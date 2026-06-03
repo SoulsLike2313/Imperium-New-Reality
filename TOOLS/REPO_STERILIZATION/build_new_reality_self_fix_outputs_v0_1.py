@@ -88,6 +88,14 @@ TEXT_SUFFIXES = {
 }
 CYRILLIC_RE = re.compile(r"[\u0400-\u04ff]")
 REPLACEMENT_RE = re.compile(r"\ufffd")
+SELF_REFERENTIAL_REPORT_FILES = {
+    "evidence_index.json",
+    "final_closure_proof_receipt.json",
+    "remote_tree_bundle_closure_receipt.json",
+    "self_fix_builder_summary.json",
+    "sha256sums.txt",
+    "task_report_bundle.zip",
+}
 
 
 def utc_now() -> str:
@@ -822,22 +830,35 @@ def build_bundle(repo_root: Path, report_dir: Path) -> dict[str, Any]:
     bundle_path = report_dir / "task_report_bundle.zip"
     if bundle_path.exists():
         bundle_path.unlink()
-    files = [path for path in sorted(report_dir.rglob("*")) if path.is_file() and path.name not in {"task_report_bundle.zip", "sha256sums.txt"}]
+    files = [
+        path
+        for path in sorted(report_dir.rglob("*"))
+        if path.is_file() and path.name not in SELF_REFERENTIAL_REPORT_FILES
+    ]
     with zipfile.ZipFile(bundle_path, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         for path in files:
             archive.write(path, path.relative_to(report_dir).as_posix())
+        archive.writestr(
+            "SELF_REFERENCE_LIMIT.txt",
+            "Evidence index, final closure receipt, remote tree closure receipt, sha256sums, and builder summary are stored next to this bundle because they record this bundle hash.\n",
+        )
+    write_sha256sums(report_dir)
+    return {
+        "bundle_path": to_posix(bundle_path),
+        "bundle_sha256": sha256_file(bundle_path),
+        "sha256sums_path": to_posix(report_dir / "sha256sums.txt"),
+        "included_file_count": len(files) + 1,
+        "excluded_due_self_reference": sorted(SELF_REFERENTIAL_REPORT_FILES - {"task_report_bundle.zip"}),
+        "verdict": "PASS",
+    }
+
+
+def write_sha256sums(report_dir: Path) -> None:
     sha_lines = []
     for path in sorted(report_dir.rglob("*")):
         if path.is_file() and path.name != "sha256sums.txt":
             sha_lines.append(f"{sha256_file(path)}  {path.relative_to(report_dir).as_posix()}")
     write_text(report_dir / "sha256sums.txt", "\n".join(sha_lines))
-    return {
-        "bundle_path": to_posix(bundle_path),
-        "bundle_sha256": sha256_file(bundle_path),
-        "sha256sums_path": to_posix(report_dir / "sha256sums.txt"),
-        "included_file_count": len(files),
-        "verdict": "PASS",
-    }
 
 
 def build_closure_receipts(report_dir: Path, observation: dict[str, Any], bundle: dict[str, Any], phase: str) -> None:
@@ -916,7 +937,6 @@ def main() -> int:
     )
     bundle = build_bundle(repo_root, report_dir)
     build_closure_receipts(report_dir, observation, bundle, args.phase)
-    bundle = build_bundle(repo_root, report_dir)
 
     evidence_builder = repo_root / "TOOLS/EVIDENCE/build_evidence_index_v0_1.py"
     evidence_result = run_command(
@@ -934,7 +954,6 @@ def main() -> int:
     )
     if evidence_result["returncode"] != 0:
         write_json(report_dir / "evidence_index_builder_error.json", evidence_result)
-    bundle = build_bundle(repo_root, report_dir)
 
     summary = {
         "task_id": TASK_ID,
@@ -950,6 +969,7 @@ def main() -> int:
         "verdict": "BLOCK" if validation.get("verdict") == "BLOCK" or red_team.get("verdict") == "BLOCK" else "PASS_WITH_WARNINGS",
     }
     write_json(report_dir / "self_fix_builder_summary.json", summary)
+    write_sha256sums(report_dir)
     print(json.dumps(summary, ensure_ascii=True, indent=2))
     return 0 if not str(summary["verdict"]).startswith("BLOCK") else 1
 
