@@ -1,6 +1,6 @@
 {
   "task_id": "TASK-NEWGEN-PC-NEW-REALITY-FINAL-REMOTE-CLOSURE-RECEIPT-AND-NATIVE-REPLAY-PC-V0_1",
-  "timestamp_utc": "2026-06-03T16:38:55Z",
+  "timestamp_utc": "2026-06-03T16:40:42Z",
   "mode": "HARD_RED_TEAM",
   "checks": {
     "root_resolution": "PASS",
@@ -9,14 +9,14 @@
     "invalid_taskpack_no_launch": "PASS",
     "remote_policy": "PASS",
     "ancient_empire_readonly": "PASS",
-    "bundle_receipt": "PENDING",
+    "bundle_receipt": "PASS",
     "closure_self_reference": "WARN_DISCLOSED"
   },
-  "clean_pass_allowed": false,
+  "clean_pass_allowed": true,
   "self_reference_limit_recorded": true,
   "surviving_warnings": [
     "A tracked receipt cannot contain the SHA of the commit that is created by tracking that same receipt.",
     "Final exact HEAD equality must be verified by a no-write post-push command and repeated in the Owner final response."
   ],
-  "verdict": "PASS_PRE_FINALIZE"
+  "verdict": "PASS_WITH_SELF_REFERENCE_LIMIT"
 }
