@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Final Remote Closure Receipt",
+  "type": "object",
+  "required": [
+    "task_id",
+    "active_root",
+    "remote_url",
+    "branch",
+    "local_head",
+    "remote_head",
+    "origin_equals_head",
+    "worktree_clean",
+    "bundle_path",
+    "bundle_sha256",
+    "verdict"
+  ],
+  "properties": {
+    "task_id": {
+      "const": "TASK-NEWGEN-PC-NEW-REALITY-FINAL-REMOTE-CLOSURE-RECEIPT-AND-NATIVE-REPLAY-PC-V0_1"
+    },
+    "active_root": {
+      "type": "string"
+    },
+    "remote_url": {
+      "const": "https://github.com/SoulsLike2313/Imperium-New-Reality.git"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "local_head": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "remote_head": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "origin_equals_head": {
+      "type": "boolean"
+    },
+    "worktree_clean": {
+      "type": "boolean"
+    },
+    "bundle_path": {
+      "type": "string"
+    },
+    "bundle_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "verdict": {
+      "type": "string"
+    }
+  }
+}

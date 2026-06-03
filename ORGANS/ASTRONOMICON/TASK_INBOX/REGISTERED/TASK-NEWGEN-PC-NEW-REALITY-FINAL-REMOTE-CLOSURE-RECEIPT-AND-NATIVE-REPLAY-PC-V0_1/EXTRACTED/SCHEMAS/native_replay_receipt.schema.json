@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Native Replay Receipt",
+  "type": "object",
+  "required": [
+    "task_id",
+    "new_reality_native_astronomicon_used",
+    "ancient_bridge_used",
+    "intake_verdict",
+    "resolver_verdict"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "new_reality_native_astronomicon_used": {
+      "type": "boolean"
+    },
+    "ancient_bridge_used": {
+      "type": "boolean"
+    },
+    "intake_verdict": {
+      "type": "string"
+    },
+    "resolver_verdict": {
+      "type": "string"
+    }
+  }
+}
