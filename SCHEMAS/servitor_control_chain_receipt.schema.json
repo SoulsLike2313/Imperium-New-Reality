@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "verdict",
+    "control_contract_issued_by_officio",
+    "launch_context_injected_by_astronomicon",
+    "doctrinarium_law_read",
+    "inquisition_compliance_check_run",
+    "observed_owner_facing_language",
+    "required_owner_facing_language",
+    "drift_detected",
+    "correction_source",
+    "agent_control_failure",
+    "next_control_fix"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string"
+    },
+    "control_contract_issued_by_officio": {
+      "type": "boolean"
+    },
+    "launch_context_injected_by_astronomicon": {
+      "type": "boolean"
+    },
+    "doctrinarium_law_read": {
+      "type": "boolean"
+    },
+    "inquisition_compliance_check_run": {
+      "type": "boolean"
+    },
+    "observed_owner_facing_language": {
+      "type": "string"
+    },
+    "required_owner_facing_language": {
+      "type": "string"
+    },
+    "drift_detected": {
+      "type": "boolean"
+    },
+    "correction_source": {
+      "type": "string"
+    },
+    "agent_control_failure": {
+      "type": "boolean"
+    },
+    "next_control_fix": {
+      "type": "string"
+    }
+  }
+}
+

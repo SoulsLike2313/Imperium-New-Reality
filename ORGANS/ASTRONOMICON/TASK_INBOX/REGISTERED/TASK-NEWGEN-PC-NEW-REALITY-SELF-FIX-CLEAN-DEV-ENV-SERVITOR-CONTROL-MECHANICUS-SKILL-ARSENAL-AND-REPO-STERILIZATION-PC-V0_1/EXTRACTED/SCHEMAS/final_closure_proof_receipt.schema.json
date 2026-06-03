@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "verdict",
+    "local_head",
+    "remote_head",
+    "origin_master_equals_head",
+    "worktree_clean",
+    "bundle_path",
+    "bundle_sha256"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string"
+    },
+    "local_head": {
+      "type": "string"
+    },
+    "remote_head": {
+      "type": "string"
+    },
+    "origin_master_equals_head": {
+      "type": "boolean"
+    },
+    "worktree_clean": {
+      "type": "boolean"
+    },
+    "bundle_path": {
+      "type": "string"
+    },
+    "bundle_sha256": {
+      "type": "string"
+    },
+    "self_reference_limit": {
+      "type": "string"
+    }
+  }
+}

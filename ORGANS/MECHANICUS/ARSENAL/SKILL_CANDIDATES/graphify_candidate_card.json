@@ -1,0 +1,20 @@
+{
+  "candidate_id": "graphify_context_graph_candidate_v0_1",
+  "name": "Graphify",
+  "type": "graph",
+  "category": "graph",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Explore code and document graph extraction for smaller task context packs.",
+  "first_safe_use_case": "Readonly graph map over a single task report folder with no external install in the task run.",
+  "risk": "Graph output can overstate dependency truth if not tied to source paths and hashes.",
+  "admission_mode": "CANDIDATE_ONLY_NO_INSTALL",
+  "install_status": "NOT_INSTALLED",
+  "receipt_requirements": [
+    "scope receipt",
+    "input path manifest",
+    "output graph hash",
+    "manual review note before canon admission"
+  ],
+  "canon_after_successful_cycles": 10
+}
+

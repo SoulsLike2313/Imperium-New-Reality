@@ -1,0 +1,44 @@
+{
+  "task_id": "TASK-NEWGEN-PC-NEW-REALITY-SELF-FIX-CLEAN-DEV-ENV-SERVITOR-CONTROL-MECHANICUS-SKILL-ARSENAL-AND-REPO-STERILIZATION-PC-V0_1",
+  "timestamp_utc": "2026-06-03T17:43:00Z",
+  "phase": "prepare",
+  "checks": {
+    "root_resolution": "",
+    "remote_url": "PASS",
+    "branch": "PASS",
+    "remote_head_equality": "PASS",
+    "worktree_clean": "DEFERRED_UNTIL_POST_PUSH",
+    "ancient_empire_not_mutated": "PASS_WITH_SCOPE_LIMIT",
+    "no_forbidden_broad_deletion": "PASS",
+    "quarantine_hashes_valid": "PASS",
+    "required_repo_artifacts_present": "PASS",
+    "machine_artifact_encoding": "PASS"
+  },
+  "required_repo_artifacts": {
+    "ORGANS/OFFICIO_AGENTIS/CONTRACTS/servitor_runtime_control_contract_v0_1.md": true,
+    "ORGANS/ASTRONOMICON/CONTRACTS/launch_context_injection_contract_v0_1.md": true,
+    "ORGANS/INQUISITION/MATRICES/servitor_compliance_matrix_v0_1.json": true,
+    "ORGANS/INQUISITION/CONTRACTS/review_reinforcement_proposals_contract_v0_1.md": true,
+    "ORGANS/SPECULUM/CONTRACTS/review_reinforcement_proposals_contract_v0_1.md": true,
+    "ORGANS/MECHANICUS/ARSENAL/CANONIZATION_POLICY.md": true,
+    "SCHEMAS/servitor_control_chain_receipt.schema.json": true,
+    "SCHEMAS/mechanicus_candidate_card.schema.json": true,
+    "SCHEMAS/evidence_index.schema.json": true,
+    "SCHEMAS/final_closure_proof_receipt.schema.json": true,
+    "SCHEMAS/reinforcement_proposal.schema.json": true,
+    "DOCS/EVIDENCE_BUNDLE_INDEX_AND_FINAL_PROOF_PACKAGER_V0_1.md": true,
+    "TOOLS/EVIDENCE/build_evidence_index_v0_1.py": true
+  },
+  "encoding": {
+    "checked_path_count": 36,
+    "issues": [],
+    "verdict": "PASS"
+  },
+  "not_run_checks": [
+    {
+      "check": "existing validator that probes E:/IMPERIUM",
+      "reason": "Skipped because New Reality scope lock forbids parent-context access without salvage admission."
+    }
+  ],
+  "verdict": "PASS_WITH_WARNINGS"
+}

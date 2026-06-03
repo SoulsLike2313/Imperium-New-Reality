@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "final_head",
+    "remote_head",
+    "bundle_path",
+    "bundle_sha256",
+    "required_receipts",
+    "self_reference_limit"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "final_head": {
+      "type": "string"
+    },
+    "remote_head": {
+      "type": "string"
+    },
+    "bundle_path": {
+      "type": "string"
+    },
+    "bundle_sha256": {
+      "type": "string"
+    },
+    "required_receipts": {
+      "type": "object"
+    },
+    "self_reference_limit": {
+      "type": "string"
+    },
+    "reviewer_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_gate": {
+      "type": "string"
+    }
+  }
+}
+
