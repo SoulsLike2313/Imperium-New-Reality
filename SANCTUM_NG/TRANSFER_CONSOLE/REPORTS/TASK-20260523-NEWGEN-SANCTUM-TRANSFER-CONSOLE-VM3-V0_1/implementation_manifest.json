@@ -1,0 +1,210 @@
+{
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1",
+  "generated_at_utc": "2026-05-23T00:08:30Z",
+  "scope_classification": "IN_SCOPE_IMPERIUM_NEW_GENERATION_ONLY",
+  "modified_files": [
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/index.html",
+      "reason": "Added Transfer Console section and containers for contour cards, requests/results, ledger, and source refs.",
+      "scope": "UI_INTEGRATION"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/app.js",
+      "reason": "Added transfer console state normalization/rendering, i18n labels, and wiring for transfer console view payload.",
+      "scope": "UI_INTEGRATION"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/styles.css",
+      "reason": "Added Transfer Console styling for cards, status chips, lists, and responsive layout.",
+      "scope": "UI_INTEGRATION"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/sanctum_ng_action_request.schema.json",
+      "reason": "Added deny-list for arbitrary shell/exec fields to enforce allowlisted action boundary.",
+      "scope": "ALLOWLIST_HARDENING"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_ACTION_REGISTRY_V0_1.json",
+      "reason": "Registered allowlisted Transfer Console actions and wiring metadata.",
+      "scope": "ACTION_LAYER_INTEGRATION"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_action_server.py",
+      "reason": "Added transfer action dispatch and state endpoint integration for transfer console view.",
+      "scope": "API_INTEGRATION"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_state_builder.py",
+      "reason": "Added transfer action keys in generated state action list.",
+      "scope": "STATE_INTEGRATION"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_action_layer_validator.py",
+      "reason": "Extended validator for transfer action IDs, files, and no-arbitrary-shell checks.",
+      "scope": "VALIDATION"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_action_layer_smoke.py",
+      "reason": "Extended smoke workflow with transfer actions.",
+      "scope": "SMOKE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+      "reason": "Regenerated state snapshot to include transfer action availability.",
+      "scope": "GENERATED_STATE"
+    }
+  ],
+  "created_files": [
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_contour_record_v0_1.schema.json",
+      "reason": "Contour status schema for PC/VM2/VM3 truth cards.",
+      "scope": "TRANSFER_CONTRACT"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_route_definition_v0_1.schema.json",
+      "reason": "Allowlisted transfer route contract.",
+      "scope": "TRANSFER_CONTRACT"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_request_record_v0_1.schema.json",
+      "reason": "Request model for taskpack send/report fetch tracking.",
+      "scope": "TRANSFER_CONTRACT"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_result_record_v0_1.schema.json",
+      "reason": "Result receipt model with evidence refs and no-fake-green fields.",
+      "scope": "TRANSFER_CONTRACT"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_action_ledger_entry_v0_1.schema.json",
+      "reason": "Ledger entry schema for allowlisted action traces.",
+      "scope": "TRANSFER_CONTRACT"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_console_view_state_v0_1.schema.json",
+      "reason": "View-state schema for UI consumption.",
+      "scope": "TRANSFER_CONTRACT"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/transfer_console_action_runner_v0_1.py",
+      "reason": "Allowlisted transfer action runner implementing foundation-only lifecycle.",
+      "scope": "TRANSFER_TOOL"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/build_transfer_console_foundation_v0_1.py",
+      "reason": "Builder for seeding transfer foundation records and view state.",
+      "scope": "TRANSFER_TOOL"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/validate_transfer_console_v0_1.py",
+      "reason": "Validator for schema, allowlist, no-fake-green, and report bundle gates.",
+      "scope": "TRANSFER_TOOL"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/smoke_transfer_console_v0_1.py",
+      "reason": "Smoke runner for transfer actions plus UI/API/file truth checks.",
+      "scope": "TRANSFER_TOOL"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/contours/contour_registry_v0_1.json",
+      "reason": "Registry for PC/VM2/VM3 contour definitions.",
+      "scope": "TRANSFER_DATA"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/contours/allowed_routes_v0_1.json",
+      "reason": "Allowlisted route matrix for taskpack-send and report-fetch flows.",
+      "scope": "TRANSFER_DATA"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/contours/contour_status.latest.json",
+      "reason": "Latest bounded contour statuses with claim boundary labels.",
+      "scope": "TRANSFER_DATA"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+      "reason": "Generated view state consumed by Sanctum NG UI/API.",
+      "scope": "TRANSFER_DATA"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/ledger/transfer_action_ledger.jsonl",
+      "reason": "Append-only action ledger for transfer actions.",
+      "scope": "TRANSFER_DATA"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1/start_state.json",
+      "reason": "Start truth receipt including sync/head/read-order evidence.",
+      "scope": "TASK_EVIDENCE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1/GATE_ACK.md",
+      "reason": "Mandatory gate acknowledgment before edits.",
+      "scope": "TASK_EVIDENCE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1/transfer_console_build_report.json",
+      "reason": "Builder execution receipt.",
+      "scope": "TASK_EVIDENCE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1/transfer_console_validator_report.json",
+      "reason": "Transfer validator report.",
+      "scope": "TASK_EVIDENCE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1/transfer_console_smoke_report.json",
+      "reason": "Transfer smoke report.",
+      "scope": "TASK_EVIDENCE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1/implementation_manifest.json",
+      "reason": "Implementation trace of created/modified files and scopes.",
+      "scope": "TASK_EVIDENCE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1/context_source_mix.json",
+      "reason": "Recorded context-source percentages with rationale and dependency-reduction notes.",
+      "scope": "TASK_EVIDENCE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1/FINAL_REPORT.md",
+      "reason": "Owner-facing closure report with verdict, boundaries, context mix, and KPD slice.",
+      "scope": "TASK_EVIDENCE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1/closure_receipt.json",
+      "reason": "Final closure receipt for commit/push/remote/worktree verification.",
+      "scope": "TASK_EVIDENCE"
+    }
+  ],
+  "generated_artifact_sets": [
+    {
+      "path_glob": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/contours/probes/PROBE-*.json",
+      "reason": "Bounded contour probe receipts used to prove ONLINE/OFFLINE/UNKNOWN status transitions.",
+      "scope": "TRANSFER_DATA_GENERATED",
+      "count": 16
+    },
+    {
+      "path_glob": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/requests/TRANSFER-REQ-*.json",
+      "reason": "Allowlisted transfer request receipts for dry-run send/fetch tracking.",
+      "scope": "TRANSFER_DATA_GENERATED",
+      "count": 16
+    },
+    {
+      "path_glob": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/results/TRANSFER-RESULT-*.json",
+      "reason": "Transfer result receipts with evidence refs and bounded not-proven notes.",
+      "scope": "TRANSFER_DATA_GENERATED",
+      "count": 24
+    },
+    {
+      "path_glob": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1/ACTION_LOGS/**",
+      "reason": "Action-layer and transfer-runner execution logs preserved as evidence.",
+      "scope": "TASK_EVIDENCE_GENERATED"
+    }
+  ],
+  "forbidden_paths_touched": false,
+  "notes": [
+    "All edited/created paths are inside IMPERIUM_NEW_GENERATION scope.",
+    "No production remote orchestration claim introduced.",
+    "No arbitrary shell bridge introduced."
+  ]
+}

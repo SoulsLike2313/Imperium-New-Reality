@@ -1,0 +1,80 @@
+{
+  "matrix_id": "LLM_HARNESS_AND_RESOURCE_CONTROL_MATRIX",
+  "version": "0.1-candidate-seed",
+  "owner_organ": "Mechanicus",
+  "support_organs": [
+    "Officio Agentis",
+    "Inquisition",
+    "Administratum"
+  ],
+  "purpose": "Future domain seed for LLM harness limits, context budgets, and token/resource control.",
+  "used_by": [
+    "MECHANICUS",
+    "GPT_LOGOS",
+    "SERVITOR",
+    "INQUISITOR"
+  ],
+  "required_questions": [
+    "What is the source of truth for this claim?",
+    "Which organ owns the rule?",
+    "What evidence level proves it?",
+    "What cap applies if evidence is missing?",
+    "What would make this claim fake-green?"
+  ],
+  "pass_criteria": [
+    "All criteria include owner value, evidence, and PASS/WARN/BLOCK logic.",
+    "Current status is explicit per criterion.",
+    "No real-use execution claim is made without required evidence."
+  ],
+  "warn_criteria": [
+    "Some criteria are still UNKNOWN but improvement hooks exist.",
+    "Pilot is preflight-ready only with warnings/caps."
+  ],
+  "block_criteria": [
+    "Required criterion has BLOCK state.",
+    "Matrix claims active production capability without evidence."
+  ],
+  "fake_green_flags": [
+    "CLAIM_WITHOUT_REPLAY",
+    "AGENT_REASONING_AS_SYSTEM_CAPABILITY",
+    "STALE_RECEIPT",
+    "DIRTY_STATE_HIDDEN",
+    "OWNER_DECISION_MISSING"
+  ],
+  "evidence_requirements": [
+    "context manifest",
+    "red-team leakage check",
+    "resource receipt"
+  ],
+  "current_status": "CANDIDATE_NOT_CANON",
+  "next_action": "Keep as candidate seed; connect to one safe pilot design task without active execution claims.",
+  "criteria": [
+    {
+      "criterion_id": "LHR-01",
+      "plain_language_meaning": "LLM runs have explicit context manifest and budget controls.",
+      "owner_value": "Stable cost and leakage boundaries.",
+      "owner_organ": "Mechanicus",
+      "support_organs": [
+        "Officio Agentis",
+        "Inquisition"
+      ],
+      "evidence_required": [
+        "context manifest",
+        "resource receipt",
+        "red-team leakage check"
+      ],
+      "pass_logic": "Runs include manifest + budget + post-run receipt.",
+      "warn_logic": "Manual budget declared but no checker yet.",
+      "block_logic": "No resource boundary for LLM harness claim.",
+      "current_status": "CANDIDATE_SEED",
+      "next_improvement_hook": "Prototype harness receipt schema for manual Logos and Servitor modes."
+    }
+  ],
+  "candidate_repo_location": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/MATRICES/LLM_HARNESS_AND_RESOURCE_CONTROL_MATRIX.md",
+  "seed_status": "CANDIDATE_SEED",
+  "not_active_claims": [
+    "No real-use execution claim.",
+    "No WARP unlock claim.",
+    "No production finance/freelance claim."
+  ]
+}

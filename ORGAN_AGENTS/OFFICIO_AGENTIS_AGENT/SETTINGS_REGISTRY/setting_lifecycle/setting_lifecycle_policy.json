@@ -1,0 +1,62 @@
+{
+  "setting_id": "SET-GOV-LIFECYCLE-V0_1",
+  "title": "Officio Setting Lifecycle",
+  "version": "v0_1",
+  "state": "ACTIVE",
+  "scope": "SETTINGS_REGISTRY/*",
+  "applies_to_roles": [
+    "SERVITOR",
+    "LOGOS_PRIME",
+    "LOGOS_SPECULUM"
+  ],
+  "applies_to_modes": [
+    "EXECUTOR",
+    "AUDITOR",
+    "ARCHITECT",
+    "REPAIRER"
+  ],
+  "machine_rule": {
+    "states": [
+      "DRAFT",
+      "REVIEW",
+      "ACTIVE",
+      "DEPRECATED",
+      "TOMBSTONE"
+    ],
+    "transitions": {
+      "DRAFT": [
+        "REVIEW"
+      ],
+      "REVIEW": [
+        "ACTIVE",
+        "DRAFT"
+      ],
+      "ACTIVE": [
+        "DEPRECATED"
+      ],
+      "DEPRECATED": [
+        "TOMBSTONE",
+        "ACTIVE"
+      ],
+      "TOMBSTONE": []
+    },
+    "requires_receipt_on_transition": true
+  },
+  "human_summary": "Every active setting follows auditable lifecycle states and rollback path.",
+  "acceptance_tests": [
+    "All ACTIVE settings include required lifecycle metadata.",
+    "Transitions outside allowed graph are rejected by validator."
+  ],
+  "evidence_required": [
+    "schema_validation_report.json",
+    "settings_index.json"
+  ],
+  "dependencies": [
+    "SCHEMAS/officio_setting.schema.json"
+  ],
+  "conflicts_with": [],
+  "supersedes": [],
+  "rollback_plan": "Revert modified setting file and set state to previous valid state with change receipt.",
+  "owner_approval_required": true
+}
+

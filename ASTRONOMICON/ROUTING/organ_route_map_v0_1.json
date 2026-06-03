@@ -1,0 +1,29 @@
+{
+  "schema_version": "astronomicon.organ_route_map.v0_1",
+  "route_families": [
+    {
+      "family": "ROUTE_REGISTRY",
+      "primary_organ": "ASTRONOMICON",
+      "support_organs": ["ADMINISTRATUM", "MECHANICUS", "INQUISITION"],
+      "notes": "Used when canonical route memory and routing truth must be hardened."
+    },
+    {
+      "family": "GATE_AUDIT",
+      "primary_organ": "INQUISITION",
+      "support_organs": ["DOCTRINARIUM", "ADMINISTRATUM", "ASTRONOMICON"],
+      "notes": "Used for fake-green and scope-drift prevention."
+    },
+    {
+      "family": "SCRIPT_TOOLING",
+      "primary_organ": "MECHANICUS",
+      "support_organs": ["ASTRONOMICON", "INQUISITION", "OFFICIO_AGENTIS"],
+      "notes": "Used for script/checker generation with receipts."
+    }
+  ],
+  "default_rules": [
+    "Every route must include stop conditions.",
+    "Every route must include required receipts.",
+    "Out-of-scope systems remain forbidden unless Owner re-scopes."
+  ],
+  "generated_at_utc": "2026-05-27T12:03:00Z"
+}

@@ -1,0 +1,18 @@
+{
+  "mode": "AUDIT",
+  "purpose": "Validate claims, check evidence completeness, and enforce gates.",
+  "allowed_actions": [
+    "read and verify artifacts",
+    "run checkers",
+    "mark done/blocked/not_done"
+  ],
+  "forbidden_actions": [
+    "silently changing runtime behavior",
+    "pass verdict without evidence"
+  ],
+  "expected_output_style": "requirement-by-requirement verdict and evidence map",
+  "can_modify_files": true,
+  "can_run_commands": true,
+  "can_create_bundles": true,
+  "owner_approval_required": false
+}

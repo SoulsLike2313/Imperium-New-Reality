@@ -1,0 +1,38 @@
+{
+  "task_id": "TASK-20260524-NEWGEN-IMPORTANT-SIX-ORGAN-SHELL-V1-PC-V0_1",
+  "current_head": "7c3087e3faf7252a526fee398c8c845c9d59b33b",
+  "scope": "IMPERIUM_NEW_GENERATION only",
+  "allowed_write_paths": [
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENT_COMMON/SHELL/**",
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TUI/**",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/**",
+    "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/**",
+    "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/**",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TUI/**",
+    "IMPERIUM_NEW_GENERATION/INQUISITION/TUI/**",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/**",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-ORGAN-SHELL-V1-PC-V0_1/**"
+  ],
+  "forbidden_write_paths": [
+    "ORGANS/**",
+    "IMPERIUM_TEST_VERSION/**",
+    "INBOX/**",
+    ".git/**"
+  ],
+  "stop_conditions": [
+    "git_truth_mismatch",
+    "dirty_worktree_before_admission",
+    "missing_preflight_or_contract_inputs",
+    "owner_verdict_needed_from_organ_route",
+    "forbidden_path_required_to_complete_task"
+  ],
+  "verdict_target": "PASS_FOR_IMPORTANT_SIX_ORGAN_SHELL_V1_PC_V0_1_ONLY",
+  "not_proven": [
+    "full PTY terminal embedded in browser",
+    "dashboard write controls",
+    "Owner Verdict button implementation",
+    "production orchestration",
+    "final AAA visual lock"
+  ],
+  "generated_at_utc": "2026-05-24T02:57:00Z"
+}

@@ -1,0 +1,1373 @@
+{
+  "schema_version": "0.1",
+  "task_id": "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+  "generated_at_utc": "2026-05-22T16:53:10Z",
+  "verdict": "PASS",
+  "server": {
+    "base_url": "http://127.0.0.1:8787",
+    "command": [
+      "python3",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_action_server.py",
+      "--repo-root",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8787",
+      "--task-id",
+      "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+      "--report-dir",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1"
+    ],
+    "returncode": -15
+  },
+  "steps": [
+    {
+      "step": "action_request_schema_valid",
+      "status": "PASS",
+      "details": "request schema shape validated"
+    },
+    {
+      "step": "action_result_schema_valid",
+      "status": "PASS",
+      "details": "result schema shape validated and PARTIAL status admitted"
+    },
+    {
+      "step": "health_check",
+      "status": "PASS",
+      "details": {
+        "status": "OK",
+        "service": "sanctum_ng_action_server",
+        "task_id": "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+        "generated_at_utc": "2026-05-22T16:53:10Z"
+      }
+    },
+    {
+      "step": "registry_loads",
+      "status": "PASS",
+      "details": {
+        "status": "CONNECTED",
+        "task_id": "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+        "registry": {
+          "schema_id": "SANCTUM_NG_ACTION_REGISTRY_V0_1",
+          "mode": "ACTION_LAYER_FOUNDATION_ONLY",
+          "status": "ACTION_ALLOWED"
+        },
+        "actions": [
+          {
+            "action_id": "REFRESH_TRUTH_STATE",
+            "title": "Refresh Sanctum Truth State",
+            "description": "Run bounded refresh runner to rebuild state and validator report for this task bundle.",
+            "status": "WIRED",
+            "safety_level": "SAFE_LOCAL_SCRIPT_ONLY",
+            "allowed_commands": [
+              "python3 IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_refresh_runner.py --repo-root <repo-root> --task-id TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1 --required-starting-head 573169b9830ecb0322202e33a3e12ca2fc5e3556 --report-dir IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1"
+            ],
+            "allowed_paths": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/**",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/**"
+            ],
+            "forbidden_paths": [
+              "ORGANS/**",
+              "SANCTUM/**",
+              "IMPERIUM_TEST_VERSION/**",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/**",
+              ".git/**"
+            ],
+            "writes_files": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json"
+            ],
+            "evidence_refs": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_refresh_runner.py",
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json"
+            ],
+            "known_limitations": [
+              "Foundation-only local refresh flow.",
+              "Does not claim production orchestration."
+            ],
+            "availability_state": "ACTION_ALLOWED"
+          },
+          {
+            "action_id": "VALIDATE_TRUTH_STATE",
+            "title": "Validate Sanctum Truth State",
+            "description": "Run bounded Sanctum NG validator for current state/schema/report bundle.",
+            "status": "WIRED",
+            "safety_level": "SAFE_LOCAL_SCRIPT_ONLY",
+            "allowed_commands": [
+              "python3 IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_validator.py --repo-root <repo-root> --task-id TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1 --report-dir IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1 --output IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json"
+            ],
+            "allowed_paths": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/**",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/**"
+            ],
+            "forbidden_paths": [
+              "ORGANS/**",
+              "SANCTUM/**",
+              "IMPERIUM_TEST_VERSION/**",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/**",
+              ".git/**"
+            ],
+            "writes_files": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json"
+            ],
+            "evidence_refs": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_validator.py",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json"
+            ],
+            "known_limitations": [
+              "Validator verdict is bounded to foundation artifact checks.",
+              "No production readiness claim."
+            ],
+            "availability_state": "ACTION_ALLOWED"
+          },
+          {
+            "action_id": "READ_PHASE_REGISTRY",
+            "title": "Read Phase Registry",
+            "description": "Read Sanctum NG phase registry from fixed known path.",
+            "status": "WIRED",
+            "safety_level": "SAFE_READ_FIXED_PATH",
+            "allowed_commands": [
+              "READ_FIXED_JSON: IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_PHASE_REGISTRY_V0_1.json"
+            ],
+            "allowed_paths": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_PHASE_REGISTRY_V0_1.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/**"
+            ],
+            "forbidden_paths": [
+              "*"
+            ],
+            "writes_files": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/**"
+            ],
+            "evidence_refs": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_PHASE_REGISTRY_V0_1.json"
+            ],
+            "known_limitations": [
+              "Only fixed registry file path is readable.",
+              "No arbitrary file traversal."
+            ],
+            "availability_state": "ACTION_ALLOWED"
+          },
+          {
+            "action_id": "READ_ACTION_REGISTRY",
+            "title": "Read Action Registry",
+            "description": "Read Sanctum NG action registry from fixed known path.",
+            "status": "WIRED",
+            "safety_level": "SAFE_READ_FIXED_PATH",
+            "allowed_commands": [
+              "READ_FIXED_JSON: IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_ACTION_REGISTRY_V0_1.json"
+            ],
+            "allowed_paths": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_ACTION_REGISTRY_V0_1.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/**"
+            ],
+            "forbidden_paths": [
+              "*"
+            ],
+            "writes_files": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/**"
+            ],
+            "evidence_refs": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_ACTION_REGISTRY_V0_1.json"
+            ],
+            "known_limitations": [
+              "Only fixed registry file path is readable.",
+              "No arbitrary file traversal."
+            ],
+            "availability_state": "ACTION_ALLOWED"
+          },
+          {
+            "action_id": "READ_LATEST_REPORT_SUMMARY",
+            "title": "Read Latest Report Summary",
+            "description": "Read fixed known summary reports and return structured summary_state: FOUND, MISSING, PARTIAL, NOT_READY, STALE, ERROR.",
+            "status": "WIRED",
+            "safety_level": "SAFE_READ_FIXED_REPORT_SET",
+            "allowed_commands": [
+              "READ_FIXED_JSON_SET: SANCTUM_NG_REFRESH_RUNNER_REPORT.json, VALIDATOR_REPORT.json, SMOKE_REPORT.json (legacy alias ACTION_LAYER_SMOKE_REPORT.json), FINAL_RECEIPT.json, POST_COMMIT_CLOSURE_RECEIPT.json"
+            ],
+            "allowed_paths": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LAYER_SMOKE_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/**"
+            ],
+            "forbidden_paths": [
+              "*"
+            ],
+            "writes_files": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/**"
+            ],
+            "evidence_refs": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json"
+            ],
+            "known_limitations": [
+              "Only predefined report files are readable.",
+              "Legacy smoke filename is accepted for compatibility.",
+              "Missing files are reported as structured states, not auto-repaired."
+            ],
+            "availability_state": "ACTION_ALLOWED"
+          }
+        ],
+        "action_layer_state_model": {
+          "connection_state": "CONNECTED",
+          "connection_states": [
+            "CONNECTED",
+            "NOT_CONNECTED",
+            "UNKNOWN",
+            "ACTION_SERVER_NOT_CONNECTED"
+          ],
+          "action_states": [
+            "ACTION_ALLOWED",
+            "ACTION_DISABLED"
+          ],
+          "result_states": [
+            "ACTION_RESULT_PASS",
+            "ACTION_RESULT_WARN",
+            "ACTION_RESULT_BLOCK",
+            "ACTION_RESULT_PARTIAL"
+          ]
+        },
+        "forbidden_paths": [
+          "ORGANS/**",
+          "SANCTUM/**",
+          "IMPERIUM_TEST_VERSION/**",
+          "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/**",
+          ".git/**"
+        ]
+      }
+    },
+    {
+      "step": "state_endpoint",
+      "status": "PASS",
+      "details": {
+        "status": "CONNECTED",
+        "task_id": "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+        "state": {
+          "schema_id": "SANCTUM_NG_STATE_V0_1",
+          "task_id": "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+          "mode": "READ_ONLY_FOUNDATION",
+          "generated_at_utc": "2026-05-22T16:52:35Z",
+          "git": {
+            "head": "573169b9830ecb0322202e33a3e12ca2fc5e3556",
+            "branch": "master",
+            "worktree_dirty": true,
+            "required_starting_head": "573169b9830ecb0322202e33a3e12ca2fc5e3556",
+            "head_matches_required_start": true
+          },
+          "truth_flags": {
+            "read_only": true,
+            "foundation_only": true,
+            "production_ready": false,
+            "live_backend": false,
+            "autonomous_execution": false
+          },
+          "phase_registry": {
+            "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_PHASE_REGISTRY_V0_1.json",
+            "loaded": true,
+            "phase_count": 10,
+            "source_commit": "257a9332f926c31cffcc419851b0f87da1e0fab5"
+          },
+          "communication_gate": {
+            "LIVE_LANGUAGE_COMPLIANCE": "RUSSIAN_OWNER_PROGRESS_REQUIRED",
+            "FINAL_REPORT_LANGUAGE": "RUSSIAN_REQUIRED",
+            "TECHNICAL_ARTIFACT_LANGUAGE": "ENGLISH_ALLOWED",
+            "AUTHORITY_SOURCE": [
+              "IMPERIUM_NEW_GENERATION/AUTHORITY_DRAFTS/OFFICIO_LIVE_COMMUNICATION_ENFORCEMENT_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/officio_live_communication_gate_v0_1.schema.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/OFFICIO_ROLE_ACK_OR_WARN.json"
+            ],
+            "STATUS": "WARN_FOUNDATION_ONLY",
+            "KNOWN_LIMITATION": "Live language compliance is foundation-level receipt discipline, not runtime hard-block enforcement.",
+            "VIOLATIONS": [],
+            "SELF_CORRECTIONS": []
+          },
+          "pipeline_shape": [
+            {
+              "phase_no": 1,
+              "name": "Architecture",
+              "status": "FOUNDATION"
+            },
+            {
+              "phase_no": 2,
+              "name": "Organ Packets",
+              "status": "FOUNDATION"
+            },
+            {
+              "phase_no": 3,
+              "name": "Task Kernel",
+              "status": "FOUNDATION"
+            },
+            {
+              "phase_no": 4,
+              "name": "Astronomicon",
+              "status": "FOUNDATION"
+            },
+            {
+              "phase_no": 5,
+              "name": "Authority Gates",
+              "status": "WARN"
+            },
+            {
+              "phase_no": 6,
+              "name": "Servitor Loop",
+              "status": "FOUNDATION"
+            },
+            {
+              "phase_no": 7,
+              "name": "Evidence Binder",
+              "status": "FOUNDATION"
+            },
+            {
+              "phase_no": 8,
+              "name": "Visual Brain",
+              "status": "FOUNDATION"
+            },
+            {
+              "phase_no": 9,
+              "name": "Skill Growth",
+              "status": "FOUNDATION"
+            },
+            {
+              "phase_no": 10,
+              "name": "Tool Admission",
+              "status": "FOUNDATION"
+            }
+          ],
+          "phases": [
+            {
+              "phase_no": 1,
+              "name": "Architecture",
+              "status": "FOUNDATION",
+              "summary": "Architecture foundation mapping from canonical Sanctum NG phase registry.",
+              "evidence_refs": [
+                "FILE:IMPERIUM_NEW_GENERATION/ARCHITECTURE/NEWGEN_ARCHITECTURE_MAP_V0_1.md",
+                "FILE:IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-ARCHITECTURE-SKILL-SPINE-PC-V0_1/FINAL_RECEIPT.json",
+                "REGISTRY:PHASE_01_ARCHITECTURE_SKILL_SPINE"
+              ],
+              "paths": [
+                "IMPERIUM_NEW_GENERATION/ARCHITECTURE/NEWGEN_ARCHITECTURE_MAP_V0_1.md",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-ARCHITECTURE-SKILL-SPINE-PC-V0_1/FINAL_RECEIPT.json"
+              ],
+              "report_paths": [
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-ARCHITECTURE-SKILL-SPINE-PC-V0_1/FINAL_RECEIPT.json"
+              ],
+              "limitations": [
+                "Registry phase id: PHASE_01_ARCHITECTURE_SKILL_SPINE",
+                "Registry source commit: 257a9332f926c31cffcc419851b0f87da1e0fab5"
+              ]
+            },
+            {
+              "phase_no": 2,
+              "name": "Organ Packets",
+              "status": "FOUNDATION",
+              "summary": "Organ Packets foundation mapping from canonical Sanctum NG phase registry.",
+              "evidence_refs": [
+                "FILE:IMPERIUM_NEW_GENERATION/ARCHITECTURE/ORGAN_PACKET_PROTOCOL_V0_1.md",
+                "FILE:IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/ORGAN_PACKET_V0_1.schema.json",
+                "FILE:IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/ORGAN_PACKET_SET_V0_1.schema.json",
+                "FILE:IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-ORGAN-PACKET-CONTRACT-PC-V0_1/FINAL_RECEIPT.json",
+                "REGISTRY:PHASE_02_ORGAN_PACKET_PROTOCOL"
+              ],
+              "paths": [
+                "IMPERIUM_NEW_GENERATION/ARCHITECTURE/ORGAN_PACKET_PROTOCOL_V0_1.md",
+                "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/ORGAN_PACKET_V0_1.schema.json",
+                "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/ORGAN_PACKET_SET_V0_1.schema.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-ORGAN-PACKET-CONTRACT-PC-V0_1/FINAL_RECEIPT.json"
+              ],
+              "report_paths": [
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-ORGAN-PACKET-CONTRACT-PC-V0_1/FINAL_RECEIPT.json"
+              ],
+              "limitations": [
+                "Registry phase id: PHASE_02_ORGAN_PACKET_PROTOCOL",
+                "Registry source commit: 257a9332f926c31cffcc419851b0f87da1e0fab5"
+              ]
+            },
+            {
+              "phase_no": 3,
+              "name": "Task Kernel",
+              "status": "FOUNDATION",
+              "summary": "Task Kernel foundation mapping from canonical Sanctum NG phase registry.",
+              "evidence_refs": [
+                "FILE:IMPERIUM_NEW_GENERATION/ARCHITECTURE/TASK_KERNEL_REGISTRY_V0_1.md",
+                "FILE:IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/TASK_KERNEL_V0_1.schema.json",
+                "FILE:IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-KERNEL-REGISTRY-PC-V0_1/FINAL_RECEIPT.json",
+                "FILE:IMPERIUM_NEW_GENERATION/TASKS/REGISTRY/TASK_INDEX_V0_1.json",
+                "REGISTRY:PHASE_03_TASK_KERNEL_REGISTRY"
+              ],
+              "paths": [
+                "IMPERIUM_NEW_GENERATION/ARCHITECTURE/TASK_KERNEL_REGISTRY_V0_1.md",
+                "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/TASK_KERNEL_V0_1.schema.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-KERNEL-REGISTRY-PC-V0_1/FINAL_RECEIPT.json",
+                "IMPERIUM_NEW_GENERATION/TASKS/REGISTRY/TASK_INDEX_V0_1.json"
+              ],
+              "report_paths": [
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-KERNEL-REGISTRY-PC-V0_1/FINAL_RECEIPT.json"
+              ],
+              "limitations": [
+                "Registry phase id: PHASE_03_TASK_KERNEL_REGISTRY",
+                "Registry source commit: 257a9332f926c31cffcc419851b0f87da1e0fab5"
+              ]
+            },
+            {
+              "phase_no": 4,
+              "name": "Astronomicon",
+              "status": "FOUNDATION",
+              "summary": "Astronomicon foundation mapping from canonical Sanctum NG phase registry.",
+              "evidence_refs": [
+                "FILE:IMPERIUM_NEW_GENERATION/ARCHITECTURE/ASTRONOMICON_TASK_FORMATION_V0_1.md",
+                "FILE:IMPERIUM_NEW_GENERATION/CONTRACTS/ASTRONOMICON/TASK_FORMATION_RECORD_V0_1.schema.json",
+                "FILE:IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-ASTRONOMICON-TASK-FORMATION-PC-V0_1/FINAL_RECEIPT.json",
+                "REGISTRY:PHASE_04_ASTRONOMICON_FORMATION"
+              ],
+              "paths": [
+                "IMPERIUM_NEW_GENERATION/ARCHITECTURE/ASTRONOMICON_TASK_FORMATION_V0_1.md",
+                "IMPERIUM_NEW_GENERATION/CONTRACTS/ASTRONOMICON/TASK_FORMATION_RECORD_V0_1.schema.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-ASTRONOMICON-TASK-FORMATION-PC-V0_1/FINAL_RECEIPT.json"
+              ],
+              "report_paths": [
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-ASTRONOMICON-TASK-FORMATION-PC-V0_1/FINAL_RECEIPT.json"
+              ],
+              "limitations": [
+                "Registry phase id: PHASE_04_ASTRONOMICON_FORMATION",
+                "Registry source commit: 257a9332f926c31cffcc419851b0f87da1e0fab5"
+              ]
+            },
+            {
+              "phase_no": 5,
+              "name": "Authority Gates",
+              "status": "WARN",
+              "summary": "Authority Gates foundation mapping from canonical Sanctum NG phase registry.",
+              "evidence_refs": [
+                "FILE:IMPERIUM_NEW_GENERATION/AUTHORITY_DRAFTS/SUPER_SKEPTICISM_MODE_V0_1.md",
+                "FILE:IMPERIUM_NEW_GENERATION/AUTHORITY_DRAFTS/OFFICIO_LIVE_COMMUNICATION_ENFORCEMENT_V0_1.md",
+                "FILE:IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/officio_live_communication_gate_v0_1.schema.json",
+                "FILE:IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-TRUTH-SHELL-RUNNER-AND-OFFICIO-REPAIR-VM3-V0_1/OFFICIO_ROLE_ACK_OR_WARN.json",
+                "FILE:IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-TRUTH-SHELL-RUNNER-AND-OFFICIO-REPAIR-VM3-V0_1/DOCTRINARIUM_LAW_ACK_OR_WARN.json",
+                "REGISTRY:PHASE_05_AUTHORITY_GATES"
+              ],
+              "paths": [
+                "IMPERIUM_NEW_GENERATION/AUTHORITY_DRAFTS/SUPER_SKEPTICISM_MODE_V0_1.md",
+                "IMPERIUM_NEW_GENERATION/AUTHORITY_DRAFTS/OFFICIO_LIVE_COMMUNICATION_ENFORCEMENT_V0_1.md",
+                "IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/officio_live_communication_gate_v0_1.schema.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-TRUTH-SHELL-RUNNER-AND-OFFICIO-REPAIR-VM3-V0_1/OFFICIO_ROLE_ACK_OR_WARN.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-TRUTH-SHELL-RUNNER-AND-OFFICIO-REPAIR-VM3-V0_1/DOCTRINARIUM_LAW_ACK_OR_WARN.json"
+              ],
+              "report_paths": [
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-TRUTH-SHELL-RUNNER-AND-OFFICIO-REPAIR-VM3-V0_1/OFFICIO_ROLE_ACK_OR_WARN.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-TRUTH-SHELL-RUNNER-AND-OFFICIO-REPAIR-VM3-V0_1/DOCTRINARIUM_LAW_ACK_OR_WARN.json"
+              ],
+              "limitations": [
+                "Registry phase id: PHASE_05_AUTHORITY_GATES",
+                "Registry source commit: 257a9332f926c31cffcc419851b0f87da1e0fab5",
+                "DOCTRINARIUM_ROLE_CONTRACT_MATURITY_LIMIT",
+                "LIVE_LANGUAGE_COMPLIANCE_FOUNDATION_ONLY"
+              ]
+            },
+            {
+              "phase_no": 6,
+              "name": "Servitor Loop",
+              "status": "FOUNDATION",
+              "summary": "Servitor Loop foundation mapping from canonical Sanctum NG phase registry.",
+              "evidence_refs": [
+                "FILE:IMPERIUM_NEW_GENERATION/ARCHITECTURE/SERVITOR_RUN_RERUN_LOOP_V0_1.md",
+                "FILE:IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/FINAL_RECEIPT.json",
+                "FILE:IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/VALIDATOR_REPORT.json",
+                "REGISTRY:PHASE_06_SERVITOR_RUN_RERUN_LOOP"
+              ],
+              "paths": [
+                "IMPERIUM_NEW_GENERATION/ARCHITECTURE/SERVITOR_RUN_RERUN_LOOP_V0_1.md",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/FINAL_RECEIPT.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/VALIDATOR_REPORT.json"
+              ],
+              "report_paths": [
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/FINAL_RECEIPT.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/VALIDATOR_REPORT.json"
+              ],
+              "limitations": [
+                "Registry phase id: PHASE_06_SERVITOR_RUN_RERUN_LOOP",
+                "Registry source commit: 257a9332f926c31cffcc419851b0f87da1e0fab5"
+              ]
+            },
+            {
+              "phase_no": 7,
+              "name": "Evidence Binder",
+              "status": "FOUNDATION",
+              "summary": "Evidence Binder foundation mapping from canonical Sanctum NG phase registry.",
+              "evidence_refs": [
+                "FILE:IMPERIUM_NEW_GENERATION/ARCHITECTURE/TASK_STATE_EVIDENCE_BINDER_V0_1.md",
+                "FILE:IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-STATE-EVIDENCE-BINDER-PC-V0_1/FINAL_RECEIPT.json",
+                "FILE:IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-STATE-EVIDENCE-BINDER-PC-V0_1/VALIDATOR_REPORT.json",
+                "REGISTRY:PHASE_07_TASK_STATE_EVIDENCE_BINDER"
+              ],
+              "paths": [
+                "IMPERIUM_NEW_GENERATION/ARCHITECTURE/TASK_STATE_EVIDENCE_BINDER_V0_1.md",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-STATE-EVIDENCE-BINDER-PC-V0_1/FINAL_RECEIPT.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-STATE-EVIDENCE-BINDER-PC-V0_1/VALIDATOR_REPORT.json"
+              ],
+              "report_paths": [
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-STATE-EVIDENCE-BINDER-PC-V0_1/FINAL_RECEIPT.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-STATE-EVIDENCE-BINDER-PC-V0_1/VALIDATOR_REPORT.json"
+              ],
+              "limitations": [
+                "Registry phase id: PHASE_07_TASK_STATE_EVIDENCE_BINDER",
+                "Registry source commit: 257a9332f926c31cffcc419851b0f87da1e0fab5"
+              ]
+            },
+            {
+              "phase_no": 8,
+              "name": "Visual Brain",
+              "status": "FOUNDATION",
+              "summary": "Visual Brain foundation mapping from canonical Sanctum NG phase registry.",
+              "evidence_refs": [
+                "FILE:IMPERIUM_NEW_GENERATION/ARCHITECTURE/VISUAL_BRAIN_TASK_CORRIDOR_V0_1.md",
+                "FILE:IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-VISUAL-BRAIN-TASK-CORRIDOR-PC-V0_1/FINAL_RECEIPT.json",
+                "FILE:IMPERIUM_NEW_GENERATION/VISUAL_BRAIN/TASK_CORRIDOR_V0_1/data/visual_brain_task_corridor_state.generated.json",
+                "REGISTRY:PHASE_08_VISUAL_BRAIN_TASK_CORRIDOR"
+              ],
+              "paths": [
+                "IMPERIUM_NEW_GENERATION/ARCHITECTURE/VISUAL_BRAIN_TASK_CORRIDOR_V0_1.md",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-VISUAL-BRAIN-TASK-CORRIDOR-PC-V0_1/FINAL_RECEIPT.json",
+                "IMPERIUM_NEW_GENERATION/VISUAL_BRAIN/TASK_CORRIDOR_V0_1/data/visual_brain_task_corridor_state.generated.json"
+              ],
+              "report_paths": [
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-VISUAL-BRAIN-TASK-CORRIDOR-PC-V0_1/FINAL_RECEIPT.json"
+              ],
+              "limitations": [
+                "Registry phase id: PHASE_08_VISUAL_BRAIN_TASK_CORRIDOR",
+                "Registry source commit: 257a9332f926c31cffcc419851b0f87da1e0fab5"
+              ]
+            },
+            {
+              "phase_no": 9,
+              "name": "Skill Growth",
+              "status": "FOUNDATION",
+              "summary": "Skill Growth foundation mapping from canonical Sanctum NG phase registry.",
+              "evidence_refs": [
+                "FILE:IMPERIUM_NEW_GENERATION/ARCHITECTURE/SKILL_GROWTH_SYSTEM_V0_1.md",
+                "FILE:IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SKILL-GROWTH-SYSTEM-VM3-V0_1/FINAL_RECEIPT.json",
+                "FILE:IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SKILL-GROWTH-SYSTEM-VM3-V0_1/VALIDATOR_REPORT.json",
+                "FILE:IMPERIUM_NEW_GENERATION/SKILLS/GROWTH/SKILL_GROWTH_INDEX_V0_1.json",
+                "REGISTRY:PHASE_09_SKILL_GROWTH_SYSTEM"
+              ],
+              "paths": [
+                "IMPERIUM_NEW_GENERATION/ARCHITECTURE/SKILL_GROWTH_SYSTEM_V0_1.md",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SKILL-GROWTH-SYSTEM-VM3-V0_1/FINAL_RECEIPT.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SKILL-GROWTH-SYSTEM-VM3-V0_1/VALIDATOR_REPORT.json",
+                "IMPERIUM_NEW_GENERATION/SKILLS/GROWTH/SKILL_GROWTH_INDEX_V0_1.json"
+              ],
+              "report_paths": [
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SKILL-GROWTH-SYSTEM-VM3-V0_1/FINAL_RECEIPT.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SKILL-GROWTH-SYSTEM-VM3-V0_1/VALIDATOR_REPORT.json"
+              ],
+              "limitations": [
+                "Registry phase id: PHASE_09_SKILL_GROWTH_SYSTEM",
+                "Registry source commit: 257a9332f926c31cffcc419851b0f87da1e0fab5"
+              ]
+            },
+            {
+              "phase_no": 10,
+              "name": "Tool Admission",
+              "status": "FOUNDATION",
+              "summary": "Tool Admission foundation mapping from canonical Sanctum NG phase registry.",
+              "evidence_refs": [
+                "FILE:IMPERIUM_NEW_GENERATION/ARCHITECTURE/MECHANICUS_TOOL_ADMISSION_V0_1.md",
+                "FILE:IMPERIUM_NEW_GENERATION/CONTRACTS/TOOL_ADMISSION/TOOL_ADMISSION_DECISION.schema.json",
+                "FILE:IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1/FINAL_RECEIPT.json",
+                "FILE:IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1/VALIDATOR_REPORT.json",
+                "FILE:IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_ADMISSION_INDEX_V0_1.json",
+                "REGISTRY:PHASE_10_MECHANICUS_TOOL_ADMISSION"
+              ],
+              "paths": [
+                "IMPERIUM_NEW_GENERATION/ARCHITECTURE/MECHANICUS_TOOL_ADMISSION_V0_1.md",
+                "IMPERIUM_NEW_GENERATION/CONTRACTS/TOOL_ADMISSION/TOOL_ADMISSION_DECISION.schema.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1/FINAL_RECEIPT.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1/VALIDATOR_REPORT.json",
+                "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_ADMISSION_INDEX_V0_1.json"
+              ],
+              "report_paths": [
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1/FINAL_RECEIPT.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1/VALIDATOR_REPORT.json"
+              ],
+              "limitations": [
+                "Registry phase id: PHASE_10_MECHANICUS_TOOL_ADMISSION",
+                "Registry source commit: 257a9332f926c31cffcc419851b0f87da1e0fab5"
+              ]
+            }
+          ],
+          "warnings": [
+            "PHASE_5_WARN"
+          ],
+          "limitations": [
+            "Truth shell reflects bounded local artifacts and foundation phase evidence only.",
+            "No live backend bridge is wired from browser local file mode.",
+            "No autonomous organ dialogue or production readiness is claimed.",
+            "Communication language compliance is exposed as foundation gate truth, not runtime hard-block automation."
+          ],
+          "forbidden_claims": [
+            "LIVE_BACKEND_READY",
+            "AUTONOMOUS_EXECUTION_READY",
+            "PRODUCTION_READY",
+            "LIVE_ORGAN_DIALOGUE"
+          ],
+          "actions": {
+            "REFRESH_TRUTH_STATE": "WIRED",
+            "VALIDATE_TRUTH_STATE": "WIRED",
+            "READ_PHASE_REGISTRY": "WIRED",
+            "READ_ACTION_REGISTRY": "WIRED",
+            "READ_LATEST_REPORT_SUMMARY": "WIRED"
+          }
+        },
+        "action_layer_state_model": {
+          "connection_state": "CONNECTED",
+          "connection_states": [
+            "CONNECTED",
+            "NOT_CONNECTED",
+            "UNKNOWN",
+            "ACTION_SERVER_NOT_CONNECTED"
+          ],
+          "action_states": [
+            "ACTION_ALLOWED",
+            "ACTION_DISABLED"
+          ],
+          "result_states": [
+            "ACTION_RESULT_PASS",
+            "ACTION_RESULT_WARN",
+            "ACTION_RESULT_BLOCK",
+            "ACTION_RESULT_PARTIAL"
+          ]
+        },
+        "latest_action_result": {
+          "schema_id": "SANCTUM_NG_ACTION_RESULT_V0_1",
+          "task_id": "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+          "request_id": "20260522T165235Z_624c68346c",
+          "action_id": "READ_LATEST_REPORT_SUMMARY",
+          "action_status": "WIRED",
+          "started_at_utc": "2026-05-22T16:52:35Z",
+          "request_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/REQUESTS/20260522T165235Z_624c68346c.json",
+          "executed_command": [],
+          "status": "PARTIAL",
+          "finished_at_utc": "2026-05-22T16:52:35Z",
+          "result_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/RESULTS/20260522T165235Z_624c68346c.json",
+          "output_summary": "PARTIAL: found=3 missing=0 partial=2 stale=0 error=0",
+          "payload": {
+            "summary_state": "PARTIAL",
+            "reason": "report_bundle_incomplete_or_legacy",
+            "owner_summary": "PARTIAL: found=3 missing=0 partial=2 stale=0 error=0",
+            "report_folder_inspected": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+            "expected_files": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json"
+            ],
+            "found_files": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json"
+            ],
+            "missing_files": [],
+            "partial_files": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json"
+            ],
+            "stale_files": [],
+            "error_files": [],
+            "reports": [
+              {
+                "logical_id": "refresh_runner",
+                "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+                "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+                "summary_state": "FOUND",
+                "reason": "ok",
+                "exists": true,
+                "verdict": "PASS"
+              },
+              {
+                "logical_id": "validator",
+                "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+                "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+                "summary_state": "FOUND",
+                "reason": "ok",
+                "exists": true,
+                "verdict": "PASS"
+              },
+              {
+                "logical_id": "smoke",
+                "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+                "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+                "summary_state": "FOUND",
+                "reason": "ok",
+                "exists": true,
+                "verdict": "PENDING"
+              },
+              {
+                "logical_id": "final_receipt",
+                "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+                "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+                "summary_state": "PARTIAL",
+                "reason": "missing_or_invalid_timestamp",
+                "exists": true,
+                "verdict": "PENDING_CLOSURE"
+              },
+              {
+                "logical_id": "post_commit_closure",
+                "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json",
+                "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json",
+                "summary_state": "PARTIAL",
+                "reason": "missing_or_invalid_timestamp",
+                "exists": true,
+                "verdict": "UNKNOWN"
+              }
+            ]
+          },
+          "evidence_refs": [
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json"
+          ],
+          "known_limitations": [
+            "Only fixed known report files are readable.",
+            "Alias support is limited to historical smoke filename compatibility.",
+            "Summary is read-only and does not auto-repair missing files."
+          ],
+          "state_model": {
+            "connection_state": "CONNECTED",
+            "action_availability": "ACTION_ALLOWED",
+            "result_state": "ACTION_RESULT_PARTIAL",
+            "known_states": {
+              "connection_state": "CONNECTED",
+              "connection_states": [
+                "CONNECTED",
+                "NOT_CONNECTED",
+                "UNKNOWN",
+                "ACTION_SERVER_NOT_CONNECTED"
+              ],
+              "action_states": [
+                "ACTION_ALLOWED",
+                "ACTION_DISABLED"
+              ],
+              "result_states": [
+                "ACTION_RESULT_PASS",
+                "ACTION_RESULT_WARN",
+                "ACTION_RESULT_BLOCK",
+                "ACTION_RESULT_PARTIAL"
+              ]
+            }
+          }
+        },
+        "latest_report_summary": {
+          "status": "PASS",
+          "payload": {
+            "summary_state": "FOUND",
+            "reason": "all_expected_reports_found",
+            "owner_summary": "FOUND: found=5 missing=0 partial=0 stale=0 error=0",
+            "report_folder_inspected": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+            "expected_files": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json"
+            ],
+            "found_files": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json"
+            ],
+            "missing_files": [],
+            "partial_files": [],
+            "stale_files": [],
+            "error_files": [],
+            "reports": [
+              {
+                "logical_id": "refresh_runner",
+                "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+                "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+                "summary_state": "FOUND",
+                "reason": "ok",
+                "exists": true,
+                "verdict": "PASS"
+              },
+              {
+                "logical_id": "validator",
+                "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+                "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+                "summary_state": "FOUND",
+                "reason": "ok",
+                "exists": true,
+                "verdict": "PASS"
+              },
+              {
+                "logical_id": "smoke",
+                "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+                "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+                "summary_state": "FOUND",
+                "reason": "ok",
+                "exists": true,
+                "verdict": "PENDING"
+              },
+              {
+                "logical_id": "final_receipt",
+                "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+                "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+                "summary_state": "FOUND",
+                "reason": "ok",
+                "exists": true,
+                "verdict": "PENDING_CLOSURE"
+              },
+              {
+                "logical_id": "post_commit_closure",
+                "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json",
+                "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json",
+                "summary_state": "FOUND",
+                "reason": "ok",
+                "exists": true,
+                "verdict": "UNKNOWN"
+              }
+            ]
+          },
+          "evidence_refs": [
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json"
+          ],
+          "output_summary": "FOUND: found=5 missing=0 partial=0 stale=0 error=0",
+          "known_limitations": [
+            "Only fixed known report files are readable.",
+            "Alias support is limited to historical smoke filename compatibility.",
+            "Summary is read-only and does not auto-repair missing files."
+          ]
+        }
+      }
+    },
+    {
+      "step": "required_actions_present",
+      "status": "PASS",
+      "details": {
+        "missing_actions": []
+      }
+    },
+    {
+      "step": "no_production_autonomy_claim",
+      "status": "PASS",
+      "details": {
+        "read_only": true,
+        "foundation_only": true,
+        "production_ready": false,
+        "live_backend": false,
+        "autonomous_execution": false
+      }
+    },
+    {
+      "step": "refresh_truth_state",
+      "status": "PASS",
+      "details": {
+        "status": "PASS",
+        "http_status": 200,
+        "summary": "refresh_returncode=0 runner_verdict=PASS"
+      }
+    },
+    {
+      "step": "validate_truth_state",
+      "status": "PASS",
+      "details": {
+        "status": "PASS",
+        "http_status": 200,
+        "summary": "validator_returncode=0 validator_verdict=PASS"
+      }
+    },
+    {
+      "step": "read_latest_report_summary",
+      "status": "PASS",
+      "details": {
+        "status": "PASS",
+        "summary_state": "FOUND",
+        "reason": "all_expected_reports_found"
+      }
+    },
+    {
+      "step": "no_arbitrary_shell_execution",
+      "status": "PASS",
+      "details": {
+        "http_status": 400,
+        "error": "{\n  \"schema_id\": \"SANCTUM_NG_ACTION_RESULT_V0_1\",\n  \"task_id\": \"TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1\",\n  \"request_id\": \"NOT_CREATED\",\n  \"action_id\": \"UNALLOWLISTED_EXEC_TEST\",\n  \"action_status\": \"BLOCKED\",\n  \"status\": \"NOT_ALLOWED\",\n  \"started_at_utc\": \"2026-05-22T16:53:10Z\",\n  \"finished_at_utc\": \"2026-05-22T16:53:10Z\",\n  \"request_record_path\": \"N/A\",\n  \"result_record_path\": \"N/A\",\n  \"executed_command\": [],\n  \"output_summary\": \"Action ID is not allowlisted.\",\n  \"payload\": {\n    \"known_actions\": [\n      \"READ_ACTION_REGISTRY\",\n      \"READ_LATEST_REPORT_SUMMARY\",\n      \"READ_PHASE_REGISTRY\",\n      \"REFRESH_TRUTH_STATE\",\n      \"VALIDATE_TRUTH_STATE\"\n    ]\n  },\n  \"evidence_refs\": [\n    \"IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_ACTION_REGISTRY_V0_1.json\"\n  ],\n  \"known_limitations\": [\n    \"Only allowlisted actions can be executed.\",\n    \"Arbitrary action IDs are blocked.\"\n  ],\n  \"state_model\": {\n    \"connection_state\": \"CONNECTED\",\n    \"action_availability\": \"ACTION_DISABLED\",\n    \"result_state\": \"ACTION_RESULT_BLOCK\",\n    \"known_states\": {\n      \"connection_state\": \"CONNECTED\",\n      \"connection_states\": [\n        \"CONNECTED\",\n        \"NOT_CONNECTED\",\n        \"UNKNOWN\",\n        \"ACTION_SERVER_NOT_CONNECTED\"\n      ],\n      \"action_states\": [\n        \"ACTION_ALLOWED\",\n        \"ACTION_DISABLED\"\n      ],\n      \"result_states\": [\n        \"ACTION_RESULT_PASS\",\n        \"ACTION_RESULT_WARN\",\n        \"ACTION_RESULT_BLOCK\",\n        \"ACTION_RESULT_PARTIAL\"\n      ]\n    }\n  }\n}"
+      }
+    },
+    {
+      "step": "server_source_shell_safety",
+      "status": "PASS",
+      "details": "no shell=True and no os.system patterns"
+    },
+    {
+      "step": "server_disconnected_behavior",
+      "status": "PASS",
+      "details": "disconnected path detected as unreachable"
+    }
+  ],
+  "action_results": [
+    {
+      "action_id": "REFRESH_TRUTH_STATE",
+      "http_status": 200,
+      "status": "PASS",
+      "result_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/RESULTS/20260522T165310Z_8293b51d45.json",
+      "output_summary": "refresh_returncode=0 runner_verdict=PASS",
+      "payload": {
+        "schema_id": "SANCTUM_NG_ACTION_RESULT_V0_1",
+        "task_id": "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+        "request_id": "20260522T165310Z_8293b51d45",
+        "action_id": "REFRESH_TRUTH_STATE",
+        "action_status": "WIRED",
+        "started_at_utc": "2026-05-22T16:53:10Z",
+        "request_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/REQUESTS/20260522T165310Z_8293b51d45.json",
+        "executed_command": [
+          "python3",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_refresh_runner.py",
+          "--repo-root",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+          "--task-id",
+          "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+          "--required-starting-head",
+          "573169b9830ecb0322202e33a3e12ca2fc5e3556",
+          "--report-dir",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1"
+        ],
+        "status": "PASS",
+        "finished_at_utc": "2026-05-22T16:53:10Z",
+        "result_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/RESULTS/20260522T165310Z_8293b51d45.json",
+        "output_summary": "refresh_returncode=0 runner_verdict=PASS",
+        "payload": {
+          "runner": {
+            "command": [
+              "python3",
+              "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_refresh_runner.py",
+              "--repo-root",
+              "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+              "--task-id",
+              "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+              "--required-starting-head",
+              "573169b9830ecb0322202e33a3e12ca2fc5e3556",
+              "--report-dir",
+              "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1"
+            ],
+            "returncode": 0,
+            "stdout": "runner_verdict=PASS\nrunner_report=IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+            "stderr": ""
+          },
+          "runner_report": {
+            "schema_version": "0.1",
+            "task_id": "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+            "generated_at_utc": "2026-05-22T16:53:10Z",
+            "verdict": "PASS",
+            "builder_result": {
+              "command": [
+                "python3",
+                "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_state_builder.py",
+                "--repo-root",
+                "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+                "--output",
+                "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+                "--task-id",
+                "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+                "--required-starting-head",
+                "573169b9830ecb0322202e33a3e12ca2fc5e3556"
+              ],
+              "returncode": 0,
+              "stdout": "state_written=IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+              "stderr": ""
+            },
+            "validator_result": {
+              "command": [
+                "python3",
+                "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_validator.py",
+                "--repo-root",
+                "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+                "--state",
+                "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+                "--schema",
+                "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/sanctum_ng_state.schema.json",
+                "--report-dir",
+                "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+                "--output",
+                "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+                "--task-id",
+                "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1"
+              ],
+              "returncode": 0,
+              "stdout": "validator_verdict=PASS\nvalidator_report=IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+              "stderr": ""
+            },
+            "validator_verdict": "PASS",
+            "communication_gate_status": "WARN_FOUNDATION_ONLY",
+            "state_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+            "validator_report_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+            "notes": [
+              "Runner executes bounded build -> validate flow.",
+              "No external dependency install is required.",
+              "PASS means builder succeeded and validator returned PASS."
+            ]
+          }
+        },
+        "evidence_refs": [
+          "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json"
+        ],
+        "known_limitations": [
+          "Runs bounded local refresh flow only.",
+          "No production backend claim."
+        ],
+        "state_model": {
+          "connection_state": "CONNECTED",
+          "action_availability": "ACTION_ALLOWED",
+          "result_state": "ACTION_RESULT_PASS",
+          "known_states": {
+            "connection_state": "CONNECTED",
+            "connection_states": [
+              "CONNECTED",
+              "NOT_CONNECTED",
+              "UNKNOWN",
+              "ACTION_SERVER_NOT_CONNECTED"
+            ],
+            "action_states": [
+              "ACTION_ALLOWED",
+              "ACTION_DISABLED"
+            ],
+            "result_states": [
+              "ACTION_RESULT_PASS",
+              "ACTION_RESULT_WARN",
+              "ACTION_RESULT_BLOCK",
+              "ACTION_RESULT_PARTIAL"
+            ]
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "action_id": "VALIDATE_TRUTH_STATE",
+      "http_status": 200,
+      "status": "PASS",
+      "result_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/RESULTS/20260522T165310Z_24d515a985.json",
+      "output_summary": "validator_returncode=0 validator_verdict=PASS",
+      "payload": {
+        "schema_id": "SANCTUM_NG_ACTION_RESULT_V0_1",
+        "task_id": "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+        "request_id": "20260522T165310Z_24d515a985",
+        "action_id": "VALIDATE_TRUTH_STATE",
+        "action_status": "WIRED",
+        "started_at_utc": "2026-05-22T16:53:10Z",
+        "request_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/REQUESTS/20260522T165310Z_24d515a985.json",
+        "executed_command": [
+          "python3",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_validator.py",
+          "--repo-root",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+          "--state",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+          "--schema",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/sanctum_ng_state.schema.json",
+          "--report-dir",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+          "--output",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+          "--task-id",
+          "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1"
+        ],
+        "status": "PASS",
+        "finished_at_utc": "2026-05-22T16:53:10Z",
+        "result_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/RESULTS/20260522T165310Z_24d515a985.json",
+        "output_summary": "validator_returncode=0 validator_verdict=PASS",
+        "payload": {
+          "validator": {
+            "command": [
+              "python3",
+              "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_validator.py",
+              "--repo-root",
+              "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+              "--state",
+              "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+              "--schema",
+              "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/sanctum_ng_state.schema.json",
+              "--report-dir",
+              "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+              "--output",
+              "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+              "--task-id",
+              "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1"
+            ],
+            "returncode": 0,
+            "stdout": "validator_verdict=PASS\nvalidator_report=IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+            "stderr": ""
+          },
+          "validator_report": {
+            "schema_version": "0.1",
+            "task_id": "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+            "generated_at_utc": "2026-05-22T16:53:10Z",
+            "verdict": "PASS",
+            "checks": [
+              {
+                "check_id": "core_files_exist",
+                "status": "PASS",
+                "details": "core files exist (registry/runner/schemas/state)"
+              },
+              {
+                "check_id": "schema_parse",
+                "status": "PASS",
+                "details": "state schema parses as JSON object"
+              },
+              {
+                "check_id": "phase_registry_parse",
+                "status": "PASS",
+                "details": "phase registry parses as JSON object"
+              },
+              {
+                "check_id": "phase_registry_coverage",
+                "status": "PASS",
+                "details": "registry covers phases 1..10 with required fields"
+              },
+              {
+                "check_id": "state_parse",
+                "status": "PASS",
+                "details": "state parses as JSON object"
+              },
+              {
+                "check_id": "minimum_shape",
+                "status": "PASS",
+                "details": "minimum required state keys are present"
+              },
+              {
+                "check_id": "phase_coverage_1_10",
+                "status": "PASS",
+                "details": "all phases 1..10 are present in generated state"
+              },
+              {
+                "check_id": "no_proved_without_evidence",
+                "status": "PASS",
+                "details": "all PROVED phases have evidence refs"
+              },
+              {
+                "check_id": "mode_read_only_foundation",
+                "status": "PASS",
+                "details": "mode is READ_ONLY_FOUNDATION"
+              },
+              {
+                "check_id": "forbidden_production_claims_absent",
+                "status": "PASS",
+                "details": "truth flags block production/live/autonomous claims"
+              },
+              {
+                "check_id": "communication_gate_shape",
+                "status": "PASS",
+                "details": "communication gate contains required fields"
+              },
+              {
+                "check_id": "app_files_exist",
+                "status": "PASS",
+                "details": "app files exist"
+              },
+              {
+                "check_id": "report_files_exist",
+                "status": "PASS",
+                "details": "required report files exist"
+              },
+              {
+                "check_id": "schema_id_match",
+                "status": "PASS",
+                "details": "schema title matches SANCTUM_NG_STATE_V0_1"
+              }
+            ],
+            "warnings": [],
+            "blockers": [],
+            "state_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+            "schema_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/sanctum_ng_state.schema.json",
+            "registry_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_PHASE_REGISTRY_V0_1.json",
+            "report_dir": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+            "no_fake_green_note": "PASS/WARN here validates bounded foundation truth shell only; no production or autonomy claim is made."
+          }
+        },
+        "evidence_refs": [
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json"
+        ],
+        "known_limitations": [
+          "Validator covers bounded Sanctum NG foundation checks.",
+          "No production readiness claim."
+        ],
+        "state_model": {
+          "connection_state": "CONNECTED",
+          "action_availability": "ACTION_ALLOWED",
+          "result_state": "ACTION_RESULT_PASS",
+          "known_states": {
+            "connection_state": "CONNECTED",
+            "connection_states": [
+              "CONNECTED",
+              "NOT_CONNECTED",
+              "UNKNOWN",
+              "ACTION_SERVER_NOT_CONNECTED"
+            ],
+            "action_states": [
+              "ACTION_ALLOWED",
+              "ACTION_DISABLED"
+            ],
+            "result_states": [
+              "ACTION_RESULT_PASS",
+              "ACTION_RESULT_WARN",
+              "ACTION_RESULT_BLOCK",
+              "ACTION_RESULT_PARTIAL"
+            ]
+          }
+        }
+      },
+      "error": null
+    },
+    {
+      "action_id": "READ_LATEST_REPORT_SUMMARY",
+      "http_status": 200,
+      "status": "PASS",
+      "result_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/RESULTS/20260522T165310Z_364ef4815a.json",
+      "output_summary": "FOUND: found=5 missing=0 partial=0 stale=0 error=0",
+      "payload": {
+        "schema_id": "SANCTUM_NG_ACTION_RESULT_V0_1",
+        "task_id": "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+        "request_id": "20260522T165310Z_364ef4815a",
+        "action_id": "READ_LATEST_REPORT_SUMMARY",
+        "action_status": "WIRED",
+        "started_at_utc": "2026-05-22T16:53:10Z",
+        "request_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/REQUESTS/20260522T165310Z_364ef4815a.json",
+        "executed_command": [],
+        "status": "PASS",
+        "finished_at_utc": "2026-05-22T16:53:10Z",
+        "result_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/RESULTS/20260522T165310Z_364ef4815a.json",
+        "output_summary": "FOUND: found=5 missing=0 partial=0 stale=0 error=0",
+        "payload": {
+          "summary_state": "FOUND",
+          "reason": "all_expected_reports_found",
+          "owner_summary": "FOUND: found=5 missing=0 partial=0 stale=0 error=0",
+          "report_folder_inspected": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+          "expected_files": [
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json"
+          ],
+          "found_files": [
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json"
+          ],
+          "missing_files": [],
+          "partial_files": [],
+          "stale_files": [],
+          "error_files": [],
+          "reports": [
+            {
+              "logical_id": "refresh_runner",
+              "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+              "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+              "summary_state": "FOUND",
+              "reason": "ok",
+              "exists": true,
+              "verdict": "PASS"
+            },
+            {
+              "logical_id": "validator",
+              "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+              "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+              "summary_state": "FOUND",
+              "reason": "ok",
+              "exists": true,
+              "verdict": "PASS"
+            },
+            {
+              "logical_id": "smoke",
+              "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+              "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+              "summary_state": "FOUND",
+              "reason": "ok",
+              "exists": true,
+              "verdict": "PENDING"
+            },
+            {
+              "logical_id": "final_receipt",
+              "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+              "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+              "summary_state": "FOUND",
+              "reason": "ok",
+              "exists": true,
+              "verdict": "PENDING_CLOSURE"
+            },
+            {
+              "logical_id": "post_commit_closure",
+              "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json",
+              "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json",
+              "summary_state": "FOUND",
+              "reason": "ok",
+              "exists": true,
+              "verdict": "UNKNOWN"
+            }
+          ]
+        },
+        "evidence_refs": [
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json"
+        ],
+        "known_limitations": [
+          "Only fixed known report files are readable.",
+          "Alias support is limited to historical smoke filename compatibility.",
+          "Summary is read-only and does not auto-repair missing files."
+        ],
+        "state_model": {
+          "connection_state": "CONNECTED",
+          "action_availability": "ACTION_ALLOWED",
+          "result_state": "ACTION_RESULT_PASS",
+          "known_states": {
+            "connection_state": "CONNECTED",
+            "connection_states": [
+              "CONNECTED",
+              "NOT_CONNECTED",
+              "UNKNOWN",
+              "ACTION_SERVER_NOT_CONNECTED"
+            ],
+            "action_states": [
+              "ACTION_ALLOWED",
+              "ACTION_DISABLED"
+            ],
+            "result_states": [
+              "ACTION_RESULT_PASS",
+              "ACTION_RESULT_WARN",
+              "ACTION_RESULT_BLOCK",
+              "ACTION_RESULT_PARTIAL"
+            ]
+          }
+        }
+      },
+      "error": null
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "server_stdout_tail": "",
+  "server_stderr_tail": "",
+  "no_fake_green_note": "Smoke validates bounded localhost action layer only; no production/autonomy claim."
+}

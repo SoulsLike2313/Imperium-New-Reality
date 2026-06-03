@@ -1,0 +1,21 @@
+{
+  "task_id": "MECHANICUS_FORGE_CLIENT_V0_8_CLEAN_SEALS_MANUAL_GIFT",
+  "created_utc": "2026-05-25T00:28:24Z",
+  "organ": "MECHANICUS",
+  "mode": "GE_LITE_VISUAL_REPAIR",
+  "learning_delta": [
+    "Bad V0.7 pseudo-heraldry is corrected into compact terminal-native seals.",
+    "Top strip height is reduced and main content is lifted upward.",
+    "Heraldry is explicitly treated as decorative seals, not real emblems."
+  ],
+  "reusable_capability": {
+    "name": "mechanicus_forge_client_v0_8_clean_seals",
+    "entrypoint": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/mechanicus_forge_client_v0_8_clean_seals.py",
+    "launcher": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/LAUNCH_MECHANICUS_FORGE_CLIENT_V0_8.cmd"
+  },
+  "eval_or_smoke": [
+    "py -3 -m py_compile mechanicus_forge_client_v0_8_clean_seals.py",
+    "manual launch via LAUNCH_MECHANICUS_FORGE_CLIENT_V0_8.cmd"
+  ],
+  "read_only": true
+}

@@ -1,0 +1,180 @@
+{
+  "schema_id": "ACTION_ROLLBACK_SAMPLE_ACTIONS_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-MECHANICUS-SSH-MATRIX-AND-ACTION-ROLLBACK-CONTRACT-VM2-V0_1",
+  "actions": [
+    {
+      "action_id": "sample-read-only-inspect-truth",
+      "mutation_class": "READ_ONLY_ACTION",
+      "allowed_paths": [
+        "IMPERIUM_NEW_GENERATION/TRUTH/**"
+      ],
+      "backup_required": false,
+      "rollback_method": "ROLLBACK_NOT_REQUIRED",
+      "rollback_evidence_required": false,
+      "owner_approval_required": false,
+      "failure_policy": "ROLLBACK_NOT_DEFINED_BLOCK",
+      "no_fake_green_rule": "No PASS claim without evidence refs.",
+      "preconditions": [
+        "Truth files exist."
+      ],
+      "postconditions": [
+        "No filesystem mutation occurred."
+      ]
+    },
+    {
+      "action_id": "sample-refresh-generated-state",
+      "mutation_class": "GENERATED_STATE_REFRESH",
+      "allowed_paths": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/**"
+      ],
+      "backup_required": false,
+      "rollback_method": "ROLLBACK_BY_REBUILD",
+      "rollback_evidence_required": true,
+      "owner_approval_required": false,
+      "failure_policy": "ROLLBACK_NOT_DEFINED_BLOCK",
+      "no_fake_green_rule": "Rebuild report required for PASS.",
+      "preconditions": [
+        "Builder and validator are present."
+      ],
+      "postconditions": [
+        "Generated state can be deterministically rebuilt."
+      ]
+    },
+    {
+      "action_id": "sample-write-report-bundle",
+      "mutation_class": "REPORT_WRITE_ACTION",
+      "allowed_paths": [
+        "IMPERIUM_NEW_GENERATION/REPORTS/**"
+      ],
+      "backup_required": false,
+      "rollback_method": "ROLLBACK_BY_GIT_RESTORE",
+      "rollback_evidence_required": true,
+      "owner_approval_required": false,
+      "failure_policy": "ROLLBACK_NOT_DEFINED_BLOCK",
+      "no_fake_green_rule": "Report receipts must exist for PASS.",
+      "preconditions": [
+        "Task scope allows report writes."
+      ],
+      "postconditions": [
+        "Report bundle is auditable and reversible via git restore."
+      ]
+    },
+    {
+      "action_id": "sample-registry-update",
+      "mutation_class": "REGISTRY_UPDATE_ACTION",
+      "allowed_paths": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/**",
+        "IMPERIUM_NEW_GENERATION/TRUTH/**"
+      ],
+      "backup_required": false,
+      "rollback_method": "ROLLBACK_BY_GIT_RESTORE",
+      "rollback_evidence_required": true,
+      "owner_approval_required": false,
+      "failure_policy": "ROLLBACK_NOT_DEFINED_BLOCK",
+      "no_fake_green_rule": "Registry mutation requires validator PASS before claim.",
+      "preconditions": [
+        "Registry schema is available."
+      ],
+      "postconditions": [
+        "Registry entries stay scoped and reversible."
+      ]
+    },
+    {
+      "action_id": "sample-task-state-mutation",
+      "mutation_class": "TASK_STATE_MUTATION",
+      "allowed_paths": [
+        "IMPERIUM_NEW_GENERATION/TASKS/**"
+      ],
+      "backup_required": true,
+      "rollback_method": "ROLLBACK_BY_BACKUP_RESTORE",
+      "rollback_evidence_required": true,
+      "owner_approval_required": false,
+      "failure_policy": "ROLLBACK_NOT_DEFINED_BLOCK",
+      "no_fake_green_rule": "Task-state updates need rollback proof and backups.",
+      "preconditions": [
+        "Backup snapshot exists."
+      ],
+      "postconditions": [
+        "Task state can be restored from backup snapshot."
+      ]
+    },
+    {
+      "action_id": "sample-organ-dialogue-packet-write",
+      "mutation_class": "ORGAN_DIALOGUE_PACKET_WRITE",
+      "allowed_paths": [
+        "IMPERIUM_NEW_GENERATION/PROTOCOLS/**"
+      ],
+      "backup_required": true,
+      "rollback_method": "ROLLBACK_REQUIRES_OWNER",
+      "rollback_evidence_required": true,
+      "owner_approval_required": true,
+      "failure_policy": "ROLLBACK_REQUIRES_OWNER",
+      "no_fake_green_rule": "No PASS without explicit owner-backed rollback trace.",
+      "preconditions": [
+        "Owner gate reference is present."
+      ],
+      "postconditions": [
+        "Packet write remains traceable with rollback route."
+      ]
+    },
+    {
+      "action_id": "sample-scope-merge-mutation",
+      "mutation_class": "SCOPE_MERGE_MUTATION",
+      "allowed_paths": [
+        "IMPERIUM_NEW_GENERATION/ARCHITECTURE/**"
+      ],
+      "backup_required": true,
+      "rollback_method": "ROLLBACK_REQUIRES_OWNER",
+      "rollback_evidence_required": true,
+      "owner_approval_required": true,
+      "failure_policy": "ROLLBACK_REQUIRES_OWNER",
+      "no_fake_green_rule": "Scope merges cannot bypass owner rollback gate.",
+      "preconditions": [
+        "Scope merge contract is approved."
+      ],
+      "postconditions": [
+        "Scope merge can be reversed under owner procedure."
+      ]
+    },
+    {
+      "action_id": "sample-dangerous-action-blocked",
+      "mutation_class": "DANGEROUS_ACTION",
+      "allowed_paths": [
+        "IMPERIUM_NEW_GENERATION/**"
+      ],
+      "backup_required": true,
+      "rollback_method": "DANGEROUS_ACTION_BLOCKED",
+      "rollback_evidence_required": true,
+      "owner_approval_required": true,
+      "failure_policy": "DANGEROUS_ACTION_BLOCKED",
+      "no_fake_green_rule": "Dangerous actions remain blocked without owner contract.",
+      "preconditions": [
+        "Owner approval contract is absent."
+      ],
+      "postconditions": [
+        "Action is blocked and not executed."
+      ]
+    },
+    {
+      "action_id": "sample-dangerous-action-owner-gated",
+      "mutation_class": "DANGEROUS_ACTION",
+      "allowed_paths": [
+        "IMPERIUM_NEW_GENERATION/TRUTH/**"
+      ],
+      "backup_required": true,
+      "rollback_method": "ROLLBACK_REQUIRES_OWNER",
+      "rollback_evidence_required": true,
+      "owner_approval_required": true,
+      "owner_approval_contract_ref": "OWNER_APPROVAL_CONTRACT_EXAMPLE_V0_1",
+      "failure_policy": "ROLLBACK_REQUIRES_OWNER",
+      "no_fake_green_rule": "Even approved dangerous action requires full rollback evidence.",
+      "preconditions": [
+        "Owner approval contract reference is present.",
+        "Backup and restore plan are prepared."
+      ],
+      "postconditions": [
+        "If action fails, owner-led rollback procedure is executed."
+      ]
+    }
+  ]
+}

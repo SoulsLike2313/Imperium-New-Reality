@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "NEGATIVE_TEST_CASE_V0_1",
+  "title": "Negative Test Case V0.1",
+  "type": "object",
+  "required": [
+    "case_id",
+    "title",
+    "mutant_type",
+    "mutation_target",
+    "description",
+    "synthetic_payload",
+    "expected_classification",
+    "expected_reason_code"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mutant_type": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mutation_target": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "synthetic_payload": {
+      "type": "object"
+    },
+    "expected_classification": {
+      "type": "string",
+      "enum": [
+        "BLOCK",
+        "WARN",
+        "REJECTED"
+      ]
+    },
+    "expected_reason_code": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

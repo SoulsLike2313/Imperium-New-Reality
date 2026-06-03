@@ -1,0 +1,90 @@
+[
+  {
+    "id": "L001",
+    "source_problem": "Root _TASKPACK_INBOX policy ambiguity",
+    "affected_organ": "ASTRONOMICON",
+    "problem_type": "INTAKE_GAP",
+    "why_it_matters": "Owner could confuse temporary staging with canonical truth.",
+    "proposed_future_improvement": "Add checker that flags root _TASKPACK_INBOX usage without Astronomicon registration.",
+    "blocks": "REAL_USE_PILOT",
+    "can_be_script_first": true,
+    "recommended_next_task": "TASK-NEWGEN-ASTRONOMICON-TEMP-STAGING-GUARD-V0_1"
+  },
+  {
+    "id": "L002",
+    "source_problem": "Route template absence blocks intake",
+    "affected_organ": "MECHANICUS",
+    "problem_type": "ROUTE_GAP",
+    "why_it_matters": "Admission cannot create deterministic route manifest.",
+    "proposed_future_improvement": "Add preflight contract checker for TASK_ENTRY_CORRIDOR templates.",
+    "blocks": "STAGE2",
+    "can_be_script_first": true,
+    "recommended_next_task": "TASK-NEWGEN-MECHANICUS-CORRIDOR-PREFLIGHT-CHECKER-V0_1"
+  },
+  {
+    "id": "L003",
+    "source_problem": "Duplicate task_id registration attempts",
+    "affected_organ": "INQUISITION",
+    "problem_type": "CAP_GAP",
+    "why_it_matters": "Duplicate IDs can corrupt provenance and resolver truth.",
+    "proposed_future_improvement": "Promote duplicate-task cap to dedicated registry integrity checker.",
+    "blocks": "REAL_USE_PILOT",
+    "can_be_script_first": true,
+    "recommended_next_task": "TASK-NEWGEN-INQUISITION-REGISTRY-INTEGRITY-CAP-V0_1"
+  },
+  {
+    "id": "L004",
+    "source_problem": "Bad ZIP/unreadable ZIP handling",
+    "affected_organ": "ASTRONOMICON",
+    "problem_type": "INTAKE_GAP",
+    "why_it_matters": "Owner flow must fail clearly without partial artifacts.",
+    "proposed_future_improvement": "Add owner-friendly RU diagnostics map for intake failures.",
+    "blocks": "NONE",
+    "can_be_script_first": true,
+    "recommended_next_task": "TASK-NEWGEN-ASTRONOMICON-INTAKE-RU-ERROR-MAP-V0_1"
+  },
+  {
+    "id": "L005",
+    "source_problem": "Registry corruption scenario",
+    "affected_organ": "ADMINISTRATUM",
+    "problem_type": "RECEIPT_GAP",
+    "why_it_matters": "Corrupt registry must be visible and block false starts.",
+    "proposed_future_improvement": "Add signed backup/restore semantics for task_registry.json.",
+    "blocks": "REAL_USE_PILOT",
+    "can_be_script_first": true,
+    "recommended_next_task": "TASK-NEWGEN-ADMINISTRATUM-REGISTRY-BACKUP-SEMANTICS-V0_1"
+  },
+  {
+    "id": "L006",
+    "source_problem": "Missing organ read-first file",
+    "affected_organ": "OFFICIO_AGENTIS",
+    "problem_type": "OWNER_PAIN",
+    "why_it_matters": "Owner may issue start task while organ route is incomplete.",
+    "proposed_future_improvement": "TUI should print explicit organ missing checklist in RU before start instruction.",
+    "blocks": "STAGE2",
+    "can_be_script_first": true,
+    "recommended_next_task": "TASK-NEWGEN-OFFICIO-START-ACTIONABLE-CHECKLIST-V0_1"
+  },
+  {
+    "id": "L007",
+    "source_problem": "Unsafe extraction path attempt",
+    "affected_organ": "INQUISITION",
+    "problem_type": "CAP_GAP",
+    "why_it_matters": "Path traversal is a direct integrity/security risk.",
+    "proposed_future_improvement": "Promote unsafe member detection to reusable global checker utility.",
+    "blocks": "REAL_USE_PILOT",
+    "can_be_script_first": true,
+    "recommended_next_task": "TASK-NEWGEN-INQUISITION-ZIP-PATH-TRAVERSAL-CHECKER-V0_1"
+  },
+  {
+    "id": "L008",
+    "source_problem": "Repeated manual fixture orchestration",
+    "affected_organ": "SCHOLA_IMPERIALIS",
+    "problem_type": "OWNER_PAIN",
+    "why_it_matters": "Manual repetitions slow feedback loops.",
+    "proposed_future_improvement": "Evolve fixture runner into standardized Stage2 regression harness.",
+    "blocks": "NONE",
+    "can_be_script_first": true,
+    "recommended_next_task": "TASK-NEWGEN-SCHOLA-STAGE2-REGRESSION-HARNESS-V0_1"
+  }
+]

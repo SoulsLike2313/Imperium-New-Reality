@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/CONTRACTS/SKILL_GROWTH/VALIDATOR_RECOMMENDATION_RECORD.schema.json",
+  "title": "Validator Recommendation Record V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "recommendation_id",
+    "task_id",
+    "linked_proposal_id",
+    "recommendation_type",
+    "recommendation_text",
+    "advisory_only",
+    "proof_status",
+    "confidence",
+    "created_at_utc"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "recommendation_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "linked_proposal_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "recommendation_type": {
+      "type": "string",
+      "enum": [
+        "EVIDENCE_HARDENING",
+        "SCOPE_HARDENING",
+        "CHECKLIST_ENRICHMENT",
+        "TOOLING_ENHANCEMENT",
+        "OWNER_ESCALATION_RULE"
+      ]
+    },
+    "recommendation_text": {
+      "type": "string",
+      "minLength": 3
+    },
+    "advisory_only": {
+      "type": "boolean"
+    },
+    "proof_status": {
+      "type": "string",
+      "enum": [
+        "PROVED",
+        "STRONG",
+        "PLAUSIBLE",
+        "UNKNOWN"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "PROVED",
+        "STRONG",
+        "PLAUSIBLE",
+        "UNKNOWN",
+        "FAILED",
+        "FAKE_GREEN_RISK"
+      ]
+    },
+    "created_at_utc": {
+      "type": "string",
+      "minLength": 20
+    }
+  }
+}

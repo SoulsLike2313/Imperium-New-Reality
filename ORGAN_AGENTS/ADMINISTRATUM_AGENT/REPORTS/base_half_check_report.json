@@ -1,0 +1,73 @@
+{
+  "schema_version": "ORGAN_BASE_HALF_CHECK_REPORT_V0_1",
+  "task_id": "TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1",
+  "organ": "ADMINISTRATUM_AGENT",
+  "timestamp_utc": "2026-05-19T22:35:29.570055Z",
+  "verdict": "PASS",
+  "visual_status": "WARN",
+  "supported_commands": [
+    "status",
+    "check",
+    "where",
+    "identity",
+    "tools",
+    "pack",
+    "shell",
+    "help"
+  ],
+  "checks": [
+    {
+      "file": "README.md",
+      "exists": true
+    },
+    {
+      "file": "AGENT_PROFILE.md",
+      "exists": true
+    },
+    {
+      "file": "agent_profile.json",
+      "exists": true
+    },
+    {
+      "file": "IDENTITY_BASELINE.md",
+      "exists": true
+    },
+    {
+      "file": "TOOLS/administratum_agent_runner.py",
+      "exists": true
+    },
+    {
+      "file": "LAUNCHERS/run_administratum_pc.ps1",
+      "exists": true
+    },
+    {
+      "file": "SHELL/SHELL_CONTRACT.md",
+      "exists": true
+    },
+    {
+      "file": "STATE/current_status.json",
+      "exists": true
+    },
+    {
+      "file": "REPORTS/base_half_check_report.json",
+      "exists": true
+    },
+    {
+      "file": "REPORTS/base_half_check_report.md",
+      "exists": true
+    },
+    {
+      "file": "EXAMPLES/README.md",
+      "exists": true
+    },
+    {
+      "file": "TESTS/README.md",
+      "exists": true
+    }
+  ],
+  "missing": [],
+  "notes": [
+    "Base Half shell is minimal by design.",
+    "Identity/profile depth is intentionally compact for first scaffold pass."
+  ]
+}

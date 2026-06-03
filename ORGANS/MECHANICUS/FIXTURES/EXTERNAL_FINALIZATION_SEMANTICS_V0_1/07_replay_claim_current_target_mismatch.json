@@ -1,0 +1,55 @@
+{
+  "fixture_id": "FX07_REPLAY_CLAIM_CURRENT_TARGET_MISMATCH",
+  "description": "Current-target replay claimed but replay head mismatches target.",
+  "external_finalization_receipt": {
+    "task_id": "TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1",
+    "receipt_subject_head": "h_subject",
+    "last_verified_head_before_this_commit": "h_before",
+    "receipt_content_head": "h_content",
+    "external_delivery_head": "h_delivery",
+    "remote_head_after_push": "h_remote",
+    "verification_timestamp_utc": "2026-05-30T18:00:00Z",
+    "verification_actor": "PC_SERVITOR",
+    "worktree_clean_after_push": true,
+    "origin_master_sync_after_push": true,
+    "verification_method": "git rev-parse + git status + git ls-remote",
+    "self_head_paradox_handled": true,
+    "caps_triggered": [],
+    "clean_pass_allowed": false
+  },
+  "cap_closure_states": [
+    {
+      "task_id": "TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1",
+      "cap_id": "CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING",
+      "state": "OPEN",
+      "opened_by": "fixture",
+      "evidence_for_state": [
+        "report.md"
+      ],
+      "closure_head": "",
+      "applies_to_heads": [
+        "h_remote"
+      ],
+      "clean_pass_impact": "ALLOWS_PASS_WITH_WARNINGS",
+      "notes": "fixture"
+    }
+  ],
+  "independent_replay_state": {
+    "task_id": "TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1",
+    "replay_state": "SEPARATE_REPLAY_RUNNER_FOR_TARGET",
+    "target_head": "h_target_new",
+    "replay_head": "h_old",
+    "replay_actor": "SEPARATE_RUNNER",
+    "replay_receipt_path": "receipts/replay.json",
+    "is_current_for_target": true,
+    "caps_triggered": [],
+    "clean_pass_allowed": false
+  },
+  "expected": {
+    "verdict": "BLOCK",
+    "must_include_caps": [
+      "CAP_STALE_REPLAY_USED_AS_CURRENT"
+    ],
+    "must_not_include_caps": []
+  }
+}

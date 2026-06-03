@@ -1,0 +1,54 @@
+GATE_ACK:
+- task_id: TASK-NEWGEN-ADMINISTRATUM-REGISTRATION-CARDS-CURRENT-TRUTH-PC-V0_1
+- current_head: 892ae8a6f5452c55211da4748bed3b1d9d3f9326
+- gatepack_path: c:/Users/PC/Downloads/TASKPACK_NEWGEN_ADMINISTRATUM_REGISTRATION_CARDS_CURRENT_TRUTH_PC_V0_1.zip
+- gatepack_sha256: 30fc50f15f82668f0d02f782e5874960e891045bbcf7d9b30c710354bafb97a9
+- read_gates:
+  - GATE-U00-GIT-TRUTH
+  - GATE-U01-ROLE-ACK
+  - GATE-U02-SCOPE-BOUNDARY
+  - GATE-U04-EVIDENCE-RECEIPT
+  - GATE-U05-STOP-CONDITIONS
+  - GATE-U08-REPO-PURITY
+  - GATE-U09-NO-FAKE-GREEN
+  - GATE-U12-REPORT-OUTPUT-BUDGET
+  - GATE-U13-PYTHON-TYPE-SAFETY
+  - GATE-U14-WHOLE-REPO-SCOPE-RECON
+  - GATE-U15-OPERATIONALITY-IMPACT
+  - GATE-U16-BILINGUAL-UI
+  - GATE-U17-DELIVERABLE-PACKAGE
+  - GATE-U18-AGENT-FACTORY-COMPLIANCE
+  - GATE-U19-SCRIPT-ARTIFACT-PRESERVATION (policy-required; not present in gate registry json)
+  - GATE-U20-AGENT-KPD-SELF-REVIEW (policy-required; not present in gate registry json)
+  - GATE-U21-COMMAND-CHUNKING (policy-required; not present in gate registry json)
+- accepted_stop_conditions:
+  - STOP if repo root/branch/head drift from task baseline.
+  - STOP if pre-work clean-state is lost by unrelated path mutation.
+  - STOP if forbidden paths appear in staged diff.
+  - STOP if checker outputs exceed report budget and no owner gate exists.
+  - STOP if required taskpack artifacts cannot be produced inside ADMINISTRATUM scope.
+  - STOP if useful generated tools cannot be preserved/classified.
+- scope_boundary: Build Administratum registration cards/current truth body only. No Inquisition/Astronomicon/IDE/WARP/CLI-worker implementation. No Mechanicus/Officio refactor.
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/ADMINISTRATUM/**
+- forbidden_paths:
+  - ORGANS/INQUISITION/** (implementation work forbidden for this task)
+  - IMPERIUM_NEW_GENERATION/ASTRONOMICON/**
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/**
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/** (no refactor/mutation)
+  - IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/** (no refactor/mutation)
+  - IMPERIUM_TEST_VERSION/**
+- expected_receipts:
+  - receipts/git_truth_receipt.json
+  - receipts/json_parse_receipt.json
+  - receipts/schema_validation_receipt.json
+  - receipts/current_truth_checker_receipt.json
+  - receipts/tui_smoke_receipt.json
+  - receipts/py_compile_receipt.json
+  - receipts/repo_purity_receipt.json
+  - receipts/report_budget_receipt.json
+  - receipts/receipt_index.json
+- repo_recon_required: YES (cross-organ source-map required for Mechanicus/Officio registration cards)
+- script_absorption_required: YES (all created checkers/TUI helpers must be preserved/classified)
+- clarification_needed: NONE
+- verdict: PASS

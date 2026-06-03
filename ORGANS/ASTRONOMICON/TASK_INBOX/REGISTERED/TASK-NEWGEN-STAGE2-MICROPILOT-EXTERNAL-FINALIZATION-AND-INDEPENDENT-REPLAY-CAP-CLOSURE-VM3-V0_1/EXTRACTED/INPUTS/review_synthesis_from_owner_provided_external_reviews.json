@@ -1,0 +1,24 @@
+{
+  "source": "Owner-provided external review bundles summarized in chat context; raw binary review bundles are not embedded to preserve taskpack English-only admission safety.",
+  "inquisitor_review": {
+    "file_name": "INQUISITOR_COMMIT_MATRIX_REVIEW_F3123E5_STAGE2_MICROPILOT_20260601.zip",
+    "verdict": "PASS_WITH_WARNINGS__STAGE2_MICROPILOT_ACCEPTED__CONTEXT_ECONOMY_PROVEN__CAPS_ACTIVE",
+    "accepted_head": "f3123e5b089821487d9891b156351ba4006f349c",
+    "notes": [
+      "Stage2 micro-pilot accepted with warnings.",
+      "Context economy was proven.",
+      "Caps remain active and require follow-up."
+    ]
+  },
+  "speculum_review": {
+    "file_name": "SPECULUM_TECHNICAL_REDTEAM_REVIEW_f3123e5_20260601_1125.zip",
+    "verdict": "PASS_WITH_WARNINGS__CONTEXT_PACK_EXECUTION_REAL__MEASURABLE_CONTEXT_ECONOMY__BLOCK_CLEAN_PASS_EXTERNAL_FINALIZATION_INDEPENDENT_REPLAY_AND_STAGE_CAPS",
+    "accepted_head": "f3123e5b089821487d9891b156351ba4006f349c",
+    "notes": [
+      "Context pack execution is real.",
+      "Context economy is measurable.",
+      "Clean PASS remains blocked by external finalization, independent replay, and stage caps."
+    ]
+  },
+  "required_servitor_action": "Create external_finalization_receipt.json and do not overclaim raw external replay if raw bundles are absent from VM3 repo."
+}

@@ -1,0 +1,325 @@
+{
+  "schema_id": "officio_agentis_body_manifest_v0_1",
+  "organ_id": "OFFICIO_AGENTIS",
+  "version": "v0_1",
+  "status": "ACTIVE",
+  "task_lineage": {
+    "task_id": "TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1",
+    "starting_head": "55c3e6b5c7ba55b9f43f92758708569b94b3b8ce"
+  },
+  "purpose": "First usable Officio body and entry contract with compact block identities.",
+  "owner_organ": "OFFICIO_AGENTIS",
+  "validation_owner_organ": "OFFICIO_AGENTIS",
+  "external_validation_owner_organ": "MECHANICUS_WHEN_SCRIPT_OR_TOOL_BEHAVIOR_IS_INVOLVED",
+  "allowed_write_paths": [
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/BODY/**",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLES/**",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/RULES/**",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/**",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/**",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/GHOST_EVOLVE/**",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1/**"
+  ],
+  "forbidden_write_paths": [
+    "ORGANS/SANCTUM/**",
+    "IMPERIUM_TEST_VERSION/**",
+    "ORGANS/MECHANICUS/**",
+    "ORGANS/ADMINISTRATUM/**"
+  ],
+  "dependencies": [
+    "ORGANS/DOCTRINARIUM/GATES/GATE_REGISTRY_V0_1.json",
+    "ORGANS/DOCTRINARIUM/GATES/UNIVERSAL_GATE_LAWS_V0_1.md",
+    "ORGANS/OFFICIO_AGENTIS/RESPONSE_CONTRACTS/AGENT_GATE_ACK_CONTRACT_V0_1.md"
+  ],
+  "blocks": [
+    {
+      "block_id": "OFFICIO_AGENTIS_BODY_V0_1",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "purpose": "Whole Officio body composition and boundaries.",
+      "source_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/BODY/officio_agentis_body_manifest_v0_1.json"
+      ],
+      "inputs": [
+        "Task contract",
+        "Gate laws",
+        "Officio baseline contracts"
+      ],
+      "outputs": [
+        "Block identities",
+        "Boundary truth",
+        "Validation map"
+      ],
+      "dependencies": [
+        "OFFICIO_SERVITOR_ENTRY_CONTRACT_V0_1",
+        "OFFICIO_ROLE_REGISTRY_V0_1",
+        "OFFICIO_AGENT_CONTROL_POLICY_V0_1"
+      ],
+      "validation_commands": [
+        "python IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_role_registry_checker_v0_1.py --output <task_report>/receipts/role_registry_checker.json"
+      ],
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1/receipts/role_registry_checker.json"
+      ],
+      "display_hints": {
+        "tui_panel": "BODY_MANIFEST",
+        "dashboard_future_slot": "OFFICIO_OVERVIEW",
+        "show_to_owner": true
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "block_id": "OFFICIO_SERVITOR_ENTRY_CONTRACT_V0_1",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "purpose": "Defines admission sequence and ACK requirements.",
+      "source_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/BODY/servitor_entry_contract_v0_1.md"
+      ],
+      "inputs": [
+        "task_id",
+        "expected_head",
+        "scope"
+      ],
+      "outputs": [
+        "GATE_ACK",
+        "admission verdict"
+      ],
+      "dependencies": [
+        "OFFICIO_TASKPACK_ACCEPTANCE_GATE_V0_1",
+        "OFFICIO_STOP_WARN_PASS_GRAMMAR_V0_1"
+      ],
+      "validation_commands": [
+        "python IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_taskpack_acceptance_checker_v0_1.py --output <task_report>/receipts/taskpack_checker.json"
+      ],
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1/GATE_ACK.md"
+      ],
+      "display_hints": {
+        "tui_panel": "ENTRY_CONTRACT",
+        "dashboard_future_slot": "OFFICIO_ADMISSION",
+        "show_to_owner": true
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "block_id": "OFFICIO_ROLE_REGISTRY_V0_1",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "purpose": "Canonical role listing and role file pointers.",
+      "source_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLES/role_registry_v0_1.json"
+      ],
+      "inputs": [
+        "role definitions",
+        "existing role packs"
+      ],
+      "outputs": [
+        "active/default role map",
+        "scope by role"
+      ],
+      "dependencies": [
+        "OFFICIO_AGENT_CONTROL_POLICY_V0_1"
+      ],
+      "validation_commands": [
+        "python IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_role_registry_checker_v0_1.py --output <task_report>/receipts/role_registry_checker.json"
+      ],
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1/receipts/role_registry_checker.json"
+      ],
+      "display_hints": {
+        "tui_panel": "ROLES",
+        "dashboard_future_slot": "OFFICIO_ROLES",
+        "show_to_owner": true
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "block_id": "OFFICIO_AGENT_CONTROL_POLICY_V0_1",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "purpose": "Defines allowed/forbidden behavior for Servitor-driven execution.",
+      "source_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/BODY/agent_control_policy_v0_1.md"
+      ],
+      "inputs": [
+        "gate families",
+        "task scope"
+      ],
+      "outputs": [
+        "control clauses",
+        "stop/warn handling"
+      ],
+      "dependencies": [
+        "OFFICIO_STOP_WARN_PASS_GRAMMAR_V0_1"
+      ],
+      "validation_commands": [
+        "python IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_taskpack_acceptance_checker_v0_1.py --output <task_report>/receipts/taskpack_checker.json"
+      ],
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1/receipts/taskpack_checker.json"
+      ],
+      "display_hints": {
+        "tui_panel": "CONTROL_POLICY",
+        "dashboard_future_slot": "OFFICIO_POLICY",
+        "show_to_owner": true
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "block_id": "OFFICIO_GHOST_EVOLVE_CONTRACT_V0_1",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "purpose": "Canonical anti-bloat progression discipline for local agent upgrades.",
+      "source_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/BODY/ghost_evolve_contract_v0_1.md",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/GHOST_EVOLVE/ghost_evolve_decision_schema_v0_1.json"
+      ],
+      "inputs": [
+        "upgrade candidate",
+        "evidence paths"
+      ],
+      "outputs": [
+        "accepted_local_upgrades",
+        "rejected_noise"
+      ],
+      "dependencies": [
+        "OFFICIO_AGENTIS_BODY_V0_1"
+      ],
+      "validation_commands": [
+        "python IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_taskpack_acceptance_checker_v0_1.py --output <task_report>/receipts/taskpack_checker.json"
+      ],
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1/ghost_evolve_sidecar.json"
+      ],
+      "display_hints": {
+        "tui_panel": "GHOST_EVOLVE",
+        "dashboard_future_slot": "OFFICIO_EVOLUTION",
+        "show_to_owner": true
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "block_id": "OFFICIO_STOP_WARN_PASS_GRAMMAR_V0_1",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "purpose": "Stable result grammar for scoped task execution.",
+      "source_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/RULES/stop_warn_pass_grammar_v0_1.md"
+      ],
+      "inputs": [
+        "task evidence",
+        "gate results"
+      ],
+      "outputs": [
+        "STOP/WARN/PASS verdict discipline"
+      ],
+      "dependencies": [
+        "OFFICIO_FINAL_RESPONSE_CONTRACT_V0_1"
+      ],
+      "validation_commands": [
+        "python IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_response_contract_checker_v0_1.py --input IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/RULES/final_response_contract_v0_1.md --output <task_report>/receipts/response_contract_checker.json"
+      ],
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1/receipts/response_contract_checker.json"
+      ],
+      "display_hints": {
+        "tui_panel": "VERDICT_GRAMMAR",
+        "dashboard_future_slot": "OFFICIO_VERDICT",
+        "show_to_owner": true
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "block_id": "OFFICIO_TASKPACK_ACCEPTANCE_GATE_V0_1",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "purpose": "Admission validity for taskpack-driven execution.",
+      "source_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/RULES/taskpack_acceptance_rules_v0_1.md"
+      ],
+      "inputs": [
+        "taskpack manifest",
+        "git truth"
+      ],
+      "outputs": [
+        "PASS/CLARIFY/STOP admission result"
+      ],
+      "dependencies": [
+        "OFFICIO_SERVITOR_ENTRY_CONTRACT_V0_1"
+      ],
+      "validation_commands": [
+        "python IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_taskpack_acceptance_checker_v0_1.py --output <task_report>/receipts/taskpack_checker.json"
+      ],
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1/receipts/taskpack_checker.json"
+      ],
+      "display_hints": {
+        "tui_panel": "TASKPACK_GATE",
+        "dashboard_future_slot": "OFFICIO_TASK_ADMISSION",
+        "show_to_owner": true
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "block_id": "OFFICIO_FINAL_RESPONSE_CONTRACT_V0_1",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "purpose": "Owner-facing final answer shape for bounded tasks.",
+      "source_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/RULES/final_response_contract_v0_1.md"
+      ],
+      "inputs": [
+        "execution outcome",
+        "evidence map"
+      ],
+      "outputs": [
+        "final owner response"
+      ],
+      "dependencies": [
+        "OFFICIO_STOP_WARN_PASS_GRAMMAR_V0_1",
+        "OFFICIO_ROLE_REGISTRY_V0_1"
+      ],
+      "validation_commands": [
+        "python IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_response_contract_checker_v0_1.py --input IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/RULES/final_response_contract_v0_1.md --output <task_report>/receipts/response_contract_checker.json"
+      ],
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1/receipts/response_contract_checker.json"
+      ],
+      "display_hints": {
+        "tui_panel": "FINAL_RESPONSE",
+        "dashboard_future_slot": "OFFICIO_REPORTING",
+        "show_to_owner": true
+      },
+      "status": "ACTIVE"
+    },
+    {
+      "block_id": "OFFICIO_TUI_READONLY_INSPECTOR_V0_1",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "purpose": "Read-only visibility of real Officio contracts, roles, and evidence.",
+      "source_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/officio_agentis_tui_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/LAUNCH_OFFICIO_AGENTIS_TUI_V0_1.cmd"
+      ],
+      "inputs": [
+        "role registry",
+        "body manifest",
+        "rules",
+        "ghost evolve indexes"
+      ],
+      "outputs": [
+        "console inspector output",
+        "smoke markers"
+      ],
+      "dependencies": [
+        "OFFICIO_AGENTIS_BODY_V0_1",
+        "OFFICIO_ROLE_REGISTRY_V0_1",
+        "OFFICIO_GHOST_EVOLVE_CONTRACT_V0_1"
+      ],
+      "validation_commands": [
+        "python IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/officio_agentis_tui_v0_1.py --mode summary --strict"
+      ],
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1/receipts/tui_smoke_receipt.json"
+      ],
+      "display_hints": {
+        "tui_panel": "READONLY_INSPECTOR",
+        "dashboard_future_slot": "OFFICIO_RUNTIME_VIEW",
+        "show_to_owner": true
+      },
+      "status": "ACTIVE"
+    }
+  ]
+}

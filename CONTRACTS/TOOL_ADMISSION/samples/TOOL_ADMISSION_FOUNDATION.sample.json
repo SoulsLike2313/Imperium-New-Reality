@@ -1,0 +1,148 @@
+{
+  "schema_version": "0.1",
+  "sample_kind": "TOOL_ADMISSION_FOUNDATION",
+  "task_id": "TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1",
+  "foundation_only": true,
+  "no_install": true,
+  "candidate_record": {
+    "schema_version": "0.1",
+    "record_id": "TCAND-001",
+    "task_id": "TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1",
+    "tool_name": "Playwright",
+    "tool_slug": "playwright",
+    "owner_organ": "MECHANICUS",
+    "capability_summary": "Browser automation for bounded UI/runtime evidence tasks.",
+    "need_reason": "Future synthetic E2E evidence may require controlled browser automation.",
+    "admission_state": "DEFERRED_NEEDS_ADMISSION_TASK",
+    "decision_owner_organ": "DOCTRINARIUM+MECHANICUS+OWNER",
+    "evidence_required_pre_admission": [
+      "install_plan_review.md",
+      "scope_boundary_receipt.json",
+      "validator_report.json"
+    ],
+    "receipts_required_post_use": [
+      "tool_capability_receipt.json",
+      "post_use_validator_report.json"
+    ],
+    "risk_refs": [
+      "TRISK-001"
+    ],
+    "no_install_in_v0_1": true,
+    "install_verified": false,
+    "install_verification_note": "Not verified in V0.1 foundation task.",
+    "future_task_ref": "TASK_NEWGEN_TOOL_ADMISSION_FOLLOWUP_PLAYWRIGHT",
+    "foundation_only": true,
+    "forbidden_claims_blocked": true,
+    "status_note": "Candidate recorded without installation.",
+    "created_at_utc": "2026-05-22T00:00:00Z"
+  },
+  "risk_record": {
+    "schema_version": "0.1",
+    "risk_id": "TRISK-001",
+    "task_id": "TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1",
+    "tool_slug": "playwright",
+    "linked_candidate_id": "TCAND-001",
+    "risk_category": "SUPPLY_CHAIN",
+    "severity": "HIGH",
+    "risk_summary": "Binary/runtime dependencies can drift without locked install receipts.",
+    "mitigation_plan": "Allow only dedicated admission+install task with deterministic receipts.",
+    "proof_required_before_approval": [
+      "admission_decision_record.json",
+      "no_install_guard_receipt.json",
+      "future_install_task_contract.md"
+    ],
+    "owner_gate_required": true,
+    "recommended_state_if_unproven": "DEFERRED_NEEDS_ADMISSION_TASK",
+    "foundation_only": true,
+    "created_at_utc": "2026-05-22T00:00:00Z"
+  },
+  "decision_record": {
+    "schema_version": "0.1",
+    "decision_id": "TDEC-001",
+    "task_id": "TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1",
+    "tool_slug": "playwright",
+    "linked_candidate_id": "TCAND-001",
+    "linked_risk_ids": [
+      "TRISK-001"
+    ],
+    "decision_state": "DEFERRED_NEEDS_ADMISSION_TASK",
+    "decision_owner_organ": "DOCTRINARIUM+MECHANICUS+OWNER",
+    "decision_reason": "Tool is relevant but requires dedicated follow-up admission task before install/use.",
+    "allowed_actions": [
+      "Document admission rationale and risk controls",
+      "Prepare bounded follow-up admission/install task",
+      "Perform read-only planning actions"
+    ],
+    "forbidden_actions": [
+      "Install external packages in phase 10",
+      "Claim production readiness",
+      "Claim unrestricted tool approval"
+    ],
+    "evidence_refs": [
+      "TCAND-001",
+      "TRISK-001",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1/VALIDATOR_REPORT.json"
+    ],
+    "install_allowed_now": false,
+    "future_install_task_ref": "TASK_NEWGEN_TOOL_ADMISSION_FOLLOWUP_PLAYWRIGHT",
+    "receipts_required_post_use": [
+      "tool_capability_receipt.json",
+      "post_use_validator_report.json"
+    ],
+    "foundation_only": true,
+    "created_at_utc": "2026-05-22T00:00:00Z"
+  },
+  "capability_receipt_record": {
+    "schema_version": "0.1",
+    "receipt_id": "TCAP-001",
+    "task_id": "TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1",
+    "tool_slug": "playwright",
+    "capability_name": "Browser automation for bounded UI/runtime evidence tasks.",
+    "outcome_state": "DEFERRED_NEEDS_ADMISSION_TASK",
+    "evidence_paths": [
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_ADMISSION_DECISIONS_V0_1.generated.json"
+    ],
+    "decision_id": "TDEC-001",
+    "execution_mode": "CANDIDATE_REGISTRY_ONLY",
+    "run_command": "",
+    "run_result": "NOT_RUN",
+    "no_install_performed": true,
+    "notes": "Foundation registry receipt only; no command execution performed.",
+    "foundation_only": true,
+    "created_at_utc": "2026-05-22T00:00:00Z"
+  },
+  "index_preview": {
+    "schema_version": "0.1",
+    "task_id": "TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1",
+    "phase": 10,
+    "phase_name": "Mechanicus Tool Admission V0.1",
+    "foundation_only": true,
+    "no_install": true,
+    "generated_at_utc": "2026-05-22T00:00:00Z",
+    "paths": {
+      "candidate_catalog": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_CANDIDATE_CATALOG_V0_1.generated.json",
+      "risk_catalog": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_RISK_CATALOG_V0_1.generated.json",
+      "decision_catalog": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_ADMISSION_DECISIONS_V0_1.generated.json",
+      "capability_registry": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_CAPABILITY_REGISTRY_V0_1.generated.json"
+    },
+    "record_counts": {
+      "candidate_count": 7,
+      "risk_count": 7,
+      "decision_count": 7,
+      "capability_count": 7
+    },
+    "admission_state_counts": {
+      "DEFERRED_NEEDS_ADMISSION_TASK": 4,
+      "CANDIDATE_ONLY": 3
+    },
+    "forbidden_claims": [
+      "Claiming production toolchain readiness is forbidden.",
+      "Claiming phase-10 installed Playwright/Vitest/Storybook/Nx is forbidden.",
+      "Claiming unrestricted external-tool approval is forbidden.",
+      "Claiming guaranteed future UI or UX evidence is forbidden.",
+      "Claiming production package-management readiness is forbidden.",
+      "Claiming proof of live autonomous agents is forbidden."
+    ],
+    "next_allowed_task": "OWNER_REVIEW_AFTER_PHASE_10_OR_TASK_NEWGEN_MANUAL_SYNTHETIC_E2E_CORRIDOR"
+  }
+}

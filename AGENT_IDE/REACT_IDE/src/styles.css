@@ -1,0 +1,267 @@
+:root {
+  --bg-1: #f4e7cf;
+  --bg-2: #dce8ef;
+  --ink: #10202b;
+  --muted: #435764;
+  --accent-a: #d95f32;
+  --accent-b: #0f8c7d;
+  --accent-c: #143a52;
+  --panel: rgba(255, 255, 255, 0.8);
+  --panel-border: rgba(16, 32, 43, 0.18);
+  --shadow: 0 16px 34px rgba(20, 58, 82, 0.17);
+  --font-ui: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "Consolas", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: linear-gradient(132deg, var(--bg-1), var(--bg-2));
+  font-family: var(--font-ui);
+}
+
+.app-shell {
+  min-height: 100vh;
+  position: relative;
+}
+
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 14% 22%, rgba(217, 95, 50, 0.2), transparent 36%),
+    radial-gradient(circle at 84% 12%, rgba(15, 140, 125, 0.22), transparent 40%),
+    radial-gradient(circle at 72% 84%, rgba(20, 58, 82, 0.15), transparent 44%);
+  animation: drift 16s ease-in-out infinite alternate;
+}
+
+.topbar {
+  z-index: 5;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(20, 58, 82, 0.2);
+  background: rgba(244, 231, 207, 0.85);
+  backdrop-filter: blur(5px);
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(24px, 3.8vw, 34px);
+}
+
+.topbar p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(120deg, var(--accent-c), var(--accent-b));
+}
+
+.truth-markers {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(120px, 1fr));
+  gap: 8px;
+  padding: 10px 16px;
+}
+
+.truth-markers span {
+  border-left: 4px solid var(--accent-a);
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 8px;
+  padding: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.error-strip {
+  margin: 0 16px;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  background: #ae2c2c;
+}
+
+.loading {
+  margin: 16px;
+  font-family: var(--font-mono);
+}
+
+.grid {
+  z-index: 1;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 14px;
+  padding: 14px 16px 20px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 12px;
+  animation: rise 0.3s ease-out both;
+}
+
+.panel h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+#overview,
+#organs,
+#file-atlas,
+#viewer,
+#officio-language-gate,
+#owner-pain-map,
+#routes,
+#reports,
+#checks,
+#block-foundation,
+#plugins {
+  grid-column: span 6;
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 12px;
+  line-height: 1.35;
+  font-family: var(--font-mono);
+}
+
+.file-preview {
+  max-height: 220px;
+  overflow: auto;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(20, 58, 82, 0.06);
+}
+
+.organ-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(110px, 1fr));
+  gap: 8px;
+}
+
+.organ-card {
+  border-radius: 12px;
+  border: 1px solid rgba(15, 140, 125, 0.35);
+  background: linear-gradient(145deg, #f6fbfd, #fff8ef);
+  padding: 10px;
+  display: grid;
+  gap: 4px;
+}
+
+.organ-card span {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.organ-card em {
+  font-style: normal;
+  color: var(--muted);
+}
+
+.viewer-select {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+select {
+  width: 100%;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  border: 1px solid var(--panel-border);
+  padding: 8px;
+  font-family: var(--font-mono);
+}
+
+.pain-list {
+  display: grid;
+  gap: 8px;
+}
+
+.pain-item {
+  display: grid;
+  gap: 4px;
+  border-left: 4px solid var(--accent-a);
+  background: rgba(217, 95, 50, 0.08);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.pain-item code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+@media (max-width: 1200px) {
+  .truth-markers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #overview,
+  #organs,
+  #file-atlas,
+  #viewer,
+  #officio-language-gate,
+  #owner-pain-map,
+  #routes,
+  #reports,
+  #checks,
+  #block-foundation,
+  #plugins {
+    grid-column: span 12;
+  }
+
+  .organ-grid {
+    grid-template-columns: repeat(2, minmax(110px, 1fr));
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(-1%, 0, 0);
+  }
+  to {
+    transform: translate3d(1%, -1%, 0);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

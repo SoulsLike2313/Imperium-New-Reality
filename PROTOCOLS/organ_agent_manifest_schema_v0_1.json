@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "agent_id",
+    "organ_name",
+    "status",
+    "supported_actions",
+    "maturity_stage"
+  ],
+  "properties": {
+    "agent_id": {
+      "type": "string"
+    },
+    "organ_name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "maturity_stage": {
+      "type": "string"
+    },
+    "supported_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_write_scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_write_scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

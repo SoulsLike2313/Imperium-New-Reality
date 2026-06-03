@@ -1,0 +1,24 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1",
+  "generated_at_utc": "2026-06-01T11:47:57Z",
+  "delta_summary": {
+    "before": "External-finalization and independent-replay caps were both open after Stage2 micro-pilot.",
+    "after": "Independent replay cap is CLOSED; external finalization cap is NARROWED with explicit evidence and follow-up proof path."
+  },
+  "improvements": [
+    "Converted admission/resolver launch friction into reusable regression fixtures.",
+    "Added isolated local replay evidence at current target head.",
+    "Introduced cap-specific next_required_proof trails instead of optimistic closure."
+  ],
+  "remaining_caps": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME",
+    "CAP_DIRTY_START_OWNER_APPROVED_CONTINUATION"
+  ],
+  "reuse_targets": [
+    "Astronomicon taskpack builders",
+    "Inquisition cap-closure auditors",
+    "Mechanicus replay checkers"
+  ]
+}

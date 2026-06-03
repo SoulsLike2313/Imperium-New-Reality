@@ -1,0 +1,28 @@
+{
+  "schema_id": "TASK_VALIDATOR_AGGREGATE_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-MECHANICUS-SSH-MATRIX-AND-ACTION-ROLLBACK-CONTRACT-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T21:00:00Z",
+  "verdict": "PASS",
+  "checks": {
+    "ssh_matrix_validator": {
+      "verdict": "PASS",
+      "report_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-MECHANICUS-SSH-MATRIX-AND-ACTION-ROLLBACK-CONTRACT-VM2-V0_1/SSH_MATRIX_VALIDATOR_REPORT.json"
+    },
+    "action_rollback_validator": {
+      "verdict": "PASS",
+      "report_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-MECHANICUS-SSH-MATRIX-AND-ACTION-ROLLBACK-CONTRACT-VM2-V0_1/ACTION_ROLLBACK_VALIDATOR_REPORT.json"
+    },
+    "read_only_visibility_validator": {
+      "verdict": "PASS",
+      "report_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-MECHANICUS-SSH-MATRIX-AND-ACTION-ROLLBACK-CONTRACT-VM2-V0_1/READ_ONLY_VISIBILITY_VALIDATOR_REPORT.json"
+    },
+    "current_truth_compat_validator": {
+      "verdict": "PASS",
+      "report_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-MECHANICUS-SSH-MATRIX-AND-ACTION-ROLLBACK-CONTRACT-VM2-V0_1/CURRENT_TRUTH_VALIDATOR_REPORT.json"
+    }
+  },
+  "notes": [
+    "All bounded validators passed.",
+    "Sanctum refresh runner was not executed to avoid unintended full state regeneration outside this bounded scope."
+  ]
+}

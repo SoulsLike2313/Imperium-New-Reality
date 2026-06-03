@@ -1,0 +1,34 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1",
+    "agent_role": "Codex big-model execution partner",
+    "useful_outputs": [
+      "Exporter v0_2 + checker v0_1 for practical task-scoped guidance",
+      "Seven capability-scope packs with bounded forbidden actions",
+      "Compact evidence/report package for Inquisition/Administratum/Ghost_Evolve"
+    ],
+    "waste_points": [
+      "Initial gate registry lacks U19/U20/U21 entries, requiring cross-policy reconciliation."
+    ],
+    "missing_tools": [
+      "No dedicated pre-existing checker for task-scoped capability packs."
+    ],
+    "generated_tools_to_preserve": [
+      "mechanicus_capability_scope_exporter_v0_2.py",
+      "check_mechanicus_scope_packs_v0_1.py"
+    ],
+    "recommended_script_absorption": [
+      "Absorb exporter/checker pair into standard Mechanicus taskpack pipeline."
+    ],
+    "recommended_narrow_agent_profiles": [
+      "Mechanicus Scope-Pack Curator Servitor (task-type mapping + guard enforcement)."
+    ],
+    "future_prompt_improvements": [
+      "Attach explicit allowed/forbidden path list in TASK.json for each NewGen dossier to reduce admission ambiguity."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add a formal registry entry for GATE-U19/U20/U21 to eliminate policy/registry drift."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

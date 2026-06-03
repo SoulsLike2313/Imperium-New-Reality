@@ -1,0 +1,119 @@
+{
+  "matrix_id": "IMPERIUM_MATURITY_TARGET_MATRIX",
+  "version": "0.1-candidate",
+  "owner_organ": "Strategium",
+  "support_organs": [
+    "Astronomicon",
+    "Inquisition",
+    "Mechanicus",
+    "Administratum"
+  ],
+  "purpose": "Defines target maturity trajectory from synthetic form to controlled real-use execution across all corridors.",
+  "used_by": [
+    "OWNER",
+    "GPT_LOGOS",
+    "SERVITOR",
+    "INQUISITOR",
+    "STRATEGIUM"
+  ],
+  "required_questions": [
+    "What is the source of truth for this claim?",
+    "Which organ owns the rule?",
+    "What evidence level proves it?",
+    "What cap applies if evidence is missing?",
+    "What would make this claim fake-green?"
+  ],
+  "pass_criteria": [
+    "All criteria include owner value, evidence, and PASS/WARN/BLOCK logic.",
+    "Current status is explicit per criterion.",
+    "No real-use execution claim is made without required evidence."
+  ],
+  "warn_criteria": [
+    "Some criteria are still UNKNOWN but improvement hooks exist.",
+    "Pilot is preflight-ready only with warnings/caps."
+  ],
+  "block_criteria": [
+    "Required criterion has BLOCK state.",
+    "Matrix claims active production capability without evidence."
+  ],
+  "fake_green_flags": [
+    "CLAIM_WITHOUT_REPLAY",
+    "AGENT_REASONING_AS_SYSTEM_CAPABILITY",
+    "STALE_RECEIPT",
+    "DIRTY_STATE_HIDDEN",
+    "OWNER_DECISION_MISSING"
+  ],
+  "evidence_requirements": [
+    "REAL_USE_PILOT_READINESS_MATRIX.md",
+    "future-domain matrix seed files",
+    "maturity_matrix_seed_report.md",
+    "real_use_pilot_preflight_report.md",
+    "resolver_negative_fixture_report.md",
+    "resolver_positive_proof_receipt.json"
+  ],
+  "current_status": "CANDIDATE_NOT_CANON",
+  "next_action": "Use this matrix in next preflight/pilot closure loop and update criterion statuses with receipts.",
+  "criteria": [
+    {
+      "criterion_id": "IMT-01",
+      "plain_language_meaning": "Task-entry corridor is deterministic and resolves from TASK_ID + start task.",
+      "owner_value": "Predictable execution entry without long prompts.",
+      "owner_organ": "Astronomicon",
+      "support_organs": [
+        "Officio Agentis",
+        "Mechanicus",
+        "Inquisition"
+      ],
+      "evidence_required": [
+        "resolver_positive_proof_receipt.json",
+        "resolver_negative_fixture_report.md"
+      ],
+      "pass_logic": "Registered task and current expected task both resolve with complete route/start evidence.",
+      "warn_logic": "Resolves only in synthetic fixtures or with known caps.",
+      "block_logic": "Resolver cannot deterministically resolve canonical task entry.",
+      "current_status": "WARN",
+      "next_improvement_hook": "Close remaining resolver caps in first manual Logos registration trial."
+    },
+    {
+      "criterion_id": "IMT-02",
+      "plain_language_meaning": "Real-use pilot has explicit preflight gate and reviewers.",
+      "owner_value": "No accidental launch without readiness discipline.",
+      "owner_organ": "Strategium",
+      "support_organs": [
+        "Inquisition",
+        "Administratum",
+        "Astronomicon"
+      ],
+      "evidence_required": [
+        "real_use_pilot_preflight_report.md",
+        "REAL_USE_PILOT_READINESS_MATRIX.md"
+      ],
+      "pass_logic": "Pilot readiness criteria are measurable and reviewer responsibilities assigned.",
+      "warn_logic": "Criteria exist but not all evidence is populated yet.",
+      "block_logic": "Pilot readiness has no measurable gate.",
+      "current_status": "WARN",
+      "next_improvement_hook": "Run first preflight closure without executing real pilot runtime."
+    },
+    {
+      "criterion_id": "IMT-03",
+      "plain_language_meaning": "Future domains are preserved as non-active maturity seeds.",
+      "owner_value": "Ideas are retained without fake capability claims.",
+      "owner_organ": "Strategium",
+      "support_organs": [
+        "Mechanicus",
+        "Schola Imperialis",
+        "Inquisition"
+      ],
+      "evidence_required": [
+        "maturity_matrix_seed_report.md",
+        "future-domain matrix seed files"
+      ],
+      "pass_logic": "All seed domains are present and marked CANDIDATE_SEED.",
+      "warn_logic": "Seeds exist but some criteria remain UNKNOWN.",
+      "block_logic": "Future domains are missing or overclaimed as active.",
+      "current_status": "PASS",
+      "next_improvement_hook": "Connect each seed to one safe pilot backlog item."
+    }
+  ],
+  "candidate_repo_location": "IMPERIUM_NEW_GENERATION/ORGANS/STRATEGIUM/MATRICES/IMPERIUM_MATURITY_TARGET_MATRIX.md"
+}

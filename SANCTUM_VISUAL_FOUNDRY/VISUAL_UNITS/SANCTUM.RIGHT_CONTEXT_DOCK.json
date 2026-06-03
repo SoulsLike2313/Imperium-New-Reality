@@ -1,0 +1,54 @@
+{
+  "visual_unit_id": "SANCTUM.RIGHT_CONTEXT_DOCK",
+  "parent": "VISUAL_SYSTEM.SANCTUM_SHELL",
+  "type": "context_dock",
+  "visual_owner": "SANCTUM_SHELL",
+  "truth_owner": "OFFICIO_AGENTIS_AGENT",
+  "data_source_owner": "SANCTUM_STATE_BUILDER",
+  "organ_subject": "SYSTEM",
+  "implementation_owner": "VISUAL_FOUNDRY",
+  "purpose": "Right-side context dock container for organ-specific cockpit panels.",
+  "backend_source": {
+    "type": "static_ui_shell",
+    "paths": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/static/index.html",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/static/styles.css"
+    ]
+  },
+  "backend_source_status": "real",
+  "allowed_states": [
+    "collapsed",
+    "expanded",
+    "focus",
+    "unknown"
+  ],
+  "truth_rules": [
+    "Dock container is structural and must not claim readiness itself."
+  ],
+  "visual_tokens": "right_dock_tokens",
+  "texture": "glass_holograph_panel",
+  "glow": {
+    "enabled": false
+  },
+  "motion": {
+    "enabled": true,
+    "animation": "panel_slide_right",
+    "perf_tier": "CHEAP",
+    "disable_in_reduced_motion": true
+  },
+  "perf_tier": "CHEAP",
+  "proof_requirements": [
+    "Panel unit IDs resolve through visual address registry."
+  ],
+  "integration_status": "real",
+  "fake_green_risks": [
+    "Dock cards can appear ready while child panels are stub."
+  ],
+  "owner_group": "SANCTUM",
+  "owner_organ": "OFFICIO_AGENTIS_AGENT",
+  "accessibility_rules": [
+    "State must not be encoded by color alone.",
+    "RU/EN labels must remain explicit for status tags."
+  ],
+  "change_safety": "Topology hardening scope only; no final UI readiness claims."
+}

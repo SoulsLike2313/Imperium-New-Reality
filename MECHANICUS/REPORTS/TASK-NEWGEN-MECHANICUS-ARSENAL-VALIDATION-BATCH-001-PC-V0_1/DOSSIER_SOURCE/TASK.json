@@ -1,0 +1,33 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+  "created_utc": "2026-05-24T17:54:56Z",
+  "mode": "PC_LOCAL_NEWGEN_MECHANICUS_GHOST_EVOLVE",
+  "repo_root": "E:\\IMPERIUM",
+  "active_contour": "PC",
+  "mission": "Run Mechanicus Arsenal Validation Batch 001 through Ghost_Evolve organ-body execution: validate foundational tools/capabilities and leave reusable Mechanicus validation machinery.",
+  "depends_on": [
+    "TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1",
+    "TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1"
+  ],
+  "non_goals": [
+    "Do not install tools without explicit Owner approval.",
+    "Do not network-provision tools.",
+    "Do not validate LOCAL_LLM/CLOUD_LLM_ADAPTERS beyond reserved policy checks.",
+    "Do not start visual prototype comparison.",
+    "Do not modify Sanctum visuals.",
+    "Do not broaden cleanup outside IMPERIUM_NEW_GENERATION.",
+    "Do not fake CANON promotion."
+  ],
+  "ghost_evolve": {
+    "involved_organs": [
+      "Mechanicus",
+      "Inquisition",
+      "Administratum"
+    ],
+    "primary_body": "Mechanicus",
+    "required_proof": "Mechanicus must be stronger after this task: reusable scripts/checkers/playbooks/scope exports/receipts must exist and run."
+  },
+  "recommended_report_root": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1/",
+  "recommended_commit_message": "TASK-20260524: validate Mechanicus Arsenal batch 001",
+  "next_allowed_if_pass": "TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1"
+}

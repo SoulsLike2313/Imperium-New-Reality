@@ -1,0 +1,26 @@
+{
+  "schema": "imperium.vm3_interrupted_handoff.v0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1",
+  "verdict": "WARN_INTERRUPTED_PARTIAL_SALVAGE_ONLY",
+  "created_utc": "2026-05-23T02:03:05Z",
+  "head_before_commit": "6f4b09f1e377d75075ba89f258943979cf10c921",
+  "status_before_commit_escaped": " M IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/app.js\n M IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_action_request.schema.json\n M IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_action_result.schema.json\n M IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json\n M IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/ledgers/transfer_action_runner_ledger.jsonl\n M IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/samples/transfer_action_runner_policy.v0_1.json\n M IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/smoke_transfer_action_runner_v0_1.py\n M IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/transfer_action_runner_v0_1.py\n M IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/validate_transfer_action_runner_v0_1.py\n?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/",
+  "interruption_reason": "power outage / execution limit exhaustion reported by Owner",
+  "not_proven": [
+    "PC_TO_VM3 route proof final PASS",
+    "Transfer action runner execute-enable PASS",
+    "production remote orchestration"
+  ],
+  "next_allowed_contour": "VM2",
+  "required_next_action": [
+    "pull latest VM3 salvage commit",
+    "inspect partial files",
+    "complete PC_TO_VM3 bounded route proof",
+    "add PC_TO_VM2 route/path proof",
+    "add VM2_TO_VM3 route/path proof if SSH access works",
+    "update transfer request/result/evidence ledgers",
+    "run validators and smoke checks",
+    "commit push verify clean"
+  ],
+  "claim_boundary": "partial interrupted salvage only; not a working transfer claim"
+}

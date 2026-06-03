@@ -1,0 +1,135 @@
+{
+  "organ_id": "ADMINISTRATUM",
+  "rich_available": true,
+  "smoke_mode": false,
+  "responsibility": "Task continuity, report/receipt routing, and repo hygiene boundaries.",
+  "bundle": {
+    "identity_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ADMINISTRATUM/IDENTITY/organ_identity_v0_1.md",
+    "contract_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ADMINISTRATUM/CONTRACTS/servitor_contract_v0_1.md",
+    "gate_catalog_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ADMINISTRATUM/GATES/organ_gate_catalog_v0_1.json",
+    "state_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ADMINISTRATUM/STATE/current_state_v0_1.json",
+    "template_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TEMPLATES/organ_verdict_template_v0_1.json",
+    "gate_catalog": {
+      "schema_id": "newgen_organ_gate_catalog_v0_1",
+      "organ_id": "ADMINISTRATUM",
+      "version": "v0_1",
+      "gates": [
+        {
+          "gate_id": "GATE_TASK_REGISTRATION_CONTINUITY",
+          "severity": "BLOCK",
+          "purpose": "Task must be registered and routed with explicit scope records.",
+          "expected_verdict": "PASS",
+          "evidence_required": [
+            "taskpack_scope_ack.json",
+            "organ_route_plan.json"
+          ]
+        },
+        {
+          "gate_id": "GATE_EVIDENCE_PACKAGE_REQUIRED",
+          "severity": "BLOCK",
+          "purpose": "Critical claims require report/receipt package.",
+          "expected_verdict": "PASS",
+          "evidence_required": [
+            "FINAL_REPORT.md",
+            "closure_receipt.json",
+            "wave1_organ_tui_smoke_report.json"
+          ]
+        },
+        {
+          "gate_id": "GATE_REPO_HYGIENE_BOUNDARY",
+          "severity": "BLOCK",
+          "purpose": "No writes outside declared NewGen scope.",
+          "expected_verdict": "PASS",
+          "evidence_required": [
+            "git status --short",
+            "git diff --name-only"
+          ]
+        },
+        {
+          "gate_id": "GATE_SEQUENCE_DISCIPLINE",
+          "severity": "WARN_TO_BLOCK",
+          "purpose": "Boot -> capability -> implementation -> smoke -> closure sequence is required.",
+          "expected_verdict": "PASS",
+          "evidence_required": [
+            "FINAL_REPORT.md"
+          ]
+        }
+      ]
+    },
+    "state": {
+      "schema_id": "newgen_organ_state_v0_1",
+      "organ_id": "ADMINISTRATUM",
+      "version": "v0_1",
+      "default_verdict": "PASS",
+      "responsibility": "Task continuity, report/receipt routing, and repo hygiene boundaries.",
+      "servitor_ask": [
+        "What registration/routing evidence is required for this task?",
+        "What report and receipt bundle must be produced?",
+        "What hygiene/sequence failures block completion?"
+      ],
+      "warn_block_profile": [
+        "WARN on partial continuity package with explicit recovery path",
+        "BLOCK on missing closure receipts or out-of-scope path drift"
+      ],
+      "required_actions": [
+        "Publish final report and closure receipt with evidence paths",
+        "Verify clean worktree and remote sync after push"
+      ],
+      "forbidden_actions": [
+        "Hide dirty state or missing receipts",
+        "Claim pass without smoke evidence"
+      ],
+      "evidence_refs": [
+        "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/taskpack_scope_ack.json",
+        "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/organ_route_plan.json"
+      ],
+      "last_updated_utc": "2026-05-24T01:20:00Z"
+    },
+    "template": {
+      "schema_id": "newgen_organ_verdict_v0_1",
+      "organ_id": "ADMINISTRATUM",
+      "task_id": "<TASK_ID>",
+      "mode": "SERVITOR_QUERY",
+      "verdict": "PASS|WARN|BLOCK|OWNER_VERDICT_NEEDED",
+      "applied_rules": [],
+      "required_actions": [],
+      "forbidden_actions": [],
+      "evidence_required": [],
+      "owner_question": null,
+      "not_proven": [],
+      "evidence_refs": []
+    }
+  },
+  "verdict": {
+    "schema_id": "newgen_organ_verdict_v0_1",
+    "organ_id": "ADMINISTRATUM",
+    "task_id": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+    "mode": "SMOKE",
+    "verdict": "PASS",
+    "applied_rules": [
+      "GATE_TASK_REGISTRATION_CONTINUITY",
+      "GATE_EVIDENCE_PACKAGE_REQUIRED",
+      "GATE_REPO_HYGIENE_BOUNDARY",
+      "GATE_SEQUENCE_DISCIPLINE"
+    ],
+    "required_actions": [
+      "Publish final report and closure receipt with evidence paths",
+      "Verify clean worktree and remote sync after push"
+    ],
+    "forbidden_actions": [
+      "Hide dirty state or missing receipts",
+      "Claim pass without smoke evidence"
+    ],
+    "evidence_required": [],
+    "owner_question": null,
+    "not_proven": [
+      "full automated archive intelligence",
+      "autonomous stage orchestration"
+    ],
+    "evidence_refs": [
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/taskpack_scope_ack.json",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/organ_route_plan.json"
+    ],
+    "generated_at_utc": "2026-05-24T01:27:13.054653+00:00"
+  }
+}

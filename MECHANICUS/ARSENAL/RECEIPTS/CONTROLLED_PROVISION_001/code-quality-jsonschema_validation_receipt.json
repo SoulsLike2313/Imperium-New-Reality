@@ -1,0 +1,30 @@
+{
+  "receipt_id": "task-newgen-mechanicus-controlled-tool-provision-pc-v0_1:code_quality_jsonschema:controlled_provision:jsonschema",
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+  "capability_id": "CODE_QUALITY_JSONSCHEMA",
+  "validator": "mechanicus_controlled_provision_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T19:34:23Z",
+  "status": "PASS",
+  "summary": "CODE_QUALITY_JSONSCHEMA: PASS via controlled_provision:jsonschema. promotion_recommendation=PROMOTE_SANDBOX",
+  "check_name": "controlled_provision:jsonschema",
+  "command_or_check": "python -c \"import importlib.metadata as m; print(m.version('jsonschema'))\"",
+  "exit_code": 0,
+  "stdout_excerpt": "$ python -c \"import importlib.metadata as m; print(m.version('jsonschema'))\"\n4.26.0",
+  "stderr_excerpt": "$ python -c \"import importlib.metadata as m; print(m.version('jsonschema'))\"",
+  "side_effects": [
+    "validation check executed",
+    "receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/code-quality-jsonschema_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "PROMOTE_SANDBOX",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/code-quality-jsonschema_validation_receipt.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/install_jsonschema_receipt.json"
+  ]
+}

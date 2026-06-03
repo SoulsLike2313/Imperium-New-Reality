@@ -1,0 +1,223 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CURRENT_TRUTH_ROOT_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "generated_at_utc",
+    "newgen_mode",
+    "repo_truth",
+    "phase_coverage",
+    "sanctum_ng_truth_shell",
+    "action_layer_status",
+    "known_warnings",
+    "forbidden_claims",
+    "context_source_mix_snapshot",
+    "report_status_index_path",
+    "evidence_source_map_path",
+    "evidence_map_unified_path",
+    "evidence_freshness_index_path",
+    "report_status_normalization_table_path",
+    "not_proven_register_path"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "CURRENT_TRUTH_ROOT_V0_1"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "newgen_mode": {
+      "const": "FOUNDATION_TRUTH_SPINE_V0_1"
+    },
+    "repo_truth": {
+      "type": "object",
+      "required": [
+        "repo_root",
+        "head",
+        "branch",
+        "worktree_dirty",
+        "head_commit_utc"
+      ],
+      "properties": {
+        "repo_root": {
+          "type": "string"
+        },
+        "head": {
+          "type": "string"
+        },
+        "branch": {
+          "type": "string"
+        },
+        "worktree_dirty": {
+          "type": "boolean"
+        },
+        "head_commit_utc": {
+          "type": "string"
+        }
+      }
+    },
+    "phase_coverage": {
+      "type": "object",
+      "required": [
+        "phases",
+        "summary"
+      ],
+      "properties": {
+        "phases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "phase_no",
+              "phase_id",
+              "name",
+              "status",
+              "evidence_refs",
+              "limitations"
+            ],
+            "properties": {
+              "phase_no": {
+                "type": "integer"
+              },
+              "phase_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "status": {
+                "enum": [
+                  "PASS",
+                  "PASS_WITH_WARN",
+                  "WARN",
+                  "BLOCK",
+                  "UNKNOWN",
+                  "MISSING",
+                  "PARTIAL",
+                  "FOUNDATION_ONLY"
+                ]
+              },
+              "evidence_refs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "limitations": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "summary": {
+          "type": "object"
+        }
+      }
+    },
+    "sanctum_ng_truth_shell": {
+      "type": "object",
+      "required": [
+        "state_path",
+        "exists",
+        "status"
+      ],
+      "properties": {
+        "state_path": {
+          "type": "string"
+        },
+        "exists": {
+          "type": "boolean"
+        },
+        "status": {
+          "enum": [
+            "PASS",
+            "PASS_WITH_WARN",
+            "WARN",
+            "BLOCK",
+            "UNKNOWN",
+            "MISSING",
+            "PARTIAL",
+            "FOUNDATION_ONLY"
+          ]
+        },
+        "mode": {
+          "type": "string"
+        },
+        "communication_gate_status": {
+          "type": "string"
+        }
+      }
+    },
+    "action_layer_status": {
+      "type": "object",
+      "required": [
+        "overall_status",
+        "evidence_refs"
+      ],
+      "properties": {
+        "overall_status": {
+          "enum": [
+            "PASS",
+            "PASS_WITH_WARN",
+            "WARN",
+            "BLOCK",
+            "UNKNOWN",
+            "MISSING",
+            "PARTIAL",
+            "FOUNDATION_ONLY"
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "known_warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "context_source_mix_snapshot": {
+      "type": "object"
+    },
+    "report_status_index_path": {
+      "type": "string"
+    },
+    "evidence_source_map_path": {
+      "type": "string"
+    },
+    "evidence_map_unified_path": {
+      "type": "string"
+    },
+    "evidence_freshness_index_path": {
+      "type": "string"
+    },
+    "report_status_normalization_table_path": {
+      "type": "string"
+    },
+    "not_proven_register_path": {
+      "type": "string"
+    },
+    "evidence_unification": {
+      "type": "object"
+    }
+  }
+}

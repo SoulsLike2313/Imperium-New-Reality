@@ -1,0 +1,41 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1",
+  "generated_at_utc": "2026-05-24T21:39:54Z",
+  "checker": "mechanicus_quality_gate_runner_v0_1.py:officio_gate_use",
+  "starting_head": "21cfb651f66923d7361c3ea80cc22bd3fce6e4fd",
+  "starting_branch": "master",
+  "officio_references": {
+    "gate_ack_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1/GATE_ACK.md",
+    "role_pack_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/OFFICIO_PC_SERVITOR_ROLE_PACK_V0_1.json",
+    "officio_checker_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_response_contract_checker_v0_1.py"
+  },
+  "ack_status": {
+    "ROLE_ACK": true,
+    "LANGUAGE_ACK": true,
+    "SCOPE_ACK": true,
+    "STOP_CONDITIONS_ACK": true,
+    "FORBIDDEN_ACTIONS_ACK": true
+  },
+  "role_pack_summary": {
+    "role_id": "PC_SERVITOR",
+    "owner_facing_language": "ru",
+    "required_acks": [
+      "ROLE_ACK",
+      "LANGUAGE_ACK",
+      "SCOPE_ACK",
+      "STOP_CONDITIONS_ACK",
+      "FORBIDDEN_ACTIONS_ACK"
+    ],
+    "forbidden_actions": [
+      "silent_install",
+      "llm_cloud_activation_without_owner_gate",
+      "out_of_scope_edits",
+      "claim_pass_without_receipts",
+      "broad_cleanup"
+    ]
+  },
+  "warnings": [],
+  "errors": [],
+  "verdict": "PASS",
+  "raw_dump_status": "COMPACT_ONLY"
+}

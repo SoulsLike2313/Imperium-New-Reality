@@ -1,0 +1,92 @@
+{
+  "schema_id": "NEGATIVE_TEST_RESULT_MATRIX_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-PQG-NEGATIVE-TEST-MUTATION-CHECK-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T20:48:00Z",
+  "status": "FOUNDATION_ONLY",
+  "result_rows": [
+    {
+      "case_id": "FAKE_GREEN_WITHOUT_EVIDENCE",
+      "expected_classification": "BLOCK",
+      "actual_classification": "BLOCK",
+      "expected_reason_code": "NO_EVIDENCE_NO_STRICT_PASS",
+      "actual_reason_code": "NO_EVIDENCE_NO_STRICT_PASS",
+      "is_expected_match": true,
+      "fake_green_accepted": false
+    },
+    {
+      "case_id": "UNKNOWN_PROMOTED_TO_PASS",
+      "expected_classification": "BLOCK",
+      "actual_classification": "BLOCK",
+      "expected_reason_code": "UNKNOWN_CANNOT_BE_GREEN",
+      "actual_reason_code": "UNKNOWN_CANNOT_BE_GREEN",
+      "is_expected_match": true,
+      "fake_green_accepted": false
+    },
+    {
+      "case_id": "STALE_EVIDENCE_ACCEPTED_AS_FRESH",
+      "expected_classification": "WARN",
+      "actual_classification": "WARN",
+      "expected_reason_code": "STALE_EVIDENCE_REQUIRES_REFRESH",
+      "actual_reason_code": "STALE_EVIDENCE_REQUIRES_REFRESH",
+      "is_expected_match": true,
+      "fake_green_accepted": false
+    },
+    {
+      "case_id": "ROLLBACK_REQUIRED_BUT_MISSING",
+      "expected_classification": "BLOCK",
+      "actual_classification": "BLOCK",
+      "expected_reason_code": "ROLLBACK_PLAN_REQUIRED",
+      "actual_reason_code": "ROLLBACK_PLAN_REQUIRED",
+      "is_expected_match": true,
+      "fake_green_accepted": false
+    },
+    {
+      "case_id": "PRIVATE_KEY_MATERIAL_MARKER",
+      "expected_classification": "BLOCK",
+      "actual_classification": "BLOCK",
+      "expected_reason_code": "PRIVATE_KEY_MARKER_REJECTED",
+      "actual_reason_code": "PRIVATE_KEY_MARKER_REJECTED",
+      "is_expected_match": true,
+      "fake_green_accepted": false
+    },
+    {
+      "case_id": "ACTION_OUTSIDE_ALLOWLIST",
+      "expected_classification": "BLOCK",
+      "actual_classification": "BLOCK",
+      "expected_reason_code": "ACTION_NOT_ALLOWLISTED",
+      "actual_reason_code": "ACTION_NOT_ALLOWLISTED",
+      "is_expected_match": true,
+      "fake_green_accepted": false
+    },
+    {
+      "case_id": "PENDING_POST_COMMIT_CLOSURE_ACCEPTED",
+      "expected_classification": "WARN",
+      "actual_classification": "WARN",
+      "expected_reason_code": "CLOSURE_PENDING_CANNOT_BE_FINAL_PASS",
+      "actual_reason_code": "CLOSURE_PENDING_CANNOT_BE_FINAL_PASS",
+      "is_expected_match": true,
+      "fake_green_accepted": false
+    },
+    {
+      "case_id": "PARTIAL_ACCEPTED_WITHOUT_RULE",
+      "expected_classification": "BLOCK",
+      "actual_classification": "BLOCK",
+      "expected_reason_code": "PARTIAL_ACCEPTANCE_RULE_REQUIRED",
+      "actual_reason_code": "PARTIAL_ACCEPTANCE_RULE_REQUIRED",
+      "is_expected_match": true,
+      "fake_green_accepted": false
+    }
+  ],
+  "summary": {
+    "total_cases": 8,
+    "classification_counts": {
+      "BLOCK": 6,
+      "WARN": 2,
+      "REJECTED": 0,
+      "PASS_STRICT": 0
+    },
+    "all_expected_match": true,
+    "fake_green_acceptance_count": 0,
+    "synthetic_private_key_marker_only": true
+  }
+}

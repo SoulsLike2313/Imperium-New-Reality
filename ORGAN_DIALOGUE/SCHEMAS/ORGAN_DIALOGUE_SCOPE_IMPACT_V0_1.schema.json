@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ORGAN_DIALOGUE_SCOPE_IMPACT_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "demo_task_id",
+    "foundation_only",
+    "allowed_paths",
+    "forbidden_paths",
+    "claims_not_proved",
+    "runtime_impact"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "ORGAN_DIALOGUE_SCOPE_IMPACT_V0_1"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "demo_task_id": {
+      "type": "string"
+    },
+    "foundation_only": {
+      "const": true
+    },
+    "allowed_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "claims_not_proved": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "runtime_impact": {
+      "enum": [
+        "NONE",
+        "READ_ONLY_UI_SURFACE"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

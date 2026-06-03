@@ -1,0 +1,61 @@
+{
+  "version": "0.1.0",
+  "layout_id": "imperium.common_agent_cli.reference",
+  "zones": {
+    "top_status_bar": {
+      "required_fields": [
+        "organ",
+        "mode",
+        "git_state",
+        "runtime_state",
+        "active_task",
+        "warnings"
+      ],
+      "height_lines": {
+        "preferred": 6,
+        "min": 3
+      }
+    },
+    "left_work_zone": {
+      "purpose": "main command output and validation details",
+      "priority": "highest",
+      "min_width_chars": 52
+    },
+    "right_command_zone": {
+      "purpose": "command panel with examples and next commands",
+      "priority": "high",
+      "preferred_width_chars": 44,
+      "min_width_chars": 28
+    },
+    "bottom_event_bar": {
+      "required_fields": [
+        "last_run_id",
+        "artifacts_written",
+        "latest_warning_or_blocker",
+        "next_action"
+      ],
+      "height_lines": {
+        "preferred": 4,
+        "min": 2
+      }
+    }
+  },
+  "degradation_rules": [
+    {
+      "when_terminal_width_lt": 110,
+      "behavior": "compress right command zone into compact command panel with top 8 commands"
+    },
+    {
+      "when_terminal_width_lt": 88,
+      "behavior": "stack command panel below left work zone"
+    },
+    {
+      "when_terminal_width_lt": 68,
+      "behavior": "single-column render with explicit section titles"
+    }
+  ],
+  "forbidden_patterns": [
+    "raw debug-only section dump without command guidance",
+    "unlabeled output zones"
+  ]
+}

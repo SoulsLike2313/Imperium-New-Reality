@@ -1,0 +1,32 @@
+GATE_ACK:
+- task_id: TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1
+- current_head: 8eb214c47fb14077ec638f1ef561607ee142b99f
+- gatepack_path: C:/Users/PC/Downloads/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1_DOSSIER.zip
+- gatepack_sha256: 7EF1A7D058AD01EF18AEA51079CB6B8DCB2E9D0C4C5F6A73D248B6F48050C6F6
+- read_gates: GATE-U00-GIT-TRUTH, GATE-U01-ROLE-ACK, GATE-U02-SCOPE-BOUNDARY, GATE-U04-EVIDENCE-RECEIPT, GATE-U05-STOP-CONDITIONS, GATE-U08-REPO-PURITY, GATE-U09-NO-FAKE-GREEN, GATE-U12-REPORT-OUTPUT-BUDGET, GATE-U13-PYTHON-TYPE-SAFETY, GATE-U14-WHOLE-REPO-SCOPE-RECON, GATE-U15-OPERATIONALITY-IMPACT, GATE-U16-BILINGUAL-UI, GATE-U17-DELIVERABLE-PACKAGE, GATE-U18-AGENT-FACTORY-COMPLIANCE, GATE-U19-SCRIPT-ARTIFACT-PRESERVATION, GATE-U20-AGENT-KPD-SELF-REVIEW, GATE-U21-COMMAND-CHUNKING
+- accepted_stop_conditions: starting HEAD mismatch, worktree dirty before task edits, forbidden path required, install command required without Owner approval, unsafe npx/pip/npm install path discovered, output budget breach without Owner gate
+- scope_boundary: Detect P1/P3 availability, generate Owner-gated install plan, validate present tools with receipts, update capabilities only where evidence permits, no install/provision execution.
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/VALIDATION/VALIDATION_FOLLOWUP_001/*
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/OWNER_QUESTIONS/*
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/EXPORTS/*
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_FOLLOWUP_001/*
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-NODE-NPM-NPX.json (if evidence supports promotion)
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json (only if status change occurs)
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_validation_followup_001_runner_v0_1.py
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1/*
+- forbidden_paths:
+  - ORGANS/SANCTUM/**
+  - IMPERIUM_TEST_VERSION/**
+  - src/**
+  - LOCAL_LLM/** and CLOUD_LLM_ADAPTERS activation lanes
+  - any global system/PATH mutation
+- expected_receipts:
+  - validation receipt(s) for present tools
+  - detection matrix
+  - owner approval gate report + owner questions
+  - fake canon + inquisition + closure receipt
+- repo_recon_required: PARTIAL_MECHANICUS_SCOPE_ONLY
+- script_absorption_required: YES (runner preserved in TOOLS + preservation note)
+- clarification_needed: NO
+- verdict: PASS

@@ -1,0 +1,32 @@
+{
+  "receipt_id": "task-newgen-mechanicus-arsenal-validation-batch-001-pc-v0_1:ui_frameworks_vite:p3_visual_deferred_readiness_only:ui_frameworks_vite",
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+  "capability_id": "UI_FRAMEWORKS_VITE",
+  "validator": "mechanicus_capability_validator_v0_1.py",
+  "checked_at_utc": "2026-05-24T18:15:17Z",
+  "status": "PASS_WITH_WARNINGS",
+  "summary": "UI_FRAMEWORKS_VITE: MISSING via P3_VISUAL_DEFERRED_READINESS_ONLY:UI_FRAMEWORKS_VITE. promotion_recommendation=KEEP_CANDIDATE_READINESS_ONLY",
+  "check_name": "P3_VISUAL_DEFERRED_READINESS_ONLY:UI_FRAMEWORKS_VITE",
+  "command_or_check": "vite --version",
+  "exit_code": 1,
+  "stdout_excerpt": "$ vite --version",
+  "stderr_excerpt": "$ vite --version\n'vite' is not recognized as an internal or external command,\noperable program or batch file.",
+  "side_effects": [
+    "read-only command execution",
+    "receipt json created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/ui-frameworks-vite_validation_receipt.json"
+  ],
+  "validation_verdict": "MISSING",
+  "promotion_recommendation": "KEEP_CANDIDATE_READINESS_ONLY",
+  "warnings": [
+    "partial_or_missing_dependency",
+    "readiness_detection_only_no_visual_prototype"
+  ],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/ui-frameworks-vite_validation_receipt.json"
+  ]
+}

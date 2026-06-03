@@ -1,0 +1,59 @@
+# GATE_ACK
+
+- task_id: `TASK-NEWGEN-SANCTUM-ORGAN-CENTERED-COCKPIT-SKELETON-PC-V0_1`
+- current_head: `9653d634446e5ef4b13340012647dc02c317230f`
+- gatepack_path: `ORGANS/DOCTRINARIUM/GATES/GATE_REGISTRY_V0_1.json`
+- gatepack_sha256: `DF1AEC635B1F1B6619E9444768F7E88FFDFB8F6F88C9C62BE959EA8DD212C149`
+- read_gates:
+  - `GATE-U00-GIT-TRUTH`
+  - `GATE-U01-ROLE-ACK`
+  - `GATE-U02-SCOPE-BOUNDARY`
+  - `GATE-U04-EVIDENCE-RECEIPT`
+  - `GATE-U05-STOP-CONDITIONS`
+  - `GATE-U08-REPO-PURITY`
+  - `GATE-U09-NO-FAKE-GREEN`
+  - `GATE-U12-REPORT-OUTPUT-BUDGET`
+  - `GATE-U13-PYTHON-TYPE-SAFETY`
+  - `GATE-U14-WHOLE-REPO-SCOPE-RECON`
+  - `GATE-U15-OPERATIONALITY-IMPACT`
+  - `GATE-U16-BILINGUAL-UI`
+  - `GATE-U17-DELIVERABLE-PACKAGE`
+  - `GATE-U18-AGENT-FACTORY-COMPLIANCE`
+  - `GATE-U19-SCRIPT-ARTIFACT-PRESERVATION`
+  - `GATE-U20-AGENT-KPD-SELF-REVIEW`
+  - `GATE-U21-COMMAND-CHUNKING`
+- accepted_stop_conditions:
+  - expected HEAD/branch/root mismatch
+  - unexpected unrelated dirty changes
+  - missing required read-first contracts or report outputs
+  - forbidden path required for completion
+  - report budget breach without Owner gate
+  - inability to produce truthful receipts/evidence
+- scope_boundary:
+  - implement organ-centered cockpit skeleton under `IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/`
+  - create task reports only under `IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-SANCTUM-ORGAN-CENTERED-COCKPIT-SKELETON-PC-V0_1/`
+  - hygiene scan only inside `IMPERIUM_NEW_GENERATION`
+- touched_paths:
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_organ_cockpit_v0_1.html`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_organ_cockpit_v0_1.css`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_organ_cockpit_v0_1.js`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_organ_cockpit_manifest_v0_1.json`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/README_ORGAN_COCKPIT_V0_1.md`
+  - `IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-SANCTUM-ORGAN-CENTERED-COCKPIT-SKELETON-PC-V0_1/*`
+- forbidden_paths:
+  - `ORGANS/**` (read-only this step)
+  - `IMPERIUM_TEST_VERSION/**` (read-only this step)
+  - any non-NewGen edit path
+- expected_receipts:
+  - `cockpit_skeleton_manifest.json`
+  - `visual_contract_report.json`
+  - `owner_decision_queue_contract_report.json`
+  - `read_only_smoke_or_static_validation_report.json`
+  - `newgen_hygiene_segment_scan_report.json`
+  - `inquisition_cleanliness_report.json`
+  - `FINAL_REPORT.md`
+  - `closure_receipt.json`
+- repo_recon_required: `YES`
+- script_absorption_required: `CONDITIONAL_IF_NEW_TOOL_CREATED`
+- clarification_needed: `NONE`
+- verdict: `PASS`

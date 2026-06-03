@@ -1,0 +1,139 @@
+{
+  "schema_id": "IMPERIUM_ASTRONOMICON_TASKPACK_MANIFEST_V0_1",
+  "manifest_version": "0.1",
+  "taskpack_id": "TASKPACK_NEWGEN_STAGE2_MICROPILOT_EXTERNAL_FINALIZATION_AND_INDEPENDENT_REPLAY_CAP_CLOSURE_VM3_V0_1",
+  "task_id": "TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1",
+  "task_title": "Stage2 micro-pilot cap closure for external finalization and independent replay",
+  "created_at_utc": "2026-06-01T11:45:00Z",
+  "target_contour": "VM3",
+  "owner_start_message": "start task",
+  "source_previous_task": "TASK-NEWGEN-STAGE2-MICROPILOT-VM3-CONTEXT-PACK-EXECUTION-V0_1",
+  "required_start_head": "f3123e5b089821487d9891b156351ba4006f349c",
+  "previous_micro_pilot_subject_head": "5fe85a57e76b9e05ab04dcb067191945d9f81b8b",
+  "previous_block_spine_head": "cda220333299c82931f81beee461f6cb55974462",
+  "implementation_anchor": "1a3d30a071f52c54fd8c8e75054caad0c5ea6f0b",
+  "task_spec_path": "TASK_SPEC.md",
+  "acceptance_gates_path": "ACCEPTANCE_GATES.md",
+  "output_requirements_path": "OUTPUT_REQUIREMENTS.md",
+  "read_first": [
+    "MANIFEST.json",
+    "000_START_TASK_READ_ORDER.md",
+    "TASK_SPEC.md",
+    "ACCEPTANCE_GATES.md",
+    "OUTPUT_REQUIREMENTS.md",
+    "020_SCOPE_LOCKS_AND_CAPS.md",
+    "030_EXECUTION_PLAN.md",
+    "INPUTS/previous_stage2_result_synthesis.json",
+    "INPUTS/admission_positive_controls_seed.json",
+    "INPUTS/review_synthesis_from_owner_provided_external_reviews.json"
+  ],
+  "required_inputs": [
+    "Previous Stage2 micro-pilot report artifacts from current repo at head f3123e5",
+    "Previous context pack consumption receipt from current repo",
+    "Previous before/after context economy delta from current repo",
+    "Previous organ block usage receipt from current repo",
+    "Owner-provided Inquisitor and Speculum verdict synthesis embedded in this taskpack",
+    "Astronomicon admission and resolver event sequence from manual launch attempt embedded in this taskpack"
+  ],
+  "required_outputs": [
+    "external_finalization_receipt.json",
+    "independent_replay_receipt.json",
+    "cap_closure_decision.json",
+    "taskpack_admission_regression_fixtures.json",
+    "astronomicon_positive_controls_learning_card.md",
+    "ghost_evolve_learning_delta.json",
+    "schola_learning_card.json",
+    "repo_truth_probe.json",
+    "manual_read_log.jsonl",
+    "claim_ledger.jsonl",
+    "hard_red_team_verdict.json",
+    "final_owner_summary_ru.md",
+    "commit_push_receipt.json"
+  ],
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "language_and_encoding_policy": {
+    "policy_id": "IMPERIUM_OFFICIO_LANGUAGE_AND_ENCODING_POLICY_V0_1",
+    "taskpack_internal_files": {
+      "language": "ENGLISH",
+      "encoding": "UTF8_NO_BOM",
+      "required_statement": "ENGLISH + UTF8",
+      "cyrillic_allowed": false,
+      "non_english_text_allowed": false,
+      "policy": "ENGLISH + UTF8"
+    },
+    "canonical_repo_artifacts": {
+      "language": "ENGLISH",
+      "encoding": "UTF8_NO_BOM",
+      "required_statement": "ENGLISH + UTF8",
+      "cyrillic_allowed": false,
+      "non_english_text_allowed": false,
+      "policy": "ENGLISH + UTF8"
+    },
+    "owner_facing_russian_runtime_output": {
+      "allowed": true,
+      "language": "RUSSIAN",
+      "encoding": "UTF8_NO_BOM",
+      "runtime_only": true,
+      "routed_through": "OFFICIO_AGENTIS",
+      "authority": "OFFICIO_AGENTIS",
+      "required_statement": "RUSSIAN OWNER-FACING RUNTIME OUTPUT ROUTED THROUGH OFFICIO",
+      "policy": "RUSSIAN OWNER-FACING RUNTIME OUTPUT ROUTED THROUGH OFFICIO"
+    },
+    "cyrillic_in_taskpack": {
+      "allowed": false,
+      "policy": "FORBIDDEN",
+      "required_statement": "NO CYRILLIC IN TASKPACK INTERNAL FILES"
+    },
+    "localization_exception": {
+      "allowed": true,
+      "scope": "OWNER_FACING_RUNTIME_OUTPUT_ONLY",
+      "runtime_only": true,
+      "authority": "OFFICIO_AGENTIS",
+      "does_not_apply_to_taskpack_internal_files": true,
+      "does_not_apply_to_canonical_repo_artifacts": true,
+      "policy": "OWNER_FACING_RUNTIME_OUTPUT_ONLY THROUGH OFFICIO_AGENTIS"
+    },
+    "officio_authority": "OFFICIO_AGENTIS",
+    "owner_language_route": "OFFICIO_AGENTIS",
+    "bom_allowed": false,
+    "filenames_ascii_only": true,
+    "mojibake_prevention_required": true
+  },
+  "active_caps_to_close_or_narrow": [
+    "CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING_OR_NEEDS_FOLLOWUP",
+    "CAP_NO_LOCAL_INDEPENDENT_REPLAY_IN_REVIEW_ENVIRONMENT"
+  ],
+  "active_caps_to_carry_without_expansion": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME",
+    "CAP_DIRTY_START_OWNER_APPROVED_CONTINUATION"
+  ],
+  "forbidden_scopes": [
+    "IDE runtime",
+    "WARP runtime",
+    "Browser automation runtime",
+    "External API runtime",
+    "AdsPower API runtime actions",
+    "Freelance readiness",
+    "Trading readiness",
+    "New feature expansion outside cap closure",
+    "Broad repo read as default work mode"
+  ],
+  "admission_notes": [
+    "MANIFEST.json is present at ZIP root.",
+    "TASK_SPEC.md, ACCEPTANCE_GATES.md, and OUTPUT_REQUIREMENTS.md are present at ZIP root.",
+    "MANIFEST.language_and_encoding_policy contains the exact required fields discovered during Stage2 admission testing.",
+    "MANIFEST.organs contains the exact 8 required organ identifiers.",
+    "This taskpack must preserve the previous invalid ZIP and unregistered TASK_ID blocks as positive-control regression evidence."
+  ]
+}

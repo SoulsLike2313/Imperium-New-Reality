@@ -1,0 +1,39 @@
+{
+  "tool_id": "MATRIX_SPINE_VALIDATOR_V0_1",
+  "owner_organ": "Mechanicus",
+  "support_organs": [
+    "Inquisition",
+    "Administratum",
+    "Officio Agentis"
+  ],
+  "status": "CANDIDATE_RUNTIME_READY",
+  "entrypoints": {
+    "python": "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/validate_matrix_spine.py",
+    "shell": "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_matrix_spine_validation.sh",
+    "powershell": "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_matrix_spine_validation.ps1",
+    "synthetic_corridor_shell": "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_synthetic_runtime_corridor.sh",
+    "efficiency_delta_shell": "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_efficiency_delta.sh"
+  },
+  "outputs": [
+    "matrix_spine_validation_receipt.json",
+    "matrix_spine_validation_report.md",
+    "matrix_spine_validation_failures.jsonl",
+    "matrix_spine_validation_summary.json",
+    "synthetic_corridor_receipt.json",
+    "synthetic_runtime_corridor_report.md",
+    "efficiency_delta_receipt.json",
+    "final_closure_verifier_receipt.json",
+    "NEXT_PIPELINE_HANDOFF.json"
+  ],
+  "capability_class": "LOCAL_SCRIPT_FIRST",
+  "dependencies": [
+    "python3 standard library"
+  ],
+  "replay_command": "bash IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_matrix_spine_validation.sh && bash IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_synthetic_runtime_corridor.sh && bash IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_efficiency_delta.sh",
+  "limitations": [
+    "Schema validation uses standard-library checks (required/type/enum/min items), not full external JSON Schema engine.",
+    "Synthetic corridor proves taskpack flow but does not activate real_runtime_corridor or warp_corridor.",
+    "Clean PASS is forbidden when independent replay status is NONE.",
+    "Canon admission remains Doctrinarium process outside this validator's authority."
+  ]
+}

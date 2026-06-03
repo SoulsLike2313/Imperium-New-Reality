@@ -1,0 +1,67 @@
+{
+  "setting_id": "SET-LANGUAGE-EXECUTION-CONTRACT-V0_1",
+  "title": "Language Execution Contract",
+  "version": "v0_1",
+  "state": "ACTIVE",
+  "scope": "post-ACK owner-facing language authority and machine artifact boundary",
+  "applies_to_roles": [
+    "SERVITOR",
+    "SERVITOR_PRIME"
+  ],
+  "applies_to_modes": [
+    "EXECUTOR"
+  ],
+  "machine_rule": {
+    "activation_requires_ack": true,
+    "required_ack_refs": [
+      "ROLE_SETTINGS_ACK_PROTOCOL.md",
+      "OFFICIO_BOOTSTRAP_EXECUTION_DIRECTIVE.md"
+    ],
+    "surface_language_rules": {
+      "owner_live_commentary_after_officio_ack": "Russian",
+      "owner_final_comments_after_officio_ack": "Russian",
+      "technical_identifiers": "English",
+      "code_json_schema": "English",
+      "paths_and_commands": "English",
+      "machine_artifacts": "English"
+    },
+    "violation_codes": [
+      "WARN_RESPONSE_LANGUAGE_CONTRACT",
+      "FAIL_RESPONSE_CONTRACT",
+      "BLOCKED_OFFICIO_ACK_MISSING",
+      "BLOCKED_ROLE_PACK_AUTHORITY_MISSING",
+      "WARN_TASKPACK_ONLY_WORKAROUND_DETECTED"
+    ],
+    "anti_taskpack_only_workaround": true,
+    "required_response_sections": [
+      "STEP",
+      "BUNDLE",
+      "VERDICT",
+      "OWNER COMMENTS"
+    ],
+    "checker_policy_v0_1": {
+      "owner_comment_english_after_ack": "FAIL_RESPONSE_CONTRACT",
+      "owner_live_english_after_ack": "WARN_RESPONSE_LANGUAGE_CONTRACT",
+      "machine_artifact_english": "PASS"
+    }
+  },
+  "human_summary": "After Officio ACK, owner-facing text is Russian while technical/machine artifacts remain English.",
+  "acceptance_tests": [
+    "Russian live Owner comment after ACK passes.",
+    "English live Owner comment after ACK yields warn/fail code.",
+    "English machine artifact sample passes.",
+    "Final response OWNER COMMENTS in English fails response contract."
+  ],
+  "evidence_required": [
+    "SETTINGS_REGISTRY/communication/LANGUAGE_EXECUTION_CONTRACT.md",
+    "RESPONSE_CONTRACTS/SERVITOR_EXECUTOR_RESPONSE_CONTRACT.md",
+    "COMMON_AGENT_CLI/officio_contract_check.py"
+  ],
+  "dependencies": [
+    "SCHEMAS/officio_setting.schema.json"
+  ],
+  "conflicts_with": [],
+  "supersedes": [],
+  "rollback_plan": "Set this contract to DEPRECATED and restore prior communication-only language enforcement.",
+  "owner_approval_required": true
+}

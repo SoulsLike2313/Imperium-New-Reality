@@ -1,0 +1,36 @@
+{
+  "schema_id": "newgen_closure_receipt_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-IMPORTANT-SIX-ORGAN-SHELL-V1-PC-V0_1",
+  "generated_at_utc": "2026-05-24T03:18:30Z",
+  "verdict": "PASS_FOR_IMPORTANT_SIX_ORGAN_SHELL_V1_PC_V0_1_ONLY",
+  "scope": "IMPERIUM_NEW_GENERATION only",
+  "commit": {
+    "observed_head_at_receipt_generation": "7d828a25b55b5215244eac7025a55f7053135df1",
+    "observed_remote_head_at_receipt_generation": "7d828a25b55b5215244eac7025a55f7053135df1",
+    "observed_heads_equal": true,
+    "note": "Observed git truth at receipt generation time; final push truth is reported in final owner response."
+  },
+  "checks": {
+    "smoke_report_verdict": "PASS",
+    "scripted_report_verdict": "PASS",
+    "dashboard_smoke_verdict": "PASS",
+    "json_parse_verdict": "PASS",
+    "blocked_command_probe": "PASS"
+  },
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-ORGAN-SHELL-V1-PC-V0_1/FINAL_REPORT.md",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-ORGAN-SHELL-V1-PC-V0_1/organ_shell_v1_smoke_report.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-ORGAN-SHELL-V1-PC-V0_1/organ_shell_v1_scripted_test_report.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-ORGAN-SHELL-V1-PC-V0_1/dashboard_smoke_after_shell_v1.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-ORGAN-SHELL-V1-PC-V0_1/json_parse_validation_report.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-ORGAN-SHELL-V1-PC-V0_1/blocked_command_probe_mechanicus.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-ORGAN-SHELL-V1-PC-V0_1/AGENT_KPD_SELF_REVIEW.json"
+  ],
+  "not_proven": [
+    "full PTY terminal embedded in browser",
+    "dashboard write controls",
+    "Owner Verdict button implementation",
+    "production orchestration",
+    "final AAA visual lock"
+  ]
+}

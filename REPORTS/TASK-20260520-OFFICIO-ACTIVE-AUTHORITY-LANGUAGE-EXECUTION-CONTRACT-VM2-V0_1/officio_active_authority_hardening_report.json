@@ -1,0 +1,147 @@
+{
+  "schema_version": "OFFICIO_ACTIVE_AUTHORITY_HARDENING_REPORT_V0_1",
+  "task_id": "TASK-20260520-OFFICIO-ACTIVE-AUTHORITY-LANGUAGE-EXECUTION-CONTRACT-VM2-V0_1",
+  "generated_at_utc": "2026-05-20T00:19:43.726308+00:00",
+  "git_truth": {
+    "head": "70bfa73370cd39737490e77a466c57e7c46fb5c2",
+    "branch": "master",
+    "expected_base_head": "70bfa73370cd39737490e77a466c57e7c46fb5c2"
+  },
+  "officio_acceptance": {
+    "original_decision": "CLARIFICATION_REQUIRED",
+    "original_reasons": [
+      "missing required fields: allowed_scope"
+    ],
+    "normalized_decision": "ACCEPT_WITH_WARNINGS",
+    "normalized_reasons": [
+      "unsupported schema_version: TASK_CONTRACT_V0_1"
+    ],
+    "normalized_receipt": "/home/vboxuser2/IMPERIUM_CONTEXT/LOCAL/OFFICIO_AGENTIS/RUNS/run_20260520T001040182578Z_task_acceptance_check/receipts/task_acceptance_check_receipt.json"
+  },
+  "implementation": {
+    "files_changed": [
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/OFFICIO_BOOTSTRAP_EXECUTION_DIRECTIVE.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/officio_bootstrap_execution_directive.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/SERVITOR_COMMUNICATION_CONTRACT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/servitor_communication_contract.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/LANGUAGE_EXECUTION_CONTRACT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/language_execution_contract.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/ROLE_SETTINGS_ACK_PROTOCOL.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/ROLE_SETTINGS_ACK_PROTOCOL.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/SERVITOR_EXECUTOR_RESPONSE_CONTRACT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/SERVITOR_EXECUTOR_RESPONSE_CONTRACT.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/TOOLS/officio_agent_runner.py",
+      "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/officio_contract_check.py"
+    ],
+    "anti_crutch_statement": "Language authority is implemented in Officio-owned contracts and role-pack generation, not taskpack-only notes."
+  },
+  "validation": {
+    "py_compile_runner": "PASS",
+    "py_compile_checker": "PASS",
+    "check_all_verdict": "PASS",
+    "check_all_report": "/home/vboxuser2/IMPERIUM_CONTEXT/LOCAL/OFFICIO_AGENTIS/RUNS/run_20260520T001626798696Z_check_all/check_all/check_all_report.json",
+    "pack_build_role_receipt": "/home/vboxuser2/IMPERIUM_CONTEXT/LOCAL/OFFICIO_AGENTIS/RUNS/run_20260520T001626812148Z_pack_build_role/receipts/pack_build_role_SERVITOR_PRIME_receipt.json",
+    "settings_get_receipt": "/home/vboxuser2/IMPERIUM_CONTEXT/LOCAL/OFFICIO_AGENTIS/RUNS/run_20260520T001626836509Z_settings_get/receipts/settings_get_SERVITOR_PRIME_EXECUTOR_receipt.json",
+    "role_pack_manifest": "/home/vboxuser2/IMPERIUM_CONTEXT/LOCAL/OFFICIO_AGENTIS/RUNS/run_20260520T001626812148Z_pack_build_role/role_pack_work/SERVITOR_PRIME/MANIFEST.json",
+    "role_pack_missing_required_artifacts": [],
+    "language_tests": [
+      {
+        "sample": "owner_live_ru",
+        "actual_verdict": "PASS",
+        "actual_code": "PASS_OFFICIO_ACTIVE_AUTHORITY_V0_1",
+        "expected_verdict": "PASS",
+        "expected_code": "PASS_OFFICIO_ACTIVE_AUTHORITY_V0_1",
+        "pass": true
+      },
+      {
+        "sample": "owner_live_en",
+        "actual_verdict": "WARN",
+        "actual_code": "WARN_RESPONSE_LANGUAGE_CONTRACT",
+        "expected_verdict": "WARN",
+        "expected_code": "WARN_RESPONSE_LANGUAGE_CONTRACT",
+        "pass": true
+      },
+      {
+        "sample": "machine_artifact_en",
+        "actual_verdict": "PASS",
+        "actual_code": "PASS_MACHINE_ARTIFACT_ENGLISH_ALLOWED",
+        "expected_verdict": "PASS",
+        "expected_code": "PASS_MACHINE_ARTIFACT_ENGLISH_ALLOWED",
+        "pass": true
+      },
+      {
+        "sample": "final_response_ru",
+        "actual_verdict": "PASS",
+        "actual_code": "PASS_OFFICIO_ACTIVE_AUTHORITY_V0_1",
+        "expected_verdict": "PASS",
+        "expected_code": "PASS_OFFICIO_ACTIVE_AUTHORITY_V0_1",
+        "pass": true
+      },
+      {
+        "sample": "final_response_en",
+        "actual_verdict": "FAIL",
+        "actual_code": "FAIL_RESPONSE_CONTRACT",
+        "expected_verdict": "FAIL",
+        "expected_code": "FAIL_RESPONSE_CONTRACT",
+        "pass": true
+      }
+    ],
+    "language_test_suite_pass": true
+  },
+  "scope_boundary": {
+    "touched_paths": [
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/ROLE_SETTINGS_ACK_PROTOCOL.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/ROLE_SETTINGS_ACK_PROTOCOL.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/SERVITOR_EXECUTOR_RESPONSE_CONTRACT.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/SERVITOR_EXECUTOR_RESPONSE_CONTRACT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/OFFICIO_BOOTSTRAP_EXECUTION_DIRECTIVE.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/SERVITOR_COMMUNICATION_CONTRACT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/officio_bootstrap_execution_directive.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/servitor_communication_contract.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/TOOLS/officio_agent_runner.py"
+    ],
+    "out_of_scope_paths": []
+  },
+  "verdict": "PASS_WITH_WARNINGS",
+  "verdict_details": [
+    "PASS_OFFICIO_ACTIVE_AUTHORITY_V0_1",
+    "PASS_WITH_WARNINGS"
+  ],
+  "agent_kpd_self_review": {
+    "task_id": "TASK-20260520-OFFICIO-ACTIVE-AUTHORITY-LANGUAGE-EXECUTION-CONTRACT-VM2-V0_1",
+    "agent_role": "SERVITOR_PRIME",
+    "useful_outputs": [
+      "Officio language execution contract (MD/JSON)",
+      "Role settings ACK protocol hardening (MD/JSON)",
+      "officio_agent_runner authority-pack integration",
+      "officio_contract_check.py checker tool",
+      "role-pack and language test evidence bundle"
+    ],
+    "waste_points": [
+      "Legacy task contract schema required normalization step before acceptance gate."
+    ],
+    "missing_tools": [
+      "Built-in Officio command for direct language sample suite execution."
+    ],
+    "generated_tools_to_preserve": [
+      {
+        "path": "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/officio_contract_check.py",
+        "classification": "ABSORB_NOW",
+        "reason": "Directly enforces Officio language/response contract with explicit pass/warn/fail decisions."
+      }
+    ],
+    "recommended_script_absorption": [
+      "Add officio_contract_check.py to Common Agent CLI checks index and README usage section."
+    ],
+    "recommended_narrow_agent_profiles": [
+      "OFFICIO_CONTRACT_ENFORCEMENT_AGENT_V0_1"
+    ],
+    "future_prompt_improvements": [
+      "Provide normalized task contract schema directly in taskpack to avoid clarification round."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add mandatory gate to verify role pack includes LANGUAGE_EXECUTION_CONTRACT and ROLE_SETTINGS_ACK_PROTOCOL."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

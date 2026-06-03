@@ -1,0 +1,44 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE2-MICROPILOT-VM3-CONTEXT-PACK-EXECUTION-V0_1",
+  "generated_at_utc": "2026-06-01T10:52:24Z",
+  "checks": {
+    "head_matches_required": true,
+    "resolver_verdict": "PASS_WITH_WARNINGS",
+    "dirty_start_detected": true,
+    "dirty_start_owner_approved_continuation": true,
+    "forbidden_scope_violations_detected": false,
+    "script_replayable": true,
+    "context_economy_measurable": true,
+    "positive_context_economy": true,
+    "required_outputs_present": {
+      "context_pack_consumption_receipt.json": true,
+      "before_after_context_economy_delta.json": true,
+      "organ_block_usage_receipt.json": true,
+      "manual_read_log.jsonl": true,
+      "llm_focus_claim_ledger.jsonl": true,
+      "cap_carry_forward_receipt.json": true,
+      "hard_red_team_verdict.json": true,
+      "final_owner_summary_ru.md": true,
+      "commit_push_receipt.json": true
+    },
+    "final_worktree_clean_after_push": true,
+    "origin_master_equals_head_after_push": true,
+    "commit_push_receipt_present": true,
+    "checked_commit_subject": "5fe85a57e76b9e05ab04dcb067191945d9f81b8b"
+  },
+  "caps_triggered": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME",
+    "CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING_OR_NEEDS_FOLLOWUP",
+    "CAP_NO_LOCAL_INDEPENDENT_REPLAY_IN_REVIEW_ENVIRONMENT",
+    "CAP_DIRTY_START_OWNER_APPROVED_CONTINUATION"
+  ],
+  "downgrades": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY remains active.",
+    "CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING_OR_NEEDS_FOLLOWUP remains active.",
+    "Dirty start continued with explicit owner continuation; clean pass blocked.",
+    "Baseline measurement is approximate metadata-based estimate."
+  ],
+  "verdict": "PASS_WITH_WARNINGS"
+}

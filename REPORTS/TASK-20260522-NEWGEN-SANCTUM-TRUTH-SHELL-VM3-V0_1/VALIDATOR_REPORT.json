@@ -1,0 +1,69 @@
+{
+  "schema_version": "0.1",
+  "task_id": "TASK-20260522-NEWGEN-SANCTUM-TRUTH-SHELL-VM3-V0_1",
+  "generated_at_utc": "2026-05-22T12:53:15Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "required_files_exist",
+      "status": "PASS",
+      "details": "state and schema files exist"
+    },
+    {
+      "check_id": "schema_parse",
+      "status": "PASS",
+      "details": "schema parses as JSON object"
+    },
+    {
+      "check_id": "state_parse",
+      "status": "PASS",
+      "details": "state parses as JSON object"
+    },
+    {
+      "check_id": "minimum_shape",
+      "status": "PASS",
+      "details": "minimum required keys are present"
+    },
+    {
+      "check_id": "phase_coverage_1_10",
+      "status": "PASS",
+      "details": "all phases 1..10 are present"
+    },
+    {
+      "check_id": "no_proved_without_evidence",
+      "status": "PASS",
+      "details": "all PROVED phases have evidence refs"
+    },
+    {
+      "check_id": "mode_read_only_foundation",
+      "status": "PASS",
+      "details": "mode is READ_ONLY_FOUNDATION"
+    },
+    {
+      "check_id": "forbidden_production_claims_absent",
+      "status": "PASS",
+      "details": "truth flags block production/live/autonomous claims"
+    },
+    {
+      "check_id": "app_files_exist",
+      "status": "PASS",
+      "details": "app files exist"
+    },
+    {
+      "check_id": "report_files_exist",
+      "status": "PASS",
+      "details": "required report files exist"
+    },
+    {
+      "check_id": "schema_id_match",
+      "status": "PASS",
+      "details": "schema title matches SANCTUM_NG_STATE_V0_1"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "state_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+  "schema_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/sanctum_ng_state.schema.json",
+  "report_dir": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-TRUTH-SHELL-VM3-V0_1",
+  "no_fake_green_note": "PASS/WARN here validates bounded foundation truth shell only; no production or autonomy claim is made."
+}

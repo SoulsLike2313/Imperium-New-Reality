@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/CONTRACTS/ASTRONOMICON/STAGE_MAP_PREVIEW_V0_1.schema.json",
+  "title": "NewGen Astronomicon Stage Map Preview V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "map_id",
+    "task_id",
+    "stages"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "map_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "stages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/stageEntry"
+      }
+    }
+  },
+  "$defs": {
+    "stageEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stage_id",
+        "owner_organ",
+        "goal",
+        "entry_state",
+        "exit_state",
+        "exit_criteria"
+      ],
+      "properties": {
+        "stage_id": {
+          "type": "string",
+          "minLength": 3
+        },
+        "owner_organ": {
+          "type": "string",
+          "enum": [
+            "ASTRONOMICON",
+            "OFFICIO_AGENTIS",
+            "DOCTRINARIUM",
+            "ADMINISTRATUM",
+            "MECHANICUS",
+            "INQUISITION",
+            "STRATEGIUM",
+            "SCHOLA_IMPERIALIS"
+          ]
+        },
+        "goal": {
+          "type": "string",
+          "minLength": 5
+        },
+        "entry_state": {
+          "type": "string",
+          "minLength": 3
+        },
+        "exit_state": {
+          "type": "string",
+          "minLength": 3
+        },
+        "exit_criteria": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 3
+          }
+        },
+        "evidence_expected": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

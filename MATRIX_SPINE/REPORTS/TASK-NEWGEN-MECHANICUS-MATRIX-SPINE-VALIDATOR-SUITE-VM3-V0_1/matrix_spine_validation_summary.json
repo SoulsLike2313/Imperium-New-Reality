@@ -1,0 +1,44 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1",
+  "timestamp_utc": "2026-05-29T22:47:21Z",
+  "repo_root": "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+  "matrix_files_scanned": 29,
+  "matrix_parse_failures": 0,
+  "issue_counts": {
+    "FAIL": 0,
+    "WARN": 4,
+    "INFO": 0
+  },
+  "verdict": "PASS_WITH_WARNINGS",
+  "negative_fixture_results": [
+    {
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_missing_owner_matrix.json",
+      "title": "matrix payload metadata check",
+      "expected_issue_code": "MATRIX_OWNER_MISSING",
+      "detected": true,
+      "detected_codes": [
+        "MATRIX_OWNER_MISSING",
+        "MATRIX_SCHEMA_REQUIRED_MISSING"
+      ]
+    },
+    {
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_bad_status_matrix.json",
+      "title": "matrix status vocabulary check",
+      "expected_issue_code": "MATRIX_STATUS_INVALID",
+      "detected": true,
+      "detected_codes": [
+        "MATRIX_STATUS_INVALID",
+        "MATRIX_SCHEMA_PROPERTY_INVALID"
+      ]
+    },
+    {
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_red_team_verdict.json",
+      "title": "red-team schema required key check",
+      "expected_issue_code": "RED_TEAM_SCHEMA_REQUIRED_MISSING",
+      "detected": true,
+      "detected_codes": [
+        "RED_TEAM_SCHEMA_REQUIRED_MISSING"
+      ]
+    }
+  ]
+}

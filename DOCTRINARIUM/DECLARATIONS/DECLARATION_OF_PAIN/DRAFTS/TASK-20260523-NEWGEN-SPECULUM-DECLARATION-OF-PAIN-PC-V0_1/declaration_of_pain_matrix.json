@@ -1,0 +1,249 @@
+{
+  "schema_id": "declaration_of_pain_matrix_v0_1",
+  "task_id": "TASK-20260523-NEWGEN-SPECULUM-DECLARATION-OF-PAIN-PC-V0_1",
+  "generated_at_utc": "2026-05-24T00:00:00Z",
+  "status": "DRAFT",
+  "verdict": "PASS_FOR_DECLARATION_OF_PAIN_DRAFT_ONLY",
+  "target_form_source": "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DECLARATIONS/DECLARATION_OF_FORM/IMPERIUM_NEWGEN_DECLARATION_OF_FORM_OWNER_CORRECTED_RU_V0_2.pdf",
+  "pain_items": [
+    {
+      "pain_id": "PAIN_001_OWNER_POWER_CONVERSION_FAILURE",
+      "class": "OWNER_POWER",
+      "severity": "P0",
+      "symptom": "Есть артефакты и отчеты, но нет устойчивого ежедневного operator-loop.",
+      "root_cause": "Метрика прогресса долго была artifact-first, а не owner-power-first.",
+      "damage": "Owner не получает прямое усиление управления.",
+      "gate": "GATE-NG-P00-OWNER_POWER_DELTA_REQUIRED",
+      "repair_task": "Перед началом задачи фиксировать owner-visible delta и доказывать его в cockpit.",
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/DATA/operator_cockpit_l1_state.generated.json",
+        "IMPERIUM_NEW_GENERATION/README.md"
+      ],
+      "decision": "ACCELERATE"
+    },
+    {
+      "pain_id": "PAIN_002_DEFAULT_VISUAL_WEAK_COCKPIT",
+      "class": "VISUAL",
+      "severity": "P0",
+      "symptom": "Визуальные контуры не везде стабильны и могут откатываться в слабый вид.",
+      "root_cause": "Visual-contract и screenshot discipline не везде hard blocker.",
+      "damage": "Owner тратит время на расшифровку состояния.",
+      "gate": "GATE-NG-P01-VISUAL_CONTRACT_MANDATORY",
+      "repair_task": "Блокировать visual tasks без contract + screenshots + linter.",
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/index.html",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/REPORTS/TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1/screenshot_matrix.json"
+      ],
+      "decision": "REPAIR"
+    },
+    {
+      "pain_id": "PAIN_003_FOUNDATION_ONLY_FATIGUE",
+      "class": "FOUNDATION_FATIGUE",
+      "severity": "P0",
+      "symptom": "Ключевые зоны долго остаются FOUNDATION_ONLY.",
+      "root_cause": "Горизонтальное расширение foundation без обязательной owner-facing интеграции.",
+      "damage": "Система честная по статусам, но медленная по полезности.",
+      "gate": "GATE-NG-P02-FOUNDATION_ONLY_BUDGET",
+      "repair_task": "Лимит foundation-only задач подряд и обязательная конверсия в usable surface.",
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/TRUTH/CURRENT_TRUTH_ROOT_V0_1.json",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json"
+      ],
+      "decision": "REPAIR"
+    },
+    {
+      "pain_id": "PAIN_004_FAKE_GREEN_GENERIC_PASS",
+      "class": "FAKE_GREEN",
+      "severity": "P0",
+      "symptom": "Риск воспринимать технический PASS как продуктовую готовность.",
+      "root_cause": "Слабый разрыв между validator-pass и owner-pass.",
+      "damage": "Потеря доверия к итоговым вердиктам.",
+      "gate": "GATE-NG-P03-NO_GENERIC_PASS",
+      "repair_task": "Только scoped verdict + обязательные NOT_PROVEN/NOT_RUN.",
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/TRUTH/NOT_PROVEN_REGISTER_V0_1.json",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/REPORTS/TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1/FINAL_REPORT.md"
+      ],
+      "decision": "KILL"
+    },
+    {
+      "pain_id": "PAIN_005_REPO_TRASH_ARTIFACT_SPRAWL",
+      "class": "REPO_HYGIENE",
+      "severity": "P0",
+      "symptom": "Большой объем runtime/report-следов в git-контуре.",
+      "root_cause": "Слабая классификация классов артефактов и quarantine discipline.",
+      "damage": "Трудная разведка и риск ложной current truth.",
+      "gate": "GATE-NG-P04-REPO_CLASSIFICATION_REQUIRED",
+      "repair_task": "Ввести обязательный class/quarantine для новых артефактов.",
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/RUNS",
+        "IMPERIUM_NEW_GENERATION/REPORTS"
+      ],
+      "decision": "ACCELERATE"
+    },
+    {
+      "pain_id": "PAIN_006_CONTINUITY_LOSS",
+      "class": "CONTINUITY",
+      "severity": "P0",
+      "symptom": "Handoff и новый чат могут терять значимые решения.",
+      "root_cause": "Continuity не везде оформлен как строгий admission requirement.",
+      "damage": "Повторный сбор контекста и рост времени выполнения.",
+      "gate": "GATE-NG-P05-CONTINUITY_PACK_MANDATORY",
+      "repair_task": "Сделать continuity pack обязательным для high-impact задач.",
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/DATA/continuity",
+        "IMPERIUM_NEW_GENERATION/TRUTH/README_CURRENT_TRUTH_ROOT_V0_1.md"
+      ],
+      "decision": "ACCELERATE"
+    },
+    {
+      "pain_id": "PAIN_007_WEAK_ORGAN_AGENCY",
+      "class": "ORGAN_AGENCY",
+      "severity": "P0",
+      "symptom": "Органы часто остаются в deterministic foundation-mode.",
+      "root_cause": "Veto/required_checks не везде hard-bound к execution start.",
+      "damage": "Органы не управляют ходом задачи в полной мере.",
+      "gate": "GATE-NG-P06-ORGAN_VETO_ENFORCEMENT",
+      "repair_task": "Подключить organ packets как обязательный execution policy input.",
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/REGISTRY/ORGAN_DIALOGUE_CAPABILITY_MATRIX_V0_1.json",
+        "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/ORGAN_PACKET_V0_1.schema.json"
+      ],
+      "decision": "REPAIR"
+    },
+    {
+      "pain_id": "PAIN_008_MISSING_DOCTRINARIUM_READ_GATE",
+      "class": "DOCTRINARIUM_ADMISSION",
+      "severity": "P0",
+      "symptom": "Задачи могут стартовать из локальной памяти агента.",
+      "root_cause": "Нет универсального enforced check для Form+Pain read-first.",
+      "damage": "Drift законов и повтор старых ошибок.",
+      "gate": "GATE-NG-P07-DOCTRINARIUM_READ_FIRST",
+      "repair_task": "Обязательный Form+Pain ACK перед правками.",
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DECLARATIONS/DECLARATION_OF_FORM/IMPERIUM_NEWGEN_DECLARATION_OF_FORM_OWNER_CORRECTED_RU_V0_2.pdf"
+      ],
+      "decision": "REPAIR"
+    },
+    {
+      "pain_id": "PAIN_009_MISSING_PAIN_MEMORY",
+      "class": "PAIN_MEMORY",
+      "severity": "P0",
+      "symptom": "Боль зафиксирована, но не всегда блокирует следующую задачу.",
+      "root_cause": "Нет полного pain-ledger preflight injection в admission path.",
+      "damage": "Повторяемость боли между задачами.",
+      "gate": "GATE-NG-P08-PAIN_PREFLIGHT_REQUIRED",
+      "repair_task": "Внедрить machine-readable pain registry и preflight фильтр.",
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/TRUTH/NOT_PROVEN_REGISTER_V0_1.json",
+        "IMPERIUM_NEW_GENERATION/TRUTH/NEGATIVE_TESTS/FAKE_GREEN_REJECTION_RULES_V0_1.json"
+      ],
+      "decision": "ACCELERATE"
+    },
+    {
+      "pain_id": "PAIN_010_MISSING_DEVELOPMENT_PREVIEW",
+      "class": "DEV_PREVIEW",
+      "severity": "P0",
+      "symptom": "Preview and screenshot discipline не везде обязательны перед приемкой.",
+      "root_cause": "Preview channel местами soft-policy, а не gate.",
+      "damage": "Поздняя фиксация визуальных ошибок и переработки.",
+      "gate": "GATE-NG-P09-DEV_PREVIEW_SCREENSHOT_REQUIRED",
+      "repair_task": "Закрепить mandatory preview states + screenshot matrix + owner stop/note.",
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.html",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/REPORTS/TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1/screenshot_matrix.json"
+      ],
+      "decision": "REPAIR"
+    },
+    {
+      "pain_id": "PAIN_011_RESOURCE_BURN_KPD_BLINDNESS",
+      "class": "RESOURCE_KPD",
+      "severity": "P0",
+      "symptom": "Высокий объем действий/артефактов не всегда дает видимую Owner-прибавку.",
+      "root_cause": "KPD budget редко используется как pre-task gate.",
+      "damage": "Снижение полезной плотности каждой задачи.",
+      "gate": "GATE-NG-P10-KPD_BUDGET_REQUIRED",
+      "repair_task": "Ввести KPD budget с stop-threshold до исполнения.",
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/agent_kpd_self_review.json"
+      ],
+      "decision": "REPAIR"
+    },
+    {
+      "pain_id": "PAIN_012_SOVEREIGNTY_RISK",
+      "class": "SOVEREIGNTY",
+      "severity": "P0",
+      "symptom": "Часть маршрутов и интеграций остается bounded/demo при внешних зависимостях.",
+      "root_cause": "Недостаточная формализация local fallback для критичных путей.",
+      "damage": "Операционная уязвимость при отказах внешних инструментов.",
+      "gate": "GATE-NG-P11-SOVEREIGN_FALLBACK_REQUIRED",
+      "repair_task": "Матрица fallback и запрет silent dependency assumptions.",
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/SSH_CONNECTION_MATRIX_V0_1.json",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/contours/contour_status.latest.json"
+      ],
+      "decision": "REPAIR"
+    },
+    {
+      "pain_id": "PAIN_013_EXTERNAL_FREELANCE_READINESS_GAP",
+      "class": "EXTERNAL_DELIVERY",
+      "severity": "P1",
+      "symptom": "External delivery readiness уступает internal foundation maturity.",
+      "root_cause": "Delivery package discipline еще не полностью operationalized.",
+      "damage": "Риск нестабильного клиентского handoff.",
+      "gate": "GATE-NG-P12-DELIVERABLE_PACKAGE_REQUIRED",
+      "repair_task": "Унифицировать bundle/readme/qa/presentation requirements.",
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/REPORTS"
+      ],
+      "decision": "REPAIR"
+    },
+    {
+      "pain_id": "PAIN_014_THRONE_CUSTODES_FUTURE_GAP",
+      "class": "THRONE_CUSTODES_FUTURE",
+      "severity": "P1",
+      "symptom": "Future Throne/Core transition criteria пока не жестко связан с pain-gate closure.",
+      "root_cause": "Нет formal transition boundary, прошитой в текущие admission rules.",
+      "damage": "Риск переноса незакрытой боли в следующий управляющий слой.",
+      "gate": "GATE-NG-P13-THRONE_TRANSITION_BOUNDARY",
+      "repair_task": "Сформировать checklist перехода к Throne/Core через закрытые pain gates.",
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/CORE/THRONE_CORE_BOUNDARY.md",
+        "IMPERIUM_NEW_GENERATION/TRUTH/CURRENT_TRUTH_ROOT_V0_1.json"
+      ],
+      "decision": "MONITOR"
+    }
+  ],
+  "next_tasks": {
+    "next_3": [
+      "TASK-20260524-NEWGEN-PAIN-GATE-REGISTRY-INTEGRATION-PC-V0_1",
+      "TASK-20260524-NEWGEN-CURRENT-TRUTH-RECONCILIATION-PC-V0_1",
+      "TASK-20260524-NEWGEN-DOCTRINARIUM-READ-FIRST-ENFORCEMENT-PC-V0_1"
+    ],
+    "next_7": [
+      "TASK-20260524-NEWGEN-PAIN-GATE-REGISTRY-INTEGRATION-PC-V0_1",
+      "TASK-20260524-NEWGEN-CURRENT-TRUTH-RECONCILIATION-PC-V0_1",
+      "TASK-20260524-NEWGEN-DOCTRINARIUM-READ-FIRST-ENFORCEMENT-PC-V0_1",
+      "TASK-20260524-NEWGEN-REPO-CLASSIFIER-QUARANTINE-ENFORCEMENT-PC-V0_1",
+      "TASK-20260524-NEWGEN-CONTINUITY-PACK-MANDATORY-HANDOFF-PC-V0_1",
+      "TASK-20260524-NEWGEN-ORGAN-VETO-RUNTIME-BINDING-PC-V0_1",
+      "TASK-20260524-NEWGEN-KPD-BUDGET-PREFLIGHT-PC-V0_1"
+    ],
+    "next_14": [
+      "TASK-20260524-NEWGEN-PAIN-GATE-REGISTRY-INTEGRATION-PC-V0_1",
+      "TASK-20260524-NEWGEN-CURRENT-TRUTH-RECONCILIATION-PC-V0_1",
+      "TASK-20260524-NEWGEN-DOCTRINARIUM-READ-FIRST-ENFORCEMENT-PC-V0_1",
+      "TASK-20260524-NEWGEN-REPO-CLASSIFIER-QUARANTINE-ENFORCEMENT-PC-V0_1",
+      "TASK-20260524-NEWGEN-CONTINUITY-PACK-MANDATORY-HANDOFF-PC-V0_1",
+      "TASK-20260524-NEWGEN-ORGAN-VETO-RUNTIME-BINDING-PC-V0_1",
+      "TASK-20260524-NEWGEN-KPD-BUDGET-PREFLIGHT-PC-V0_1",
+      "TASK-20260525-NEWGEN-DEV-PREVIEW-SCREENSHOT-GATE-PC-V0_1",
+      "TASK-20260525-NEWGEN-VISUAL-CONTRACT-HARD-BLOCK-PC-V0_1",
+      "TASK-20260525-NEWGEN-OWNER-ANSWER-WRITE-PATH-HARDENING-PC-V0_1",
+      "TASK-20260525-NEWGEN-PAIN-MEMORY-LEDGER-INJECTION-PC-V0_1",
+      "TASK-20260525-NEWGEN-EXTERNAL-DELIVERABLE-PACKAGE-POLICY-PC-V0_1",
+      "TASK-20260526-NEWGEN-SOVEREIGN-FALLBACK-MATRIX-PC-V0_1",
+      "TASK-20260526-NEWGEN-THRONE-TRANSITION-CRITERIA-PC-V0_1"
+    ]
+  }
+}

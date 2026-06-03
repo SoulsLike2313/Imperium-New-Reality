@@ -1,0 +1,111 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "generated_at_utc": "2026-05-24T23:35:59Z",
+  "checker": "check_mechanicus_evidence_index_v0_1.py",
+  "summary": {
+    "records_indexed": 440,
+    "fts_rows": 440,
+    "source_files_indexed": 440,
+    "task_links": 469,
+    "commit_links": 176,
+    "capability_links": 116,
+    "receipt_links": 97,
+    "private_paths_indexed": 0
+  },
+  "source_type_counts": {
+    "ADMINISTRATUM_EVIDENCE_MAP": 8,
+    "CAPABILITY_CARD": 116,
+    "CLOSURE_RECEIPT": 12,
+    "CONTRACT": 7,
+    "FINAL_REPORT": 12,
+    "INQUISITION_REPORT": 10,
+    "INSTALL_RECEIPT": 5,
+    "MECHANICUS_SCOPE_PACK": 11,
+    "ROLE_PACK": 5,
+    "TEMPLATE": 4,
+    "TOOL_REPORT": 94,
+    "UNKNOWN_JSON": 49,
+    "UNKNOWN_MD": 31,
+    "VALIDATION_RECEIPT": 76
+  },
+  "organ_counts": {
+    "ADMINISTRATUM": 8,
+    "INQUISITION": 10,
+    "MECHANICUS": 384,
+    "OFFICIO_AGENTIS": 38
+  },
+  "coverage_by_glob": [
+    {
+      "pattern": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/**/*.md",
+      "expected_files": 35,
+      "matched_files": 35,
+      "verdict": "PASS"
+    },
+    {
+      "pattern": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/**/*.json",
+      "expected_files": 165,
+      "matched_files": 165,
+      "verdict": "PASS"
+    },
+    {
+      "pattern": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/**/capability_card.json",
+      "expected_files": 116,
+      "matched_files": 116,
+      "verdict": "PASS"
+    },
+    {
+      "pattern": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/**/*.json",
+      "expected_files": 73,
+      "matched_files": 73,
+      "verdict": "PASS"
+    },
+    {
+      "pattern": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/**/*.json",
+      "expected_files": 10,
+      "matched_files": 10,
+      "verdict": "PASS"
+    },
+    {
+      "pattern": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/**/*.md",
+      "expected_files": 1,
+      "matched_files": 1,
+      "verdict": "PASS"
+    },
+    {
+      "pattern": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/**/*.json",
+      "expected_files": 5,
+      "matched_files": 5,
+      "verdict": "PASS"
+    },
+    {
+      "pattern": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/CONTRACTS/**/*.md",
+      "expected_files": 7,
+      "matched_files": 7,
+      "verdict": "PASS"
+    },
+    {
+      "pattern": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TEMPLATES/**/*.md",
+      "expected_files": 4,
+      "matched_files": 4,
+      "verdict": "PASS"
+    },
+    {
+      "pattern": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/**/*.json",
+      "expected_files": 16,
+      "matched_files": 16,
+      "verdict": "PASS"
+    },
+    {
+      "pattern": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/**/*.md",
+      "expected_files": 8,
+      "matched_files": 8,
+      "verdict": "PASS"
+    }
+  ],
+  "warnings": [
+    "mypy:PASS_WITH_WARNINGS"
+  ],
+  "errors": [],
+  "verdict": "PASS_WITH_WARNINGS",
+  "raw_dump_status": "COMPACT_ONLY"
+}

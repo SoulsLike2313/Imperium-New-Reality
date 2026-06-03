@@ -1,0 +1,36 @@
+{
+  "version": "0.1.0",
+  "shell_modes": [
+    {
+      "name": "ASK",
+      "purpose": "clarify task and gather constraints",
+      "can_run_os_commands": false
+    },
+    {
+      "name": "ARCHITECT",
+      "purpose": "design and contract work",
+      "can_run_os_commands": false
+    },
+    {
+      "name": "IMPLEMENT",
+      "purpose": "apply scoped changes",
+      "can_run_os_commands": true
+    },
+    {
+      "name": "DEBUG",
+      "purpose": "reproduce and fix failures",
+      "can_run_os_commands": true
+    },
+    {
+      "name": "AUDIT",
+      "purpose": "verify evidence and verdicts",
+      "can_run_os_commands": false
+    },
+    {
+      "name": "ORCHESTRATE",
+      "purpose": "coordinate sequence and bundling",
+      "can_run_os_commands": true
+    }
+  ],
+  "default_mode": "ASK"
+}

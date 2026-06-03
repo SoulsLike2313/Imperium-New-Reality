@@ -1,0 +1,30 @@
+{
+  "schema_id": "TRANSFER_ACTION_RUNNER_ACTION_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1",
+  "generated_at_utc": "2026-05-23T01:48:38Z",
+  "action_id": "DRY_RUN_TRANSFER",
+  "status": "BLOCK",
+  "result_status": "BLOCKED",
+  "request_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T014838Z-21C0B2DB.json",
+  "result_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T014838Z-6D67F492.json",
+  "view_state_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T014838Z-21C0B2DB.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_action_request.schema.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_action_result.schema.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_action_runner_policy.schema.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/samples/transfer_action_runner_policy.v0_1.json"
+  ],
+  "no_arbitrary_shell_confirmed": true,
+  "claim_boundary": "FOUNDATION_ONLY",
+  "known_limitations": [
+    "Foundation-only transfer action runner.",
+    "No production remote orchestration claim.",
+    "No arbitrary shell execution path is accepted.",
+    "error:route_proof_mode_requires_action:SEND_TASKPACK_ZIP"
+  ],
+  "not_proven": [
+    "Production remote orchestration is not proven by this foundation action runner.",
+    "VM2 route proof and return-fetch route proof are not included in this bounded slice."
+  ]
+}

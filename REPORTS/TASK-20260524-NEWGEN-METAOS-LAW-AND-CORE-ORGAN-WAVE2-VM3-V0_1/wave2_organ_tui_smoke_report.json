@@ -1,0 +1,66 @@
+{
+  "schema_id": "newgen_wave2_organ_tui_smoke_report_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "astronomicon_tui_smoke",
+      "command": "python3 IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/astronomicon_tui_v0_1.py --smoke",
+      "exit_code": 0,
+      "evidence": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/smoke_astronomicon_tui.txt"
+    },
+    {
+      "name": "inquisition_tui_smoke",
+      "command": "python3 IMPERIUM_NEW_GENERATION/INQUISITION/TUI/inquisition_tui_v0_1.py --smoke",
+      "exit_code": 0,
+      "evidence": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/smoke_inquisition_tui.txt"
+    },
+    {
+      "name": "astronomicon_tui_plain_json",
+      "command": "python3 IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/astronomicon_tui_v0_1.py --plain-json --smoke",
+      "exit_code": 0,
+      "evidence": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/plainjson_astronomicon_tui.json"
+    },
+    {
+      "name": "inquisition_tui_plain_json",
+      "command": "python3 IMPERIUM_NEW_GENERATION/INQUISITION/TUI/inquisition_tui_v0_1.py --plain-json --smoke",
+      "exit_code": 0,
+      "evidence": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/plainjson_inquisition_tui.json"
+    },
+    {
+      "name": "astronomicon_query_sample",
+      "command": "python3 IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_organ_query_v0_1.py --sample",
+      "exit_code": 0,
+      "evidence": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/query_astronomicon_sample.json"
+    },
+    {
+      "name": "inquisition_query_sample",
+      "command": "python3 IMPERIUM_NEW_GENERATION/INQUISITION/TOOLS/inquisition_organ_query_v0_1.py --sample",
+      "exit_code": 0,
+      "evidence": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/query_inquisition_sample.json"
+    },
+    {
+      "name": "json_parse_validation",
+      "command": "python3 -m json.tool <required files>",
+      "exit_code": 0,
+      "evidence": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/json_parse_validation_report.json"
+    }
+  ],
+  "rich_status": {
+    "required": true,
+    "available": true,
+    "version": "13.7.1",
+    "module_path": "/usr/lib/python3/dist-packages/rich/__init__.py",
+    "registry_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json",
+    "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/20260524_rich_probe_receipt.json"
+  },
+  "important_six_query_exit_codes": {
+    "doctrinarium": 0,
+    "officio": 0,
+    "astronomicon": 0,
+    "administratum": 0,
+    "mechanicus": 0,
+    "inquisition": 2
+  },
+  "generated_at_utc": "2026-05-24T02:02:09+00:00"
+}

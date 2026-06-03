@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/CONTRACTS/SKILL_GROWTH/SKILL_UPDATE_PROPOSAL.schema.json",
+  "title": "Skill Update Proposal V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "proposal_id",
+    "task_id",
+    "linked_skill_gap_ids",
+    "linked_lesson_ids",
+    "proposal_title",
+    "proposal_text",
+    "change_kind",
+    "proposal_effect",
+    "mutating_live_agents",
+    "approval_state",
+    "confidence",
+    "requires_owner_decision",
+    "created_at_utc"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "proposal_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "linked_skill_gap_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "linked_lesson_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "proposal_title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "proposal_text": {
+      "type": "string",
+      "minLength": 3
+    },
+    "change_kind": {
+      "type": "string",
+      "enum": [
+        "PROMPT_RULE_UPDATE",
+        "CHECKLIST_UPDATE",
+        "TOOLING_RECOMMENDATION",
+        "VALIDATOR_RULE_UPDATE",
+        "TRAINING_PLAN_UPDATE"
+      ]
+    },
+    "proposal_effect": {
+      "type": "string",
+      "enum": [
+        "NON_MUTATING_ADVISORY",
+        "OWNER_APPROVED_MUTATION_REQUIRED"
+      ]
+    },
+    "mutating_live_agents": {
+      "type": "boolean"
+    },
+    "approval_state": {
+      "type": "string",
+      "enum": [
+        "FOUNDATION_SAMPLE",
+        "ADVISORY_ONLY",
+        "OWNER_REVIEW_REQUIRED",
+        "APPROVED",
+        "REJECTED"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "PROVED",
+        "STRONG",
+        "PLAUSIBLE",
+        "UNKNOWN",
+        "FAILED",
+        "FAKE_GREEN_RISK"
+      ]
+    },
+    "requires_owner_decision": {
+      "type": "boolean"
+    },
+    "created_at_utc": {
+      "type": "string",
+      "minLength": 20
+    }
+  }
+}

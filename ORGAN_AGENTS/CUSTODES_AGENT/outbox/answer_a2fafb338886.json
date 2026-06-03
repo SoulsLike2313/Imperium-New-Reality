@@ -1,0 +1,22 @@
+{
+  "answer_id": "answer_a2fafb338886",
+  "question_id": "stress_q_custodes_ok",
+  "task_id": "stress_task_first_3",
+  "agent": "CUSTODES_AGENT",
+  "action": "CHECK_ALLOWED_PATHS",
+  "verdict": "ADMIT",
+  "summary": "Path admission accepted.",
+  "data": {
+    "findings": [
+      {
+        "path": "IMPERIUM_NEW_GENERATION/EXCHANGE/ORGAN_BUS/answers",
+        "resolved_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\EXCHANGE\\ORGAN_BUS\\answers",
+        "inside_new_generation": true,
+        "operation": "write",
+        "read_only": false
+      }
+    ],
+    "policy": "No out-of-scope write allowed in first-stage base spine"
+  },
+  "generated_at_utc": "2026-05-17T23:40:09.602694Z"
+}

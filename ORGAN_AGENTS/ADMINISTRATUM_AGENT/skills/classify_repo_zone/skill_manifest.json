@@ -1,0 +1,16 @@
+{
+  "skill_id": "classify_repo_zone",
+  "skill_name": "classify_repo_zone",
+  "status": "IMPLEMENTED_V1_BASE",
+  "description": "Classify one path into repo zone/artifact/risk classes.",
+  "entrypoint": "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py",
+  "execution_mode": "SHARED_RUNNER_ROUTED",
+  "deterministic": true,
+  "outputs": [
+    "report_json",
+    "receipt_json"
+  ],
+  "mutates_canon": false,
+  "deletes_files": false,
+  "runtime_dependency": "PYTHON_STDLIB_ONLY"
+}

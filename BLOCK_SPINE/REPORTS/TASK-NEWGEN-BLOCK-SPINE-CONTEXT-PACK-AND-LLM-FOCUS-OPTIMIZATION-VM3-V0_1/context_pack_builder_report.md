@@ -1,0 +1,27 @@
+# Context Pack Builder Report
+
+Task ID: `TASK-NEWGEN-BLOCK-SPINE-CONTEXT-PACK-AND-LLM-FOCUS-OPTIMIZATION-VM3-V0_1`
+Target contour: `VM3`
+Route manifest: `IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-BLOCK-SPINE-CONTEXT-PACK-AND-LLM-FOCUS-OPTIMIZATION-VM3-V0_1/TASK_ROUTE_MANIFEST.json`
+
+## Metrics
+
+- mandatory_context_count: 34
+- optional_context_count: 16
+- estimated_file_count: 34
+- estimated_character_count: 40448
+
+## Required organs
+
+- DOCTRINARIUM
+- OFFICIO_AGENTIS
+- ASTRONOMICON
+- ADMINISTRATUM
+- MECHANICUS
+- INQUISITION
+- STRATEGIUM
+- SCHOLA_IMPERIALIS
+
+## Warnings
+
+- none

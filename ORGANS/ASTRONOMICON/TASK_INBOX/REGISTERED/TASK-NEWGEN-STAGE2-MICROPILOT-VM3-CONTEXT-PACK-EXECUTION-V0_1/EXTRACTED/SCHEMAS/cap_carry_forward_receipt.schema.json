@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cap Carry Forward Receipt",
+  "type": "object",
+  "required": [
+    "task_id",
+    "generated_at_utc",
+    "caps_carried",
+    "caps_closed",
+    "caps_new",
+    "clean_pass_allowed"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "caps_carried": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "caps_closed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "caps_new": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "clean_pass_allowed": {
+      "type": "boolean"
+    }
+  }
+}

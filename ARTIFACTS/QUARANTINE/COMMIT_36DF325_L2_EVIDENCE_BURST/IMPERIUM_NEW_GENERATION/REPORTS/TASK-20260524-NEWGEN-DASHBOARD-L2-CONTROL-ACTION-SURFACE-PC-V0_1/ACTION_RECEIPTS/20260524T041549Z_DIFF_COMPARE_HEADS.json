@@ -1,0 +1,43 @@
+{
+  "schema_id": "important_six_dashboard_action_receipt_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+  "action_id": "DIFF_COMPARE_HEADS",
+  "owner_organ": "OFFICIO_AGENTIS",
+  "dashboard_button_group": "Diff / Approval",
+  "safety_class": "READ_ONLY",
+  "started_at_utc": "2026-05-24T04:15:48Z",
+  "finished_at_utc": "2026-05-24T04:15:49Z",
+  "duration_ms": 1458,
+  "status": "WARN",
+  "summary": "Diff status: local=36df325e6cdf, remote=36df325e6cdf, dirty=True",
+  "payload": {},
+  "details": {
+    "schema_id": "important_six_diff_status_v0_1",
+    "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+    "generated_at_utc": "2026-05-24T04:15:49Z",
+    "branch": "master",
+    "local_head": "36df325e6cdfbf5cfe10a22ec969b97faa0853a8",
+    "remote_master_head": "36df325e6cdfbf5cfe10a22ec969b97faa0853a8",
+    "previous_head": "3864b075b1ee8e242c4f14a9d8f01a0455d28245",
+    "remote_sync": true,
+    "working_tree_dirty": true,
+    "changed_files": [
+      " M IMPERIUM_NEW_GENERATION/ASTRONOMICON/DRAFT_TASK_REGISTRY/draft_registry_index.json",
+      " M IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/action_history.jsonl",
+      " M IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/action_last_results.json",
+      " M IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/action_registry_validation_report.json",
+      "?? IMPERIUM_NEW_GENERATION/ASTRONOMICON/DRAFT_TASK_REGISTRY/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1_20260524T041548Z.json",
+      "?? IMPERIUM_NEW_GENERATION/OUTBOX/CONTINUITY_PACKS/newgen_continuity_pack_20260524T041539Z.zip",
+      "?? IMPERIUM_NEW_GENERATION/OUTBOX/CONTINUITY_PACKS/newgen_continuity_pack_20260524T041539Z.zip.sha256",
+      "?? IMPERIUM_NEW_GENERATION/OUTBOX/CONTINUITY_PACKS/newgen_continuity_pack_20260524T041539Z_receipt.json",
+      "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T041539Z_ADMIN_FULL_NEWGEN_FILE_AUDIT.json",
+      "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T041541Z_ADMIN_BUILD_CONTINUITY_PACK.json",
+      "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T041541Z_TRANSFER_FETCH_REPORT_VM2_DRY_RUN.json",
+      "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T041541Z_TRANSFER_FETCH_REPORT_VM3",
+      "...[TRUNCATED]"
+    ],
+    "diff_stat": " .../DRAFT_TASK_REGISTRY/draft_registry_index.json  |  7 ++-\n .../action_history.jsonl                           | 11 +++++\n .../action_last_results.json                       | 52 +++++++++++-----------\n .../action_registry_validation_report.json         |  2 +-\n 4 files changed, 44 insertions(+), 28 deletions(-)\n",
+    "diff_name_status": "M\tIMPERIUM_NEW_GENERATION/ASTRONOMICON/DRAFT_TASK_REGISTRY/draft_registry_index.json\nM\tIMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/action_history.jsonl\nM\tIMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/action_last_results.json\nM\tIMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/action_registry_validation_report.json\n"
+  },
+  "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T041549Z_DIFF_COMPARE_HEADS.json"
+}

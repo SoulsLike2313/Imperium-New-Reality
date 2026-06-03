@@ -1,0 +1,67 @@
+{
+  "schema_version": "0.1",
+  "task_id": "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+  "generated_at_utc": "2026-05-22T16:52:00Z",
+  "implemented": {
+    "read_latest_report_summary_structured_states": [
+      "FOUND",
+      "MISSING",
+      "PARTIAL",
+      "NOT_READY",
+      "STALE",
+      "ERROR"
+    ],
+    "state_model": {
+      "connection": [
+        "CONNECTED",
+        "NOT_CONNECTED",
+        "UNKNOWN",
+        "ACTION_SERVER_NOT_CONNECTED"
+      ],
+      "availability": [
+        "ACTION_ALLOWED",
+        "ACTION_DISABLED"
+      ],
+      "result": [
+        "ACTION_RESULT_PASS",
+        "ACTION_RESULT_WARN",
+        "ACTION_RESULT_BLOCK",
+        "ACTION_RESULT_PARTIAL"
+      ]
+    },
+    "smoke_coverage": [
+      "registry_loads",
+      "action_request_schema_valid",
+      "action_result_schema_valid",
+      "refresh_truth_state",
+      "validate_truth_state",
+      "read_latest_report_summary",
+      "server_disconnected_behavior",
+      "no_arbitrary_shell_execution",
+      "no_production_autonomy_claim"
+    ],
+    "ui_truth_updates": [
+      "registry_status",
+      "report_summary_status",
+      "result_model_status",
+      "officio_gate_visibility"
+    ]
+  },
+  "checks_snapshot": {
+    "refresh_runner": "PASS",
+    "validator": "PASS",
+    "action_layer_validator": "PASS",
+    "smoke": "PASS"
+  },
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_action_server.py",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_action_layer_smoke.py",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_action_layer_validator.py",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/app.js",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_ACTION_REGISTRY_V0_1.json"
+  ],
+  "limitations": [
+    "Foundation-only bounded localhost action layer.",
+    "No production backend and no autonomous execution claim."
+  ]
+}

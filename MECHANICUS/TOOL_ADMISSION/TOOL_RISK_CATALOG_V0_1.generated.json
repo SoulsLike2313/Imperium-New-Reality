@@ -1,0 +1,142 @@
+[
+  {
+    "schema_version": "0.1",
+    "risk_id": "TRISK-001",
+    "task_id": "TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1",
+    "tool_slug": "playwright",
+    "linked_candidate_id": "TCAND-001",
+    "risk_category": "SUPPLY_CHAIN",
+    "severity": "HIGH",
+    "risk_summary": "Binary/runtime dependencies can drift without locked install receipts.",
+    "mitigation_plan": "Allow only dedicated admission+install task with deterministic receipts.",
+    "proof_required_before_approval": [
+      "admission_decision_record.json",
+      "no_install_guard_receipt.json",
+      "future_install_task_contract.md"
+    ],
+    "owner_gate_required": true,
+    "recommended_state_if_unproven": "DEFERRED_NEEDS_ADMISSION_TASK",
+    "foundation_only": true,
+    "created_at_utc": "2026-05-22T00:00:00Z"
+  },
+  {
+    "schema_version": "0.1",
+    "risk_id": "TRISK-002",
+    "task_id": "TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1",
+    "tool_slug": "vitest",
+    "linked_candidate_id": "TCAND-002",
+    "risk_category": "REPRODUCIBILITY",
+    "severity": "MEDIUM",
+    "risk_summary": "Version drift and hidden dependency updates may fake pass confidence.",
+    "mitigation_plan": "Require lockfile evidence and deterministic test receipts before approval.",
+    "proof_required_before_approval": [
+      "admission_decision_record.json",
+      "no_install_guard_receipt.json",
+      "future_install_task_contract.md"
+    ],
+    "owner_gate_required": true,
+    "recommended_state_if_unproven": "DEFERRED_NEEDS_ADMISSION_TASK",
+    "foundation_only": true,
+    "created_at_utc": "2026-05-22T00:00:00Z"
+  },
+  {
+    "schema_version": "0.1",
+    "risk_id": "TRISK-003",
+    "task_id": "TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1",
+    "tool_slug": "eslint",
+    "linked_candidate_id": "TCAND-003",
+    "risk_category": "DX",
+    "severity": "LOW",
+    "risk_summary": "Rule churn can produce noisy output without policy alignment.",
+    "mitigation_plan": "Admit only with rule-baseline contract and false-positive policy.",
+    "proof_required_before_approval": [
+      "admission_decision_record.json",
+      "no_install_guard_receipt.json",
+      "future_install_task_contract.md"
+    ],
+    "owner_gate_required": true,
+    "recommended_state_if_unproven": "DEFERRED_NEEDS_ADMISSION_TASK",
+    "foundation_only": true,
+    "created_at_utc": "2026-05-22T00:00:00Z"
+  },
+  {
+    "schema_version": "0.1",
+    "risk_id": "TRISK-004",
+    "task_id": "TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1",
+    "tool_slug": "storybook",
+    "linked_candidate_id": "TCAND-004",
+    "risk_category": "COMPLEXITY",
+    "severity": "MEDIUM",
+    "risk_summary": "Extra runtime/build surface can expand scope without strict gating.",
+    "mitigation_plan": "Require explicit visual-boundary scope and performance receipts.",
+    "proof_required_before_approval": [
+      "admission_decision_record.json",
+      "no_install_guard_receipt.json",
+      "future_install_task_contract.md"
+    ],
+    "owner_gate_required": true,
+    "recommended_state_if_unproven": "DEFERRED_NEEDS_ADMISSION_TASK",
+    "foundation_only": true,
+    "created_at_utc": "2026-05-22T00:00:00Z"
+  },
+  {
+    "schema_version": "0.1",
+    "risk_id": "TRISK-005",
+    "task_id": "TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1",
+    "tool_slug": "nx",
+    "linked_candidate_id": "TCAND-005",
+    "risk_category": "MAINTENANCE",
+    "severity": "HIGH",
+    "risk_summary": "Repository workflow and scripts can be heavily altered by setup defaults.",
+    "mitigation_plan": "Keep candidate-only until dedicated architecture-impact admission task.",
+    "proof_required_before_approval": [
+      "admission_decision_record.json",
+      "no_install_guard_receipt.json",
+      "future_install_task_contract.md"
+    ],
+    "owner_gate_required": true,
+    "recommended_state_if_unproven": "DEFERRED_NEEDS_ADMISSION_TASK",
+    "foundation_only": true,
+    "created_at_utc": "2026-05-22T00:00:00Z"
+  },
+  {
+    "schema_version": "0.1",
+    "risk_id": "TRISK-006",
+    "task_id": "TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1",
+    "tool_slug": "turborepo",
+    "linked_candidate_id": "TCAND-006",
+    "risk_category": "MAINTENANCE",
+    "severity": "HIGH",
+    "risk_summary": "Cache and pipeline assumptions can conflict with current repo contracts.",
+    "mitigation_plan": "Require separate architecture+operational impact admission decision.",
+    "proof_required_before_approval": [
+      "admission_decision_record.json",
+      "no_install_guard_receipt.json",
+      "future_install_task_contract.md"
+    ],
+    "owner_gate_required": true,
+    "recommended_state_if_unproven": "DEFERRED_NEEDS_ADMISSION_TASK",
+    "foundation_only": true,
+    "created_at_utc": "2026-05-22T00:00:00Z"
+  },
+  {
+    "schema_version": "0.1",
+    "risk_id": "TRISK-007",
+    "task_id": "TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1",
+    "tool_slug": "rich-textual-cli-candidate",
+    "linked_candidate_id": "TCAND-007",
+    "risk_category": "COMPLEXITY",
+    "severity": "MEDIUM",
+    "risk_summary": "UI/runtime coupling risk if introduced without bounded control contracts.",
+    "mitigation_plan": "Candidate-only until dedicated TUI admission scope is approved.",
+    "proof_required_before_approval": [
+      "admission_decision_record.json",
+      "no_install_guard_receipt.json",
+      "future_install_task_contract.md"
+    ],
+    "owner_gate_required": true,
+    "recommended_state_if_unproven": "DEFERRED_NEEDS_ADMISSION_TASK",
+    "foundation_only": true,
+    "created_at_utc": "2026-05-22T00:00:00Z"
+  }
+]

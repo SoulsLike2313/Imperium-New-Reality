@@ -1,0 +1,45 @@
+{
+  "task_id": "TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1",
+  "mode": "important_six_tui_api_dashboard_l1",
+  "dashboard_root": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/",
+  "organs": [
+    {
+      "organ_key": "doctrinarium",
+      "display_name": "Doctrinarium",
+      "tui_command": "python3 IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TUI/doctrinarium_tui_v0_1.py --smoke --plain-json",
+      "query_command": "python3 IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TOOLS/doctrinarium_organ_query_v0_1.py --sample"
+    },
+    {
+      "organ_key": "officio",
+      "display_name": "Officio Agentis",
+      "tui_command": "python3 IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/officio_tui_v0_1.py --smoke --plain-json",
+      "query_command": "python3 IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_organ_query_v0_1.py --sample"
+    },
+    {
+      "organ_key": "administratum",
+      "display_name": "Administratum",
+      "tui_command": "python3 IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/administratum_tui_v0_1.py --smoke --plain-json",
+      "query_command": "python3 IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS/administratum_organ_query_v0_1.py --sample"
+    },
+    {
+      "organ_key": "astronomicon",
+      "display_name": "Astronomicon",
+      "tui_command": "python3 IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/astronomicon_tui_v0_1.py --smoke --plain-json",
+      "query_command": "python3 IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_organ_query_v0_1.py --sample"
+    },
+    {
+      "organ_key": "mechanicus",
+      "display_name": "Mechanicus",
+      "tui_command": "python3 IMPERIUM_NEW_GENERATION/MECHANICUS/TUI/mechanicus_tui_v0_1.py --smoke --plain-json",
+      "query_command": "python3 IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_organ_query_v0_1.py --sample"
+    },
+    {
+      "organ_key": "inquisition",
+      "display_name": "Inquisition",
+      "tui_command": "python3 IMPERIUM_NEW_GENERATION/INQUISITION/TUI/inquisition_tui_v0_1.py --smoke --plain-json",
+      "query_command": "python3 IMPERIUM_NEW_GENERATION/INQUISITION/TOOLS/inquisition_organ_query_v0_1.py --sample"
+    }
+  ],
+  "owner_verdict_needed": false,
+  "generated_at_utc": "2026-05-24T02:16:53+00:00"
+}

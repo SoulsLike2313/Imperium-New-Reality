@@ -1,0 +1,35 @@
+{
+  "task_id": "TASK-20260520-SANCTUM-MINI-ACTIONS-VISUAL-POLISH-PC-V0_2",
+  "head": "b84d32ac33bf921b0da6cc8a727dea1792008e67",
+  "owner_clarifications": [
+    "First screenshot in left/top position was accidental and excluded from visual target evaluation."
+  ],
+  "checks": {
+    "raw_data_secondary_tabs": "PASS",
+    "api_actions_run": "PASS",
+    "api_actions_endpoint": "PASS",
+    "visual_viewport_primary": "PASS",
+    "api_state_endpoint": "PASS",
+    "fake_green_guard": "PASS",
+    "api_health_endpoint": "PASS",
+    "allowlist_enforced": "PASS"
+  },
+  "evidence": {
+    "api_action_run_sample": "API_ACTION_RUN_SAMPLE.json",
+    "fake_green_guard": "FAKE_GREEN_GUARD_REPORT.md",
+    "dashboard_capture": "DASHBOARD_SCREENSHOT_OR_HTML_CAPTURE.md",
+    "action_smoke_log": "ACTION_SMOKE_TEST_LOG.md",
+    "api_state_sample": "API_STATE_SAMPLE.json",
+    "visual_gap_report": "VISUAL_GAP_REPORT.md",
+    "api_actions_sample": "API_ACTIONS_SAMPLE.json"
+  },
+  "branch": "master",
+  "schema_version": "SANCTUM_MINI_ACTIONS_VISUAL_POLISH_REPORT_V0_2",
+  "warnings": [
+    "API /api/health returns WARN because worktree is intentionally DIRTY at task start",
+    "Dashboard browser screenshot was not auto-captured; HTML/CSS/JS capture provided instead",
+    "Owner clarified first (left) screenshot in shared composite was accidental and must be ignored as target evidence"
+  ],
+  "generated_at_utc": "2026-05-20T05:49:50.3890521Z",
+  "verdict": "PASS_WITH_WARNINGS_OWNER_REVIEW_READY_NO_COMMIT"
+}

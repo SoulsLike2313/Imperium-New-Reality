@@ -1,0 +1,93 @@
+{
+  "schema_id": "ACTION_MUTATION_CLASSIFICATION_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-MECHANICUS-SSH-MATRIX-AND-ACTION-ROLLBACK-CONTRACT-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T21:00:00Z",
+  "required_mutation_classes": [
+    "READ_ONLY_ACTION",
+    "GENERATED_STATE_REFRESH",
+    "REPORT_WRITE_ACTION",
+    "REGISTRY_UPDATE_ACTION",
+    "TASK_STATE_MUTATION",
+    "ORGAN_DIALOGUE_PACKET_WRITE",
+    "SCOPE_MERGE_MUTATION",
+    "DANGEROUS_ACTION"
+  ],
+  "mutation_classes": [
+    {
+      "mutation_class": "READ_ONLY_ACTION",
+      "risk_level": "LOW",
+      "default_rollback_verdict": "ROLLBACK_NOT_REQUIRED",
+      "owner_approval_default": false,
+      "notes": [
+        "Read-only operations do not mutate repository state."
+      ]
+    },
+    {
+      "mutation_class": "GENERATED_STATE_REFRESH",
+      "risk_level": "LOW",
+      "default_rollback_verdict": "ROLLBACK_BY_REBUILD",
+      "owner_approval_default": false,
+      "notes": [
+        "Generated outputs can be rebuilt deterministically from source truth."
+      ]
+    },
+    {
+      "mutation_class": "REPORT_WRITE_ACTION",
+      "risk_level": "LOW",
+      "default_rollback_verdict": "ROLLBACK_BY_GIT_RESTORE",
+      "owner_approval_default": false,
+      "notes": [
+        "Report writes are file mutations with straightforward git rollback."
+      ]
+    },
+    {
+      "mutation_class": "REGISTRY_UPDATE_ACTION",
+      "risk_level": "MEDIUM",
+      "default_rollback_verdict": "ROLLBACK_BY_GIT_RESTORE",
+      "owner_approval_default": false,
+      "notes": [
+        "Registry drift can mislead truth surfaces; explicit rollback is required."
+      ]
+    },
+    {
+      "mutation_class": "TASK_STATE_MUTATION",
+      "risk_level": "MEDIUM",
+      "default_rollback_verdict": "ROLLBACK_BY_BACKUP_RESTORE",
+      "owner_approval_default": false,
+      "notes": [
+        "Task-state writes may require backup restore to recover chronology."
+      ]
+    },
+    {
+      "mutation_class": "ORGAN_DIALOGUE_PACKET_WRITE",
+      "risk_level": "HIGH",
+      "default_rollback_verdict": "ROLLBACK_REQUIRES_OWNER",
+      "owner_approval_default": true,
+      "notes": [
+        "Organ dialogue writes require owner-governed rollback contracts."
+      ]
+    },
+    {
+      "mutation_class": "SCOPE_MERGE_MUTATION",
+      "risk_level": "HIGH",
+      "default_rollback_verdict": "ROLLBACK_REQUIRES_OWNER",
+      "owner_approval_default": true,
+      "notes": [
+        "Scope merges can alter execution boundaries; owner governance required."
+      ]
+    },
+    {
+      "mutation_class": "DANGEROUS_ACTION",
+      "risk_level": "CRITICAL",
+      "default_rollback_verdict": "DANGEROUS_ACTION_BLOCKED",
+      "owner_approval_default": true,
+      "notes": [
+        "Dangerous mutations are blocked by default without explicit owner approval contract."
+      ]
+    }
+  ],
+  "known_limitations": [
+    "Classification is foundation-only and policy-oriented.",
+    "No destructive runtime mutation tests are claimed in this slice."
+  ]
+}

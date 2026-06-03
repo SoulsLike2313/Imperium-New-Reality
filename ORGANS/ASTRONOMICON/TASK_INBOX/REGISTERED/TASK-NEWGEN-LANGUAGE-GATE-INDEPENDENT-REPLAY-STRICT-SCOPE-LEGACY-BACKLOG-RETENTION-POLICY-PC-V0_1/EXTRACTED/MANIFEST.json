@@ -1,0 +1,79 @@
+{
+  "taskpack_id": "TASKPACK_NEWGEN_LANGUAGE_GATE_REPLAY_LEGACY_BACKLOG_RETENTION_POLICY_PC_V0_1_EN_ONLY",
+  "task_id": "TASK-NEWGEN-LANGUAGE-GATE-INDEPENDENT-REPLAY-STRICT-SCOPE-LEGACY-BACKLOG-RETENTION-POLICY-PC-V0_1",
+  "created_at_utc": "2026-06-01T06:00:48Z",
+  "target_contour": "PC",
+  "repo_root_pc": "E:\\IMPERIUM",
+  "repo_url": "https://github.com/SoulsLike2313/Imperium-",
+  "expected_start_head": "b5bd8a0ca8a91a458f13b9aa5e183151dec91452",
+  "accepted_continuity_head": "b5bd8a0ca8a91a458f13b9aa5e183151dec91452",
+  "language_authority_artifact_commit": "aed6cbfbd44fad10263371e2fb434b4e32173388",
+  "language_authority_receipt_commit": "f0758e59d82f807b731fae5ebbd9a3f703961e58",
+  "ghost_evolve_v2_required": true,
+  "servitor_must_commit_and_push": true,
+  "owner_launch_phrase_after_astronomicon_registration": "TASK_ID: TASK-NEWGEN-LANGUAGE-GATE-INDEPENDENT-REPLAY-STRICT-SCOPE-LEGACY-BACKLOG-RETENTION-POLICY-PC-V0_1\nstart task",
+  "task_type": "language_gate_independent_replay_strict_scope_legacy_backlog_and_retention_policy",
+  "stage": "Stage 3.3 / Independent language replay, backlog, and retention policy",
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH_ONLY_ASCII_SAFE_UTF8_NO_BOM",
+    "canonical_repo_artifacts": "ENGLISH_ONLY_ASCII_SAFE_UTF8_NO_BOM",
+    "owner_facing_runtime_language": "AUTHORIZED_BY_OFFICIO_ONLY",
+    "cyrillic_in_taskpack": "FORBIDDEN",
+    "review_artifacts": "NOT_EMBEDDED_TO_KEEP_TASKPACK_EN_ONLY",
+    "owner_facing_russian_runtime_output": "ALLOWED_ONLY_VIA_OFFICIO_AGENTIS_RUNTIME_AUTHORITY",
+    "localization_exception": "ALLOWED_ONLY_IN_EXPLICIT_CONTROLLED_LOCALIZATION_RESOURCES"
+  },
+  "problem_statement": {
+    "root_issue": "The language authority layer was accepted with warnings, but independent replay, strict-scope classification, legacy backlog, stale red-team repo-truth marking, and taskpack retention policy are still needed before context optimization.",
+    "known_review_findings": [
+      "Language authority and mojibake filter were accepted with warnings.",
+      "Global scan reported many legacy WARN hits and legacy-to-remediate items.",
+      "Hard red-team artifact may contain stale repo-truth captured before final closure.",
+      "Head taxonomy split must be explicit: artifact commit, receipt commit, and final HEAD.",
+      "Registered taskpack ZIP and EXTRACTED artifacts need retention or quarantine policy."
+    ]
+  },
+  "inherited_caps": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME",
+    "CAP_LEGACY_RECEIPT_PRODUCERS_UNCLASSIFIED",
+    "CAP_LANGUAGE_SCAN_LEGACY_WARNINGS_PRESENT",
+    "CAP_HEAD_TAXONOMY_SPLIT_REQUIRES_EXPLICIT_RECEIPTS",
+    "CAP_REGISTERED_TASKPACK_RETENTION_POLICY_MISSING"
+  ],
+  "new_required_caps": [
+    "CAP_INDEPENDENT_LANGUAGE_REPLAY_MISSING",
+    "CAP_STRICT_SCOPE_LANGUAGE_RECEIPT_MISSING",
+    "CAP_LEGACY_LANGUAGE_BACKLOG_MISSING",
+    "CAP_STALE_REPO_TRUTH_NOT_CLASSIFIED",
+    "CAP_TASKPACK_RETENTION_POLICY_MISSING",
+    "CAP_LANGUAGE_CLEAN_PASS_OVERCLAIM"
+  ],
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "astronomicon_intake_compatibility": {
+    "root_manifest": true,
+    "root_task_spec": true,
+    "root_acceptance_gates": true,
+    "root_output_requirements": true,
+    "root_route_manifest_template": true,
+    "root_start_ack_template": true
+  },
+  "embedded_review_artifacts": [],
+  "astronomicon_language_gate_compatibility": {
+    "required_policy_fields_present": [
+      "owner_facing_russian_runtime_output",
+      "localization_exception"
+    ],
+    "compatibility_version": "ASTRA_READY_V2"
+  }
+}

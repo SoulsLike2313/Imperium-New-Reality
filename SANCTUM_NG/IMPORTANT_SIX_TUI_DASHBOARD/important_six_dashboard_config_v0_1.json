@@ -1,0 +1,152 @@
+{
+  "schema_id": "important_six_dashboard_config_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1",
+  "mode": "READ_ONLY_OR_SEMI_LIVE_TUI_SNAPSHOT_DASHBOARD_L1",
+  "claim_boundary": "READ_ONLY_OR_SEMI_LIVE_TUI_SNAPSHOT_DASHBOARD_L1",
+  "safe_commands_only": [
+    "TUI --smoke --plain-json",
+    "organ_query --sample"
+  ],
+  "server": {
+    "default_host": "127.0.0.1",
+    "default_port": 8766,
+    "command_timeout_sec": 30
+  },
+  "not_proven": [
+    "true interactive terminal",
+    "real-time bidirectional organ sessions",
+    "Owner Verdict button",
+    "write actions",
+    "production orchestration",
+    "final visual design",
+    "live Servitor execution stream"
+  ],
+  "organs": {
+    "doctrinarium": {
+      "organ_label": "DOCTRINARIUM",
+      "display_name": {
+        "ru": "Доктринариум",
+        "en": "Doctrinarium"
+      },
+      "role": {
+        "ru": "Законы и gate-дисциплина",
+        "en": "Laws and gate discipline"
+      },
+      "accent": "#56d79a",
+      "tui_script": "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TUI/doctrinarium_shell_v0_1.py",
+      "query_script": "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TOOLS/doctrinarium_organ_query_v0_1.py",
+      "tui_args": [
+        "--smoke",
+        "--plain-json"
+      ],
+      "query_args": [
+        "--sample"
+      ]
+    },
+    "officio": {
+      "organ_label": "OFFICIO_AGENTIS",
+      "display_name": {
+        "ru": "Оффицио Агентум",
+        "en": "Officio Agentis"
+      },
+      "role": {
+        "ru": "Роль, язык, execution-контракт",
+        "en": "Role, language, execution contract"
+      },
+      "accent": "#f4c95d",
+      "tui_script": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/officio_shell_v0_1.py",
+      "query_script": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_organ_query_v0_1.py",
+      "tui_args": [
+        "--smoke",
+        "--plain-json"
+      ],
+      "query_args": [
+        "--sample"
+      ]
+    },
+    "administratum": {
+      "organ_label": "ADMINISTRATUM",
+      "display_name": {
+        "ru": "Администратум",
+        "en": "Administratum"
+      },
+      "role": {
+        "ru": "Непрерывность, отчётность, closure",
+        "en": "Continuity, reporting, closure"
+      },
+      "accent": "#7ea8ff",
+      "tui_script": "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/administratum_shell_v0_1.py",
+      "query_script": "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS/administratum_organ_query_v0_1.py",
+      "tui_args": [
+        "--smoke",
+        "--plain-json"
+      ],
+      "query_args": [
+        "--sample"
+      ]
+    },
+    "astronomicon": {
+      "organ_label": "ASTRONOMICON",
+      "display_name": {
+        "ru": "Астрономикон",
+        "en": "Astronomicon"
+      },
+      "role": {
+        "ru": "Маршруты, стадии, task-регистрация",
+        "en": "Routes, stages, task registration"
+      },
+      "accent": "#d68cff",
+      "tui_script": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/astronomicon_shell_v0_1.py",
+      "query_script": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_organ_query_v0_1.py",
+      "tui_args": [
+        "--smoke",
+        "--plain-json"
+      ],
+      "query_args": [
+        "--sample"
+      ]
+    },
+    "mechanicus": {
+      "organ_label": "MECHANICUS",
+      "display_name": {
+        "ru": "Механикус",
+        "en": "Mechanicus"
+      },
+      "role": {
+        "ru": "Инструменты и безопасность capability",
+        "en": "Tooling and capability safety"
+      },
+      "accent": "#ff8b8b",
+      "tui_script": "IMPERIUM_NEW_GENERATION/MECHANICUS/TUI/mechanicus_shell_v0_1.py",
+      "query_script": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_organ_query_v0_1.py",
+      "tui_args": [
+        "--smoke",
+        "--plain-json"
+      ],
+      "query_args": [
+        "--sample"
+      ]
+    },
+    "inquisition": {
+      "organ_label": "INQUISITION",
+      "display_name": {
+        "ru": "Инквизиция",
+        "en": "Inquisition"
+      },
+      "role": {
+        "ru": "Анти fake-green и аудит-правила",
+        "en": "Anti fake-green and audit rules"
+      },
+      "accent": "#6de5f2",
+      "tui_script": "IMPERIUM_NEW_GENERATION/INQUISITION/TUI/inquisition_shell_v0_1.py",
+      "query_script": "IMPERIUM_NEW_GENERATION/INQUISITION/TOOLS/inquisition_organ_query_v0_1.py",
+      "tui_args": [
+        "--smoke",
+        "--plain-json"
+      ],
+      "query_args": [
+        "--sample"
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "cases": [
+    {
+      "id": "BAD_ZIP_MISSING_MANIFEST",
+      "expected": "ADMISSION_BLOCK"
+    },
+    {
+      "id": "BAD_ZIP_MISSING_LANGUAGE_POLICY",
+      "expected": "ADMISSION_BLOCK"
+    },
+    {
+      "id": "BAD_ZIP_MISSING_8_ORGAN_ROUTE",
+      "expected": "ADMISSION_BLOCK"
+    },
+    {
+      "id": "UNREGISTERED_TASK_ID_RESOLVE",
+      "expected": "RESOLVER_BLOCK"
+    },
+    {
+      "id": "VALID_8_ORGAN_TASKPACK",
+      "expected": "ADMISSION_PASS and RESOLVER_PASS_WITH_WARNINGS_OR_PASS"
+    }
+  ],
+  "classification": "positive protection cases"
+}

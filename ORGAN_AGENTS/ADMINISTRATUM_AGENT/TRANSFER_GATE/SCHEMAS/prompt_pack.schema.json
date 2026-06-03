@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.administratum.transfer_gate.prompt_pack.v0_1",
+  "title": "Administratum Transfer Gate Prompt Pack V0.1",
+  "type": "object",
+  "required": [
+    "pack_type",
+    "schema_version",
+    "task_id",
+    "required_starting_head",
+    "target_actor",
+    "files"
+  ],
+  "properties": {
+    "pack_type": {
+      "type": "string",
+      "const": "IMPERIUM_LOGOS_PROMPT_PACK"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "required_starting_head": {
+      "type": "string",
+      "minLength": 7
+    },
+    "target_actor": {
+      "type": "string",
+      "const": "VM2_SERVITOR"
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "size_bytes"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "size_bytes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  }
+}

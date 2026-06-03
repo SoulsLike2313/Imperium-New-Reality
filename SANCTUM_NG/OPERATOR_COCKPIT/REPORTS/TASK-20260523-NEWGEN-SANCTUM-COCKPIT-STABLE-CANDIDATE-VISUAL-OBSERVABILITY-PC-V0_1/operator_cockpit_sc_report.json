@@ -1,0 +1,50 @@
+{
+  "schema_id": "OPERATOR_COCKPIT_STABLE_CANDIDATE_BUILD_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1",
+  "generated_at_utc": "2026-05-23T21:05:57Z",
+  "verdict": "PASS",
+  "build_command": [
+    "python",
+    "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\TOOLS\\operator_cockpit_l1_builder.py",
+    "--repo-root",
+    "E:\\IMPERIUM",
+    "--task-id",
+    "TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1",
+    "--report-dir",
+    "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\REPORTS\\TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1",
+    "--output-report",
+    "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\REPORTS\\TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1\\operator_cockpit_l1_report.json",
+    "--build-small-continuity-pack"
+  ],
+  "build_returncode": 0,
+  "build_stdout": "operator_cockpit_state=IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/DATA/operator_cockpit_l1_state.generated.json\noperator_cockpit_build_report=IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/REPORTS/TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1/operator_cockpit_l1_report.json",
+  "build_stderr": "",
+  "launch_points": {
+    "stable": {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.html",
+      "url": "http://127.0.0.1:8765/IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.html"
+    },
+    "candidate": {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_candidate.html",
+      "url": "http://127.0.0.1:8765/IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_candidate.html"
+    }
+  },
+  "entry_assets": {
+    "stable_html": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.html",
+    "stable_css": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.css",
+    "candidate_html": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_candidate.html",
+    "candidate_css": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_candidate.css",
+    "shared_js": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.js"
+  },
+  "contracts": {
+    "promotion_contract": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/CONTRACTS/STABLE_CANDIDATE_PROMOTION_CONTRACT_V0_1.md",
+    "launch_helper": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/TOOLS/launch_operator_cockpit.ps1",
+    "generated_state": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/DATA/operator_cockpit_l1_state.generated.json"
+  },
+  "claim_boundary": "IMPROVED_PC_OPERATOR_SHELL_ONLY",
+  "forbidden_claims": [
+    "production orchestration",
+    "live autonomous multi-contour operations",
+    "fake-ready green without evidence"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schema_id": "READ_ONLY_VISIBILITY_VALIDATOR_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-MECHANICUS-SSH-MATRIX-AND-ACTION-ROLLBACK-CONTRACT-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T20:26:56Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "current_truth_parse",
+      "status": "PASS",
+      "details": "current truth root parses"
+    },
+    {
+      "check_id": "sanctum_state_parse",
+      "status": "PASS",
+      "details": "sanctum state parses"
+    },
+    {
+      "check_id": "current_truth_ssh_ref_exists",
+      "status": "PASS",
+      "details": "current truth has mechanicus ssh registry reference"
+    },
+    {
+      "check_id": "current_truth_rollback_ref_exists",
+      "status": "PASS",
+      "details": "current truth has action rollback layer reference"
+    },
+    {
+      "check_id": "ssh_ref_foundation_status",
+      "status": "PASS",
+      "details": "ssh registry status is FOUNDATION_ONLY"
+    },
+    {
+      "check_id": "ssh_ref_path_exists",
+      "status": "PASS",
+      "details": "ssh matrix path exists"
+    },
+    {
+      "check_id": "ssh_private_key_rule",
+      "status": "PASS",
+      "details": "ssh reference explicitly disallows private key material"
+    },
+    {
+      "check_id": "rollback_ref_foundation_status",
+      "status": "PASS",
+      "details": "rollback layer status is FOUNDATION_ONLY"
+    },
+    {
+      "check_id": "rollback_policy_path_exists",
+      "status": "PASS",
+      "details": "rollback policy path exists"
+    },
+    {
+      "check_id": "sanctum_truth_index_exists",
+      "status": "PASS",
+      "details": "sanctum current_truth_index exists"
+    },
+    {
+      "check_id": "sanctum_truth_index_ssh_path",
+      "status": "PASS",
+      "details": "sanctum truth index references ssh matrix"
+    },
+    {
+      "check_id": "sanctum_truth_index_rollback_path",
+      "status": "PASS",
+      "details": "sanctum truth index references rollback policy"
+    },
+    {
+      "check_id": "sanctum_foundation_safety_layers_exists",
+      "status": "PASS",
+      "details": "sanctum foundation_safety_layers section exists"
+    },
+    {
+      "check_id": "sanctum_foundation_safety_layers_status",
+      "status": "PASS",
+      "details": "sanctum safety layer status is FOUNDATION_ONLY"
+    },
+    {
+      "check_id": "no_fake_live_claims_in_visibility_refs",
+      "status": "PASS",
+      "details": "visibility references do not claim live/autonomous/destructive-tested readiness"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "validated_paths": {
+    "current_truth": "IMPERIUM_NEW_GENERATION/TRUTH/CURRENT_TRUTH_ROOT_V0_1.json",
+    "sanctum_state": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json"
+  },
+  "no_fake_green_note": "PASS means read-only visibility references exist without fake live readiness claims."
+}

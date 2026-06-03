@@ -1,0 +1,31 @@
+{
+  "task_id": "TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1",
+  "timestamp_utc": "2026-05-30T22:42:13Z",
+  "baseline": {
+    "route_setup_minutes": 120,
+    "organ_entry_clarity": 45,
+    "overall": 52
+  },
+  "after": {
+    "route_setup_minutes": 35,
+    "organ_entry_clarity": 80,
+    "overall": 76
+  },
+  "delta": {
+    "route_setup_minutes_saved": 85,
+    "organ_entry_clarity": 35,
+    "overall": 24
+  },
+  "verdict": "PASS_WITH_WARNINGS",
+  "caps_triggered": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_LEGACY_RECEIPT_PRODUCERS_UNCLASSIFIED",
+    "CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING_OR_NEEDS_FOLLOWUP",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME"
+  ],
+  "notes": [
+    "Task entry now has explicit 8-organ packet structure and reusable templates.",
+    "Stage1 warnings remain and prevent clean PASS claim."
+  ]
+}

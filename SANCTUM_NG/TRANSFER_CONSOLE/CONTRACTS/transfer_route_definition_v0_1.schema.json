@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRANSFER_ROUTE_DEFINITION_V0_1",
+  "type": "object",
+  "required": [
+    "route_id",
+    "source_contour",
+    "target_contour",
+    "artifact_kind",
+    "route_status",
+    "allowlisted_actions",
+    "claim_boundary"
+  ],
+  "properties": {
+    "route_id": { "type": "string" },
+    "source_contour": { "enum": ["PC", "VM2", "VM3"] },
+    "target_contour": { "enum": ["PC", "VM2", "VM3"] },
+    "artifact_kind": { "enum": ["taskpack_zip", "report_bundle"] },
+    "route_status": { "enum": ["CONFIGURED", "NOT_CONFIGURED", "UNKNOWN"] },
+    "route_ref": { "type": ["string", "null"] },
+    "allowlisted_actions": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "CHECK_CONTOUR_STATUS",
+          "REGISTER_TASKPACK_SEND",
+          "REGISTER_REPORT_BUNDLE_FETCH",
+          "DRY_RUN_TASKPACK_SEND",
+          "DRY_RUN_REPORT_FETCH",
+          "REFRESH_TRANSFER_CONSOLE_VIEW"
+        ]
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "claim_boundary": { "const": "FOUNDATION_ONLY" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,395 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/CONTRACTS/operator_cockpit_l1_state.schema.json",
+  "title": "Operator Cockpit L1 State",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "generated_at_utc",
+    "claim_boundary",
+    "repo",
+    "five_second_truth",
+    "focus_gateway",
+    "panels",
+    "transfer_routes",
+    "evidence_diff",
+    "continuity",
+    "development_preview",
+    "actions",
+    "limitations",
+    "forbidden_claims"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "OPERATOR_COCKPIT_L1_STATE_V0_1"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "minLength": 20
+    },
+    "claim_boundary": {
+      "type": "string",
+      "enum": [
+        "READ_ONLY_OWNER_COCKPIT_L1"
+      ]
+    },
+    "repo": {
+      "type": "object",
+      "required": [
+        "head",
+        "branch",
+        "worktree",
+        "remote_master_head",
+        "master_synced"
+      ],
+      "properties": {
+        "head": {
+          "type": "string"
+        },
+        "branch": {
+          "type": "string"
+        },
+        "worktree": {
+          "type": "string",
+          "enum": [
+            "CLEAN",
+            "DIRTY",
+            "UNKNOWN"
+          ]
+        },
+        "remote_master_head": {
+          "type": "string"
+        },
+        "master_synced": {
+          "type": "boolean"
+        },
+        "changed_files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "path",
+              "status"
+            ],
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "five_second_truth": {
+      "type": "object",
+      "required": [
+        "active_task",
+        "who_is_working",
+        "contour",
+        "current_blocker",
+        "next_action",
+        "repo_clean",
+        "evidence_confidence"
+      ],
+      "properties": {
+        "active_task": {
+          "type": "string"
+        },
+        "who_is_working": {
+          "type": "string"
+        },
+        "contour": {
+          "type": "string"
+        },
+        "current_blocker": {
+          "type": "string"
+        },
+        "next_action": {
+          "type": "string"
+        },
+        "repo_clean": {
+          "type": "string"
+        },
+        "evidence_confidence": {
+          "type": "string",
+          "enum": [
+            "LOW",
+            "MEDIUM",
+            "HIGH"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "focus_gateway": {
+      "type": "object",
+      "required": [
+        "external_inputs",
+        "imperium_core",
+        "workers",
+        "assistance_block",
+        "digital_outputs"
+      ],
+      "properties": {
+        "external_inputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "imperium_core": {
+          "type": "string"
+        },
+        "workers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "assistance_block": {
+          "type": "string"
+        },
+        "digital_outputs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "panels": {
+      "type": "object",
+      "required": [
+        "operator_overview",
+        "task_session",
+        "owner_questions_organ_dialogue",
+        "development_preview",
+        "continuity_pack"
+      ],
+      "additionalProperties": true
+    },
+    "transfer_routes": {
+      "type": "object",
+      "required": [
+        "pc_vm2",
+        "pc_vm3",
+        "vm2_vm3",
+        "vm3_vm2",
+        "route_proof_commit",
+        "source_refs"
+      ],
+      "properties": {
+        "pc_vm2": {
+          "type": "string"
+        },
+        "pc_vm3": {
+          "type": "string"
+        },
+        "vm2_vm3": {
+          "type": "string"
+        },
+        "vm3_vm2": {
+          "type": "string"
+        },
+        "route_proof_commit": {
+          "type": "string"
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "evidence_diff": {
+      "type": "object",
+      "required": [
+        "changed_files_count",
+        "changed_files",
+        "report_refs",
+        "validator_refs",
+        "screenshot_refs",
+        "source_refs"
+      ],
+      "properties": {
+        "changed_files_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "changed_files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "report_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "validator_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "screenshot_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "source_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "continuity": {
+      "type": "object",
+      "required": [
+        "small_mode",
+        "latest_pack_ref"
+      ],
+      "properties": {
+        "small_mode": {
+          "type": "string",
+          "enum": [
+            "WIRED",
+            "DRY_RUN_ONLY",
+            "STUB",
+            "PREVIEW_ONLY",
+            "BLOCKED",
+            "NEEDS_ROUTE_PROOF",
+            "NEEDS_OWNER_CONFIRMATION"
+          ]
+        },
+        "latest_pack_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "development_preview": {
+      "type": "object",
+      "required": [
+        "status",
+        "preview_url",
+        "reason"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "WIRED",
+            "DRY_RUN_ONLY",
+            "STUB",
+            "PREVIEW_ONLY",
+            "BLOCKED",
+            "NEEDS_ROUTE_PROOF",
+            "NEEDS_OWNER_CONFIRMATION"
+          ]
+        },
+        "preview_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "screenshot_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 9,
+      "items": {
+        "type": "object",
+        "required": [
+          "control_id",
+          "label",
+          "status"
+        ],
+        "properties": {
+          "control_id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "WIRED",
+              "DRY_RUN_ONLY",
+              "STUB",
+              "PREVIEW_ONLY",
+              "BLOCKED",
+              "NEEDS_ROUTE_PROOF",
+              "NEEDS_OWNER_CONFIRMATION"
+            ]
+          },
+          "backend_action_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "request_result_receipt_mode": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

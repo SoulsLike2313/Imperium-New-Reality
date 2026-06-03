@@ -1,0 +1,77 @@
+{
+  "task_id": "TASK-NEWGEN-PC-NEW-REALITY-SEPARATE-REPO-ANCIENT-EMPIRE-FREEZE-PC-V0_1",
+  "taskpack_version": "0.1",
+  "taskpack_type": "implementation",
+  "contour": "PC",
+  "title": "New Reality separate repo foundation and Ancient Empire freeze",
+  "summary": "Create a non-destructive PC-first New Reality root from IMPERIUM_NEW_GENERATION, initialize its own local git repository, preserve the current Imperium repository as Ancient Empire reference, and install a strict New Reality scope lock. Do not delete old files in this task.",
+  "created_utc": "2026-06-03T09:06:16Z",
+  "owner_intent": "Promote IMPERIUM_NEW_GENERATION into IMPERIUM_NEW_GENERATION_NEW_REALITY as the active runtime core while preserving the existing full Imperium repository as ANCIENT_EMPIRE precedent memory.",
+  "required_files": [
+    "MANIFEST.json",
+    "START_HERE.md",
+    "TASK_SPEC.md",
+    "ACCEPTANCE_GATES.md",
+    "OUTPUT_REQUIREMENTS.md"
+  ],
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH_UTF8_NO_BOM_ONLY",
+    "canonical_repo_artifacts": "ENGLISH_UTF8_NO_BOM_BY_DEFAULT",
+    "owner_facing_russian_runtime_output": "ALLOWED_ONLY_THROUGH_OFFICIO_AGENTIS",
+    "cyrillic_in_taskpack": "FORBIDDEN",
+    "localization_exception": "Dedicated i18n/localization files only when explicitly required; not required in this taskpack"
+  },
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "additional_future_organs_context": [
+    {
+      "name": "THRONE",
+      "status": "future/new reality evidence organ; not required for Astronomicon 8-organ admission"
+    },
+    {
+      "name": "CUSTODES",
+      "status": "future admission guardian; not implemented in this task"
+    }
+  ],
+  "scope": {
+    "allowed_roots": [
+      "E:/IMPERIUM",
+      "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+      "E:/IMPERIUM_ANCIENT_EMPIRE_EVIDENCE"
+    ],
+    "forbidden_actions": [
+      "delete original repository",
+      "rewrite old git history",
+      "remove IMPERIUM_NEW_GENERATION from old repo",
+      "push destructive remote changes",
+      "touch private folders",
+      "copy entire old repo into New Reality"
+    ],
+    "required_mode": "non_destructive_split_foundation"
+  },
+  "expected_outputs": [
+    "new_reality_root_created",
+    "new_reality_local_git_repo_initialized",
+    "ancient_empire_freeze_receipt",
+    "newgen_copy_manifest",
+    "external_dependency_scan",
+    "scope_lock_contract",
+    "root_readme_and_agents_created",
+    "no_deletion_receipt",
+    "final_report_bundle"
+  ],
+  "admission": {
+    "requires_pc_contour": true,
+    "requires_owner_approved_new_root_name": "IMPERIUM_NEW_GENERATION_NEW_REALITY",
+    "requires_current_repo_readable": true,
+    "requires_source_folder": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION"
+  }
+}

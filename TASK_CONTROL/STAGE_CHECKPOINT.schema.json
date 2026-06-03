@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/TASK_CONTROL/STAGE_CHECKPOINT.schema.json",
+  "title": "Stage Checkpoint V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "stage_id",
+    "stage_name",
+    "stage_type",
+    "before_state",
+    "after_state",
+    "touched_files",
+    "diff_summary",
+    "evidence_links",
+    "warnings",
+    "errors",
+    "blockers",
+    "organ_checks",
+    "owner_decision_options",
+    "owner_decision_required",
+    "checkpoint_status"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "pattern": "^TASK-"
+    },
+    "stage_id": {
+      "type": "string",
+      "minLength": 2
+    },
+    "stage_name": {
+      "type": "string",
+      "minLength": 3
+    },
+    "stage_type": {
+      "type": "string",
+      "enum": ["PLAN", "IMPLEMENT", "VERIFY", "INTEGRATE", "REPORT", "HANDOFF"]
+    },
+    "before_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["git_head", "git_status_short"],
+      "properties": {
+        "git_head": {"type": "string", "minLength": 7},
+        "git_status_short": {"type": "array", "items": {"type": "string"}},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "after_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["git_head", "git_status_short"],
+      "properties": {
+        "git_head": {"type": "string", "minLength": 7},
+        "git_status_short": {"type": "array", "items": {"type": "string"}},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "touched_files": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "diff_summary": {
+      "type": "string",
+      "minLength": 3
+    },
+    "evidence_links": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 3}
+    },
+    "warnings": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "errors": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "blockers": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "organ_checks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "STRATEGIUM_AGENT",
+        "ASTRONOMICON_AGENT",
+        "ADMINISTRATUM_AGENT",
+        "OFFICIO_AGENTIS_AGENT",
+        "INQUISITION_AGENT",
+        "MECHANICUS_AGENT",
+        "SCHOLA_IMPERIALIS_AGENT",
+        "DOCTRINARIUM_AGENT"
+      ],
+      "properties": {
+        "STRATEGIUM_AGENT": {"type": "string", "enum": ["PASS", "WARN", "BLOCKED"]},
+        "ASTRONOMICON_AGENT": {"type": "string", "enum": ["PASS", "WARN", "BLOCKED"]},
+        "ADMINISTRATUM_AGENT": {"type": "string", "enum": ["PASS", "WARN", "BLOCKED"]},
+        "OFFICIO_AGENTIS_AGENT": {"type": "string", "enum": ["PASS", "WARN", "BLOCKED"]},
+        "INQUISITION_AGENT": {"type": "string", "enum": ["PASS", "WARN", "BLOCKED"]},
+        "MECHANICUS_AGENT": {"type": "string", "enum": ["PASS", "WARN", "BLOCKED"]},
+        "SCHOLA_IMPERIALIS_AGENT": {"type": "string", "enum": ["PASS", "WARN", "BLOCKED"]},
+        "DOCTRINARIUM_AGENT": {"type": "string", "enum": ["PASS", "WARN", "BLOCKED"]}
+      }
+    },
+    "owner_decision_options": {
+      "type": "array",
+      "minItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["ACCEPT", "REQUEST_FIX", "CONTINUE_WITH_NOTES", "STOP", "SPLIT_REQUIRED"]
+      }
+    },
+    "owner_decision_required": {
+      "type": "boolean"
+    },
+    "checkpoint_status": {
+      "type": "string",
+      "enum": ["READY_FOR_REVIEW", "NEEDS_FIX", "BLOCKED", "ACCEPTED"]
+    },
+    "notes": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  }
+}

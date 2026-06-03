@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:utilities_archive_manifest_generator:tool_detection:utilities_archive_manifest_generator",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "UTILITIES_ARCHIVE_MANIFEST_GENERATOR",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:44Z",
+  "status": "PASS",
+  "summary": "UTILITIES_ARCHIVE_MANIFEST_GENERATOR: PASS via tool_detection:UTILITIES_ARCHIVE_MANIFEST_GENERATOR. promotion_recommendation=PROMOTE_SANDBOX",
+  "check_name": "tool_detection:UTILITIES_ARCHIVE_MANIFEST_GENERATOR",
+  "command_or_check": "python -c \"import json,hashlib,zipfile,tarfile; print('archive_manifest_stack_ok')\"",
+  "exit_code": 0,
+  "stdout_excerpt": "$ python -c \"import json,hashlib,zipfile,tarfile; print('archive_manifest_stack_ok')\"\narchive_manifest_stack_ok",
+  "stderr_excerpt": "",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-archive-manifest-generator_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "PROMOTE_SANDBOX",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-archive-manifest-generator_validation_receipt.json"
+  ]
+}

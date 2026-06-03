@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.newgen.mechanicus.tool_validation_recipe.v0_1",
+  "title": "Mechanicus Tool Validation Recipe V0.1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "capability_id",
+    "tool_name",
+    "category",
+    "platform",
+    "detect",
+    "install",
+    "validate",
+    "stress",
+    "receipt",
+    "rollback_or_cleanup_notes"
+  ],
+  "properties": {
+    "capability_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tool_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1
+    },
+    "platform": {
+      "type": "string",
+      "minLength": 1
+    },
+    "detect": {
+      "type": "object"
+    },
+    "install": {
+      "type": "object"
+    },
+    "validate": {
+      "type": "object"
+    },
+    "stress": {
+      "type": "object"
+    },
+    "receipt": {
+      "type": "object"
+    },
+    "rollback_or_cleanup_notes": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

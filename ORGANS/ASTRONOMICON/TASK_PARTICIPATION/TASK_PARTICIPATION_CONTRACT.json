@@ -1,0 +1,41 @@
+{
+  "organ": "ASTRONOMICON",
+  "status": "ACTIVE_FOR_STAGE1",
+  "task_entry_role": "Canonical task-entry owner: task ID resolver, route manifest, start ACK, and taskpack admission.",
+  "required_inputs": [
+    "Taskpack pointer",
+    "Task route template"
+  ],
+  "required_outputs": [
+    "Task route manifest template",
+    "Task start ACK template"
+  ],
+  "matrix_responsibilities": [
+    "IMPERIUM_WORK_PATH_MATRIX",
+    "OWNER_QUESTION_MATRIX",
+    "TASK_FOCUS_PACKET_MATRIX",
+    "TASKPACK_LANGUAGE_ADMISSION_MATRIX"
+  ],
+  "tools_or_receipts_used": [
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TOOLS/check_task_entry_route_v0_1.py",
+    "python IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TOOLS/check_task_entry_route_v0_1.py --repo-root . --report-root IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1",
+    "scripts/astronomicon_workbench_intake_e2e_check_v0_1.py"
+  ],
+  "ide_display_fields": [
+    "task_id",
+    "taskpack_path",
+    "route_status",
+    "entry_ack_status",
+    "missing_organs"
+  ],
+  "failure_caps": [
+    "CAP_ASTRONOMICON_TASK_ENTRY_MISSING",
+    "CAP_TASK_ID_RESOLVER_MISSING",
+    "CAP_SYNTHETIC_TASK_ENTRY_PROOF_MISSING"
+  ],
+  "known_gaps": [
+    "Task ID resolver is synthetic fixture-backed, not production intake-backed.",
+    "Corridor contracts are Stage1 candidate and require post-review hardening."
+  ],
+  "used_by_astronomicon_task_entry": true
+}

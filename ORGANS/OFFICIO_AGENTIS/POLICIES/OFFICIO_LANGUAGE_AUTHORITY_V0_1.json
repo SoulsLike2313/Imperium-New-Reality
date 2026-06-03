@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.1",
+  "contract_id": "OFFICIO_LANGUAGE_AUTHORITY_V0_1",
+  "owner_organ": "OFFICIO_AGENTIS",
+  "status": "CANDIDATE_NOT_CANON",
+  "canonical_artifacts_language": "ENGLISH_ONLY",
+  "canonical_artifacts_encoding": "UTF8_NO_BOM",
+  "canonical_artifact_extensions": [
+    "json",
+    "md",
+    "txt",
+    "py",
+    "ps1",
+    "yaml",
+    "yml",
+    "csv",
+    "toml"
+  ],
+  "owner_facing_runtime_language": {
+    "russian_allowed": true,
+    "authority": "OFFICIO_AGENTIS_RUNTIME_ROLE_SETTINGS",
+    "servitor_live_progress_ru_allowed": true,
+    "not_allowed_inside_taskpack_internal_files": true
+  },
+  "forbidden_in_canonical_internal_artifacts": [
+    "CYRILLIC_OUTSIDE_CONTROLLED_LOCALIZATION",
+    "UTF8_BOM",
+    "REPLACEMENT_CHARACTER_UFFFD",
+    "MOJIBAKE_SIGNATURE",
+    "MIXED_ENCODING_ARTIFACT",
+    "RUNTIME_OWNER_PROSE_EMBEDDED_IN_MACHINE_POLICY"
+  ],
+  "localization_resources": {
+    "allowed": true,
+    "required_folder_markers": [
+      "locales",
+      "i18n",
+      "translations",
+      "LOCALIZATION"
+    ],
+    "default_verdict": "WARN_OR_PASS_WITH_EXCLUSION_NOTE"
+  },
+  "caps": [
+    "CAP_LANGUAGE_AUTHORITY_MISSING",
+    "CAP_OWNER_LANGUAGE_NOT_ROUTED_THROUGH_OFFICIO",
+    "CAP_NON_ENGLISH_TASKPACK_INTERNAL_TEXT",
+    "CAP_CANONICAL_ARTIFACT_CONTAINS_CYRILLIC",
+    "CAP_UTF8_BOM_NOT_DETECTED",
+    "CAP_REPLACEMENT_CHARACTER_NOT_DETECTED",
+    "CAP_MOJIBAKE_SIGNATURE_NOT_DETECTED",
+    "CAP_LOCALIZATION_EXCEPTION_UNCONTROLLED"
+  ]
+}

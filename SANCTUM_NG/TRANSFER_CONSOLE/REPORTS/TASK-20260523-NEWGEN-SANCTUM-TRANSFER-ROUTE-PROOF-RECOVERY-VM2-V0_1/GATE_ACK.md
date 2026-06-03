@@ -1,0 +1,59 @@
+# GATE_ACK
+
+- task_id: `TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1`
+- current_head: `fc4b7ec9bd4baf565ceb25e6f30bce6297c0d209`
+- gatepack_path: `INBOX/VM2_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1/TASKPACK_TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1`
+- gatepack_sha256: `10f7cca9ddb9bc6e3bd46386e25673601d047b2fd16e75eb6c43a93e3a8f8630`
+- read_gates:
+  - `GATE-U00-GIT-TRUTH`
+  - `GATE-U01-ROLE-ACK`
+  - `GATE-U02-SCOPE-BOUNDARY`
+  - `GATE-U04-EVIDENCE-RECEIPT`
+  - `GATE-U05-STOP-CONDITIONS`
+  - `GATE-U08-REPO-PURITY`
+  - `GATE-U09-NO-FAKE-GREEN`
+  - `GATE-U12-REPORT-OUTPUT-BUDGET`
+  - `GATE-U13-PYTHON-TYPE-SAFETY`
+  - `GATE-U14-WHOLE-REPO-SCOPE-RECON`
+  - `GATE-U15-OPERATIONALITY-IMPACT`
+  - `GATE-U16-BILINGUAL-UI`
+  - `GATE-U17-DELIVERABLE-PACKAGE`
+  - `GATE-U18-AGENT-FACTORY-COMPLIANCE`
+  - `GATE-U19-SCRIPT-ARTIFACT-PRESERVATION`
+  - `GATE-U20-AGENT-KPD-SELF-REVIEW`
+  - `GATE-U21-COMMAND-CHUNKING`
+- accepted_stop_conditions:
+  - `Any out-of-scope path touch => STOP/BLOCK.`
+  - `Any production orchestration claim => STOP/BLOCK.`
+  - `Any route PASS without evidence object => STOP/BLOCK.`
+  - `Any unavailable route hidden as PASS => STOP/BLOCK.`
+  - `Any forbidden shell field in request/result => STOP/BLOCK.`
+- scope_boundary: `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/** and INBOX/VM2_TASKPACKS evidence read-only`
+- touched_paths:
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/build_transfer_route_proof_recovery_v0_1.py`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/validate_transfer_route_proof_recovery_v0_1.py`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/smoke_transfer_route_proof_recovery_v0_1.py`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/**`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1/**`
+- forbidden_paths:
+  - `ORGANS/**`
+  - `SANCTUM/**`
+  - `IMPERIUM_TEST_VERSION/**`
+  - `.git/**`
+- expected_receipts:
+  - `route_proof_recovery_summary.json`
+  - `transfer_route_proof_validator_report.json`
+  - `transfer_route_proof_smoke_report.json`
+  - `context_source_mix.json`
+  - `kpd_next_task_improvement.md`
+  - `FINAL_REPORT.md`
+  - `closure_receipt.json`
+- repo_recon_required: `YES`
+- script_absorption_required: `YES (new recovery builder/validator/smoke preserved under TRANSFER_CONSOLE/TOOLS)`
+- clarification_needed: `NO`
+- verdict: `PASS`
+
+Claim boundary:
+- `ROUTE_PROOF_ONLY`
+- `NO_PRODUCTION_REMOTE_ORCHESTRATION`
+- `NO_ARBITRARY_SHELL`

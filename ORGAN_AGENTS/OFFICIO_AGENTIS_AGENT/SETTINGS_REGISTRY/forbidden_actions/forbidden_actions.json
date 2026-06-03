@@ -1,0 +1,44 @@
+{
+  "setting_id": "SET-FORBIDDEN-ACTIONS-V0_1",
+  "title": "Forbidden Actions",
+  "version": "v0_1",
+  "state": "ACTIVE",
+  "scope": "execution safety and truth protection",
+  "applies_to_roles": [
+    "SERVITOR",
+    "LOGOS_PRIME",
+    "LOGOS_SPECULUM"
+  ],
+  "applies_to_modes": [
+    "EXECUTOR",
+    "AUDITOR",
+    "ARCHITECT",
+    "REPAIRER"
+  ],
+  "forbidden_actions": [
+    "claim_pass_without_evidence",
+    "hide_failed_checks",
+    "ignore_dirty_start",
+    "ignore_head_mismatch",
+    "modify_forbidden_paths",
+    "fabricate_outputs",
+    "bypass_response_contract"
+  ],
+  "machine_rule": {
+    "violation_default_verdict": "BLOCKED",
+    "requires_receipt": true
+  },
+  "human_summary": "These actions are never allowed for admitted tasks.",
+  "acceptance_tests": [
+    "forbidden action appears in report as blocker"
+  ],
+  "evidence_required": [
+    "compliance check output",
+    "audit findings"
+  ],
+  "dependencies": [],
+  "conflicts_with": [],
+  "supersedes": [],
+  "rollback_plan": "restore previous forbidden list and rerun checks",
+  "owner_approval_required": true
+}

@@ -1,0 +1,108 @@
+{
+  "cmd": [
+    "python",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py",
+    "--plain-json",
+    "check"
+  ],
+  "returncode": 0,
+  "severity": "WARN",
+  "stdout": "{\n  \"header\": \"ADMINISTRATUM AGENT :: CHECK (BASE HALF)\",\n  \"status\": \"PASS\",\n  \"command\": \"check\",\n  \"run_id\": \"RUN-ADMINISTRATUM-20260519-193154-8707f8\",\n  \"verdict\": \"PASS\",\n  \"summary\": \"Base Half check report refreshed.\",\n  \"primary_refs\": [],\n  \"artifacts_written\": [\n    \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\ORGAN_AGENTS\\\\ADMINISTRATUM_AGENT\\\\STATE\\\\current_status.json\",\n    \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\ORGAN_AGENTS\\\\ADMINISTRATUM_AGENT\\\\REPORTS\\\\base_half_check_report.json\",\n    \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\ORGAN_AGENTS\\\\ADMINISTRATUM_AGENT\\\\REPORTS\\\\base_half_check_report.md\",\n    \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\\\reports\\\\check_access_map.json\",\n    \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\\\reports\\\\check_metrics_summary.json\",\n    \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\\\receipts\\\\check_command_receipt.json\"\n  ],\n  \"outputs\": {\n    \"run_dir\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193154-8707f8\",\n    \"metrics_report\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\\\reports\\\\check_metrics_summary.json\",\n    \"command_receipt\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\\\receipts\\\\check_command_receipt.json\",\n    \"output_01\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\ORGAN_AGENTS\\\\ADMINISTRATUM_AGENT\\\\STATE\\\\current_status.json\",\n    \"output_02\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\ORGAN_AGENTS\\\\ADMINISTRATUM_AGENT\\\\REPORTS\\\\base_half_check_report.json\",\n    \"output_03\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\ORGAN_AGENTS\\\\ADMINISTRATUM_AGENT\\\\REPORTS\\\\base_half_check_report.md\",\n    \"output_04\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\\\reports\\\\check_access_map.json\",\n    \"output_05\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\\\reports\\\\check_metrics_summary.json\",\n    \"output_06\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\\\receipts\\\\check_command_receipt.json\"\n  },\n  \"warnings\": [],\n  \"why_trust\": [\n    \"Git truth checked before/after command: dirty_before=true, dirty_after=true.\",\n    \"Command receipt written: E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\\\receipts\\\\check_command_receipt.json.\",\n    \"Metrics report written: E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\\\reports\\\\check_metrics_summary.json.\",\n    \"Access map written: E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\\\reports\\\\check_access_map.json.\",\n    \"Runtime outputs confined to run dir: false; RUNS root confinement: false.\",\n    \"Trust is partial where limitations are present.\"\n  ],\n  \"next_actions\": [\n    \"Run `where`, `identity`, and `pack` for continuity outputs.\"\n  ],\n  \"metrics\": {\n    \"command\": \"check\",\n    \"wall_clock_ms\": 269,\n    \"process_cpu_seconds\": 0.015625,\n    \"peak_memory_kb\": 56,\n    \"peak_memory_unavailable_reason\": \"\",\n    \"memory_metric_source\": \"tracemalloc\",\n    \"files_scanned\": 0,\n    \"files_classified\": 0,\n    \"objects_considered\": 0,\n    \"outputs_written_count\": 6,\n    \"output_bytes_total\": 8807,\n    \"warnings_count\": 0,\n    \"errors_count\": 0,\n    \"rejected_count\": 0,\n    \"routes_made\": 0,\n    \"receipts_written\": 1,\n    \"gpu_used\": false,\n    \"gpu_reason\": \"No GPU API/dependency invoked; Python stdlib/script-first execution.\",\n    \"touched_paths_read_count\": 0,\n    \"touched_paths_written_count\": 6,\n    \"owner_wait_seconds\": 0.269,\n    \"maintenance_cost_note\": \"Low ongoing maintenance in stdlib-first mode.\",\n    \"run_cost_class\": \"LIGHT\",\n    \"output_bytes\": 8807,\n    \"cost_class\": \"LIGHT\",\n    \"dirty_before\": true,\n    \"dirty_after\": true,\n    \"dirty_tree_before\": true,\n    \"dirty_tree_after\": true\n  },\n  \"limitations\": [\n    \"Some outputs are outside the expected RUNS root.\"\n  ],\n  \"details\": {\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n    \"required_commands\": [\n      \"status\",\n      \"check\",\n      \"where\",\n      \"identity\",\n      \"pack\",\n      \"shell\",\n      \"help\"\n    ],\n    \"state_path\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\ORGAN_AGENTS\\\\ADMINISTRATUM_AGENT\\\\STATE\\\\current_status.json\",\n    \"report_json\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\ORGAN_AGENTS\\\\ADMINISTRATUM_AGENT\\\\REPORTS\\\\base_half_check_report.json\",\n    \"report_md\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\ORGAN_AGENTS\\\\ADMINISTRATUM_AGENT\\\\REPORTS\\\\base_half_check_report.md\",\n    \"missing\": [],\n    \"warning_reconciliation\": {\n      \"explicit_warning_count\": 0,\n      \"metrics_warning_count\": 0,\n      \"final_status_rule\": \"PASS_WITH_WARNINGS/WARN when warnings are non-empty\",\n      \"active_warnings\": []\n    }\n  }\n}\n",
+  "stderr": "",
+  "json": {
+    "header": "ADMINISTRATUM AGENT :: CHECK (BASE HALF)",
+    "status": "PASS",
+    "command": "check",
+    "run_id": "RUN-ADMINISTRATUM-20260519-193154-8707f8",
+    "verdict": "PASS",
+    "summary": "Base Half check report refreshed.",
+    "primary_refs": [],
+    "artifacts_written": [
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\STATE\\current_status.json",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\REPORTS\\base_half_check_report.json",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\REPORTS\\base_half_check_report.md",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\reports\\check_access_map.json",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\reports\\check_metrics_summary.json",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\receipts\\check_command_receipt.json"
+    ],
+    "outputs": {
+      "run_dir": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193154-8707f8",
+      "metrics_report": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\reports\\check_metrics_summary.json",
+      "command_receipt": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\receipts\\check_command_receipt.json",
+      "output_01": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\STATE\\current_status.json",
+      "output_02": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\REPORTS\\base_half_check_report.json",
+      "output_03": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\REPORTS\\base_half_check_report.md",
+      "output_04": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\reports\\check_access_map.json",
+      "output_05": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\reports\\check_metrics_summary.json",
+      "output_06": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\receipts\\check_command_receipt.json"
+    },
+    "warnings": [],
+    "why_trust": [
+      "Git truth checked before/after command: dirty_before=true, dirty_after=true.",
+      "Command receipt written: E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\receipts\\check_command_receipt.json.",
+      "Metrics report written: E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\reports\\check_metrics_summary.json.",
+      "Access map written: E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193154-8707f8\\reports\\check_access_map.json.",
+      "Runtime outputs confined to run dir: false; RUNS root confinement: false.",
+      "Trust is partial where limitations are present."
+    ],
+    "next_actions": [
+      "Run `where`, `identity`, and `pack` for continuity outputs."
+    ],
+    "metrics": {
+      "command": "check",
+      "wall_clock_ms": 269,
+      "process_cpu_seconds": 0.015625,
+      "peak_memory_kb": 56,
+      "peak_memory_unavailable_reason": "",
+      "memory_metric_source": "tracemalloc",
+      "files_scanned": 0,
+      "files_classified": 0,
+      "objects_considered": 0,
+      "outputs_written_count": 6,
+      "output_bytes_total": 8807,
+      "warnings_count": 0,
+      "errors_count": 0,
+      "rejected_count": 0,
+      "routes_made": 0,
+      "receipts_written": 1,
+      "gpu_used": false,
+      "gpu_reason": "No GPU API/dependency invoked; Python stdlib/script-first execution.",
+      "touched_paths_read_count": 0,
+      "touched_paths_written_count": 6,
+      "owner_wait_seconds": 0.269,
+      "maintenance_cost_note": "Low ongoing maintenance in stdlib-first mode.",
+      "run_cost_class": "LIGHT",
+      "output_bytes": 8807,
+      "cost_class": "LIGHT",
+      "dirty_before": true,
+      "dirty_after": true,
+      "dirty_tree_before": true,
+      "dirty_tree_after": true
+    },
+    "limitations": [
+      "Some outputs are outside the expected RUNS root."
+    ],
+    "details": {
+      "task_id": "TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1",
+      "required_commands": [
+        "status",
+        "check",
+        "where",
+        "identity",
+        "pack",
+        "shell",
+        "help"
+      ],
+      "state_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\STATE\\current_status.json",
+      "report_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\REPORTS\\base_half_check_report.json",
+      "report_md": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\REPORTS\\base_half_check_report.md",
+      "missing": [],
+      "warning_reconciliation": {
+        "explicit_warning_count": 0,
+        "metrics_warning_count": 0,
+        "final_status_rule": "PASS_WITH_WARNINGS/WARN when warnings are non-empty",
+        "active_warnings": []
+      }
+    }
+  }
+}

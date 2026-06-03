@@ -1,0 +1,19 @@
+{
+  "task_id": "TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1",
+  "timestamp_utc": "2026-06-01T05:41:57Z",
+  "baseline_owner_start_flow": "Language and encoding checks were implicit and not centrally enforced.",
+  "current_owner_start_flow": "Taskpack language gate + global scanner + fixture coverage provide deterministic checks.",
+  "observed_delta": {
+    "language_lane_explicit_authority": "ESTABLISHED",
+    "encoding_violation_detection": "AUTOMATED",
+    "taskpack_language_admission_gate": "ENFORCED",
+    "fixture_coverage": "10_REQUIRED_CASES_IMPLEMENTED",
+    "positive_efficiency_delta": true
+  },
+  "caps_triggered": [
+    "CAP_CANONICAL_ARTIFACT_CONTAINS_CYRILLIC",
+    "CAP_NON_ENGLISH_TASKPACK_INTERNAL_TEXT",
+    "CAP_REPLACEMENT_CHARACTER_NOT_DETECTED",
+    "CAP_UTF8_BOM_NOT_DETECTED"
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "schema_version": "0.1",
+  "visual_state_id": "VB-TASK-20260521-NEWGEN-VISUAL-BRAIN-TASK-CORRIDOR-PC-V0_1-STATE",
+  "mode": "READ_ONLY_LAB",
+  "foundation_only": true,
+  "production_ready": false,
+  "live_autonomous_organ_dialogue_proven": false,
+  "task_ref": {
+    "task_id": "TASK-20260521-NEWGEN-VISUAL-BRAIN-TASK-CORRIDOR-PC-V0_1",
+    "source_task_id": "TASK-20260521-NEWGEN-TASK-STATE-EVIDENCE-BINDER-PC-V0_1",
+    "state_ref": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-STATE-EVIDENCE-BINDER-PC-V0_1/TASK_STATE_TRANSITION_PROPOSAL.generated.json",
+    "evidence_ref": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-STATE-EVIDENCE-BINDER-PC-V0_1/EVIDENCE_REPLAY_INDEX.generated.json"
+  },
+  "nodes": [
+    {
+      "node_id": "owner_intent",
+      "label": "Owner Intent",
+      "kind": "OWNER",
+      "status": "PROVED_BY_RECEIPT",
+      "evidence_ref": "EVID-001-TASK_KERNEL",
+      "notes": [
+        "Owner intent is derived from task kernel/formation receipts."
+      ]
+    },
+    {
+      "node_id": "astronomicon",
+      "label": "Astronomicon Formation",
+      "kind": "ORGAN",
+      "status": "FOUNDATION_ONLY",
+      "evidence_ref": "FORMATION-20260521-ASTRONOMICON-SAMPLE",
+      "notes": [
+        "Formation record is foundation sample unless upgraded by live receipts."
+      ]
+    },
+    {
+      "node_id": "officio_agentis",
+      "label": "Officio Agentis",
+      "kind": "ORGAN",
+      "status": "FOUNDATION_ONLY",
+      "evidence_ref": "EVID-002-SCOPE_MERGE",
+      "notes": [
+        "Scope source_type=SAMPLE_PACKET."
+      ]
+    },
+    {
+      "node_id": "doctrinarium",
+      "label": "Doctrinarium",
+      "kind": "ORGAN",
+      "status": "FOUNDATION_ONLY",
+      "evidence_ref": "EVID-002-SCOPE_MERGE",
+      "notes": [
+        "Scope source_type=SAMPLE_PACKET."
+      ]
+    },
+    {
+      "node_id": "administratum",
+      "label": "Administratum",
+      "kind": "ORGAN",
+      "status": "FOUNDATION_ONLY",
+      "evidence_ref": "EVID-002-SCOPE_MERGE",
+      "notes": [
+        "Scope source_type=SAMPLE_PACKET."
+      ]
+    },
+    {
+      "node_id": "mechanicus",
+      "label": "Mechanicus",
+      "kind": "ORGAN",
+      "status": "FOUNDATION_ONLY",
+      "evidence_ref": "EVID-002-SCOPE_MERGE",
+      "notes": [
+        "Scope source_type=SAMPLE_PACKET."
+      ]
+    },
+    {
+      "node_id": "inquisition",
+      "label": "Inquisition",
+      "kind": "ORGAN",
+      "status": "FOUNDATION_ONLY",
+      "evidence_ref": "EVID-002-SCOPE_MERGE",
+      "notes": [
+        "Scope source_type=SAMPLE_PACKET."
+      ]
+    },
+    {
+      "node_id": "strategium",
+      "label": "Strategium",
+      "kind": "ORGAN",
+      "status": "FOUNDATION_ONLY",
+      "evidence_ref": "EVID-002-SCOPE_MERGE",
+      "notes": [
+        "Scope source_type=SAMPLE_PACKET."
+      ]
+    },
+    {
+      "node_id": "schola_imperialis",
+      "label": "Schola Imperialis",
+      "kind": "ORGAN",
+      "status": "FOUNDATION_ONLY",
+      "evidence_ref": "EVID-002-SCOPE_MERGE",
+      "notes": [
+        "Scope source_type=SAMPLE_PACKET."
+      ]
+    },
+    {
+      "node_id": "servitor_core",
+      "label": "Servitor Execution Core",
+      "kind": "SERVITOR",
+      "status": "PROVED_BY_RECEIPT",
+      "evidence_ref": "EVID-003-SERVITOR_SESSION",
+      "notes": [
+        "Run/rerun records are deterministic foundation records."
+      ]
+    },
+    {
+      "node_id": "evidence_binder",
+      "label": "Evidence Binder",
+      "kind": "BINDER",
+      "status": "PROVED_BY_RECEIPT",
+      "evidence_ref": "EVID-004-RUN_RECORD",
+      "notes": [
+        "State transition and replay index are bound here."
+      ]
+    },
+    {
+      "node_id": "owner_verdict_gate",
+      "label": "Owner Verdict Gate",
+      "kind": "OWNER_GATE",
+      "status": "PARTIAL",
+      "evidence_ref": "EVID-005-RERUN_DECISION",
+      "notes": [
+        "Owner acceptance remains external to V0.1 static corridor lab."
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "edge-001",
+      "from": "owner_intent",
+      "to": "astronomicon",
+      "status": "PROVED_BY_RECEIPT",
+      "evidence_ref": "EVID-001-TASK_KERNEL"
+    },
+    {
+      "edge_id": "edge-002",
+      "from": "astronomicon",
+      "to": "officio_agentis",
+      "status": "FOUNDATION_ONLY",
+      "evidence_ref": "FORMATION-20260521-ASTRONOMICON-SAMPLE"
+    },
+    {
+      "edge_id": "edge-003",
+      "from": "astronomicon",
+      "to": "doctrinarium",
+      "status": "FOUNDATION_ONLY",
+      "evidence_ref": "FORMATION-20260521-ASTRONOMICON-SAMPLE"
+    },
+    {
+      "edge_id": "edge-004",
+      "from": "astronomicon",
+      "to": "administratum",
+      "status": "FOUNDATION_ONLY",
+      "evidence_ref": "FORMATION-20260521-ASTRONOMICON-SAMPLE"
+    },
+    {
+      "edge_id": "edge-005",
+      "from": "astronomicon",
+      "to": "mechanicus",
+      "status": "FOUNDATION_ONLY",
+      "evidence_ref": "FORMATION-20260521-ASTRONOMICON-SAMPLE"
+    },
+    {
+      "edge_id": "edge-006",
+      "from": "astronomicon",
+      "to": "inquisition",
+      "status": "FOUNDATION_ONLY",
+      "evidence_ref": "FORMATION-20260521-ASTRONOMICON-SAMPLE"
+    },
+    {
+      "edge_id": "edge-007",
+      "from": "astronomicon",
+      "to": "strategium",
+      "status": "FOUNDATION_ONLY",
+      "evidence_ref": "FORMATION-20260521-ASTRONOMICON-SAMPLE"
+    },
+    {
+      "edge_id": "edge-008",
+      "from": "astronomicon",
+      "to": "schola_imperialis",
+      "status": "FOUNDATION_ONLY",
+      "evidence_ref": "FORMATION-20260521-ASTRONOMICON-SAMPLE"
+    },
+    {
+      "edge_id": "edge-009",
+      "from": "officio_agentis",
+      "to": "servitor_core",
+      "status": "PROVED_BY_RECEIPT",
+      "evidence_ref": "EVID-002-SCOPE_MERGE"
+    },
+    {
+      "edge_id": "edge-010",
+      "from": "doctrinarium",
+      "to": "servitor_core",
+      "status": "PROVED_BY_RECEIPT",
+      "evidence_ref": "EVID-002-SCOPE_MERGE"
+    },
+    {
+      "edge_id": "edge-011",
+      "from": "administratum",
+      "to": "servitor_core",
+      "status": "PROVED_BY_RECEIPT",
+      "evidence_ref": "EVID-002-SCOPE_MERGE"
+    },
+    {
+      "edge_id": "edge-012",
+      "from": "mechanicus",
+      "to": "servitor_core",
+      "status": "PROVED_BY_RECEIPT",
+      "evidence_ref": "EVID-002-SCOPE_MERGE"
+    },
+    {
+      "edge_id": "edge-013",
+      "from": "inquisition",
+      "to": "servitor_core",
+      "status": "PROVED_BY_RECEIPT",
+      "evidence_ref": "EVID-002-SCOPE_MERGE"
+    },
+    {
+      "edge_id": "edge-014",
+      "from": "strategium",
+      "to": "servitor_core",
+      "status": "PROVED_BY_RECEIPT",
+      "evidence_ref": "EVID-002-SCOPE_MERGE"
+    },
+    {
+      "edge_id": "edge-015",
+      "from": "schola_imperialis",
+      "to": "servitor_core",
+      "status": "PROVED_BY_RECEIPT",
+      "evidence_ref": "EVID-002-SCOPE_MERGE"
+    },
+    {
+      "edge_id": "edge-016",
+      "from": "servitor_core",
+      "to": "evidence_binder",
+      "status": "PROVED_BY_RECEIPT",
+      "evidence_ref": "EVID-003-SERVITOR_SESSION"
+    },
+    {
+      "edge_id": "edge-017",
+      "from": "evidence_binder",
+      "to": "owner_verdict_gate",
+      "status": "PROVED_BY_RECEIPT",
+      "evidence_ref": "EVID-004-RUN_RECORD"
+    }
+  ],
+  "run_rail": [
+    {
+      "step_id": "session",
+      "label": "Servitor Session",
+      "status": "PROVED_BY_RECEIPT",
+      "evidence_ref": "EVID-003-SERVITOR_SESSION",
+      "details": "READY_FOR_RUN"
+    },
+    {
+      "step_id": "run",
+      "label": "Run Record",
+      "status": "PROVED_BY_RECEIPT",
+      "evidence_ref": "EVID-004-RUN_RECORD",
+      "details": "PASSED_WITH_EVIDENCE"
+    },
+    {
+      "step_id": "rerun",
+      "label": "Rerun Decision",
+      "status": "PARTIAL",
+      "evidence_ref": "EVID-005-RERUN_DECISION",
+      "details": "PASS_WITH_WARNINGS"
+    }
+  ],
+  "evidence_constellation": [
+    {
+      "evidence_id": "EVID-001-TASK_KERNEL",
+      "kind": "TASK_KERNEL",
+      "status": "PRESENT",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/EXAMPLES/SAMPLE_TASK_KERNEL_OBJECT_V0_1.json",
+      "linked_nodes": [
+        "owner_intent"
+      ]
+    },
+    {
+      "evidence_id": "EVID-002-SCOPE_MERGE",
+      "kind": "ORGAN_SCOPE_MERGE_RECORD",
+      "status": "PRESENT",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-8-ORGAN-SCOPING-CORRIDOR-PC-V0_1/ORGAN_SCOPE_MERGE_RECORD.generated.json",
+      "linked_nodes": [
+        "administratum",
+        "doctrinarium",
+        "inquisition",
+        "mechanicus",
+        "officio_agentis",
+        "schola_imperialis",
+        "strategium"
+      ]
+    },
+    {
+      "evidence_id": "EVID-003-SERVITOR_SESSION",
+      "kind": "SERVITOR_SESSION",
+      "status": "PRESENT",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/SERVITOR_EXECUTION_SESSION.generated.json",
+      "linked_nodes": [
+        "servitor_core"
+      ]
+    },
+    {
+      "evidence_id": "EVID-004-RUN_RECORD",
+      "kind": "RUN_RECORD",
+      "status": "PRESENT",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/RUN_RECORD_001.generated.json",
+      "linked_nodes": [
+        "evidence_binder"
+      ]
+    },
+    {
+      "evidence_id": "EVID-005-RERUN_DECISION",
+      "kind": "RERUN_DECISION",
+      "status": "PRESENT",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/RERUN_DECISION_RECORD.generated.json",
+      "linked_nodes": [
+        "owner_verdict_gate"
+      ]
+    }
+  ],
+  "warnings": [
+    "FOUNDATION_ONLY",
+    "GREEN REQUIRES RECEIPT",
+    "NO LIVE AUTONOMOUS ORGAN DIALOGUE PROVEN",
+    "NO LIVE BACKEND",
+    "READ_ONLY_LAB"
+  ],
+  "forbidden_claims": [
+    "production orchestration is ready",
+    "live autonomous execution is proven",
+    "live organ dialogue is proven",
+    "full visual brain readiness is proven"
+  ],
+  "source_records": [
+    {
+      "source_id": "transition",
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-STATE-EVIDENCE-BINDER-PC-V0_1/TASK_STATE_TRANSITION_PROPOSAL.generated.json",
+      "status": "READ"
+    },
+    {
+      "source_id": "evidence_index",
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-STATE-EVIDENCE-BINDER-PC-V0_1/EVIDENCE_REPLAY_INDEX.generated.json",
+      "status": "READ"
+    },
+    {
+      "source_id": "scope_merge",
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-8-ORGAN-SCOPING-CORRIDOR-PC-V0_1/ORGAN_SCOPE_MERGE_RECORD.generated.json",
+      "status": "READ"
+    },
+    {
+      "source_id": "servitor_session",
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/SERVITOR_EXECUTION_SESSION.generated.json",
+      "status": "READ"
+    },
+    {
+      "source_id": "run_record",
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/RUN_RECORD_001.generated.json",
+      "status": "READ"
+    },
+    {
+      "source_id": "rerun_decision",
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/RERUN_DECISION_RECORD.generated.json",
+      "status": "READ"
+    },
+    {
+      "source_id": "formation_record",
+      "path": "IMPERIUM_NEW_GENERATION/CONTRACTS/ASTRONOMICON/EXAMPLES/SAMPLE_TASK_FORMATION_RECORD_V0_1.json",
+      "status": "READ"
+    },
+    {
+      "source_id": "task_kernel",
+      "path": "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/EXAMPLES/SAMPLE_TASK_KERNEL_OBJECT_V0_1.json",
+      "status": "READ"
+    }
+  ],
+  "created_at_utc": "2026-05-21T21:14:01Z"
+}

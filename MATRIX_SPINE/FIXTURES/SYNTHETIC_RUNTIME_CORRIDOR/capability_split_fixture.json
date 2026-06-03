@@ -1,0 +1,24 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1",
+  "items": [
+    {
+      "output_or_action": "Matrix Spine validation runner",
+      "classification": "LOCAL_SCRIPT_FIRST",
+      "evidence": "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_matrix_spine_validation.sh",
+      "owner_organ": "Mechanicus",
+      "gap_or_replay": "replay: bash IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_matrix_spine_validation.sh"
+    },
+    {
+      "output_or_action": "Synthetic corridor runner",
+      "classification": "LOCAL_SCRIPT_FIRST",
+      "evidence": "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_synthetic_runtime_corridor.sh",
+      "owner_organ": "Mechanicus",
+      "gap_or_replay": "replay: bash IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_synthetic_runtime_corridor.sh"
+    }
+  ],
+  "summary": {
+    "local_script_first_count": 2,
+    "agent_reasoning_only_count": 0
+  },
+  "verdict": "PASS"
+}

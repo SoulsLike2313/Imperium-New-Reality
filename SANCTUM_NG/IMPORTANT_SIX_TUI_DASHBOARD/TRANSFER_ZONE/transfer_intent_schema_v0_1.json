@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "important_six.transfer_intent.v0_1",
+  "title": "Important Six Transfer Intent",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "generated_at_utc",
+    "target",
+    "intent_type",
+    "dry_run_only",
+    "command_preview",
+    "aliases_checked",
+    "config_ref",
+    "forbidden"
+  ],
+  "properties": {
+    "schema_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "minLength": 20
+    },
+    "target": {
+      "type": "string",
+      "enum": [
+        "vm2",
+        "vm3"
+      ]
+    },
+    "intent_type": {
+      "type": "string",
+      "enum": [
+        "send_taskpack",
+        "fetch_report"
+      ]
+    },
+    "dry_run_only": {
+      "type": "boolean"
+    },
+    "command_preview": {
+      "type": "string",
+      "minLength": 8
+    },
+    "aliases_checked": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "alias",
+          "available"
+        ],
+        "properties": {
+          "alias": {
+            "type": "string",
+            "minLength": 2
+          },
+          "checked": {
+            "type": "boolean"
+          },
+          "available": {
+            "type": "boolean"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "exit_code": {
+            "type": "integer"
+          },
+          "stderr": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "config_ref": {
+      "type": "string",
+      "minLength": 4
+    },
+    "forbidden": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

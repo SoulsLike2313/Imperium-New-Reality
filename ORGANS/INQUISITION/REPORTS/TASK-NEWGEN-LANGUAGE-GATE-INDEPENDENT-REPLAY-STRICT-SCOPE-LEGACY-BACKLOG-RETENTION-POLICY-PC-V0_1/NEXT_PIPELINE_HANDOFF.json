@@ -1,0 +1,23 @@
+{
+  "task_id": "TASK-NEWGEN-LANGUAGE-GATE-INDEPENDENT-REPLAY-STRICT-SCOPE-LEGACY-BACKLOG-RETENTION-POLICY-PC-V0_1",
+  "timestamp_utc": "2026-06-01T06:19:48Z",
+  "current_stage_verdict": "LANGUAGE_GATE_REPLAY_PASS_WITH_WARNINGS",
+  "next_allowed_tasks": [
+    {
+      "task_id": "TASK-NEWGEN-LEGACY-LANGUAGE-BACKLOG-PHASED-REMEDIATION-PC-V0_1",
+      "priority": "P0",
+      "reason": "Reduce LEGACY_TO_REMEDIATE language/encoding debt without broad unsafe rewrite."
+    },
+    {
+      "task_id": "TASK-NEWGEN-ASTRONOMICON-TASKPACK-RETENTION-QUARANTINE-HASH-POINTER-PC-V0_1",
+      "priority": "P1",
+      "reason": "Implement hash-and-quarantine pointer workflow for heavy registered taskpack payloads."
+    },
+    {
+      "task_id": "TASK-NEWGEN-INQUISITION-STABLE-PENDING-FIELD-SCANNER-PC-V0_1",
+      "priority": "P1",
+      "reason": "Continuously classify pending finalization markers in report bundles."
+    }
+  ],
+  "owner_action": "Run independent Inquisitor/Speculum review before any clean PASS claim."
+}

@@ -1,0 +1,178 @@
+[
+  {
+    "id": "SRC-MCP-SPEC-2025-06-18",
+    "system": "Model Context Protocol",
+    "title": "Model Context Protocol Specification 2025-06-18",
+    "url": "https://modelcontextprotocol.io/specification/2025-06-18",
+    "official": true,
+    "facts": [
+      "MCP is an open protocol for integrating LLM applications with external data sources and tools.",
+      "MCP standardizes sharing context, exposing tools/capabilities, and building composable integrations/workflows.",
+      "MCP uses JSON-RPC 2.0 messages between hosts, clients, and servers."
+    ],
+    "imperium_takeaway": "Translate MCP into a sovereign Skill Bundle Protocol and Tool State Protocol; do not install or adopt MCP as a master architecture."
+  },
+  {
+    "id": "SRC-LANGGRAPH-PERSISTENCE",
+    "system": "LangGraph",
+    "title": "LangGraph Persistence",
+    "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+    "official": true,
+    "facts": [
+      "LangGraph persistence saves graph state as checkpoints at every step when compiled with a checkpointer.",
+      "Checkpoints enable human-in-the-loop inspection/approval, memory, time travel debugging, and fault-tolerant execution.",
+      "Graph executions are organized into threads."
+    ],
+    "imperium_takeaway": "Translate to Route/Checkpoint Protocol with resumable run state, Owner approval points, time-travel/debug snapshots, and fault recovery."
+  },
+  {
+    "id": "SRC-CLAUDE-CODE-SUBAGENTS",
+    "system": "Claude Code subagents",
+    "title": "Create custom subagents - Claude Code Docs",
+    "url": "https://code.claude.com/docs/en/sub-agents",
+    "official": true,
+    "facts": [
+      "Subagents are defined in Markdown files with YAML frontmatter.",
+      "Subagents can be user-level, project-level, managed settings, CLI-session, or plugin-provided.",
+      "A subagent can be configured with tool access, model choice, color, and persistent memory."
+    ],
+    "imperium_takeaway": "Translate to Organ-Agent manifest + role contract + tool admission + visual CLI identity + memory scope."
+  },
+  {
+    "id": "SRC-CLAUDE-CODE-HOOKS",
+    "system": "Claude Code hooks",
+    "title": "Claude Code Hooks Reference",
+    "url": "https://code.claude.com/docs/en/hooks",
+    "official": true,
+    "facts": [
+      "Hooks can run when subagents start or stop.",
+      "SubagentStart receives agent_id and agent_type and can inject additional context.",
+      "SubagentStop receives subagent transcript path and last assistant message."
+    ],
+    "imperium_takeaway": "Translate to Agent Event Hooks and Receipts: start/stop events, transcript paths, injected context, and run ledger."
+  },
+  {
+    "id": "SRC-SWE-AGENT-ARCHITECTURE",
+    "system": "SWE-agent",
+    "title": "SWE-agent Architecture",
+    "url": "https://swe-agent.com/latest/background/architecture/",
+    "official": true,
+    "facts": [
+      "SWE-agent central entry point is a CLI executable.",
+      "It initializes an environment, shell session, custom tools/ACI, configurable agent, history processor, action parser, and execution loop.",
+      "SWE-agent documentation notes it has been superseded by mini-swe-agent and is now maintenance-only."
+    ],
+    "imperium_takeaway": "Translate to clean CLI runner, sandboxed execution surface, action parser, history compressor, and tool bundle interface; avoid adopting an obsolete framework."
+  },
+  {
+    "id": "SRC-SWE-AGENT-ACI",
+    "system": "SWE-agent ACI",
+    "title": "Agent-Computer Interface",
+    "url": "https://github.com/SWE-agent/SWE-agent/blob/main/docs/background/aci.md",
+    "official": true,
+    "facts": [
+      "SWE-agent centers the idea of an Agent-Computer Interface: tools and interaction format enabling an agent to interact with a computer environment.",
+      "ACI design materially affects agent behavior and performance."
+    ],
+    "imperium_takeaway": "Translate to IMPERIUM Agent-Computer Interface: narrow command grammar, receipts, safe shell exposure, and script-first capabilities."
+  },
+  {
+    "id": "SRC-SWE-AGENT-TRAJECTORIES",
+    "system": "SWE-agent trajectories",
+    "title": "SWE-agent trajectories",
+    "url": "https://swe-agent.com/latest/usage/inspector/",
+    "official": true,
+    "facts": [
+      "Trajectories are SWE-agent's main output for understanding what the agent does.",
+      "SWE-agent provides CLI and web inspectors for trajectory files."
+    ],
+    "imperium_takeaway": "Translate to Route Session Trajectory + Inspector-ready receipts, not only final answers."
+  },
+  {
+    "id": "SRC-OPENHANDS-SITE",
+    "system": "OpenHands",
+    "title": "OpenHands official site",
+    "url": "https://www.openhands.dev/",
+    "official": true,
+    "facts": [
+      "OpenHands is an AI agent platform for software development that can plan, write, apply changes, and complete engineering tasks end-to-end.",
+      "OpenHands emphasizes large/legacy codebase handling, dependency mapping, and safe parallel agent work."
+    ],
+    "imperium_takeaway": "Translate to Workspace Boundary, large-repo map, controlled parallelism, and end-to-end task proof; do not hand control to external agent platform."
+  },
+  {
+    "id": "SRC-OPENHANDS-PAPER",
+    "system": "OpenHands paper",
+    "title": "OpenHands: An Open Platform for AI Software Developers",
+    "url": "https://arxiv.org/abs/2407.16741",
+    "official": false,
+    "facts": [
+      "The OpenHands paper describes agents interacting through code writing, command line, and web browsing.",
+      "It highlights sandboxed environments for code execution, multi-agent coordination, and evaluation benchmarks."
+    ],
+    "imperium_takeaway": "Translate to sandboxed workspaces, action channels, benchmark/eval suites, and browser/tool boundaries."
+  },
+  {
+    "id": "SRC-METAGPT-DOCS",
+    "system": "MetaGPT",
+    "title": "MetaGPT introduction",
+    "url": "https://docs.deepwisdom.ai/main/en/guide/get_started/introduction.html",
+    "official": true,
+    "facts": [
+      "MetaGPT takes a one-line requirement and outputs artifacts such as user stories, competitive analysis, requirements, data structures, APIs, and documents.",
+      "MetaGPT models a software company using roles like product managers, architects, project managers, and engineers.",
+      "Its stated philosophy is Code = SOP(Team): materialized SOP applied to LLM teams."
+    ],
+    "imperium_takeaway": "Translate to Organ SOP pipeline and artifact chain; accept structured role workflows, reject theatrical roleplay and uncontrolled cascade."
+  },
+  {
+    "id": "SRC-CREWAI-DOCS",
+    "system": "CrewAI",
+    "title": "CrewAI Documentation",
+    "url": "https://docs.crewai.com/",
+    "official": true,
+    "facts": [
+      "CrewAI describes collaborative agents, crews, and flows.",
+      "It emphasizes guardrails, memory, knowledge, observability, and structured outputs."
+    ],
+    "imperium_takeaway": "Translate to controlled teams, observability, flow-managed state, and typed outputs; do not import CrewAI as host."
+  },
+  {
+    "id": "SRC-CREWAI-INTRO",
+    "system": "CrewAI",
+    "title": "CrewAI Introduction",
+    "url": "https://docs.crewai.com/en/introduction",
+    "official": true,
+    "facts": [
+      "CrewAI Flows manage state and control execution.",
+      "Crews are teams of autonomous agents delegated tasks by Flows.",
+      "Flows provide state management, event-driven execution, control flow, conditional logic, loops, and branching."
+    ],
+    "imperium_takeaway": "Translate to Sanctum/Route manager as flow controller and Organ-Agent groups as crews, but keep deterministic gates and local sovereignty."
+  },
+  {
+    "id": "SRC-AUTOGEN-MS-RESEARCH",
+    "system": "AutoGen",
+    "title": "AutoGen - Microsoft Research",
+    "url": "https://www.microsoft.com/en-us/research/project/autogen/",
+    "official": true,
+    "facts": [
+      "AutoGen is an open-source framework for building AI agents and facilitating cooperation among multiple agents.",
+      "AutoGen v0.4 emphasizes asynchronous messaging, modular extensibility, observability/debugging, scalable/distributed networks, extensions, cross-language support, and type support."
+    ],
+    "imperium_takeaway": "Translate to typed async event bus, modular tool/agent interfaces, tracing, and cross-language adapter boundaries."
+  },
+  {
+    "id": "SRC-AUTOGEN-AGENTS",
+    "system": "AutoGen agentchat",
+    "title": "AutoGen Agents tutorial",
+    "url": "https://microsoft.github.io/autogen/stable/user-guide/agentchat-user-guide/tutorial/agents.html",
+    "official": true,
+    "facts": [
+      "AutoGen supports using an agent as a tool.",
+      "It warns to disable parallel tool calls when tools or agent teams have internal state that can conflict.",
+      "Structured output can be validated with schema-like Python models."
+    ],
+    "imperium_takeaway": "Translate to Agent-as-tool admission, side-effect concurrency lock, max iteration budgets, and typed output contracts."
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-arsenal-validation-batch-001-pc-v0_1:tools_command_gateway:p0_mechanicus_spine:tools_command_gateway",
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+  "capability_id": "TOOLS_COMMAND_GATEWAY",
+  "validator": "mechanicus_capability_validator_v0_1.py",
+  "checked_at_utc": "2026-05-24T18:15:14Z",
+  "status": "PASS",
+  "summary": "TOOLS_COMMAND_GATEWAY: PASS via P0_MECHANICUS_SPINE:TOOLS_COMMAND_GATEWAY. promotion_recommendation=KEEP_SANDBOX",
+  "check_name": "P0_MECHANICUS_SPINE:TOOLS_COMMAND_GATEWAY",
+  "command_or_check": "python -c \"from pathlib import Path; p=Path('src/imperium/security/command_gateway.py'); print(p.exists()); raise SystemExit(0 if p.exists() else 2)\"",
+  "exit_code": 0,
+  "stdout_excerpt": "$ python -c \"from pathlib import Path; p=Path('src/imperium/security/command_gateway.py'); print(p.exists()); raise SystemExit(0 if p.exists() else 2)\"\nTrue",
+  "stderr_excerpt": "$ python -c \"from pathlib import Path; p=Path('src/imperium/security/command_gateway.py'); print(p.exists()); raise SystemExit(0 if p.exists() else 2)\"",
+  "side_effects": [
+    "read-only command execution",
+    "receipt json created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/tools-command-gateway_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "KEEP_SANDBOX",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/tools-command-gateway_validation_receipt.json"
+  ]
+}

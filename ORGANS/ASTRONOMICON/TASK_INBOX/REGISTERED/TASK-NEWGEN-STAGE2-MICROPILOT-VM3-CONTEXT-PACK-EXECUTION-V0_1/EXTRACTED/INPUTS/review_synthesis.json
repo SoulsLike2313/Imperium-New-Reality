@@ -1,0 +1,60 @@
+{
+  "schema_id": "REVIEW_SYNTHESIS_V0_1",
+  "inquisitor": {
+    "verdict": "PASS_WITH_WARNINGS__BLOCK_SPINE_CONTEXT_FOUNDATION_ACCEPTED__EXTERNAL_FINALIZATION_CAP_ACTIVE__IDE_WARP_LOCKS_ACTIVE",
+    "clean_pass_allowed": false,
+    "why_not_clean_pass": [
+      "External finalization receipt still contains PENDING_VERIFICATION_FOR_CONTAINING_COMMIT for the containing commit.",
+      "Hard red-team keeps CAP_STAGE1_WITH_WARNINGS_ONLY, CAP_NO_IDE_VISUAL_RELEASE_YET, CAP_NO_WARP_RUNTIME.",
+      "This review used GitHub/raw evidence, not local independent replay/clone in the reviewer environment.",
+      "IDE workbench artifacts are candidate/design contracts only; no IDE runtime/API/browser automation was implemented."
+    ],
+    "accepted_progress": [
+      "BLOCK_SPINE foundation added as candidate structure.",
+      "Eight organ block passports and compact read-first/context digest files added.",
+      "Task context pack builder and context bloat detector prototypes added and executed.",
+      "Context pack reports 50 items, 34 mandatory, 16 optional, estimated 40448 chars, no duplicate read-first or forbidden pattern issues.",
+      "Owner-question pass and evidence boundary receipts were added at final reviewed head.",
+      "Scope exclusions are explicit: no IDE runtime, no external API integration, no browser automation runtime, no second micro-pilot execution."
+    ],
+    "next_recommended_task": "TASK-NEWGEN-STAGE2-MICROPILOT-VM3-CONTEXT-PACK-EXECUTION-V0_1",
+    "pre_next_required_gate": "Accept candidate block-spine contracts or run small external-finalization follow-up if Owner wants closure-cap removed before pilot."
+  },
+  "speculum": {
+    "verdict": "BLOCK_SPINE_CONTEXT_OPTIMIZATION_PASS_WITH_WARNINGS__CONTEXT_PACK_REAL__BLOCK_CLEAN_PASS_EXTERNAL_ACCEPTANCE_IDE_WARP_AND_SELF_HEAD_FOLLOWUP",
+    "top_3_blockers": [
+      {
+        "id": "B1",
+        "severity": "BLOCK_CLEAN_PASS",
+        "title": "Clean PASS remains blocked by explicit caps",
+        "detail": "Hard red-team keeps CAP_STAGE1_WITH_WARNINGS_ONLY, CAP_NO_IDE_VISUAL_RELEASE_YET and CAP_NO_WARP_RUNTIME; verdict remains BLOCK_SPINE_CONTEXT_OPTIMIZATION_PASS_WITH_WARNINGS."
+      },
+      {
+        "id": "B2",
+        "severity": "WARN_FINALIZATION_CAP",
+        "title": "External finalization follow-up semantics still not fully closed",
+        "detail": "64b0146 avoids the self-head paradox by using external delivery fields, but leaves CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING_OR_NEEDS_FOLLOWUP. cda2203 adds boundary/question pass receipts, not an explicit external_delivery_head closure for cda itself."
+      },
+      {
+        "id": "B3",
+        "severity": "WARN_IMPLEMENTATION_FOOTPRINT",
+        "title": "Main implementation is broad and mostly scaffolding/focus layer, not runtime leverage",
+        "detail": "1a3d30a is a 99-file, +3964/-7 implementation. It adds useful Block Spine context tooling, but also IDE workbench candidate contracts and registered taskpack artifacts that must not be mistaken for runtime implementation."
+      }
+    ],
+    "positive_evidence": [
+      "Block Spine standard and context-pack schema/template were added.",
+      "build_task_context_pack_v0_1.py and context_bloat_detector_v0_1.py exist as script-first tools.",
+      "Task context pack contains 34 mandatory context items, 16 optional items and estimated 40,448 characters.",
+      "Context bloat detector reports PASS: 50 total context items, duplicate_read_first_count=0, forbidden_pattern_count=0, blocking_issues=[].",
+      "All 8 organs received BLOCK compact digests and organ block passports.",
+      "Hard red-team confirms forbidden_scope_violations_detected=false and no IDE/API/browser automation runtime was started.",
+      "Final cda2203 adds EVIDENCE_BOUNDARY and IMPERIUM_QUESTION_PASS with owner_questions=[] and PASS_WITHOUT_ADDITIONAL_OWNER_QUESTION."
+    ]
+  },
+  "taskpack_decision": {
+    "chosen_next_task": "TASK-NEWGEN-STAGE2-MICROPILOT-VM3-CONTEXT-PACK-EXECUTION-V0_1",
+    "reason": "The foundation is accepted with warnings, but runtime leverage is unproven. The next proof must consume a context pack and measure economy.",
+    "external_finalization_cap_strategy": "Carry transparently into the micro-pilot. Do not spend a separate tiny task unless Owner explicitly requests it."
+  }
+}

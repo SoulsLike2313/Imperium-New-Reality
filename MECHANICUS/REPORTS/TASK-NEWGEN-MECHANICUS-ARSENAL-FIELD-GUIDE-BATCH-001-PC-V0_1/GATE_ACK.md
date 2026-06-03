@@ -1,0 +1,60 @@
+# GATE_ACK
+
+```text
+GATE_ACK:
+- task_id: TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1
+- current_head: 776be59617308f4da829da261cc48e0fff3d74bf
+- gatepack_path: C:\Users\PC\Downloads\TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1_DOSSIER.zip
+- gatepack_sha256: 8012FB9074AFFCCDDE4FB62B621AA85EC603AE82D839A2DDFB2387C7D01F18D4
+- read_gates:
+  - GATE-U00-GIT-TRUTH
+  - GATE-U01-ROLE-ACK
+  - GATE-U02-SCOPE-BOUNDARY
+  - GATE-U04-EVIDENCE-RECEIPT
+  - GATE-U05-STOP-CONDITIONS
+  - GATE-U08-REPO-PURITY
+  - GATE-U09-NO-FAKE-GREEN
+  - GATE-U12-REPORT-OUTPUT-BUDGET
+  - GATE-U13-PYTHON-TYPE-SAFETY
+  - GATE-U14-WHOLE-REPO-SCOPE-RECON
+  - GATE-U15-OPERATIONALITY-IMPACT
+  - GATE-U16-BILINGUAL-UI
+  - GATE-U17-DELIVERABLE-PACKAGE
+  - GATE-U18-AGENT-FACTORY-COMPLIANCE
+  - GATE-U19-SCRIPT-ARTIFACT-PRESERVATION
+  - GATE-U20-AGENT-KPD-SELF-REVIEW
+  - GATE-U21-COMMAND-CHUNKING
+  - GATE-AI00-NO-DIRECT-MODEL-COMMAND
+- accepted_stop_conditions:
+  - STOP if repo root/HEAD/branch truth mismatches task contract.
+  - STOP if forbidden paths are required or touched.
+  - STOP if card parse/coverage cannot reach 100%.
+  - STOP if LLM/cloud adapters would need activation or secret setup.
+  - STOP if no evidence path can be produced for PASS claims.
+  - STOP if report output budget is exceeded without Owner gate.
+- scope_boundary: Create Field Guide + usage map + reports + checker only; no installs, no runtime integration, no status promotion.
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/FIELD_GUIDES/BATCH_001/**
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1/**
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/build_mechanicus_arsenal_field_guide_batch_001.py
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_arsenal_field_guide_batch_001.py
+- forbidden_paths:
+  - IMPERIUM_TEST_VERSION/**
+  - src/**
+  - ORGANS/SANCTUM/**
+  - Any LOCAL_LLM/CLOUD_LLM runtime adapter activation/config path
+- expected_receipts:
+  - FINAL_REPORT.md
+  - field_guide_manifest.json
+  - field_guide_coverage_report.json
+  - agent_usage_map_check_report.json
+  - servitor_scope_examples_report.json
+  - validation_priority_queue_report.json
+  - owner_decision_points_report.json
+  - llm_cloud_reserved_check_report.json
+  - closure_receipt.json
+- repo_recon_required: false
+- script_absorption_required: true
+- clarification_needed: none
+- verdict: PASS
+```

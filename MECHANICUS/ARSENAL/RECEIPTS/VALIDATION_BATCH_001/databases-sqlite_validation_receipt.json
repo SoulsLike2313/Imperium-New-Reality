@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-arsenal-validation-batch-001-pc-v0_1:databases_sqlite:p2_evidence_search_lite:databases_sqlite",
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+  "capability_id": "DATABASES_SQLITE",
+  "validator": "mechanicus_capability_validator_v0_1.py",
+  "checked_at_utc": "2026-05-24T18:15:16Z",
+  "status": "PASS",
+  "summary": "DATABASES_SQLITE: PASS via P2_EVIDENCE_SEARCH_LITE:DATABASES_SQLITE. promotion_recommendation=KEEP_SANDBOX",
+  "check_name": "P2_EVIDENCE_SEARCH_LITE:DATABASES_SQLITE",
+  "command_or_check": "python -c \"import sqlite3; print(sqlite3.sqlite_version)\"",
+  "exit_code": 0,
+  "stdout_excerpt": "$ python -c \"import sqlite3; print(sqlite3.sqlite_version)\"\n3.49.1",
+  "stderr_excerpt": "$ python -c \"import sqlite3; print(sqlite3.sqlite_version)\"",
+  "side_effects": [
+    "read-only command execution",
+    "receipt json created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/databases-sqlite_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "KEEP_SANDBOX",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/databases-sqlite_validation_receipt.json"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1",
+  "builder_claims": [
+    {
+      "claim": "Self-head paradox rule is explicit and enforced by checker",
+      "claim_id": "C001",
+      "evidence": "self_head_paradox_rule_report.md + checker fixtures"
+    },
+    {
+      "claim": "External finalization receipt semantics are machine-checkable",
+      "claim_id": "C002",
+      "evidence": "external_finalization_receipt_schema.json + checker report"
+    },
+    {
+      "claim": "Replay taxonomy distinguishes stale vs current target",
+      "claim_id": "C003",
+      "evidence": "independent_replay_state_taxonomy_report.md + fixtures 07/08"
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "A001",
+      "result": "PASS",
+      "target_claim": "C001",
+      "detail": "Ambiguous final_head and clean-pass contradiction are blocked in fixtures."
+    },
+    {
+      "attack_id": "A002",
+      "result": "WARN",
+      "target_claim": "C002",
+      "detail": "Historical receipt producers are not migrated in this task."
+    },
+    {
+      "attack_id": "A003",
+      "result": "PASS",
+      "target_claim": "C003",
+      "detail": "Current-target mismatch produces BLOCK; stale-only precise state produces PASS."
+    },
+    {
+      "attack_id": "A004",
+      "result": "WARN",
+      "target_claim": "GLOBAL",
+      "detail": "Taskpack expected head differs from runtime start head; provenance explicitly recorded."
+    }
+  ],
+  "downgrade_rules_applied": [
+    "HEAD_MISMATCH_EXPECTED_START->WARN",
+    "HISTORICAL_PRODUCER_NOT_MIGRATED->PASS_WITH_WARNINGS_CAP",
+    "NO_RUNTIME_WARP_CLAIM->PASS"
+  ],
+  "final_verdict": "PASS_WITH_WARNINGS",
+  "blocked_clean_pass_reasons": [
+    "CAP_FINALIZATION_SEMANTICS_CONTRADICTORY blocks clean PASS when contradictions exist",
+    "Historical migration not complete for all legacy receipts"
+  ]
+}

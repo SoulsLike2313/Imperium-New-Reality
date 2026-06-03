@@ -1,0 +1,29 @@
+{
+  "task_id": "TASK-NEWGEN-LEGACY-RECEIPT-P0-PRODUCER-REMEDIATION-PC-V0_1",
+  "decision": "ALLOW_STAGE1_WITH_WARNINGS",
+  "p0_summary": {
+    "total": 4,
+    "remediated": 4,
+    "downgraded_with_reason": 0,
+    "not_producer_with_evidence": 0,
+    "blocked": 0
+  },
+  "surviving_caps": [
+    "CAP_LEGACY_RECEIPT_PRODUCERS_UNCLASSIFIED"
+  ],
+  "warnings_to_carry_into_stage1": [
+    "P1/unknown producers remain from Stage 0 inventory and still require phased review/migration.",
+    "Full legacy receipt migration is not complete; only four P0 blockers were remediated here.",
+    "IDE visual work remains frozen until Astronomicon task-entry + harness model preconditions are satisfied.",
+    "Inquisitor and Speculum commit-matrix reviews are required before final Stage 1 admission."
+  ],
+  "required_inquisitor_questions": [
+    "Do external-finalization semantics in the four remediated producers satisfy cap-closure contradiction gates?",
+    "Is clean PASS still properly blocked while external review/push verification is pending?"
+  ],
+  "required_speculum_questions": [
+    "Do the four producer diffs avoid regression and remain narrowly scoped without mass migration?",
+    "Is the delta-scan evidence sufficient to accept ALLOW_STAGE1_WITH_WARNINGS candidate?"
+  ],
+  "recommended_next_task": "TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1"
+}

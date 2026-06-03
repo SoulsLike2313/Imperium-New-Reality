@@ -1,0 +1,81 @@
+{
+  "task_id": "TASK-NEWGEN-LANGUAGE-BACKLOG-PHASED-REMEDIATION-AND-RETENTION-CHECKER-PC-V0_1",
+  "timestamp_utc": "2026-06-01T07:27:01Z",
+  "builder_claims": [
+    {
+      "claim_id": "LBR-C01",
+      "claim": "Safe slice selected with bounded risk and explicit rationale."
+    },
+    {
+      "claim_id": "LBR-C02",
+      "claim": "17 deterministic UTF8_BOM remediations applied with hashes."
+    },
+    {
+      "claim_id": "LBR-C03",
+      "claim": "Retention checker implemented and run against REGISTERED."
+    },
+    {
+      "claim_id": "LBR-C04",
+      "claim": "Strict scope has zero BLOCK hits post-remediation."
+    },
+    {
+      "claim_id": "LBR-C05",
+      "claim": "Global remains WARN and caps are explicit."
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "RT-LBR-01",
+      "target_claim_id": "LBR-C02",
+      "attack": "Remediation may have changed semantics, not only BOM.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "language_remediation_actions.json"
+      ]
+    },
+    {
+      "attack_id": "RT-LBR-02",
+      "target_claim_id": "LBR-C03",
+      "attack": "Retention checker may mutate payloads or delete files.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "astronomicon_taskpack_retention_checker_v0_1.py",
+        "taskpack_retention_checker_receipt.json"
+      ]
+    },
+    {
+      "attack_id": "RT-LBR-03",
+      "target_claim_id": "LBR-C04",
+      "attack": "Strict scope might hide blocking hits under legacy classification.",
+      "result": "PARTIAL",
+      "counter_evidence": [
+        "strict_scope_language_scan_receipt.json",
+        "language_backlog_delta_receipt.json"
+      ]
+    },
+    {
+      "attack_id": "RT-LBR-04",
+      "target_claim_id": "LBR-C05",
+      "attack": "Task may over-claim clean pass after partial slice.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "post_remediation_independent_replay_receipt.json",
+        "final_owner_summary_ru.md"
+      ]
+    }
+  ],
+  "caps_triggered": [
+    "CAP_CANONICAL_ARTIFACT_CONTAINS_CYRILLIC",
+    "CAP_NON_ENGLISH_TASKPACK_INTERNAL_TEXT",
+    "CAP_REPLACEMENT_CHARACTER_NOT_DETECTED",
+    "CAP_UTF8_BOM_NOT_DETECTED"
+  ],
+  "repo_truth": {
+    "head": "23727b55020775827aa0473f72e9132830004f6c",
+    "origin_master_head": "23727b55020775827aa0473f72e9132830004f6c",
+    "origin_sync_now": true,
+    "worktree_dirty_now": true
+  },
+  "final_verdict": "LANGUAGE_BACKLOG_REMEDIATION_PASS_WITH_WARNINGS",
+  "clean_pass_allowed": false
+}

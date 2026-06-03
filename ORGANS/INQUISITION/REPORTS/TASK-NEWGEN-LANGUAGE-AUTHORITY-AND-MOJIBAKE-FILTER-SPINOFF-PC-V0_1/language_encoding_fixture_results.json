@@ -1,0 +1,388 @@
+{
+  "task_id": "TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1",
+  "timestamp_utc": "2026-06-01T05:44:53Z",
+  "sandbox_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/_language_encoding_fixture_sandbox_v0_1",
+  "total_cases": 10,
+  "passed_cases": 10,
+  "failed_cases": 0,
+  "cases": [
+    {
+      "case_id": "CASE-01",
+      "case_type": "CLEAN_ENGLISH",
+      "expected_verdict": "PASS",
+      "expected_caps": [],
+      "actual_verdict": "PASS",
+      "actual_caps": [],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/language_encoding_fixture_results.json",
+      "pass": true,
+      "details": {
+        "summary": {
+          "total_hits": 0,
+          "by_hit_type": {},
+          "by_severity": {},
+          "by_classification": {}
+        },
+        "excluded_paths": [],
+        "sample_hits": []
+      }
+    },
+    {
+      "case_id": "CASE-02",
+      "case_type": "CYRILLIC_CANONICAL",
+      "expected_verdict": "BLOCK",
+      "expected_caps": [
+        "CAP_CANONICAL_ARTIFACT_CONTAINS_CYRILLIC"
+      ],
+      "actual_verdict": "BLOCK",
+      "actual_caps": [
+        "CAP_CANONICAL_ARTIFACT_CONTAINS_CYRILLIC"
+      ],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/language_encoding_fixture_results.json",
+      "pass": true,
+      "details": {
+        "summary": {
+          "total_hits": 1,
+          "by_hit_type": {
+            "CYRILLIC_IN_CANONICAL_ARTIFACT": 1
+          },
+          "by_severity": {
+            "BLOCK": 1
+          },
+          "by_classification": {
+            "BLOCK": 1
+          }
+        },
+        "excluded_paths": [],
+        "sample_hits": [
+          {
+            "path": "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/POLICIES/BAD.md",
+            "line": 1,
+            "hit_type": "CYRILLIC_IN_CANONICAL_ARTIFACT",
+            "signature_id": "CYRILLIC_RE",
+            "snippet_hash": "cb236f472e8c9cab4099e737",
+            "owner_organ": "OFFICIO_AGENTIS",
+            "severity": "BLOCK",
+            "classification": "BLOCK"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "CASE-03",
+      "case_type": "UTF8_BOM",
+      "expected_verdict": "BLOCK",
+      "expected_caps": [
+        "CAP_UTF8_BOM_NOT_DETECTED"
+      ],
+      "actual_verdict": "BLOCK",
+      "actual_caps": [
+        "CAP_UTF8_BOM_NOT_DETECTED"
+      ],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/language_encoding_fixture_results.json",
+      "pass": true,
+      "details": {
+        "summary": {
+          "total_hits": 1,
+          "by_hit_type": {
+            "UTF8_BOM": 1
+          },
+          "by_severity": {
+            "BLOCK": 1
+          },
+          "by_classification": {
+            "BLOCK": 1
+          }
+        },
+        "excluded_paths": [],
+        "sample_hits": [
+          {
+            "path": "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/POLICIES/BOM.json",
+            "line": 1,
+            "hit_type": "UTF8_BOM",
+            "signature_id": "UTF8_BOM",
+            "snippet_hash": "1e6506ba48de2fea3e2b9e07",
+            "owner_organ": "OFFICIO_AGENTIS",
+            "severity": "BLOCK",
+            "classification": "BLOCK"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "CASE-04",
+      "case_type": "REPLACEMENT_CHARACTER",
+      "expected_verdict": "BLOCK",
+      "expected_caps": [
+        "CAP_REPLACEMENT_CHARACTER_NOT_DETECTED"
+      ],
+      "actual_verdict": "BLOCK",
+      "actual_caps": [
+        "CAP_REPLACEMENT_CHARACTER_NOT_DETECTED"
+      ],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/language_encoding_fixture_results.json",
+      "pass": true,
+      "details": {
+        "summary": {
+          "total_hits": 1,
+          "by_hit_type": {
+            "REPLACEMENT_CHARACTER": 1
+          },
+          "by_severity": {
+            "BLOCK": 1
+          },
+          "by_classification": {
+            "BLOCK": 1
+          }
+        },
+        "excluded_paths": [],
+        "sample_hits": [
+          {
+            "path": "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/MATRICES/REPLACEMENT.md",
+            "line": 1,
+            "hit_type": "REPLACEMENT_CHARACTER",
+            "signature_id": "REPLACEMENT_UFFFD",
+            "snippet_hash": "977e77421aad16db480633e1",
+            "owner_organ": "INQUISITION",
+            "severity": "BLOCK",
+            "classification": "BLOCK"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "CASE-05",
+      "case_type": "MOJIBAKE_SIGNATURE",
+      "expected_verdict": "BLOCK",
+      "expected_caps": [
+        "CAP_MOJIBAKE_SIGNATURE_NOT_DETECTED"
+      ],
+      "actual_verdict": "BLOCK",
+      "actual_caps": [
+        "CAP_MOJIBAKE_SIGNATURE_NOT_DETECTED"
+      ],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/language_encoding_fixture_results.json",
+      "pass": true,
+      "details": {
+        "summary": {
+          "total_hits": 3,
+          "by_hit_type": {
+            "MIXED_ENCODING_PATTERN": 1,
+            "MOJIBAKE_SIGNATURE": 2
+          },
+          "by_severity": {
+            "BLOCK": 3
+          },
+          "by_classification": {
+            "BLOCK": 3
+          }
+        },
+        "excluded_paths": [],
+        "sample_hits": [
+          {
+            "path": "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/MATRICES/MOJIBAKE.md",
+            "line": 1,
+            "hit_type": "MOJIBAKE_SIGNATURE",
+            "signature_id": "MOJIBAKE_UTF8_LATIN1_C3",
+            "snippet_hash": "839a5240ba0afed910505a4b",
+            "owner_organ": "INQUISITION",
+            "severity": "BLOCK",
+            "classification": "BLOCK"
+          },
+          {
+            "path": "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/MATRICES/MOJIBAKE.md",
+            "line": 1,
+            "hit_type": "MOJIBAKE_SIGNATURE",
+            "signature_id": "MOJIBAKE_D0_D1_SEQUENCE",
+            "snippet_hash": "58ebbf61dbe2dda020b4bf30",
+            "owner_organ": "INQUISITION",
+            "severity": "BLOCK",
+            "classification": "BLOCK"
+          },
+          {
+            "path": "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/MATRICES/MOJIBAKE.md",
+            "line": null,
+            "hit_type": "MIXED_ENCODING_PATTERN",
+            "signature_id": "MIXED_PATTERN_HEURISTIC",
+            "snippet_hash": "16dec45023205f0cf54a68f7",
+            "owner_organ": "INQUISITION",
+            "severity": "BLOCK",
+            "classification": "BLOCK"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "CASE-06",
+      "case_type": "LOCALIZATION_ALLOWED",
+      "expected_verdict": "PASS",
+      "expected_caps": [],
+      "actual_verdict": "PASS",
+      "actual_caps": [],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/language_encoding_fixture_results.json",
+      "pass": true,
+      "details": {
+        "summary": {
+          "total_hits": 0,
+          "by_hit_type": {},
+          "by_severity": {},
+          "by_classification": {}
+        },
+        "excluded_paths": [
+          {
+            "path": "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/locales/ru/messages.md",
+            "reason": "LOCALIZATION_PATH_EXCLUDED"
+          }
+        ],
+        "sample_hits": []
+      }
+    },
+    {
+      "case_id": "CASE-07",
+      "case_type": "BINARY_EXCLUDED",
+      "expected_verdict": "PASS",
+      "expected_caps": [],
+      "actual_verdict": "PASS",
+      "actual_caps": [],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/language_encoding_fixture_results.json",
+      "pass": true,
+      "details": {
+        "summary": {
+          "total_hits": 0,
+          "by_hit_type": {},
+          "by_severity": {},
+          "by_classification": {}
+        },
+        "excluded_paths": [
+          {
+            "path": "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/sample.pdf",
+            "reason": "BINARY_EXTENSION_EXCLUDED:.pdf"
+          }
+        ],
+        "sample_hits": []
+      }
+    },
+    {
+      "case_id": "CASE-08",
+      "case_type": "RUNTIME_OWNER_SUMMARY",
+      "expected_verdict": "WARN",
+      "expected_caps": [
+        "CAP_CANONICAL_ARTIFACT_CONTAINS_CYRILLIC"
+      ],
+      "actual_verdict": "WARN",
+      "actual_caps": [
+        "CAP_CANONICAL_ARTIFACT_CONTAINS_CYRILLIC"
+      ],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/language_encoding_fixture_results.json",
+      "pass": true,
+      "details": {
+        "summary": {
+          "total_hits": 1,
+          "by_hit_type": {
+            "CYRILLIC_IN_CANONICAL_ARTIFACT": 1
+          },
+          "by_severity": {
+            "WARN": 1
+          },
+          "by_classification": {
+            "ALLOWED_RUNTIME_OWNER_OUTPUT": 1
+          }
+        },
+        "excluded_paths": [],
+        "sample_hits": [
+          {
+            "path": "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-LOCAL-RUNTIME/final_owner_summary_ru.md",
+            "line": 1,
+            "hit_type": "CYRILLIC_IN_CANONICAL_ARTIFACT",
+            "signature_id": "CYRILLIC_RE",
+            "snippet_hash": "93f2c59372162e2df084e763",
+            "owner_organ": "INQUISITION",
+            "severity": "WARN",
+            "classification": "ALLOWED_RUNTIME_OWNER_OUTPUT"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "CASE-09",
+      "case_type": "TASKPACK_ROOT_VIOLATION_CYRILLIC",
+      "expected_verdict": "BLOCK",
+      "expected_caps": [
+        "CAP_NON_ENGLISH_TASKPACK_INTERNAL_TEXT"
+      ],
+      "actual_verdict": "BLOCK",
+      "actual_caps": [
+        "CAP_NON_ENGLISH_TASKPACK_INTERNAL_TEXT"
+      ],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/language_encoding_fixture_results.json",
+      "pass": true,
+      "details": {
+        "summary": {
+          "total_hits": 1,
+          "by_hit_type": {
+            "TASKPACK_ROOT_CYRILLIC": 1
+          },
+          "by_severity": {
+            "BLOCK": 1
+          },
+          "by_classification": {
+            "BLOCK": 1
+          }
+        },
+        "excluded_paths": [],
+        "sample_hits": [
+          {
+            "path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/EXTRACTED/TASK_SPEC.md",
+            "line": 1,
+            "hit_type": "TASKPACK_ROOT_CYRILLIC",
+            "signature_id": "CYRILLIC_RE",
+            "snippet_hash": "7853bd3ab50c4d787a13cf5c",
+            "owner_organ": "ASTRONOMICON",
+            "severity": "BLOCK",
+            "classification": "BLOCK"
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "CASE-10",
+      "case_type": "TASKPACK_ROOT_VIOLATION_BOM",
+      "expected_verdict": "BLOCK",
+      "expected_caps": [
+        "CAP_UTF8_BOM_NOT_DETECTED"
+      ],
+      "actual_verdict": "BLOCK",
+      "actual_caps": [
+        "CAP_UTF8_BOM_NOT_DETECTED"
+      ],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/language_encoding_fixture_results.json",
+      "pass": true,
+      "details": {
+        "summary": {
+          "total_hits": 1,
+          "by_hit_type": {
+            "UTF8_BOM": 1
+          },
+          "by_severity": {
+            "BLOCK": 1
+          },
+          "by_classification": {
+            "BLOCK": 1
+          }
+        },
+        "excluded_paths": [],
+        "sample_hits": [
+          {
+            "path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/EXTRACTED/TASK_SPEC.md",
+            "line": 1,
+            "hit_type": "UTF8_BOM",
+            "signature_id": "UTF8_BOM",
+            "snippet_hash": "17aec8d4f9e0de2e71d05842",
+            "owner_organ": "ASTRONOMICON",
+            "severity": "BLOCK",
+            "classification": "BLOCK"
+          }
+        ]
+      }
+    }
+  ]
+}

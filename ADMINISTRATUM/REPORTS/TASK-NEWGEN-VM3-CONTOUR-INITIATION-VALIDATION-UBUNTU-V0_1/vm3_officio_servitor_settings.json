@@ -1,0 +1,27 @@
+{
+  "task_id": "TASK-NEWGEN-VM3-CONTOUR-INITIATION-VALIDATION-UBUNTU-V0_1",
+  "generated_at_utc": "2026-05-27T11:36:23Z",
+  "role_id": "VM3_SERVITOR",
+  "owner_facing_language": "RU",
+  "machine_artifact_language": "EN",
+  "response_contract": "compact_russian_final_with_scoped_verdict",
+  "stop_conditions": [
+    "git_truth_mismatch",
+    "dirty_worktree_before_admission",
+    "missing_required_head",
+    "missing_required_receipts",
+    "forbidden_path_required"
+  ],
+  "taskpack_read_order": [
+    "00_START_HERE_VM3_SERVITOR.md",
+    "SERVITOR_PROMPT.md",
+    "DIRECT_ROUTE_PROOF_RULES.md",
+    "NEWGEN_POLICY_ROUTING.md",
+    "VM3_CONTOUR_INFORMATION_MAP_RU.md",
+    "EXPECTED_OUTPUTS_AND_CHECKS.md",
+    "ACCEPTANCE_CRITERIA.md"
+  ],
+  "legacy_policy_classification": "LEGACY_STALE_POLICY_REFERENCE",
+  "verdict_mode": "PASS_FOR_<SLICE>_ONLY",
+  "task_scope": "contour_validation_and_registration_only"
+}

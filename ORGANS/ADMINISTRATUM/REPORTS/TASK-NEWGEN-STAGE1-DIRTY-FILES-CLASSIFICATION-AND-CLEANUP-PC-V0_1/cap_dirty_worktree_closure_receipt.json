@@ -1,0 +1,29 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE1-DIRTY-FILES-CLASSIFICATION-AND-CLEANUP-PC-V0_1",
+  "starting_head": "412dd0cb44f87aa1e139a67dbe8222ea9fcf5e72",
+  "dirty_paths_initial_count": 3,
+  "dirty_paths_final_count": 0,
+  "actions_taken": [
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/synthetic_task_entry_checker_receipt.json",
+      "action": "RESTORE_TO_HEAD_WITH_RECEIPT",
+      "outcome": "APPLIED"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/synthetic_task_entry_proof_report.md",
+      "action": "RESTORE_TO_HEAD_WITH_RECEIPT",
+      "outcome": "APPLIED"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/_TASKPACK_INBOX/",
+      "action": "DELETE_WITH_RECEIPT",
+      "outcome": "APPLIED"
+    }
+  ],
+  "cap_before": "CAP_DIRTY_WORKTREE_UNCLASSIFIED",
+  "cap_after_state": "CLOSED_CLEAN",
+  "worktree_clean_after": true,
+  "remote_sync_after": true,
+  "clean_pass_allowed": false,
+  "notes": "Pre-existing dirty paths resolved and push verified in commit_push_receipt."
+}

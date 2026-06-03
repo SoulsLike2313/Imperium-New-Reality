@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.administratum.oss_tool_record.v0_1",
+  "type": "object",
+  "required": [
+    "tool_id",
+    "purpose",
+    "scope",
+    "risk",
+    "fallback",
+    "status"
+  ],
+  "properties": {
+    "tool_id": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "risk": {
+      "type": "string"
+    },
+    "fallback": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "availability": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "detection_method": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

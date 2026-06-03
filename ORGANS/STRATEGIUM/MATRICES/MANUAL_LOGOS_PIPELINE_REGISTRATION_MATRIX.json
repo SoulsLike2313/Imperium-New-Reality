@@ -1,0 +1,91 @@
+{
+  "matrix_id": "MANUAL_LOGOS_PIPELINE_REGISTRATION_MATRIX",
+  "version": "0.1-candidate",
+  "owner_organ": "Strategium",
+  "support_organs": [
+    "Administratum",
+    "Astronomicon",
+    "Officio Agentis",
+    "Inquisition"
+  ],
+  "purpose": "Registers manual Owner+Logos execution corridor as a first-class candidate pipeline without overclaiming automation.",
+  "used_by": [
+    "OWNER",
+    "GPT_LOGOS",
+    "SERVITOR",
+    "STRATEGIUM",
+    "ADMINISTRATUM"
+  ],
+  "required_questions": [
+    "What is the source of truth for this claim?",
+    "Which organ owns the rule?",
+    "What evidence level proves it?",
+    "What cap applies if evidence is missing?",
+    "What would make this claim fake-green?"
+  ],
+  "pass_criteria": [
+    "All criteria include owner value, evidence, and PASS/WARN/BLOCK logic.",
+    "Current status is explicit per criterion.",
+    "No real-use execution claim is made without required evidence."
+  ],
+  "warn_criteria": [
+    "Some criteria are still UNKNOWN but improvement hooks exist.",
+    "Pilot is preflight-ready only with warnings/caps."
+  ],
+  "block_criteria": [
+    "Required criterion has BLOCK state.",
+    "Matrix claims active production capability without evidence."
+  ],
+  "fake_green_flags": [
+    "CLAIM_WITHOUT_REPLAY",
+    "AGENT_REASONING_AS_SYSTEM_CAPABILITY",
+    "STALE_RECEIPT",
+    "DIRTY_STATE_HIDDEN",
+    "OWNER_DECISION_MISSING"
+  ],
+  "evidence_requirements": [
+    "hard_red_team_verdict.json",
+    "manual_logos_pipeline_registration_report.md"
+  ],
+  "current_status": "CANDIDATE_NOT_CANON",
+  "next_action": "Use this matrix in next preflight/pilot closure loop and update criterion statuses with receipts.",
+  "criteria": [
+    {
+      "criterion_id": "MLP-01",
+      "plain_language_meaning": "Manual pipeline stages are explicitly recorded.",
+      "owner_value": "Chat-based work remains traceable and reusable.",
+      "owner_organ": "Administratum",
+      "support_organs": [
+        "Strategium",
+        "Astronomicon"
+      ],
+      "evidence_required": [
+        "manual_logos_pipeline_registration_report.md"
+      ],
+      "pass_logic": "Record includes idea, Logos interpretation, taskpack, commit, reviews, and next pipeline decision.",
+      "warn_logic": "Record exists but some links are pending.",
+      "block_logic": "No durable registration record.",
+      "current_status": "PASS",
+      "next_improvement_hook": "Create machine schema + checker for manual corridor records."
+    },
+    {
+      "criterion_id": "MLP-02",
+      "plain_language_meaning": "Manual pipeline is not overclaimed as automation.",
+      "owner_value": "Avoids fake automation confidence.",
+      "owner_organ": "Inquisition",
+      "support_organs": [
+        "Officio Agentis"
+      ],
+      "evidence_required": [
+        "hard_red_team_verdict.json",
+        "manual_logos_pipeline_registration_report.md"
+      ],
+      "pass_logic": "All statements keep manual steps explicit.",
+      "warn_logic": "Minor wording ambiguity but capped.",
+      "block_logic": "Report claims autonomous pipeline execution.",
+      "current_status": "PASS",
+      "next_improvement_hook": "Add explicit anti-overclaim checklist in pipeline template."
+    }
+  ],
+  "candidate_repo_location": "IMPERIUM_NEW_GENERATION/ORGANS/STRATEGIUM/MATRICES/MANUAL_LOGOS_PIPELINE_REGISTRATION_MATRIX.md"
+}

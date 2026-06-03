@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:utilities_sha256_hashing:tool_detection:utilities_sha256_hashing",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "UTILITIES_SHA256_HASHING",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:44Z",
+  "status": "PASS",
+  "summary": "UTILITIES_SHA256_HASHING: PASS via tool_detection:UTILITIES_SHA256_HASHING. promotion_recommendation=PROMOTE_SANDBOX",
+  "check_name": "tool_detection:UTILITIES_SHA256_HASHING",
+  "command_or_check": "certutil -hashfile AGENTS.md SHA256 || python -c \"import hashlib, pathlib; print(hashlib.sha256(pathlib.Path('AGENTS.md').read_bytes()).hexdigest()[:8])\"",
+  "exit_code": 0,
+  "stdout_excerpt": "$ certutil -hashfile AGENTS.md SHA256\nХэш SHA256 AGENTS.md:\n11a74cbf1bba6e5930a69e715f9261bcdd2a8fdfd89efa5bdcf6c28fdf37036a\nCertUtil: -hashfile — команда успешно выполнена.\n\n$ python -c \"import hashlib, pathlib; print(hashlib.sha256(pathlib.Path('AGENTS.md').read_bytes()).hexdigest()[:8])\"\n11a74cbf",
+  "stderr_excerpt": "",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-sha256-hashing_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "PROMOTE_SANDBOX",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-sha256-hashing_validation_receipt.json"
+  ]
+}

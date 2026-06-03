@@ -1,0 +1,46 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+  "timestamp_utc": "2026-06-01T04:52:52Z",
+  "stage": "Stage 3.1 / Astronomicon bootstrap hardening",
+  "learning_items": [
+    {
+      "id": "ST3_1-L01",
+      "type": "SCRIPT_FIRST_ADOPTION",
+      "title": "Bootstrap preflight must gate owner launcher",
+      "evidence": [
+        "astronomicon_bootstrap_preflight_receipt.json",
+        "owner_launcher_report.md"
+      ],
+      "outcome": "ADOPTED"
+    },
+    {
+      "id": "ST3_1-L02",
+      "type": "ENCODING_GUARD",
+      "title": "UTF-8 BOM detection must be explicit and fixture-backed",
+      "evidence": [
+        "bootstrap_fixture_results.json"
+      ],
+      "outcome": "ADOPTED"
+    },
+    {
+      "id": "ST3_1-L03",
+      "type": "REPAIR_SEMANTICS",
+      "title": "Template rewrite requires --force and before/after hash capture",
+      "evidence": [
+        "astronomicon_bootstrap_repair_receipt.json",
+        "bootstrap_fixture_results.json"
+      ],
+      "outcome": "ADOPTED"
+    },
+    {
+      "id": "ST3_1-L04",
+      "type": "FINALIZATION_CLARITY",
+      "title": "Pending Stage3 placeholders require follow-up semantic receipt",
+      "evidence": [
+        "stage3_pending_field_scan_report.md",
+        "stage3_followup_finalization_receipt.json"
+      ],
+      "outcome": "ADOPTED"
+    }
+  ]
+}

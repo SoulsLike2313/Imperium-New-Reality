@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NewGen Organ Packet Set V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "set_id",
+    "task_id",
+    "set_live_status",
+    "non_live_disclaimer",
+    "organs_expected",
+    "packets"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "set_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "set_live_status": {
+      "type": "string",
+      "enum": [
+        "EXAMPLE_ONLY",
+        "NOT_IMPLEMENTED",
+        "STUB",
+        "LIVE"
+      ]
+    },
+    "non_live_disclaimer": {
+      "type": "string",
+      "minLength": 10
+    },
+    "organs_expected": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "ASTRONOMICON",
+          "OFFICIO_AGENTIS",
+          "DOCTRINARIUM",
+          "ADMINISTRATUM",
+          "MECHANICUS",
+          "INQUISITION",
+          "STRATEGIUM",
+          "SCHOLA_IMPERIALIS"
+        ]
+      }
+    },
+    "packets": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "$ref": "ORGAN_PACKET_V0_1.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+# Synthetic Task Entry Proof Report
+
+Task: `TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1`
+Timestamp: `2026-05-30T22:43:57Z`
+
+Verdict: `PASS_WITH_WARNINGS`
+
+## Checks
+- Required organs checked: `8`
+- Missing organs: `0`
+- Missing corridor files: `0`
+- Taskpack pointer warnings: `0`
+- Route manifest issues: `0`
+
+## Caps
+- `CAP_STAGE1_WITH_WARNINGS_ONLY`
+
+## Organ details
+- `DOCTRINARIUM`: `ACTIVE_FOR_STAGE1`
+- `OFFICIO_AGENTIS`: `ACTIVE_FOR_STAGE1`
+- `ASTRONOMICON`: `ACTIVE_FOR_STAGE1`
+- `ADMINISTRATUM`: `ACTIVE_FOR_STAGE1`
+- `MECHANICUS`: `ACTIVE_FOR_STAGE1`
+- `INQUISITION`: `ACTIVE_FOR_STAGE1`
+- `STRATEGIUM`: `ACTIVE_FOR_STAGE1`
+- `SCHOLA_IMPERIALIS`: `ACTIVE_FOR_STAGE1`

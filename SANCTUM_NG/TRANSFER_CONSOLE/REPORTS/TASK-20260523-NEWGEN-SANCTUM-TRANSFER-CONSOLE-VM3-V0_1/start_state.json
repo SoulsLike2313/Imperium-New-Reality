@@ -1,0 +1,47 @@
+{
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1",
+  "recorded_at_utc": "2026-05-22T23:59:00Z",
+  "repo_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+  "branch": "master",
+  "start_head_before_sync": "563cef589b0f9e3b4539f0ce66f30cb11bda99ec",
+  "start_head_after_sync": "1baa600f35af1dd5f3c49403bbc56557838367e6",
+  "remote_master_head": "1baa600f35af1dd5f3c49403bbc56557838367e6",
+  "worktree_clean": true,
+  "taskpack_root": "INBOX/VM3_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1/TASKPACK_TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1",
+  "read_taskpack_files": [
+    "00_START_HERE_SERVITOR.md",
+    "00_START_MESSAGE_FOR_SERVITOR.txt",
+    "TASK/TASK_SPEC.md",
+    "TASK/TASK_SPEC.machine.json",
+    "GATES/ACCEPTANCE_GATES.md",
+    "EVIDENCE/EVIDENCE_REQUIREMENTS.md",
+    "CONTRACTS/transfer_console_contracts.md",
+    "CHECKLISTS/IMPLEMENTATION_CHECKLIST.md",
+    "REPORT_TEMPLATES/FINAL_REPORT_TEMPLATE.md",
+    "REPORT_TEMPLATES/CLOSURE_RECEIPT_TEMPLATE.json",
+    "REFERENCES/OWNER_PDFS/IMPERIUM_NEWGEN_PAIN_TO_ACTION_PLAN_RU_20260522.pdf",
+    "REFERENCES/OWNER_PDFS/IMPERIUM_NEWGEN_SANCTUM_BLUEPRINT_RU_20260522.pdf",
+    "CONTRACTS/schema_examples.json",
+    "COMMANDS/PC_SEND_TO_VM3_POWERSHELL.ps1",
+    "COMMANDS/VM3_TERMINAL_START_HELPER.sh",
+    "MANIFESTS/taskpack_manifest.json",
+    "MANIFESTS/SHA256SUMS.txt",
+    "REFERENCES/OWNER_PDFS/README.md"
+  ],
+  "scope_constraints": {
+    "allowed": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_NG/**",
+      "IMPERIUM_NEW_GENERATION/**/REPORTS/**",
+      "IMPERIUM_NEW_GENERATION/**/CONTRACTS/**",
+      "IMPERIUM_NEW_GENERATION/**/TOOLS/**",
+      "IMPERIUM_NEW_GENERATION/**/DESIGN/**"
+    ],
+    "forbidden": [
+      "ORGANS/** outside New Generation",
+      "SANCTUM/**",
+      "IMPERIUM_TEST_VERSION/**",
+      "arbitrary shell bridges",
+      "secret/key export"
+    ]
+  }
+}

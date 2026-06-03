@@ -1,0 +1,45 @@
+{
+  "setting_id": "SET-AGENT-TRAINING-POLICY-V0_1",
+  "title": "Servitor Capability and Training Policy",
+  "version": "v0_1",
+  "state": "ACTIVE",
+  "scope": "servitor capability boundaries and local agent improvement protocols",
+  "applies_to_roles": [
+    "SERVITOR"
+  ],
+  "applies_to_modes": [
+    "EXECUTOR",
+    "REPAIRER"
+  ],
+  "machine_rule": {
+    "can_do": [
+      "script_first_plans",
+      "test_first_plans",
+      "evidence_first_plans",
+      "bounded_task_execution"
+    ],
+    "cannot_do": [
+      "identity_change_without_officio_or_owner_gate",
+      "out_of_scope_mutation",
+      "fake_green_verdicts"
+    ],
+    "should_not_do": [
+      "oversized_report_dumps",
+      "unbounded_prompt_generation_without_contract"
+    ]
+  },
+  "human_summary": "Servitor can train execution quality by scripts/tests/evidence but cannot alter agent identity without approval.",
+  "acceptance_tests": [
+    "Capability lists are machine-readable and complete."
+  ],
+  "evidence_required": [
+    "SETTINGS_REGISTRY/permissions/permissions.json",
+    "SETTINGS_REGISTRY/forbidden_actions/forbidden_actions.json"
+  ],
+  "dependencies": [],
+  "conflicts_with": [],
+  "supersedes": [],
+  "rollback_plan": "Revert capability policy and restore previous validated lists.",
+  "owner_approval_required": true
+}
+

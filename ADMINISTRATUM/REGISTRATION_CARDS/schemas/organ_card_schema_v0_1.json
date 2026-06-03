@@ -1,0 +1,137 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "administratum/organ_card_schema_v0_1",
+  "title": "Administratum Organ Card V0.1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "organ_id",
+    "organ_name",
+    "status",
+    "real_owner_organ",
+    "registration_owner_organ",
+    "validation_owner_organ",
+    "body_paths",
+    "tui_paths",
+    "checker_paths",
+    "report_paths",
+    "current_accepted_points",
+    "capability_summary",
+    "foundation_summary",
+    "known_warnings",
+    "next_recommended_work"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "organ_card_v0_1"
+    },
+    "organ_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "organ_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "WARN",
+        "LEGACY",
+        "UNKNOWN"
+      ]
+    },
+    "real_owner_organ": {
+      "type": "string"
+    },
+    "registration_owner_organ": {
+      "type": "string"
+    },
+    "validation_owner_organ": {
+      "type": "string"
+    },
+    "body_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tui_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "checker_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "report_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "current_accepted_points": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "task_id",
+          "accepted_head",
+          "evidence_paths"
+        ],
+        "properties": {
+          "task_id": {
+            "type": "string"
+          },
+          "accepted_head": {
+            "type": "string",
+            "minLength": 7
+          },
+          "evidence_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "status": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "capability_summary": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "foundation_summary": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "known_warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_recommended_work": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

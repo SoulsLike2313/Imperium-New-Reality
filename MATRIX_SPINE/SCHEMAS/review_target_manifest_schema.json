@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Review Target Manifest Schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "head_taxonomy_manifest_path",
+    "review_target_head",
+    "review_target_type",
+    "artifact_bundle_head",
+    "accepted_continuity_head",
+    "commit_urls",
+    "reviewer_instruction",
+    "caps_reviewers_must_apply"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "head_taxonomy_manifest_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_target_head": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "review_target_type": {
+      "type": "string",
+      "enum": [
+        "IMPLEMENTATION",
+        "PROOF",
+        "ARTIFACT_BUNDLE"
+      ]
+    },
+    "artifact_bundle_head": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "accepted_continuity_head": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "commit_urls": {
+      "type": "object",
+      "required": [
+        "review_target",
+        "artifact_bundle",
+        "accepted_continuity"
+      ],
+      "properties": {
+        "review_target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artifact_bundle": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accepted_continuity": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "reviewer_head_taxonomy_paths": {
+      "type": "object",
+      "required": [
+        "inquisitor",
+        "speculum"
+      ],
+      "properties": {
+        "inquisitor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "speculum": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "independent_replay": {
+      "type": "object",
+      "properties": {
+        "runner": {
+          "type": "string"
+        },
+        "commands": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "reviewer_instruction": {
+      "type": "string",
+      "minLength": 1
+    },
+    "caps_reviewers_must_apply": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "questions_for_inquisitor": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "questions_for_speculum": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes_for_logos": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

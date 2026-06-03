@@ -1,0 +1,48 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1",
+  "learning_delta": "Wave installs are safer when command-phase logs, fixtures, and explicit non-CANON status updates are enforced.",
+  "reusable_capability": "Task-local phased runner pattern with per-command raw receipts and explicit validation matrix.",
+  "eval_fixture": {
+    "seven_zip": [
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\archive_input\\hello.txt",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\test_archive.7z",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\archive_output\\hello.txt"
+    ],
+    "markdownlint": [
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\markdownlint_good.md",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\markdownlint_bad.md",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\.markdownlint.json"
+    ],
+    "check_jsonschema": [
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\schema.json",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\valid.json",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\invalid.json"
+    ],
+    "yamllint": [
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\yamllint_good.yaml",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\yamllint_bad.yaml",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\.yamllint"
+    ]
+  },
+  "pain_pattern": [
+    "Read-only introspection safety gap in another runner caused incident before containment.",
+    "CLI PATH drift for pip user scripts required controlled user-PATH repair.",
+    "Risk of fake green without fixture pass/fail dual checks."
+  ],
+  "evidence_index_update": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/tool_install_receipts.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/validation_receipts.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/stability_matrix.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/checker_run_report.json"
+  ],
+  "next_task_improvement": "Create shared read-only introspection guard and git-clean smoke gate for all Mechanicus runners.",
+  "no_delete_policy": "No deletions in task scope; only incident rollback of unintended out-of-task mutations to HEAD.",
+  "scope_discipline": {
+    "touched_scope": [
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/**",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/(UTILITIES|CODE_QUALITY)/*_CLI/capability_card.json",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json"
+    ],
+    "forbidden_scope_touched": false
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema_id": "SCRIPT_ARTIFACT_PRESERVATION_MANIFEST_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1",
+  "generated_at_utc": "2026-05-23T19:53:30Z",
+  "artifacts": [
+    {
+      "artifact_id": "TOOL-OPERATOR-COCKPIT-L1-BUILDER",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/TOOLS/operator_cockpit_l1_builder.py",
+      "classification": "ABSORB_NOW",
+      "purpose": "Generate operator cockpit L1 state + compact build report + small continuity pack receipts"
+    },
+    {
+      "artifact_id": "TOOL-OPERATOR-COCKPIT-L1-VALIDATOR",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/TOOLS/operator_cockpit_l1_validator.py",
+      "classification": "ABSORB_NOW",
+      "purpose": "Validate cockpit contract, action honesty, visual markers, screenshot presence"
+    },
+    {
+      "artifact_id": "TOOL-OPERATOR-COCKPIT-L1-SMOKE",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/TOOLS/operator_cockpit_l1_smoke.py",
+      "classification": "ABSORB_NOW",
+      "purpose": "Run builder+validator and capture screenshot matrix via local static URL"
+    }
+  ],
+  "policy_note": "No useful generated tool was deleted; all created tools are preserved in OPERATOR_COCKPIT/TOOLS."
+}

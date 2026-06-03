@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_id": "NEGATIVE_TEST_RESULT_MATRIX_V0_1",
+  "title": "Negative Test Result Matrix V0.1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "generated_at_utc",
+    "status",
+    "result_rows",
+    "summary"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "NEGATIVE_TEST_RESULT_MATRIX_V0_1"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "FOUNDATION_ONLY"
+      ]
+    },
+    "result_rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "case_id",
+          "expected_classification",
+          "actual_classification",
+          "expected_reason_code",
+          "actual_reason_code",
+          "is_expected_match",
+          "fake_green_accepted"
+        ],
+        "properties": {
+          "case_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "expected_classification": {
+            "type": "string"
+          },
+          "actual_classification": {
+            "type": "string"
+          },
+          "expected_reason_code": {
+            "type": "string"
+          },
+          "actual_reason_code": {
+            "type": "string"
+          },
+          "is_expected_match": {
+            "type": "boolean"
+          },
+          "fake_green_accepted": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "summary": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

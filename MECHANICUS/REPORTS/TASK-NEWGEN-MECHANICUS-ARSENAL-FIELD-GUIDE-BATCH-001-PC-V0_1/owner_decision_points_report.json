@@ -1,0 +1,78 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1",
+  "generated_at_utc": "2026-05-24T17:18:30Z",
+  "questions": [
+    {
+      "question_id": "Q-ARS-001",
+      "topic": "CODE_QUALITY",
+      "question": "Choose primary type checker lane for Python promotion: pyright-first, mypy-first, or dual-lane?",
+      "recommendation": "Зафиксировать owner-решение до validation batch, иначе capability останется CANDIDATE."
+    },
+    {
+      "question_id": "Q-ARS-002",
+      "topic": "VISUAL_TESTING",
+      "question": "Do we prioritize Playwright-only visual baseline first, or multi-runner strategy later?",
+      "recommendation": "Зафиксировать owner-решение до validation batch, иначе capability останется CANDIDATE."
+    },
+    {
+      "question_id": "Q-ARS-003",
+      "topic": "DATABASES",
+      "question": "Should SQLite remain default evidence store, or should DuckDB become co-primary?",
+      "recommendation": "Зафиксировать owner-решение до validation batch, иначе capability останется CANDIDATE."
+    },
+    {
+      "question_id": "Q-ARS-004",
+      "topic": "UI_FRAMEWORKS",
+      "question": "For owner-facing cockpit work, do we anchor plain HTML/CSS/JS first or React/Vite first?",
+      "recommendation": "Зафиксировать owner-решение до validation batch, иначе capability останется CANDIDATE."
+    },
+    {
+      "question_id": "Q-ARS-005",
+      "topic": "CLOUD_LLM_ADAPTERS",
+      "question": "Which secret-policy baseline is required before any cloud adapter leaves CANDIDATE?",
+      "recommendation": "Зафиксировать owner-решение до validation batch, иначе capability останется CANDIDATE."
+    },
+    {
+      "question_id": "Q-ARS-006",
+      "topic": "LOCAL_LLM",
+      "question": "Which local runner is the first dedicated validation target (Ollama, llama.cpp, or LM Studio)?",
+      "recommendation": "Зафиксировать owner-решение до validation batch, иначе capability останется CANDIDATE."
+    },
+    {
+      "question_id": "Q-ARS-007",
+      "topic": "SEARCH_INDEXING",
+      "question": "Do we prioritize ripgrep-index manifest strategy or a DB-backed index strategy first?",
+      "recommendation": "Зафиксировать owner-решение до validation batch, иначе capability останется CANDIDATE."
+    },
+    {
+      "question_id": "Q-ARS-008",
+      "topic": "TOOLS",
+      "question": "Should external tool admissions happen by category waves or by dependency chains?",
+      "recommendation": "Зафиксировать owner-решение до validation batch, иначе capability останется CANDIDATE."
+    },
+    {
+      "question_id": "Q-ARS-009",
+      "topic": "PROMPTING_PATTERNS",
+      "question": "Do we canonize any prompt patterns early, or keep all prompting cards candidate until audit cycle?",
+      "recommendation": "Зафиксировать owner-решение до validation batch, иначе capability останется CANDIDATE."
+    },
+    {
+      "question_id": "Q-ARS-010",
+      "topic": "PLAYBOOKS",
+      "question": "Which playbook should be promoted first as cross-organ standard: scope-review or no-fake-green?",
+      "recommendation": "Зафиксировать owner-решение до validation batch, иначе capability останется CANDIDATE."
+    },
+    {
+      "question_id": "Q-FG-011",
+      "topic": "STATUS_PROMOTION_POLICY",
+      "question": "Подтвердить единые критерии SANDBOX -> CANON для всех категорий (минимальный набор receipts и checks).",
+      "recommendation": "Утвердить canonical receipt baseline и gate checklist."
+    },
+    {
+      "question_id": "Q-FG-012",
+      "topic": "INSTALL_ADMISSION_WAVES",
+      "question": "Какой порядок installation-admission предпочтителен: волнами по категориям или по dependency-цепочкам?",
+      "recommendation": "Начать с P0/P1 и переходить к P2/P3 после подтверждения стабильности."
+    }
+  ]
+}

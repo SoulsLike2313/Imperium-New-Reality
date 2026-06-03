@@ -1,0 +1,39 @@
+{
+  "contract_id": "VISUAL-CONTRACT-MECHANICUS-CONSOLE-V0_1",
+  "target_slice": "mechanicus_console",
+  "purpose": "Reference Mechanicus operator console slice for Visual Foundry with truth-first hierarchy and secondary raw mode.",
+  "layout_regions": [
+    "top_truth_strip",
+    "main_work_zone",
+    "command_operator_rail",
+    "tool_registry_overview",
+    "summary_footer",
+    "secondary_raw_technical_mode"
+  ],
+  "interaction_rules": [
+    "Primary operator actions must be visible without hunting.",
+    "Raw or technical output remains secondary and collapsible.",
+    "RU and EN labels are available through language switch.",
+    "Key truth/status pills stay readable at 1366x768."
+  ],
+  "viewport_targets": [
+    "1366x768",
+    "1920x1080"
+  ],
+  "style_constraints": [
+    "dark metallic base",
+    "semantic accent colors (cyan/green/amber/red)",
+    "strong typographic hierarchy",
+    "clean grouping and spacing rhythm",
+    "no decorative clutter that harms legibility"
+  ],
+  "truth_rules": [
+    "Displayed truth values are static prototype values clearly labeled and not fake-live claims.",
+    "Unavailable fields must be labeled UNKNOWN instead of fabricated values.",
+    "No auto-green PASS messaging without receipt evidence."
+  ],
+  "known_gaps": [
+    "Prototype uses static sample data and does not connect to live backend APIs."
+  ]
+}
+

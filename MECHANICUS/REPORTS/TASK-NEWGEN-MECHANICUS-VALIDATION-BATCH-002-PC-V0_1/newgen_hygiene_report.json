@@ -1,0 +1,54 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1",
+  "generated_at_utc": "2026-05-24T21:39:57Z",
+  "checker": "newgen_repo_hygiene_check_v0_1.py",
+  "mode": "report_only_no_delete",
+  "scan_roots": [
+    "IMPERIUM_NEW_GENERATION"
+  ],
+  "summary": {
+    "findings_rule_count": 3,
+    "total_hits": 18,
+    "tracked_dirty_count": 0,
+    "untracked_count": 8
+  },
+  "findings": {
+    "PY_CACHE_DIR": {
+      "count": 2,
+      "samples": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/__pycache__"
+      ]
+    },
+    "PYC_FILE": {
+      "count": 13,
+      "samples": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__/check_mechanicus_scope_packs_v0_1.cpython-312.pyc",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__/evidence_index_smoke_v0_1.cpython-312.pyc",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__/mechanicus_capability_scope_exporter_v0_2.cpython-312.pyc",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__/mechanicus_controlled_provision_runner_v0_1.cpython-312.pyc",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__/mechanicus_install_receipt_builder_v0_1.cpython-312.pyc",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__/mechanicus_quality_gate_runner_v0_1.cpython-312.pyc",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__/mechanicus_schema_validation_runner_v0_1.cpython-312.pyc",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__/mechanicus_scope_pack_consumer_v0_1.cpython-312.pyc",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__/mechanicus_taskpack_validator_v0_1.cpython-312.pyc",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__/mechanicus_validation_receipt_builder_v0_1.cpython-312.pyc"
+      ]
+    },
+    "LOG_FILE": {
+      "count": 3,
+      "samples": [
+        "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-VISUAL-SHELL-V0_2/DEPENDENCY_INSTALL_VM2.log",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/ACTION_LOGS/vm2_to_vm3_probe_transfer.log",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/ACTION_LOGS/vm3_to_vm2_probe_transfer.log"
+      ]
+    }
+  },
+  "warnings": [
+    "hygiene_hits_found_report_only_mode"
+  ],
+  "errors": [],
+  "verdict": "WARN",
+  "raw_dump_status": "COMPACT_ONLY",
+  "omitted_findings_count": 0
+}

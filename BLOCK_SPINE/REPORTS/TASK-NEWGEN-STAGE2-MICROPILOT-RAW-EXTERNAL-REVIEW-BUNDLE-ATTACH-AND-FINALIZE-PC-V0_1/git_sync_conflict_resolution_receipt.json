@@ -1,0 +1,22 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE2-MICROPILOT-RAW-EXTERNAL-REVIEW-BUNDLE-ATTACH-AND-FINALIZE-PC-V0_1",
+  "timestamp_utc": "2026-06-01T13:25:49Z",
+  "sync_operation": "stash_push_u + pull_ff_only_origin_master + stash_pop",
+  "synced_head": "1c435a944ed6fbf8bbe5ef7c24a0b8a29c1c9860",
+  "origin_master_head": "1c435a944ed6fbf8bbe5ef7c24a0b8a29c1c9860",
+  "conflict_files": [
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json"
+  ],
+  "pre_resolution_snapshot_receipt": "IMPERIUM_NEW_GENERATION/BLOCK_SPINE/REPORTS/TASK-NEWGEN-STAGE2-MICROPILOT-RAW-EXTERNAL-REVIEW-BUNDLE-ATTACH-AND-FINALIZE-PC-V0_1/git_sync_conflict_snapshot_receipt.json",
+  "resolution_policy": "Preserve current PC task registration on top of synced origin/master while keeping existing valid registered tasks.",
+  "expected_sync_conflict": true,
+  "data_loss_detected": false,
+  "resolution_summary": [
+    "Conflict markers removed.",
+    "current_expected_task points to current PC task.",
+    "task_registry keeps existing entries and adds current PC task as NEXT_EXPECTED.",
+    "previous VM3 NEXT_EXPECTED entry retained as REGISTERED with current_expected=false."
+  ],
+  "classification": "EXPECTED_SYNC_CONFLICT_AFTER_TASK_REGISTRATION"
+}

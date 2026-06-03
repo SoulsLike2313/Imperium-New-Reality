@@ -1,0 +1,48 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-INDEPENDENT-REPLAY-AND-HEAD-CHAIN-RECONCILIATION-VM3-V0_1",
+  "timestamp_utc": "2026-05-30T16:46:18Z",
+  "builder_claims": [
+    {
+      "claim_id": "C01",
+      "claim": "Conflict between 3aa0779 and d6768e5 is reconciled with one implementation truth head and one review target.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-INDEPENDENT-REPLAY-AND-HEAD-CHAIN-RECONCILIATION-VM3-V0_1/HEAD_CHAIN_RECEIPT.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-INDEPENDENT-REPLAY-AND-HEAD-CHAIN-RECONCILIATION-VM3-V0_1/REVIEW_TARGET_MANIFEST.json"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "claim": "Independent replay is reproducible and clean PASS gating is explicit.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_review_target_alignment.py",
+        "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-INDEPENDENT-REPLAY-AND-HEAD-CHAIN-RECONCILIATION-VM3-V0_1/independent_replay_receipt.json"
+      ]
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "A01",
+      "target_claim_id": "C01",
+      "attack": "Reviewers may still diverge if one path ignores REVIEW_TARGET_MANIFEST.json.",
+      "result": "RESISTED",
+      "downgrade_needed": false,
+      "counter_evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-INDEPENDENT-REPLAY-AND-HEAD-CHAIN-RECONCILIATION-VM3-V0_1/reviewer_alignment_fixture_report.md"
+      ]
+    },
+    {
+      "attack_id": "A02",
+      "target_claim_id": "C02",
+      "attack": "Manifest missing can bypass replay unless explicitly capped.",
+      "result": "RESISTED",
+      "downgrade_needed": false,
+      "counter_evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-INDEPENDENT-REPLAY-AND-HEAD-CHAIN-RECONCILIATION-VM3-V0_1/reviewer_alignment_fixture_report.md"
+      ]
+    }
+  ],
+  "downgrade_rules_applied": [],
+  "caps_triggered": [],
+  "final_verdict": "PASS",
+  "notes": "No blocking cap remains after replay and fixture checks; WARP remains locked."
+}

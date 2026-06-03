@@ -1,0 +1,39 @@
+{
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1",
+  "verdict": "WARN_PARTIAL_ROUTE_PROOF_WITH_VM2_TO_VM3_BLOCKED",
+  "claim_boundary": "PASS_FOR_PC_TO_VM2_WITH_WARN_PARTIAL_PC_TO_VM3_AND_BLOCKED_VM2_TO_VM3_ROUTE_ONLY",
+  "repo_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-",
+  "start_head": "fc4b7ec9bd4baf565ceb25e6f30bce6297c0d209",
+  "final_head": "RECORDED_IN_FINAL_OWNER_MESSAGE",
+  "commit_message": "TASK-20260523: recover scoped transfer route proof on VM2",
+  "commit_hash": "RECORDED_IN_FINAL_OWNER_MESSAGE",
+  "push_status": "RECORDED_IN_FINAL_OWNER_MESSAGE",
+  "remote_verification": {
+    "command": "git ls-remote origin refs/heads/master",
+    "remote_head": "RECORDED_IN_FINAL_OWNER_MESSAGE",
+    "matches_final_head": null
+  },
+  "worktree_clean_after": null,
+  "checks": {
+    "route_summary_builder": "WARN",
+    "validator": "WARN",
+    "smoke": "WARN",
+    "scope_gate": "PASS",
+    "no_fake_green_gate": "PASS",
+    "no_arbitrary_shell_gate": "PASS"
+  },
+  "not_proven": [
+    "production orchestration",
+    "global live all-routes transfer",
+    "arbitrary remote execution"
+  ],
+  "not_run": [
+    "VM2->VM3 remote copy/hash probe stage after SSH connectivity (blocked by unresolved host alias)."
+  ],
+  "limitations": [
+    "PC_TO_VM3 remains WARN_PARTIAL because VM3 raw request/result evidence paths were not fully available on VM2.",
+    "VM2_TO_VM3 is BLOCKED_ROUTE_UNAVAILABLE due SSH alias resolution failure.",
+    "closure receipt keeps commit/push hash placeholders and expects authoritative values from final owner-facing message."
+  ],
+  "context_source_mix_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1/context_source_mix.json"
+}

@@ -1,0 +1,103 @@
+{
+  "schema_id": "CURRENT_TRUTH_VALIDATOR_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-MECHANICUS-SSH-MATRIX-AND-ACTION-ROLLBACK-CONTRACT-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T20:26:56Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "core_truth_files_exist",
+      "status": "PASS",
+      "details": "truth core files exist"
+    },
+    {
+      "check_id": "sanctum_reference_files_exist",
+      "status": "PASS",
+      "details": "sanctum state/ui reference files exist"
+    },
+    {
+      "check_id": "py_compile_build_current_truth_root_v0_1.py",
+      "status": "PASS",
+      "details": "build_current_truth_root_v0_1.py compiles"
+    },
+    {
+      "check_id": "py_compile_validate_current_truth_root_v0_1.py",
+      "status": "PASS",
+      "details": "validate_current_truth_root_v0_1.py compiles"
+    },
+    {
+      "check_id": "current_truth_json_parse",
+      "status": "PASS",
+      "details": "current truth root parses"
+    },
+    {
+      "check_id": "report_index_json_parse",
+      "status": "PASS",
+      "details": "report status index parses"
+    },
+    {
+      "check_id": "evidence_map_json_parse",
+      "status": "PASS",
+      "details": "evidence source map parses"
+    },
+    {
+      "check_id": "current_truth_schema_id",
+      "status": "PASS",
+      "details": "current truth schema_id is correct"
+    },
+    {
+      "check_id": "current_truth_mode",
+      "status": "PASS",
+      "details": "newgen mode is foundation truth spine"
+    },
+    {
+      "check_id": "report_index_schema_id",
+      "status": "PASS",
+      "details": "report index schema_id is correct"
+    },
+    {
+      "check_id": "report_status_values",
+      "status": "PASS",
+      "details": "all report statuses are allowed"
+    },
+    {
+      "check_id": "pass_entries_have_evidence",
+      "status": "PASS",
+      "details": "all PASS/PASS_WITH_WARN entries have evidence refs"
+    },
+    {
+      "check_id": "pass_entries_have_report_path",
+      "status": "PASS",
+      "details": "all PASS/PASS_WITH_WARN entries have report paths"
+    },
+    {
+      "check_id": "evidence_map_schema_id",
+      "status": "PASS",
+      "details": "evidence map schema_id is correct"
+    },
+    {
+      "check_id": "forbidden_claims_absent",
+      "status": "PASS",
+      "details": "forbidden production/autonomy claim patterns are absent"
+    },
+    {
+      "check_id": "sanctum_state_truth_reference",
+      "status": "PASS",
+      "details": "sanctum state references current truth root/report index/evidence map"
+    },
+    {
+      "check_id": "task_report_bundle_files_exist",
+      "status": "PASS",
+      "details": "all required task report bundle files exist"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "validated_paths": {
+    "current_truth_root": "IMPERIUM_NEW_GENERATION/TRUTH/CURRENT_TRUTH_ROOT_V0_1.json",
+    "report_status_index": "IMPERIUM_NEW_GENERATION/TRUTH/REPORT_STATUS_INDEX_V0_1.json",
+    "evidence_source_map": "IMPERIUM_NEW_GENERATION/TRUTH/EVIDENCE_SOURCE_MAP_V0_1.json",
+    "sanctum_state": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+    "report_dir": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-MECHANICUS-SSH-MATRIX-AND-ACTION-ROLLBACK-CONTRACT-VM2-V0_1"
+  },
+  "no_fake_green_note": "PASS here validates bounded foundation truth/index artifacts only."
+}

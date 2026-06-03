@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "answer_id",
+    "question_id",
+    "agent",
+    "verdict",
+    "action"
+  ],
+  "properties": {
+    "answer_id": {
+      "type": "string"
+    },
+    "question_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "agent": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object"
+    }
+  }
+}

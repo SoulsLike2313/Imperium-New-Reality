@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:languages_powershell:tool_detection:languages_powershell",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "LANGUAGES_POWERSHELL",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:42Z",
+  "status": "PASS",
+  "summary": "LANGUAGES_POWERSHELL: PASS via tool_detection:LANGUAGES_POWERSHELL. promotion_recommendation=KEEP_STATUS",
+  "check_name": "tool_detection:LANGUAGES_POWERSHELL",
+  "command_or_check": "powershell -NoProfile -Command \"'alpha' | Select-String -Pattern 'alp' | ForEach-Object { $_.Matches.Count }\"",
+  "exit_code": 0,
+  "stdout_excerpt": "$ powershell -NoProfile -Command \"'alpha' | Select-String -Pattern 'alp' | ForEach-Object { $_.Matches.Count }\"\n1",
+  "stderr_excerpt": "",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/languages-powershell_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "KEEP_STATUS",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/languages-powershell_validation_receipt.json"
+  ]
+}

@@ -1,0 +1,20 @@
+TASK: TASK-NEWGEN-MECHANICUS-RUNNER-READONLY-INTROSPECTION-HARDENING-PC-V0_1
+
+You are PC Servitor operating in E:\IMPERIUM.
+
+Read this taskpack in the required order. Execute only the narrow Mechanicus read-only introspection hardening task.
+
+Baseline accepted HEAD: bee2d984fa673f596de344350082e15f5f9429c0
+Previous task: TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1
+Previous verdict: PASS
+
+Goal:
+Harden Mechanicus runner/checker behavior so introspection commands like --help, --version, --list, --show-config, and declared read-only/check modes do not mutate repository files, reports, receipts, registries, or historical task folders.
+
+Final Owner-facing reply must be short and in this exact style:
+1. Step name
+2. Full path to report/bundle
+3. Verdict: PASS/WARN/FAIL
+4. Краткий Owner-комментарий (RU): 3-6 bullets
+5. Commit/push HEAD if performed
+6. Next allowed task

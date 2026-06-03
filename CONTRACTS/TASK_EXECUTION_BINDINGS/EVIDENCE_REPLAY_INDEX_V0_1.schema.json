@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_EXECUTION_BINDINGS/EVIDENCE_REPLAY_INDEX_V0_1.schema.json",
+  "title": "Evidence Replay Index V0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task_id",
+    "session_id",
+    "run_ids",
+    "rerun_decision_ids",
+    "organ_packet_refs",
+    "task_kernel_ref",
+    "evidence_items",
+    "replay_order",
+    "missing_evidence",
+    "truth_claims_allowed",
+    "truth_claims_forbidden",
+    "created_at_utc"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "run_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rerun_decision_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "organ_packet_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "task_kernel_ref": {
+      "type": "string"
+    },
+    "evidence_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "kind",
+          "path_or_note",
+          "status"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "path_or_note": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PRESENT",
+              "MISSING",
+              "WARN"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "replay_order": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth_claims_allowed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth_claims_forbidden": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at_utc": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/TRUTH/ACTION_ROLLBACK/SCHEMAS/action_mutation_classification_v0_1.schema.json",
+  "title": "Action Mutation Classification V0.1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "required_mutation_classes",
+    "mutation_classes"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "ACTION_MUTATION_CLASSIFICATION_V0_1"
+    },
+    "required_mutation_classes": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "string"
+      }
+    },
+    "mutation_classes": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "mutation_class",
+          "risk_level",
+          "default_rollback_verdict"
+        ],
+        "properties": {
+          "mutation_class": {
+            "type": "string"
+          },
+          "risk_level": {
+            "type": "string"
+          },
+          "default_rollback_verdict": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

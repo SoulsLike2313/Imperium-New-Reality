@@ -1,0 +1,34 @@
+{
+  "request_id": "BLOCK_IMPROVEMENT_REQUEST_SAMPLE_V0_1",
+  "source_block": "ASTRONOMICON_INTAKE_BLOCK",
+  "pain": "Context packet includes too many optional references by default.",
+  "evidence": [
+    "IMPERIUM_NEW_GENERATION/BLOCK_SPINE/REPORTS/TASK-NEWGEN-BLOCK-SPINE-CONTEXT-PACK-AND-LLM-FOCUS-OPTIMIZATION-VM3-V0_1/context_bloat_detector_receipt.json"
+  ],
+  "requested_improvement": "Add stricter optional context threshold and duplicate route pruning.",
+  "expected_output": "Updated context builder and passing bloat detector receipt.",
+  "risk": {
+    "level": "MEDIUM",
+    "notes": "Over-pruning could hide required authority files."
+  },
+  "owner_organ": "ASTRONOMICON",
+  "support_organs": [
+    "MECHANICUS",
+    "INQUISITION"
+  ],
+  "validation_needed": [
+    "run build_task_context_pack_v0_1.py",
+    "run context_bloat_detector_v0_1.py",
+    "review hard_red_team_verdict.json"
+  ],
+  "context_needed": [
+    "task route manifest",
+    "organ compact digests",
+    "current cap list"
+  ],
+  "success_criteria": [
+    "mandatory context remains complete",
+    "optional context volume decreases",
+    "no new protected-zone omissions"
+  ]
+}

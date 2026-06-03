@@ -1,0 +1,44 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1",
+    "agent_role": "PC_SERVITOR_BIG_MODEL",
+    "useful_outputs": [
+      "Officio body manifest with compact block identities",
+      "Role registry and role files",
+      "Taskpack/grammar/final response/language rules",
+      "Read-only TUI with launcher",
+      "Role/taskpack checkers plus receipts"
+    ],
+    "waste_points": [
+      "Initial temporary unzip path created inside repo and later cleaned.",
+      "One checker failed once due to missing explicit path markers in TUI source."
+    ],
+    "missing_tools": [
+      "Reusable aggregated Officio checker runner",
+      "One-step receipt bundler for Officio task reports"
+    ],
+    "generated_tools_to_preserve": [
+      "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_role_registry_checker_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_taskpack_acceptance_checker_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/officio_agentis_tui_v0_1.py"
+    ],
+    "recommended_script_absorption": [
+      "Review new Officio checkers for possible Scriptorium absorption after type-hardening.",
+      "Keep current maturity as TASK_LOCAL until strict reusable promotion criteria are requested."
+    ],
+    "recommended_narrow_agent_profiles": [
+      "OFFICIO_CONTRACT_AUDITOR_AGENT",
+      "OFFICIO_ROLE_REGISTRY_MAINTAINER_AGENT",
+      "OFFICIO_TUI_READONLY_SMOKE_AGENT"
+    ],
+    "future_prompt_improvements": [
+      "Taskpack should explicitly provide allowed/forbidden path list in one canonical JSON file.",
+      "Taskpack should include pre-defined receipt checklist template to reduce setup friction."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Auto-fail when temporary unpack roots remain in repo after recon.",
+      "Add one gate helper that checks report budget line/size automatically."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

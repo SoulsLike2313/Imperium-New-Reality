@@ -1,0 +1,23 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+  "generated_at_utc": "2026-05-24T19:26:17Z",
+  "gate_reference": "PREFLIGHT_HYGIENE_GATE.md",
+  "dirty_state_detected_before_admission": true,
+  "detected_dirty_paths": [
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-VISUAL-SHELL-V0_2/DEPENDENCY_INSTALL_VM2.log",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/ACTION_LOGS/vm2_to_vm3_probe_transfer.log",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/ACTION_LOGS/vm3_to_vm2_probe_transfer.log"
+  ],
+  "dirty_state_classification": "KNOWN_LEGACY_RUNTIME_LOG_DELETIONS_ONLY",
+  "origin_analysis": {
+    "likely_source": "Residual local deletions from previous runtime/report handling before this task admission.",
+    "last_commit_touching_paths": [
+      "f6a197cfa4028408047a32f0be8f8739df2f880a (VM2 Servitor, 2026-05-20, visual shell task log)",
+      "f00053012c5f4110a4a75423be8236fce1a5baa4 (VM2 Servitor, 2026-05-23, transfer route proof logs)"
+    ]
+  },
+  "remediation_action": "Restored all three tracked files from HEAD with git restore to satisfy GATE-U08 repo purity before edits.",
+  "deletion_committed_in_this_task": false,
+  "current_worktree_status": "CLEAN",
+  "verdict": "PASS"
+}

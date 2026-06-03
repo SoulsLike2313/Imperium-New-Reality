@@ -1,0 +1,19 @@
+{
+  "mode": "ORCHESTRATE",
+  "purpose": "Coordinate multi-step and multi-agent execution while preserving gate truth.",
+  "allowed_actions": [
+    "sequence tasks",
+    "route role-specific commands",
+    "collect cross-step evidence",
+    "prepare final packaging"
+  ],
+  "forbidden_actions": [
+    "cross-scope execution",
+    "destructive operations without owner gate"
+  ],
+  "expected_output_style": "milestone-oriented progress with clear next command",
+  "can_modify_files": true,
+  "can_run_commands": true,
+  "can_create_bundles": true,
+  "owner_approval_required": true
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/TRUTH/ACTION_ROLLBACK/SCHEMAS/action_rollback_sample_actions_v0_1.schema.json",
+  "title": "Action Rollback Sample Actions V0.1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "actions"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "ACTION_ROLLBACK_SAMPLE_ACTIONS_V0_1"
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "action_id",
+          "mutation_class",
+          "allowed_paths",
+          "backup_required",
+          "rollback_method",
+          "rollback_evidence_required",
+          "owner_approval_required",
+          "failure_policy",
+          "no_fake_green_rule",
+          "preconditions",
+          "postconditions"
+        ],
+        "properties": {
+          "action_id": {
+            "type": "string"
+          },
+          "mutation_class": {
+            "type": "string"
+          },
+          "allowed_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "backup_required": {
+            "type": "boolean"
+          },
+          "rollback_method": {
+            "type": "string"
+          },
+          "rollback_evidence_required": {
+            "type": "boolean"
+          },
+          "owner_approval_required": {
+            "type": "boolean"
+          },
+          "failure_policy": {
+            "type": "string"
+          },
+          "no_fake_green_rule": {
+            "type": "string"
+          },
+          "preconditions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "postconditions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

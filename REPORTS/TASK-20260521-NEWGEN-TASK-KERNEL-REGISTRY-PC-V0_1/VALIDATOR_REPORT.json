@@ -1,0 +1,62 @@
+{
+  "task_id": "TASK-20260521-NEWGEN-TASK-KERNEL-REGISTRY-PC-V0_1",
+  "timestamp_utc": "2026-05-21T19:13:24Z",
+  "validator": "newgen_task_kernel_validator_v0_1.py",
+  "status": "PASS_STRICT",
+  "failures": [],
+  "warnings": [],
+  "limitations": [
+    "No external jsonschema engine; this validator performs deterministic structure checks only."
+  ],
+  "checks": [
+    {
+      "check_id": "required_file_existence",
+      "status": "PASS",
+      "details": "all required files exist"
+    },
+    {
+      "check_id": "json_parseability",
+      "status": "PASS",
+      "details": "all json files parse"
+    },
+    {
+      "check_id": "sample_kernel_required_fields",
+      "status": "PASS",
+      "details": "sample fields and non-live guards valid"
+    },
+    {
+      "check_id": "required_states_documented",
+      "status": "PASS",
+      "details": "all required states present"
+    },
+    {
+      "check_id": "no_live_orchestration_claim_guard",
+      "status": "PASS",
+      "details": "live claim guard satisfied"
+    },
+    {
+      "check_id": "forbidden_paths_not_in_changed_report",
+      "status": "PASS",
+      "details": "no forbidden paths in report"
+    },
+    {
+      "check_id": "forbidden_paths_not_in_git_status",
+      "status": "PASS",
+      "details": "no forbidden paths in git status"
+    }
+  ],
+  "checked_paths": {
+    "architecture_doc": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ARCHITECTURE/TASK_KERNEL_REGISTRY_V0_1.md",
+    "kernel_schema": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/TASK_KERNEL_V0_1.schema.json",
+    "registry_schema": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/TASK_REGISTRY_INDEX_V0_1.schema.json",
+    "state_machine_doc": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/TASK_STATE_MACHINE_V0_1.md",
+    "sample_kernel": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/EXAMPLES/SAMPLE_TASK_KERNEL_OBJECT_V0_1.json",
+    "registry_index": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/TASKS/REGISTRY/TASK_INDEX_V0_1.json",
+    "validator_script": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/TOOLS/VALIDATORS/newgen_task_kernel_validator_v0_1.py",
+    "officio_ack": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-KERNEL-REGISTRY-PC-V0_1/OFFICIO_ROLE_ACK_TASK-20260521-NEWGEN-TASK-KERNEL-REGISTRY-PC-V0_1.json",
+    "step_proof": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-KERNEL-REGISTRY-PC-V0_1/STEP_PROOF_RECORDS.jsonl",
+    "changed_files": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-KERNEL-REGISTRY-PC-V0_1/CHANGED_FILES_STATUS.md",
+    "final_receipt": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-KERNEL-REGISTRY-PC-V0_1/FINAL_RECEIPT.json",
+    "owner_report": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-TASK-KERNEL-REGISTRY-PC-V0_1/OWNER_REPORT_RU.md"
+  }
+}

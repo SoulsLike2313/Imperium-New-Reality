@@ -1,0 +1,50 @@
+{
+  "task_id": "TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1",
+  "generated_at_utc": "2026-05-24T21:01:43.0110633Z",
+  "checker_overall_status": "FAIL",
+  "fixture_expectation_match": true,
+  "mismatch_count": 0,
+  "fixtures": [
+    {
+      "fixture": "FAIL_ENGLISH_LIVE_PROGRESS.md",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "pass_match": true,
+      "detected_fail": [
+        "MISSING_RUSSIAN_OWNER_SUMMARY",
+        "LONG_ENGLISH_OWNER_COMMENTARY"
+      ],
+      "detected_warn": []
+    },
+    {
+      "fixture": "FAIL_MISSING_ACK.md",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "pass_match": true,
+      "detected_fail": [
+        "MISSING_ACK:ROLE_ACK,LANGUAGE_ACK,SCOPE_ACK,STOP_CONDITIONS_ACK",
+        "FORBIDDEN_ACTION_ADMISSION"
+      ],
+      "detected_warn": []
+    },
+    {
+      "fixture": "PASS_RU_4_PART_RESPONSE.md",
+      "expected": "PASS",
+      "actual": "PASS",
+      "pass_match": true,
+      "detected_fail": [],
+      "detected_warn": []
+    },
+    {
+      "fixture": "WARN_TECHNICAL_ENGLISH_ALLOWED.md",
+      "expected": "WARN",
+      "actual": "WARN",
+      "pass_match": true,
+      "detected_fail": [],
+      "detected_warn": [
+        "TECHNICAL_ENGLISH_ALLOWED"
+      ]
+    }
+  ],
+  "note": "PASS fixture must be PASS; fail fixtures must fail; technical-English fixture may warn."
+}

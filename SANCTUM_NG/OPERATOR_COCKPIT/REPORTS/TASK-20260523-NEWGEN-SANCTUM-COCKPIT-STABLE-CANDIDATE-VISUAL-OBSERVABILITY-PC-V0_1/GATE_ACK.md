@@ -1,0 +1,70 @@
+GATE_ACK:
+- task_id: TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1
+- current_head: 936ea57272061077bad16ee91ec7041838748251
+- gatepack_path: C:\Users\PC\Downloads\TASKPACK_TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1.zip
+- gatepack_extract_path: C:\Users\PC\Downloads\IMPERIUM_TASKPACK_BUFFER\TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1
+- gatepack_sha256: D7AFE125300B6E6EC3E0BE32137BF0C78977C1A3852011A20752C4FF73A53D78
+- read_gates:
+  - GATE-U00-GIT-TRUTH
+  - GATE-U01-ROLE-ACK
+  - GATE-U02-SCOPE-BOUNDARY
+  - GATE-U04-EVIDENCE-RECEIPT
+  - GATE-U05-STOP-CONDITIONS
+  - GATE-U08-REPO-PURITY
+  - GATE-U09-NO-FAKE-GREEN
+  - GATE-U12-REPORT-OUTPUT-BUDGET
+  - GATE-U13-PYTHON-TYPE-SAFETY
+  - GATE-U14-WHOLE-REPO-SCOPE-RECON
+  - GATE-U15-OPERATIONALITY-IMPACT
+  - GATE-U16-BILINGUAL-UI
+  - GATE-U17-DELIVERABLE-PACKAGE
+  - GATE-U18-AGENT-FACTORY-COMPLIANCE
+  - GATE-U19-SCRIPT-ARTIFACT-PRESERVATION
+  - GATE-U20-AGENT-KPD-SELF-REVIEW
+  - GATE-U21-COMMAND-CHUNKING
+  - GATE-UI00-TRUTH-BINDING
+  - GATE-VIS00-PERFORMANCE-BUDGET
+  - GATE-VIS01-DECORATIVE-SEMANTIC-SPLIT
+- accepted_stop_conditions:
+  - STOP if branch/root/head truth drifts from task spec baseline.
+  - STOP if touched paths leave IMPERIUM_NEW_GENERATION scope.
+  - STOP if required stable/candidate screenshot evidence cannot be produced.
+  - STOP if visual result remains generic/default and fails anti-acceptance gate.
+  - STOP if unexpected unrelated repo changes appear during execution.
+  - STOP if PASS claim would require evidence not produced.
+- scope_boundary:
+  allowed_paths:
+    - IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/**
+    - IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/**
+  forbidden_paths:
+    - ORGANS/**
+    - IMPERIUM_TEST_VERSION/**
+    - SANCTUM/**
+    - .git/**
+    - main/test merge operations
+- touched_paths_plan:
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_candidate.*
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.html
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/index.html
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/TOOLS/operator_cockpit_sc_*.py
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/TOOLS/operator_cockpit_l1_builder.py
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/TOOLS/launch_operator_cockpit.ps1
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/REPORTS/TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1/**
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/CONTRACTS/STABLE_CANDIDATE_PROMOTION_CONTRACT_V0_1.md
+- expected_receipts:
+  - GATE_ACK.md
+  - operator_cockpit_sc_report.json
+  - operator_cockpit_sc_validator_report.json
+  - operator_cockpit_sc_smoke_report.json
+  - screenshot_matrix.json
+  - stable_candidate_comparison.json
+  - research_dossier.json
+  - FINAL_REPORT.md
+  - context_source_mix.json
+  - agent_kpd_self_review.json
+  - tool_artifact_preservation_manifest.json
+  - closure_receipt.json
+- repo_recon_required: yes (taskpack + SANCTUM_NG APP/OPERATOR_COCKPIT baseline + web research sources)
+- script_absorption_required: yes
+- clarification_needed: no
+- verdict: PASS

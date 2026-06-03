@@ -1,0 +1,52 @@
+╭─────────────────────────────── TOP STATUS BAR ───────────────────────────────╮
+│ organ: INQUISITION_AGENT                                                     │
+│ identity/lore: Audit, anti-fake-green, scope integrity, and evidence truth   │
+│ enforcement.                                                                 │
+│ backend_truth: head=57cf210f2516fb001adc42a4f283a8bd4e647ec8 branch=master   │
+│ dirty=yes                                                                    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─────────── LEFT WORK ZONE ───────────╮╭───────── RIGHT COMMAND ZONE ─────────╮
+│ latest_output:                       ││ active_command_list:                 │
+│ once_mode_command=help               ││ status, check, where, identity,      │
+│                                      ││ pack, shell, help, fake-green-check, │
+│                                      ││ scope-drift-check, hygiene-scan,     │
+│                                      ││ audit-claims                         │
+│                                      ││                                      │
+│                                      ││                                      │
+│                                      ││                                      │
+│                                      ││                                      │
+│                                      ││                                      │
+│                                      ││                                      │
+╰──────────────────────────────────────╯╰──────────────────────────────────────╯
+╭────────────────────────────── BOTTOM EVENT BAR ──────────────────────────────╮
+│ latest_report_path:                                                          │
+│ /home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS │
+│ /INQUISITION_AGENT/REPORTS/base_half_check_report.json                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+{
+  "organ": "INQUISITION_AGENT",
+  "runner": "inquisition_agent_runner.py",
+  "commands": [
+    "status",
+    "check",
+    "where",
+    "identity",
+    "pack",
+    "shell",
+    "help",
+    "fake-green-check",
+    "scope-drift-check",
+    "hygiene-scan",
+    "audit-claims"
+  ],
+  "domain_commands": {
+    "fake-green-check": "Detect unsupported PASS claims and missing evidence links.",
+    "scope-drift-check": "Surface changed paths and highlight potential scope drift.",
+    "hygiene-scan": "Scan Identity Half required files and report missing artifacts.",
+    "audit-claims": "Summarize claim/evidence anchors for current organ status."
+  },
+  "shell_usage": "py -3 TOOLS/inquisition_agent_runner.py shell",
+  "visual_status": "PASS_RICH",
+  "warnings": []
+}
+

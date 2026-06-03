@@ -1,0 +1,48 @@
+{
+  "task_id": "TASK-20260520-NEWGEN-MECHANICUS-PANEL-VISUAL-SLICE-VM3-V0_1",
+  "task_type": "VISUAL_SLICE_IMPLEMENTATION",
+  "role_authority": "OFFICIO_REQUIRED_NOT_TASKPACK",
+  "mode": "VM3_SSH_EXECUTION",
+  "repo_root_vm3": "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+  "target_visual_unit": "SANCTUM.RIGHT_CONTEXT_DOCK.MECHANICUS_PANEL",
+  "allowed_write_roots": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1",
+    "IMPERIUM_NEW_GENERATION/TASKS/VM3_ASSIGNED/TASK-20260520-NEWGEN-MECHANICUS-PANEL-VISUAL-SLICE-VM3-V0_1"
+  ],
+  "read_only_roots": [
+    "ORGANS/OFFICIO_AGENTIS",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT"
+  ],
+  "forbidden_write_roots": [
+    "ORGANS",
+    "SANCTUM",
+    "IMPERIUM_TEST_VERSION"
+  ],
+  "officio_intake_required": true,
+  "commit_required_if_gates_pass": true,
+  "push_required_if_gates_pass": true,
+  "required_output_files": [
+    "index.html",
+    "styles.css",
+    "app.js",
+    "README.md",
+    "SCREENSHOTS",
+    "REPORTS",
+    "RECEIPTS"
+  ],
+  "required_zones": [
+    "header_identity",
+    "current_activity_work_zone",
+    "command_operator_palette",
+    "tool_registry_capability_overview",
+    "footer_evidence_mission_focus"
+  ],
+  "anti_goals": [
+    "generic_bootstrap_dashboard",
+    "fake_backend_truth",
+    "full_sanctum_rewrite",
+    "visual_concept_without_implementation",
+    "unbounded_scope"
+  ]
+}

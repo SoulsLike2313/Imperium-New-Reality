@@ -1,0 +1,46 @@
+{
+  "task_id": "TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1",
+  "timestamp_utc": "2026-06-01T05:41:57Z",
+  "stage": "Stage 3.2 / Language authority and mojibake filter spinoff",
+  "learning_items": [
+    {
+      "id": "LANG-L01",
+      "type": "OFFICIO_AUTHORITY",
+      "title": "Language lane ownership must be explicit in Officio policy files",
+      "evidence": [
+        "officio_language_authority_receipt.json"
+      ],
+      "outcome": "ADOPTED"
+    },
+    {
+      "id": "LANG-L02",
+      "type": "INQUISITION_FILTER",
+      "title": "Mojibake/encoding detection requires script-first global scanner plus fixtures",
+      "evidence": [
+        "inquisition_mojibake_filter_report.json",
+        "language_encoding_fixture_results.json"
+      ],
+      "outcome": "ADOPTED"
+    },
+    {
+      "id": "LANG-L03",
+      "type": "ASTRONOMICON_GATE",
+      "title": "Taskpack admission must fail when root files violate language or encoding policy",
+      "evidence": [
+        "taskpack_language_gate_receipt.json",
+        "taskpack_language_gate_report.md"
+      ],
+      "outcome": "ADOPTED"
+    },
+    {
+      "id": "LANG-L04",
+      "type": "LEGACY_CLASSIFICATION",
+      "title": "Existing violations must be classified as legacy/localized/runtime before closure",
+      "evidence": [
+        "canonical_artifact_language_scan_report.md",
+        "inquisition_mojibake_filter_report.json"
+      ],
+      "outcome": "ADOPTED"
+    }
+  ]
+}

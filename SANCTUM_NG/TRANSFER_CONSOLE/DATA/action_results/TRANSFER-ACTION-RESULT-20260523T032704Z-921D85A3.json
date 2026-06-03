@@ -1,0 +1,37 @@
+{
+  "schema_id": "TRANSFER_ACTION_RESULT_V0_1",
+  "result_id": "TRANSFER-ACTION-RESULT-20260523T032704Z-921D85A3",
+  "request_id": "TRANSFER-ACTION-REQ-20260523T032704Z-9FDCC260",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1",
+  "action_type": "SEND_TASKPACK_ZIP",
+  "status": "CONFIRMED",
+  "started_at_utc": "2026-05-23T03:27:04Z",
+  "finished_at_utc": "2026-05-23T03:27:04Z",
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T032704Z-9FDCC260.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/ACTION_LOGS/vm2_to_vm3_auth.txt",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/vm2_to_vm3_probe_result.json"
+  ],
+  "stdout_log_ref": null,
+  "stderr_log_ref": null,
+  "paths_verified": [
+    "/home/vboxuser2/IMPERIUM_WORK/Imperium-/INBOX/VM2_PROBES/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/vm2_to_vm3_probe_bundle_20260523T031321Z.zip",
+    "/home/vboxuser3/IMPERIUM_WORK/Imperium-/INBOX/VM2_TO_VM3_PROBES/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/vm2_to_vm3_probe_bundle_20260523T031321Z.zip"
+  ],
+  "sha256_before_after": {
+    "before": "f9d912593db91073f20119a0b7693b4bf82f3991a20eade683c37283e6dac2fc",
+    "after": "f9d912593db91073f20119a0b7693b4bf82f3991a20eade683c37283e6dac2fc"
+  },
+  "no_arbitrary_shell_confirmed": true,
+  "limitations": [
+    "Bounded VM2/VM3 route-proof result only.",
+    "No production remote orchestration claim.",
+    "No arbitrary shell execution claim.",
+    "route:VM2_TO_VM3",
+    "route_status:PROVED",
+    "alias:imperium-vm3-from-vm2"
+  ],
+  "claim_boundary": "FOUNDATION_ONLY",
+  "error": null,
+  "mode": "EXECUTE"
+}

@@ -1,0 +1,55 @@
+GATE_ACK:
+- task_id: TASK-NEWGEN-AGENT-IDE-DUAL-SURFACE-SELF-VALIDATOR-BLOCK-FOUNDATION-PC-V0_1
+- current_head: 22ae2830ce55a7c397f83e338f826a15c3049dba
+- gatepack_path: C:\Users\PC\Downloads\TASKPACK_NEWGEN_AGENT_IDE_DUAL_SURFACE_SELF_VALIDATOR_BLOCK_FOUNDATION_PC_V0_1.zip
+- gatepack_sha256: 30a9fc4a6ec6e522e366f293e8b6577aa17c049b13dd4a736a32b5ee828ae609
+- read_gates:
+  - GATE-U00-GIT-TRUTH
+  - GATE-U01-ROLE-ACK
+  - GATE-U02-SCOPE-BOUNDARY
+  - GATE-U04-EVIDENCE-RECEIPT
+  - GATE-U05-STOP-CONDITIONS
+  - GATE-U08-REPO-PURITY
+  - GATE-U09-NO-FAKE-GREEN
+  - GATE-U12-REPORT-OUTPUT-BUDGET
+  - GATE-U13-PYTHON-TYPE-SAFETY
+  - GATE-U14-WHOLE-REPO-SCOPE-RECON
+  - GATE-U15-OPERATIONALITY-IMPACT
+  - GATE-U16-BILINGUAL-UI
+  - GATE-U17-DELIVERABLE-PACKAGE
+  - GATE-U18-AGENT-FACTORY-COMPLIANCE
+  - GATE-U19-SCRIPT-ARTIFACT-PRESERVATION
+  - GATE-U20-AGENT-KPD-SELF-REVIEW
+  - GATE-U21-COMMAND-CHUNKING
+  - GATE-AI00-NO-DIRECT-MODEL-COMMAND
+- accepted_stop_conditions:
+  - STOP if repo root/branch/head diverge from task truth lock.
+  - STOP if out-of-scope paths are touched.
+  - STOP if private/local content cannot be safely masked in projection.
+  - STOP if required receipts cannot be generated.
+  - STOP if PASS/WARN_ACCEPTED cannot be closed with commit/push/sync proof.
+- scope_boundary:
+  - Build Agent IDE dual-surface foundation under AGENT_IDE and Mechanicus registration entries for this task only.
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/AGENT_IDE/**
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-AGENT-IDE-DUAL-SURFACE-SELF-VALIDATOR-BLOCK-FOUNDATION-PC-V0_1/**
+- forbidden_paths:
+  - WARP surfaces
+  - CLI Worker implementation
+  - UI edit/write features
+  - UI command execution features
+  - UI commit/push features
+  - Officio hardening implementation
+  - Inquisition V0.2 implementation
+- expected_receipts:
+  - source_truth_receipt.json
+  - view_model_receipt.json
+  - desktop_ide_smoke_receipt.json
+  - web_projection_receipt.json
+  - truth_parity_receipt.json
+  - self_validation_summary.json
+  - closure_receipt.json
+- repo_recon_required: YES
+- script_absorption_required: YES
+- clarification_needed: NONE
+- verdict: PASS

@@ -1,0 +1,29 @@
+{
+  "schema_id": "newgen_organ_state_v0_1",
+  "organ_id": "DOCTRINARIUM",
+  "version": "v0_1",
+  "default_verdict": "PASS",
+  "responsibility": "Law and gate admission for NewGen tasks.",
+  "servitor_ask": [
+    "What doctrinal gates apply to this task now?",
+    "What evidence is mandatory before PASS claim?",
+    "What is explicitly not proven in this slice?"
+  ],
+  "warn_block_profile": [
+    "WARN on partial execution with explicit not-run boundary",
+    "BLOCK on generic pass or missing evidence refs"
+  ],
+  "required_actions": [
+    "Run and store preflight output before edits",
+    "Bind final verdict to scoped Wave 1 slice only"
+  ],
+  "forbidden_actions": [
+    "Claim complete Important Six",
+    "Claim production autonomy"
+  ],
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/gate_registry_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/doctrinarium_preflight_output.json"
+  ],
+  "last_updated_utc": "2026-05-24T01:20:00Z"
+}

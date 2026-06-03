@@ -1,0 +1,36 @@
+{
+  "task_id": "TASK-NEWGEN-FIVE-ORGAN-ALIGNMENT-CHECK-VM3-V0_1",
+  "pains": [
+    {
+      "pain_id": "ROUTE_MEMORY_LOSS_PC_TO_VM3",
+      "severity": "HIGH",
+      "status": "REDUCED",
+      "owner_organs": [
+        "ASTRONOMICON",
+        "ADMINISTRATUM",
+        "MECHANICUS"
+      ],
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/REPORTS/TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1/pc_to_vm3_direct_route_card.json",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/REPORTS/TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1/canonical_transfer_commands.md",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS/TASK-NEWGEN-FIVE-ORGAN-ALIGNMENT-CHECK-VM3-V0_1/route_memory_loss_cure_check.json"
+      ],
+      "cure_summary": "Маршрут и канонические команды формализованы и подтверждены receipt-цепочкой.",
+      "next_requirement": "В будущей IDE вывести route card и командный блок send/verify."
+    },
+    {
+      "pain_id": "PENDING_COMMIT_PUSH_RECURRENCE",
+      "severity": "HIGH",
+      "status": "REDUCED_BY_RULE",
+      "owner_organs": [
+        "ADMINISTRATUM",
+        "OFFICIO_AGENTIS"
+      ],
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS/TASK-NEWGEN-FIVE-ORGAN-ALIGNMENT-CHECK-VM3-V0_1/closure_receipt.json"
+      ],
+      "cure_summary": "Правило NO_PENDING_FINAL_WITHOUT_BLOCKER применено: задача завершается commit+push в том же цикле.",
+      "next_requirement": "Сохранять это правило для всех VM3 taskpack execution задач."
+    }
+  ]
+}

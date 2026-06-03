@@ -1,0 +1,56 @@
+{
+  "schema_version": "0.1",
+  "policy_id": "TASKPACK_RETENTION_POLICY_V0_1",
+  "root": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED",
+  "artifact_classes": [
+    {
+      "artifact_class": "TASKPACK_ZIP",
+      "default_action": "KEEP_CANONICAL",
+      "retention_reason": "Primary admission evidence for registered task.",
+      "max_size_guidance": "<=50MB preferred; larger payloads flagged for quarantine planning.",
+      "required_receipt": true
+    },
+    {
+      "artifact_class": "EXTRACTED_PAYLOAD",
+      "default_action": "KEEP_CANONICAL",
+      "retention_reason": "Execution route needs extracted authority files.",
+      "max_size_guidance": "Track file count and binary-heavy footprint.",
+      "required_receipt": true
+    },
+    {
+      "artifact_class": "MANIFEST",
+      "default_action": "KEEP_CANONICAL",
+      "retention_reason": "Task identity and policy contract anchor.",
+      "max_size_guidance": "N/A",
+      "required_receipt": true
+    },
+    {
+      "artifact_class": "ROUTE_MANIFEST",
+      "default_action": "KEEP_CANONICAL",
+      "retention_reason": "Task entry replay trace.",
+      "max_size_guidance": "N/A",
+      "required_receipt": true
+    },
+    {
+      "artifact_class": "ADMISSION_RECEIPT",
+      "default_action": "KEEP_CANONICAL",
+      "retention_reason": "Admission truth boundary.",
+      "max_size_guidance": "N/A",
+      "required_receipt": true
+    },
+    {
+      "artifact_class": "REVIEW_ARTIFACT",
+      "default_action": "HASH_AND_QUARANTINE",
+      "retention_reason": "Large review payload can exceed canonical repo intent.",
+      "max_size_guidance": ">20MB or binary-heavy => quarantine candidate.",
+      "required_receipt": true
+    },
+    {
+      "artifact_class": "BINARY_PAYLOAD",
+      "default_action": "HASH_AND_QUARANTINE",
+      "retention_reason": "Binary payload not required for daily canonical scans.",
+      "max_size_guidance": "Prefer pointer+hash storage for large binaries.",
+      "required_receipt": true
+    }
+  ]
+}

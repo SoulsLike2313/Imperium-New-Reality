@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Before After Context Economy Delta",
+  "type": "object",
+  "required": [
+    "task_id",
+    "generated_at_utc",
+    "baseline",
+    "context_pack",
+    "delta",
+    "method",
+    "caveats",
+    "verdict"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "baseline": {
+      "type": "object",
+      "required": [
+        "estimated_files",
+        "estimated_chars"
+      ],
+      "properties": {
+        "estimated_files": {
+          "type": "integer"
+        },
+        "estimated_chars": {
+          "type": "integer"
+        }
+      }
+    },
+    "context_pack": {
+      "type": "object",
+      "required": [
+        "files",
+        "chars"
+      ],
+      "properties": {
+        "files": {
+          "type": "integer"
+        },
+        "chars": {
+          "type": "integer"
+        }
+      }
+    },
+    "delta": {
+      "type": "object",
+      "required": [
+        "file_reduction",
+        "char_reduction",
+        "positive_context_economy"
+      ],
+      "properties": {
+        "file_reduction": {
+          "type": "integer"
+        },
+        "char_reduction": {
+          "type": "integer"
+        },
+        "positive_context_economy": {
+          "type": "boolean"
+        }
+      }
+    },
+    "method": {
+      "type": "string"
+    },
+    "caveats": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verdict": {
+      "type": "string"
+    }
+  }
+}

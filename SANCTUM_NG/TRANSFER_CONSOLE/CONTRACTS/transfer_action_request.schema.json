@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRANSFER_ACTION_REQUEST_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "request_id",
+    "task_id",
+    "action_type",
+    "source_contour",
+    "target_contour",
+    "artifact_type",
+    "artifact_name",
+    "source_path",
+    "target_path",
+    "mode",
+    "owner_approval_required",
+    "owner_approved",
+    "rollback_plan",
+    "allowed_command_profile",
+    "created_at_utc",
+    "status",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_id": { "const": "TRANSFER_ACTION_REQUEST_V0_1" },
+    "request_id": { "type": "string", "minLength": 1 },
+    "task_id": { "type": "string", "minLength": 1 },
+    "action_type": {
+      "type": "string",
+      "enum": [
+        "SEND_TASKPACK_ZIP",
+        "FETCH_REPORT_BUNDLE_ZIP",
+        "REGISTER_TRANSFER_RESULT",
+        "VALIDATE_TRANSFER_REQUEST",
+        "DRY_RUN_TRANSFER"
+      ]
+    },
+    "source_contour": { "type": "string", "enum": ["PC", "VM2", "VM3"] },
+    "target_contour": { "type": "string", "enum": ["PC", "VM2", "VM3"] },
+    "artifact_type": { "type": "string", "enum": ["taskpack_zip", "report_bundle"] },
+    "artifact_name": { "type": "string", "minLength": 1 },
+    "source_path": { "type": "string", "minLength": 1 },
+    "target_path": { "type": "string", "minLength": 1 },
+    "mode": { "type": "string", "enum": ["DRY_RUN", "EXECUTE"] },
+    "owner_approval_required": { "type": "boolean" },
+    "owner_approved": { "type": "boolean" },
+    "rollback_plan": { "type": "string", "minLength": 1 },
+    "allowed_command_profile": {
+      "type": "string",
+      "enum": ["DRY_RUN_ONLY", "VM3_LOCAL_COPY", "PROFILE_NOT_READY"]
+    },
+    "created_at_utc": { "type": "string", "minLength": 1 },
+    "status": {
+      "type": "string",
+      "enum": [
+        "REQUESTED",
+        "VALIDATED",
+        "DRY_RUN_READY",
+        "NOT_READY",
+        "BLOCKED",
+        "EXECUTING",
+        "COMPLETED",
+        "FAILED"
+      ]
+    },
+    "claim_boundary": { "const": "FOUNDATION_ONLY" },
+    "requester": { "type": "string" },
+    "no_arbitrary_shell_confirmed": { "type": "boolean" },
+    "route_proof_mode": { "type": "boolean" },
+    "delivery_evidence_file": {
+      "anyOf": [
+        { "type": "string" },
+        { "type": "null" }
+      ]
+    },
+    "notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

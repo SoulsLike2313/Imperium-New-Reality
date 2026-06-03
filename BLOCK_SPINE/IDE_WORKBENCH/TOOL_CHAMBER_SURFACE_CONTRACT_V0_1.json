@@ -1,0 +1,24 @@
+{
+  "contract_id": "TOOL_CHAMBER_SURFACE_CONTRACT_V0_1",
+  "status": "CANDIDATE_NOT_CANON",
+  "surface_panels": [
+    "TOOL_REGISTRY",
+    "COMMAND_PREVIEW",
+    "RISK_PROFILE",
+    "RECEIPT_STREAM"
+  ],
+  "required_tool_fields": [
+    "tool_id",
+    "owner_organ",
+    "scope_class",
+    "risk_level",
+    "resource_budget",
+    "allowed_commands",
+    "forbidden_commands",
+    "receipt_contract"
+  ],
+  "policy": {
+    "candidate_cards_only": true,
+    "runtime_execution_forbidden_in_stage": true
+  }
+}

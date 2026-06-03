@@ -1,0 +1,32 @@
+{
+  "matrix_id": "INVALID_BAD_STATUS_MATRIX",
+  "version": "0.1-test",
+  "owner_organ": "Mechanicus",
+  "support_organs": [
+    "Inquisition"
+  ],
+  "purpose": "Negative fixture: status value intentionally outside allowed vocabulary.",
+  "used_by": [
+    "SERVITOR"
+  ],
+  "required_questions": [
+    "Can status vocabulary enforcement detect invalid values?"
+  ],
+  "pass_criteria": [
+    "Should never pass"
+  ],
+  "warn_criteria": [
+    "N/A"
+  ],
+  "block_criteria": [
+    "Invalid status must fail"
+  ],
+  "fake_green_flags": [
+    "STATUS_OUT_OF_VOCAB"
+  ],
+  "evidence_requirements": [
+    "Fixture should fail status checks"
+  ],
+  "current_status": "TOTALLY_READY_NOW",
+  "next_action": "Expect validator failure"
+}

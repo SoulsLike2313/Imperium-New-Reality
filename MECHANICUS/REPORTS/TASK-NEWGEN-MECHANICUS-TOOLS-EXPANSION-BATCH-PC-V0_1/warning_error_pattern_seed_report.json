@@ -1,0 +1,91 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "generated_at_utc": "2026-05-24T23:35:59Z",
+  "seed_version": "v0_1",
+  "patterns": [
+    {
+      "pattern_id": "fake_canon_count",
+      "label": "Fake canon references",
+      "regex": "fake[_\\s-]?canon[_\\s-]?count|fake\\s+canon",
+      "severity": "critical"
+    },
+    {
+      "pattern_id": "PASS_WITH_WARNINGS",
+      "label": "PASS_WITH_WARNINGS verdicts",
+      "regex": "PASS_WITH_WARNINGS",
+      "severity": "warning"
+    },
+    {
+      "pattern_id": "hygiene",
+      "label": "Hygiene findings",
+      "regex": "hygiene",
+      "severity": "warning"
+    },
+    {
+      "pattern_id": "runtime_junk",
+      "label": "Runtime junk mentions",
+      "regex": "runtime[_\\s-]?junk",
+      "severity": "warning"
+    },
+    {
+      "pattern_id": "pycache",
+      "label": "Pycache artifact mention",
+      "regex": "__pycache__|pycache",
+      "severity": "warning"
+    },
+    {
+      "pattern_id": "pyc",
+      "label": "PYC artifact mention",
+      "regex": "\\.pyc\\b",
+      "severity": "warning"
+    },
+    {
+      "pattern_id": "missing_ACK",
+      "label": "Missing ACK mention",
+      "regex": "missing\\s+ack|ack[_\\s-]?violation",
+      "severity": "critical"
+    },
+    {
+      "pattern_id": "language_violation",
+      "label": "Language violation mention",
+      "regex": "language[_\\s-]?violation|OFFICIO_LANGUAGE_VIOLATION_WARN",
+      "severity": "warning"
+    },
+    {
+      "pattern_id": "NO_SCHEMA_AVAILABLE",
+      "label": "No schema available markers",
+      "regex": "NO_SCHEMA_AVAILABLE",
+      "severity": "warning"
+    },
+    {
+      "pattern_id": "BLOCKED",
+      "label": "BLOCKED verdict mentions",
+      "regex": "\\bBLOCKED\\b",
+      "severity": "critical"
+    },
+    {
+      "pattern_id": "FAIL",
+      "label": "FAIL verdict mentions",
+      "regex": "\\bFAIL\\b",
+      "severity": "critical"
+    },
+    {
+      "pattern_id": "install_performed",
+      "label": "Install performed mention",
+      "regex": "install(ed|_performed)|pip\\s+install|npm\\s+install",
+      "severity": "critical"
+    },
+    {
+      "pattern_id": "visual_prototype",
+      "label": "Visual prototype mention",
+      "regex": "visual\\s+prototype",
+      "severity": "critical"
+    },
+    {
+      "pattern_id": "LLM_cloud",
+      "label": "LLM/cloud mention",
+      "regex": "\\bLLM\\b|cloud",
+      "severity": "critical"
+    }
+  ]
+}

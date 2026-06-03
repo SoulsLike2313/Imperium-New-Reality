@@ -1,0 +1,89 @@
+{
+  "schema_id": "SANCTUM_NG_ACTION_RESULT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+  "request_id": "20260523T004222Z_6a008395bb",
+  "action_id": "DRY_RUN_TASKPACK_SEND",
+  "action_status": "WIRED",
+  "started_at_utc": "2026-05-23T00:42:22Z",
+  "request_record_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/ACTION_LOGS/REQUESTS/20260523T004222Z_6a008395bb.json",
+  "executed_command": [
+    "python3",
+    "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/transfer_console_action_runner_v0_1.py",
+    "--repo-root",
+    "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+    "--task-id",
+    "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+    "--action-id",
+    "DRY_RUN_TASKPACK_SEND",
+    "--requester",
+    "SANCTUM_NG_ACTION_SERVER",
+    "--report-dir",
+    "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1"
+  ],
+  "status": "PASS",
+  "finished_at_utc": "2026-05-23T00:42:22Z",
+  "result_record_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/ACTION_LOGS/RESULTS/20260523T004222Z_6a008395bb.json",
+  "output_summary": "transfer_action=DRY_RUN_TASKPACK_SEND status=PASS returncode=0",
+  "payload": {
+    "runner": {
+      "command": [
+        "python3",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/transfer_console_action_runner_v0_1.py",
+        "--repo-root",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+        "--task-id",
+        "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+        "--action-id",
+        "DRY_RUN_TASKPACK_SEND",
+        "--requester",
+        "SANCTUM_NG_ACTION_SERVER",
+        "--report-dir",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1"
+      ],
+      "returncode": 0,
+      "stdout": "transfer_console_action_status=PASS\ntransfer_console_action_report=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/ACTION_LOGS/TRANSFER_CONSOLE_ACTION_REPORTS/ACTION-REPORT-20260523T004222Z-455AA47B.json\ntransfer_console_view_state=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+      "stderr": ""
+    },
+    "runner_report_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/ACTION_LOGS/TRANSFER_CONSOLE_ACTION_REPORTS/ACTION-REPORT-20260523T004222Z-455AA47B.json",
+    "view_state_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+    "transfer_action_status": "PASS",
+    "parsed_stdout": {
+      "transfer_console_action_status": "PASS",
+      "transfer_console_action_report": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/ACTION_LOGS/TRANSFER_CONSOLE_ACTION_REPORTS/ACTION-REPORT-20260523T004222Z-455AA47B.json",
+      "transfer_console_view_state": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json"
+    }
+  },
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/transfer_console_action_runner_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/ACTION_LOGS/TRANSFER_CONSOLE_ACTION_REPORTS/ACTION-REPORT-20260523T004222Z-455AA47B.json"
+  ],
+  "known_limitations": [
+    "Transfer Console actions are file-backed foundation workflows only.",
+    "No production remote orchestration claim is made."
+  ],
+  "state_model": {
+    "connection_state": "CONNECTED",
+    "action_availability": "ACTION_ALLOWED",
+    "result_state": "ACTION_RESULT_PASS",
+    "known_states": {
+      "connection_state": "CONNECTED",
+      "connection_states": [
+        "CONNECTED",
+        "NOT_CONNECTED",
+        "UNKNOWN",
+        "ACTION_SERVER_NOT_CONNECTED"
+      ],
+      "action_states": [
+        "ACTION_ALLOWED",
+        "ACTION_DISABLED"
+      ],
+      "result_states": [
+        "ACTION_RESULT_PASS",
+        "ACTION_RESULT_WARN",
+        "ACTION_RESULT_BLOCK",
+        "ACTION_RESULT_PARTIAL"
+      ]
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1",
+  "timestamp_utc": "2026-05-30T15:03:48Z",
+  "builder_claims": [
+    {
+      "claim_id": "C01",
+      "claim": "Typed corridor policy is enforced and untyped runtime corridor claims are blocked.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "claim": "Closure provenance and NEXT_PIPELINE_HANDOFF contracts/templates are present and validated.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/TEMPLATES/FINAL_CLOSURE_VERIFIER_RECEIPT_TEMPLATE.json",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/TEMPLATES/NEXT_PIPELINE_HANDOFF_TEMPLATE.json"
+      ]
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "A01",
+      "target_claim_id": "C01",
+      "attack": "Policy may still allow broad runtime wording.",
+      "result": "RESISTED",
+      "downgrade_needed": false
+    },
+    {
+      "attack_id": "A02",
+      "target_claim_id": "C02",
+      "attack": "Missing final verifier chain could fake closure confidence.",
+      "result": "RESISTED",
+      "downgrade_needed": false
+    },
+    {
+      "attack_id": "A03",
+      "target_claim_id": "C02",
+      "attack": "No independent Inquisitor/Speculum replay inside this task.",
+      "result": "PARTIAL",
+      "downgrade_needed": true
+    }
+  ],
+  "downgrade_rules_applied": [
+    "CAP_NO_INDEPENDENT_REPLAY"
+  ],
+  "caps_triggered": [
+    "CAP_NO_INDEPENDENT_REPLAY"
+  ],
+  "final_verdict": "PASS_WITH_WARNINGS",
+  "notes": "Synthetic replay evidence is strong for policy enforcement, but independent external replay is pending."
+}

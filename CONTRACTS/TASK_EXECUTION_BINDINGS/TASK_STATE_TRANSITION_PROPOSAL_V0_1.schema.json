@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_EXECUTION_BINDINGS/TASK_STATE_TRANSITION_PROPOSAL_V0_1.schema.json",
+  "title": "Task State Transition Proposal V0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task_id",
+    "source_records",
+    "current_task_state",
+    "proposed_task_state",
+    "transition_reason",
+    "failure_classification",
+    "rerun_decision",
+    "owner_escalation_required",
+    "organ_escalation_required",
+    "fake_green_risk",
+    "evidence_index_ref",
+    "confidence",
+    "foundation_limitations",
+    "created_at_utc"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "source_records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "record_kind",
+          "path",
+          "status",
+          "input_truth_level"
+        ],
+        "properties": {
+          "record_kind": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "READ",
+              "MISSING",
+              "READ_ERROR"
+            ]
+          },
+          "input_truth_level": {
+            "type": "string",
+            "enum": [
+              "PROVED_FOUNDATION_INPUT",
+              "FOUNDATION_SAMPLE_INPUT",
+              "MISSING_INPUT_WARN"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "current_task_state": {
+      "type": "string"
+    },
+    "proposed_task_state": {
+      "type": "string"
+    },
+    "transition_reason": {
+      "type": "string"
+    },
+    "failure_classification": {
+      "type": "string",
+      "enum": [
+        "NONE",
+        "TASK_ARCHITECTURE_FAILURE",
+        "SCOPE_AMBIGUITY",
+        "SKILL_GAP",
+        "TOOL_MISSING",
+        "VALIDATOR_FAILURE",
+        "VISUAL_MISMATCH",
+        "FAKE_GREEN_RISK",
+        "OWNER_DECISION_REQUIRED",
+        "FOUNDATION_LIMITATION"
+      ]
+    },
+    "rerun_decision": {
+      "type": "string",
+      "enum": [
+        "RERUN_ALLOWED",
+        "RERUN_REQUIRED",
+        "ASK_OWNER",
+        "ASK_ORGAN",
+        "BLOCKED",
+        "PASS_WITH_WARNINGS",
+        "PASS_STRICT"
+      ]
+    },
+    "owner_escalation_required": {
+      "type": "boolean"
+    },
+    "organ_escalation_required": {
+      "type": "boolean"
+    },
+    "fake_green_risk": {
+      "type": "boolean"
+    },
+    "evidence_index_ref": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "PROVED",
+        "STRONG",
+        "PLAUSIBLE",
+        "UNKNOWN",
+        "FAILED",
+        "FAKE_GREEN_RISK"
+      ]
+    },
+    "foundation_limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at_utc": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

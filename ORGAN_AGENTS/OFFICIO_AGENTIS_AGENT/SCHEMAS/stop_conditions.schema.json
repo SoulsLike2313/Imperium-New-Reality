@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Stop Conditions",
+  "type": "object",
+  "required": [
+    "stop_conditions"
+  ],
+  "properties": {
+    "stop_conditions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "code",
+          "trigger",
+          "agent_action",
+          "required_evidence",
+          "owner_options"
+        ],
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "trigger": {
+            "type": "string"
+          },
+          "agent_action": {
+            "type": "string"
+          },
+          "required_evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "owner_options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
+

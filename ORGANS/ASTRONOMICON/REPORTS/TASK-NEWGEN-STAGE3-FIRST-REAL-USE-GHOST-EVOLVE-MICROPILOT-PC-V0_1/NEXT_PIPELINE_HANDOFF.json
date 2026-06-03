@@ -1,0 +1,27 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1",
+  "timestamp_utc": "2026-05-31T01:15:47Z",
+  "current_stage_verdict": "STAGE3_MICROPILOT_PASS_WITH_WARNINGS",
+  "next_allowed_tasks": [
+    {
+      "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+      "priority": "P0",
+      "reason": "Convert BOM/bootstrap repair into script-first intake preflight and close Stage3 finding ST3-L01."
+    },
+    {
+      "task_id": "TASK-NEWGEN-STAGE3-INQUISITION-CAP-LEDGER-INDEX-PC-V0_1",
+      "priority": "P1",
+      "reason": "Centralize cap lifecycle history and remove report-local contradiction risk."
+    },
+    {
+      "task_id": "TASK-NEWGEN-STAGE3-LARGER-REAL-USE-PILOT-PREFLIGHT-GATE-PC-V0_1",
+      "priority": "P1",
+      "reason": "Prepare first larger real-use pilot only after bootstrap and cap-ledger hardening."
+    }
+  ],
+  "independent_reviews_required_before_clean_pass": [
+    "INQUISITOR_COMMIT_MATRIX_REVIEW",
+    "SPECULUM_TECHNICAL_REDTEAM_REVIEW"
+  ],
+  "owner_action": "Run next taskpack through Astronomicon intake, then start via TASK_ID + start task."
+}

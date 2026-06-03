@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/TRUTH/ACTION_ROLLBACK/SCHEMAS/rollback_decision_rules_v0_1.schema.json",
+  "title": "Rollback Decision Rules V0.1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "required_rollback_verdicts",
+    "rules"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "ROLLBACK_DECISION_RULES_V0_1"
+    },
+    "required_rollback_verdicts": {
+      "type": "array",
+      "minItems": 7,
+      "items": {
+        "type": "string"
+      }
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "mutation_class",
+          "default_rollback_method",
+          "backup_required",
+          "owner_approval_required",
+          "failure_policy"
+        ],
+        "properties": {
+          "mutation_class": {
+            "type": "string"
+          },
+          "default_rollback_method": {
+            "type": "string"
+          },
+          "backup_required": {
+            "type": "boolean"
+          },
+          "owner_approval_required": {
+            "type": "boolean"
+          },
+          "failure_policy": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

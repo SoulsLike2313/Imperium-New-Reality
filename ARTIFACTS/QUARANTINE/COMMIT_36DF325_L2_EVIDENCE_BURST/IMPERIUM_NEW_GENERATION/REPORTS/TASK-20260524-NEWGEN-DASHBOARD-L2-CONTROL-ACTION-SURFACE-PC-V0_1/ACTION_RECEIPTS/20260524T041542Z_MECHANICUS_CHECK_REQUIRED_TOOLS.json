@@ -1,0 +1,157 @@
+{
+  "schema_id": "important_six_dashboard_action_receipt_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+  "action_id": "MECHANICUS_CHECK_REQUIRED_TOOLS",
+  "owner_organ": "MECHANICUS",
+  "dashboard_button_group": "Mechanicus",
+  "safety_class": "READ_ONLY",
+  "started_at_utc": "2026-05-24T04:15:41Z",
+  "finished_at_utc": "2026-05-24T04:15:42Z",
+  "duration_ms": 669,
+  "status": "WARN",
+  "summary": "Tools check required_missing=0 optional_missing=4",
+  "payload": {},
+  "details": {
+    "checks": [
+      {
+        "tool": "git",
+        "required": true,
+        "available": true,
+        "command": [
+          "git",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "git version 2.53.0.windows.1\n",
+        "stderr": ""
+      },
+      {
+        "tool": "python",
+        "required": true,
+        "available": true,
+        "command": [
+          "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "Python 3.12.10\n",
+        "stderr": ""
+      },
+      {
+        "tool": "pip",
+        "required": true,
+        "available": true,
+        "command": [
+          "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+          "-m",
+          "pip",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "pip 25.0.1 from C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pip (python 3.12)\n\n",
+        "stderr": ""
+      },
+      {
+        "tool": "rich",
+        "required": true,
+        "available": true,
+        "source": "python_package",
+        "version": "14.3.3"
+      },
+      {
+        "tool": "node",
+        "required": false,
+        "available": true,
+        "command": [
+          "node",
+          "--version"
+        ],
+        "exit_code": 0,
+        "stdout": "v24.15.0\n",
+        "stderr": ""
+      },
+      {
+        "tool": "npm",
+        "required": false,
+        "available": false,
+        "command": [
+          "npm",
+          "--version"
+        ],
+        "exit_code": 127,
+        "stdout": "",
+        "stderr": "[WinError 2] Не удается найти указанный файл"
+      },
+      {
+        "tool": "npx",
+        "required": false,
+        "available": false,
+        "command": [
+          "npx",
+          "--version"
+        ],
+        "exit_code": 127,
+        "stdout": "",
+        "stderr": "[WinError 2] Не удается найти указанный файл"
+      },
+      {
+        "tool": "playwright_npx",
+        "required": false,
+        "available": false,
+        "command": [
+          "npx",
+          "playwright",
+          "--version"
+        ],
+        "exit_code": 127,
+        "stdout": "",
+        "stderr": "[WinError 2] Не удается найти указанный файл"
+      },
+      {
+        "tool": "ssh",
+        "required": false,
+        "available": true,
+        "command": [
+          "ssh",
+          "-V"
+        ],
+        "exit_code": 0,
+        "stdout": "",
+        "stderr": "OpenSSH_for_Windows_9.5p1, LibreSSL 3.8.2\n"
+      },
+      {
+        "tool": "scp",
+        "required": false,
+        "available": false,
+        "command": [
+          "scp",
+          "-V"
+        ],
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": "scp: unknown option -- V\nusage: scp [-346ABCOpqRrsTv] [-c cipher] [-D sftp_server_path] [-F ssh_config]\n           [-i identity_file] [-J destination] [-l limit] [-o ssh_option]\n           [-P port] [-S program] [-X sftp_option] source ... target\n"
+      },
+      {
+        "tool": "powershell",
+        "required": false,
+        "available": true,
+        "command": [
+          "powershell",
+          "-Command",
+          "$PSVersionTable.PSVersion.ToString()"
+        ],
+        "exit_code": 0,
+        "stdout": "5.1.19041.6456\n",
+        "stderr": ""
+      }
+    ],
+    "required_missing": [],
+    "optional_missing": [
+      "npm",
+      "npx",
+      "playwright_npx",
+      "scp"
+    ]
+  },
+  "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T041542Z_MECHANICUS_CHECK_REQUIRED_TOOLS.json"
+}

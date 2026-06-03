@@ -1,0 +1,46 @@
+{
+  "setting_id": "SET-PROMPT-INTAKE-V0_1",
+  "title": "Prompt Pack Intake Contract",
+  "version": "v0_1",
+  "state": "ACTIVE",
+  "scope": "zip prompt-pack composition validation",
+  "applies_to_roles": [
+    "SERVITOR"
+  ],
+  "applies_to_modes": [
+    "EXECUTOR"
+  ],
+  "machine_rule": {
+    "allowed_archive_extension": ".zip",
+    "required_files": [
+      "TASK_PACK.md",
+      "task_pack.json",
+      "START_PROMPT.txt",
+      "REQUIREMENTS/requirement_matrix_seed.json",
+      "POLICIES/EVIDENCE_POLICY.md",
+      "POLICIES/RESPONSE_CONTRACT.md",
+      "MANIFEST.json",
+      "SHA256SUMS.txt"
+    ],
+    "blocked_code_on_invalid": "BLOCKED_PROMPT_PACK_INVALID",
+    "accepted_language": "English MD+JSON"
+  },
+  "human_summary": "Servitor accepts only complete English MD+JSON ZIP prompt packs with required structure.",
+  "acceptance_tests": [
+    "Valid prompt pack returns PASS.",
+    "Missing required file returns BLOCKED_PROMPT_PACK_INVALID."
+  ],
+  "evidence_required": [
+    "prompt_pack_validation_output.txt",
+    "EXAMPLES/valid_prompt_packs/*.json",
+    "EXAMPLES/invalid_prompt_packs/*.json"
+  ],
+  "dependencies": [
+    "SCHEMAS/prompt_pack_contract.schema.json"
+  ],
+  "conflicts_with": [],
+  "supersedes": [],
+  "rollback_plan": "Restore required file set from previous validated intake contract.",
+  "owner_approval_required": true
+}
+

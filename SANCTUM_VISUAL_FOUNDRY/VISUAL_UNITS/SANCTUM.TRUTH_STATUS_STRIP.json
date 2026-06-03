@@ -1,0 +1,60 @@
+{
+  "visual_unit_id": "SANCTUM.TRUTH_STATUS_STRIP",
+  "parent": "SANCTUM.CONTROL_SURFACES",
+  "type": "truth_strip",
+  "visual_owner": "SANCTUM_SHELL",
+  "truth_owner": "INQUISITION_AGENT",
+  "data_source_owner": "SANCTUM_STATE_BUILDER",
+  "organ_subject": "SYSTEM",
+  "implementation_owner": "VISUAL_FOUNDRY",
+  "purpose": "Explicit truth strip for head/worktree/runtime state chips.",
+  "backend_source": {
+    "type": "api_state",
+    "paths": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/api/state_builder.py",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/static/app.js"
+    ],
+    "key_bindings": [
+      "repo.head",
+      "repo.worktree_state",
+      "server.connection_quality"
+    ]
+  },
+  "backend_source_status": "candidate",
+  "allowed_states": [
+    "pass",
+    "warn",
+    "error",
+    "unknown"
+  ],
+  "truth_rules": [
+    "PASS chip requires backend payload.",
+    "Missing payload must show UNKNOWN, never default green."
+  ],
+  "visual_tokens": "truth_strip_tokens",
+  "texture": "law_seal_amber",
+  "glow": {
+    "enabled": false
+  },
+  "motion": {
+    "enabled": false,
+    "animation": "ambient_disabled",
+    "perf_tier": "STATIC",
+    "disable_in_reduced_motion": true
+  },
+  "perf_tier": "STATIC",
+  "proof_requirements": [
+    "/api/state binding for head/worktree truth fields."
+  ],
+  "integration_status": "candidate",
+  "fake_green_risks": [
+    "Cached PASS chip after backend failure."
+  ],
+  "owner_group": "SANCTUM",
+  "owner_organ": "INQUISITION_AGENT",
+  "accessibility_rules": [
+    "State must not be encoded by color alone.",
+    "RU/EN labels must remain explicit for status tags."
+  ],
+  "change_safety": "Topology hardening scope only; no final UI readiness claims."
+}

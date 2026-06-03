@@ -1,0 +1,31 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:search_indexing_ripgrep_search:tool_detection:search_indexing_ripgrep_search",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "SEARCH_INDEXING_RIPGREP_SEARCH",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:42Z",
+  "status": "PASS_WITH_WARNINGS",
+  "summary": "SEARCH_INDEXING_RIPGREP_SEARCH: PASS_WITH_WARNINGS via tool_detection:SEARCH_INDEXING_RIPGREP_SEARCH. promotion_recommendation=PROMOTE_SANDBOX",
+  "check_name": "tool_detection:SEARCH_INDEXING_RIPGREP_SEARCH",
+  "command_or_check": "rg --files IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS | head -n 3 || rg --files IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS",
+  "exit_code": 255,
+  "stdout_excerpt": "$ rg --files IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS\nIMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS\\README.md\nIMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS\\TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\\fake_canon_detector_report.json\nIMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS\\TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\\evidence_index_smoke_report.json\nIMPERIUM_NEW_GENERATION/MECHANICUS/R...<truncated>",
+  "stderr_excerpt": "$ rg --files IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS | head -n 3\n'head' is not recognized as an internal or external command,\noperable program or batch file.",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/search-indexing-ripgrep-search_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS_WITH_WARNINGS",
+  "promotion_recommendation": "PROMOTE_SANDBOX",
+  "warnings": [
+    "partial_detection_fallback"
+  ],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/search-indexing-ripgrep-search_validation_receipt.json"
+  ]
+}

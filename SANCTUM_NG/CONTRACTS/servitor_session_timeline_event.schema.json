@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SERVITOR_SESSION_TIMELINE_EVENT_V0_1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "timestamp_utc",
+    "event_type",
+    "status",
+    "task_id",
+    "session_id",
+    "run_kind",
+    "summary",
+    "source_path",
+    "evidence_refs"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "timestamp_utc": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "PASS_STRICT",
+        "PASS_WITH_WARN",
+        "PARTIAL_ACCEPTED",
+        "PARTIAL_BLOCKED",
+        "FOUNDATION_ONLY",
+        "UNKNOWN",
+        "MISSING",
+        "STALE",
+        "NOT_READY",
+        "BLOCKED"
+      ]
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "rerun_id": {
+      "type": "string"
+    },
+    "run_kind": {
+      "enum": [
+        "RUN",
+        "RERUN"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "source_path": {
+      "type": "string"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

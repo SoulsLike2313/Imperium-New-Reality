@@ -1,0 +1,25 @@
+{
+  "organ": "STRATEGIUM",
+  "inputs": [
+    {
+      "name": "Stage1 inherited warnings",
+      "source": ".imperium_runtime/taskpacks/TASKPACK_NEWGEN_EIGHT_ORGAN_MOBILIZATION_ASTRONOMICON_TASK_ENTRY_FORM_PC_V0_1/TASKPACK_NEWGEN_EIGHT_ORGAN_MOBILIZATION_ASTRONOMICON_TASK_ENTRY_FORM_PC_V0_1/REFERENCE/STAGE1_INHERITED_WARNINGS.md",
+      "required": true,
+      "missing_behavior": "WARN"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Efficiency delta receipt",
+      "path_or_contract": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/efficiency_delta_receipt.json",
+      "required": true,
+      "consumer": "OWNER_AND_PIPELINE"
+    },
+    {
+      "name": "Next pipeline handoff",
+      "path_or_contract": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/NEXT_PIPELINE_HANDOFF.json",
+      "required": true,
+      "consumer": "INQUISITOR_SPECULUM"
+    }
+  ]
+}

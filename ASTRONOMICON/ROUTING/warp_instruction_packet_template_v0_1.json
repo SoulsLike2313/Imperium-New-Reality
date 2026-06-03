@@ -1,0 +1,33 @@
+{
+  "schema_version": "astronomicon.warp_instruction_packet_template.v0_1",
+  "template_mode": "WARP_TEMPLATE_ONLY",
+  "task_id": "<TASK-ID>",
+  "target_contour": "<CONTOUR>",
+  "primary_organ": "<PRIMARY_ORGAN>",
+  "support_organs": [
+    "<SUPPORT_ORGAN_1>",
+    "<SUPPORT_ORGAN_2>"
+  ],
+  "execution_brief": "<ONE_PARAGRAPH_EXECUTION_BRIEF>",
+  "phase_plan": [
+    {
+      "phase_id": "<PHASE_ID>",
+      "goal": "<PHASE_GOAL>",
+      "deliverables": [
+        "<DELIVERABLE_PATH_OR_ID>"
+      ]
+    }
+  ],
+  "required_receipts": [
+    "<RECEIPT_FILE_NAME>"
+  ],
+  "stop_conditions": [
+    "<STOP_CONDITION>"
+  ],
+  "forbidden_actions": [
+    "<FORBIDDEN_ACTION>"
+  ],
+  "not_proven_boundary": [
+    "Template only; no WARP runtime behavior is implemented in this task."
+  ]
+}

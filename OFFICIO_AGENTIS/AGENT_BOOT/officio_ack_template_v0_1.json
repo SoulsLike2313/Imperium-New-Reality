@@ -1,0 +1,40 @@
+{
+  "schema_id": "newgen_officio_boot_ack_v0_1",
+  "task_id": "",
+  "task_type": "",
+  "role_id": "VM3_SERVITOR",
+  "scope": "IMPERIUM_NEW_GENERATION only",
+  "boot_route_ack": {
+    "read_newgen_agents_md": false,
+    "run_doctrinarium_preflight": false,
+    "read_officio_boot_contracts": false,
+    "read_taskpack": false,
+    "publish_boot_ack": false
+  },
+  "input_paths": {
+    "agents_md": "IMPERIUM_NEW_GENERATION/AGENTS.md",
+    "doctrinarium_preflight_json": "",
+    "officio_role_contract": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/officio_role_contract_v0_1.json",
+    "taskpack_path": ""
+  },
+  "owner_facing_language": {
+    "live_commentary": "Russian",
+    "final_summary": "Russian"
+  },
+  "machine_artifact_language": "English",
+  "active_gates": [],
+  "required_declarations": [],
+  "stop_conditions": [
+    "git_truth_mismatch",
+    "dirty_worktree_before_admission",
+    "owner_verdict_needed_from_organ_route"
+  ],
+  "ack_verdict": "PASS_OR_STOP",
+  "not_proven_boundary": [
+    "full organ intelligence",
+    "automatic enforcement across all agents",
+    "live organ dialogue",
+    "Owner Verdict Needed live button",
+    "production autonomy"
+  ]
+}

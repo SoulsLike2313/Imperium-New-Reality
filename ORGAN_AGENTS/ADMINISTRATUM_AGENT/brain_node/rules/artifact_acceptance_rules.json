@@ -1,0 +1,15 @@
+{
+  "rule_set": "artifact_acceptance_rules_v1",
+  "required_fields": [
+    "path",
+    "zone_class",
+    "artifact_type",
+    "provenance_status",
+    "trust_level"
+  ],
+  "acceptance_threshold": {
+    "risk_level_max_for_auto_accept": "MEDIUM",
+    "must_have_known_source": true
+  },
+  "accept_verdict": "ACCEPT_FOR_SUMMARY"
+}

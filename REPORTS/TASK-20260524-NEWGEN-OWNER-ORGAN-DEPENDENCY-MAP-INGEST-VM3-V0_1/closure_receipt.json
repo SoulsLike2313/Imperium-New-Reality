@@ -1,0 +1,58 @@
+{
+  "schema_id": "newgen_owner_organ_dependency_map_ingest_closure_receipt_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-OWNER-ORGAN-DEPENDENCY-MAP-INGEST-VM3-V0_1",
+  "step_name": "Owner Organ Dependency Map Ingest",
+  "verdict": "PASS_FOR_OWNER_ORGAN_DEPENDENCY_MAP_INGEST_V0_1_ONLY",
+  "status": "COMPLETE",
+  "scope": "IMPERIUM_NEW_GENERATION only",
+  "git_truth": {
+    "branch": "master",
+    "start_head": "fd25935bc359d41a1cd0164b126b6312cb55ab4c",
+    "remote_head_at_start": "fd25935bc359d41a1cd0164b126b6312cb55ab4c",
+    "start_worktree_clean": true,
+    "post_push_local_head": null,
+    "post_push_remote_head": null,
+    "post_push_heads_match": null,
+    "post_push_worktree_clean": null
+  },
+  "gatepack": {
+    "path": "INBOX/VM3_TASKPACKS/TASK-20260524-NEWGEN-OWNER-ORGAN-DEPENDENCY-MAP-INGEST-VM3-V0_1/TASKPACK_TASK-20260524-NEWGEN-OWNER-ORGAN-DEPENDENCY-MAP-INGEST-VM3-V0_1.zip",
+    "sha256": "89c52cf4c9fed27432b2e328ee9f1fa7bef39ad64e1e5d73cb139565877d6169"
+  },
+  "required_outputs": [
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DECLARATIONS/ORGAN_DEPENDENCY_MAP/OWNER_SERVITOR_ROUTE_MAP_V0_1.drawio.svg",
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DECLARATIONS/ORGAN_DEPENDENCY_MAP/README.md",
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DECLARATIONS/ORGAN_DEPENDENCY_MAP/ORGAN_DEPENDENCY_MAP_OWNER_RU_V0_1.md",
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DECLARATIONS/ORGAN_DEPENDENCY_MAP/organ_dependency_map_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DECLARATIONS/ORGAN_DEPENDENCY_MAP/organ_route_phases_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DECLARATIONS/ORGAN_DEPENDENCY_MAP/organ_responsibility_matrix_v0_1.md",
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DECLARATIONS/ORGAN_DEPENDENCY_MAP/servitor_organ_query_catalog_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-OWNER-ORGAN-DEPENDENCY-MAP-INGEST-VM3-V0_1/FINAL_REPORT.md",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-OWNER-ORGAN-DEPENDENCY-MAP-INGEST-VM3-V0_1/closure_receipt.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-OWNER-ORGAN-DEPENDENCY-MAP-INGEST-VM3-V0_1/context_source_mix.json"
+  ],
+  "validation": {
+    "owner_svg_copy_sha256_match": true,
+    "organ_dependency_map_json_parse": true,
+    "organ_route_phases_json_parse": true,
+    "servitor_query_catalog_json_parse": true,
+    "organ_count": 10,
+    "route_phase_count": 7,
+    "query_count": 10,
+    "required_organs_present": true
+  },
+  "not_proven": [
+    "full organ intelligence",
+    "all organ TUI implementation",
+    "live Owner Verdict Needed button",
+    "production autonomy",
+    "final organ dependency canon"
+  ],
+  "boot_evidence": {
+    "preflight_output": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-OWNER-ORGAN-DEPENDENCY-MAP-INGEST-VM3-V0_1/doctrinarium_preflight_core_task.json",
+    "officio_role_ack": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-OWNER-ORGAN-DEPENDENCY-MAP-INGEST-VM3-V0_1/officio_role_contract_ack.generated.json",
+    "applicable_doctrinarium_gates": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-OWNER-ORGAN-DEPENDENCY-MAP-INGEST-VM3-V0_1/applicable_doctrinarium_gates.json",
+    "taskpack_scope_ack": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-OWNER-ORGAN-DEPENDENCY-MAP-INGEST-VM3-V0_1/taskpack_scope_ack.json",
+    "organ_route_plan": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-OWNER-ORGAN-DEPENDENCY-MAP-INGEST-VM3-V0_1/organ_route_plan.json"
+  }
+}

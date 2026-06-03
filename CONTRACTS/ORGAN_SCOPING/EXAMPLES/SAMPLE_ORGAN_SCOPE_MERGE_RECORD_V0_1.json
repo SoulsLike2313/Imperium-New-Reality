@@ -1,0 +1,94 @@
+{
+  "schema_version": "0.1",
+  "merge_id": "SCOPE-MERGE-20260521-NEWGEN-SAMPLE",
+  "task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+  "packet_sources": [
+    {
+      "organ_id": "ASTRONOMICON",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "Derived from ORGAN_PACKET_SET example and normalized for target task."
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "Derived from ORGAN_PACKET_SET example and normalized for target task."
+    },
+    {
+      "organ_id": "DOCTRINARIUM",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "Derived from ORGAN_PACKET_SET example and normalized for target task."
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "Derived from ORGAN_PACKET_SET example and normalized for target task."
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "Derived from ORGAN_PACKET_SET example and normalized for target task."
+    },
+    {
+      "organ_id": "INQUISITION",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "Derived from ORGAN_PACKET_SET example and normalized for target task."
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "Derived from ORGAN_PACKET_SET example and normalized for target task."
+    },
+    {
+      "organ_id": "SCHOLA_IMPERIALIS",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "Derived from ORGAN_PACKET_SET example and normalized for target task."
+    }
+  ],
+  "organ_coverage": {
+    "required_count": 8,
+    "covered_count": 8,
+    "missing_organs": []
+  },
+  "merged_scope": {
+    "allowed_paths": [
+      "IMPERIUM_NEW_GENERATION/ARCHITECTURE/",
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/",
+      "IMPERIUM_NEW_GENERATION/TASKS/",
+      "IMPERIUM_NEW_GENERATION/TOOLS/",
+      "IMPERIUM_NEW_GENERATION/REPORTS/"
+    ],
+    "forbidden_paths": [
+      "ORGANS/**",
+      "SANCTUM/**",
+      "IMPERIUM_TEST_VERSION/**",
+      ".git/**"
+    ],
+    "required_checks": [
+      "Gate ACK before edits",
+      "Schema and JSON parse checks",
+      "Forbidden path diff checks",
+      "Validator report generation"
+    ],
+    "evidence_required": [
+      "OFFICIO_ROLE_ACK_OR_WARN.json",
+      "DOCTRINARIUM_LAW_ACK_OR_WARN.json",
+      "STEP_PROOF_RECORDS.jsonl",
+      "VALIDATOR_REPORT.json",
+      "FINAL_RECEIPT.json"
+    ],
+    "owner_questions": [
+      "Should next task implement real per-organ live adapters or keep static resolver for one more step?"
+    ],
+    "next_stage_recommendation": "Proceed to adapter planning for guarded live packet sources with explicit receipts."
+  },
+  "conflicts": [],
+  "warnings": [
+    "Foundation-only merge: packet sources are sample/static, not live agent responses."
+  ],
+  "readiness": "FOUNDATION_ONLY",
+  "truth_limitations": [
+    "No live autonomous cross-organ runtime claimed.",
+    "Merge record proves deterministic contract behavior only."
+  ],
+  "self_verdict": "STRONG"
+}

@@ -1,0 +1,45 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-20260521-NEWGEN-VISUAL-BRAIN-TASK-CORRIDOR-PC-V0_1",
+    "agent_role": "CODEx_PC_SERVITOR_BIG_MODEL",
+    "useful_outputs": [
+      "visual brain architecture + contracts",
+      "deterministic builder",
+      "scope-safe validator",
+      "truth-bound static lab shell",
+      "receipt bundle for git closure"
+    ],
+    "waste_points": [
+      "repeated accidental empty web tool invocations during local-only workflow"
+    ],
+    "missing_tools": [
+      "shared NewGen helper for standard PASS receipt/final-report synchronization"
+    ],
+    "generated_tools_to_preserve": [
+      "IMPERIUM_NEW_GENERATION/TOOLS/VISUAL_BRAIN/build_visual_brain_task_corridor_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/TOOLS/VALIDATORS/newgen_visual_brain_task_corridor_validator_v0_1.py"
+    ],
+    "recommended_script_absorption": [
+      {
+        "artifact_id": "build_visual_brain_task_corridor_v0_1.py",
+        "classification": "ABSORB_NOW",
+        "reason": "Deterministic state builder with bounded truth markers."
+      },
+      {
+        "artifact_id": "newgen_visual_brain_task_corridor_validator_v0_1.py",
+        "classification": "ABSORB_NOW",
+        "reason": "Reusable no-fake-green and scope enforcement for Visual Brain tasks."
+      }
+    ],
+    "recommended_narrow_agent_profiles": [
+      "VISUAL_BRAIN_STATE_BINDER_VALIDATOR_AGENT_V0_1"
+    ],
+    "future_prompt_improvements": [
+      "Add explicit 'no-web-tools' hard flag in local-only PC taskpacks."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add shared checklist ensuring owner report + final receipt fields auto-sync after git closure."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

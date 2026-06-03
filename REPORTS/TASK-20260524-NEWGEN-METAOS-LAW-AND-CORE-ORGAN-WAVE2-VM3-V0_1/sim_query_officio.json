@@ -1,0 +1,39 @@
+{
+  "schema_id": "newgen_organ_verdict_v0_1",
+  "organ_id": "OFFICIO_AGENTIS",
+  "task_id": "TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1",
+  "mode": "IMPORTANT_SIX_SIM",
+  "verdict": "PASS",
+  "applied_rules": [
+    "GATE_ROLE_ACK_REQUIRED",
+    "GATE_OWNER_LANGUAGE_RU",
+    "GATE_SCOPED_VERDICT_ONLY",
+    "GATE_STOP_CONDITION_BINDING"
+  ],
+  "required_actions": [
+    "Publish officio role contract ack before edits",
+    "Use scoped verdict format PASS_FOR_<SLICE>_ONLY"
+  ],
+  "forbidden_actions": [
+    "Use generic PASS verdict",
+    "Continue after Owner Verdict Needed signal"
+  ],
+  "evidence_required": [
+    "officio_role_contract_ack.json",
+    "taskpack_scope_ack.json",
+    "FINAL_REPORT.md",
+    "closure_receipt.json",
+    "organ_route_plan.json"
+  ],
+  "owner_question": null,
+  "not_proven": [
+    "full multi-agent autonomy",
+    "Owner Verdict Needed live UI button"
+  ],
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/officio_role_contract_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/officio_role_contract_ack.json"
+  ],
+  "question": "What role, language, and final response rules apply?",
+  "generated_at_utc": "2026-05-24T01:59:59.918508+00:00"
+}

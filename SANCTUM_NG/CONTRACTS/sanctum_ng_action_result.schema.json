@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SANCTUM_NG_ACTION_RESULT_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "request_id",
+    "action_id",
+    "action_status",
+    "status",
+    "started_at_utc",
+    "finished_at_utc",
+    "request_record_path",
+    "result_record_path",
+    "evidence_refs",
+    "known_limitations"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "SANCTUM_NG_ACTION_RESULT_V0_1"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "request_id": {
+      "type": "string"
+    },
+    "action_id": {
+      "type": "string"
+    },
+    "action_status": {
+      "enum": [
+        "WIRED",
+        "PREVIEW_ONLY",
+        "NOT_WIRED",
+        "BLOCKED"
+      ]
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "PARTIAL",
+        "WARN",
+        "BLOCK",
+        "ERROR",
+        "PREVIEW_ONLY",
+        "NOT_ALLOWED"
+      ]
+    },
+    "started_at_utc": {
+      "type": "string"
+    },
+    "finished_at_utc": {
+      "type": "string"
+    },
+    "request_record_path": {
+      "type": "string"
+    },
+    "result_record_path": {
+      "type": "string"
+    },
+    "executed_command": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "output_summary": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "known_limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

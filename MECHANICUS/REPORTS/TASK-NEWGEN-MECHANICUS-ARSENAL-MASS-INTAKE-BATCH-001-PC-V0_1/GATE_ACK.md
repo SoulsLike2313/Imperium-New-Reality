@@ -1,0 +1,15 @@
+GATE_ACK:
+- task_id: TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1
+- current_head: 9653d634446e5ef4b13340012647dc02c317230f
+- gatepack_path: C:/Users/PC/Downloads/TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1_DOSSIER.zip
+- gatepack_sha256: F02DBE6B2823324D4BEB49E8CD6E05ADAC44E2B5476A281621F8169C9A544072
+- read_gates: GATE-U00-GIT-TRUTH; GATE-U01-ROLE-ACK; GATE-U02-SCOPE-BOUNDARY; GATE-U04-EVIDENCE-RECEIPT; GATE-U05-STOP-CONDITIONS; GATE-U08-REPO-PURITY; GATE-U09-NO-FAKE-GREEN; GATE-U12-REPORT-OUTPUT-BUDGET; GATE-U13-PYTHON-TYPE-SAFETY; GATE-U14-WHOLE-REPO-SCOPE-RECON; GATE-U15-OPERATIONALITY-IMPACT; GATE-U18-AGENT-FACTORY-COMPLIANCE; GATE-U19-SCRIPT-ARTIFACT-PRESERVATION; GATE-U20-AGENT-KPD-SELF-REVIEW; GATE-U21-COMMAND-CHUNKING
+- accepted_stop_conditions: repo_root_mismatch; branch_or_head_mismatch; forbidden_path_touch; fake_canon_detected; llm_cloud_promoted_to_canon; schema_or_json_parse_failure; report_output_avalanche; preexisting_dirty_state_expands_outside_scope; checker_failure_without_evidence
+- scope_boundary: Create mass-intake capability folders/cards and task reports under Mechanicus Arsenal only; no Sanctum, no tool install, no network provisioning.
+- touched_paths: IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/**; IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_arsenal_mass_intake_v0_1.py; IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1/**
+- forbidden_paths: IMPERIUM_NEW_GENERATION/SANCTUM_NG/**; IMPERIUM_NEW_GENERATION/SANCTUM/**; ORGANS/** (except read-only); IMPERIUM_TEST_VERSION/**; secrets/API keys; any external install/runtime directories
+- expected_receipts: FINAL_REPORT.md; mass_intake_manifest.json; category_coverage_report.json; fake_canon_detection_report.json; next_validation_queue.json; servitor_capability_scope_seed_report.json; owner_questions_report.json; llm_reserved_policy_report.json; arsenal_mass_intake_check_report.json; closure_receipt.json; agent_kpd_self_review.json; script_artifact_preservation_manifest.json
+- repo_recon_required: false (scope is Mechanicus Arsenal bounded, not whole-repo rewrite)
+- script_absorption_required: true
+- clarification_needed: preexisting dirty start detected in unrelated Sanctum paths; proceeding with bounded scope and explicit dirty-baseline evidence
+- verdict: PASS

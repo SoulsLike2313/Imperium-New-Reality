@@ -1,0 +1,62 @@
+{
+  "matrix_id": "TASKPACK_LANGUAGE_ADMISSION_MATRIX",
+  "version": "0.1-candidate",
+  "owner_organ": "Astronomicon",
+  "support_organs": [
+    "Inquisition",
+    "Officio Agentis",
+    "Mechanicus"
+  ],
+  "purpose": "Defines language and encoding admission gates for taskpack registration.",
+  "criteria": [
+    {
+      "criterion_id": "TLA-01_MANIFEST_LANGUAGE_POLICY_REQUIRED",
+      "owner_organ": "ASTRONOMICON",
+      "evidence_required": [
+        "TASKPACK_ADMISSION_RECEIPT.json"
+      ],
+      "pass_logic": "Manifest contains language policy and Officio-routed owner runtime lane.",
+      "warn_logic": "Policy exists but legacy wording needs cleanup.",
+      "block_logic": "Language policy missing or owner lane bypasses Officio.",
+      "caps": [
+        "CAP_ASTRONOMICON_ADMISSION_LANGUAGE_GATE_MISSING",
+        "CAP_OWNER_LANGUAGE_NOT_ROUTED_THROUGH_OFFICIO"
+      ],
+      "remediation_path": "Fix MANIFEST.language_and_encoding_policy before intake."
+    },
+    {
+      "criterion_id": "TLA-02_ROOT_FILE_ENCODING_AND_LANGUAGE_GUARD",
+      "owner_organ": "ASTRONOMICON",
+      "evidence_required": [
+        "TASKPACK_ADMISSION_RECEIPT.json",
+        "language_encoding_fixture_results.json"
+      ],
+      "pass_logic": "Root files are UTF-8 no BOM and contain no Cyrillic, replacement char, or mojibake signature.",
+      "warn_logic": "Legacy warning-only mode is explicit without clean pass claim.",
+      "block_logic": "Any guarded violation appears in root intake files.",
+      "caps": [
+        "CAP_UTF8_BOM_NOT_DETECTED",
+        "CAP_NON_ENGLISH_TASKPACK_INTERNAL_TEXT",
+        "CAP_REPLACEMENT_CHARACTER_NOT_DETECTED",
+        "CAP_MOJIBAKE_SIGNATURE_NOT_DETECTED"
+      ],
+      "remediation_path": "Repair root files and re-run registration."
+    },
+    {
+      "criterion_id": "TLA-03_ADMISSION_RECEIPT_LANGUAGE_GATE_FIELDS",
+      "owner_organ": "ASTRONOMICON",
+      "evidence_required": [
+        "TASKPACK_ADMISSION_RECEIPT.json"
+      ],
+      "pass_logic": "Receipt records language gate status and caps.",
+      "warn_logic": "Receipt includes status with partial detail only.",
+      "block_logic": "Receipt omits language gate status while admitting taskpack.",
+      "caps": [
+        "CAP_ASTRONOMICON_ADMISSION_LANGUAGE_GATE_MISSING"
+      ],
+      "remediation_path": "Restore receipt schema fields and rerun intake."
+    }
+  ],
+  "current_status": "CANDIDATE_NOT_CANON",
+  "next_action": "Use matrix in intake fixture suite and resolver checks."
+}

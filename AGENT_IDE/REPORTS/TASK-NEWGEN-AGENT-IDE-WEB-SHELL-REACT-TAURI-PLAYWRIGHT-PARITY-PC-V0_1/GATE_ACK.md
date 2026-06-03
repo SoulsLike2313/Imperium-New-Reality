@@ -1,0 +1,62 @@
+GATE_ACK:
+- task_id: TASK-NEWGEN-AGENT-IDE-WEB-SHELL-REACT-TAURI-PLAYWRIGHT-PARITY-PC-V0_1
+- current_head: 50c996dfed1af9ae2ff15690917cb248682b5d42
+- gatepack_path: C:\Users\PC\Downloads\TASKPACK_NEWGEN_AGENT_IDE_WEB_SHELL_REACT_TAURI_PLAYWRIGHT_PARITY_PC_V0_1.zip
+- gatepack_sha256: a9548f0f4d98a850d0852b7cd534568a3f71e6e20d8ffcc8a0886ac1e0801467
+- read_gates:
+  - GATE-U00-GIT-TRUTH
+  - GATE-U01-ROLE-ACK
+  - GATE-U02-SCOPE-BOUNDARY
+  - GATE-U04-EVIDENCE-RECEIPT
+  - GATE-U05-STOP-CONDITIONS
+  - GATE-U08-REPO-PURITY
+  - GATE-U09-NO-FAKE-GREEN
+  - GATE-U12-REPORT-OUTPUT-BUDGET
+  - GATE-U13-PYTHON-TYPE-SAFETY
+  - GATE-U14-WHOLE-REPO-SCOPE-RECON
+  - GATE-U15-OPERATIONALITY-IMPACT
+  - GATE-U16-BILINGUAL-UI
+  - GATE-U17-DELIVERABLE-PACKAGE
+  - GATE-U18-AGENT-FACTORY-COMPLIANCE
+  - GATE-U19-SCRIPT-ARTIFACT-PRESERVATION
+  - GATE-U20-AGENT-KPD-SELF-REVIEW
+  - GATE-U21-COMMAND-CHUNKING
+  - GATE-AI00-NO-DIRECT-MODEL-COMMAND
+  - GATE-UI00-TRUTH-BINDING
+  - GATE-VIS00-PERFORMANCE-BUDGET
+  - GATE-VIS01-DECORATIVE-SEMANTIC-SPLIT
+- accepted_stop_conditions:
+  - STOP if repo root/branch/head diverge from required truth lock.
+  - STOP if forbidden scope/path appears in diff.
+  - STOP if React/web projection cannot preserve source-truth parity markers.
+  - STOP if private/local projection safety cannot be enforced.
+  - STOP if required receipts cannot be generated.
+  - STOP if commit/push closure or sync proof cannot be produced for PASS/WARN_ACCEPTED.
+- scope_boundary:
+  - Implement Agent IDE web-shell React/TypeScript projection, desktop-shell decision/probe, Playwright parity, self-validator parity checks, and Mechanicus tool registration for this task.
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/AGENT_IDE/**
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-AGENT-IDE-WEB-SHELL-REACT-TAURI-PLAYWRIGHT-PARITY-PC-V0_1/**
+- forbidden_paths:
+  - WARP surfaces
+  - CLI Worker implementation
+  - file editing implementation
+  - command execution implementation
+  - git action UI/buttons
+  - Officio hardening implementation
+  - Inquisition V0.2 implementation
+- expected_receipts:
+  - dirty_state_classification_start_receipt.json
+  - DESKTOP_SHELL/tauri_probe_receipt.json
+  - DESKTOP_SHELL/tauri_or_electron_decision_v0_1.json
+  - source_truth_receipt.json
+  - view_model_receipt.json
+  - web_projection_receipt.json
+  - truth_parity_receipt.json
+  - playwright_capture_receipt.json
+  - self_validation_summary.json
+  - closure_receipt.json
+- repo_recon_required: YES
+- script_absorption_required: YES
+- clarification_needed: NONE
+- verdict: PASS

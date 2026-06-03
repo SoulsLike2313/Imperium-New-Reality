@@ -1,0 +1,41 @@
+{
+  "schema_id": "administratum_body_manifest_v0_1",
+  "organ_id": "ADMINISTRATUM",
+  "version": "v0_1",
+  "status": "ACTIVE",
+  "task_lineage": {
+    "task_id": "TASK-NEWGEN-ADMINISTRATUM-REGISTRATION-CARDS-CURRENT-TRUTH-PC-V0_1",
+    "starting_head": "892ae8a6f5452c55211da4748bed3b1d9d3f9326",
+    "previous_accepted_task": "TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1"
+  },
+  "owner_organ": "ADMINISTRATUM",
+  "mission": "Registration, addressability, and current truth continuity for NewGen organ work.",
+  "capabilities": [
+    "Registration card schemas",
+    "Organ cards for active organs",
+    "Current truth indexes",
+    "Accepted points continuity",
+    "Future-compatible WARP/CLI card seeds",
+    "Read-only inspection entrypoint"
+  ],
+  "ownership_separation": {
+    "rule": "Administratum registers artifacts and accepted state; real ownership remains with source organs.",
+    "fields": [
+      "real_owner_organ",
+      "registration_owner_organ",
+      "validation_owner_organ"
+    ]
+  },
+  "allowed_write_paths": [
+    "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/**"
+  ],
+  "forbidden_write_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/**",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/**",
+    "IMPERIUM_NEW_GENERATION/ASTRONOMICON/**",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/**",
+    "IMPERIUM_TEST_VERSION/**"
+  ],
+  "next_allowed_task_after_pass": "TASK-NEWGEN-INQUISITION-PURITY-QUARANTINE-BODY-PC-V0_1",
+  "future_seed_policy": "FUTURE_COMPATIBLE_SEED artifacts are schema-level readiness only and do not activate runtime systems."
+}

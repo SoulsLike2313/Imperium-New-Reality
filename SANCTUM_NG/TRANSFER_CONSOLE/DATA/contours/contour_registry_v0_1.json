@@ -1,0 +1,47 @@
+{
+  "schema_id": "TRANSFER_CONTOUR_REGISTRY_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1",
+  "claim_boundary": "FOUNDATION_ONLY",
+  "contours": [
+    {
+      "contour_id": "PC",
+      "display_name": "PC",
+      "role": "control_contour",
+      "default_route_config_status": "NOT_CONFIGURED"
+    },
+    {
+      "contour_id": "VM2",
+      "display_name": "VM2",
+      "role": "executor_contour",
+      "default_route_config_status": "CONFIGURED_NOT_VERIFIED"
+    },
+    {
+      "contour_id": "VM3",
+      "display_name": "VM3",
+      "role": "executor_contour",
+      "default_route_config_status": "CONFIGURED"
+    }
+  ],
+  "allowlisted_actions": [
+    "CHECK_CONTOUR_STATUS",
+    "REGISTER_TASKPACK_SEND",
+    "REGISTER_REPORT_BUNDLE_FETCH",
+    "DRY_RUN_TASKPACK_SEND",
+    "DRY_RUN_REPORT_FETCH",
+    "REFRESH_TRANSFER_CONSOLE_VIEW"
+  ],
+  "forbidden_request_fields": [
+    "command",
+    "shell",
+    "exec",
+    "powershell",
+    "bash",
+    "cmd",
+    "arbitrary_command",
+    "remote_command"
+  ],
+  "known_limitations": [
+    "Foundation-only transfer console; no production remote orchestration claim.",
+    "Contour ONLINE/SENT/FETCHED statuses require bounded receipts."
+  ]
+}

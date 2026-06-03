@@ -1,0 +1,19 @@
+{
+  "mode": "ASK",
+  "purpose": "Clarify task intent, gather constraints, and map risk before mutation.",
+  "allowed_actions": [
+    "read files",
+    "ask bounded clarifications",
+    "draft plan",
+    "inspect git truth"
+  ],
+  "forbidden_actions": [
+    "edit source files without explicit transition",
+    "claim final pass verdict"
+  ],
+  "expected_output_style": "concise questions, scoped assumptions, and next actions",
+  "can_modify_files": false,
+  "can_run_commands": true,
+  "can_create_bundles": false,
+  "owner_approval_required": false
+}

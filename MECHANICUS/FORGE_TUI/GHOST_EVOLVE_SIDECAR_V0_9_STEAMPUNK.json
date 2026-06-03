@@ -1,0 +1,21 @@
+{
+  "task_id": "MECHANICUS_FORGE_CLIENT_V0_9_STEAMPUNK_PATCH_MANUAL_GIFT",
+  "created_utc": "2026-05-25T00:39:13Z",
+  "organ": "MECHANICUS",
+  "mode": "GE_LITE_STEAMPUNK_VISUAL_PATCH",
+  "learning_delta": [
+    "Mechanicus TUI receives a stronger steampunk/forge skin while staying terminal-native.",
+    "The patch records the limitation: true metal textures and real heraldry need enhanced/webview mode.",
+    "All existing read-only data surfaces remain intact."
+  ],
+  "reusable_capability": {
+    "name": "mechanicus_forge_client_v0_9_steampunk",
+    "entrypoint": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/mechanicus_forge_client_v0_9_steampunk.py",
+    "launcher": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/LAUNCH_MECHANICUS_FORGE_CLIENT_V0_9.cmd"
+  },
+  "eval_or_smoke": [
+    "py -3 -m py_compile mechanicus_forge_client_v0_9_steampunk.py",
+    "manual launch via LAUNCH_MECHANICUS_FORGE_CLIENT_V0_9.cmd"
+  ],
+  "read_only": true
+}

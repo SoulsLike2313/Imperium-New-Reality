@@ -1,0 +1,52 @@
+╭─────────────────────────────── TOP STATUS BAR ───────────────────────────────╮
+│ organ: MECHANICUS_AGENT                                                      │
+│ organ_mission: Tools, scripts, validators, and tool-registry capability      │
+│ machinery.                                                                   │
+│ backend_truth: head=41e30242c1afe7ce74f6b3e472464f774822f07f branch=master   │
+│ dirty=yes                                                                    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─────────── LEFT WORK ZONE ───────────╮╭───────── RIGHT COMMAND ZONE ─────────╮
+│ latest_output:                       ││ active_command_list:                 │
+│ once_mode_command=help               ││ status, check, where, identity,      │
+│                                      ││ tools, pack, shell, help, tool-list, │
+│                                      ││ validator-check, capability-map,     │
+│                                      ││ script-receipt-check                 │
+│                                      ││ tool_registry:                       │
+│                                      ││ path=/home/vboxuser2/IMPERIUM_WORK/I │
+│                                      ││ mperium-/IMPERIUM_NEW_GENERATION/ORG │
+│                                      ││ AN_AGENTS/MECHANICUS_AGENT/TOOL_REGI │
+│                                      ││ STRY/TOOL_INDEX.json                 │
+│                                      ││ counts: registered=16 available=9    │
+╰──────────────────────────────────────╯╰──────────────────────────────────────╯
+╭────────────────────────────── BOTTOM EVENT BAR ──────────────────────────────╮
+│ latest_report_path:                                                          │
+│ /home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS │
+│ /MECHANICUS_AGENT/REPORTS/base_half_check_report.json                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+{
+  "organ": "MECHANICUS_AGENT",
+  "runner": "mechanicus_agent_runner.py",
+  "commands": [
+    "status",
+    "check",
+    "where",
+    "identity",
+    "tools",
+    "pack",
+    "shell",
+    "help",
+    "tool-list",
+    "validator-check",
+    "capability-map",
+    "script-receipt-check"
+  ],
+  "domain_commands": {
+    "tool-list": "List local Mechanicus toolchain artifacts from TOOLS.",
+    "validator-check": "Validate Identity Half JSON payload integrity.",
+    "capability-map": "Show base and domain capability map for this organ.",
+    "script-receipt-check": "Report receipt coverage for script-oriented runs."
+  },
+  "shell_usage": "py -3 TOOLS/mechanicus_agent_runner.py shell",
+  "visual_status": "PASS_RICH_OPERATOR_SHELL",
+  "warnings": []
+}

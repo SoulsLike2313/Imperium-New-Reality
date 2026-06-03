@@ -1,0 +1,97 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "generated_at_utc": "2026-05-24T23:33:55Z",
+  "queue": [
+    {
+      "tool_id": "UTILITIES_7_ZIP",
+      "name": "7-Zip CLI",
+      "category": "UTILITIES",
+      "risk_level": "MEDIUM",
+      "install_command": "winget install 7zip.7zip",
+      "install_scope": "local_user",
+      "network_use": true,
+      "expected_side_effects": [
+        "package install into user environment"
+      ],
+      "rollback_uninstall_note": "Uninstall with package manager command for the same tool.",
+      "why_it_matters": "Strong archive tooling for taskpack checks.",
+      "recommended_decision": "DEFER",
+      "owner_options": [
+        "APPROVE_INSTALL_THIS_TOOL",
+        "DEFER",
+        "QUARANTINE_REVIEW",
+        "REJECT",
+        "APPROVE_DETECTION_ONLY"
+      ]
+    },
+    {
+      "tool_id": "MARKDOWNLINT_CLI",
+      "name": "markdownlint CLI",
+      "category": "TOOLS",
+      "risk_level": "MEDIUM",
+      "install_command": "npm install -g markdownlint-cli2",
+      "install_scope": "local_user",
+      "network_use": true,
+      "expected_side_effects": [
+        "package install into user environment"
+      ],
+      "rollback_uninstall_note": "Uninstall with package manager command for the same tool.",
+      "why_it_matters": "Automated markdown contract hygiene.",
+      "recommended_decision": "DEFER",
+      "owner_options": [
+        "APPROVE_INSTALL_THIS_TOOL",
+        "DEFER",
+        "QUARANTINE_REVIEW",
+        "REJECT",
+        "APPROVE_DETECTION_ONLY"
+      ]
+    },
+    {
+      "tool_id": "CHECK_JSONSCHEMA_CLI",
+      "name": "check-jsonschema CLI",
+      "category": "TOOLS",
+      "risk_level": "MEDIUM",
+      "install_command": "python -m pip install --user check-jsonschema",
+      "install_scope": "local_user",
+      "network_use": true,
+      "expected_side_effects": [
+        "package install into user environment"
+      ],
+      "rollback_uninstall_note": "Uninstall with package manager command for the same tool.",
+      "why_it_matters": "Modern replacement for deprecated jsonschema CLI.",
+      "recommended_decision": "DEFER",
+      "owner_options": [
+        "APPROVE_INSTALL_THIS_TOOL",
+        "DEFER",
+        "QUARANTINE_REVIEW",
+        "REJECT",
+        "APPROVE_DETECTION_ONLY"
+      ]
+    },
+    {
+      "tool_id": "YAMLLINT_CLI",
+      "name": "yamllint",
+      "category": "TOOLS",
+      "risk_level": "MEDIUM",
+      "install_command": "python -m pip install --user yamllint",
+      "install_scope": "local_user",
+      "network_use": true,
+      "expected_side_effects": [
+        "package install into user environment"
+      ],
+      "rollback_uninstall_note": "Uninstall with package manager command for the same tool.",
+      "why_it_matters": "Strict YAML lint for future taskpack variants.",
+      "recommended_decision": "DEFER",
+      "owner_options": [
+        "APPROVE_INSTALL_THIS_TOOL",
+        "DEFER",
+        "QUARANTINE_REVIEW",
+        "REJECT",
+        "APPROVE_DETECTION_ONLY"
+      ]
+    }
+  ],
+  "summary": {
+    "count": 4
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.administratum.transfer_gate.response_bundle.v0_1",
+  "title": "VM2 Response Bundle V0.1",
+  "type": "object",
+  "required": [
+    "task_id",
+    "expected_filename",
+    "payload_sha256",
+    "verified_at_utc",
+    "verdict"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "correlation_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "expected_filename": {
+      "type": "string"
+    },
+    "payload_sha256": {
+      "type": "string",
+      "minLength": 64,
+      "maxLength": 64
+    },
+    "verified_at_utc": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string"
+    }
+  }
+}

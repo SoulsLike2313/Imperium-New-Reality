@@ -1,0 +1,93 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1",
+  "timestamp_utc": "2026-05-31T01:15:47Z",
+  "builder_claims": [
+    {
+      "claim_id": "ST3-C01",
+      "claim": "Task was executed from Astronomicon registered TASK_ID route, not raw zip prompt."
+    },
+    {
+      "claim_id": "ST3-C02",
+      "claim": "All 8 organs participated with explicit runtime receipt entries."
+    },
+    {
+      "claim_id": "ST3-C03",
+      "claim": "Useful micropilot output for next decision was produced."
+    },
+    {
+      "claim_id": "ST3-C04",
+      "claim": "Core and seed maturity matrices were exercised without future-domain overclaim."
+    },
+    {
+      "claim_id": "ST3-C05",
+      "claim": "Stage3 bootstrap BOM incident was captured and converted into hardening backlog."
+    },
+    {
+      "claim_id": "ST3-C06",
+      "claim": "No forbidden runtime domain (IDE visual/WARP/trading/freelance production) was executed."
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "RT-ST3-01",
+      "target_claim_id": "ST3-C01",
+      "attack": "Bypass task_id route and execute as raw zip prompt only.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/ASTRONOMICON_TASK_ID_EXECUTION_PROOF.json"
+      ]
+    },
+    {
+      "attack_id": "RT-ST3-02",
+      "target_claim_id": "ST3-C05",
+      "attack": "Ignore bootstrap BOM issue after ADMISSION_PASS and close without learning capture.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/stage3_bootstrap_repair_finding.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/GHOST_EVOLVE_STAGE3_MICROPILOT_LEARNING_BACKLOG.json"
+      ]
+    },
+    {
+      "attack_id": "RT-ST3-03",
+      "target_claim_id": "ST3-C04",
+      "attack": "Overclaim future-domain seed matrices as active runtime capabilities.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/MATURITY_MATRIX_EXERCISE_REPORT.json"
+      ]
+    },
+    {
+      "attack_id": "RT-ST3-04",
+      "target_claim_id": "ST3-C03",
+      "attack": "Mark clean PASS despite inherited caps and pending independent external review.",
+      "result": "PARTIAL",
+      "downgrade_needed": true,
+      "applied_downgrade": "FORCE_STAGE3_PASS_WITH_WARNINGS"
+    }
+  ],
+  "caps_triggered": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_SYNTHETIC_ONLY_UNTIL_REAL_USE_PILOT",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME",
+    "CAP_ASTRONOMICON_BOOTSTRAP_UTF8_BOM_INCIDENT_RECORDED",
+    "CAP_INDEPENDENT_EXTERNAL_REVIEW_PENDING"
+  ],
+  "required_caps_status": {
+    "CAP_ASTRONOMICON_REGISTRATION_NOT_USED": "CLOSED_BY_ADMISSION_RECEIPT",
+    "CAP_TASK_ID_EXECUTION_PROOF_MISSING": "CLOSED_BY_STAGE3_PROOF",
+    "CAP_REGISTERED_TASK_NOT_RESOLVED": "CLOSED_BY_RESOLVER_RECEIPT",
+    "CAP_EIGHT_ORGAN_RUNTIME_RECEIPT_MISSING": "CLOSED_BY_STAGE3_RECEIPT",
+    "CAP_USEFUL_MICROPILOT_OUTPUT_MISSING": "CLOSED_BY_READINESS_SNAPSHOT",
+    "CAP_MATURITY_MATRIX_NOT_EXERCISED": "CLOSED_BY_EXERCISE_REPORT",
+    "CAP_FUTURE_DOMAIN_OVERCLAIM": "NOT_TRIGGERED",
+    "CAP_GHOST_EVOLVE_LEARNING_BACKLOG_MISSING": "CLOSED_BY_LEARNING_BACKLOG",
+    "CAP_IDE_VISUAL_STARTED_TOO_EARLY": "OPEN_GUARD_NOT_TRIGGERED",
+    "CAP_WARP_CLAIMED_WITHOUT_UNLOCK": "OPEN_GUARD_NOT_TRIGGERED",
+    "CAP_NO_EFFICIENCY_DELTA": "CLOSED_BY_EFFICIENCY_RECEIPT",
+    "CAP_ROUTE_MANIFEST_TEMPLATE_MISSING": "MITIGATED_BY_BOOTSTRAP_REPAIR_RECORDED",
+    "CAP_ROUTE_MANIFEST_TEMPLATE_INVALID": "MITIGATED_BY_BOOTSTRAP_REPAIR_RECORDED"
+  },
+  "final_verdict": "STAGE3_MICROPILOT_PASS_WITH_WARNINGS",
+  "clean_pass_allowed": false
+}

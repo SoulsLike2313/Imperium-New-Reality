@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:code_quality_ruff:tool_detection:code_quality_ruff",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "CODE_QUALITY_RUFF",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:44Z",
+  "status": "PASS",
+  "summary": "CODE_QUALITY_RUFF: PASS via tool_detection:CODE_QUALITY_RUFF. promotion_recommendation=KEEP_STATUS",
+  "check_name": "tool_detection:CODE_QUALITY_RUFF",
+  "command_or_check": "python -m ruff --version",
+  "exit_code": 0,
+  "stdout_excerpt": "$ python -m ruff --version\nruff 0.15.14",
+  "stderr_excerpt": "",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/code-quality-ruff_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "KEEP_STATUS",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/code-quality-ruff_validation_receipt.json"
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Next Pipeline Handoff Schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "head_taxonomy_manifest_path",
+    "combined_review_adjudication_receipt_path",
+    "target_commit_for_review",
+    "review_target_head",
+    "accepted_continuity_head",
+    "base_head",
+    "implementation_head",
+    "proof_head",
+    "artifact_bundle_head",
+    "closure_bundle_head",
+    "final_verifier_head",
+    "remote_head_after_bundle",
+    "claim_ledger_path",
+    "independent_replay_status",
+    "commit_urls",
+    "changed_paths_summary",
+    "primary_report_paths",
+    "replay_commands",
+    "servitor_claimed_efficiency_delta",
+    "known_caps_or_warnings",
+    "next_allowed_task_candidate"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "head_taxonomy_manifest_path": {
+      "type": "string"
+    },
+    "combined_review_adjudication_receipt_path": {
+      "type": "string"
+    },
+    "target_commit_for_review": {
+      "type": "string"
+    },
+    "review_target_head": {
+      "type": "string"
+    },
+    "accepted_continuity_head": {
+      "type": "string"
+    },
+    "base_head": {
+      "type": "string"
+    },
+    "implementation_head": {
+      "type": "string"
+    },
+    "proof_head": {
+      "type": "string"
+    },
+    "artifact_bundle_head": {
+      "type": "string"
+    },
+    "closure_bundle_head": {
+      "type": "string"
+    },
+    "final_verifier_head": {
+      "type": "string"
+    },
+    "remote_head_after_bundle": {
+      "type": "string"
+    },
+    "claim_ledger_path": {
+      "type": "string"
+    },
+    "independent_replay_status": {
+      "type": "string",
+      "enum": [
+        "INQUISITOR",
+        "SPECULUM",
+        "SEPARATE_REPLAY_RUNNER",
+        "NONE"
+      ]
+    },
+    "commit_urls": {
+      "type": "object",
+      "required": [
+        "implementation",
+        "proof",
+        "closure_bundle",
+        "remote",
+        "final_verifier"
+      ],
+      "properties": {
+        "implementation": {
+          "type": "string"
+        },
+        "proof": {
+          "type": "string"
+        },
+        "closure_bundle": {
+          "type": "string"
+        },
+        "remote": {
+          "type": "string"
+        },
+        "final_verifier": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "changed_paths_summary": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "primary_report_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "replay_commands": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "servitor_claimed_efficiency_delta": {
+      "type": "object",
+      "required": [
+        "mechanicus",
+        "inquisition",
+        "officio",
+        "administratum",
+        "overall"
+      ],
+      "properties": {
+        "mechanicus": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "inquisition": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "officio": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "administratum": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "overall": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "known_caps_or_warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "suggested_inquisitor_review_taskpack": {
+      "type": "string"
+    },
+    "suggested_speculum_review_taskpack": {
+      "type": "string"
+    },
+    "next_allowed_task_candidate": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

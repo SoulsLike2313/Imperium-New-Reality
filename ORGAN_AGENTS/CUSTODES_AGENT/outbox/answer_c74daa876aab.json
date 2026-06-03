@@ -1,0 +1,22 @@
+{
+  "answer_id": "answer_c74daa876aab",
+  "question_id": "stress_q_custodes_forbidden",
+  "task_id": "stress_task_first_3",
+  "agent": "CUSTODES_AGENT",
+  "action": "CHECK_ALLOWED_PATHS",
+  "verdict": "BLOCK_CORE_ACCESS",
+  "summary": "Write outside IMPERIUM_NEW_GENERATION is blocked.",
+  "data": {
+    "findings": [
+      {
+        "path": "ORGANS/DOCTRINARIUM/GATES/GATE_REGISTRY_V0_1.json",
+        "resolved_path": "E:\\IMPERIUM\\ORGANS\\DOCTRINARIUM\\GATES\\GATE_REGISTRY_V0_1.json",
+        "inside_new_generation": false,
+        "operation": "write",
+        "read_only": false
+      }
+    ],
+    "policy": "No out-of-scope write allowed in first-stage base spine"
+  },
+  "generated_at_utc": "2026-05-17T23:40:09.987749Z"
+}

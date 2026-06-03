@@ -1,0 +1,96 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1",
+  "generated_at_utc": "2026-05-25T22:54:51Z",
+  "receipts": [
+    {
+      "capability_id": "UTILITIES_7_ZIP",
+      "install_state": "present_validated",
+      "admission_state": "controlled_installed",
+      "validation_state": "sandbox_validated_wave001",
+      "canon_state": "not_canon",
+      "owner_approval": "approved_for_wave001",
+      "expected_pass": {
+        "compress": 0,
+        "list": 0,
+        "extract": 0,
+        "hash_match": true
+      },
+      "actual": {
+        "compress": 0,
+        "list": 0,
+        "extract": 0,
+        "hash_match": true
+      },
+      "fixture_paths": [
+        "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\archive_input\\hello.txt",
+        "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\test_archive.7z",
+        "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\archive_output\\hello.txt"
+      ]
+    },
+    {
+      "capability_id": "MARKDOWNLINT_CLI",
+      "install_state": "present_validated",
+      "admission_state": "controlled_installed",
+      "validation_state": "sandbox_validated_wave001",
+      "canon_state": "not_canon",
+      "owner_approval": "approved_for_wave001",
+      "expected_pass": {
+        "good_exit_code": 0,
+        "bad_exit_code_nonzero": true
+      },
+      "actual": {
+        "good_exit_code": 0,
+        "bad_exit_code": 1
+      },
+      "fixture_paths": [
+        "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\markdownlint_good.md",
+        "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\markdownlint_bad.md",
+        "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\.markdownlint.json"
+      ]
+    },
+    {
+      "capability_id": "CHECK_JSONSCHEMA_CLI",
+      "install_state": "present_validated",
+      "admission_state": "controlled_installed",
+      "validation_state": "sandbox_validated_wave001",
+      "canon_state": "not_canon",
+      "owner_approval": "approved_for_wave001",
+      "expected_pass": {
+        "good_exit_code": 0,
+        "bad_exit_code_nonzero": true
+      },
+      "actual": {
+        "good_exit_code": 0,
+        "bad_exit_code": 1
+      },
+      "invocation": "check-jsonschema",
+      "fixture_paths": [
+        "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\schema.json",
+        "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\valid.json",
+        "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\invalid.json"
+      ]
+    },
+    {
+      "capability_id": "YAMLLINT_CLI",
+      "install_state": "present_validated",
+      "admission_state": "controlled_installed",
+      "validation_state": "sandbox_validated_wave001",
+      "canon_state": "not_canon",
+      "owner_approval": "approved_for_wave001",
+      "expected_pass": {
+        "good_exit_code": 0,
+        "bad_exit_code_nonzero": true
+      },
+      "actual": {
+        "good_exit_code": 0,
+        "bad_exit_code": 1
+      },
+      "invocation": "yamllint",
+      "fixture_paths": [
+        "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\yamllint_good.yaml",
+        "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\yamllint_bad.yaml",
+        "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\fixtures\\.yamllint"
+      ]
+    }
+  ]
+}

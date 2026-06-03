@@ -1,0 +1,21 @@
+{
+  "task_id": "TASK-NEWGEN-LANGUAGE-BACKLOG-PHASED-REMEDIATION-AND-RETENTION-CHECKER-PC-V0_1",
+  "timestamp_utc": "2026-06-01T07:27:01Z",
+  "next_recommended_task": "TASK-NEWGEN-LANGUAGE-BACKLOG-PHASED-REMEDIATION-SLICE-2-PC-V0_1",
+  "prerequisites": [
+    "Use current report root as baseline",
+    "Preserve global WARN semantics",
+    "Do not claim clean global PASS"
+  ],
+  "focus": [
+    "Remediate remaining UTF8_BOM legacy items not in current slice",
+    "Decide policy for Astronomicon tool-level Cyrillic strings",
+    "Prepare hash-pointer plan for REVIEW_ARTIFACT_PAYLOAD_REVIEW_REQUIRED entries"
+  ],
+  "carry_caps": [
+    "CAP_CANONICAL_ARTIFACT_CONTAINS_CYRILLIC",
+    "CAP_NON_ENGLISH_TASKPACK_INTERNAL_TEXT",
+    "CAP_REPLACEMENT_CHARACTER_NOT_DETECTED",
+    "CAP_UTF8_BOM_NOT_DETECTED"
+  ]
+}

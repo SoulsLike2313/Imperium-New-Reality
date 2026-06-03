@@ -1,0 +1,72 @@
+{
+  "schema_id": "FAKE_GREEN_REJECTION_RULES_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-PQG-NEGATIVE-TEST-MUTATION-CHECK-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T20:48:00Z",
+  "status": "FOUNDATION_ONLY",
+  "rules": [
+    {
+      "rule_id": "NO_EVIDENCE_NO_STRICT_PASS",
+      "if": "claimed_verdict == PASS_STRICT and evidence_refs is empty",
+      "then": "BLOCK",
+      "applies_to_case_ids": [
+        "FAKE_GREEN_WITHOUT_EVIDENCE"
+      ]
+    },
+    {
+      "rule_id": "UNKNOWN_NEVER_PROMOTES_TO_GREEN",
+      "if": "source_status == UNKNOWN and target_status in [PASS_STRICT, PASS_WITH_WARN]",
+      "then": "BLOCK",
+      "applies_to_case_ids": [
+        "UNKNOWN_PROMOTED_TO_PASS"
+      ]
+    },
+    {
+      "rule_id": "STALE_REQUIRES_REFRESH_OR_WARN",
+      "if": "evidence_status == STALE and attempted_freshness_override == true",
+      "then": "WARN",
+      "applies_to_case_ids": [
+        "STALE_EVIDENCE_ACCEPTED_AS_FRESH"
+      ]
+    },
+    {
+      "rule_id": "ROLLBACK_REQUIRED_FOR_MUTATION_ACTION",
+      "if": "mutation_class is mutable and rollback_plan_present == false",
+      "then": "BLOCK",
+      "applies_to_case_ids": [
+        "ROLLBACK_REQUIRED_BUT_MISSING"
+      ]
+    },
+    {
+      "rule_id": "PRIVATE_KEY_MARKER_ALWAYS_REJECTED",
+      "if": "marker_type == PRIVATE_KEY_MATERIAL_MARKER",
+      "then": "BLOCK",
+      "applies_to_case_ids": [
+        "PRIVATE_KEY_MATERIAL_MARKER"
+      ]
+    },
+    {
+      "rule_id": "ACTION_MUST_BE_ALLOWLISTED",
+      "if": "allowlisted == false",
+      "then": "BLOCK",
+      "applies_to_case_ids": [
+        "ACTION_OUTSIDE_ALLOWLIST"
+      ]
+    },
+    {
+      "rule_id": "PENDING_CLOSURE_CANNOT_BE_FINAL_PASS",
+      "if": "post_commit_closure_status == PENDING and attempted_final_verdict == PASS_STRICT",
+      "then": "WARN",
+      "applies_to_case_ids": [
+        "PENDING_POST_COMMIT_CLOSURE_ACCEPTED"
+      ]
+    },
+    {
+      "rule_id": "PARTIAL_ACCEPTED_REQUIRES_RULE_AND_OWNER_BASIS",
+      "if": "requested_status == PARTIAL_ACCEPTED and acceptance_rule_ref == ''",
+      "then": "BLOCK",
+      "applies_to_case_ids": [
+        "PARTIAL_ACCEPTED_WITHOUT_RULE"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1",
+  "produced_by": "PC_SERVITOR",
+  "next_pipeline": [
+    {
+      "step": 1,
+      "target": "INQUISITOR",
+      "required_taskpack": "TASKPACK_INQUISITOR_COMMIT_MATRIX_SEMANTIC_REVIEW_V0_1.zip",
+      "launch_phrase": "start task",
+      "required_input": "final commit URL from this task"
+    },
+    {
+      "step": 2,
+      "target": "SPECULUM",
+      "required_taskpack": "TASKPACK_SPECULUM_COMMIT_TECHNICAL_REDTEAM_MATRIX_REVIEW_V0_1.zip",
+      "launch_phrase": "start task",
+      "required_input": "final commit URL from this task"
+    },
+    {
+      "step": 3,
+      "target": "LOGOS_PRIME",
+      "required_input": "final commit URL + Inquisitor/Speculum outputs + Owner corrections",
+      "action": "select next task"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1",
+  "timestamp_utc": "2026-05-30T15:55:00Z",
+  "builder_claims": [
+    {
+      "claim_id": "C01",
+      "claim": "Head consistency, claim-ledger closure gate, and excluded-output hash-policy are enforced by validator fixtures.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "claim": "Synthetic corridor score cap is limited to +13 until real runtime proof.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/efficiency_delta_receipt.json"
+      ]
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "A01",
+      "target_claim_id": "C01",
+      "attack": "Could still fake closure by leaving head chain ambiguous in final bundle metadata.",
+      "result": "RESISTED",
+      "downgrade_needed": false
+    },
+    {
+      "attack_id": "A02",
+      "target_claim_id": "C02",
+      "attack": "Independent replay (Inquisitor/Speculum/separate runner) is not yet provided.",
+      "result": "PARTIAL",
+      "downgrade_needed": true
+    }
+  ],
+  "downgrade_rules_applied": [
+    "CAP_NO_INDEPENDENT_REPLAY"
+  ],
+  "caps_triggered": [
+    "CAP_NO_INDEPENDENT_REPLAY"
+  ],
+  "final_verdict": "PASS_WITH_WARNINGS",
+  "notes": "Independent replay remains pending; clean PASS is intentionally blocked."
+}

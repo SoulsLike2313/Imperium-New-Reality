@@ -1,0 +1,41 @@
+{
+  "task_id": "TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1",
+  "generated_at_utc": "2026-05-24T21:02:23.2304695Z",
+  "previous_manual_pain": [
+    "Servitor manually repeated language/ACK/response-shape instructions per taskpack.",
+    "No reusable Officio exporter/checker existed for role gate injection and contract drift checks."
+  ],
+  "officio_now_can_export_check": [
+    "Exports reusable role packs and taskpack gate blocks via officio_role_pack_exporter_v0_1.py.",
+    "Checks ACK/language/4-part/final-summary/forbidden-admission heuristics via officio_response_contract_checker_v0_1.py.",
+    "Provides reusable templates and fixtures for future taskpack admission."
+  ],
+  "role_packs_created": [
+    "PC_SERVITOR",
+    "VM_SERVITOR",
+    "LOGOS_PRIME",
+    "LOGOS_SPECULUM",
+    "LOCAL_ORGAN_AGENT"
+  ],
+  "templates_for_future_taskpacks": [
+    "TASKPACK_OFFICIO_GATE_TEMPLATE_V0_1.md",
+    "OFFICIO_ROLE_ACK_BLOCK_TEMPLATE_V0_1.md",
+    "OFFICIO_4_PART_FINAL_RESPONSE_TEMPLATE_RU_V0_1.md",
+    "OFFICIO_LANGUAGE_CORRECTION_MESSAGE_RU_V0_1.md"
+  ],
+  "rerun_instructions": [
+    "python IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_role_pack_exporter_v0_1.py --output-dir <dir> --report <report.json>",
+    "python IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_response_contract_checker_v0_1.py --input IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/FIXTURES --output <report.json>",
+    "python -m py_compile IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_role_pack_exporter_v0_1.py IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_response_contract_checker_v0_1.py"
+  ],
+  "limitations": [
+    "Checker is heuristic and may yield false positives/false negatives on complex multilingual text.",
+    "No deep semantic classifier or runtime integration hook is implemented in this contour.",
+    "Scope is Officio contract layer only; no Sanctum UI enforcement in this step."
+  ],
+  "required_follow_up": [
+    "TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-FOLLOWUP-PC-V0_1 for stronger semantic checks and policy tuning.",
+    "Mechanicus validation batch to widen contract checks and schema enforcement."
+  ],
+  "verdict": "PASS_WITH_WARNINGS"
+}

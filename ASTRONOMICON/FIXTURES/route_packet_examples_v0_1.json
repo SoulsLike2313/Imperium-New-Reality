@@ -1,0 +1,62 @@
+{
+  "schema_version": "astronomicon.route_packet_examples.v0_1",
+  "examples": [
+    {
+      "example_id": "ROUTE_PACKET_EXAMPLE_0001",
+      "expected_verdict": "PASS",
+      "payload": {
+        "schema_version": "astronomicon.task_route_packet.v0_1",
+        "task_id": "TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1",
+        "target_contour": "VM3_UBUNTU",
+        "execution_mode": "SERVITOR",
+        "primary_organ": "ASTRONOMICON",
+        "support_organs": ["ADMINISTRATUM", "MECHANICUS", "INQUISITION"],
+        "phases": [
+          {
+            "phase_id": "PHASE-1-ADMISSION",
+            "goal": "Bind truth and scope through GATE_ACK",
+            "deliverables": [
+              "GATE_ACK.md",
+              "evidence/git_truth_start.txt"
+            ]
+          },
+          {
+            "phase_id": "PHASE-2-ROUTE-REGISTRATION",
+            "goal": "Register canonical route card and receipt",
+            "deliverables": [
+              "pc_to_vm3_direct_route_card.json",
+              "pc_to_vm3_direct_route_receipt.json",
+              "canonical_transfer_commands.md"
+            ]
+          },
+          {
+            "phase_id": "PHASE-3-ASTRONOMICON-BODY",
+            "goal": "Generate contracts, schemas, fixtures, tools, and read-only TUI",
+            "deliverables": [
+              "BODY/astronomicon_body_manifest_v0_1.json",
+              "TASK_ESSENCE/task_essence_schema_v0_1.json",
+              "ROUTING/warp_instruction_packet_template_v0_1.json"
+            ]
+          }
+        ],
+        "required_receipts": [
+          "route_registration_receipt.json",
+          "receipts/validation_receipt.json",
+          "receipts/scope_boundary_receipt.json"
+        ],
+        "stop_conditions": [
+          "Stop on forbidden path mutation",
+          "Stop on checker failures that cannot be repaired in scope"
+        ],
+        "forbidden_actions": [
+          "Implement WARP runtime",
+          "Implement Agent IDE",
+          "Create persona/memory dump"
+        ],
+        "not_proven_boundary": [
+          "Route template only; no runtime WARP implementation"
+        ]
+      }
+    }
+  ]
+}

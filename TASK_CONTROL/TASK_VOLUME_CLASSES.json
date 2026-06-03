@@ -1,0 +1,53 @@
+{
+  "schema_version": "TASK_VOLUME_CLASSES_V0_1",
+  "classes": [
+    {
+      "task_size_class": "SMALL",
+      "organ_count_min": 1,
+      "organ_count_max": 1,
+      "expected_file_touch_class": "FILES_1_10",
+      "expected_command_count_class": "CMDS_1_20",
+      "expected_evidence_volume_class": "EVIDENCE_LOW",
+      "context_budget_class": "LOW",
+      "accuracy_risk": "LOW",
+      "checkpoint_required": false,
+      "checkpoint_cadence": "END_ONLY"
+    },
+    {
+      "task_size_class": "MEDIUM",
+      "organ_count_min": 1,
+      "organ_count_max": 2,
+      "expected_file_touch_class": "FILES_10_30",
+      "expected_command_count_class": "CMDS_20_60",
+      "expected_evidence_volume_class": "EVIDENCE_MEDIUM",
+      "context_budget_class": "MEDIUM",
+      "accuracy_risk": "MEDIUM",
+      "checkpoint_required": false,
+      "checkpoint_cadence": "MILESTONE"
+    },
+    {
+      "task_size_class": "LARGE",
+      "organ_count_min": 3,
+      "organ_count_max": 5,
+      "expected_file_touch_class": "FILES_30_80",
+      "expected_command_count_class": "CMDS_60_140",
+      "expected_evidence_volume_class": "EVIDENCE_HIGH",
+      "context_budget_class": "HIGH",
+      "accuracy_risk": "HIGH",
+      "checkpoint_required": true,
+      "checkpoint_cadence": "PER_STAGE"
+    },
+    {
+      "task_size_class": "MEGA",
+      "organ_count_min": 6,
+      "organ_count_max": 99,
+      "expected_file_touch_class": "FILES_80_PLUS",
+      "expected_command_count_class": "CMDS_140_PLUS",
+      "expected_evidence_volume_class": "EVIDENCE_EXTREME",
+      "context_budget_class": "EXTREME",
+      "accuracy_risk": "CRITICAL",
+      "checkpoint_required": true,
+      "checkpoint_cadence": "PER_STAGE"
+    }
+  ]
+}

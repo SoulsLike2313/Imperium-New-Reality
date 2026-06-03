@@ -1,0 +1,83 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "generated_at_utc": "2026-05-24T23:35:59Z",
+  "checker": "mechanicus_tool_expansion_finalize_v0_1.py",
+  "db_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/EVIDENCE_INDEX/V0_1/evidence_index.sqlite3",
+  "query_results": [
+    {
+      "query": "tool expansion",
+      "fts_query": "tool NEAR expansion",
+      "count": 1,
+      "verdict": "PASS"
+    },
+    {
+      "query": "owner approval required",
+      "fts_query": "\"owner approval\" OR owner NEAR approval",
+      "count": 11,
+      "verdict": "PASS"
+    },
+    {
+      "query": "SANDBOX",
+      "fts_query": "SANDBOX",
+      "count": 88,
+      "verdict": "PASS"
+    },
+    {
+      "query": "CANDIDATE",
+      "fts_query": "CANDIDATE",
+      "count": 173,
+      "verdict": "PASS"
+    },
+    {
+      "query": "receipt",
+      "fts_query": "receipt",
+      "count": 187,
+      "verdict": "PASS"
+    },
+    {
+      "query": "ripgrep",
+      "fts_query": "ripgrep",
+      "count": 6,
+      "verdict": "PASS"
+    },
+    {
+      "query": "jq",
+      "fts_query": "jq",
+      "count": 2,
+      "verdict": "PASS"
+    },
+    {
+      "query": "7zip",
+      "fts_query": "7zip OR \"7-zip\"",
+      "count": 3,
+      "verdict": "PASS"
+    },
+    {
+      "query": "repo hygiene",
+      "fts_query": "\"repo hygiene\" OR hygiene",
+      "count": 66,
+      "verdict": "PASS"
+    },
+    {
+      "query": "taskpack",
+      "fts_query": "taskpack",
+      "count": 25,
+      "verdict": "PASS"
+    },
+    {
+      "query": "evidence index",
+      "fts_query": "\"evidence index\"",
+      "count": 36,
+      "verdict": "PASS"
+    }
+  ],
+  "fake_canon_count": 76,
+  "summary": {
+    "query_count": 11,
+    "zero_count": 0,
+    "fail_count": 0
+  },
+  "errors": [],
+  "verdict": "PASS",
+  "raw_dump_status": "COMPACT_ONLY"
+}

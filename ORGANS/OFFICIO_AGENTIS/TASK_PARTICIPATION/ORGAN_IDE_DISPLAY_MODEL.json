@@ -1,0 +1,29 @@
+{
+  "organ": "OFFICIO_AGENTIS",
+  "panel_title": "OFFICIO_AGENTIS Task Participation",
+  "primary_status_field": "status",
+  "fields": [
+    "status",
+    "language_lane",
+    "role_mode",
+    "focus_packet_state"
+  ],
+  "warnings": [
+    "Language drift checks are present but not yet hard-gated everywhere.",
+    "Role route remains candidate and can diverge without route-manifest enforcement."
+  ],
+  "links": [
+    {
+      "label": "read_first_ghost_packet",
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/READ_FIRST_GHOST_EVOLVE_PACKET.md"
+    },
+    {
+      "label": "task_participation_contract",
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/TASK_PARTICIPATION/TASK_PARTICIPATION_CONTRACT.json"
+    }
+  ],
+  "actions_future_only": [
+    "Promote to canon only with organ owner admission + replay evidence."
+  ],
+  "no_fake_buttons": true
+}

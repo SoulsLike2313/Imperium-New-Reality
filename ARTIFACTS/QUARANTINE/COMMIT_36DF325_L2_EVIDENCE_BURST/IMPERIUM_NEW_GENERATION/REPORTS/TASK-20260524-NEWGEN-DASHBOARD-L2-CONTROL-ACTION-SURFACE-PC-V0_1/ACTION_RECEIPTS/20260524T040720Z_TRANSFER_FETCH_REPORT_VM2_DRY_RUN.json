@@ -1,0 +1,47 @@
+{
+  "schema_id": "important_six_dashboard_action_receipt_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+  "action_id": "TRANSFER_FETCH_REPORT_VM2_DRY_RUN",
+  "owner_organ": "TRANSFER_ZONE",
+  "dashboard_button_group": "Transfer Zone",
+  "safety_class": "DRY_RUN",
+  "started_at_utc": "2026-05-24T04:07:19Z",
+  "finished_at_utc": "2026-05-24T04:07:20Z",
+  "duration_ms": 40,
+  "status": "PASS",
+  "summary": "Transfer intent saved (vm2/fetch_report), alias_available=True",
+  "payload": {},
+  "details": {
+    "schema_id": "important_six_transfer_intent_v0_1",
+    "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+    "generated_at_utc": "2026-05-24T04:07:20Z",
+    "target": "vm2",
+    "intent_type": "fetch_report",
+    "dry_run_only": true,
+    "command_preview": "scp vm2:~/IMPERIUM_REPORTS/OUTBOX/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1_REPORT_BUNDLE.zip IMPERIUM_NEW_GENERATION/REPORTS/",
+    "aliases_checked": [
+      {
+        "alias": "vm2",
+        "checked": true,
+        "available": true,
+        "exit_code": 0,
+        "stderr": ""
+      },
+      {
+        "alias": "imperium-vm2",
+        "checked": true,
+        "available": true,
+        "exit_code": 0,
+        "stderr": ""
+      }
+    ],
+    "config_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/transfer_zone_config_v0_1.json",
+    "forbidden": {
+      "arbitrary_user_paths": true,
+      "shell_injection": true,
+      "live_transfer_without_owner_gate": true
+    },
+    "intent_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/TRANSFER_INTENTS/20260524T040720Z_vm2_fetch_report.json"
+  },
+  "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040720Z_TRANSFER_FETCH_REPORT_VM2_DRY_RUN.json"
+}

@@ -1,0 +1,39 @@
+{
+  "capability_id": "CAP-TOOL-COMMAND-GATEWAY-INTERNAL",
+  "name": "command_gateway internal capability",
+  "category": "TOOLS",
+  "status": "CANON",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Allowlisted command execution with verdict receipt shape.",
+  "what_problem_it_solves": "Constrains arbitrary command execution and captures evidence.",
+  "source_type": "repo_existing",
+  "source_url_or_path": "src/imperium/security/command_gateway.py",
+  "license_or_trust_note": "Host/external trust requires explicit admission receipts.",
+  "install_required": false,
+  "install_gate": "GATE-U09-NO-FAKE-GREEN",
+  "validation_commands": [
+    "validate:cap-tool-command-gateway-internal"
+  ],
+  "expected_receipts": [
+    "cap-tool-command-gateway-internal_receipt.json"
+  ],
+  "safety_notes": "Use only in bounded task scope; no blind runtime mutation.",
+  "security_notes": "Do not bypass path, command, and evidence gates.",
+  "offline_or_network_dependency": "offline_preferred",
+  "promoted_by_receipt": "REPO_EVIDENCE_PATHS",
+  "last_reviewed_utc": "2026-05-24T00:00:00Z",
+  "next_review_reason": "Needs periodic allowlist and exception-path audits.",
+  "limitations": "Policy quality depends on maintained allowlist boundaries.",
+  "allowed_use_cases": [
+    "Bounded task execution under Mechanicus policy",
+    "Evidence-backed validation and report generation"
+  ],
+  "forbidden_use_cases": [
+    "Production-ready claim without receipts",
+    "Out-of-scope or unbounded execution"
+  ],
+  "canon_evidence_paths": [
+    "src/imperium/security/command_gateway.py",
+    "src/imperium/security/__init__.py"
+  ]
+}

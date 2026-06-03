@@ -1,0 +1,28 @@
+{
+  "schema_id": "OPERATOR_COCKPIT_L1_BUILD_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1",
+  "generated_at_utc": "2026-05-23T21:05:57Z",
+  "verdict": "PASS",
+  "generated_state_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/DATA/operator_cockpit_l1_state.generated.json",
+  "report_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/REPORTS/TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1/operator_cockpit_l1_report.json",
+  "summary": {
+    "worktree": "DIRTY",
+    "master_synced": true,
+    "changed_files_count": 19,
+    "evidence_confidence": "MEDIUM",
+    "route_truth_vm2_vm3": "PROVED_BOUNDED_ROUTE_ONLY",
+    "route_truth_vm3_vm2": "PROVED_BOUNDED_ROUTE_ONLY"
+  },
+  "continuity_pack": {
+    "request_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/DATA/continuity/requests/CONTINUITY-PACK-REQ-20260523T210557Z-979385BF.json",
+    "result_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/DATA/continuity/results/CONTINUITY-PACK-RESULT-20260523T210557Z-979385BF.json",
+    "pack_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/DATA/continuity/packs/CONTINUITY_PACK_SMALL_TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1.zip",
+    "manifest_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/DATA/continuity/packs/CONTINUITY_PACK_SMALL_TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1.zip.manifest.json",
+    "start_here_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/DATA/continuity/packs/START_HERE_NEXT_CHAT.md"
+  },
+  "claim_boundary": "READ_ONLY_OWNER_COCKPIT_L1",
+  "notes": [
+    "Generated state is bounded to existing NewGen artifacts and git truth.",
+    "No fake-green: route and action claims remain scoped."
+  ]
+}

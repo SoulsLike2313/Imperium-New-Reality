@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concept C - Holograph Command Spine</title>
+  <style>
+    body{margin:0;font-family:Exo 2,Segoe UI,sans-serif;color:#e8f5ff;background:radial-gradient(800px 600px at 50% 50%,rgba(88,219,255,.15),transparent 60%),linear-gradient(160deg,#070b14,#111327 56%,#1a1430)}
+    .wrap{min-height:100vh;padding:16px;display:grid;grid-template-rows:auto 1fr auto;gap:12px}
+    .bar,.foot{border:1px solid rgba(88,219,255,.45);border-radius:14px;padding:10px 12px;background:rgba(11,18,32,.74)}
+    .bar h1{margin:0;letter-spacing:.06em}
+    .grid{display:grid;grid-template-columns:1.35fr .9fr;gap:12px}
+    .field{position:relative;border:1px solid rgba(88,219,255,.46);border-radius:18px;overflow:hidden;background:linear-gradient(180deg,rgba(14,19,36,.92),rgba(10,14,28,.94))}
+    .spine{position:absolute;left:50%;top:6%;bottom:6%;width:7px;transform:translateX(-50%);background:linear-gradient(180deg,rgba(88,219,255,.2),rgba(88,219,255,.88),rgba(177,111,255,.7));border-radius:999px;box-shadow:0 0 34px rgba(88,219,255,.4)}
+    .node{position:absolute;width:128px;padding:8px;border:1px solid rgba(177,111,255,.45);border-radius:10px;background:rgba(18,24,44,.82);font-size:12px}
+    .n1{left:12%;top:14%}.n2{right:12%;top:24%}.n3{left:14%;top:46%}.n4{right:10%;top:58%}.n5{left:42%;bottom:10%}
+    .orbit{position:absolute;border:1px solid rgba(88,219,255,.25);border-radius:999px}
+    .o1{inset:14%}.o2{inset:27%}
+    .panel{border:1px solid rgba(88,219,255,.46);border-radius:18px;padding:10px;background:linear-gradient(170deg,rgba(14,20,40,.92),rgba(10,14,31,.95));display:grid;gap:8px}
+    .glass{border:1px solid rgba(177,111,255,.45);border-radius:10px;padding:8px;background:rgba(17,25,48,.65);backdrop-filter:blur(2px)}
+    .glass h3{margin:0 0 4px;font-size:13px;color:#b9cdf5}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header class="bar"><h1>CONCEPT C // HOLOGRAPH COMMAND SPINE</h1></header>
+  <main class="grid">
+    <section class="field">
+      <div class="orbit o1"></div><div class="orbit o2"></div><div class="spine"></div>
+      <div class="node n1">ADMINISTRATUM</div><div class="node n2">INQUISITION</div><div class="node n3">MECHANICUS</div><div class="node n4">STRATEGIUM</div><div class="node n5">THRONE</div>
+    </section>
+    <aside class="panel">
+      <section class="glass"><h3>Command layer</h3><div>Vertical authority routing</div></section>
+      <section class="glass"><h3>Signal panels</h3><div>status • receipts • action rails</div></section>
+      <section class="glass"><h3>Risk</h3><div>Can feel too sterile without forge grounding.</div></section>
+      <section class="glass"><h3>Raw mode</h3><div>secondary translucent drawer</div></section>
+    </aside>
+  </main>
+  <footer class="foot">Vertical holograph hierarchy with spine-centric command geometry.</footer>
+</div>
+</body>
+</html>

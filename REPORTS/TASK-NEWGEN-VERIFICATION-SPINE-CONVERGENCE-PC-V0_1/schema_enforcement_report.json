@@ -1,0 +1,50 @@
+{
+  "schema_id": "newgen_verification_spine_schema_enforcement_report_v0_1",
+  "task_id": "TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1",
+  "generated_at_utc": "2026-05-24T06:47:48.519441+00:00",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "gate": "action_registry_schema_gate",
+      "target": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_registry_v0_1.json",
+      "schema": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_registry_schema_v0_1.json",
+      "verdict": "PASS",
+      "errors": []
+    },
+    {
+      "gate": "transfer_intent_schema_gate",
+      "target": "runtime_payload:transfer_intent",
+      "schema": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/transfer_intent_schema_v0_1.json",
+      "verdict": "PASS",
+      "errors": []
+    },
+    {
+      "gate": "owner_question_schema_gate",
+      "target": "runtime_payload:owner_question_record",
+      "schema": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/OWNER_INTENT/owner_question_schema_v0_1.json",
+      "verdict": "PASS",
+      "errors": []
+    },
+    {
+      "gate": "owner_diff_schema_gate",
+      "target": "runtime_payload:owner_diff_decision_record",
+      "schema": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/OWNER_INTENT/owner_diff_decision_schema_v0_1.json",
+      "verdict": "PASS",
+      "errors": []
+    },
+    {
+      "gate": "action_receipt_schema_gate",
+      "target": "runtime_payload:action_receipt",
+      "schema": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_action_receipt_schema_v0_1.json",
+      "verdict": "PASS",
+      "errors": []
+    },
+    {
+      "gate": "action_run_result_schema_gate",
+      "target": "runtime_payload:action_run_result",
+      "schema": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_action_run_result_schema_v0_1.json",
+      "verdict": "PASS",
+      "errors": []
+    }
+  ]
+}

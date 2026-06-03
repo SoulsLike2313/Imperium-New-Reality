@@ -1,0 +1,593 @@
+{
+  "schema_id": "newgen_doctrinarium_gate_registry_v0_1",
+  "schema_version": "0.1",
+  "task_id": "TASK-20260524-NEWGEN-DOCTRINARIUM-GATE-SPINE-READ-FIRST-VM3-V0_1",
+  "generated_at_utc": "2026-05-24T01:53:56+00:00",
+  "status": "ACTIVE_FOUNDATION",
+  "scope": "IMPERIUM_NEW_GENERATION only",
+  "source_declarations": [
+    "DECLARATION_OF_FORM",
+    "CORE_SYNTHESIS_DECLARATION_OF_PAIN",
+    "DECLARATION_OF_VISUAL_POWER",
+    "METAOS_FOCUSING_DOCTRINE"
+  ],
+  "supported_task_types": [
+    "core_task",
+    "visual_cockpit",
+    "tool_acquisition",
+    "continuity",
+    "repo_hygiene",
+    "organ_directive",
+    "freelance_external"
+  ],
+  "forbidden_pattern_catalog": [
+    {
+      "pattern_id": "FP-001",
+      "pattern": "Generic owner-facing PASS verdict",
+      "block_code": "BLOCK_GENERIC_PASS_OWNER_FACING"
+    },
+    {
+      "pattern_id": "FP-002",
+      "pattern": "Green/proved claim without evidence_ref/source path",
+      "block_code": "BLOCK_EVIDENCE_MISSING"
+    },
+    {
+      "pattern_id": "FP-003",
+      "pattern": "Task starts before Doctrinarium read-first ACK",
+      "block_code": "BLOCK_DOCTRINARIUM_READ_ACK_MISSING"
+    },
+    {
+      "pattern_id": "FP-004",
+      "pattern": "Visual work without Visual Contract",
+      "block_code": "BLOCK_VISUAL_CONTRACT_MISSING"
+    },
+    {
+      "pattern_id": "FP-005",
+      "pattern": "Visual work without screenshot matrix evidence",
+      "block_code": "BLOCK_SCREENSHOT_EVIDENCE_MISSING"
+    },
+    {
+      "pattern_id": "FP-006",
+      "pattern": "Default dashboard/admin-like UI accepted as PASS",
+      "block_code": "BLOCK_DEFAULT_DASHBOARD_PATTERN"
+    },
+    {
+      "pattern_id": "FP-007",
+      "pattern": "Handoff/continuity task without continuity pack",
+      "block_code": "BLOCK_CONTINUITY_PACK_MISSING"
+    },
+    {
+      "pattern_id": "FP-008",
+      "pattern": "Repo-heavy artifacts committed without class/quarantine",
+      "block_code": "BLOCK_REPO_HYGIENE_UNCLASSIFIED"
+    },
+    {
+      "pattern_id": "FP-009",
+      "pattern": "Blind tool acquisition without Mechanicus registration",
+      "block_code": "BLOCK_TOOL_ACQUISITION_POLICY_BYPASS"
+    },
+    {
+      "pattern_id": "FP-010",
+      "pattern": "High-cost task without KPD/resource budget statement",
+      "block_code": "BLOCK_KPD_BUDGET_MISSING"
+    },
+    {
+      "pattern_id": "FP-011",
+      "pattern": "Organ-sensitive execution without organ directive/veto check",
+      "block_code": "BLOCK_ORGAN_DIRECTIVE_MISSING"
+    },
+    {
+      "pattern_id": "FP-012",
+      "pattern": "Visual candidate promoted without stable comparison proof",
+      "block_code": "BLOCK_STABLE_CANDIDATE_PROOF_MISSING"
+    },
+    {
+      "pattern_id": "FP-013",
+      "pattern": "Production/autonomy claim from bounded demo/foundation output",
+      "block_code": "BLOCK_PRODUCTION_OVERCLAIM"
+    },
+    {
+      "pattern_id": "FP-014",
+      "pattern": "Internal IMPERIUM function declared or changed without explicit organ owner",
+      "block_code": "BLOCK_INTERNAL_FUNCTION_OWNER_MISSING"
+    }
+  ],
+  "global_pass_criteria": [
+    "scope_truth: all touched paths stay inside declared allowed scope",
+    "evidence_truth: every critical claim references existing evidence artifacts",
+    "verdict_scope: verdict is scoped (PASS_FOR_<X>_ONLY), never generic PASS",
+    "uncertainty_honesty: NOT_PROVEN/NOT_RUN/FOUNDATION_ONLY boundaries are explicit",
+    "operational_delta: owner-visible control/observability/safety delta is present",
+    "repo_closure: final git status is clean or explicitly bounded by task contract"
+  ],
+  "global_fail_criteria": [
+    "forbidden path touched",
+    "PASS claim without evidence",
+    "hidden uncertainty presented as success",
+    "production/autonomy claim without proof loops",
+    "declared touched paths do not match real diff",
+    "missing required outputs for task contract"
+  ],
+  "gates": [
+    {
+      "gate_id": "GATE_DOCTRINARIUM_READ_FIRST",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "DECLARATION_OF_FORM",
+        "CORE_SYNTHESIS_DECLARATION_OF_PAIN"
+      ],
+      "applies_to_task_types": [
+        "core_task",
+        "visual_cockpit",
+        "tool_acquisition",
+        "continuity",
+        "repo_hygiene",
+        "organ_directive",
+        "freelance_external"
+      ],
+      "forbidden_patterns": [
+        "FP-003"
+      ],
+      "pass_criteria": [
+        "Preflight output is generated before edits",
+        "Required declarations are listed and acknowledged"
+      ],
+      "fail_criteria": [
+        "Task edits begin without preflight",
+        "Required declarations are skipped"
+      ],
+      "evidence_required": [
+        "preflight_output_json",
+        "task_start_doctrinarium_block"
+      ]
+    },
+    {
+      "gate_id": "GATE_NO_GENERIC_PASS",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "CORE_SYNTHESIS_DECLARATION_OF_PAIN"
+      ],
+      "applies_to_task_types": [
+        "core_task",
+        "visual_cockpit",
+        "tool_acquisition",
+        "continuity",
+        "repo_hygiene",
+        "organ_directive",
+        "freelance_external"
+      ],
+      "forbidden_patterns": [
+        "FP-001"
+      ],
+      "pass_criteria": [
+        "Final verdict is scoped",
+        "NOT_PROVEN and NOT_RUN sections are explicit"
+      ],
+      "fail_criteria": [
+        "Generic PASS is used",
+        "Scoped boundary is missing"
+      ],
+      "evidence_required": [
+        "final_report",
+        "closure_receipt"
+      ]
+    },
+    {
+      "gate_id": "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "DECLARATION_OF_FORM",
+        "CORE_SYNTHESIS_DECLARATION_OF_PAIN",
+        "DECLARATION_OF_VISUAL_POWER"
+      ],
+      "applies_to_task_types": [
+        "core_task",
+        "visual_cockpit",
+        "tool_acquisition",
+        "continuity",
+        "repo_hygiene",
+        "organ_directive",
+        "freelance_external"
+      ],
+      "forbidden_patterns": [
+        "FP-002"
+      ],
+      "pass_criteria": [
+        "Every PROVED/GREEN claim has source or evidence references"
+      ],
+      "fail_criteria": [
+        "Status is green/proved with missing evidence references"
+      ],
+      "evidence_required": [
+        "evidence_paths",
+        "smoke_or_validator_report"
+      ]
+    },
+    {
+      "gate_id": "GATE_OWNER_POWER_DELTA_REQUIRED",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "DECLARATION_OF_FORM",
+        "CORE_SYNTHESIS_DECLARATION_OF_PAIN"
+      ],
+      "applies_to_task_types": [
+        "core_task",
+        "visual_cockpit",
+        "continuity",
+        "freelance_external"
+      ],
+      "forbidden_patterns": [
+        "FP-013"
+      ],
+      "pass_criteria": [
+        "Task states owner-visible operational delta"
+      ],
+      "fail_criteria": [
+        "Only artifact volume changed, with no owner-visible control delta"
+      ],
+      "evidence_required": [
+        "final_report_owner_delta_section"
+      ]
+    },
+    {
+      "gate_id": "GATE_PAIN_PREFLIGHT_REQUIRED",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "CORE_SYNTHESIS_DECLARATION_OF_PAIN"
+      ],
+      "applies_to_task_types": [
+        "core_task",
+        "visual_cockpit",
+        "continuity",
+        "repo_hygiene",
+        "organ_directive",
+        "freelance_external"
+      ],
+      "forbidden_patterns": [
+        "FP-003"
+      ],
+      "pass_criteria": [
+        "Active pain-linked gates are included in preflight"
+      ],
+      "fail_criteria": [
+        "Known pain gate omitted from applicable task preflight"
+      ],
+      "evidence_required": [
+        "preflight_output_json"
+      ]
+    },
+    {
+      "gate_id": "GATE_VISUAL_CONTRACT_REQUIRED",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "DECLARATION_OF_VISUAL_POWER"
+      ],
+      "applies_to_task_types": [
+        "visual_cockpit",
+        "freelance_external"
+      ],
+      "forbidden_patterns": [
+        "FP-004"
+      ],
+      "pass_criteria": [
+        "Visual Contract exists before major UI/UX edits"
+      ],
+      "fail_criteria": [
+        "Visual changes proceed without a contract"
+      ],
+      "evidence_required": [
+        "visual_contract_file_or_receipt"
+      ]
+    },
+    {
+      "gate_id": "GATE_NO_DEFAULT_DASHBOARD",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "DECLARATION_OF_FORM",
+        "DECLARATION_OF_VISUAL_POWER"
+      ],
+      "applies_to_task_types": [
+        "visual_cockpit",
+        "freelance_external"
+      ],
+      "forbidden_patterns": [
+        "FP-006"
+      ],
+      "pass_criteria": [
+        "UI result does not regress to generic admin/default pattern"
+      ],
+      "fail_criteria": [
+        "Default dashboard pattern accepted as pass"
+      ],
+      "evidence_required": [
+        "visual_before_after_screenshots"
+      ]
+    },
+    {
+      "gate_id": "GATE_SCREENSHOT_EVIDENCE_REQUIRED",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "DECLARATION_OF_VISUAL_POWER"
+      ],
+      "applies_to_task_types": [
+        "visual_cockpit",
+        "freelance_external"
+      ],
+      "forbidden_patterns": [
+        "FP-005"
+      ],
+      "pass_criteria": [
+        "Screenshot matrix includes before/after and key states"
+      ],
+      "fail_criteria": [
+        "Visual PASS claimed without screenshot matrix"
+      ],
+      "evidence_required": [
+        "screenshot_matrix_json_or_md"
+      ]
+    },
+    {
+      "gate_id": "GATE_CONTINUITY_PACK_REQUIRED",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "DECLARATION_OF_FORM",
+        "CORE_SYNTHESIS_DECLARATION_OF_PAIN"
+      ],
+      "applies_to_task_types": [
+        "continuity",
+        "core_task",
+        "freelance_external"
+      ],
+      "forbidden_patterns": [
+        "FP-007"
+      ],
+      "pass_criteria": [
+        "Continuity pack artifacts are declared for handoff tasks"
+      ],
+      "fail_criteria": [
+        "Handoff flow claims success without continuity package"
+      ],
+      "evidence_required": [
+        "continuity_manifest_or_pack_path"
+      ]
+    },
+    {
+      "gate_id": "GATE_REPO_HYGIENE_REQUIRED",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "DECLARATION_OF_FORM",
+        "CORE_SYNTHESIS_DECLARATION_OF_PAIN"
+      ],
+      "applies_to_task_types": [
+        "repo_hygiene",
+        "core_task",
+        "continuity",
+        "freelance_external"
+      ],
+      "forbidden_patterns": [
+        "FP-008"
+      ],
+      "pass_criteria": [
+        "New artifacts are classed or quarantined with explicit policy"
+      ],
+      "fail_criteria": [
+        "Heavy runtime/report artifacts committed without classification"
+      ],
+      "evidence_required": [
+        "git_diff_paths",
+        "classification_or_quarantine_note"
+      ]
+    },
+    {
+      "gate_id": "GATE_TOOL_ACQUISITION_REQUIRED",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "CORE_SYNTHESIS_DECLARATION_OF_PAIN"
+      ],
+      "applies_to_task_types": [
+        "tool_acquisition",
+        "core_task",
+        "visual_cockpit"
+      ],
+      "forbidden_patterns": [
+        "FP-009"
+      ],
+      "pass_criteria": [
+        "Missing tool flow follows identify/justify/source/verify/register/receipt"
+      ],
+      "fail_criteria": [
+        "Blind install/download without registration"
+      ],
+      "evidence_required": [
+        "tool_source_and_version_receipt",
+        "mechanicus_registration_reference"
+      ]
+    },
+    {
+      "gate_id": "GATE_RESOURCE_KPD_REQUIRED",
+      "severity": "WARN_TO_BLOCK",
+      "source_declarations": [
+        "CORE_SYNTHESIS_DECLARATION_OF_PAIN"
+      ],
+      "applies_to_task_types": [
+        "core_task",
+        "visual_cockpit",
+        "tool_acquisition",
+        "continuity",
+        "freelance_external"
+      ],
+      "forbidden_patterns": [
+        "FP-010"
+      ],
+      "pass_criteria": [
+        "Task states resource/KPD value expectations"
+      ],
+      "fail_criteria": [
+        "High-cost task with no KPD/resource disclosure"
+      ],
+      "evidence_required": [
+        "final_report_kpd_section"
+      ]
+    },
+    {
+      "gate_id": "GATE_ORGAN_DIRECTIVE_REQUIRED_WHEN_APPLICABLE",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "DECLARATION_OF_FORM",
+        "CORE_SYNTHESIS_DECLARATION_OF_PAIN"
+      ],
+      "applies_to_task_types": [
+        "organ_directive",
+        "core_task"
+      ],
+      "forbidden_patterns": [
+        "FP-011"
+      ],
+      "pass_criteria": [
+        "Organ-sensitive tasks declare required organ checks or veto boundaries"
+      ],
+      "fail_criteria": [
+        "Task bypasses declared organ directive requirements"
+      ],
+      "evidence_required": [
+        "organ_directive_reference_or_ack"
+      ]
+    },
+    {
+      "gate_id": "GATE_STABLE_CANDIDATE_REQUIRED_FOR_VISUAL_WORK",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "DECLARATION_OF_FORM",
+        "DECLARATION_OF_VISUAL_POWER"
+      ],
+      "applies_to_task_types": [
+        "visual_cockpit",
+        "freelance_external"
+      ],
+      "forbidden_patterns": [
+        "FP-012"
+      ],
+      "pass_criteria": [
+        "Visual changes preserve stable/candidate separation with promotion proof"
+      ],
+      "fail_criteria": [
+        "Candidate is promoted with no stable comparison evidence"
+      ],
+      "evidence_required": [
+        "stable_candidate_comparison",
+        "promotion_or_rejection_decision"
+      ]
+    },
+    {
+      "gate_id": "GATE_INTERNAL_FUNCTION_MUST_HAVE_ORGAN_OWNER",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "METAOS_FOCUSING_DOCTRINE"
+      ],
+      "applies_to_task_types": [
+        "core_task",
+        "visual_cockpit",
+        "tool_acquisition",
+        "continuity",
+        "repo_hygiene",
+        "organ_directive",
+        "freelance_external"
+      ],
+      "forbidden_patterns": [
+        "FP-014"
+      ],
+      "pass_criteria": [
+        "Internal function changes declare explicit owner organ and route context",
+        "Task route shows organ ownership continuity for created/updated functions"
+      ],
+      "fail_criteria": [
+        "Internal function is introduced or changed with no owner organ binding",
+        "Ownership declaration is missing from scope and evidence chain"
+      ],
+      "evidence_required": [
+        "metaos_focusing_doctrine_reference",
+        "organ_route_plan"
+      ]
+    }
+  ],
+  "task_type_gate_sets": {
+    "core_task": [
+      "GATE_DOCTRINARIUM_READ_FIRST",
+      "GATE_NO_GENERIC_PASS",
+      "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+      "GATE_OWNER_POWER_DELTA_REQUIRED",
+      "GATE_PAIN_PREFLIGHT_REQUIRED",
+      "GATE_REPO_HYGIENE_REQUIRED",
+      "GATE_RESOURCE_KPD_REQUIRED",
+      "GATE_INTERNAL_FUNCTION_MUST_HAVE_ORGAN_OWNER"
+    ],
+    "visual_cockpit": [
+      "GATE_DOCTRINARIUM_READ_FIRST",
+      "GATE_NO_GENERIC_PASS",
+      "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+      "GATE_OWNER_POWER_DELTA_REQUIRED",
+      "GATE_PAIN_PREFLIGHT_REQUIRED",
+      "GATE_VISUAL_CONTRACT_REQUIRED",
+      "GATE_NO_DEFAULT_DASHBOARD",
+      "GATE_SCREENSHOT_EVIDENCE_REQUIRED",
+      "GATE_STABLE_CANDIDATE_REQUIRED_FOR_VISUAL_WORK",
+      "GATE_RESOURCE_KPD_REQUIRED",
+      "GATE_INTERNAL_FUNCTION_MUST_HAVE_ORGAN_OWNER"
+    ],
+    "tool_acquisition": [
+      "GATE_DOCTRINARIUM_READ_FIRST",
+      "GATE_NO_GENERIC_PASS",
+      "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+      "GATE_TOOL_ACQUISITION_REQUIRED",
+      "GATE_RESOURCE_KPD_REQUIRED",
+      "GATE_INTERNAL_FUNCTION_MUST_HAVE_ORGAN_OWNER"
+    ],
+    "continuity": [
+      "GATE_DOCTRINARIUM_READ_FIRST",
+      "GATE_NO_GENERIC_PASS",
+      "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+      "GATE_PAIN_PREFLIGHT_REQUIRED",
+      "GATE_CONTINUITY_PACK_REQUIRED",
+      "GATE_REPO_HYGIENE_REQUIRED",
+      "GATE_RESOURCE_KPD_REQUIRED",
+      "GATE_INTERNAL_FUNCTION_MUST_HAVE_ORGAN_OWNER"
+    ],
+    "repo_hygiene": [
+      "GATE_DOCTRINARIUM_READ_FIRST",
+      "GATE_NO_GENERIC_PASS",
+      "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+      "GATE_PAIN_PREFLIGHT_REQUIRED",
+      "GATE_REPO_HYGIENE_REQUIRED",
+      "GATE_INTERNAL_FUNCTION_MUST_HAVE_ORGAN_OWNER"
+    ],
+    "organ_directive": [
+      "GATE_DOCTRINARIUM_READ_FIRST",
+      "GATE_NO_GENERIC_PASS",
+      "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+      "GATE_PAIN_PREFLIGHT_REQUIRED",
+      "GATE_ORGAN_DIRECTIVE_REQUIRED_WHEN_APPLICABLE",
+      "GATE_INTERNAL_FUNCTION_MUST_HAVE_ORGAN_OWNER"
+    ],
+    "freelance_external": [
+      "GATE_DOCTRINARIUM_READ_FIRST",
+      "GATE_NO_GENERIC_PASS",
+      "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+      "GATE_OWNER_POWER_DELTA_REQUIRED",
+      "GATE_PAIN_PREFLIGHT_REQUIRED",
+      "GATE_VISUAL_CONTRACT_REQUIRED",
+      "GATE_NO_DEFAULT_DASHBOARD",
+      "GATE_SCREENSHOT_EVIDENCE_REQUIRED",
+      "GATE_STABLE_CANDIDATE_REQUIRED_FOR_VISUAL_WORK",
+      "GATE_CONTINUITY_PACK_REQUIRED",
+      "GATE_REPO_HYGIENE_REQUIRED",
+      "GATE_RESOURCE_KPD_REQUIRED",
+      "GATE_INTERNAL_FUNCTION_MUST_HAVE_ORGAN_OWNER"
+    ]
+  },
+  "not_proven_boundary": [
+    "full organ intelligence",
+    "automatic enforcement across all taskpacks",
+    "final visual quality",
+    "production autonomy"
+  ]
+}

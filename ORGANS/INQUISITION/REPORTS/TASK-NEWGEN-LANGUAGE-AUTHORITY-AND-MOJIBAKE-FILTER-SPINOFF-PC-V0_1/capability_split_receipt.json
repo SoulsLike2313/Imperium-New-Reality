@@ -1,0 +1,26 @@
+{
+  "task_id": "TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1",
+  "timestamp_utc": "2026-06-01T05:41:57Z",
+  "LOCAL_SCRIPT_FIRST": [
+    "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/TOOLS/inquisition_mojibake_filter_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/TOOLS/run_language_encoding_fixtures_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_language_gate_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_task_entry_lib_v0_1.py"
+  ],
+  "LOCAL_MANUAL_COMMAND": [
+    "python IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/TOOLS/run_language_encoding_fixtures_v0_1.py --repo-root . --task-id TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1",
+    "python IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/TOOLS/inquisition_mojibake_filter_v0_1.py --repo-root . --task-id TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1 --current-task-id TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1 --report-json <report_root>/inquisition_mojibake_filter_report.json --report-md <report_root>/inquisition_mojibake_filter_report.md",
+    "python IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_language_gate_v0_1.py --repo-root . --task-id TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1 --receipt-path <report_root>/taskpack_language_gate_receipt.json"
+  ],
+  "CANDIDATE_SCRIPT_FIRST": [
+    "Add pre-commit language lane check that consumes Officio policy + Inquisition signatures."
+  ],
+  "AGENT_REASONING_ONLY": [
+    "Hard red-team attack narrative and downgrade decision synthesis."
+  ],
+  "EXTERNAL_RESEARCH": [],
+  "OWNER_MANUAL_CONFIRMATION": [],
+  "FUTURE_CAPABILITY_GAP": [
+    "Independent external review still required before clean PASS semantics."
+  ]
+}

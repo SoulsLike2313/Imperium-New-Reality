@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:cap-tool-jsonschema:tool_detection:cap-tool-jsonschema",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "CAP-TOOL-JSONSCHEMA",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:43Z",
+  "status": "PASS",
+  "summary": "CAP-TOOL-JSONSCHEMA: PASS via tool_detection:CAP-TOOL-JSONSCHEMA. promotion_recommendation=KEEP_STATUS",
+  "check_name": "tool_detection:CAP-TOOL-JSONSCHEMA",
+  "command_or_check": "python -m jsonschema --version",
+  "exit_code": 0,
+  "stdout_excerpt": "$ python -m jsonschema --version\n4.26.0",
+  "stderr_excerpt": "$ python -m jsonschema --version\nC:\\Users\\PC\\AppData\\Roaming\\Python\\Python312\\site-packages\\jsonschema\\__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/cap-tool-jsonschema_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "KEEP_STATUS",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/cap-tool-jsonschema_validation_receipt.json"
+  ]
+}

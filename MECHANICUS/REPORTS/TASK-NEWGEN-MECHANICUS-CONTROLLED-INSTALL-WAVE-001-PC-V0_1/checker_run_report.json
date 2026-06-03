@@ -1,0 +1,41 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1",
+  "generated_at_utc": "2026-05-25T22:54:51Z",
+  "checkers": [
+    {
+      "command": "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_owner_approved_tool_normalization_v0_1.py",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "raw_log": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/validation/checker_1.txt"
+    },
+    {
+      "command": "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_owner_approval_matrix_v0_1.py",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "raw_log": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/validation/checker_2.txt"
+    },
+    {
+      "command": "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_arsenal_foundation_v0_1.py",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "",
+      "raw_log": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/validation/checker_3.txt"
+    }
+  ],
+  "failed_count": 0,
+  "verdict": "PASS",
+  "side_effect_containment": {
+    "finding": "Checker scripts mutated historical task report files by default output behavior.",
+    "unintended_files": [
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-INTAKE-FOUNDATION-PC-V0_1/arsenal_foundation_check_report.json",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-OWNER-APPROVAL-MATRIX-PC-V0_1/matrix_check_report.json",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-OWNER-APPROVED-TOOLS-REGISTRY-NORMALIZATION-PC-V0_1/normalization_check_report.json"
+    ],
+    "evidence_before": "raw/incident/checker_side_effect_status_before_restore.txt",
+    "evidence_after": "raw/incident/checker_side_effect_status_after_restore.txt",
+    "restoration": "Restored ONLY unintended out-of-task historical report files back to HEAD.",
+    "hardening_lesson": "Checker scripts must not overwrite historical task reports by default; output must go to current task report folder or explicit output path."
+  }
+}

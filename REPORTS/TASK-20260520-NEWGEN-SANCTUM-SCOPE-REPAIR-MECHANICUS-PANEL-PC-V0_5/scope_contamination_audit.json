@@ -1,0 +1,46 @@
+{
+  "schema_version": "NEWGEN_SCOPE_CONTAMINATION_AUDIT_V0_5",
+  "task_id": "TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5",
+  "generated_at_utc": "2026-05-20T16:31:01.6019350Z",
+  "starting_head": "67459e3d6f7e9b38a233833ed4f914e6a8e37baa",
+  "starting_truth_raw": "HEAD: 67459e3d6f7e9b38a233833ed4f914e6a8e37baa\nLOG: 67459e3 TASK-20260520 SANCTUM clean anchor SSE live console V0_3\nSTATUS:\nSystem.Object[]\r\n",
+  "detected_forbidden_uncommitted": [
+    {
+      "path": "ORGANS/MECHANICUS/REPORTS/TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5/_TASKPACK_TMP/**",
+      "class": "runtime_unpack_temp",
+      "action": "moved_taskpack_to_new_generation_and_removed_organs_temp"
+    },
+    {
+      "path": "ORGANS/MECHANICUS/REPORTS/TASK-20260520-SANCTUM-CLEAN-ANCHOR-SSE-LIVE-CONSOLE-PC-V0_3/sse_proof_check.zip",
+      "class": "wrong_scope_untracked_prior_evidence",
+      "action": "copied_to_MIGRATED_PRIOR_EVIDENCE_then_removed_from_ORGANS"
+    }
+  ],
+  "migrated_prior_evidence": [
+    {
+      "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5/MIGRATED_PRIOR_EVIDENCE/sse_proof_check_from_organs_untracked.zip",
+      "sha256": "BE1B9AA92BEE882DE7D5A599FACB51ABB1C0864F375CF91DA3B0A6607311C516",
+      "note": "migrated from forbidden untracked ORGANS path"
+    }
+  ],
+  "committed_wrong_scope_findings": [
+    {
+      "path": "ORGANS/MECHANICUS/REPORTS/TASK-20260520-SANCTUM-CLEAN-ANCHOR-SSE-LIVE-CONSOLE-PC-V0_3",
+      "tracked_file_count": 33,
+      "status": "COMMITTED_PRIOR_CONTAMINATION",
+      "remediation": "No history rewrite in this task. Mark WARN and provide owner decision options for dedicated cleanup task."
+    },
+    {
+      "path": "ORGANS/MECHANICUS/REPORTS/TASK-20260520-SANCTUM-MECHANICUS-PANEL-REPAIR-RESPONSIVE-SSE-PC-V0_4",
+      "tracked_file_count": 0,
+      "status": "NOT_FOUND",
+      "remediation": "No action required"
+    }
+  ],
+  "current_status_short": "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5/",
+  "scope_status": "PASS_NEW_GENERATION_ONLY_FOR_CURRENT_WORKTREE_WITH_WARN_ON_PRIOR_COMMITTED_CONTAMINATION",
+  "owner_decision_options": [
+    "Option 1: accept WARN and continue New Generation-only development (recommended now).",
+    "Option 2: schedule dedicated cleanup task to remove old ORGANS V0_3 report tree in a separate authorized corrective commit."
+  ]
+}

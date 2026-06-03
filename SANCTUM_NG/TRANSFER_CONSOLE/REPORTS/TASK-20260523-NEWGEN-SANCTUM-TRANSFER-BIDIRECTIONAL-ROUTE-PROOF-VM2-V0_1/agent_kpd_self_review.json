@@ -1,0 +1,41 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1",
+    "agent_role": "VM2_SERVITOR_CODEX",
+    "useful_outputs": [
+      "Bidirectional bounded probe evidence with matching hash/size both directions",
+      "Mechanicus matrix update + dedicated route proof record",
+      "Transfer Console request/result/ledger/view-state updates",
+      "Task-scoped builder/validator/smoke automation"
+    ],
+    "waste_points": [
+      "Remote nested SSH stdin consumption caused one failed probe scripting attempt",
+      "Initial validator ledger correlation heuristic was too weak"
+    ],
+    "missing_tools": [
+      "Prebuilt VM2<->VM3 bidirectional route-proof runner"
+    ],
+    "generated_tools_to_preserve": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/build_bidirectional_route_proof_vm2_vm3_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/validate_bidirectional_route_proof_vm2_vm3_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/smoke_bidirectional_route_proof_vm2_vm3_v0_1.py"
+    ],
+    "recommended_script_absorption": [
+      "ABSORB_NOW: build_bidirectional_route_proof_vm2_vm3_v0_1.py",
+      "ABSORB_NOW: validate_bidirectional_route_proof_vm2_vm3_v0_1.py",
+      "ABSORB_NOW: smoke_bidirectional_route_proof_vm2_vm3_v0_1.py"
+    ],
+    "recommended_narrow_agent_profiles": [
+      "NG_TRANSFER_ROUTE_PROOF_AGENT_VM2_VM3"
+    ],
+    "future_prompt_improvements": [
+      "Always include stdin-safe nested SSH pattern guidance for remote scripts",
+      "Explicitly require summary-ref-based ledger correlation checks"
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add checklist item: nested SSH calls must use -n or redirected stdin",
+      "Add checklist item: validator route correlation must use emitted refs"
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

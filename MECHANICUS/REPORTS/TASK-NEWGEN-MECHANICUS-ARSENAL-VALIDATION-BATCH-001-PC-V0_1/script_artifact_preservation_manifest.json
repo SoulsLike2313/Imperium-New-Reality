@@ -1,0 +1,38 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+  "generated_at_utc": "2026-05-24T18:15:17Z",
+  "artifacts": [
+    {
+      "artifact_id": "TOOL-MECH-VALIDATOR-V0_1",
+      "original_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_validator_v0_1.py",
+      "purpose": "Run bounded capability validation and build full evidence package.",
+      "result": "WORKED",
+      "risk": "Heuristic missing-tool detection for external binaries.",
+      "recommended_action": "ABSORB_NOW"
+    },
+    {
+      "artifact_id": "TOOL-MECH-RECEIPT-BUILDER-V0_1",
+      "original_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_validation_receipt_builder_v0_1.py",
+      "purpose": "Build standardized validation receipts with required fields.",
+      "result": "WORKED",
+      "risk": "Schema evolution requires synchronized field upgrades.",
+      "recommended_action": "ABSORB_NOW"
+    },
+    {
+      "artifact_id": "TOOL-MECH-SCOPE-EXPORTER-V0_1",
+      "original_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_scope_exporter_v0_1.py",
+      "purpose": "Export capability scope slices for future tasks.",
+      "result": "WORKED",
+      "risk": "Depends on consistent card status hygiene.",
+      "recommended_action": "ABSORB_NOW"
+    },
+    {
+      "artifact_id": "TOOL-MECH-FAKE-CANON-DETECTOR-V0_2",
+      "original_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_fake_canon_detector_v0_2.py",
+      "purpose": "Detect fake-CANON violations for Inquisition gate.",
+      "result": "WORKED",
+      "risk": "Evidence rules rely on card field quality.",
+      "recommended_action": "ABSORB_NOW"
+    }
+  ]
+}

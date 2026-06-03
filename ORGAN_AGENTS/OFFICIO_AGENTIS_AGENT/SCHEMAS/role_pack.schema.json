@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Role Pack",
+  "type": "object",
+  "required": [
+    "agent",
+    "role_profile",
+    "default_mode",
+    "status",
+    "generated_at_utc"
+  ],
+  "properties": {
+    "agent": {
+      "type": "string"
+    },
+    "role_profile": {
+      "type": "object"
+    },
+    "default_mode": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
+

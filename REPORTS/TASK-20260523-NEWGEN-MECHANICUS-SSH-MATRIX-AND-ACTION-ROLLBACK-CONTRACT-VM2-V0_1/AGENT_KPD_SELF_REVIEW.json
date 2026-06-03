@@ -1,0 +1,42 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-20260523-NEWGEN-MECHANICUS-SSH-MATRIX-AND-ACTION-ROLLBACK-CONTRACT-VM2-V0_1",
+    "agent_role": "VM2 Servitor (Codex big-model bounded execution)",
+    "useful_outputs": [
+      "MECHANICUS/CONNECTIONS matrix + policy + catalog + schema + validator",
+      "TRUTH/ACTION_ROLLBACK policy/classification/rules/samples + schemas + validators",
+      "Read-only visibility references in CURRENT_TRUTH_ROOT and SANCTUM_NG state",
+      "Complete report bundle with gate/validator/context/KPD receipts"
+    ],
+    "waste_points": [
+      "Initial SSH validator scanned literal marker strings from validator source.",
+      "One correction cycle needed for marker-safe implementation."
+    ],
+    "missing_tools": [
+      "Shared safe-pattern utility for key-marker scanning exclusions and tokenized marker rules"
+    ],
+    "generated_tools_to_preserve": [
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/TOOLS/validate_ssh_connection_matrix_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/TRUTH/ACTION_ROLLBACK/TOOLS/validate_action_rollback_contract_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/TRUTH/ACTION_ROLLBACK/TOOLS/validate_read_only_visibility_v0_1.py"
+    ],
+    "recommended_script_absorption": [
+      "ABSORB_NOW: validate_action_rollback_contract_v0_1.py",
+      "ABSORB_NOW: validate_ssh_connection_matrix_v0_1.py",
+      "ABSORB_NOW: validate_read_only_visibility_v0_1.py"
+    ],
+    "recommended_narrow_agent_profiles": [
+      "NEWGEN_ROLLBACK_POLICY_GUARD_AGENT",
+      "MECHANICUS_CONNECTION_MATRIX_MAINTAINER_AGENT"
+    ],
+    "future_prompt_improvements": [
+      "Explicitly forbid literal secret-pattern strings inside security validators to avoid false positives.",
+      "Include pre-defined compatibility checklist for truth/sanctum read-only reference updates."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add a small gate for validator self-scan false-positive resistance.",
+      "Add shared helper for dangerous-action policy checks to reduce duplication."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

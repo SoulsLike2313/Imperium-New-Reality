@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/CONTRACTS/SKILL_GROWTH/SKILL_LESSON_RECORD.schema.json",
+  "title": "Skill Lesson Record V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "lesson_id",
+    "task_id",
+    "linked_skill_gap_id",
+    "lesson_type",
+    "lesson_text",
+    "proof_status",
+    "confidence",
+    "reuse_guidance",
+    "status",
+    "mode",
+    "created_at_utc"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "lesson_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "linked_skill_gap_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "lesson_type": {
+      "type": "string",
+      "enum": [
+        "ANTI_PATTERN",
+        "GOOD_PATTERN",
+        "PROCEDURE",
+        "CHECK",
+        "OWNER_PREFERENCE",
+        "TOOL_USAGE"
+      ]
+    },
+    "lesson_text": {
+      "type": "string",
+      "minLength": 3
+    },
+    "proof_status": {
+      "type": "string",
+      "enum": [
+        "PROVED",
+        "STRONG",
+        "PLAUSIBLE",
+        "UNKNOWN"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "PROVED",
+        "STRONG",
+        "PLAUSIBLE",
+        "UNKNOWN",
+        "FAILED",
+        "FAKE_GREEN_RISK"
+      ]
+    },
+    "reuse_guidance": {
+      "type": "string",
+      "minLength": 3
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "FOUNDATION_SAMPLE",
+        "ADVISORY",
+        "PROPOSED",
+        "ACCEPTED",
+        "REJECTED"
+      ]
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "FOUNDATION_ONLY",
+        "ADVISORY_ONLY",
+        "PRODUCTION"
+      ]
+    },
+    "created_at_utc": {
+      "type": "string",
+      "minLength": 20
+    }
+  }
+}

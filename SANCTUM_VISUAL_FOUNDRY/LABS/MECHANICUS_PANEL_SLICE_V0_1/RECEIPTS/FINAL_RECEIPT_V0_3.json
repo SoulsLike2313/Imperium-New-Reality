@@ -1,0 +1,73 @@
+{
+  "task_id": "TASK-20260520-NEWGEN-MECHANICUS-PANEL-LUXURY-NEURO-TEXTURE-PRESSURE-VM3-V0_3",
+  "timestamp_utc": "2026-05-20T22:28:03Z",
+  "verdict": "MECHANICUS_PANEL_LUXURY_NEURO_V0_3_ACCEPTED_FOR_OWNER_REVIEW",
+  "officio_intake": {
+    "status": "ACK_PRESENT",
+    "file": "IMPERIUM_NEW_GENERATION/TASKS/VM3_ASSIGNED/TASK-20260520-NEWGEN-MECHANICUS-PANEL-LUXURY-NEURO-TEXTURE-PRESSURE-VM3-V0_3/OFFICIO_ROLE_ACK_VM3_SERVITOR.json"
+  },
+  "scope": {
+    "allowed_write_roots_only": true,
+    "notes": "Inherited dirty state outside allowed roots is preserved"
+  },
+  "enhancement_targets": {
+    "existing_slice_enhanced_not_discarded": true,
+    "reference_proximity_increase": true,
+    "premium_material_texture_upgrade": true,
+    "visible_neuro_motion_upgrade": true
+  },
+  "truth_discipline": {
+    "unknown_visible": true,
+    "stub_visible": true,
+    "locked_visible": true,
+    "fake_backend_activity_simulation": false
+  },
+  "motion_safety": {
+    "local_raf_engine_only": true,
+    "cosmetic_only": true,
+    "reduced_motion_support": true,
+    "no_fake_telemetry": true
+  },
+  "tooling_actions": [
+    {
+      "tool": "node",
+      "action": "installed",
+      "version": "v18.19.1",
+      "reason": "Owner request: install and register node, then continue task"
+    },
+    {
+      "tool": "npm",
+      "action": "installed",
+      "version": "9.2.0",
+      "reason": "Node package manager required with node installation"
+    },
+    {
+      "tool": "chromium-browser",
+      "action": "installed",
+      "reason": "Headless screenshot generation for V0_3 evidence package"
+    }
+  ],
+  "evidence": {
+    "before_after_present": true,
+    "full_screenshot": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/SCREENSHOTS/01_full.png",
+    "detail_screenshots_02_pattern": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/SCREENSHOTS/02_detail_header.png",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/SCREENSHOTS/02_detail_memory_work.png",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/SCREENSHOTS/02_detail_command_zone.png",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/SCREENSHOTS/02_detail_registry_footer.png",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/SCREENSHOTS/02_detail_neuro_background.png"
+    ],
+    "before_full": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/SCREENSHOTS/00_before_v0_1_full.png",
+    "before_reference": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/SCREENSHOTS/00_before_reference.png",
+    "animation_note": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/REPORTS/ANIMATION_NOTE.md",
+    "before_after_note": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/REPORTS/BEFORE_AFTER_NOTE.md",
+    "owner_report_ru": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/REPORTS/OWNER_REPORT_RU.md",
+    "implementation_report_en": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/REPORTS/IMPLEMENTATION_REPORT_EN.md"
+  },
+  "commit": {
+    "required_if_gates_pass": true,
+    "status": "CREATED_AND_PUSHED",
+    "hash": "52c9a46412b7c28ebe5d3924a4908d0512670b05",
+    "url": "https://github.com/SoulsLike2313/Imperium-/commit/52c9a46412b7c28ebe5d3924a4908d0512670b05"
+  }
+}

@@ -1,0 +1,55 @@
+# GATE_ACK
+
+- task_id: `TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1`
+- current_head: `74898f67447dde1d20e8cc94c4f96591e0075176`
+- gatepack_path: `INBOX/VM3_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/TASKPACK_TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1`
+- gatepack_sha256: `MANIFEST.sha256.json / MANIFEST.sha256.txt read`
+- read_gates:
+  - `GATE-U00-GIT-TRUTH`
+  - `GATE-U01-ROLE-ACK`
+  - `GATE-U02-SCOPE-BOUNDARY`
+  - `GATE-U04-EVIDENCE-RECEIPT`
+  - `GATE-U05-STOP-CONDITIONS`
+  - `GATE-U08-REPO-PURITY`
+  - `GATE-U09-NO-FAKE-GREEN`
+  - `GATE-U12-REPORT-OUTPUT-BUDGET`
+  - `GATE-U13-PYTHON-TYPE-SAFETY`
+  - `GATE-U15-OPERATIONALITY-IMPACT`
+  - `GATE-U16-BILINGUAL-UI`
+  - `GATE-U17-DELIVERABLE-PACKAGE`
+  - `GATE-U19-SCRIPT-ARTIFACT-PRESERVATION`
+  - `GATE-U20-AGENT-KPD-SELF-REVIEW`
+  - `GATE-U21-COMMAND-CHUNKING`
+- accepted_stop_conditions:
+  - `Any out-of-scope path touch => STOP/BLOCK.`
+  - `Any arbitrary shell acceptance => STOP/BLOCK.`
+  - `Any fake SENT/FETCHED without evidence refs => STOP/BLOCK.`
+  - `Any production remote orchestration claim => STOP/BLOCK.`
+  - `Missing required report bundle receipts => WARN/BLOCK.`
+- scope_boundary: `IMPERIUM_NEW_GENERATION only`
+- touched_paths:
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/**`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/**` (if needed for render)
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/**` (if needed for server/state integration)
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/**` (if needed for action registry integration)
+- forbidden_paths:
+  - `ORGANS/**`
+  - `SANCTUM/**`
+  - `IMPERIUM_TEST_VERSION/**`
+  - `.git/**`
+- expected_receipts:
+  - `transfer_action_runner_validator_report.json`
+  - `transfer_action_runner_smoke_report.json`
+  - `context_source_mix.json`
+  - `implementation_manifest.json`
+  - `FINAL_REPORT.md`
+  - `closure_receipt.json`
+- repo_recon_required: `YES (Sanctum NG action layer + transfer console integration points)`
+- script_absorption_required: `YES (new runner/validator/smoke/builder scripts preserved in TRANSFER_CONSOLE/TOOLS)`
+- clarification_needed: `NO`
+- verdict: `PASS`
+
+Claim boundary:
+- `FOUNDATION_ONLY`
+- `NO_PRODUCTION_REMOTE_ORCHESTRATION`
+- `NO_ARBITRARY_SHELL`

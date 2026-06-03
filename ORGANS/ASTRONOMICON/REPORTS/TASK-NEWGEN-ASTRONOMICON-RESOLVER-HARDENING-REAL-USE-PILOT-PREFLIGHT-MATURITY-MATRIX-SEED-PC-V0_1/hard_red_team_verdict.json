@@ -1,0 +1,68 @@
+{
+  "task_id": "TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1",
+  "timestamp_utc": "2026-05-30T23:59:08Z",
+  "builder_claims": [
+    {
+      "claim_id": "S21-C01",
+      "claim": "Mandatory resolver edge-cases are blocked."
+    },
+    {
+      "claim_id": "S21-C02",
+      "claim": "Current expected start flow resolves."
+    },
+    {
+      "claim_id": "S21-C03",
+      "claim": "Maturity matrix seeds capture future domains without overclaim."
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "RT-S21-01",
+      "target_claim_id": "S21-C01",
+      "attack": "Try malformed receipt/path traversal/root _TASKPACK_INBOX misuse.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "task_id_resolver_fixture_results_stage2_1.json"
+      ]
+    },
+    {
+      "attack_id": "RT-S21-02",
+      "target_claim_id": "S21-C02",
+      "attack": "Remove current_expected and trigger start task without task_id.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "task_id_resolver_fixture_results_stage2_1.json::start_task_without_task_id"
+      ]
+    },
+    {
+      "attack_id": "RT-S21-03",
+      "target_claim_id": "S21-C03",
+      "attack": "Check for future-domain overclaim as active runtime capability.",
+      "result": "PARTIAL",
+      "downgrade_needed": true,
+      "applied_downgrade": "FORCE_PASS_WITH_WARNINGS_ONLY"
+    }
+  ],
+  "caps_triggered": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_SYNTHETIC_ONLY_UNTIL_REAL_USE_PILOT",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME"
+  ],
+  "final_verdict": "PASS_WITH_WARNINGS",
+  "required_caps_status": {
+    "CAP_DIRTY_WORKTREE_UNCLASSIFIED": "OPEN",
+    "CAP_RESOLVER_HARDENING_MISSING": "CLOSED_BY_FIXTURE_EVIDENCE",
+    "CAP_REGISTERED_TASK_NOT_RESOLVABLE": "CLOSED_BY_DETECTION_GUARD",
+    "CAP_CURRENT_EXPECTED_TASK_NOT_RESOLVABLE": "CLOSED_BY_DETECTION_GUARD",
+    "CAP_DUPLICATE_TASK_ID_NOT_DETECTED": "CLOSED_BY_DETECTION_GUARD",
+    "CAP_ROUTE_DOES_NOT_INCLUDE_8_ORGANS": "CLOSED_BY_DETECTION_GUARD",
+    "CAP_MATURITY_TARGET_MATRIX_MISSING": "CLOSED_BY_MATRIX_CREATION",
+    "CAP_REAL_USE_PILOT_PREFLIGHT_MISSING": "CLOSED_BY_REPORT",
+    "CAP_MANUAL_LOGOS_PIPELINE_NOT_REGISTERED": "CLOSED_BY_REPORT",
+    "CAP_FUTURE_DOMAIN_OVERCLAIM": "MITIGATED_BY_CANDIDATE_SEED_LABEL",
+    "CAP_IDE_VISUAL_STARTED_TOO_EARLY": "OPEN_GUARD_NOT_TRIGGERED",
+    "CAP_WARP_CLAIMED_WITHOUT_UNLOCK": "OPEN_GUARD_NOT_TRIGGERED",
+    "CAP_NO_EFFICIENCY_DELTA": "CLOSED_BY_RECEIPT"
+  }
+}

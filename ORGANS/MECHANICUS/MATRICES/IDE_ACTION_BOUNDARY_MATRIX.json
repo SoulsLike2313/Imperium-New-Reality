@@ -1,0 +1,78 @@
+{
+  "matrix_id": "IDE_ACTION_BOUNDARY_MATRIX",
+  "version": "0.1-candidate-seed",
+  "owner_organ": "Mechanicus",
+  "support_organs": [
+    "Inquisition",
+    "Astronomicon",
+    "Officio Agentis"
+  ],
+  "purpose": "Future domain seed for separating real local IDE actions from web-projection smoke checks.",
+  "used_by": [
+    "MECHANICUS",
+    "SERVITOR",
+    "INQUISITOR",
+    "OWNER"
+  ],
+  "required_questions": [
+    "What is the source of truth for this claim?",
+    "Which organ owns the rule?",
+    "What evidence level proves it?",
+    "What cap applies if evidence is missing?",
+    "What would make this claim fake-green?"
+  ],
+  "pass_criteria": [
+    "All criteria include owner value, evidence, and PASS/WARN/BLOCK logic.",
+    "Current status is explicit per criterion.",
+    "No real-use execution claim is made without required evidence."
+  ],
+  "warn_criteria": [
+    "Some criteria are still UNKNOWN but improvement hooks exist.",
+    "Pilot is preflight-ready only with warnings/caps."
+  ],
+  "block_criteria": [
+    "Required criterion has BLOCK state.",
+    "Matrix claims active production capability without evidence."
+  ],
+  "fake_green_flags": [
+    "CLAIM_WITHOUT_REPLAY",
+    "AGENT_REASONING_AS_SYSTEM_CAPABILITY",
+    "STALE_RECEIPT",
+    "DIRTY_STATE_HIDDEN",
+    "OWNER_DECISION_MISSING"
+  ],
+  "evidence_requirements": [
+    "action classification receipt",
+    "semantic parity notes"
+  ],
+  "current_status": "CANDIDATE_NOT_CANON",
+  "next_action": "Keep as candidate seed; connect to one safe pilot design task without active execution claims.",
+  "criteria": [
+    {
+      "criterion_id": "IAB-01",
+      "plain_language_meaning": "IDE actions are classified as local-real vs projection-smoke.",
+      "owner_value": "Clear trust boundary for UI claims.",
+      "owner_organ": "Mechanicus",
+      "support_organs": [
+        "Inquisition",
+        "Officio Agentis"
+      ],
+      "evidence_required": [
+        "action classification receipt",
+        "semantic parity notes"
+      ],
+      "pass_logic": "Every UI claim includes action class and evidence type.",
+      "warn_logic": "Classification exists but partial.",
+      "block_logic": "UI claims rely only on screenshots without semantic checks.",
+      "current_status": "CANDIDATE_SEED",
+      "next_improvement_hook": "Add checker for screenshot-only claims."
+    }
+  ],
+  "candidate_repo_location": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/MATRICES/IDE_ACTION_BOUNDARY_MATRIX.md",
+  "seed_status": "CANDIDATE_SEED",
+  "not_active_claims": [
+    "No real-use execution claim.",
+    "No WARP unlock claim.",
+    "No production finance/freelance claim."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_id": "TRANSFER_ACTION_RESULT_V0_1",
+  "result_id": "TRANSFER-ACTION-RESULT-20260523T022351Z-7A9EDED8",
+  "request_id": "TRANSFER-ACTION-REQ-20260523T022351Z-54B3AEBF",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1",
+  "action_type": "VALIDATE_TRANSFER_REQUEST",
+  "status": "BLOCKED",
+  "started_at_utc": "2026-05-23T02:23:51Z",
+  "finished_at_utc": "2026-05-23T02:23:51Z",
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T022351Z-54B3AEBF.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1/ACTION_LOGS/vm2_to_vm3_ssh_g.txt",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1/ACTION_LOGS/vm2_to_vm3_probe_run.json"
+  ],
+  "stdout_log_ref": null,
+  "stderr_log_ref": null,
+  "paths_verified": [],
+  "sha256_before_after": {
+    "before": null,
+    "after": null
+  },
+  "no_arbitrary_shell_confirmed": true,
+  "limitations": [
+    "Foundation-only route-proof recovery record.",
+    "No production remote orchestration claim.",
+    "No arbitrary shell execution path is accepted.",
+    "route:VM2->VM3",
+    "route_status:BLOCKED_ROUTE_UNAVAILABLE",
+    "error:ssh_probe_failed:ssh: Could not resolve hostname imperium-vm3: Temporary failure in name resolution"
+  ],
+  "claim_boundary": "FOUNDATION_ONLY",
+  "error": "ssh_probe_failed:ssh: Could not resolve hostname imperium-vm3: Temporary failure in name resolution",
+  "mode": "DRY_RUN"
+}

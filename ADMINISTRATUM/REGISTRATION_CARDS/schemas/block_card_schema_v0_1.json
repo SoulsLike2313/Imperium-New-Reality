@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "administratum/block_card_schema_v0_1",
+  "title": "Administratum Block Card Seed V0.1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "block_id",
+    "layer",
+    "macro_block_type",
+    "owner_organ",
+    "purpose",
+    "status",
+    "source_paths"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "block_card_v0_1"
+    },
+    "block_id": {
+      "type": "string"
+    },
+    "layer": {
+      "type": "string",
+      "enum": [
+        "L1_ORGAN_BLOCK",
+        "L2_MACRO_BLOCK",
+        "L3_MICRO_BLOCK",
+        "L4_LEAF_FILE"
+      ]
+    },
+    "macro_block_type": {
+      "type": "string",
+      "enum": [
+        "CAPABILITY",
+        "FOUNDATION"
+      ]
+    },
+    "owner_organ": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "source_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

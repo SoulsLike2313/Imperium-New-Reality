@@ -1,0 +1,36 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+    "agent_role": "VM3_SERVITOR",
+    "useful_outputs": [
+      "Wave1 common organ-agent form and schemas",
+      "4 organ query tools and 4 Rich TUIs with smoke mode",
+      "Mechanicus rich capability registry + probe receipt",
+      "Simulation and smoke evidence package"
+    ],
+    "waste_points": [
+      "Broad repo discovery around historical artifacts before narrowing to Wave1 deliverables"
+    ],
+    "missing_tools": [
+      "Dedicated NewGen utility to auto-generate task scope ack, route plan, and closure receipt skeleton"
+    ],
+    "generated_tools_to_preserve": [
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENT_COMMON/organ_agent_runtime_v0_1.py"
+    ],
+    "recommended_script_absorption": [
+      "Promote organ_agent_runtime_v0_1.py to stable shared helper after Wave2 validation"
+    ],
+    "recommended_narrow_agent_profiles": [
+      "NEWGEN_WAVE1_ORGAN_FORM_BUILDER",
+      "NEWGEN_RICH_TUI_SMOKE_AUDITOR"
+    ],
+    "future_prompt_improvements": [
+      "Provide explicit JSON schema for closure_receipt/context_source_mix to reduce interpretation variance"
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add gate requiring explicit check of existing ORGAN_AGENTS reference assets before NewGen organ rewrites",
+      "Add standard smoke matrix template for query+TUI commands"
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

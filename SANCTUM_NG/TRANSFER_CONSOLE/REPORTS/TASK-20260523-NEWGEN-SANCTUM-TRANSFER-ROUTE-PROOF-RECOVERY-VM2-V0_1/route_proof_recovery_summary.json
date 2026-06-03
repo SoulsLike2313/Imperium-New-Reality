@@ -1,0 +1,114 @@
+{
+  "schema": "imperium.transfer_route_proof_recovery_summary.v0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1",
+  "generated_at_utc": "2026-05-23T02:23:51Z",
+  "repo_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-",
+  "git_head": "fc4b7ec9bd4baf565ceb25e6f30bce6297c0d209",
+  "verdict_status": "WARN",
+  "verdict_claim": "PASS_FOR_PC_TO_VM2_WITH_WARN_PARTIAL_PC_TO_VM3_AND_BLOCKED_VM2_TO_VM3_ROUTE_ONLY",
+  "claim_boundary": "scoped route proof only; no production orchestration",
+  "routes": [
+    {
+      "route": "PC_TO_VM2",
+      "source_contour": "PC",
+      "destination_contour": "VM2",
+      "action_type": "SEND_TASKPACK_ZIP",
+      "status": "PROVED",
+      "created_utc": "2026-05-23T02:23:50Z",
+      "claim_boundary": "route proof only; no production orchestration",
+      "evidence_refs": [
+        "INBOX/VM2_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1/PC_TO_VM2_DELIVERY_EVIDENCE.json",
+        "INBOX/VM2_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1/TASKPACK_TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1.zip",
+        "INBOX/VM2_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1/TASKPACK_TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1"
+      ],
+      "warnings": [
+        "declared_unpacked_path_missing_using_derived:/home/vboxuser2/IMPERIUM_WORK/Imperium-/INBOX/VM2_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1/unpacked"
+      ],
+      "errors": [],
+      "source_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/INBOX/VM2_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1/TASKPACK_TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1.zip",
+      "target_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/INBOX/VM2_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1/TASKPACK_TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1.zip",
+      "sha256": "10f7cca9ddb9bc6e3bd46386e25673601d047b2fd16e75eb6c43a93e3a8f8630",
+      "size_bytes": 187757
+    },
+    {
+      "route": "PC_TO_VM3",
+      "source_contour": "PC",
+      "destination_contour": "VM3",
+      "action_type": "SEND_TASKPACK_ZIP",
+      "status": "WARN_PARTIAL",
+      "created_utc": "2026-05-23T02:23:50Z",
+      "claim_boundary": "recovered proof from committed salvage artifacts only",
+      "evidence_refs": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/transfer_route_proof_action_report.json",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/transfer_route_proof_validator_report.json",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/vm3_interrupted_handoff.json",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/VM3_INTERRUPTED_HANDOFF.md",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T014838Z-4F4C6FE0.json",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_action_request.schema.json",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_action_result.schema.json",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_action_runner_policy.schema.json",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/samples/transfer_action_runner_policy.v0_1.json",
+        "INBOX/VM3_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/PC_TO_VM3_DELIVERY_EVIDENCE.json",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/INBOX/VM3_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/TASKPACK_TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1.zip",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/INBOX/VM3_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/TASKPACK_TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1"
+      ],
+      "warnings": [
+        "pc_to_vm3_missing_request_ref:IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T014838Z-4F4C6FE0.json",
+        "pc_to_vm3_missing_result_ref:IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T014838Z-6D0AD7B1.json",
+        "pc_to_vm3_raw_evidence_not_fully_available_on_vm2"
+      ],
+      "errors": [],
+      "source_path": "INBOX/VM3_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/PC_TO_VM3_DELIVERY_EVIDENCE.json",
+      "target_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/INBOX/VM3_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/TASKPACK_TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1.zip",
+      "sha256": null,
+      "size_bytes": null
+    },
+    {
+      "route": "VM2_TO_VM3",
+      "source_contour": "VM2",
+      "destination_contour": "VM3",
+      "action_type": "VALIDATE_TRANSFER_REQUEST",
+      "status": "BLOCKED_ROUTE_UNAVAILABLE",
+      "created_utc": "2026-05-23T02:23:50Z",
+      "claim_boundary": "bounded route/path probe only",
+      "evidence_refs": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1/ACTION_LOGS/vm2_to_vm3_ssh_g.txt",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1/ACTION_LOGS/vm2_to_vm3_probe_run.json"
+      ],
+      "warnings": [],
+      "errors": [
+        "ssh_probe_failed:ssh: Could not resolve hostname imperium-vm3: Temporary failure in name resolution"
+      ],
+      "source_path": "",
+      "target_path": "",
+      "sha256": null,
+      "size_bytes": null
+    }
+  ],
+  "request_refs": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T022351Z-757E4B78.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T022351Z-00A68F46.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T022351Z-54B3AEBF.json"
+  ],
+  "result_refs": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T022351Z-9B528958.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T022351Z-36BA2D40.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T022351Z-7A9EDED8.json"
+  ],
+  "runner_ledger_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/ledgers/transfer_action_runner_ledger.jsonl",
+  "transfer_ledger_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/ledger/transfer_action_ledger.jsonl",
+  "view_state_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+  "context_source_mix": {
+    "taskpack_percent": 48,
+    "existing_newgen_repo_percent": 30,
+    "owner_handoff_percent": 12,
+    "organ_registry_percent": 5,
+    "servitor_inference_percent": 5,
+    "external_local_private_percent": 0
+  },
+  "not_proven": [
+    "production orchestration",
+    "autonomous remote execution",
+    "global all-routes live transfer claim"
+  ]
+}

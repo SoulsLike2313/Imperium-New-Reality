@@ -1,0 +1,82 @@
+{
+  "task_id": "TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1",
+  "timestamp_utc": "2026-06-01T16:09:28Z",
+  "owner_organ": "MECHANICUS",
+  "checks": {
+    "json_parse": [
+      {
+        "file": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/administratum_continuity_pack_finalization_receipt.json",
+        "exists": true,
+        "parse_ok": true
+      },
+      {
+        "file": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/fresh_continuity_pack_replay_receipt.json",
+        "exists": true,
+        "parse_ok": true
+      },
+      {
+        "file": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/fresh_current_truth_snapshot.json",
+        "exists": true,
+        "parse_ok": true
+      },
+      {
+        "file": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/fresh_git_truth_receipt.json",
+        "exists": true,
+        "parse_ok": true
+      },
+      {
+        "file": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/fresh_continuity_source_index.json",
+        "exists": true,
+        "parse_ok": true
+      },
+      {
+        "file": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/fresh_private_data_exclusion_receipt.json",
+        "exists": true,
+        "parse_ok": true
+      },
+      {
+        "file": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/fresh_stale_context_audit.json",
+        "exists": true,
+        "parse_ok": true
+      },
+      {
+        "file": "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/CONTRACTS/officio_final_owner_response_contract.json",
+        "exists": true,
+        "parse_ok": true
+      },
+      {
+        "file": "IMPERIUM_NEW_GENERATION/ORGANS/DOCTRINARIUM/LAWS/doctrinarium_non_block_git_closure_law.json",
+        "exists": true,
+        "parse_ok": true
+      },
+      {
+        "file": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/inquisition_final_response_and_git_closure_guard_receipt.json",
+        "exists": true,
+        "parse_ok": true
+      },
+      {
+        "file": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/mechanicus_validation_receipt.json",
+        "exists": true,
+        "parse_ok": true
+      },
+      {
+        "file": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/skill_next_candidates_registry_receipt.json",
+        "exists": false,
+        "parse_ok": false
+      }
+    ],
+    "required_markdown_present": {
+      "officio_contract_md": true,
+      "doctrinarium_law_md": true,
+      "fresh_handoff_ru_md": true,
+      "fresh_handoff_en_md": true
+    },
+    "sha256s_present": true
+  },
+  "replay_state": "SEPARATE_REPLAY_RUNNER_FOR_TARGET",
+  "replay_command": "python IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/SKILLS/CONTINUITY_PACK_SKILL/administratum_continuity_pack_skill_v0_1.py --repo-root . --task-id TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1",
+  "caps_triggered": [
+    "CAP_JSON_PARSE_CHECK_FAILED"
+  ],
+  "verdict": "BLOCK"
+}

@@ -1,0 +1,70 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1",
+  "timestamp_utc": "2026-05-29T23:59:16Z",
+  "builder_claims": [
+    {
+      "claim_id": "C01",
+      "claim": "Status normalization accepts CANDIDATE_NOT_CANON without warning when declared by policy/schema.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/SCHEMAS/matrix_status_policy.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "claim": "Negative fixture corpus is at least 10 and replay-detected.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/negative_fixture_manifest.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1/negative_fixtures_report.md"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "claim": "Synthetic start-task runtime corridor executes all five required steps.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1/synthetic_corridor_receipt.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1/synthetic_runtime_corridor_report.md"
+      ]
+    },
+    {
+      "claim_id": "C04",
+      "claim": "Five-scale efficiency delta is positive and replayable.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1/efficiency_delta_receipt.json",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/score_efficiency_delta.py"
+      ]
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "A01",
+      "target_claim_id": "C01",
+      "attack": "Could be fake if unknown statuses silently pass.",
+      "result": "RESISTED",
+      "evidence": "NF02 still fails unknown status with MATRIX_STATUS_INVALID.",
+      "downgrade_needed": false
+    },
+    {
+      "attack_id": "A02",
+      "target_claim_id": "C02",
+      "attack": "Could be fake if fixtures exist but are not executed.",
+      "result": "RESISTED",
+      "evidence": "13/13 fixtures detected in validator summary.",
+      "downgrade_needed": false
+    },
+    {
+      "attack_id": "A03",
+      "target_claim_id": "C03",
+      "attack": "Could overclaim real runtime corridor authority.",
+      "result": "CONFIRMED_RISK",
+      "evidence": "Corridor is explicitly synthetic and not real WARP runtime.",
+      "downgrade_needed": true
+    }
+  ],
+  "downgrade_rules_applied": [
+    "CAP_TEXT_ONLY_IMPLEMENTATION_NOT_TRIGGERED",
+    "CAP_NEGATIVE_FIXTURES_LT_10_NOT_TRIGGERED",
+    "SYNTHETIC_CORRIDOR_NOT_REAL_WARP"
+  ],
+  "final_verdict": "PASS_WITH_WARNINGS"
+}

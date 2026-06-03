@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Task Acceptance Policy",
+  "type": "object",
+  "required": [
+    "policy_id",
+    "version",
+    "decision_codes",
+    "required_task_fields",
+    "decision_rules"
+  ],
+  "properties": {
+    "policy_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "decision_codes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "ACCEPT",
+          "ACCEPT_WITH_WARNINGS",
+          "SPLIT_REQUIRED",
+          "CLARIFICATION_REQUIRED",
+          "BLOCKED_OUT_OF_SCOPE",
+          "BLOCKED_UNSAFE"
+        ]
+      },
+      "minItems": 6
+    },
+    "required_task_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decision_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "rule_id",
+          "if",
+          "decision",
+          "reason"
+        ],
+        "properties": {
+          "rule_id": {
+            "type": "string"
+          },
+          "if": {
+            "type": "string"
+          },
+          "decision": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
+

@@ -1,0 +1,31 @@
+{
+  "matrix_id": "INVALID_MISSING_OWNER_MATRIX",
+  "version": "0.1-test",
+  "support_organs": [
+    "Inquisition"
+  ],
+  "purpose": "Negative fixture: owner_organ is intentionally missing.",
+  "used_by": [
+    "SERVITOR"
+  ],
+  "required_questions": [
+    "What breaks when owner metadata is absent?"
+  ],
+  "pass_criteria": [
+    "Should never pass"
+  ],
+  "warn_criteria": [
+    "N/A"
+  ],
+  "block_criteria": [
+    "Missing owner_organ must block"
+  ],
+  "fake_green_flags": [
+    "OWNER_MISSING"
+  ],
+  "evidence_requirements": [
+    "Fixture should fail metadata checks"
+  ],
+  "current_status": "CANDIDATE",
+  "next_action": "Expect validator failure"
+}

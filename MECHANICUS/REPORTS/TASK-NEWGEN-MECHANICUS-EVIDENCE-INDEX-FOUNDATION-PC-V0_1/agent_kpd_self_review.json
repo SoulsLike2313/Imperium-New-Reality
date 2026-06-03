@@ -1,0 +1,42 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1",
+    "agent_role": "PC_SERVITOR",
+    "useful_outputs": [
+      "SQLite/FTS evidence index foundation under NewGen scope",
+      "Builder/query/check tooling for repeatable index refresh",
+      "Administratum handoff and Inquisition safety receipts",
+      "Compact coverage, query smoke, and linkage reports"
+    ],
+    "waste_points": [
+      "Initial checker coverage matching logic produced false WARN signals and required one correction cycle"
+    ],
+    "missing_tools": [
+      "Dedicated generic NewGen evidence coverage matcher for glob-to-index parity checks",
+      "Single command wrapper to run builder+query+checker with gate-aware status export"
+    ],
+    "generated_tools_to_preserve": [
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_evidence_index_builder_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_evidence_query_runner_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_evidence_index_v0_1.py"
+    ],
+    "recommended_script_absorption": [
+      "ABSORB_NOW: mechanicus_evidence_index_builder_v0_1.py",
+      "ABSORB_NOW: mechanicus_evidence_query_runner_v0_1.py",
+      "ABSORB_NOW: check_mechanicus_evidence_index_v0_1.py"
+    ],
+    "recommended_narrow_agent_profiles": [
+      "MECHANICUS_EVIDENCE_INDEX_SERVITOR_V0_1 for bounded index refresh and smoke validation",
+      "ADMINISTRATUM_EVIDENCE_LINKAGE_SERVITOR_V0_1 for task/commit chronicle handoff maintenance"
+    ],
+    "future_prompt_improvements": [
+      "Explicitly separate pre-commit and post-commit fields in closure/final report generation",
+      "Pin coverage semantics to snapshot timestamp to avoid late-report drift warnings"
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add explicit gate checklist item: rerun hygiene after py_compile and clean runtime artifacts",
+      "Add checker assertion that coverage warnings must not be produced by matcher false positives"
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

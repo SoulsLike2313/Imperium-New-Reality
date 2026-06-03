@@ -1,0 +1,72 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1",
+  "timestamp_utc": "2026-05-29T22:44:29Z",
+  "builder_claims": [
+    {
+      "claim_id": "C01",
+      "claim": "Validator suite exists and is replayable from shell and PowerShell runners.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_matrix_spine_validation.sh",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_matrix_spine_validation.ps1",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1/matrix_spine_validation_receipt.json"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "claim": "Schema mismatch has been reduced by aligning matrix_definition_schema.json to runtime matrix structures.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/SCHEMAS/matrix_definition_schema.json",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1/matrix_spine_validation_summary.json"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "claim": "At least three negative fixtures are validated and fail as expected.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_missing_owner_matrix.json",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_bad_status_matrix.json",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_red_team_verdict.json",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1/matrix_spine_validation_summary.json"
+      ]
+    },
+    {
+      "claim_id": "C04",
+      "claim": "Final status can be PASS_WITH_WARNINGS but not PASS due remaining non-canonical status aliases and missing full runtime corridor proof.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1/matrix_spine_validation_failures.jsonl"
+      ]
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "A01",
+      "target_claim_id": "C01",
+      "attack": "Could be fake if runner scripts exist but fail at runtime.",
+      "result": "RESISTED",
+      "evidence": "Validator run produced receipt and PASS_WITH_WARNINGS verdict.",
+      "downgrade_needed": false
+    },
+    {
+      "attack_id": "A02",
+      "target_claim_id": "C02",
+      "attack": "Could be fake if schema is weakened to always pass without meaningful checks.",
+      "result": "PARTIAL",
+      "evidence": "Schema is aligned to real matrix keys; validator still enforces owner/status/purpose/structure checks.",
+      "downgrade_needed": false
+    },
+    {
+      "attack_id": "A03",
+      "target_claim_id": "C04",
+      "attack": "Claiming PASS would be fake-green due unresolved runtime-corridor/canon gaps.",
+      "result": "CONFIRMED_RISK",
+      "evidence": "Red-team keeps verdict at PASS_WITH_WARNINGS and blocks PASS escalation.",
+      "downgrade_needed": true
+    }
+  ],
+  "downgrade_rules_applied": [
+    "NO_RUNTIME_ENFORCEMENT_WITHOUT_CORRIDOR_PROOF",
+    "NO_CANON_ADMISSION_WITHOUT_DOCTRINARIUM_PROCESS",
+    "STATUS_ALIAS_WARNINGS_BLOCK_FULL_PASS"
+  ],
+  "final_verdict": "PASS_WITH_WARNINGS"
+}

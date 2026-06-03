@@ -1,0 +1,85 @@
+{
+  "setting_id": "SET-ACCEPTANCE-POLICY-V0_1",
+  "title": "Task Acceptance Policy",
+  "version": "v0_1",
+  "state": "ACTIVE",
+  "scope": "prompt pack and task admission",
+  "applies_to_roles": [
+    "SERVITOR"
+  ],
+  "applies_to_modes": [
+    "EXECUTOR"
+  ],
+  "machine_rule": {
+    "decision_codes": [
+      "ACCEPT",
+      "ACCEPT_WITH_WARNINGS",
+      "SPLIT_REQUIRED",
+      "CLARIFICATION_REQUIRED",
+      "BLOCKED_OUT_OF_SCOPE",
+      "BLOCKED_UNSAFE"
+    ],
+    "required_task_fields": [
+      "task_id",
+      "expected_base_head",
+      "allowed_scope",
+      "requirements_file",
+      "evidence_policy_file"
+    ],
+    "decision_rules": [
+      {
+        "rule_id": "ACC-001",
+        "if": "missing required task fields",
+        "decision": "CLARIFICATION_REQUIRED",
+        "reason": "task contract is incomplete"
+      },
+      {
+        "rule_id": "ACC-002",
+        "if": "scope includes forbidden paths",
+        "decision": "BLOCKED_OUT_OF_SCOPE",
+        "reason": "scope violation risk"
+      },
+      {
+        "rule_id": "ACC-003",
+        "if": "unsafe or destructive request without owner gate",
+        "decision": "BLOCKED_UNSAFE",
+        "reason": "unsafe operation not admitted"
+      },
+      {
+        "rule_id": "ACC-004",
+        "if": "task is multi-domain without split boundaries",
+        "decision": "SPLIT_REQUIRED",
+        "reason": "precision and evidence quality risk"
+      },
+      {
+        "rule_id": "ACC-005",
+        "if": "requirements complete with minor non-blocking uncertainty",
+        "decision": "ACCEPT_WITH_WARNINGS",
+        "reason": "limited ambiguity with bounded mitigation"
+      },
+      {
+        "rule_id": "ACC-006",
+        "if": "all required fields and safety checks pass",
+        "decision": "ACCEPT",
+        "reason": "admission criteria satisfied"
+      }
+    ]
+  },
+  "human_summary": "Servitor accepts only bounded and auditable tasks and rejects unsafe/ambiguous scope.",
+  "acceptance_tests": [
+    "Decision codes are enumerable and stable.",
+    "Accepted and rejected examples map to this policy."
+  ],
+  "evidence_required": [
+    "EXAMPLES/accepted_tasks/*.json",
+    "EXAMPLES/rejected_tasks/*.json"
+  ],
+  "dependencies": [
+    "SCHEMAS/task_acceptance_policy.schema.json"
+  ],
+  "conflicts_with": [],
+  "supersedes": [],
+  "rollback_plan": "Revert decision rules to previous version and rerun acceptance checker tests.",
+  "owner_approval_required": true
+}
+

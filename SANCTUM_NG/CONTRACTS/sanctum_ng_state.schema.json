@@ -1,0 +1,322 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SANCTUM_NG_STATE_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "mode",
+    "generated_at_utc",
+    "git",
+    "truth_flags",
+    "phase_registry",
+    "communication_gate",
+    "pipeline_shape",
+    "phases",
+    "limitations",
+    "forbidden_claims",
+    "actions"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "SANCTUM_NG_STATE_V0_1"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "READ_ONLY_FOUNDATION"
+      ]
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "git": {
+      "type": "object",
+      "required": [
+        "head",
+        "branch",
+        "worktree_dirty"
+      ],
+      "properties": {
+        "head": {
+          "type": "string"
+        },
+        "branch": {
+          "type": "string"
+        },
+        "worktree_dirty": {
+          "type": "boolean"
+        },
+        "required_starting_head": {
+          "type": "string"
+        },
+        "head_matches_required_start": {
+          "type": "boolean"
+        }
+      }
+    },
+    "truth_flags": {
+      "type": "object",
+      "required": [
+        "read_only",
+        "foundation_only",
+        "production_ready",
+        "live_backend",
+        "autonomous_execution"
+      ],
+      "properties": {
+        "read_only": {
+          "type": "boolean"
+        },
+        "foundation_only": {
+          "type": "boolean"
+        },
+        "production_ready": {
+          "type": "boolean"
+        },
+        "live_backend": {
+          "type": "boolean"
+        },
+        "autonomous_execution": {
+          "type": "boolean"
+        }
+      }
+    },
+    "phase_registry": {
+      "type": "object",
+      "required": [
+        "path",
+        "loaded",
+        "phase_count"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "loaded": {
+          "type": "boolean"
+        },
+        "phase_count": {
+          "type": "integer"
+        },
+        "source_commit": {
+          "type": "string"
+        }
+      }
+    },
+    "communication_gate": {
+      "type": "object",
+      "required": [
+        "LIVE_LANGUAGE_COMPLIANCE",
+        "FINAL_REPORT_LANGUAGE",
+        "TECHNICAL_ARTIFACT_LANGUAGE",
+        "AUTHORITY_SOURCE",
+        "STATUS",
+        "KNOWN_LIMITATION"
+      ],
+      "properties": {
+        "LIVE_LANGUAGE_COMPLIANCE": {
+          "type": "string"
+        },
+        "FINAL_REPORT_LANGUAGE": {
+          "type": "string"
+        },
+        "TECHNICAL_ARTIFACT_LANGUAGE": {
+          "type": "string"
+        },
+        "AUTHORITY_SOURCE": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "STATUS": {
+          "type": "string"
+        },
+        "KNOWN_LIMITATION": {
+          "type": "string"
+        },
+        "VIOLATIONS": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "SELF_CORRECTIONS": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "pipeline_shape": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "required": [
+          "phase_no",
+          "name",
+          "status"
+        ],
+        "properties": {
+          "phase_no": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "PROVED",
+              "FOUNDATION",
+              "PARTIAL",
+              "WARN",
+              "MISSING"
+            ]
+          }
+        }
+      }
+    },
+    "phases": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "required": [
+          "phase_no",
+          "name",
+          "status",
+          "summary",
+          "evidence_refs",
+          "paths",
+          "limitations"
+        ],
+        "properties": {
+          "phase_no": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "PROVED",
+              "FOUNDATION",
+              "PARTIAL",
+              "WARN",
+              "MISSING"
+            ]
+          },
+          "summary": {
+            "type": "string"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "report_paths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "actions": {
+      "type": "object",
+      "required": [
+        "REFRESH_TRUTH_STATE",
+        "VALIDATE_TRUTH_STATE",
+        "READ_PHASE_REGISTRY",
+        "READ_ACTION_REGISTRY",
+        "READ_LATEST_REPORT_SUMMARY"
+      ],
+      "properties": {
+        "REFRESH_TRUTH_STATE": {
+          "type": "string"
+        },
+        "VALIDATE_TRUTH_STATE": {
+          "type": "string"
+        },
+        "READ_PHASE_REGISTRY": {
+          "type": "string"
+        },
+        "READ_ACTION_REGISTRY": {
+          "type": "string"
+        },
+        "READ_LATEST_REPORT_SUMMARY": {
+          "type": "string"
+        }
+      }
+    },
+    "current_truth_index": {
+      "type": "object",
+      "properties": {
+        "current_truth_root_path": {
+          "type": "string"
+        },
+        "report_status_index_path": {
+          "type": "string"
+        },
+        "evidence_source_map_path": {
+          "type": "string"
+        },
+        "evidence_map_unified_path": {
+          "type": "string"
+        },
+        "evidence_freshness_index_path": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "last_sync_utc": {
+          "type": "string"
+        },
+        "known_limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

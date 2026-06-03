@@ -1,0 +1,79 @@
+{
+  "schema_version": "IMPERIUM_ACCEPTANCE_GATES_V0_5",
+  "task_id": "TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5",
+  "gates": [
+    {
+      "id": "GATE_SCOPE_NEW_GENERATION_ONLY",
+      "verdict_rule": "BLOCK",
+      "requirement": "All source writes and task reports must be under IMPERIUM_NEW_GENERATION unless a narrow exception is documented and Owner-approved.",
+      "evidence": [
+        "scope_contamination_audit.json",
+        "git_diff_scope_report.json"
+      ]
+    },
+    {
+      "id": "GATE_REPORT_ROOT",
+      "verdict_rule": "BLOCK",
+      "requirement": "Final bundle/report path must be E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\<TASK_ID>.",
+      "evidence": [
+        "FINAL_RECEIPT.json",
+        "OWNER_REPORT_RU.md"
+      ]
+    },
+    {
+      "id": "GATE_MECHANICUS_CLICK",
+      "verdict_rule": "BLOCK",
+      "requirement": "Clicking Mechanicus opens/selects a Mechanicus operator panel.",
+      "evidence": [
+        "ui_interaction_proof.json",
+        "SCREENSHOTS/03_mechanicus_panel_after_click_1366x768.png"
+      ]
+    },
+    {
+      "id": "GATE_OPERATOR_PANEL_NOT_RAW_TERMINAL",
+      "verdict_rule": "BLOCK",
+      "requirement": "Primary Mechanicus panel is a structured operator console, not raw ASCII terminal logs.",
+      "evidence": [
+        "ui_interaction_proof.md",
+        "SCREENSHOTS/03_mechanicus_panel_after_click_1366x768.png",
+        "SCREENSHOTS/07_raw_technical_mode.png"
+      ]
+    },
+    {
+      "id": "GATE_RESPONSIVE_1366",
+      "verdict_rule": "WARN_OR_BLOCK",
+      "requirement": "1366x768 layout is usable without whole-page horizontal overflow and without hiding critical controls.",
+      "evidence": [
+        "responsive_layout_proof.json",
+        "SCREENSHOTS/03_mechanicus_panel_after_click_1366x768.png"
+      ]
+    },
+    {
+      "id": "GATE_SSE_TRUTH",
+      "verdict_rule": "BLOCK_IF_FAKE",
+      "requirement": "SSE status shown in UI must match tested transport. FALLBACK cannot be reported as SSE PASS.",
+      "evidence": [
+        "sse_live_status_proof.json",
+        "SCREENSHOTS/06_sse_live_state_visible.png"
+      ]
+    },
+    {
+      "id": "GATE_PLACEHOLDERS_HONEST",
+      "verdict_rule": "BLOCK",
+      "requirement": "Only Mechanicus is real unless another organ is truly implemented; placeholder and locked organs remain honestly labeled.",
+      "evidence": [
+        "CURRENT_SANCTUM_TRUTH_VERDICT.json",
+        "SCREENSHOTS/01_overview_before_mechanicus_click.png"
+      ]
+    },
+    {
+      "id": "GATE_GIT_CLEAN_FINAL",
+      "verdict_rule": "BLOCK_OR_WARN_WITH_OWNER_DECISION",
+      "requirement": "Final git status must be clean after commit/push or explicitly blocked with reason.",
+      "evidence": [
+        "FINAL_RECEIPT.json",
+        "validation_report.json"
+      ]
+    }
+  ]
+}

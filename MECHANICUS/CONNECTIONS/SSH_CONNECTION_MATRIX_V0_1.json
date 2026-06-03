@@ -1,0 +1,125 @@
+{
+  "schema_id": "SSH_CONNECTION_MATRIX_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1",
+  "generated_at_utc": "2026-05-23T03:27:56Z",
+  "private_key_material_allowed_in_repo": false,
+  "policy_refs": {
+    "alias_policy": "IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/SSH_ALIAS_POLICY_V0_1.md",
+    "command_shortcuts": "IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/COMMAND_SHORTCUTS_CATALOG_V0_1.md"
+  },
+  "connections": [
+    {
+      "connection_id": "PC_LOCAL_REPO",
+      "alias": "imperium-pc-local",
+      "contour": "PC",
+      "status": "REGISTERED_LOCAL_PATH_ONLY",
+      "route": "LOCAL_FILESYSTEM_ONLY",
+      "host": "LOCALHOST",
+      "port": null,
+      "user": "owner-local",
+      "repo_path": "E:\\IMPERIUM",
+      "key_reference_path": null,
+      "live_verified": false,
+      "notes": [
+        "Local path registration only.",
+        "No SSH runtime claim in VM2 task scope."
+      ]
+    },
+    {
+      "connection_id": "VM2_SSH_LOOPBACK_ALIAS",
+      "alias": "imperium-vm2",
+      "contour": "VM2",
+      "status": "REGISTERED_KNOWN_ROUTE_NOT_RUNTIME_TESTED",
+      "route": "127.0.0.1:2223",
+      "host": "127.0.0.1",
+      "port": 2223,
+      "user": "vboxuser2",
+      "repo_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-",
+      "key_reference_path": "%USERPROFILE%\\.ssh\\imperium_pc_to_vm2_ed25519_20260418",
+      "live_verified": false,
+      "notes": [
+        "Known route is documented for operator speed.",
+        "No private key material is stored in repo."
+      ]
+    },
+    {
+      "connection_id": "VM3_SSH_ALIAS",
+      "alias": "imperium-vm3",
+      "contour": "VM3",
+      "status": "REGISTERED_OFFLINE_NOT_VERIFIED",
+      "route": "UNAVAILABLE_IN_VM2_TASK_SCOPE",
+      "host": "UNKNOWN",
+      "port": null,
+      "user": "vboxuser3",
+      "repo_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+      "key_reference_path": null,
+      "live_verified": false,
+      "notes": [
+        "Registered in matrix for visibility.",
+        "Offline or route-not-provided in this bounded task."
+      ]
+    },
+    {
+      "connection_id": "THRONE_CORE_FUTURE_CONTOUR",
+      "alias": "imperium-throne-core",
+      "contour": "THRONE_CORE",
+      "status": "OFFLINE_OR_NOT_CONFIGURED",
+      "route": "OFFLINE_OR_NOT_CONFIGURED",
+      "host": "UNKNOWN",
+      "port": null,
+      "user": "unknown",
+      "repo_path": "unknown",
+      "key_reference_path": null,
+      "live_verified": false,
+      "notes": [
+        "Future contour placeholder only.",
+        "No runtime or connectivity claim is made."
+      ]
+    },
+    {
+      "connection_id": "VM2_TO_VM3_ALIAS_BOUNDED_ROUTE",
+      "alias": "imperium-vm3-from-vm2",
+      "contour": "VM2",
+      "status": "LIVE_BOUNDED_PROBE_CONFIRMED",
+      "route": "10.0.2.2:2225",
+      "host": "10.0.2.2",
+      "port": 2225,
+      "user": "vboxuser3",
+      "repo_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+      "key_reference_path": "~/.ssh/imperium_vm2_to_vm3_ed25519_20260523",
+      "live_verified": true,
+      "notes": [
+        "task_id:TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1",
+        "route:VM2_TO_VM3",
+        "route_status:PROVED",
+        "bounded_probe_only_no_production_claim",
+        "no_private_key_material_in_repo"
+      ]
+    },
+    {
+      "connection_id": "VM3_TO_VM2_ALIAS_BOUNDED_ROUTE",
+      "alias": "imperium-vm2-from-vm3",
+      "contour": "VM3",
+      "status": "LIVE_BOUNDED_PROBE_CONFIRMED",
+      "route": "10.0.2.2:2223",
+      "host": "10.0.2.2",
+      "port": 2223,
+      "user": "vboxuser2",
+      "repo_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-",
+      "key_reference_path": "~/.ssh/imperium_vm3_to_vm2_ed25519_20260523",
+      "live_verified": true,
+      "notes": [
+        "task_id:TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1",
+        "route:VM3_TO_VM2",
+        "route_status:PROVED",
+        "bounded_probe_only_no_production_claim",
+        "no_private_key_material_in_repo"
+      ]
+    }
+  ],
+  "known_limitations": [
+    "Alias installation across host contours is out of scope.",
+    "VM3 and Throne/Core are registered as non-live placeholders.",
+    "This matrix does not mutate user SSH configuration files."
+  ]
+}

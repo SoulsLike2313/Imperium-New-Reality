@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.administratum.transfer_gate.transfer_receipt.v0_1",
+  "title": "Administratum Transfer Receipt V0.1",
+  "type": "object",
+  "required": [
+    "transfer_id",
+    "correlation_id",
+    "source_actor",
+    "operator",
+    "gateway",
+    "target_actor",
+    "route",
+    "step_name",
+    "payload_sha256",
+    "source_head",
+    "signed_at_utc",
+    "verdict"
+  ],
+  "properties": {
+    "transfer_id": {
+      "type": "string",
+      "pattern": "^TRANSFER-"
+    },
+    "correlation_id": {
+      "type": "string",
+      "pattern": "^CORR-"
+    },
+    "source_actor": {
+      "type": "string"
+    },
+    "operator": {
+      "type": "string"
+    },
+    "gateway": {
+      "type": "string",
+      "const": "ADMINISTRATUM_AGENT"
+    },
+    "target_actor": {
+      "type": "string"
+    },
+    "route": {
+      "type": "string"
+    },
+    "step_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload_sha256": {
+      "type": "string",
+      "minLength": 64,
+      "maxLength": 64
+    },
+    "source_head": {
+      "type": "string",
+      "minLength": 7
+    },
+    "signed_at_utc": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string"
+    }
+  }
+}

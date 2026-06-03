@@ -1,0 +1,106 @@
+{
+  "scope_id": "json_schema_validation_task",
+  "version": "0.1",
+  "generated_at_utc": "2026-05-24T23:34:05Z",
+  "source_registry": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json",
+  "purpose": "Schema-first validation of JSON artifacts: cards, receipts, registry, taskpacks, scope exports.",
+  "target_task_types": [
+    "schema_validation",
+    "json_contract_enforcement",
+    "receipt_validation"
+  ],
+  "canon_allowed": [
+    "CAP-PLAYBOOK-SCHEMA-FIRST-CONTRACT",
+    "CAP-TOOL-PATH-POLICY-INTERNAL",
+    "CAP-TOOL-RECEIPT-MODELS-VALIDATORS"
+  ],
+  "sandbox_allowed": [
+    "CAP-TOOL-JSONSCHEMA",
+    "CODE_QUALITY_JSONSCHEMA",
+    "TOOLS_PATH_POLICY",
+    "TOOLS_RECEIPT_VALIDATOR",
+    "UTILITIES_JQ",
+    "UTILITIES_YQ"
+  ],
+  "candidate_context_only": [
+    "CODE_QUALITY_SCHEMA_FIRST_VALIDATION",
+    "REFERENCE_CODE_CAPABILITY_CARD_SCHEMA",
+    "REFERENCE_CODE_SAFE_JSON_WRITE_HELPER",
+    "REFERENCE_CODE_SCOPE_EXPORT_SCHEMA",
+    "REFERENCE_CODE_VALIDATION_RECEIPT_SCHEMA"
+  ],
+  "owner_decision_required": [
+    "CLOUD_LLM_ADAPTERS_CLOUD_MODEL_ROUTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_CLOUD_RECEIPT_MODEL_CANDIDATE",
+    "CLOUD_LLM_ADAPTERS_COST_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_OPENAI_COMPATIBLE_API_ADAPTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_PRIVACY_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_SECRET_POLICY_GATE",
+    "LOCAL_LLM_LLAMACPP_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LM_STUDIO_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LOCAL_MODEL_RUNNER_RESERVED",
+    "LOCAL_LLM_MODEL_CAPABILITY_CARD_PATTERN",
+    "LOCAL_LLM_OLLAMA_RESERVED_CANDIDATE",
+    "LOCAL_LLM_OPENAI_COMPATIBLE_LOCAL_ENDPOINT_PATTERN"
+  ],
+  "forbidden": [],
+  "required_receipts": [
+    "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/TASK_KERNEL_V0_1.schema.json",
+    "IMPERIUM_NEW_GENERATION/CONTRACTS/TOOL_ADMISSION/TOOL_CANDIDATE_RECORD.schema.json",
+    "administratum_evidence_map.json",
+    "cap-playbook-schema-first-contract_receipt.json",
+    "cap-tool-jsonschema_receipt.json",
+    "cap-tool-path-policy-internal_receipt.json",
+    "cap-tool-receipt-models-validators_receipt.json",
+    "code-quality-jsonschema_validation_receipt.json",
+    "code-quality-schema-first-validation_validation_receipt.json",
+    "reference-code-capability-card-schema_validation_receipt.json",
+    "reference-code-safe-json-write-helper_validation_receipt.json",
+    "reference-code-scope-export-schema_validation_receipt.json",
+    "reference-code-validation-receipt-schema_validation_receipt.json",
+    "schema_validation_receipt.json",
+    "scope_pack_check_report.json",
+    "src/imperium/receipts/__init__.py",
+    "src/imperium/receipts/model.py",
+    "src/imperium/receipts/validator.py",
+    "src/imperium/security/__init__.py",
+    "src/imperium/security/path_policy.py",
+    "tools-path-policy_validation_receipt.json",
+    "tools-receipt-validator_validation_receipt.json",
+    "utilities-jq_validation_receipt.json",
+    "utilities-yq_validation_receipt.json"
+  ],
+  "required_gates": [
+    "GATE-U00-GIT-TRUTH",
+    "GATE-U01-ROLE-ACK",
+    "GATE-U02-SCOPE-BOUNDARY",
+    "GATE-U04-EVIDENCE-RECEIPT",
+    "GATE-U05-STOP-CONDITIONS",
+    "GATE-U08-REPO-PURITY",
+    "GATE-U09-NO-FAKE-GREEN",
+    "GATE-U12-REPORT-OUTPUT-BUDGET",
+    "GATE-U13-PYTHON-TYPE-SAFETY",
+    "GATE-U14-WHOLE-REPO-SCOPE-RECON",
+    "GATE-U15-OPERATIONALITY-IMPACT",
+    "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+    "GATE-U20-AGENT-KPD-SELF-REVIEW",
+    "GATE-U21-COMMAND-CHUNKING"
+  ],
+  "warnings": [
+    "Candidate schema references remain context-only until SANDBOX/CANON promotion evidence exists."
+  ],
+  "examples_of_use": [
+    "python -m json.tool <artifact.json>",
+    "python -m jsonschema -i <artifact.json> <schema.json>"
+  ],
+  "future_promotion_candidates": [
+    "REFERENCE_CODE_SCOPE_EXPORT_SCHEMA",
+    "CODE_QUALITY_SCHEMA_FIRST_VALIDATION"
+  ],
+  "forbidden_actions": [
+    "schema bypass",
+    "manual-only JSON trust",
+    "fake PASS without schema evidence"
+  ],
+  "last_generated_from_commit": "5d22657b2fe8a319c9a4636549c53bfcc2ffa119"
+}

@@ -1,0 +1,44 @@
+{
+  "schema_id": "newgen_organ_verdict_v0_1",
+  "organ_id": "MECHANICUS",
+  "task_id": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+  "mode": "SERVITOR_QUERY",
+  "verdict": "PASS",
+  "applied_rules": [
+    "GATE_RICH_MANDATORY_FOR_WAVE1_TUI",
+    "GATE_CONTROLLED_CAPABILITY_ACQUISITION",
+    "GATE_SCRIPT_ARTIFACT_PRESERVATION",
+    "GATE_COMMAND_CHUNKING_DISCIPLINE"
+  ],
+  "required_actions": [
+    "Probe Rich import and version",
+    "Store capability registry evidence under Mechanicus TOOLS_REGISTRY"
+  ],
+  "forbidden_actions": [
+    "Claim TUI visual pass with plain fallback only",
+    "Perform uncontrolled package installs"
+  ],
+  "evidence_required": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/",
+    "wave1_organ_tui_smoke_report.json",
+    "FINAL_REPORT.md",
+    "closure_receipt.json"
+  ],
+  "owner_question": null,
+  "not_proven": [
+    "full production-grade tool admission framework",
+    "autonomic remediation loops"
+  ],
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/"
+  ],
+  "question": "What tools and capabilities are required and healthy?",
+  "rich_probe": {
+    "available": true,
+    "version": "13.7.1",
+    "module_path": "/usr/lib/python3/dist-packages/rich/__init__.py"
+  },
+  "generated_at_utc": "2026-05-24T01:26:56.284155+00:00"
+}

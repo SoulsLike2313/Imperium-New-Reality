@@ -1,0 +1,46 @@
+{
+  "contract_id": "TASK_ENTRY_CORRIDOR_CONTRACT_V0_3",
+  "status": "CANDIDATE_NOT_CANON",
+  "owner": "ASTRONOMICON",
+  "mode": "ALLOW_STAGE2_WITH_WARNINGS",
+  "launch_phrase": "start task",
+  "required_organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "required_inputs": [
+    "task_id",
+    "launch_phrase",
+    "taskpack_zip_path"
+  ],
+  "required_outputs": [
+    "taskpack_admission_receipt",
+    "task_route_manifest",
+    "task_start_ack",
+    "resolver_receipt",
+    "current_expected_task"
+  ],
+  "required_registry_files": [
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json"
+  ],
+  "blocking_caps": [
+    "CAP_ASTRONOMICON_TASKPACK_INTAKE_MISSING",
+    "CAP_TASK_REGISTRY_MISSING",
+    "CAP_CURRENT_EXPECTED_TASK_MISSING",
+    "CAP_TASK_ID_RESOLVER_MISSING",
+    "CAP_TASKPACK_ADMISSION_MISSING",
+    "CAP_DUPLICATE_TASK_ID_NOT_DETECTED",
+    "CAP_UNSAFE_EXTRACTION_PATH_NOT_BLOCKED",
+    "CAP_ROUTE_DOES_NOT_INCLUDE_8_ORGANS",
+    "CAP_MALFORMED_ADMISSION_RECEIPT",
+    "CAP_ROOT_TASKPACK_INBOX_CANON_MISUSE",
+    "CAP_EXTRACTED_MANIFEST_TASK_ID_MISMATCH"
+  ]
+}

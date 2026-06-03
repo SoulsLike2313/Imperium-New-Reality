@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Context Pack Consumption Receipt",
+  "type": "object",
+  "required": [
+    "task_id",
+    "context_pack_path",
+    "generated_at_utc",
+    "consumer_tool",
+    "consumed_items",
+    "summary",
+    "verdict"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "context_pack_path": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "consumer_tool": {
+      "type": "string"
+    },
+    "consumed_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "exists",
+          "read",
+          "sha256",
+          "byte_count",
+          "char_count",
+          "organ",
+          "role"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "exists": {
+            "type": "boolean"
+          },
+          "read": {
+            "type": "boolean"
+          },
+          "sha256": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "byte_count": {
+            "type": "integer"
+          },
+          "char_count": {
+            "type": "integer"
+          },
+          "organ": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "role": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "mandatory_count",
+        "read_count",
+        "missing_count",
+        "total_bytes",
+        "total_chars",
+        "broad_read_detected"
+      ],
+      "properties": {
+        "mandatory_count": {
+          "type": "integer"
+        },
+        "read_count": {
+          "type": "integer"
+        },
+        "missing_count": {
+          "type": "integer"
+        },
+        "total_bytes": {
+          "type": "integer"
+        },
+        "total_chars": {
+          "type": "integer"
+        },
+        "broad_read_detected": {
+          "type": "boolean"
+        }
+      }
+    },
+    "verdict": {
+      "type": "string"
+    }
+  }
+}

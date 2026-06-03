@@ -1,0 +1,91 @@
+{
+  "schema_id": "TRANSFER_CONSOLE_VALIDATOR_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1",
+  "generated_at_utc": "2026-05-22T23:55:26Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "core_files_exist",
+      "status": "PASS",
+      "details": "all transfer console core files exist"
+    },
+    {
+      "check_id": "contour_status_parse",
+      "status": "PASS",
+      "details": "contour status parses"
+    },
+    {
+      "check_id": "required_contours_present",
+      "status": "PASS",
+      "details": "PC/VM2/VM3 contour cards are present"
+    },
+    {
+      "check_id": "online_requires_probe_receipt",
+      "status": "PASS",
+      "details": "ONLINE statuses have bounded probe receipts"
+    },
+    {
+      "check_id": "request_records_exist",
+      "status": "PASS",
+      "details": "request records present (16)"
+    },
+    {
+      "check_id": "result_records_exist",
+      "status": "PASS",
+      "details": "result records present (24)"
+    },
+    {
+      "check_id": "no_forbidden_request_fields",
+      "status": "PASS",
+      "details": "no forbidden shell/exec request fields found"
+    },
+    {
+      "check_id": "no_sent_fetched_without_result",
+      "status": "PASS",
+      "details": "SENT/FETCHED request states are backed by result records"
+    },
+    {
+      "check_id": "sent_fetched_require_evidence_refs",
+      "status": "PASS",
+      "details": "SENT/FETCHED result states include evidence refs"
+    },
+    {
+      "check_id": "view_state_parse",
+      "status": "PASS",
+      "details": "view state parses"
+    },
+    {
+      "check_id": "context_source_mix_present",
+      "status": "PASS",
+      "details": "context source mix block exists in view state"
+    },
+    {
+      "check_id": "view_state_source_refs_exist",
+      "status": "PASS",
+      "details": "all view-state source refs exist"
+    },
+    {
+      "check_id": "foundation_boundary_labels_visible",
+      "status": "PASS",
+      "details": "FOUNDATION_ONLY and no-production labels are visible"
+    },
+    {
+      "check_id": "ui_transfer_console_visible",
+      "status": "PASS",
+      "details": "Transfer Console panel is present in Sanctum NG UI"
+    },
+    {
+      "check_id": "ui_transfer_console_render_logic",
+      "status": "PASS",
+      "details": "Transfer Console render logic exists in app.js"
+    },
+    {
+      "check_id": "report_bundle_progress",
+      "status": "PASS",
+      "details": "report bundle core files are present"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "no_fake_green_note": "Validation is bounded to foundation-only transfer records and explicit evidence constraints."
+}

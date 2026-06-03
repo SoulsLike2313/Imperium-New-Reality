@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Cap Closure State Schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "cap_id",
+    "state",
+    "evidence_for_state",
+    "clean_pass_impact"
+  ],
+  "properties": {
+    "task_id": { "type": "string" },
+    "cap_id": { "type": "string" },
+    "state": {
+      "enum": [
+        "OPEN",
+        "MITIGATED",
+        "CLOSED_BY_REPLAY",
+        "CLOSED_BY_EXTERNAL_REVIEW",
+        "ACCEPTED_WITH_WARNING",
+        "BLOCKING",
+        "SUPERSEDED"
+      ]
+    },
+    "opened_by": { "type": "string" },
+    "evidence_for_state": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "closure_head": { "type": "string" },
+    "applies_to_heads": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "clean_pass_impact": {
+      "enum": [
+        "BLOCKS_CLEAN_PASS",
+        "ALLOWS_PASS_WITH_WARNINGS",
+        "NO_BLOCK"
+      ]
+    },
+    "notes": { "type": "string" }
+  }
+}

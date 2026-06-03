@@ -1,0 +1,48 @@
+{
+  "task_id": "TASK-NEWGEN-COMMIT-36DF325-CLEANUP-HARDENING-PC-V0_1",
+  "policy": "NewGen Dashboard L2 cleanup policy",
+  "keep_source_patterns": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/*.py",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/*.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_server_v0_2.py",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/*.py",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TESTS/*.py",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/OWNER_INTENT/*schema*.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/*.json"
+  ],
+  "delete_runtime_junk_patterns": [
+    "**/server_pid.txt",
+    "**/server_stdout.log",
+    "**/server_stderr.log",
+    "**/action_last_results.json",
+    "**/action_history.jsonl",
+    "**/*.tmp",
+    "**/*.cache"
+  ],
+  "quarantine_generated_patterns": [
+    "IMPERIUM_NEW_GENERATION/OUTBOX/CONTINUITY_PACKS/*.zip",
+    "IMPERIUM_NEW_GENERATION/OUTBOX/CONTINUITY_PACKS/*.sha256",
+    "IMPERIUM_NEW_GENERATION/**/CONTINUITY_BUILD/**",
+    "IMPERIUM_NEW_GENERATION/**/TRANSFER_INTENTS/*.json",
+    "IMPERIUM_NEW_GENERATION/**/ACTION_RECEIPTS/*.json",
+    "IMPERIUM_NEW_GENERATION/OWNER_INTENT/DECISIONS/*.json",
+    "IMPERIUM_NEW_GENERATION/OWNER_INTENT/NOTES/*.json",
+    "IMPERIUM_NEW_GENERATION/OWNER_INTENT/QUESTIONS/*.json"
+  ],
+  "rewrite_required_targets": [
+    "important_six_dashboard_v0_2.html",
+    "important_six_dashboard_l2.css",
+    "important_six_dashboard_l2.js",
+    "README_L2.md",
+    "owner_question_schema_v0_1.json conceptual model",
+    "action grouping/button placement",
+    "Playwright visual expectations"
+  ],
+  "forbidden_this_task": [
+    "visual cockpit rewrite",
+    "new arsenal foundation",
+    "OSS installation",
+    "uncontrolled PTY",
+    "mutation smoke tests"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "generated_at_utc": "2026-05-24T23:35:59Z",
+  "contract": "Ghost_Evolve Evidence Index Contract V0.1",
+  "manual_search_work_converted": [
+    "reports/receipts lookup by task id and verdict",
+    "warning/error term discovery via FTS",
+    "task-to-commit linkage extraction",
+    "capability and receipt path discovery"
+  ],
+  "rebuild_steps": [
+    "run mechanicus_evidence_index_builder_v0_1.py",
+    "run mechanicus_evidence_query_runner_v0_1.py",
+    "run check_mechanicus_evidence_index_v0_1.py"
+  ],
+  "covered_categories": [
+    "ADMINISTRATUM_EVIDENCE_MAP",
+    "CAPABILITY_CARD",
+    "CLOSURE_RECEIPT",
+    "CONTRACT",
+    "FINAL_REPORT",
+    "INQUISITION_REPORT",
+    "INSTALL_RECEIPT",
+    "MECHANICUS_SCOPE_PACK",
+    "ROLE_PACK",
+    "TEMPLATE",
+    "TOOL_REPORT",
+    "UNKNOWN_JSON",
+    "UNKNOWN_MD",
+    "VALIDATION_RECEIPT"
+  ],
+  "intentional_exclusions": [
+    "private/local external context",
+    "full-repository blind indexing",
+    "binary payload content indexing",
+    "LLM/cloud source ingestion"
+  ],
+  "future_servitor_manual_work_reduced": [
+    "manual grep across every report folder",
+    "manual commit hash hunting in markdown/json files",
+    "manual warning/error trend extraction"
+  ],
+  "verdict": "PASS",
+  "raw_dump_status": "COMPACT_ONLY"
+}

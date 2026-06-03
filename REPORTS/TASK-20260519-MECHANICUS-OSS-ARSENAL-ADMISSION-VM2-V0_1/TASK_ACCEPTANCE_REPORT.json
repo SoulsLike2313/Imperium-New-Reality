@@ -1,0 +1,85 @@
+{
+  "schema_version": "TASK_ACCEPTANCE_REPORT_V0_1",
+  "task_id": "TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1",
+  "generated_at_utc": "2026-05-19T22:09:07.895553Z",
+  "rows": [
+    {
+      "id": "A1",
+      "requirement": "Officio role intake",
+      "status": "PASS",
+      "details": "OFFICIO_ROLE_ACK_SERVITOR_PRIME.json present."
+    },
+    {
+      "id": "A2",
+      "requirement": "No random install",
+      "status": "PASS",
+      "details": "Only read-only version/probe commands executed; no install commands run."
+    },
+    {
+      "id": "A3",
+      "requirement": "Tool registry",
+      "status": "PASS",
+      "details": "TOOL_INDEX/tool cards/policy/capability map generated and validated."
+    },
+    {
+      "id": "A4",
+      "requirement": "VM2 probe",
+      "status": "WARN",
+      "details": "VM2 probe report exists; vm2_not_found=7."
+    },
+    {
+      "id": "A5",
+      "requirement": "PC snapshot",
+      "status": "PASS",
+      "details": "PC probe snapshot consumed from intake external inputs."
+    },
+    {
+      "id": "A6",
+      "requirement": "Reader CLI",
+      "status": "PASS",
+      "details": "tool_registry_reader.py list command executed successfully."
+    },
+    {
+      "id": "A7",
+      "requirement": "Probe CLI",
+      "status": "PASS",
+      "details": "tool_availability_probe.py executed successfully on VM2."
+    },
+    {
+      "id": "A8",
+      "requirement": "JSON validity",
+      "status": "PASS",
+      "details": "Registry JSON and tool cards load successfully."
+    },
+    {
+      "id": "A9",
+      "requirement": "Forbidden scope",
+      "status": "PASS",
+      "details": "No THRONE/CUSTODES writes in touched paths."
+    },
+    {
+      "id": "A10",
+      "requirement": "Reports",
+      "status": "PASS",
+      "details": "Required MD+JSON reports generated in task report directory."
+    },
+    {
+      "id": "A11",
+      "requirement": "Commit/push",
+      "status": "WARN",
+      "details": "Pending at report-generation stage; verified in final execution step."
+    },
+    {
+      "id": "A12",
+      "requirement": "Language contract",
+      "status": "PASS",
+      "details": "Owner-facing live/final comments in Russian after Officio ACK; machine artifacts in English."
+    }
+  ],
+  "counts": {
+    "pass": 10,
+    "warn": 2,
+    "block": 0
+  },
+  "verdict": "PASS_WITH_WARNINGS"
+}

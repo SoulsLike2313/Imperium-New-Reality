@@ -1,0 +1,57 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1",
+  "generated_at_utc": "2026-05-24T21:39:58Z",
+  "starting_head": "21cfb651f66923d7361c3ea80cc22bd3fce6e4fd",
+  "starting_branch": "master",
+  "starting_status": "?? IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/PLAYBOOKS/MECHANICUS_QUALITY_GATE_PLAYBOOK_V0_1.md\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1/\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/evidence_index_smoke_v0_1.py\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_quality_gate_runner_v0_1.py\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_schema_validation_runner_v0_1.py\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_scope_pack_consumer_v0_1.py\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_taskpack_validator_v0_1.py\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/newgen_repo_hygiene_check_v0_1.py",
+  "starting_status_classification": "TASK_OWNED_DIRTY_EXPECTED",
+  "starting_status_unrelated_paths": [],
+  "starting_log": [
+    "21cfb65 TASK-20260524: add Officio language role gate foundation",
+    "4adfe39 TASK-20260524: export Mechanicus capability scopes",
+    "edaf291 TASK-20260524: provision Mechanicus code quality tools",
+    "ec8fb30 TASK-20260524: follow up Mechanicus Arsenal validation batch 001",
+    "8eb214c TASK-20260524: refresh Mechanicus Arsenal registry after validation batch 001",
+    "3fa8762 TASK-20260524: validate Mechanicus Arsenal batch 001",
+    "f5820d2 TASK-20260524: add Mechanicus Arsenal field guide batch 001",
+    "776be59 TASK-20260524: add Mechanicus Arsenal mass intake batch 001"
+  ],
+  "commands": [
+    {
+      "name": "scope_consumer",
+      "exit_code": 0,
+      "stdout_excerpt": "{\"task_id\": \"TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\", \"verdict\": \"PASS\", \"consumed_scope_count\": 6, \"missing_scope_count\": 0}",
+      "stderr_excerpt": ""
+    },
+    {
+      "name": "schema_runner",
+      "exit_code": 0,
+      "stdout_excerpt": "{\"task_id\": \"TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\", \"verdict\": \"PASS\", \"targets_total\": 26, \"schema_fail_count\": 0}",
+      "stderr_excerpt": ""
+    },
+    {
+      "name": "taskpack_validator",
+      "exit_code": 0,
+      "stdout_excerpt": "{\"task_id\": \"TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\", \"source_kind\": \"zip\", \"verdict\": \"PASS\", \"missing_required_files\": 0}",
+      "stderr_excerpt": ""
+    },
+    {
+      "name": "hygiene_runner",
+      "exit_code": 0,
+      "stdout_excerpt": "{\"task_id\": \"TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\", \"verdict\": \"WARN\", \"total_hits\": 18, \"tracked_dirty_count\": 0, \"untracked_count\": 8}",
+      "stderr_excerpt": ""
+    },
+    {
+      "name": "evidence_smoke",
+      "exit_code": 0,
+      "stdout_excerpt": "{\"task_id\": \"TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\", \"verdict\": \"PASS\", \"documents_indexed\": 17, \"fts_enabled\": true}",
+      "stderr_excerpt": ""
+    },
+    {
+      "name": "fake_canon_detector",
+      "exit_code": 0,
+      "stdout_excerpt": "{\"task_id\": \"TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\", \"verdict\": \"PASS\"}",
+      "stderr_excerpt": ""
+    }
+  ]
+}

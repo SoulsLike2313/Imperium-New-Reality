@@ -1,0 +1,122 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1",
+  "timestamp_utc": "2026-05-30T16:01:58Z",
+  "base_head": "c10f2b1c46d19e6a7614e25c4eff57b46b8baef5",
+  "implementation_truth_head": "3aa07798217fff0f594214d203e1783307a03a5e",
+  "closure_bundle_head": "PENDING_CLOSURE_BUNDLE_HEAD",
+  "independent_replay_status": "NONE",
+  "scales": {
+    "mechanicus": {
+      "before": 64,
+      "after": 82,
+      "delta": 18,
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json"
+      ]
+    },
+    "inquisition": {
+      "before": 41,
+      "after": 59,
+      "delta": 18,
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json"
+      ]
+    },
+    "officio": {
+      "before": 44,
+      "after": 53,
+      "delta": 9,
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/synthetic_corridor_receipt.json"
+      ]
+    },
+    "administratum": {
+      "before": 46,
+      "after": 58,
+      "delta": 12,
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/synthetic_corridor_receipt.json"
+      ]
+    },
+    "overall": {
+      "before": 69,
+      "after": 82,
+      "delta": 13,
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/synthetic_corridor_receipt.json"
+      ]
+    }
+  },
+  "baseline": {
+    "mechanicus": 64,
+    "inquisition": 41,
+    "officio": 44,
+    "administratum": 46,
+    "overall": 69
+  },
+  "after": {
+    "mechanicus": 82,
+    "inquisition": 59,
+    "officio": 53,
+    "administratum": 58,
+    "overall": 82
+  },
+  "delta": {
+    "mechanicus": 18,
+    "inquisition": 18,
+    "officio": 9,
+    "administratum": 12,
+    "overall": 13
+  },
+  "red_team_caps_consumed": [
+    "CAP_HEADS_MIXED_OR_AMBIGUOUS",
+    "CAP_NO_INDEPENDENT_REPLAY"
+  ],
+  "synthetic_score_cap_applied": 13,
+  "independent_replay_cap_applied": "CAP_NO_INDEPENDENT_REPLAY",
+  "caps_triggered": [
+    "CAP_HEADS_MIXED_OR_AMBIGUOUS",
+    "CAP_NO_INDEPENDENT_REPLAY"
+  ],
+  "final_verdict": "PASS_WITH_WARNINGS",
+  "verdict": "PASS_WITH_WARNINGS",
+  "evidence": [
+    {
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json",
+      "negative_fixture_total": 24,
+      "negative_fixture_detected": 24,
+      "fail_count": 0,
+      "warn_count": 0
+    },
+    {
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/synthetic_corridor_receipt.json",
+      "passed_steps": 5,
+      "overall": "PASS",
+      "corridor_type": "synthetic_corridor"
+    },
+    {
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/hard_red_team_verdict.json",
+      "read_ok": true,
+      "caps_detected": [
+        "CAP_NO_INDEPENDENT_REPLAY"
+      ],
+      "error": ""
+    },
+    {
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/final_closure_verifier_receipt.json",
+      "read_ok": true,
+      "caps_detected": [
+        "CAP_HEADS_MIXED_OR_AMBIGUOUS",
+        "CAP_NO_INDEPENDENT_REPLAY"
+      ],
+      "error": ""
+    }
+  ],
+  "notes": [
+    "Five-scale score is deterministic and stdlib-only.",
+    "Synthetic corridor overall delta is capped at +13 until real runtime proof.",
+    "Clean PASS is blocked when independent replay status is NONE.",
+    "Red-team caps are consumed before verdict emission."
+  ]
+}

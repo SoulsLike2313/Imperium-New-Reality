@@ -1,0 +1,61 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE2-MICROPILOT-RAW-EXTERNAL-REVIEW-BUNDLE-ATTACH-AND-FINALIZE-PC-V0_1",
+  "timestamp_utc": "2026-06-01T13:29:56Z",
+  "builder_claims": [
+    {
+      "claim_id": "C01",
+      "claim": "Sync+conflict resolution kept registry integrity and current PC task selection."
+    },
+    {
+      "claim_id": "C02",
+      "claim": "Raw external bundles are attached and hash-verified."
+    },
+    {
+      "claim_id": "C03",
+      "claim": "Reference mapping to reviewed target heads is valid."
+    },
+    {
+      "claim_id": "C04",
+      "claim": "External finalization cap can be closed for this task scope."
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "RT01",
+      "target_claim_id": "C01",
+      "attack": "Registry conflict may hide data loss after sync.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "git_sync_conflict_snapshot_receipt.json",
+        "git_sync_conflict_resolution_receipt.json"
+      ]
+    },
+    {
+      "attack_id": "RT02",
+      "target_claim_id": "C02",
+      "attack": "Attached bundles may be renamed or altered.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "raw_external_review_bundle_inventory.json"
+      ]
+    },
+    {
+      "attack_id": "RT03",
+      "target_claim_id": "C04",
+      "attack": "Cap might be over-closed while global readiness caps remain.",
+      "result": "RESISTED_WITH_DOWNGRADE",
+      "applied_downgrade": "FORCE_PASS_WITH_WARNINGS_ONLY",
+      "counter_evidence": [
+        "external_finalization_decision_matrix.json"
+      ]
+    }
+  ],
+  "caps_triggered": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME",
+    "CAP_DIRTY_START_OWNER_APPROVED_CONTINUATION"
+  ],
+  "final_verdict": "PASS_WITH_WARNINGS__EXTERNAL_FINALIZATION_CAP_CLOSED__GLOBAL_CAPS_CARRIED",
+  "clean_pass_allowed": false
+}

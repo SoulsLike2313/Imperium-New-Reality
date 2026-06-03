@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRANSFER_ACTION_RUNNER_POLICY_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "claim_boundary",
+    "allowed_action_types",
+    "allowed_contours",
+    "allowed_modes",
+    "safe_target_roots",
+    "forbidden_request_fields",
+    "no_shell_true",
+    "no_arbitrary_shell"
+  ],
+  "properties": {
+    "schema_id": { "const": "TRANSFER_ACTION_RUNNER_POLICY_V0_1" },
+    "claim_boundary": { "const": "FOUNDATION_ONLY" },
+    "allowed_action_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "SEND_TASKPACK_ZIP",
+          "FETCH_REPORT_BUNDLE_ZIP",
+          "REGISTER_TRANSFER_RESULT",
+          "VALIDATE_TRANSFER_REQUEST",
+          "DRY_RUN_TRANSFER"
+        ]
+      }
+    },
+    "allowed_contours": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["PC", "VM2", "VM3"] }
+    },
+    "allowed_modes": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["DRY_RUN", "EXECUTE"] }
+    },
+    "safe_target_roots": {
+      "type": "object",
+      "required": [
+        "VM2_TASKPACK_INBOX",
+        "VM3_TASKPACK_INBOX",
+        "VM2_REPORT_OUTBOX_CANDIDATE",
+        "VM3_REPORT_OUTBOX_CANDIDATE"
+      ],
+      "properties": {
+        "VM2_TASKPACK_INBOX": { "type": "string", "minLength": 1 },
+        "VM3_TASKPACK_INBOX": { "type": "string", "minLength": 1 },
+        "VM2_REPORT_OUTBOX_CANDIDATE": { "type": "string", "minLength": 1 },
+        "VM3_REPORT_OUTBOX_CANDIDATE": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "forbidden_request_fields": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "command",
+          "shell",
+          "exec",
+          "powershell",
+          "bash",
+          "cmd",
+          "arbitrary_command",
+          "remote_command"
+        ]
+      }
+    },
+    "no_shell_true": { "const": true },
+    "no_arbitrary_shell": { "const": true }
+  },
+  "additionalProperties": false
+}

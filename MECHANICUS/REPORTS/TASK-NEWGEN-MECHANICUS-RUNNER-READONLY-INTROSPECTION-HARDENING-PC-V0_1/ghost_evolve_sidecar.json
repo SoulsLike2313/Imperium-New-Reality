@@ -1,0 +1,23 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-RUNNER-READONLY-INTROSPECTION-HARDENING-PC-V0_1",
+  "organ": "MECHANICUS",
+  "lesson_type": "runner_checker_safety",
+  "pain_observed": [
+    "--help command mutated repository state",
+    "checker scripts mutated historical report files"
+  ],
+  "root_cause_summary": "Runner lacked argparse/read-only gate and checkers wrote to historical report paths by default.",
+  "new_rule": [
+    "Introspection commands must be read-only.",
+    "No import-time writes.",
+    "Historical reports must not be overwritten by default.",
+    "Write-capable scripts must declare explicit output paths or explicit write mode.",
+    "Read-only smoke gates compare git status before and after."
+  ],
+  "future_reuse": [
+    "Apply this contract to future Mechanicus runners/checkers.",
+    "Require same read-only discipline before Officio Agentis body task runners are admitted.",
+    "Track this as checker policy baseline in future Administratum registration cards."
+  ],
+  "status": "COMPLETED"
+}

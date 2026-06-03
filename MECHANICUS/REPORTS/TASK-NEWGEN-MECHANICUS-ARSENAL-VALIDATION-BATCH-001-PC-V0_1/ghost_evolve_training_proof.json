@@ -1,0 +1,42 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+  "generated_at_utc": "2026-05-24T18:15:17Z",
+  "before_manual_work": [
+    "Manual capability checks without shared receipt schema.",
+    "No unified validator for P0/P1/P2-lite/P3 readiness lanes.",
+    "No built-in scope export and fake-CANON detector execution corridor."
+  ],
+  "after_mechanicus_capabilities": [
+    "Unified validator executes safe checks and writes structured receipts.",
+    "Receipt builder enforces repeatable evidence fields.",
+    "Scope exporter outputs canon/sandbox/candidate/owner-decision slices.",
+    "Fake-CANON detector is runnable as dedicated Inquisition hook."
+  ],
+  "reusable_scripts_created_or_improved": [
+    "mechanicus_capability_validator_v0_1.py",
+    "mechanicus_validation_receipt_builder_v0_1.py",
+    "mechanicus_capability_scope_exporter_v0_1.py",
+    "mechanicus_fake_canon_detector_v0_2.py"
+  ],
+  "how_to_run_again": [
+    "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_validator_v0_1.py",
+    "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_fake_canon_detector_v0_2.py --help",
+    "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_scope_exporter_v0_1.py --help"
+  ],
+  "future_servitor_no_longer_manual": [
+    "Per-capability receipt formatting.",
+    "Promotion recommendation stitching.",
+    "Fake-CANON baseline scan.",
+    "Scope export packaging for next tasks."
+  ],
+  "receipts_proving_script_runs": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1/validation_results.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1/fake_canon_detector_report.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1/capability_scope_export_report.json"
+  ],
+  "limitations": [
+    "No uncontrolled installs were allowed, so some P1/P3 tools stay MISSING.",
+    "P5 LOCAL_LLM/CLOUD_LLM remains reserved and unvalidated.",
+    "CANON promotion was intentionally conservative in this batch."
+  ]
+}

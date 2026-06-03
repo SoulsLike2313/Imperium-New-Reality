@@ -1,0 +1,124 @@
+╭─────────────────────────────── TOP STATUS BAR ───────────────────────────────╮
+│ organ: SCHOLA_IMPERIALIS_AGENT                                               │
+│ identity/lore: Lessons, training packs, examples, and skill growth loops.    │
+│ backend_truth: head=57cf210f2516fb001adc42a4f283a8bd4e647ec8 branch=master   │
+│ dirty=yes                                                                    │
+│ visual_status: PASS_RICH | renderer: rich                                    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─────────── LEFT WORK ZONE ───────────╮╭───────── RIGHT COMMAND ZONE ─────────╮
+│ latest_output:                       ││ active_command_list:                 │
+│ once_mode_command=identity           ││ status, check, where, identity,      │
+│                                      ││ pack, shell, help, lesson-register,  │
+│                                      ││ training-pack-outline, skill-map,    │
+│                                      ││ example-check                        │
+│                                      ││                                      │
+│                                      ││                                      │
+│                                      ││                                      │
+│                                      ││                                      │
+│                                      ││                                      │
+│                                      ││                                      │
+╰──────────────────────────────────────╯╰──────────────────────────────────────╯
+╭────────────────────────────── BOTTOM EVENT BAR ──────────────────────────────╮
+│ latest_report_path:                                                          │
+│ /home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS │
+│ /SCHOLA_IMPERIALIS_AGENT/REPORTS/base_half_check_report.json                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+{
+  "organ": "SCHOLA_IMPERIALIS_AGENT",
+  "summary": "Lessons, training packs, examples, and skill growth loops.",
+  "profile": {
+    "schema_version": "ORGAN_AGENT_PROFILE_BASE_HALF_V0_1",
+    "task_id": "TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1",
+    "organ": "SCHOLA_IMPERIALIS_AGENT",
+    "organ_slug": "schola_imperialis",
+    "maturity": "BASE_HALF",
+    "summary": "Lessons, training packs, examples, and skill growth loops.",
+    "mission": "Capture lessons, maintain training assets, and evaluate agent growth.",
+    "required_commands": [
+      "status",
+      "check",
+      "where",
+      "identity",
+      "pack",
+      "shell",
+      "help"
+    ],
+    "forbidden_organs": [
+      "THRONE",
+      "CUSTODES"
+    ],
+    "visual_status": "WARN"
+  },
+  "identity_profile": {
+    "schema_version": "ORGAN_IDENTITY_PROFILE_V0_1",
+    "task_id": "TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1",
+    "organ": "SCHOLA_IMPERIALIS_AGENT",
+    "identity_summary": "Register lessons, outline training packs, map skills, and verify examples.",
+    "mission": "Turn execution knowledge into reusable training primitives and examples.",
+    "scope_boundary": {
+      "forbidden_terms": [
+        "THRONE",
+        "CUSTODES"
+      ],
+      "allowed_focus": "Identity Half + Rich Shell + domain checks for this organ"
+    },
+    "domain_commands": [
+      "lesson-register",
+      "training-pack-outline",
+      "skill-map",
+      "example-check"
+    ],
+    "domain_aliases": {}
+  },
+  "lore_functions": {
+    "schema_version": "ORGAN_LORE_FUNCTIONS_V0_1",
+    "task_id": "TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1",
+    "organ": "SCHOLA_IMPERIALIS_AGENT",
+    "functions": [
+      {
+        "id": "schola-lore-001",
+        "name": "Lesson Register",
+        "description": "Collect current lesson/example references."
+      },
+      {
+        "id": "schola-lore-002",
+        "name": "Training Pack Outline",
+        "description": "Define required shape of training package."
+      },
+      {
+        "id": "schola-lore-003",
+        "name": "Skill Cartography",
+        "description": "Map available skills and supporting artifacts."
+      },
+      {
+        "id": "schola-lore-004",
+        "name": "Example Integrity",
+        "description": "Verify domain example artifacts exist."
+      }
+    ]
+  },
+  "domain_commands": {
+    "schema_version": "ORGAN_DOMAIN_COMMANDS_V0_1",
+    "task_id": "TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1",
+    "organ": "SCHOLA_IMPERIALIS_AGENT",
+    "commands": {
+      "lesson-register": {
+        "description": "List lesson/example anchors for current Schola scope."
+      },
+      "training-pack-outline": {
+        "description": "Outline required training-pack components."
+      },
+      "skill-map": {
+        "description": "Map currently visible skills/resources for training flow."
+      },
+      "example-check": {
+        "description": "Verify domain example files are present and readable."
+      }
+    },
+    "alias_map": {}
+  },
+  "identity_baseline_excerpt": "# IDENTITY BASELINE :: SCHOLA_IMPERIALIS_AGENT\n\n## Semantic Role\n- Lessons, training packs, examples, and skill growth loops.\n\n## Operational Mission\n- Capture lessons, maintain training assets, and evaluate agent growth.\n\n## Out Of Scope\n- THRONE\n- CUSTODES\n\n## Base Half Limits\n- Skeleton-level semantics only.\n- Advanced workflows and deep specialization remain future work.",
+  "identity_profile_excerpt": "# SCHOLA_IMPERIALIS_AGENT Identity Profile\n\n- task_id: `TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1`\n- organ: `SCHOLA_IMPERIALIS_AGENT`\n- identity_summary: Register lessons, outline training packs, map skills, and verify examples.\n- mission: Turn execution knowledge into reusable training primitives and examples.\n\n## Domain Command Set\n- `lesson-register`: List lesson/example anchors for current Schola scope.\n- `training-pack-outline`: Outline required training-pack components.\n- `skill-map`: Map currently visible skills/resources for training flow.\n- `example-check`: Verify domain example files are present and readable.\n\n## Scope and Boundaries\n- Build bounded organ behavior and evidence outputs only.\n- Never claim PASS without evidence receipts.\n- Never touch THRONE or CUSTODES paths.",
+  "timestamp_utc": "2026-05-19T21:06:27.858755+00:00"
+}
+

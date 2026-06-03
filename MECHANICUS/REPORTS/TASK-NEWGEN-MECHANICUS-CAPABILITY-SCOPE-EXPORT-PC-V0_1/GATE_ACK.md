@@ -1,0 +1,38 @@
+GATE_ACK:
+- task_id: TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1
+- current_head: edaf291236e1a88dd1ee9715f8431b1d6c3501af
+- gatepack_path: C:/Users/PC/Downloads/TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1_DOSSIER.zip
+- gatepack_sha256: D97FB095608ADCB3D0831FF53CFD094F670A345E2CE3A1C8BC92E1A28F8E7A28
+- read_gates: GATE-U00-GIT-TRUTH, GATE-U01-ROLE-ACK, GATE-U02-SCOPE-BOUNDARY, GATE-U04-EVIDENCE-RECEIPT, GATE-U05-STOP-CONDITIONS, GATE-U08-REPO-PURITY, GATE-U09-NO-FAKE-GREEN, GATE-U12-REPORT-OUTPUT-BUDGET, GATE-U13-PYTHON-TYPE-SAFETY, GATE-U14-WHOLE-REPO-SCOPE-RECON, GATE-U15-OPERATIONALITY-IMPACT, GATE-U16-BILINGUAL-UI, GATE-U17-DELIVERABLE-PACKAGE, GATE-U18-AGENT-FACTORY-COMPLIANCE, GATE-U19-SCRIPT-ARTIFACT-PRESERVATION, GATE-U20-AGENT-KPD-SELF-REVIEW, GATE-U21-COMMAND-CHUNKING
+- accepted_stop_conditions: starting HEAD mismatch; unrelated dirty files appear; forbidden path required; expected source files missing/unparseable; scope pack checker fails critically; report budget overflow without owner gate; accidental install/prototype/LLM-cloud activation attempt
+- scope_boundary: Create and validate Mechanicus capability-scope export artifacts only (7 scope packs, schema/index/manifest, exporter/checker tools, task reports/receipts) under Mechanicus New Generation paths.
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/*
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_scope_exporter_v0_2.py
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_scope_packs_v0_1.py
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1/*
+- forbidden_paths:
+  - IMPERIUM_TEST_VERSION/**
+  - ORGANS/SANCTUM/** runtime/UI implementation paths
+  - src/**
+  - any React/Vite prototype directories
+  - any Playwright browser install paths
+  - LOCAL_LLM/** activation paths
+  - CLOUD_LLM_ADAPTERS/** activation paths
+  - .git/hooks/** modifications
+- expected_receipts:
+  - FINAL_REPORT.md
+  - scope_export_manifest.json
+  - scope_pack_check_report.json
+  - scope_pack_coverage_report.json
+  - servitor_consumption_examples_report.json
+  - forbidden_capability_guard_report.json
+  - fake_canon_detector_report.json
+  - inquisition_cleanliness_report.json
+  - administratum_evidence_map.json
+  - ghost_evolve_scope_export_training_proof.json
+  - closure_receipt.json
+- repo_recon_required: PARTIAL_MECHANICUS_SCOPE_ONLY
+- script_absorption_required: YES
+- clarification_needed: NO
+- verdict: PASS

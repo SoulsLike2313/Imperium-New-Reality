@@ -1,0 +1,116 @@
+{
+  "scope_id": "mechanicus_tool_validation_task",
+  "version": "0.1",
+  "generated_at_utc": "2026-05-24T23:34:05Z",
+  "source_registry": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json",
+  "purpose": "Validate Arsenal capabilities and produce receipts/status recommendations without fake CANON.",
+  "target_task_types": [
+    "tool_validation",
+    "arsenal_receipt_audit",
+    "registry_sync_check"
+  ],
+  "canon_allowed": [
+    "CAP-TOOL-COMMAND-GATEWAY-INTERNAL",
+    "CAP-TOOL-PATH-POLICY-INTERNAL",
+    "CAP-TOOL-RECEIPT-MODELS-VALIDATORS"
+  ],
+  "sandbox_allowed": [
+    "CAP-PLAYBOOK-MECHANICUS-ARSENAL-INTAKE",
+    "TOOLS_COMMAND_GATEWAY",
+    "TOOLS_PATH_POLICY",
+    "TOOLS_RECEIPT_VALIDATOR",
+    "TOOLS_SCOPE_REVIEW_TOOL"
+  ],
+  "candidate_context_only": [
+    "ALGORITHMS_CAPABILITY_PROMOTION_RULES",
+    "ALGORITHMS_DIFF_CLASSIFIER",
+    "ALGORITHMS_EVIDENCE_RANKING",
+    "ALGORITHMS_FAKE_GREEN_DETECTOR",
+    "EXAMPLES_MECHANICUS_TOOL_INTAKE_EXAMPLE",
+    "PLAYBOOKS_CANDIDATE_CHECK_PLAYBOOK",
+    "PLAYBOOKS_SCOPE_REVIEW_PLAYBOOK",
+    "PROMPTING_PATTERNS_NO_FAKE_GREEN_RESPONSE_PATTERN",
+    "SEARCH_INDEXING_RECEIPT_PATH_INDEX",
+    "SEARCH_INDEXING_REPORT_PATH_INDEX",
+    "TOOLS_CANDIDATE_CHECK_WORKFLOW"
+  ],
+  "owner_decision_required": [
+    "CLOUD_LLM_ADAPTERS_CLOUD_MODEL_ROUTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_CLOUD_RECEIPT_MODEL_CANDIDATE",
+    "CLOUD_LLM_ADAPTERS_COST_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_OPENAI_COMPATIBLE_API_ADAPTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_PRIVACY_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_SECRET_POLICY_GATE",
+    "LOCAL_LLM_LLAMACPP_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LM_STUDIO_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LOCAL_MODEL_RUNNER_RESERVED",
+    "LOCAL_LLM_MODEL_CAPABILITY_CARD_PATTERN",
+    "LOCAL_LLM_OLLAMA_RESERVED_CANDIDATE",
+    "LOCAL_LLM_OPENAI_COMPATIBLE_LOCAL_ENDPOINT_PATTERN"
+  ],
+  "forbidden": [],
+  "required_receipts": [
+    "algorithms-capability-promotion-rules_validation_receipt.json",
+    "algorithms-diff-classifier_validation_receipt.json",
+    "algorithms-evidence-ranking_validation_receipt.json",
+    "algorithms-fake-green-detector_validation_receipt.json",
+    "cap-playbook-mechanicus-arsenal-intake_receipt.json",
+    "cap-tool-command-gateway-internal_receipt.json",
+    "cap-tool-path-policy-internal_receipt.json",
+    "cap-tool-receipt-models-validators_receipt.json",
+    "capability_status_change_report.json",
+    "examples-mechanicus-tool-intake-example_validation_receipt.json",
+    "fake_canon_detector_report.json",
+    "playbooks-candidate-check-playbook_validation_receipt.json",
+    "playbooks-scope-review-playbook_validation_receipt.json",
+    "prompting-patterns-no-fake-green-response-pattern_validation_receipt.json",
+    "registry_sync_report.json",
+    "search-indexing-receipt-path-index_validation_receipt.json",
+    "search-indexing-report-path-index_validation_receipt.json",
+    "src/imperium/receipts/__init__.py",
+    "src/imperium/receipts/model.py",
+    "src/imperium/receipts/validator.py",
+    "src/imperium/security/__init__.py",
+    "src/imperium/security/command_gateway.py",
+    "src/imperium/security/path_policy.py",
+    "tools-candidate-check-workflow_validation_receipt.json",
+    "tools-command-gateway_validation_receipt.json",
+    "tools-path-policy_validation_receipt.json",
+    "tools-receipt-validator_validation_receipt.json",
+    "tools-scope-review-tool_validation_receipt.json",
+    "validation_receipt.json"
+  ],
+  "required_gates": [
+    "GATE-U00-GIT-TRUTH",
+    "GATE-U01-ROLE-ACK",
+    "GATE-U02-SCOPE-BOUNDARY",
+    "GATE-U04-EVIDENCE-RECEIPT",
+    "GATE-U05-STOP-CONDITIONS",
+    "GATE-U08-REPO-PURITY",
+    "GATE-U09-NO-FAKE-GREEN",
+    "GATE-U12-REPORT-OUTPUT-BUDGET",
+    "GATE-U13-PYTHON-TYPE-SAFETY",
+    "GATE-U14-WHOLE-REPO-SCOPE-RECON",
+    "GATE-U15-OPERATIONALITY-IMPACT",
+    "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+    "GATE-U20-AGENT-KPD-SELF-REVIEW",
+    "GATE-U21-COMMAND-CHUNKING"
+  ],
+  "warnings": [
+    "Candidate algorithms/workflows are planning-only unless separately validated."
+  ],
+  "examples_of_use": [
+    "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_validator_v0_1.py",
+    "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_fake_canon_detector_v0_2.py"
+  ],
+  "future_promotion_candidates": [
+    "ALGORITHMS_FAKE_GREEN_DETECTOR",
+    "TOOLS_SCOPE_REVIEW_TOOL"
+  ],
+  "forbidden_actions": [
+    "fake CANON",
+    "status changes without receipt",
+    "receipt omission for critical validation claim"
+  ],
+  "last_generated_from_commit": "5d22657b2fe8a319c9a4636549c53bfcc2ffa119"
+}

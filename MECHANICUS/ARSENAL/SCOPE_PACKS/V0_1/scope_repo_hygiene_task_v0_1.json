@@ -1,0 +1,110 @@
+{
+  "scope_id": "repo_hygiene_task",
+  "version": "0.1",
+  "generated_at_utc": "2026-05-24T23:34:05Z",
+  "source_registry": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json",
+  "purpose": "NewGen-scoped hygiene checks: dirty-tree/runtime-junk/fake-green under Inquisition oversight.",
+  "target_task_types": [
+    "repo_hygiene",
+    "inquisition_cleanliness_audit",
+    "runtime_junk_scan"
+  ],
+  "canon_allowed": [
+    "CAP-TOOL-PATH-POLICY-INTERNAL"
+  ],
+  "sandbox_allowed": [
+    "CAP-UTILITY-GIT",
+    "CAP-UTILITY-POWERSHELL",
+    "LANGUAGES_POWERSHELL",
+    "TOOLS_GIT",
+    "TOOLS_PATH_POLICY"
+  ],
+  "candidate_context_only": [
+    "ALGORITHMS_DIFF_CLASSIFIER",
+    "ALGORITHMS_DIRTY_TREE_CLASSIFIER",
+    "ALGORITHMS_FAKE_GREEN_DETECTOR",
+    "ALGORITHMS_RUNTIME_JUNK_CLASSIFIER",
+    "EXAMPLES_INQUISITION_HYGIENE_SCAN_EXAMPLE",
+    "PLAYBOOKS_CLEAN_WORKTREE_PLAYBOOK",
+    "PLAYBOOKS_COMMIT_PUSH_GATE_PLAYBOOK",
+    "PLAYBOOKS_INQUISITION_HYGIENE_PLAYBOOK",
+    "PLAYBOOKS_NO_RUNTIME_JUNK_PLAYBOOK",
+    "SEARCH_INDEXING_RECEIPT_PATH_INDEX",
+    "SEARCH_INDEXING_REPORT_PATH_INDEX",
+    "TOOLS_COMMIT_PUSH_WORKFLOW"
+  ],
+  "owner_decision_required": [
+    "CLOUD_LLM_ADAPTERS_CLOUD_MODEL_ROUTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_CLOUD_RECEIPT_MODEL_CANDIDATE",
+    "CLOUD_LLM_ADAPTERS_COST_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_OPENAI_COMPATIBLE_API_ADAPTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_PRIVACY_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_SECRET_POLICY_GATE",
+    "LOCAL_LLM_LLAMACPP_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LM_STUDIO_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LOCAL_MODEL_RUNNER_RESERVED",
+    "LOCAL_LLM_MODEL_CAPABILITY_CARD_PATTERN",
+    "LOCAL_LLM_OLLAMA_RESERVED_CANDIDATE",
+    "LOCAL_LLM_OPENAI_COMPATIBLE_LOCAL_ENDPOINT_PATTERN"
+  ],
+  "forbidden": [],
+  "required_receipts": [
+    "algorithms-diff-classifier_validation_receipt.json",
+    "algorithms-dirty-tree-classifier_validation_receipt.json",
+    "algorithms-fake-green-detector_validation_receipt.json",
+    "algorithms-runtime-junk-classifier_validation_receipt.json",
+    "cap-tool-path-policy-internal_receipt.json",
+    "cap-utility-git_receipt.json",
+    "cap-utility-powershell_receipt.json",
+    "examples-inquisition-hygiene-scan-example_validation_receipt.json",
+    "fake_canon_detector_report.json",
+    "inquisition_cleanliness_report.json",
+    "languages-powershell_validation_receipt.json",
+    "playbooks-clean-worktree-playbook_validation_receipt.json",
+    "playbooks-commit-push-gate-playbook_validation_receipt.json",
+    "playbooks-inquisition-hygiene-playbook_validation_receipt.json",
+    "playbooks-no-runtime-junk-playbook_validation_receipt.json",
+    "scope_pack_check_report.json",
+    "search-indexing-receipt-path-index_validation_receipt.json",
+    "search-indexing-report-path-index_validation_receipt.json",
+    "src/imperium/security/__init__.py",
+    "src/imperium/security/path_policy.py",
+    "tools-commit-push-workflow_validation_receipt.json",
+    "tools-git_validation_receipt.json",
+    "tools-path-policy_validation_receipt.json"
+  ],
+  "required_gates": [
+    "GATE-U00-GIT-TRUTH",
+    "GATE-U01-ROLE-ACK",
+    "GATE-U02-SCOPE-BOUNDARY",
+    "GATE-U04-EVIDENCE-RECEIPT",
+    "GATE-U05-STOP-CONDITIONS",
+    "GATE-U08-REPO-PURITY",
+    "GATE-U09-NO-FAKE-GREEN",
+    "GATE-U12-REPORT-OUTPUT-BUDGET",
+    "GATE-U13-PYTHON-TYPE-SAFETY",
+    "GATE-U14-WHOLE-REPO-SCOPE-RECON",
+    "GATE-U15-OPERATIONALITY-IMPACT",
+    "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+    "GATE-U20-AGENT-KPD-SELF-REVIEW",
+    "GATE-U21-COMMAND-CHUNKING"
+  ],
+  "warnings": [
+    "Hygiene work must stay bounded to declared scope and touched paths."
+  ],
+  "examples_of_use": [
+    "git status --short",
+    "git diff --name-status",
+    "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_fake_canon_detector_v0_2.py"
+  ],
+  "future_promotion_candidates": [
+    "ALGORITHMS_DIRTY_TREE_CLASSIFIER",
+    "PLAYBOOKS_INQUISITION_HYGIENE_PLAYBOOK"
+  ],
+  "forbidden_actions": [
+    "broad full repo cleanup",
+    "unreviewed deletion",
+    "runtime-junk cleanup without evidence receipt"
+  ],
+  "last_generated_from_commit": "5d22657b2fe8a319c9a4636549c53bfcc2ffa119"
+}

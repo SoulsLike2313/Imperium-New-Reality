@@ -1,0 +1,34 @@
+{
+  "task_id": "TASK-NEWGEN-FIVE-ORGAN-ALIGNMENT-CHECK-VM3-V0_1",
+  "pain_id": "ROUTE_MEMORY_LOSS_PC_TO_VM3",
+  "verdict": "PASS",
+  "status": "REDUCED",
+  "checks": [
+    {
+      "check_id": "ROUTE_ALIAS_VISIBLE",
+      "result": "PASS",
+      "evidence_path": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/REPORTS/TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1/pc_to_vm3_direct_route_card.json",
+      "details": "Alias imperium-vm3 present with remote user and inbox."
+    },
+    {
+      "check_id": "CANONICAL_COMMANDS_VISIBLE",
+      "result": "PASS",
+      "evidence_path": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/REPORTS/TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1/canonical_transfer_commands.md",
+      "details": "Probe/send/verify commands documented for stable reuse."
+    },
+    {
+      "check_id": "ROUTE_PROOF_RECEIPT_PRESENT",
+      "result": "PASS",
+      "evidence_path": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/REPORTS/TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1/route_registration_receipt.json",
+      "details": "Route registration receipt binds proof task and alias."
+    },
+    {
+      "check_id": "IDE_REQUIREMENT_RECORDED",
+      "result": "PASS",
+      "evidence_path": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/REPORTS/TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1/owner_pain_map.json",
+      "details": "Future IDE visibility requirement explicitly captured."
+    }
+  ],
+  "remaining_gap": "Need future read-only IDE panel to surface route card and command copy flow.",
+  "next_action": "Carry route card visibility into Administratum File Atlas/passport index."
+}

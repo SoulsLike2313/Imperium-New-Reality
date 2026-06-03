@@ -1,0 +1,33 @@
+{
+  "task_id": "TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1",
+  "current_head": "6d839d5949d7e305639b222fea26d159fe98b2c4",
+  "scope": "IMPERIUM_NEW_GENERATION only",
+  "allowed_write_paths": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/**",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1/**"
+  ],
+  "forbidden_write_paths": [
+    "ORGANS/**",
+    "IMPERIUM_TEST_VERSION/**",
+    "INBOX/**",
+    ".git/**"
+  ],
+  "stop_conditions": [
+    "git_truth_mismatch",
+    "dirty_worktree_before_admission",
+    "missing_preflight_or_contract_inputs",
+    "owner_verdict_needed_from_organ_route",
+    "forbidden_path_required_to_complete_task"
+  ],
+  "verdict_target": "PASS_FOR_IMPORTANT_SIX_TUI_API_DASHBOARD_L1_ONLY",
+  "not_proven": [
+    "true interactive terminal",
+    "real-time bidirectional organ sessions",
+    "Owner Verdict button",
+    "write actions",
+    "production orchestration",
+    "final visual design",
+    "live Servitor execution stream"
+  ],
+  "generated_at_utc": "2026-05-24T02:16:53+00:00"
+}

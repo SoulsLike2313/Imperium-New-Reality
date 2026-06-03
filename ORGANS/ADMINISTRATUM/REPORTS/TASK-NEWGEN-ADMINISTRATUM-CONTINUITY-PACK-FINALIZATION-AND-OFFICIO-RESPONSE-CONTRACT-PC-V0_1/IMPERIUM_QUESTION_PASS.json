@@ -1,0 +1,27 @@
+{
+  "task_id": "TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1",
+  "timestamp_utc": "2026-06-01T16:05:44Z",
+  "questions": [
+    {
+      "question": "What is the source of truth?",
+      "answer": "Taskpack + organ authority files + local git truth"
+    },
+    {
+      "question": "Which organ owns the rule?",
+      "answer": "Administratum for continuity pack, Officio for RU route, Inquisition for red-team caps"
+    },
+    {
+      "question": "What evidence proves runtime behavior?",
+      "answer": "Local script run receipts and generated bundle artifacts"
+    },
+    {
+      "question": "What cap applies if evidence is missing?",
+      "answer": "PASS_WITH_WARNINGS with explicit caps; clean PASS blocked"
+    },
+    {
+      "question": "What could be fake-green?",
+      "answer": "Claims without replay/receipt, hidden dirty state, missing stale-context audit"
+    }
+  ],
+  "verdict": "PASS_WITH_WARNINGS"
+}

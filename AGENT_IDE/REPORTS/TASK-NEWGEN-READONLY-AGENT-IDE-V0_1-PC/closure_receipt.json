@@ -1,0 +1,21 @@
+{
+  "task_id": "TASK-NEWGEN-READONLY-AGENT-IDE-V0_1-PC",
+  "timestamp_utc": "2026-05-27T13:47:49Z",
+  "status": "PASS_WITH_WARN_ACCEPTED",
+  "implementation_commit_hash": "793de3468db0015a6481527c45ccb38ff615dff4",
+  "implementation_commit_pushed_to_origin_master": true,
+  "origin_master_after_push": "793de3468db0015a6481527c45ccb38ff615dff4",
+  "worktree_clean_after_push": true,
+  "warn_accepted": [
+    "UNKNOWN_FILE_KIND_COUNT remains non-zero (visibility added, hardening deferred)."
+  ],
+  "required_rules_confirmed": {
+    "read_only_app": true,
+    "no_warp": true,
+    "no_cli_worker": true,
+    "no_editing": true,
+    "no_command_execution_in_app": true,
+    "no_commit_push_ui": true
+  },
+  "next_allowed_task": "TASK-NEWGEN-OFFICIO-LANGUAGE-GATE-HARDENING-PC-V0_1"
+}

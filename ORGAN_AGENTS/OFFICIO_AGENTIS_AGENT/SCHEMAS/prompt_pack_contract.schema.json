@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Prompt Pack Contract",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "pack_type",
+    "allowed_archive_extension",
+    "required_files",
+    "blocked_code_on_invalid"
+  ],
+  "properties": {
+    "contract_id": {
+      "type": "string"
+    },
+    "pack_type": {
+      "type": "string"
+    },
+    "allowed_archive_extension": {
+      "type": "string",
+      "const": ".zip"
+    },
+    "required_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "optional_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "blocked_code_on_invalid": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
+

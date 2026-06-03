@@ -1,0 +1,138 @@
+{
+  "schema_version": "MECHANICUS_TOOL_AVAILABILITY_STATUS_V0_1",
+  "task_id": "TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1",
+  "generated_at_utc": "2026-05-19T22:06:55.328577Z",
+  "source_report_json": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/tool_availability_report.json",
+  "tools": [
+    {
+      "tool_id": "git",
+      "pc_status": "AVAILABLE_PC",
+      "vm2_status": "AVAILABLE_VM2",
+      "combined_status": "AVAILABLE_BOTH",
+      "tool_card_path": "TOOLS/git.json"
+    },
+    {
+      "tool_id": "ripgrep",
+      "pc_status": "AVAILABLE_PC",
+      "vm2_status": "AVAILABLE_VM2",
+      "combined_status": "AVAILABLE_BOTH",
+      "tool_card_path": "TOOLS/ripgrep.json"
+    },
+    {
+      "tool_id": "ruff",
+      "pc_status": "NOT_FOUND_ON_PC",
+      "vm2_status": "AVAILABLE_VM2",
+      "combined_status": "AVAILABLE_VM2",
+      "tool_card_path": "TOOLS/ruff.json"
+    },
+    {
+      "tool_id": "pytest",
+      "pc_status": "AVAILABLE_PC",
+      "vm2_status": "NOT_FOUND_ON_VM2",
+      "combined_status": "AVAILABLE_PC",
+      "tool_card_path": "TOOLS/pytest.json"
+    },
+    {
+      "tool_id": "jsonschema",
+      "pc_status": "NOT_FOUND_ON_PC",
+      "vm2_status": "AVAILABLE_VM2",
+      "combined_status": "AVAILABLE_VM2",
+      "tool_card_path": "TOOLS/jsonschema.json"
+    },
+    {
+      "tool_id": "jq",
+      "pc_status": "AVAILABLE_PC",
+      "vm2_status": "AVAILABLE_VM2",
+      "combined_status": "AVAILABLE_BOTH",
+      "tool_card_path": "TOOLS/jq.json"
+    },
+    {
+      "tool_id": "yq",
+      "pc_status": "AVAILABLE_PC",
+      "vm2_status": "AVAILABLE_VM2",
+      "combined_status": "AVAILABLE_BOTH",
+      "tool_card_path": "TOOLS/yq.json"
+    },
+    {
+      "tool_id": "gitleaks",
+      "pc_status": "NOT_FOUND_ON_PC",
+      "vm2_status": "NOT_FOUND_ON_VM2",
+      "combined_status": "KNOWN_NOT_INSTALLED",
+      "tool_card_path": "TOOLS/gitleaks.json"
+    },
+    {
+      "tool_id": "semgrep",
+      "pc_status": "NOT_FOUND_ON_PC",
+      "vm2_status": "NOT_FOUND_ON_VM2",
+      "combined_status": "KNOWN_NOT_INSTALLED",
+      "tool_card_path": "TOOLS/semgrep.json"
+    },
+    {
+      "tool_id": "bandit",
+      "pc_status": "NOT_FOUND_ON_PC",
+      "vm2_status": "NOT_FOUND_ON_VM2",
+      "combined_status": "KNOWN_NOT_INSTALLED",
+      "tool_card_path": "TOOLS/bandit.json"
+    },
+    {
+      "tool_id": "pip-audit",
+      "pc_status": "AVAILABLE_PC",
+      "vm2_status": "NOT_FOUND_ON_VM2",
+      "combined_status": "AVAILABLE_PC",
+      "tool_card_path": "TOOLS/pip-audit.json"
+    },
+    {
+      "tool_id": "uv",
+      "pc_status": "AVAILABLE_PC",
+      "vm2_status": "AVAILABLE_VM2",
+      "combined_status": "AVAILABLE_BOTH",
+      "tool_card_path": "TOOLS/uv.json"
+    },
+    {
+      "tool_id": "duckdb",
+      "pc_status": "NOT_FOUND_ON_PC",
+      "vm2_status": "NOT_FOUND_ON_VM2",
+      "combined_status": "KNOWN_NOT_INSTALLED",
+      "tool_card_path": "TOOLS/duckdb.json"
+    },
+    {
+      "tool_id": "playwright",
+      "pc_status": "NOT_FOUND_ON_PC",
+      "vm2_status": "NOT_FOUND_ON_VM2",
+      "combined_status": "KNOWN_NOT_INSTALLED",
+      "tool_card_path": "TOOLS/playwright.json"
+    },
+    {
+      "tool_id": "node",
+      "pc_status": "AVAILABLE_PC",
+      "vm2_status": "AVAILABLE_VM2",
+      "combined_status": "AVAILABLE_BOTH",
+      "tool_card_path": "TOOLS/node.json"
+    },
+    {
+      "tool_id": "npm",
+      "pc_status": "AVAILABLE_PC",
+      "vm2_status": "AVAILABLE_VM2",
+      "combined_status": "AVAILABLE_BOTH",
+      "tool_card_path": "TOOLS/npm.json"
+    }
+  ],
+  "counts": {
+    "tools_total": 16,
+    "available_both": 7,
+    "available_vm2_only": 2,
+    "available_pc_only": 2,
+    "known_not_installed": 5
+  },
+  "allowed_statuses": [
+    "AVAILABLE_PC",
+    "AVAILABLE_VM2",
+    "AVAILABLE_BOTH",
+    "KNOWN_NOT_INSTALLED",
+    "NOT_FOUND_ON_PC",
+    "NOT_FOUND_ON_VM2",
+    "PC_SNAPSHOT_MISSING",
+    "VERSION_UNKNOWN",
+    "BLOCKED_NOT_ADMITTED"
+  ]
+}

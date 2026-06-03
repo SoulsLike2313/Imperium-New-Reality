@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "newgen_organ_agent_form_schema_v0_1",
+  "title": "NewGen Organ Agent Form V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "organ_id",
+    "organ_slug",
+    "version",
+    "identity",
+    "contracts",
+    "gates",
+    "tools",
+    "tui",
+    "state",
+    "templates",
+    "reports"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "newgen_organ_agent_form_v0_1"
+    },
+    "organ_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "organ_slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9_\\-]+$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^v0_1$"
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "responsibility",
+        "servitor_first_question",
+        "warn_block_profile"
+      ],
+      "properties": {
+        "responsibility": {
+          "type": "string"
+        },
+        "servitor_first_question": {
+          "type": "string"
+        },
+        "warn_block_profile": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "contracts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tui": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rich_required",
+        "smoke_mode",
+        "plain_json_mode"
+      ],
+      "properties": {
+        "rich_required": {
+          "type": "boolean"
+        },
+        "smoke_mode": {
+          "type": "boolean"
+        },
+        "plain_json_mode": {
+          "type": "boolean"
+        }
+      }
+    },
+    "state": {
+      "type": "string"
+    },
+    "templates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reports": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

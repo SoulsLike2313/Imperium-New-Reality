@@ -1,0 +1,59 @@
+GATE_ACK:
+- task_id: TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1
+- current_head: e8b631e55535263ec6ee8e9864d80427b5c2300e
+- gatepack_path: INBOX/VM3_TASKPACKS/TASKPACK_NEWGEN_MECHANICUS_MATRIX_SPINE_VALIDATOR_SUITE_VM3_V0_1.zip
+- gatepack_sha256: 0f204ac0561039440fbf4532d4e698006614c0fb2e3d9050e6404f80b82a061c
+- read_gates:
+  - GATE-U00-GIT-TRUTH
+  - GATE-U01-ROLE-ACK
+  - GATE-U02-SCOPE-BOUNDARY
+  - GATE-U04-EVIDENCE-RECEIPT
+  - GATE-U05-STOP-CONDITIONS
+  - GATE-U08-REPO-PURITY
+  - GATE-U09-NO-FAKE-GREEN
+  - GATE-U12-REPORT-OUTPUT-BUDGET
+  - GATE-U13-PYTHON-TYPE-SAFETY
+  - GATE-U14-WHOLE-REPO-SCOPE-RECON
+  - GATE-U15-OPERATIONALITY-IMPACT
+  - GATE-U16-BILINGUAL-UI
+  - GATE-U17-DELIVERABLE-PACKAGE
+  - GATE-U18-AGENT-FACTORY-COMPLIANCE
+  - GATE-U19-SCRIPT-ARTIFACT-PRESERVATION
+  - GATE-U20-AGENT-KPD-SELF-REVIEW
+  - GATE-U21-COMMAND-CHUNKING
+- accepted_stop_conditions:
+  - repo root is not /home/vboxuser3/IMPERIUM_WORK/Imperium-
+  - repository cannot sync to origin/master
+  - starting HEAD after sync is not e8b631e55535263ec6ee8e9864d80427b5c2300e
+  - private/secret data would be committed
+  - validation cannot be executed
+  - git push is rejected and cannot be safely resolved
+  - forbidden path edit would be required
+- scope_boundary: Matrix Spine validator suite, receipts, and NewGen organ support artifacts only.
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/MATRIX_SPINE/
+  - IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/
+  - IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/
+  - IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/
+  - IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/
+  - IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/
+  - IMPERIUM_NEW_GENERATION/ORGANS/DOCTRINARIUM/
+  - IMPERIUM_NEW_GENERATION/ORGANS/SCHOLA_IMPERIALIS/
+  - IMPERIUM_NEW_GENERATION/ORGANS/STRATEGIUM/
+- forbidden_paths:
+  - THRONE/
+  - CUSTODES/
+  - old non-NewGen organ implementations outside task need
+  - secrets/keys/tokens
+- expected_receipts:
+  - ghost_evolve_entry_ack.json
+  - imperium_matrix_pass_receipt.json
+  - capability_split_receipt.json
+  - matrix_spine_validation_receipt.json
+  - red_team_verdict.json
+  - efficiency_delta_receipt.json
+  - commit_push_receipt.json
+- repo_recon_required: yes
+- script_absorption_required: yes
+- clarification_needed: no
+- verdict: PASS

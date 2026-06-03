@@ -1,0 +1,9 @@
+$ZIP = "$env:USERPROFILE\Downloads\TASKPACK_NEWGEN_STAGE2_MICROPILOT_EXTERNAL_FINALIZATION_AND_INDEPENDENT_REPLAY_CAP_CLOSURE_VM3_V0_1.zip"
+$REMOTE_INBOX = "/home/vboxuser3/IMPERIUM_VM3_INBOX"
+$ZIP_NAME = Split-Path $ZIP -Leaf
+
+scp $ZIP "imperium-vm3:$REMOTE_INBOX/$ZIP_NAME"
+
+ssh imperium-vm3 "cd /home/vboxuser3/IMPERIUM_WORK/Imperium- && python3 IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_intake_v0_1.py --repo-root . --zip-path $REMOTE_INBOX/$ZIP_NAME --receipt-out /tmp/cap_closure_intake_receipt.json; cat /tmp/cap_closure_intake_receipt.json"
+
+ssh imperium-vm3 "cd /home/vboxuser3/IMPERIUM_WORK/Imperium- && python3 IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_task_id_resolver_v0_1.py --repo-root . --task-id TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1 --receipt-out /tmp/cap_closure_resolver_receipt.json; cat /tmp/cap_closure_resolver_receipt.json"

@@ -1,0 +1,58 @@
+GATE_ACK:
+- task_id: TASK-NEWGEN-ADMINISTRATUM-FILE-ATLAS-PASSPORT-INDEX-VM3-V0_1
+- current_head: f1e51a44a6529bb09a5321c6219b0857d527fe54
+- gatepack_path: /home/vboxuser3/IMPERIUM_VM3_INBOX/TASKPACK_NEWGEN_ADMINISTRATUM_FILE_ATLAS_PASSPORT_INDEX_VM3_V0_1.zip
+- gatepack_sha256: 14f18b33434fe73d0732657a0ca254d68573619a05ccced121d8cb067cd6dc7c
+- read_gates:
+  - GATE-U00-GIT-TRUTH
+  - GATE-U01-ROLE-ACK
+  - GATE-U02-SCOPE-BOUNDARY
+  - GATE-U04-EVIDENCE-RECEIPT
+  - GATE-U05-STOP-CONDITIONS
+  - GATE-U08-REPO-PURITY
+  - GATE-U09-NO-FAKE-GREEN
+  - GATE-U12-REPORT-OUTPUT-BUDGET
+  - GATE-U13-PYTHON-TYPE-SAFETY
+  - GATE-U14-WHOLE-REPO-SCOPE-RECON
+  - GATE-U15-OPERATIONALITY-IMPACT
+  - GATE-U16-BILINGUAL-UI
+  - GATE-U17-DELIVERABLE-PACKAGE
+  - GATE-U18-AGENT-FACTORY-COMPLIANCE
+  - GATE-U19-SCRIPT-ARTIFACT-PRESERVATION
+  - GATE-U20-AGENT-KPD-SELF-REVIEW
+  - GATE-U21-COMMAND-CHUNKING
+  - GATE-AI00-NO-DIRECT-MODEL-COMMAND
+- accepted_stop_conditions:
+  - STOP if HEAD, branch, repo root, or origin/master truth lock mismatches required baseline.
+  - STOP if worktree is dirty from unrelated paths.
+  - STOP if forbidden paths are required to satisfy acceptance criteria.
+  - STOP if generated artifacts cannot be validated as parseable JSON/JSONL.
+  - STOP if tool/script outputs cannot be preserved/classified.
+  - STOP if commit/push closure is required but blocked without explicit blocker evidence.
+- scope_boundary: Build read-only File Atlas artifacts for five NewGen organs under ADMINISTRATUM FILE_ATLAS/TOOLS/TUI/REPORTS only; do not implement IDE/WARP/CLI Worker or Officio/Inquisition hardening.
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/ADMINISTRATUM/FILE_ATLAS/**
+  - IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS/administratum_file_atlas_builder_v0_1.py
+  - IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS/administratum_file_atlas_checker_v0_1.py
+  - IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS/administratum_file_atlas_tui_smoke_v0_1.py
+  - IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/administratum_file_atlas_tui_v0_1.py
+  - IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/LAUNCH_ADMINISTRATUM_FILE_ATLAS_TUI_V0_1.sh
+  - IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-FILE-ATLAS-PASSPORT-INDEX-VM3-V0_1/**
+- forbidden_paths:
+  - IMPERIUM_NEW_GENERATION/** outside ADMINISTRATUM output surfaces for this task
+  - IDE runtime implementation surfaces
+  - WARP implementation surfaces
+  - CLI Worker implementation surfaces
+  - Officio language hardening implementation surfaces
+  - Inquisition V0.2 hardening implementation surfaces
+- expected_receipts:
+  - receipts/git_truth_start_receipt.json
+  - file_atlas_build_receipt.json
+  - file_atlas_check_receipt.json
+  - ide_readiness_receipt.json
+  - owner_pain_map.json
+  - closure_receipt.json
+- repo_recon_required: YES (five-organ indexing with cross-organ surface mapping)
+- script_absorption_required: YES (new builder/checker/tui-smoke scripts)
+- clarification_needed: NONE
+- verdict: PASS

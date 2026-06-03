@@ -1,0 +1,39 @@
+{
+  "capability_id": "CAP-TOOL-PATH-POLICY-INTERNAL",
+  "name": "path_policy internal capability",
+  "category": "TOOLS",
+  "status": "CANON",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Root-bounded path safety enforcement.",
+  "what_problem_it_solves": "Prevents out-of-scope path traversal and root escape.",
+  "source_type": "repo_existing",
+  "source_url_or_path": "src/imperium/security/path_policy.py",
+  "license_or_trust_note": "Host/external trust requires explicit admission receipts.",
+  "install_required": false,
+  "install_gate": "GATE-U02-SCOPE-BOUNDARY",
+  "validation_commands": [
+    "validate:cap-tool-path-policy-internal"
+  ],
+  "expected_receipts": [
+    "cap-tool-path-policy-internal_receipt.json"
+  ],
+  "safety_notes": "Use only in bounded task scope; no blind runtime mutation.",
+  "security_notes": "Do not bypass path, command, and evidence gates.",
+  "offline_or_network_dependency": "offline_preferred",
+  "promoted_by_receipt": "REPO_EVIDENCE_PATHS",
+  "last_reviewed_utc": "2026-05-24T00:00:00Z",
+  "next_review_reason": "Requires verification whenever repo layout changes.",
+  "limitations": "Callers must use policy functions consistently.",
+  "allowed_use_cases": [
+    "Bounded task execution under Mechanicus policy",
+    "Evidence-backed validation and report generation"
+  ],
+  "forbidden_use_cases": [
+    "Production-ready claim without receipts",
+    "Out-of-scope or unbounded execution"
+  ],
+  "canon_evidence_paths": [
+    "src/imperium/security/path_policy.py",
+    "src/imperium/security/__init__.py"
+  ]
+}

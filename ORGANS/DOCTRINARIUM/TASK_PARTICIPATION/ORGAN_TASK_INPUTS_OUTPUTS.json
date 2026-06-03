@@ -1,0 +1,25 @@
+{
+  "organ": "DOCTRINARIUM",
+  "inputs": [
+    {
+      "name": "Matrix Spine Index",
+      "source": "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md",
+      "required": true,
+      "missing_behavior": "BLOCK"
+    },
+    {
+      "name": "Ghost_Evolve laws",
+      "source": "IMPERIUM_NEW_GENERATION/ORGANS/DOCTRINARIUM/MATRICES/*.md",
+      "required": true,
+      "missing_behavior": "BLOCK"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Law Admission Gate",
+      "path_or_contract": "IMPERIUM_NEW_GENERATION/ORGANS/DOCTRINARIUM/TASK_PARTICIPATION/TASK_PARTICIPATION_CONTRACT.json",
+      "required": true,
+      "consumer": "ASTRONOMICON_TASK_ENTRY"
+    }
+  ]
+}

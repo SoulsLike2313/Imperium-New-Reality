@@ -1,0 +1,304 @@
+{
+  "schema_version": "SANCTUM_PLAYWRIGHT_TRUTH_AUDIT_V0_1",
+  "label": "baseline",
+  "base_url": "http://127.0.0.1:8877",
+  "generated_at_utc": "2026-05-20T14:05:20.544Z",
+  "endpoint_checks": [
+    {
+      "endpoint": "/api/health",
+      "http_status": 200,
+      "ok": true,
+      "json": true,
+      "pass": true
+    },
+    {
+      "endpoint": "/api/state",
+      "http_status": 200,
+      "ok": true,
+      "json": true,
+      "pass": true
+    },
+    {
+      "endpoint": "/api/actions",
+      "http_status": 200,
+      "ok": true,
+      "json": true,
+      "pass": true
+    },
+    {
+      "endpoint": "/api/actions/history",
+      "http_status": 200,
+      "ok": true,
+      "json": true,
+      "pass": true
+    },
+    {
+      "endpoint": "/api/terminal/history",
+      "http_status": 200,
+      "ok": true,
+      "json": true,
+      "pass": true
+    }
+  ],
+  "visible_claim_checks": [
+    {
+      "id": "header_head_visible",
+      "pass": true,
+      "expected": "473ae295aa13",
+      "actual_chips": [
+        "Сервер: PASS",
+        "API: PASS",
+        "HEAD: 473ae295aa13",
+        "Дерево: DIRTY",
+        "Активный: MECHANICUS_AGENT",
+        "Качество: PASS",
+        "Обновление: 2026-05-20T14:05:21.746616Z"
+      ]
+    },
+    {
+      "id": "header_worktree_visible",
+      "pass": true,
+      "expected": "DIRTY",
+      "actual_chips": [
+        "Сервер: PASS",
+        "API: PASS",
+        "HEAD: 473ae295aa13",
+        "Дерево: DIRTY",
+        "Активный: MECHANICUS_AGENT",
+        "Качество: PASS",
+        "Обновление: 2026-05-20T14:05:21.746616Z"
+      ]
+    },
+    {
+      "id": "header_active_organ_visible",
+      "pass": true,
+      "expected": "MECHANICUS_AGENT",
+      "actual_chips": [
+        "Сервер: PASS",
+        "API: PASS",
+        "HEAD: 473ae295aa13",
+        "Дерево: DIRTY",
+        "Активный: MECHANICUS_AGENT",
+        "Качество: PASS",
+        "Обновление: 2026-05-20T14:05:21.746616Z"
+      ]
+    }
+  ],
+  "action_checks": [
+    {
+      "action_id": "refresh_state",
+      "pass": true,
+      "button_present": true,
+      "history_recorded": true
+    },
+    {
+      "action_id": "mechanicus_visual_status",
+      "pass": true,
+      "button_present": true,
+      "history_recorded": true
+    },
+    {
+      "action_id": "mechanicus_visual_tools",
+      "pass": true,
+      "button_present": true,
+      "history_recorded": true
+    },
+    {
+      "action_id": "mechanicus_visual_check",
+      "pass": true,
+      "button_present": true,
+      "history_recorded": true
+    },
+    {
+      "action_id": "mechanicus_visual_identity",
+      "pass": true,
+      "button_present": true,
+      "history_recorded": true
+    },
+    {
+      "action_id": "open_or_show_latest_report",
+      "pass": true,
+      "button_present": true,
+      "history_recorded": true
+    },
+    {
+      "action_id": "open_or_show_screenshots_folder",
+      "pass": true,
+      "button_present": true,
+      "history_recorded": true
+    },
+    {
+      "action_id": "show_api_state_json",
+      "pass": true,
+      "button_present": true,
+      "history_recorded": true
+    }
+  ],
+  "truth_checks": [
+    {
+      "id": "counts_connected_match",
+      "pass": true,
+      "ui": 1,
+      "api": 1
+    },
+    {
+      "id": "counts_placeholder_match",
+      "pass": true,
+      "ui": 7,
+      "api": 7
+    },
+    {
+      "id": "counts_locked_match",
+      "pass": true,
+      "ui": 2,
+      "api": 2
+    },
+    {
+      "id": "latest_report_path_exists",
+      "pass": true,
+      "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1"
+    },
+    {
+      "id": "latest_screenshot_path_exists",
+      "pass": true,
+      "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\SCREENSHOTS\\mechanicus_raw_v0_5.svg"
+    },
+    {
+      "id": "latest_evidence_path_exists",
+      "pass": true,
+      "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1\\TASK_RECEIPT.json"
+    },
+    {
+      "id": "brain_zone_layout_detected",
+      "pass": true,
+      "detail": "#brainZoneMap found"
+    },
+    {
+      "id": "brain_core_zone_detected",
+      "pass": false,
+      "detail": "#brainCoreZone missing"
+    },
+    {
+      "id": "organ_cards_count_expected_10",
+      "pass": true,
+      "card_count": 10
+    },
+    {
+      "id": "organ_cards_peripheral_distribution",
+      "pass": false,
+      "container_found": true,
+      "central_count": 3,
+      "peripheral_count": 7,
+      "positions": [
+        {
+          "organ_id": "MECHANICUS_AGENT",
+          "normalized_x": 0.52,
+          "normalized_y": 0.381,
+          "central": true
+        },
+        {
+          "organ_id": "ADMINISTRATUM_AGENT",
+          "normalized_x": 0.191,
+          "normalized_y": 0.301,
+          "central": false
+        },
+        {
+          "organ_id": "OFFICIO_AGENTIS_AGENT",
+          "normalized_x": 0.32,
+          "normalized_y": 0.192,
+          "central": false
+        },
+        {
+          "organ_id": "ASTRONOMICON_AGENT",
+          "normalized_x": 0.47,
+          "normalized_y": 0.152,
+          "central": false
+        },
+        {
+          "organ_id": "INQUISITION_AGENT",
+          "normalized_x": 0.64,
+          "normalized_y": 0.172,
+          "central": false
+        },
+        {
+          "organ_id": "DOCTRINARIUM_AGENT",
+          "normalized_x": 0.779,
+          "normalized_y": 0.291,
+          "central": false
+        },
+        {
+          "organ_id": "STRATEGIUM_AGENT",
+          "normalized_x": 0.74,
+          "normalized_y": 0.49,
+          "central": false
+        },
+        {
+          "organ_id": "SCHOLA_IMPERIALIS_AGENT",
+          "normalized_x": 0.62,
+          "normalized_y": 0.629,
+          "central": true
+        },
+        {
+          "organ_id": "CUSTODES",
+          "normalized_x": 0.4,
+          "normalized_y": 0.669,
+          "central": true
+        },
+        {
+          "organ_id": "THRONE",
+          "normalized_x": 0.27,
+          "normalized_y": 0.52,
+          "central": false
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "overview",
+      "file_name": "01_overview.png",
+      "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-BRAIN-HARDENING-VISUAL-POLISH-PC-V0_2\\BASELINE_PLAYWRIGHT\\screenshots\\01_overview.png"
+    },
+    {
+      "name": "active_brain_or_organ_zone",
+      "file_name": "02_active_brain_or_organ_zone.png",
+      "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-BRAIN-HARDENING-VISUAL-POLISH-PC-V0_2\\BASELINE_PLAYWRIGHT\\screenshots\\02_active_brain_or_organ_zone.png"
+    },
+    {
+      "name": "brain_core_zone",
+      "file_name": "03_brain_core_zone.png",
+      "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-BRAIN-HARDENING-VISUAL-POLISH-PC-V0_2\\BASELINE_PLAYWRIGHT\\screenshots\\03_brain_core_zone.png"
+    },
+    {
+      "name": "action_click_result_examples",
+      "file_name": "04_action_click_result_examples.png",
+      "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-BRAIN-HARDENING-VISUAL-POLISH-PC-V0_2\\BASELINE_PLAYWRIGHT\\screenshots\\04_action_click_result_examples.png"
+    },
+    {
+      "name": "mechanicus_expanded_view",
+      "file_name": "05_mechanicus_expanded_view.png",
+      "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-BRAIN-HARDENING-VISUAL-POLISH-PC-V0_2\\BASELINE_PLAYWRIGHT\\screenshots\\05_mechanicus_expanded_view.png"
+    },
+    {
+      "name": "failure_gap_placeholder_mode",
+      "file_name": "06_failure_gap_placeholder_mode.png",
+      "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-BRAIN-HARDENING-VISUAL-POLISH-PC-V0_2\\BASELINE_PLAYWRIGHT\\screenshots\\06_failure_gap_placeholder_mode.png"
+    },
+    {
+      "name": "right_truth_panel",
+      "file_name": "07_right_truth_panel.png",
+      "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-BRAIN-HARDENING-VISUAL-POLISH-PC-V0_2\\BASELINE_PLAYWRIGHT\\screenshots\\07_right_truth_panel.png"
+    }
+  ],
+  "gaps": [
+    "brain_core_zone_detected",
+    "organ_cards_peripheral_distribution"
+  ],
+  "notes": [
+    "health_status=WARN",
+    "brain_like_detected=true",
+    "brain_core_detected=false",
+    "central_cards=3"
+  ],
+  "verdict": "FAIL"
+}

@@ -1,0 +1,18 @@
+{
+  "skill_id": "CONTINUITY_PACK_SKILL",
+  "skill_name": "Administratum Continuity Pack Skill",
+  "owner_organ": "ADMINISTRATUM",
+  "version": "0.1.0",
+  "status": "CANDIDATE_STAGE1",
+  "truth_source": "Administratum report receipts + Astronomicon task registry + local git truth",
+  "entrypoints": [
+    "python IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/SKILLS/CONTINUITY_PACK_SKILL/administratum_continuity_pack_skill_v0_1.py --repo-root .",
+    "python IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/SKILLS/CONTINUITY_PACK_SKILL/administratum_continuity_pack_skill_v0_1.py --repo-root . --task-id <TASK_ID>"
+  ],
+  "supported_contours": [
+    "PC"
+  ],
+  "compatibility_aliases": [
+    "administratum_continuity_pack_launcher_v0_1"
+  ]
+}

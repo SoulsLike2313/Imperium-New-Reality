@@ -1,0 +1,36 @@
+{
+  "purpose": "Preserve manual launch attempt blocks as successful IMPERIUM protection cases.",
+  "cases": [
+    {
+      "case_id": "BAD_ZIP_MISSING_MANIFEST",
+      "expected_result": "ADMISSION_BLOCK",
+      "protection_meaning": "Astronomicon intake blocks ZIP when root MANIFEST.json is missing."
+    },
+    {
+      "case_id": "BAD_ZIP_MISSING_LANGUAGE_POLICY",
+      "expected_result": "ADMISSION_BLOCK",
+      "protection_meaning": "Astronomicon intake blocks ZIP when MANIFEST.language_and_encoding_policy is absent or incomplete."
+    },
+    {
+      "case_id": "BAD_ZIP_MISSING_8_ORGAN_ROUTE",
+      "expected_result": "ADMISSION_BLOCK",
+      "protection_meaning": "Astronomicon intake blocks ZIP when MANIFEST.organs does not include all required 8 organs."
+    },
+    {
+      "case_id": "UNREGISTERED_TASK_ID_RESOLVE",
+      "expected_result": "RESOLVER_BLOCK",
+      "protection_meaning": "Astronomicon resolver blocks task start when TASK_ID is not registered in the stage registry."
+    },
+    {
+      "case_id": "VALID_8_ORGAN_TASKPACK",
+      "expected_result": "ADMISSION_PASS_AND_RESOLVER_PASS_WITH_WARNINGS",
+      "protection_meaning": "Valid taskpack registers safely, updates current expected task, resolves route manifest, and confirms 8 organs reachable."
+    }
+  ],
+  "required_outputs": [
+    "taskpack_admission_regression_fixtures.json",
+    "astronomicon_positive_controls_learning_card.md",
+    "ghost_evolve_learning_delta.json",
+    "schola_learning_card.json"
+  ]
+}

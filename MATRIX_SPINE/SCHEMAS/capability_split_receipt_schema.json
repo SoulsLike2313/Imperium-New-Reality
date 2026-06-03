@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Capability Split Receipt Schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "items",
+    "summary",
+    "verdict"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "output_or_action",
+          "classification",
+          "evidence",
+          "owner_organ",
+          "gap_or_replay"
+        ],
+        "properties": {
+          "output_or_action": {
+            "type": "string"
+          },
+          "classification": {
+            "enum": [
+              "LOCAL_SCRIPT_FIRST",
+              "LOCAL_MANUAL_COMMAND",
+              "CANDIDATE_SCRIPT_FIRST",
+              "AGENT_REASONING_ONLY",
+              "EXTERNAL_RESEARCH",
+              "OWNER_MANUAL_CONFIRMATION",
+              "FUTURE_CAPABILITY_GAP"
+            ]
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "owner_organ": {
+            "type": "string"
+          },
+          "gap_or_replay": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object"
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "WARN",
+        "BLOCK"
+      ]
+    }
+  }
+}

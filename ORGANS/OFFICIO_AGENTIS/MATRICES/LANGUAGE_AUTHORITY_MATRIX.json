@@ -1,0 +1,69 @@
+{
+  "matrix_id": "LANGUAGE_AUTHORITY_MATRIX",
+  "version": "0.1-candidate",
+  "owner_organ": "Officio Agentis",
+  "support_organs": [
+    "Astronomicon",
+    "Inquisition",
+    "Administratum"
+  ],
+  "purpose": "Defines ownership and enforcement rules for owner-facing runtime language and canonical machine-artifact language.",
+  "criteria": [
+    {
+      "criterion_id": "LA-01_CANONICAL_ENGLISH_ONLY",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "support_organs": [
+        "INQUISITION"
+      ],
+      "evidence_required": [
+        "inquisition_mojibake_filter_report.json",
+        "canonical_artifact_language_scan_report.md"
+      ],
+      "pass_logic": "Canonical internal artifacts are English-only.",
+      "warn_logic": "Only legacy artifacts are non-English and classified.",
+      "block_logic": "New canonical artifact contains non-English text.",
+      "caps": [
+        "CAP_CANONICAL_ARTIFACT_CONTAINS_CYRILLIC",
+        "CAP_NON_ENGLISH_TASKPACK_INTERNAL_TEXT"
+      ],
+      "remediation_path": "Rewrite offending canonical artifacts to English and rerun scanner."
+    },
+    {
+      "criterion_id": "LA-02_RUNTIME_RU_ROUTE_OFFICIO_ONLY",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "support_organs": [
+        "ASTRONOMICON"
+      ],
+      "evidence_required": [
+        "OFFICIO_LANGUAGE_AUTHORITY_V0_1.json",
+        "final_owner_summary_ru.md"
+      ],
+      "pass_logic": "Runtime owner-facing Russian exists only through Officio runtime lane.",
+      "warn_logic": "Legacy runtime RU files remain and are explicitly marked runtime-only.",
+      "block_logic": "Russian prose is stored in machine policy/contracts/schemas.",
+      "caps": [
+        "CAP_OWNER_LANGUAGE_NOT_ROUTED_THROUGH_OFFICIO"
+      ],
+      "remediation_path": "Move RU prose to owner-facing runtime output file and keep machine files English."
+    },
+    {
+      "criterion_id": "LA-03_LOCALIZATION_EXCEPTION_CONTROLLED",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "support_organs": [
+        "INQUISITION"
+      ],
+      "evidence_required": [
+        "inquisition_mojibake_filter_report.json"
+      ],
+      "pass_logic": "Localized content exists only under explicit localization folders.",
+      "warn_logic": "Localization metadata is present but partial.",
+      "block_logic": "Localized text appears outside controlled localization folders.",
+      "caps": [
+        "CAP_LOCALIZATION_EXCEPTION_UNCONTROLLED"
+      ],
+      "remediation_path": "Move localized resources under controlled localization markers."
+    }
+  ],
+  "current_status": "CANDIDATE_NOT_CANON",
+  "next_action": "Adopt matrix in filter gate and include in Officio read-first route."
+}

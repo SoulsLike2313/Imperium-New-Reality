@@ -1,0 +1,84 @@
+{
+  "task_id": "TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1",
+  "run_id": "TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1-2026-05-30T17:47:37Z",
+  "timestamp_utc": "2026-05-30T17:47:37Z",
+  "role": "VM3_SERVITOR",
+  "mode": "GHOST_EVOLVE_V2",
+  "task_source_boundary": "TASKPACK_NEWGEN_COMBINED_REVIEW_ADJUDICATION_FILL_LOGOS_PIPELINE_PLANNER_VM3_V0_1.zip",
+  "contour": "VM3",
+  "declared_contour": "VM3",
+  "repo_root": "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+  "branch": "master",
+  "repo_head": "740d152ca9e235a6550b1818e7381627b1f32d03",
+  "head": "740d152ca9e235a6550b1818e7381627b1f32d03",
+  "expected_start_head": "740d152ca9e235a6550b1818e7381627b1f32d03",
+  "owner_language_contract": "RU_FOR_OWNER_EN_FOR_MACHINE_ARTIFACTS",
+  "forbidden_claims_acknowledged": [
+    "NO_FAKE_PASS",
+    "NO_WARP_RUNTIME_CLAIM",
+    "NO_AGENT_REASONING_AS_SYSTEM_CAPABILITY",
+    "NO_TASKPACK_AUTHORITY_OVERRIDE"
+  ],
+  "read_files": [
+    "AGENTS.md",
+    "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md",
+    "IMPERIUM_NEW_GENERATION/ORGANS/DOCTRINARIUM/READ_FIRST_GHOST_EVOLVE_PACKET.md",
+    "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/READ_FIRST_GHOST_EVOLVE_PACKET.md",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/READ_FIRST_GHOST_EVOLVE_PACKET.md",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/READ_FIRST_GHOST_EVOLVE_PACKET.md",
+    "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/READ_FIRST_GHOST_EVOLVE_PACKET.md",
+    "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/READ_FIRST_GHOST_EVOLVE_PACKET.md",
+    "IMPERIUM_NEW_GENERATION/ORGANS/STRATEGIUM/READ_FIRST_GHOST_EVOLVE_PACKET.md",
+    "IMPERIUM_NEW_GENERATION/ORGANS/SCHOLA_IMPERIALIS/READ_FIRST_GHOST_EVOLVE_PACKET.md",
+    "INBOX/VM3_TASKPACKS/TASKPACK_NEWGEN_COMBINED_REVIEW_ADJUDICATION_FILL_LOGOS_PIPELINE_PLANNER_VM3_V0_1/000_START_TASK_READ_ORDER.md",
+    "INBOX/VM3_TASKPACKS/TASKPACK_NEWGEN_COMBINED_REVIEW_ADJUDICATION_FILL_LOGOS_PIPELINE_PLANNER_VM3_V0_1/TASK_SPEC.md",
+    "INBOX/VM3_TASKPACKS/TASKPACK_NEWGEN_COMBINED_REVIEW_ADJUDICATION_FILL_LOGOS_PIPELINE_PLANNER_VM3_V0_1/ACCEPTANCE_GATES.md"
+  ],
+  "sources_read": [
+    "MATRIX_SPINE_INDEX",
+    "Doctrinarium matrices/contracts",
+    "Officio matrices/contracts/role pack",
+    "Astronomicon matrices/contracts",
+    "Administratum matrices/contracts",
+    "Mechanicus matrices/contracts",
+    "Inquisition matrices/contracts",
+    "Strategium matrices",
+    "Schola matrices/contracts",
+    "Taskpack manifest/spec/templates/reference",
+    "Embedded Inquisitor and Speculum review bundles"
+  ],
+  "organ_packets": [
+    {"organ": "Doctrinarium", "status": "READ"},
+    {"organ": "Officio Agentis", "status": "READ"},
+    {"organ": "Astronomicon", "status": "READ"},
+    {"organ": "Administratum", "status": "READ"},
+    {"organ": "Mechanicus", "status": "READ"},
+    {"organ": "Inquisition", "status": "READ"},
+    {"organ": "Strategium", "status": "READ_OPTIONAL"},
+    {"organ": "Schola Imperialis", "status": "READ_OPTIONAL"}
+  ],
+  "matrix_packs": [
+    {"name": "MATRIX_SPINE_INDEX", "status": "READ"}
+  ],
+  "scope": {
+    "allowed": [
+      "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/**",
+      "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/**",
+      "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/**",
+      "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/**",
+      "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/**",
+      "IMPERIUM_NEW_GENERATION/ORGANS/STRATEGIUM/**",
+      "IMPERIUM_NEW_GENERATION/ORGANS/SCHOLA_IMPERIALIS/**"
+    ],
+    "forbidden": [
+      "WARP activation",
+      "real runtime claims",
+      "broad unrelated implementation",
+      "taskpack authority override"
+    ]
+  },
+  "capability_gaps": [],
+  "authority_gaps": [],
+  "readiness": "PASS",
+  "verdict": "PASS"
+}

@@ -1,0 +1,59 @@
+{
+  "schema_id": "OWNER_QUESTION_GATE_SMOKE_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-OWNER-QUESTION-GATE-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T22:54:22Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "owner_state_exists",
+      "status": "PASS",
+      "details": "generated owner gate state exists"
+    },
+    {
+      "check_id": "owner_state_schema_id",
+      "status": "PASS",
+      "details": "state schema_id ok"
+    },
+    {
+      "check_id": "owner_state_read_only_boundary",
+      "status": "PASS",
+      "details": "read-only/no-live flags enforced"
+    },
+    {
+      "check_id": "owner_state_sample_count",
+      "status": "PASS",
+      "details": "state has at least 6 owner questions"
+    },
+    {
+      "check_id": "owner_boundary_note",
+      "status": "PASS",
+      "details": "boundary note present"
+    },
+    {
+      "check_id": "ui_section_marker",
+      "status": "PASS",
+      "details": "owner gate section present in index.html"
+    },
+    {
+      "check_id": "ui_renderer_marker",
+      "status": "PASS",
+      "details": "owner gate renderer present in app.js"
+    },
+    {
+      "check_id": "ui_styles_marker",
+      "status": "PASS",
+      "details": "owner gate styles present in styles.css"
+    },
+    {
+      "check_id": "api_owner_payload_marker",
+      "status": "PASS",
+      "details": "owner gate payload wired in action server"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "notes": [
+    "Smoke is bounded to file-backed state and static UI/API wiring checks.",
+    "No live owner answer channel or autonomous behavior is claimed."
+  ]
+}

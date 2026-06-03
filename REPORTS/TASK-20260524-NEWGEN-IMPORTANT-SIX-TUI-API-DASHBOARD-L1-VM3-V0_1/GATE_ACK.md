@@ -1,0 +1,15 @@
+GATE_ACK:
+- task_id: TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1
+- current_head: 6d839d5949d7e305639b222fea26d159fe98b2c4
+- gatepack_path: INBOX/VM3_TASKPACKS/TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1/TASKPACK_TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1.zip
+- gatepack_sha256: 28520a68f1fd448253ff05b55bc35e078c0ae64b3fd2364599cb20ebb3775e33
+- read_gates: GATE_DOCTRINARIUM_READ_FIRST, GATE_NO_GENERIC_PASS, GATE_NO_GREEN_WITHOUT_EVIDENCE, GATE_OWNER_POWER_DELTA_REQUIRED, GATE_PAIN_PREFLIGHT_REQUIRED, GATE_VISUAL_CONTRACT_REQUIRED, GATE_NO_DEFAULT_DASHBOARD, GATE_SCREENSHOT_EVIDENCE_REQUIRED, GATE_STABLE_CANDIDATE_REQUIRED_FOR_VISUAL_WORK, GATE_RESOURCE_KPD_REQUIRED, GATE_INTERNAL_FUNCTION_MUST_HAVE_ORGAN_OWNER
+- accepted_stop_conditions: git_truth_mismatch; dirty_worktree_before_admission; missing_preflight_or_contract_inputs; owner_verdict_needed_from_organ_route; forbidden_path_required_to_complete_task
+- scope_boundary: IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/** and IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1/** only
+- touched_paths: implementation root + task report root only
+- forbidden_paths: ORGANS/**, IMPERIUM_TEST_VERSION/**, INBOX/**, .git/**
+- expected_receipts: important_six_dashboard_api_smoke_report.json; playwright_important_six_dashboard_l1_report.json; important_six_dashboard_l1_screenshot.png; closure_receipt.json
+- repo_recon_required: true
+- script_absorption_required: yes_if_new_reusable_tool_created
+- clarification_needed: none
+- verdict: PASS

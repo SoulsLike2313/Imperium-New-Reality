@@ -1,0 +1,43 @@
+{
+  "task_id": "TASK-NEWGEN-LEGACY-RECEIPT-PRODUCER-INVENTORY-AND-MIGRATION-PREFLIGHT-PC-V0_1",
+  "produced_by": "PC_SERVITOR",
+  "stage_0_status": "CLOSED_WITH_WARNINGS",
+  "blocking_caps": [
+    "CAP_P0_PRODUCER_RISK_UNRESOLVED",
+    "CAP_LEGACY_RECEIPT_PRODUCERS_UNCLASSIFIED"
+  ],
+  "next_pipeline": [
+    {
+      "step": 1,
+      "target": "PC_SERVITOR",
+      "action": "Run targeted P0 migration micro-taskpack for 4 producer paths",
+      "required_inputs": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_scope_exporter_v0_2.py",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_quality_gate_runner_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/TOOLS/TOOL_ADMISSION/newgen_tool_admission_builder_v0_1.py"
+      ],
+      "launch_phrase": "start task"
+    },
+    {
+      "step": 2,
+      "target": "INQUISITOR",
+      "action": "Independent semantic review of P0 remediation commit",
+      "required_taskpack": "TASKPACK_INQUISITOR_COMMIT_MATRIX_SEMANTIC_REVIEW_V0_1.zip",
+      "launch_phrase": "start task"
+    },
+    {
+      "step": 3,
+      "target": "SPECULUM",
+      "action": "Independent technical red-team review of P0 remediation commit",
+      "required_taskpack": "TASKPACK_SPECULUM_COMMIT_TECHNICAL_REDTEAM_MATRIX_REVIEW_V0_1.zip",
+      "launch_phrase": "start task"
+    },
+    {
+      "step": 4,
+      "target": "LOGOS_PRIME",
+      "action": "Adjudicate Stage 0 closure and permit Stage 1 (Eight Organ Mobilization) only if P0=0 and unresolved-unknown trend reduced"
+    }
+  ],
+  "generated_at_utc": "2026-05-30T20:52:35Z"
+}

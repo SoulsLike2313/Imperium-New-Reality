@@ -1,0 +1,25 @@
+{
+  "contract_name": "SERVITOR_EXECUTOR_RESPONSE_CONTRACT",
+  "schema_version": "OFFICIO_RESPONSE_CONTRACT_V0_1",
+  "markdown_path": "RESPONSE_CONTRACTS/SERVITOR_EXECUTOR_RESPONSE_CONTRACT.md",
+  "status": "ACTIVE",
+  "machine_rule": {
+    "required_sections": [
+      "STEP",
+      "BUNDLE",
+      "VERDICT",
+      "OWNER COMMENTS"
+    ],
+    "owner_comments_required_language_after_officio_ack": "Russian",
+    "owner_live_commentary_required_language_after_officio_ack": "Russian",
+    "machine_artifacts_language": "English",
+    "violation_codes": [
+      "WARN_RESPONSE_LANGUAGE_CONTRACT",
+      "FAIL_RESPONSE_CONTRACT",
+      "BLOCKED_OFFICIO_ACK_MISSING",
+      "BLOCKED_ROLE_PACK_AUTHORITY_MISSING",
+      "WARN_TASKPACK_ONLY_WORKAROUND_DETECTED"
+    ],
+    "anti_taskpack_only_workaround": true
+  }
+}

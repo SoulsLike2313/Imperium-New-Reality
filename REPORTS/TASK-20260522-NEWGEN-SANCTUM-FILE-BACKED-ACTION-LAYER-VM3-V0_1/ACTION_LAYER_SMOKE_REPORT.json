@@ -1,0 +1,260 @@
+{
+  "schema_version": "0.1",
+  "task_id": "TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1",
+  "generated_at_utc": "2026-05-22T15:49:07Z",
+  "verdict": "WARN",
+  "server": {
+    "base_url": "http://127.0.0.1:8787",
+    "command": [
+      "python3",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_action_server.py",
+      "--repo-root",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+      "--host",
+      "127.0.0.1",
+      "--port",
+      "8787",
+      "--task-id",
+      "TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1",
+      "--report-dir",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1"
+    ],
+    "returncode": -15
+  },
+  "steps": [
+    {
+      "step": "health_check",
+      "status": "PASS",
+      "details": {
+        "status": "OK",
+        "service": "sanctum_ng_action_server",
+        "task_id": "TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1",
+        "generated_at_utc": "2026-05-22T15:49:07Z"
+      }
+    },
+    {
+      "step": "actions_endpoint",
+      "status": "PASS",
+      "details": {
+        "status": "CONNECTED",
+        "task_id": "TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1",
+        "registry": {
+          "schema_id": "SANCTUM_NG_ACTION_REGISTRY_V0_1",
+          "mode": "ACTION_LAYER_FOUNDATION_ONLY"
+        },
+        "actions": [
+          {
+            "action_id": "REFRESH_TRUTH_STATE",
+            "title": "Refresh Sanctum Truth State",
+            "description": "Run bounded refresh runner to rebuild state and validator report for this task bundle.",
+            "status": "WIRED",
+            "safety_level": "SAFE_LOCAL_SCRIPT_ONLY",
+            "allowed_commands": [
+              "python3 IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_refresh_runner.py --repo-root <repo-root> --task-id TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1 --required-starting-head 904ff5f5e47f470293b5857682702d4086240a4e --report-dir IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1"
+            ],
+            "allowed_paths": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/**",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/**"
+            ],
+            "forbidden_paths": [
+              "ORGANS/**",
+              "SANCTUM/**",
+              "IMPERIUM_TEST_VERSION/**",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/**",
+              ".git/**"
+            ],
+            "writes_files": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/VALIDATOR_REPORT.json"
+            ],
+            "evidence_refs": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_refresh_runner.py",
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json"
+            ],
+            "known_limitations": [
+              "Foundation-only local refresh flow.",
+              "Does not claim production orchestration."
+            ]
+          },
+          {
+            "action_id": "VALIDATE_TRUTH_STATE",
+            "title": "Validate Sanctum Truth State",
+            "description": "Run bounded Sanctum NG validator for current state/schema/report bundle.",
+            "status": "WIRED",
+            "safety_level": "SAFE_LOCAL_SCRIPT_ONLY",
+            "allowed_commands": [
+              "python3 IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_validator.py --repo-root <repo-root> --task-id TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1 --report-dir IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1 --output IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/VALIDATOR_REPORT.json"
+            ],
+            "allowed_paths": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/**",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/**"
+            ],
+            "forbidden_paths": [
+              "ORGANS/**",
+              "SANCTUM/**",
+              "IMPERIUM_TEST_VERSION/**",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/**",
+              ".git/**"
+            ],
+            "writes_files": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/VALIDATOR_REPORT.json"
+            ],
+            "evidence_refs": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_validator.py",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/VALIDATOR_REPORT.json"
+            ],
+            "known_limitations": [
+              "Validator verdict is bounded to foundation artifact checks.",
+              "No production readiness claim."
+            ]
+          },
+          {
+            "action_id": "READ_PHASE_REGISTRY",
+            "title": "Read Phase Registry",
+            "description": "Read Sanctum NG phase registry from fixed known path.",
+            "status": "WIRED",
+            "safety_level": "SAFE_READ_FIXED_PATH",
+            "allowed_commands": [
+              "READ_FIXED_JSON: IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_PHASE_REGISTRY_V0_1.json"
+            ],
+            "allowed_paths": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_PHASE_REGISTRY_V0_1.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/**"
+            ],
+            "forbidden_paths": [
+              "*"
+            ],
+            "writes_files": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/ACTION_LOGS/**"
+            ],
+            "evidence_refs": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_PHASE_REGISTRY_V0_1.json"
+            ],
+            "known_limitations": [
+              "Only fixed registry file path is readable.",
+              "No arbitrary file traversal."
+            ]
+          },
+          {
+            "action_id": "READ_ACTION_REGISTRY",
+            "title": "Read Action Registry",
+            "description": "Read Sanctum NG action registry from fixed known path.",
+            "status": "WIRED",
+            "safety_level": "SAFE_READ_FIXED_PATH",
+            "allowed_commands": [
+              "READ_FIXED_JSON: IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_ACTION_REGISTRY_V0_1.json"
+            ],
+            "allowed_paths": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_ACTION_REGISTRY_V0_1.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/**"
+            ],
+            "forbidden_paths": [
+              "*"
+            ],
+            "writes_files": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/ACTION_LOGS/**"
+            ],
+            "evidence_refs": [
+              "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_ACTION_REGISTRY_V0_1.json"
+            ],
+            "known_limitations": [
+              "Only fixed registry file path is readable.",
+              "No arbitrary file traversal."
+            ]
+          },
+          {
+            "action_id": "READ_LATEST_REPORT_SUMMARY",
+            "title": "Read Latest Report Summary",
+            "description": "Read fixed known summary reports from the current task bundle and return compact status map.",
+            "status": "WIRED",
+            "safety_level": "SAFE_READ_FIXED_REPORT_SET",
+            "allowed_commands": [
+              "READ_FIXED_JSON_SET: SANCTUM_NG_REFRESH_RUNNER_REPORT.json, VALIDATOR_REPORT.json, ACTION_LAYER_SMOKE_REPORT.json, FINAL_RECEIPT.json, POST_COMMIT_CLOSURE_RECEIPT.json"
+            ],
+            "allowed_paths": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/VALIDATOR_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/ACTION_LAYER_SMOKE_REPORT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/FINAL_RECEIPT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/**"
+            ],
+            "forbidden_paths": [
+              "*"
+            ],
+            "writes_files": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/ACTION_LOGS/**"
+            ],
+            "evidence_refs": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/VALIDATOR_REPORT.json"
+            ],
+            "known_limitations": [
+              "Only predefined report files are readable.",
+              "Missing files are reported as warnings, not auto-repaired."
+            ]
+          }
+        ],
+        "forbidden_paths": [
+          "ORGANS/**",
+          "SANCTUM/**",
+          "IMPERIUM_TEST_VERSION/**",
+          "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/**",
+          ".git/**"
+        ]
+      }
+    },
+    {
+      "step": "wired_action_count",
+      "status": "PASS",
+      "details": {
+        "wired_count": 5
+      }
+    }
+  ],
+  "action_results": [
+    {
+      "action_id": "REFRESH_TRUTH_STATE",
+      "http_status": 200,
+      "status": "PASS",
+      "result_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/ACTION_LOGS/RESULTS/20260522T154907Z_e2e9fa593c.json",
+      "output_summary": "refresh_returncode=0 runner_verdict=PASS"
+    },
+    {
+      "action_id": "VALIDATE_TRUTH_STATE",
+      "http_status": 200,
+      "status": "PASS",
+      "result_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/ACTION_LOGS/RESULTS/20260522T154907Z_b1150e6f18.json",
+      "output_summary": "validator_returncode=0 validator_verdict=PASS"
+    },
+    {
+      "action_id": "READ_PHASE_REGISTRY",
+      "http_status": 200,
+      "status": "PASS",
+      "result_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/ACTION_LOGS/RESULTS/20260522T154907Z_8f05a209b3.json",
+      "output_summary": "read_ok:IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_PHASE_REGISTRY_V0_1.json"
+    },
+    {
+      "action_id": "READ_ACTION_REGISTRY",
+      "http_status": 200,
+      "status": "PASS",
+      "result_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/ACTION_LOGS/RESULTS/20260522T154907Z_8cfe3dc9a3.json",
+      "output_summary": "read_ok:IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_ACTION_REGISTRY_V0_1.json"
+    },
+    {
+      "action_id": "READ_LATEST_REPORT_SUMMARY",
+      "http_status": 200,
+      "status": "WARN",
+      "result_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1/ACTION_LOGS/RESULTS/20260522T154907Z_d28f022d82.json",
+      "output_summary": "summary_count=5 missing=1"
+    }
+  ],
+  "warnings": [
+    "action_warn:READ_LATEST_REPORT_SUMMARY"
+  ],
+  "blockers": [],
+  "server_stdout_tail": "",
+  "server_stderr_tail": "",
+  "no_fake_green_note": "Smoke PASS/WARN confirms bounded localhost action layer only."
+}

@@ -1,0 +1,32 @@
+{
+  "receipt_id": "task-newgen-mechanicus-controlled-tool-provision-pc-v0_1:code_quality_ruff:controlled_provision:ruff",
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+  "capability_id": "CODE_QUALITY_RUFF",
+  "validator": "mechanicus_controlled_provision_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T19:34:31Z",
+  "status": "PASS",
+  "summary": "CODE_QUALITY_RUFF: PASS via controlled_provision:ruff. promotion_recommendation=PROMOTE_SANDBOX",
+  "check_name": "controlled_provision:ruff",
+  "command_or_check": "ruff --version || python -m ruff --version",
+  "exit_code": 0,
+  "stdout_excerpt": "$ ruff --version\n\n$ python -m ruff --version\nruff 0.15.14",
+  "stderr_excerpt": "$ ruff --version\n'ruff' is not recognized as an internal or external command,\noperable program or batch file.\n\n$ python -m ruff --version",
+  "side_effects": [
+    "validation check executed",
+    "receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/code-quality-ruff_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "PROMOTE_SANDBOX",
+  "warnings": [
+    "path_warning_or_alternate_invocation_used"
+  ],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/code-quality-ruff_validation_receipt.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/install_ruff_receipt.json"
+  ]
+}

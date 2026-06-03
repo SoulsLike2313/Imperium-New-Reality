@@ -1,0 +1,33 @@
+{
+  "task_id": "TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1",
+  "generated_at_utc": "2026-05-24T21:02:36.6881966Z",
+  "inquisition_gate_refs": [
+    "GATE-U08-REPO-PURITY",
+    "GATE-U09-NO-FAKE-GREEN",
+    "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+    "GATE-U20-AGENT-KPD-SELF-REVIEW",
+    "GATE-U21-COMMAND-CHUNKING"
+  ],
+  "findings": {
+    "fail_count": 2,
+    "warn_count": 1,
+    "fail_files": [
+      "IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\FIXTURES\\FAIL_ENGLISH_LIVE_PROGRESS.md",
+      "IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\FIXTURES\\FAIL_MISSING_ACK.md"
+    ],
+    "warn_files": [
+      "IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\FIXTURES\\WARN_TECHNICAL_ENGLISH_ALLOWED.md"
+    ]
+  },
+  "dominant_failures": [
+    "Missing ACK block",
+    "Long owner-facing English commentary",
+    "Forbidden action admission"
+  ],
+  "recommended_inquisition_actions": [
+    "Keep FAIL fixtures as regression corpus for future checker hardening.",
+    "Escalate repeated language drift from WARN to violation in follow-up task.",
+    "Preserve current tools as baseline and compare future false-positive rates."
+  ],
+  "handoff_verdict": "REVIEW_REQUIRED"
+}

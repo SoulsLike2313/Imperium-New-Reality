@@ -1,0 +1,25 @@
+{
+  "organ": "SCHOLA_IMPERIALIS",
+  "inputs": [
+    {
+      "name": "Learning backlog source",
+      "source": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/GHOST_EVOLVE_STAGE1_LEARNING_BACKLOG.json",
+      "required": true,
+      "missing_behavior": "BLOCK"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Learning backlog JSON",
+      "path_or_contract": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/GHOST_EVOLVE_STAGE1_LEARNING_BACKLOG.json",
+      "required": true,
+      "consumer": "FUTURE_TASKPACKS"
+    },
+    {
+      "name": "Learning backlog MD",
+      "path_or_contract": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/GHOST_EVOLVE_STAGE1_LEARNING_BACKLOG.md",
+      "required": true,
+      "consumer": "OWNER"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+  "generated_at_utc": "2026-05-24T19:35:08Z",
+  "approved_tools": [
+    {
+      "tool": "jsonschema",
+      "detected_before": "no",
+      "detected_after": "yes",
+      "install_performed": "yes",
+      "install_exit_code": 0,
+      "install_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/install_jsonschema_receipt.json",
+      "primary_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-tool-jsonschema_validation_receipt.json",
+      "status_change": "+2",
+      "before_detection_command": "python -c \"import importlib.metadata as m; print(m.version('jsonschema'))\"",
+      "after_detection_command": "python -c \"import importlib.metadata as m; print(m.version('jsonschema'))\""
+    },
+    {
+      "tool": "ruff",
+      "detected_before": "no",
+      "detected_after": "yes",
+      "install_performed": "yes",
+      "install_exit_code": 0,
+      "install_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/install_ruff_receipt.json",
+      "primary_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-ruff_validation_receipt.json",
+      "status_change": "+2",
+      "before_detection_command": "ruff --version",
+      "after_detection_command": "python -m ruff --version"
+    },
+    {
+      "tool": "mypy",
+      "detected_before": "no",
+      "detected_after": "yes",
+      "install_performed": "yes",
+      "install_exit_code": 0,
+      "install_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/install_mypy_receipt.json",
+      "primary_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-pyright-mypy_validation_receipt.json",
+      "status_change": "+2",
+      "before_detection_command": "mypy --version",
+      "after_detection_command": "python -m mypy --version"
+    },
+    {
+      "tool": "pre-commit",
+      "detected_before": "no",
+      "detected_after": "yes",
+      "install_performed": "yes",
+      "install_exit_code": 0,
+      "install_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/install_pre-commit_receipt.json",
+      "primary_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-precommit_validation_receipt.json",
+      "status_change": "+2",
+      "before_detection_command": "pre-commit --version",
+      "after_detection_command": "python -m pre_commit --version"
+    }
+  ],
+  "forbidden_checks": [
+    {
+      "item": "pyright",
+      "before_present": false,
+      "after_present": false,
+      "added_by_task": false,
+      "status": "not_installed",
+      "before_stdout": "",
+      "after_stdout": ""
+    },
+    {
+      "item": "React/Vite: react",
+      "before_present": false,
+      "after_present": false,
+      "added_by_task": false,
+      "status": "not_installed",
+      "before_stdout": "",
+      "after_stdout": ""
+    },
+    {
+      "item": "React/Vite: vite",
+      "before_present": false,
+      "after_present": false,
+      "added_by_task": false,
+      "status": "not_installed",
+      "before_stdout": "",
+      "after_stdout": ""
+    }
+  ],
+  "summary": {
+    "approved_total": 4,
+    "approved_present_before": 0,
+    "approved_present_after": 4,
+    "forbidden_added_by_task": false,
+    "pre_commit_hook_changed": false
+  }
+}

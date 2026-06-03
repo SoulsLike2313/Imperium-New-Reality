@@ -1,0 +1,49 @@
+{
+  "schema_version": "mechanicus.owner_approved_aliases.v0_1",
+  "task_id": "TASK-NEWGEN-MECHANICUS-OWNER-APPROVED-TOOLS-REGISTRY-NORMALIZATION-PC-V0_1",
+  "generated_at_utc": "2026-05-25T21:21:26Z",
+  "policy": "Owner-approved tool IDs must map to canonical capability IDs before install wave planning.",
+  "aliases": [
+    {
+      "owner_approved_id": "UTILITIES_7_ZIP",
+      "canonical_capability_id": "UTILITIES_7_ZIP",
+      "display_name": "7-Zip CLI",
+      "category": "UTILITIES",
+      "mapping_type": "identity",
+      "related_existing_capabilities": [],
+      "reason_ru": "ID уже канонический, alias не требуется."
+    },
+    {
+      "owner_approved_id": "MARKDOWNLINT_CLI",
+      "canonical_capability_id": "MARKDOWNLINT_CLI",
+      "display_name": "markdownlint CLI",
+      "category": "CODE_QUALITY",
+      "mapping_type": "identity",
+      "related_existing_capabilities": [
+        "CODE_QUALITY_PRE_COMMIT"
+      ],
+      "reason_ru": "Создана отдельная каноническая карта CLI, чтобы install-wave ссылалась на точный инструмент."
+    },
+    {
+      "owner_approved_id": "CHECK_JSONSCHEMA_CLI",
+      "canonical_capability_id": "CHECK_JSONSCHEMA_CLI",
+      "display_name": "check-jsonschema CLI",
+      "category": "CODE_QUALITY",
+      "mapping_type": "normalized_with_related",
+      "related_existing_capabilities": [
+        "CODE_QUALITY_JSONSCHEMA",
+        "CAP-TOOL-JSONSCHEMA"
+      ],
+      "reason_ru": "Отдельный canonical ID для CLI; существующие jsonschema-карты сохранены как родственные, но не подменяют owner-approved ID."
+    },
+    {
+      "owner_approved_id": "YAMLLINT_CLI",
+      "canonical_capability_id": "YAMLLINT_CLI",
+      "display_name": "yamllint",
+      "category": "CODE_QUALITY",
+      "mapping_type": "identity",
+      "related_existing_capabilities": [],
+      "reason_ru": "Создана каноническая карта под owner-approved ID без alias-неоднозначности."
+    }
+  ]
+}

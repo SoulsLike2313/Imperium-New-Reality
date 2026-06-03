@@ -1,0 +1,75 @@
+{
+  "schema_id": "newgen_agent_front_door_officio_boot_closure_receipt_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-AGENT-FRONT-DOOR-OFFICIO-BOOT-PROTOCOL-VM3-V0_1",
+  "step_name": "Agent Front Door + Officio Boot Protocol V0.1",
+  "verdict": "PASS_FOR_AGENT_FRONT_DOOR_AND_OFFICIO_BOOT_PROTOCOL_V0_1_ONLY",
+  "status": "COMPLETE",
+  "scope": "IMPERIUM_NEW_GENERATION only",
+  "git_truth": {
+    "branch": "master",
+    "start_head": "6dcc3b07fefb419cfe397b5db30fee576ab101e8",
+    "remote_head_at_start": "6dcc3b07fefb419cfe397b5db30fee576ab101e8",
+    "start_worktree_clean": true,
+    "post_push_local_head": null,
+    "post_push_remote_head": null,
+    "post_push_heads_match": null,
+    "post_push_worktree_clean": null
+  },
+  "gatepack": {
+    "path": "INBOX/VM3_TASKPACKS/TASK-20260524-NEWGEN-AGENT-FRONT-DOOR-OFFICIO-BOOT-PROTOCOL-VM3-V0_1/TASKPACK_TASK-20260524-NEWGEN-AGENT-FRONT-DOOR-OFFICIO-BOOT-PROTOCOL-VM3-V0_1.zip",
+    "sha256": "5fe5e5abe0ae9f732e3e52c1322ed82a5345c147412452bcc3a4bdf570b3811d"
+  },
+  "required_outputs": [
+    "IMPERIUM_NEW_GENERATION/AGENTS.md",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/README.md",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/officio_role_contract_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/servitor_execution_contract_v0_1.md",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/owner_facing_language_contract_v0_1.md",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/final_response_contract_v0_1.md",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/officio_ack_template_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/TOOLS/officio_boot_ack_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/TEMPLATES/task_start_full_boot_sequence_v0_1.md",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-AGENT-FRONT-DOOR-OFFICIO-BOOT-PROTOCOL-VM3-V0_1/FINAL_REPORT.md",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-AGENT-FRONT-DOOR-OFFICIO-BOOT-PROTOCOL-VM3-V0_1/closure_receipt.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-AGENT-FRONT-DOOR-OFFICIO-BOOT-PROTOCOL-VM3-V0_1/context_source_mix.json"
+  ],
+  "smoke": {
+    "doctrinarium_preflight_core_task": {
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-AGENT-FRONT-DOOR-OFFICIO-BOOT-PROTOCOL-VM3-V0_1/doctrinarium_preflight_core_task.json",
+      "status": "PASS"
+    },
+    "officio_ack_generation": {
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-AGENT-FRONT-DOOR-OFFICIO-BOOT-PROTOCOL-VM3-V0_1/officio_role_contract_ack.generated.json",
+      "status": "PASS"
+    },
+    "json_parse_validation": {
+      "officio_role_contract": true,
+      "officio_ack_template": true
+    },
+    "agents_route_order_proof": {
+      "status": "PASS",
+      "proof_lines": [
+        "IMPERIUM_NEW_GENERATION/AGENTS.md:12",
+        "IMPERIUM_NEW_GENERATION/AGENTS.md:13",
+        "IMPERIUM_NEW_GENERATION/AGENTS.md:14",
+        "IMPERIUM_NEW_GENERATION/AGENTS.md:20"
+      ]
+    }
+  },
+  "script_artifact_preservation": [
+    {
+      "artifact_id": "officio_boot_ack_v0_1",
+      "path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/TOOLS/officio_boot_ack_v0_1.py",
+      "classification": "ABSORB_NOW",
+      "type_safety_level": "TASK_LOCAL",
+      "result": "py_compile_pass"
+    }
+  ],
+  "not_proven": [
+    "full organ intelligence",
+    "automatic enforcement across all agents",
+    "live organ dialogue",
+    "Owner Verdict Needed live button",
+    "production autonomy"
+  ]
+}

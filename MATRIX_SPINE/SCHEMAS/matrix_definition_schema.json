@@ -1,0 +1,186 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IMPERIUM Matrix Definition Runtime-Aligned Schema V0.5 Candidate",
+  "type": "object",
+  "required": [
+    "matrix_id",
+    "version",
+    "owner_organ",
+    "support_organs",
+    "purpose",
+    "used_by",
+    "required_questions",
+    "pass_criteria",
+    "warn_criteria",
+    "block_criteria",
+    "fake_green_flags",
+    "evidence_requirements",
+    "current_status",
+    "next_action"
+  ],
+  "properties": {
+    "matrix_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner_organ": {
+      "type": "string",
+      "enum": [
+        "Global",
+        "Administratum",
+        "Astronomicon",
+        "Doctrinarium",
+        "Inquisition",
+        "Mechanicus",
+        "Officio Agentis",
+        "Schola Imperialis",
+        "Strategium"
+      ]
+    },
+    "support_organs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "used_by": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "INQUISITOR",
+          "GPT_LOGOS",
+          "SERVITOR",
+          "OWNER",
+          "SCHOLA",
+          "MECHANICUS",
+          "OFFICIO",
+          "ADMINISTRATUM",
+          "ASTRONOMICON",
+          "DOCTRINARIUM",
+          "INQUISITION",
+          "STRATEGIUM"
+        ]
+      },
+      "minItems": 1
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "required_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pass_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "warn_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "block_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "pass_warn_block": {
+      "type": "object"
+    },
+    "fake_green_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "score_caps": {
+      "oneOf": [
+        {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      ]
+    },
+    "evidence_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "receipt_schema_reference": {
+      "type": "string"
+    },
+    "expected_repo_location_candidate": {
+      "type": "string"
+    },
+    "candidate_repo_location": {
+      "type": "string"
+    },
+    "current_status": {
+      "type": "string",
+      "enum": [
+        "CANDIDATE",
+        "ACTIVE",
+        "CANON",
+        "DEPRECATED",
+        "QUARANTINE",
+        "BLOCKED",
+        "WARN",
+        "CANDIDATE_NOT_CANON"
+      ]
+    },
+    "next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

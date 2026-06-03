@@ -1,0 +1,8 @@
+# Officio Status
+
+- status: `FOUNDATION_V0_1_READY_FOR_REVIEW`
+- root: `/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT`
+- runtime_root: `/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-RICH-SHELL-OPERATOR-REPAIR-8-ORGANS-VM2-V0_1/OFFICIO_RUNTIME`
+- git_head: `57cf210f2516fb001adc42a4f283a8bd4e647ec8`
+- git_branch: `master`
+- git_dirty: `yes`

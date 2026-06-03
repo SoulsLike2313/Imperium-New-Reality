@@ -1,0 +1,174 @@
+{
+  "task_id": "TASK-NEWGEN-FIVE-ORGAN-ALIGNMENT-CHECK-VM3-V0_1",
+  "ide_scope": "READ_ONLY_ONLY",
+  "summary_verdict": "PARTIAL_READY_WITH_INQUISITION_GAP",
+  "organs": [
+    {
+      "organ_id": "MECHANICUS",
+      "display_title": "Mechanicus",
+      "status": "REFERENCE",
+      "root_path": "IMPERIUM_NEW_GENERATION/MECHANICUS",
+      "body_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/IDENTITY/organ_identity_v0_1.md",
+      "tui_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TUI/mechanicus_tui_v0_1.py",
+      "key_reports": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1/FINAL_REPORT.md"
+      ],
+      "checkers": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_scope_packs_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_arsenal_foundation_v0_1.py"
+      ],
+      "cards_or_registries": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json"
+      ],
+      "visible_warnings": [
+        "BODY representation is split across IDENTITY/STATE/CONTRACTS; no dedicated BODY manifest file."
+      ],
+      "visible_successes": [
+        "High checker and report density.",
+        "Capability governance and TUI evidence are present."
+      ],
+      "drill_down_file_groups": [
+        "TOOLS",
+        "TOOLS_REGISTRY",
+        "ARSENAL/REGISTRY",
+        "REPORTS"
+      ],
+      "missing_file_passports": true
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "display_title": "Officio Agentis",
+      "status": "ACCEPTED_FIRST_BODY",
+      "root_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS",
+      "body_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/BODY/officio_agentis_body_manifest_v0_1.json",
+      "tui_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/officio_agentis_tui_v0_1.py",
+      "key_reports": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/FINAL_REPORT.md"
+      ],
+      "checkers": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_role_registry_checker_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_response_contract_checker_v0_1.py"
+      ],
+      "cards_or_registries": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLES/role_registry_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/OFFICIO_VM_SERVITOR_ROLE_PACK_V0_1.json"
+      ],
+      "visible_warnings": [
+        "Needs ongoing alignment between role packs and incoming taskpack templates."
+      ],
+      "visible_successes": [
+        "Body manifest and role-response contract stack are in place.",
+        "Ghost_Evolve indexes exist."
+      ],
+      "drill_down_file_groups": [
+        "BODY",
+        "ROLES",
+        "RULES",
+        "REPORTS"
+      ],
+      "missing_file_passports": true
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "display_title": "Administratum",
+      "status": "CURRENT_TRUTH_BASE_ACCEPTED",
+      "root_path": "IMPERIUM_NEW_GENERATION/ADMINISTRATUM",
+      "body_path": "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/BODY/administratum_body_manifest_v0_1.json",
+      "tui_path": "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/administratum_tui_v0_1.py",
+      "key_reports": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS/TASK-NEWGEN-VM3-CONTOUR-INITIATION-VALIDATION-UBUNTU-V0_1/FINAL_REPORT.md"
+      ],
+      "checkers": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS/administratum_current_truth_checker_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS/administratum_card_checker_v0_1.py"
+      ],
+      "cards_or_registries": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/CURRENT_TRUTH/active_organs_index_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REGISTRATION_CARDS/organs/mechanicus_organ_card_v0_1.json"
+      ],
+      "visible_warnings": [
+        "Organ cards are incomplete for all five organs."
+      ],
+      "visible_successes": [
+        "Current-truth index and accepted points are established.",
+        "Registration card schema stack exists."
+      ],
+      "drill_down_file_groups": [
+        "CURRENT_TRUTH",
+        "REGISTRATION_CARDS",
+        "TOOLS",
+        "REPORTS"
+      ],
+      "missing_file_passports": true
+    },
+    {
+      "organ_id": "INQUISITION",
+      "display_title": "Inquisition",
+      "status": "WARN_NEEDS_ALIGNMENT",
+      "root_path": "IMPERIUM_NEW_GENERATION/INQUISITION",
+      "body_path": null,
+      "tui_path": "IMPERIUM_NEW_GENERATION/INQUISITION/TUI/inquisition_tui_v0_1.py",
+      "key_reports": [
+        "IMPERIUM_NEW_GENERATION/INQUISITION/REPORTS/README.md"
+      ],
+      "checkers": [],
+      "cards_or_registries": [],
+      "visible_warnings": [
+        "No BODY manifest.",
+        "No schema/registry/checker layer.",
+        "No task-level report receipts."
+      ],
+      "visible_successes": [
+        "Identity + gate catalog + basic TUI are present."
+      ],
+      "drill_down_file_groups": [
+        "IDENTITY",
+        "GATES",
+        "TUI"
+      ],
+      "missing_file_passports": true
+    },
+    {
+      "organ_id": "ASTRONOMICON",
+      "display_title": "Astronomicon",
+      "status": "BODY_SEED_ACCEPTED",
+      "root_path": "IMPERIUM_NEW_GENERATION/ASTRONOMICON",
+      "body_path": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/BODY/astronomicon_body_manifest_v0_1.json",
+      "tui_path": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/astronomicon_tui_v0_1.py",
+      "key_reports": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/REPORTS/TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1/FINAL_REPORT.md"
+      ],
+      "checkers": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_task_essence_checker_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_route_packet_checker_v0_1.py"
+      ],
+      "cards_or_registries": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/ROUTING/route_decision_registry_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/ROUTING/organ_route_map_v0_1.json"
+      ],
+      "visible_warnings": [
+        "Body is new and still low-volume (single route-body task lineage)."
+      ],
+      "visible_successes": [
+        "Route card and canonical PC->VM3 commands are registered.",
+        "Legacy Doctrinarium-first override is explicitly neutralized in route decisions."
+      ],
+      "drill_down_file_groups": [
+        "BODY",
+        "ROUTING",
+        "TASK_ESSENCE",
+        "REPORTS"
+      ],
+      "missing_file_passports": true
+    }
+  ],
+  "file_atlas_preparation_readiness": {
+    "ready_for_next_task": true,
+    "blocking_organ_for_ide_direct_jump": "INQUISITION",
+    "notes": [
+      "File Atlas task is viable as next system action.",
+      "IDE/WARP readiness cannot be claimed until Inquisition V0_2 hardening is completed."
+    ]
+  }
+}

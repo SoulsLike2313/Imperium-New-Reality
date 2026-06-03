@@ -1,0 +1,57 @@
+{
+  "task_id": "TASK-20260520-NEWGEN-VISUAL-TOPOLOGY-HARDEN-10-ORGAN-COVERAGE-VM3-V0_2R",
+  "role_authority": "OFFICIO_REQUIRED_NOT_TASKPACK",
+  "mode": "VM3_SSH_EXECUTION",
+  "repo_root_vm3": "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+  "allowed_write_roots": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY",
+    "IMPERIUM_NEW_GENERATION/TASKS/VM3_ASSIGNED/TASK-20260520-NEWGEN-VISUAL-TOPOLOGY-HARDEN-10-ORGAN-COVERAGE-VM3-V0_2R"
+  ],
+  "read_only_authority_roots": [
+    "ORGANS/OFFICIO_AGENTIS",
+    "IMPERIUM_NEW_GENERATION"
+  ],
+  "forbidden_write_roots": [
+    "ORGANS",
+    "SANCTUM",
+    "IMPERIUM_TEST_VERSION"
+  ],
+  "baseline_commit": "5b2cb210b21404eb44427183544d31ca0e47f3ff",
+  "task_type": "VISUAL_TOPOLOGY_HARDENING",
+  "officio_intake_required": true,
+  "commit_required_if_gates_pass": true,
+  "push_required_if_gates_pass": true,
+  "zip_bundle_required": false,
+  "external_local_artifacts_allowed": false,
+  "required_organ_nodes": [
+    "ADMINISTRATUM_NODE",
+    "ASTRONOMICON_NODE",
+    "MECHANICUS_NODE",
+    "OFFICIO_NODE",
+    "INQUISITION_NODE",
+    "DOCTRINARIUM_NODE",
+    "STRATEGIUM_NODE",
+    "SCHOLA_NODE",
+    "CUSTODES_NODE_LOCKED",
+    "THRONE_NODE_LOCKED"
+  ],
+  "required_panel_units": [
+    "MECHANICUS_PANEL",
+    "ADMINISTRATUM_PANEL_STUB",
+    "ASTRONOMICON_PANEL_STUB",
+    "OFFICIO_PANEL_STUB",
+    "INQUISITION_PANEL_STUB",
+    "DOCTRINARIUM_PANEL_STUB",
+    "STRATEGIUM_PANEL_STUB",
+    "SCHOLA_PANEL_STUB",
+    "CUSTODES_PANEL_LOCKED",
+    "THRONE_PANEL_LOCKED"
+  ],
+  "required_owner_fields": [
+    "visual_owner",
+    "truth_owner",
+    "data_source_owner",
+    "organ_subject",
+    "implementation_owner"
+  ]
+}

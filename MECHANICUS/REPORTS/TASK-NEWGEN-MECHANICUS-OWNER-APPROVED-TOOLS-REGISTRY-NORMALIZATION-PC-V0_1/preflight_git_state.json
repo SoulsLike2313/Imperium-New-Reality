@@ -1,0 +1,51 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-OWNER-APPROVED-TOOLS-REGISTRY-NORMALIZATION-PC-V0_1",
+  "captured_at_utc": "2026-05-25T21:26:12Z",
+  "git": {
+    "rev_parse_head": "21c507d092abeb010a50fc333df4e8fb56f14ca9",
+    "status_short": "M IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json\n M IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/intake_queue_v0_1.json\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CHECK_JSONSCHEMA_CLI/\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/MARKDOWNLINT_CLI/\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/YAMLLINT_CLI/\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/PLAYBOOKS/MECHANICUS_OWNER_APPROVED_TOOL_NORMALIZATION_PLAYBOOK_V0_1.md\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/PLAYBOOKS/MECHANICUS_TOOL_APPROVAL_MATRIX_PLAYBOOK_V0_1.md\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/PLAYBOOKS/MECHANICUS_TOOL_VALIDATION_RECIPE_PLAYBOOK_V0_1.md\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECIPES/\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/owner_approved_tool_aliases_v0_1.json\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCHEMAS/owner_approval_matrix_entry_schema_v0_1.json\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCHEMAS/tool_validation_recipe_schema_v0_1.json\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-OWNER-APPROVAL-MATRIX-PC-V0_1/\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_owner_approval_matrix_v0_1.py\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_owner_approved_tool_normalization_v0_1.py\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_owner_approval_matrix_builder_v0_1.py\n?? IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_tool_validation_recipe_builder_v0_1.py",
+    "log_10_oneline": [
+      "21c507d TASK-20260525: finalize Mechanicus Forge TUI client V1",
+      "763ad7b TASK-20260525: add Mechanicus Forge TUI client",
+      "94c9f4b TASK-20260524: expand Mechanicus toolbase batch 001",
+      "5d22657 TASK-20260524: add Mechanicus evidence index foundation",
+      "b373f45 TASK-20260524: confirm Mechanicus quality gate clean followup",
+      "919e314 TASK-20260524: remove legacy NewGen runtime logs after quality gate",
+      "6b6555c TASK-20260524: add Mechanicus quality gate batch 002",
+      "21cfb65 TASK-20260524: add Officio language role gate foundation",
+      "4adfe39 TASK-20260524: export Mechanicus capability scopes",
+      "edaf291 TASK-20260524: provision Mechanicus code quality tools"
+    ],
+    "ls_remote_origin_master": "21c507d092abeb010a50fc333df4e8fb56f14ca9"
+  },
+  "sync_state": {
+    "local_equals_remote_master": true,
+    "pull_executed": false,
+    "pull_reason": "Local HEAD already equals origin/master."
+  },
+  "dirty_state_handling": {
+    "dirty_detected": true,
+    "preexisting_dirty_paths": [
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/PLAYBOOKS/MECHANICUS_TOOL_APPROVAL_MATRIX_PLAYBOOK_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/PLAYBOOKS/MECHANICUS_TOOL_VALIDATION_RECIPE_PLAYBOOK_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECIPES/",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCHEMAS/owner_approval_matrix_entry_schema_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCHEMAS/tool_validation_recipe_schema_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-OWNER-APPROVAL-MATRIX-PC-V0_1/",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_owner_approval_matrix_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_owner_approval_matrix_builder_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_tool_validation_recipe_builder_v0_1.py"
+    ],
+    "runtime_junk_cleanup_performed": false,
+    "non_runtime_tracked_dirty_files_detected": false,
+    "admission": "CONTINUE_WITH_EVIDENCE",
+    "admission_reason_ru": "Стартовый dirty-state ограничен preexisting untracked артефактами в разрешенном контуре; удаление канонических файлов не выполнялось."
+  },
+  "forbidden_actions_confirmed": [
+    "Do not install tools",
+    "Do not run package manager installs",
+    "Do not enable TUI write buttons",
+    "Do not redesign UI",
+    "Do not promote to CANON"
+  ]
+}

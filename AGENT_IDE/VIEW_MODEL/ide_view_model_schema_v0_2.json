@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IMPERIUM Agent IDE Shared View Model V0.2",
+  "type": "object",
+  "required": [
+    "task_id",
+    "schema_version",
+    "generated_at_utc",
+    "truth",
+    "organs",
+    "file_passports",
+    "unknown_file_kind_count",
+    "route_surface",
+    "owner_pain_map",
+    "classification_surface",
+    "projection_guard",
+    "block_foundation_preview",
+    "self_validator_surface"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "truth": {
+      "type": "object"
+    },
+    "organs": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "file_passports": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "unknown_file_kind_count": {
+      "type": "integer"
+    },
+    "route_surface": {
+      "type": "object"
+    },
+    "owner_pain_map": {
+      "type": "object"
+    },
+    "classification_surface": {
+      "type": "object"
+    },
+    "projection_guard": {
+      "type": "object"
+    },
+    "block_foundation_preview": {
+      "type": "object"
+    },
+    "self_validator_surface": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

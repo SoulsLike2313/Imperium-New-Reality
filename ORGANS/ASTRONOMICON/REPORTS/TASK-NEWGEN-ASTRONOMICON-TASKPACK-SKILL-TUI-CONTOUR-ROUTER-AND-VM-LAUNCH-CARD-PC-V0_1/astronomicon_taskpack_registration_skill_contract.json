@@ -1,0 +1,16 @@
+{
+  "skill_id": "ASTRONOMICON_TASKPACK_REGISTRATION_SKILL",
+  "owner_organ": "ASTRONOMICON",
+  "version": "0.1.0",
+  "entrypoints": [
+    "python IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py --interactive",
+    "python IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py --zip-path <ZIP_PATH> --contour <PC|VM3|VM2>"
+  ],
+  "truth_source": "ASTRONOMICON intake/resolver tools only",
+  "supported_contours": [
+    "PC",
+    "VM3",
+    "VM2"
+  ],
+  "route_receipt_contract": "LIVE | DRY_RUN | ROUTE_MISSING | BLOCKED"
+}

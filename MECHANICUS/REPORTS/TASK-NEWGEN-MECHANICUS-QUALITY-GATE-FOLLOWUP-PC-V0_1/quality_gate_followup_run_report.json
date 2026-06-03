@@ -1,0 +1,40 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-QUALITY-GATE-FOLLOWUP-PC-V0_1",
+  "generated_at_utc": "2026-05-24T22:19:56Z",
+  "gates": {
+    "officio_gate": "PASS",
+    "scope_consumption": "PASS",
+    "py_compile": "PASS",
+    "ruff": "PASS",
+    "mypy": "PASS",
+    "json_schema": "PASS",
+    "taskpack_validation": "WARN",
+    "taskpack_validation_raw_verdict": "FAIL",
+    "hygiene_followup": "PASS",
+    "evidence_index_smoke": "PASS",
+    "fake_canon": "PASS"
+  },
+  "overall_verdict": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "taskpack_validator_v0_1_legacy_template_mismatch:TEMPLATES/quality_gate_report.template.json",
+    "py_compile_generates_runtime_hygiene_artifacts_cleanup_required",
+    "missing_recommended:QUALITY_GATE_SCOPE.md,QUALITY_GATE_SCOPE.json,OFFICIO_MECHANICUS_COMBINED_GATE.md,GHOST_EVOLVE_BATCH_002_CONTRACT.md"
+  ],
+  "failures": [],
+  "hygiene_transition": {
+    "legacy_batch_002_hits": 18,
+    "baseline_after_cleanup_hits": 0,
+    "after_quality_before_cleanup_hits": 7,
+    "final_followup_hits": 0
+  },
+  "reports": [
+    "GATE_ACK.md",
+    "scope_pack_consumption_report.json",
+    "code_quality_followup_report.json",
+    "json_schema_followup_report.json",
+    "taskpack_validation_followup_report.json",
+    "hygiene_followup_report.json",
+    "fake_canon_detector_report.json",
+    "evidence_index_smoke_followup_report.json"
+  ]
+}

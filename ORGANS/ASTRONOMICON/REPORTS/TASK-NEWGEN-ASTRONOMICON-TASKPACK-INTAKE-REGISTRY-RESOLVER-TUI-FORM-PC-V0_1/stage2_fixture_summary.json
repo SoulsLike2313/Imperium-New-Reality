@@ -1,0 +1,624 @@
+{
+  "timestamp_utc": "2026-05-30T23:15:38Z",
+  "sandbox_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox",
+  "admission_case_count": 9,
+  "resolver_case_count": 5,
+  "admission_results": [
+    {
+      "case": "missing_zip",
+      "timestamp_utc": "2026-05-30T23:15:38Z",
+      "admission_verdict": "ADMISSION_BLOCK",
+      "task_id": "",
+      "caps_triggered": [
+        "CAP_TASKPACK_ADMISSION_MISSING"
+      ],
+      "warnings": [
+        "ZIP does not exist."
+      ],
+      "raw_receipt": {
+        "timestamp_utc": "2026-05-30T23:15:38Z",
+        "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/fixture_zips/missing.zip",
+        "admission_verdict": "ADMISSION_BLOCK",
+        "manifest_found": false,
+        "task_id_found": false,
+        "task_spec_found": false,
+        "acceptance_gates_found": false,
+        "output_requirements_found": false,
+        "duplicate_task_id": false,
+        "safe_extraction_path": false,
+        "registered_task_path": "",
+        "extracted_path": "",
+        "route_manifest_path": "",
+        "current_expected_task_updated": false,
+        "caps_triggered": [
+          "CAP_TASKPACK_ADMISSION_MISSING"
+        ],
+        "warnings": [
+          "ZIP does not exist."
+        ]
+      }
+    },
+    {
+      "case": "bad_zip",
+      "timestamp_utc": "2026-05-30T23:15:38Z",
+      "admission_verdict": "ADMISSION_BLOCK",
+      "task_id": "",
+      "caps_triggered": [
+        "CAP_TASKPACK_ADMISSION_MISSING"
+      ],
+      "warnings": [
+        "Unreadable ZIP: File is not a zip file"
+      ],
+      "raw_receipt": {
+        "timestamp_utc": "2026-05-30T23:15:38Z",
+        "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/fixture_zips/bad_zip.zip",
+        "admission_verdict": "ADMISSION_BLOCK",
+        "manifest_found": false,
+        "task_id_found": false,
+        "task_spec_found": false,
+        "acceptance_gates_found": false,
+        "output_requirements_found": false,
+        "duplicate_task_id": false,
+        "safe_extraction_path": false,
+        "registered_task_path": "",
+        "extracted_path": "",
+        "route_manifest_path": "",
+        "current_expected_task_updated": false,
+        "caps_triggered": [
+          "CAP_TASKPACK_ADMISSION_MISSING"
+        ],
+        "warnings": [
+          "Unreadable ZIP: File is not a zip file"
+        ]
+      }
+    },
+    {
+      "case": "missing_manifest",
+      "timestamp_utc": "2026-05-30T23:15:38Z",
+      "admission_verdict": "ADMISSION_BLOCK",
+      "task_id": "",
+      "caps_triggered": [
+        "CAP_TASKPACK_ADMISSION_MISSING"
+      ],
+      "warnings": [
+        "Required file missing: MANIFEST.json"
+      ],
+      "raw_receipt": {
+        "timestamp_utc": "2026-05-30T23:15:38Z",
+        "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/fixture_zips/no_manifest.zip",
+        "zip_sha256": "87e6f5b478e6487155c4fd0394a7e519710a84f7cc0b308d2088643418319fdf",
+        "admission_verdict": "ADMISSION_BLOCK",
+        "manifest_found": false,
+        "task_id_found": false,
+        "task_spec_found": true,
+        "acceptance_gates_found": true,
+        "output_requirements_found": true,
+        "duplicate_task_id": false,
+        "safe_extraction_path": false,
+        "registered_task_path": "",
+        "extracted_path": "",
+        "route_manifest_path": "",
+        "current_expected_task_updated": false,
+        "caps_triggered": [
+          "CAP_TASKPACK_ADMISSION_MISSING"
+        ],
+        "warnings": [
+          "Required file missing: MANIFEST.json"
+        ]
+      }
+    },
+    {
+      "case": "missing_task_id",
+      "timestamp_utc": "2026-05-30T23:15:38Z",
+      "admission_verdict": "ADMISSION_BLOCK",
+      "task_id": "",
+      "caps_triggered": [
+        "CAP_TASKPACK_ADMISSION_MISSING"
+      ],
+      "warnings": [
+        "MANIFEST.json exists but task_id is missing."
+      ],
+      "raw_receipt": {
+        "timestamp_utc": "2026-05-30T23:15:38Z",
+        "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/fixture_zips/no_task_id.zip",
+        "zip_sha256": "6c467dec0aa3bcf3df93d8b1f07143b8f4a59360d3e66d74aebf722ba4a7a795",
+        "admission_verdict": "ADMISSION_BLOCK",
+        "manifest_found": true,
+        "task_id_found": false,
+        "task_spec_found": true,
+        "acceptance_gates_found": true,
+        "output_requirements_found": true,
+        "duplicate_task_id": false,
+        "safe_extraction_path": false,
+        "registered_task_path": "",
+        "extracted_path": "",
+        "route_manifest_path": "",
+        "current_expected_task_updated": false,
+        "caps_triggered": [
+          "CAP_TASKPACK_ADMISSION_MISSING"
+        ],
+        "warnings": [
+          "MANIFEST.json exists but task_id is missing."
+        ]
+      }
+    },
+    {
+      "case": "missing_task_spec",
+      "timestamp_utc": "2026-05-30T23:15:38Z",
+      "admission_verdict": "ADMISSION_BLOCK",
+      "task_id": "TASK-FIXTURE-NO-SPEC",
+      "caps_triggered": [
+        "CAP_TASKPACK_ADMISSION_MISSING"
+      ],
+      "warnings": [
+        "Missing TASK_SPEC equivalent."
+      ],
+      "raw_receipt": {
+        "timestamp_utc": "2026-05-30T23:15:38Z",
+        "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/fixture_zips/no_spec.zip",
+        "zip_sha256": "da7d79b08a4ebd92d5a87d5ac80cacca775f7ccf8b1f75d8efa7f416a026636b",
+        "task_id": "TASK-FIXTURE-NO-SPEC",
+        "admission_verdict": "ADMISSION_BLOCK",
+        "manifest_found": true,
+        "task_id_found": true,
+        "task_spec_found": false,
+        "acceptance_gates_found": true,
+        "output_requirements_found": true,
+        "duplicate_task_id": false,
+        "safe_extraction_path": false,
+        "registered_task_path": "",
+        "extracted_path": "",
+        "route_manifest_path": "",
+        "current_expected_task_updated": false,
+        "caps_triggered": [
+          "CAP_TASKPACK_ADMISSION_MISSING"
+        ],
+        "warnings": [
+          "Missing TASK_SPEC equivalent."
+        ]
+      }
+    },
+    {
+      "case": "unsafe_extraction_path",
+      "timestamp_utc": "2026-05-30T23:15:38Z",
+      "admission_verdict": "ADMISSION_BLOCK",
+      "task_id": "TASK-FIXTURE-UNSAFE",
+      "caps_triggered": [
+        "CAP_UNSAFE_EXTRACTION_PATH_NOT_BLOCKED"
+      ],
+      "warnings": [
+        "Unsafe ZIP members detected: ../escape.txt"
+      ],
+      "raw_receipt": {
+        "timestamp_utc": "2026-05-30T23:15:38Z",
+        "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/fixture_zips/unsafe.zip",
+        "zip_sha256": "ca0d5a9e0c38a7386a3725ee8ec7f1387274604eebb90ac562e048c6f7d3af08",
+        "task_id": "TASK-FIXTURE-UNSAFE",
+        "admission_verdict": "ADMISSION_BLOCK",
+        "manifest_found": true,
+        "task_id_found": true,
+        "task_spec_found": true,
+        "acceptance_gates_found": true,
+        "output_requirements_found": true,
+        "duplicate_task_id": false,
+        "safe_extraction_path": false,
+        "registered_task_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-UNSAFE",
+        "extracted_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-UNSAFE/EXTRACTED",
+        "route_manifest_path": "",
+        "current_expected_task_updated": false,
+        "caps_triggered": [
+          "CAP_UNSAFE_EXTRACTION_PATH_NOT_BLOCKED"
+        ],
+        "warnings": [
+          "Unsafe ZIP members detected: ../escape.txt"
+        ]
+      }
+    },
+    {
+      "case": "positive_valid_registration",
+      "timestamp_utc": "2026-05-30T23:15:38Z",
+      "admission_verdict": "ADMISSION_PASS",
+      "task_id": "TASK-FIXTURE-STAGE2-POSITIVE",
+      "caps_triggered": [
+        "CAP_NO_IDE_VISUAL_RELEASE_YET",
+        "CAP_NO_WARP_RUNTIME",
+        "CAP_STAGE1_WITH_WARNINGS_ONLY"
+      ],
+      "warnings": [],
+      "raw_receipt": {
+        "task_id": "TASK-FIXTURE-STAGE2-POSITIVE",
+        "timestamp_utc": "2026-05-30T23:15:38Z",
+        "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/fixture_zips/positive.zip",
+        "zip_sha256": "0bd818d2dbf76fad612f2683c17420f674e9a8b9deff8c4cbfbe95a1ca896069",
+        "admission_verdict": "ADMISSION_PASS",
+        "manifest_found": true,
+        "task_id_found": true,
+        "task_spec_found": true,
+        "acceptance_gates_found": true,
+        "output_requirements_found": true,
+        "duplicate_task_id": false,
+        "safe_extraction_path": true,
+        "registered_task_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-POSITIVE",
+        "extracted_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-POSITIVE/EXTRACTED",
+        "route_manifest_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-POSITIVE/TASK_ROUTE_MANIFEST.json",
+        "current_expected_task_updated": true,
+        "caps_triggered": [
+          "CAP_NO_IDE_VISUAL_RELEASE_YET",
+          "CAP_NO_WARP_RUNTIME",
+          "CAP_STAGE1_WITH_WARNINGS_ONLY"
+        ],
+        "warnings": []
+      }
+    },
+    {
+      "case": "duplicate_task_id",
+      "timestamp_utc": "2026-05-30T23:15:38Z",
+      "admission_verdict": "ADMISSION_BLOCK",
+      "task_id": "TASK-FIXTURE-STAGE2-POSITIVE",
+      "caps_triggered": [
+        "CAP_DUPLICATE_TASK_ID_NOT_DETECTED"
+      ],
+      "warnings": [
+        "Duplicate task_id detected in registry."
+      ],
+      "raw_receipt": {
+        "timestamp_utc": "2026-05-30T23:15:38Z",
+        "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/fixture_zips/duplicate.zip",
+        "zip_sha256": "0bd818d2dbf76fad612f2683c17420f674e9a8b9deff8c4cbfbe95a1ca896069",
+        "task_id": "TASK-FIXTURE-STAGE2-POSITIVE",
+        "admission_verdict": "ADMISSION_BLOCK",
+        "manifest_found": true,
+        "task_id_found": true,
+        "task_spec_found": true,
+        "acceptance_gates_found": true,
+        "output_requirements_found": true,
+        "duplicate_task_id": true,
+        "safe_extraction_path": false,
+        "registered_task_path": "",
+        "extracted_path": "",
+        "route_manifest_path": "",
+        "current_expected_task_updated": false,
+        "caps_triggered": [
+          "CAP_DUPLICATE_TASK_ID_NOT_DETECTED"
+        ],
+        "warnings": [
+          "Duplicate task_id detected in registry."
+        ]
+      }
+    },
+    {
+      "case": "missing_route_template",
+      "timestamp_utc": "2026-05-30T23:15:38Z",
+      "admission_verdict": "ADMISSION_BLOCK",
+      "task_id": "",
+      "caps_triggered": [
+        "CAP_ROUTE_MANIFEST_TEMPLATE_MISSING"
+      ],
+      "warnings": [
+        "Route manifest template is missing."
+      ],
+      "raw_receipt": {
+        "timestamp_utc": "2026-05-30T23:15:38Z",
+        "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/fixture_zips/missing_route_template.zip",
+        "admission_verdict": "ADMISSION_BLOCK",
+        "manifest_found": false,
+        "task_id_found": false,
+        "task_spec_found": false,
+        "acceptance_gates_found": false,
+        "output_requirements_found": false,
+        "duplicate_task_id": false,
+        "safe_extraction_path": false,
+        "registered_task_path": "",
+        "extracted_path": "",
+        "route_manifest_path": "",
+        "current_expected_task_updated": false,
+        "caps_triggered": [
+          "CAP_ROUTE_MANIFEST_TEMPLATE_MISSING"
+        ],
+        "warnings": [
+          "Route manifest template is missing."
+        ]
+      }
+    }
+  ],
+  "resolver_results": [
+    {
+      "case": "positive_resolve",
+      "timestamp_utc": "2026-05-30T23:15:38Z",
+      "resolver_verdict": "PASS_WITH_WARNINGS",
+      "task_id": "TASK-FIXTURE-STAGE2-POSITIVE",
+      "caps_triggered": [
+        "CAP_NO_IDE_VISUAL_RELEASE_YET",
+        "CAP_NO_WARP_RUNTIME",
+        "CAP_STAGE1_WITH_WARNINGS_ONLY"
+      ],
+      "warnings": [],
+      "raw_receipt": {
+        "timestamp_utc": "2026-05-30T23:15:38Z",
+        "resolved_by": "astronomicon_task_id_resolver_v0_1.py",
+        "resolver_source": "stage2_registry",
+        "task_id": "TASK-FIXTURE-STAGE2-POSITIVE",
+        "registered_task_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-POSITIVE",
+        "taskpack_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-POSITIVE/TASKPACK.zip",
+        "extracted_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-POSITIVE/EXTRACTED",
+        "route_manifest_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-POSITIVE/TASK_ROUTE_MANIFEST.json",
+        "current_expected_task_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json",
+        "current_expected_task_found": true,
+        "task_start_ack": {
+          "task_id": "TASK-FIXTURE-STAGE2-POSITIVE",
+          "resolved": true,
+          "route_manifest_found": true,
+          "all_required_organs_reachable": true,
+          "organs": {
+            "DOCTRINARIUM": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/DOCTRINARIUM/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "OFFICIO_AGENTIS": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "ASTRONOMICON": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "ADMINISTRATUM": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "MECHANICUS": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "INQUISITION": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "STRATEGIUM": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/STRATEGIUM/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "SCHOLA_IMPERIALIS": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/SCHOLA_IMPERIALIS/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            }
+          },
+          "caps_triggered": [],
+          "verdict": "PASS_WITH_WARNINGS"
+        },
+        "caps_triggered": [
+          "CAP_NO_IDE_VISUAL_RELEASE_YET",
+          "CAP_NO_WARP_RUNTIME",
+          "CAP_STAGE1_WITH_WARNINGS_ONLY"
+        ],
+        "warnings": [],
+        "resolver_verdict": "PASS_WITH_WARNINGS"
+      }
+    },
+    {
+      "case": "missing_task",
+      "timestamp_utc": "2026-05-30T23:15:38Z",
+      "resolver_verdict": "BLOCK",
+      "task_id": "TASK-NOT-FOUND",
+      "caps_triggered": [
+        "CAP_TASK_ID_RESOLVER_MISSING"
+      ],
+      "warnings": [
+        "Task ID not found in stage2 or stage1 registry."
+      ],
+      "raw_receipt": {
+        "timestamp_utc": "2026-05-30T23:15:38Z",
+        "task_id": "TASK-NOT-FOUND",
+        "resolver_verdict": "BLOCK",
+        "caps_triggered": [
+          "CAP_TASK_ID_RESOLVER_MISSING"
+        ],
+        "warnings": [
+          "Task ID not found in stage2 or stage1 registry."
+        ]
+      }
+    },
+    {
+      "case": "registry_corruption",
+      "timestamp_utc": "2026-05-30T23:15:38Z",
+      "resolver_verdict": "BLOCK",
+      "task_id": "TASK-FIXTURE-STAGE2-POSITIVE",
+      "caps_triggered": [
+        "CAP_TASK_REGISTRY_CORRUPTION"
+      ],
+      "warnings": [
+        "Registry JSON decode error: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+      ],
+      "raw_receipt": {
+        "timestamp_utc": "2026-05-30T23:15:38Z",
+        "resolver_verdict": "BLOCK",
+        "caps_triggered": [
+          "CAP_TASK_REGISTRY_CORRUPTION"
+        ],
+        "warnings": [
+          "Registry JSON decode error: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+        ]
+      }
+    },
+    {
+      "case": "registered_artifact_missing",
+      "timestamp_utc": "2026-05-30T23:15:38Z",
+      "resolver_verdict": "BLOCK",
+      "task_id": "TASK-FIXTURE-STAGE2-POSITIVE",
+      "caps_triggered": [
+        "CAP_NO_IDE_VISUAL_RELEASE_YET",
+        "CAP_NO_WARP_RUNTIME",
+        "CAP_REGISTERED_ARTIFACT_MISSING",
+        "CAP_STAGE1_WITH_WARNINGS_ONLY"
+      ],
+      "warnings": [
+        "Extracted taskpack missing: E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGANS\\ASTRONOMICON\\REPORTS\\TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1\\_fixture_sandbox\\IMPERIUM_NEW_GENERATION\\ORGANS\\ASTRONOMICON\\TASK_INBOX\\REGISTERED\\TASK-FIXTURE-STAGE2-POSITIVE\\EXTRACTED"
+      ],
+      "raw_receipt": {
+        "timestamp_utc": "2026-05-30T23:15:38Z",
+        "resolved_by": "astronomicon_task_id_resolver_v0_1.py",
+        "resolver_source": "stage2_registry",
+        "task_id": "TASK-FIXTURE-STAGE2-POSITIVE",
+        "registered_task_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-POSITIVE",
+        "taskpack_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-POSITIVE/TASKPACK.zip",
+        "extracted_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-POSITIVE/EXTRACTED",
+        "route_manifest_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-POSITIVE/TASK_ROUTE_MANIFEST.json",
+        "current_expected_task_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json",
+        "current_expected_task_found": true,
+        "task_start_ack": {
+          "task_id": "TASK-FIXTURE-STAGE2-POSITIVE",
+          "resolved": true,
+          "route_manifest_found": true,
+          "all_required_organs_reachable": true,
+          "organs": {
+            "DOCTRINARIUM": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/DOCTRINARIUM/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "OFFICIO_AGENTIS": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "ASTRONOMICON": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "ADMINISTRATUM": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "MECHANICUS": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "INQUISITION": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "STRATEGIUM": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/STRATEGIUM/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "SCHOLA_IMPERIALIS": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/SCHOLA_IMPERIALIS/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            }
+          },
+          "caps_triggered": [],
+          "verdict": "PASS_WITH_WARNINGS"
+        },
+        "caps_triggered": [
+          "CAP_NO_IDE_VISUAL_RELEASE_YET",
+          "CAP_NO_WARP_RUNTIME",
+          "CAP_REGISTERED_ARTIFACT_MISSING",
+          "CAP_STAGE1_WITH_WARNINGS_ONLY"
+        ],
+        "warnings": [
+          "Extracted taskpack missing: E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGANS\\ASTRONOMICON\\REPORTS\\TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1\\_fixture_sandbox\\IMPERIUM_NEW_GENERATION\\ORGANS\\ASTRONOMICON\\TASK_INBOX\\REGISTERED\\TASK-FIXTURE-STAGE2-POSITIVE\\EXTRACTED"
+        ],
+        "resolver_verdict": "BLOCK"
+      }
+    },
+    {
+      "case": "organ_read_first_missing",
+      "timestamp_utc": "2026-05-30T23:15:38Z",
+      "resolver_verdict": "BLOCK",
+      "task_id": "TASK-FIXTURE-STAGE2-POSITIVE",
+      "caps_triggered": [
+        "CAP_NO_IDE_VISUAL_RELEASE_YET",
+        "CAP_NO_WARP_RUNTIME",
+        "CAP_ORGAN_READ_FIRST_ACK_MISSING",
+        "CAP_STAGE1_WITH_WARNINGS_ONLY"
+      ],
+      "warnings": [],
+      "raw_receipt": {
+        "timestamp_utc": "2026-05-30T23:15:38Z",
+        "resolved_by": "astronomicon_task_id_resolver_v0_1.py",
+        "resolver_source": "stage2_registry",
+        "task_id": "TASK-FIXTURE-STAGE2-POSITIVE",
+        "registered_task_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-POSITIVE",
+        "taskpack_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-POSITIVE/TASKPACK.zip",
+        "extracted_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-POSITIVE/EXTRACTED",
+        "route_manifest_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-POSITIVE/TASK_ROUTE_MANIFEST.json",
+        "current_expected_task_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/_fixture_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json",
+        "current_expected_task_found": true,
+        "task_start_ack": {
+          "task_id": "TASK-FIXTURE-STAGE2-POSITIVE",
+          "resolved": false,
+          "route_manifest_found": true,
+          "all_required_organs_reachable": false,
+          "organs": {
+            "DOCTRINARIUM": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/DOCTRINARIUM/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "OFFICIO_AGENTIS": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "ASTRONOMICON": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "ADMINISTRATUM": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "MECHANICUS": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "INQUISITION": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": false,
+              "status": "MISSING_READ_FIRST"
+            },
+            "STRATEGIUM": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/STRATEGIUM/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            },
+            "SCHOLA_IMPERIALIS": {
+              "read_first_path": "IMPERIUM_NEW_GENERATION/ORGANS/SCHOLA_IMPERIALIS/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+              "found": true,
+              "status": "ACTIVE_FOR_STAGE1"
+            }
+          },
+          "caps_triggered": [
+            "CAP_ORGAN_READ_FIRST_ACK_MISSING"
+          ],
+          "verdict": "BLOCK"
+        },
+        "caps_triggered": [
+          "CAP_NO_IDE_VISUAL_RELEASE_YET",
+          "CAP_NO_WARP_RUNTIME",
+          "CAP_ORGAN_READ_FIRST_ACK_MISSING",
+          "CAP_STAGE1_WITH_WARNINGS_ONLY"
+        ],
+        "warnings": [],
+        "resolver_verdict": "BLOCK"
+      }
+    }
+  ]
+}

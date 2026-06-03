@@ -1,0 +1,49 @@
+{
+  "visual_unit_id": "SANCTUM.RIGHT_CONTEXT_DOCK.DOCTRINARIUM_PANEL_STUB",
+  "parent": "SANCTUM.RIGHT_CONTEXT_DOCK",
+  "type": "organ_panel_stub",
+  "visual_owner": "SANCTUM_SHELL",
+  "truth_owner": "DOCTRINARIUM_AGENT",
+  "data_source_owner": "UNKNOWN",
+  "organ_subject": "DOCTRINARIUM_AGENT",
+  "implementation_owner": "VISUAL_FOUNDRY",
+  "purpose": "Reserved stub panel lane for future organ cockpit integration.",
+  "backend_source": "UNKNOWN",
+  "backend_source_status": "unknown",
+  "allowed_states": [
+    "stub",
+    "hidden",
+    "unknown"
+  ],
+  "truth_rules": [
+    "Stub label must remain explicit.",
+    "No action controls are exposed while backend source is unknown."
+  ],
+  "visual_tokens": "stub_panel_tokens",
+  "texture": "forge_metal_dark",
+  "glow": {
+    "enabled": false
+  },
+  "motion": {
+    "enabled": false,
+    "animation": "ambient_disabled",
+    "perf_tier": "STATIC",
+    "disable_in_reduced_motion": true
+  },
+  "perf_tier": "STATIC",
+  "proof_requirements": [
+    "Stub panels listed in inventory/map with non-real status."
+  ],
+  "integration_status": "stub",
+  "fake_green_risks": [
+    "Stub panel represented as real cockpit lane."
+  ],
+  "owner_group": "SANCTUM",
+  "owner_organ": "DOCTRINARIUM_AGENT",
+  "accessibility_rules": [
+    "State must not be encoded by color alone.",
+    "RU/EN labels must remain explicit for status tags."
+  ],
+  "change_safety": "Topology hardening scope only; no final UI readiness claims.",
+  "backend_source_unknown_reason": "Panel backend integration is not implemented in this topology hardening stage."
+}

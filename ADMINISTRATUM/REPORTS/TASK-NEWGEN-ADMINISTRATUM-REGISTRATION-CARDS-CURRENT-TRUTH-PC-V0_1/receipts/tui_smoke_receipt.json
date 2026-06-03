@@ -1,0 +1,18 @@
+{
+  "task_id": "TASK-NEWGEN-ADMINISTRATUM-REGISTRATION-CARDS-CURRENT-TRUTH-PC-V0_1",
+  "checker": "administratum_tui_smoke_v0_1.py",
+  "status": "PASS",
+  "command": [
+    "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ADMINISTRATUM\\TUI\\administratum_tui_v0_1.py",
+    "--strict",
+    "--smoke",
+    "--lang",
+    "ru"
+  ],
+  "returncode": 0,
+  "marker_expected": "SMOKE_OK_ADMINISTRATUM_TUI_V0_1",
+  "marker_found": true,
+  "stdout_tail": "ADMINISTRATUM READ-ONLY INSPECTOR V0.1\n======================================\nTekushchiy accepted HEAD: 892ae8a6f5452c55211da4748bed3b1d9d3f9326\n\n[Accepted points]\n- OFFICIO_AGENTIS: TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1 -> 892ae8a6f5452c55211da4748bed3b1d9d3f9326 (ACCEPTED_CURRENT_TRUTH)\n- MECHANICUS: TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1 -> cf6192a07fc8347f1948a5ba57dfcbd8b4aa7557 (PASS)\n- MECHANICUS: TASK-NEWGEN-MECHANICUS-RUNNER-READONLY-INTROSPECTION-HARDENING-PC-V0_1 -> fdd98a7916b0c242102f1c5f5ffb11f9aff09a16 (PASS)\n\n[Aktivnye organy]\n- ADMINISTRATUM: ACTIVE\n- MECHANICUS: ACTIVE\n- OFFICIO_AGENTIS: ACTIVE\n\n[Sleduyushchie zadachi]\n- TASK-NEWGEN-INQUISITION-PURITY-QUARANTINE-BODY-PC-V0_1 (PENDING)\n\n[Registratsionnye kartochki organov]\n- MECHANICUS: ACTIVE\n- OFFICIO_AGENTIS: ACTIVE\n\n[Seed block registry]\n- blocks: 2\n- Budushchee (future): WARP/CLI schemas are seed-only\n\n[Preduprezhdeniya]\n- warn.gate_registry.missing_u19_u21: GATE-U19/U20/U21 are policy-required by AGENTS.md but currently absent from gate registry json.\n- warn.officio.current_truth.source_split: Officio lineage start head differs from current accepted point declared for this taskpack start.\nSMOKE_OK_ADMINISTRATUM_TUI_V0_1\n",
+  "stderr_tail": ""
+}

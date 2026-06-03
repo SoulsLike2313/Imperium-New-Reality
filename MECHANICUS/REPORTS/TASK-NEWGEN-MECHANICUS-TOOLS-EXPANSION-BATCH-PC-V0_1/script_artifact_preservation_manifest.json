@@ -1,0 +1,46 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "generated_at_utc": "2026-05-24T23:35:59Z",
+  "artifacts": [
+    {
+      "artifact_id": "TOOL-MECH-EXPANSION-CANDIDATE-BUILDER-V0_1",
+      "original_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_tool_expansion_candidate_builder_v0_1.py",
+      "purpose": "Build structured candidate matrix for controlled expansion.",
+      "result": "WORKED",
+      "risk": "Candidate definitions need periodic refresh against real tooling landscape.",
+      "recommended_action": "ABSORB_NOW"
+    },
+    {
+      "artifact_id": "TOOL-MECH-EXPANSION-DETECTION-RUNNER-V0_1",
+      "original_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_tool_detection_runner_v0_1.py",
+      "purpose": "Execute bounded detection checks and produce validation receipts.",
+      "result": "WORKED",
+      "risk": "Shell command heuristics may need extension for edge runtimes.",
+      "recommended_action": "ABSORB_NOW"
+    },
+    {
+      "artifact_id": "TOOL-MECH-EXPANSION-DECISION-BUILDER-V0_1",
+      "original_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_tool_expansion_decision_builder_v0_1.py",
+      "purpose": "Build decision matrix, owner queue, and apply bounded promotions.",
+      "result": "WORKED",
+      "risk": "Promotion whitelist should be reviewed per batch policy.",
+      "recommended_action": "ABSORB_NOW"
+    },
+    {
+      "artifact_id": "TOOL-MECH-EXPANSION-SCOPE-REFRESH-V0_1",
+      "original_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_tool_scope_refresh_v0_1.py",
+      "purpose": "Refresh scope packs and append evidence search scope.",
+      "result": "WORKED",
+      "risk": "Scope index regeneration depends on stable schema fields.",
+      "recommended_action": "ABSORB_NOW"
+    },
+    {
+      "artifact_id": "TOOL-MECH-EXPANSION-FINALIZE-V0_1",
+      "original_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_tool_expansion_finalize_v0_1.py",
+      "purpose": "Finalize evidence refresh and closure artifacts for expansion batch.",
+      "result": "WORKED",
+      "risk": "Final verdict policy may evolve with stricter gate coupling.",
+      "recommended_action": "BUFFER_FOR_SCRIPTORIUM_REVIEW"
+    }
+  ]
+}

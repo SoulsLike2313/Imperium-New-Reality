@@ -1,0 +1,32 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-OWNER-APPROVAL-MATRIX-PC-V0_1",
+  "generated_at_utc": "2026-05-25T19:44:19Z",
+  "waves": [
+    {
+      "wave_id": "INSTALL_WAVE_001_OWNER_APPROVED",
+      "policy": "Do not install in this task. Planning artifact only.",
+      "capability_count": 1,
+      "capabilities": [
+        {
+          "capability_id": "UTILITIES_7_ZIP",
+          "install_command_candidate": "winget install 7zip.7zip",
+          "owner_decision": "pending",
+          "recommendation": "install",
+          "notes_for_owner_ru": "source_type=external_tool; install_gate=GATE-ARSENAL-EXTERNAL-INSTALL-ADMISSION; reserved=false."
+        }
+      ]
+    }
+  ],
+  "recommended_install_now_count": 1,
+  "recommended_install_now_capabilities": [
+    {
+      "capability_id": "UTILITIES_7_ZIP",
+      "install_command_candidate": "winget install 7zip.7zip"
+    }
+  ],
+  "missing_owner_approved_capabilities": [
+    "CHECK_JSONSCHEMA_CLI",
+    "MARKDOWNLINT_CLI",
+    "YAMLLINT_CLI"
+  ]
+}

@@ -1,0 +1,67 @@
+# GATE_ACK
+
+- task_id:     `TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1`
+- current_head:     `f640d0f325278c2ad73f851b12ad855b43e6ed32`
+- gatepack_path:     `INBOX/VM2_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/TASKPACK_TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1`
+- gatepack_sha256:     `eb4cab3c0bcf1a86dee61b78d2f629c1ff4827cf3a037156df920805dd7cb1cf`
+- read_gates:
+  - `GATE-U00-GIT-TRUTH`
+  - `GATE-U01-ROLE-ACK`
+  - `GATE-U02-SCOPE-BOUNDARY`
+  - `GATE-U04-EVIDENCE-RECEIPT`
+  - `GATE-U05-STOP-CONDITIONS`
+  - `GATE-U08-REPO-PURITY`
+  - `GATE-U09-NO-FAKE-GREEN`
+  - `GATE-U12-REPORT-OUTPUT-BUDGET`
+  - `GATE-U13-PYTHON-TYPE-SAFETY`
+  - `GATE-U14-WHOLE-REPO-SCOPE-RECON`
+  - `GATE-U15-OPERATIONALITY-IMPACT`
+  - `GATE-U16-BILINGUAL-UI`
+  - `GATE-U17-DELIVERABLE-PACKAGE`
+  - `GATE-U18-AGENT-FACTORY-COMPLIANCE`
+  - `GATE-U19-SCRIPT-ARTIFACT-PRESERVATION`
+  - `GATE-U20-AGENT-KPD-SELF-REVIEW`
+  - `GATE-U21-COMMAND-CHUNKING`
+- accepted_stop_conditions:
+  - `BLOCK/WARN if VM2->VM3 auth fails in BatchMode.`
+  - `BLOCK/WARN if VM3->VM2 auth fails in BatchMode.`
+  - `BLOCK/WARN if any bounded probe hash/size mismatch appears.`
+  - `BLOCK if private key material would be printed or committed.`
+  - `BLOCK if changes escape IMPERIUM_NEW_GENERATION scope (except allowed INBOX runtime evidence).`
+- scope_boundary: `IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/** and IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/**; runtime probe evidence under INBOX/VM2_PROBES/**, INBOX/VM2_TO_VM3_PROBES/**, INBOX/VM3_TO_VM2_PROBES/**`
+- touched_paths:
+  - `IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/SSH_CONNECTION_MATRIX_V0_1.json`
+  - `IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/SSH_CONNECTION_MATRIX_V0_1.md`
+  - `IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/COMMAND_SHORTCUTS_CATALOG_V0_1.md`
+  - `IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/VM2_VM3_BIDIRECTIONAL_ROUTE_PROOF_V0_1.json`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/build_bidirectional_route_proof_vm2_vm3_v0_1.py`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/validate_bidirectional_route_proof_vm2_vm3_v0_1.py`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/smoke_bidirectional_route_proof_vm2_vm3_v0_1.py`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/**`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/**`
+- forbidden_paths:
+  - `ORGANS/**`
+  - `SANCTUM/**`
+  - `IMPERIUM_TEST_VERSION/**`
+  - `main/test merge or branch rewrites`
+- expected_receipts:
+  - `FINAL_REPORT.md`
+  - `closure_receipt.json`
+  - `context_source_mix.json`
+  - `bidirectional_route_probe_report.json`
+  - `vm2_to_vm3_probe_result.json`
+  - `vm3_to_vm2_probe_result.json`
+  - `bidirectional_route_proof_validator_report.json`
+  - `bidirectional_route_proof_smoke_report.json`
+  - `ssh_matrix_validator_report.json`
+  - `kpd_next_task_improvement.md`
+  - `agent_kpd_self_review.json`
+- repo_recon_required: `YES (targeted within New Generation transfer+mechanicus scope)`
+- script_absorption_required: `YES (new builder/validator/smoke preserved under TRANSFER_CONSOLE/TOOLS)`
+- clarification_needed: `NO`
+- verdict: `PASS`
+
+Claim boundary:
+- `PASS_FOR_TWO_CONFIRMED_BOUNDED_VM2_VM3_TRANSFER_ROUTES_ONLY`
+- `NO_PRODUCTION_REMOTE_ORCHESTRATION`
+- `NO_ARBITRARY_SHELL`

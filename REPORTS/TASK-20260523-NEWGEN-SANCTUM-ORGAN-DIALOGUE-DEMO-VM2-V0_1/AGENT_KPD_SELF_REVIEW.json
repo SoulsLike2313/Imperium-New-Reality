@@ -1,0 +1,38 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-20260523-NEWGEN-SANCTUM-ORGAN-DIALOGUE-DEMO-VM2-V0_1",
+    "agent_role": "BIG_MODEL_CODEX_VM2",
+    "useful_outputs": [
+      "ORGAN_DIALOGUE foundation file-backed packet structure",
+      "Deterministic builder/validator/smoke scripts",
+      "Sanctum NG minimal read-only Organ Dialogue UI+state visibility",
+      "Evidence report bundle with gate acknowledgements"
+    ],
+    "waste_points": [
+      "Sanctum state file is large and costly to inspect repeatedly."
+    ],
+    "missing_tools": [
+      "shared report bundle profile validator"
+    ],
+    "generated_tools_to_preserve": [
+      "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/TOOLS/build_organ_dialogue_demo_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/TOOLS/validate_organ_dialogue_demo_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/TOOLS/smoke_organ_dialogue_demo_v0_1.py"
+    ],
+    "recommended_script_absorption": [
+      "ORGAN_DIALOGUE_DEMO_BUILDER",
+      "ORGAN_DIALOGUE_DEMO_VALIDATOR",
+      "ORGAN_DIALOGUE_DEMO_SMOKE"
+    ],
+    "recommended_narrow_agent_profiles": [
+      "NEWGEN_ORGAN_DIALOGUE_PACKET_SERVITOR"
+    ],
+    "future_prompt_improvements": [
+      "Include explicit receipt JSON schemas in taskpack to reduce manual metadata normalization."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add reusable gate checklist for deterministic packet demos with mandatory state/UI marker checks."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

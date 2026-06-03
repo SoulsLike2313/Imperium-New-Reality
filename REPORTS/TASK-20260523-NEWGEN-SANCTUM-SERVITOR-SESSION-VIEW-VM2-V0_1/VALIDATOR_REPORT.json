@@ -1,0 +1,106 @@
+{
+  "schema_version": "0.1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-SERVITOR-SESSION-VIEW-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T22:26:12Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "required_files_exist",
+      "status": "PASS",
+      "details": "all core session-view files exist"
+    },
+    {
+      "check_id": "state_parse",
+      "status": "PASS",
+      "details": "state parses as JSON object"
+    },
+    {
+      "check_id": "state_schema_parse",
+      "status": "PASS",
+      "details": "state schema parses as JSON object"
+    },
+    {
+      "check_id": "timeline_schema_parse",
+      "status": "PASS",
+      "details": "timeline schema parses as JSON object"
+    },
+    {
+      "check_id": "status_rules_parse",
+      "status": "PASS",
+      "details": "status rules parse as JSON object"
+    },
+    {
+      "check_id": "status_rules_include_required_baseline",
+      "status": "PASS",
+      "details": "status rules include baseline required statuses"
+    },
+    {
+      "check_id": "state_minimum_shape",
+      "status": "PASS",
+      "details": "state contains required top-level keys"
+    },
+    {
+      "check_id": "schema_id_match",
+      "status": "PASS",
+      "details": "schema_id matches SERVITOR_SESSION_VIEW_STATE_V0_1"
+    },
+    {
+      "check_id": "forbidden_live_claims_absent",
+      "status": "PASS",
+      "details": "truth_flags enforce read-only/foundation/no-live/no-production"
+    },
+    {
+      "check_id": "timeline_non_empty",
+      "status": "PASS",
+      "details": "timeline has events"
+    },
+    {
+      "check_id": "timeline_contains_run_events",
+      "status": "PASS",
+      "details": "timeline contains RUN events (88)"
+    },
+    {
+      "check_id": "timeline_contains_rerun_events",
+      "status": "PASS",
+      "details": "timeline contains RERUN events (18)"
+    },
+    {
+      "check_id": "timeline_statuses_allowed",
+      "status": "PASS",
+      "details": "all timeline event statuses are allowed"
+    },
+    {
+      "check_id": "no_fake_green_timeline",
+      "status": "PASS",
+      "details": "all PASS_STRICT timeline events include evidence refs"
+    },
+    {
+      "check_id": "source_reports_coverage",
+      "status": "PASS",
+      "details": "all required source report categories are present"
+    },
+    {
+      "check_id": "source_report_statuses_allowed",
+      "status": "PASS",
+      "details": "all source report statuses are allowed"
+    },
+    {
+      "check_id": "source_report_paths_exist_when_declared",
+      "status": "PASS",
+      "details": "source report dirs exist when exists=true"
+    },
+    {
+      "check_id": "acceptance_semantics_status_coverage",
+      "status": "PASS",
+      "details": "acceptance semantics include required status vocabulary"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "state_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/servitor_session_view_state.generated.json",
+  "state_schema_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/servitor_session_view_state.schema.json",
+  "timeline_schema_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/servitor_session_timeline_event.schema.json",
+  "status_rules_path": "IMPERIUM_NEW_GENERATION/TRUTH/SERVITOR_SESSIONS/SERVITOR_SESSION_STATUS_RULES_V0_1.json",
+  "report_dir": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-SANCTUM-SERVITOR-SESSION-VIEW-VM2-V0_1",
+  "no_fake_green_note": "PASS_STRICT is only accepted with explicit evidence references in timeline events."
+}

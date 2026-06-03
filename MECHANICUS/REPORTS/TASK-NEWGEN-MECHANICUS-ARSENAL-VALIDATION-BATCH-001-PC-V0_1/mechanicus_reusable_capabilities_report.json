@@ -1,0 +1,53 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+  "generated_at_utc": "2026-05-24T18:15:17Z",
+  "reusable_outputs": [
+    {
+      "name": "mechanicus_capability_validator_v0_1.py",
+      "path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_validator_v0_1.py",
+      "how_to_rerun": "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_validator_v0_1.py"
+    },
+    {
+      "name": "mechanicus_validation_receipt_builder_v0_1.py",
+      "path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_validation_receipt_builder_v0_1.py",
+      "how_to_rerun": "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_validation_receipt_builder_v0_1.py --help"
+    },
+    {
+      "name": "mechanicus_capability_scope_exporter_v0_1.py",
+      "path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_scope_exporter_v0_1.py",
+      "how_to_rerun": "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_scope_exporter_v0_1.py --help"
+    },
+    {
+      "name": "mechanicus_fake_canon_detector_v0_2.py",
+      "path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_fake_canon_detector_v0_2.py",
+      "how_to_rerun": "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_fake_canon_detector_v0_2.py --help"
+    }
+  ],
+  "promoted_capabilities": [
+    "TOOLS_GIT",
+    "LANGUAGES_POWERSHELL",
+    "LANGUAGES_PYTHON_312_RUNTIME",
+    "TOOLS_PATH_POLICY",
+    "TOOLS_COMMAND_GATEWAY",
+    "TOOLS_RECEIPT_VALIDATOR",
+    "CODE_QUALITY_PY_COMPILE",
+    "CAP-TOOL-PYTEST",
+    "CODE_QUALITY_PYTEST",
+    "DATABASES_SQLITE",
+    "DATABASES_SQLITE_FTS5",
+    "CAP-DB-SQLITE-FTS5-EVIDENCE",
+    "SEARCH_INDEXING_SQLITE_FTS_SEARCH"
+  ],
+  "missing_capabilities": [
+    "CAP-TOOL-JSONSCHEMA",
+    "CODE_QUALITY_JSONSCHEMA",
+    "CAP-CQ-RUFF",
+    "CODE_QUALITY_RUFF",
+    "CAP-CQ-PYRIGHT-MYPY",
+    "CODE_QUALITY_MYPY",
+    "CODE_QUALITY_PYRIGHT",
+    "UI_FRAMEWORKS_VITE",
+    "UI_FRAMEWORKS_REACT"
+  ],
+  "failed_capabilities": []
+}

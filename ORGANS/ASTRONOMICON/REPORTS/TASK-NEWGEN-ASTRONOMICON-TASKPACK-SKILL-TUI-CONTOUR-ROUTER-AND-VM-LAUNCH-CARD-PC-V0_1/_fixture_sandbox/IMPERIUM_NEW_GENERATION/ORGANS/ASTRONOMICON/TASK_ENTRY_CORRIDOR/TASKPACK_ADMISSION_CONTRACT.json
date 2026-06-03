@@ -1,0 +1,49 @@
+{
+  "contract_id": "TASKPACK_ADMISSION_CONTRACT_V0_3",
+  "owner": "ASTRONOMICON",
+  "required_files": [
+    "MANIFEST.json",
+    "TASK_SPEC.md|01_TASK_SPEC.md|02_TASK_SPEC.json",
+    "ACCEPTANCE_GATES.md|03_ACCEPTANCE_GATES.json",
+    "OUTPUT_REQUIREMENTS.md|06_EVIDENCE_REQUIREMENTS.md|07_EXPECTED_OUTPUTS.md"
+  ],
+  "required_manifest_fields": [
+    "taskpack_id",
+    "task_id",
+    "target_contour",
+    "expected_start_head",
+    "owner_launch_phrase",
+    "organs",
+    "language_and_encoding_policy"
+  ],
+  "required_checks": [
+    "zip_exists",
+    "zip_readable",
+    "zip_sha256_computed",
+    "manifest_organs_include_8",
+    "manifest_language_policy_present",
+    "manifest_owner_runtime_routed_through_officio",
+    "taskpack_root_utf8_no_bom",
+    "taskpack_root_non_english_absent",
+    "taskpack_root_replacement_character_absent",
+    "taskpack_root_mojibake_signature_absent",
+    "task_id_not_duplicate",
+    "safe_extraction_path",
+    "route_manifest_can_be_created",
+    "read_route_contains_8_organs"
+  ],
+  "launch_phrase_must_equal": "start task",
+  "admission_verdicts": [
+    "ADMISSION_PASS",
+    "ADMISSION_PASS_WITH_WARNINGS",
+    "ADMISSION_BLOCK"
+  ],
+  "forbidden_overrides": [
+    "OFFICIO_ROLE_OVERRIDE",
+    "DOCTRINARIUM_AUTHORITY_OVERRIDE",
+    "INQUISITION_CAP_OVERRIDE",
+    "MECHANICUS_TOOL_BOUNDARY_OVERRIDE"
+  ],
+  "on_missing_required_file": "BLOCK",
+  "on_missing_non_critical_reference": "WARN"
+}

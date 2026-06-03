@@ -1,0 +1,103 @@
+{
+  "schema_id": "ORGAN_DIALOGUE_DEMO_VALIDATOR_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-ORGAN-DIALOGUE-DEMO-VM2-V0_1",
+  "demo_task_id": "TASK-DEMO-ORGAN-DIALOGUE-V0_1",
+  "generated_at_utc": "2026-05-22T21:17:06Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "schemas_exist",
+      "status": "PASS",
+      "details": "all Organ Dialogue schemas exist"
+    },
+    {
+      "check_id": "schemas_parse",
+      "status": "PASS",
+      "details": "all schemas parse as JSON objects"
+    },
+    {
+      "check_id": "thread_exists",
+      "status": "PASS",
+      "details": "thread file exists and parses"
+    },
+    {
+      "check_id": "request_count_is_8",
+      "status": "PASS",
+      "details": "8 request packets found"
+    },
+    {
+      "check_id": "response_count_is_8",
+      "status": "PASS",
+      "details": "8 response packets found"
+    },
+    {
+      "check_id": "responses_link_to_valid_requests",
+      "status": "PASS",
+      "details": "every response links to a valid request"
+    },
+    {
+      "check_id": "responses_foundation_only",
+      "status": "PASS",
+      "details": "all responses include foundation_only=true"
+    },
+    {
+      "check_id": "no_live_autonomous_claim_in_responses",
+      "status": "PASS",
+      "details": "responses do not claim live/autonomous/production booleans"
+    },
+    {
+      "check_id": "scope_impact_exists",
+      "status": "PASS",
+      "details": "scope impact record exists and parses"
+    },
+    {
+      "check_id": "sanctum_state_references_demo",
+      "status": "PASS",
+      "details": "Sanctum state references Organ Dialogue demo"
+    },
+    {
+      "check_id": "report_bundle_exists",
+      "status": "PASS",
+      "details": "required report bundle files exist"
+    },
+    {
+      "check_id": "no_private_key_material",
+      "status": "PASS",
+      "details": "no private key material detected in Organ Dialogue artifacts"
+    },
+    {
+      "check_id": "no_fake_green_claim",
+      "status": "PASS",
+      "details": "foundation-only/no-fake-green boundaries are explicit"
+    },
+    {
+      "check_id": "events_jsonl_parse",
+      "status": "PASS",
+      "details": "events JSONL parses"
+    },
+    {
+      "check_id": "thread_identity",
+      "status": "PASS",
+      "details": "thread_id and demo_task_id are correct"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "validated_paths": {
+    "schemas": [
+      "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/SCHEMAS/ORGAN_DIALOGUE_REQUEST_V0_1.schema.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/SCHEMAS/ORGAN_DIALOGUE_RESPONSE_V0_1.schema.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/SCHEMAS/ORGAN_DIALOGUE_THREAD_V0_1.schema.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/SCHEMAS/ORGAN_DIALOGUE_EVENT_V0_1.schema.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/SCHEMAS/ORGAN_DIALOGUE_SCOPE_IMPACT_V0_1.schema.json"
+    ],
+    "thread": "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/THREADS/TASK-DEMO-ORGAN-DIALOGUE-V0_1/ORGAN_DIALOGUE_THREAD_V0_1.generated.json",
+    "events": "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/THREADS/TASK-DEMO-ORGAN-DIALOGUE-V0_1/ORGAN_DIALOGUE_EVENTS_V0_1.generated.jsonl",
+    "scope_impact": "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/THREADS/TASK-DEMO-ORGAN-DIALOGUE-V0_1/SCOPE_IMPACT/ORGAN_DIALOGUE_SCOPE_IMPACT_V0_1.generated.json",
+    "requests_dir": "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/THREADS/TASK-DEMO-ORGAN-DIALOGUE-V0_1/REQUESTS",
+    "responses_dir": "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/THREADS/TASK-DEMO-ORGAN-DIALOGUE-V0_1/RESPONSES",
+    "sanctum_state": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+    "report_dir": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-SANCTUM-ORGAN-DIALOGUE-DEMO-VM2-V0_1"
+  },
+  "no_fake_green_note": "PASS/WARN proves deterministic file-backed foundation dialogue only; no live autonomy or production readiness claim."
+}

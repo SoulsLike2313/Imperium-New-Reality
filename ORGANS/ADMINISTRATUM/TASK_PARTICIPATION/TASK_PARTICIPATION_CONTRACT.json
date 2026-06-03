@@ -1,0 +1,42 @@
+{
+  "organ": "ADMINISTRATUM",
+  "status": "ACTIVE_FOR_STAGE1",
+  "task_entry_role": "Owns evidence boundary, continuity receipts, and external finalization semantics for commit/push truth.",
+  "required_inputs": [
+    "Git truth",
+    "External finalization contract"
+  ],
+  "required_outputs": [
+    "Repo truth probe",
+    "Commit push receipt"
+  ],
+  "matrix_responsibilities": [
+    "EVIDENCE_STRENGTH_MATRIX",
+    "FILE_KIND_CLASSIFICATION_MATRIX",
+    "CONTINUITY_HANDOFF_MATRIX",
+    "EXTERNAL_FINALIZATION_RECEIPT_MATRIX"
+  ],
+  "tools_or_receipts_used": [
+    "scripts/administratum_task_start_v0_1.py",
+    "scripts/administratum_task_close_v0_1.py",
+    "git status --short",
+    "git rev-parse HEAD",
+    "git rev-parse origin/master",
+    "scripts/administratum_check_all_v0_1.py"
+  ],
+  "ide_display_fields": [
+    "evidence_level",
+    "worktree_clean",
+    "origin_sync",
+    "finalization_semantics"
+  ],
+  "failure_caps": [
+    "CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING_OR_NEEDS_FOLLOWUP",
+    "CAP_ORGAN_FILE_DECORATIVE_NOT_USED"
+  ],
+  "known_gaps": [
+    "Legacy receipt producers remain partially unmigrated.",
+    "External finalization semantics are candidate-accepted and still not repo-wide canonical."
+  ],
+  "used_by_astronomicon_task_entry": true
+}

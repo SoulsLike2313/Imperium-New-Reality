@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_SCOPING/ORGAN_SCOPE_MERGE_RECORD_V0_1.schema.json",
+  "title": "ORGAN_SCOPE_MERGE_RECORD_V0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "merge_id",
+    "task_id",
+    "packet_sources",
+    "organ_coverage",
+    "merged_scope",
+    "conflicts",
+    "warnings",
+    "readiness",
+    "truth_limitations",
+    "self_verdict"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "merge_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "packet_sources": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "organ_id",
+          "source_type",
+          "path_or_note"
+        ],
+        "properties": {
+          "organ_id": {
+            "type": "string",
+            "enum": [
+              "ASTRONOMICON",
+              "OFFICIO_AGENTIS",
+              "DOCTRINARIUM",
+              "ADMINISTRATUM",
+              "MECHANICUS",
+              "INQUISITION",
+              "STRATEGIUM",
+              "SCHOLA_IMPERIALIS"
+            ]
+          },
+          "source_type": {
+            "type": "string",
+            "enum": [
+              "LIVE_AGENT_RESPONSE",
+              "STATIC_FILE",
+              "SAMPLE_PACKET",
+              "FOUNDATION_STUB",
+              "MISSING_IMPLEMENTATION_WARN"
+            ]
+          },
+          "path_or_note": {
+            "type": "string",
+            "minLength": 3
+          }
+        }
+      }
+    },
+    "organ_coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required_count",
+        "covered_count",
+        "missing_organs"
+      ],
+      "properties": {
+        "required_count": {
+          "type": "integer",
+          "minimum": 8,
+          "maximum": 8
+        },
+        "covered_count": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 8
+        },
+        "missing_organs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "ASTRONOMICON",
+              "OFFICIO_AGENTIS",
+              "DOCTRINARIUM",
+              "ADMINISTRATUM",
+              "MECHANICUS",
+              "INQUISITION",
+              "STRATEGIUM",
+              "SCHOLA_IMPERIALIS"
+            ]
+          }
+        }
+      }
+    },
+    "merged_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "allowed_paths",
+        "forbidden_paths",
+        "required_checks",
+        "evidence_required",
+        "owner_questions",
+        "next_stage_recommendation"
+      ],
+      "properties": {
+        "allowed_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "forbidden_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_checks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_required": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "owner_questions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "next_stage_recommendation": {
+          "type": "string",
+          "minLength": 5
+        }
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "readiness": {
+      "type": "string",
+      "enum": [
+        "READY",
+        "READY_WITH_WARNINGS",
+        "BLOCKED",
+        "FOUNDATION_ONLY"
+      ]
+    },
+    "truth_limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "self_verdict": {
+      "type": "string",
+      "enum": [
+        "PROVED",
+        "STRONG",
+        "PLAUSIBLE",
+        "UNKNOWN",
+        "FAILED",
+        "FAKE_GREEN_RISK"
+      ]
+    }
+  }
+}

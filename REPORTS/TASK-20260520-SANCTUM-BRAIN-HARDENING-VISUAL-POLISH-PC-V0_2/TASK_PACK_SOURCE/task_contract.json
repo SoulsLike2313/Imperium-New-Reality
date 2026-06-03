@@ -1,0 +1,32 @@
+{
+  "schema_version": "SERVITOR_TASK_CONTRACT_V0_1",
+  "task_id": "TASK-20260520-SANCTUM-BRAIN-HARDENING-VISUAL-POLISH-PC-V0_2",
+  "mode": "PC_LOCAL_EXECUTION",
+  "requires_officio_role_intake": true,
+  "owner_language_after_officio_intake": "ru",
+  "repo_root": "E:\\IMPERIUM",
+  "must_commit_push_if_pass": true,
+  "scope": {
+    "primary_zone": "IMPERIUM_NEW_GENERATION",
+    "target_area": "SANCTUM / Sanctum Mini / linked reports and truth-audit artifacts",
+    "allow_visual_changes": true,
+    "allow_receipt_hardening": true,
+    "allow_playwright_recheck": true
+  },
+  "forbidden": [
+    "fake_green",
+    "placeholder_as_real",
+    "skip_final_receipts",
+    "claim_60fps_without_measurement",
+    "leave_organs_centered_in_brain_core"
+  ],
+  "required_outputs": [
+    "updated_sanctum_mini_implementation",
+    "playwright_truth_audit_outputs",
+    "brain_view_visual_polish_report",
+    "truth_hardening_report",
+    "screenshots_or_svg_evidence",
+    "final_receipt",
+    "final_commit_push_evidence"
+  ]
+}

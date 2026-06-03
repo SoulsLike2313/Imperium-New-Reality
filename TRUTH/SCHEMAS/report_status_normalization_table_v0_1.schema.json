@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "REPORT_STATUS_NORMALIZATION_TABLE_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "generated_at_utc",
+    "canonical_statuses",
+    "mappings"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "REPORT_STATUS_NORMALIZATION_TABLE_V0_1"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "canonical_statuses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "raw_status",
+          "canonical_status",
+          "freshness_hint",
+          "proof_level_hint",
+          "no_fake_green_note"
+        ],
+        "properties": {
+          "raw_status": {
+            "type": "string"
+          },
+          "canonical_status": {
+            "type": "string"
+          },
+          "freshness_hint": {
+            "enum": [
+              "CURRENT",
+              "STALE",
+              "UNKNOWN",
+              "MISSING",
+              "FOUNDATION_ONLY",
+              "PARTIAL"
+            ]
+          },
+          "proof_level_hint": {
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "FOUNDATION",
+              "WEAK",
+              "UNKNOWN",
+              "MISSING"
+            ]
+          },
+          "no_fake_green_note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

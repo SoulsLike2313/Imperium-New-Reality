@@ -1,0 +1,9 @@
+# evidence ranking
+
+- capability_id: `ALGORITHMS_EVIDENCE_RANKING`
+- category: `ALGORITHMS`
+- status: `CANDIDATE`
+- source_type: `algorithm`
+- install_required: `False`
+
+This folder was created by mass intake to establish candidate coverage with honest limits.

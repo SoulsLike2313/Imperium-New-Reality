@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/TRUTH/ACTION_ROLLBACK/SCHEMAS/action_rollback_policy_v0_1.schema.json",
+  "title": "Action Rollback Policy V0.1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "required_fields_per_action_contract",
+    "required_mutation_classes",
+    "required_rollback_verdicts"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "ACTION_ROLLBACK_POLICY_V0_1"
+    },
+    "required_fields_per_action_contract": {
+      "type": "array",
+      "minItems": 11,
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_mutation_classes": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_rollback_verdicts": {
+      "type": "array",
+      "minItems": 7,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

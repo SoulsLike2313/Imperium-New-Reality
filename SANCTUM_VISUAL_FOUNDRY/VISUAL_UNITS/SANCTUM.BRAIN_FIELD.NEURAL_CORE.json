@@ -1,0 +1,61 @@
+{
+  "visual_unit_id": "SANCTUM.BRAIN_FIELD.NEURAL_CORE",
+  "parent": "SANCTUM.BRAIN_FIELD",
+  "type": "hero_core",
+  "visual_owner": "SANCTUM_SHELL",
+  "truth_owner": "UNKNOWN",
+  "data_source_owner": "SANCTUM_STATE_BUILDER",
+  "organ_subject": "SYSTEM",
+  "implementation_owner": "VISUAL_FOUNDRY",
+  "purpose": "Central hero brain core used as structural anchor, not as readiness truth lane.",
+  "backend_source": {
+    "type": "frontend_logic",
+    "paths": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/static/app.js"
+    ],
+    "key_bindings": [
+      "BRAIN_LAYOUT",
+      "selectedOrganId"
+    ]
+  },
+  "backend_source_status": "candidate",
+  "allowed_states": [
+    "idle",
+    "active",
+    "warn",
+    "error",
+    "unknown"
+  ],
+  "truth_rules": [
+    "Core glow never means PASS or READY.",
+    "If state payload is absent, core must remain UNKNOWN-neutral."
+  ],
+  "visual_tokens": "brain_core_tokens",
+  "texture": "purple_nebula_depth",
+  "glow": {
+    "enabled": true,
+    "color_token": "accent_holo_cyan",
+    "default_intensity": 0.35
+  },
+  "motion": {
+    "enabled": true,
+    "animation": "pulse_breath",
+    "perf_tier": "EXPENSIVE",
+    "disable_in_reduced_motion": true
+  },
+  "perf_tier": "EXPENSIVE",
+  "proof_requirements": [
+    "Exactly one EXPENSIVE hero layer in motion budget."
+  ],
+  "integration_status": "candidate",
+  "fake_green_risks": [
+    "Core pulse can be mistaken as health confirmation."
+  ],
+  "owner_group": "SANCTUM",
+  "owner_organ": "OFFICIO_AGENTIS_AGENT",
+  "accessibility_rules": [
+    "State must not be encoded by color alone.",
+    "RU/EN labels must remain explicit for status tags."
+  ],
+  "change_safety": "Topology hardening scope only; no final UI readiness claims."
+}

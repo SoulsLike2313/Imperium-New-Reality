@@ -1,0 +1,41 @@
+{
+  "schema_version": "OFFICIO_ROLE_ACK_V0_1",
+  "task_id": "TASK-20260520-OFFICIO-ACTIVE-AUTHORITY-LANGUAGE-EXECUTION-CONTRACT-VM2-V0_1",
+  "generated_at_utc": "2026-05-20T00:19:43.726308+00:00",
+  "role_ack": {
+    "role_accepted": "SERVITOR_PRIME",
+    "mode": "EXECUTOR",
+    "response_contract_accepted": true,
+    "execution_contract_accepted": true,
+    "language_execution_contract_accepted": true,
+    "role_settings_ack_protocol_accepted": true,
+    "owner_live_commentary_language_after_officio_ack": "Russian",
+    "owner_final_comments_language_after_officio_ack": "Russian",
+    "machine_artifact_language": "English",
+    "violation_codes": [
+      "WARN_RESPONSE_LANGUAGE_CONTRACT",
+      "FAIL_RESPONSE_CONTRACT",
+      "BLOCKED_OFFICIO_ACK_MISSING",
+      "BLOCKED_ROLE_PACK_AUTHORITY_MISSING",
+      "WARN_TASKPACK_ONLY_WORKAROUND_DETECTED"
+    ]
+  },
+  "evidence": {
+    "check_all_receipt": "/home/vboxuser2/IMPERIUM_CONTEXT/LOCAL/OFFICIO_AGENTIS/RUNS/run_20260520T001626798696Z_check_all/receipts/check_all_receipt.json",
+    "pack_build_role_receipt": "/home/vboxuser2/IMPERIUM_CONTEXT/LOCAL/OFFICIO_AGENTIS/RUNS/run_20260520T001626812148Z_pack_build_role/receipts/pack_build_role_SERVITOR_PRIME_receipt.json",
+    "settings_get_receipt": "/home/vboxuser2/IMPERIUM_CONTEXT/LOCAL/OFFICIO_AGENTIS/RUNS/run_20260520T001626836509Z_settings_get/receipts/settings_get_SERVITOR_PRIME_EXECUTOR_receipt.json",
+    "task_acceptance_original": "/home/vboxuser2/IMPERIUM_CONTEXT/LOCAL/OFFICIO_AGENTIS/RUNS/run_20260520T000621856184Z_task_acceptance_check/task_acceptance_check/task_acceptance_check.json",
+    "task_acceptance_normalized": "/home/vboxuser2/IMPERIUM_CONTEXT/LOCAL/OFFICIO_AGENTIS/RUNS/run_20260520T001040182578Z_task_acceptance_check/task_acceptance_check/task_acceptance_check.json"
+  },
+  "task_acceptance_summary": {
+    "original_decision": "CLARIFICATION_REQUIRED",
+    "original_reasons": [
+      "missing required fields: allowed_scope"
+    ],
+    "normalized_decision": "ACCEPT_WITH_WARNINGS",
+    "normalized_reasons": [
+      "unsupported schema_version: TASK_CONTRACT_V0_1"
+    ],
+    "normalized_contract_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-OFFICIO-ACTIVE-AUTHORITY-LANGUAGE-EXECUTION-CONTRACT-VM2-V0_1/task_contract_admission_normalized.json"
+  }
+}

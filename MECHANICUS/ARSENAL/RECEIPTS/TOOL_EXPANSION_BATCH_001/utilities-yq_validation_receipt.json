@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:utilities_yq:tool_detection:utilities_yq",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "UTILITIES_YQ",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:43Z",
+  "status": "PASS",
+  "summary": "UTILITIES_YQ: PASS via tool_detection:UTILITIES_YQ. promotion_recommendation=PROMOTE_SANDBOX",
+  "check_name": "tool_detection:UTILITIES_YQ",
+  "command_or_check": "yq --version",
+  "exit_code": 0,
+  "stdout_excerpt": "$ yq --version\nyq (https://github.com/mikefarah/yq/) version v4.52.5",
+  "stderr_excerpt": "",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-yq_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "PROMOTE_SANDBOX",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-yq_validation_receipt.json"
+  ]
+}

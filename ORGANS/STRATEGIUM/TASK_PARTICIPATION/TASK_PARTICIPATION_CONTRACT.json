@@ -1,0 +1,35 @@
+{
+  "organ": "STRATEGIUM",
+  "status": "ACTIVE_FOR_STAGE1",
+  "task_entry_role": "Owns priority weighting, owner pain/KPD delta, and next-strike routing after Stage1 delivery.",
+  "required_inputs": [
+    "Stage1 inherited warnings"
+  ],
+  "required_outputs": [
+    "Efficiency delta receipt",
+    "Next pipeline handoff"
+  ],
+  "matrix_responsibilities": [
+    "SCORE_WEIGHTING_MATRIX",
+    "OWNER_PAIN_KPD_DELTA_MATRIX",
+    "FREELANCE_SYNTHETIC_E2E_MATRIX"
+  ],
+  "tools_or_receipts_used": [
+    "Update NEXT_PIPELINE_HANDOFF.json after proof and red-team."
+  ],
+  "ide_display_fields": [
+    "priority_rank",
+    "owner_pain_delta",
+    "kpd_delta",
+    "next_strike"
+  ],
+  "failure_caps": [
+    "CAP_NO_EFFICIENCY_DELTA",
+    "CAP_STAGE1_WITH_WARNINGS_ONLY"
+  ],
+  "known_gaps": [
+    "Prioritization is structured but still manual, no canonical scorer yet.",
+    "Synthetic-to-real-use transition policy needs stronger contract templates."
+  ],
+  "used_by_astronomicon_task_entry": true
+}

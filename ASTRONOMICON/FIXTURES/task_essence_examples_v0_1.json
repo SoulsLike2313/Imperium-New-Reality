@@ -1,0 +1,44 @@
+{
+  "schema_version": "astronomicon.task_essence_examples.v0_1",
+  "examples": [
+    {
+      "example_id": "TASK_ESSENCE_EXAMPLE_0001",
+      "expected_verdict": "PASS",
+      "payload": {
+        "schema_version": "astronomicon.task_essence.v0_1",
+        "task_id": "TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1",
+        "task_summary": "Register canonical PC->VM3 route proof artifacts and build first Astronomicon routing body.",
+        "primary_organ": "ASTRONOMICON",
+        "support_organs": ["ADMINISTRATUM", "MECHANICUS", "INQUISITION"],
+        "out_of_scope": [
+          "Agent IDE",
+          "WARP runtime implementation",
+          "CLI Worker",
+          "LLM-agent memory/persona dump"
+        ],
+        "success_criteria": [
+          "Route card/receipt/commands files exist",
+          "Task essence and route schemas exist",
+          "Checkers run and pass fixtures"
+        ],
+        "risks_and_gates": [
+          {
+            "gate_id": "GATE-U02-SCOPE-BOUNDARY",
+            "risk": "Out-of-scope organ edits",
+            "mitigation": "Constrain edits to ASTRONOMICON paths"
+          },
+          {
+            "gate_id": "GATE-U09-NO-FAKE-GREEN",
+            "risk": "PASS claims without receipts",
+            "mitigation": "Emit validation receipt and evidence index"
+          }
+        ],
+        "stop_conditions": [
+          "Stop on starting HEAD mismatch",
+          "Stop if required receipts cannot be produced"
+        ],
+        "owner_pain_ids": ["ROUTE_MEMORY_LOSS_PC_TO_VM3"]
+      }
+    }
+  ]
+}

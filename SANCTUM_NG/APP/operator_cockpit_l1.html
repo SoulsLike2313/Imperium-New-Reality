@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanctum Operator Cockpit L1</title>
+  <link rel="stylesheet" href="./operator_cockpit_l1.css">
+</head>
+<body>
+  <header class="top-truth" id="top-truth">
+    <div class="truth-title">
+      <p class="kicker" id="kicker-text">IMPERIUM NEW GENERATION</p>
+      <p class="track-badge">STABLE TRACK</p>
+      <h1 id="title-text">Sanctum Operator Cockpit L1</h1>
+      <p class="subtitle" id="subtitle-text">Owner power slice: read-only overview with bounded action truth.</p>
+    </div>
+    <div class="truth-controls">
+      <button id="lang-toggle" class="control-btn" type="button">RU</button>
+      <a class="control-btn secondary" href="./operator_cockpit_candidate.html">Candidate WIP</a>
+      <a class="control-btn secondary" href="./index.html" id="legacy-link">Legacy Shell</a>
+    </div>
+    <div class="truth-grid">
+      <article class="truth-card">
+        <span class="truth-label" id="label-task">Active task</span>
+        <strong id="truth-task">-</strong>
+      </article>
+      <article class="truth-card">
+        <span class="truth-label" id="label-worker">Who works</span>
+        <strong id="truth-worker">-</strong>
+      </article>
+      <article class="truth-card">
+        <span class="truth-label" id="label-contour">Contour</span>
+        <strong id="truth-contour">-</strong>
+      </article>
+      <article class="truth-card">
+        <span class="truth-label" id="label-blocker">Current blocker</span>
+        <strong id="truth-blocker">-</strong>
+      </article>
+      <article class="truth-card">
+        <span class="truth-label" id="label-next">Next action</span>
+        <strong id="truth-next">-</strong>
+      </article>
+      <article class="truth-card">
+        <span class="truth-label" id="label-repo">Repo clean</span>
+        <strong id="truth-repo-clean">-</strong>
+      </article>
+      <article class="truth-card">
+        <span class="truth-label" id="label-confidence">Evidence confidence</span>
+        <strong id="truth-confidence">-</strong>
+      </article>
+      <article class="truth-card">
+        <span class="truth-label" id="label-head">HEAD</span>
+        <strong id="truth-head">-</strong>
+      </article>
+    </div>
+  </header>
+
+  <main class="cockpit-grid">
+    <section class="panel gateway-map" id="focus-gateway">
+      <header class="panel-head">
+        <h2 id="gateway-title">Focus Gateway Map</h2>
+        <span class="status-pill" id="gateway-status">FOUNDATION_ONLY</span>
+      </header>
+      <div class="map-zone">
+        <div class="external-world">
+          <h3 id="external-title">External Inputs</h3>
+          <ul id="external-list"></ul>
+        </div>
+
+        <div class="workers-block">
+          <h3 id="workers-title">Workers / Contours</h3>
+          <ul id="workers-list"></ul>
+        </div>
+
+        <div class="focus-core">
+          <span class="core-label" id="core-label">IMPERIUM CORE</span>
+          <span class="warning-lamp" id="warning-lamp" aria-label="warning lamp"></span>
+        </div>
+
+        <div class="assistance-block">
+          <h3 id="assist-title">Assistance</h3>
+          <p id="assist-text">-</p>
+        </div>
+
+        <div class="outputs-block">
+          <h3 id="outputs-title">Digital Outputs</h3>
+          <ul id="outputs-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="task-session">
+      <header class="panel-head">
+        <h2 id="task-session-title">Task / Session</h2>
+        <span class="status-pill" id="task-session-status">UNKNOWN</span>
+      </header>
+      <div class="meta-grid">
+        <div><span class="meta-label" id="label-session-mode">Session mode</span><strong id="session-mode">-</strong></div>
+        <div><span class="meta-label" id="label-session-status">Session status</span><strong id="session-status">-</strong></div>
+        <div><span class="meta-label" id="label-owner-open">Owner open</span><strong id="owner-open">-</strong></div>
+        <div><span class="meta-label" id="label-owner-blocking">Owner blocking</span><strong id="owner-blocking">-</strong></div>
+      </div>
+      <h3 id="task-sources-title">Source refs</h3>
+      <ul id="task-session-sources"></ul>
+    </section>
+
+    <section class="panel" id="transfer-routes">
+      <header class="panel-head">
+        <h2 id="transfer-title">Transfer Routes</h2>
+        <span class="status-pill" id="transfer-status">UNKNOWN</span>
+      </header>
+      <div class="meta-grid">
+        <div><span class="meta-label">PC -> VM2</span><strong id="route-pc-vm2">-</strong></div>
+        <div><span class="meta-label">PC -> VM3</span><strong id="route-pc-vm3">-</strong></div>
+        <div><span class="meta-label">VM2 -> VM3</span><strong id="route-vm2-vm3">-</strong></div>
+        <div><span class="meta-label">VM3 -> VM2</span><strong id="route-vm3-vm2">-</strong></div>
+      </div>
+      <p class="route-proof" id="route-proof-commit">route proof commit: -</p>
+      <h3 id="transfer-sources-title">Source refs</h3>
+      <ul id="transfer-sources"></ul>
+    </section>
+
+    <section class="panel" id="evidence-diff">
+      <header class="panel-head">
+        <h2 id="evidence-title">Evidence / Diff</h2>
+        <span class="status-pill" id="evidence-status">UNKNOWN</span>
+      </header>
+      <div class="meta-grid">
+        <div><span class="meta-label" id="label-changed-count">Changed files</span><strong id="changed-count">-</strong></div>
+        <div><span class="meta-label" id="label-master-sync">Master synced</span><strong id="master-synced">-</strong></div>
+      </div>
+      <div class="evidence-columns">
+        <section>
+          <h3 id="changed-title">Changed files</h3>
+          <ul id="changed-files"></ul>
+        </section>
+        <section>
+          <h3 id="reports-title">Report refs</h3>
+          <ul id="report-refs"></ul>
+          <h3 id="validators-title">Validator refs</h3>
+          <ul id="validator-refs"></ul>
+        </section>
+      </div>
+      <h3 id="screenshots-title">Screenshots</h3>
+      <ul id="screenshot-refs" class="evidence-stars"></ul>
+    </section>
+
+    <section class="panel" id="owner-organ">
+      <header class="panel-head">
+        <h2 id="owner-organ-title">Owner Questions / Organ Dialogue</h2>
+        <span class="status-pill" id="owner-organ-status">FOUNDATION_ONLY</span>
+      </header>
+      <div class="meta-grid">
+        <div><span class="meta-label" id="label-owner-total">Questions total</span><strong id="owner-total">-</strong></div>
+        <div><span class="meta-label" id="label-organ-req">Organ requests</span><strong id="organ-requests">-</strong></div>
+        <div><span class="meta-label" id="label-organ-resp">Organ responses</span><strong id="organ-responses">-</strong></div>
+      </div>
+      <h3 id="owner-organ-sources-title">Source refs</h3>
+      <ul id="owner-organ-sources"></ul>
+    </section>
+
+    <section class="panel" id="continuity-preview">
+      <header class="panel-head">
+        <h2 id="continuity-title">Continuity + Development Preview</h2>
+        <span class="status-pill" id="continuity-status">PREVIEW_ONLY</span>
+      </header>
+      <div class="split">
+        <article class="split-card">
+          <h3 id="continuity-subtitle">Build Continuity Pack</h3>
+          <p id="continuity-mode">small mode: -</p>
+          <p id="continuity-latest-pack">latest pack: -</p>
+          <p id="continuity-latest-manifest">manifest: -</p>
+          <p id="continuity-latest-result">result: -</p>
+        </article>
+        <article class="split-card">
+          <h3 id="preview-subtitle">Development Preview</h3>
+          <p id="preview-status-line">status: -</p>
+          <p id="preview-reason-line">reason: -</p>
+          <a class="inline-link" id="preview-url" href="#" target="_blank" rel="noopener">-</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel action-strip" id="action-strip">
+      <header class="panel-head">
+        <h2 id="actions-title">Action Strip</h2>
+        <span class="status-pill" id="action-connection">UNKNOWN</span>
+      </header>
+      <p id="action-note">Every active WIRED/DRY_RUN_ONLY action must emit request/result receipts.</p>
+      <div id="action-cards" class="action-cards"></div>
+      <h3 id="last-action-title">Last action result</h3>
+      <pre id="last-action-json">-</pre>
+    </section>
+  </main>
+
+  <footer class="cockpit-footer">
+    <p id="footer-boundary">PASS boundary: read-only owner overview only.</p>
+    <p id="footer-not-proven">Not proven: live execution, production orchestration, full organ intelligence.</p>
+  </footer>
+
+  <script src="./operator_cockpit_l1.js"></script>
+</body>
+</html>

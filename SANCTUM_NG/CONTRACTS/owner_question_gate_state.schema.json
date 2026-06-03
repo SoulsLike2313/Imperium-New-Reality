@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OWNER_QUESTION_GATE_STATE_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "mode",
+    "generated_at_utc",
+    "git",
+    "truth_flags",
+    "registry",
+    "summary",
+    "questions",
+    "events",
+    "warnings",
+    "limitations",
+    "forbidden_claims",
+    "boundary_note",
+    "next_required_step"
+  ],
+  "properties": {
+    "schema_id": { "const": "OWNER_QUESTION_GATE_STATE_V0_1" },
+    "task_id": { "type": "string" },
+    "mode": { "enum": ["FOUNDATION_READ_ONLY_OWNER_QUESTION_GATE"] },
+    "generated_at_utc": { "type": "string" },
+    "git": {
+      "type": "object",
+      "required": ["head", "branch", "worktree_dirty", "required_starting_head", "head_matches_required_start"],
+      "properties": {
+        "head": { "type": "string" },
+        "branch": { "type": "string" },
+        "worktree_dirty": { "type": "boolean" },
+        "required_starting_head": { "type": "string" },
+        "head_matches_required_start": { "type": "boolean" }
+      }
+    },
+    "truth_flags": {
+      "type": "object",
+      "required": [
+        "read_only",
+        "foundation_only",
+        "live_owner_channel",
+        "owner_answer_write_path",
+        "production_ready"
+      ],
+      "properties": {
+        "read_only": { "type": "boolean" },
+        "foundation_only": { "type": "boolean" },
+        "live_owner_channel": { "type": "boolean" },
+        "owner_answer_write_path": { "type": "boolean" },
+        "production_ready": { "type": "boolean" }
+      }
+    },
+    "registry": {
+      "type": "object",
+      "required": [
+        "registry_path",
+        "status_rules_path",
+        "priority_rules_path",
+        "sample_set_path",
+        "question_schema_path",
+        "event_schema_path",
+        "state_schema_path"
+      ],
+      "properties": {
+        "registry_path": { "type": "string" },
+        "status_rules_path": { "type": "string" },
+        "priority_rules_path": { "type": "string" },
+        "sample_set_path": { "type": "string" },
+        "question_schema_path": { "type": "string" },
+        "event_schema_path": { "type": "string" },
+        "state_schema_path": { "type": "string" }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "total_questions",
+        "open_count",
+        "blocking_count",
+        "deferred_count",
+        "warn_only_count",
+        "answered_count",
+        "stale_count",
+        "foundation_sample_count",
+        "owner_answer_required_count",
+        "derived_gate_status"
+      ],
+      "properties": {
+        "total_questions": { "type": "integer" },
+        "open_count": { "type": "integer" },
+        "blocking_count": { "type": "integer" },
+        "deferred_count": { "type": "integer" },
+        "warn_only_count": { "type": "integer" },
+        "answered_count": { "type": "integer" },
+        "stale_count": { "type": "integer" },
+        "foundation_sample_count": { "type": "integer" },
+        "owner_answer_required_count": { "type": "integer" },
+        "derived_gate_status": {
+          "enum": ["BLOCKING_OWNER_DECISION_REQUIRED", "WARN_OWNER_REVIEW_RECOMMENDED", "FOUNDATION_SAMPLE_ONLY"]
+        }
+      }
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "question_id",
+          "task_id",
+          "source",
+          "source_ref",
+          "question_text_ru",
+          "why_needed_ru",
+          "decision_type",
+          "blocking_level",
+          "status",
+          "owner_answer_required",
+          "allowed_answers",
+          "evidence_refs",
+          "created_at_utc",
+          "updated_at_utc"
+        ]
+      }
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "timestamp_utc",
+          "event_type",
+          "question_id",
+          "status_after",
+          "blocking_level",
+          "owner_answer_required",
+          "source",
+          "summary",
+          "evidence_refs"
+        ]
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "forbidden_claims": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "boundary_note": { "type": "string" },
+    "next_required_step": { "type": "string" }
+  }
+}

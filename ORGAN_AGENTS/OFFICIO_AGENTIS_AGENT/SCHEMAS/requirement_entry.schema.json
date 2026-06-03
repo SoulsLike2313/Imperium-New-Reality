@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Officio Requirement Entry",
+  "type": "object",
+  "required": [
+    "requirement_id",
+    "source",
+    "requirement",
+    "acceptance",
+    "evidence_required",
+    "status",
+    "evidence_paths",
+    "notes"
+  ],
+  "properties": {
+    "requirement_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requirement": {
+      "type": "string",
+      "minLength": 1
+    },
+    "acceptance": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "PENDING",
+        "DONE",
+        "BLOCKED",
+        "NOT_DONE"
+      ]
+    },
+    "evidence_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
+

@@ -1,0 +1,59 @@
+# Final Report — TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1
+
+## Verdict
+
+`PASS_FOR_TWO_CONFIRMED_BOUNDED_VM2_VM3_TRANSFER_ROUTES_ONLY`
+
+## Claim boundary
+
+This task proves only bounded bidirectional VM2/VM3 route probes. It does not prove production orchestration or arbitrary remote execution.
+
+## Required summary for Owner in Russian
+
+Маршрут VM2->VM3 через `imperium-vm3-from-vm2` подтвержден в BatchMode и probe-переносе с совпадением hash/size.
+Маршрут VM3->VM2 через `imperium-vm2-from-vm3` подтвержден с VM2 через VM3, также с совпадением hash/size.
+Truth закреплен в Mechanicus (`SSH_CONNECTION_MATRIX_V0_1.json` + route-proof record) и в Sanctum NG Transfer Console (request/result/ledger/view-state).
+Validator/smoke по текущему task_id прошли честным `PASS`, без production-claim и без arbitrary-shell-claim.
+
+## Evidence
+
+- VM2 -> VM3 auth proof:
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/ACTION_LOGS/vm2_to_vm3_auth.txt`
+- VM2 -> VM3 probe hash/size:
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/vm2_to_vm3_probe_result.json`
+- VM3 -> VM2 auth proof:
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/ACTION_LOGS/vm3_to_vm2_auth_via_vm3.txt`
+- VM3 -> VM2 probe hash/size:
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/vm3_to_vm2_probe_result.json`
+- Combined scoped report:
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/bidirectional_route_probe_report.json`
+- Mechanicus route truth:
+  - `IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/SSH_CONNECTION_MATRIX_V0_1.json`
+  - `IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/VM2_VM3_BIDIRECTIONAL_ROUTE_PROOF_V0_1.json`
+- Updated ledgers/state paths:
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/ledgers/transfer_action_runner_ledger.jsonl`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/ledger/transfer_action_ledger.jsonl`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/contours/allowed_routes_v0_1.json`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json`
+- Validator/smoke reports:
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/bidirectional_route_proof_validator_report.json`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/bidirectional_route_proof_smoke_report.json`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/ssh_matrix_validator_report.json`
+
+## Context Source Mix
+
+See `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/context_source_mix.json`.
+
+## KPD / next-task improvement slice
+
+See:
+- `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/kpd_next_task_improvement.md`
+- `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/agent_kpd_self_review.json`
+
+## Not proven
+
+- production remote orchestration
+- arbitrary remote shell execution
+- all contours globally operational

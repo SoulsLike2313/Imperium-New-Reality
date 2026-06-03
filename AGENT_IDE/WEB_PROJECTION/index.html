@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IMPERIUM Agent IDE Projection V0.1</title>
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
+    <div class="bg-mesh" aria-hidden="true"></div>
+    <header class="topbar">
+      <div>
+        <h1 id="title">IMPERIUM Agent IDE Projection</h1>
+        <p id="subtitle">Local-only dashboard on shared truth view model</p>
+      </div>
+      <div class="topbar-actions">
+        <button id="langBtn" type="button">RU</button>
+        <button id="refreshBtn" type="button">Refresh</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="card" id="overview">
+        <h2 data-i18n="overview">Overview</h2>
+        <pre id="overviewBox">loading...</pre>
+      </section>
+
+      <section class="card" id="organs">
+        <h2 data-i18n="organs">Organs</h2>
+        <div id="organsGrid" class="organs-grid"></div>
+      </section>
+
+      <section class="card" id="file-atlas">
+        <h2 data-i18n="atlas">File Atlas</h2>
+        <pre id="atlasBox">loading...</pre>
+      </section>
+
+      <section class="card" id="officio-language-gate">
+        <h2 data-i18n="languageGate">Officio Language Gate</h2>
+        <pre id="languageGateBox">loading...</pre>
+      </section>
+
+      <section class="card" id="owner-pain">
+        <h2 data-i18n="painMap">Owner Pain Map</h2>
+        <div id="painList" class="pain-list"></div>
+      </section>
+
+      <section class="card" id="routes">
+        <h2 data-i18n="routes">Routes</h2>
+        <pre id="routesBox">loading...</pre>
+      </section>
+
+      <section class="card" id="reports">
+        <h2 data-i18n="reportsReceipts">Reports / Receipts</h2>
+        <pre id="reportsBox">loading...</pre>
+      </section>
+
+      <section class="card" id="block-foundation">
+        <h2 data-i18n="blockFoundation">Block Foundation</h2>
+        <pre id="blockBox">loading...</pre>
+      </section>
+    </main>
+
+    <footer class="footnote">
+      <span id="privacyNote">PRIVATE/LOCAL data is projection-restricted by policy.</span>
+      <span id="statusNote"></span>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

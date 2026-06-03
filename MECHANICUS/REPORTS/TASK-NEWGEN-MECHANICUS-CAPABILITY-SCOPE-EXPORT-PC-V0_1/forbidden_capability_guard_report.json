@@ -1,0 +1,43 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1",
+  "generated_at_utc": "2026-05-24T20:04:57Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "guard": "visual_prototype_forbidden",
+      "result": "PASS",
+      "source": "scope_visual_readiness_task_v0_1.json#forbidden_actions"
+    },
+    {
+      "guard": "llm_cloud_forbidden",
+      "result": "PASS",
+      "source": "scope_visual_readiness_task_v0_1.json#forbidden_actions"
+    },
+    {
+      "guard": "playwright_browser_install_forbidden",
+      "result": "PASS",
+      "source": "scope_visual_readiness_task_v0_1.json#forbidden_actions"
+    },
+    {
+      "guard": "react_vite_project_creation_forbidden",
+      "result": "PASS",
+      "source": "scope_visual_readiness_task_v0_1.json#forbidden_actions"
+    },
+    {
+      "guard": "silent_install_forbidden",
+      "result": "PASS",
+      "source": "scope_controlled_tool_provision_task_v0_1.json#forbidden_actions"
+    },
+    {
+      "guard": "network_without_owner_approval_forbidden",
+      "result": "PASS",
+      "source": "scope_controlled_tool_provision_task_v0_1.json#forbidden_actions"
+    },
+    {
+      "guard": "precommit_auto_enable_forbidden",
+      "result": "PASS",
+      "source": "scope_controlled_tool_provision_task_v0_1.json + scope_code_quality_task_v0_1.json"
+    }
+  ],
+  "checker_reference": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_scope_packs_v0_1.py"
+}

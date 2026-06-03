@@ -1,0 +1,668 @@
+{
+  "schema_version": "EIGHT_ORGAN_TOOL_COMMAND_SWEEP_REPORT_V0_1",
+  "task_id": "TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2",
+  "generated_at_utc": "2026-05-19T22:35:35.723734Z",
+  "organ_count": 8,
+  "required_commands": [
+    "status",
+    "check",
+    "identity",
+    "tools",
+    "shell_once_tools"
+  ],
+  "verdict": "PASS",
+  "failures": [],
+  "warnings": [],
+  "organs": [
+    {
+      "organ_id": "INQUISITION_AGENT",
+      "runner_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/INQUISITION_AGENT/TOOLS/inquisition_agent_runner.py",
+      "runner_flavor": "base_half",
+      "commands": [
+        {
+          "name": "status",
+          "argv": [
+            "status"
+          ],
+          "executed_argv": [
+            "status"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_IDENTITY_RICH_STATUS_V0_1\",\n  \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n  \"base_half_task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n  \"organ\": \"INQUISITION_AGENT\",\n  \"runner\": \"inquisition_agent_runner.py\",\n  \"timestamp_utc\": \"2026-05-19T22:35:26.979610+00:00\",\n  \"status\": \"READY\",\n  \"visual_status\": \"PASS_RICH\",\n  \"supported_commands\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"fake-green-check\",\n    \"scope-drift-check\",\n    \"hygiene-scan\",\n    \"audit-claims\"\n  ],\n  \"active_command_list\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"fake-green-check\",\n    \"scope-drift-check\",\n    \"hygiene-scan\",\n    \"audit-claims\"\n  ],\n  \"identity_summary\": \"Audit, anti-fake-green, scope integrity, and evidence truth enforcement.\",\n  \"paths\": {\n    \"organ_root\": \"/home/vboxuser2/IMPERI...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "check",
+          "argv": [
+            "check"
+          ],
+          "executed_argv": [
+            "check"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_IDENTITY_RICH_STATUS_V0_1\",\n  \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n  \"base_half_task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n  \"organ\": \"INQUISITION_AGENT\",\n  \"runner\": \"inquisition_agent_runner.py\",\n  \"timestamp_utc\": \"2026-05-19T22:35:27.199301+00:00\",\n  \"status\": \"READY\",\n  \"visual_status\": \"PASS_RICH\",\n  \"supported_commands\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"fake-green-check\",\n    \"scope-drift-check\",\n    \"hygiene-scan\",\n    \"audit-claims\"\n  ],\n  \"active_command_list\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"fake-green-check\",\n    \"scope-drift-check\",\n    \"hygiene-scan\",\n    \"audit-claims\"\n  ],\n  \"identity_summary\": \"Audit, anti-fake-green, scope integrity, and evidence truth enforcement.\",\n  \"paths\": {\n    \"organ_root\": \"/home/vboxuser2/IMPERI...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "identity",
+          "argv": [
+            "identity"
+          ],
+          "executed_argv": [
+            "identity"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"organ\": \"INQUISITION_AGENT\",\n  \"summary\": \"Audit, anti-fake-green, scope integrity, and evidence truth enforcement.\",\n  \"profile\": {\n    \"schema_version\": \"ORGAN_AGENT_PROFILE_BASE_HALF_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n    \"organ\": \"INQUISITION_AGENT\",\n    \"organ_slug\": \"inquisition\",\n    \"maturity\": \"BASE_HALF\",\n    \"summary\": \"Audit, anti-fake-green, scope integrity, and evidence truth enforcement.\",\n    \"mission\": \"Detect false PASS claims, scope drift, runtime contamination, and missing receipts.\",\n    \"required_commands\": [\n      \"status\",\n      \"check\",\n      \"where\",\n      \"identity\",\n      \"pack\",\n      \"shell\",\n      \"help\"\n    ],\n    \"forbidden_organs\": [\n      \"THRONE\",\n      \"CUSTODES\"\n    ],\n    \"visual_status\": \"WARN\"\n  },\n  \"identity_profile\": {\n    \"schema_version\": \"ORGAN_IDENTITY_PROFILE_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n    \"organ\": \"INQUISITION_AGENT\",\n    \"identit...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "tools",
+          "argv": [
+            "tools"
+          ],
+          "executed_argv": [
+            "tools"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_TOOL_CAPABILITY_VIEW_V0_1\",\n  \"generated_at_utc\": \"2026-05-19T22:35:27.502654Z\",\n  \"organ_id\": \"INQUISITION_AGENT\",\n  \"registry_source\": \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOL_INDEX.json\",\n  \"registry_owner\": \"MECHANICUS_AGENT\",\n  \"relevant_tools\": [\n    {\n      \"tool_id\": \"ripgrep\",\n      \"owner_organ\": \"INQUISITION_AGENT\",\n      \"consumer_organs\": [\n        \"INQUISITION_AGENT\",\n        \"MECHANICUS_AGENT\",\n        \"ADMINISTRATUM_AGENT\",\n        \"SERVITOR\"\n      ],\n      \"availability_status\": \"AVAILABLE_BOTH\",\n      \"capability_summary\": \"fast repo search, scope checks, forbidden-pattern detection\",\n      \"allowed_use\": [\n        \"read-only version/status probe\",\n        \"task-scoped execution with evidence receipt\"\n      ],\n      \"forbidden_use\": [\n        \"random install without Owner gate\",\n        \"destructive actions outside task contract scope\"\n      ],\n      \"evidence_require...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "shell_once_tools",
+          "argv": [
+            "shell",
+            "--once",
+            "tools"
+          ],
+          "executed_argv": [
+            "shell",
+            "--once",
+            "tools"
+          ],
+          "returncode": 0,
+          "stdout_preview": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 TOP STATUS BAR \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 organ: INQUISITION_AGENT                                                     \u2502\n\u2502 identity/lore: Audit, anti-fake-green, scope integrity, and evidence truth   \u2502\n\u2502 enforcement.                                                                 \u2502\n\u2502 backend_truth: head=821561a8bf642c3f3c2fce2cb9bf3a45a770646b branch=master   \u2502\n\u2502 dirty=yes                                                                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 LEFT WORK ZONE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 RIGHT COMMAND ZONE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 latest_output:                       \u2502\u2502 active_command_list:                 \u2502\n\u2502 once_mode_command=tools              \u2502\u2502 status, check, where, identity,      \u2502\n\u2502                                      \u2502\u2502 tools, pack, shell, help,            \u2502\n\u2502                                      \u2502\u2502 fake-green-check, scope-drift-check, \u2502\n\u2502                           ...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        }
+      ]
+    },
+    {
+      "organ_id": "MECHANICUS_AGENT",
+      "runner_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py",
+      "runner_flavor": "base_half",
+      "commands": [
+        {
+          "name": "status",
+          "argv": [
+            "status"
+          ],
+          "executed_argv": [
+            "status"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_IDENTITY_RICH_STATUS_V0_1\",\n  \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n  \"base_half_task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n  \"organ\": \"MECHANICUS_AGENT\",\n  \"runner\": \"mechanicus_agent_runner.py\",\n  \"timestamp_utc\": \"2026-05-19T22:35:27.955256+00:00\",\n  \"status\": \"READY\",\n  \"visual_status\": \"PASS_RICH\",\n  \"supported_commands\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"tool-list\",\n    \"validator-check\",\n    \"capability-map\",\n    \"script-receipt-check\"\n  ],\n  \"active_command_list\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"tool-list\",\n    \"validator-check\",\n    \"capability-map\",\n    \"script-receipt-check\"\n  ],\n  \"identity_summary\": \"Tools, scripts, validators, and capability machinery.\",\n  \"paths\": {\n    \"organ_root\": \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/I...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "check",
+          "argv": [
+            "check"
+          ],
+          "executed_argv": [
+            "check"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_IDENTITY_RICH_STATUS_V0_1\",\n  \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n  \"base_half_task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n  \"organ\": \"MECHANICUS_AGENT\",\n  \"runner\": \"mechanicus_agent_runner.py\",\n  \"timestamp_utc\": \"2026-05-19T22:35:28.175674+00:00\",\n  \"status\": \"READY\",\n  \"visual_status\": \"PASS_RICH\",\n  \"supported_commands\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"tool-list\",\n    \"validator-check\",\n    \"capability-map\",\n    \"script-receipt-check\"\n  ],\n  \"active_command_list\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"tool-list\",\n    \"validator-check\",\n    \"capability-map\",\n    \"script-receipt-check\"\n  ],\n  \"identity_summary\": \"Tools, scripts, validators, and capability machinery.\",\n  \"paths\": {\n    \"organ_root\": \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/I...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "identity",
+          "argv": [
+            "identity"
+          ],
+          "executed_argv": [
+            "identity"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"organ\": \"MECHANICUS_AGENT\",\n  \"summary\": \"Tools, scripts, validators, and capability machinery.\",\n  \"profile\": {\n    \"schema_version\": \"ORGAN_AGENT_PROFILE_BASE_HALF_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n    \"organ\": \"MECHANICUS_AGENT\",\n    \"organ_slug\": \"mechanicus\",\n    \"maturity\": \"BASE_HALF\",\n    \"summary\": \"Tools, scripts, validators, and capability machinery.\",\n    \"mission\": \"Register tools, validate scripts, and produce execution receipts.\",\n    \"required_commands\": [\n      \"status\",\n      \"check\",\n      \"where\",\n      \"identity\",\n      \"pack\",\n      \"shell\",\n      \"help\"\n    ],\n    \"forbidden_organs\": [\n      \"THRONE\",\n      \"CUSTODES\"\n    ],\n    \"visual_status\": \"WARN\"\n  },\n  \"identity_profile\": {\n    \"schema_version\": \"ORGAN_IDENTITY_PROFILE_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n    \"organ\": \"MECHANICUS_AGENT\",\n    \"identity_summary\": \"Operate toolchains, validators, and script capa...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "tools",
+          "argv": [
+            "tools"
+          ],
+          "executed_argv": [
+            "tools"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_TOOL_CAPABILITY_VIEW_V0_1\",\n  \"generated_at_utc\": \"2026-05-19T22:35:28.481419Z\",\n  \"organ_id\": \"MECHANICUS_AGENT\",\n  \"registry_source\": \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOL_INDEX.json\",\n  \"registry_owner\": \"MECHANICUS_AGENT\",\n  \"relevant_tools\": [\n    {\n      \"tool_id\": \"bandit\",\n      \"owner_organ\": \"INQUISITION_AGENT\",\n      \"consumer_organs\": [\n        \"INQUISITION_AGENT\",\n        \"MECHANICUS_AGENT\"\n      ],\n      \"availability_status\": \"KNOWN_NOT_INSTALLED\",\n      \"capability_summary\": \"Python security lint checks\",\n      \"allowed_use\": [\n        \"read-only version/status probe\",\n        \"task-scoped execution with evidence receipt\"\n      ],\n      \"forbidden_use\": [\n        \"random install without Owner gate\",\n        \"destructive actions outside task contract scope\"\n      ],\n      \"evidence_required\": [\n        \"bandit_report.json\"\n      ],\n      \"failure_policy\": \"Record WARN...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "shell_once_tools",
+          "argv": [
+            "shell",
+            "--once",
+            "tools"
+          ],
+          "executed_argv": [
+            "shell",
+            "--once",
+            "tools"
+          ],
+          "returncode": 0,
+          "stdout_preview": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 TOP STATUS BAR \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 organ: MECHANICUS_AGENT                                                      \u2502\n\u2502 identity/lore: Tools, scripts, validators, and capability machinery.         \u2502\n\u2502 backend_truth: head=821561a8bf642c3f3c2fce2cb9bf3a45a770646b branch=master   \u2502\n\u2502 dirty=yes                                                                    \u2502\n\u2502 visual_status: PASS_RICH | renderer: rich                                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 LEFT WORK ZONE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 RIGHT COMMAND ZONE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 latest_output:                       \u2502\u2502 active_command_list:                 \u2502\n\u2502 once_mode_command=tools              \u2502\u2502 status, check, where, identity,      \u2502\n\u2502                                      \u2502\u2502 tools, pack, shell, help, tool-list, \u2502\n\u2502                                      \u2502\u2502 validator-check, capability-map,     \u2502\n\u2502                           ...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        }
+      ]
+    },
+    {
+      "organ_id": "ADMINISTRATUM_AGENT",
+      "runner_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py",
+      "runner_flavor": "administratum",
+      "commands": [
+        {
+          "name": "status",
+          "argv": [
+            "status"
+          ],
+          "executed_argv": [
+            "status"
+          ],
+          "returncode": 0,
+          "stdout_preview": "\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 ADMINISTRATUM AGENT :: STATUS                                                                              \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 STATUS: [WARN]                                                                                             \u2502\n\u2502 COMMAND: status                                                                                            \u2502\n\u2502 RUN_ID: RUN-ADMINISTRATUM-20260519-223528-d1e014                                                           \u2502\n\u2502 VERDICT: PASS_WITH_WARNINGS                                                                                \u2502\n\u2502 SUMMARY:                                                                                                   \u2502\n\u2502   - Status snapshot created.                                                                               \u2502\n\u2502...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "check",
+          "argv": [
+            "check"
+          ],
+          "executed_argv": [
+            "check"
+          ],
+          "returncode": 0,
+          "stdout_preview": "\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 ADMINISTRATUM AGENT :: CHECK (BASE HALF)                                                                   \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 STATUS: [PASS]                                                                                             \u2502\n\u2502 COMMAND: check                                                                                             \u2502\n\u2502 RUN_ID: RUN-ADMINISTRATUM-20260519-223529-bcb5c6                                                           \u2502\n\u2502 VERDICT: PASS                                                                                              \u2502\n\u2502 SUMMARY:                                                                                                   \u2502\n\u2502   - Base Half check report refreshed.                                                                      \u2502\n\u2502...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "identity",
+          "argv": [
+            "identity"
+          ],
+          "executed_argv": [
+            "identity"
+          ],
+          "returncode": 0,
+          "stdout_preview": "\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 ADMINISTRATUM AGENT :: IDENTITY (BASE HALF)                                                                \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 STATUS: [PASS]                                                                                             \u2502\n\u2502 COMMAND: identity                                                                                          \u2502\n\u2502 RUN_ID: RUN-ADMINISTRATUM-20260519-223529-68e351                                                           \u2502\n\u2502 VERDICT: PASS                                                                                              \u2502\n\u2502 SUMMARY:                                                                                                   \u2502\n\u2502   - Identity baseline and profile references emitted.                                                      \u2502\n\u2502...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "tools",
+          "argv": [
+            "tools"
+          ],
+          "executed_argv": [
+            "--plain-json",
+            "tools"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"header\": \"ADMINISTRATUM AGENT :: TOOLS\",\n  \"status\": \"PASS\",\n  \"command\": \"tools\",\n  \"run_id\": \"RUN-ADMINISTRATUM-20260519-223530-88b3b0\",\n  \"verdict\": \"PASS\",\n  \"summary\": \"Organ-specific tool capability view generated from Mechanicus registry.\",\n  \"primary_refs\": [\n    \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOL_INDEX.json\"\n  ],\n  \"artifacts_written\": [\n    \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260519-223530-88b3b0/reports/tools_report.json\",\n    \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260519-223530-88b3b0/reports/tools_access_map.json\",\n    \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260519-223530-88b3b0/reports/tools_metrics_summary.json\",\n    \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "shell_once_tools",
+          "argv": [
+            "shell",
+            "--once",
+            "tools"
+          ],
+          "executed_argv": [
+            "--plain-json",
+            "shell",
+            "--once",
+            "tools"
+          ],
+          "returncode": 0,
+          "stdout_preview": "\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502 WELCOME                                                                                                    \u2502\n\u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524\n\u2502 [ADM-ARCHIVE-SEAL] ADMINISTRATUM LOCAL MODEL [IMP-THRONE-SEAL]                                             \u2502\n\u2502 IMPERIUM NEW GENERATION / ARCHIVE VAULT ONLINE                                                             \u2502\n\u2502 ADMINISTRATUM AGENT :: LOCAL MODEL                                                                         \u2502\n\u2502 version: V1_HARDENED_REF_TRAJECTORY | status: REFERENCE_READY_WITH_PC_TRANSFER_PUSH_SHELL_REPAIR_V0_1      \u2502\n\u2502 head: 821561a8bf64 | git_dirty: true | live_work: enabled                                                  \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        }
+      ]
+    },
+    {
+      "organ_id": "ASTRONOMICON_AGENT",
+      "runner_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ASTRONOMICON_AGENT/TOOLS/astronomicon_agent_runner.py",
+      "runner_flavor": "base_half",
+      "commands": [
+        {
+          "name": "status",
+          "argv": [
+            "status"
+          ],
+          "executed_argv": [
+            "status"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_IDENTITY_RICH_STATUS_V0_1\",\n  \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n  \"base_half_task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n  \"organ\": \"ASTRONOMICON_AGENT\",\n  \"runner\": \"astronomicon_agent_runner.py\",\n  \"timestamp_utc\": \"2026-05-19T22:35:31.076074+00:00\",\n  \"status\": \"READY\",\n  \"visual_status\": \"PASS_RICH\",\n  \"supported_commands\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"task-route\",\n    \"stage-map-outline\",\n    \"ready-for-agent-check\",\n    \"route-report\"\n  ],\n  \"active_command_list\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"task-route\",\n    \"stage-map-outline\",\n    \"ready-for-agent-check\",\n    \"route-report\"\n  ],\n  \"identity_summary\": \"Task intake, decomposition, stage maps, and route readiness.\",\n  \"paths\": {\n    \"organ_root\": \"/home/vboxuser2/IMPERIUM_W...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "check",
+          "argv": [
+            "check"
+          ],
+          "executed_argv": [
+            "check"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_IDENTITY_RICH_STATUS_V0_1\",\n  \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n  \"base_half_task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n  \"organ\": \"ASTRONOMICON_AGENT\",\n  \"runner\": \"astronomicon_agent_runner.py\",\n  \"timestamp_utc\": \"2026-05-19T22:35:31.303661+00:00\",\n  \"status\": \"READY\",\n  \"visual_status\": \"PASS_RICH\",\n  \"supported_commands\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"task-route\",\n    \"stage-map-outline\",\n    \"ready-for-agent-check\",\n    \"route-report\"\n  ],\n  \"active_command_list\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"task-route\",\n    \"stage-map-outline\",\n    \"ready-for-agent-check\",\n    \"route-report\"\n  ],\n  \"identity_summary\": \"Task intake, decomposition, stage maps, and route readiness.\",\n  \"paths\": {\n    \"organ_root\": \"/home/vboxuser2/IMPERIUM_W...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "identity",
+          "argv": [
+            "identity"
+          ],
+          "executed_argv": [
+            "identity"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"organ\": \"ASTRONOMICON_AGENT\",\n  \"summary\": \"Task intake, decomposition, stage maps, and route readiness.\",\n  \"profile\": {\n    \"schema_version\": \"ORGAN_AGENT_PROFILE_BASE_HALF_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n    \"organ\": \"ASTRONOMICON_AGENT\",\n    \"organ_slug\": \"astronomicon\",\n    \"maturity\": \"BASE_HALF\",\n    \"summary\": \"Task intake, decomposition, stage maps, and route readiness.\",\n    \"mission\": \"Convert broad intent into executable local stages and readiness signals.\",\n    \"required_commands\": [\n      \"status\",\n      \"check\",\n      \"where\",\n      \"identity\",\n      \"pack\",\n      \"shell\",\n      \"help\"\n    ],\n    \"forbidden_organs\": [\n      \"THRONE\",\n      \"CUSTODES\"\n    ],\n    \"visual_status\": \"WARN\"\n  },\n  \"identity_profile\": {\n    \"schema_version\": \"ORGAN_IDENTITY_PROFILE_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n    \"organ\": \"ASTRONOMICON_AGENT\",\n    \"identity_summary\": \"Route tasks, stage...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "tools",
+          "argv": [
+            "tools"
+          ],
+          "executed_argv": [
+            "tools"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_TOOL_CAPABILITY_VIEW_V0_1\",\n  \"generated_at_utc\": \"2026-05-19T22:35:31.600716Z\",\n  \"organ_id\": \"ASTRONOMICON_AGENT\",\n  \"registry_source\": \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOL_INDEX.json\",\n  \"registry_owner\": \"MECHANICUS_AGENT\",\n  \"relevant_tools\": [\n    {\n      \"tool_id\": \"git\",\n      \"owner_organ\": \"ADMINISTRATUM_AGENT\",\n      \"consumer_organs\": [\n        \"ALL\"\n      ],\n      \"availability_status\": \"AVAILABLE_BOTH\",\n      \"capability_summary\": \"repository state, diffs, commits, push/pull, provenance\",\n      \"allowed_use\": [\n        \"status\",\n        \"diff\",\n        \"commit\",\n        \"push when task contract allows\"\n      ],\n      \"forbidden_use\": [\n        \"destructive history rewrite without Owner gate\",\n        \"random install without Owner gate\",\n        \"destructive actions outside task contract scope\"\n      ],\n      \"evidence_required\": [\n        \"git_version.txt\",\n        \"g...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "shell_once_tools",
+          "argv": [
+            "shell",
+            "--once",
+            "tools"
+          ],
+          "executed_argv": [
+            "shell",
+            "--once",
+            "tools"
+          ],
+          "returncode": 0,
+          "stdout_preview": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 TOP STATUS BAR \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 organ: ASTRONOMICON_AGENT                                                    \u2502\n\u2502 identity/lore: Task intake, decomposition, stage maps, and route readiness.  \u2502\n\u2502 backend_truth: head=821561a8bf642c3f3c2fce2cb9bf3a45a770646b branch=master   \u2502\n\u2502 dirty=yes                                                                    \u2502\n\u2502 visual_status: PASS_RICH | renderer: rich                                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 LEFT WORK ZONE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 RIGHT COMMAND ZONE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 latest_output:                       \u2502\u2502 active_command_list:                 \u2502\n\u2502 once_mode_command=tools              \u2502\u2502 status, check, where, identity,      \u2502\n\u2502                                      \u2502\u2502 tools, pack, shell, help,            \u2502\n\u2502                                      \u2502\u2502 task-route, stage-map-outline,       \u2502\n\u2502                           ...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        }
+      ]
+    },
+    {
+      "organ_id": "STRATEGIUM_AGENT",
+      "runner_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/STRATEGIUM_AGENT/TOOLS/strategium_agent_runner.py",
+      "runner_flavor": "base_half",
+      "commands": [
+        {
+          "name": "status",
+          "argv": [
+            "status"
+          ],
+          "executed_argv": [
+            "status"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_IDENTITY_RICH_STATUS_V0_1\",\n  \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n  \"base_half_task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n  \"organ\": \"STRATEGIUM_AGENT\",\n  \"runner\": \"strategium_agent_runner.py\",\n  \"timestamp_utc\": \"2026-05-19T22:35:32.069681+00:00\",\n  \"status\": \"READY\",\n  \"visual_status\": \"PASS_RICH\",\n  \"supported_commands\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"priority-matrix\",\n    \"campaign-plan-outline\",\n    \"resource-estimate\",\n    \"freeze-list\"\n  ],\n  \"active_command_list\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"priority-matrix\",\n    \"campaign-plan-outline\",\n    \"resource-estimate\",\n    \"freeze-list\"\n  ],\n  \"identity_summary\": \"Strategy, priorities, campaigns, and risk-aware planning.\",\n  \"paths\": {\n    \"organ_root\": \"/home/vboxuser2/IMPERIUM_...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "check",
+          "argv": [
+            "check"
+          ],
+          "executed_argv": [
+            "check"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_IDENTITY_RICH_STATUS_V0_1\",\n  \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n  \"base_half_task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n  \"organ\": \"STRATEGIUM_AGENT\",\n  \"runner\": \"strategium_agent_runner.py\",\n  \"timestamp_utc\": \"2026-05-19T22:35:32.298168+00:00\",\n  \"status\": \"READY\",\n  \"visual_status\": \"PASS_RICH\",\n  \"supported_commands\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"priority-matrix\",\n    \"campaign-plan-outline\",\n    \"resource-estimate\",\n    \"freeze-list\"\n  ],\n  \"active_command_list\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"priority-matrix\",\n    \"campaign-plan-outline\",\n    \"resource-estimate\",\n    \"freeze-list\"\n  ],\n  \"identity_summary\": \"Strategy, priorities, campaigns, and risk-aware planning.\",\n  \"paths\": {\n    \"organ_root\": \"/home/vboxuser2/IMPERIUM_...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "identity",
+          "argv": [
+            "identity"
+          ],
+          "executed_argv": [
+            "identity"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"organ\": \"STRATEGIUM_AGENT\",\n  \"summary\": \"Strategy, priorities, campaigns, and risk-aware planning.\",\n  \"profile\": {\n    \"schema_version\": \"ORGAN_AGENT_PROFILE_BASE_HALF_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n    \"organ\": \"STRATEGIUM_AGENT\",\n    \"organ_slug\": \"strategium\",\n    \"maturity\": \"BASE_HALF\",\n    \"summary\": \"Strategy, priorities, campaigns, and risk-aware planning.\",\n    \"mission\": \"Prioritize work lines and align campaigns to constrained resources.\",\n    \"required_commands\": [\n      \"status\",\n      \"check\",\n      \"where\",\n      \"identity\",\n      \"pack\",\n      \"shell\",\n      \"help\"\n    ],\n    \"forbidden_organs\": [\n      \"THRONE\",\n      \"CUSTODES\"\n    ],\n    \"visual_status\": \"WARN\"\n  },\n  \"identity_profile\": {\n    \"schema_version\": \"ORGAN_IDENTITY_PROFILE_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n    \"organ\": \"STRATEGIUM_AGENT\",\n    \"identity_summary\": \"Prioritize campaigns, estimate resour...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "tools",
+          "argv": [
+            "tools"
+          ],
+          "executed_argv": [
+            "tools"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_TOOL_CAPABILITY_VIEW_V0_1\",\n  \"generated_at_utc\": \"2026-05-19T22:35:32.599396Z\",\n  \"organ_id\": \"STRATEGIUM_AGENT\",\n  \"registry_source\": \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOL_INDEX.json\",\n  \"registry_owner\": \"MECHANICUS_AGENT\",\n  \"relevant_tools\": [\n    {\n      \"tool_id\": \"duckdb\",\n      \"owner_organ\": \"ADMINISTRATUM_AGENT\",\n      \"consumer_organs\": [\n        \"ADMINISTRATUM_AGENT\",\n        \"STRATEGIUM_AGENT\",\n        \"SCHOLA_IMPERIALIS_AGENT\"\n      ],\n      \"availability_status\": \"KNOWN_NOT_INSTALLED\",\n      \"capability_summary\": \"query reports, ledgers, CSV/JSON data\",\n      \"allowed_use\": [\n        \"read-only version/status probe\",\n        \"task-scoped execution with evidence receipt\"\n      ],\n      \"forbidden_use\": [\n        \"random install without Owner gate\",\n        \"destructive actions outside task contract scope\"\n      ],\n      \"evidence_required\": [\n        \"duckdb_version.t...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "shell_once_tools",
+          "argv": [
+            "shell",
+            "--once",
+            "tools"
+          ],
+          "executed_argv": [
+            "shell",
+            "--once",
+            "tools"
+          ],
+          "returncode": 0,
+          "stdout_preview": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 TOP STATUS BAR \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 organ: STRATEGIUM_AGENT                                                      \u2502\n\u2502 identity/lore: Strategy, priorities, campaigns, and risk-aware planning.     \u2502\n\u2502 backend_truth: head=821561a8bf642c3f3c2fce2cb9bf3a45a770646b branch=master   \u2502\n\u2502 dirty=yes                                                                    \u2502\n\u2502 visual_status: PASS_RICH | renderer: rich                                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 LEFT WORK ZONE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 RIGHT COMMAND ZONE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 latest_output:                       \u2502\u2502 active_command_list:                 \u2502\n\u2502 once_mode_command=tools              \u2502\u2502 status, check, where, identity,      \u2502\n\u2502                                      \u2502\u2502 tools, pack, shell, help,            \u2502\n\u2502                                      \u2502\u2502 priority-matrix,                     \u2502\n\u2502                           ...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        }
+      ]
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS_AGENT",
+      "runner_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/TOOLS/officio_agentis_agent_runner.py",
+      "runner_flavor": "base_half",
+      "commands": [
+        {
+          "name": "status",
+          "argv": [
+            "status"
+          ],
+          "executed_argv": [
+            "status"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_IDENTITY_RICH_STATUS_V0_1\",\n  \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n  \"base_half_task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n  \"organ\": \"OFFICIO_AGENTIS_AGENT\",\n  \"runner\": \"officio_agentis_agent_runner.py\",\n  \"timestamp_utc\": \"2026-05-19T22:35:33.034329+00:00\",\n  \"status\": \"READY\",\n  \"visual_status\": \"PASS_RICH\",\n  \"supported_commands\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\"\n  ],\n  \"active_command_list\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\"\n  ],\n  \"identity_summary\": \"Roles, modes, permissions, stop conditions, and response contracts.\",\n  \"paths\": {\n    \"organ_root\": \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT\",\n    \"runner\": \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFI...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "check",
+          "argv": [
+            "check"
+          ],
+          "executed_argv": [
+            "check"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_IDENTITY_RICH_STATUS_V0_1\",\n  \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n  \"base_half_task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n  \"organ\": \"OFFICIO_AGENTIS_AGENT\",\n  \"runner\": \"officio_agentis_agent_runner.py\",\n  \"timestamp_utc\": \"2026-05-19T22:35:33.247773+00:00\",\n  \"status\": \"READY\",\n  \"visual_status\": \"PASS_RICH\",\n  \"supported_commands\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\"\n  ],\n  \"active_command_list\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\"\n  ],\n  \"identity_summary\": \"Roles, modes, permissions, stop conditions, and response contracts.\",\n  \"paths\": {\n    \"organ_root\": \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT\",\n    \"runner\": \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFI...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "identity",
+          "argv": [
+            "identity"
+          ],
+          "executed_argv": [
+            "identity"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"organ\": \"OFFICIO_AGENTIS_AGENT\",\n  \"summary\": \"Roles, modes, permissions, stop conditions, and response contracts.\",\n  \"profile\": {\n    \"schema_version\": \"ORGAN_AGENT_PROFILE_BASE_HALF_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n    \"organ\": \"OFFICIO_AGENTIS_AGENT\",\n    \"organ_slug\": \"officio_agentis\",\n    \"maturity\": \"BASE_HALF\",\n    \"summary\": \"Roles, modes, permissions, stop conditions, and response contracts.\",\n    \"mission\": \"Govern agent admission, role/settings packs, and ACK discipline.\",\n    \"required_commands\": [\n      \"status\",\n      \"check\",\n      \"where\",\n      \"identity\",\n      \"pack\",\n      \"shell\",\n      \"help\"\n    ],\n    \"forbidden_organs\": [\n      \"THRONE\",\n      \"CUSTODES\"\n    ],\n    \"visual_status\": \"WARN\"\n  },\n  \"identity_profile\": {\n    \"schema_version\": \"ORGAN_IDENTITY_PROFILE_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n    \"organ\": \"OFFICIO_AGENTIS_AGENT\",\n    \"identity_summary\": \"...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "tools",
+          "argv": [
+            "tools"
+          ],
+          "executed_argv": [
+            "tools"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_TOOL_CAPABILITY_VIEW_V0_1\",\n  \"generated_at_utc\": \"2026-05-19T22:35:33.549334Z\",\n  \"organ_id\": \"OFFICIO_AGENTIS_AGENT\",\n  \"registry_source\": \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOL_INDEX.json\",\n  \"registry_owner\": \"MECHANICUS_AGENT\",\n  \"relevant_tools\": [\n    {\n      \"tool_id\": \"jsonschema\",\n      \"owner_organ\": \"DOCTRINARIUM_AGENT\",\n      \"consumer_organs\": [\n        \"DOCTRINARIUM_AGENT\",\n        \"OFFICIO_AGENTIS_AGENT\",\n        \"MECHANICUS_AGENT\"\n      ],\n      \"availability_status\": \"AVAILABLE_VM2\",\n      \"capability_summary\": \"validate JSON artifacts, contracts, policies\",\n      \"allowed_use\": [\n        \"read-only version/status probe\",\n        \"task-scoped execution with evidence receipt\"\n      ],\n      \"forbidden_use\": [\n        \"random install without Owner gate\",\n        \"destructive actions outside task contract scope\"\n      ],\n      \"evidence_required\": [\n        \"jsonschema...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "shell_once_tools",
+          "argv": [
+            "shell",
+            "--once",
+            "tools"
+          ],
+          "executed_argv": [
+            "shell",
+            "--once",
+            "tools"
+          ],
+          "returncode": 0,
+          "stdout_preview": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 TOP STATUS BAR \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 organ: OFFICIO_AGENTIS_AGENT                                                 \u2502\n\u2502 identity/lore: Roles, modes, permissions, stop conditions, and response      \u2502\n\u2502 contracts.                                                                   \u2502\n\u2502 backend_truth: head=821561a8bf642c3f3c2fce2cb9bf3a45a770646b branch=master   \u2502\n\u2502 dirty=yes                                                                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 LEFT WORK ZONE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 RIGHT COMMAND ZONE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 latest_output:                       \u2502\u2502 active_command_list:                 \u2502\n\u2502 once_mode_command=tools              \u2502\u2502 status, check, where, identity,      \u2502\n\u2502                                      \u2502\u2502 tools, pack, shell, help             \u2502\n\u2502                                      \u2502\u2502                                      \u2502\n\u2502                           ...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        }
+      ]
+    },
+    {
+      "organ_id": "SCHOLA_IMPERIALIS_AGENT",
+      "runner_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/SCHOLA_IMPERIALIS_AGENT/TOOLS/schola_imperialis_agent_runner.py",
+      "runner_flavor": "base_half",
+      "commands": [
+        {
+          "name": "status",
+          "argv": [
+            "status"
+          ],
+          "executed_argv": [
+            "status"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_IDENTITY_RICH_STATUS_V0_1\",\n  \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n  \"base_half_task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n  \"organ\": \"SCHOLA_IMPERIALIS_AGENT\",\n  \"runner\": \"schola_imperialis_agent_runner.py\",\n  \"timestamp_utc\": \"2026-05-19T22:35:33.997631+00:00\",\n  \"status\": \"READY\",\n  \"visual_status\": \"PASS_RICH\",\n  \"supported_commands\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"lesson-register\",\n    \"training-pack-outline\",\n    \"skill-map\",\n    \"example-check\"\n  ],\n  \"active_command_list\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"lesson-register\",\n    \"training-pack-outline\",\n    \"skill-map\",\n    \"example-check\"\n  ],\n  \"identity_summary\": \"Lessons, training packs, examples, and skill growth loops.\",\n  \"paths\": {\n    \"organ_root\": \"/home/vboxuser2/IMPERI...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "check",
+          "argv": [
+            "check"
+          ],
+          "executed_argv": [
+            "check"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_IDENTITY_RICH_STATUS_V0_1\",\n  \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n  \"base_half_task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n  \"organ\": \"SCHOLA_IMPERIALIS_AGENT\",\n  \"runner\": \"schola_imperialis_agent_runner.py\",\n  \"timestamp_utc\": \"2026-05-19T22:35:34.217985+00:00\",\n  \"status\": \"READY\",\n  \"visual_status\": \"PASS_RICH\",\n  \"supported_commands\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"lesson-register\",\n    \"training-pack-outline\",\n    \"skill-map\",\n    \"example-check\"\n  ],\n  \"active_command_list\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"lesson-register\",\n    \"training-pack-outline\",\n    \"skill-map\",\n    \"example-check\"\n  ],\n  \"identity_summary\": \"Lessons, training packs, examples, and skill growth loops.\",\n  \"paths\": {\n    \"organ_root\": \"/home/vboxuser2/IMPERI...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "identity",
+          "argv": [
+            "identity"
+          ],
+          "executed_argv": [
+            "identity"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"organ\": \"SCHOLA_IMPERIALIS_AGENT\",\n  \"summary\": \"Lessons, training packs, examples, and skill growth loops.\",\n  \"profile\": {\n    \"schema_version\": \"ORGAN_AGENT_PROFILE_BASE_HALF_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n    \"organ\": \"SCHOLA_IMPERIALIS_AGENT\",\n    \"organ_slug\": \"schola_imperialis\",\n    \"maturity\": \"BASE_HALF\",\n    \"summary\": \"Lessons, training packs, examples, and skill growth loops.\",\n    \"mission\": \"Capture lessons, maintain training assets, and evaluate agent growth.\",\n    \"required_commands\": [\n      \"status\",\n      \"check\",\n      \"where\",\n      \"identity\",\n      \"pack\",\n      \"shell\",\n      \"help\"\n    ],\n    \"forbidden_organs\": [\n      \"THRONE\",\n      \"CUSTODES\"\n    ],\n    \"visual_status\": \"WARN\"\n  },\n  \"identity_profile\": {\n    \"schema_version\": \"ORGAN_IDENTITY_PROFILE_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n    \"organ\": \"SCHOLA_IMPERIALIS_AGENT\",\n    \"identity_summary\": \"Regis...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "tools",
+          "argv": [
+            "tools"
+          ],
+          "executed_argv": [
+            "tools"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_TOOL_CAPABILITY_VIEW_V0_1\",\n  \"generated_at_utc\": \"2026-05-19T22:35:34.522745Z\",\n  \"organ_id\": \"SCHOLA_IMPERIALIS_AGENT\",\n  \"registry_source\": \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOL_INDEX.json\",\n  \"registry_owner\": \"MECHANICUS_AGENT\",\n  \"relevant_tools\": [\n    {\n      \"tool_id\": \"pytest\",\n      \"owner_organ\": \"MECHANICUS_AGENT\",\n      \"consumer_organs\": [\n        \"MECHANICUS_AGENT\",\n        \"SCHOLA_IMPERIALIS_AGENT\",\n        \"SERVITOR\"\n      ],\n      \"availability_status\": \"AVAILABLE_PC\",\n      \"capability_summary\": \"Python tests and regression suite\",\n      \"allowed_use\": [\n        \"read-only version/status probe\",\n        \"task-scoped execution with evidence receipt\"\n      ],\n      \"forbidden_use\": [\n        \"random install without Owner gate\",\n        \"destructive actions outside task contract scope\"\n      ],\n      \"evidence_required\": [\n        \"pytest_report.txt\"\n      ],\n      ...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "shell_once_tools",
+          "argv": [
+            "shell",
+            "--once",
+            "tools"
+          ],
+          "executed_argv": [
+            "shell",
+            "--once",
+            "tools"
+          ],
+          "returncode": 0,
+          "stdout_preview": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 TOP STATUS BAR \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 organ: SCHOLA_IMPERIALIS_AGENT                                               \u2502\n\u2502 identity/lore: Lessons, training packs, examples, and skill growth loops.    \u2502\n\u2502 backend_truth: head=821561a8bf642c3f3c2fce2cb9bf3a45a770646b branch=master   \u2502\n\u2502 dirty=yes                                                                    \u2502\n\u2502 visual_status: PASS_RICH | renderer: rich                                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 LEFT WORK ZONE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 RIGHT COMMAND ZONE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 latest_output:                       \u2502\u2502 active_command_list:                 \u2502\n\u2502 once_mode_command=tools              \u2502\u2502 status, check, where, identity,      \u2502\n\u2502                                      \u2502\u2502 tools, pack, shell, help,            \u2502\n\u2502                                      \u2502\u2502 lesson-register,                     \u2502\n\u2502                           ...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        }
+      ]
+    },
+    {
+      "organ_id": "DOCTRINARIUM_AGENT",
+      "runner_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/DOCTRINARIUM_AGENT/TOOLS/doctrinarium_agent_runner.py",
+      "runner_flavor": "base_half",
+      "commands": [
+        {
+          "name": "status",
+          "argv": [
+            "status"
+          ],
+          "executed_argv": [
+            "status"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_IDENTITY_RICH_STATUS_V0_1\",\n  \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n  \"base_half_task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n  \"organ\": \"DOCTRINARIUM_AGENT\",\n  \"runner\": \"doctrinarium_agent_runner.py\",\n  \"timestamp_utc\": \"2026-05-19T22:35:34.960939+00:00\",\n  \"status\": \"READY\",\n  \"visual_status\": \"PASS_RICH\",\n  \"supported_commands\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"law-list\",\n    \"doctrine-check\",\n    \"violation-report\",\n    \"gate-before-work\"\n  ],\n  \"active_command_list\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"law-list\",\n    \"doctrine-check\",\n    \"violation-report\",\n    \"gate-before-work\"\n  ],\n  \"identity_summary\": \"Laws, policy gates, compliance, and conflict resolution.\",\n  \"paths\": {\n    \"organ_root\": \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IM...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "check",
+          "argv": [
+            "check"
+          ],
+          "executed_argv": [
+            "check"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_IDENTITY_RICH_STATUS_V0_1\",\n  \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n  \"base_half_task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n  \"organ\": \"DOCTRINARIUM_AGENT\",\n  \"runner\": \"doctrinarium_agent_runner.py\",\n  \"timestamp_utc\": \"2026-05-19T22:35:35.175574+00:00\",\n  \"status\": \"READY\",\n  \"visual_status\": \"PASS_RICH\",\n  \"supported_commands\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"law-list\",\n    \"doctrine-check\",\n    \"violation-report\",\n    \"gate-before-work\"\n  ],\n  \"active_command_list\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"tools\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"law-list\",\n    \"doctrine-check\",\n    \"violation-report\",\n    \"gate-before-work\"\n  ],\n  \"identity_summary\": \"Laws, policy gates, compliance, and conflict resolution.\",\n  \"paths\": {\n    \"organ_root\": \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IM...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "identity",
+          "argv": [
+            "identity"
+          ],
+          "executed_argv": [
+            "identity"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"organ\": \"DOCTRINARIUM_AGENT\",\n  \"summary\": \"Laws, policy gates, compliance, and conflict resolution.\",\n  \"profile\": {\n    \"schema_version\": \"ORGAN_AGENT_PROFILE_BASE_HALF_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n    \"organ\": \"DOCTRINARIUM_AGENT\",\n    \"organ_slug\": \"doctrinarium\",\n    \"maturity\": \"BASE_HALF\",\n    \"summary\": \"Laws, policy gates, compliance, and conflict resolution.\",\n    \"mission\": \"Enforce doctrine gates before PASS and reconcile policy conflicts.\",\n    \"required_commands\": [\n      \"status\",\n      \"check\",\n      \"where\",\n      \"identity\",\n      \"pack\",\n      \"shell\",\n      \"help\"\n    ],\n    \"forbidden_organs\": [\n      \"THRONE\",\n      \"CUSTODES\"\n    ],\n    \"visual_status\": \"WARN\"\n  },\n  \"identity_profile\": {\n    \"schema_version\": \"ORGAN_IDENTITY_PROFILE_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n    \"organ\": \"DOCTRINARIUM_AGENT\",\n    \"identity_summary\": \"Maintain law lists, doctrine che...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "tools",
+          "argv": [
+            "tools"
+          ],
+          "executed_argv": [
+            "tools"
+          ],
+          "returncode": 0,
+          "stdout_preview": "{\n  \"schema_version\": \"ORGAN_TOOL_CAPABILITY_VIEW_V0_1\",\n  \"generated_at_utc\": \"2026-05-19T22:35:35.479419Z\",\n  \"organ_id\": \"DOCTRINARIUM_AGENT\",\n  \"registry_source\": \"/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOL_INDEX.json\",\n  \"registry_owner\": \"MECHANICUS_AGENT\",\n  \"relevant_tools\": [\n    {\n      \"tool_id\": \"jsonschema\",\n      \"owner_organ\": \"DOCTRINARIUM_AGENT\",\n      \"consumer_organs\": [\n        \"DOCTRINARIUM_AGENT\",\n        \"OFFICIO_AGENTIS_AGENT\",\n        \"MECHANICUS_AGENT\"\n      ],\n      \"availability_status\": \"AVAILABLE_VM2\",\n      \"capability_summary\": \"validate JSON artifacts, contracts, policies\",\n      \"allowed_use\": [\n        \"read-only version/status probe\",\n        \"task-scoped execution with evidence receipt\"\n      ],\n      \"forbidden_use\": [\n        \"random install without Owner gate\",\n        \"destructive actions outside task contract scope\"\n      ],\n      \"evidence_required\": [\n        \"jsonschema_re...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        },
+        {
+          "name": "shell_once_tools",
+          "argv": [
+            "shell",
+            "--once",
+            "tools"
+          ],
+          "executed_argv": [
+            "shell",
+            "--once",
+            "tools"
+          ],
+          "returncode": 0,
+          "stdout_preview": "\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 TOP STATUS BAR \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 organ: DOCTRINARIUM_AGENT                                                    \u2502\n\u2502 identity/lore: Laws, policy gates, compliance, and conflict resolution.      \u2502\n\u2502 backend_truth: head=821561a8bf642c3f3c2fce2cb9bf3a45a770646b branch=master   \u2502\n\u2502 dirty=yes                                                                    \u2502\n\u2502 visual_status: PASS_RICH | renderer: rich                                    \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 LEFT WORK ZONE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\u256d\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500 RIGHT COMMAND ZONE \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 latest_output:                       \u2502\u2502 active_command_list:                 \u2502\n\u2502 once_mode_command=tools              \u2502\u2502 status, check, where, identity,      \u2502\n\u2502                                      \u2502\u2502 tools, pack, shell, help, law-list,  \u2502\n\u2502                                      \u2502\u2502 doctrine-check, violation-report,    \u2502\n\u2502                           ...<truncated>",
+          "stderr_preview": "",
+          "warnings": [],
+          "pass": true
+        }
+      ]
+    }
+  ]
+}

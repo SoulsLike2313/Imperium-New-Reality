@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FINAL_RECEIPT_V0_5",
+  "type": "object",
+  "required": [
+    "task_id",
+    "verdict",
+    "report_root",
+    "scope_status",
+    "mechanicus_click_panel",
+    "raw_terminal_secondary",
+    "sse_status",
+    "git"
+  ],
+  "properties": {
+    "task_id": {
+      "const": "TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5"
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "WARN",
+        "BLOCK"
+      ]
+    },
+    "report_root": {
+      "type": "string",
+      "pattern": "IMPERIUM_NEW_GENERATION"
+    },
+    "scope_status": {
+      "enum": [
+        "PASS_NEW_GENERATION_ONLY",
+        "WARN_PRIOR_COMMITTED_CONTAMINATION",
+        "BLOCK_FORBIDDEN_WRITES"
+      ]
+    },
+    "mechanicus_click_panel": {
+      "enum": [
+        "PASS",
+        "WARN",
+        "BLOCK"
+      ]
+    },
+    "raw_terminal_secondary": {
+      "enum": [
+        "PASS",
+        "WARN",
+        "BLOCK"
+      ]
+    },
+    "sse_status": {
+      "enum": [
+        "SSE_CONNECTED_TESTED_PASS",
+        "SSE_FALLBACK_WARN",
+        "SSE_ERROR_BLOCK",
+        "SSE_DISABLED_WARN",
+        "UNPROVEN_BLOCK"
+      ]
+    },
+    "responsive_status": {
+      "enum": [
+        "PASS",
+        "WARN",
+        "BLOCK",
+        "UNPROVEN"
+      ]
+    },
+    "git": {
+      "type": "object",
+      "required": [
+        "head_before",
+        "head_after",
+        "status_final"
+      ],
+      "properties": {
+        "head_before": {
+          "type": "string"
+        },
+        "head_after": {
+          "type": "string"
+        },
+        "status_final": {
+          "type": "string"
+        },
+        "commit_url": {
+          "type": "string"
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "capability_id": "CAP-EXAMPLE-LOCAL-HTTP-DASHBOARD-SERVER",
+  "name": "local HTTP dashboard server pattern",
+  "category": "EXAMPLES",
+  "status": "SANDBOX",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Bounded local server pattern for dashboard smoke checks.",
+  "what_problem_it_solves": "Supports repeatable local evidence capture loops.",
+  "source_type": "practice",
+  "source_url_or_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1/important_six_dashboard_api_smoke_report.json",
+  "license_or_trust_note": "Internal repo evidence controlled by IMPERIUM.",
+  "install_required": false,
+  "install_gate": "GATE-U15-OPERATIONALITY-IMPACT",
+  "validation_commands": [
+    "validate:cap-example-local-http-dashboard-server"
+  ],
+  "expected_receipts": [
+    "cap-example-local-http-dashboard-server_receipt.json"
+  ],
+  "safety_notes": "Use only in bounded task scope; no blind runtime mutation.",
+  "security_notes": "Do not bypass path, command, and evidence gates.",
+  "offline_or_network_dependency": "offline_preferred",
+  "promoted_by_receipt": "NOT_PROMOTED",
+  "last_reviewed_utc": "2026-05-24T00:00:00Z",
+  "next_review_reason": "Needs hardened exposure policy before CANON.",
+  "limitations": "Pattern is local-only and scenario-specific.",
+  "allowed_use_cases": [
+    "Bounded task execution under Mechanicus policy",
+    "Evidence-backed validation and report generation"
+  ],
+  "forbidden_use_cases": [
+    "Production-ready claim without receipts",
+    "Out-of-scope or unbounded execution"
+  ]
+}

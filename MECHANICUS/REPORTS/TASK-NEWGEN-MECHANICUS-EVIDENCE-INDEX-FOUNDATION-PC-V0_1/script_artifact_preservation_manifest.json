@@ -1,0 +1,80 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1",
+  "generated_at_utc": "2026-05-24T23:00:00Z",
+  "policy": "SCRIPT_ARTIFACT_PRESERVATION_POLICY_V0_1",
+  "artifacts": [
+    {
+      "artifact_id": "MECH-EVIDENCE-BUILDER-V0_1",
+      "original_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_evidence_index_builder_v0_1.py",
+      "buffer_path": "",
+      "purpose": "Build bounded NewGen evidence SQLite/FTS index and foundational artifacts.",
+      "inputs": [
+        "IMPERIUM_NEW_GENERATION scoped reports/receipts/cards/scope packs/role packs/contracts/templates"
+      ],
+      "outputs": [
+        "evidence_index.sqlite3",
+        "evidence_index_schema_v0_1.sql",
+        "evidence_index_manifest.json",
+        "warning_error_patterns_v0_1.json",
+        "example_queries_v0_1.json",
+        "evidence_index_build_report.json"
+      ],
+      "dependencies": [
+        "python>=3.12",
+        "sqlite3"
+      ],
+      "result": "WORKED",
+      "risk": "Low; bounded to declared NewGen paths.",
+      "recommendation": "ABSORB_NOW"
+    },
+    {
+      "artifact_id": "MECH-EVIDENCE-QUERY-RUNNER-V0_1",
+      "original_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_evidence_query_runner_v0_1.py",
+      "buffer_path": "",
+      "purpose": "Execute required evidence query smoke set over SQLite/FTS index.",
+      "inputs": [
+        "evidence_index.sqlite3",
+        "example_queries_v0_1.json"
+      ],
+      "outputs": [
+        "evidence_query_smoke_report.json"
+      ],
+      "dependencies": [
+        "python>=3.12",
+        "sqlite3"
+      ],
+      "result": "WORKED",
+      "risk": "Low; read-only query execution.",
+      "recommendation": "ABSORB_NOW"
+    },
+    {
+      "artifact_id": "MECH-EVIDENCE-CHECKER-V0_1",
+      "original_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_evidence_index_v0_1.py",
+      "buffer_path": "",
+      "purpose": "Validate coverage/safety gates and produce Inquisition+Administratum+quality reports.",
+      "inputs": [
+        "evidence_index.sqlite3",
+        "evidence_index_manifest.json",
+        "quality statuses (py_compile/ruff/mypy/json/query)"
+      ],
+      "outputs": [
+        "evidence_index_coverage_report.json",
+        "inquisition_evidence_safety_report.json",
+        "administratum_evidence_index_handoff.json",
+        "ghost_evolve_evidence_index_training_proof.json",
+        "quality_gate_result_report.json"
+      ],
+      "dependencies": [
+        "python>=3.12",
+        "sqlite3"
+      ],
+      "result": "WORKED",
+      "risk": "Low; no destructive actions.",
+      "recommendation": "ABSORB_NOW"
+    }
+  ],
+  "notes": [
+    "No temporary helper scripts were created outside repository scope.",
+    "No artifact buffering in E:\\IMPERIUM_CONTEXT was required."
+  ]
+}

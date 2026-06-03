@@ -1,0 +1,46 @@
+{
+  "matrix_id": "INDEPENDENT_REPLAY_STATE_TAXONOMY_MATRIX",
+  "version": "0.1-candidate",
+  "owner_organ": "Mechanicus",
+  "support_organs": [
+    "Inquisition",
+    "Administratum"
+  ],
+  "purpose": "Defines strict replay state taxonomy and target-head matching rules for independent replay claims.",
+  "used_by": [
+    "SERVITOR",
+    "INQUISITOR",
+    "GPT_LOGOS"
+  ],
+  "required_questions": [
+    "Does replay exist for this exact target head?",
+    "Which actor produced replay?",
+    "Is replay stale or current?",
+    "What cap is triggered if mismatch exists?"
+  ],
+  "pass_criteria": [
+    "Replay state reflects head truth",
+    "Current-target states require replay_head == target_head",
+    "Stale replay state is explicit"
+  ],
+  "warn_criteria": [
+    "Replay exists only for older target",
+    "External replay acceptance pending stricter review"
+  ],
+  "block_criteria": [
+    "Current replay claim with mismatched heads",
+    "State NONE with replay evidence present"
+  ],
+  "fake_green_flags": [
+    "REPLAY_STATE_AMBIGUOUS",
+    "STALE_REPLAY_USED_AS_CURRENT",
+    "REPLAY_CLAIM_WITHOUT_RECEIPT"
+  ],
+  "evidence_requirements": [
+    "independent_replay_state.json",
+    "replay_receipt_path",
+    "checker_report"
+  ],
+  "current_status": "CANDIDATE_NOT_CANON",
+  "next_action": "Bind taxonomy into matrix-level checker and migration fixtures."
+}

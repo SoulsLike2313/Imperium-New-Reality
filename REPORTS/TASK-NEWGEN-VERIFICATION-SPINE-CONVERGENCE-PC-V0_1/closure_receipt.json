@@ -1,0 +1,69 @@
+{
+  "schema_id": "newgen_verification_spine_convergence_closure_receipt_v0_1",
+  "task_id": "TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1",
+  "generated_at_utc": "2026-05-24T06:48:44.102954+00:00",
+  "verdict": "PASS_WITH_WARNINGS",
+  "starting_head_expected": "830a627bb73939d5d37f7c22c6127ba4cf5a40c4",
+  "ending_head": "830a627bb73939d5d37f7c22c6127ba4cf5a40c4",
+  "gatepack": {
+    "path": "C:/Users/PC/Downloads/TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1_DOSSIER.zip",
+    "sha256": "DB756251B4829B86092A2D9D7F3289CA3406D5D8B9AF42FC10FC034A05AB1BF0"
+  },
+  "reports": {
+    "final_report": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1/FINAL_REPORT.md",
+    "raw_boundary_inventory": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1/raw_boundary_inventory.json",
+    "convergence_matrix": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1/verification_spine_convergence_matrix.json",
+    "schema_enforcement_report": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1/schema_enforcement_report.json",
+    "read_only_smoke_report": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1/read_only_smoke_report.json",
+    "agent_kpd_self_review": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1/agent_kpd_self_review.json"
+  },
+  "checks": {
+    "py_compile": "PASS",
+    "json_parse": "PASS",
+    "schema_enforcement": "PASS",
+    "read_only_smoke": "PASS"
+  },
+  "working_tree_status_short": [
+    "M IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_registry_v0_1.json",
+    " M IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+    " M IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+    " M IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/transfer_zone_config_v0_1.json",
+    " M IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.js",
+    " M IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_server_v0_2.py",
+    "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1/",
+    "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_action_receipt_schema_v0_1.json",
+    "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_action_run_result_schema_v0_1.json",
+    "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_registry_schema_v0_1.json",
+    "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/transfer_intent_schema_v0_1.json"
+  ],
+  "finalization": {
+    "finalization_task_id": "TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-COMMIT-PUSH-PC-V0_1",
+    "commit_push_required": true,
+    "commit_message": "TASK-20260524: converge NewGen dashboard actions with verification spine",
+    "pre_commit_status_short": [
+      " M IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_registry_v0_1.json",
+      " M IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      " M IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+      " M IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/transfer_zone_config_v0_1.json",
+      " M IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.js",
+      " M IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_server_v0_2.py",
+      "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1/",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_action_receipt_schema_v0_1.json",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_action_run_result_schema_v0_1.json",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_registry_schema_v0_1.json",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/transfer_intent_schema_v0_1.json"
+    ],
+    "pre_commit_checks": {
+      "git_status_scope": "PASS",
+      "py_compile": "PASS",
+      "json_parse": "PASS"
+    },
+    "note": "Commit hash and push confirmation are recorded in supplementary finalization artifacts to avoid self-referential amend hash churn."
+  },
+  "next_allowed_task": "TASK-NEWGEN-SANCTUM-ORGAN-CENTERED-COCKPIT-SKELETON-PC-V0_1",
+  "warnings": [
+    "Residual classified command fallbacks remain for non-allowlisted command shapes.",
+    "Nested diagnostic payload alias cleanup deferred to follow-up.",
+    "Commit/push not performed in this run."
+  ]
+}

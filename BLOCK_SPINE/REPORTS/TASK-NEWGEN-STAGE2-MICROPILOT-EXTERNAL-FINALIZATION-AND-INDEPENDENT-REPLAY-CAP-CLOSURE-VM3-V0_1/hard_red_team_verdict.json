@@ -1,0 +1,37 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1",
+  "generated_at_utc": "2026-06-01T11:49:38Z",
+  "mode": "HARD_RED_TEAM",
+  "checks": {
+    "head_status_boundary_checked": true,
+    "dirty_provenance_contradiction": false,
+    "stale_receipt_detected": false,
+    "role_authority_not_read": false,
+    "manual_reasoning_claimed_as_capability": false,
+    "screenshot_as_truth_without_semantic_check": false,
+    "replay_command_or_receipt_missing": false,
+    "output_format_mismatch": false,
+    "private_local_leak_risk": false,
+    "git_closure_pending": false,
+    "commit_push_receipt_present": true,
+    "checked_commit_subject": "f771403a79712db8d6500bec3f10098ac20f4ae0"
+  },
+  "attacked_claims": [
+    "External finalization closure attempt",
+    "Independent replay closure claim",
+    "Clean PASS eligibility",
+    "Scope lock discipline"
+  ],
+  "downgrades": [
+    "External finalization remains NARROWED because raw external bundles are absent.",
+    "Stage caps remain carried and block clean PASS.",
+    "Dirty-start continuation remains explicit and carried."
+  ],
+  "caps_triggered": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME",
+    "CAP_DIRTY_START_OWNER_APPROVED_CONTINUATION"
+  ],
+  "verdict": "PASS_WITH_WARNINGS"
+}

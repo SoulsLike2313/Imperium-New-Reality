@@ -1,0 +1,30 @@
+{
+  "matrix_id": "INVALID_MISSING_SUPPORT_ORGANS_MATRIX",
+  "version": "0.1-test",
+  "owner_organ": "Mechanicus",
+  "support_organs": [],
+  "purpose": "Negative fixture: support_organs must be non-empty list.",
+  "used_by": [
+    "SERVITOR"
+  ],
+  "required_questions": [
+    "Does validator block missing support_organs?"
+  ],
+  "pass_criteria": [
+    "Should never pass"
+  ],
+  "warn_criteria": [
+    "N/A"
+  ],
+  "block_criteria": [
+    "Missing support_organs must block"
+  ],
+  "fake_green_flags": [
+    "SUPPORT_ORGANS_MISSING"
+  ],
+  "evidence_requirements": [
+    "Fixture should fail support_organs checks"
+  ],
+  "current_status": "CANDIDATE",
+  "next_action": "Expect validator failure"
+}

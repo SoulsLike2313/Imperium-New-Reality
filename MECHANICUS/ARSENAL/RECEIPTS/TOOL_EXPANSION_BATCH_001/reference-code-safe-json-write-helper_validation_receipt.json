@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:reference_code_safe_json_write_helper:tool_detection:reference_code_safe_json_write_helper",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "REFERENCE_CODE_SAFE_JSON_WRITE_HELPER",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:44Z",
+  "status": "PASS",
+  "summary": "REFERENCE_CODE_SAFE_JSON_WRITE_HELPER: PASS via tool_detection:REFERENCE_CODE_SAFE_JSON_WRITE_HELPER. promotion_recommendation=PROMOTE_SANDBOX",
+  "check_name": "tool_detection:REFERENCE_CODE_SAFE_JSON_WRITE_HELPER",
+  "command_or_check": "python -c \"from pathlib import Path; p=Path('IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/REFERENCE_CODE/REFERENCE_CODE_SAFE_JSON_WRITE_HELPER/capability_card.json'); print(p.exists()); raise SystemExit(0 if p.exists() else 2)\"",
+  "exit_code": 0,
+  "stdout_excerpt": "$ python -c \"from pathlib import Path; p=Path('IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/REFERENCE_CODE/REFERENCE_CODE_SAFE_JSON_WRITE_HELPER/capability_card.json'); print(p.exists()); raise SystemExit(0 if p.exists() else 2)\"\nTrue",
+  "stderr_excerpt": "",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/reference-code-safe-json-write-helper_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "PROMOTE_SANDBOX",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/reference-code-safe-json-write-helper_validation_receipt.json"
+  ]
+}

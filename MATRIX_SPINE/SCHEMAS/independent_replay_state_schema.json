@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Independent Replay State Schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "replay_state",
+    "target_head",
+    "replay_head",
+    "replay_actor",
+    "replay_receipt_path",
+    "is_current_for_target",
+    "caps_triggered",
+    "clean_pass_allowed"
+  ],
+  "properties": {
+    "task_id": { "type": "string" },
+    "replay_state": {
+      "enum": [
+        "NONE",
+        "PRIOR_REPLAY_EXISTS",
+        "SEPARATE_REPLAY_RUNNER_FOR_TARGET",
+        "INQUISITOR_REPLAY_FOR_TARGET",
+        "SPECULUM_REPLAY_FOR_TARGET",
+        "EXTERNAL_REPLAY_ACCEPTED",
+        "STALE_REPLAY_ONLY"
+      ]
+    },
+    "target_head": { "type": "string" },
+    "replay_head": { "type": "string" },
+    "replay_actor": { "type": "string" },
+    "replay_receipt_path": { "type": "string" },
+    "is_current_for_target": { "type": "boolean" },
+    "caps_triggered": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "clean_pass_allowed": { "type": "boolean" }
+  }
+}

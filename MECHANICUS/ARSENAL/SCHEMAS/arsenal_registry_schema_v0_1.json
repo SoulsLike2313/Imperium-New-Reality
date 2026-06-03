@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.newgen.mechanicus.arsenal.registry.v0_1",
+  "title": "Mechanicus Arsenal Registry V0.1",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "root_path": {
+      "type": "string"
+    },
+    "card_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "status_counts": {
+      "type": "object",
+      "properties": {
+        "CANDIDATE": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "SANDBOX": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "CANON": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "QUARANTINE": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "REJECTED": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "CANDIDATE",
+        "SANDBOX",
+        "CANON",
+        "QUARANTINE",
+        "REJECTED"
+      ]
+    },
+    "cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "capability_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "card_path": {
+            "type": "string"
+          },
+          "owner_organ": {
+            "type": "string"
+          },
+          "source_type": {
+            "type": "string"
+          },
+          "install_required": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "capability_id",
+          "name",
+          "category",
+          "status",
+          "card_path",
+          "owner_organ",
+          "source_type",
+          "install_required"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "generated_at_utc",
+    "task_id",
+    "root_path",
+    "card_count",
+    "status_counts",
+    "cards"
+  ]
+}

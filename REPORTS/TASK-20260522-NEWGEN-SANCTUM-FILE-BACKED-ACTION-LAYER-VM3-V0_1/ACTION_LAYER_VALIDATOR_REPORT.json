@@ -1,0 +1,93 @@
+{
+  "schema_version": "0.1",
+  "task_id": "TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1",
+  "generated_at_utc": "2026-05-22T15:53:09Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "impl_files_exist",
+      "status": "PASS",
+      "details": "all required implementation files exist"
+    },
+    {
+      "check_id": "request_schema_parse",
+      "status": "PASS",
+      "details": "request schema parses"
+    },
+    {
+      "check_id": "result_schema_parse",
+      "status": "PASS",
+      "details": "result schema parses"
+    },
+    {
+      "check_id": "registry_schema_parse",
+      "status": "PASS",
+      "details": "registry schema parses"
+    },
+    {
+      "check_id": "action_registry_parse",
+      "status": "PASS",
+      "details": "action registry parses"
+    },
+    {
+      "check_id": "required_actions_present",
+      "status": "PASS",
+      "details": "all required allowlisted actions are present"
+    },
+    {
+      "check_id": "action_field_shape",
+      "status": "PASS",
+      "details": "all action entries contain required fields"
+    },
+    {
+      "check_id": "action_status_enum",
+      "status": "PASS",
+      "details": "all action statuses are valid"
+    },
+    {
+      "check_id": "wired_actions_have_commands",
+      "status": "PASS",
+      "details": "all wired actions have non-empty allowed_commands"
+    },
+    {
+      "check_id": "server_routes_present",
+      "status": "PASS",
+      "details": "server contains required API route handlers"
+    },
+    {
+      "check_id": "localhost_only_default",
+      "status": "PASS",
+      "details": "server defaults and checks localhost-only behavior"
+    },
+    {
+      "check_id": "no_arbitrary_shell_patterns",
+      "status": "PASS",
+      "details": "no arbitrary shell execution pattern found"
+    },
+    {
+      "check_id": "ui_has_connection_states",
+      "status": "PASS",
+      "details": "UI includes required connection states"
+    },
+    {
+      "check_id": "ui_file_mode_honesty",
+      "status": "PASS",
+      "details": "UI includes file mode not-connected signal"
+    },
+    {
+      "check_id": "ui_officio_gate_visible",
+      "status": "PASS",
+      "details": "UI shows Officio live-language gate fields"
+    },
+    {
+      "check_id": "required_report_bundle_exists",
+      "status": "PASS",
+      "details": "required report bundle files exist"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "registry_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_ACTION_REGISTRY_V0_1.json",
+  "report_dir": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-FILE-BACKED-ACTION-LAYER-VM3-V0_1",
+  "no_fake_green_note": "PASS/WARN validates bounded foundation action layer only; no production/autonomy claim."
+}

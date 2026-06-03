@@ -1,0 +1,21 @@
+{
+  "schema_id": "ORGAN_DIALOGUE_REQUEST_V0_1",
+  "request_id": "OD-REQ-007-STRATEGIUM",
+  "task_id": "TASK-DEMO-ORGAN-DIALOGUE-V0_1",
+  "source_actor": "SERVITOR_EXTERNAL",
+  "target_organ": "STRATEGIUM",
+  "purpose": "Foundation dialogue intake for STRATEGIUM without live autonomy.",
+  "question_set": [
+    "Identify owner-choice boundary for next expansion phase.",
+    "List what must remain manual in this version."
+  ],
+  "context_refs": [
+    "IMPERIUM_NEW_GENERATION/TRUTH/CURRENT_TRUTH_ROOT_V0_1.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-PQG-NEGATIVE-TEST-MUTATION-CHECK-VM2-V0_1/FINAL_RECEIPT.json"
+  ],
+  "allowed_response_mode": "FOUNDATION_DETERMINISTIC_FILE_BACKED_ONLY",
+  "claim_boundary": "foundation-only deterministic packet response; no live autonomous organ execution",
+  "created_at_utc": "2026-05-22T21:10:39Z",
+  "owner_task_id": "TASK-20260523-NEWGEN-SANCTUM-ORGAN-DIALOGUE-DEMO-VM2-V0_1"
+}

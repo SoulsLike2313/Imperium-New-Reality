@@ -1,0 +1,239 @@
+{
+  "schema_id": "TRANSFER_ACTION_RUNNER_VALIDATOR_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+  "generated_at_utc": "2026-05-23T00:43:55Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "core_files_exist",
+      "status": "PASS",
+      "details": "core transfer action runner files exist"
+    },
+    {
+      "check_id": "request_schema_parse",
+      "status": "PASS",
+      "details": "transfer_action_request.schema.json parses"
+    },
+    {
+      "check_id": "result_schema_parse",
+      "status": "PASS",
+      "details": "transfer_action_result.schema.json parses"
+    },
+    {
+      "check_id": "policy_schema_parse",
+      "status": "PASS",
+      "details": "transfer_action_runner_policy.schema.json parses"
+    },
+    {
+      "check_id": "runner_no_shell_true",
+      "status": "PASS",
+      "details": "runner does not use shell=True"
+    },
+    {
+      "check_id": "runner_no_arbitrary_exec_patterns",
+      "status": "PASS",
+      "details": "runner does not use arbitrary command execution patterns"
+    },
+    {
+      "check_id": "registry_has_new_action_runner_actions",
+      "status": "PASS",
+      "details": "action registry contains new transfer action runner action IDs"
+    },
+    {
+      "check_id": "server_dispatch_has_new_actions",
+      "status": "PASS",
+      "details": "action server dispatch includes new transfer action runner actions"
+    },
+    {
+      "check_id": "server_points_to_new_runner",
+      "status": "PASS",
+      "details": "action server references transfer action runner script"
+    },
+    {
+      "check_id": "samples_builder_runs",
+      "status": "PASS",
+      "details": "sample builder ran (verdict=PASS)"
+    },
+    {
+      "check_id": "runner_rejects_unknown_action_type",
+      "status": "PASS",
+      "details": "rejection produced BLOCK as expected"
+    },
+    {
+      "check_id": "runner_rejects_unknown_contour",
+      "status": "PASS",
+      "details": "rejection produced BLOCK as expected"
+    },
+    {
+      "check_id": "runner_rejects_unsafe_path",
+      "status": "PASS",
+      "details": "rejection produced BLOCK as expected"
+    },
+    {
+      "check_id": "dry_run_creates_result_receipt",
+      "status": "PASS",
+      "details": "dry-run action generated a result receipt"
+    },
+    {
+      "check_id": "sent_fetched_require_evidence_refs",
+      "status": "PASS",
+      "details": "SENT/FETCHED result states include evidence refs"
+    },
+    {
+      "check_id": "view_state_parse",
+      "status": "PASS",
+      "details": "transfer console view state parses"
+    },
+    {
+      "check_id": "view_state_has_action_runner_state",
+      "status": "PASS",
+      "details": "view state includes action_runner_state block"
+    },
+    {
+      "check_id": "view_state_no_arbitrary_shell_flag",
+      "status": "PASS",
+      "details": "view state confirms no-arbitrary-shell for action runner"
+    },
+    {
+      "check_id": "report_bundle_progress",
+      "status": "PASS",
+      "details": "report bundle core files are present"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "validator_runs": {
+    "samples_builder": {
+      "command": [
+        "python3",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/build_transfer_action_samples_v0_1.py",
+        "--repo-root",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+        "--task-id",
+        "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+        "--report-dir",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+        "--output",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/transfer_action_samples_build_report.json"
+      ],
+      "returncode": 0,
+      "stdout": "transfer_action_samples_build_verdict=PASS\ntransfer_action_samples_build_report=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/transfer_action_samples_build_report.json",
+      "stderr": "",
+      "parsed": {
+        "transfer_action_samples_build_verdict": "PASS",
+        "transfer_action_samples_build_report": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/transfer_action_samples_build_report.json"
+      }
+    },
+    "bad_action": {
+      "command": [
+        "python3",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/transfer_action_runner_v0_1.py",
+        "--repo-root",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+        "--task-id",
+        "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+        "--action-id",
+        "VALIDATE_TRANSFER_REQUEST",
+        "--request-file",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/validator_bad_action_request.json",
+        "--report-dir",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+        "--output-report",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/validator_bad_action_action_report.json"
+      ],
+      "returncode": 1,
+      "stdout": "transfer_action_runner_status=BLOCK\ntransfer_action_runner_report=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/validator_bad_action_action_report.json\ntransfer_action_request_ref=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/VALIDATOR-BAD-ACTION.json\ntransfer_action_result_ref=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T004355Z-A302284B.json\ntransfer_console_view_state=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+      "stderr": "",
+      "parsed": {
+        "transfer_action_runner_status": "BLOCK",
+        "transfer_action_runner_report": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/validator_bad_action_action_report.json",
+        "transfer_action_request_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/VALIDATOR-BAD-ACTION.json",
+        "transfer_action_result_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T004355Z-A302284B.json",
+        "transfer_console_view_state": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json"
+      }
+    },
+    "bad_contour": {
+      "command": [
+        "python3",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/transfer_action_runner_v0_1.py",
+        "--repo-root",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+        "--task-id",
+        "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+        "--action-id",
+        "VALIDATE_TRANSFER_REQUEST",
+        "--request-file",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/validator_bad_contour_request.json",
+        "--report-dir",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+        "--output-report",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/validator_bad_contour_action_report.json"
+      ],
+      "returncode": 1,
+      "stdout": "transfer_action_runner_status=BLOCK\ntransfer_action_runner_report=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/validator_bad_contour_action_report.json\ntransfer_action_request_ref=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/VALIDATOR-BAD-CONTOUR.json\ntransfer_action_result_ref=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T004355Z-32769D46.json\ntransfer_console_view_state=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+      "stderr": "",
+      "parsed": {
+        "transfer_action_runner_status": "BLOCK",
+        "transfer_action_runner_report": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/validator_bad_contour_action_report.json",
+        "transfer_action_request_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/VALIDATOR-BAD-CONTOUR.json",
+        "transfer_action_result_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T004355Z-32769D46.json",
+        "transfer_console_view_state": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json"
+      }
+    },
+    "bad_path": {
+      "command": [
+        "python3",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/transfer_action_runner_v0_1.py",
+        "--repo-root",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+        "--task-id",
+        "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+        "--action-id",
+        "VALIDATE_TRANSFER_REQUEST",
+        "--request-file",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/validator_bad_path_request.json",
+        "--report-dir",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+        "--output-report",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/validator_bad_path_action_report.json"
+      ],
+      "returncode": 1,
+      "stdout": "transfer_action_runner_status=BLOCK\ntransfer_action_runner_report=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/validator_bad_path_action_report.json\ntransfer_action_request_ref=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/VALIDATOR-BAD-PATH.json\ntransfer_action_result_ref=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T004355Z-18058B7B.json\ntransfer_console_view_state=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+      "stderr": "",
+      "parsed": {
+        "transfer_action_runner_status": "BLOCK",
+        "transfer_action_runner_report": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/validator_bad_path_action_report.json",
+        "transfer_action_request_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/VALIDATOR-BAD-PATH.json",
+        "transfer_action_result_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T004355Z-18058B7B.json",
+        "transfer_console_view_state": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json"
+      }
+    },
+    "dry_run": {
+      "command": [
+        "python3",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/transfer_action_runner_v0_1.py",
+        "--repo-root",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+        "--task-id",
+        "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+        "--action-id",
+        "DRY_RUN_TRANSFER",
+        "--report-dir",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+        "--output-report",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/validator_dry_run_action_report.json"
+      ],
+      "returncode": 0,
+      "stdout": "transfer_action_runner_status=PASS\ntransfer_action_runner_report=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/validator_dry_run_action_report.json\ntransfer_action_request_ref=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T004355Z-04E37F56.json\ntransfer_action_result_ref=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T004355Z-C7E267A8.json\ntransfer_console_view_state=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+      "stderr": "",
+      "parsed": {
+        "transfer_action_runner_status": "PASS",
+        "transfer_action_runner_report": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/validator_dry_run_action_report.json",
+        "transfer_action_request_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T004355Z-04E37F56.json",
+        "transfer_action_result_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T004355Z-C7E267A8.json",
+        "transfer_console_view_state": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json"
+      }
+    }
+  },
+  "no_fake_green_note": "Pass claims are constrained by receipt checks and explicit BLOCK/WARN branches."
+}

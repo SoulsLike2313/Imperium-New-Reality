@@ -1,0 +1,59 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1",
+  "generated_at_utc": "2026-05-25T22:54:51Z",
+  "owner_clarification_applied": true,
+  "receipts": [
+    {
+      "prerequisite_id": "winget",
+      "state_before": "present_validated",
+      "action": "none_required",
+      "command": "winget --version",
+      "exit_code": 0,
+      "version_or_output": "v1.28.240",
+      "raw_log": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/install/prereq_winget_version.txt",
+      "classification": "prerequisite_only_not_owner_arsenal_tool"
+    },
+    {
+      "prerequisite_id": "node_npm",
+      "state_before": "present_validated",
+      "action": "none_required",
+      "command": "npm --version",
+      "exit_code": 0,
+      "version_or_output": "11.12.1",
+      "raw_log": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/install/prereq_npm_version.txt",
+      "classification": "prerequisite_only_not_owner_arsenal_tool"
+    },
+    {
+      "prerequisite_id": "python_pip",
+      "state_before": "present_validated",
+      "action": "none_required",
+      "command": "python -m pip --version",
+      "exit_code": 0,
+      "version_or_output": "pip 25.0.1 from C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pip (python 3.12)",
+      "raw_log": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/install/prereq_python_pip_version.txt",
+      "classification": "prerequisite_only_not_owner_arsenal_tool"
+    }
+  ],
+  "path_repair": {
+    "user_path_before": "C:\\Users\\PC\\.cargo\\bin;C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\;C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\;C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Launcher\\;C:\\Users\\PC\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\PC\\AppData\\Local\\Python\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\PC\\AppData\\Local\\Microsoft\\WinGet\\Links;C:\\Users\\PC\\AppData\\Roaming\\npm;C:\\Users\\PC\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\PC\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\PC\\AppData\\Roaming\\Python\\Python312\\Scripts",
+    "user_path_after": "C:\\Users\\PC\\.cargo\\bin;C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\;C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\;C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Launcher\\;C:\\Users\\PC\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\PC\\AppData\\Local\\Python\\bin;C:\\Program Files\\Git\\cmd;C:\\Users\\PC\\AppData\\Local\\Microsoft\\WinGet\\Links;C:\\Users\\PC\\AppData\\Roaming\\npm;C:\\Users\\PC\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\PC\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\PC\\AppData\\Roaming\\Python\\Python312\\Scripts",
+    "actions": [
+      {
+        "capability_id": "CHECK_JSONSCHEMA_CLI",
+        "user_scripts_dir": "C:\\Users\\PC\\AppData\\Roaming\\Python\\Python312\\Scripts",
+        "before_cli_available": false,
+        "after_cli_available": true,
+        "set_path_log": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/install/path_repair_add_check_jsonschema_cli.txt",
+        "recheck_log": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/install/path_repair_recheck_check_jsonschema_cli.txt"
+      },
+      {
+        "capability_id": "YAMLLINT_CLI",
+        "user_scripts_dir": "C:\\Users\\PC\\AppData\\Roaming\\Python\\Python312\\Scripts",
+        "before_cli_available": false,
+        "after_cli_available": true,
+        "set_path_log": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/install/path_repair_add_yamllint_cli.txt",
+        "recheck_log": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/install/path_repair_recheck_yamllint_cli.txt"
+      }
+    ]
+  }
+}

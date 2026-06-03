@@ -1,0 +1,119 @@
+{
+  "schema_version": "NEWGEN_SSE_EVENT_PROOF_V0_5",
+  "checked_at_utc": "2026-05-20T16:45:50.548712Z",
+  "timeout_sec": 35.0,
+  "sse_url": "http://127.0.0.1:18765/api/events",
+  "flags": {
+    "heartbeat": true,
+    "state_snapshot": true,
+    "command_event": true
+  },
+  "command_response": {
+    "status": "PASS",
+    "action_id": "mechanicus_visual_status",
+    "command": "status",
+    "source": "terminal_manual",
+    "safety": "ALLOWLISTED_LOCAL_READ_ONLY",
+    "exit_code": 0,
+    "duration_ms": 683,
+    "stdout_summary": "+------------------------------ TOP STATUS BAR -------------------------------+\n| [COG-SIGIL] MECHANICUS_AGENT // OPERATOR_CONSOLE // shell v0.5              |\n| MECHANICUS_AGENT :: Tools, scripts, validators, registry intelligence, and  |\n| premium Textual op...[truncated]",
+    "stderr_summary": ""
+  },
+  "events_sample": [
+    {
+      "event_type": "state_snapshot",
+      "timestamp_utc": "2026-05-20T16:45:42.731070Z",
+      "source": "sanctum_state_builder",
+      "truth_status": "PASS",
+      "action_id": null,
+      "command": null,
+      "details": {
+        "status": null,
+        "exit_code": null,
+        "duration_ms": null,
+        "safety": null,
+        "stdout_summary": "",
+        "stderr_summary": "",
+        "heartbeat_interval_sec": null,
+        "head": "67459e3d6f7e9b38a233833ed4f914e6a8e37baa",
+        "worktree_state": "DIRTY"
+      }
+    },
+    {
+      "event_type": "command_started",
+      "timestamp_utc": "2026-05-20T16:45:42.919964Z",
+      "source": "terminal_manual",
+      "truth_status": "PENDING",
+      "action_id": "mechanicus_visual_status",
+      "command": "status",
+      "details": {
+        "status": null,
+        "exit_code": null,
+        "duration_ms": null,
+        "safety": null,
+        "stdout_summary": "",
+        "stderr_summary": "",
+        "heartbeat_interval_sec": null,
+        "head": null,
+        "worktree_state": null
+      }
+    },
+    {
+      "event_type": "terminal_entry_added",
+      "timestamp_utc": "2026-05-20T16:45:43.602632Z",
+      "source": "terminal_manual",
+      "truth_status": "PASS",
+      "action_id": "mechanicus_visual_status",
+      "command": "status",
+      "details": {
+        "status": "PASS",
+        "exit_code": 0,
+        "duration_ms": 683,
+        "safety": "ALLOWLISTED_LOCAL_READ_ONLY",
+        "stdout_summary": "+------------------------------ TOP STATUS BAR -------------------------------+\n| [COG-SIGIL] MECHANICUS_AGENT // OPERATOR_CONSOLE // shell v0.5              |\n| MECHANICUS_AGENT :: Tools, scripts, validators, registry intelligence, and  |\n| premium Textual op...[truncated]",
+        "stderr_summary": "",
+        "heartbeat_interval_sec": null,
+        "head": null,
+        "worktree_state": null
+      }
+    },
+    {
+      "event_type": "command_finished",
+      "timestamp_utc": "2026-05-20T16:45:43.602632Z",
+      "source": "terminal_manual",
+      "truth_status": "PASS",
+      "action_id": "mechanicus_visual_status",
+      "command": "status",
+      "details": {
+        "status": "PASS",
+        "exit_code": 0,
+        "duration_ms": 683,
+        "safety": "ALLOWLISTED_LOCAL_READ_ONLY",
+        "stdout_summary": "+------------------------------ TOP STATUS BAR -------------------------------+\n| [COG-SIGIL] MECHANICUS_AGENT // OPERATOR_CONSOLE // shell v0.5              |\n| MECHANICUS_AGENT :: Tools, scripts, validators, registry intelligence, and  |\n| premium Textual op...[truncated]",
+        "stderr_summary": "",
+        "heartbeat_interval_sec": null,
+        "head": null,
+        "worktree_state": null
+      }
+    },
+    {
+      "event_type": "heartbeat",
+      "timestamp_utc": "2026-05-20T16:45:50.548712Z",
+      "source": "sanctum_sse_gateway",
+      "truth_status": "PASS",
+      "action_id": null,
+      "command": null,
+      "details": {
+        "status": null,
+        "exit_code": null,
+        "duration_ms": null,
+        "safety": null,
+        "stdout_summary": "",
+        "stderr_summary": "",
+        "heartbeat_interval_sec": 8.0,
+        "head": null,
+        "worktree_state": null
+      }
+    }
+  ]
+}

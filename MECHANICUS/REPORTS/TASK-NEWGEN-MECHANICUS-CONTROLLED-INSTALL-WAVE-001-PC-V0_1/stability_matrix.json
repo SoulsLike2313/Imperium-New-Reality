@@ -1,0 +1,106 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1",
+  "generated_at_utc": "2026-05-25T22:54:51Z",
+  "rows": [
+    {
+      "capability_id": "UTILITIES_7_ZIP",
+      "command": "\"C:\\Program Files\\7-Zip\\7z.exe\" i",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "7-Zip 26.01 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-04-27\n\n\nLibs:\n 0 : 26.01 : C:\\Program Files\\7-Zip\\7z.dll\n\nFormats:\n 0 C...F..........c.a.m+.. w...0  7z       7z            7 z BC AF ' 1...<truncated>",
+          "log_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/validation/stability_utilities_7_zip_1.txt"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "7-Zip 26.01 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-04-27\n\n\nLibs:\n 0 : 26.01 : C:\\Program Files\\7-Zip\\7z.dll\n\nFormats:\n 0 C...F..........c.a.m+.. w...0  7z       7z            7 z BC AF ' 1...<truncated>",
+          "log_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/validation/stability_utilities_7_zip_2.txt"
+        },
+        {
+          "run": 3,
+          "exit_code": 0,
+          "stdout": "7-Zip 26.01 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-04-27\n\n\nLibs:\n 0 : 26.01 : C:\\Program Files\\7-Zip\\7z.dll\n\nFormats:\n 0 C...F..........c.a.m+.. w...0  7z       7z            7 z BC AF ' 1...<truncated>",
+          "log_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/validation/stability_utilities_7_zip_3.txt"
+        }
+      ],
+      "stability_pass": true
+    },
+    {
+      "capability_id": "MARKDOWNLINT_CLI",
+      "command": "markdownlint --version",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "0.48.0",
+          "log_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/validation/stability_markdownlint_cli_1.txt"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "0.48.0",
+          "log_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/validation/stability_markdownlint_cli_2.txt"
+        },
+        {
+          "run": 3,
+          "exit_code": 0,
+          "stdout": "0.48.0",
+          "log_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/validation/stability_markdownlint_cli_3.txt"
+        }
+      ],
+      "stability_pass": true
+    },
+    {
+      "capability_id": "CHECK_JSONSCHEMA_CLI",
+      "command": "check-jsonschema --version",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "check-jsonschema, version 0.37.2",
+          "log_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/validation/stability_check_jsonschema_cli_1.txt"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "check-jsonschema, version 0.37.2",
+          "log_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/validation/stability_check_jsonschema_cli_2.txt"
+        },
+        {
+          "run": 3,
+          "exit_code": 0,
+          "stdout": "check-jsonschema, version 0.37.2",
+          "log_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/validation/stability_check_jsonschema_cli_3.txt"
+        }
+      ],
+      "stability_pass": true
+    },
+    {
+      "capability_id": "YAMLLINT_CLI",
+      "command": "yamllint --version",
+      "runs": [
+        {
+          "run": 1,
+          "exit_code": 0,
+          "stdout": "yamllint 1.38.0",
+          "log_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/validation/stability_yamllint_cli_1.txt"
+        },
+        {
+          "run": 2,
+          "exit_code": 0,
+          "stdout": "yamllint 1.38.0",
+          "log_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/validation/stability_yamllint_cli_2.txt"
+        },
+        {
+          "run": 3,
+          "exit_code": 0,
+          "stdout": "yamllint 1.38.0",
+          "log_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/raw/validation/stability_yamllint_cli_3.txt"
+        }
+      ],
+      "stability_pass": true
+    }
+  ]
+}

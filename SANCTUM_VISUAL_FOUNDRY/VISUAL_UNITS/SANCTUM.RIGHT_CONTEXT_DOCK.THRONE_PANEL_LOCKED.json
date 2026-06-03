@@ -1,0 +1,51 @@
+{
+  "visual_unit_id": "SANCTUM.RIGHT_CONTEXT_DOCK.THRONE_PANEL_LOCKED",
+  "parent": "SANCTUM.RIGHT_CONTEXT_DOCK",
+  "type": "organ_panel_locked",
+  "visual_owner": "SANCTUM_SHELL",
+  "truth_owner": "THRONE_AGENT",
+  "data_source_owner": "OWNER_GATE_REQUIRED",
+  "organ_subject": "THRONE_AGENT",
+  "implementation_owner": "VISUAL_FOUNDRY",
+  "purpose": "Locked panel lane requiring explicit owner gate before any activation.",
+  "backend_source": "OWNER_GATE_REQUIRED",
+  "backend_source_status": "locked",
+  "allowed_states": [
+    "locked",
+    "owner_gate_required",
+    "unknown"
+  ],
+  "truth_rules": [
+    "Locked panel is never real/candidate in this task.",
+    "Unlock requires dedicated admission task and owner gate."
+  ],
+  "visual_tokens": "stub_panel_tokens",
+  "texture": "imperial_gold_edge",
+  "glow": {
+    "enabled": true,
+    "color_token": "imperial_gold_edge",
+    "default_intensity": 0.2
+  },
+  "motion": {
+    "enabled": false,
+    "animation": "ambient_disabled",
+    "perf_tier": "STATIC",
+    "disable_in_reduced_motion": true
+  },
+  "perf_tier": "STATIC",
+  "proof_requirements": [
+    "Locked panel status shown in truth map and reports."
+  ],
+  "integration_status": "locked",
+  "fake_green_risks": [
+    "Locked panel displayed as operable cockpit."
+  ],
+  "owner_group": "SANCTUM",
+  "owner_organ": "THRONE_AGENT",
+  "accessibility_rules": [
+    "State must not be encoded by color alone.",
+    "RU/EN labels must remain explicit for status tags."
+  ],
+  "change_safety": "Topology hardening scope only; no final UI readiness claims.",
+  "backend_source_unknown_reason": "Panel lane is locked by governance and has no active backend mapping."
+}

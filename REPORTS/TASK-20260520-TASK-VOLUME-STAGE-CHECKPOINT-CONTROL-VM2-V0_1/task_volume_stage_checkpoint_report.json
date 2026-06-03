@@ -1,0 +1,104 @@
+{
+  "schema_version": "TASK_VOLUME_STAGE_CHECKPOINT_REPORT_V0_1",
+  "task_id": "TASK-20260520-TASK-VOLUME-STAGE-CHECKPOINT-CONTROL-VM2-V0_1",
+  "generated_at_utc": "2026-05-19T23:55:06.729341Z",
+  "deliverables_root": "IMPERIUM_NEW_GENERATION/TASK_CONTROL/",
+  "deliverables": [
+    "TASK_VOLUME_CONTROL.md",
+    "TASK_VOLUME_CONTROL.schema.json",
+    "TASK_VOLUME_CLASSES.json",
+    "TASK_VOLUME_EXAMPLES.md",
+    "STAGE_CHECKPOINT_PROTOCOL.md",
+    "STAGE_CHECKPOINT.schema.json",
+    "STAGE_DECISION_PROTOCOL.md",
+    "STAGE_CHECKPOINT_EXAMPLES.md",
+    "README.md",
+    "ORGAN_RESPONSIBILITY_MAP.md"
+  ],
+  "cli_tools": [
+    "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/task_volume_check.py",
+    "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/stage_checkpoint_builder.py"
+  ],
+  "smoke": {
+    "verdict": "PASS",
+    "all_commands": [
+      {
+        "name": "classify_small",
+        "returncode": 0
+      },
+      {
+        "name": "classify_large",
+        "returncode": 0
+      },
+      {
+        "name": "classify_mega",
+        "returncode": 0
+      },
+      {
+        "name": "validate_task_volume_example",
+        "returncode": 0
+      },
+      {
+        "name": "create_stage_checkpoint_example",
+        "returncode": 0
+      },
+      {
+        "name": "validate_stage_checkpoint_example",
+        "returncode": 0
+      },
+      {
+        "name": "report_stage_checkpoint_example",
+        "returncode": 0
+      },
+      {
+        "name": "help_task_volume",
+        "returncode": 0
+      },
+      {
+        "name": "help_stage_builder",
+        "returncode": 0
+      },
+      {
+        "name": "py_compile",
+        "returncode": 0
+      }
+    ]
+  },
+  "examples": {
+    "small": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-TASK-VOLUME-STAGE-CHECKPOINT-CONTROL-VM2-V0_1/EXAMPLE_TASK_VOLUME_SMALL.json",
+    "large": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-TASK-VOLUME-STAGE-CHECKPOINT-CONTROL-VM2-V0_1/EXAMPLE_TASK_VOLUME_LARGE.json",
+    "mega": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-TASK-VOLUME-STAGE-CHECKPOINT-CONTROL-VM2-V0_1/EXAMPLE_TASK_VOLUME_MEGA.json",
+    "task_volume_control": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-TASK-VOLUME-STAGE-CHECKPOINT-CONTROL-VM2-V0_1/EXAMPLE_TASK_VOLUME_CONTROL.json",
+    "stage_checkpoint": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-TASK-VOLUME-STAGE-CHECKPOINT-CONTROL-VM2-V0_1/EXAMPLE_STAGE_CHECKPOINT.json"
+  },
+  "organ_responsibility_alignment": {
+    "STRATEGIUM_AGENT": "volume/risk/priority/split recommendation",
+    "ASTRONOMICON_AGENT": "route and stage map",
+    "ADMINISTRATUM_AGENT": "checkpoint ledger and owner decisions",
+    "OFFICIO_AGENTIS_AGENT": "execution contract enforcement",
+    "INQUISITION_AGENT": "fake-green and missing-evidence detection",
+    "MECHANICUS_AGENT": "schemas/checkers/builders",
+    "SCHOLA_IMPERIALIS_AGENT": "lessons and regression examples",
+    "DOCTRINARIUM_AGENT": "doctrine/law compliance"
+  },
+  "officio_acceptance": {
+    "original_decision": "CLARIFICATION_REQUIRED",
+    "normalized_decision": "ACCEPT_WITH_WARNINGS",
+    "reason": "TASK_CONTRACT_V0_1 compatibility warning"
+  },
+  "git_status_after_build": [
+    "?? IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/stage_checkpoint_builder.py",
+    "?? IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/task_volume_check.py",
+    "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-TASK-VOLUME-STAGE-CHECKPOINT-CONTROL-VM2-V0_1/",
+    "?? IMPERIUM_NEW_GENERATION/TASK_CONTROL/"
+  ],
+  "verdict": "PASS_TASK_CONTROL_V0_1",
+  "git_status_before_preflight": [
+    "<clean>"
+  ],
+  "git_status_evidence": {
+    "before_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-TASK-VOLUME-STAGE-CHECKPOINT-CONTROL-VM2-V0_1/GIT_STATUS_BEFORE.txt",
+    "after_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-TASK-VOLUME-STAGE-CHECKPOINT-CONTROL-VM2-V0_1/GIT_STATUS_AFTER.txt"
+  },
+  "updated_at_utc": "2026-05-19T23:55:50.094940Z"
+}

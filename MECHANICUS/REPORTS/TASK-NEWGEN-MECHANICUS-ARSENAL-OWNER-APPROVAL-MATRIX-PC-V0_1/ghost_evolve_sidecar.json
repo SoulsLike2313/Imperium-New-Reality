@@ -1,0 +1,84 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-OWNER-APPROVAL-MATRIX-PC-V0_1",
+  "organ": "MECHANICUS",
+  "generated_at_utc": "2026-05-25T19:45:39Z",
+  "learning_delta": [
+    "Repeatable owner approval matrix workflow added.",
+    "Repeatable tool validation recipe format added.",
+    "Dedicated matrix checker with enum and scope guards added.",
+    "Owner decision import/update templates added (CSV/JSON).",
+    "Playbooks added for future Servitor reuse without reinvention."
+  ],
+  "reusable_capabilities": [
+    "mechanicus_owner_approval_matrix_builder_v0_1.py",
+    "mechanicus_tool_validation_recipe_builder_v0_1.py",
+    "check_mechanicus_owner_approval_matrix_v0_1.py",
+    "MECHANICUS_TOOL_APPROVAL_MATRIX_PLAYBOOK_V0_1.md",
+    "MECHANICUS_TOOL_VALIDATION_RECIPE_PLAYBOOK_V0_1.md"
+  ],
+  "new_scripts": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_owner_approval_matrix_builder_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_tool_validation_recipe_builder_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_owner_approval_matrix_v0_1.py"
+  ],
+  "new_schemas": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCHEMAS/owner_approval_matrix_entry_schema_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCHEMAS/tool_validation_recipe_schema_v0_1.json"
+  ],
+  "new_playbooks": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/PLAYBOOKS/MECHANICUS_TOOL_APPROVAL_MATRIX_PLAYBOOK_V0_1.md",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/PLAYBOOKS/MECHANICUS_TOOL_VALIDATION_RECIPE_PLAYBOOK_V0_1.md"
+  ],
+  "evidence_artifacts": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-OWNER-APPROVAL-MATRIX-PC-V0_1/owner_approval_matrix_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-OWNER-APPROVAL-MATRIX-PC-V0_1/OWNER_APPROVAL_MATRIX.csv",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-OWNER-APPROVAL-MATRIX-PC-V0_1/OWNER_APPROVAL_MATRIX.md",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-OWNER-APPROVAL-MATRIX-PC-V0_1/matrix_build_receipt.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECIPES/tool_validation_recipes_v0_1.json"
+  ],
+  "pain_patterns": [
+    "Source data spread across registry, cards, and usage map required deterministic merge logic.",
+    "Install-wave approved identifiers partly absent in registry, requiring explicit if-present handling.",
+    "Checker needed anti-self-reference handling for first-run report generation."
+  ],
+  "next_reuse_instruction": "Run builder -> recipe builder -> checker in this order; do not install tools in matrix-only tasks; import owner decisions from template in next wave.",
+  "agent_kpd_self_review": {
+    "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-OWNER-APPROVAL-MATRIX-PC-V0_1",
+    "agent_role": "Codex big-model servitor",
+    "useful_outputs": [
+      "Owner approval matrix bundle",
+      "Reusable builders and checker",
+      "Reusable schemas and playbooks"
+    ],
+    "waste_points": [
+      "Initial hash command relied on unavailable Get-FileHash and was replaced by hashlib.",
+      "One checker self-reference required a quick corrective patch."
+    ],
+    "missing_tools": [
+      "Unified capability detect-command registry across all cards is still missing."
+    ],
+    "generated_tools_to_preserve": [
+      "mechanicus_owner_approval_matrix_builder_v0_1.py",
+      "mechanicus_tool_validation_recipe_builder_v0_1.py",
+      "check_mechanicus_owner_approval_matrix_v0_1.py"
+    ],
+    "recommended_script_absorption": [
+      "ABSORB_NOW: matrix builder",
+      "ABSORB_NOW: recipe builder",
+      "ABSORB_NOW: matrix checker"
+    ],
+    "recommended_narrow_agent_profiles": [
+      "MECHANICUS_MATRIX_CURATOR_AGENT",
+      "MECHANICUS_RECIPE_POLICY_AGENT"
+    ],
+    "future_prompt_improvements": [
+      "Provide canonical mapping for install-wave aliases vs capability_id to remove ambiguity.",
+      "Provide explicit expected row coverage count in task contract."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add a dedicated gate for matrix file self-reference ordering checks.",
+      "Add shared CLI availability map for Windows shells."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

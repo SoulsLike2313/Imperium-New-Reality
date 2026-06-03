@@ -1,0 +1,95 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+  "timestamp_utc": "2026-06-01T05:05:26Z",
+  "builder_claims": [
+    {
+      "claim_id": "ST3_1-C01",
+      "claim": "Bootstrap preflight script exists and blocks missing/BOM/invalid/missing-organ cases."
+    },
+    {
+      "claim_id": "ST3_1-C02",
+      "claim": "Bootstrap repair script creates missing templates and rewrites with --force and hash traceability."
+    },
+    {
+      "claim_id": "ST3_1-C03",
+      "claim": "Owner launcher enforces preflight before intake/TUI and avoids fixture-runner auto-pick behavior."
+    },
+    {
+      "claim_id": "ST3_1-C04",
+      "claim": "Fixture runner covers all 8 required cases with passing results."
+    },
+    {
+      "claim_id": "ST3_1-C05",
+      "claim": "Stage3 pending finalization placeholders were scanned and follow-up semantics captured."
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "RT-ST3_1-01",
+      "target_claim_id": "ST3_1-C01",
+      "attack": "Route template with UTF-8 BOM bypasses detection.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "bootstrap_fixture_results.json#CASE-03",
+        "astronomicon_bootstrap_preflight_receipt.json"
+      ]
+    },
+    {
+      "attack_id": "RT-ST3_1-02",
+      "target_claim_id": "ST3_1-C02",
+      "attack": "Repair rewrites existing templates without force and without hash evidence.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "astronomicon_bootstrap_repair_receipt.json",
+        "bootstrap_fixture_results.json#CASE-08"
+      ]
+    },
+    {
+      "attack_id": "RT-ST3_1-03",
+      "target_claim_id": "ST3_1-C03",
+      "attack": "Owner launcher starts intake/TUI while preflight is BLOCK.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "owner_launcher_report.md"
+      ]
+    },
+    {
+      "attack_id": "RT-ST3_1-04",
+      "target_claim_id": "ST3_1-C05",
+      "attack": "Ignore Stage3 pending placeholders and claim clean PASS.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "stage3_pending_field_scan_report.md",
+        "stage3_followup_finalization_receipt.json"
+      ]
+    },
+    {
+      "attack_id": "RT-ST3_1-05",
+      "target_claim_id": "ST3_1-C04",
+      "attack": "Claim fixture coverage without mandatory 8-case proof.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "bootstrap_fixture_results.json"
+      ]
+    },
+    {
+      "attack_id": "RT-ST3_1-06",
+      "target_claim_id": "ST3_1-C01",
+      "attack": "Claim clean PASS despite Stage1 warning cap.",
+      "result": "PARTIAL",
+      "downgrade_needed": true,
+      "applied_downgrade": "FORCE_PASS_WITH_WARNINGS_ONLY"
+    }
+  ],
+  "caps_triggered": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY"
+  ],
+  "repo_truth": {
+    "head": "9b421cabc2cf781a47bf90d31c233fe96e6d8fbd",
+    "origin_master_head": "9b421cabc2cf781a47bf90d31c233fe96e6d8fbd",
+    "origin_sync_now": true,
+    "worktree_dirty_now": true
+  },
+  "final_verdict": "BOOTSTRAP_HARDENING_PASS_WITH_WARNINGS",
+  "clean_pass_allowed": false
+}

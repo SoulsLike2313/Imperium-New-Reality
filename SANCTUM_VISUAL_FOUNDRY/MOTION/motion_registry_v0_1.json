@@ -1,0 +1,57 @@
+{
+  "motion_registry_id": "SANCTUM_MOTION_REGISTRY_V0_1",
+  "task_id": "TASK-20260520-NEWGEN-SANCTUM-VISUAL-TOPOLOGY-ADDRESS-REGISTRY-PC-V0_1",
+  "motions": [
+    {
+      "motion_id": "pulse_breath",
+      "description": "Low-frequency pulse for hero/core and active organ presence.",
+      "intended_units": [
+        "SANCTUM.BRAIN_FIELD.NEURAL_CORE",
+        "SANCTUM.BRAIN_FIELD.ORGAN_RING.MECHANICUS_NODE"
+      ],
+      "default_perf_tier": "CHEAP",
+      "reduced_motion_policy": "disable_or_reduce_to_opacity_shift"
+    },
+    {
+      "motion_id": "neural_flow_line",
+      "description": "Directional line drift for neural link awareness.",
+      "intended_units": [
+        "SANCTUM.BRAIN_FIELD.NEURAL_LINKS"
+      ],
+      "default_perf_tier": "CHEAP",
+      "reduced_motion_policy": "static_lines_only"
+    },
+    {
+      "motion_id": "panel_slide_right",
+      "description": "Controlled right-dock reveal and module transitions.",
+      "intended_units": [
+        "SANCTUM.RIGHT_CONTEXT_DOCK",
+        "SANCTUM.RIGHT_CONTEXT_DOCK.MECHANICUS_PANEL",
+        "SANCTUM.COMMAND_SURFACE"
+      ],
+      "default_perf_tier": "CHEAP",
+      "reduced_motion_policy": "crossfade_only"
+    },
+    {
+      "motion_id": "warning_flicker_limited",
+      "description": "Rate-limited warning flicker used only on genuine WARN/ERROR states.",
+      "intended_units": [
+        "SANCTUM.BRAIN_FIELD.ACTIVITY_PULSE_LAYER",
+        "SANCTUM.TRUTH_STATUS_STRIP"
+      ],
+      "default_perf_tier": "MEDIUM",
+      "reduced_motion_policy": "single_flash_then_static"
+    },
+    {
+      "motion_id": "ambient_disabled",
+      "description": "Motion disabled baseline for strict truth and evidence surfaces.",
+      "intended_units": [
+        "SANCTUM.TRUTH_STATUS_STRIP",
+        "SANCTUM.EVIDENCE_REPORT_LAYER",
+        "SANCTUM.RIGHT_CONTEXT_DOCK.ADMINISTRATUM_PANEL_STUB"
+      ],
+      "default_perf_tier": "STATIC",
+      "reduced_motion_policy": "always_static"
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "organ_id": "ASTRONOMICON",
+  "rich_available": true,
+  "smoke_mode": true,
+  "responsibility": "Task registration, classification, templates, staged route planning, owner comment lanes, pass/fail criteria, active/archive transitions.",
+  "bundle": {
+    "identity_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ASTRONOMICON/IDENTITY/organ_identity_v0_1.md",
+    "contract_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ASTRONOMICON/CONTRACTS/servitor_contract_v0_1.md",
+    "gate_catalog_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ASTRONOMICON/GATES/organ_gate_catalog_v0_1.json",
+    "state_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ASTRONOMICON/STATE/current_state_v0_1.json",
+    "template_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ASTRONOMICON/TEMPLATES/organ_verdict_template_v0_1.json",
+    "gate_catalog": {
+      "schema_id": "newgen_organ_gate_catalog_v0_1",
+      "organ_id": "ASTRONOMICON",
+      "version": "v0_1",
+      "gates": [
+        {
+          "gate_id": "GATE_ASTRA_TASK_REGISTRATION_REQUIRED",
+          "severity": "BLOCK",
+          "purpose": "Task must be registered and typed before execution.",
+          "expected_verdict": "PASS",
+          "evidence_required": [
+            "taskpack_scope_ack.json",
+            "organ_route_plan.json"
+          ]
+        },
+        {
+          "gate_id": "GATE_ASTRA_STAGE_ROUTE_REQUIRED",
+          "severity": "BLOCK",
+          "purpose": "Stage route and ordering must be explicit.",
+          "expected_verdict": "PASS",
+          "evidence_required": [
+            "organ_route_plan.json",
+            "important_six_interaction_simulation_v0_1.json"
+          ]
+        },
+        {
+          "gate_id": "GATE_ASTRA_OWNER_PASS_FAIL_REQUIRED",
+          "severity": "BLOCK",
+          "purpose": "Owner comments and pass/fail criteria are mandatory fields.",
+          "expected_verdict": "PASS",
+          "evidence_required": [
+            "important_six_interaction_simulation_ru.md",
+            "FINAL_REPORT.md"
+          ]
+        },
+        {
+          "gate_id": "GATE_ASTRA_ACTIVE_ARCHIVE_TRANSITION",
+          "severity": "WARN_TO_BLOCK",
+          "purpose": "Active/archive transition should be defined before closure.",
+          "expected_verdict": "PASS",
+          "evidence_required": [
+            "closure_receipt.json"
+          ]
+        }
+      ]
+    },
+    "state": {
+      "schema_id": "newgen_organ_state_v0_1",
+      "organ_id": "ASTRONOMICON",
+      "version": "v0_1",
+      "default_verdict": "PASS",
+      "responsibility": "Task registration, classification, templates, staged route planning, owner comment lanes, pass/fail criteria, active/archive transitions.",
+      "servitor_ask": [
+        "How should this task be registered and classified?",
+        "What stage plan and route order are required?",
+        "What owner comments and pass/fail criteria must be embedded?",
+        "What active-to-archive transition conditions apply?"
+      ],
+      "warn_block_profile": [
+        "WARN on partially specified stage plan with explicit boundary",
+        "BLOCK on task execution without registration/classification/stage map",
+        "BLOCK on missing pass/fail criteria and owner comment field"
+      ],
+      "required_actions": [
+        "Register task packet with class and stage structure",
+        "Bind owner comments and pass/fail criteria before execution",
+        "Produce route/stage plan and archive transition rule"
+      ],
+      "forbidden_actions": [
+        "Skip task registration",
+        "Run stage flow without explicit classification",
+        "Mark task complete with no archive transition criteria"
+      ],
+      "evidence_refs": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/GATES/organ_gate_catalog_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/organ_route_plan.json",
+        "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json"
+      ],
+      "last_updated_utc": "2026-05-24T01:57:54+00:00"
+    },
+    "template": {
+      "schema_id": "newgen_organ_verdict_v0_1",
+      "organ_id": "ASTRONOMICON",
+      "task_id": "<TASK_ID>",
+      "mode": "SERVITOR_QUERY",
+      "verdict": "PASS|WARN|BLOCK|OWNER_VERDICT_NEEDED",
+      "applied_rules": [],
+      "required_actions": [],
+      "forbidden_actions": [],
+      "evidence_required": [],
+      "owner_question": null,
+      "not_proven": [],
+      "evidence_refs": []
+    }
+  },
+  "verdict": {
+    "schema_id": "newgen_organ_verdict_v0_1",
+    "organ_id": "ASTRONOMICON",
+    "task_id": "TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1",
+    "mode": "SMOKE",
+    "verdict": "PASS",
+    "applied_rules": [
+      "GATE_ASTRA_TASK_REGISTRATION_REQUIRED",
+      "GATE_ASTRA_STAGE_ROUTE_REQUIRED",
+      "GATE_ASTRA_OWNER_PASS_FAIL_REQUIRED",
+      "GATE_ASTRA_ACTIVE_ARCHIVE_TRANSITION"
+    ],
+    "required_actions": [
+      "Register task packet with class and stage structure",
+      "Bind owner comments and pass/fail criteria before execution",
+      "Produce route/stage plan and archive transition rule"
+    ],
+    "forbidden_actions": [
+      "Skip task registration",
+      "Run stage flow without explicit classification",
+      "Mark task complete with no archive transition criteria"
+    ],
+    "evidence_required": [],
+    "owner_question": null,
+    "not_proven": [
+      "Strategium/Schola/Custodes/Throne implementation",
+      "live Owner Verdict Needed UI button",
+      "production autonomy",
+      "full organ intelligence",
+      "full external adapter layer"
+    ],
+    "evidence_refs": [
+      "IMPERIUM_NEW_GENERATION/ASTRONOMICON/GATES/organ_gate_catalog_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/organ_route_plan.json",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json"
+    ],
+    "generated_at_utc": "2026-05-24T01:58:40.489389+00:00"
+  }
+}

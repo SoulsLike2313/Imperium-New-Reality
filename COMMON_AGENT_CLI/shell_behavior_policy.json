@@ -1,0 +1,22 @@
+{
+  "version": "0.1.0",
+  "boundary_detection": {
+    "os_command_patterns": [
+      "^cd\\s+",
+      "^\\$[A-Za-z_][A-Za-z0-9_]*\\s*=",
+      "^(py|python|pwsh|powershell|cmd)(\\s+|$)",
+      "^(dir|ls|git|npm|pip|where|type)(\\s+|$)"
+    ],
+    "response_policy": "dedicated_boundary_message"
+  },
+  "boundary_message": "This is IMPERIUM agent shell, not PowerShell. Use /exit for PowerShell, or /run <command> only if the current mode permits command execution.",
+  "malformed_policy": {
+    "for_non_boundary_unknown": "show short unknown-command help and suggest /help",
+    "for_boundary_input": "never classify as generic malformed command"
+  },
+  "input_discipline": {
+    "slash_commands_required": true,
+    "supports_quoted_arguments": true,
+    "trim_whitespace": true
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": "TASK_VOLUME_CONTROL_V0_1",
+  "generated_at_utc": "2026-05-19T23:55:06.109182Z",
+  "task_id": "TASK-EXAMPLE-LARGE-V0_1",
+  "task_size_class": "LARGE",
+  "context_budget_class": "HIGH",
+  "organ_count": 3,
+  "expected_file_touch_class": "FILES_30_80",
+  "expected_command_count_class": "CMDS_60_140",
+  "expected_evidence_volume_class": "EVIDENCE_HIGH",
+  "accuracy_risk": "HIGH",
+  "checkpoint_required": true,
+  "checkpoint_cadence": "PER_STAGE",
+  "split_required_if": [
+    "scope spans 3 or more organs",
+    "required checks exceed 5 commands",
+    "evidence references exceed one report package"
+  ],
+  "continuation_protocol_required": true,
+  "recommended_execution_phases": [
+    {
+      "phase_id": "S1",
+      "phase_name": "design",
+      "goal": "schemas and control model",
+      "checkpoint_gate": true
+    },
+    {
+      "phase_id": "S2",
+      "phase_name": "implementation",
+      "goal": "bounded implementation",
+      "checkpoint_gate": true
+    },
+    {
+      "phase_id": "S3",
+      "phase_name": "validation",
+      "goal": "smoke and evidence checks",
+      "checkpoint_gate": true
+    },
+    {
+      "phase_id": "S4",
+      "phase_name": "closure",
+      "goal": "reports and commit",
+      "checkpoint_gate": true
+    }
+  ],
+  "classification_trace": {
+    "scope_count": 6,
+    "required_checks_count": 4,
+    "organs_detected": [
+      "ADMINISTRATUM_AGENT",
+      "ASTRONOMICON_AGENT",
+      "STRATEGIUM_AGENT"
+    ],
+    "source_schema_version": "TASK_CONTRACT_V0_1"
+  }
+}

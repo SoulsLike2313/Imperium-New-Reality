@@ -1,0 +1,18 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+  "timestamp_utc": "2026-06-01T05:05:26Z",
+  "current_stage_verdict": "BOOTSTRAP_HARDENING_PASS_WITH_WARNINGS",
+  "next_allowed_tasks": [
+    {
+      "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-STARTACK-SCHEMA-LOCK-PC-V0_1",
+      "priority": "P0",
+      "reason": "Lock TASK_START_ACK schema and checker with negative fixtures after bootstrap hardening."
+    },
+    {
+      "task_id": "TASK-NEWGEN-STAGE3-INQUISITION-CAP-LEDGER-INDEX-PC-V0_1",
+      "priority": "P1",
+      "reason": "Consolidate cap lifecycle evidence and reduce report-local contradiction risk."
+    }
+  ],
+  "owner_action": "Run next taskpack via Astronomicon intake, then start by TASK_ID + start task."
+}

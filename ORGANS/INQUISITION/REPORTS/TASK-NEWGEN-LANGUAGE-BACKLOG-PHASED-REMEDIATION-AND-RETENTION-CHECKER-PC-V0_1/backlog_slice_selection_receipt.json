@@ -1,0 +1,35 @@
+{
+  "task_id": "TASK-NEWGEN-LANGUAGE-BACKLOG-PHASED-REMEDIATION-AND-RETENTION-CHECKER-PC-V0_1",
+  "timestamp_utc": "2026-06-01T07:18:17Z",
+  "source_backlog_path": "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-GATE-INDEPENDENT-REPLAY-STRICT-SCOPE-LEGACY-BACKLOG-RETENTION-POLICY-PC-V0_1/legacy_language_backlog.json",
+  "selected_count": 17,
+  "skipped_count": 87,
+  "selection_rules": [
+    "Select only LEGACY_TO_REMEDIATE items with hit_type UTF8_BOM.",
+    "Select files under historical report outputs where BOM removal is semantic no-op.",
+    "Limit scope to deterministic low-risk edits with reversible byte-level proof."
+  ],
+  "selection_reason": "Deterministic UTF8_BOM-only remediation slice with no semantic translation and no broad rewrite.",
+  "risk_level": "LOW",
+  "owner_approval_required": false,
+  "expected_delta": "Decrease legacy backlog by 17 items and reduce UTF8_BOM hit-type count by at least 17 in global scan.",
+  "selected_item_ids": [
+    "LBL-0051",
+    "LBL-0052",
+    "LBL-0053",
+    "LBL-0054",
+    "LBL-0055",
+    "LBL-0056",
+    "LBL-0057",
+    "LBL-0058",
+    "LBL-0059",
+    "LBL-0060",
+    "LBL-0061",
+    "LBL-0062",
+    "LBL-0063",
+    "LBL-0064",
+    "LBL-0066",
+    "LBL-0067",
+    "LBL-0068"
+  ]
+}

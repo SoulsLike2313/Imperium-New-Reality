@@ -1,0 +1,36 @@
+{
+  "schema_id": "inquisition_cleanliness_report_v0_1",
+  "task_id": "TASK-NEWGEN-SANCTUM-ORGAN-CENTERED-COCKPIT-SKELETON-PC-V0_1",
+  "generated_at_utc": "2026-05-24T15:20:27Z",
+  "oversight_scope": "IMPERIUM_NEW_GENERATION touched segments only",
+  "audit_focus": [
+    "runtime-junk absence",
+    "no broad cleaning",
+    "anti-fake-green wording",
+    "scope boundary integrity"
+  ],
+  "findings": [
+    {
+      "id": "INQ-CLEAN-001",
+      "status": "PASS",
+      "detail": "No runtime junk artifacts found in touched cockpit/report paths."
+    },
+    {
+      "id": "INQ-CLEAN-002",
+      "status": "PASS",
+      "detail": "All cleanup/scanning activity remained inside IMPERIUM_NEW_GENERATION."
+    },
+    {
+      "id": "INQ-CLEAN-003",
+      "status": "PASS_WITH_WARNINGS",
+      "detail": "Cockpit status content is static seed; fake-green avoided by explicit SEED_DATA_NOT_PROVEN labeling."
+    },
+    {
+      "id": "INQ-CLEAN-004",
+      "status": "PASS",
+      "detail": "No uncontrolled PTY or mutating endpoint was added by this step."
+    }
+  ],
+  "anti_heresy_flags": [],
+  "verdict": "PASS_WITH_WARNINGS"
+}

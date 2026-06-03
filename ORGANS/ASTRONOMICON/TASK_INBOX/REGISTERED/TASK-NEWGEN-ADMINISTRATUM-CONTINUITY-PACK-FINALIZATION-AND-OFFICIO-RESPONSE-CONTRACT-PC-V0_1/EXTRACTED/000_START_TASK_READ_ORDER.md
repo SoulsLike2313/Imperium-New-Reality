@@ -1,0 +1,22 @@
+# Start task read order
+
+Task ID: `TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1`
+
+Read exactly in this order before execution:
+
+1. `MANIFEST.json`
+2. `TASK_SPEC.md`
+3. `ACCEPTANCE_GATES.md`
+4. `OUTPUT_REQUIREMENTS.md`
+5. `010_OWNER_DECISION_NOTE.md`
+6. `020_SCOPE_LOCKS_AND_CAPS.md`
+7. `030_EXECUTION_PLAN.md`
+8. `040_ACCEPTANCE_CRITERIA.md`
+9. `050_FINAL_RESPONSE_CONTRACT_REQUIREMENTS.md`
+10. `060_NON_BLOCK_GIT_CLOSURE_LAW_REQUIREMENTS.md`
+11. `070_ADMINISTRATUM_CONTINUITY_FINALIZATION_REQUIREMENTS.md`
+12. `INPUTS/source_state.json`
+13. `INPUTS/owner_requirements.json`
+14. `TEMPLATES/final_owner_response_template.md`
+
+Do not broaden scope. Do not implement IDE, WARP, VM route proof, or visual TUI hardening.

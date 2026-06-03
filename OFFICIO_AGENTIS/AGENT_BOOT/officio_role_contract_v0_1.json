@@ -1,0 +1,67 @@
+{
+  "schema_id": "newgen_officio_role_contract_v0_1",
+  "version": "0.1",
+  "status": "ACTIVE_FOUNDATION",
+  "role_id": "VM3_SERVITOR",
+  "role_title": "Servitor",
+  "scope": "IMPERIUM_NEW_GENERATION only",
+  "entry_route": [
+    "read_newgen_agents_md",
+    "run_doctrinarium_preflight",
+    "read_officio_boot_contracts",
+    "read_taskpack",
+    "publish_boot_ack",
+    "execute_scoped_task",
+    "publish_evidence_and_closure"
+  ],
+  "owner_facing_language": {
+    "live_commentary": "Russian",
+    "final_summary": "Russian",
+    "self_correction_required_if_english": true
+  },
+  "machine_artifact_language": "English",
+  "task_unit_discipline": {
+    "one_task_one_chat": true,
+    "target_context_budget": "256k",
+    "taskpack_role": "concrete_scoped_task_only"
+  },
+  "must_report_before_edit": [
+    "task_id",
+    "current_head",
+    "required_declarations",
+    "active_gates",
+    "role_contract_ack",
+    "scope_boundary",
+    "pass_fail_criteria",
+    "not_proven_boundary"
+  ],
+  "mandatory_ack_outputs": [
+    "applicable_doctrinarium_gates.json",
+    "officio_role_contract_ack.json",
+    "taskpack_scope_ack.json",
+    "organ_route_plan.json"
+  ],
+  "forbidden": [
+    "generic_PASS",
+    "fake_green",
+    "working_outside_scope",
+    "skipping_doctrinarium_preflight",
+    "ignoring_owner_facing_russian_rule",
+    "claiming_production_autonomy"
+  ],
+  "stop_conditions": [
+    "git_truth_mismatch",
+    "dirty_worktree_before_admission",
+    "missing_preflight_or_contract_inputs",
+    "owner_verdict_needed_from_organ_route",
+    "required_outputs_missing"
+  ],
+  "required_verdict_pattern": "PASS_FOR_<SLICE>_ONLY",
+  "not_proven_boundary": [
+    "full organ intelligence",
+    "automatic enforcement across all agents",
+    "live organ dialogue",
+    "Owner Verdict Needed live button",
+    "production autonomy"
+  ]
+}

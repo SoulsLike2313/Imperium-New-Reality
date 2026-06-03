@@ -1,0 +1,80 @@
+{
+  "task_id": "TASK-NEWGEN-FIVE-ORGAN-ALIGNMENT-CHECK-VM3-V0_1",
+  "gaps": [
+    {
+      "gap_id": "GAP-INQ-001",
+      "organ_id": "INQUISITION",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "title": "No body manifest for Inquisition",
+      "description": "INQUISITION root has identity/contract/gate/tui but no BODY manifest path.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/INQUISITION/IDENTITY/organ_identity_v0_1.md",
+        "IMPERIUM_NEW_GENERATION/INQUISITION/CONTRACTS/servitor_contract_v0_1.md"
+      ],
+      "owner_organ": "INQUISITION",
+      "proposed_cure": "Create Inquisition body package V0_2 with body manifest and capability/foundation blocks.",
+      "next_task_route": "TASK-NEWGEN-INQUISITION-PURITY-QUARANTINE-BODY-VM3-V0_2"
+    },
+    {
+      "gap_id": "GAP-INQ-002",
+      "organ_id": "INQUISITION",
+      "severity": "HIGH",
+      "status": "OPEN",
+      "title": "Missing checker/schema/registry coverage",
+      "description": "No dedicated checker scripts, schema files, or registry index under Inquisition root.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/INQUISITION/TOOLS/inquisition_organ_query_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/INQUISITION/GATES/organ_gate_catalog_v0_1.json"
+      ],
+      "owner_organ": "INQUISITION",
+      "proposed_cure": "Add anti-fake-green/dirty/duplicate checkers and evidence schema pack in V0_2.",
+      "next_task_route": "TASK-NEWGEN-INQUISITION-PURITY-QUARANTINE-BODY-VM3-V0_2"
+    },
+    {
+      "gap_id": "GAP-ADM-001",
+      "organ_id": "ADMINISTRATUM",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "title": "Incomplete five-organ registration cards",
+      "description": "Current organ cards in Administratum cover Mechanicus and Officio, but not Inquisition and Astronomicon within organ cards directory.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REGISTRATION_CARDS/organs/mechanicus_organ_card_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REGISTRATION_CARDS/organs/officio_agentis_organ_card_v0_1.json"
+      ],
+      "owner_organ": "ADMINISTRATUM",
+      "proposed_cure": "Implement File Atlas/passport indexing task to normalize full 5-organ card coverage.",
+      "next_task_route": "TASK-NEWGEN-ADMINISTRATUM-FILE-ATLAS-PASSPORT-INDEX-VM3-V0_1"
+    },
+    {
+      "gap_id": "GAP-MECH-001",
+      "organ_id": "MECHANICUS",
+      "severity": "LOW",
+      "status": "OPEN",
+      "title": "Body representation not normalized to explicit BODY manifest",
+      "description": "Mechanicus uses strong identity/state/contracts but no dedicated BODY manifest file under BODY/.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/IDENTITY/organ_identity_v0_1.md",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/STATE/current_state_v0_1.json"
+      ],
+      "owner_organ": "MECHANICUS",
+      "proposed_cure": "Create compact BODY manifest aligned with existing identity/contract layer.",
+      "next_task_route": "TASK-NEWGEN-ADMINISTRATUM-FILE-ATLAS-PASSPORT-INDEX-VM3-V0_1"
+    },
+    {
+      "gap_id": "GAP-CROSS-001",
+      "organ_id": "CROSS_ORGAN",
+      "severity": "MEDIUM",
+      "status": "OPEN",
+      "title": "No unified file-passport index for IDE read-only drilldown",
+      "description": "All five organs expose useful artifacts, but there is no unified passport index for stable IDE panel navigation.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/CURRENT_TRUTH/active_organs_index_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/ROUTING/organ_route_map_v0_1.json"
+      ],
+      "owner_organ": "ADMINISTRATUM",
+      "proposed_cure": "Run File Atlas/Passport index task as immediate next step.",
+      "next_task_route": "TASK-NEWGEN-ADMINISTRATUM-FILE-ATLAS-PASSPORT-INDEX-VM3-V0_1"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "status_policy_id": "MATRIX_STATUS_NORMALIZATION_POLICY_V0_1",
+  "version": "0.1",
+  "allowed_statuses": [
+    "CANDIDATE",
+    "ACTIVE",
+    "CANON",
+    "DEPRECATED",
+    "QUARANTINE",
+    "BLOCKED",
+    "WARN",
+    "CANDIDATE_NOT_CANON"
+  ],
+  "status_aliases": {},
+  "non_canon_statuses": [
+    "CANDIDATE_NOT_CANON"
+  ],
+  "warn_only_statuses": [
+    "WARN"
+  ],
+  "canon_admission_allowed_statuses": [
+    "CANON"
+  ],
+  "notes": [
+    "CANDIDATE_NOT_CANON is first-class and must not trigger validator warning by itself.",
+    "Admitting any matrix as canon remains Doctrinarium authority and is outside validator scope."
+  ]
+}

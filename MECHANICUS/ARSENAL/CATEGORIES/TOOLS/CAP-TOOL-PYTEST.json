@@ -1,0 +1,36 @@
+{
+  "capability_id": "CAP-TOOL-PYTEST",
+  "name": "pytest",
+  "category": "TOOLS",
+  "status": "SANDBOX",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Python regression test runner.",
+  "what_problem_it_solves": "Automates repeatable behavioral checks.",
+  "source_type": "external_tool",
+  "source_url_or_path": "https://docs.pytest.org/",
+  "license_or_trust_note": "Host/external trust requires explicit admission receipts.",
+  "install_required": true,
+  "install_gate": "GATE-ARSENAL-EXTERNAL-INSTALL-ADMISSION",
+  "validation_commands": [
+    "validate:cap-tool-pytest"
+  ],
+  "expected_receipts": [
+    "cap-tool-pytest_receipt.json",
+    "cap-tool-pytest_validation_receipt.json"
+  ],
+  "safety_notes": "Use only in bounded task scope; no blind runtime mutation.",
+  "security_notes": "Do not bypass path, command, and evidence gates.",
+  "offline_or_network_dependency": "offline_preferred",
+  "promoted_by_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-tool-pytest_validation_receipt.json",
+  "last_reviewed_utc": "2026-05-24T18:13:22Z",
+  "next_review_reason": "Validated in Batch 001; requires bounded multi-run proof before CANON.",
+  "limitations": "Not admitted as available in this foundation task.",
+  "allowed_use_cases": [
+    "Bounded task execution under Mechanicus policy",
+    "Evidence-backed validation and report generation"
+  ],
+  "forbidden_use_cases": [
+    "Production-ready claim without receipts",
+    "Out-of-scope or unbounded execution"
+  ]
+}

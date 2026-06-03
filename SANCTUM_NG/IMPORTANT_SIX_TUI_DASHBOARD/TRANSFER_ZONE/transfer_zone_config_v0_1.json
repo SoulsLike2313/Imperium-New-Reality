@@ -1,0 +1,39 @@
+{
+  "schema_id": "important_six_transfer_zone_config_v0_1",
+  "task_id": "TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1",
+  "mode": "DRY_RUN_ONLY_UNTIL_OWNER_EXPANDS_SCOPE",
+  "pc": {
+    "taskpack_source": "c:/Users/PC/Downloads/",
+    "report_source": "IMPERIUM_NEW_GENERATION/REPORTS/"
+  },
+  "targets": {
+    "vm2": {
+      "ssh_aliases": ["vm2", "imperium-vm2"],
+      "taskpack_inbox": "~/IMPERIUM_TASKPACKS/INBOX/",
+      "report_outbox": "~/IMPERIUM_REPORTS/OUTBOX/"
+    },
+    "vm3": {
+      "ssh_aliases": ["vm3", "imperium-vm3"],
+      "taskpack_inbox": "~/IMPERIUM_TASKPACKS/INBOX/",
+      "report_outbox": "~/IMPERIUM_REPORTS/OUTBOX/"
+    }
+  },
+  "allowed_patterns": {
+    "taskpack_name_regex": "^TASKPACK_[A-Za-z0-9_.-]+\\.zip$",
+    "report_bundle_regex": "^(TASK|REPORT)[A-Za-z0-9_.-]+\\.(zip|json|md)$"
+  },
+  "default_filenames": {
+    "taskpack": "TASKPACK_TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1.zip",
+    "report_bundle": "TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1_REPORT_BUNDLE.zip"
+  },
+  "dry_run_templates": {
+    "send_taskpack": "scp {pc_taskpack} {alias}:{target_taskpack_inbox}",
+    "fetch_report": "scp {alias}:{target_report_outbox}{report_bundle} {pc_report_target}"
+  },
+  "forbidden": {
+    "arbitrary_user_paths": true,
+    "shell_injection": true,
+    "live_transfer_without_owner_gate": true
+  }
+}
+

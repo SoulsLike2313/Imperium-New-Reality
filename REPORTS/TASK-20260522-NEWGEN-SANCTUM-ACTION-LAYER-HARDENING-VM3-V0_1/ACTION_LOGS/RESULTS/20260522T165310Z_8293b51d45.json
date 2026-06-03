@@ -1,0 +1,130 @@
+{
+  "schema_id": "SANCTUM_NG_ACTION_RESULT_V0_1",
+  "task_id": "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+  "request_id": "20260522T165310Z_8293b51d45",
+  "action_id": "REFRESH_TRUTH_STATE",
+  "action_status": "WIRED",
+  "started_at_utc": "2026-05-22T16:53:10Z",
+  "request_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/REQUESTS/20260522T165310Z_8293b51d45.json",
+  "executed_command": [
+    "python3",
+    "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_refresh_runner.py",
+    "--repo-root",
+    "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+    "--task-id",
+    "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+    "--required-starting-head",
+    "573169b9830ecb0322202e33a3e12ca2fc5e3556",
+    "--report-dir",
+    "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1"
+  ],
+  "status": "PASS",
+  "finished_at_utc": "2026-05-22T16:53:10Z",
+  "result_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/RESULTS/20260522T165310Z_8293b51d45.json",
+  "output_summary": "refresh_returncode=0 runner_verdict=PASS",
+  "payload": {
+    "runner": {
+      "command": [
+        "python3",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_refresh_runner.py",
+        "--repo-root",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+        "--task-id",
+        "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+        "--required-starting-head",
+        "573169b9830ecb0322202e33a3e12ca2fc5e3556",
+        "--report-dir",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1"
+      ],
+      "returncode": 0,
+      "stdout": "runner_verdict=PASS\nrunner_report=IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+      "stderr": ""
+    },
+    "runner_report": {
+      "schema_version": "0.1",
+      "task_id": "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+      "generated_at_utc": "2026-05-22T16:53:10Z",
+      "verdict": "PASS",
+      "builder_result": {
+        "command": [
+          "python3",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_state_builder.py",
+          "--repo-root",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+          "--output",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+          "--task-id",
+          "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+          "--required-starting-head",
+          "573169b9830ecb0322202e33a3e12ca2fc5e3556"
+        ],
+        "returncode": 0,
+        "stdout": "state_written=IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+        "stderr": ""
+      },
+      "validator_result": {
+        "command": [
+          "python3",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_validator.py",
+          "--repo-root",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+          "--state",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+          "--schema",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/sanctum_ng_state.schema.json",
+          "--report-dir",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+          "--output",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+          "--task-id",
+          "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1"
+        ],
+        "returncode": 0,
+        "stdout": "validator_verdict=PASS\nvalidator_report=IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+        "stderr": ""
+      },
+      "validator_verdict": "PASS",
+      "communication_gate_status": "WARN_FOUNDATION_ONLY",
+      "state_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+      "validator_report_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+      "notes": [
+        "Runner executes bounded build -> validate flow.",
+        "No external dependency install is required.",
+        "PASS means builder succeeded and validator returned PASS."
+      ]
+    }
+  },
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json"
+  ],
+  "known_limitations": [
+    "Runs bounded local refresh flow only.",
+    "No production backend claim."
+  ],
+  "state_model": {
+    "connection_state": "CONNECTED",
+    "action_availability": "ACTION_ALLOWED",
+    "result_state": "ACTION_RESULT_PASS",
+    "known_states": {
+      "connection_state": "CONNECTED",
+      "connection_states": [
+        "CONNECTED",
+        "NOT_CONNECTED",
+        "UNKNOWN",
+        "ACTION_SERVER_NOT_CONNECTED"
+      ],
+      "action_states": [
+        "ACTION_ALLOWED",
+        "ACTION_DISABLED"
+      ],
+      "result_states": [
+        "ACTION_RESULT_PASS",
+        "ACTION_RESULT_WARN",
+        "ACTION_RESULT_BLOCK",
+        "ACTION_RESULT_PARTIAL"
+      ]
+    }
+  }
+}

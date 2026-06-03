@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "administratum/cli_worker_report_card_schema_v0_1",
+  "title": "Administratum CLI Worker Report Card Seed V0.1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "seed_status",
+    "report_id",
+    "inspected_organ",
+    "findings",
+    "severity",
+    "approval_status"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "cli_worker_report_card_v0_1"
+    },
+    "seed_status": {
+      "const": "FUTURE_COMPATIBLE_SEED"
+    },
+    "report_id": {
+      "type": "string"
+    },
+    "inspected_organ": {
+      "type": "string"
+    },
+    "inspected_block": {
+      "type": "string"
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "severity": {
+      "type": "string"
+    },
+    "proposed_improvement": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "approval_status": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

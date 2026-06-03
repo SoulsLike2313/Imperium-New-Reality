@@ -1,0 +1,51 @@
+{
+  "task_id": "TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-SKILL-AND-LOGOS-HANDOFF-BRIDGE-PC-V0_1",
+  "builder_claims": [
+    {
+      "claim_id": "C001",
+      "claim": "Continuity pack skill is script-first and replayable.",
+      "evidence": "administratum_continuity_pack_skill_v0_1.py + continuity_pack_skill_smoke_receipt.json"
+    },
+    {
+      "claim_id": "C002",
+      "claim": "No private/secrets bulk collection is performed.",
+      "evidence": "private_data_exclusion_receipt.json"
+    },
+    {
+      "claim_id": "C003",
+      "claim": "Pack integrity is validated with JSON/ZIP/SHA checks.",
+      "evidence": "mechanicus_validation_receipt.json"
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "A001",
+      "target_claim": "C001",
+      "result": "PASS",
+      "detail": "Replay command exists and generated current-target artifacts."
+    },
+    {
+      "attack_id": "A002",
+      "target_claim": "C002",
+      "result": "PASS",
+      "detail": "Allowlist-only packaging with explicit private exclusion policy."
+    },
+    {
+      "attack_id": "A003",
+      "target_claim": "GLOBAL",
+      "result": "WARN",
+      "detail": "Global Stage1/IDE/WARP caps remain active; clean PASS is forbidden."
+    }
+  ],
+  "downgrade_rules_applied": [
+    "NO_CLEAN_PASS_WITH_GLOBAL_CAPS",
+    "DIRTY_START_VISIBLE_AND_CAPPED",
+    "NO_VM2_VM3_LIVE_ROUTE_PROOF"
+  ],
+  "final_verdict": "PASS_WITH_WARNINGS",
+  "blocked_clean_pass_reasons": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME"
+  ]
+}

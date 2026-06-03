@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Officio Response Contract",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "role",
+    "version",
+    "required_sections",
+    "language_policy",
+    "style_rules",
+    "verdict_policy"
+  ],
+  "properties": {
+    "contract_id": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "required_sections": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "language_policy": {
+      "type": "object",
+      "required": [
+        "technical_language",
+        "owner_comments_language"
+      ],
+      "properties": {
+        "technical_language": {
+          "type": "string"
+        },
+        "owner_comments_language": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "style_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verdict_policy": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}
+

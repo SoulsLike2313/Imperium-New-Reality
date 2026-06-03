@@ -1,0 +1,27 @@
+{
+  "tool_id": "pytest",
+  "attempts": [
+    {
+      "command": [
+        "pytest",
+        "--version"
+      ],
+      "returncode": 127,
+      "stdout": "",
+      "stderr": "command_not_found",
+      "timeout": false
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "pytest",
+        "--version"
+      ],
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "/usr/bin/python3: No module named pytest\n",
+      "timeout": false
+    }
+  ]
+}

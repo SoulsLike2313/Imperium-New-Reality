@@ -1,0 +1,117 @@
+{
+  "task_id": "TASK-NEWGEN-SAMPLE-KERNEL-OBJECT-V0_1",
+  "schema_version": "0.1",
+  "owner_intent": {
+    "raw_text": "Build a bounded task kernel object from a short owner intent.",
+    "summary": "Foundation-only sample for task kernel registry.",
+    "language": "EN"
+  },
+  "task_title": "Sample Task Kernel Object V0.1",
+  "status": "REGISTERED",
+  "created_at_utc": "2026-05-21T00:00:00Z",
+  "scope": {
+    "mode": "bounded_foundation",
+    "purpose": "Demonstrate required task kernel fields for registry workflows.",
+    "non_goals": [
+      "No live runtime orchestration",
+      "No UI implementation",
+      "No organ runtime execution claim"
+    ]
+  },
+  "allowed_paths": [
+    "IMPERIUM_NEW_GENERATION/ARCHITECTURE/",
+    "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/",
+    "IMPERIUM_NEW_GENERATION/TASKS/REGISTRY/",
+    "IMPERIUM_NEW_GENERATION/TOOLS/VALIDATORS/",
+    "IMPERIUM_NEW_GENERATION/REPORTS/"
+  ],
+  "forbidden_paths": [
+    "ORGANS/**",
+    "SANCTUM/**",
+    "IMPERIUM_TEST_VERSION/**",
+    ".git/**"
+  ],
+  "required_organs": [
+    "ASTRONOMICON",
+    "OFFICIO_AGENTIS",
+    "DOCTRINARIUM",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "organ_packet_set_ref": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json",
+  "required_skills": [
+    "agent.read_first_admission.v0_1",
+    "agent.scope_boundary_control.v0_1",
+    "agent.super_skepticism_loop.v0_1",
+    "agent.proof_record_writer.v0_1"
+  ],
+  "stage_map": [
+    {
+      "stage_id": "S1_REGISTER",
+      "owner_organ": "ASTRONOMICON",
+      "entry_state": "DRAFT",
+      "exit_state": "REGISTERED",
+      "exit_criteria": [
+        "Kernel object fields complete",
+        "Scope boundaries explicit"
+      ]
+    },
+    {
+      "stage_id": "S2_SCOPE_WITH_ORGANS",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "entry_state": "REGISTERED",
+      "exit_state": "SCOPING_WITH_ORGANS",
+      "exit_criteria": [
+        "Required organs set defined",
+        "Packet set reference attached"
+      ]
+    },
+    {
+      "stage_id": "S3_READY_FOR_SERVITOR",
+      "owner_organ": "DOCTRINARIUM",
+      "entry_state": "SCOPING_WITH_ORGANS",
+      "exit_state": "READY_FOR_SERVITOR",
+      "exit_criteria": [
+        "Run policy and evidence policy resolved",
+        "No fake-green guard conditions recorded"
+      ]
+    }
+  ],
+  "run_policy": {
+    "max_reruns": 2,
+    "stop_on_forbidden_path_touch": true,
+    "stop_on_missing_evidence": true,
+    "owner_escalation_on_blocked": true
+  },
+  "evidence_policy": {
+    "required_receipts": [
+      "OFFICIO_ROLE_ACK",
+      "STEP_PROOF_RECORDS",
+      "VALIDATOR_REPORT",
+      "FINAL_RECEIPT",
+      "OWNER_REPORT"
+    ],
+    "proof_record_required": true,
+    "validator_required": true
+  },
+  "owner_questions": [
+    "Should rerun policy be stricter for high-risk tasks?",
+    "Should registry index include priority tier by default?"
+  ],
+  "final_bundle_policy": {
+    "owner_report_language": "RU",
+    "auto_commit_push_clean_required": true,
+    "bundle_report_path_required": true
+  },
+  "truth_status": "NON_LIVE_FOUNDATION",
+  "limitations": [
+    "EXAMPLE_ONLY",
+    "NOT_LIVE",
+    "No autonomous multi-organ runtime proven"
+  ],
+  "live_orchestration": false
+}
+

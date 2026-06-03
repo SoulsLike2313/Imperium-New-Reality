@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRANSFER_REQUEST_RECORD_V0_1",
+  "type": "object",
+  "required": [
+    "request_id",
+    "action_type",
+    "source_contour",
+    "target_contour",
+    "artifact_kind",
+    "artifact_ref",
+    "requested_by",
+    "created_utc",
+    "allowlist_verdict",
+    "rollback_plan_ref",
+    "status",
+    "claim_boundary"
+  ],
+  "properties": {
+    "request_id": { "type": "string" },
+    "action_type": {
+      "enum": [
+        "REGISTER_TASKPACK_SEND",
+        "REGISTER_REPORT_BUNDLE_FETCH",
+        "DRY_RUN_TASKPACK_SEND",
+        "DRY_RUN_REPORT_FETCH"
+      ]
+    },
+    "source_contour": { "enum": ["PC", "VM2", "VM3"] },
+    "target_contour": { "enum": ["PC", "VM2", "VM3"] },
+    "artifact_kind": { "enum": ["taskpack_zip", "report_bundle"] },
+    "artifact_ref": { "type": "string" },
+    "requested_by": { "type": "string" },
+    "created_utc": { "type": "string" },
+    "allowlist_verdict": { "enum": ["ALLOWED", "BLOCKED"] },
+    "rollback_plan_ref": {
+      "type": ["string", "null"]
+    },
+    "status": {
+      "enum": [
+        "REQUESTED",
+        "DRY_RUN_READY",
+        "SENT",
+        "FETCHED",
+        "ERROR",
+        "NOT_READY",
+        "BLOCKED"
+      ]
+    },
+    "claim_boundary": { "const": "FOUNDATION_ONLY" },
+    "notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
+}

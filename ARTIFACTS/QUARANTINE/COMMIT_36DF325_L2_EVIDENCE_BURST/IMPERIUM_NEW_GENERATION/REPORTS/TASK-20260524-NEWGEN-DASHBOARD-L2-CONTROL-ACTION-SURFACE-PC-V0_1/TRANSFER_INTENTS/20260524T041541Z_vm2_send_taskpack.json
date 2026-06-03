@@ -1,0 +1,31 @@
+{
+  "schema_id": "important_six_transfer_intent_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+  "generated_at_utc": "2026-05-24T04:15:41Z",
+  "target": "vm2",
+  "intent_type": "send_taskpack",
+  "dry_run_only": true,
+  "command_preview": "scp c:/Users/PC/Downloads/TASKPACK_TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1.zip vm2:~/IMPERIUM_TASKPACKS/INBOX/",
+  "aliases_checked": [
+    {
+      "alias": "vm2",
+      "checked": true,
+      "available": true,
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "alias": "imperium-vm2",
+      "checked": true,
+      "available": true,
+      "exit_code": 0,
+      "stderr": ""
+    }
+  ],
+  "config_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/transfer_zone_config_v0_1.json",
+  "forbidden": {
+    "arbitrary_user_paths": true,
+    "shell_injection": true,
+    "live_transfer_without_owner_gate": true
+  }
+}

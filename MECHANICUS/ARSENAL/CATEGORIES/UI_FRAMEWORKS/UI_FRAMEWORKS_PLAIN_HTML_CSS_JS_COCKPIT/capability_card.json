@@ -1,0 +1,38 @@
+{
+  "capability_id": "UI_FRAMEWORKS_PLAIN_HTML_CSS_JS_COCKPIT",
+  "name": "plain HTML/CSS/JS cockpit",
+  "category": "UI_FRAMEWORKS",
+  "status": "CANDIDATE",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Mass intake candidate for plain HTML/CSS/JS cockpit in UI_FRAMEWORKS.",
+  "what_problem_it_solves": "Mass intake seed for UI_FRAMEWORKS.",
+  "source_type": "external_tool",
+  "source_url_or_path": "TO_VERIFY_LOCAL_OR_VENDOR_SOURCE",
+  "license_or_trust_note": "TO_VERIFY; no promotion beyond CANDIDATE without receipt evidence.",
+  "install_required": false,
+  "install_gate": "GATE-U09-NO-FAKE-GREEN",
+  "validation_commands": [
+    "validate:ui-frameworks-plain-html-css-js-cockpit"
+  ],
+  "expected_receipts": [
+    "ui-frameworks-plain-html-css-js-cockpit_validation_receipt.json"
+  ],
+  "safety_notes": "Bounded use only; no uncontrolled runtime mutation or hidden side effects.",
+  "security_notes": "No secret handling in this task; obey path, scope, and evidence gates.",
+  "offline_or_network_dependency": "network_optional",
+  "promoted_by_receipt": "NOT_PROMOTED",
+  "last_reviewed_utc": "2026-05-24T16:49:31Z",
+  "next_review_reason": "Mass intake seed; requires bounded validation before SANDBOX promotion.",
+  "limitations": "Candidate-only until validation receipts and trust checks exist.",
+  "allowed_use_cases": [
+    "Capability cataloging and validation planning",
+    "Scoped candidate execution after explicit admission gate"
+  ],
+  "forbidden_use_cases": [
+    "Claiming CANON without validation receipt evidence",
+    "Using capability outside bounded task scope"
+  ],
+  "reserved": false,
+  "intake_batch_id": "MECHANICUS-INTAKE-BATCH-UI_FRAMEWORKS-001",
+  "desired_future_status": "CANDIDATE_OR_SANDBOX_AFTER_VALIDATION"
+}

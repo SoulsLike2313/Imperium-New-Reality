@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NewGen Visual Brain Task Corridor V0.1</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="view-detailed motion-enabled">
+  <div class="nebula"></div>
+  <header class="topbar panel">
+    <div>
+      <p class="kicker">IMPERIUM NEW GENERATION</p>
+      <h1>Visual Brain Task Corridor V0.1</h1>
+      <p class="subtitle">Static truth-bound lab surface. No live backend execution.</p>
+    </div>
+    <div class="controls">
+      <button id="toggle-view" class="control-btn" type="button">Switch Compact View</button>
+      <button id="toggle-motion" class="control-btn" type="button">Reduced Motion: Off</button>
+    </div>
+  </header>
+
+  <section class="status-strip panel">
+    <h2>Truth Markers</h2>
+    <div id="truth-markers" class="badges"></div>
+  </section>
+
+  <main class="layout">
+    <section class="corridor panel">
+      <h2>Corridor Spine</h2>
+      <div id="spine-nodes" class="spine-nodes"></div>
+      <h3>8 Organ Consultation Ring</h3>
+      <div id="organ-ring" class="organ-ring"></div>
+      <h3>Run / Rerun Rail</h3>
+      <div id="run-rail" class="run-rail"></div>
+    </section>
+
+    <section class="evidence panel">
+      <h2>Evidence Constellation</h2>
+      <div id="evidence-stars" class="evidence-stars"></div>
+    </section>
+
+    <aside class="inspector panel">
+      <h2>Node Detail</h2>
+      <div id="node-detail" class="detail-card">
+        <p>Select any node to inspect status and evidence binding.</p>
+      </div>
+      <h2>Evidence Detail</h2>
+      <div id="evidence-detail" class="detail-card">
+        <p>Select any evidence star to inspect source path and linked nodes.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footnote panel">
+    <p>READ_ONLY_LAB | FOUNDATION_ONLY | NO LIVE BACKEND | GREEN REQUIRES RECEIPT</p>
+  </footer>
+
+  <script src="./visual_brain_task_corridor.js"></script>
+</body>
+</html>

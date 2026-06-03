@@ -1,0 +1,30 @@
+╭────────────────────────────── WAVE1 ORGAN TUI ───────────────────────────────╮
+│ DOCTRINARIUM                                                                 │
+│ responsibility: Law and gate admission for NewGen tasks.                     │
+│ verdict: PASS                                                                │
+│ mode: SMOKE                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+                               Servitor Interface                               
+┏━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Block        ┃ Value                                                         ┃
+┡━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ Ask          │ What doctrinal gates apply to this task now?                  │
+│              │ What evidence is mandatory before PASS claim?                 │
+│              │ What is explicitly not proven in this slice?                  │
+│ Warn/Block   │ WARN on partial execution with explicit not-run boundary      │
+│              │ BLOCK on generic pass or missing evidence refs                │
+│ Gate Catalog │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ State        │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ Contract     │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ Identity     │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+└──────────────┴───────────────────────────────────────────────────────────────┘
+                        Gate Preview                        
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━┓
+┃ Gate ID                        ┃ Severity      ┃ Verdict ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━┩
+│ GATE_DOCTRINARIUM_READ_FIRST   │ BLOCK         │ PASS    │
+│ GATE_NO_GENERIC_PASS           │ BLOCK         │ PASS    │
+│ GATE_NO_GREEN_WITHOUT_EVIDENCE │ BLOCK         │ PASS    │
+│ GATE_NOT_PROVEN_BOUNDARY       │ WARN_TO_BLOCK │ PASS    │
+└────────────────────────────────┴───────────────┴─────────┘
+SMOKE_OK_DOCTRINARIUM_TUI_V0_1

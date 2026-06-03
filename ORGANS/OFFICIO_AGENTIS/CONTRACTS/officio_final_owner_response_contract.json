@@ -1,0 +1,48 @@
+{
+  "contract_id": "OFFICIO_FINAL_OWNER_RESPONSE_CONTRACT_V0_1",
+  "owner_organ": "OFFICIO_AGENTIS",
+  "status": "CANDIDATE_V0_1",
+  "applies_to": [
+    "PC_SERVITOR",
+    "VM2_SERVITOR",
+    "VM3_SERVITOR",
+    "LOCAL_WORKERS",
+    "FUTURE_IDE_ACTIONS"
+  ],
+  "non_block_final_answer_sections": [
+    {
+      "order": 1,
+      "name": "Step name",
+      "required": true
+    },
+    {
+      "order": 2,
+      "name": "Step verdict",
+      "required": true
+    },
+    {
+      "order": 3,
+      "name": "Commit links",
+      "required": true,
+      "note": "Every task commit with short label"
+    },
+    {
+      "order": 4,
+      "name": "Owner comments",
+      "required": true,
+      "line_count_min": 3,
+      "line_count_max": 4,
+      "language": "RUSSIAN"
+    }
+  ],
+  "details_location": "repo/report/bundle",
+  "forbidden_in_final_chat": [
+    "Long logs",
+    "Full JSON receipts",
+    "Broad prose reports",
+    "Unlabeled commit hashes",
+    "Missing commit links when commits were made",
+    "More than 4 owner comment lines"
+  ],
+  "long_chat_reports_forbidden": true
+}

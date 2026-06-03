@@ -1,0 +1,45 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1",
+  "timestamp_utc": "2026-05-30T17:23:52Z",
+  "baseline": {
+    "mechanicus": 72,
+    "inquisition": 66,
+    "officio": 70,
+    "administratum": 68,
+    "overall": 69
+  },
+  "after": {
+    "mechanicus": 86,
+    "inquisition": 82,
+    "officio": 79,
+    "administratum": 83,
+    "overall": 83
+  },
+  "delta": {
+    "mechanicus": 14,
+    "inquisition": 16,
+    "officio": 9,
+    "administratum": 15,
+    "overall": 14
+  },
+  "verdict": "PASS_WITH_WARNINGS",
+  "caps_triggered": [],
+  "evidence": [
+    {
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/head_taxonomy_adjudication_receipt.json",
+      "reason": "checker replay plus cap evaluation"
+    },
+    {
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/taxonomy_fixture_report.md",
+      "reason": "10 fixtures with proven failure and pass detection"
+    },
+    {
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/NEXT_PIPELINE_HANDOFF.json",
+      "reason": "handoff includes taxonomy and combined adjudication references"
+    }
+  ],
+  "notes": [
+    "Positive overall delta is backed by enforceable caps and replay checks.",
+    "PASS_WITH_WARNINGS remains until external Inquisitor/Speculum slots are filled."
+  ]
+}

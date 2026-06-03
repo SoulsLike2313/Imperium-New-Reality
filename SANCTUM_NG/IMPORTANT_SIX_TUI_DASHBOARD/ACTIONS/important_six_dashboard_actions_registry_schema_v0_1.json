@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "important_six.dashboard_actions_registry.v0_1",
+  "title": "Important Six Dashboard Actions Registry",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "mode",
+    "scope",
+    "actions"
+  ],
+  "properties": {
+    "schema_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "mode": {
+      "type": "string",
+      "minLength": 4
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 4
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "action_id",
+          "owner_organ",
+          "label_ru",
+          "description",
+          "safety_class",
+          "writes_allowed",
+          "output_root",
+          "handler",
+          "dry_run_supported",
+          "receipt_required",
+          "dashboard_button_group"
+        ],
+        "properties": {
+          "action_id": {
+            "type": "string",
+            "minLength": 4
+          },
+          "owner_organ": {
+            "type": "string",
+            "minLength": 2
+          },
+          "label_ru": {
+            "type": "string",
+            "minLength": 2
+          },
+          "description": {
+            "type": "string",
+            "minLength": 4
+          },
+          "safety_class": {
+            "type": "string",
+            "enum": [
+              "READ_ONLY",
+              "DRY_RUN",
+              "WRITES_SCOPED"
+            ]
+          },
+          "writes_allowed": {
+            "type": "boolean"
+          },
+          "output_root": {
+            "type": "string",
+            "minLength": 4
+          },
+          "handler": {
+            "type": "string",
+            "minLength": 4
+          },
+          "dry_run_supported": {
+            "type": "boolean"
+          },
+          "receipt_required": {
+            "type": "boolean"
+          },
+          "dashboard_button_group": {
+            "type": "string",
+            "minLength": 2
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

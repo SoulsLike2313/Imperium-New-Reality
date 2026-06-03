@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EVIDENCE_SOURCE_MAP_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "generated_at_utc",
+    "entries"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "EVIDENCE_SOURCE_MAP_V0_1"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "phase_id",
+          "evidence_type",
+          "path",
+          "existence_status",
+          "proof_strength",
+          "known_limitations"
+        ],
+        "properties": {
+          "phase_id": {
+            "type": "string"
+          },
+          "evidence_type": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "existence_status": {
+            "enum": [
+              "EXISTS",
+              "MISSING"
+            ]
+          },
+          "proof_strength": {
+            "enum": [
+              "STRONG",
+              "FOUNDATION",
+              "PARTIAL",
+              "WEAK",
+              "UNKNOWN"
+            ]
+          },
+          "known_limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

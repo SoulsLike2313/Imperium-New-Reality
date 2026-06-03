@@ -1,0 +1,42 @@
+{
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1",
+  "verdict": "PASS_FOR_TRANSFER_CONSOLE_FOUNDATION_ONLY",
+  "claim_boundary": "FOUNDATION_ONLY",
+  "repo_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+  "start_head": "1baa600f35af1dd5f3c49403bbc56557838367e6",
+  "final_head": "RECORDED_IN_FINAL_OWNER_MESSAGE",
+  "commit_message": "TASK-20260523: add Sanctum NG transfer console foundation",
+  "commit_hash": "RECORDED_IN_FINAL_OWNER_MESSAGE",
+  "push_status": "RECORDED_IN_FINAL_OWNER_MESSAGE",
+  "remote_verification": {
+    "command": "git ls-remote origin HEAD",
+    "remote_head": "RECORDED_IN_FINAL_OWNER_MESSAGE",
+    "matches_final_head": null
+  },
+  "worktree_clean_after": null,
+  "checks": {
+    "builder": "PASS",
+    "validator": "PASS",
+    "smoke": "PASS",
+    "scope_gate": "PASS",
+    "allowlist_gate": "PASS",
+    "no_fake_green_gate": "PASS"
+  },
+  "not_proven": [
+    "Production remote orchestration is not proven; this task is foundation-only."
+  ],
+  "not_run": [],
+  "limitations": [
+    "Foundation-only transfer console does not prove production remote orchestration.",
+    "Contour ONLINE/SENT/FETCHED states require receipts.",
+    "In-file commit hash cannot self-reference the containing commit; authoritative commit/push values are reported in final owner message."
+  ],
+  "context_source_mix": {
+    "taskpack_percent": 67,
+    "existing_newgen_repo_percent": 24,
+    "owner_handoff_percent": 5,
+    "organ_registry_percent": 2,
+    "servitor_inference_percent": 2,
+    "external_local_private_percent": 0
+  }
+}

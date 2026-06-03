@@ -1,0 +1,14 @@
+{
+  "schema_id": "NEXT_TASK_IMPROVEMENT_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-SERVITOR-SESSION-VIEW-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T22:23:54Z",
+  "next_allowed_task": "TASK-20260523-NEWGEN-SANCTUM-OWNER-QUESTION-GATE-VM2-OR-VM3-V0_1",
+  "improvements": [
+    "Bind Session View status to explicit Owner Question Gate decisions.",
+    "Add semantic transform registry hook for Session View cards/chips.",
+    "Promote report category discovery from token-scan to explicit registry."
+  ],
+  "blocking_risks": [
+    "Inconsistent historical STEP_PROOF field shapes can hide rerun semantics if parser is not conservative."
+  ]
+}

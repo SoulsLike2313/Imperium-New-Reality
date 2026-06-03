@@ -1,0 +1,35 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1",
+    "agent_role": "Codex big-model execution partner",
+    "useful_outputs": [
+      "Complete 136-entry usage map",
+      "RU/EN field-guide indexes and 15 category guides",
+      "Servitor scope examples and validation priority queue",
+      "Dedicated checker + evidence reports"
+    ],
+    "waste_points": [
+      "Repeated manual scanning is slower than scripted aggregation for 136 cards."
+    ],
+    "missing_tools": [
+      "No pre-existing shared field-guide generator for Arsenal cards."
+    ],
+    "generated_tools_to_preserve": [
+      "build_mechanicus_arsenal_field_guide_batch_001.py",
+      "check_mechanicus_arsenal_field_guide_batch_001.py"
+    ],
+    "recommended_script_absorption": [
+      "Promote checker into reusable Mechanicus validation lane."
+    ],
+    "recommended_narrow_agent_profiles": [
+      "Mechanicus Arsenal Curator Servitor (guide + queue + owner decision synthesis)."
+    ],
+    "future_prompt_improvements": [
+      "Provide pre-approved priority-mapping matrix for queues to reduce heuristic choices."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add explicit gate for reserved-category non-activation proof in Arsenal tasks."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

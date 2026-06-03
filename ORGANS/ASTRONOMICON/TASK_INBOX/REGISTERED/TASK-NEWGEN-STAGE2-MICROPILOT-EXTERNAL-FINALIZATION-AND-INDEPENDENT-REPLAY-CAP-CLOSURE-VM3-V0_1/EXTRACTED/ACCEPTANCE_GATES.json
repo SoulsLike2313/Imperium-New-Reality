@@ -1,0 +1,50 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1",
+  "gates": [
+    {
+      "id": "GATE_TASK_ID_RESOLVED",
+      "required": true,
+      "expected": "Astronomicon resolver PASS or PASS_WITH_WARNINGS"
+    },
+    {
+      "id": "GATE_REPO_TRUTH_PROBED",
+      "required": true,
+      "expected": "repo_truth_probe.json exists"
+    },
+    {
+      "id": "GATE_PREVIOUS_EVIDENCE_LOCATED",
+      "required": true,
+      "expected": "previous Stage2 evidence paths recorded"
+    },
+    {
+      "id": "GATE_EXTERNAL_FINALIZATION_RECEIPT",
+      "required": true,
+      "expected": "external_finalization_receipt.json exists"
+    },
+    {
+      "id": "GATE_INDEPENDENT_REPLAY_RECEIPT",
+      "required": true,
+      "expected": "independent_replay_receipt.json exists"
+    },
+    {
+      "id": "GATE_ADMISSION_POSITIVE_CONTROLS",
+      "required": true,
+      "expected": "taskpack_admission_regression_fixtures.json exists"
+    },
+    {
+      "id": "GATE_CAP_DECISION",
+      "required": true,
+      "expected": "cap_closure_decision.json exists"
+    },
+    {
+      "id": "GATE_RED_TEAM",
+      "required": true,
+      "expected": "hard_red_team_verdict.json exists"
+    },
+    {
+      "id": "GATE_GIT_CLOSURE",
+      "required": true,
+      "expected": "commit_push_receipt.json confirms push and clean worktree"
+    }
+  ]
+}

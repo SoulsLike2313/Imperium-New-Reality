@@ -1,0 +1,59 @@
+{
+  "visual_unit_id": "SANCTUM.BRAIN_FIELD.NEURAL_LINKS",
+  "parent": "SANCTUM.BRAIN_FIELD",
+  "type": "connector_layer",
+  "visual_owner": "SANCTUM_SHELL",
+  "truth_owner": "ASTRONOMICON_AGENT",
+  "data_source_owner": "SANCTUM_STATE_BUILDER",
+  "organ_subject": "SYSTEM",
+  "implementation_owner": "VISUAL_FOUNDRY",
+  "purpose": "Connector topology linking organ nodes in non-authoritative visual layer.",
+  "backend_source": {
+    "type": "frontend_logic",
+    "paths": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/static/app.js"
+    ],
+    "key_bindings": [
+      "BRAIN_LINKS",
+      "renderBrainLinks"
+    ]
+  },
+  "backend_source_status": "candidate",
+  "allowed_states": [
+    "idle",
+    "active_path",
+    "degraded",
+    "unknown"
+  ],
+  "truth_rules": [
+    "Links are structural hints and must not fabricate live transport."
+  ],
+  "visual_tokens": "neural_link_tokens",
+  "texture": "archive_blue_cold",
+  "glow": {
+    "enabled": true,
+    "color_token": "accent_holo_cyan",
+    "default_intensity": 0.2
+  },
+  "motion": {
+    "enabled": true,
+    "animation": "neural_flow_line",
+    "perf_tier": "CHEAP",
+    "disable_in_reduced_motion": true
+  },
+  "perf_tier": "CHEAP",
+  "proof_requirements": [
+    "Link endpoints map to known ring node unit IDs."
+  ],
+  "integration_status": "candidate",
+  "fake_green_risks": [
+    "Animated links imply live data flow without evidence."
+  ],
+  "owner_group": "SANCTUM",
+  "owner_organ": "ASTRONOMICON_AGENT",
+  "accessibility_rules": [
+    "State must not be encoded by color alone.",
+    "RU/EN labels must remain explicit for status tags."
+  ],
+  "change_safety": "Topology hardening scope only; no final UI readiness claims."
+}

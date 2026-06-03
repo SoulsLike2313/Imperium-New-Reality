@@ -1,0 +1,1586 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1",
+  "generated_at_utc": "2026-05-24T16:49:31Z",
+  "scope_model_version": "servitor_capability_scope_seed_v0_1",
+  "summary": {
+    "total_cards": 136,
+    "candidate_cards": 125,
+    "sandbox_cards": 7,
+    "canon_cards": 4
+  },
+  "categories": [
+    {
+      "category": "ALGORITHMS",
+      "capability_count": 8,
+      "reserved_only": false
+    },
+    {
+      "category": "CLOUD_LLM_ADAPTERS",
+      "capability_count": 6,
+      "reserved_only": true
+    },
+    {
+      "category": "CODE_QUALITY",
+      "capability_count": 11,
+      "reserved_only": false
+    },
+    {
+      "category": "DATABASES",
+      "capability_count": 9,
+      "reserved_only": false
+    },
+    {
+      "category": "EXAMPLES",
+      "capability_count": 9,
+      "reserved_only": false
+    },
+    {
+      "category": "LANGUAGES",
+      "capability_count": 9,
+      "reserved_only": false
+    },
+    {
+      "category": "LOCAL_LLM",
+      "capability_count": 6,
+      "reserved_only": true
+    },
+    {
+      "category": "PLAYBOOKS",
+      "capability_count": 12,
+      "reserved_only": false
+    },
+    {
+      "category": "PROMPTING_PATTERNS",
+      "capability_count": 8,
+      "reserved_only": false
+    },
+    {
+      "category": "REFERENCE_CODE",
+      "capability_count": 9,
+      "reserved_only": false
+    },
+    {
+      "category": "SEARCH_INDEXING",
+      "capability_count": 8,
+      "reserved_only": false
+    },
+    {
+      "category": "TOOLS",
+      "capability_count": 14,
+      "reserved_only": false
+    },
+    {
+      "category": "UI_FRAMEWORKS",
+      "capability_count": 8,
+      "reserved_only": false
+    },
+    {
+      "category": "UTILITIES",
+      "capability_count": 10,
+      "reserved_only": false
+    },
+    {
+      "category": "VISUAL_TESTING",
+      "capability_count": 9,
+      "reserved_only": false
+    }
+  ],
+  "scope_seed": [
+    {
+      "capability_id": "ALGORITHMS_CAPABILITY_PROMOTION_RULES",
+      "category": "ALGORITHMS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:algorithms-capability-promotion-rules"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/ALGORITHMS/ALGORITHMS_CAPABILITY_PROMOTION_RULES/capability_card.json"
+    },
+    {
+      "capability_id": "ALGORITHMS_DIFF_CLASSIFIER",
+      "category": "ALGORITHMS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:algorithms-diff-classifier"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/ALGORITHMS/ALGORITHMS_DIFF_CLASSIFIER/capability_card.json"
+    },
+    {
+      "capability_id": "ALGORITHMS_DIRTY_TREE_CLASSIFIER",
+      "category": "ALGORITHMS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:algorithms-dirty-tree-classifier"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/ALGORITHMS/ALGORITHMS_DIRTY_TREE_CLASSIFIER/capability_card.json"
+    },
+    {
+      "capability_id": "ALGORITHMS_EVIDENCE_RANKING",
+      "category": "ALGORITHMS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:algorithms-evidence-ranking"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/ALGORITHMS/ALGORITHMS_EVIDENCE_RANKING/capability_card.json"
+    },
+    {
+      "capability_id": "ALGORITHMS_FAKE_GREEN_DETECTOR",
+      "category": "ALGORITHMS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:algorithms-fake-green-detector"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/ALGORITHMS/ALGORITHMS_FAKE_GREEN_DETECTOR/capability_card.json"
+    },
+    {
+      "capability_id": "ALGORITHMS_OWNER_QUESTION_CLASSIFIER",
+      "category": "ALGORITHMS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:algorithms-owner-question-classifier"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/ALGORITHMS/ALGORITHMS_OWNER_QUESTION_CLASSIFIER/capability_card.json"
+    },
+    {
+      "capability_id": "ALGORITHMS_RUNTIME_JUNK_CLASSIFIER",
+      "category": "ALGORITHMS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:algorithms-runtime-junk-classifier"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/ALGORITHMS/ALGORITHMS_RUNTIME_JUNK_CLASSIFIER/capability_card.json"
+    },
+    {
+      "capability_id": "ALGORITHMS_TASK_SCOPE_SPLITTER",
+      "category": "ALGORITHMS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:algorithms-task-scope-splitter"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/ALGORITHMS/ALGORITHMS_TASK_SCOPE_SPLITTER/capability_card.json"
+    },
+    {
+      "capability_id": "CLOUD_LLM_ADAPTERS_CLOUD_MODEL_ROUTER_RESERVED",
+      "category": "CLOUD_LLM_ADAPTERS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": true,
+      "validation_commands": [
+        "validate:cloud-llm-adapters-cloud-model-router-reserved"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CLOUD_LLM_ADAPTERS/CLOUD_LLM_ADAPTERS_CLOUD_MODEL_ROUTER_RESERVED/capability_card.json"
+    },
+    {
+      "capability_id": "CLOUD_LLM_ADAPTERS_CLOUD_RECEIPT_MODEL_CANDIDATE",
+      "category": "CLOUD_LLM_ADAPTERS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": true,
+      "validation_commands": [
+        "validate:cloud-llm-adapters-cloud-receipt-model-candidate"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CLOUD_LLM_ADAPTERS/CLOUD_LLM_ADAPTERS_CLOUD_RECEIPT_MODEL_CANDIDATE/capability_card.json"
+    },
+    {
+      "capability_id": "CLOUD_LLM_ADAPTERS_COST_POLICY_GATE",
+      "category": "CLOUD_LLM_ADAPTERS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": true,
+      "validation_commands": [
+        "validate:cloud-llm-adapters-cost-policy-gate"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CLOUD_LLM_ADAPTERS/CLOUD_LLM_ADAPTERS_COST_POLICY_GATE/capability_card.json"
+    },
+    {
+      "capability_id": "CLOUD_LLM_ADAPTERS_OPENAI_COMPATIBLE_API_ADAPTER_RESERVED",
+      "category": "CLOUD_LLM_ADAPTERS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": true,
+      "validation_commands": [
+        "validate:cloud-llm-adapters-openai-compatible-api-adapter-reserved"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CLOUD_LLM_ADAPTERS/CLOUD_LLM_ADAPTERS_OPENAI_COMPATIBLE_API_ADAPTER_RESERVED/capability_card.json"
+    },
+    {
+      "capability_id": "CLOUD_LLM_ADAPTERS_PRIVACY_POLICY_GATE",
+      "category": "CLOUD_LLM_ADAPTERS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": true,
+      "validation_commands": [
+        "validate:cloud-llm-adapters-privacy-policy-gate"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CLOUD_LLM_ADAPTERS/CLOUD_LLM_ADAPTERS_PRIVACY_POLICY_GATE/capability_card.json"
+    },
+    {
+      "capability_id": "CLOUD_LLM_ADAPTERS_SECRET_POLICY_GATE",
+      "category": "CLOUD_LLM_ADAPTERS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": true,
+      "validation_commands": [
+        "validate:cloud-llm-adapters-secret-policy-gate"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CLOUD_LLM_ADAPTERS/CLOUD_LLM_ADAPTERS_SECRET_POLICY_GATE/capability_card.json"
+    },
+    {
+      "capability_id": "CAP-CQ-PRECOMMIT",
+      "category": "CODE_QUALITY",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-cq-precommit"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CAP-CQ-PRECOMMIT.json"
+    },
+    {
+      "capability_id": "CAP-CQ-PYRIGHT-MYPY",
+      "category": "CODE_QUALITY",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-cq-pyright-mypy"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CAP-CQ-PYRIGHT-MYPY.json"
+    },
+    {
+      "capability_id": "CAP-CQ-RUFF",
+      "category": "CODE_QUALITY",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-cq-ruff"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CAP-CQ-RUFF.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_JSONSCHEMA",
+      "category": "CODE_QUALITY",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:code-quality-jsonschema"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_JSONSCHEMA/capability_card.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_MYPY",
+      "category": "CODE_QUALITY",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:code-quality-mypy"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_MYPY/capability_card.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_PRE_COMMIT",
+      "category": "CODE_QUALITY",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:code-quality-pre-commit"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PRE_COMMIT/capability_card.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_PYRIGHT",
+      "category": "CODE_QUALITY",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:code-quality-pyright"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PYRIGHT/capability_card.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_PYTEST",
+      "category": "CODE_QUALITY",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:code-quality-pytest"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PYTEST/capability_card.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_PY_COMPILE",
+      "category": "CODE_QUALITY",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:code-quality-py-compile"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PY_COMPILE/capability_card.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_RUFF",
+      "category": "CODE_QUALITY",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:code-quality-ruff"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_RUFF/capability_card.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_SCHEMA_FIRST_VALIDATION",
+      "category": "CODE_QUALITY",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:code-quality-schema-first-validation"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_SCHEMA_FIRST_VALIDATION/capability_card.json"
+    },
+    {
+      "capability_id": "CAP-DB-SQLITE-FTS5-EVIDENCE",
+      "category": "DATABASES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-db-sqlite-fts5-evidence"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/CAP-DB-SQLITE-FTS5-EVIDENCE.json"
+    },
+    {
+      "capability_id": "DATABASES_CAPABILITY_REGISTRY_DATABASE",
+      "category": "DATABASES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:databases-capability-registry-database"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_CAPABILITY_REGISTRY_DATABASE/capability_card.json"
+    },
+    {
+      "capability_id": "DATABASES_CSV_AUDIT_TABLE",
+      "category": "DATABASES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:databases-csv-audit-table"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_CSV_AUDIT_TABLE/capability_card.json"
+    },
+    {
+      "capability_id": "DATABASES_DUCKDB",
+      "category": "DATABASES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:databases-duckdb"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_DUCKDB/capability_card.json"
+    },
+    {
+      "capability_id": "DATABASES_GRAPH_EDGE_LIST",
+      "category": "DATABASES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:databases-graph-edge-list"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_GRAPH_EDGE_LIST/capability_card.json"
+    },
+    {
+      "capability_id": "DATABASES_JSONL_EVIDENCE_STREAM",
+      "category": "DATABASES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:databases-jsonl-evidence-stream"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_JSONL_EVIDENCE_STREAM/capability_card.json"
+    },
+    {
+      "capability_id": "DATABASES_SQLITE",
+      "category": "DATABASES",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:databases-sqlite"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_SQLITE/capability_card.json"
+    },
+    {
+      "capability_id": "DATABASES_SQLITE_FTS5",
+      "category": "DATABASES",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:databases-sqlite-fts5"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_SQLITE_FTS5/capability_card.json"
+    },
+    {
+      "capability_id": "DATABASES_TASK_EVIDENCE_STORE",
+      "category": "DATABASES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:databases-task-evidence-store"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_TASK_EVIDENCE_STORE/capability_card.json"
+    },
+    {
+      "capability_id": "CAP-EXAMPLE-LOCAL-HTTP-DASHBOARD-SERVER",
+      "category": "EXAMPLES",
+      "status": "SANDBOX",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-example-local-http-dashboard-server"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/EXAMPLES/CAP-EXAMPLE-LOCAL-HTTP-DASHBOARD-SERVER.json"
+    },
+    {
+      "capability_id": "EXAMPLES_CAPABILITY_SCOPE_EXAMPLE",
+      "category": "EXAMPLES",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:examples-capability-scope-example"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/EXAMPLES/EXAMPLES_CAPABILITY_SCOPE_EXAMPLE/capability_card.json"
+    },
+    {
+      "capability_id": "EXAMPLES_EVIDENCE_REPORT_EXAMPLE",
+      "category": "EXAMPLES",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:examples-evidence-report-example"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/EXAMPLES/EXAMPLES_EVIDENCE_REPORT_EXAMPLE/capability_card.json"
+    },
+    {
+      "capability_id": "EXAMPLES_INQUISITION_HYGIENE_SCAN_EXAMPLE",
+      "category": "EXAMPLES",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:examples-inquisition-hygiene-scan-example"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/EXAMPLES/EXAMPLES_INQUISITION_HYGIENE_SCAN_EXAMPLE/capability_card.json"
+    },
+    {
+      "capability_id": "EXAMPLES_MECHANICUS_TOOL_INTAKE_EXAMPLE",
+      "category": "EXAMPLES",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:examples-mechanicus-tool-intake-example"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/EXAMPLES/EXAMPLES_MECHANICUS_TOOL_INTAKE_EXAMPLE/capability_card.json"
+    },
+    {
+      "capability_id": "EXAMPLES_ORGAN_CONSOLE_EXAMPLE",
+      "category": "EXAMPLES",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:examples-organ-console-example"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/EXAMPLES/EXAMPLES_ORGAN_CONSOLE_EXAMPLE/capability_card.json"
+    },
+    {
+      "capability_id": "EXAMPLES_OWNER_DECISION_QUEUE_EXAMPLE",
+      "category": "EXAMPLES",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:examples-owner-decision-queue-example"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/EXAMPLES/EXAMPLES_OWNER_DECISION_QUEUE_EXAMPLE/capability_card.json"
+    },
+    {
+      "capability_id": "EXAMPLES_TASKPACK_EXAMPLE",
+      "category": "EXAMPLES",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:examples-taskpack-example"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/EXAMPLES/EXAMPLES_TASKPACK_EXAMPLE/capability_card.json"
+    },
+    {
+      "capability_id": "EXAMPLES_VISUAL_GATE_EXAMPLE",
+      "category": "EXAMPLES",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:examples-visual-gate-example"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/EXAMPLES/EXAMPLES_VISUAL_GATE_EXAMPLE/capability_card.json"
+    },
+    {
+      "capability_id": "CAP-LANG-PYTHON312-RUNTIME",
+      "category": "LANGUAGES",
+      "status": "SANDBOX",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-lang-python312-runtime"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/CAP-LANG-PYTHON312-RUNTIME.json"
+    },
+    {
+      "capability_id": "LANGUAGES_GO",
+      "category": "LANGUAGES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:languages-go"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/LANGUAGES_GO/capability_card.json"
+    },
+    {
+      "capability_id": "LANGUAGES_HTML_CSS",
+      "category": "LANGUAGES",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:languages-html-css"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/LANGUAGES_HTML_CSS/capability_card.json"
+    },
+    {
+      "capability_id": "LANGUAGES_JAVASCRIPT",
+      "category": "LANGUAGES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:languages-javascript"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/LANGUAGES_JAVASCRIPT/capability_card.json"
+    },
+    {
+      "capability_id": "LANGUAGES_POWERSHELL",
+      "category": "LANGUAGES",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:languages-powershell"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/LANGUAGES_POWERSHELL/capability_card.json"
+    },
+    {
+      "capability_id": "LANGUAGES_PYTHON_312_RUNTIME",
+      "category": "LANGUAGES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:languages-python-312-runtime"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/LANGUAGES_PYTHON_312_RUNTIME/capability_card.json"
+    },
+    {
+      "capability_id": "LANGUAGES_RUST",
+      "category": "LANGUAGES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:languages-rust"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/LANGUAGES_RUST/capability_card.json"
+    },
+    {
+      "capability_id": "LANGUAGES_SQL",
+      "category": "LANGUAGES",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:languages-sql"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/LANGUAGES_SQL/capability_card.json"
+    },
+    {
+      "capability_id": "LANGUAGES_TYPESCRIPT",
+      "category": "LANGUAGES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:languages-typescript"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/LANGUAGES_TYPESCRIPT/capability_card.json"
+    },
+    {
+      "capability_id": "LOCAL_LLM_LLAMACPP_RESERVED_CANDIDATE",
+      "category": "LOCAL_LLM",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": true,
+      "validation_commands": [
+        "validate:local-llm-llamacpp-reserved-candidate"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LOCAL_LLM/LOCAL_LLM_LLAMACPP_RESERVED_CANDIDATE/capability_card.json"
+    },
+    {
+      "capability_id": "LOCAL_LLM_LM_STUDIO_RESERVED_CANDIDATE",
+      "category": "LOCAL_LLM",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": true,
+      "validation_commands": [
+        "validate:local-llm-lm-studio-reserved-candidate"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LOCAL_LLM/LOCAL_LLM_LM_STUDIO_RESERVED_CANDIDATE/capability_card.json"
+    },
+    {
+      "capability_id": "LOCAL_LLM_LOCAL_MODEL_RUNNER_RESERVED",
+      "category": "LOCAL_LLM",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": true,
+      "validation_commands": [
+        "validate:local-llm-local-model-runner-reserved"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LOCAL_LLM/LOCAL_LLM_LOCAL_MODEL_RUNNER_RESERVED/capability_card.json"
+    },
+    {
+      "capability_id": "LOCAL_LLM_MODEL_CAPABILITY_CARD_PATTERN",
+      "category": "LOCAL_LLM",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": true,
+      "validation_commands": [
+        "validate:local-llm-model-capability-card-pattern"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LOCAL_LLM/LOCAL_LLM_MODEL_CAPABILITY_CARD_PATTERN/capability_card.json"
+    },
+    {
+      "capability_id": "LOCAL_LLM_OLLAMA_RESERVED_CANDIDATE",
+      "category": "LOCAL_LLM",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": true,
+      "validation_commands": [
+        "validate:local-llm-ollama-reserved-candidate"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LOCAL_LLM/LOCAL_LLM_OLLAMA_RESERVED_CANDIDATE/capability_card.json"
+    },
+    {
+      "capability_id": "LOCAL_LLM_OPENAI_COMPATIBLE_LOCAL_ENDPOINT_PATTERN",
+      "category": "LOCAL_LLM",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": true,
+      "validation_commands": [
+        "validate:local-llm-openai-compatible-local-endpoint-pattern"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LOCAL_LLM/LOCAL_LLM_OPENAI_COMPATIBLE_LOCAL_ENDPOINT_PATTERN/capability_card.json"
+    },
+    {
+      "capability_id": "CAP-PLAYBOOK-MECHANICUS-ARSENAL-INTAKE",
+      "category": "PLAYBOOKS",
+      "status": "SANDBOX",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-playbook-mechanicus-arsenal-intake"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PLAYBOOKS/CAP-PLAYBOOK-MECHANICUS-ARSENAL-INTAKE.json"
+    },
+    {
+      "capability_id": "CAP-PLAYBOOK-OSINT-DEEP-RESEARCH",
+      "category": "PLAYBOOKS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-playbook-osint-deep-research"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PLAYBOOKS/CAP-PLAYBOOK-OSINT-DEEP-RESEARCH.json"
+    },
+    {
+      "capability_id": "CAP-PLAYBOOK-SCHEMA-FIRST-CONTRACT",
+      "category": "PLAYBOOKS",
+      "status": "CANON",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-playbook-schema-first-contract"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PLAYBOOKS/CAP-PLAYBOOK-SCHEMA-FIRST-CONTRACT.json"
+    },
+    {
+      "capability_id": "CAP-PLAYBOOK-VISUAL-SCREENSHOT-GATE",
+      "category": "PLAYBOOKS",
+      "status": "SANDBOX",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-playbook-visual-screenshot-gate"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PLAYBOOKS/CAP-PLAYBOOK-VISUAL-SCREENSHOT-GATE.json"
+    },
+    {
+      "capability_id": "PLAYBOOKS_CANDIDATE_CHECK_PLAYBOOK",
+      "category": "PLAYBOOKS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:playbooks-candidate-check-playbook"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PLAYBOOKS/PLAYBOOKS_CANDIDATE_CHECK_PLAYBOOK/capability_card.json"
+    },
+    {
+      "capability_id": "PLAYBOOKS_CLEAN_WORKTREE_PLAYBOOK",
+      "category": "PLAYBOOKS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:playbooks-clean-worktree-playbook"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PLAYBOOKS/PLAYBOOKS_CLEAN_WORKTREE_PLAYBOOK/capability_card.json"
+    },
+    {
+      "capability_id": "PLAYBOOKS_COMMIT_PUSH_GATE_PLAYBOOK",
+      "category": "PLAYBOOKS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:playbooks-commit-push-gate-playbook"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PLAYBOOKS/PLAYBOOKS_COMMIT_PUSH_GATE_PLAYBOOK/capability_card.json"
+    },
+    {
+      "capability_id": "PLAYBOOKS_INQUISITION_HYGIENE_PLAYBOOK",
+      "category": "PLAYBOOKS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:playbooks-inquisition-hygiene-playbook"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PLAYBOOKS/PLAYBOOKS_INQUISITION_HYGIENE_PLAYBOOK/capability_card.json"
+    },
+    {
+      "capability_id": "PLAYBOOKS_MECHANICUS_TOOL_INTAKE_PLAYBOOK",
+      "category": "PLAYBOOKS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:playbooks-mechanicus-tool-intake-playbook"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PLAYBOOKS/PLAYBOOKS_MECHANICUS_TOOL_INTAKE_PLAYBOOK/capability_card.json"
+    },
+    {
+      "capability_id": "PLAYBOOKS_NO_RUNTIME_JUNK_PLAYBOOK",
+      "category": "PLAYBOOKS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:playbooks-no-runtime-junk-playbook"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PLAYBOOKS/PLAYBOOKS_NO_RUNTIME_JUNK_PLAYBOOK/capability_card.json"
+    },
+    {
+      "capability_id": "PLAYBOOKS_SCOPE_REVIEW_PLAYBOOK",
+      "category": "PLAYBOOKS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:playbooks-scope-review-playbook"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PLAYBOOKS/PLAYBOOKS_SCOPE_REVIEW_PLAYBOOK/capability_card.json"
+    },
+    {
+      "capability_id": "PLAYBOOKS_VISUAL_ANTI_DEFAULT_PLAYBOOK",
+      "category": "PLAYBOOKS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:playbooks-visual-anti-default-playbook"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PLAYBOOKS/PLAYBOOKS_VISUAL_ANTI_DEFAULT_PLAYBOOK/capability_card.json"
+    },
+    {
+      "capability_id": "PROMPTING_PATTERNS_4_PART_OWNER_REPORT_PROMPT",
+      "category": "PROMPTING_PATTERNS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:prompting-patterns-4-part-owner-report-prompt"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PROMPTING_PATTERNS/PROMPTING_PATTERNS_4_PART_OWNER_REPORT_PROMPT/capability_card.json"
+    },
+    {
+      "capability_id": "PROMPTING_PATTERNS_NO_FAKE_GREEN_RESPONSE_PATTERN",
+      "category": "PROMPTING_PATTERNS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:prompting-patterns-no-fake-green-response-pattern"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PROMPTING_PATTERNS/PROMPTING_PATTERNS_NO_FAKE_GREEN_RESPONSE_PATTERN/capability_card.json"
+    },
+    {
+      "capability_id": "PROMPTING_PATTERNS_OWNER_DECISION_QUEUE_PROMPT",
+      "category": "PROMPTING_PATTERNS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:prompting-patterns-owner-decision-queue-prompt"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PROMPTING_PATTERNS/PROMPTING_PATTERNS_OWNER_DECISION_QUEUE_PROMPT/capability_card.json"
+    },
+    {
+      "capability_id": "PROMPTING_PATTERNS_READ_FIRST_GATE_PROMPT",
+      "category": "PROMPTING_PATTERNS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:prompting-patterns-read-first-gate-prompt"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PROMPTING_PATTERNS/PROMPTING_PATTERNS_READ_FIRST_GATE_PROMPT/capability_card.json"
+    },
+    {
+      "capability_id": "PROMPTING_PATTERNS_SERVITOR_ROLE_RE_ANCHOR_PROMPT",
+      "category": "PROMPTING_PATTERNS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:prompting-patterns-servitor-role-re-anchor-prompt"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PROMPTING_PATTERNS/PROMPTING_PATTERNS_SERVITOR_ROLE_RE_ANCHOR_PROMPT/capability_card.json"
+    },
+    {
+      "capability_id": "PROMPTING_PATTERNS_STRUCTURED_ZIP_DOSSIER_PROMPT",
+      "category": "PROMPTING_PATTERNS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:prompting-patterns-structured-zip-dossier-prompt"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PROMPTING_PATTERNS/PROMPTING_PATTERNS_STRUCTURED_ZIP_DOSSIER_PROMPT/capability_card.json"
+    },
+    {
+      "capability_id": "PROMPTING_PATTERNS_TASK_CONTINUATION_PROMPT",
+      "category": "PROMPTING_PATTERNS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:prompting-patterns-task-continuation-prompt"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PROMPTING_PATTERNS/PROMPTING_PATTERNS_TASK_CONTINUATION_PROMPT/capability_card.json"
+    },
+    {
+      "capability_id": "PROMPTING_PATTERNS_VOLUME_BUDGET_PROMPT",
+      "category": "PROMPTING_PATTERNS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:prompting-patterns-volume-budget-prompt"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PROMPTING_PATTERNS/PROMPTING_PATTERNS_VOLUME_BUDGET_PROMPT/capability_card.json"
+    },
+    {
+      "capability_id": "CAP-REF-PATHLIB-DISCIPLINE",
+      "category": "REFERENCE_CODE",
+      "status": "SANDBOX",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-ref-pathlib-discipline"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/REFERENCE_CODE/CAP-REF-PATHLIB-DISCIPLINE.json"
+    },
+    {
+      "capability_id": "REFERENCE_CODE_CAPABILITY_CARD_SCHEMA",
+      "category": "REFERENCE_CODE",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:reference-code-capability-card-schema"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/REFERENCE_CODE/REFERENCE_CODE_CAPABILITY_CARD_SCHEMA/capability_card.json"
+    },
+    {
+      "capability_id": "REFERENCE_CODE_ORGAN_CONSOLE_LAYOUT_REFERENCE",
+      "category": "REFERENCE_CODE",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:reference-code-organ-console-layout-reference"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/REFERENCE_CODE/REFERENCE_CODE_ORGAN_CONSOLE_LAYOUT_REFERENCE/capability_card.json"
+    },
+    {
+      "capability_id": "REFERENCE_CODE_OWNER_QUESTION_SCHEMA",
+      "category": "REFERENCE_CODE",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:reference-code-owner-question-schema"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/REFERENCE_CODE/REFERENCE_CODE_OWNER_QUESTION_SCHEMA/capability_card.json"
+    },
+    {
+      "capability_id": "REFERENCE_CODE_READ_ONLY_SMOKE_HARNESS",
+      "category": "REFERENCE_CODE",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:reference-code-read-only-smoke-harness"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/REFERENCE_CODE/REFERENCE_CODE_READ_ONLY_SMOKE_HARNESS/capability_card.json"
+    },
+    {
+      "capability_id": "REFERENCE_CODE_SAFE_JSON_WRITE_HELPER",
+      "category": "REFERENCE_CODE",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:reference-code-safe-json-write-helper"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/REFERENCE_CODE/REFERENCE_CODE_SAFE_JSON_WRITE_HELPER/capability_card.json"
+    },
+    {
+      "capability_id": "REFERENCE_CODE_SCOPE_EXPORT_SCHEMA",
+      "category": "REFERENCE_CODE",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:reference-code-scope-export-schema"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/REFERENCE_CODE/REFERENCE_CODE_SCOPE_EXPORT_SCHEMA/capability_card.json"
+    },
+    {
+      "capability_id": "REFERENCE_CODE_STATUS_BADGE_SYSTEM",
+      "category": "REFERENCE_CODE",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:reference-code-status-badge-system"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/REFERENCE_CODE/REFERENCE_CODE_STATUS_BADGE_SYSTEM/capability_card.json"
+    },
+    {
+      "capability_id": "REFERENCE_CODE_VALIDATION_RECEIPT_SCHEMA",
+      "category": "REFERENCE_CODE",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:reference-code-validation-receipt-schema"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/REFERENCE_CODE/REFERENCE_CODE_VALIDATION_RECEIPT_SCHEMA/capability_card.json"
+    },
+    {
+      "capability_id": "SEARCH_INDEXING_CATEGORY_LOOKUP_INDEX",
+      "category": "SEARCH_INDEXING",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:search-indexing-category-lookup-index"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/SEARCH_INDEXING/SEARCH_INDEXING_CATEGORY_LOOKUP_INDEX/capability_card.json"
+    },
+    {
+      "capability_id": "SEARCH_INDEXING_FUTURE_EMBEDDING_INDEX_PLACEHOLDER",
+      "category": "SEARCH_INDEXING",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:search-indexing-future-embedding-index-placeholder"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/SEARCH_INDEXING/SEARCH_INDEXING_FUTURE_EMBEDDING_INDEX_PLACEHOLDER/capability_card.json"
+    },
+    {
+      "capability_id": "SEARCH_INDEXING_RECEIPT_PATH_INDEX",
+      "category": "SEARCH_INDEXING",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:search-indexing-receipt-path-index"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/SEARCH_INDEXING/SEARCH_INDEXING_RECEIPT_PATH_INDEX/capability_card.json"
+    },
+    {
+      "capability_id": "SEARCH_INDEXING_REPORT_PATH_INDEX",
+      "category": "SEARCH_INDEXING",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:search-indexing-report-path-index"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/SEARCH_INDEXING/SEARCH_INDEXING_REPORT_PATH_INDEX/capability_card.json"
+    },
+    {
+      "capability_id": "SEARCH_INDEXING_RIPGREP_SEARCH",
+      "category": "SEARCH_INDEXING",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:search-indexing-ripgrep-search"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/SEARCH_INDEXING/SEARCH_INDEXING_RIPGREP_SEARCH/capability_card.json"
+    },
+    {
+      "capability_id": "SEARCH_INDEXING_SIMPLE_INVERTED_INDEX",
+      "category": "SEARCH_INDEXING",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:search-indexing-simple-inverted-index"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/SEARCH_INDEXING/SEARCH_INDEXING_SIMPLE_INVERTED_INDEX/capability_card.json"
+    },
+    {
+      "capability_id": "SEARCH_INDEXING_SQLITE_FTS_SEARCH",
+      "category": "SEARCH_INDEXING",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:search-indexing-sqlite-fts-search"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/SEARCH_INDEXING/SEARCH_INDEXING_SQLITE_FTS_SEARCH/capability_card.json"
+    },
+    {
+      "capability_id": "SEARCH_INDEXING_TAG_INDEX_MODEL",
+      "category": "SEARCH_INDEXING",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:search-indexing-tag-index-model"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/SEARCH_INDEXING/SEARCH_INDEXING_TAG_INDEX_MODEL/capability_card.json"
+    },
+    {
+      "capability_id": "CAP-TOOL-COMMAND-GATEWAY-INTERNAL",
+      "category": "TOOLS",
+      "status": "CANON",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-tool-command-gateway-internal"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-COMMAND-GATEWAY-INTERNAL.json"
+    },
+    {
+      "capability_id": "CAP-TOOL-JSONSCHEMA",
+      "category": "TOOLS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-tool-jsonschema"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-JSONSCHEMA.json"
+    },
+    {
+      "capability_id": "CAP-TOOL-NODE-NPM-NPX",
+      "category": "TOOLS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-tool-node-npm-npx"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-NODE-NPM-NPX.json"
+    },
+    {
+      "capability_id": "CAP-TOOL-PATH-POLICY-INTERNAL",
+      "category": "TOOLS",
+      "status": "CANON",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-tool-path-policy-internal"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-PATH-POLICY-INTERNAL.json"
+    },
+    {
+      "capability_id": "CAP-TOOL-PYTEST",
+      "category": "TOOLS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-tool-pytest"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-PYTEST.json"
+    },
+    {
+      "capability_id": "CAP-TOOL-RECEIPT-MODELS-VALIDATORS",
+      "category": "TOOLS",
+      "status": "CANON",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-tool-receipt-models-validators"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-RECEIPT-MODELS-VALIDATORS.json"
+    },
+    {
+      "capability_id": "TOOLS_CANDIDATE_CHECK_WORKFLOW",
+      "category": "TOOLS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:tools-candidate-check-workflow"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_CANDIDATE_CHECK_WORKFLOW/capability_card.json"
+    },
+    {
+      "capability_id": "TOOLS_COMMAND_GATEWAY",
+      "category": "TOOLS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:tools-command-gateway"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_COMMAND_GATEWAY/capability_card.json"
+    },
+    {
+      "capability_id": "TOOLS_COMMIT_PUSH_WORKFLOW",
+      "category": "TOOLS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:tools-commit-push-workflow"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_COMMIT_PUSH_WORKFLOW/capability_card.json"
+    },
+    {
+      "capability_id": "TOOLS_GIT",
+      "category": "TOOLS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:tools-git"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_GIT/capability_card.json"
+    },
+    {
+      "capability_id": "TOOLS_PATH_POLICY",
+      "category": "TOOLS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:tools-path-policy"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_PATH_POLICY/capability_card.json"
+    },
+    {
+      "capability_id": "TOOLS_RECEIPT_VALIDATOR",
+      "category": "TOOLS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:tools-receipt-validator"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_RECEIPT_VALIDATOR/capability_card.json"
+    },
+    {
+      "capability_id": "TOOLS_SCOPE_REVIEW_TOOL",
+      "category": "TOOLS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:tools-scope-review-tool"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_SCOPE_REVIEW_TOOL/capability_card.json"
+    },
+    {
+      "capability_id": "TOOLS_TASKPACK_DOSSIER_BUILDER",
+      "category": "TOOLS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:tools-taskpack-dossier-builder"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_TASKPACK_DOSSIER_BUILDER/capability_card.json"
+    },
+    {
+      "capability_id": "UI_FRAMEWORKS_FRAMER_MOTION",
+      "category": "UI_FRAMEWORKS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:ui-frameworks-framer-motion"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UI_FRAMEWORKS/UI_FRAMEWORKS_FRAMER_MOTION/capability_card.json"
+    },
+    {
+      "capability_id": "UI_FRAMEWORKS_LUCIDE_ICONS",
+      "category": "UI_FRAMEWORKS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:ui-frameworks-lucide-icons"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UI_FRAMEWORKS/UI_FRAMEWORKS_LUCIDE_ICONS/capability_card.json"
+    },
+    {
+      "capability_id": "UI_FRAMEWORKS_PLAIN_HTML_CSS_JS_COCKPIT",
+      "category": "UI_FRAMEWORKS",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:ui-frameworks-plain-html-css-js-cockpit"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UI_FRAMEWORKS/UI_FRAMEWORKS_PLAIN_HTML_CSS_JS_COCKPIT/capability_card.json"
+    },
+    {
+      "capability_id": "UI_FRAMEWORKS_REACT",
+      "category": "UI_FRAMEWORKS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:ui-frameworks-react"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UI_FRAMEWORKS/UI_FRAMEWORKS_REACT/capability_card.json"
+    },
+    {
+      "capability_id": "UI_FRAMEWORKS_RECHARTS",
+      "category": "UI_FRAMEWORKS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:ui-frameworks-recharts"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UI_FRAMEWORKS/UI_FRAMEWORKS_RECHARTS/capability_card.json"
+    },
+    {
+      "capability_id": "UI_FRAMEWORKS_SHADCN_UI",
+      "category": "UI_FRAMEWORKS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:ui-frameworks-shadcn-ui"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UI_FRAMEWORKS/UI_FRAMEWORKS_SHADCN_UI/capability_card.json"
+    },
+    {
+      "capability_id": "UI_FRAMEWORKS_TAILWIND_CSS",
+      "category": "UI_FRAMEWORKS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:ui-frameworks-tailwind-css"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UI_FRAMEWORKS/UI_FRAMEWORKS_TAILWIND_CSS/capability_card.json"
+    },
+    {
+      "capability_id": "UI_FRAMEWORKS_VITE",
+      "category": "UI_FRAMEWORKS",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:ui-frameworks-vite"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UI_FRAMEWORKS/UI_FRAMEWORKS_VITE/capability_card.json"
+    },
+    {
+      "capability_id": "CAP-UTILITY-GIT",
+      "category": "UTILITIES",
+      "status": "SANDBOX",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-utility-git"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/CAP-UTILITY-GIT.json"
+    },
+    {
+      "capability_id": "CAP-UTILITY-POWERSHELL",
+      "category": "UTILITIES",
+      "status": "SANDBOX",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-utility-powershell"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/CAP-UTILITY-POWERSHELL.json"
+    },
+    {
+      "capability_id": "UTILITIES_7_ZIP",
+      "category": "UTILITIES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:utilities-7-zip"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/UTILITIES_7_ZIP/capability_card.json"
+    },
+    {
+      "capability_id": "UTILITIES_ARCHIVE_MANIFEST_GENERATOR",
+      "category": "UTILITIES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:utilities-archive-manifest-generator"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/UTILITIES_ARCHIVE_MANIFEST_GENERATOR/capability_card.json"
+    },
+    {
+      "capability_id": "UTILITIES_FD",
+      "category": "UTILITIES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:utilities-fd"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/UTILITIES_FD/capability_card.json"
+    },
+    {
+      "capability_id": "UTILITIES_JQ",
+      "category": "UTILITIES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:utilities-jq"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/UTILITIES_JQ/capability_card.json"
+    },
+    {
+      "capability_id": "UTILITIES_RIPGREP",
+      "category": "UTILITIES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:utilities-ripgrep"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/UTILITIES_RIPGREP/capability_card.json"
+    },
+    {
+      "capability_id": "UTILITIES_SAFE_DELETE_QUARANTINE_WRAPPER",
+      "category": "UTILITIES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:utilities-safe-delete-quarantine-wrapper"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/UTILITIES_SAFE_DELETE_QUARANTINE_WRAPPER/capability_card.json"
+    },
+    {
+      "capability_id": "UTILITIES_SHA256_HASHING",
+      "category": "UTILITIES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:utilities-sha256-hashing"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/UTILITIES_SHA256_HASHING/capability_card.json"
+    },
+    {
+      "capability_id": "UTILITIES_YQ",
+      "category": "UTILITIES",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:utilities-yq"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/UTILITIES_YQ/capability_card.json"
+    },
+    {
+      "capability_id": "CAP-VIS-PLAYWRIGHT-REGRESSION",
+      "category": "VISUAL_TESTING",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:cap-vis-playwright-regression"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/VISUAL_TESTING/CAP-VIS-PLAYWRIGHT-REGRESSION.json"
+    },
+    {
+      "capability_id": "VISUAL_TESTING_ANTI_GENERIC_ADMIN_VISUAL_GATE",
+      "category": "VISUAL_TESTING",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:visual-testing-anti-generic-admin-visual-gate"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/VISUAL_TESTING/VISUAL_TESTING_ANTI_GENERIC_ADMIN_VISUAL_GATE/capability_card.json"
+    },
+    {
+      "capability_id": "VISUAL_TESTING_PLAYWRIGHT",
+      "category": "VISUAL_TESTING",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:visual-testing-playwright"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/VISUAL_TESTING/VISUAL_TESTING_PLAYWRIGHT/capability_card.json"
+    },
+    {
+      "capability_id": "VISUAL_TESTING_RESPONSIVE_VIEWPORT_CHECKLIST",
+      "category": "VISUAL_TESTING",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:visual-testing-responsive-viewport-checklist"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/VISUAL_TESTING/VISUAL_TESTING_RESPONSIVE_VIEWPORT_CHECKLIST/capability_card.json"
+    },
+    {
+      "capability_id": "VISUAL_TESTING_SCREENSHOT_BASELINE_PRACTICE",
+      "category": "VISUAL_TESTING",
+      "status": "CANDIDATE",
+      "install_required": false,
+      "reserved": false,
+      "validation_commands": [
+        "validate:visual-testing-screenshot-baseline-practice"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/VISUAL_TESTING/VISUAL_TESTING_SCREENSHOT_BASELINE_PRACTICE/capability_card.json"
+    },
+    {
+      "capability_id": "VISUAL_TESTING_SCREENSHOT_MANIFEST",
+      "category": "VISUAL_TESTING",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:visual-testing-screenshot-manifest"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/VISUAL_TESTING/VISUAL_TESTING_SCREENSHOT_MANIFEST/capability_card.json"
+    },
+    {
+      "capability_id": "VISUAL_TESTING_STATIC_HTML_VISUAL_CHECK",
+      "category": "VISUAL_TESTING",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:visual-testing-static-html-visual-check"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/VISUAL_TESTING/VISUAL_TESTING_STATIC_HTML_VISUAL_CHECK/capability_card.json"
+    },
+    {
+      "capability_id": "VISUAL_TESTING_VISUAL_EVIDENCE_REPORT",
+      "category": "VISUAL_TESTING",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:visual-testing-visual-evidence-report"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/VISUAL_TESTING/VISUAL_TESTING_VISUAL_EVIDENCE_REPORT/capability_card.json"
+    },
+    {
+      "capability_id": "VISUAL_TESTING_VISUAL_LAYOUT_CONTRACT",
+      "category": "VISUAL_TESTING",
+      "status": "CANDIDATE",
+      "install_required": true,
+      "reserved": false,
+      "validation_commands": [
+        "validate:visual-testing-visual-layout-contract"
+      ],
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/VISUAL_TESTING/VISUAL_TESTING_VISUAL_LAYOUT_CONTRACT/capability_card.json"
+    }
+  ]
+}

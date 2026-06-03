@@ -1,0 +1,36 @@
+{
+  "fixture_id": "HTA04",
+  "title": "reviewers used different taxonomy paths",
+  "mode": "inline_payload",
+  "expected_caps": [
+    "CAP_REVIEWERS_USED_DIFFERENT_HEAD_TAXONOMY"
+  ],
+  "payload": {
+    "head_taxonomy_manifest_path": "HEAD_TAXONOMY_MANIFEST.json",
+    "declared_target_head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+    "fetchable_heads": [
+      "6cc51091ad89238f97f5211ff6d59f0ae9ae53de",
+      "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+      "e4b2c19e6c8aab875e53f086376e875b3a4afd2b"
+    ],
+    "head_taxonomy_manifest": {
+      "review_target_head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+      "artifact_bundle_head": "e4b2c19e6c8aab875e53f086376e875b3a4afd2b",
+      "fallback_review_head": "",
+      "warp_runtime_claimed": false,
+      "warp_unlocked": false
+    },
+    "review_target_manifest": {
+      "review_target_head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+      "head_taxonomy_manifest_path": "HEAD_TAXONOMY_MANIFEST.json",
+      "reviewer_head_taxonomy_paths": {
+        "inquisitor": "HEAD_TAXONOMY_MANIFEST.json",
+        "speculum": "OTHER_HEAD_TAXONOMY_MANIFEST.json"
+      }
+    },
+    "combined_review_adjudication_receipt": {
+      "review_target_head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+      "final_merged_verdict": "PENDING"
+    }
+  }
+}

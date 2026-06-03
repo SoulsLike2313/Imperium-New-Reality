@@ -1,0 +1,34 @@
+{
+  "pass_label": "MECHANICUS_PANEL_SLICE_V0_1_ACCEPTED_FOR_OWNER_REVIEW",
+  "pass_if_all_true": [
+    "Officio ACK or missing-authority WARN exists before implementation.",
+    "Taskpack is not treated as role authority.",
+    "All writes remain inside allowed IMPERIUM_NEW_GENERATION paths.",
+    "One isolated implementation slice exists under LABS/MECHANICUS_PANEL_SLICE_V0_1.",
+    "The slice contains the five required zones.",
+    "The slice is visibly grounded on included references but not copied blindly.",
+    "The slice is non-generic and visually stronger than previous rough implementations.",
+    "Unknown/stub/locked semantics are shown honestly.",
+    "Before/after screenshots exist.",
+    "Owner report RU exists.",
+    "Implementation report EN exists.",
+    "Final receipt JSON exists.",
+    "Commit is created if gates pass."
+  ],
+  "warn_conditions": [
+    "Officio source missing/incomplete but explicit missing-authority WARN exists.",
+    "Some values are still mock/static but clearly marked.",
+    "The slice is not yet integrated into the main shell, but the isolated lab is strong and reviewable.",
+    "Push fails due to credentials/network, but commit and evidence exist."
+  ],
+  "block_conditions": [
+    "Implementation begins before Officio ACK/WARN.",
+    "Taskpack is used as role authority.",
+    "Work spills outside allowed write scope.",
+    "The result is generic/generic-bootstrap/SaaS-like.",
+    "The result fakes truth or connected states.",
+    "No screenshots or no reports exist.",
+    "The implementation attempts to rewrite full Sanctum.",
+    "Git dirty state is hidden."
+  ]
+}

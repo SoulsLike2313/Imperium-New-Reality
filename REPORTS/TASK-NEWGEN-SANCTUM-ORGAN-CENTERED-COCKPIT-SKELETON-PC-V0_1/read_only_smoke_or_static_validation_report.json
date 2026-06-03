@@ -1,0 +1,52 @@
+{
+  "schema_id": "newgen_read_only_smoke_or_static_validation_report_v0_1",
+  "task_id": "TASK-NEWGEN-SANCTUM-ORGAN-CENTERED-COCKPIT-SKELETON-PC-V0_1",
+  "generated_at_utc": "2026-05-24T15:20:27Z",
+  "mode": "STATIC_VISUAL_VALIDATION",
+  "verdict": "PASS",
+  "steps": [
+    {
+      "step": "json_parse_manifest",
+      "status": "PASS",
+      "details": "python -m json.tool parsed important_six_organ_cockpit_manifest_v0_1.json"
+    },
+    {
+      "step": "local_static_server_boot",
+      "status": "PASS",
+      "details": "python -m http.server 8767 started against IMPORTANT_SIX_TUI_DASHBOARD"
+    },
+    {
+      "step": "http_get_cockpit_html",
+      "status": "PASS",
+      "details": "GET http://127.0.0.1:8767/important_six_organ_cockpit_v0_1.html returned HTTP 200"
+    },
+    {
+      "step": "headless_capture_en",
+      "status": "PASS",
+      "details": {
+        "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-SANCTUM-ORGAN-CENTERED-COCKPIT-SKELETON-PC-V0_1/VISUAL_EVIDENCE/important_six_organ_cockpit_en_1920x1400.png",
+        "size_bytes": 494382,
+        "sha256": "A38FAD05D5EB4C2DCCAF6152DFD844A6326B519F98E639D7CDC9259D26DD1E42"
+      }
+    },
+    {
+      "step": "headless_capture_ru",
+      "status": "PASS",
+      "details": {
+        "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-SANCTUM-ORGAN-CENTERED-COCKPIT-SKELETON-PC-V0_1/VISUAL_EVIDENCE/important_six_organ_cockpit_ru_1920x1400.png",
+        "size_bytes": 499666,
+        "sha256": "507E39B162FD6EAD3BCFCB861A9BED80B00357BA2D9300D4EFC726833612D3B5"
+      }
+    },
+    {
+      "step": "server_shutdown",
+      "status": "PASS",
+      "details": "Temporary static server process stopped after capture"
+    }
+  ],
+  "safety_assertions": [
+    "No mutating API endpoint added for this cockpit skeleton.",
+    "No uncontrolled PTY/browser terminal introduced.",
+    "Visual/static validation only; no runtime mutation."
+  ]
+}

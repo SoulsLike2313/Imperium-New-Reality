@@ -1,0 +1,73 @@
+{
+  "schema_id": "OPERATOR_COCKPIT_STABLE_CANDIDATE_VALIDATOR_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1",
+  "generated_at_utc": "2026-05-23T21:06:04Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "core_track_files_exist",
+      "status": "PASS",
+      "details": "stable/candidate core files exist"
+    },
+    {
+      "check_id": "stable_has_candidate_link",
+      "status": "PASS",
+      "details": "stable entry links to candidate"
+    },
+    {
+      "check_id": "index_has_dual_launch_links",
+      "status": "PASS",
+      "details": "index exposes stable and candidate launch links"
+    },
+    {
+      "check_id": "candidate_required_zones",
+      "status": "PASS",
+      "details": "candidate keeps required cockpit zones"
+    },
+    {
+      "check_id": "candidate_compression_markers",
+      "status": "PASS",
+      "details": "candidate includes compression-oriented style markers"
+    },
+    {
+      "check_id": "research_dossier_exists",
+      "status": "PASS",
+      "details": "research dossier parses"
+    },
+    {
+      "check_id": "research_source_count",
+      "status": "PASS",
+      "details": "research source count=7"
+    },
+    {
+      "check_id": "screenshot_matrix_exists",
+      "status": "PASS",
+      "details": "screenshot matrix parses"
+    },
+    {
+      "check_id": "screenshot_capture_count",
+      "status": "PASS",
+      "details": "screenshot captures=4"
+    },
+    {
+      "check_id": "comparison_report_exists",
+      "status": "PASS",
+      "details": "stable/candidate comparison report parses"
+    },
+    {
+      "check_id": "candidate_visual_delta",
+      "status": "PASS",
+      "details": "candidate visual delta detected"
+    },
+    {
+      "check_id": "base_l1_validator",
+      "status": "PASS",
+      "details": "base l1 validator verdict=PASS"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "l1_validator_stdout": "operator_cockpit_validator_verdict=PASS\noperator_cockpit_validator_report=IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/REPORTS/TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1/operator_cockpit_l1_validator_report.json",
+  "l1_validator_stderr": "",
+  "claim_boundary": "IMPROVED_PC_OPERATOR_SHELL_ONLY"
+}

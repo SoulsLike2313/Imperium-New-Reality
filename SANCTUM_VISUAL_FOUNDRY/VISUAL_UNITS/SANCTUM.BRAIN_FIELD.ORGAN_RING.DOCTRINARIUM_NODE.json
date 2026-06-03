@@ -1,0 +1,49 @@
+{
+  "visual_unit_id": "SANCTUM.BRAIN_FIELD.ORGAN_RING.DOCTRINARIUM_NODE",
+  "parent": "SANCTUM.BRAIN_FIELD.ORGAN_RING",
+  "type": "organ_node_stub",
+  "visual_owner": "SANCTUM_SHELL",
+  "truth_owner": "DOCTRINARIUM_AGENT",
+  "data_source_owner": "UNKNOWN",
+  "organ_subject": "DOCTRINARIUM_AGENT",
+  "implementation_owner": "VISUAL_FOUNDRY",
+  "purpose": "Reserved stub organ node for DOCTRINARIUM lane in topology V0.2.",
+  "backend_source": "UNKNOWN",
+  "backend_source_status": "unknown",
+  "allowed_states": [
+    "stub",
+    "hidden",
+    "unknown"
+  ],
+  "truth_rules": [
+    "Stub label must stay explicit in reports and UI text.",
+    "No connected/ready state until backend truth source is integrated."
+  ],
+  "visual_tokens": "organ_ring_tokens",
+  "texture": "law_seal_amber",
+  "glow": {
+    "enabled": false
+  },
+  "motion": {
+    "enabled": false,
+    "animation": "ambient_disabled",
+    "perf_tier": "STATIC",
+    "disable_in_reduced_motion": true
+  },
+  "perf_tier": "STATIC",
+  "proof_requirements": [
+    "Stub status must be reflected in inventory and truth map."
+  ],
+  "integration_status": "stub",
+  "fake_green_risks": [
+    "Stub node shown as real organ cockpit."
+  ],
+  "owner_group": "SANCTUM",
+  "owner_organ": "DOCTRINARIUM_AGENT",
+  "accessibility_rules": [
+    "State must not be encoded by color alone.",
+    "RU/EN labels must remain explicit for status tags."
+  ],
+  "change_safety": "Topology hardening scope only; no final UI readiness claims.",
+  "backend_source_unknown_reason": "Dedicated backend status lane is not integrated in this V0.2 topology hardening slice."
+}

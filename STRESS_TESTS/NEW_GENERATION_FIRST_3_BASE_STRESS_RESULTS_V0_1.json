@@ -1,0 +1,76 @@
+{
+  "suite": "NEW_GENERATION_FIRST_3_BASE_STRESS_V0_1",
+  "total": 12,
+  "passed": 12,
+  "failed": 0,
+  "results": [
+    {
+      "test": "status_ADMINISTRATUM",
+      "pass": true,
+      "stdout": "AGENT ADMINISTRATUM_AGENT\nSTATUS BASE_IMPLEMENTED_V0_1\nSTAGE FIRST_3_BASE\nACTIONS CREATE_TASK_ENVELOPE,CREATE_ROUTE_SHEET,REGISTER_ORGAN_ANSWER,REGISTER_RECEIPT,BUILD_FINAL_ROUTE_REPORT\nSHORT_TERM_ENTRIES 14",
+      "stderr": ""
+    },
+    {
+      "test": "status_CUSTODES",
+      "pass": true,
+      "stdout": "AGENT CUSTODES_AGENT\nSTATUS BASE_IMPLEMENTED_V0_1\nSTAGE FIRST_3_BASE\nACTIONS FILTER_ZONE_ADMISSION,CHECK_ALLOWED_PATHS,CHECK_CORE_IMPACT\nSHORT_TERM_ENTRIES 9",
+      "stderr": ""
+    },
+    {
+      "test": "status_MECHANICUS",
+      "pass": true,
+      "stdout": "AGENT MECHANICUS_AGENT\nSTATUS BASE_IMPLEMENTED_V0_1\nSTAGE FIRST_3_BASE\nACTIONS LIST_AVAILABLE_TOOLS,MATCH_TOOLS_TO_TASK,RECOMMEND_QUALITY_GATES,REGISTER_TOOL_CANDIDATE\nSHORT_TERM_ENTRIES 4",
+      "stderr": ""
+    },
+    {
+      "test": "ask_custodes",
+      "pass": true,
+      "stdout": "ASK_AGENT CUSTODES_AGENT\nASK_VERDICT ADMIT\nANSWER_JSON E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\EXCHANGE\\ORGAN_BUS\\answers\\answer_a2fafb338886.json\nRECEIPT_JSON E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\EXCHANGE\\ORGAN_BUS\\receipts\\answer_a2fafb338886_receipt.json",
+      "stderr": ""
+    },
+    {
+      "test": "route_first_three",
+      "pass": true,
+      "stdout": "ROUTE_TASK demo_task_first_3_agent_route_v0_1\nROUTE_VERDICT PASS\nROUTE_RECEIPT E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\EXCHANGE\\SERVITOR\\receipts\\route_receipt_0e5e6a3741a2.json\nFINAL_ROUTE_REPORT E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ARCHIVE\\ADMINISTRATUM_PERMANENT_ARCHIVE\\route_archive\\route_final_a4f7f045501f.json",
+      "stderr": ""
+    },
+    {
+      "test": "receipts_created",
+      "pass": true,
+      "count": 1
+    },
+    {
+      "test": "memory_updated_first_three",
+      "pass": true
+    },
+    {
+      "test": "administratum_archive_written",
+      "pass": true,
+      "json_files": 5
+    },
+    {
+      "test": "forbidden_write_rejected",
+      "pass": true,
+      "stdout": "ASK_AGENT CUSTODES_AGENT\nASK_VERDICT BLOCK_CORE_ACCESS\nANSWER_JSON E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\EXCHANGE\\ORGAN_BUS\\answers\\answer_c74daa876aab.json\nRECEIPT_JSON E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\EXCHANGE\\ORGAN_BUS\\receipts\\answer_c74daa876aab_receipt.json",
+      "stderr": ""
+    },
+    {
+      "test": "skeleton_status_honest",
+      "pass": true,
+      "stdout": "AGENT THRONE_AGENT\nSTATUS SKELETON_ONLY_NOT_IMPLEMENTED\nSTAGE SKELETON_STAGE\nACTIONS none\nSHORT_TERM_ENTRIES 0",
+      "stderr": ""
+    },
+    {
+      "test": "count_agent_units",
+      "pass": true,
+      "stdout": "ADMINISTRATUM_AGENT: 65\nCUSTODES_AGENT: 60\nMECHANICUS_AGENT: 63\nTOTAL: 188\nUNITS_JSON: E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\FIRST_THREE_AGENT_UNIT_BASELINE_V0_1.json",
+      "stderr": ""
+    },
+    {
+      "test": "no_new_out_of_scope_writes",
+      "pass": true,
+      "new_outside_paths": []
+    }
+  ],
+  "verdict": "PASS"
+}

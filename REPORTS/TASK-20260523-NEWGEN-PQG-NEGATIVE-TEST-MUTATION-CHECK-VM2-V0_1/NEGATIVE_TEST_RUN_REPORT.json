@@ -1,0 +1,158 @@
+{
+  "schema_id": "NEGATIVE_TEST_RUN_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-PQG-NEGATIVE-TEST-MUTATION-CHECK-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T20:53:43Z",
+  "status": "PASS",
+  "required_case_count": 8,
+  "result_row_count": 8,
+  "safe_negative_classifications": [
+    "BLOCK",
+    "REJECTED",
+    "WARN"
+  ],
+  "checks": [
+    {
+      "check_id": "core_artifacts_exist",
+      "status": "PASS",
+      "details": "all core negative-test/mutation-check artifacts exist"
+    },
+    {
+      "check_id": "py_compile_build_negative_test_mutation_check_v0_1.py",
+      "status": "PASS",
+      "details": "build_negative_test_mutation_check_v0_1.py compiles"
+    },
+    {
+      "check_id": "py_compile_validate_negative_test_mutation_check_v0_1.py",
+      "status": "PASS",
+      "details": "validate_negative_test_mutation_check_v0_1.py compiles"
+    },
+    {
+      "check_id": "catalog_parse",
+      "status": "PASS",
+      "details": "catalog parses"
+    },
+    {
+      "check_id": "policy_parse",
+      "status": "PASS",
+      "details": "policy parses"
+    },
+    {
+      "check_id": "rules_parse",
+      "status": "PASS",
+      "details": "rules parse"
+    },
+    {
+      "check_id": "matrix_parse",
+      "status": "PASS",
+      "details": "result matrix parses"
+    },
+    {
+      "check_id": "samples_parse",
+      "status": "PASS",
+      "details": "samples parse"
+    },
+    {
+      "check_id": "current_truth_parse",
+      "status": "PASS",
+      "details": "current truth root parses"
+    },
+    {
+      "check_id": "sanctum_state_parse",
+      "status": "PASS",
+      "details": "sanctum state parses"
+    },
+    {
+      "check_id": "catalog_schema_id",
+      "status": "PASS",
+      "details": "catalog schema_id is correct"
+    },
+    {
+      "check_id": "required_cases_present",
+      "status": "PASS",
+      "details": "all required negative test case IDs are present"
+    },
+    {
+      "check_id": "matrix_schema_id",
+      "status": "PASS",
+      "details": "matrix schema_id is correct"
+    },
+    {
+      "check_id": "matrix_covers_required_cases",
+      "status": "PASS",
+      "details": "result matrix covers required case IDs"
+    },
+    {
+      "check_id": "no_bad_case_pass_strict",
+      "status": "PASS",
+      "details": "no known-bad sample classified PASS_STRICT"
+    },
+    {
+      "check_id": "known_bad_classifications_safe",
+      "status": "PASS",
+      "details": "all known-bad cases classified as BLOCK/WARN/REJECTED"
+    },
+    {
+      "check_id": "no_fake_green_accepted",
+      "status": "PASS",
+      "details": "no fake-green sample accepted"
+    },
+    {
+      "check_id": "expected_vs_actual_match",
+      "status": "PASS",
+      "details": "actual classifications match expected classifications"
+    },
+    {
+      "check_id": "policy_schema_id",
+      "status": "PASS",
+      "details": "policy schema_id is correct"
+    },
+    {
+      "check_id": "policy_forbids_pass_strict",
+      "status": "PASS",
+      "details": "policy forbids PASS_STRICT for known-bad samples"
+    },
+    {
+      "check_id": "fake_green_rule_present",
+      "status": "PASS",
+      "details": "fake-green rejection rule is present"
+    },
+    {
+      "check_id": "private_key_marker_is_synthetic_only",
+      "status": "PASS",
+      "details": "private key marker case is synthetic-only"
+    },
+    {
+      "check_id": "no_real_private_key_pattern_found",
+      "status": "PASS",
+      "details": "no real private-key material patterns found in negative-test artifacts"
+    },
+    {
+      "check_id": "current_truth_has_negative_test_layer_ref",
+      "status": "PASS",
+      "details": "current truth root has negative-test foundation reference"
+    },
+    {
+      "check_id": "sanctum_state_has_negative_test_layer_ref",
+      "status": "PASS",
+      "details": "sanctum state has read-only negative-test layer reference"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "report_bundle_file_status": {
+    "GATE_ACK.md": "PRESENT",
+    "FINAL_OWNER_REPORT_RU.md": "PRESENT",
+    "FINAL_RECEIPT.json": "PRESENT",
+    "POST_COMMIT_CLOSURE_RECEIPT.json": "PRESENT",
+    "STEP_PROOF_RECORDS.jsonl": "PRESENT",
+    "CONTEXT_SOURCE_REPORT.md": "PRESENT",
+    "CONTEXT_SOURCE_REPORT.json": "PRESENT",
+    "CONTEXT_WINDOW_USAGE_NOTE.md": "PRESENT",
+    "KPD_SLICE.md": "PRESENT",
+    "NEXT_TASK_IMPROVEMENT_REPORT.md": "PRESENT",
+    "NEXT_TASK_IMPROVEMENT_REPORT.json": "PRESENT",
+    "OFFICIO_ROLE_ACK_OR_WARN.json": "PRESENT",
+    "DOCTRINARIUM_LAW_ACK_OR_WARN.json": "PRESENT",
+    "SUPER_SKEPTICISM_ACK.json": "PRESENT"
+  }
+}

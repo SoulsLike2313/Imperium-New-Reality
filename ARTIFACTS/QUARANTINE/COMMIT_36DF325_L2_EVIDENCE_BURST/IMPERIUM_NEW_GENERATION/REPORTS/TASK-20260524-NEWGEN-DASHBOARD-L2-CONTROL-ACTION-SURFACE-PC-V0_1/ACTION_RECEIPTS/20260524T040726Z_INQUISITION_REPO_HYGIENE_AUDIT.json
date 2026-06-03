@@ -1,0 +1,652 @@
+{
+  "schema_id": "important_six_dashboard_action_receipt_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+  "action_id": "INQUISITION_REPO_HYGIENE_AUDIT",
+  "owner_organ": "INQUISITION",
+  "dashboard_button_group": "Inquisition",
+  "safety_class": "READ_ONLY",
+  "started_at_utc": "2026-05-24T04:07:20Z",
+  "finished_at_utc": "2026-05-24T04:07:26Z",
+  "duration_ms": 5860,
+  "status": "WARN",
+  "summary": "Repo hygiene scan complete: dirty=True, duplicates=670, pollution=346, large=1",
+  "payload": {},
+  "details": {
+    "dirty_state": true,
+    "git_dirty_entries_count": 14,
+    "git_untracked_entries_count": 14,
+    "git_status_sample": [
+      "?? IMPERIUM_NEW_GENERATION/ASTRONOMICON/DRAFT_TASK_REGISTRY/",
+      "?? IMPERIUM_NEW_GENERATION/OUTBOX/",
+      "?? IMPERIUM_NEW_GENERATION/OWNER_INTENT/",
+      "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/OWNER_INTENT/",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/README_L2.md",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TESTS/playwright_dashboard_l2_actions_v0_1.py",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.css",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.js",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_server_v0_2.py",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_v0_2.html"
+    ],
+    "duplicate_name_hits": [
+      {
+        "name": "receipts",
+        "count": 395,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RECEIPTS",
+          "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/RECEIPTS",
+          "IMPERIUM_NEW_GENERATION/EXCHANGE/ORGAN_BUS/receipts",
+          "IMPERIUM_NEW_GENERATION/EXCHANGE/SERVITOR/receipts",
+          "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/receipts",
+          "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ASTRONOMICON_AGENT/receipts"
+        ]
+      },
+      {
+        "name": "events.jsonl",
+        "count": 313,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-004955-e266/events.jsonl",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-004959-8b5f/events.jsonl",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005225-9ad2/events.jsonl",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005247-6523/events.jsonl",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005515-d00b/events.jsonl",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005515-dd21/events.jsonl"
+        ]
+      },
+      {
+        "name": "reports",
+        "count": 306,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/REPORTS",
+          "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS",
+          "IMPERIUM_NEW_GENERATION/ASTRONOMICON/REPORTS",
+          "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/REPORTS",
+          "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/REPORTS",
+          "IMPERIUM_NEW_GENERATION/INQUISITION/REPORTS"
+        ]
+      },
+      {
+        "name": "readme.md",
+        "count": 142,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/README.md",
+          "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/README.md",
+          "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/README.md",
+          "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/README.md",
+          "IMPERIUM_NEW_GENERATION/TASK_CONTROL/README.md",
+          "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS/README.md"
+        ]
+      },
+      {
+        "name": "status_report.json",
+        "count": 118,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-004955-e266/status_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005515-d00b/status_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005515-dd21/status_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-010805-0c36/status_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-010805-a0cc/status_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-011634-1db9/status_report.json"
+        ]
+      },
+      {
+        "name": "status_command_receipt.json",
+        "count": 97,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023354-1f7b/receipts/status_command_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023354-2f16/receipts/status_command_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/cli_plain_status/receipts/status_command_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/cli_status/receipts/status_command_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024822-6dd2/receipts/status_command_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/cli_plain_status/receipts/status_command_receipt.json"
+        ]
+      },
+      {
+        "name": "status_metrics_summary.json",
+        "count": 97,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023354-1f7b/reports/status_metrics_summary.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023354-2f16/reports/status_metrics_summary.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/cli_plain_status/reports/status_metrics_summary.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/cli_status/reports/status_metrics_summary.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024822-6dd2/reports/status_metrics_summary.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/cli_plain_status/reports/status_metrics_summary.json"
+        ]
+      },
+      {
+        "name": "status_access_map.json",
+        "count": 84,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-035009-fb682a/cli_plain_status/reports/status_access_map.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-035009-fb682a/cli_status/reports/status_access_map.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-035010-6666d8/reports/status_access_map.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-040356-d49f43/reports/status_access_map.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-042812-c25bed/cli_plain_status/reports/status_access_map.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-042812-c25bed/cli_status/reports/status_access_map.json"
+        ]
+      },
+      {
+        "name": "build_repo_inventory_receipt.json",
+        "count": 50,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-004959-8b5f/receipts/build_repo_inventory_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005225-9ad2/receipts/build_repo_inventory_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/receipts/build_repo_inventory_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/receipts/build_repo_inventory_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/receipts/build_repo_inventory_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/receipts/build_repo_inventory_receipt.json"
+        ]
+      },
+      {
+        "name": "inventory_objects.jsonl",
+        "count": 50,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-004959-8b5f/inventory_objects.jsonl",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005225-9ad2/inventory_objects.jsonl",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/inventory_objects.jsonl",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/inventory_objects.jsonl",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/inventory_objects.jsonl",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/inventory_objects.jsonl"
+        ]
+      },
+      {
+        "name": "inventory_report.json",
+        "count": 50,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-004959-8b5f/inventory_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005225-9ad2/inventory_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/inventory_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/inventory_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/inventory_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/inventory_report.json"
+        ]
+      },
+      {
+        "name": "route_to_organs_receipt.json",
+        "count": 44,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/receipts/route_to_organs_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005455-2f41/receipts/route_to_organs_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005509-96cd/receipts/route_to_organs_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/receipts/route_to_organs_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/receipts/route_to_organs_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/receipts/route_to_organs_receipt.json"
+        ]
+      },
+      {
+        "name": "routing_recommendations_report.json",
+        "count": 44,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/routing_recommendations_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005455-2f41/routing_recommendations_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005509-96cd/routing_recommendations_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/routing_recommendations_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/routing_recommendations_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/routing_recommendations_report.json"
+        ]
+      },
+      {
+        "name": "detect_dirty_runtime_outputs_receipt.json",
+        "count": 43,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005250-d128/receipts/detect_dirty_runtime_outputs_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/receipts/detect_dirty_runtime_outputs_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005509-96cd/receipts/detect_dirty_runtime_outputs_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/receipts/detect_dirty_runtime_outputs_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005700-7022/receipts/detect_dirty_runtime_outputs_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005718-dbd9/receipts/detect_dirty_runtime_outputs_receipt.json"
+        ]
+      },
+      {
+        "name": "dirty_runtime_report.json",
+        "count": 43,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005250-d128/dirty_runtime_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/dirty_runtime_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005509-96cd/dirty_runtime_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/dirty_runtime_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005700-7022/dirty_runtime_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005718-dbd9/dirty_runtime_report.json"
+        ]
+      },
+      {
+        "name": "receipt.json",
+        "count": 42,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-034711-d62c25/continuity_pack/receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-035009-fb682a/continuity_pack/receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-040557-7068b8/continuity_pack/receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-042322-549103/continuity_pack/receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-042622-2abf24/continuity_pack/receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-042812-c25bed/continuity_pack/receipt.json"
+        ]
+      },
+      {
+        "name": "find_useful_candidates_receipt.json",
+        "count": 40,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005305-907c/receipts/find_useful_candidates_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/receipts/find_useful_candidates_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005509-96cd/receipts/find_useful_candidates_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/receipts/find_useful_candidates_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/receipts/find_useful_candidates_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/receipts/find_useful_candidates_receipt.json"
+        ]
+      },
+      {
+        "name": "useful_candidates_report.json",
+        "count": 40,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005305-907c/useful_candidates_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/useful_candidates_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005509-96cd/useful_candidates_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/useful_candidates_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/useful_candidates_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/useful_candidates_report.json"
+        ]
+      },
+      {
+        "name": "__pycache__",
+        "count": 38,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/__pycache__",
+          "IMPERIUM_NEW_GENERATION/ORGAN_AGENT_COMMON/__pycache__",
+          "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/__pycache__",
+          "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/__pycache__",
+          "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/__pycache__",
+          "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TUI/__pycache__"
+        ]
+      },
+      {
+        "name": "build_provenance_index_receipt.json",
+        "count": 37,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/receipts/build_provenance_index_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/receipts/build_provenance_index_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/receipts/build_provenance_index_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/receipts/build_provenance_index_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-010156-861e/receipts/build_provenance_index_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-010824-50d9/receipts/build_provenance_index_receipt.json"
+        ]
+      },
+      {
+        "name": "provenance_report.json",
+        "count": 37,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/provenance_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/provenance_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/provenance_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/provenance_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-010156-861e/provenance_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-010824-50d9/provenance_report.json"
+        ]
+      },
+      {
+        "name": "imperium_context_index.jsonl",
+        "count": 32,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/reports/imperium_context_index.jsonl",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-84b7/reports/imperium_context_index.jsonl",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/reports/imperium_context_index.jsonl",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/reports/imperium_context_index.jsonl",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/reports/imperium_context_index.jsonl",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/reports/imperium_context_index.jsonl"
+        ]
+      },
+      {
+        "name": "imperium_context_scan_report.json",
+        "count": 32,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/reports/imperium_context_scan_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-84b7/reports/imperium_context_scan_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/reports/imperium_context_scan_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/reports/imperium_context_scan_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/reports/imperium_context_scan_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/reports/imperium_context_scan_report.json"
+        ]
+      },
+      {
+        "name": "scan_imperium_context_receipt.json",
+        "count": 32,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/receipts/scan_imperium_context_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-84b7/receipts/scan_imperium_context_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/receipts/scan_imperium_context_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/receipts/scan_imperium_context_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/receipts/scan_imperium_context_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/receipts/scan_imperium_context_receipt.json"
+        ]
+      },
+      {
+        "name": "manifest.json",
+        "count": 30,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/MANIFEST.json",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-RICH-SHELL-OPERATOR-REPAIR-8-ORGANS-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T205421584637Z_pack_build_role/role_pack_work/SERVITOR_PRIME/MANIFEST.json",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2/OFFICIO_RUNTIME/run_20260519T222118321799Z_pack_build_role/role_pack_work/SERVITOR_PRIME/MANIFEST.json",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-VISUAL-SHELL-V0_2/OFFICIO_RUNTIME/run_20260520T015518670432Z_pack_build_role/role_pack_work/SERVITOR_PRIME/MANIFEST.json",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-SANCTUM-PLAYWRIGHT-TRUTH-BRAIN-STRIKE-PC-V0_1/TASK_PACK_SOURCE/MANIFEST.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-ATTACK-MATRIX-20260518-204315/MANIFEST.json"
+        ]
+      },
+      {
+        "name": "recent_runs_report.json",
+        "count": 30,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024823-09d5/reports/recent_runs_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025105-da9a/reports/recent_runs_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030131-9254/reports/recent_runs_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-035011-9b26c6/reports/recent_runs_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-040424-74e4d1/reports/recent_runs_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-042815-73b582/reports/recent_runs_report.json"
+        ]
+      },
+      {
+        "name": "tools",
+        "count": 29,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/TOOLS",
+          "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS",
+          "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS",
+          "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TOOLS",
+          "IMPERIUM_NEW_GENERATION/INQUISITION/TOOLS",
+          "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS"
+        ]
+      },
+      {
+        "name": "agent_kpd_self_review.json",
+        "count": 28,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/AGENT_KPD_SELF_REVIEW.json",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1/AGENT_KPD_SELF_REVIEW.json",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TEXTUAL-FULLSCREEN-TUI-PC-V0_3/AGENT_KPD_SELF_REVIEW.json",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2/AGENT_KPD_SELF_REVIEW.json",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5/AGENT_KPD_SELF_REVIEW.json",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4/AGENT_KPD_SELF_REVIEW.json"
+        ]
+      },
+      {
+        "name": "classify_local_context_receipt.json",
+        "count": 28,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/receipts/classify_local_context_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/receipts/classify_local_context_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/receipts/classify_local_context_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/receipts/classify_local_context_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/receipts/classify_local_context_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/receipts/classify_local_context_receipt.json"
+        ]
+      },
+      {
+        "name": "collect_reality_snapshot_receipt.json",
+        "count": 28,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/receipts/collect_reality_snapshot_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/receipts/collect_reality_snapshot_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/receipts/collect_reality_snapshot_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-034617-5a1f/receipts/collect_reality_snapshot_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-034711-d62c25/receipts/collect_reality_snapshot_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-035009-fb682a/cli_progress/receipts/collect_reality_snapshot_receipt.json"
+        ]
+      },
+      {
+        "name": "detect_private_export_risk_receipt.json",
+        "count": 28,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/receipts/detect_private_export_risk_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/receipts/detect_private_export_risk_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/receipts/detect_private_export_risk_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/receipts/detect_private_export_risk_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/receipts/detect_private_export_risk_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/receipts/detect_private_export_risk_receipt.json"
+        ]
+      },
+      {
+        "name": "local_context_classification_report.json",
+        "count": 28,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/reports/local_context_classification_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/reports/local_context_classification_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/reports/local_context_classification_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/reports/local_context_classification_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/reports/local_context_classification_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/reports/local_context_classification_report.json"
+        ]
+      },
+      {
+        "name": "private_export_risk_report.json",
+        "count": 28,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/reports/private_export_risk_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/reports/private_export_risk_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/reports/private_export_risk_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/reports/private_export_risk_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/reports/private_export_risk_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/reports/private_export_risk_report.json"
+        ]
+      },
+      {
+        "name": "reality_snapshot_report.json",
+        "count": 28,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/reports/reality_snapshot_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/reports/reality_snapshot_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/reports/reality_snapshot_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-034617-5a1f/reports/reality_snapshot_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-034711-d62c25/reports/reality_snapshot_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-035009-fb682a/cli_progress/reports/reality_snapshot_report.json"
+        ]
+      },
+      {
+        "name": "collect_continuity_pack_receipt.json",
+        "count": 27,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/receipts/collect_continuity_pack_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/receipts/collect_continuity_pack_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/receipts/collect_continuity_pack_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/receipts/collect_continuity_pack_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/receipts/collect_continuity_pack_receipt.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/receipts/collect_continuity_pack_receipt.json"
+        ]
+      },
+      {
+        "name": "continuity_pack",
+        "count": 27,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/continuity_pack",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/continuity_pack",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/continuity_pack",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/continuity_pack",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/continuity_pack",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/continuity_pack"
+        ]
+      },
+      {
+        "name": "continuity_pack_manifest.json",
+        "count": 27,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/continuity_pack/continuity_pack_manifest.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/continuity_pack/continuity_pack_manifest.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/continuity_pack/continuity_pack_manifest.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/continuity_pack/continuity_pack_manifest.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/continuity_pack/continuity_pack_manifest.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/continuity_pack/continuity_pack_manifest.json"
+        ]
+      },
+      {
+        "name": "continuity_pack_report.json",
+        "count": 27,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/reports/continuity_pack_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/reports/continuity_pack_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/reports/continuity_pack_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/reports/continuity_pack_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/reports/continuity_pack_report.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/reports/continuity_pack_report.json"
+        ]
+      },
+      {
+        "name": "continuity_pack_summary.md",
+        "count": 27,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/continuity_pack/continuity_pack_summary.md",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/continuity_pack/continuity_pack_summary.md",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/continuity_pack/continuity_pack_summary.md",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/continuity_pack/continuity_pack_summary.md",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/continuity_pack/continuity_pack_summary.md",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/continuity_pack/continuity_pack_summary.md"
+        ]
+      },
+      {
+        "name": "kpd_score.json",
+        "count": 27,
+        "sample_paths": [
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-7af6/reports/kpd_score.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030037-b666/reports/kpd_score.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-034711-d62c25/continuity_pack/kpd_score.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-035009-fb682a/continuity_pack/kpd_score.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-040528-317717/reports/kpd_score.json",
+          "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-040557-7068b8/continuity_pack/kpd_score.json"
+        ]
+      }
+    ],
+    "duplicate_name_hits_count": 670,
+    "pollution_hits_sample": [
+      "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE",
+      "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TEMPLATES",
+      "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TEMPLATES",
+      "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/__pycache__",
+      "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TEMPLATES",
+      "IMPERIUM_NEW_GENERATION/INQUISITION/TEMPLATES",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TEMPLATES",
+      "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TEMPLATES",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENT_COMMON/organ_agent_runtime_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENT_COMMON/__pycache__",
+      "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/ORGAN_DIALOGUE_DEMO_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-SANCTUM-ORGAN-DIALOGUE-DEMO-VM2-V0_1",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/__pycache__",
+      "IMPERIUM_NEW_GENERATION/SKILLS/SKILL_PASSPORT_TEMPLATE_V0_1.json",
+      "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/GATES/organ_gate_catalog_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TEMPLATES/organ_verdict_template_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/__pycache__",
+      "IMPERIUM_NEW_GENERATION/ASTRONOMICON/GATES/organ_gate_catalog_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TEMPLATES/organ_verdict_template_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/__pycache__",
+      "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/HERALDRY/no_external_logo_policy.md",
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/ORGAN_PACKET_RESPONSE_CATALOG_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATES/organ_gate_catalog_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/TEMPLATES",
+      "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TEMPLATES/organ_verdict_template_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TUI/__pycache__",
+      "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DECLARATIONS/ORGAN_DEPENDENCY_MAP/servitor_organ_query_catalog_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/TOOLS/__pycache__",
+      "IMPERIUM_NEW_GENERATION/INQUISITION/GATES/organ_gate_catalog_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/INQUISITION/TEMPLATES/organ_verdict_template_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/INQUISITION/TUI/__pycache__",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/COMMAND_SHORTCUTS_CATALOG_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/GATES/organ_gate_catalog_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TEMPLATES/organ_verdict_template_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_CANDIDATE_CATALOG_V0_1.generated.json",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_RISK_CATALOG_V0_1.generated.json",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TUI/__pycache__",
+      "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/officio_ack_template_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/GATES/organ_gate_catalog_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TEMPLATES/organ_verdict_template_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/__pycache__",
+      "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/TOOLS/__pycache__",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/PACK_TEMPLATES",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/POLICIES/RUNTIME_OUTPUT_POLICY.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/skills/detect_dirty_runtime_outputs",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TESTS/__pycache__",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/__pycache__",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TRANSFER_GATE/TEMPLATES",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/REPAIR_BACKLOG_STATUS.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-BUILD-ADMINISTRATUM-AGENT-V1-FROM-TARGET-FORM/STAGE_EXECUTION_LOG_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-HARDEN-ADMINISTRATUM-AGENT-TOWARD-REFERENCE-GRADE/STAGE_EXECUTION_LOG_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TRANSFER_GATE/SCRIPTS/__pycache__",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TRANSFER_GATE/TEMPLATES/START_PROMPT.template.txt",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TRANSFER_GATE/TEMPLATES/TRANSFER_CARD.template.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ASTRONOMICON_AGENT/TOOLS/__pycache__",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/DOCTRINARIUM_AGENT/TOOLS/__pycache__",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/INQUISITION_AGENT/TOOLS/__pycache__",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/SHELL/__pycache__",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/__pycache__",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/BASE_HALF/runtime_isolation.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/PACK_TEMPLATES/role_pack_template.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/PACK_TEMPLATES/ROLE_PACK_TEMPLATE.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/REQUIREMENT_MATRIX/requirement_template.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/LOGOS_PRIME_RESPONSE_CONTRACT.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/LOGOS_PRIME_RESPONSE_CONTRACT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/LOGOS_SPECULUM_RESPONSE_CONTRACT.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/LOGOS_SPECULUM_RESPONSE_CONTRACT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/ROLE_REGISTRY/LOGOS",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/ROLE_REGISTRY/LOGOS_PRIME",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/ROLE_REGISTRY/LOGOS_SPECULUM",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/TOOLS/__pycache__",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/response_contracts/logos_prime_response_contract.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/response_contracts/logos_speculum_response_contract.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/SCHOLA_IMPERIALIS_AGENT/TOOLS/__pycache__",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/STRATEGIUM_AGENT/TOOLS/__pycache__",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENT_COMMON/SHELL/organ_shell_runtime_contract_v0_1.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENT_COMMON/SHELL/__pycache__",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENT_COMMON/__pycache__/organ_agent_runtime_v0_1.cpython-312.pyc",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENT_COMMON/__pycache__/organ_agent_runtime_v0_1.cpython-314.pyc",
+      "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/REGISTRY/ORGAN_DIALOGUE_CAPABILITY_MATRIX_V0_1.json"
+    ],
+    "pollution_hits_count": 346,
+    "large_artifacts": [
+      {
+        "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5.zip",
+        "size_bytes": 39578667
+      }
+    ],
+    "large_artifact_count": 1,
+    "reports_outside_expected_zone_sample": [
+      "IMPERIUM_NEW_GENERATION/TRUTH/REPORT_STATUS_INDEX_V0_1.json",
+      "IMPERIUM_NEW_GENERATION/TRUTH/REPORT_STATUS_NORMALIZATION_TABLE_V0_1.json",
+      "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/REPORTS/common_cli_reference_report.md",
+      "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/REPORTS/preflight_smoke_report_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/CONTRACTS/ADMINISTRATUM_OWNER_PDF_REPORT_CONTRACT_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/base_half_check_report.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/base_half_check_report.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/DOSSIER_FACTORY_REPORT_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/EVIDENCE_CAPTURE_REPORT_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/IMPLEMENTATION_REPORT_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/OSS_ADMISSION_REPORT_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/TEST_REPORT_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-LIVE-WORK-RESOURCE-METRICS-CLI-HARDENING-EXPERIMENT/IMPLEMENTATION_REPORT_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1/IMPLEMENTATION_REPORT_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1/OWNER_REPORT_RENDER_SOURCE_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1/TEST_REPORT_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/CLI_UX_REPAIR_REPORT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/DIRTY_ADMISSION_REPORT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/DOSSIER_NO_PDF_POLICY_REPORT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/FREELANCE_CORRIDOR_REPORT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/IMPLEMENTATION_REPORT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/KPD_SCORECARD_REPORT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/SCHEMA_REGRESSION_REPORT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/TEST_REPORT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/WARNING_RECONCILIATION_REPORT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-BUILD-ADMINISTRATUM-AGENT-V1-FROM-TARGET-FORM/ADMINISTRATUM_AGENT_V1_IMPLEMENTATION_REPORT_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-HARDEN-ADMINISTRATUM-AGENT-TOWARD-REFERENCE-GRADE/ADMINISTRATUM_AGENT_REFERENCE_GRADE_HARDENING_REPORT_V0_1.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ASTRONOMICON_AGENT/receipts/domain_route_report_latest.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ASTRONOMICON_AGENT/REPORTS/base_half_check_report.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ASTRONOMICON_AGENT/REPORTS/base_half_check_report.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/DOCTRINARIUM_AGENT/receipts/domain_violation_report_latest.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/DOCTRINARIUM_AGENT/REPORTS/base_half_check_report.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/DOCTRINARIUM_AGENT/REPORTS/base_half_check_report.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/INQUISITION_AGENT/REPORTS/base_half_check_report.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/INQUISITION_AGENT/REPORTS/base_half_check_report.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/REPORTS/base_half_check_report.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/REPORTS/base_half_check_report.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/BASE_HALF/reports_contract.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/REPORTS/base_half_check_report.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/REPORTS/base_half_check_report.md"
+    ],
+    "reports_outside_expected_zone_count": 1006
+  },
+  "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040726Z_INQUISITION_REPO_HYGIENE_AUDIT.json"
+}

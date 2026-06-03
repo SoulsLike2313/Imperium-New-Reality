@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EVIDENCE_MAP_UNIFIED_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "generated_at_utc",
+    "records",
+    "summary"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "EVIDENCE_MAP_UNIFIED_V0_1"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "source_path",
+          "source_kind",
+          "status",
+          "freshness",
+          "proof_level",
+          "linked_reports",
+          "known_limitations"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "source_path": {
+            "type": "string"
+          },
+          "source_kind": {
+            "type": "string"
+          },
+          "task_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "phase_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "type": "string"
+          },
+          "freshness": {
+            "enum": [
+              "CURRENT",
+              "STALE",
+              "UNKNOWN",
+              "MISSING",
+              "FOUNDATION_ONLY",
+              "PARTIAL"
+            ]
+          },
+          "proof_level": {
+            "enum": [
+              "STRONG",
+              "PARTIAL",
+              "FOUNDATION",
+              "WEAK",
+              "UNKNOWN",
+              "MISSING"
+            ]
+          },
+          "linked_reports": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "known_limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

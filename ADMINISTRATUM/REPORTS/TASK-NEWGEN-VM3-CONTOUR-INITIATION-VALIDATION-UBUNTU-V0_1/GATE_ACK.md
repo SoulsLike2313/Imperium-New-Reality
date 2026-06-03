@@ -1,0 +1,62 @@
+GATE_ACK:
+- task_id: TASK-NEWGEN-VM3-CONTOUR-INITIATION-VALIDATION-UBUNTU-V0_1
+- current_head: 248be568f1e2689d420e72dfb45f79e886c5b4ab
+- gatepack_path: /home/vboxuser3/IMPERIUM_VM3_INBOX/TASKPACK_NEWGEN_VM3_CONTOUR_INITIATION_VALIDATION_UBUNTU_V0_1_DIRECT_ROUTE_PROOF.zip
+- gatepack_sha256: 5a71cf8a61c588b87888d4c1f98309933805771ed8d71cfde5376ae59f05199a
+- read_gates:
+  - GATE-U00-GIT-TRUTH
+  - GATE-U01-ROLE-ACK
+  - GATE-U02-SCOPE-BOUNDARY
+  - GATE-U04-EVIDENCE-RECEIPT
+  - GATE-U05-STOP-CONDITIONS
+  - GATE-U08-REPO-PURITY
+  - GATE-U09-NO-FAKE-GREEN
+  - GATE-U12-REPORT-OUTPUT-BUDGET
+  - GATE-U13-PYTHON-TYPE-SAFETY
+  - GATE-U14-WHOLE-REPO-SCOPE-RECON
+  - GATE-U15-OPERATIONALITY-IMPACT
+  - GATE-U16-BILINGUAL-UI
+  - GATE-U17-DELIVERABLE-PACKAGE
+  - GATE-U18-AGENT-FACTORY-COMPLIANCE
+  - GATE-U19-SCRIPT-ARTIFACT-PRESERVATION
+  - GATE-U20-AGENT-KPD-SELF-REVIEW
+  - GATE-U21-COMMAND-CHUNKING
+  - GATE_DOCTRINARIUM_READ_FIRST
+  - GATE_NO_GENERIC_PASS
+  - GATE_NO_GREEN_WITHOUT_EVIDENCE
+  - GATE_PAIN_PREFLIGHT_REQUIRED
+  - GATE_CONTINUITY_PACK_REQUIRED
+  - GATE_REPO_HYGIENE_REQUIRED
+  - GATE_RESOURCE_KPD_REQUIRED
+  - GATE_INTERNAL_FUNCTION_MUST_HAVE_ORGAN_OWNER
+- accepted_stop_conditions:
+  - STOP if REQUIRED_HEAD is missing or git truth mismatches.
+  - STOP if forbidden path is required for completion.
+  - STOP if start purity cannot be evidenced.
+  - STOP if critical receipt cannot be produced.
+  - STOP if out-of-scope mutations appear in git diff.
+- scope_boundary: IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS/TASK-NEWGEN-VM3-CONTOUR-INITIATION-VALIDATION-UBUNTU-V0_1/** only.
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS/TASK-NEWGEN-VM3-CONTOUR-INITIATION-VALIDATION-UBUNTU-V0_1/**
+- forbidden_paths:
+  - ORGANS/**
+  - IMPERIUM_TEST_VERSION/**
+  - INBOX/**
+  - .git/**
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/**
+  - IMPERIUM_NEW_GENERATION/ASTRONOMICON/**
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/**
+  - IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/**
+  - IMPERIUM_NEW_GENERATION/INQUISITION/**
+- expected_receipts:
+  - vm3_sync_receipt.json
+  - pc_to_vm3_direct_route_delivery_receipt.json
+  - vm3_contour_card.json
+  - vm3_tool_validation_report.json
+  - vm3_officio_servitor_settings.json
+  - vm3_inquisition_purity_report.json
+  - ghost_evolve_sidecar.json
+- repo_recon_required: true
+- script_absorption_required: no_new_scripts_created
+- clarification_needed: resolved (REQUIRED_HEAD bound to actual origin/master by Owner)
+- verdict: PASS

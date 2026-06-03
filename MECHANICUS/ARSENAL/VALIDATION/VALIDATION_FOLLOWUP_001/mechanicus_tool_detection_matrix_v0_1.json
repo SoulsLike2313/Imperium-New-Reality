@@ -1,0 +1,394 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1",
+  "generated_at_utc": "2026-05-24T18:54:03Z",
+  "policy": "DETECTION_ONLY_NO_INSTALL",
+  "targets_total": 14,
+  "present_total": 3,
+  "missing_total": 11,
+  "entries": [
+    {
+      "capability_id": "CAP-TOOL-JSONSCHEMA",
+      "tool_name": "jsonschema",
+      "category": "TOOLS",
+      "lane": "P1_CODE_QUALITY",
+      "detect_commands": [
+        {
+          "command": "python -c \"import importlib.metadata as m; print(m.version('jsonschema'))\"",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\n  File \"C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\__init__.py\", line 397, in from_name\n    return next(cls.discover(name=name))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSto...<truncated>"
+        }
+      ],
+      "present": false,
+      "validation_verdict": "MISSING",
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "install_requires_owner_approval": true,
+      "install_command": "python -m pip install jsonschema",
+      "notes": "JSON schema validation for receipts/cards/registries."
+    },
+    {
+      "capability_id": "CODE_QUALITY_JSONSCHEMA",
+      "tool_name": "jsonschema",
+      "category": "CODE_QUALITY",
+      "lane": "P1_CODE_QUALITY",
+      "detect_commands": [
+        {
+          "command": "python -c \"import importlib.metadata as m; print(m.version('jsonschema'))\"",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "Traceback (most recent call last):\n  File \"C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\__init__.py\", line 397, in from_name\n    return next(cls.discover(name=name))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nSto...<truncated>"
+        }
+      ],
+      "present": false,
+      "validation_verdict": "MISSING",
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "install_requires_owner_approval": true,
+      "install_command": "python -m pip install jsonschema",
+      "notes": "Code quality schema-first validation dependency."
+    },
+    {
+      "capability_id": "CAP-CQ-RUFF",
+      "tool_name": "ruff",
+      "category": "CODE_QUALITY",
+      "lane": "P1_CODE_QUALITY",
+      "detect_commands": [
+        {
+          "command": "ruff --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'ruff' is not recognized as an internal or external command,\noperable program or batch file."
+        },
+        {
+          "command": "python -m ruff --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe: No module named ruff"
+        }
+      ],
+      "present": false,
+      "validation_verdict": "MISSING",
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "install_requires_owner_approval": true,
+      "install_command": "python -m pip install ruff",
+      "notes": "Fast linter/formatter candidate."
+    },
+    {
+      "capability_id": "CODE_QUALITY_RUFF",
+      "tool_name": "ruff",
+      "category": "CODE_QUALITY",
+      "lane": "P1_CODE_QUALITY",
+      "detect_commands": [
+        {
+          "command": "ruff --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'ruff' is not recognized as an internal or external command,\noperable program or batch file."
+        },
+        {
+          "command": "python -m ruff --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe: No module named ruff"
+        }
+      ],
+      "present": false,
+      "validation_verdict": "MISSING",
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "install_requires_owner_approval": true,
+      "install_command": "python -m pip install ruff",
+      "notes": "Code-quality linting lane."
+    },
+    {
+      "capability_id": "CAP-CQ-PYRIGHT-MYPY",
+      "tool_name": "mypy_or_pyright",
+      "category": "CODE_QUALITY",
+      "lane": "P1_CODE_QUALITY",
+      "detect_commands": [
+        {
+          "command": "mypy --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'mypy' is not recognized as an internal or external command,\noperable program or batch file."
+        },
+        {
+          "command": "python -m mypy --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe: No module named mypy"
+        },
+        {
+          "command": "pyright --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'pyright' is not recognized as an internal or external command,\noperable program or batch file."
+        },
+        {
+          "command": "where.exe pyright",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "INFO: Could not find files for the given pattern(s)."
+        }
+      ],
+      "present": false,
+      "validation_verdict": "MISSING",
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "install_requires_owner_approval": true,
+      "install_command": "Owner decision required: mypy (pip) vs pyright (npm/npx) route",
+      "notes": "Explicit Owner path decision required for type checker route."
+    },
+    {
+      "capability_id": "CODE_QUALITY_MYPY",
+      "tool_name": "mypy",
+      "category": "CODE_QUALITY",
+      "lane": "P1_CODE_QUALITY",
+      "detect_commands": [
+        {
+          "command": "mypy --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'mypy' is not recognized as an internal or external command,\noperable program or batch file."
+        },
+        {
+          "command": "python -m mypy --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe: No module named mypy"
+        }
+      ],
+      "present": false,
+      "validation_verdict": "MISSING",
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "install_requires_owner_approval": true,
+      "install_command": "python -m pip install mypy",
+      "notes": "Python static type checker."
+    },
+    {
+      "capability_id": "CODE_QUALITY_PYRIGHT",
+      "tool_name": "pyright",
+      "category": "CODE_QUALITY",
+      "lane": "P1_CODE_QUALITY",
+      "detect_commands": [
+        {
+          "command": "pyright --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'pyright' is not recognized as an internal or external command,\noperable program or batch file."
+        },
+        {
+          "command": "where.exe pyright",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "INFO: Could not find files for the given pattern(s)."
+        }
+      ],
+      "present": false,
+      "validation_verdict": "MISSING",
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "install_requires_owner_approval": true,
+      "install_command": "npm install -g pyright OR approved local npm/npx path",
+      "notes": "Owner should explicitly choose npm/npx provisioning path."
+    },
+    {
+      "capability_id": "CAP-CQ-PRECOMMIT",
+      "tool_name": "pre-commit",
+      "category": "CODE_QUALITY",
+      "lane": "P1_CODE_QUALITY",
+      "detect_commands": [
+        {
+          "command": "pre-commit --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'pre-commit' is not recognized as an internal or external command,\noperable program or batch file."
+        },
+        {
+          "command": "python -m pre_commit --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe: No module named pre_commit"
+        }
+      ],
+      "present": false,
+      "validation_verdict": "MISSING",
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "install_requires_owner_approval": true,
+      "install_command": "python -m pip install pre-commit",
+      "notes": "Hook runner; do not auto-enable hooks."
+    },
+    {
+      "capability_id": "CODE_QUALITY_PRE_COMMIT",
+      "tool_name": "pre-commit",
+      "category": "CODE_QUALITY",
+      "lane": "P1_CODE_QUALITY",
+      "detect_commands": [
+        {
+          "command": "pre-commit --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'pre-commit' is not recognized as an internal or external command,\noperable program or batch file."
+        },
+        {
+          "command": "python -m pre_commit --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe: No module named pre_commit"
+        }
+      ],
+      "present": false,
+      "validation_verdict": "MISSING",
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "install_requires_owner_approval": true,
+      "install_command": "python -m pip install pre-commit",
+      "notes": "Code quality hook tool card."
+    },
+    {
+      "capability_id": "CAP-TOOL-NODE-NPM-NPX",
+      "tool_name": "node_npm",
+      "category": "TOOLS",
+      "lane": "P3_VISUAL_READINESS",
+      "detect_commands": [
+        {
+          "command": "node --version",
+          "exit_code": 0,
+          "stdout_excerpt": "v24.15.0",
+          "stderr_excerpt": ""
+        },
+        {
+          "command": "npm --version",
+          "exit_code": 0,
+          "stdout_excerpt": "11.12.1",
+          "stderr_excerpt": ""
+        },
+        {
+          "command": "where.exe node",
+          "exit_code": 0,
+          "stdout_excerpt": "C:\\Program Files\\nodejs\\node.exe",
+          "stderr_excerpt": ""
+        },
+        {
+          "command": "where.exe npm",
+          "exit_code": 0,
+          "stdout_excerpt": "C:\\Program Files\\nodejs\\npm\nC:\\Program Files\\nodejs\\npm.cmd",
+          "stderr_excerpt": ""
+        }
+      ],
+      "present": true,
+      "validation_verdict": "PASS",
+      "recommended_action": "VALIDATE_RECEIPT",
+      "promotion_recommendation": "PROMOTE_SANDBOX",
+      "install_requires_owner_approval": true,
+      "install_command": "Manual installer or package manager route only after Owner approval",
+      "notes": "Readiness check only; no npm install and no npx downloads."
+    },
+    {
+      "capability_id": "CAP-VIS-PLAYWRIGHT-REGRESSION",
+      "tool_name": "playwright",
+      "category": "VISUAL_TESTING",
+      "lane": "P3_VISUAL_READINESS",
+      "detect_commands": [
+        {
+          "command": "python -c \"import playwright; print('python-playwright-ok')\"",
+          "exit_code": 0,
+          "stdout_excerpt": "python-playwright-ok",
+          "stderr_excerpt": ""
+        },
+        {
+          "command": "where.exe playwright",
+          "exit_code": 0,
+          "stdout_excerpt": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\playwright.exe",
+          "stderr_excerpt": ""
+        }
+      ],
+      "present": true,
+      "validation_verdict": "PASS",
+      "recommended_action": "DEFER",
+      "promotion_recommendation": "KEEP_CANDIDATE_READINESS_ONLY",
+      "install_requires_owner_approval": true,
+      "install_command": "python -m pip install playwright (plus browser install only with explicit Owner approval)",
+      "notes": "Keep candidate/defer until visual provisioning policy explicitly approved."
+    },
+    {
+      "capability_id": "VISUAL_TESTING_PLAYWRIGHT",
+      "tool_name": "playwright",
+      "category": "VISUAL_TESTING",
+      "lane": "P3_VISUAL_READINESS",
+      "detect_commands": [
+        {
+          "command": "python -c \"import playwright; print('python-playwright-ok')\"",
+          "exit_code": 0,
+          "stdout_excerpt": "python-playwright-ok",
+          "stderr_excerpt": ""
+        },
+        {
+          "command": "where.exe playwright",
+          "exit_code": 0,
+          "stdout_excerpt": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\playwright.exe",
+          "stderr_excerpt": ""
+        }
+      ],
+      "present": true,
+      "validation_verdict": "PASS",
+      "recommended_action": "DEFER",
+      "promotion_recommendation": "KEEP_CANDIDATE_READINESS_ONLY",
+      "install_requires_owner_approval": true,
+      "install_command": "python -m pip install playwright (plus browser install only with explicit Owner approval)",
+      "notes": "Playwright visual lane remains deferred in this step."
+    },
+    {
+      "capability_id": "UI_FRAMEWORKS_REACT",
+      "tool_name": "react",
+      "category": "UI_FRAMEWORKS",
+      "lane": "P3_VISUAL_READINESS",
+      "detect_commands": [
+        {
+          "command": "node -e \"try {console.log(require('react/package.json').version)} catch(e){process.exit(2)}\"",
+          "exit_code": 2,
+          "stdout_excerpt": "",
+          "stderr_excerpt": ""
+        }
+      ],
+      "present": false,
+      "validation_verdict": "MISSING",
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "install_requires_owner_approval": true,
+      "install_command": "npm install react (in bounded project scope only after Owner approval)",
+      "notes": "No React project/prototype creation in this task."
+    },
+    {
+      "capability_id": "UI_FRAMEWORKS_VITE",
+      "tool_name": "vite",
+      "category": "UI_FRAMEWORKS",
+      "lane": "P3_VISUAL_READINESS",
+      "detect_commands": [
+        {
+          "command": "vite --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'vite' is not recognized as an internal or external command,\noperable program or batch file."
+        },
+        {
+          "command": "where.exe vite",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "INFO: Could not find files for the given pattern(s)."
+        }
+      ],
+      "present": false,
+      "validation_verdict": "MISSING",
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "install_requires_owner_approval": true,
+      "install_command": "npm install -g vite OR project-local vite only after Owner approval",
+      "notes": "No npx vite execution in detection-only phase."
+    }
+  ]
+}

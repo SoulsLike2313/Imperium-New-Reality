@@ -1,0 +1,41 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE2-MICROPILOT-RAW-EXTERNAL-REVIEW-BUNDLE-ATTACH-AND-FINALIZE-PC-V0_1",
+  "timestamp_utc": "2026-06-01T13:29:06Z",
+  "cap": "CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING_OR_NEEDS_FOLLOWUP",
+  "gate_checks": [
+    {
+      "gate": "RAW_BUNDLES_PRESENT",
+      "status": "PASS",
+      "evidence": "raw_external_review_bundle_inventory.json"
+    },
+    {
+      "gate": "HASH_AND_SIZE_MATCH",
+      "status": "PASS",
+      "evidence": "raw_external_review_bundle_inventory.json"
+    },
+    {
+      "gate": "ZIP_READABILITY",
+      "status": "PASS",
+      "evidence": "raw_external_review_bundle_inventory.json"
+    },
+    {
+      "gate": "TARGET_HEAD_MAPPING",
+      "status": "PASS",
+      "evidence": "external_review_reference_verification_receipt.json"
+    },
+    {
+      "gate": "EVIDENCE_REFERENCED_IN_DECISION",
+      "status": "PASS",
+      "evidence": "external_finalization_decision_matrix.json + cap_external_finalization_final_decision.json"
+    }
+  ],
+  "inherited_caps_to_carry": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME",
+    "CAP_DIRTY_START_OWNER_APPROVED_CONTINUATION"
+  ],
+  "recommended_cap_decision": "CLOSED",
+  "clean_pass_allowed": false,
+  "rationale": "Task-scope cap can be closed when raw bundles are attached/hash-verified/head-mapped; global clean pass remains disallowed by carried caps."
+}

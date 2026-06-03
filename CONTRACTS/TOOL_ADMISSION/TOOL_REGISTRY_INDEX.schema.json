@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TOOL_REGISTRY_INDEX",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "phase",
+    "phase_name",
+    "foundation_only",
+    "no_install",
+    "generated_at_utc",
+    "paths",
+    "record_counts",
+    "admission_state_counts",
+    "forbidden_claims",
+    "next_allowed_task"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "phase": {
+      "type": "integer",
+      "const": 10
+    },
+    "phase_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "foundation_only": {
+      "type": "boolean"
+    },
+    "no_install": {
+      "type": "boolean"
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "paths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_catalog",
+        "risk_catalog",
+        "decision_catalog",
+        "capability_registry"
+      ],
+      "properties": {
+        "candidate_catalog": {
+          "type": "string",
+          "minLength": 1
+        },
+        "risk_catalog": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_catalog": {
+          "type": "string",
+          "minLength": 1
+        },
+        "capability_registry": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "record_counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "candidate_count",
+        "risk_count",
+        "decision_count",
+        "capability_count"
+      ],
+      "properties": {
+        "candidate_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "risk_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "decision_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "capability_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "admission_state_counts": {
+      "type": "object",
+      "minProperties": 1,
+      "patternProperties": {
+        "^[A-Z_]+$": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "forbidden_claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "next_allowed_task": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

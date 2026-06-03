@@ -1,0 +1,38 @@
+{
+  "finding_id": "STAGE3-FINDING-BOOTSTRAP-UTF8-BOM-001",
+  "title": "Astronomicon intake bootstrap repair for route/start templates (UTF-8 without BOM)",
+  "reported_by_owner_pre_task_start": true,
+  "observed_pre_fix_failure_caps": [
+    "CAP_ROUTE_MANIFEST_TEMPLATE_MISSING",
+    "CAP_ROUTE_MANIFEST_TEMPLATE_INVALID"
+  ],
+  "observed_pre_fix_error": "Unexpected UTF-8 BOM",
+  "manual_repair_actions": [
+    "Create TASK_ROUTE_MANIFEST_TEMPLATE.json and TASK_START_ACK_TEMPLATE.json in TASK_ENTRY_CORRIDOR",
+    "Rewrite both files as UTF-8 without BOM",
+    "Rerun Astronomicon intake for Stage3 taskpack"
+  ],
+  "post_fix_admission_verdict": "ADMISSION_PASS",
+  "post_fix_receipt_path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/TASKPACK_ADMISSION_RECEIPT.json",
+  "template_file_checks": [
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+      "utf8_bom_present": false,
+      "first_bytes_hex": "7B 0D 0A 20",
+      "json_parses": true
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+      "utf8_bom_present": false,
+      "first_bytes_hex": "7B 0D 0A 20",
+      "json_parses": true
+    }
+  ],
+  "classification": "STAGE3_LEARNING_AND_HARDENING_REQUIRED",
+  "recommended_hardening": [
+    "Add explicit UTF-8 BOM detection and actionable diagnostics in intake preflight",
+    "Add auto-rewrite helper for template files with encoding mismatch",
+    "Add fixture for BOM corruption and missing template pair in Astronomicon intake tests"
+  ],
+  "evidence_level": "E2_FILE_EXISTS_PLUS_OWNER_OPERATION_NOTE"
+}

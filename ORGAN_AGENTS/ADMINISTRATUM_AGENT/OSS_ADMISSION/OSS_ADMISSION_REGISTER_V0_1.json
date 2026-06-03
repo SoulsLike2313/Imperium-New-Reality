@@ -1,0 +1,107 @@
+{
+  "schema_version": "imperium.administratum.oss_admission_register.v0_1",
+  "generated_at_utc": "2026-05-18T00:00:00Z",
+  "owner_organ": "ADMINISTRATUM_AGENT",
+  "tools": [
+    {
+      "tool_id": "rich",
+      "purpose": "terminal panels and live status",
+      "scope": "cli rendering",
+      "risk": "low",
+      "fallback": "stdlib renderer",
+      "status": "admitted_if_available",
+      "availability": null,
+      "detection_method": "python_import"
+    },
+    {
+      "tool_id": "jsonschema",
+      "purpose": "json schema validation",
+      "scope": "schema checks",
+      "risk": "low",
+      "fallback": "json parse + manual key checks",
+      "status": "candidate_for_admission",
+      "availability": null,
+      "detection_method": "python_import"
+    },
+    {
+      "tool_id": "reportlab",
+      "purpose": "python-native pdf generation",
+      "scope": "owner pdf rendering",
+      "risk": "medium",
+      "fallback": "edge/chrome headless print",
+      "status": "candidate_for_pdf_backend",
+      "availability": null,
+      "detection_method": "python_import"
+    },
+    {
+      "tool_id": "weasyprint",
+      "purpose": "html/css to pdf",
+      "scope": "owner pdf rendering",
+      "risk": "high_weight",
+      "fallback": "edge/chrome headless print",
+      "status": "sandbox_candidate_due_to_weight",
+      "availability": null,
+      "detection_method": "python_import"
+    },
+    {
+      "tool_id": "pillow",
+      "purpose": "image/evidence processing",
+      "scope": "evidence helpers",
+      "risk": "low",
+      "fallback": "text-only evidence capture",
+      "status": "candidate_for_evidence_helpers",
+      "availability": null,
+      "detection_method": "python_import"
+    },
+    {
+      "tool_id": "pytest",
+      "purpose": "regression test runner",
+      "scope": "quality gate",
+      "risk": "low",
+      "fallback": "inline subprocess checks",
+      "status": "candidate_for_test_gate",
+      "availability": null,
+      "detection_method": "python_import"
+    },
+    {
+      "tool_id": "ruff",
+      "purpose": "lint/static checks",
+      "scope": "future quality gate",
+      "risk": "low",
+      "fallback": "py_compile + targeted checks",
+      "status": "future_candidate",
+      "availability": null,
+      "detection_method": "python_import"
+    },
+    {
+      "tool_id": "playwright",
+      "purpose": "browser evidence capture",
+      "scope": "future heavy adapter",
+      "risk": "high_dependency",
+      "fallback": "terminal and pdf evidence only",
+      "status": "future_heavy_adapter",
+      "availability": null,
+      "detection_method": "python_import"
+    },
+    {
+      "tool_id": "duckdb",
+      "purpose": "analytics/indexing",
+      "scope": "future large evidence index",
+      "risk": "medium",
+      "fallback": "sqlite3 stdlib",
+      "status": "future_candidate",
+      "availability": null,
+      "detection_method": "python_import"
+    },
+    {
+      "tool_id": "sqlite3",
+      "purpose": "lightweight local index",
+      "scope": "stdlib evidence index cache",
+      "risk": "low",
+      "fallback": "json files only",
+      "status": "stdlib_allowed",
+      "availability": true,
+      "detection_method": "stdlib"
+    }
+  ]
+}

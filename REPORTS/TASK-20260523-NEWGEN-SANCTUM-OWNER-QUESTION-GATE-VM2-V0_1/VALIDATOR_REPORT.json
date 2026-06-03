@@ -1,0 +1,184 @@
+{
+  "schema_id": "OWNER_QUESTION_GATE_VALIDATOR_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-OWNER-QUESTION-GATE-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T22:55:00Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "required_core_files_exist",
+      "status": "PASS",
+      "details": "all owner question gate core files exist"
+    },
+    {
+      "check_id": "required_report_bundle_files_exist",
+      "status": "PASS",
+      "details": "required report bundle files exist"
+    },
+    {
+      "check_id": "registry_parse",
+      "status": "PASS",
+      "details": "registry parses"
+    },
+    {
+      "check_id": "status_rules_parse",
+      "status": "PASS",
+      "details": "status rules parse"
+    },
+    {
+      "check_id": "priority_rules_parse",
+      "status": "PASS",
+      "details": "priority rules parse"
+    },
+    {
+      "check_id": "sample_set_parse",
+      "status": "PASS",
+      "details": "sample set parses"
+    },
+    {
+      "check_id": "state_parse",
+      "status": "PASS",
+      "details": "state parses"
+    },
+    {
+      "check_id": "question_schema_parse",
+      "status": "PASS",
+      "details": "question schema parses"
+    },
+    {
+      "check_id": "event_schema_parse",
+      "status": "PASS",
+      "details": "event schema parses"
+    },
+    {
+      "check_id": "state_schema_parse",
+      "status": "PASS",
+      "details": "state schema parses"
+    },
+    {
+      "check_id": "status_rules_required_statuses",
+      "status": "PASS",
+      "details": "status rules include required statuses"
+    },
+    {
+      "check_id": "status_rules_required_derived_statuses",
+      "status": "PASS",
+      "details": "status rules include required derived statuses"
+    },
+    {
+      "check_id": "status_rules_source_set",
+      "status": "PASS",
+      "details": "status rules include required source set"
+    },
+    {
+      "check_id": "status_rules_decision_types",
+      "status": "PASS",
+      "details": "status rules include required decision types"
+    },
+    {
+      "check_id": "priority_rules_blocking_levels",
+      "status": "PASS",
+      "details": "priority rules include required blocking levels"
+    },
+    {
+      "check_id": "sample_min_count",
+      "status": "PASS",
+      "details": "sample count is 6 (>=6)"
+    },
+    {
+      "check_id": "sample_required_question_ids_present",
+      "status": "PASS",
+      "details": "required foundation sample question IDs are present"
+    },
+    {
+      "check_id": "sample_records_have_required_fields",
+      "status": "PASS",
+      "details": "all sample records contain required fields"
+    },
+    {
+      "check_id": "sample_statuses_allowed",
+      "status": "PASS",
+      "details": "all sample statuses are allowed"
+    },
+    {
+      "check_id": "sample_blocking_levels_allowed",
+      "status": "PASS",
+      "details": "all sample blocking levels are allowed"
+    },
+    {
+      "check_id": "sample_decision_types_allowed",
+      "status": "PASS",
+      "details": "all sample decision types are allowed"
+    },
+    {
+      "check_id": "required_sample_records_are_foundation_sample",
+      "status": "PASS",
+      "details": "required sample records are FOUNDATION_SAMPLE"
+    },
+    {
+      "check_id": "state_schema_id",
+      "status": "PASS",
+      "details": "state schema_id matches"
+    },
+    {
+      "check_id": "state_mode",
+      "status": "PASS",
+      "details": "state mode matches"
+    },
+    {
+      "check_id": "state_truth_flags_no_live_claim",
+      "status": "PASS",
+      "details": "state truth flags enforce read-only foundation no-live boundary"
+    },
+    {
+      "check_id": "state_question_count_minimum",
+      "status": "PASS",
+      "details": "state has 6 questions"
+    },
+    {
+      "check_id": "state_summary_counts_consistent",
+      "status": "PASS",
+      "details": "state summary counts are consistent with question records"
+    },
+    {
+      "check_id": "state_summary_derived_gate_status_allowed",
+      "status": "PASS",
+      "details": "derived gate status is allowed"
+    },
+    {
+      "check_id": "state_boundary_note",
+      "status": "PASS",
+      "details": "boundary note contains foundation/no-live markers"
+    },
+    {
+      "check_id": "forbidden_live_claim_declared",
+      "status": "PASS",
+      "details": "forbidden live claim is explicitly declared"
+    },
+    {
+      "check_id": "ui_owner_question_section_present",
+      "status": "PASS",
+      "details": "index.html contains owner question gate section"
+    },
+    {
+      "check_id": "ui_owner_question_renderer_present",
+      "status": "PASS",
+      "details": "app.js contains owner question renderer"
+    },
+    {
+      "check_id": "ui_owner_question_styles_present",
+      "status": "PASS",
+      "details": "styles.css contains owner question gate styles"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "validated_paths": {
+    "registry": "IMPERIUM_NEW_GENERATION/TRUTH/OWNER_QUESTIONS/OWNER_QUESTION_REGISTRY_V0_1.json",
+    "status_rules": "IMPERIUM_NEW_GENERATION/TRUTH/OWNER_QUESTIONS/OWNER_QUESTION_STATUS_RULES_V0_1.json",
+    "priority_rules": "IMPERIUM_NEW_GENERATION/TRUTH/OWNER_QUESTIONS/OWNER_QUESTION_PRIORITY_RULES_V0_1.json",
+    "sample_set": "IMPERIUM_NEW_GENERATION/TRUTH/OWNER_QUESTIONS/OWNER_QUESTION_SAMPLE_SET_V0_1.json",
+    "state": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/owner_question_gate_state.generated.json",
+    "report_dir": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-SANCTUM-OWNER-QUESTION-GATE-VM2-V0_1"
+  },
+  "no_fake_live_claim_note": "Validator enforces foundation-only read-only boundary with explicit NO LIVE OWNER CHANNEL markers."
+}

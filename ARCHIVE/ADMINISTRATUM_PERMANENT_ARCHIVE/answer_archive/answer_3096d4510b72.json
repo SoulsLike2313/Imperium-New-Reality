@@ -1,0 +1,29 @@
+{
+  "answer_id": "answer_3096d4510b72",
+  "question_id": "q_94a1c8cc577a",
+  "task_id": "demo_task_first_3_agent_route_v0_1",
+  "agent": "CUSTODES_AGENT",
+  "action": "FILTER_ZONE_ADMISSION",
+  "verdict": "ADMIT",
+  "summary": "Path admission accepted.",
+  "data": {
+    "findings": [
+      {
+        "path": "IMPERIUM_NEW_GENERATION/EXCHANGE/ORGAN_BUS/answers",
+        "resolved_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\EXCHANGE\\ORGAN_BUS\\answers",
+        "inside_new_generation": true,
+        "operation": "write",
+        "read_only": false
+      },
+      {
+        "path": "IMPERIUM_NEW_GENERATION/ARCHIVE",
+        "resolved_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ARCHIVE",
+        "inside_new_generation": true,
+        "operation": "write",
+        "read_only": false
+      }
+    ],
+    "policy": "No out-of-scope write allowed in first-stage base spine"
+  },
+  "generated_at_utc": "2026-05-17T23:40:09.771598Z"
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": "NEWGEN_VALIDATION_REPORT_V0_5",
+  "task_id": "TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5",
+  "generated_at_utc": "2026-05-20T16:49:44.4538743Z",
+  "overall_verdict": "WARN",
+  "gates": [
+    {
+      "id": "GATE_SCOPE_NEW_GENERATION_ONLY",
+      "verdict": "PASS",
+      "evidence": [
+        "scope_contamination_audit.json",
+        "git_diff_scope_report.json"
+      ],
+      "note": "Current writes are contained in IMPERIUM_NEW_GENERATION. Historical committed contamination remains WARN only."
+    },
+    {
+      "id": "GATE_REPORT_ROOT",
+      "verdict": "PASS",
+      "evidence": [
+        "FINAL_RECEIPT.json",
+        "OWNER_REPORT_RU.md"
+      ],
+      "note": "Report root is under IMPERIUM_NEW_GENERATION/REPORTS."
+    },
+    {
+      "id": "GATE_MECHANICUS_CLICK",
+      "verdict": "PASS",
+      "evidence": [
+        "ui_interaction_proof.json",
+        "SCREENSHOTS/03_mechanicus_panel_after_click_1366x768.png"
+      ],
+      "note": "Mechanicus click selects organ and opens Live operator panel."
+    },
+    {
+      "id": "GATE_OPERATOR_PANEL_NOT_RAW_TERMINAL",
+      "verdict": "PASS",
+      "evidence": [
+        "ui_interaction_proof.md",
+        "SCREENSHOTS/07_raw_technical_mode.png"
+      ],
+      "note": "RAW stream hidden by default and available through explicit RAW toggle."
+    },
+    {
+      "id": "GATE_RESPONSIVE_1366",
+      "verdict": "PASS",
+      "evidence": [
+        "responsive_layout_proof.json",
+        "SCREENSHOTS/03_mechanicus_panel_after_click_1366x768.png"
+      ],
+      "note": "1366/1600/1920 checks show no horizontal overflow and key zones visible."
+    },
+    {
+      "id": "GATE_SSE_TRUTH",
+      "verdict": "PASS",
+      "evidence": [
+        "sse_live_status_proof.json",
+        "sse_event_stream_proof.json",
+        "SCREENSHOTS/06_sse_live_state_visible.png"
+      ],
+      "note": "UI SSE label and event stream proof are aligned."
+    },
+    {
+      "id": "GATE_PLACEHOLDERS_HONEST",
+      "verdict": "PASS",
+      "evidence": [
+        "CURRENT_SANCTUM_TRUTH_VERDICT.json",
+        "SCREENSHOTS/01_overview_before_mechanicus_click.png"
+      ],
+      "note": "Only Mechanicus stays REAL; placeholders/locked remain honest."
+    },
+    {
+      "id": "GATE_GIT_CLEAN_FINAL",
+      "verdict": "WARN",
+      "evidence": [
+        "FINAL_RECEIPT.json",
+        "validation_report.json"
+      ],
+      "note": "Task changes are not committed in this run; owner can commit after review."
+    }
+  ],
+  "summary": {
+    "mechanicus_click_panel": "PASS",
+    "raw_terminal_secondary": "PASS",
+    "responsive_layout": "PASS",
+    "sse_truth": "PASS",
+    "placeholder_honesty": "PASS",
+    "git_scope": "PASS",
+    "git_clean_final": "WARN",
+    "prior_committed_contamination": "WARN"
+  }
+}

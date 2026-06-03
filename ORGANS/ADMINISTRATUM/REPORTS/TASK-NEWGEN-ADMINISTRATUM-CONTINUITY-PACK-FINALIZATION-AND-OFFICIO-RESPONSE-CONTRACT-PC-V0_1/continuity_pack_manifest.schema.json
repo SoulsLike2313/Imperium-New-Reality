@@ -1,0 +1,35 @@
+{
+  "type": "object",
+  "required": [
+    "schema_id",
+    "pack_id",
+    "created_at_utc",
+    "repo_truth",
+    "contents",
+    "sha256s",
+    "limitations"
+  ],
+  "properties": {
+    "schema_id": {
+      "type": "string"
+    },
+    "pack_id": {
+      "type": "string"
+    },
+    "created_at_utc": {
+      "type": "string"
+    },
+    "repo_truth": {
+      "type": "object"
+    },
+    "contents": {
+      "type": "array"
+    },
+    "sha256s": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array"
+    }
+  }
+}

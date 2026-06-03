@@ -1,0 +1,108 @@
+{
+  "schema_version": "imperium.agent_ide.block_registry_seed.v0_1",
+  "generated_for_task": "TASK-NEWGEN-AGENT-IDE-DUAL-SURFACE-SELF-VALIDATOR-BLOCK-FOUNDATION-PC-V0_1",
+  "blocks": [
+    {
+      "block_id": "BLK_L0_SESSION_TRUTH",
+      "name": "Session Truth Panel",
+      "level": "L0_SYSTEM",
+      "data_sources": [
+        "truth.git",
+        "truth.loaded_sources"
+      ],
+      "display_contract": {
+        "fields": [
+          "head",
+          "branch",
+          "loaded_sources_count",
+          "missing_sources_count"
+        ],
+        "stale_policy": "SHOW_STALE_BADGE_IF_OLDER_THAN_10_MIN"
+      },
+      "skin_material_ref": "MAT_CARD_GLASS_SAND",
+      "animation_policy_ref": "ANIM_FADE_IN_SOFT",
+      "safety_level": "PUBLIC",
+      "projection_visibility": "FULL"
+    },
+    {
+      "block_id": "BLK_L1_ORGAN_MATRIX",
+      "name": "Five Organ Matrix",
+      "level": "L1_ORGAN",
+      "data_sources": [
+        "organs"
+      ],
+      "display_contract": {
+        "fields": [
+          "organ",
+          "file_count",
+          "status"
+        ],
+        "stale_policy": "SHOW_STALE_BADGE_IF_OLDER_THAN_10_MIN"
+      },
+      "skin_material_ref": "MAT_ORGAN_TILE_AURORA",
+      "animation_policy_ref": "ANIM_STAGGER_LIST",
+      "safety_level": "PUBLIC",
+      "projection_visibility": "FULL"
+    },
+    {
+      "block_id": "BLK_L2_OWNER_PAIN_MAP",
+      "name": "Owner Pain Map",
+      "level": "L2_MACRO",
+      "data_sources": [
+        "owner_pain_surface"
+      ],
+      "display_contract": {
+        "fields": [
+          "pain_id",
+          "severity",
+          "current_status",
+          "next_task_route"
+        ],
+        "stale_policy": "WARN_IF_EMPTY"
+      },
+      "skin_material_ref": "MAT_ALERT_NEUTRAL",
+      "animation_policy_ref": "ANIM_PULSE_LOW",
+      "safety_level": "PUBLIC",
+      "projection_visibility": "FULL"
+    },
+    {
+      "block_id": "BLK_L3_REPORT_RECEIPT_SUMMARY",
+      "name": "Reports And Receipts Summary",
+      "level": "L3_MICRO",
+      "data_sources": [
+        "report_receipt_summary"
+      ],
+      "display_contract": {
+        "fields": [
+          "report_paths_count",
+          "receipt_paths_count"
+        ],
+        "stale_policy": "SHOW_STALE_BADGE_IF_OLDER_THAN_10_MIN"
+      },
+      "skin_material_ref": "MAT_CARD_SOLID_SKY",
+      "animation_policy_ref": "ANIM_NONE",
+      "safety_level": "PUBLIC",
+      "projection_visibility": "FULL"
+    },
+    {
+      "block_id": "BLK_L4_PRIVATE_GUARD",
+      "name": "Projection Privacy Guard",
+      "level": "L4_LEAF_GROUP",
+      "data_sources": [
+        "projection_guard",
+        "classification_surface"
+      ],
+      "display_contract": {
+        "fields": [
+          "private_local_restricted_count",
+          "policy"
+        ],
+        "stale_policy": "WARN_IF_POLICY_MISSING"
+      },
+      "skin_material_ref": "MAT_GUARD_RIBBON",
+      "animation_policy_ref": "ANIM_BADGE_APPEAR",
+      "safety_level": "SUMMARY_ONLY",
+      "projection_visibility": "SUMMARY_ONLY"
+    }
+  ]
+}

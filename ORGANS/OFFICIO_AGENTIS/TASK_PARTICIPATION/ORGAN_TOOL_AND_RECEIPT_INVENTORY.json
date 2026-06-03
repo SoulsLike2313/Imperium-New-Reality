@@ -1,0 +1,22 @@
+{
+  "organ": "OFFICIO_AGENTIS",
+  "local_script_first": [
+    "scripts/officio_agentis_check_all_v0_1.py"
+  ],
+  "local_manual_command": [
+    "Get-Content IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/ROLE_PACKS/SERVITOR_GHOST_EVOLVE_ROLE.md"
+  ],
+  "candidate_script_first": [
+    "scripts/check_servitor_response_contract_v0_1.py",
+    "scripts/check_commit_push_policy_v0_1.py"
+  ],
+  "agent_reasoning_only": [
+    "Compose owner-facing RU wording without losing machine truth."
+  ],
+  "external_research": [],
+  "owner_manual_confirmation": [],
+  "future_capability_gap": [
+    "Need single bundle-wide RU/EN lane validator.",
+    "Need Officio checker that flags commit/push skip unless BLOCK_OWNER_INPUT_REQUIRED_TO_CONTINUE."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema_id": "SSH_CONNECTION_MATRIX_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-MECHANICUS-SSH-MATRIX-AND-ACTION-ROLLBACK-CONTRACT-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T21:00:00Z",
+  "private_key_material_allowed_in_repo": false,
+  "connections": [
+    {
+      "connection_id": "PC_LOCAL_REPO",
+      "alias": "imperium-pc-local",
+      "contour": "PC",
+      "status": "REGISTERED_LOCAL_PATH_ONLY",
+      "route": "LOCAL_FILESYSTEM_ONLY",
+      "user": "owner-local",
+      "repo_path": "E:\\IMPERIUM",
+      "live_verified": false
+    },
+    {
+      "connection_id": "VM2_SSH_LOOPBACK_ALIAS",
+      "alias": "imperium-vm2",
+      "contour": "VM2",
+      "status": "REGISTERED_KNOWN_ROUTE_NOT_RUNTIME_TESTED",
+      "route": "127.0.0.1:2223",
+      "user": "vboxuser2",
+      "repo_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-",
+      "key_reference_path": "%USERPROFILE%\\.ssh\\imperium_pc_to_vm2_ed25519_20260418",
+      "live_verified": false
+    },
+    {
+      "connection_id": "VM3_SSH_ALIAS",
+      "alias": "imperium-vm3",
+      "contour": "VM3",
+      "status": "REGISTERED_OFFLINE_NOT_VERIFIED",
+      "route": "UNAVAILABLE_IN_VM2_TASK_SCOPE",
+      "user": "vboxuser3",
+      "repo_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+      "live_verified": false
+    },
+    {
+      "connection_id": "THRONE_CORE_FUTURE_CONTOUR",
+      "alias": "imperium-throne-core",
+      "contour": "THRONE_CORE",
+      "status": "OFFLINE_OR_NOT_CONFIGURED",
+      "route": "OFFLINE_OR_NOT_CONFIGURED",
+      "user": "unknown",
+      "repo_path": "unknown",
+      "live_verified": false
+    }
+  ]
+}

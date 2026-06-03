@@ -1,0 +1,157 @@
+{
+  "schema_id": "ACCEPTANCE_DECISION_SAMPLES_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-PQG-PARTIAL-ACCEPTANCE-MAP-VM3-V0_1",
+  "generated_at_utc": "2026-05-22T18:54:31Z",
+  "record_schema_path": "IMPERIUM_NEW_GENERATION/TRUTH/SCHEMAS/ACCEPTANCE_DECISION_RECORD_V0_1.schema.json",
+  "samples": [
+    {
+      "sample_id": "SAMPLE_PASS_STRICT_CURRENT_EVIDENCE",
+      "input": {
+        "normalized_status": "PASS",
+        "evidence_present": true,
+        "freshness": "CURRENT",
+        "reason_present": true,
+        "owner_decision_confirmed": false,
+        "contract_basis_present": true,
+        "production_claim_requested": false
+      },
+      "expected_outcome": "PASS_STRICT",
+      "reason": "Current evidence and no warning boundary allow strict pass.",
+      "claim_boundary": "No production/autonomy claim implied outside task contract."
+    },
+    {
+      "sample_id": "SAMPLE_PASS_WITH_WARN",
+      "input": {
+        "normalized_status": "WARN",
+        "evidence_present": true,
+        "freshness": "PARTIAL",
+        "reason_present": true,
+        "owner_decision_confirmed": true,
+        "contract_basis_present": false,
+        "production_claim_requested": false
+      },
+      "expected_outcome": "PASS_WITH_WARN",
+      "reason": "Warnings preserved with explicit bounded continuation.",
+      "claim_boundary": "Strict green is forbidden while WARN boundary exists."
+    },
+    {
+      "sample_id": "SAMPLE_FOUNDATION_ONLY",
+      "input": {
+        "normalized_status": "FOUNDATION_ONLY",
+        "evidence_present": true,
+        "freshness": "FOUNDATION_ONLY",
+        "reason_present": true,
+        "owner_decision_confirmed": true,
+        "contract_basis_present": true,
+        "production_claim_requested": false
+      },
+      "expected_outcome": "FOUNDATION_ONLY",
+      "reason": "Foundation artifact remains foundation until promoted by separate scope.",
+      "claim_boundary": "No production readiness claim is allowed."
+    },
+    {
+      "sample_id": "SAMPLE_UNKNOWN",
+      "input": {
+        "normalized_status": "UNKNOWN",
+        "evidence_present": false,
+        "freshness": "UNKNOWN",
+        "reason_present": false,
+        "owner_decision_confirmed": false,
+        "contract_basis_present": false,
+        "production_claim_requested": false
+      },
+      "expected_outcome": "UNKNOWN",
+      "reason": "Unknown remains unknown until direct proof exists.",
+      "claim_boundary": "Cannot continue as green."
+    },
+    {
+      "sample_id": "SAMPLE_MISSING",
+      "input": {
+        "normalized_status": "MISSING",
+        "evidence_present": false,
+        "freshness": "MISSING",
+        "reason_present": false,
+        "owner_decision_confirmed": false,
+        "contract_basis_present": false,
+        "production_claim_requested": false
+      },
+      "expected_outcome": "MISSING",
+      "reason": "Missing artifacts block acceptance.",
+      "claim_boundary": "No completion claim allowed."
+    },
+    {
+      "sample_id": "SAMPLE_STALE",
+      "input": {
+        "normalized_status": "PASS",
+        "evidence_present": true,
+        "freshness": "STALE",
+        "reason_present": true,
+        "owner_decision_confirmed": true,
+        "contract_basis_present": true,
+        "production_claim_requested": false
+      },
+      "expected_outcome": "STALE",
+      "reason": "Stale freshness downgrades acceptance even if historical status passed.",
+      "claim_boundary": "Current strict green is forbidden."
+    },
+    {
+      "sample_id": "SAMPLE_PARTIAL_ACCEPTED",
+      "input": {
+        "normalized_status": "PARTIAL",
+        "evidence_present": true,
+        "freshness": "PARTIAL",
+        "reason_present": true,
+        "owner_decision_confirmed": true,
+        "contract_basis_present": false,
+        "production_claim_requested": false
+      },
+      "expected_outcome": "PARTIAL_ACCEPTED",
+      "reason": "Partial is accepted because reason and owner basis are explicit.",
+      "claim_boundary": "Must carry rerun/closure action."
+    },
+    {
+      "sample_id": "SAMPLE_PARTIAL_BLOCKED",
+      "input": {
+        "normalized_status": "PARTIAL",
+        "evidence_present": true,
+        "freshness": "PARTIAL",
+        "reason_present": false,
+        "owner_decision_confirmed": false,
+        "contract_basis_present": false,
+        "production_claim_requested": false
+      },
+      "expected_outcome": "PARTIAL_BLOCKED",
+      "reason": "Partial without explicit basis is blocked.",
+      "claim_boundary": "No green continuation allowed."
+    },
+    {
+      "sample_id": "SAMPLE_FAKE_GREEN_RISK",
+      "input": {
+        "normalized_status": "PASS",
+        "evidence_present": false,
+        "freshness": "UNKNOWN",
+        "reason_present": false,
+        "owner_decision_confirmed": false,
+        "contract_basis_present": false,
+        "production_claim_requested": true
+      },
+      "expected_outcome": "FAKE_GREEN_RISK",
+      "reason": "Green claim attempted without evidence must be flagged as fake-green risk.",
+      "claim_boundary": "Requires downgrade and explicit evidence restoration."
+    }
+  ],
+  "coverage": {
+    "sample_count": 9,
+    "covered_outcomes": [
+      "PASS_STRICT",
+      "PASS_WITH_WARN",
+      "FOUNDATION_ONLY",
+      "UNKNOWN",
+      "MISSING",
+      "STALE",
+      "PARTIAL_ACCEPTED",
+      "PARTIAL_BLOCKED",
+      "FAKE_GREEN_RISK"
+    ]
+  }
+}

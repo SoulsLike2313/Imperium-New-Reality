@@ -1,0 +1,73 @@
+{
+  "schema_id": "OWNER_QUESTION_STATUS_RULES_V0_1",
+  "version": "0.1",
+  "allowed_statuses": [
+    "OPEN",
+    "ANSWERED",
+    "DEFERRED",
+    "CANCELLED",
+    "STALE",
+    "FOUNDATION_SAMPLE"
+  ],
+  "derived_gate_statuses": [
+    "BLOCKING_OWNER_DECISION_REQUIRED",
+    "WARN_OWNER_REVIEW_RECOMMENDED"
+  ],
+  "allowed_sources": [
+    "SERVITOR",
+    "ORGAN",
+    "SANCTUM",
+    "TRUTH_GATE",
+    "OWNER"
+  ],
+  "allowed_decision_types": [
+    "CLARIFICATION",
+    "APPROVAL",
+    "REJECTION",
+    "SCOPE_DECISION",
+    "RISK_ACCEPTANCE",
+    "TOOL_DECISION",
+    "MERGE_DECISION"
+  ],
+  "status_semantics": {
+    "OPEN": {
+      "owner_attention": "REQUIRED",
+      "can_proceed": false,
+      "no_fake_green_rule": "OPEN_CANNOT_BE_PROMOTED_TO_GREEN"
+    },
+    "ANSWERED": {
+      "owner_attention": "COMPLETED",
+      "can_proceed": true,
+      "no_fake_green_rule": "ANSWERED_REQUIRES_EVIDENCE_LINK"
+    },
+    "DEFERRED": {
+      "owner_attention": "SCHEDULED",
+      "can_proceed": false,
+      "no_fake_green_rule": "DEFERRED_MUST_BE_VISIBLE"
+    },
+    "CANCELLED": {
+      "owner_attention": "NOT_REQUIRED",
+      "can_proceed": true,
+      "no_fake_green_rule": "CANCELLED_REQUIRES_REASON"
+    },
+    "STALE": {
+      "owner_attention": "REVIEW_RECOMMENDED",
+      "can_proceed": false,
+      "no_fake_green_rule": "STALE_CANNOT_BE_PROMOTED_TO_GREEN"
+    },
+    "FOUNDATION_SAMPLE": {
+      "owner_attention": "SAMPLE_ONLY",
+      "can_proceed": true,
+      "no_fake_green_rule": "FOUNDATION_SAMPLE_IS_NOT_LIVE_DECISION"
+    }
+  },
+  "derived_status_rules": {
+    "BLOCKING_OWNER_DECISION_REQUIRED": "Any OPEN question with blocking_level=BLOCKING and owner_answer_required=true.",
+    "WARN_OWNER_REVIEW_RECOMMENDED": "Any STALE question or any OPEN question with blocking_level=WARN_ONLY."
+  },
+  "global_invariants": [
+    "FOUNDATION_ONLY_NOT_PRODUCTION",
+    "NO_LIVE_OWNER_ANSWER_CHANNEL",
+    "NO_EVIDENCE_NO_STRICT_PROMOTION"
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "schema_version": "SANCTUM_MINI_MECHANICUS_HOLDER_REPORT_V0_1",
+  "task_id": "TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1",
+  "generated_at_utc": "2026-05-20T04:58:57.959596+00:00",
+  "result": {
+    "local_server": "DONE",
+    "api_health": "DONE",
+    "api_state": "DONE",
+    "api_mechanicus": "DONE",
+    "dashboard_html": "DONE",
+    "mechanicus_adapter": "DONE",
+    "placeholders_truth": "DONE",
+    "locked_organs_truth": "DONE",
+    "actions_execution_mode": "DONE_WITH_WARNINGS",
+    "browser_screenshot": "NOT_DONE_HTML_CAPTURE_USED",
+    "commit_push": "DONE_NO_COMMIT_NO_PUSH"
+  },
+  "counts": {
+    "connected": 1,
+    "placeholders": 7,
+    "locked": 2,
+    "warnings": 1,
+    "errors": 0,
+    "blockers": 0
+  },
+  "owner_clarification": {
+    "left_first_screenshot_accidental": true,
+    "applied_to_evidence_filter": true
+  },
+  "acceptance_matrix": [
+    {
+      "requirement": "Local server",
+      "status": "PASS",
+      "evidence": "SERVER_SMOKE_TEST_LOG.md"
+    },
+    {
+      "requirement": "API health",
+      "status": "PASS",
+      "evidence": "API_HEALTH_SAMPLE.json"
+    },
+    {
+      "requirement": "API state",
+      "status": "PASS",
+      "evidence": "API_STATE_SAMPLE.json"
+    },
+    {
+      "requirement": "Mechanicus adapter",
+      "status": "PASS",
+      "evidence": "API_MECHANICUS_SAMPLE.json"
+    },
+    {
+      "requirement": "Dashboard",
+      "status": "PASS",
+      "evidence": "DASHBOARD_HTML_CAPTURE.html"
+    },
+    {
+      "requirement": "Placeholders",
+      "status": "PASS",
+      "evidence": "API_STATE_SAMPLE.json"
+    },
+    {
+      "requirement": "Locked organs",
+      "status": "PASS",
+      "evidence": "API_STATE_SAMPLE.json"
+    },
+    {
+      "requirement": "Actions",
+      "status": "WARN_ACTIONS_PASSIVE",
+      "evidence": "USAGE_GUIDE_OWNER_RU.md"
+    },
+    {
+      "requirement": "Visual capture",
+      "status": "WARN_BROWSER_SCREENSHOT_NOT_CAPTURED",
+      "evidence": "DASHBOARD_HTML_CAPTURE.html"
+    },
+    {
+      "requirement": "No commit/push",
+      "status": "PASS",
+      "evidence": "GIT_STATUS_AFTER.txt"
+    }
+  ],
+  "verdict": "PASS_WITH_WARNINGS_OWNER_REVIEW_READY_NO_COMMIT"
+}

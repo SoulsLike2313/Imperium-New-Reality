@@ -1,0 +1,228 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/CONTRACTS/ASTRONOMICON/TASK_FORMATION_RECORD_V0_1.schema.json",
+  "title": "NewGen Astronomicon Task Formation Record V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "formation_id",
+    "source_request_id",
+    "task_id",
+    "owner_intent",
+    "scope",
+    "allowed_paths",
+    "forbidden_paths",
+    "required_organs",
+    "task_kernel_draft",
+    "stage_map_preview",
+    "servitor_start_block",
+    "owner_questions",
+    "limitations",
+    "self_verdict"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "formation_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "source_request_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "owner_intent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_text",
+        "summary",
+        "language"
+      ],
+      "properties": {
+        "raw_text": {
+          "type": "string",
+          "minLength": 10
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 3
+        },
+        "language": {
+          "type": "string"
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "purpose",
+        "non_goals"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "non_goals": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "allowed_paths": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_paths": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_organs": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "ASTRONOMICON",
+          "OFFICIO_AGENTIS",
+          "DOCTRINARIUM",
+          "ADMINISTRATUM",
+          "MECHANICUS",
+          "INQUISITION",
+          "STRATEGIUM",
+          "SCHOLA_IMPERIALIS"
+        ]
+      }
+    },
+    "task_kernel_draft": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "task_id",
+        "task_title",
+        "status",
+        "scope",
+        "allowed_paths",
+        "forbidden_paths",
+        "required_organs",
+        "required_skills",
+        "evidence_policy",
+        "task_kernel_contract_ref",
+        "organ_packet_contract_ref"
+      ],
+      "properties": {
+        "task_id": {
+          "type": "string"
+        },
+        "task_title": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "scope": {
+          "type": "object"
+        },
+        "allowed_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "forbidden_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_organs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "required_skills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evidence_policy": {
+          "type": "object"
+        },
+        "task_kernel_contract_ref": {
+          "type": "string"
+        },
+        "organ_packet_contract_ref": {
+          "type": "string"
+        },
+        "task_registry_index_ref": {
+          "type": "string"
+        }
+      }
+    },
+    "stage_map_preview": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "STAGE_MAP_PREVIEW_V0_1.schema.json#/$defs/stageEntry"
+      }
+    },
+    "servitor_start_block": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 5,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "owner_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "self_verdict": {
+      "type": "string",
+      "enum": [
+        "PROVED",
+        "STRONG",
+        "STRONG_WITH_WARNINGS",
+        "PLAUSIBLE",
+        "UNKNOWN",
+        "FAILED",
+        "FAKE_GREEN_RISK"
+      ]
+    }
+  }
+}

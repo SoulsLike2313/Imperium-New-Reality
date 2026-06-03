@@ -1,0 +1,13 @@
+{
+  "schema_id": "newgen_runtime_mutation_control_receipt_v0_1",
+  "task_id": "TASK-NEWGEN-COMMIT-36DF325-CLEANUP-HARDENING-PC-V0_1",
+  "issue_detected": "OWNER_INTENT/QUESTIONS files were auto-regenerated during cleanup due running dashboard server runtime",
+  "detected_process": {
+    "process_id": 17328,
+    "name": "python.exe",
+    "command_line": "\"C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\" IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\IMPORTANT_SIX_TUI_DASHBOARD\\important_six_dashboard_server_v0_2.py --host 127.0.0.1 --port 8766"
+  },
+  "mitigation_action": "Stop-Process -Id 17328 -Force",
+  "post_mitigation_expectation": "No further runtime mutation in OWNER_INTENT canonical paths during cleanup finalization.",
+  "verdict": "PASS_WITH_WARNINGS"
+}

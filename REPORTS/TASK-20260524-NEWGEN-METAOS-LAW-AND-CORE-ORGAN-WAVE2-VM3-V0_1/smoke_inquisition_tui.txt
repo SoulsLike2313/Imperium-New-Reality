@@ -1,0 +1,36 @@
+╭────────────────────────────── WAVE1 ORGAN TUI ───────────────────────────────╮
+│ INQUISITION                                                                  │
+│ responsibility: Fake-green detection, dirty work detection, duplicate        │
+│ detection, failure/heresy checks, semantic cleanliness,                      │
+│ readability/explainability audits, Speculum-style hard gates.                │
+│ verdict: PASS                                                                │
+│ mode: SMOKE                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+                               Servitor Interface                               
+┏━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Block        ┃ Value                                                         ┃
+┡━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ Ask          │ What fake-green risks exist in this task?                     │
+│              │ What dirty-work or duplicate risks must be blocked?           │
+│              │ Which semantic/readability/explainability checks are          │
+│              │ mandatory?                                                    │
+│              │ What hard Speculum-style audit gate can stop PASS?            │
+│ Warn/Block   │ WARN on partial audit coverage with explicit NOT_RUN boundary │
+│              │ BLOCK on PASS claim without evidence                          │
+│              │ BLOCK on dirty/duplicate drift left unresolved                │
+│              │ BLOCK on unreadable or semantically contradictory closure     │
+│ Gate Catalog │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ State        │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ Contract     │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ Identity     │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+└──────────────┴───────────────────────────────────────────────────────────────┘
+                          Gate Preview                           
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━┓
+┃ Gate ID                             ┃ Severity      ┃ Verdict ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━┩
+│ GATE_INQ_NO_FAKE_GREEN              │ BLOCK         │ PASS    │
+│ GATE_INQ_DIRTY_WORK_DETECTION       │ BLOCK         │ PASS    │
+│ GATE_INQ_DUPLICATE_AND_HERESY_CHECK │ BLOCK         │ PASS    │
+│ GATE_INQ_SPECULUM_HARD_AUDIT        │ WARN_TO_BLOCK │ PASS    │
+└─────────────────────────────────────┴───────────────┴─────────┘
+SMOKE_OK_INQUISITION_TUI_V0_1

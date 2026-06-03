@@ -1,0 +1,49 @@
+GATE_ACK:
+- task_id: TASK-NEWGEN-READONLY-AGENT-IDE-V0_1-PC
+- current_head: d8697c85b419d1ab87a08c43b02714eba79dda2b
+- gatepack_path: C:\Users\PC\Downloads\TASKPACK_NEWGEN_READONLY_AGENT_IDE_V0_1_PC.zip
+- gatepack_sha256: 7f80662dfacb5f956b0a68ad264ffbe954720d1b21ab97a3f0175fc3d5707dea
+- read_gates:
+  - GATE-U00-GIT-TRUTH
+  - GATE-U01-ROLE-ACK
+  - GATE-U02-SCOPE-BOUNDARY
+  - GATE-U04-EVIDENCE-RECEIPT
+  - GATE-U05-STOP-CONDITIONS
+  - GATE-U08-REPO-PURITY
+  - GATE-U09-NO-FAKE-GREEN
+  - GATE-U12-REPORT-OUTPUT-BUDGET
+  - GATE-U13-PYTHON-TYPE-SAFETY
+  - GATE-U14-WHOLE-REPO-SCOPE-RECON
+  - GATE-U15-OPERATIONALITY-IMPACT
+  - GATE-U16-BILINGUAL-UI
+  - GATE-U17-DELIVERABLE-PACKAGE
+  - GATE-U18-AGENT-FACTORY-COMPLIANCE
+  - GATE-U19-SCRIPT-ARTIFACT-PRESERVATION
+  - GATE-U20-AGENT-KPD-SELF-REVIEW
+  - GATE-U21-COMMAND-CHUNKING
+  - GATE-AI00-NO-DIRECT-MODEL-COMMAND
+- accepted_stop_conditions:
+  - STOP if repo truth lock (root/branch/head/remote master) diverges from required baseline.
+  - STOP if out-of-scope or forbidden path changes appear in git diff.
+  - STOP if required read-only safety is violated by edit/run/commit UI capability in the app.
+  - STOP if required receipts cannot be generated or parsed.
+  - STOP if commit/push closure is required and blocked without explicit blocker evidence.
+- scope_boundary: Build read-only local tkinter Agent IDE V0.1 under IMPERIUM_NEW_GENERATION/AGENT_IDE only, with report bundle and receipts for this task.
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/AGENT_IDE/**
+- forbidden_paths:
+  - IMPERIUM_NEW_GENERATION/** outside AGENT_IDE for this task
+  - WARP implementation surfaces
+  - CLI Worker implementation surfaces
+  - any editing/command execution/commit push UI surfaces
+  - Officio language hardening implementation surfaces
+  - Inquisition V0.2 hardening implementation surfaces
+- expected_receipts:
+  - pc_dirty_preflight_receipt.json
+  - ide_data_probe_receipt.json
+  - ide_smoke_receipt.json
+  - closure_receipt.json
+- repo_recon_required: YES (atlas and route surfaces across five organs)
+- script_absorption_required: YES (agent IDE tools are preserved in AGENT_IDE/TOOLS)
+- clarification_needed: NONE
+- verdict: PASS

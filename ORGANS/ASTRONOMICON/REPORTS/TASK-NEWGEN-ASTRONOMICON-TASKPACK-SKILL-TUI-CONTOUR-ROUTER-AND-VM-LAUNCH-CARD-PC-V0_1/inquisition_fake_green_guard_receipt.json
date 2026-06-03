@@ -1,0 +1,35 @@
+{
+  "timestamp_utc": "2026-06-01T14:27:59Z",
+  "claims_reviewed": [
+    {
+      "claim_id": "C01",
+      "claim": "PC contour registration is live-proven through Skill in isolated sandbox.",
+      "evidence": [
+        "pc_contour_registration_test_receipt.json",
+        "taskpack_skill_smoke_receipt.json"
+      ],
+      "status": "SUPPORTED_WITH_WARNINGS"
+    },
+    {
+      "claim_id": "C02",
+      "claim": "VM3/VM2 are route-aware and do not fake live PASS when route is missing.",
+      "evidence": [
+        "vm3_contour_registration_dry_or_live_receipt.json",
+        "vm2_contour_registration_dry_or_live_receipt.json"
+      ],
+      "status": "SUPPORTED"
+    }
+  ],
+  "fake_green_checks": {
+    "no_live_claim_for_missing_vm_route": true,
+    "no_registry_conflict_auto_resolution_claimed": true,
+    "no_ide_truth_source_claimed": true
+  },
+  "caps_carried": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME",
+    "CAP_DIRTY_START_OWNER_APPROVED_CONTINUATION"
+  ],
+  "verdict": "PASS_WITH_WARNINGS"
+}

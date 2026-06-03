@@ -1,0 +1,27 @@
+{
+  "task_id": "MECHANICUS_FORGE_TUI_V0_1_MANUAL_GIFT",
+  "created_utc": "2026-05-24T23:56:51Z",
+  "organ": "MECHANICUS",
+  "mode": "GE_LITE_MANUAL_GIFT",
+  "learning_delta": [
+    "Mechanicus gains a read-only Arsenal Registry Surface.",
+    "Future TUI buttons have reserved action sockets.",
+    "Visual surface is modular and separated from data loader."
+  ],
+  "reusable_capability": {
+    "name": "mechanicus_forge_tui_v0_1",
+    "type": "read_only_tui_snapshot",
+    "entrypoint": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/mechanicus_forge_tui_v0_1.py",
+    "runner": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/run_mechanicus_forge_tui_v0_1.ps1"
+  },
+  "eval_or_smoke": [
+    "py -3 -m py_compile mechanicus_forge_tui_v0_1.py",
+    "py -3 mechanicus_forge_tui_v0_1.py --category UTILITIES"
+  ],
+  "pain_pattern": {
+    "id": "PAIN-POWERSHELL-HERESTRING-LONG-PASTE-001",
+    "symptom": "Large here-string paste into PowerShell/PSReadLine corrupts command input and leaves partial files.",
+    "mitigation": "Use source ZIP extraction or short file-copy commands instead of huge pasted here-strings."
+  },
+  "evidence_index_update": "Defer until commit/report step; this manual gift should be indexed after acceptance."
+}

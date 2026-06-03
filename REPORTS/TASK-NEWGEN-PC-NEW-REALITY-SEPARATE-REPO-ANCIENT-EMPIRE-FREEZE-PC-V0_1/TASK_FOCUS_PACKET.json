@@ -1,0 +1,53 @@
+{
+  "timestamp_utc": "2026-06-03T10:08:46.0561740Z",
+  "task_id": "TASK-NEWGEN-PC-NEW-REALITY-SEPARATE-REPO-ANCIENT-EMPIRE-FREEZE-PC-V0_1",
+  "task_intent": "Create non-destructive PC-local New Reality root from IMPERIUM_NEW_GENERATION, initialize local git repo, freeze Ancient Empire reference, install scope lock, produce receipts and validation bundle.",
+  "contour": "PC",
+  "allowed_roots": [
+    "E:/IMPERIUM",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+    "E:/IMPERIUM_ANCIENT_EMPIRE_EVIDENCE"
+  ],
+  "forbidden_actions": [
+    "delete original repository",
+    "rewrite old git history",
+    "remove IMPERIUM_NEW_GENERATION from old repo",
+    "push remote changes without Owner authorization",
+    "sync VM2 or VM3",
+    "copy entire old repo into New Reality",
+    "touch private folders"
+  ],
+  "required_outputs": [
+    "pc_repo_truth_probe.json",
+    "ancient_empire_freeze_receipt.json",
+    "new_reality_copy_manifest.json",
+    "new_reality_git_init_receipt.json",
+    "external_dependency_scan.json",
+    "scope_lock_validation_receipt.json",
+    "no_deletion_receipt.json",
+    "epoch_manifest_validation_receipt.json",
+    "salvage_policy_receipt.json",
+    "new_reality_root_inventory.json",
+    "sha256sums.txt",
+    "final_owner_summary_ru.md",
+    "task_report_bundle.zip"
+  ],
+  "pass_warn_block_gates": [
+    "PC contour truth",
+    "Ancient Empire freeze no deletion",
+    "New Reality root and root contracts",
+    "local git repo with commit",
+    "scope lock",
+    "dependency scan",
+    "receipts and bundle"
+  ],
+  "evidence_boundary": "Local filesystem and git command receipts on PC only; no remote/GitHub/VM claim.",
+  "stop_conditions": [
+    "source missing",
+    "target non-empty before task without Owner admission",
+    "copy overwrite unrelated files",
+    "old repo deletion/rewrite risk",
+    "git init/commit impossible",
+    "root contracts cannot be written"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ghost Evolve Entry ACK Schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "run_id",
+    "repo_head",
+    "contour",
+    "read_files",
+    "organ_packets",
+    "matrix_packs",
+    "scope",
+    "capability_gaps",
+    "verdict"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "repo_head": {
+      "type": "string"
+    },
+    "contour": {
+      "type": "string"
+    },
+    "read_files": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "organ_packets": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "matrix_packs": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "scope": {
+      "type": "object"
+    },
+    "capability_gaps": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "WARN",
+        "BLOCK"
+      ]
+    }
+  }
+}

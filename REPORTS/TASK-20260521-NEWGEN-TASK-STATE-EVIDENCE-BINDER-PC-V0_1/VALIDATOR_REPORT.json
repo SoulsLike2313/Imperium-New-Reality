@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.1",
+  "task_id": "TASK-20260521-NEWGEN-TASK-STATE-EVIDENCE-BINDER-PC-V0_1",
+  "generated_at_utc": "2026-05-21T20:23:07Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "required_file_exists",
+      "status": "PASS",
+      "details": "all required files exist"
+    },
+    {
+      "check_id": "json_and_schema_parse",
+      "status": "PASS",
+      "details": "json/schema parse checks passed"
+    },
+    {
+      "check_id": "builder_run",
+      "status": "PASS",
+      "details": "builder generated outputs"
+    },
+    {
+      "check_id": "generated_outputs_exist",
+      "status": "PASS",
+      "details": "generated outputs exist"
+    },
+    {
+      "check_id": "generated_shapes_and_no_fake_green",
+      "status": "PASS",
+      "details": "generated payload checks passed"
+    },
+    {
+      "check_id": "no_fake_green_claims",
+      "status": "PASS",
+      "details": "no fake-green claims found"
+    },
+    {
+      "check_id": "forbidden_paths_not_in_changed_report",
+      "status": "PASS",
+      "details": "no forbidden paths in changed files report"
+    },
+    {
+      "check_id": "forbidden_paths_not_in_git_status",
+      "status": "PASS",
+      "details": "no forbidden paths in git status"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "builder_command": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\TOOLS\\TASK_EXECUTION_BINDINGS\\newgen_task_state_evidence_binder_v0_1.py --repo-root E:\\IMPERIUM --task-id TASK-20260521-NEWGEN-TASK-STATE-EVIDENCE-BINDER-PC-V0_1 --out-dir E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260521-NEWGEN-TASK-STATE-EVIDENCE-BINDER-PC-V0_1",
+  "no_fake_green_note": "PASS/WARN verifies bounded foundation integrity only. This is not proof of production autonomous execution."
+}

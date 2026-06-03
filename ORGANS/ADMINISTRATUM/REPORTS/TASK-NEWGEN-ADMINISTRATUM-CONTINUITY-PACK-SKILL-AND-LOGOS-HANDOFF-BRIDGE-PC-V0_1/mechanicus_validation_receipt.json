@@ -1,0 +1,110 @@
+{
+  "task_id": "TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-SKILL-AND-LOGOS-HANDOFF-BRIDGE-PC-V0_1",
+  "timestamp_utc": "2026-06-01T15:25:56Z",
+  "checks": {
+    "json_parse": [
+      {
+        "file": "active_caps_snapshot.json",
+        "parse_ok": true
+      },
+      {
+        "file": "administratum_continuity_pack_skill_contract.json",
+        "parse_ok": true
+      },
+      {
+        "file": "astronomicon_task_link_receipt.json",
+        "parse_ok": true
+      },
+      {
+        "file": "capability_split_receipt.json",
+        "parse_ok": true
+      },
+      {
+        "file": "commit_push_receipt.json",
+        "parse_ok": true
+      },
+      {
+        "file": "continuity_pack_manifest.json",
+        "parse_ok": true
+      },
+      {
+        "file": "continuity_pack_manifest.schema.json",
+        "parse_ok": true
+      },
+      {
+        "file": "continuity_pack_skill_smoke_receipt.json",
+        "parse_ok": true
+      },
+      {
+        "file": "continuity_pack_zip_receipt.json",
+        "parse_ok": true
+      },
+      {
+        "file": "current_truth_snapshot.json",
+        "parse_ok": true
+      },
+      {
+        "file": "EVIDENCE_BOUNDARY.json",
+        "parse_ok": true
+      },
+      {
+        "file": "git_truth_receipt.json",
+        "parse_ok": true
+      },
+      {
+        "file": "hard_red_team_verdict.json",
+        "parse_ok": true
+      },
+      {
+        "file": "IMPERIUM_QUESTION_PASS.json",
+        "parse_ok": true
+      },
+      {
+        "file": "inquisition_fake_continuity_guard_receipt.json",
+        "parse_ok": true
+      },
+      {
+        "file": "latest_task_chain.json",
+        "parse_ok": true
+      },
+      {
+        "file": "logos_prime_handoff_contract.json",
+        "parse_ok": true
+      },
+      {
+        "file": "mechanicus_validation_receipt.json",
+        "parse_ok": true
+      },
+      {
+        "file": "pc_continuity_pack_build_receipt.json",
+        "parse_ok": true
+      },
+      {
+        "file": "private_data_exclusion_receipt.json",
+        "parse_ok": true
+      },
+      {
+        "file": "skill_owner_pain_cure_receipt.json",
+        "parse_ok": true
+      },
+      {
+        "file": "source_index.json",
+        "parse_ok": true
+      },
+      {
+        "file": "stale_context_audit.json",
+        "parse_ok": true
+      }
+    ],
+    "zip_readability": {
+      "ok": true,
+      "error": null
+    },
+    "sha256_generated": true,
+    "git_truth_present": true
+  },
+  "replay_state": "SEPARATE_REPLAY_RUNNER_FOR_TARGET",
+  "replay_command": "python IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/SKILLS/CONTINUITY_PACK_SKILL/administratum_continuity_pack_skill_v0_1.py --repo-root . --task-id TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-SKILL-AND-LOGOS-HANDOFF-BRIDGE-PC-V0_1",
+  "caps_triggered": [],
+  "verdict": "PASS_WITH_WARNINGS"
+}

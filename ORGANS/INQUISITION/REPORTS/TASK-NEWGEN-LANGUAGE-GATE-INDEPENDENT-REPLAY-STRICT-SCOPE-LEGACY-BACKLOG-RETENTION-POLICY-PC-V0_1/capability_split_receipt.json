@@ -1,0 +1,26 @@
+{
+  "task_id": "TASK-NEWGEN-LANGUAGE-GATE-INDEPENDENT-REPLAY-STRICT-SCOPE-LEGACY-BACKLOG-RETENTION-POLICY-PC-V0_1",
+  "timestamp_utc": "2026-06-01T06:10:10Z",
+  "LOCAL_SCRIPT_FIRST": [
+    "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/TOOLS/inquisition_mojibake_filter_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/TOOLS/run_language_encoding_fixtures_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_language_gate_v0_1.py"
+  ],
+  "LOCAL_MANUAL_COMMAND": [
+    "git fetch origin",
+    "python IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/TOOLS/inquisition_mojibake_filter_v0_1.py ...",
+    "python IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_language_gate_v0_1.py ...",
+    "python IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/TOOLS/run_language_encoding_fixtures_v0_1.py ..."
+  ],
+  "CANDIDATE_SCRIPT_FIRST": [
+    "Strict-scope backlog and stale-truth classifier emitter for reuse in next tasks."
+  ],
+  "AGENT_REASONING_ONLY": [
+    "Risk-based categorization for NEEDS_OWNER_OR_ORGAN_DECISION and final red-team downgrade synthesis."
+  ],
+  "EXTERNAL_RESEARCH": [],
+  "OWNER_MANUAL_CONFIRMATION": [],
+  "FUTURE_CAPABILITY_GAP": [
+    "Independent external review still required before clean language PASS."
+  ]
+}

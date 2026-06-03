@@ -1,0 +1,35 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1",
+    "agent_role": "SERVITOR_PRIME_Codex",
+    "useful_outputs": [
+      "Tool admission schemas",
+      "Deterministic builder and validator",
+      "Candidate/risk/decision/capability catalogs",
+      "Report bundle scaffolding"
+    ],
+    "waste_points": [],
+    "missing_tools": [
+      "No existing dedicated tool-admission generator in this repo scope"
+    ],
+    "generated_tools_to_preserve": [
+      "IMPERIUM_NEW_GENERATION/TOOLS/TOOL_ADMISSION/newgen_tool_admission_builder_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/TOOLS/TOOL_ADMISSION/newgen_tool_admission_validator_v0_1.py"
+    ],
+    "recommended_script_absorption": [
+      "ABSORB_NOW: newgen_tool_admission_builder_v0_1.py",
+      "ABSORB_NOW: newgen_tool_admission_validator_v0_1.py"
+    ],
+    "recommended_narrow_agent_profiles": [
+      "NEWGEN_TOOL_ADMISSION_FOUNDATION_AGENT_V0_1"
+    ],
+    "future_prompt_improvements": [
+      "Provide full 40-char required starting HEAD in taskpacks.",
+      "Include standard closure report schema template with commit fields."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add explicit gate check for short-hash normalization in task intake."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

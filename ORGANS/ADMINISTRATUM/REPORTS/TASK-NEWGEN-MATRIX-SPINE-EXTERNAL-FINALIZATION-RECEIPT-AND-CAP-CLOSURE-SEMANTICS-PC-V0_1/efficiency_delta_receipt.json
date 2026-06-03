@@ -1,0 +1,56 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1",
+  "base_head": "5f717d94a761f86195dddc812590fe9e7380c6c0",
+  "strict_previous_delta": "+10%",
+  "scales": {
+    "administratum_finalization_clarity": {
+      "before": 35,
+      "after": 78,
+      "delta": "+43",
+      "evidence": [
+        "EXTERNAL_FINALIZATION_RECEIPT_CONTRACT.md",
+        "external_finalization_receipt_schema.json",
+        "fixture_report.md"
+      ]
+    },
+    "inquisition_cap_closure_precision": {
+      "before": 42,
+      "after": 80,
+      "delta": "+38",
+      "evidence": [
+        "CAP_CLOSURE_SEMANTICS_CONTRACT.md",
+        "cap_closure_state_schema.json",
+        "fixture_report.md"
+      ]
+    },
+    "mechanicus_fixture_replay_readiness": {
+      "before": 33,
+      "after": 82,
+      "delta": "+49",
+      "evidence": [
+        "check_external_finalization_semantics_v0_1.py",
+        "EXTERNAL_FINALIZATION_SEMANTICS_V0_1 fixtures",
+        "external_finalization_checker_report.json"
+      ]
+    },
+    "overall": {
+      "before": 37,
+      "after": 80,
+      "delta": "+43",
+      "evidence": [
+        "external_finalization_checker_report.json",
+        "MATRIX_SPINE_INDEX updates"
+      ]
+    }
+  },
+  "caps_consumed": [
+    "CAP_SELF_HEAD_PARADOX",
+    "CAP_AMBIGUOUS_FINAL_HEAD",
+    "CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING",
+    "CAP_CAP_CLOSED_WITHOUT_EVIDENCE",
+    "CAP_REPLAY_STATE_AMBIGUOUS",
+    "CAP_STALE_REPLAY_USED_AS_CURRENT",
+    "CAP_FINALIZATION_SEMANTICS_CONTRADICTORY"
+  ],
+  "final_verdict": "PASS_WITH_WARNINGS"
+}

@@ -1,0 +1,36 @@
+{
+  "timestamp_utc": "2026-06-01T14:27:59Z",
+  "task_id": "TASK-NEWGEN-ASTRONOMICON-TASKPACK-SKILL-TUI-CONTOUR-ROUTER-AND-VM-LAUNCH-CARD-PC-V0_1",
+  "attacks": [
+    {
+      "attack_id": "A01",
+      "attack": "Claim live VM route success without route evidence.",
+      "result": "RESISTED",
+      "evidence": [
+        "vm3_contour_registration_dry_or_live_receipt.json",
+        "vm2_contour_registration_dry_or_live_receipt.json"
+      ]
+    },
+    {
+      "attack_id": "A02",
+      "attack": "Claim registration robustness without negative admission tests.",
+      "result": "RESISTED",
+      "evidence": [
+        "admission_regression_fixture_receipt.json"
+      ]
+    },
+    {
+      "attack_id": "A03",
+      "attack": "Claim clean PASS despite stage caps and dirty-start provenance.",
+      "result": "DOWNGRADED",
+      "downgrade": "FORCE_PASS_WITH_WARNINGS_ONLY"
+    }
+  ],
+  "caps_triggered": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME",
+    "CAP_DIRTY_START_OWNER_APPROVED_CONTINUATION"
+  ],
+  "final_verdict": "PASS_WITH_WARNINGS"
+}

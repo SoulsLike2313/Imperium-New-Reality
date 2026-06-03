@@ -1,0 +1,20 @@
+{
+  "candidate_id": "MECHANICUS_LOCAL_VALIDATOR_CANDIDATE_V0_1",
+  "status": "CANDIDATE_ONLY",
+  "purpose": "Define local validator policy so compile, lint, and type checks run locally instead of consuming Servitor tokens.",
+  "validation_scope": [
+    "compile_check",
+    "lint_check",
+    "type_check",
+    "schema_check"
+  ],
+  "policy": {
+    "llm_token_offload_required": true,
+    "validator_receipts_required": true,
+    "fallback_to_agent_reasoning_only_when_tooling_missing": true
+  },
+  "expected_receipts": [
+    "validator_run_receipt.json",
+    "validator_failure_summary.md"
+  ]
+}

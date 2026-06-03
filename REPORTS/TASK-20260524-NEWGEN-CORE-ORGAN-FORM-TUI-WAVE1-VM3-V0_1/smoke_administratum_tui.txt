@@ -1,0 +1,32 @@
+╭────────────────────────────── WAVE1 ORGAN TUI ───────────────────────────────╮
+│ ADMINISTRATUM                                                                │
+│ responsibility: Task continuity, report/receipt routing, and repo hygiene    │
+│ boundaries.                                                                  │
+│ verdict: PASS                                                                │
+│ mode: SMOKE                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+                               Servitor Interface                               
+┏━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Block        ┃ Value                                                         ┃
+┡━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ Ask          │ What registration/routing evidence is required for this task? │
+│              │ What report and receipt bundle must be produced?              │
+│              │ What hygiene/sequence failures block completion?              │
+│ Warn/Block   │ WARN on partial continuity package with explicit recovery     │
+│              │ path                                                          │
+│              │ BLOCK on missing closure receipts or out-of-scope path drift  │
+│ Gate Catalog │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ State        │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ Contract     │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ Identity     │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+└──────────────┴───────────────────────────────────────────────────────────────┘
+                         Gate Preview                          
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━┓
+┃ Gate ID                           ┃ Severity      ┃ Verdict ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━┩
+│ GATE_TASK_REGISTRATION_CONTINUITY │ BLOCK         │ PASS    │
+│ GATE_EVIDENCE_PACKAGE_REQUIRED    │ BLOCK         │ PASS    │
+│ GATE_REPO_HYGIENE_BOUNDARY        │ BLOCK         │ PASS    │
+│ GATE_SEQUENCE_DISCIPLINE          │ WARN_TO_BLOCK │ PASS    │
+└───────────────────────────────────┴───────────────┴─────────┘
+SMOKE_OK_ADMINISTRATUM_TUI_V0_1

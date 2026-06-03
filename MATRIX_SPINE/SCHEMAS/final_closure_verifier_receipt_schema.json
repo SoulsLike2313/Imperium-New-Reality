@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Final Closure Verifier Receipt Schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "base_head",
+    "implementation_head",
+    "proof_head",
+    "closure_bundle_head",
+    "final_verifier_head",
+    "remote_head_after_bundle",
+    "worktree_clean_after_bundle",
+    "origin_master_sync_after_bundle",
+    "base_commit_url",
+    "implementation_commit_url",
+    "proof_commit_url",
+    "closure_bundle_commit_url",
+    "remote_commit_url",
+    "hard_red_team_verdict_path",
+    "next_pipeline_handoff_path",
+    "independent_replay_status",
+    "claim_ledger_path",
+    "claim_statuses_seen",
+    "runtime_outputs",
+    "caps_triggered",
+    "verdict"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "base_head": {
+      "type": "string"
+    },
+    "implementation_head": {
+      "type": "string"
+    },
+    "proof_head": {
+      "type": "string"
+    },
+    "closure_bundle_head": {
+      "type": "string"
+    },
+    "final_verifier_head": {
+      "type": "string"
+    },
+    "remote_head_after_bundle": {
+      "type": "string"
+    },
+    "worktree_clean_after_bundle": {
+      "type": "boolean"
+    },
+    "origin_master_sync_after_bundle": {
+      "type": "boolean"
+    },
+    "base_commit_url": {
+      "type": "string"
+    },
+    "implementation_commit_url": {
+      "type": "string"
+    },
+    "proof_commit_url": {
+      "type": "string"
+    },
+    "closure_bundle_commit_url": {
+      "type": "string"
+    },
+    "final_verifier_commit_url": {
+      "type": "string"
+    },
+    "remote_commit_url": {
+      "type": "string"
+    },
+    "hard_red_team_verdict_path": {
+      "type": "string"
+    },
+    "next_pipeline_handoff_path": {
+      "type": "string"
+    },
+    "independent_replay_status": {
+      "type": "string",
+      "enum": [
+        "INQUISITOR",
+        "SPECULUM",
+        "SEPARATE_REPLAY_RUNNER",
+        "NONE"
+      ]
+    },
+    "independent_replay_receipt_path": {
+      "type": "string"
+    },
+    "independent_replay_head": {
+      "type": "string"
+    },
+    "claim_ledger_path": {
+      "type": "string"
+    },
+    "claim_statuses_seen": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "TRUE",
+          "TRUE_WITH_SCOPE",
+          "PARTIAL",
+          "OVERCLAIM",
+          "UNKNOWN",
+          "FALSE_IF_CLAIMED",
+          "UNPROVEN",
+          "BLOCKED_BY_CAP"
+        ]
+      }
+    },
+    "heads_intentionally_collapsed": {
+      "type": "boolean"
+    },
+    "runtime_outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "classification",
+          "commit_decision",
+          "reason"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "classification": {
+            "type": "string",
+            "enum": [
+              "SOURCE",
+              "CURATED_EVIDENCE",
+              "RUNTIME_EPHEMERAL",
+              "REPEATED_RUNTIME_OUTPUT",
+              "QUARANTINE",
+              "PRIVATE_OR_SECRET_DO_NOT_COMMIT"
+            ]
+          },
+          "commit_decision": {
+            "type": "string",
+            "enum": [
+              "COMMIT",
+              "EXCLUDE",
+              "QUARANTINE"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "retention_or_quarantine_policy": {
+            "type": "string",
+            "enum": [
+              "DELETE",
+              "QUARANTINE",
+              "KEEP_OUTSIDE_GIT",
+              "OWNER_REVIEW"
+            ]
+          },
+          "quarantine_path": {
+            "type": "string"
+          },
+          "private_or_secret_risk": {
+            "type": "boolean"
+          },
+          "owner_visible_summary": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "empty_or_ambiguous_fields": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "caps_triggered": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "WARN",
+        "BLOCK"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

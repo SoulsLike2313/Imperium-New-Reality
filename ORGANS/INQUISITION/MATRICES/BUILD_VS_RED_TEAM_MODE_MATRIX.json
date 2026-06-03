@@ -1,0 +1,100 @@
+{
+  "matrix_id": "BUILD_VS_RED_TEAM_MODE_MATRIX",
+  "version": "0.4-candidate",
+  "owner_organ": "Inquisition",
+  "support_organs": [
+    "Mechanicus",
+    "Administratum"
+  ],
+  "purpose": "Forces task to switch from builder to red-team before verdict.",
+  "used_by": [
+    "INQUISITOR",
+    "GPT_LOGOS",
+    "SERVITOR",
+    "SCHOLA"
+  ],
+  "inputs": [
+    "declared_HEAD",
+    "taskpack",
+    "organ_authority_files",
+    "receipts",
+    "Owner_decisions"
+  ],
+  "outputs": [
+    "BUILD_VS_RED_TEAM_MODE_MATRIX.md",
+    "BUILD_VS_RED_TEAM_MODE_MATRIX.json",
+    "verdict_or_route_update"
+  ],
+  "required_questions": [
+    "What is the source of truth for this claim?",
+    "Which organ owns the rule?",
+    "What evidence level proves it?",
+    "What cap applies if evidence is missing?",
+    "What would make this claim fake-green?"
+  ],
+  "required_fields": [
+    "matrix_id",
+    "owner_organ",
+    "purpose",
+    "inputs",
+    "outputs",
+    "required_questions",
+    "pass_criteria",
+    "warn_criteria",
+    "block_criteria",
+    "fake_green_flags",
+    "score_caps",
+    "evidence_requirements",
+    "candidate_repo_location",
+    "current_status",
+    "next_action"
+  ],
+  "pass_criteria": [
+    "All required fields present",
+    "Owner organ declared",
+    "Evidence level E3+ for runtime claims or explicit cap",
+    "Fake-green flags reviewed"
+  ],
+  "warn_criteria": [
+    "Candidate location only",
+    "Evidence below E3 but not claiming runtime",
+    "Owner decision pending"
+  ],
+  "block_criteria": [
+    "Owner unknown",
+    "Capability claimed without evidence",
+    "Contradicts declared HEAD or dirty/provenance state"
+  ],
+  "fake_green_flags": [
+    "CLAIM_WITHOUT_REPLAY",
+    "AGENT_REASONING_AS_SYSTEM_CAPABILITY",
+    "STALE_RECEIPT",
+    "DIRTY_STATE_HIDDEN",
+    "OWNER_DECISION_MISSING"
+  ],
+  "score_caps": [
+    {
+      "if": "evidence_level <= E1_FILE_EXISTS",
+      "cap": 35
+    },
+    {
+      "if": "runtime_claim_without_replay",
+      "cap": 40
+    },
+    {
+      "if": "owner_decision_required_but_missing",
+      "cap": 60
+    }
+  ],
+  "evidence_requirements": [
+    "E1 minimum for existence",
+    "E3 for executed behavior",
+    "E4 for stable pass",
+    "E5 for audit confidence",
+    "E6 for Owner-facing UX acceptance"
+  ],
+  "receipt_schema_reference": "SCHEMAS/matrix_definition_schema.json",
+  "expected_repo_location_candidate": "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/MATRICES/BUILD_VS_RED_TEAM_MODE_MATRIX.md",
+  "current_status": "CANDIDATE",
+  "next_action": "Owner review -> V0.5 correction -> selected organ placement task"
+}

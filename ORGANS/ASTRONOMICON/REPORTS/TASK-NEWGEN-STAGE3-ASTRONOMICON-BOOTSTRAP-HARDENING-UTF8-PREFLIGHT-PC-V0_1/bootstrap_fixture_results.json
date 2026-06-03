@@ -1,0 +1,467 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+  "timestamp_utc": "2026-06-01T04:50:05Z",
+  "repo_root": "E:/IMPERIUM",
+  "sandbox_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1",
+  "total_cases": 8,
+  "passed_cases": 8,
+  "failed_cases": 0,
+  "cases": [
+    {
+      "case_id": "CASE-01",
+      "case_type": "MISSING_ROUTE_TEMPLATE",
+      "expected_verdict": "BLOCK",
+      "expected_caps": [
+        "CAP_ASTRONOMICON_ROUTE_TEMPLATE_MISSING"
+      ],
+      "actual_verdict": "BLOCK",
+      "actual_caps": [
+        "CAP_ASTRONOMICON_ROUTE_TEMPLATE_MISSING"
+      ],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/bootstrap_fixture_results.json",
+      "pass": true,
+      "details": {
+        "preflight_receipt": {
+          "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+          "timestamp_utc": "2026-06-01T04:50:05Z",
+          "repo_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1",
+          "route_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+          "start_ack_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+          "route_template_exists": false,
+          "start_ack_template_exists": true,
+          "route_template_utf8_no_bom": null,
+          "start_ack_template_utf8_no_bom": true,
+          "route_template_json_valid": null,
+          "start_ack_template_json_valid": true,
+          "route_includes_all_8_organs": null,
+          "route_read_order_complete": null,
+          "start_ack_required_fields_present": true,
+          "route_required_organs_missing": [],
+          "route_required_read_order_missing": [],
+          "start_ack_required_fields_missing": [],
+          "route_validation_issues": [],
+          "start_ack_validation_issues": [],
+          "caps_triggered": [
+            "CAP_ASTRONOMICON_ROUTE_TEMPLATE_MISSING"
+          ],
+          "warnings": [],
+          "verdict": "BLOCK"
+        }
+      }
+    },
+    {
+      "case_id": "CASE-02",
+      "case_type": "MISSING_START_ACK_TEMPLATE",
+      "expected_verdict": "BLOCK",
+      "expected_caps": [
+        "CAP_ASTRONOMICON_START_ACK_TEMPLATE_MISSING"
+      ],
+      "actual_verdict": "BLOCK",
+      "actual_caps": [
+        "CAP_ASTRONOMICON_START_ACK_TEMPLATE_MISSING"
+      ],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/bootstrap_fixture_results.json",
+      "pass": true,
+      "details": {
+        "preflight_receipt": {
+          "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+          "timestamp_utc": "2026-06-01T04:50:05Z",
+          "repo_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1",
+          "route_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+          "start_ack_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+          "route_template_exists": true,
+          "start_ack_template_exists": false,
+          "route_template_utf8_no_bom": true,
+          "start_ack_template_utf8_no_bom": null,
+          "route_template_json_valid": true,
+          "start_ack_template_json_valid": null,
+          "route_includes_all_8_organs": true,
+          "route_read_order_complete": true,
+          "start_ack_required_fields_present": null,
+          "route_required_organs_missing": [],
+          "route_required_read_order_missing": [],
+          "start_ack_required_fields_missing": [],
+          "route_validation_issues": [],
+          "start_ack_validation_issues": [],
+          "caps_triggered": [
+            "CAP_ASTRONOMICON_START_ACK_TEMPLATE_MISSING"
+          ],
+          "warnings": [],
+          "verdict": "BLOCK"
+        }
+      }
+    },
+    {
+      "case_id": "CASE-03",
+      "case_type": "UTF8_BOM",
+      "expected_verdict": "BLOCK",
+      "expected_caps": [
+        "CAP_ASTRONOMICON_TEMPLATE_UTF8_BOM_PRESENT"
+      ],
+      "actual_verdict": "BLOCK",
+      "actual_caps": [
+        "CAP_ASTRONOMICON_ROUTE_TEMPLATE_JSON_INVALID",
+        "CAP_ASTRONOMICON_TEMPLATE_UTF8_BOM_PRESENT"
+      ],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/bootstrap_fixture_results.json",
+      "pass": true,
+      "details": {
+        "preflight_receipt": {
+          "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+          "timestamp_utc": "2026-06-01T04:50:05Z",
+          "repo_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1",
+          "route_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+          "start_ack_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+          "route_template_exists": true,
+          "start_ack_template_exists": true,
+          "route_template_utf8_no_bom": false,
+          "start_ack_template_utf8_no_bom": true,
+          "route_template_json_valid": false,
+          "start_ack_template_json_valid": true,
+          "route_includes_all_8_organs": null,
+          "route_read_order_complete": null,
+          "start_ack_required_fields_present": true,
+          "route_required_organs_missing": [],
+          "route_required_read_order_missing": [],
+          "start_ack_required_fields_missing": [],
+          "route_validation_issues": [
+            "JSON parse error with utf-8: Unexpected UTF-8 BOM (decode using utf-8-sig): line 1 column 1 (char 0)"
+          ],
+          "start_ack_validation_issues": [],
+          "caps_triggered": [
+            "CAP_ASTRONOMICON_ROUTE_TEMPLATE_JSON_INVALID",
+            "CAP_ASTRONOMICON_TEMPLATE_UTF8_BOM_PRESENT"
+          ],
+          "warnings": [],
+          "verdict": "BLOCK"
+        }
+      }
+    },
+    {
+      "case_id": "CASE-04",
+      "case_type": "INVALID_JSON",
+      "expected_verdict": "BLOCK",
+      "expected_caps": [
+        "CAP_ASTRONOMICON_ROUTE_TEMPLATE_JSON_INVALID"
+      ],
+      "actual_verdict": "BLOCK",
+      "actual_caps": [
+        "CAP_ASTRONOMICON_ROUTE_TEMPLATE_JSON_INVALID"
+      ],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/bootstrap_fixture_results.json",
+      "pass": true,
+      "details": {
+        "preflight_receipt": {
+          "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+          "timestamp_utc": "2026-06-01T04:50:05Z",
+          "repo_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1",
+          "route_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+          "start_ack_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+          "route_template_exists": true,
+          "start_ack_template_exists": true,
+          "route_template_utf8_no_bom": true,
+          "start_ack_template_utf8_no_bom": true,
+          "route_template_json_valid": false,
+          "start_ack_template_json_valid": true,
+          "route_includes_all_8_organs": null,
+          "route_read_order_complete": null,
+          "start_ack_required_fields_present": true,
+          "route_required_organs_missing": [],
+          "route_required_read_order_missing": [],
+          "start_ack_required_fields_missing": [],
+          "route_validation_issues": [
+            "JSON parse error with utf-8: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+          ],
+          "start_ack_validation_issues": [],
+          "caps_triggered": [
+            "CAP_ASTRONOMICON_ROUTE_TEMPLATE_JSON_INVALID"
+          ],
+          "warnings": [],
+          "verdict": "BLOCK"
+        }
+      }
+    },
+    {
+      "case_id": "CASE-05",
+      "case_type": "MISSING_ORGAN",
+      "expected_verdict": "BLOCK",
+      "expected_caps": [
+        "CAP_ASTRONOMICON_ROUTE_TEMPLATE_MISSING_REQUIRED_ORGANS"
+      ],
+      "actual_verdict": "BLOCK",
+      "actual_caps": [
+        "CAP_ASTRONOMICON_ROUTE_TEMPLATE_MISSING_REQUIRED_ORGANS",
+        "CAP_ASTRONOMICON_ROUTE_TEMPLATE_SCHEMA_INVALID"
+      ],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/bootstrap_fixture_results.json",
+      "pass": true,
+      "details": {
+        "preflight_receipt": {
+          "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+          "timestamp_utc": "2026-06-01T04:50:05Z",
+          "repo_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1",
+          "route_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+          "start_ack_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+          "route_template_exists": true,
+          "start_ack_template_exists": true,
+          "route_template_utf8_no_bom": true,
+          "start_ack_template_utf8_no_bom": true,
+          "route_template_json_valid": true,
+          "start_ack_template_json_valid": true,
+          "route_includes_all_8_organs": false,
+          "route_read_order_complete": true,
+          "start_ack_required_fields_present": true,
+          "route_required_organs_missing": [
+            "SCHOLA_IMPERIALIS"
+          ],
+          "route_required_read_order_missing": [],
+          "start_ack_required_fields_missing": [],
+          "route_validation_issues": [
+            "required_organs missing: SCHOLA_IMPERIALIS"
+          ],
+          "start_ack_validation_issues": [],
+          "caps_triggered": [
+            "CAP_ASTRONOMICON_ROUTE_TEMPLATE_MISSING_REQUIRED_ORGANS",
+            "CAP_ASTRONOMICON_ROUTE_TEMPLATE_SCHEMA_INVALID"
+          ],
+          "warnings": [],
+          "verdict": "BLOCK"
+        }
+      }
+    },
+    {
+      "case_id": "CASE-06",
+      "case_type": "VALID_PAIR",
+      "expected_verdict": "PASS",
+      "expected_caps": [],
+      "actual_verdict": "PASS",
+      "actual_caps": [],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/bootstrap_fixture_results.json",
+      "pass": true,
+      "details": {
+        "preflight_receipt": {
+          "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+          "timestamp_utc": "2026-06-01T04:50:05Z",
+          "repo_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1",
+          "route_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+          "start_ack_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+          "route_template_exists": true,
+          "start_ack_template_exists": true,
+          "route_template_utf8_no_bom": true,
+          "start_ack_template_utf8_no_bom": true,
+          "route_template_json_valid": true,
+          "start_ack_template_json_valid": true,
+          "route_includes_all_8_organs": true,
+          "route_read_order_complete": true,
+          "start_ack_required_fields_present": true,
+          "route_required_organs_missing": [],
+          "route_required_read_order_missing": [],
+          "start_ack_required_fields_missing": [],
+          "route_validation_issues": [],
+          "start_ack_validation_issues": [],
+          "caps_triggered": [],
+          "warnings": [],
+          "verdict": "PASS"
+        }
+      }
+    },
+    {
+      "case_id": "CASE-07",
+      "case_type": "REPAIR_MISSING",
+      "expected_verdict": "PASS",
+      "expected_caps": [],
+      "actual_verdict": "PASS",
+      "actual_caps": [],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/bootstrap_fixture_results.json",
+      "pass": true,
+      "details": {
+        "repair_receipt": {
+          "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+          "timestamp_utc": "2026-06-01T04:50:05Z",
+          "repo_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1",
+          "force": false,
+          "actions": [
+            {
+              "path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+              "force": false,
+              "operation": "CREATED_MISSING_TEMPLATE",
+              "before_exists": false,
+              "after_exists": true,
+              "after_sha256": "9bbb01e58c3cc741385404f8cf73cd4ca4bff2e62ebab8666cd9abede6c552e2",
+              "after_has_utf8_bom": false,
+              "source_payload": "fallback_default"
+            },
+            {
+              "path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+              "force": false,
+              "operation": "CREATED_MISSING_TEMPLATE",
+              "before_exists": false,
+              "after_exists": true,
+              "after_sha256": "f36b47fc6af6f4e19107a2ede659bdf63094562c540526b4dd9934652397bf1f",
+              "after_has_utf8_bom": false,
+              "source_payload": "fallback_default"
+            }
+          ],
+          "caps_closed_or_reduced": [
+            "CAP_ASTRONOMICON_ROUTE_TEMPLATE_MISSING",
+            "CAP_ASTRONOMICON_START_ACK_TEMPLATE_MISSING"
+          ],
+          "post_preflight_receipt": {
+            "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+            "timestamp_utc": "2026-06-01T04:50:05Z",
+            "repo_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1",
+            "route_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+            "start_ack_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+            "route_template_exists": true,
+            "start_ack_template_exists": true,
+            "route_template_utf8_no_bom": true,
+            "start_ack_template_utf8_no_bom": true,
+            "route_template_json_valid": true,
+            "start_ack_template_json_valid": true,
+            "route_includes_all_8_organs": true,
+            "route_read_order_complete": true,
+            "start_ack_required_fields_present": true,
+            "route_required_organs_missing": [],
+            "route_required_read_order_missing": [],
+            "start_ack_required_fields_missing": [],
+            "route_validation_issues": [],
+            "start_ack_validation_issues": [],
+            "caps_triggered": [],
+            "warnings": [],
+            "verdict": "PASS"
+          },
+          "post_preflight_caps": [],
+          "verdict": "PASS"
+        },
+        "route_exists_after": true,
+        "start_exists_after": true,
+        "post_preflight": {
+          "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+          "timestamp_utc": "2026-06-01T04:50:05Z",
+          "repo_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1",
+          "route_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+          "start_ack_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+          "route_template_exists": true,
+          "start_ack_template_exists": true,
+          "route_template_utf8_no_bom": true,
+          "start_ack_template_utf8_no_bom": true,
+          "route_template_json_valid": true,
+          "start_ack_template_json_valid": true,
+          "route_includes_all_8_organs": true,
+          "route_read_order_complete": true,
+          "start_ack_required_fields_present": true,
+          "route_required_organs_missing": [],
+          "route_required_read_order_missing": [],
+          "start_ack_required_fields_missing": [],
+          "route_validation_issues": [],
+          "start_ack_validation_issues": [],
+          "caps_triggered": [],
+          "warnings": [],
+          "verdict": "PASS"
+        }
+      }
+    },
+    {
+      "case_id": "CASE-08",
+      "case_type": "REPAIR_BOM",
+      "expected_verdict": "PASS",
+      "expected_caps": [],
+      "actual_verdict": "PASS",
+      "actual_caps": [],
+      "evidence_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/bootstrap_fixture_results.json",
+      "pass": true,
+      "details": {
+        "repair_receipt": {
+          "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+          "timestamp_utc": "2026-06-01T04:50:05Z",
+          "repo_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1",
+          "force": true,
+          "actions": [
+            {
+              "path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+              "force": true,
+              "before_exists": true,
+              "before_sha256": "982c15be27d15f4a869b2148212d2e212b8646cc9771f06fda504778624aa974",
+              "before_has_utf8_bom": true,
+              "before_json_parse_issues": [],
+              "source_payload": "existing_payload",
+              "operation": "REWRITTEN_FORCE_UTF8_NO_BOM",
+              "after_sha256": "9bbb01e58c3cc741385404f8cf73cd4ca4bff2e62ebab8666cd9abede6c552e2",
+              "after_has_utf8_bom": false,
+              "content_changed": true
+            },
+            {
+              "path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+              "force": true,
+              "before_exists": true,
+              "before_sha256": "f36b47fc6af6f4e19107a2ede659bdf63094562c540526b4dd9934652397bf1f",
+              "before_has_utf8_bom": false,
+              "before_json_parse_issues": [],
+              "source_payload": "existing_payload",
+              "operation": "REWRITTEN_FORCE_UTF8_NO_BOM",
+              "after_sha256": "f36b47fc6af6f4e19107a2ede659bdf63094562c540526b4dd9934652397bf1f",
+              "after_has_utf8_bom": false,
+              "content_changed": false
+            }
+          ],
+          "caps_closed_or_reduced": [
+            "CAP_ASTRONOMICON_TEMPLATE_UTF8_BOM_PRESENT"
+          ],
+          "post_preflight_receipt": {
+            "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+            "timestamp_utc": "2026-06-01T04:50:05Z",
+            "repo_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1",
+            "route_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+            "start_ack_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+            "route_template_exists": true,
+            "start_ack_template_exists": true,
+            "route_template_utf8_no_bom": true,
+            "start_ack_template_utf8_no_bom": true,
+            "route_template_json_valid": true,
+            "start_ack_template_json_valid": true,
+            "route_includes_all_8_organs": true,
+            "route_read_order_complete": true,
+            "start_ack_required_fields_present": true,
+            "route_required_organs_missing": [],
+            "route_required_read_order_missing": [],
+            "start_ack_required_fields_missing": [],
+            "route_validation_issues": [],
+            "start_ack_validation_issues": [],
+            "caps_triggered": [],
+            "warnings": [],
+            "verdict": "PASS"
+          },
+          "post_preflight_caps": [],
+          "verdict": "PASS"
+        },
+        "post_preflight": {
+          "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+          "timestamp_utc": "2026-06-01T04:50:05Z",
+          "repo_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1",
+          "route_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+          "start_ack_template_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1/_bootstrap_preflight_fixture_sandbox_v0_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+          "route_template_exists": true,
+          "start_ack_template_exists": true,
+          "route_template_utf8_no_bom": true,
+          "start_ack_template_utf8_no_bom": true,
+          "route_template_json_valid": true,
+          "start_ack_template_json_valid": true,
+          "route_includes_all_8_organs": true,
+          "route_read_order_complete": true,
+          "start_ack_required_fields_present": true,
+          "route_required_organs_missing": [],
+          "route_required_read_order_missing": [],
+          "start_ack_required_fields_missing": [],
+          "route_validation_issues": [],
+          "start_ack_validation_issues": [],
+          "caps_triggered": [],
+          "warnings": [],
+          "verdict": "PASS"
+        },
+        "force_rewrite_actions_count": 2,
+        "before_hash_recorded": true,
+        "after_hash_recorded": true
+      }
+    }
+  ]
+}

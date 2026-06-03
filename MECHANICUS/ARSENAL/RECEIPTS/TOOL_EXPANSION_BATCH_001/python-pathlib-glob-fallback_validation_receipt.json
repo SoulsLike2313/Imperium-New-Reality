@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:python_pathlib_glob_fallback:tool_detection:python_pathlib_glob_fallback",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "PYTHON_PATHLIB_GLOB_FALLBACK",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:43Z",
+  "status": "PASS",
+  "summary": "PYTHON_PATHLIB_GLOB_FALLBACK: PASS via tool_detection:PYTHON_PATHLIB_GLOB_FALLBACK. promotion_recommendation=KEEP_CANDIDATE",
+  "check_name": "tool_detection:PYTHON_PATHLIB_GLOB_FALLBACK",
+  "command_or_check": "python -c \"from pathlib import Path; print(len(list(Path('IMPERIUM_NEW_GENERATION').glob('**/*.md'))) > 0)\"",
+  "exit_code": 0,
+  "stdout_excerpt": "$ python -c \"from pathlib import Path; print(len(list(Path('IMPERIUM_NEW_GENERATION').glob('**/*.md'))) > 0)\"\nTrue",
+  "stderr_excerpt": "",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/python-pathlib-glob-fallback_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "KEEP_CANDIDATE",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/python-pathlib-glob-fallback_validation_receipt.json"
+  ]
+}

@@ -1,0 +1,1479 @@
+{
+  "schema_id": "important_six_dashboard_state_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1",
+  "mode": "READ_ONLY_OR_SEMI_LIVE_TUI_SNAPSHOT_DASHBOARD_L1",
+  "claim_boundary": "READ_ONLY_OR_SEMI_LIVE_TUI_SNAPSHOT_DASHBOARD_L1",
+  "generated_at_utc": "2026-05-24T02:29:09Z",
+  "safe_commands_only": [
+    "TUI --smoke --plain-json",
+    "organ_query --sample"
+  ],
+  "not_proven": [
+    "true interactive terminal",
+    "real-time bidirectional organ sessions",
+    "Owner Verdict button",
+    "write actions",
+    "production orchestration",
+    "final visual design",
+    "live Servitor execution stream"
+  ],
+  "organs": {
+    "doctrinarium": {
+      "schema_id": "important_six_terminal_snapshot_v0_1",
+      "generated_at_utc": "2026-05-24T02:29:07Z",
+      "organ_key": "doctrinarium",
+      "organ_label": "DOCTRINARIUM",
+      "display_name": {
+        "ru": "Доктринариум",
+        "en": "Doctrinarium"
+      },
+      "role": {
+        "ru": "Законы и gate-дисциплина",
+        "en": "Laws and gate discipline"
+      },
+      "accent": "#56d79a",
+      "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+      "source": {
+        "tui_command": "python3 IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TUI/doctrinarium_tui_v0_1.py --smoke --plain-json",
+        "query_command": "python3 IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TOOLS/doctrinarium_organ_query_v0_1.py --sample",
+        "tui_script": "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TUI/doctrinarium_tui_v0_1.py",
+        "query_script": "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TOOLS/doctrinarium_organ_query_v0_1.py"
+      },
+      "verdict": "PASS",
+      "status": "PASS",
+      "tui_smoke": {
+        "command": "python3 IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TUI/doctrinarium_tui_v0_1.py --smoke --plain-json",
+        "script_path": "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TUI/doctrinarium_tui_v0_1.py",
+        "exit_code": 0,
+        "duration_ms": 149.06,
+        "timed_out": false,
+        "stdout": "{\n  \"organ_id\": \"DOCTRINARIUM\",\n  \"rich_available\": true,\n  \"smoke_mode\": true,\n  \"responsibility\": \"Law and gate admission for NewGen tasks.\",\n  \"bundle\": {\n    \"identity_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/IDENTITY/organ_identity_v0_1.md\",\n    \"contract_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/CONTRACTS/servitor_contract_v0_1.md\",\n    \"gate_catalog_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATES/organ_gate_catalog_v0_1.json\",\n    \"state_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/STATE/current_state_v0_1.json\",\n    \"template_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TEMPLATES/organ_verdict_template_v0_1.json\",\n    \"gate_catalog\": {\n      \"schema_id\": \"newgen_organ_gate_catalog_v0_1\",\n      \"organ_id\": \"DOCTRINARIUM\",\n      \"version\": \"v0_1\",\n      \"gates\": [\n        {\n          \"gate_id\": \"GATE_DOCTRINARIUM_READ_FIRST\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"No scoped work before read-first route and preflight.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"doctrinarium_preflight_output.json\",\n            \"applicable_doctrinarium_gates.json\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_NO_GENERIC_PASS\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"Reject generic PASS; require scoped verdict.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"FINAL_REPORT.md\",\n            \"closure_receipt.json\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_NO_GREEN_WITHOUT_EVIDENCE\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"Every strong claim must have evidence path.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"wave1_organ_tui_smoke_report.json\",\n            \"organ_interaction_simulation_v0_1.json\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_NOT_PROVEN_BOUNDARY\",\n          \"severity\": \"WARN_TO_BLOCK\",\n          \"purpose\": \"Bound claims to Wave 1 only.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"FINAL_REPORT.md\"\n          ]\n        }\n      ]\n    },\n    \"state\": {\n      \"schema_id\": \"newgen_organ_state_v0_1\",\n      \"organ_id\": \"DOCTRINARIUM\",\n      \"version\": \"v0_1\",\n      \"default_verdict\": \"PASS\",\n      \"responsibility\": \"Law and gate admission for NewGen tasks.\",\n      \"servitor_ask\": [\n        \"What doctrinal gates apply to this task now?\",\n        \"What evidence is mandatory before PASS claim?\",\n        \"What is explicitly not proven in this slice?\"\n      ],\n      \"warn_block_profile\": [\n        \"WARN on partial execution with explicit not-run boundary\",\n        \"BLOCK on generic pass or missing evidence refs\"\n      ],\n      \"required_actions\": [\n        \"Run and store preflight output before edits\",\n        \"Bind final verdict to scoped Wave 1 slice only\"\n      ],\n      \"forbidden_actions\": [\n        \"Claim complete Important Six\",\n        \"Claim production autonomy\"\n      ],\n      \"evidence_refs\": [\n        \"IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/gate_registry_v0_1.json\",\n        \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/doctrinarium_preflight_output.json\"\n      ],\n      \"last_updated_utc\": \"2026-05-24T01:20:00Z\"\n    },\n    \"template\": {\n      \"schema_id\": \"newgen_organ_verdict_v0_1\",\n      \"organ_id\": \"DOCTRINARIUM\",\n      \"task_id\": \"<TASK_ID>\",\n      \"mode\": \"SERVITOR_QUERY\",\n      \"verdict\": \"PASS|WARN|BLOCK|OWNER_VERDICT_NEEDED\",\n      \"applied_rules\": [],\n      \"required_actions\": [],\n      \"forbidden_actions\": [],\n      \"evidence_required\": [],\n      \"owner_question\": null,\n      \"not_proven\": [],\n      \"evidence_refs\": []\n    }\n  },\n  \"verdict\": {\n    \"schema_id\": \"newgen_organ_verdict_v0_1\",\n    \"organ_id\": \"DOCTRINARIUM\",\n    \"task_id\": \"TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1\",\n    \"mode\": \"SMOKE\",\n    \"verdict\": \"PASS\",\n    \"applied_rules\": [\n      \"GATE_DOCTRINARIUM_READ_FIRST\",\n      \"GATE_NO_GENERIC_PASS\",\n      \"GATE_NO_GREEN_WITHOUT_EVIDENCE\",\n      \"GATE_NOT_PROVEN_BOUNDARY\"\n    ],\n    \"required_actions\": [\n      \"Run and store preflight output before edits\",\n      \"Bind final verdict to scoped Wave 1 slice only\"\n    ],\n    \"forbidden_actions\": [\n      \"Claim complete Important Six\",\n      \"Claim production autonomy\"\n    ],\n    \"evidence_required\": [],\n    \"owner_question\": null,\n    \"not_proven\": [\n      \"complete Important Six\",\n      \"Astronomicon/Inquisition TUI in this task\",\n      \"production autonomy\"\n    ],\n    \"evidence_refs\": [\n      \"IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/gate_registry_v0_1.json\",\n      \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/doctrinarium_preflight_output.json\"\n    ],\n    \"generated_at_utc\": \"2026-05-24T02:29:07.833734+00:00\"\n  }\n}\n",
+        "stderr": "",
+        "stdout_truncated": false,
+        "stderr_truncated": false,
+        "parsed_json": {
+          "organ_id": "DOCTRINARIUM",
+          "rich_available": true,
+          "smoke_mode": true,
+          "responsibility": "Law and gate admission for NewGen tasks.",
+          "bundle": {
+            "identity_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/IDENTITY/organ_identity_v0_1.md",
+            "contract_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/CONTRACTS/servitor_contract_v0_1.md",
+            "gate_catalog_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATES/organ_gate_catalog_v0_1.json",
+            "state_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/STATE/current_state_v0_1.json",
+            "template_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TEMPLATES/organ_verdict_template_v0_1.json",
+            "gate_catalog": {
+              "schema_id": "newgen_organ_gate_catalog_v0_1",
+              "organ_id": "DOCTRINARIUM",
+              "version": "v0_1",
+              "gates": [
+                {
+                  "gate_id": "GATE_DOCTRINARIUM_READ_FIRST",
+                  "severity": "BLOCK",
+                  "purpose": "No scoped work before read-first route and preflight.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "doctrinarium_preflight_output.json",
+                    "applicable_doctrinarium_gates.json"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_NO_GENERIC_PASS",
+                  "severity": "BLOCK",
+                  "purpose": "Reject generic PASS; require scoped verdict.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "FINAL_REPORT.md",
+                    "closure_receipt.json"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+                  "severity": "BLOCK",
+                  "purpose": "Every strong claim must have evidence path.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "wave1_organ_tui_smoke_report.json",
+                    "organ_interaction_simulation_v0_1.json"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_NOT_PROVEN_BOUNDARY",
+                  "severity": "WARN_TO_BLOCK",
+                  "purpose": "Bound claims to Wave 1 only.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "FINAL_REPORT.md"
+                  ]
+                }
+              ]
+            },
+            "state": {
+              "schema_id": "newgen_organ_state_v0_1",
+              "organ_id": "DOCTRINARIUM",
+              "version": "v0_1",
+              "default_verdict": "PASS",
+              "responsibility": "Law and gate admission for NewGen tasks.",
+              "servitor_ask": [
+                "What doctrinal gates apply to this task now?",
+                "What evidence is mandatory before PASS claim?",
+                "What is explicitly not proven in this slice?"
+              ],
+              "warn_block_profile": [
+                "WARN on partial execution with explicit not-run boundary",
+                "BLOCK on generic pass or missing evidence refs"
+              ],
+              "required_actions": [
+                "Run and store preflight output before edits",
+                "Bind final verdict to scoped Wave 1 slice only"
+              ],
+              "forbidden_actions": [
+                "Claim complete Important Six",
+                "Claim production autonomy"
+              ],
+              "evidence_refs": [
+                "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/gate_registry_v0_1.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/doctrinarium_preflight_output.json"
+              ],
+              "last_updated_utc": "2026-05-24T01:20:00Z"
+            },
+            "template": {
+              "schema_id": "newgen_organ_verdict_v0_1",
+              "organ_id": "DOCTRINARIUM",
+              "task_id": "<TASK_ID>",
+              "mode": "SERVITOR_QUERY",
+              "verdict": "PASS|WARN|BLOCK|OWNER_VERDICT_NEEDED",
+              "applied_rules": [],
+              "required_actions": [],
+              "forbidden_actions": [],
+              "evidence_required": [],
+              "owner_question": null,
+              "not_proven": [],
+              "evidence_refs": []
+            }
+          },
+          "verdict": {
+            "schema_id": "newgen_organ_verdict_v0_1",
+            "organ_id": "DOCTRINARIUM",
+            "task_id": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+            "mode": "SMOKE",
+            "verdict": "PASS",
+            "applied_rules": [
+              "GATE_DOCTRINARIUM_READ_FIRST",
+              "GATE_NO_GENERIC_PASS",
+              "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+              "GATE_NOT_PROVEN_BOUNDARY"
+            ],
+            "required_actions": [
+              "Run and store preflight output before edits",
+              "Bind final verdict to scoped Wave 1 slice only"
+            ],
+            "forbidden_actions": [
+              "Claim complete Important Six",
+              "Claim production autonomy"
+            ],
+            "evidence_required": [],
+            "owner_question": null,
+            "not_proven": [
+              "complete Important Six",
+              "Astronomicon/Inquisition TUI in this task",
+              "production autonomy"
+            ],
+            "evidence_refs": [
+              "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/gate_registry_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/doctrinarium_preflight_output.json"
+            ],
+            "generated_at_utc": "2026-05-24T02:29:07.833734+00:00"
+          }
+        },
+        "parse_error": null,
+        "started_at_utc": "2026-05-24T02:29:07Z",
+        "finished_at_utc": "2026-05-24T02:29:07Z",
+        "schema_id": "important_six_tui_smoke_v0_1",
+        "organ_key": "doctrinarium",
+        "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+        "generated_at_utc": "2026-05-24T02:29:07Z"
+      },
+      "query_sample": {
+        "command": "python3 IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TOOLS/doctrinarium_organ_query_v0_1.py --sample",
+        "script_path": "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TOOLS/doctrinarium_organ_query_v0_1.py",
+        "exit_code": 0,
+        "duration_ms": 141.18,
+        "timed_out": false,
+        "stdout": "{\n  \"schema_id\": \"newgen_organ_verdict_v0_1\",\n  \"organ_id\": \"DOCTRINARIUM\",\n  \"task_id\": \"TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1\",\n  \"mode\": \"SERVITOR_QUERY\",\n  \"verdict\": \"PASS\",\n  \"applied_rules\": [\n    \"GATE_DOCTRINARIUM_READ_FIRST\",\n    \"GATE_NO_GENERIC_PASS\",\n    \"GATE_NO_GREEN_WITHOUT_EVIDENCE\",\n    \"GATE_NOT_PROVEN_BOUNDARY\"\n  ],\n  \"required_actions\": [\n    \"Run and store preflight output before edits\",\n    \"Bind final verdict to scoped Wave 1 slice only\"\n  ],\n  \"forbidden_actions\": [\n    \"Claim complete Important Six\",\n    \"Claim production autonomy\"\n  ],\n  \"evidence_required\": [\n    \"doctrinarium_preflight_output.json\",\n    \"applicable_doctrinarium_gates.json\",\n    \"FINAL_REPORT.md\",\n    \"closure_receipt.json\",\n    \"wave1_organ_tui_smoke_report.json\",\n    \"organ_interaction_simulation_v0_1.json\"\n  ],\n  \"owner_question\": null,\n  \"not_proven\": [\n    \"complete Important Six\",\n    \"Astronomicon/Inquisition TUI in this task\",\n    \"production autonomy\"\n  ],\n  \"evidence_refs\": [\n    \"IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/gate_registry_v0_1.json\",\n    \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/doctrinarium_preflight_output.json\"\n  ],\n  \"question\": \"What laws and gates apply to this task?\",\n  \"generated_at_utc\": \"2026-05-24T02:29:07.978361+00:00\"\n}\n",
+        "stderr": "",
+        "stdout_truncated": false,
+        "stderr_truncated": false,
+        "parsed_json": {
+          "schema_id": "newgen_organ_verdict_v0_1",
+          "organ_id": "DOCTRINARIUM",
+          "task_id": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+          "mode": "SERVITOR_QUERY",
+          "verdict": "PASS",
+          "applied_rules": [
+            "GATE_DOCTRINARIUM_READ_FIRST",
+            "GATE_NO_GENERIC_PASS",
+            "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+            "GATE_NOT_PROVEN_BOUNDARY"
+          ],
+          "required_actions": [
+            "Run and store preflight output before edits",
+            "Bind final verdict to scoped Wave 1 slice only"
+          ],
+          "forbidden_actions": [
+            "Claim complete Important Six",
+            "Claim production autonomy"
+          ],
+          "evidence_required": [
+            "doctrinarium_preflight_output.json",
+            "applicable_doctrinarium_gates.json",
+            "FINAL_REPORT.md",
+            "closure_receipt.json",
+            "wave1_organ_tui_smoke_report.json",
+            "organ_interaction_simulation_v0_1.json"
+          ],
+          "owner_question": null,
+          "not_proven": [
+            "complete Important Six",
+            "Astronomicon/Inquisition TUI in this task",
+            "production autonomy"
+          ],
+          "evidence_refs": [
+            "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/gate_registry_v0_1.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/doctrinarium_preflight_output.json"
+          ],
+          "question": "What laws and gates apply to this task?",
+          "generated_at_utc": "2026-05-24T02:29:07.978361+00:00"
+        },
+        "parse_error": null,
+        "started_at_utc": "2026-05-24T02:29:07Z",
+        "finished_at_utc": "2026-05-24T02:29:07Z",
+        "schema_id": "important_six_query_sample_v0_1",
+        "organ_key": "doctrinarium",
+        "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+        "generated_at_utc": "2026-05-24T02:29:07Z"
+      },
+      "claim_boundary": "READ_ONLY_OR_SEMI_LIVE_TUI_SNAPSHOT_DASHBOARD_L1"
+    },
+    "officio": {
+      "schema_id": "important_six_terminal_snapshot_v0_1",
+      "generated_at_utc": "2026-05-24T02:29:08Z",
+      "organ_key": "officio",
+      "organ_label": "OFFICIO_AGENTIS",
+      "display_name": {
+        "ru": "Оффицио Агентум",
+        "en": "Officio Agentis"
+      },
+      "role": {
+        "ru": "Роль, язык, execution-контракт",
+        "en": "Role, language, execution contract"
+      },
+      "accent": "#f4c95d",
+      "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+      "source": {
+        "tui_command": "python3 IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/officio_tui_v0_1.py --smoke --plain-json",
+        "query_command": "python3 IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_organ_query_v0_1.py --sample",
+        "tui_script": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/officio_tui_v0_1.py",
+        "query_script": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_organ_query_v0_1.py"
+      },
+      "verdict": "PASS",
+      "status": "PASS",
+      "tui_smoke": {
+        "command": "python3 IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/officio_tui_v0_1.py --smoke --plain-json",
+        "script_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/officio_tui_v0_1.py",
+        "exit_code": 0,
+        "duration_ms": 155.18,
+        "timed_out": false,
+        "stdout": "{\n  \"organ_id\": \"OFFICIO_AGENTIS\",\n  \"rich_available\": true,\n  \"smoke_mode\": true,\n  \"responsibility\": \"Role, language, response contract, and stop-condition admission.\",\n  \"bundle\": {\n    \"identity_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/IDENTITY/organ_identity_v0_1.md\",\n    \"contract_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/CONTRACTS/servitor_contract_v0_1.md\",\n    \"gate_catalog_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/GATES/organ_gate_catalog_v0_1.json\",\n    \"state_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/STATE/current_state_v0_1.json\",\n    \"template_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TEMPLATES/organ_verdict_template_v0_1.json\",\n    \"gate_catalog\": {\n      \"schema_id\": \"newgen_organ_gate_catalog_v0_1\",\n      \"organ_id\": \"OFFICIO_AGENTIS\",\n      \"version\": \"v0_1\",\n      \"gates\": [\n        {\n          \"gate_id\": \"GATE_ROLE_ACK_REQUIRED\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"No execution without role contract acknowledgment.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"officio_role_contract_ack.json\",\n            \"taskpack_scope_ack.json\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_OWNER_LANGUAGE_RU\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"Owner-facing live commentary must stay in Russian.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"FINAL_REPORT.md\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_SCOPED_VERDICT_ONLY\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"No generic PASS claims.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"closure_receipt.json\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_STOP_CONDITION_BINDING\",\n          \"severity\": \"WARN_TO_BLOCK\",\n          \"purpose\": \"Stop conditions must be explicit and accepted.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"taskpack_scope_ack.json\",\n            \"organ_route_plan.json\"\n          ]\n        }\n      ]\n    },\n    \"state\": {\n      \"schema_id\": \"newgen_organ_state_v0_1\",\n      \"organ_id\": \"OFFICIO_AGENTIS\",\n      \"version\": \"v0_1\",\n      \"default_verdict\": \"PASS\",\n      \"responsibility\": \"Role, language, response contract, and stop-condition admission.\",\n      \"servitor_ask\": [\n        \"What role contract applies to me for this task?\",\n        \"What owner-facing language and response format are mandatory?\",\n        \"What stop conditions block continuation?\"\n      ],\n      \"warn_block_profile\": [\n        \"WARN on recoverable format mismatch with explicit correction\",\n        \"BLOCK on missing role ack or owner-facing language violation\"\n      ],\n      \"required_actions\": [\n        \"Publish officio role contract ack before edits\",\n        \"Use scoped verdict format PASS_FOR_<SLICE>_ONLY\"\n      ],\n      \"forbidden_actions\": [\n        \"Use generic PASS verdict\",\n        \"Continue after Owner Verdict Needed signal\"\n      ],\n      \"evidence_refs\": [\n        \"IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/officio_role_contract_v0_1.json\",\n        \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/officio_role_contract_ack.json\"\n      ],\n      \"last_updated_utc\": \"2026-05-24T01:20:00Z\"\n    },\n    \"template\": {\n      \"schema_id\": \"newgen_organ_verdict_v0_1\",\n      \"organ_id\": \"OFFICIO_AGENTIS\",\n      \"task_id\": \"<TASK_ID>\",\n      \"mode\": \"SERVITOR_QUERY\",\n      \"verdict\": \"PASS|WARN|BLOCK|OWNER_VERDICT_NEEDED\",\n      \"applied_rules\": [],\n      \"required_actions\": [],\n      \"forbidden_actions\": [],\n      \"evidence_required\": [],\n      \"owner_question\": null,\n      \"not_proven\": [],\n      \"evidence_refs\": []\n    }\n  },\n  \"verdict\": {\n    \"schema_id\": \"newgen_organ_verdict_v0_1\",\n    \"organ_id\": \"OFFICIO_AGENTIS\",\n    \"task_id\": \"TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1\",\n    \"mode\": \"SMOKE\",\n    \"verdict\": \"PASS\",\n    \"applied_rules\": [\n      \"GATE_ROLE_ACK_REQUIRED\",\n      \"GATE_OWNER_LANGUAGE_RU\",\n      \"GATE_SCOPED_VERDICT_ONLY\",\n      \"GATE_STOP_CONDITION_BINDING\"\n    ],\n    \"required_actions\": [\n      \"Publish officio role contract ack before edits\",\n      \"Use scoped verdict format PASS_FOR_<SLICE>_ONLY\"\n    ],\n    \"forbidden_actions\": [\n      \"Use generic PASS verdict\",\n      \"Continue after Owner Verdict Needed signal\"\n    ],\n    \"evidence_required\": [],\n    \"owner_question\": null,\n    \"not_proven\": [\n      \"full multi-agent autonomy\",\n      \"Owner Verdict Needed live UI button\"\n    ],\n    \"evidence_refs\": [\n      \"IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/officio_role_contract_v0_1.json\",\n      \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/officio_role_contract_ack.json\"\n    ],\n    \"generated_at_utc\": \"2026-05-24T02:29:08.134704+00:00\"\n  }\n}\n",
+        "stderr": "",
+        "stdout_truncated": false,
+        "stderr_truncated": false,
+        "parsed_json": {
+          "organ_id": "OFFICIO_AGENTIS",
+          "rich_available": true,
+          "smoke_mode": true,
+          "responsibility": "Role, language, response contract, and stop-condition admission.",
+          "bundle": {
+            "identity_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/IDENTITY/organ_identity_v0_1.md",
+            "contract_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/CONTRACTS/servitor_contract_v0_1.md",
+            "gate_catalog_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/GATES/organ_gate_catalog_v0_1.json",
+            "state_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/STATE/current_state_v0_1.json",
+            "template_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TEMPLATES/organ_verdict_template_v0_1.json",
+            "gate_catalog": {
+              "schema_id": "newgen_organ_gate_catalog_v0_1",
+              "organ_id": "OFFICIO_AGENTIS",
+              "version": "v0_1",
+              "gates": [
+                {
+                  "gate_id": "GATE_ROLE_ACK_REQUIRED",
+                  "severity": "BLOCK",
+                  "purpose": "No execution without role contract acknowledgment.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "officio_role_contract_ack.json",
+                    "taskpack_scope_ack.json"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_OWNER_LANGUAGE_RU",
+                  "severity": "BLOCK",
+                  "purpose": "Owner-facing live commentary must stay in Russian.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "FINAL_REPORT.md"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_SCOPED_VERDICT_ONLY",
+                  "severity": "BLOCK",
+                  "purpose": "No generic PASS claims.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "closure_receipt.json"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_STOP_CONDITION_BINDING",
+                  "severity": "WARN_TO_BLOCK",
+                  "purpose": "Stop conditions must be explicit and accepted.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "taskpack_scope_ack.json",
+                    "organ_route_plan.json"
+                  ]
+                }
+              ]
+            },
+            "state": {
+              "schema_id": "newgen_organ_state_v0_1",
+              "organ_id": "OFFICIO_AGENTIS",
+              "version": "v0_1",
+              "default_verdict": "PASS",
+              "responsibility": "Role, language, response contract, and stop-condition admission.",
+              "servitor_ask": [
+                "What role contract applies to me for this task?",
+                "What owner-facing language and response format are mandatory?",
+                "What stop conditions block continuation?"
+              ],
+              "warn_block_profile": [
+                "WARN on recoverable format mismatch with explicit correction",
+                "BLOCK on missing role ack or owner-facing language violation"
+              ],
+              "required_actions": [
+                "Publish officio role contract ack before edits",
+                "Use scoped verdict format PASS_FOR_<SLICE>_ONLY"
+              ],
+              "forbidden_actions": [
+                "Use generic PASS verdict",
+                "Continue after Owner Verdict Needed signal"
+              ],
+              "evidence_refs": [
+                "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/officio_role_contract_v0_1.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/officio_role_contract_ack.json"
+              ],
+              "last_updated_utc": "2026-05-24T01:20:00Z"
+            },
+            "template": {
+              "schema_id": "newgen_organ_verdict_v0_1",
+              "organ_id": "OFFICIO_AGENTIS",
+              "task_id": "<TASK_ID>",
+              "mode": "SERVITOR_QUERY",
+              "verdict": "PASS|WARN|BLOCK|OWNER_VERDICT_NEEDED",
+              "applied_rules": [],
+              "required_actions": [],
+              "forbidden_actions": [],
+              "evidence_required": [],
+              "owner_question": null,
+              "not_proven": [],
+              "evidence_refs": []
+            }
+          },
+          "verdict": {
+            "schema_id": "newgen_organ_verdict_v0_1",
+            "organ_id": "OFFICIO_AGENTIS",
+            "task_id": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+            "mode": "SMOKE",
+            "verdict": "PASS",
+            "applied_rules": [
+              "GATE_ROLE_ACK_REQUIRED",
+              "GATE_OWNER_LANGUAGE_RU",
+              "GATE_SCOPED_VERDICT_ONLY",
+              "GATE_STOP_CONDITION_BINDING"
+            ],
+            "required_actions": [
+              "Publish officio role contract ack before edits",
+              "Use scoped verdict format PASS_FOR_<SLICE>_ONLY"
+            ],
+            "forbidden_actions": [
+              "Use generic PASS verdict",
+              "Continue after Owner Verdict Needed signal"
+            ],
+            "evidence_required": [],
+            "owner_question": null,
+            "not_proven": [
+              "full multi-agent autonomy",
+              "Owner Verdict Needed live UI button"
+            ],
+            "evidence_refs": [
+              "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/officio_role_contract_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/officio_role_contract_ack.json"
+            ],
+            "generated_at_utc": "2026-05-24T02:29:08.134704+00:00"
+          }
+        },
+        "parse_error": null,
+        "started_at_utc": "2026-05-24T02:29:07Z",
+        "finished_at_utc": "2026-05-24T02:29:08Z",
+        "schema_id": "important_six_tui_smoke_v0_1",
+        "organ_key": "officio",
+        "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+        "generated_at_utc": "2026-05-24T02:29:08Z"
+      },
+      "query_sample": {
+        "command": "python3 IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_organ_query_v0_1.py --sample",
+        "script_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_organ_query_v0_1.py",
+        "exit_code": 0,
+        "duration_ms": 143.62,
+        "timed_out": false,
+        "stdout": "{\n  \"schema_id\": \"newgen_organ_verdict_v0_1\",\n  \"organ_id\": \"OFFICIO_AGENTIS\",\n  \"task_id\": \"TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1\",\n  \"mode\": \"SERVITOR_QUERY\",\n  \"verdict\": \"PASS\",\n  \"applied_rules\": [\n    \"GATE_ROLE_ACK_REQUIRED\",\n    \"GATE_OWNER_LANGUAGE_RU\",\n    \"GATE_SCOPED_VERDICT_ONLY\",\n    \"GATE_STOP_CONDITION_BINDING\"\n  ],\n  \"required_actions\": [\n    \"Publish officio role contract ack before edits\",\n    \"Use scoped verdict format PASS_FOR_<SLICE>_ONLY\"\n  ],\n  \"forbidden_actions\": [\n    \"Use generic PASS verdict\",\n    \"Continue after Owner Verdict Needed signal\"\n  ],\n  \"evidence_required\": [\n    \"officio_role_contract_ack.json\",\n    \"taskpack_scope_ack.json\",\n    \"FINAL_REPORT.md\",\n    \"closure_receipt.json\",\n    \"organ_route_plan.json\"\n  ],\n  \"owner_question\": null,\n  \"not_proven\": [\n    \"full multi-agent autonomy\",\n    \"Owner Verdict Needed live UI button\"\n  ],\n  \"evidence_refs\": [\n    \"IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/officio_role_contract_v0_1.json\",\n    \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/officio_role_contract_ack.json\"\n  ],\n  \"question\": \"What role and language rules apply to this task?\",\n  \"generated_at_utc\": \"2026-05-24T02:29:08.277311+00:00\"\n}\n",
+        "stderr": "",
+        "stdout_truncated": false,
+        "stderr_truncated": false,
+        "parsed_json": {
+          "schema_id": "newgen_organ_verdict_v0_1",
+          "organ_id": "OFFICIO_AGENTIS",
+          "task_id": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+          "mode": "SERVITOR_QUERY",
+          "verdict": "PASS",
+          "applied_rules": [
+            "GATE_ROLE_ACK_REQUIRED",
+            "GATE_OWNER_LANGUAGE_RU",
+            "GATE_SCOPED_VERDICT_ONLY",
+            "GATE_STOP_CONDITION_BINDING"
+          ],
+          "required_actions": [
+            "Publish officio role contract ack before edits",
+            "Use scoped verdict format PASS_FOR_<SLICE>_ONLY"
+          ],
+          "forbidden_actions": [
+            "Use generic PASS verdict",
+            "Continue after Owner Verdict Needed signal"
+          ],
+          "evidence_required": [
+            "officio_role_contract_ack.json",
+            "taskpack_scope_ack.json",
+            "FINAL_REPORT.md",
+            "closure_receipt.json",
+            "organ_route_plan.json"
+          ],
+          "owner_question": null,
+          "not_proven": [
+            "full multi-agent autonomy",
+            "Owner Verdict Needed live UI button"
+          ],
+          "evidence_refs": [
+            "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/officio_role_contract_v0_1.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/officio_role_contract_ack.json"
+          ],
+          "question": "What role and language rules apply to this task?",
+          "generated_at_utc": "2026-05-24T02:29:08.277311+00:00"
+        },
+        "parse_error": null,
+        "started_at_utc": "2026-05-24T02:29:08Z",
+        "finished_at_utc": "2026-05-24T02:29:08Z",
+        "schema_id": "important_six_query_sample_v0_1",
+        "organ_key": "officio",
+        "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+        "generated_at_utc": "2026-05-24T02:29:08Z"
+      },
+      "claim_boundary": "READ_ONLY_OR_SEMI_LIVE_TUI_SNAPSHOT_DASHBOARD_L1"
+    },
+    "administratum": {
+      "schema_id": "important_six_terminal_snapshot_v0_1",
+      "generated_at_utc": "2026-05-24T02:29:08Z",
+      "organ_key": "administratum",
+      "organ_label": "ADMINISTRATUM",
+      "display_name": {
+        "ru": "Администратум",
+        "en": "Administratum"
+      },
+      "role": {
+        "ru": "Непрерывность, отчётность, closure",
+        "en": "Continuity, reporting, closure"
+      },
+      "accent": "#7ea8ff",
+      "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+      "source": {
+        "tui_command": "python3 IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/administratum_tui_v0_1.py --smoke --plain-json",
+        "query_command": "python3 IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS/administratum_organ_query_v0_1.py --sample",
+        "tui_script": "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/administratum_tui_v0_1.py",
+        "query_script": "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS/administratum_organ_query_v0_1.py"
+      },
+      "verdict": "PASS",
+      "status": "PASS",
+      "tui_smoke": {
+        "command": "python3 IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/administratum_tui_v0_1.py --smoke --plain-json",
+        "script_path": "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/administratum_tui_v0_1.py",
+        "exit_code": 0,
+        "duration_ms": 150.38,
+        "timed_out": false,
+        "stdout": "{\n  \"organ_id\": \"ADMINISTRATUM\",\n  \"rich_available\": true,\n  \"smoke_mode\": true,\n  \"responsibility\": \"Task continuity, report/receipt routing, and repo hygiene boundaries.\",\n  \"bundle\": {\n    \"identity_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ADMINISTRATUM/IDENTITY/organ_identity_v0_1.md\",\n    \"contract_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ADMINISTRATUM/CONTRACTS/servitor_contract_v0_1.md\",\n    \"gate_catalog_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ADMINISTRATUM/GATES/organ_gate_catalog_v0_1.json\",\n    \"state_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ADMINISTRATUM/STATE/current_state_v0_1.json\",\n    \"template_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TEMPLATES/organ_verdict_template_v0_1.json\",\n    \"gate_catalog\": {\n      \"schema_id\": \"newgen_organ_gate_catalog_v0_1\",\n      \"organ_id\": \"ADMINISTRATUM\",\n      \"version\": \"v0_1\",\n      \"gates\": [\n        {\n          \"gate_id\": \"GATE_TASK_REGISTRATION_CONTINUITY\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"Task must be registered and routed with explicit scope records.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"taskpack_scope_ack.json\",\n            \"organ_route_plan.json\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_EVIDENCE_PACKAGE_REQUIRED\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"Critical claims require report/receipt package.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"FINAL_REPORT.md\",\n            \"closure_receipt.json\",\n            \"wave1_organ_tui_smoke_report.json\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_REPO_HYGIENE_BOUNDARY\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"No writes outside declared NewGen scope.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"git status --short\",\n            \"git diff --name-only\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_SEQUENCE_DISCIPLINE\",\n          \"severity\": \"WARN_TO_BLOCK\",\n          \"purpose\": \"Boot -> capability -> implementation -> smoke -> closure sequence is required.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"FINAL_REPORT.md\"\n          ]\n        }\n      ]\n    },\n    \"state\": {\n      \"schema_id\": \"newgen_organ_state_v0_1\",\n      \"organ_id\": \"ADMINISTRATUM\",\n      \"version\": \"v0_1\",\n      \"default_verdict\": \"PASS\",\n      \"responsibility\": \"Task continuity, report/receipt routing, and repo hygiene boundaries.\",\n      \"servitor_ask\": [\n        \"What registration/routing evidence is required for this task?\",\n        \"What report and receipt bundle must be produced?\",\n        \"What hygiene/sequence failures block completion?\"\n      ],\n      \"warn_block_profile\": [\n        \"WARN on partial continuity package with explicit recovery path\",\n        \"BLOCK on missing closure receipts or out-of-scope path drift\"\n      ],\n      \"required_actions\": [\n        \"Publish final report and closure receipt with evidence paths\",\n        \"Verify clean worktree and remote sync after push\"\n      ],\n      \"forbidden_actions\": [\n        \"Hide dirty state or missing receipts\",\n        \"Claim pass without smoke evidence\"\n      ],\n      \"evidence_refs\": [\n        \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/taskpack_scope_ack.json\",\n        \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/organ_route_plan.json\"\n      ],\n      \"last_updated_utc\": \"2026-05-24T01:20:00Z\"\n    },\n    \"template\": {\n      \"schema_id\": \"newgen_organ_verdict_v0_1\",\n      \"organ_id\": \"ADMINISTRATUM\",\n      \"task_id\": \"<TASK_ID>\",\n      \"mode\": \"SERVITOR_QUERY\",\n      \"verdict\": \"PASS|WARN|BLOCK|OWNER_VERDICT_NEEDED\",\n      \"applied_rules\": [],\n      \"required_actions\": [],\n      \"forbidden_actions\": [],\n      \"evidence_required\": [],\n      \"owner_question\": null,\n      \"not_proven\": [],\n      \"evidence_refs\": []\n    }\n  },\n  \"verdict\": {\n    \"schema_id\": \"newgen_organ_verdict_v0_1\",\n    \"organ_id\": \"ADMINISTRATUM\",\n    \"task_id\": \"TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1\",\n    \"mode\": \"SMOKE\",\n    \"verdict\": \"PASS\",\n    \"applied_rules\": [\n      \"GATE_TASK_REGISTRATION_CONTINUITY\",\n      \"GATE_EVIDENCE_PACKAGE_REQUIRED\",\n      \"GATE_REPO_HYGIENE_BOUNDARY\",\n      \"GATE_SEQUENCE_DISCIPLINE\"\n    ],\n    \"required_actions\": [\n      \"Publish final report and closure receipt with evidence paths\",\n      \"Verify clean worktree and remote sync after push\"\n    ],\n    \"forbidden_actions\": [\n      \"Hide dirty state or missing receipts\",\n      \"Claim pass without smoke evidence\"\n    ],\n    \"evidence_required\": [],\n    \"owner_question\": null,\n    \"not_proven\": [\n      \"full automated archive intelligence\",\n      \"autonomous stage orchestration\"\n    ],\n    \"evidence_refs\": [\n      \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/taskpack_scope_ack.json\",\n      \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/organ_route_plan.json\"\n    ],\n    \"generated_at_utc\": \"2026-05-24T02:29:08.427337+00:00\"\n  }\n}\n",
+        "stderr": "",
+        "stdout_truncated": false,
+        "stderr_truncated": false,
+        "parsed_json": {
+          "organ_id": "ADMINISTRATUM",
+          "rich_available": true,
+          "smoke_mode": true,
+          "responsibility": "Task continuity, report/receipt routing, and repo hygiene boundaries.",
+          "bundle": {
+            "identity_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ADMINISTRATUM/IDENTITY/organ_identity_v0_1.md",
+            "contract_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ADMINISTRATUM/CONTRACTS/servitor_contract_v0_1.md",
+            "gate_catalog_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ADMINISTRATUM/GATES/organ_gate_catalog_v0_1.json",
+            "state_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ADMINISTRATUM/STATE/current_state_v0_1.json",
+            "template_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TEMPLATES/organ_verdict_template_v0_1.json",
+            "gate_catalog": {
+              "schema_id": "newgen_organ_gate_catalog_v0_1",
+              "organ_id": "ADMINISTRATUM",
+              "version": "v0_1",
+              "gates": [
+                {
+                  "gate_id": "GATE_TASK_REGISTRATION_CONTINUITY",
+                  "severity": "BLOCK",
+                  "purpose": "Task must be registered and routed with explicit scope records.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "taskpack_scope_ack.json",
+                    "organ_route_plan.json"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_EVIDENCE_PACKAGE_REQUIRED",
+                  "severity": "BLOCK",
+                  "purpose": "Critical claims require report/receipt package.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "FINAL_REPORT.md",
+                    "closure_receipt.json",
+                    "wave1_organ_tui_smoke_report.json"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_REPO_HYGIENE_BOUNDARY",
+                  "severity": "BLOCK",
+                  "purpose": "No writes outside declared NewGen scope.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "git status --short",
+                    "git diff --name-only"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_SEQUENCE_DISCIPLINE",
+                  "severity": "WARN_TO_BLOCK",
+                  "purpose": "Boot -> capability -> implementation -> smoke -> closure sequence is required.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "FINAL_REPORT.md"
+                  ]
+                }
+              ]
+            },
+            "state": {
+              "schema_id": "newgen_organ_state_v0_1",
+              "organ_id": "ADMINISTRATUM",
+              "version": "v0_1",
+              "default_verdict": "PASS",
+              "responsibility": "Task continuity, report/receipt routing, and repo hygiene boundaries.",
+              "servitor_ask": [
+                "What registration/routing evidence is required for this task?",
+                "What report and receipt bundle must be produced?",
+                "What hygiene/sequence failures block completion?"
+              ],
+              "warn_block_profile": [
+                "WARN on partial continuity package with explicit recovery path",
+                "BLOCK on missing closure receipts or out-of-scope path drift"
+              ],
+              "required_actions": [
+                "Publish final report and closure receipt with evidence paths",
+                "Verify clean worktree and remote sync after push"
+              ],
+              "forbidden_actions": [
+                "Hide dirty state or missing receipts",
+                "Claim pass without smoke evidence"
+              ],
+              "evidence_refs": [
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/taskpack_scope_ack.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/organ_route_plan.json"
+              ],
+              "last_updated_utc": "2026-05-24T01:20:00Z"
+            },
+            "template": {
+              "schema_id": "newgen_organ_verdict_v0_1",
+              "organ_id": "ADMINISTRATUM",
+              "task_id": "<TASK_ID>",
+              "mode": "SERVITOR_QUERY",
+              "verdict": "PASS|WARN|BLOCK|OWNER_VERDICT_NEEDED",
+              "applied_rules": [],
+              "required_actions": [],
+              "forbidden_actions": [],
+              "evidence_required": [],
+              "owner_question": null,
+              "not_proven": [],
+              "evidence_refs": []
+            }
+          },
+          "verdict": {
+            "schema_id": "newgen_organ_verdict_v0_1",
+            "organ_id": "ADMINISTRATUM",
+            "task_id": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+            "mode": "SMOKE",
+            "verdict": "PASS",
+            "applied_rules": [
+              "GATE_TASK_REGISTRATION_CONTINUITY",
+              "GATE_EVIDENCE_PACKAGE_REQUIRED",
+              "GATE_REPO_HYGIENE_BOUNDARY",
+              "GATE_SEQUENCE_DISCIPLINE"
+            ],
+            "required_actions": [
+              "Publish final report and closure receipt with evidence paths",
+              "Verify clean worktree and remote sync after push"
+            ],
+            "forbidden_actions": [
+              "Hide dirty state or missing receipts",
+              "Claim pass without smoke evidence"
+            ],
+            "evidence_required": [],
+            "owner_question": null,
+            "not_proven": [
+              "full automated archive intelligence",
+              "autonomous stage orchestration"
+            ],
+            "evidence_refs": [
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/taskpack_scope_ack.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/organ_route_plan.json"
+            ],
+            "generated_at_utc": "2026-05-24T02:29:08.427337+00:00"
+          }
+        },
+        "parse_error": null,
+        "started_at_utc": "2026-05-24T02:29:08Z",
+        "finished_at_utc": "2026-05-24T02:29:08Z",
+        "schema_id": "important_six_tui_smoke_v0_1",
+        "organ_key": "administratum",
+        "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+        "generated_at_utc": "2026-05-24T02:29:08Z"
+      },
+      "query_sample": {
+        "command": "python3 IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS/administratum_organ_query_v0_1.py --sample",
+        "script_path": "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS/administratum_organ_query_v0_1.py",
+        "exit_code": 0,
+        "duration_ms": 149.62,
+        "timed_out": false,
+        "stdout": "{\n  \"schema_id\": \"newgen_organ_verdict_v0_1\",\n  \"organ_id\": \"ADMINISTRATUM\",\n  \"task_id\": \"TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1\",\n  \"mode\": \"SERVITOR_QUERY\",\n  \"verdict\": \"PASS\",\n  \"applied_rules\": [\n    \"GATE_TASK_REGISTRATION_CONTINUITY\",\n    \"GATE_EVIDENCE_PACKAGE_REQUIRED\",\n    \"GATE_REPO_HYGIENE_BOUNDARY\",\n    \"GATE_SEQUENCE_DISCIPLINE\"\n  ],\n  \"required_actions\": [\n    \"Publish final report and closure receipt with evidence paths\",\n    \"Verify clean worktree and remote sync after push\"\n  ],\n  \"forbidden_actions\": [\n    \"Hide dirty state or missing receipts\",\n    \"Claim pass without smoke evidence\"\n  ],\n  \"evidence_required\": [\n    \"taskpack_scope_ack.json\",\n    \"organ_route_plan.json\",\n    \"FINAL_REPORT.md\",\n    \"closure_receipt.json\",\n    \"wave1_organ_tui_smoke_report.json\",\n    \"git status --short\",\n    \"git diff --name-only\"\n  ],\n  \"owner_question\": null,\n  \"not_proven\": [\n    \"full automated archive intelligence\",\n    \"autonomous stage orchestration\"\n  ],\n  \"evidence_refs\": [\n    \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/taskpack_scope_ack.json\",\n    \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/organ_route_plan.json\"\n  ],\n  \"question\": \"What registration/history/continuity hygiene is required?\",\n  \"generated_at_utc\": \"2026-05-24T02:29:08.577498+00:00\"\n}\n",
+        "stderr": "",
+        "stdout_truncated": false,
+        "stderr_truncated": false,
+        "parsed_json": {
+          "schema_id": "newgen_organ_verdict_v0_1",
+          "organ_id": "ADMINISTRATUM",
+          "task_id": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+          "mode": "SERVITOR_QUERY",
+          "verdict": "PASS",
+          "applied_rules": [
+            "GATE_TASK_REGISTRATION_CONTINUITY",
+            "GATE_EVIDENCE_PACKAGE_REQUIRED",
+            "GATE_REPO_HYGIENE_BOUNDARY",
+            "GATE_SEQUENCE_DISCIPLINE"
+          ],
+          "required_actions": [
+            "Publish final report and closure receipt with evidence paths",
+            "Verify clean worktree and remote sync after push"
+          ],
+          "forbidden_actions": [
+            "Hide dirty state or missing receipts",
+            "Claim pass without smoke evidence"
+          ],
+          "evidence_required": [
+            "taskpack_scope_ack.json",
+            "organ_route_plan.json",
+            "FINAL_REPORT.md",
+            "closure_receipt.json",
+            "wave1_organ_tui_smoke_report.json",
+            "git status --short",
+            "git diff --name-only"
+          ],
+          "owner_question": null,
+          "not_proven": [
+            "full automated archive intelligence",
+            "autonomous stage orchestration"
+          ],
+          "evidence_refs": [
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/taskpack_scope_ack.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/organ_route_plan.json"
+          ],
+          "question": "What registration/history/continuity hygiene is required?",
+          "generated_at_utc": "2026-05-24T02:29:08.577498+00:00"
+        },
+        "parse_error": null,
+        "started_at_utc": "2026-05-24T02:29:08Z",
+        "finished_at_utc": "2026-05-24T02:29:08Z",
+        "schema_id": "important_six_query_sample_v0_1",
+        "organ_key": "administratum",
+        "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+        "generated_at_utc": "2026-05-24T02:29:08Z"
+      },
+      "claim_boundary": "READ_ONLY_OR_SEMI_LIVE_TUI_SNAPSHOT_DASHBOARD_L1"
+    },
+    "astronomicon": {
+      "schema_id": "important_six_terminal_snapshot_v0_1",
+      "generated_at_utc": "2026-05-24T02:29:08Z",
+      "organ_key": "astronomicon",
+      "organ_label": "ASTRONOMICON",
+      "display_name": {
+        "ru": "Астрономикон",
+        "en": "Astronomicon"
+      },
+      "role": {
+        "ru": "Маршруты, стадии, task-регистрация",
+        "en": "Routes, stages, task registration"
+      },
+      "accent": "#d68cff",
+      "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+      "source": {
+        "tui_command": "python3 IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/astronomicon_tui_v0_1.py --smoke --plain-json",
+        "query_command": "python3 IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_organ_query_v0_1.py --sample",
+        "tui_script": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/astronomicon_tui_v0_1.py",
+        "query_script": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_organ_query_v0_1.py"
+      },
+      "verdict": "PASS",
+      "status": "PASS",
+      "tui_smoke": {
+        "command": "python3 IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/astronomicon_tui_v0_1.py --smoke --plain-json",
+        "script_path": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/astronomicon_tui_v0_1.py",
+        "exit_code": 0,
+        "duration_ms": 152.29,
+        "timed_out": false,
+        "stdout": "{\n  \"organ_id\": \"ASTRONOMICON\",\n  \"rich_available\": true,\n  \"smoke_mode\": true,\n  \"responsibility\": \"Task registration, classification, templates, staged route planning, owner comment lanes, pass/fail criteria, active/archive transitions.\",\n  \"bundle\": {\n    \"identity_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ASTRONOMICON/IDENTITY/organ_identity_v0_1.md\",\n    \"contract_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ASTRONOMICON/CONTRACTS/servitor_contract_v0_1.md\",\n    \"gate_catalog_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ASTRONOMICON/GATES/organ_gate_catalog_v0_1.json\",\n    \"state_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ASTRONOMICON/STATE/current_state_v0_1.json\",\n    \"template_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ASTRONOMICON/TEMPLATES/organ_verdict_template_v0_1.json\",\n    \"gate_catalog\": {\n      \"schema_id\": \"newgen_organ_gate_catalog_v0_1\",\n      \"organ_id\": \"ASTRONOMICON\",\n      \"version\": \"v0_1\",\n      \"gates\": [\n        {\n          \"gate_id\": \"GATE_ASTRA_TASK_REGISTRATION_REQUIRED\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"Task must be registered and typed before execution.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"taskpack_scope_ack.json\",\n            \"organ_route_plan.json\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_ASTRA_STAGE_ROUTE_REQUIRED\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"Stage route and ordering must be explicit.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"organ_route_plan.json\",\n            \"important_six_interaction_simulation_v0_1.json\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_ASTRA_OWNER_PASS_FAIL_REQUIRED\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"Owner comments and pass/fail criteria are mandatory fields.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"important_six_interaction_simulation_ru.md\",\n            \"FINAL_REPORT.md\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_ASTRA_ACTIVE_ARCHIVE_TRANSITION\",\n          \"severity\": \"WARN_TO_BLOCK\",\n          \"purpose\": \"Active/archive transition should be defined before closure.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"closure_receipt.json\"\n          ]\n        }\n      ]\n    },\n    \"state\": {\n      \"schema_id\": \"newgen_organ_state_v0_1\",\n      \"organ_id\": \"ASTRONOMICON\",\n      \"version\": \"v0_1\",\n      \"default_verdict\": \"PASS\",\n      \"responsibility\": \"Task registration, classification, templates, staged route planning, owner comment lanes, pass/fail criteria, active/archive transitions.\",\n      \"servitor_ask\": [\n        \"How should this task be registered and classified?\",\n        \"What stage plan and route order are required?\",\n        \"What owner comments and pass/fail criteria must be embedded?\",\n        \"What active-to-archive transition conditions apply?\"\n      ],\n      \"warn_block_profile\": [\n        \"WARN on partially specified stage plan with explicit boundary\",\n        \"BLOCK on task execution without registration/classification/stage map\",\n        \"BLOCK on missing pass/fail criteria and owner comment field\"\n      ],\n      \"required_actions\": [\n        \"Register task packet with class and stage structure\",\n        \"Bind owner comments and pass/fail criteria before execution\",\n        \"Produce route/stage plan and archive transition rule\"\n      ],\n      \"forbidden_actions\": [\n        \"Skip task registration\",\n        \"Run stage flow without explicit classification\",\n        \"Mark task complete with no archive transition criteria\"\n      ],\n      \"evidence_refs\": [\n        \"IMPERIUM_NEW_GENERATION/ASTRONOMICON/GATES/organ_gate_catalog_v0_1.json\",\n        \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/organ_route_plan.json\",\n        \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json\"\n      ],\n      \"last_updated_utc\": \"2026-05-24T01:57:54+00:00\"\n    },\n    \"template\": {\n      \"schema_id\": \"newgen_organ_verdict_v0_1\",\n      \"organ_id\": \"ASTRONOMICON\",\n      \"task_id\": \"<TASK_ID>\",\n      \"mode\": \"SERVITOR_QUERY\",\n      \"verdict\": \"PASS|WARN|BLOCK|OWNER_VERDICT_NEEDED\",\n      \"applied_rules\": [],\n      \"required_actions\": [],\n      \"forbidden_actions\": [],\n      \"evidence_required\": [],\n      \"owner_question\": null,\n      \"not_proven\": [],\n      \"evidence_refs\": []\n    }\n  },\n  \"verdict\": {\n    \"schema_id\": \"newgen_organ_verdict_v0_1\",\n    \"organ_id\": \"ASTRONOMICON\",\n    \"task_id\": \"TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1\",\n    \"mode\": \"SMOKE\",\n    \"verdict\": \"PASS\",\n    \"applied_rules\": [\n      \"GATE_ASTRA_TASK_REGISTRATION_REQUIRED\",\n      \"GATE_ASTRA_STAGE_ROUTE_REQUIRED\",\n      \"GATE_ASTRA_OWNER_PASS_FAIL_REQUIRED\",\n      \"GATE_ASTRA_ACTIVE_ARCHIVE_TRANSITION\"\n    ],\n    \"required_actions\": [\n      \"Register task packet with class and stage structure\",\n      \"Bind owner comments and pass/fail criteria before execution\",\n      \"Produce route/stage plan and archive transition rule\"\n    ],\n    \"forbidden_actions\": [\n      \"Skip task registration\",\n      \"Run stage flow without explicit classification\",\n      \"Mark task complete with no archive transition criteria\"\n    ],\n    \"evidence_required\": [],\n    \"owner_question\": null,\n    \"not_proven\": [\n      \"Strategium/Schola/Custodes/Throne implementation\",\n      \"live Owner Verdict Needed UI button\",\n      \"production autonomy\",\n      \"full organ intelligence\",\n      \"full external adapter layer\"\n    ],\n    \"evidence_refs\": [\n      \"IMPERIUM_NEW_GENERATION/ASTRONOMICON/GATES/organ_gate_catalog_v0_1.json\",\n      \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/organ_route_plan.json\",\n      \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json\"\n    ],\n    \"generated_at_utc\": \"2026-05-24T02:29:08.729574+00:00\"\n  }\n}\n",
+        "stderr": "",
+        "stdout_truncated": false,
+        "stderr_truncated": false,
+        "parsed_json": {
+          "organ_id": "ASTRONOMICON",
+          "rich_available": true,
+          "smoke_mode": true,
+          "responsibility": "Task registration, classification, templates, staged route planning, owner comment lanes, pass/fail criteria, active/archive transitions.",
+          "bundle": {
+            "identity_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ASTRONOMICON/IDENTITY/organ_identity_v0_1.md",
+            "contract_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ASTRONOMICON/CONTRACTS/servitor_contract_v0_1.md",
+            "gate_catalog_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ASTRONOMICON/GATES/organ_gate_catalog_v0_1.json",
+            "state_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ASTRONOMICON/STATE/current_state_v0_1.json",
+            "template_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ASTRONOMICON/TEMPLATES/organ_verdict_template_v0_1.json",
+            "gate_catalog": {
+              "schema_id": "newgen_organ_gate_catalog_v0_1",
+              "organ_id": "ASTRONOMICON",
+              "version": "v0_1",
+              "gates": [
+                {
+                  "gate_id": "GATE_ASTRA_TASK_REGISTRATION_REQUIRED",
+                  "severity": "BLOCK",
+                  "purpose": "Task must be registered and typed before execution.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "taskpack_scope_ack.json",
+                    "organ_route_plan.json"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_ASTRA_STAGE_ROUTE_REQUIRED",
+                  "severity": "BLOCK",
+                  "purpose": "Stage route and ordering must be explicit.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "organ_route_plan.json",
+                    "important_six_interaction_simulation_v0_1.json"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_ASTRA_OWNER_PASS_FAIL_REQUIRED",
+                  "severity": "BLOCK",
+                  "purpose": "Owner comments and pass/fail criteria are mandatory fields.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "important_six_interaction_simulation_ru.md",
+                    "FINAL_REPORT.md"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_ASTRA_ACTIVE_ARCHIVE_TRANSITION",
+                  "severity": "WARN_TO_BLOCK",
+                  "purpose": "Active/archive transition should be defined before closure.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "closure_receipt.json"
+                  ]
+                }
+              ]
+            },
+            "state": {
+              "schema_id": "newgen_organ_state_v0_1",
+              "organ_id": "ASTRONOMICON",
+              "version": "v0_1",
+              "default_verdict": "PASS",
+              "responsibility": "Task registration, classification, templates, staged route planning, owner comment lanes, pass/fail criteria, active/archive transitions.",
+              "servitor_ask": [
+                "How should this task be registered and classified?",
+                "What stage plan and route order are required?",
+                "What owner comments and pass/fail criteria must be embedded?",
+                "What active-to-archive transition conditions apply?"
+              ],
+              "warn_block_profile": [
+                "WARN on partially specified stage plan with explicit boundary",
+                "BLOCK on task execution without registration/classification/stage map",
+                "BLOCK on missing pass/fail criteria and owner comment field"
+              ],
+              "required_actions": [
+                "Register task packet with class and stage structure",
+                "Bind owner comments and pass/fail criteria before execution",
+                "Produce route/stage plan and archive transition rule"
+              ],
+              "forbidden_actions": [
+                "Skip task registration",
+                "Run stage flow without explicit classification",
+                "Mark task complete with no archive transition criteria"
+              ],
+              "evidence_refs": [
+                "IMPERIUM_NEW_GENERATION/ASTRONOMICON/GATES/organ_gate_catalog_v0_1.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/organ_route_plan.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json"
+              ],
+              "last_updated_utc": "2026-05-24T01:57:54+00:00"
+            },
+            "template": {
+              "schema_id": "newgen_organ_verdict_v0_1",
+              "organ_id": "ASTRONOMICON",
+              "task_id": "<TASK_ID>",
+              "mode": "SERVITOR_QUERY",
+              "verdict": "PASS|WARN|BLOCK|OWNER_VERDICT_NEEDED",
+              "applied_rules": [],
+              "required_actions": [],
+              "forbidden_actions": [],
+              "evidence_required": [],
+              "owner_question": null,
+              "not_proven": [],
+              "evidence_refs": []
+            }
+          },
+          "verdict": {
+            "schema_id": "newgen_organ_verdict_v0_1",
+            "organ_id": "ASTRONOMICON",
+            "task_id": "TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1",
+            "mode": "SMOKE",
+            "verdict": "PASS",
+            "applied_rules": [
+              "GATE_ASTRA_TASK_REGISTRATION_REQUIRED",
+              "GATE_ASTRA_STAGE_ROUTE_REQUIRED",
+              "GATE_ASTRA_OWNER_PASS_FAIL_REQUIRED",
+              "GATE_ASTRA_ACTIVE_ARCHIVE_TRANSITION"
+            ],
+            "required_actions": [
+              "Register task packet with class and stage structure",
+              "Bind owner comments and pass/fail criteria before execution",
+              "Produce route/stage plan and archive transition rule"
+            ],
+            "forbidden_actions": [
+              "Skip task registration",
+              "Run stage flow without explicit classification",
+              "Mark task complete with no archive transition criteria"
+            ],
+            "evidence_required": [],
+            "owner_question": null,
+            "not_proven": [
+              "Strategium/Schola/Custodes/Throne implementation",
+              "live Owner Verdict Needed UI button",
+              "production autonomy",
+              "full organ intelligence",
+              "full external adapter layer"
+            ],
+            "evidence_refs": [
+              "IMPERIUM_NEW_GENERATION/ASTRONOMICON/GATES/organ_gate_catalog_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/organ_route_plan.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json"
+            ],
+            "generated_at_utc": "2026-05-24T02:29:08.729574+00:00"
+          }
+        },
+        "parse_error": null,
+        "started_at_utc": "2026-05-24T02:29:08Z",
+        "finished_at_utc": "2026-05-24T02:29:08Z",
+        "schema_id": "important_six_tui_smoke_v0_1",
+        "organ_key": "astronomicon",
+        "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+        "generated_at_utc": "2026-05-24T02:29:08Z"
+      },
+      "query_sample": {
+        "command": "python3 IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_organ_query_v0_1.py --sample",
+        "script_path": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_organ_query_v0_1.py",
+        "exit_code": 0,
+        "duration_ms": 145.44,
+        "timed_out": false,
+        "stdout": "{\n  \"schema_id\": \"newgen_organ_verdict_v0_1\",\n  \"organ_id\": \"ASTRONOMICON\",\n  \"task_id\": \"TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1\",\n  \"mode\": \"SERVITOR_QUERY\",\n  \"verdict\": \"PASS\",\n  \"applied_rules\": [\n    \"GATE_ASTRA_TASK_REGISTRATION_REQUIRED\",\n    \"GATE_ASTRA_STAGE_ROUTE_REQUIRED\",\n    \"GATE_ASTRA_OWNER_PASS_FAIL_REQUIRED\",\n    \"GATE_ASTRA_ACTIVE_ARCHIVE_TRANSITION\"\n  ],\n  \"required_actions\": [\n    \"Register task packet with class and stage structure\",\n    \"Bind owner comments and pass/fail criteria before execution\",\n    \"Produce route/stage plan and archive transition rule\"\n  ],\n  \"forbidden_actions\": [\n    \"Skip task registration\",\n    \"Run stage flow without explicit classification\",\n    \"Mark task complete with no archive transition criteria\"\n  ],\n  \"evidence_required\": [\n    \"taskpack_scope_ack.json\",\n    \"organ_route_plan.json\",\n    \"important_six_interaction_simulation_v0_1.json\",\n    \"important_six_interaction_simulation_ru.md\",\n    \"FINAL_REPORT.md\",\n    \"closure_receipt.json\"\n  ],\n  \"owner_question\": null,\n  \"not_proven\": [\n    \"Strategium/Schola/Custodes/Throne implementation\",\n    \"live Owner Verdict Needed UI button\",\n    \"production autonomy\",\n    \"full organ intelligence\",\n    \"full external adapter layer\"\n  ],\n  \"evidence_refs\": [\n    \"IMPERIUM_NEW_GENERATION/ASTRONOMICON/GATES/organ_gate_catalog_v0_1.json\",\n    \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/organ_route_plan.json\",\n    \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json\"\n  ],\n  \"question\": \"What checks must pass before we can continue?\",\n  \"generated_at_utc\": \"2026-05-24T02:29:08.877389+00:00\"\n}\n",
+        "stderr": "",
+        "stdout_truncated": false,
+        "stderr_truncated": false,
+        "parsed_json": {
+          "schema_id": "newgen_organ_verdict_v0_1",
+          "organ_id": "ASTRONOMICON",
+          "task_id": "TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1",
+          "mode": "SERVITOR_QUERY",
+          "verdict": "PASS",
+          "applied_rules": [
+            "GATE_ASTRA_TASK_REGISTRATION_REQUIRED",
+            "GATE_ASTRA_STAGE_ROUTE_REQUIRED",
+            "GATE_ASTRA_OWNER_PASS_FAIL_REQUIRED",
+            "GATE_ASTRA_ACTIVE_ARCHIVE_TRANSITION"
+          ],
+          "required_actions": [
+            "Register task packet with class and stage structure",
+            "Bind owner comments and pass/fail criteria before execution",
+            "Produce route/stage plan and archive transition rule"
+          ],
+          "forbidden_actions": [
+            "Skip task registration",
+            "Run stage flow without explicit classification",
+            "Mark task complete with no archive transition criteria"
+          ],
+          "evidence_required": [
+            "taskpack_scope_ack.json",
+            "organ_route_plan.json",
+            "important_six_interaction_simulation_v0_1.json",
+            "important_six_interaction_simulation_ru.md",
+            "FINAL_REPORT.md",
+            "closure_receipt.json"
+          ],
+          "owner_question": null,
+          "not_proven": [
+            "Strategium/Schola/Custodes/Throne implementation",
+            "live Owner Verdict Needed UI button",
+            "production autonomy",
+            "full organ intelligence",
+            "full external adapter layer"
+          ],
+          "evidence_refs": [
+            "IMPERIUM_NEW_GENERATION/ASTRONOMICON/GATES/organ_gate_catalog_v0_1.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/organ_route_plan.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json"
+          ],
+          "question": "What checks must pass before we can continue?",
+          "generated_at_utc": "2026-05-24T02:29:08.877389+00:00"
+        },
+        "parse_error": null,
+        "started_at_utc": "2026-05-24T02:29:08Z",
+        "finished_at_utc": "2026-05-24T02:29:08Z",
+        "schema_id": "important_six_query_sample_v0_1",
+        "organ_key": "astronomicon",
+        "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+        "generated_at_utc": "2026-05-24T02:29:08Z"
+      },
+      "claim_boundary": "READ_ONLY_OR_SEMI_LIVE_TUI_SNAPSHOT_DASHBOARD_L1"
+    },
+    "mechanicus": {
+      "schema_id": "important_six_terminal_snapshot_v0_1",
+      "generated_at_utc": "2026-05-24T02:29:09Z",
+      "organ_key": "mechanicus",
+      "organ_label": "MECHANICUS",
+      "display_name": {
+        "ru": "Механикус",
+        "en": "Mechanicus"
+      },
+      "role": {
+        "ru": "Инструменты и безопасность capability",
+        "en": "Tooling and capability safety"
+      },
+      "accent": "#ff8b8b",
+      "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+      "source": {
+        "tui_command": "python3 IMPERIUM_NEW_GENERATION/MECHANICUS/TUI/mechanicus_tui_v0_1.py --smoke --plain-json",
+        "query_command": "python3 IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_organ_query_v0_1.py --sample",
+        "tui_script": "IMPERIUM_NEW_GENERATION/MECHANICUS/TUI/mechanicus_tui_v0_1.py",
+        "query_script": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_organ_query_v0_1.py"
+      },
+      "verdict": "PASS",
+      "status": "PASS",
+      "tui_smoke": {
+        "command": "python3 IMPERIUM_NEW_GENERATION/MECHANICUS/TUI/mechanicus_tui_v0_1.py --smoke --plain-json",
+        "script_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TUI/mechanicus_tui_v0_1.py",
+        "exit_code": 0,
+        "duration_ms": 167.64,
+        "timed_out": false,
+        "stdout": "{\n  \"organ_id\": \"MECHANICUS\",\n  \"rich_available\": true,\n  \"smoke_mode\": true,\n  \"responsibility\": \"Tool capability governance and TUI runtime readiness.\",\n  \"bundle\": {\n    \"identity_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MECHANICUS/IDENTITY/organ_identity_v0_1.md\",\n    \"contract_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MECHANICUS/CONTRACTS/servitor_contract_v0_1.md\",\n    \"gate_catalog_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MECHANICUS/GATES/organ_gate_catalog_v0_1.json\",\n    \"state_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MECHANICUS/STATE/current_state_v0_1.json\",\n    \"template_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MECHANICUS/TEMPLATES/organ_verdict_template_v0_1.json\",\n    \"gate_catalog\": {\n      \"schema_id\": \"newgen_organ_gate_catalog_v0_1\",\n      \"organ_id\": \"MECHANICUS\",\n      \"version\": \"v0_1\",\n      \"gates\": [\n        {\n          \"gate_id\": \"GATE_RICH_MANDATORY_FOR_WAVE1_TUI\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"Wave 1 core organ TUI requires Rich renderer availability.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_CONTROLLED_CAPABILITY_ACQUISITION\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"If capability missing, install/verify/register with receipt.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_SCRIPT_ARTIFACT_PRESERVATION\",\n          \"severity\": \"WARN_TO_BLOCK\",\n          \"purpose\": \"No useful helper script disappears silently.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"wave1_organ_tui_smoke_report.json\",\n            \"FINAL_REPORT.md\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_COMMAND_CHUNKING_DISCIPLINE\",\n          \"severity\": \"WARN_TO_BLOCK\",\n          \"purpose\": \"Large execution must be phased and validated.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"closure_receipt.json\"\n          ]\n        }\n      ]\n    },\n    \"state\": {\n      \"schema_id\": \"newgen_organ_state_v0_1\",\n      \"organ_id\": \"MECHANICUS\",\n      \"version\": \"v0_1\",\n      \"default_verdict\": \"PASS\",\n      \"responsibility\": \"Tool capability governance and TUI runtime readiness.\",\n      \"servitor_ask\": [\n        \"Is Rich available for Wave 1 TUI mandatory renderer?\",\n        \"What tool registry entry proves this capability?\",\n        \"What controlled install path is required if missing?\"\n      ],\n      \"warn_block_profile\": [\n        \"WARN on partial registry metadata\",\n        \"BLOCK when mandatory renderer capability is missing\"\n      ],\n      \"required_actions\": [\n        \"Probe Rich import and version\",\n        \"Store capability registry evidence under Mechanicus TOOLS_REGISTRY\"\n      ],\n      \"forbidden_actions\": [\n        \"Claim TUI visual pass with plain fallback only\",\n        \"Perform uncontrolled package installs\"\n      ],\n      \"evidence_refs\": [\n        \"IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json\",\n        \"IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/\"\n      ],\n      \"last_updated_utc\": \"2026-05-24T01:20:00Z\"\n    },\n    \"template\": {\n      \"schema_id\": \"newgen_organ_verdict_v0_1\",\n      \"organ_id\": \"MECHANICUS\",\n      \"task_id\": \"<TASK_ID>\",\n      \"mode\": \"SERVITOR_QUERY\",\n      \"verdict\": \"PASS|WARN|BLOCK|OWNER_VERDICT_NEEDED\",\n      \"applied_rules\": [],\n      \"required_actions\": [],\n      \"forbidden_actions\": [],\n      \"evidence_required\": [],\n      \"owner_question\": null,\n      \"not_proven\": [],\n      \"evidence_refs\": []\n    }\n  },\n  \"verdict\": {\n    \"schema_id\": \"newgen_organ_verdict_v0_1\",\n    \"organ_id\": \"MECHANICUS\",\n    \"task_id\": \"TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1\",\n    \"mode\": \"SMOKE\",\n    \"verdict\": \"PASS\",\n    \"applied_rules\": [\n      \"GATE_RICH_MANDATORY_FOR_WAVE1_TUI\",\n      \"GATE_CONTROLLED_CAPABILITY_ACQUISITION\",\n      \"GATE_SCRIPT_ARTIFACT_PRESERVATION\",\n      \"GATE_COMMAND_CHUNKING_DISCIPLINE\"\n    ],\n    \"required_actions\": [\n      \"Probe Rich import and version\",\n      \"Store capability registry evidence under Mechanicus TOOLS_REGISTRY\"\n    ],\n    \"forbidden_actions\": [\n      \"Claim TUI visual pass with plain fallback only\",\n      \"Perform uncontrolled package installs\"\n    ],\n    \"evidence_required\": [],\n    \"owner_question\": null,\n    \"not_proven\": [\n      \"full production-grade tool admission framework\",\n      \"autonomic remediation loops\"\n    ],\n    \"evidence_refs\": [\n      \"IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json\",\n      \"IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/\"\n    ],\n    \"rich_probe\": {\n      \"available\": true,\n      \"version\": \"13.7.1\",\n      \"module_path\": \"/usr/lib/python3/dist-packages/rich/__init__.py\"\n    },\n    \"generated_at_utc\": \"2026-05-24T02:29:09.040855+00:00\"\n  }\n}\n",
+        "stderr": "",
+        "stdout_truncated": false,
+        "stderr_truncated": false,
+        "parsed_json": {
+          "organ_id": "MECHANICUS",
+          "rich_available": true,
+          "smoke_mode": true,
+          "responsibility": "Tool capability governance and TUI runtime readiness.",
+          "bundle": {
+            "identity_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MECHANICUS/IDENTITY/organ_identity_v0_1.md",
+            "contract_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MECHANICUS/CONTRACTS/servitor_contract_v0_1.md",
+            "gate_catalog_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MECHANICUS/GATES/organ_gate_catalog_v0_1.json",
+            "state_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MECHANICUS/STATE/current_state_v0_1.json",
+            "template_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MECHANICUS/TEMPLATES/organ_verdict_template_v0_1.json",
+            "gate_catalog": {
+              "schema_id": "newgen_organ_gate_catalog_v0_1",
+              "organ_id": "MECHANICUS",
+              "version": "v0_1",
+              "gates": [
+                {
+                  "gate_id": "GATE_RICH_MANDATORY_FOR_WAVE1_TUI",
+                  "severity": "BLOCK",
+                  "purpose": "Wave 1 core organ TUI requires Rich renderer availability.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_CONTROLLED_CAPABILITY_ACQUISITION",
+                  "severity": "BLOCK",
+                  "purpose": "If capability missing, install/verify/register with receipt.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_SCRIPT_ARTIFACT_PRESERVATION",
+                  "severity": "WARN_TO_BLOCK",
+                  "purpose": "No useful helper script disappears silently.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "wave1_organ_tui_smoke_report.json",
+                    "FINAL_REPORT.md"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_COMMAND_CHUNKING_DISCIPLINE",
+                  "severity": "WARN_TO_BLOCK",
+                  "purpose": "Large execution must be phased and validated.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "closure_receipt.json"
+                  ]
+                }
+              ]
+            },
+            "state": {
+              "schema_id": "newgen_organ_state_v0_1",
+              "organ_id": "MECHANICUS",
+              "version": "v0_1",
+              "default_verdict": "PASS",
+              "responsibility": "Tool capability governance and TUI runtime readiness.",
+              "servitor_ask": [
+                "Is Rich available for Wave 1 TUI mandatory renderer?",
+                "What tool registry entry proves this capability?",
+                "What controlled install path is required if missing?"
+              ],
+              "warn_block_profile": [
+                "WARN on partial registry metadata",
+                "BLOCK when mandatory renderer capability is missing"
+              ],
+              "required_actions": [
+                "Probe Rich import and version",
+                "Store capability registry evidence under Mechanicus TOOLS_REGISTRY"
+              ],
+              "forbidden_actions": [
+                "Claim TUI visual pass with plain fallback only",
+                "Perform uncontrolled package installs"
+              ],
+              "evidence_refs": [
+                "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json",
+                "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/"
+              ],
+              "last_updated_utc": "2026-05-24T01:20:00Z"
+            },
+            "template": {
+              "schema_id": "newgen_organ_verdict_v0_1",
+              "organ_id": "MECHANICUS",
+              "task_id": "<TASK_ID>",
+              "mode": "SERVITOR_QUERY",
+              "verdict": "PASS|WARN|BLOCK|OWNER_VERDICT_NEEDED",
+              "applied_rules": [],
+              "required_actions": [],
+              "forbidden_actions": [],
+              "evidence_required": [],
+              "owner_question": null,
+              "not_proven": [],
+              "evidence_refs": []
+            }
+          },
+          "verdict": {
+            "schema_id": "newgen_organ_verdict_v0_1",
+            "organ_id": "MECHANICUS",
+            "task_id": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+            "mode": "SMOKE",
+            "verdict": "PASS",
+            "applied_rules": [
+              "GATE_RICH_MANDATORY_FOR_WAVE1_TUI",
+              "GATE_CONTROLLED_CAPABILITY_ACQUISITION",
+              "GATE_SCRIPT_ARTIFACT_PRESERVATION",
+              "GATE_COMMAND_CHUNKING_DISCIPLINE"
+            ],
+            "required_actions": [
+              "Probe Rich import and version",
+              "Store capability registry evidence under Mechanicus TOOLS_REGISTRY"
+            ],
+            "forbidden_actions": [
+              "Claim TUI visual pass with plain fallback only",
+              "Perform uncontrolled package installs"
+            ],
+            "evidence_required": [],
+            "owner_question": null,
+            "not_proven": [
+              "full production-grade tool admission framework",
+              "autonomic remediation loops"
+            ],
+            "evidence_refs": [
+              "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json",
+              "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/"
+            ],
+            "rich_probe": {
+              "available": true,
+              "version": "13.7.1",
+              "module_path": "/usr/lib/python3/dist-packages/rich/__init__.py"
+            },
+            "generated_at_utc": "2026-05-24T02:29:09.040855+00:00"
+          }
+        },
+        "parse_error": null,
+        "started_at_utc": "2026-05-24T02:29:08Z",
+        "finished_at_utc": "2026-05-24T02:29:09Z",
+        "schema_id": "important_six_tui_smoke_v0_1",
+        "organ_key": "mechanicus",
+        "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+        "generated_at_utc": "2026-05-24T02:29:09Z"
+      },
+      "query_sample": {
+        "command": "python3 IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_organ_query_v0_1.py --sample",
+        "script_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_organ_query_v0_1.py",
+        "exit_code": 0,
+        "duration_ms": 167.45,
+        "timed_out": false,
+        "stdout": "{\n  \"schema_id\": \"newgen_organ_verdict_v0_1\",\n  \"organ_id\": \"MECHANICUS\",\n  \"task_id\": \"TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1\",\n  \"mode\": \"SERVITOR_QUERY\",\n  \"verdict\": \"PASS\",\n  \"applied_rules\": [\n    \"GATE_RICH_MANDATORY_FOR_WAVE1_TUI\",\n    \"GATE_CONTROLLED_CAPABILITY_ACQUISITION\",\n    \"GATE_SCRIPT_ARTIFACT_PRESERVATION\",\n    \"GATE_COMMAND_CHUNKING_DISCIPLINE\"\n  ],\n  \"required_actions\": [\n    \"Probe Rich import and version\",\n    \"Store capability registry evidence under Mechanicus TOOLS_REGISTRY\"\n  ],\n  \"forbidden_actions\": [\n    \"Claim TUI visual pass with plain fallback only\",\n    \"Perform uncontrolled package installs\"\n  ],\n  \"evidence_required\": [\n    \"IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json\",\n    \"IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/\",\n    \"wave1_organ_tui_smoke_report.json\",\n    \"FINAL_REPORT.md\",\n    \"closure_receipt.json\"\n  ],\n  \"owner_question\": null,\n  \"not_proven\": [\n    \"full production-grade tool admission framework\",\n    \"autonomic remediation loops\"\n  ],\n  \"evidence_refs\": [\n    \"IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json\",\n    \"IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/\"\n  ],\n  \"question\": \"What tools and capabilities are required and healthy?\",\n  \"rich_probe\": {\n    \"available\": true,\n    \"version\": \"13.7.1\",\n    \"module_path\": \"/usr/lib/python3/dist-packages/rich/__init__.py\"\n  },\n  \"generated_at_utc\": \"2026-05-24T02:29:09.207757+00:00\"\n}\n",
+        "stderr": "",
+        "stdout_truncated": false,
+        "stderr_truncated": false,
+        "parsed_json": {
+          "schema_id": "newgen_organ_verdict_v0_1",
+          "organ_id": "MECHANICUS",
+          "task_id": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+          "mode": "SERVITOR_QUERY",
+          "verdict": "PASS",
+          "applied_rules": [
+            "GATE_RICH_MANDATORY_FOR_WAVE1_TUI",
+            "GATE_CONTROLLED_CAPABILITY_ACQUISITION",
+            "GATE_SCRIPT_ARTIFACT_PRESERVATION",
+            "GATE_COMMAND_CHUNKING_DISCIPLINE"
+          ],
+          "required_actions": [
+            "Probe Rich import and version",
+            "Store capability registry evidence under Mechanicus TOOLS_REGISTRY"
+          ],
+          "forbidden_actions": [
+            "Claim TUI visual pass with plain fallback only",
+            "Perform uncontrolled package installs"
+          ],
+          "evidence_required": [
+            "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json",
+            "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/",
+            "wave1_organ_tui_smoke_report.json",
+            "FINAL_REPORT.md",
+            "closure_receipt.json"
+          ],
+          "owner_question": null,
+          "not_proven": [
+            "full production-grade tool admission framework",
+            "autonomic remediation loops"
+          ],
+          "evidence_refs": [
+            "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json",
+            "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/"
+          ],
+          "question": "What tools and capabilities are required and healthy?",
+          "rich_probe": {
+            "available": true,
+            "version": "13.7.1",
+            "module_path": "/usr/lib/python3/dist-packages/rich/__init__.py"
+          },
+          "generated_at_utc": "2026-05-24T02:29:09.207757+00:00"
+        },
+        "parse_error": null,
+        "started_at_utc": "2026-05-24T02:29:09Z",
+        "finished_at_utc": "2026-05-24T02:29:09Z",
+        "schema_id": "important_six_query_sample_v0_1",
+        "organ_key": "mechanicus",
+        "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+        "generated_at_utc": "2026-05-24T02:29:09Z"
+      },
+      "claim_boundary": "READ_ONLY_OR_SEMI_LIVE_TUI_SNAPSHOT_DASHBOARD_L1"
+    },
+    "inquisition": {
+      "schema_id": "important_six_terminal_snapshot_v0_1",
+      "generated_at_utc": "2026-05-24T02:29:09Z",
+      "organ_key": "inquisition",
+      "organ_label": "INQUISITION",
+      "display_name": {
+        "ru": "Инквизиция",
+        "en": "Inquisition"
+      },
+      "role": {
+        "ru": "Анти fake-green и аудит-правила",
+        "en": "Anti fake-green and audit rules"
+      },
+      "accent": "#6de5f2",
+      "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+      "source": {
+        "tui_command": "python3 IMPERIUM_NEW_GENERATION/INQUISITION/TUI/inquisition_tui_v0_1.py --smoke --plain-json",
+        "query_command": "python3 IMPERIUM_NEW_GENERATION/INQUISITION/TOOLS/inquisition_organ_query_v0_1.py --sample",
+        "tui_script": "IMPERIUM_NEW_GENERATION/INQUISITION/TUI/inquisition_tui_v0_1.py",
+        "query_script": "IMPERIUM_NEW_GENERATION/INQUISITION/TOOLS/inquisition_organ_query_v0_1.py"
+      },
+      "verdict": "PASS",
+      "status": "PASS",
+      "tui_smoke": {
+        "command": "python3 IMPERIUM_NEW_GENERATION/INQUISITION/TUI/inquisition_tui_v0_1.py --smoke --plain-json",
+        "script_path": "IMPERIUM_NEW_GENERATION/INQUISITION/TUI/inquisition_tui_v0_1.py",
+        "exit_code": 0,
+        "duration_ms": 138.79,
+        "timed_out": false,
+        "stdout": "{\n  \"organ_id\": \"INQUISITION\",\n  \"rich_available\": true,\n  \"smoke_mode\": true,\n  \"responsibility\": \"Fake-green detection, dirty work detection, duplicate detection, failure/heresy checks, semantic cleanliness, readability/explainability audits, Speculum-style hard gates.\",\n  \"bundle\": {\n    \"identity_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/INQUISITION/IDENTITY/organ_identity_v0_1.md\",\n    \"contract_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/INQUISITION/CONTRACTS/servitor_contract_v0_1.md\",\n    \"gate_catalog_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/INQUISITION/GATES/organ_gate_catalog_v0_1.json\",\n    \"state_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/INQUISITION/STATE/current_state_v0_1.json\",\n    \"template_path\": \"/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/INQUISITION/TEMPLATES/organ_verdict_template_v0_1.json\",\n    \"gate_catalog\": {\n      \"schema_id\": \"newgen_organ_gate_catalog_v0_1\",\n      \"organ_id\": \"INQUISITION\",\n      \"version\": \"v0_1\",\n      \"gates\": [\n        {\n          \"gate_id\": \"GATE_INQ_NO_FAKE_GREEN\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"PASS claim requires concrete evidence references.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"wave2_organ_tui_smoke_report.json\",\n            \"closure_receipt.json\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_INQ_DIRTY_WORK_DETECTION\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"Dirty work and unresolved unsafe changes must block closure.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"git_diff_paths\",\n            \"FINAL_REPORT.md\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_INQ_DUPLICATE_AND_HERESY_CHECK\",\n          \"severity\": \"BLOCK\",\n          \"purpose\": \"Duplicate drift, contradiction, and semantic heresy checks are mandatory.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"important_six_interaction_simulation_v0_1.json\",\n            \"json_parse_validation_report.json\"\n          ]\n        },\n        {\n          \"gate_id\": \"GATE_INQ_SPECULUM_HARD_AUDIT\",\n          \"severity\": \"WARN_TO_BLOCK\",\n          \"purpose\": \"Speculum-style readability/explainability audit must be explicit.\",\n          \"expected_verdict\": \"PASS\",\n          \"evidence_required\": [\n            \"FINAL_REPORT.md\"\n          ]\n        }\n      ]\n    },\n    \"state\": {\n      \"schema_id\": \"newgen_organ_state_v0_1\",\n      \"organ_id\": \"INQUISITION\",\n      \"version\": \"v0_1\",\n      \"default_verdict\": \"PASS\",\n      \"responsibility\": \"Fake-green detection, dirty work detection, duplicate detection, failure/heresy checks, semantic cleanliness, readability/explainability audits, Speculum-style hard gates.\",\n      \"servitor_ask\": [\n        \"What fake-green risks exist in this task?\",\n        \"What dirty-work or duplicate risks must be blocked?\",\n        \"Which semantic/readability/explainability checks are mandatory?\",\n        \"What hard Speculum-style audit gate can stop PASS?\"\n      ],\n      \"warn_block_profile\": [\n        \"WARN on partial audit coverage with explicit NOT_RUN boundary\",\n        \"BLOCK on PASS claim without evidence\",\n        \"BLOCK on dirty/duplicate drift left unresolved\",\n        \"BLOCK on unreadable or semantically contradictory closure\"\n      ],\n      \"required_actions\": [\n        \"Run anti-fake-green and evidence-reference checks\",\n        \"Check for dirty work and duplicate drift\",\n        \"Enforce readability and explainability of closure artifacts\",\n        \"Apply hard Speculum-style audit gate before PASS\"\n      ],\n      \"forbidden_actions\": [\n        \"Claim PASS without evidence chain\",\n        \"Ignore dirty or duplicate findings\",\n        \"Ignore semantic contradiction in owner-facing output\"\n      ],\n      \"evidence_refs\": [\n        \"IMPERIUM_NEW_GENERATION/INQUISITION/GATES/organ_gate_catalog_v0_1.json\",\n        \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/organ_route_plan.json\",\n        \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json\"\n      ],\n      \"last_updated_utc\": \"2026-05-24T01:57:54+00:00\"\n    },\n    \"template\": {\n      \"schema_id\": \"newgen_organ_verdict_v0_1\",\n      \"organ_id\": \"INQUISITION\",\n      \"task_id\": \"<TASK_ID>\",\n      \"mode\": \"SERVITOR_QUERY\",\n      \"verdict\": \"PASS|WARN|BLOCK|OWNER_VERDICT_NEEDED\",\n      \"applied_rules\": [],\n      \"required_actions\": [],\n      \"forbidden_actions\": [],\n      \"evidence_required\": [],\n      \"owner_question\": null,\n      \"not_proven\": [],\n      \"evidence_refs\": []\n    }\n  },\n  \"verdict\": {\n    \"schema_id\": \"newgen_organ_verdict_v0_1\",\n    \"organ_id\": \"INQUISITION\",\n    \"task_id\": \"TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1\",\n    \"mode\": \"SMOKE\",\n    \"verdict\": \"PASS\",\n    \"applied_rules\": [\n      \"GATE_INQ_NO_FAKE_GREEN\",\n      \"GATE_INQ_DIRTY_WORK_DETECTION\",\n      \"GATE_INQ_DUPLICATE_AND_HERESY_CHECK\",\n      \"GATE_INQ_SPECULUM_HARD_AUDIT\"\n    ],\n    \"required_actions\": [\n      \"Run anti-fake-green and evidence-reference checks\",\n      \"Check for dirty work and duplicate drift\",\n      \"Enforce readability and explainability of closure artifacts\",\n      \"Apply hard Speculum-style audit gate before PASS\"\n    ],\n    \"forbidden_actions\": [\n      \"Claim PASS without evidence chain\",\n      \"Ignore dirty or duplicate findings\",\n      \"Ignore semantic contradiction in owner-facing output\"\n    ],\n    \"evidence_required\": [],\n    \"owner_question\": null,\n    \"not_proven\": [\n      \"Strategium/Schola/Custodes/Throne implementation\",\n      \"live Owner Verdict Needed UI button\",\n      \"production autonomy\",\n      \"full organ intelligence\",\n      \"full external adapter layer\"\n    ],\n    \"evidence_refs\": [\n      \"IMPERIUM_NEW_GENERATION/INQUISITION/GATES/organ_gate_catalog_v0_1.json\",\n      \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/organ_route_plan.json\",\n      \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json\"\n    ],\n    \"generated_at_utc\": \"2026-05-24T02:29:09.353297+00:00\"\n  }\n}\n",
+        "stderr": "",
+        "stdout_truncated": false,
+        "stderr_truncated": false,
+        "parsed_json": {
+          "organ_id": "INQUISITION",
+          "rich_available": true,
+          "smoke_mode": true,
+          "responsibility": "Fake-green detection, dirty work detection, duplicate detection, failure/heresy checks, semantic cleanliness, readability/explainability audits, Speculum-style hard gates.",
+          "bundle": {
+            "identity_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/INQUISITION/IDENTITY/organ_identity_v0_1.md",
+            "contract_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/INQUISITION/CONTRACTS/servitor_contract_v0_1.md",
+            "gate_catalog_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/INQUISITION/GATES/organ_gate_catalog_v0_1.json",
+            "state_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/INQUISITION/STATE/current_state_v0_1.json",
+            "template_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/INQUISITION/TEMPLATES/organ_verdict_template_v0_1.json",
+            "gate_catalog": {
+              "schema_id": "newgen_organ_gate_catalog_v0_1",
+              "organ_id": "INQUISITION",
+              "version": "v0_1",
+              "gates": [
+                {
+                  "gate_id": "GATE_INQ_NO_FAKE_GREEN",
+                  "severity": "BLOCK",
+                  "purpose": "PASS claim requires concrete evidence references.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "wave2_organ_tui_smoke_report.json",
+                    "closure_receipt.json"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_INQ_DIRTY_WORK_DETECTION",
+                  "severity": "BLOCK",
+                  "purpose": "Dirty work and unresolved unsafe changes must block closure.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "git_diff_paths",
+                    "FINAL_REPORT.md"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_INQ_DUPLICATE_AND_HERESY_CHECK",
+                  "severity": "BLOCK",
+                  "purpose": "Duplicate drift, contradiction, and semantic heresy checks are mandatory.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "important_six_interaction_simulation_v0_1.json",
+                    "json_parse_validation_report.json"
+                  ]
+                },
+                {
+                  "gate_id": "GATE_INQ_SPECULUM_HARD_AUDIT",
+                  "severity": "WARN_TO_BLOCK",
+                  "purpose": "Speculum-style readability/explainability audit must be explicit.",
+                  "expected_verdict": "PASS",
+                  "evidence_required": [
+                    "FINAL_REPORT.md"
+                  ]
+                }
+              ]
+            },
+            "state": {
+              "schema_id": "newgen_organ_state_v0_1",
+              "organ_id": "INQUISITION",
+              "version": "v0_1",
+              "default_verdict": "PASS",
+              "responsibility": "Fake-green detection, dirty work detection, duplicate detection, failure/heresy checks, semantic cleanliness, readability/explainability audits, Speculum-style hard gates.",
+              "servitor_ask": [
+                "What fake-green risks exist in this task?",
+                "What dirty-work or duplicate risks must be blocked?",
+                "Which semantic/readability/explainability checks are mandatory?",
+                "What hard Speculum-style audit gate can stop PASS?"
+              ],
+              "warn_block_profile": [
+                "WARN on partial audit coverage with explicit NOT_RUN boundary",
+                "BLOCK on PASS claim without evidence",
+                "BLOCK on dirty/duplicate drift left unresolved",
+                "BLOCK on unreadable or semantically contradictory closure"
+              ],
+              "required_actions": [
+                "Run anti-fake-green and evidence-reference checks",
+                "Check for dirty work and duplicate drift",
+                "Enforce readability and explainability of closure artifacts",
+                "Apply hard Speculum-style audit gate before PASS"
+              ],
+              "forbidden_actions": [
+                "Claim PASS without evidence chain",
+                "Ignore dirty or duplicate findings",
+                "Ignore semantic contradiction in owner-facing output"
+              ],
+              "evidence_refs": [
+                "IMPERIUM_NEW_GENERATION/INQUISITION/GATES/organ_gate_catalog_v0_1.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/organ_route_plan.json",
+                "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json"
+              ],
+              "last_updated_utc": "2026-05-24T01:57:54+00:00"
+            },
+            "template": {
+              "schema_id": "newgen_organ_verdict_v0_1",
+              "organ_id": "INQUISITION",
+              "task_id": "<TASK_ID>",
+              "mode": "SERVITOR_QUERY",
+              "verdict": "PASS|WARN|BLOCK|OWNER_VERDICT_NEEDED",
+              "applied_rules": [],
+              "required_actions": [],
+              "forbidden_actions": [],
+              "evidence_required": [],
+              "owner_question": null,
+              "not_proven": [],
+              "evidence_refs": []
+            }
+          },
+          "verdict": {
+            "schema_id": "newgen_organ_verdict_v0_1",
+            "organ_id": "INQUISITION",
+            "task_id": "TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1",
+            "mode": "SMOKE",
+            "verdict": "PASS",
+            "applied_rules": [
+              "GATE_INQ_NO_FAKE_GREEN",
+              "GATE_INQ_DIRTY_WORK_DETECTION",
+              "GATE_INQ_DUPLICATE_AND_HERESY_CHECK",
+              "GATE_INQ_SPECULUM_HARD_AUDIT"
+            ],
+            "required_actions": [
+              "Run anti-fake-green and evidence-reference checks",
+              "Check for dirty work and duplicate drift",
+              "Enforce readability and explainability of closure artifacts",
+              "Apply hard Speculum-style audit gate before PASS"
+            ],
+            "forbidden_actions": [
+              "Claim PASS without evidence chain",
+              "Ignore dirty or duplicate findings",
+              "Ignore semantic contradiction in owner-facing output"
+            ],
+            "evidence_required": [],
+            "owner_question": null,
+            "not_proven": [
+              "Strategium/Schola/Custodes/Throne implementation",
+              "live Owner Verdict Needed UI button",
+              "production autonomy",
+              "full organ intelligence",
+              "full external adapter layer"
+            ],
+            "evidence_refs": [
+              "IMPERIUM_NEW_GENERATION/INQUISITION/GATES/organ_gate_catalog_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/organ_route_plan.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json"
+            ],
+            "generated_at_utc": "2026-05-24T02:29:09.353297+00:00"
+          }
+        },
+        "parse_error": null,
+        "started_at_utc": "2026-05-24T02:29:09Z",
+        "finished_at_utc": "2026-05-24T02:29:09Z",
+        "schema_id": "important_six_tui_smoke_v0_1",
+        "organ_key": "inquisition",
+        "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+        "generated_at_utc": "2026-05-24T02:29:09Z"
+      },
+      "query_sample": {
+        "command": "python3 IMPERIUM_NEW_GENERATION/INQUISITION/TOOLS/inquisition_organ_query_v0_1.py --sample",
+        "script_path": "IMPERIUM_NEW_GENERATION/INQUISITION/TOOLS/inquisition_organ_query_v0_1.py",
+        "exit_code": 0,
+        "duration_ms": 137.28,
+        "timed_out": false,
+        "stdout": "{\n  \"schema_id\": \"newgen_organ_verdict_v0_1\",\n  \"organ_id\": \"INQUISITION\",\n  \"task_id\": \"TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1\",\n  \"mode\": \"SERVITOR_QUERY\",\n  \"verdict\": \"PASS\",\n  \"applied_rules\": [\n    \"GATE_INQ_NO_FAKE_GREEN\",\n    \"GATE_INQ_DIRTY_WORK_DETECTION\",\n    \"GATE_INQ_DUPLICATE_AND_HERESY_CHECK\",\n    \"GATE_INQ_SPECULUM_HARD_AUDIT\"\n  ],\n  \"required_actions\": [\n    \"Run anti-fake-green and evidence-reference checks\",\n    \"Check for dirty work and duplicate drift\",\n    \"Enforce readability and explainability of closure artifacts\",\n    \"Apply hard Speculum-style audit gate before PASS\"\n  ],\n  \"forbidden_actions\": [\n    \"Claim PASS without evidence chain\",\n    \"Ignore dirty or duplicate findings\",\n    \"Ignore semantic contradiction in owner-facing output\"\n  ],\n  \"evidence_required\": [\n    \"wave2_organ_tui_smoke_report.json\",\n    \"closure_receipt.json\",\n    \"git_diff_paths\",\n    \"FINAL_REPORT.md\",\n    \"important_six_interaction_simulation_v0_1.json\",\n    \"json_parse_validation_report.json\"\n  ],\n  \"owner_question\": null,\n  \"not_proven\": [\n    \"Strategium/Schola/Custodes/Throne implementation\",\n    \"live Owner Verdict Needed UI button\",\n    \"production autonomy\",\n    \"full organ intelligence\",\n    \"full external adapter layer\"\n  ],\n  \"evidence_refs\": [\n    \"IMPERIUM_NEW_GENERATION/INQUISITION/GATES/organ_gate_catalog_v0_1.json\",\n    \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/organ_route_plan.json\",\n    \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json\"\n  ],\n  \"question\": \"What checks must pass before we can continue?\",\n  \"generated_at_utc\": \"2026-05-24T02:29:09.491801+00:00\"\n}\n",
+        "stderr": "",
+        "stdout_truncated": false,
+        "stderr_truncated": false,
+        "parsed_json": {
+          "schema_id": "newgen_organ_verdict_v0_1",
+          "organ_id": "INQUISITION",
+          "task_id": "TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1",
+          "mode": "SERVITOR_QUERY",
+          "verdict": "PASS",
+          "applied_rules": [
+            "GATE_INQ_NO_FAKE_GREEN",
+            "GATE_INQ_DIRTY_WORK_DETECTION",
+            "GATE_INQ_DUPLICATE_AND_HERESY_CHECK",
+            "GATE_INQ_SPECULUM_HARD_AUDIT"
+          ],
+          "required_actions": [
+            "Run anti-fake-green and evidence-reference checks",
+            "Check for dirty work and duplicate drift",
+            "Enforce readability and explainability of closure artifacts",
+            "Apply hard Speculum-style audit gate before PASS"
+          ],
+          "forbidden_actions": [
+            "Claim PASS without evidence chain",
+            "Ignore dirty or duplicate findings",
+            "Ignore semantic contradiction in owner-facing output"
+          ],
+          "evidence_required": [
+            "wave2_organ_tui_smoke_report.json",
+            "closure_receipt.json",
+            "git_diff_paths",
+            "FINAL_REPORT.md",
+            "important_six_interaction_simulation_v0_1.json",
+            "json_parse_validation_report.json"
+          ],
+          "owner_question": null,
+          "not_proven": [
+            "Strategium/Schola/Custodes/Throne implementation",
+            "live Owner Verdict Needed UI button",
+            "production autonomy",
+            "full organ intelligence",
+            "full external adapter layer"
+          ],
+          "evidence_refs": [
+            "IMPERIUM_NEW_GENERATION/INQUISITION/GATES/organ_gate_catalog_v0_1.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/organ_route_plan.json",
+            "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json"
+          ],
+          "question": "What checks must pass before we can continue?",
+          "generated_at_utc": "2026-05-24T02:29:09.491801+00:00"
+        },
+        "parse_error": null,
+        "started_at_utc": "2026-05-24T02:29:09Z",
+        "finished_at_utc": "2026-05-24T02:29:09Z",
+        "schema_id": "important_six_query_sample_v0_1",
+        "organ_key": "inquisition",
+        "safe_mode": "READ_ONLY_SMOKE_AND_SAMPLE_ONLY",
+        "generated_at_utc": "2026-05-24T02:29:09Z"
+      },
+      "claim_boundary": "READ_ONLY_OR_SEMI_LIVE_TUI_SNAPSHOT_DASHBOARD_L1"
+    }
+  }
+}

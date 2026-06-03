@@ -1,0 +1,119 @@
+{
+  "schema_id": "NEGATIVE_TEST_SYNTHETIC_MUTANTS_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-PQG-NEGATIVE-TEST-MUTATION-CHECK-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T20:48:00Z",
+  "status": "FOUNDATION_ONLY",
+  "synthetic_only": true,
+  "cases": [
+    {
+      "case_id": "FAKE_GREEN_WITHOUT_EVIDENCE",
+      "title": "Claimed strict pass without evidence reference",
+      "mutant_type": "FAKE_GREEN",
+      "mutation_target": "receipt_verdict_claim",
+      "description": "Synthetic case attempts PASS_STRICT while criterion->evidence binding is missing.",
+      "synthetic_payload": {
+        "claimed_verdict": "PASS_STRICT",
+        "evidence_refs": [],
+        "proof_binding_present": false
+      },
+      "expected_classification": "BLOCK",
+      "expected_reason_code": "NO_EVIDENCE_NO_STRICT_PASS"
+    },
+    {
+      "case_id": "UNKNOWN_PROMOTED_TO_PASS",
+      "title": "UNKNOWN status promoted to strict pass",
+      "mutant_type": "STATE_PROMOTION",
+      "mutation_target": "status_transition",
+      "description": "Synthetic case upgrades UNKNOWN to PASS_STRICT without diagnostics.",
+      "synthetic_payload": {
+        "source_status": "UNKNOWN",
+        "target_status": "PASS_STRICT",
+        "diagnostic_refs": []
+      },
+      "expected_classification": "BLOCK",
+      "expected_reason_code": "UNKNOWN_CANNOT_BE_GREEN"
+    },
+    {
+      "case_id": "STALE_EVIDENCE_ACCEPTED_AS_FRESH",
+      "title": "Stale evidence treated as current",
+      "mutant_type": "FRESHNESS_BYPASS",
+      "mutation_target": "freshness_gate",
+      "description": "Synthetic case reuses stale evidence timestamp but marks it as current.",
+      "synthetic_payload": {
+        "evidence_status": "STALE",
+        "attempted_freshness_override": true,
+        "evidence_commit_age_hours": 240
+      },
+      "expected_classification": "WARN",
+      "expected_reason_code": "STALE_EVIDENCE_REQUIRES_REFRESH"
+    },
+    {
+      "case_id": "ROLLBACK_REQUIRED_BUT_MISSING",
+      "title": "Mutation action has no rollback plan",
+      "mutant_type": "ROLLBACK_GAP",
+      "mutation_target": "action_contract",
+      "description": "Synthetic mutation action omits rollback fields but requests continue.",
+      "synthetic_payload": {
+        "action_id": "SYNTHETIC_MUTATION_ACTION",
+        "mutation_class": "TASK_STATE_MUTATION",
+        "rollback_plan_present": false
+      },
+      "expected_classification": "BLOCK",
+      "expected_reason_code": "ROLLBACK_PLAN_REQUIRED"
+    },
+    {
+      "case_id": "PRIVATE_KEY_MATERIAL_MARKER",
+      "title": "Synthetic private-key leak marker",
+      "mutant_type": "SECRET_MARKER",
+      "mutation_target": "payload_secret_scan",
+      "description": "Synthetic marker must be rejected without storing real private key material.",
+      "synthetic_payload": {
+        "marker_type": "PRIVATE_KEY_MATERIAL_MARKER",
+        "marker_value": "SYNTHETIC_PRIVATE_KEY_MARKER_ONLY",
+        "contains_real_key_material": false
+      },
+      "expected_classification": "BLOCK",
+      "expected_reason_code": "PRIVATE_KEY_MARKER_REJECTED"
+    },
+    {
+      "case_id": "ACTION_OUTSIDE_ALLOWLIST",
+      "title": "Action not on allowlist",
+      "mutant_type": "ALLOWLIST_VIOLATION",
+      "mutation_target": "action_registry",
+      "description": "Synthetic action id is not registered in allowlisted actions.",
+      "synthetic_payload": {
+        "action_id": "SYNTHETIC_UNREGISTERED_ACTION",
+        "allowlisted": false
+      },
+      "expected_classification": "BLOCK",
+      "expected_reason_code": "ACTION_NOT_ALLOWLISTED"
+    },
+    {
+      "case_id": "PENDING_POST_COMMIT_CLOSURE_ACCEPTED",
+      "title": "Pending closure receipt treated as final pass",
+      "mutant_type": "CLOSURE_STATE_BYPASS",
+      "mutation_target": "closure_receipt_status",
+      "description": "Synthetic closure state remains PENDING but attempts final acceptance.",
+      "synthetic_payload": {
+        "post_commit_closure_status": "PENDING",
+        "attempted_final_verdict": "PASS_STRICT"
+      },
+      "expected_classification": "WARN",
+      "expected_reason_code": "CLOSURE_PENDING_CANNOT_BE_FINAL_PASS"
+    },
+    {
+      "case_id": "PARTIAL_ACCEPTED_WITHOUT_RULE",
+      "title": "PARTIAL_ACCEPTED without rule/owner basis",
+      "mutant_type": "PARTIAL_ACCEPTANCE_BYPASS",
+      "mutation_target": "partial_acceptance_contract",
+      "description": "Synthetic case sets PARTIAL_ACCEPTED but omits acceptance rule and owner basis.",
+      "synthetic_payload": {
+        "requested_status": "PARTIAL_ACCEPTED",
+        "acceptance_rule_ref": "",
+        "owner_basis": ""
+      },
+      "expected_classification": "BLOCK",
+      "expected_reason_code": "PARTIAL_ACCEPTANCE_RULE_REQUIRED"
+    }
+  ]
+}

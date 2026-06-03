@@ -1,0 +1,31 @@
+{
+  "receipt_id": "task-newgen-mechanicus-arsenal-validation-batch-001-pc-v0_1:cap-tool-node-npm-npx:p3_visual_deferred_readiness_only:cap-tool-node-npm-npx",
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+  "capability_id": "CAP-TOOL-NODE-NPM-NPX",
+  "validator": "mechanicus_capability_validator_v0_1.py",
+  "checked_at_utc": "2026-05-24T18:15:17Z",
+  "status": "PASS",
+  "summary": "CAP-TOOL-NODE-NPM-NPX: PASS via P3_VISUAL_DEFERRED_READINESS_ONLY:CAP-TOOL-NODE-NPM-NPX. promotion_recommendation=KEEP_CANDIDATE_READINESS_ONLY",
+  "check_name": "P3_VISUAL_DEFERRED_READINESS_ONLY:CAP-TOOL-NODE-NPM-NPX",
+  "command_or_check": "node --version && npm --version",
+  "exit_code": 0,
+  "stdout_excerpt": "$ node --version\nv24.15.0\n\n$ npm --version\n11.12.1",
+  "stderr_excerpt": "$ node --version\n\n$ npm --version",
+  "side_effects": [
+    "read-only command execution",
+    "receipt json created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-tool-node-npm-npx_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "KEEP_CANDIDATE_READINESS_ONLY",
+  "warnings": [
+    "readiness_detection_only_no_visual_prototype"
+  ],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-tool-node-npm-npx_validation_receipt.json"
+  ]
+}

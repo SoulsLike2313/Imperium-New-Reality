@@ -1,0 +1,32 @@
+{
+  "organ": "SCHOLA_IMPERIALIS",
+  "status": "ACTIVE_FOR_STAGE1",
+  "task_entry_role": "Captures reusable lessons and future checker hooks from every Stage1 gap discovered in execution.",
+  "required_inputs": [
+    "Learning backlog source"
+  ],
+  "required_outputs": [
+    "Learning backlog JSON",
+    "Learning backlog MD"
+  ],
+  "matrix_responsibilities": [
+    "SCHOLA_LEARNING_CAPTURE_MATRIX"
+  ],
+  "tools_or_receipts_used": [
+    "Write learning backlog entries for each discovered gap."
+  ],
+  "ide_display_fields": [
+    "learning_items_count",
+    "blocking_items_count",
+    "script_first_candidates",
+    "next_training_focus"
+  ],
+  "failure_caps": [
+    "CAP_GHOST_EVOLVE_LEARNING_BACKLOG_MISSING"
+  ],
+  "known_gaps": [
+    "Learning capture is manual and can be incomplete without checker enforcement.",
+    "No canonical backlog schema registry for cross-task comparison yet."
+  ],
+  "used_by_astronomicon_task_entry": true
+}

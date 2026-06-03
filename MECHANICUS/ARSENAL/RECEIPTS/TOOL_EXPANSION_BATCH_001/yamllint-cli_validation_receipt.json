@@ -1,0 +1,31 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:yamllint_cli:tool_detection:yamllint_cli",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "YAMLLINT_CLI",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:45Z",
+  "status": "PASS_WITH_WARNINGS",
+  "summary": "YAMLLINT_CLI: MISSING via tool_detection:YAMLLINT_CLI. promotion_recommendation=KEEP_CANDIDATE",
+  "check_name": "tool_detection:YAMLLINT_CLI",
+  "command_or_check": "yamllint --version",
+  "exit_code": 1,
+  "stdout_excerpt": "",
+  "stderr_excerpt": "$ yamllint --version\n'yamllint' is not recognized as an internal or external command,\noperable program or batch file.",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/yamllint-cli_validation_receipt.json"
+  ],
+  "validation_verdict": "MISSING",
+  "promotion_recommendation": "KEEP_CANDIDATE",
+  "warnings": [
+    "tool_missing_or_not_in_path"
+  ],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/yamllint-cli_validation_receipt.json"
+  ]
+}

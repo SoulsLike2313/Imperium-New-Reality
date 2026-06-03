@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Combined Review Adjudication Receipt Schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "head_taxonomy_manifest_path",
+    "review_target_head",
+    "servitor",
+    "mechanicus_replay",
+    "inquisitor_semantic_review",
+    "speculum_technical_review",
+    "logos_prime_adjudication",
+    "surviving_caps",
+    "final_merged_verdict"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "head_taxonomy_manifest_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_target_head": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "servitor": {
+      "type": "object",
+      "required": [
+        "claimed_verdict",
+        "claimed_delta",
+        "report_paths"
+      ],
+      "properties": {
+        "claimed_verdict": {
+          "type": "string",
+          "enum": [
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "WARN",
+            "BLOCK"
+          ]
+        },
+        "claimed_delta": {
+          "type": "object"
+        },
+        "report_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "mechanicus_replay": {
+      "type": "object",
+      "required": [
+        "status",
+        "receipt_path",
+        "caps"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "WARN",
+            "BLOCK",
+            "UNPROVEN"
+          ]
+        },
+        "receipt_path": {
+          "type": "string"
+        },
+        "caps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "inquisitor_semantic_review": {
+      "type": "object",
+      "required": [
+        "status",
+        "zip_or_report_path",
+        "caps"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "PENDING",
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "WARN",
+            "BLOCK"
+          ]
+        },
+        "zip_or_report_path": {
+          "type": "string"
+        },
+        "adjusted_delta": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "caps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "speculum_technical_review": {
+      "type": "object",
+      "required": [
+        "status",
+        "zip_or_report_path",
+        "caps"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "PENDING",
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "WARN",
+            "BLOCK"
+          ]
+        },
+        "zip_or_report_path": {
+          "type": "string"
+        },
+        "adjusted_delta": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "caps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "logos_prime_adjudication": {
+      "type": "object",
+      "required": [
+        "status",
+        "merged_verdict",
+        "next_pipeline",
+        "owner_questions"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "PENDING",
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "WARN",
+            "BLOCK"
+          ]
+        },
+        "merged_verdict": {
+          "type": "string"
+        },
+        "merged_delta": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "next_pipeline": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "owner_questions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "surviving_caps": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "final_merged_verdict": {
+      "type": "string",
+      "enum": [
+        "PENDING",
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "WARN",
+        "BLOCK"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

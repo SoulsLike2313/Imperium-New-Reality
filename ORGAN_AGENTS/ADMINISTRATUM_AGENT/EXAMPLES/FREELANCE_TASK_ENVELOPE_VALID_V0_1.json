@@ -1,0 +1,43 @@
+{
+  "task_id": "FREELANCE-TASK-ADMINISTRATUM-SAMPLE-V0_1",
+  "client_goal": "Prepare a scoped evidence and handoff package for a small client automation request.",
+  "assigned_organ": "ADMINISTRATUM_AGENT",
+  "administratum_scope": [
+    "intake",
+    "context_map",
+    "evidence_pack",
+    "handoff"
+  ],
+  "input_refs": [
+    "client_brief.md",
+    "sample_input_folder/"
+  ],
+  "privacy_level": "client_confidential",
+  "allowed_actions": [
+    "metadata_intake",
+    "evidence_index",
+    "handoff_package"
+  ],
+  "forbidden_actions": [
+    "private_payload_export",
+    "dependency_install",
+    "client_secret_copy"
+  ],
+  "deliverables_required": [
+    "intake_summary",
+    "input_file_map",
+    "evidence_package_refs",
+    "handoff_checklist"
+  ],
+  "acceptance_criteria": [
+    "all input refs classified",
+    "privacy level explicit",
+    "handoff target named"
+  ],
+  "evidence_required": [
+    "validation_report",
+    "handoff_manifest"
+  ],
+  "handoff_target": "MECHANICUS_AGENT",
+  "owner_decision_required": false
+}

@@ -1,0 +1,2121 @@
+{
+  "schema_id": "important_six_dashboard_l2_action_api_smoke_report_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+  "generated_at_utc": "2026-05-24T04:07:31Z",
+  "base_url": "http://127.0.0.1:8766",
+  "verdict": "WARN",
+  "blockers": [],
+  "warnings": [
+    "run_ADMIN_FULL_NEWGEN_FILE_AUDIT",
+    "run_MECHANICUS_CHECK_REQUIRED_TOOLS",
+    "run_INQUISITION_REPO_HYGIENE_AUDIT",
+    "run_INQUISITION_FAKE_GREEN_RISK_SCAN",
+    "run_DIFF_COMPARE_HEADS"
+  ],
+  "steps": [
+    {
+      "step": "get_/api/status",
+      "status": "PASS",
+      "details": {
+        "url": "http://127.0.0.1:8766/api/status",
+        "json_type": "dict"
+      }
+    },
+    {
+      "step": "get_/api/actions",
+      "status": "PASS",
+      "details": {
+        "url": "http://127.0.0.1:8766/api/actions",
+        "json_type": "dict"
+      }
+    },
+    {
+      "step": "required_groups_check",
+      "status": "PASS",
+      "details": {
+        "found": [
+          "Administratum",
+          "Astronomicon",
+          "Diff / Approval",
+          "Inquisition",
+          "Mechanicus",
+          "Owner Intent / Questions",
+          "Transfer Zone"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "step": "get_/api/action-history",
+      "status": "PASS",
+      "details": {
+        "url": "http://127.0.0.1:8766/api/action-history",
+        "json_type": "dict"
+      }
+    },
+    {
+      "step": "get_/api/owner-questions",
+      "status": "PASS",
+      "details": {
+        "url": "http://127.0.0.1:8766/api/owner-questions",
+        "json_type": "dict"
+      }
+    },
+    {
+      "step": "get_/api/diff/status",
+      "status": "PASS",
+      "details": {
+        "url": "http://127.0.0.1:8766/api/diff/status",
+        "json_type": "dict"
+      }
+    },
+    {
+      "step": "required_actions_check",
+      "status": "PASS",
+      "details": {
+        "found_count": 16,
+        "missing_actions": []
+      }
+    },
+    {
+      "step": "run_ADMIN_FULL_NEWGEN_FILE_AUDIT",
+      "status": "WARN",
+      "details": {
+        "http_status": 200,
+        "result": {
+          "schema_id": "important_six_dashboard_action_run_result_v0_1",
+          "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+          "action_id": "ADMIN_FULL_NEWGEN_FILE_AUDIT",
+          "status": "WARN",
+          "summary": "NewGen audit complete: files=7106, dirs=2089, dirty=14, suspicious=68",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040718Z_ADMIN_FULL_NEWGEN_FILE_AUDIT.json",
+          "details": {
+            "scan_root": "IMPERIUM_NEW_GENERATION",
+            "file_count": 7106,
+            "directory_count": 2089,
+            "extension_counts_top": [
+              {
+                "extension": ".json",
+                "count": 4376
+              },
+              {
+                "extension": ".md",
+                "count": 1275
+              },
+              {
+                "extension": ".jsonl",
+                "count": 468
+              },
+              {
+                "extension": ".txt",
+                "count": 319
+              },
+              {
+                "extension": ".py",
+                "count": 149
+              },
+              {
+                "extension": ".png",
+                "count": 106
+              },
+              {
+                "extension": ".pyc",
+                "count": 81
+              },
+              {
+                "extension": ".js",
+                "count": 73
+              },
+              {
+                "extension": ".html",
+                "count": 42
+              },
+              {
+                "extension": ".zip",
+                "count": 32
+              },
+              {
+                "extension": ".pdf",
+                "count": 27
+              },
+              {
+                "extension": ".log",
+                "count": 23
+              },
+              {
+                "extension": ".ps1",
+                "count": 23
+              },
+              {
+                "extension": ".svg",
+                "count": 23
+              },
+              {
+                "extension": ".css",
+                "count": 22
+              },
+              {
+                "extension": "<no_ext>",
+                "count": 19
+              },
+              {
+                "extension": ".mjs",
+                "count": 11
+              },
+              {
+                "extension": ".sh",
+                "count": 10
+              },
+              {
+                "extension": ".ts",
+                "count": 8
+              },
+              {
+                "extension": ".license",
+                "count": 5
+              },
+              {
+                "extension": ".ttf",
+                "count": 3
+              },
+              {
+                "extension": ".cmd",
+                "count": 2
+              },
+              {
+                "extension": ".err",
+                "count": 2
+              },
+              {
+                "extension": ".bin",
+                "count": 1
+              },
+              {
+                "extension": ".csv",
+                "count": 1
+              }
+            ],
+            "largest_files": [
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5.zip",
+                "size_bytes": 39578667
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5/SCREENSHOTS/07_raw_technical_mode.png",
+                "size_bytes": 7847953
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-184654-4f05cf/cli_inventory/reports/inventory_objects.jsonl",
+                "size_bytes": 7483772
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-175441-abdf41/cli_inventory/reports/inventory_objects.jsonl",
+                "size_bytes": 7265693
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-184654-4f05cf/reports/imperium_context_index.jsonl",
+                "size_bytes": 7251443
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-180011-8f644f/reports/imperium_context_index.jsonl",
+                "size_bytes": 7251443
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-175441-abdf41/reports/imperium_context_index.jsonl",
+                "size_bytes": 7251443
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-175045-c1f971/reports/imperium_context_index.jsonl",
+                "size_bytes": 7251443
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-174527-1da58f/reports/imperium_context_index.jsonl",
+                "size_bytes": 7251443
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-174457-14a60b/reports/imperium_context_index.jsonl",
+                "size_bytes": 7251443
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-171236-d3cbb3/reports/imperium_context_index.jsonl",
+                "size_bytes": 7251443
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-170228-f960fd/reports/imperium_context_index.jsonl",
+                "size_bytes": 7251443
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-163500-32697b/reports/imperium_context_index.jsonl",
+                "size_bytes": 7251443
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-162858-cd4720/reports/imperium_context_index.jsonl",
+                "size_bytes": 7251443
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-162548-cc9233/reports/imperium_context_index.jsonl",
+                "size_bytes": 7251443
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-154856-548305/reports/imperium_context_index.jsonl",
+                "size_bytes": 7251443
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-154614-6e45bf/reports/imperium_context_index.jsonl",
+                "size_bytes": 7251443
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-045409-55a00d/reports/imperium_context_index.jsonl",
+                "size_bytes": 7251443
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-044810-727c5a/reports/imperium_context_index.jsonl",
+                "size_bytes": 7251443
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-043714-7e4886/reports/imperium_context_index.jsonl",
+                "size_bytes": 7251443
+              }
+            ],
+            "newest_files": [
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/action_registry_validation_report.json",
+                "modified_at_utc": "2026-05-24T04:07:11Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/__pycache__/important_six_dashboard_l2_smoke_v0_1.cpython-312.pyc",
+                "modified_at_utc": "2026-05-24T04:07:03Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TESTS/__pycache__/playwright_dashboard_l2_actions_v0_1.cpython-312.pyc",
+                "modified_at_utc": "2026-05-24T04:07:03Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+                "modified_at_utc": "2026-05-24T04:06:58Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TESTS/playwright_dashboard_l2_actions_v0_1.py",
+                "modified_at_utc": "2026-05-24T04:06:48Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/json_parse_validation_report.json",
+                "modified_at_utc": "2026-05-24T04:04:46Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/dashboard_l2_action_api_smoke_report.json",
+                "modified_at_utc": "2026-05-24T04:04:46Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/sample_action_receipts_index.json",
+                "modified_at_utc": "2026-05-24T04:04:46Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/OWNER_INTENT/DECISIONS/DIFF_DECISION_20260524T040445Z.json",
+                "modified_at_utc": "2026-05-24T04:04:46Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/action_last_results.json",
+                "modified_at_utc": "2026-05-24T04:04:45Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/action_history.jsonl",
+                "modified_at_utc": "2026-05-24T04:04:45Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040445Z_OWNER_RECORD_NOTE_OR_DECISION.json",
+                "modified_at_utc": "2026-05-24T04:04:45Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/OWNER_INTENT/NOTES/OWNER_NOTE_20260524T040445Z.json",
+                "modified_at_utc": "2026-05-24T04:04:45Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040445Z_OWNER_QUESTIONS_LIST.json",
+                "modified_at_utc": "2026-05-24T04:04:45Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040445Z_OWNER_RECORD_DIFF_DECISION.json",
+                "modified_at_utc": "2026-05-24T04:04:45Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/OWNER_INTENT/DECISIONS/DIFF_DECISION_20260524T040443Z.json",
+                "modified_at_utc": "2026-05-24T04:04:45Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040443Z_DIFF_COMPARE_HEADS.json",
+                "modified_at_utc": "2026-05-24T04:04:43Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040426Z_ASTRONOMICON_REGISTER_TASK_DRAFT.json",
+                "modified_at_utc": "2026-05-24T04:04:26Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/DRAFT_TASK_REGISTRY/draft_registry_index.json",
+                "modified_at_utc": "2026-05-24T04:04:26Z"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/DRAFT_TASK_REGISTRY/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1_20260524T040426Z.json",
+                "modified_at_utc": "2026-05-24T04:04:26Z"
+              }
+            ],
+            "git_summary": {
+              "dirty_entries_count": 14,
+              "tracked_dirty_count": 0,
+              "untracked_count": 14,
+              "sample": [
+                "?? IMPERIUM_NEW_GENERATION/ASTRONOMICON/DRAFT_TASK_REGISTRY/",
+                "?? IMPERIUM_NEW_GENERATION/OUTBOX/",
+                "?? IMPERIUM_NEW_GENERATION/OWNER_INTENT/",
+                "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/",
+                "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/",
+                "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/OWNER_INTENT/",
+                "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/README_L2.md",
+                "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TESTS/playwright_dashboard_l2_actions_v0_1.py",
+                "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+                "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/",
+                "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.css",
+                "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.js",
+                "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_server_v0_2.py",
+                "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_v0_2.html"
+              ]
+            },
+            "runtime_report_outbox_zones": {
+              "reports": {
+                "exists": true,
+                "file_count": 1502,
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS"
+              },
+              "outbox": {
+                "exists": true,
+                "file_count": 3,
+                "path": "IMPERIUM_NEW_GENERATION/OUTBOX"
+              },
+              "runtime": {
+                "exists": false,
+                "file_count": 0,
+                "path": "IMPERIUM_NEW_GENERATION/RUNTIME"
+              },
+              "runs": {
+                "exists": true,
+                "file_count": 3358,
+                "path": "IMPERIUM_NEW_GENERATION/RUNS"
+              }
+            },
+            "suspicious_artifacts_sample": [
+              "IMPERIUM_NEW_GENERATION/SKILLS/SKILL_PASSPORT_TEMPLATE_V0_1.json",
+              "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TEMPLATES/organ_verdict_template_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TEMPLATES/organ_verdict_template_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TEMPLATES/organ_verdict_template_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/INQUISITION/TEMPLATES/organ_verdict_template_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/MECHANICUS/TEMPLATES/organ_verdict_template_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/officio_ack_template_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TEMPLATES/organ_verdict_template_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TRANSFER_GATE/TEMPLATES/START_PROMPT.template.txt",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TRANSFER_GATE/TEMPLATES/TRANSFER_CARD.template.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/PACK_TEMPLATES/role_pack_template.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/PACK_TEMPLATES/ROLE_PACK_TEMPLATE.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/REQUIREMENT_MATRIX/requirement_template.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1/__pycache__.zip",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-VISUAL-SHELL-V0_2/DEPENDENCY_INSTALL_VM2.log",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/server_stderr.log",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/server_stdout.log",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/VM2_TOOL_PROBE_LOGS/bandit_probe_attempts.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/VM2_TOOL_PROBE_LOGS/duckdb_probe_attempts.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/VM2_TOOL_PROBE_LOGS/gitleaks_probe_attempts.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/VM2_TOOL_PROBE_LOGS/git_probe_attempts.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/VM2_TOOL_PROBE_LOGS/jq_probe_attempts.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/VM2_TOOL_PROBE_LOGS/jsonschema_probe_attempts.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/VM2_TOOL_PROBE_LOGS/node_probe_attempts.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/VM2_TOOL_PROBE_LOGS/npm_probe_attempts.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/VM2_TOOL_PROBE_LOGS/pip-audit_probe_attempts.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/VM2_TOOL_PROBE_LOGS/playwright_probe_attempts.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/VM2_TOOL_PROBE_LOGS/pytest_probe_attempts.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/VM2_TOOL_PROBE_LOGS/ripgrep_probe_attempts.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/VM2_TOOL_PROBE_LOGS/ruff_probe_attempts.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/VM2_TOOL_PROBE_LOGS/semgrep_probe_attempts.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/VM2_TOOL_PROBE_LOGS/uv_probe_attempts.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/VM2_TOOL_PROBE_LOGS/yq_probe_attempts.json",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5/TASKPACK_SOURCE/08_FINAL_REPORT_TEMPLATE_RU.md",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5/TASKPACK_SOURCE/TEMPLATES/FINAL_RECEIPT.template.json",
+              "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-164153-3b09c5/dossier_factory/ADMINISTRATUM_DOSSIER_TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/evidence/logs/dossier_builder.log",
+              "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-164200-20ad07/reports/dossier_verify_extract/verify_ADMINISTRATUM_DOSSIER_TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/evidence/logs/dossier_builder.log",
+              "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-164612-079fbf/dossier_factory/ADMINISTRATUM_DOSSIER_TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/evidence/logs/dossier_builder.log",
+              "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-164612-1f51c2/reports/dossier_verify_extract/verify_ADMINISTRATUM_DOSSIER_TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/evidence/logs/dossier_builder.log",
+              "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-164627-4b6060/reports/dossier_verify_extract/verify_ADMINISTRATUM_DOSSIER_TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/evidence/logs/dossier_builder.log",
+              "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-170150-55de86/reports/dossier_verify_extract/verify_ADMINISTRATUM_DOSSIER_TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/evidence/logs/dossier_builder.log",
+              "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-175436-869c68/dossier_factory/ADMINISTRATUM_DOSSIER_TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/evidence/logs/dossier_builder.log",
+              "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-175439-067f92/reports/dossier_verify_extract/verify_ADMINISTRATUM_DOSSIER_TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/evidence/logs/dossier_builder.log",
+              "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-175912-45cadd/reports/dossier_verify_extract/verify_tampered_dossier/evidence/logs/dossier_builder.log",
+              "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-184549-8b610d/reports/schema_regression_dossier_extract/verify_ADMINISTRATUM_DOSSIER_TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/evidence/logs/dossier_builder.log",
+              "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-184633-f96489/reports/schema_regression_dossier_extract/verify_ADMINISTRATUM_DOSSIER_TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/evidence/logs/dossier_builder.log",
+              "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-184654-4f05cf/cli_schema_regression/reports/schema_regression_dossier_extract/verify_ADMINISTRATUM_DOSSIER_TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/evidence/logs/dossier_builder.log",
+              "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-185524-182acc/dossier_factory/ADMINISTRATUM_DOSSIER_TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/evidence/logs/dossier_builder.log",
+              "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-185524-182acc/dossier_factory/tamper_no_pdf_test/extract/evidence/logs/dossier_builder.log",
+              "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-185531-3b3a05/reports/dossier_verify_extract/verify_ADMINISTRATUM_DOSSIER_TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/evidence/logs/dossier_builder.log"
+            ],
+            "suspicious_artifact_count": 68
+          },
+          "generated_at_utc": "2026-05-24T04:07:18Z"
+        }
+      }
+    },
+    {
+      "step": "last_ADMIN_FULL_NEWGEN_FILE_AUDIT",
+      "status": "PASS",
+      "details": {
+        "schema_id": "important_six_dashboard_action_last_result_v0_1",
+        "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+        "action_id": "ADMIN_FULL_NEWGEN_FILE_AUDIT",
+        "generated_at_utc": "2026-05-24T04:07:18Z",
+        "last_result": {
+          "timestamp_utc": "2026-05-24T04:07:18Z",
+          "action_id": "ADMIN_FULL_NEWGEN_FILE_AUDIT",
+          "status": "WARN",
+          "summary": "NewGen audit complete: files=7106, dirs=2089, dirty=14, suspicious=68",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040718Z_ADMIN_FULL_NEWGEN_FILE_AUDIT.json"
+        }
+      }
+    },
+    {
+      "step": "run_ADMIN_BUILD_CONTINUITY_PACK",
+      "status": "PASS",
+      "details": {
+        "http_status": 200,
+        "result": {
+          "schema_id": "important_six_dashboard_action_run_result_v0_1",
+          "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+          "action_id": "ADMIN_BUILD_CONTINUITY_PACK",
+          "status": "PASS",
+          "summary": "Continuity pack built: newgen_continuity_pack_20260524T040718Z.zip",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040719Z_ADMIN_BUILD_CONTINUITY_PACK.json",
+          "details": {
+            "zip_path": "IMPERIUM_NEW_GENERATION/OUTBOX/CONTINUITY_PACKS/newgen_continuity_pack_20260524T040718Z.zip",
+            "sha256": "f9c001150c8cde01609b5d3e4ac672e49e31ed1a9a96bf0cce43629896c7e9c4",
+            "sha256_path": "IMPERIUM_NEW_GENERATION/OUTBOX/CONTINUITY_PACKS/newgen_continuity_pack_20260524T040718Z.zip.sha256",
+            "continuity_receipt_path": "IMPERIUM_NEW_GENERATION/OUTBOX/CONTINUITY_PACKS/newgen_continuity_pack_20260524T040718Z_receipt.json",
+            "build_dir": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/CONTINUITY_BUILD/20260524T040718Z"
+          },
+          "generated_at_utc": "2026-05-24T04:07:19Z"
+        }
+      }
+    },
+    {
+      "step": "last_ADMIN_BUILD_CONTINUITY_PACK",
+      "status": "PASS",
+      "details": {
+        "schema_id": "important_six_dashboard_action_last_result_v0_1",
+        "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+        "action_id": "ADMIN_BUILD_CONTINUITY_PACK",
+        "generated_at_utc": "2026-05-24T04:07:19Z",
+        "last_result": {
+          "timestamp_utc": "2026-05-24T04:07:19Z",
+          "action_id": "ADMIN_BUILD_CONTINUITY_PACK",
+          "status": "PASS",
+          "summary": "Continuity pack built: newgen_continuity_pack_20260524T040718Z.zip",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040719Z_ADMIN_BUILD_CONTINUITY_PACK.json"
+        }
+      }
+    },
+    {
+      "step": "run_TRANSFER_SEND_TASKPACK_VM2_DRY_RUN",
+      "status": "PASS",
+      "details": {
+        "http_status": 200,
+        "result": {
+          "schema_id": "important_six_dashboard_action_run_result_v0_1",
+          "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+          "action_id": "TRANSFER_SEND_TASKPACK_VM2_DRY_RUN",
+          "status": "PASS",
+          "summary": "Transfer intent saved (vm2/send_taskpack), alias_available=True",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040719Z_TRANSFER_SEND_TASKPACK_VM2_DRY_RUN.json",
+          "details": {
+            "schema_id": "important_six_transfer_intent_v0_1",
+            "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+            "generated_at_utc": "2026-05-24T04:07:19Z",
+            "target": "vm2",
+            "intent_type": "send_taskpack",
+            "dry_run_only": true,
+            "command_preview": "scp c:/Users/PC/Downloads/TASKPACK_TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1.zip vm2:~/IMPERIUM_TASKPACKS/INBOX/",
+            "aliases_checked": [
+              {
+                "alias": "vm2",
+                "checked": true,
+                "available": true,
+                "exit_code": 0,
+                "stderr": ""
+              },
+              {
+                "alias": "imperium-vm2",
+                "checked": true,
+                "available": true,
+                "exit_code": 0,
+                "stderr": ""
+              }
+            ],
+            "config_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/transfer_zone_config_v0_1.json",
+            "forbidden": {
+              "arbitrary_user_paths": true,
+              "shell_injection": true,
+              "live_transfer_without_owner_gate": true
+            },
+            "intent_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/TRANSFER_INTENTS/20260524T040719Z_vm2_send_taskpack.json"
+          },
+          "generated_at_utc": "2026-05-24T04:07:19Z"
+        }
+      }
+    },
+    {
+      "step": "last_TRANSFER_SEND_TASKPACK_VM2_DRY_RUN",
+      "status": "PASS",
+      "details": {
+        "schema_id": "important_six_dashboard_action_last_result_v0_1",
+        "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+        "action_id": "TRANSFER_SEND_TASKPACK_VM2_DRY_RUN",
+        "generated_at_utc": "2026-05-24T04:07:19Z",
+        "last_result": {
+          "timestamp_utc": "2026-05-24T04:07:19Z",
+          "action_id": "TRANSFER_SEND_TASKPACK_VM2_DRY_RUN",
+          "status": "PASS",
+          "summary": "Transfer intent saved (vm2/send_taskpack), alias_available=True",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040719Z_TRANSFER_SEND_TASKPACK_VM2_DRY_RUN.json"
+        }
+      }
+    },
+    {
+      "step": "run_TRANSFER_SEND_TASKPACK_VM3_DRY_RUN",
+      "status": "PASS",
+      "details": {
+        "http_status": 200,
+        "result": {
+          "schema_id": "important_six_dashboard_action_run_result_v0_1",
+          "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+          "action_id": "TRANSFER_SEND_TASKPACK_VM3_DRY_RUN",
+          "status": "PASS",
+          "summary": "Transfer intent saved (vm3/send_taskpack), alias_available=True",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040719Z_TRANSFER_SEND_TASKPACK_VM3_DRY_RUN.json",
+          "details": {
+            "schema_id": "important_six_transfer_intent_v0_1",
+            "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+            "generated_at_utc": "2026-05-24T04:07:19Z",
+            "target": "vm3",
+            "intent_type": "send_taskpack",
+            "dry_run_only": true,
+            "command_preview": "scp c:/Users/PC/Downloads/TASKPACK_TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1.zip vm3:~/IMPERIUM_TASKPACKS/INBOX/",
+            "aliases_checked": [
+              {
+                "alias": "vm3",
+                "checked": true,
+                "available": true,
+                "exit_code": 0,
+                "stderr": ""
+              },
+              {
+                "alias": "imperium-vm3",
+                "checked": true,
+                "available": true,
+                "exit_code": 0,
+                "stderr": ""
+              }
+            ],
+            "config_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/transfer_zone_config_v0_1.json",
+            "forbidden": {
+              "arbitrary_user_paths": true,
+              "shell_injection": true,
+              "live_transfer_without_owner_gate": true
+            },
+            "intent_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/TRANSFER_INTENTS/20260524T040719Z_vm3_send_taskpack.json"
+          },
+          "generated_at_utc": "2026-05-24T04:07:19Z"
+        }
+      }
+    },
+    {
+      "step": "last_TRANSFER_SEND_TASKPACK_VM3_DRY_RUN",
+      "status": "PASS",
+      "details": {
+        "schema_id": "important_six_dashboard_action_last_result_v0_1",
+        "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+        "action_id": "TRANSFER_SEND_TASKPACK_VM3_DRY_RUN",
+        "generated_at_utc": "2026-05-24T04:07:19Z",
+        "last_result": {
+          "timestamp_utc": "2026-05-24T04:07:19Z",
+          "action_id": "TRANSFER_SEND_TASKPACK_VM3_DRY_RUN",
+          "status": "PASS",
+          "summary": "Transfer intent saved (vm3/send_taskpack), alias_available=True",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040719Z_TRANSFER_SEND_TASKPACK_VM3_DRY_RUN.json"
+        }
+      }
+    },
+    {
+      "step": "run_TRANSFER_FETCH_REPORT_VM2_DRY_RUN",
+      "status": "PASS",
+      "details": {
+        "http_status": 200,
+        "result": {
+          "schema_id": "important_six_dashboard_action_run_result_v0_1",
+          "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+          "action_id": "TRANSFER_FETCH_REPORT_VM2_DRY_RUN",
+          "status": "PASS",
+          "summary": "Transfer intent saved (vm2/fetch_report), alias_available=True",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040720Z_TRANSFER_FETCH_REPORT_VM2_DRY_RUN.json",
+          "details": {
+            "schema_id": "important_six_transfer_intent_v0_1",
+            "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+            "generated_at_utc": "2026-05-24T04:07:20Z",
+            "target": "vm2",
+            "intent_type": "fetch_report",
+            "dry_run_only": true,
+            "command_preview": "scp vm2:~/IMPERIUM_REPORTS/OUTBOX/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1_REPORT_BUNDLE.zip IMPERIUM_NEW_GENERATION/REPORTS/",
+            "aliases_checked": [
+              {
+                "alias": "vm2",
+                "checked": true,
+                "available": true,
+                "exit_code": 0,
+                "stderr": ""
+              },
+              {
+                "alias": "imperium-vm2",
+                "checked": true,
+                "available": true,
+                "exit_code": 0,
+                "stderr": ""
+              }
+            ],
+            "config_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/transfer_zone_config_v0_1.json",
+            "forbidden": {
+              "arbitrary_user_paths": true,
+              "shell_injection": true,
+              "live_transfer_without_owner_gate": true
+            },
+            "intent_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/TRANSFER_INTENTS/20260524T040720Z_vm2_fetch_report.json"
+          },
+          "generated_at_utc": "2026-05-24T04:07:20Z"
+        }
+      }
+    },
+    {
+      "step": "last_TRANSFER_FETCH_REPORT_VM2_DRY_RUN",
+      "status": "PASS",
+      "details": {
+        "schema_id": "important_six_dashboard_action_last_result_v0_1",
+        "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+        "action_id": "TRANSFER_FETCH_REPORT_VM2_DRY_RUN",
+        "generated_at_utc": "2026-05-24T04:07:20Z",
+        "last_result": {
+          "timestamp_utc": "2026-05-24T04:07:20Z",
+          "action_id": "TRANSFER_FETCH_REPORT_VM2_DRY_RUN",
+          "status": "PASS",
+          "summary": "Transfer intent saved (vm2/fetch_report), alias_available=True",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040720Z_TRANSFER_FETCH_REPORT_VM2_DRY_RUN.json"
+        }
+      }
+    },
+    {
+      "step": "run_TRANSFER_FETCH_REPORT_VM3_DRY_RUN",
+      "status": "PASS",
+      "details": {
+        "http_status": 200,
+        "result": {
+          "schema_id": "important_six_dashboard_action_run_result_v0_1",
+          "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+          "action_id": "TRANSFER_FETCH_REPORT_VM3_DRY_RUN",
+          "status": "PASS",
+          "summary": "Transfer intent saved (vm3/fetch_report), alias_available=True",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040720Z_TRANSFER_FETCH_REPORT_VM3_DRY_RUN.json",
+          "details": {
+            "schema_id": "important_six_transfer_intent_v0_1",
+            "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+            "generated_at_utc": "2026-05-24T04:07:20Z",
+            "target": "vm3",
+            "intent_type": "fetch_report",
+            "dry_run_only": true,
+            "command_preview": "scp vm3:~/IMPERIUM_REPORTS/OUTBOX/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1_REPORT_BUNDLE.zip IMPERIUM_NEW_GENERATION/REPORTS/",
+            "aliases_checked": [
+              {
+                "alias": "vm3",
+                "checked": true,
+                "available": true,
+                "exit_code": 0,
+                "stderr": ""
+              },
+              {
+                "alias": "imperium-vm3",
+                "checked": true,
+                "available": true,
+                "exit_code": 0,
+                "stderr": ""
+              }
+            ],
+            "config_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/transfer_zone_config_v0_1.json",
+            "forbidden": {
+              "arbitrary_user_paths": true,
+              "shell_injection": true,
+              "live_transfer_without_owner_gate": true
+            },
+            "intent_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/TRANSFER_INTENTS/20260524T040720Z_vm3_fetch_report.json"
+          },
+          "generated_at_utc": "2026-05-24T04:07:20Z"
+        }
+      }
+    },
+    {
+      "step": "last_TRANSFER_FETCH_REPORT_VM3_DRY_RUN",
+      "status": "PASS",
+      "details": {
+        "schema_id": "important_six_dashboard_action_last_result_v0_1",
+        "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+        "action_id": "TRANSFER_FETCH_REPORT_VM3_DRY_RUN",
+        "generated_at_utc": "2026-05-24T04:07:20Z",
+        "last_result": {
+          "timestamp_utc": "2026-05-24T04:07:20Z",
+          "action_id": "TRANSFER_FETCH_REPORT_VM3_DRY_RUN",
+          "status": "PASS",
+          "summary": "Transfer intent saved (vm3/fetch_report), alias_available=True",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040720Z_TRANSFER_FETCH_REPORT_VM3_DRY_RUN.json"
+        }
+      }
+    },
+    {
+      "step": "run_MECHANICUS_CHECK_REQUIRED_TOOLS",
+      "status": "WARN",
+      "details": {
+        "http_status": 200,
+        "result": {
+          "schema_id": "important_six_dashboard_action_run_result_v0_1",
+          "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+          "action_id": "MECHANICUS_CHECK_REQUIRED_TOOLS",
+          "status": "WARN",
+          "summary": "Tools check required_missing=0 optional_missing=4",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040720Z_MECHANICUS_CHECK_REQUIRED_TOOLS.json",
+          "details": {
+            "checks": [
+              {
+                "tool": "git",
+                "required": true,
+                "available": true,
+                "command": [
+                  "git",
+                  "--version"
+                ],
+                "exit_code": 0,
+                "stdout": "git version 2.53.0.windows.1\n",
+                "stderr": ""
+              },
+              {
+                "tool": "python",
+                "required": true,
+                "available": true,
+                "command": [
+                  "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+                  "--version"
+                ],
+                "exit_code": 0,
+                "stdout": "Python 3.12.10\n",
+                "stderr": ""
+              },
+              {
+                "tool": "pip",
+                "required": true,
+                "available": true,
+                "command": [
+                  "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+                  "-m",
+                  "pip",
+                  "--version"
+                ],
+                "exit_code": 0,
+                "stdout": "pip 25.0.1 from C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pip (python 3.12)\n\n",
+                "stderr": ""
+              },
+              {
+                "tool": "rich",
+                "required": true,
+                "available": true,
+                "source": "python_package",
+                "version": "14.3.3"
+              },
+              {
+                "tool": "node",
+                "required": false,
+                "available": true,
+                "command": [
+                  "node",
+                  "--version"
+                ],
+                "exit_code": 0,
+                "stdout": "v24.15.0\n",
+                "stderr": ""
+              },
+              {
+                "tool": "npm",
+                "required": false,
+                "available": false,
+                "command": [
+                  "npm",
+                  "--version"
+                ],
+                "exit_code": 127,
+                "stdout": "",
+                "stderr": "[WinError 2] Не удается найти указанный файл"
+              },
+              {
+                "tool": "npx",
+                "required": false,
+                "available": false,
+                "command": [
+                  "npx",
+                  "--version"
+                ],
+                "exit_code": 127,
+                "stdout": "",
+                "stderr": "[WinError 2] Не удается найти указанный файл"
+              },
+              {
+                "tool": "playwright_npx",
+                "required": false,
+                "available": false,
+                "command": [
+                  "npx",
+                  "playwright",
+                  "--version"
+                ],
+                "exit_code": 127,
+                "stdout": "",
+                "stderr": "[WinError 2] Не удается найти указанный файл"
+              },
+              {
+                "tool": "ssh",
+                "required": false,
+                "available": true,
+                "command": [
+                  "ssh",
+                  "-V"
+                ],
+                "exit_code": 0,
+                "stdout": "",
+                "stderr": "OpenSSH_for_Windows_9.5p1, LibreSSL 3.8.2\n"
+              },
+              {
+                "tool": "scp",
+                "required": false,
+                "available": false,
+                "command": [
+                  "scp",
+                  "-V"
+                ],
+                "exit_code": 1,
+                "stdout": "",
+                "stderr": "scp: unknown option -- V\nusage: scp [-346ABCOpqRrsTv] [-c cipher] [-D sftp_server_path] [-F ssh_config]\n           [-i identity_file] [-J destination] [-l limit] [-o ssh_option]\n           [-P port] [-S program] [-X sftp_option] source ... target\n"
+              },
+              {
+                "tool": "powershell",
+                "required": false,
+                "available": true,
+                "command": [
+                  "powershell",
+                  "-Command",
+                  "$PSVersionTable.PSVersion.ToString()"
+                ],
+                "exit_code": 0,
+                "stdout": "5.1.19041.6456\n",
+                "stderr": ""
+              }
+            ],
+            "required_missing": [],
+            "optional_missing": [
+              "npm",
+              "npx",
+              "playwright_npx",
+              "scp"
+            ]
+          },
+          "generated_at_utc": "2026-05-24T04:07:20Z"
+        }
+      }
+    },
+    {
+      "step": "last_MECHANICUS_CHECK_REQUIRED_TOOLS",
+      "status": "PASS",
+      "details": {
+        "schema_id": "important_six_dashboard_action_last_result_v0_1",
+        "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+        "action_id": "MECHANICUS_CHECK_REQUIRED_TOOLS",
+        "generated_at_utc": "2026-05-24T04:07:20Z",
+        "last_result": {
+          "timestamp_utc": "2026-05-24T04:07:20Z",
+          "action_id": "MECHANICUS_CHECK_REQUIRED_TOOLS",
+          "status": "WARN",
+          "summary": "Tools check required_missing=0 optional_missing=4",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040720Z_MECHANICUS_CHECK_REQUIRED_TOOLS.json"
+        }
+      }
+    },
+    {
+      "step": "run_MECHANICUS_CHECK_SCRIPTS_VALIDATORS",
+      "status": "PASS",
+      "details": {
+        "http_status": 200,
+        "result": {
+          "schema_id": "important_six_dashboard_action_run_result_v0_1",
+          "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+          "action_id": "MECHANICUS_CHECK_SCRIPTS_VALIDATORS",
+          "status": "PASS",
+          "summary": "Scripts/validators checks=10",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040720Z_MECHANICUS_CHECK_SCRIPTS_VALIDATORS.json",
+          "details": {
+            "checks": [
+              {
+                "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_server_v0_2.py",
+                "type": "python",
+                "status": "PASS"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+                "type": "python",
+                "status": "PASS"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+                "type": "python",
+                "status": "PASS"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TESTS/playwright_dashboard_l2_actions_v0_1.py",
+                "type": "python",
+                "status": "PASS"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/TOOLS/doctrinarium_preflight_v0_1.py",
+                "type": "python",
+                "status": "PASS"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/TOOLS/officio_boot_ack_v0_1.py",
+                "type": "python",
+                "status": "PASS"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_registry_v0_1.json",
+                "type": "json",
+                "status": "PASS"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/transfer_zone_config_v0_1.json",
+                "type": "json",
+                "status": "PASS"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/OWNER_INTENT/owner_question_schema_v0_1.json",
+                "type": "json",
+                "status": "PASS"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/OWNER_INTENT/owner_diff_decision_schema_v0_1.json",
+                "type": "json",
+                "status": "PASS"
+              }
+            ]
+          },
+          "generated_at_utc": "2026-05-24T04:07:20Z"
+        }
+      }
+    },
+    {
+      "step": "last_MECHANICUS_CHECK_SCRIPTS_VALIDATORS",
+      "status": "PASS",
+      "details": {
+        "schema_id": "important_six_dashboard_action_last_result_v0_1",
+        "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+        "action_id": "MECHANICUS_CHECK_SCRIPTS_VALIDATORS",
+        "generated_at_utc": "2026-05-24T04:07:20Z",
+        "last_result": {
+          "timestamp_utc": "2026-05-24T04:07:20Z",
+          "action_id": "MECHANICUS_CHECK_SCRIPTS_VALIDATORS",
+          "status": "PASS",
+          "summary": "Scripts/validators checks=10",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040720Z_MECHANICUS_CHECK_SCRIPTS_VALIDATORS.json"
+        }
+      }
+    },
+    {
+      "step": "run_INQUISITION_REPO_HYGIENE_AUDIT",
+      "status": "WARN",
+      "details": {
+        "http_status": 200,
+        "result": {
+          "schema_id": "important_six_dashboard_action_run_result_v0_1",
+          "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+          "action_id": "INQUISITION_REPO_HYGIENE_AUDIT",
+          "status": "WARN",
+          "summary": "Repo hygiene scan complete: dirty=True, duplicates=670, pollution=346, large=1",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040726Z_INQUISITION_REPO_HYGIENE_AUDIT.json",
+          "details": {
+            "dirty_state": true,
+            "git_dirty_entries_count": 14,
+            "git_untracked_entries_count": 14,
+            "git_status_sample": [
+              "?? IMPERIUM_NEW_GENERATION/ASTRONOMICON/DRAFT_TASK_REGISTRY/",
+              "?? IMPERIUM_NEW_GENERATION/OUTBOX/",
+              "?? IMPERIUM_NEW_GENERATION/OWNER_INTENT/",
+              "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/OWNER_INTENT/",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/README_L2.md",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TESTS/playwright_dashboard_l2_actions_v0_1.py",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.css",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.js",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_server_v0_2.py",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_v0_2.html"
+            ],
+            "duplicate_name_hits": [
+              {
+                "name": "receipts",
+                "count": 395,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RECEIPTS",
+                  "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/RECEIPTS",
+                  "IMPERIUM_NEW_GENERATION/EXCHANGE/ORGAN_BUS/receipts",
+                  "IMPERIUM_NEW_GENERATION/EXCHANGE/SERVITOR/receipts",
+                  "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/receipts",
+                  "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ASTRONOMICON_AGENT/receipts"
+                ]
+              },
+              {
+                "name": "events.jsonl",
+                "count": 313,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-004955-e266/events.jsonl",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-004959-8b5f/events.jsonl",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005225-9ad2/events.jsonl",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005247-6523/events.jsonl",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005515-d00b/events.jsonl",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005515-dd21/events.jsonl"
+                ]
+              },
+              {
+                "name": "reports",
+                "count": 306,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/REPORTS",
+                  "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS",
+                  "IMPERIUM_NEW_GENERATION/ASTRONOMICON/REPORTS",
+                  "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/REPORTS",
+                  "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/REPORTS",
+                  "IMPERIUM_NEW_GENERATION/INQUISITION/REPORTS"
+                ]
+              },
+              {
+                "name": "readme.md",
+                "count": 142,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/README.md",
+                  "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/README.md",
+                  "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/README.md",
+                  "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/README.md",
+                  "IMPERIUM_NEW_GENERATION/TASK_CONTROL/README.md",
+                  "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS/README.md"
+                ]
+              },
+              {
+                "name": "status_report.json",
+                "count": 118,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-004955-e266/status_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005515-d00b/status_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005515-dd21/status_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-010805-0c36/status_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-010805-a0cc/status_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-011634-1db9/status_report.json"
+                ]
+              },
+              {
+                "name": "status_command_receipt.json",
+                "count": 97,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023354-1f7b/receipts/status_command_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023354-2f16/receipts/status_command_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/cli_plain_status/receipts/status_command_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/cli_status/receipts/status_command_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024822-6dd2/receipts/status_command_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/cli_plain_status/receipts/status_command_receipt.json"
+                ]
+              },
+              {
+                "name": "status_metrics_summary.json",
+                "count": 97,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023354-1f7b/reports/status_metrics_summary.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023354-2f16/reports/status_metrics_summary.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/cli_plain_status/reports/status_metrics_summary.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/cli_status/reports/status_metrics_summary.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024822-6dd2/reports/status_metrics_summary.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/cli_plain_status/reports/status_metrics_summary.json"
+                ]
+              },
+              {
+                "name": "status_access_map.json",
+                "count": 84,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-035009-fb682a/cli_plain_status/reports/status_access_map.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-035009-fb682a/cli_status/reports/status_access_map.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-035010-6666d8/reports/status_access_map.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-040356-d49f43/reports/status_access_map.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-042812-c25bed/cli_plain_status/reports/status_access_map.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-042812-c25bed/cli_status/reports/status_access_map.json"
+                ]
+              },
+              {
+                "name": "build_repo_inventory_receipt.json",
+                "count": 50,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-004959-8b5f/receipts/build_repo_inventory_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005225-9ad2/receipts/build_repo_inventory_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/receipts/build_repo_inventory_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/receipts/build_repo_inventory_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/receipts/build_repo_inventory_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/receipts/build_repo_inventory_receipt.json"
+                ]
+              },
+              {
+                "name": "inventory_objects.jsonl",
+                "count": 50,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-004959-8b5f/inventory_objects.jsonl",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005225-9ad2/inventory_objects.jsonl",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/inventory_objects.jsonl",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/inventory_objects.jsonl",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/inventory_objects.jsonl",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/inventory_objects.jsonl"
+                ]
+              },
+              {
+                "name": "inventory_report.json",
+                "count": 50,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-004959-8b5f/inventory_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005225-9ad2/inventory_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/inventory_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/inventory_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/inventory_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/inventory_report.json"
+                ]
+              },
+              {
+                "name": "route_to_organs_receipt.json",
+                "count": 44,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/receipts/route_to_organs_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005455-2f41/receipts/route_to_organs_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005509-96cd/receipts/route_to_organs_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/receipts/route_to_organs_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/receipts/route_to_organs_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/receipts/route_to_organs_receipt.json"
+                ]
+              },
+              {
+                "name": "routing_recommendations_report.json",
+                "count": 44,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/routing_recommendations_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005455-2f41/routing_recommendations_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005509-96cd/routing_recommendations_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/routing_recommendations_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/routing_recommendations_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/routing_recommendations_report.json"
+                ]
+              },
+              {
+                "name": "detect_dirty_runtime_outputs_receipt.json",
+                "count": 43,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005250-d128/receipts/detect_dirty_runtime_outputs_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/receipts/detect_dirty_runtime_outputs_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005509-96cd/receipts/detect_dirty_runtime_outputs_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/receipts/detect_dirty_runtime_outputs_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005700-7022/receipts/detect_dirty_runtime_outputs_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005718-dbd9/receipts/detect_dirty_runtime_outputs_receipt.json"
+                ]
+              },
+              {
+                "name": "dirty_runtime_report.json",
+                "count": 43,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005250-d128/dirty_runtime_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/dirty_runtime_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005509-96cd/dirty_runtime_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/dirty_runtime_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005700-7022/dirty_runtime_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005718-dbd9/dirty_runtime_report.json"
+                ]
+              },
+              {
+                "name": "receipt.json",
+                "count": 42,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-034711-d62c25/continuity_pack/receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-035009-fb682a/continuity_pack/receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-040557-7068b8/continuity_pack/receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-042322-549103/continuity_pack/receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-042622-2abf24/continuity_pack/receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-042812-c25bed/continuity_pack/receipt.json"
+                ]
+              },
+              {
+                "name": "find_useful_candidates_receipt.json",
+                "count": 40,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005305-907c/receipts/find_useful_candidates_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/receipts/find_useful_candidates_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005509-96cd/receipts/find_useful_candidates_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/receipts/find_useful_candidates_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/receipts/find_useful_candidates_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/receipts/find_useful_candidates_receipt.json"
+                ]
+              },
+              {
+                "name": "useful_candidates_report.json",
+                "count": 40,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005305-907c/useful_candidates_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/useful_candidates_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005509-96cd/useful_candidates_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/useful_candidates_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/useful_candidates_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/useful_candidates_report.json"
+                ]
+              },
+              {
+                "name": "__pycache__",
+                "count": 38,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/__pycache__",
+                  "IMPERIUM_NEW_GENERATION/ORGAN_AGENT_COMMON/__pycache__",
+                  "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/__pycache__",
+                  "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/__pycache__",
+                  "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/__pycache__",
+                  "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TUI/__pycache__"
+                ]
+              },
+              {
+                "name": "build_provenance_index_receipt.json",
+                "count": 37,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/receipts/build_provenance_index_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/receipts/build_provenance_index_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/receipts/build_provenance_index_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/receipts/build_provenance_index_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-010156-861e/receipts/build_provenance_index_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-010824-50d9/receipts/build_provenance_index_receipt.json"
+                ]
+              },
+              {
+                "name": "provenance_report.json",
+                "count": 37,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005309-77b9/provenance_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005611-5a03/provenance_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005727-9b41/provenance_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-005814-5ac4/provenance_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-010156-861e/provenance_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-010824-50d9/provenance_report.json"
+                ]
+              },
+              {
+                "name": "imperium_context_index.jsonl",
+                "count": 32,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/reports/imperium_context_index.jsonl",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-84b7/reports/imperium_context_index.jsonl",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/reports/imperium_context_index.jsonl",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/reports/imperium_context_index.jsonl",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/reports/imperium_context_index.jsonl",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/reports/imperium_context_index.jsonl"
+                ]
+              },
+              {
+                "name": "imperium_context_scan_report.json",
+                "count": 32,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/reports/imperium_context_scan_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-84b7/reports/imperium_context_scan_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/reports/imperium_context_scan_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/reports/imperium_context_scan_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/reports/imperium_context_scan_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/reports/imperium_context_scan_report.json"
+                ]
+              },
+              {
+                "name": "scan_imperium_context_receipt.json",
+                "count": 32,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/receipts/scan_imperium_context_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-84b7/receipts/scan_imperium_context_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/receipts/scan_imperium_context_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/receipts/scan_imperium_context_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/receipts/scan_imperium_context_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/receipts/scan_imperium_context_receipt.json"
+                ]
+              },
+              {
+                "name": "manifest.json",
+                "count": 30,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/MANIFEST.json",
+                  "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-RICH-SHELL-OPERATOR-REPAIR-8-ORGANS-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T205421584637Z_pack_build_role/role_pack_work/SERVITOR_PRIME/MANIFEST.json",
+                  "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2/OFFICIO_RUNTIME/run_20260519T222118321799Z_pack_build_role/role_pack_work/SERVITOR_PRIME/MANIFEST.json",
+                  "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-VISUAL-SHELL-V0_2/OFFICIO_RUNTIME/run_20260520T015518670432Z_pack_build_role/role_pack_work/SERVITOR_PRIME/MANIFEST.json",
+                  "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-SANCTUM-PLAYWRIGHT-TRUTH-BRAIN-STRIKE-PC-V0_1/TASK_PACK_SOURCE/MANIFEST.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-ATTACK-MATRIX-20260518-204315/MANIFEST.json"
+                ]
+              },
+              {
+                "name": "recent_runs_report.json",
+                "count": 30,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024823-09d5/reports/recent_runs_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025105-da9a/reports/recent_runs_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030131-9254/reports/recent_runs_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-035011-9b26c6/reports/recent_runs_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-040424-74e4d1/reports/recent_runs_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-042815-73b582/reports/recent_runs_report.json"
+                ]
+              },
+              {
+                "name": "tools",
+                "count": 29,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/TOOLS",
+                  "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS",
+                  "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS",
+                  "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TOOLS",
+                  "IMPERIUM_NEW_GENERATION/INQUISITION/TOOLS",
+                  "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS"
+                ]
+              },
+              {
+                "name": "agent_kpd_self_review.json",
+                "count": 28,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/AGENT_KPD_SELF_REVIEW.json",
+                  "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1/AGENT_KPD_SELF_REVIEW.json",
+                  "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TEXTUAL-FULLSCREEN-TUI-PC-V0_3/AGENT_KPD_SELF_REVIEW.json",
+                  "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2/AGENT_KPD_SELF_REVIEW.json",
+                  "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5/AGENT_KPD_SELF_REVIEW.json",
+                  "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4/AGENT_KPD_SELF_REVIEW.json"
+                ]
+              },
+              {
+                "name": "classify_local_context_receipt.json",
+                "count": 28,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/receipts/classify_local_context_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/receipts/classify_local_context_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/receipts/classify_local_context_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/receipts/classify_local_context_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/receipts/classify_local_context_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/receipts/classify_local_context_receipt.json"
+                ]
+              },
+              {
+                "name": "collect_reality_snapshot_receipt.json",
+                "count": 28,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/receipts/collect_reality_snapshot_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/receipts/collect_reality_snapshot_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/receipts/collect_reality_snapshot_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-034617-5a1f/receipts/collect_reality_snapshot_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-034711-d62c25/receipts/collect_reality_snapshot_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-035009-fb682a/cli_progress/receipts/collect_reality_snapshot_receipt.json"
+                ]
+              },
+              {
+                "name": "detect_private_export_risk_receipt.json",
+                "count": 28,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/receipts/detect_private_export_risk_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/receipts/detect_private_export_risk_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/receipts/detect_private_export_risk_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/receipts/detect_private_export_risk_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/receipts/detect_private_export_risk_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/receipts/detect_private_export_risk_receipt.json"
+                ]
+              },
+              {
+                "name": "local_context_classification_report.json",
+                "count": 28,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/reports/local_context_classification_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/reports/local_context_classification_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/reports/local_context_classification_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/reports/local_context_classification_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/reports/local_context_classification_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/reports/local_context_classification_report.json"
+                ]
+              },
+              {
+                "name": "private_export_risk_report.json",
+                "count": 28,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/reports/private_export_risk_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/reports/private_export_risk_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/reports/private_export_risk_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/reports/private_export_risk_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/reports/private_export_risk_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/reports/private_export_risk_report.json"
+                ]
+              },
+              {
+                "name": "reality_snapshot_report.json",
+                "count": 28,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/reports/reality_snapshot_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/reports/reality_snapshot_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/reports/reality_snapshot_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-034617-5a1f/reports/reality_snapshot_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-034711-d62c25/reports/reality_snapshot_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-035009-fb682a/cli_progress/reports/reality_snapshot_report.json"
+                ]
+              },
+              {
+                "name": "collect_continuity_pack_receipt.json",
+                "count": 27,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/receipts/collect_continuity_pack_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/receipts/collect_continuity_pack_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/receipts/collect_continuity_pack_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/receipts/collect_continuity_pack_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/receipts/collect_continuity_pack_receipt.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/receipts/collect_continuity_pack_receipt.json"
+                ]
+              },
+              {
+                "name": "continuity_pack",
+                "count": 27,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/continuity_pack",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/continuity_pack",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/continuity_pack",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/continuity_pack",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/continuity_pack",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/continuity_pack"
+                ]
+              },
+              {
+                "name": "continuity_pack_manifest.json",
+                "count": 27,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/continuity_pack/continuity_pack_manifest.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/continuity_pack/continuity_pack_manifest.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/continuity_pack/continuity_pack_manifest.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/continuity_pack/continuity_pack_manifest.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/continuity_pack/continuity_pack_manifest.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/continuity_pack/continuity_pack_manifest.json"
+                ]
+              },
+              {
+                "name": "continuity_pack_report.json",
+                "count": 27,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/reports/continuity_pack_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/reports/continuity_pack_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/reports/continuity_pack_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/reports/continuity_pack_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/reports/continuity_pack_report.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/reports/continuity_pack_report.json"
+                ]
+              },
+              {
+                "name": "continuity_pack_summary.md",
+                "count": 27,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-5a51/continuity_pack/continuity_pack_summary.md",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024501-6e77/continuity_pack/continuity_pack_summary.md",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-024820-9b8c/continuity_pack/continuity_pack_summary.md",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-025102-b40d/continuity_pack/continuity_pack_summary.md",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030129-6883/continuity_pack/continuity_pack_summary.md",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030436-9d6c/continuity_pack/continuity_pack_summary.md"
+                ]
+              },
+              {
+                "name": "kpd_score.json",
+                "count": 27,
+                "sample_paths": [
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-023406-7af6/reports/kpd_score.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-030037-b666/reports/kpd_score.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-034711-d62c25/continuity_pack/kpd_score.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-035009-fb682a/continuity_pack/kpd_score.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-040528-317717/reports/kpd_score.json",
+                  "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-040557-7068b8/continuity_pack/kpd_score.json"
+                ]
+              }
+            ],
+            "duplicate_name_hits_count": 670,
+            "pollution_hits_sample": [
+              "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE",
+              "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TEMPLATES",
+              "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TEMPLATES",
+              "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/__pycache__",
+              "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TEMPLATES",
+              "IMPERIUM_NEW_GENERATION/INQUISITION/TEMPLATES",
+              "IMPERIUM_NEW_GENERATION/MECHANICUS/TEMPLATES",
+              "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TEMPLATES",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENT_COMMON/organ_agent_runtime_v0_1.py",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENT_COMMON/__pycache__",
+              "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/ORGAN_DIALOGUE_DEMO_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-SANCTUM-ORGAN-DIALOGUE-DEMO-VM2-V0_1",
+              "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/__pycache__",
+              "IMPERIUM_NEW_GENERATION/SKILLS/SKILL_PASSPORT_TEMPLATE_V0_1.json",
+              "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/GATES/organ_gate_catalog_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TEMPLATES/organ_verdict_template_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/__pycache__",
+              "IMPERIUM_NEW_GENERATION/ASTRONOMICON/GATES/organ_gate_catalog_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TEMPLATES/organ_verdict_template_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/__pycache__",
+              "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/HERALDRY/no_external_logo_policy.md",
+              "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/ORGAN_PACKET_RESPONSE_CATALOG_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATES/organ_gate_catalog_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/TEMPLATES",
+              "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TEMPLATES/organ_verdict_template_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TUI/__pycache__",
+              "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DECLARATIONS/ORGAN_DEPENDENCY_MAP/servitor_organ_query_catalog_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/TOOLS/__pycache__",
+              "IMPERIUM_NEW_GENERATION/INQUISITION/GATES/organ_gate_catalog_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/INQUISITION/TEMPLATES/organ_verdict_template_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/INQUISITION/TUI/__pycache__",
+              "IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/COMMAND_SHORTCUTS_CATALOG_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/MECHANICUS/GATES/organ_gate_catalog_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/MECHANICUS/TEMPLATES/organ_verdict_template_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_CANDIDATE_CATALOG_V0_1.generated.json",
+              "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_RISK_CATALOG_V0_1.generated.json",
+              "IMPERIUM_NEW_GENERATION/MECHANICUS/TUI/__pycache__",
+              "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/officio_ack_template_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/GATES/organ_gate_catalog_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TEMPLATES/organ_verdict_template_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/__pycache__",
+              "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/TOOLS/__pycache__",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/PACK_TEMPLATES",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/POLICIES/RUNTIME_OUTPUT_POLICY.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/skills/detect_dirty_runtime_outputs",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TESTS/__pycache__",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/__pycache__",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TRANSFER_GATE/TEMPLATES",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/REPAIR_BACKLOG_STATUS.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-BUILD-ADMINISTRATUM-AGENT-V1-FROM-TARGET-FORM/STAGE_EXECUTION_LOG_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-HARDEN-ADMINISTRATUM-AGENT-TOWARD-REFERENCE-GRADE/STAGE_EXECUTION_LOG_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TRANSFER_GATE/SCRIPTS/__pycache__",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TRANSFER_GATE/TEMPLATES/START_PROMPT.template.txt",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TRANSFER_GATE/TEMPLATES/TRANSFER_CARD.template.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ASTRONOMICON_AGENT/TOOLS/__pycache__",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/DOCTRINARIUM_AGENT/TOOLS/__pycache__",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/INQUISITION_AGENT/TOOLS/__pycache__",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/SHELL/__pycache__",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/__pycache__",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/BASE_HALF/runtime_isolation.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/PACK_TEMPLATES/role_pack_template.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/PACK_TEMPLATES/ROLE_PACK_TEMPLATE.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/REQUIREMENT_MATRIX/requirement_template.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/LOGOS_PRIME_RESPONSE_CONTRACT.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/LOGOS_PRIME_RESPONSE_CONTRACT.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/LOGOS_SPECULUM_RESPONSE_CONTRACT.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/LOGOS_SPECULUM_RESPONSE_CONTRACT.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/ROLE_REGISTRY/LOGOS",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/ROLE_REGISTRY/LOGOS_PRIME",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/ROLE_REGISTRY/LOGOS_SPECULUM",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/TOOLS/__pycache__",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/response_contracts/logos_prime_response_contract.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/response_contracts/logos_speculum_response_contract.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/SCHOLA_IMPERIALIS_AGENT/TOOLS/__pycache__",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/STRATEGIUM_AGENT/TOOLS/__pycache__",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENT_COMMON/SHELL/organ_shell_runtime_contract_v0_1.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENT_COMMON/SHELL/__pycache__",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENT_COMMON/__pycache__/organ_agent_runtime_v0_1.cpython-312.pyc",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENT_COMMON/__pycache__/organ_agent_runtime_v0_1.cpython-314.pyc",
+              "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/REGISTRY/ORGAN_DIALOGUE_CAPABILITY_MATRIX_V0_1.json"
+            ],
+            "pollution_hits_count": 346,
+            "large_artifacts": [
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5.zip",
+                "size_bytes": 39578667
+              }
+            ],
+            "large_artifact_count": 1,
+            "reports_outside_expected_zone_sample": [
+              "IMPERIUM_NEW_GENERATION/TRUTH/REPORT_STATUS_INDEX_V0_1.json",
+              "IMPERIUM_NEW_GENERATION/TRUTH/REPORT_STATUS_NORMALIZATION_TABLE_V0_1.json",
+              "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/REPORTS/common_cli_reference_report.md",
+              "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/REPORTS/preflight_smoke_report_v0_1.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/CONTRACTS/ADMINISTRATUM_OWNER_PDF_REPORT_CONTRACT_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/base_half_check_report.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/base_half_check_report.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/DOSSIER_FACTORY_REPORT_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/EVIDENCE_CAPTURE_REPORT_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/IMPLEMENTATION_REPORT_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/OSS_ADMISSION_REPORT_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-DOSSIER-FACTORY-OSS-ADMISSION-V0_1/TEST_REPORT_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-LIVE-WORK-RESOURCE-METRICS-CLI-HARDENING-EXPERIMENT/IMPLEMENTATION_REPORT_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1/IMPLEMENTATION_REPORT_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1/OWNER_REPORT_RENDER_SOURCE_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1/TEST_REPORT_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/CLI_UX_REPAIR_REPORT.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/DIRTY_ADMISSION_REPORT.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/DOSSIER_NO_PDF_POLICY_REPORT.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/FREELANCE_CORRIDOR_REPORT.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/IMPLEMENTATION_REPORT.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/KPD_SCORECARD_REPORT.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/SCHEMA_REGRESSION_REPORT.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/TEST_REPORT.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-REFERENCE-MEGA-REPAIR-V0_1/WARNING_RECONCILIATION_REPORT.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-BUILD-ADMINISTRATUM-AGENT-V1-FROM-TARGET-FORM/ADMINISTRATUM_AGENT_V1_IMPLEMENTATION_REPORT_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-HARDEN-ADMINISTRATUM-AGENT-TOWARD-REFERENCE-GRADE/ADMINISTRATUM_AGENT_REFERENCE_GRADE_HARDENING_REPORT_V0_1.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ASTRONOMICON_AGENT/receipts/domain_route_report_latest.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ASTRONOMICON_AGENT/REPORTS/base_half_check_report.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ASTRONOMICON_AGENT/REPORTS/base_half_check_report.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/DOCTRINARIUM_AGENT/receipts/domain_violation_report_latest.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/DOCTRINARIUM_AGENT/REPORTS/base_half_check_report.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/DOCTRINARIUM_AGENT/REPORTS/base_half_check_report.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/INQUISITION_AGENT/REPORTS/base_half_check_report.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/INQUISITION_AGENT/REPORTS/base_half_check_report.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/REPORTS/base_half_check_report.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/REPORTS/base_half_check_report.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/BASE_HALF/reports_contract.md",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/REPORTS/base_half_check_report.json",
+              "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/REPORTS/base_half_check_report.md"
+            ],
+            "reports_outside_expected_zone_count": 1006
+          },
+          "generated_at_utc": "2026-05-24T04:07:26Z"
+        }
+      }
+    },
+    {
+      "step": "last_INQUISITION_REPO_HYGIENE_AUDIT",
+      "status": "PASS",
+      "details": {
+        "schema_id": "important_six_dashboard_action_last_result_v0_1",
+        "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+        "action_id": "INQUISITION_REPO_HYGIENE_AUDIT",
+        "generated_at_utc": "2026-05-24T04:07:26Z",
+        "last_result": {
+          "timestamp_utc": "2026-05-24T04:07:26Z",
+          "action_id": "INQUISITION_REPO_HYGIENE_AUDIT",
+          "status": "WARN",
+          "summary": "Repo hygiene scan complete: dirty=True, duplicates=670, pollution=346, large=1",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040726Z_INQUISITION_REPO_HYGIENE_AUDIT.json"
+        }
+      }
+    },
+    {
+      "step": "run_INQUISITION_FAKE_GREEN_RISK_SCAN",
+      "status": "WARN",
+      "details": {
+        "http_status": 200,
+        "result": {
+          "schema_id": "important_six_dashboard_action_run_result_v0_1",
+          "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+          "action_id": "INQUISITION_FAKE_GREEN_RISK_SCAN",
+          "status": "WARN",
+          "summary": "Fake-green risk scan complete: scanned=120, risks=17",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040727Z_INQUISITION_FAKE_GREEN_RISK_SCAN.json",
+          "details": {
+            "scanned_files": 120,
+            "risks": [
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/action_registry_validation_report.json",
+                "reason": "Generic PASS without evidence-like fields"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/json_parse_validation_report.json",
+                "reason": "Generic PASS without evidence-like fields"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-ORGAN-SHELL-V1-PC-V0_1/json_parse_validation_report.json",
+                "reason": "Generic PASS without evidence-like fields"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-ORGAN-SHELL-V1-PC-V0_1/dashboard_json_parse_after_shell_v1.json",
+                "reason": "Generic PASS without evidence-like fields"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-ORGAN-SHELL-V1-PC-V0_1/organ_shell_v1_scripted_test_report.json",
+                "reason": "Generic PASS without evidence-like fields"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-ORGAN-SHELL-V1-PC-V0_1/organ_shell_v1_smoke_report.json",
+                "reason": "Generic PASS without evidence-like fields"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1/json_parse_validation_report.json",
+                "reason": "Generic PASS without evidence-like fields"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json",
+                "reason": "Generic PASS without evidence-like fields"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/sim_query_mechanicus.json",
+                "reason": "Generic PASS without evidence-like fields"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/sim_query_officio.json",
+                "reason": "Generic PASS without evidence-like fields"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/sim_query_doctrinarium.json",
+                "reason": "Generic PASS without evidence-like fields"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/sim_query_astronomicon.json",
+                "reason": "Generic PASS without evidence-like fields"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/sim_query_administratum.json",
+                "reason": "Generic PASS without evidence-like fields"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/query_astronomicon_sample.json",
+                "reason": "Generic PASS without evidence-like fields"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/query_inquisition_sample.json",
+                "reason": "Generic PASS without evidence-like fields"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/json_parse_validation_report.json",
+                "reason": "Generic PASS without evidence-like fields"
+              },
+              {
+                "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/wave1_organ_tui_smoke_report.json",
+                "reason": "Generic PASS without evidence-like fields"
+              }
+            ]
+          },
+          "generated_at_utc": "2026-05-24T04:07:27Z"
+        }
+      }
+    },
+    {
+      "step": "last_INQUISITION_FAKE_GREEN_RISK_SCAN",
+      "status": "PASS",
+      "details": {
+        "schema_id": "important_six_dashboard_action_last_result_v0_1",
+        "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+        "action_id": "INQUISITION_FAKE_GREEN_RISK_SCAN",
+        "generated_at_utc": "2026-05-24T04:07:27Z",
+        "last_result": {
+          "timestamp_utc": "2026-05-24T04:07:27Z",
+          "action_id": "INQUISITION_FAKE_GREEN_RISK_SCAN",
+          "status": "WARN",
+          "summary": "Fake-green risk scan complete: scanned=120, risks=17",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040727Z_INQUISITION_FAKE_GREEN_RISK_SCAN.json"
+        }
+      }
+    },
+    {
+      "step": "run_ASTRONOMICON_REGISTER_TASK_DRAFT",
+      "status": "PASS",
+      "details": {
+        "http_status": 200,
+        "result": {
+          "schema_id": "important_six_dashboard_action_run_result_v0_1",
+          "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+          "action_id": "ASTRONOMICON_REGISTER_TASK_DRAFT",
+          "status": "PASS",
+          "summary": "Astronomicon draft created: TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1_20260524T040727Z",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040727Z_ASTRONOMICON_REGISTER_TASK_DRAFT.json",
+          "details": {
+            "draft_path": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/DRAFT_TASK_REGISTRY/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1_20260524T040727Z.json",
+            "index_path": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/DRAFT_TASK_REGISTRY/draft_registry_index.json",
+            "draft_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1_20260524T040727Z"
+          },
+          "generated_at_utc": "2026-05-24T04:07:27Z"
+        }
+      }
+    },
+    {
+      "step": "last_ASTRONOMICON_REGISTER_TASK_DRAFT",
+      "status": "PASS",
+      "details": {
+        "schema_id": "important_six_dashboard_action_last_result_v0_1",
+        "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+        "action_id": "ASTRONOMICON_REGISTER_TASK_DRAFT",
+        "generated_at_utc": "2026-05-24T04:07:27Z",
+        "last_result": {
+          "timestamp_utc": "2026-05-24T04:07:27Z",
+          "action_id": "ASTRONOMICON_REGISTER_TASK_DRAFT",
+          "status": "PASS",
+          "summary": "Astronomicon draft created: TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1_20260524T040727Z",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040727Z_ASTRONOMICON_REGISTER_TASK_DRAFT.json"
+        }
+      }
+    },
+    {
+      "step": "run_DIFF_COMPARE_HEADS",
+      "status": "WARN",
+      "details": {
+        "http_status": 200,
+        "result": {
+          "schema_id": "important_six_dashboard_action_run_result_v0_1",
+          "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+          "action_id": "DIFF_COMPARE_HEADS",
+          "status": "WARN",
+          "summary": "Diff status: local=3864b075b1ee, remote=3864b075b1ee, dirty=True",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040728Z_DIFF_COMPARE_HEADS.json",
+          "details": {
+            "schema_id": "important_six_diff_status_v0_1",
+            "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+            "generated_at_utc": "2026-05-24T04:07:28Z",
+            "branch": "master",
+            "local_head": "3864b075b1ee8e242c4f14a9d8f01a0455d28245",
+            "remote_master_head": "3864b075b1ee8e242c4f14a9d8f01a0455d28245",
+            "previous_head": "0fe27965a2dada7f7fff6311ca9071a8b8e9ff52",
+            "remote_sync": true,
+            "working_tree_dirty": true,
+            "changed_files": [
+              "?? IMPERIUM_NEW_GENERATION/ASTRONOMICON/DRAFT_TASK_REGISTRY/",
+              "?? IMPERIUM_NEW_GENERATION/OUTBOX/",
+              "?? IMPERIUM_NEW_GENERATION/OWNER_INTENT/",
+              "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/OWNER_INTENT/",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/README_L2.md",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TESTS/playwright_dashboard_l2_actions_v0_1.py",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.css",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.js",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_server_v0_2.py",
+              "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_v0_2.html"
+            ],
+            "diff_stat": "",
+            "diff_name_status": ""
+          },
+          "generated_at_utc": "2026-05-24T04:07:28Z"
+        }
+      }
+    },
+    {
+      "step": "last_DIFF_COMPARE_HEADS",
+      "status": "PASS",
+      "details": {
+        "schema_id": "important_six_dashboard_action_last_result_v0_1",
+        "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+        "action_id": "DIFF_COMPARE_HEADS",
+        "generated_at_utc": "2026-05-24T04:07:28Z",
+        "last_result": {
+          "timestamp_utc": "2026-05-24T04:07:28Z",
+          "action_id": "DIFF_COMPARE_HEADS",
+          "status": "WARN",
+          "summary": "Diff status: local=3864b075b1ee, remote=3864b075b1ee, dirty=True",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040728Z_DIFF_COMPARE_HEADS.json"
+        }
+      }
+    },
+    {
+      "step": "run_OWNER_RECORD_DIFF_DECISION",
+      "status": "PASS",
+      "details": {
+        "http_status": 200,
+        "result": {
+          "schema_id": "important_six_dashboard_action_run_result_v0_1",
+          "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+          "action_id": "OWNER_RECORD_DIFF_DECISION",
+          "status": "PASS",
+          "summary": "Owner diff decision recorded: NEEDS_REWORK",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040730Z_OWNER_RECORD_DIFF_DECISION.json",
+          "details": {
+            "decision_record_path": "IMPERIUM_NEW_GENERATION/OWNER_INTENT/DECISIONS/DIFF_DECISION_20260524T040728Z.json",
+            "record": {
+              "schema_id": "important_six.owner_diff_decision.v0_1",
+              "decision_id": "DIFF_DECISION_20260524T040728Z",
+              "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+              "decision": "NEEDS_REWORK",
+              "note_ru": "Smoke: проверка записи решения Owner.",
+              "author": "OWNER",
+              "created_at_utc": "2026-05-24T04:07:30Z",
+              "local_head": "3864b075b1ee8e242c4f14a9d8f01a0455d28245",
+              "remote_head": "3864b075b1ee8e242c4f14a9d8f01a0455d28245",
+              "source": "api_action_run"
+            }
+          },
+          "generated_at_utc": "2026-05-24T04:07:30Z"
+        }
+      }
+    },
+    {
+      "step": "last_OWNER_RECORD_DIFF_DECISION",
+      "status": "PASS",
+      "details": {
+        "schema_id": "important_six_dashboard_action_last_result_v0_1",
+        "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+        "action_id": "OWNER_RECORD_DIFF_DECISION",
+        "generated_at_utc": "2026-05-24T04:07:30Z",
+        "last_result": {
+          "timestamp_utc": "2026-05-24T04:07:30Z",
+          "action_id": "OWNER_RECORD_DIFF_DECISION",
+          "status": "PASS",
+          "summary": "Owner diff decision recorded: NEEDS_REWORK",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040730Z_OWNER_RECORD_DIFF_DECISION.json"
+        }
+      }
+    },
+    {
+      "step": "run_OWNER_QUESTIONS_LIST",
+      "status": "PASS",
+      "details": {
+        "http_status": 200,
+        "result": {
+          "schema_id": "important_six_dashboard_action_run_result_v0_1",
+          "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+          "action_id": "OWNER_QUESTIONS_LIST",
+          "status": "PASS",
+          "summary": "Owner questions loaded: open=2",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040730Z_OWNER_QUESTIONS_LIST.json",
+          "details": {
+            "schema_id": "important_six_owner_questions_v0_1",
+            "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+            "generated_at_utc": "2026-05-24T04:07:30Z",
+            "questions": [
+              {
+                "question_id": "Q-DIFF-AUTO-MERGE",
+                "organ": "OFFICIO_AGENTIS",
+                "severity": "HIGH",
+                "question": "Оставлять ли только ручной diff decision без auto merge/push?",
+                "evidence": [
+                  "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_server_v0_2.py"
+                ],
+                "required_decision": "CONFIRM_MANUAL_ONLY_DIFF_GATE",
+                "status": "OPEN",
+                "created_at_utc": "2026-05-24T04:04:08Z",
+                "_path": "IMPERIUM_NEW_GENERATION/OWNER_INTENT/QUESTIONS/Q_DIFF_AUTO_MERGE.json"
+              },
+              {
+                "question_id": "Q-TRANSFER-LIVE-ENABLE",
+                "organ": "TRANSFER_ZONE",
+                "severity": "MEDIUM",
+                "question": "Разрешить ли переход с DRY_RUN на live transfer для VM2/VM3?",
+                "evidence": [
+                  "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/transfer_zone_config_v0_1.json",
+                  "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1"
+                ],
+                "required_decision": "APPROVE_LIVE_TRANSFER_OR_KEEP_DRY_RUN",
+                "status": "OPEN",
+                "created_at_utc": "2026-05-24T04:04:08Z",
+                "_path": "IMPERIUM_NEW_GENERATION/OWNER_INTENT/QUESTIONS/Q_TRANSFER_LIVE_ENABLE.json"
+              }
+            ],
+            "decision_records_recent": [
+              "IMPERIUM_NEW_GENERATION/OWNER_INTENT/DECISIONS/DIFF_DECISION_20260524T040728Z.json",
+              "IMPERIUM_NEW_GENERATION/OWNER_INTENT/DECISIONS/DIFF_DECISION_20260524T040445Z.json",
+              "IMPERIUM_NEW_GENERATION/OWNER_INTENT/DECISIONS/DIFF_DECISION_20260524T040443Z.json"
+            ],
+            "note_records_recent": [
+              "IMPERIUM_NEW_GENERATION/OWNER_INTENT/NOTES/OWNER_NOTE_20260524T040445Z.json"
+            ]
+          },
+          "generated_at_utc": "2026-05-24T04:07:30Z"
+        }
+      }
+    },
+    {
+      "step": "last_OWNER_QUESTIONS_LIST",
+      "status": "PASS",
+      "details": {
+        "schema_id": "important_six_dashboard_action_last_result_v0_1",
+        "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+        "action_id": "OWNER_QUESTIONS_LIST",
+        "generated_at_utc": "2026-05-24T04:07:30Z",
+        "last_result": {
+          "timestamp_utc": "2026-05-24T04:07:30Z",
+          "action_id": "OWNER_QUESTIONS_LIST",
+          "status": "PASS",
+          "summary": "Owner questions loaded: open=2",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040730Z_OWNER_QUESTIONS_LIST.json"
+        }
+      }
+    },
+    {
+      "step": "run_OWNER_RECORD_NOTE_OR_DECISION",
+      "status": "PASS",
+      "details": {
+        "http_status": 200,
+        "result": {
+          "schema_id": "important_six_dashboard_action_run_result_v0_1",
+          "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+          "action_id": "OWNER_RECORD_NOTE_OR_DECISION",
+          "status": "PASS",
+          "summary": "Owner note/decision recorded",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040730Z_OWNER_RECORD_NOTE_OR_DECISION.json",
+          "details": {
+            "note_record_path": "IMPERIUM_NEW_GENERATION/OWNER_INTENT/NOTES/OWNER_NOTE_20260524T040730Z.json",
+            "record": {
+              "schema_id": "important_six.owner_question.v0_1",
+              "question_id": "OWNER_NOTE_20260524T040730Z",
+              "organ": "OFFICIO_AGENTIS",
+              "severity": "MEDIUM",
+              "question": "Smoke note",
+              "evidence": [],
+              "required_decision": "OWNER_REVIEW",
+              "status": "OPEN",
+              "owner_note_ru": "Smoke: проверка owner note записи.",
+              "decision": null,
+              "created_at_utc": "2026-05-24T04:07:30Z",
+              "updated_at_utc": "2026-05-24T04:07:30Z"
+            }
+          },
+          "generated_at_utc": "2026-05-24T04:07:30Z"
+        }
+      }
+    },
+    {
+      "step": "last_OWNER_RECORD_NOTE_OR_DECISION",
+      "status": "PASS",
+      "details": {
+        "schema_id": "important_six_dashboard_action_last_result_v0_1",
+        "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+        "action_id": "OWNER_RECORD_NOTE_OR_DECISION",
+        "generated_at_utc": "2026-05-24T04:07:30Z",
+        "last_result": {
+          "timestamp_utc": "2026-05-24T04:07:30Z",
+          "action_id": "OWNER_RECORD_NOTE_OR_DECISION",
+          "status": "PASS",
+          "summary": "Owner note/decision recorded",
+          "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040730Z_OWNER_RECORD_NOTE_OR_DECISION.json"
+        }
+      }
+    },
+    {
+      "step": "direct_owner_intent_decision_endpoint",
+      "status": "PASS",
+      "details": {
+        "http_status": 200,
+        "result": {
+          "schema_id": "important_six_owner_intent_decision_result_v0_1",
+          "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+          "status": "PASS",
+          "summary": "Owner diff decision recorded: APPROVE",
+          "details": {
+            "decision_record_path": "IMPERIUM_NEW_GENERATION/OWNER_INTENT/DECISIONS/DIFF_DECISION_20260524T040730Z.json",
+            "record": {
+              "schema_id": "important_six.owner_diff_decision.v0_1",
+              "decision_id": "DIFF_DECISION_20260524T040730Z",
+              "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+              "decision": "APPROVE",
+              "note_ru": "Smoke: direct endpoint check.",
+              "author": "OWNER",
+              "created_at_utc": "2026-05-24T04:07:31Z",
+              "local_head": "3864b075b1ee8e242c4f14a9d8f01a0455d28245",
+              "remote_head": "3864b075b1ee8e242c4f14a9d8f01a0455d28245",
+              "source": "api_owner_intent_decision"
+            }
+          },
+          "generated_at_utc": "2026-05-24T04:07:31Z"
+        }
+      }
+    }
+  ]
+}

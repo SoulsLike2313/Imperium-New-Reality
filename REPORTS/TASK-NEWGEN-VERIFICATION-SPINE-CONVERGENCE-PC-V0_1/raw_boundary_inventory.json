@@ -1,0 +1,804 @@
+{
+  "schema_id": "newgen_verification_spine_raw_boundary_inventory_v0_1",
+  "task_id": "TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1",
+  "generated_at_utc": "2026-05-24T06:47:48.517431+00:00",
+  "verdict": "PASS",
+  "scan_scope": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_server_v0_2.py",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.js"
+  ],
+  "patterns": [
+    {
+      "boundary_type": "command_execution",
+      "needles": [
+        "subprocess.",
+        "run_cmd("
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "boundary_type": "root_scoped_write",
+      "needles": [
+        "_write_json(",
+        "_write_text(",
+        "_ensure_write_path("
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "boundary_type": "legacy_write_api",
+      "needles": [
+        "write_json("
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "boundary_type": "verdict_alias",
+      "needles": [
+        "\"WARN\"",
+        "\"BLOCK\"",
+        "PASS_FOR_"
+      ],
+      "severity": "MEDIUM"
+    },
+    {
+      "boundary_type": "schema_gate",
+      "needles": [
+        "_assert_schema_valid(",
+        "validate_payload_with_schema_subset"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "boundary_type": "command_gateway",
+      "needles": [
+        "run_allowed(",
+        "gateway_command_id="
+      ],
+      "severity": "HIGH"
+    }
+  ],
+  "summary": {
+    "total_boundaries": 90,
+    "by_type": {
+      "command_execution": 17,
+      "root_scoped_write": 22,
+      "legacy_write_api": 15,
+      "verdict_alias": 22,
+      "schema_gate": 10,
+      "command_gateway": 4
+    },
+    "by_severity": {
+      "HIGH": 31,
+      "MEDIUM": 59
+    }
+  },
+  "entries": [
+    {
+      "boundary_id": "B-0001",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 170,
+      "snippet": "def run_cmd("
+    },
+    {
+      "boundary_id": "B-0002",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 248,
+      "snippet": "proc = subprocess.run("
+    },
+    {
+      "boundary_id": "B-0003",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 251,
+      "snippet": "stdout=subprocess.PIPE,"
+    },
+    {
+      "boundary_id": "B-0004",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 252,
+      "snippet": "stderr=subprocess.PIPE,"
+    },
+    {
+      "boundary_id": "B-0005",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 277,
+      "snippet": "except subprocess.TimeoutExpired as exc:"
+    },
+    {
+      "boundary_id": "B-0006",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 597,
+      "snippet": "result = run_cmd("
+    },
+    {
+      "boundary_id": "B-0007",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 612,
+      "snippet": "result = run_cmd("
+    },
+    {
+      "boundary_id": "B-0008",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 626,
+      "snippet": "result = run_cmd("
+    },
+    {
+      "boundary_id": "B-0009",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 750,
+      "snippet": "branch = run_cmd("
+    },
+    {
+      "boundary_id": "B-0010",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 757,
+      "snippet": "latest_commits = run_cmd("
+    },
+    {
+      "boundary_id": "B-0011",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 874,
+      "snippet": "probe = run_cmd("
+    },
+    {
+      "boundary_id": "B-0012",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 955,
+      "snippet": "result = run_cmd("
+    },
+    {
+      "boundary_id": "B-0013",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1248,
+      "snippet": "previous = run_cmd("
+    },
+    {
+      "boundary_id": "B-0014",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1255,
+      "snippet": "branch = run_cmd("
+    },
+    {
+      "boundary_id": "B-0015",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1262,
+      "snippet": "status_short = run_cmd("
+    },
+    {
+      "boundary_id": "B-0016",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1272,
+      "snippet": "diff_stat = run_cmd("
+    },
+    {
+      "boundary_id": "B-0017",
+      "boundary_type": "command_execution",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1279,
+      "snippet": "name_status = run_cmd("
+    },
+    {
+      "boundary_id": "B-0018",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 412,
+      "snippet": "def _ensure_write_path(self, path: Path) -> Path:"
+    },
+    {
+      "boundary_id": "B-0019",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 421,
+      "snippet": "def _write_json(self, path: Path, payload: dict[str, Any] | list[Any]) -> None:"
+    },
+    {
+      "boundary_id": "B-0020",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 422,
+      "snippet": "target = self._ensure_write_path(path)"
+    },
+    {
+      "boundary_id": "B-0021",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 426,
+      "snippet": "def _write_text(self, path: Path, text: str) -> None:"
+    },
+    {
+      "boundary_id": "B-0022",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 427,
+      "snippet": "target = self._ensure_write_path(path)"
+    },
+    {
+      "boundary_id": "B-0023",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 432,
+      "snippet": "target = self._ensure_write_path(path)"
+    },
+    {
+      "boundary_id": "B-0024",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 467,
+      "snippet": "self._write_json(self.last_results_path, self.last_results)"
+    },
+    {
+      "boundary_id": "B-0025",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 563,
+      "snippet": "self._write_json(receipt_path, receipt)"
+    },
+    {
+      "boundary_id": "B-0026",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 745,
+      "snippet": "build_dir = self._ensure_write_path(self.report_root / \"CONTINUITY_BUILD\" / stamp)"
+    },
+    {
+      "boundary_id": "B-0027",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 782,
+      "snippet": "self._write_json(build_dir / \"continuity_summary.json\", summary_payload)"
+    },
+    {
+      "boundary_id": "B-0028",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 783,
+      "snippet": "self._write_text(build_dir / \"latest_commits.txt\", (latest_commits or \"\").strip() + \"\\n\")"
+    },
+    {
+      "boundary_id": "B-0029",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 784,
+      "snippet": "self._write_text("
+    },
+    {
+      "boundary_id": "B-0030",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 805,
+      "snippet": "zip_path = self._ensure_write_path(self.outbox_continuity_root / zip_name)"
+    },
+    {
+      "boundary_id": "B-0031",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 812,
+      "snippet": "sha_path = self._ensure_write_path(zip_path.with_suffix(\".zip.sha256\"))"
+    },
+    {
+      "boundary_id": "B-0032",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 813,
+      "snippet": "self._write_text(sha_path, f\"{sha256}  {zip_path.name}\\n\")"
+    },
+    {
+      "boundary_id": "B-0033",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 815,
+      "snippet": "continuity_receipt_path = self._ensure_write_path("
+    },
+    {
+      "boundary_id": "B-0034",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 828,
+      "snippet": "self._write_json(continuity_receipt_path, continuity_receipt)"
+    },
+    {
+      "boundary_id": "B-0035",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 928,
+      "snippet": "self._write_json(intent_path, intent_payload)"
+    },
+    {
+      "boundary_id": "B-0036",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1209,
+      "snippet": "self._write_json(draft_path, draft_payload)"
+    },
+    {
+      "boundary_id": "B-0037",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1234,
+      "snippet": "self._write_json(index_path, index_payload)"
+    },
+    {
+      "boundary_id": "B-0038",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1347,
+      "snippet": "self._write_json(path, record)"
+    },
+    {
+      "boundary_id": "B-0039",
+      "boundary_type": "root_scoped_write",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1472,
+      "snippet": "self._write_json(note_path, record)"
+    },
+    {
+      "boundary_id": "B-0040",
+      "boundary_type": "legacy_write_api",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 421,
+      "snippet": "def _write_json(self, path: Path, payload: dict[str, Any] | list[Any]) -> None:"
+    },
+    {
+      "boundary_id": "B-0041",
+      "boundary_type": "legacy_write_api",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 467,
+      "snippet": "self._write_json(self.last_results_path, self.last_results)"
+    },
+    {
+      "boundary_id": "B-0042",
+      "boundary_type": "legacy_write_api",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 563,
+      "snippet": "self._write_json(receipt_path, receipt)"
+    },
+    {
+      "boundary_id": "B-0043",
+      "boundary_type": "legacy_write_api",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 782,
+      "snippet": "self._write_json(build_dir / \"continuity_summary.json\", summary_payload)"
+    },
+    {
+      "boundary_id": "B-0044",
+      "boundary_type": "legacy_write_api",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 828,
+      "snippet": "self._write_json(continuity_receipt_path, continuity_receipt)"
+    },
+    {
+      "boundary_id": "B-0045",
+      "boundary_type": "legacy_write_api",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 928,
+      "snippet": "self._write_json(intent_path, intent_payload)"
+    },
+    {
+      "boundary_id": "B-0046",
+      "boundary_type": "legacy_write_api",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1209,
+      "snippet": "self._write_json(draft_path, draft_payload)"
+    },
+    {
+      "boundary_id": "B-0047",
+      "boundary_type": "legacy_write_api",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1234,
+      "snippet": "self._write_json(index_path, index_payload)"
+    },
+    {
+      "boundary_id": "B-0048",
+      "boundary_type": "legacy_write_api",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1347,
+      "snippet": "self._write_json(path, record)"
+    },
+    {
+      "boundary_id": "B-0049",
+      "boundary_type": "legacy_write_api",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1472,
+      "snippet": "self._write_json(note_path, record)"
+    },
+    {
+      "boundary_id": "B-0050",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 67,
+      "snippet": "if upper in {\"PASS_WITH_WARNINGS\", \"WARN\", \"WARNING\", \"PARTIAL\"}:"
+    },
+    {
+      "boundary_id": "B-0051",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 71,
+      "snippet": "if upper in {\"BLOCK\", \"BLOCKED\"}:"
+    },
+    {
+      "boundary_id": "B-0052",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 735,
+      "snippet": "status = \"PASS\" if not status_lines else \"WARN\""
+    },
+    {
+      "boundary_id": "B-0053",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 860,
+      "snippet": "return ActionOutcome(status=\"BLOCK\", summary=f\"Transfer target not configured: {target_key}\", details={})"
+    },
+    {
+      "boundary_id": "B-0054",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 864,
+      "snippet": "return ActionOutcome(status=\"BLOCK\", summary=f\"Invalid target config for {target_key}\", details={})"
+    },
+    {
+      "boundary_id": "B-0055",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1004,
+      "snippet": "status = \"BLOCK\""
+    },
+    {
+      "boundary_id": "B-0056",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1006,
+      "snippet": "status = \"WARN\""
+    },
+    {
+      "boundary_id": "B-0057",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1038,
+      "snippet": "checks.append({\"path\": safe_rel(path, self.repo_root), \"type\": \"python\", \"status\": \"BLOCK\", \"error\": \"missing\"})"
+    },
+    {
+      "boundary_id": "B-0058",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1049,
+      "snippet": "\"status\": \"BLOCK\","
+    },
+    {
+      "boundary_id": "B-0059",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1057,
+      "snippet": "checks.append({\"path\": safe_rel(path, self.repo_root), \"type\": \"json\", \"status\": \"BLOCK\", \"error\": \"missing\"})"
+    },
+    {
+      "boundary_id": "B-0060",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1068,
+      "snippet": "\"status\": \"BLOCK\","
+    },
+    {
+      "boundary_id": "B-0061",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1074,
+      "snippet": "status = \"BLOCK\" if has_block else \"PASS\""
+    },
+    {
+      "boundary_id": "B-0062",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1134,
+      "snippet": "status = \"WARN\" if has_risk else \"PASS\""
+    },
+    {
+      "boundary_id": "B-0063",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1172,
+      "snippet": "elif isinstance(verdict, str) and verdict.startswith(\"PASS_FOR_\"):"
+    },
+    {
+      "boundary_id": "B-0064",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1180,
+      "snippet": "status = \"PASS\" if not risks else \"WARN\""
+    },
+    {
+      "boundary_id": "B-0065",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1311,
+      "snippet": "status = \"WARN\""
+    },
+    {
+      "boundary_id": "B-0066",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1327,
+      "snippet": "return ActionOutcome(status=\"BLOCK\", summary=decision_or_error, details={\"payload\": payload})"
+    },
+    {
+      "boundary_id": "B-0067",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1447,
+      "snippet": "status=\"BLOCK\","
+    },
+    {
+      "boundary_id": "B-0068",
+      "boundary_type": "schema_gate",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 76,
+      "snippet": "def validate_payload_with_schema_subset(payload: Any, schema: dict[str, Any]) -> list[str]:"
+    },
+    {
+      "boundary_id": "B-0069",
+      "boundary_type": "schema_gate",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 407,
+      "snippet": "self._assert_schema_valid(self.registry, self.action_registry_schema, \"action_registry\")"
+    },
+    {
+      "boundary_id": "B-0070",
+      "boundary_type": "schema_gate",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 408,
+      "snippet": "self._assert_schema_valid(self.transfer_config, {\"type\": \"object\"}, \"transfer_config\")"
+    },
+    {
+      "boundary_id": "B-0071",
+      "boundary_type": "schema_gate",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 415,
+      "snippet": "def _assert_schema_valid(self, payload: Any, schema: dict[str, Any], label: str) -> None:"
+    },
+    {
+      "boundary_id": "B-0072",
+      "boundary_type": "schema_gate",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 416,
+      "snippet": "errors = validate_payload_with_schema_subset(payload, schema)"
+    },
+    {
+      "boundary_id": "B-0073",
+      "boundary_type": "schema_gate",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 562,
+      "snippet": "self._assert_schema_valid(receipt, self.action_receipt_schema, \"action_receipt\")"
+    },
+    {
+      "boundary_id": "B-0074",
+      "boundary_type": "schema_gate",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 586,
+      "snippet": "self._assert_schema_valid(run_result, self.action_run_result_schema, \"action_run_result\")"
+    },
+    {
+      "boundary_id": "B-0075",
+      "boundary_type": "schema_gate",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 927,
+      "snippet": "self._assert_schema_valid(intent_payload, self.transfer_intent_schema, \"transfer_intent\")"
+    },
+    {
+      "boundary_id": "B-0076",
+      "boundary_type": "schema_gate",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1345,
+      "snippet": "self._assert_schema_valid(record, self.owner_diff_schema, \"owner_diff_decision\")"
+    },
+    {
+      "boundary_id": "B-0077",
+      "boundary_type": "schema_gate",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1469,
+      "snippet": "self._assert_schema_valid(record, self.owner_question_schema, \"owner_question_record\")"
+    },
+    {
+      "boundary_id": "B-0078",
+      "boundary_type": "command_gateway",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 189,
+      "snippet": "gateway_receipt = run_allowed("
+    },
+    {
+      "boundary_id": "B-0079",
+      "boundary_type": "command_gateway",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 602,
+      "snippet": "gateway_command_id=\"git.status\","
+    },
+    {
+      "boundary_id": "B-0080",
+      "boundary_type": "command_gateway",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 617,
+      "snippet": "gateway_command_id=\"git.rev_parse_head\","
+    },
+    {
+      "boundary_id": "B-0081",
+      "boundary_type": "command_gateway",
+      "severity": "HIGH",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "line": 1267,
+      "snippet": "gateway_command_id=\"git.status\","
+    },
+    {
+      "boundary_id": "B-0082",
+      "boundary_type": "legacy_write_api",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+      "line": 114,
+      "snippet": "def write_json(path: Path, payload: dict[str, Any]) -> None:"
+    },
+    {
+      "boundary_id": "B-0083",
+      "boundary_type": "legacy_write_api",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+      "line": 249,
+      "snippet": "write_json(registry_validation_path, registry_validation_payload)"
+    },
+    {
+      "boundary_id": "B-0084",
+      "boundary_type": "legacy_write_api",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+      "line": 338,
+      "snippet": "write_json(sample_receipts_index_path, sample_receipts_index)"
+    },
+    {
+      "boundary_id": "B-0085",
+      "boundary_type": "legacy_write_api",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+      "line": 352,
+      "snippet": "write_json(output_path, smoke_report)"
+    },
+    {
+      "boundary_id": "B-0086",
+      "boundary_type": "legacy_write_api",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+      "line": 370,
+      "snippet": "write_json(json_parse_report_path, parse_report)"
+    },
+    {
+      "boundary_id": "B-0087",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+      "line": 78,
+      "snippet": "if upper in {PASS_WITH_WARNINGS, \"WARN\", \"WARNING\", \"PARTIAL\"}:"
+    },
+    {
+      "boundary_id": "B-0088",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+      "line": 82,
+      "snippet": "if upper in {BLOCKED, \"BLOCK\"}:"
+    },
+    {
+      "boundary_id": "B-0089",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.js",
+      "line": 171,
+      "snippet": "if (status === \"PASS_WITH_WARNINGS\" || status === \"WARN\" || status === \"WARNING\" || status === \"PARTIAL\") {"
+    },
+    {
+      "boundary_id": "B-0090",
+      "boundary_type": "verdict_alias",
+      "severity": "MEDIUM",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.js",
+      "line": 175,
+      "snippet": "if (status === \"BLOCKED\" || status === \"BLOCK\") return \"BLOCKED\";"
+    }
+  ],
+  "notes": [
+    "Inventory captures post-convergence execution boundaries and residual legacy alias tokens.",
+    "Residual WARN/BLOCK tokens remain in internal helper/detail payloads but canonical action verdicts are normalized before persistence."
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "schema_version": "AGENT_GATE_ACK_V0_1",
+  "task_id": "TASK-20260520-SANCTUM-MINI-MECHANICUS-LIVE-TERMINAL-PC-V0_3",
+  "generated_at_utc": "2026-05-20T11:14:53.5393018Z",
+  "current_head": "b84d32ac33bf921b0da6cc8a727dea1792008e67",
+  "gatepack_path": "C:\\\\Users\\\\PC\\\\Downloads\\\\TASK-20260520-SANCTUM-MINI-MECHANICUS-LIVE-TERMINAL-PC-V0_3.zip",
+  "gatepack_sha256": "34316c6c235af90bb56d12c64a4fe69970f09d3a3a98be63a0ff1ce4fd6d15e0",
+  "read_gates": [
+    "GATE-U00-GIT-TRUTH",
+    "GATE-U01-ROLE-ACK",
+    "GATE-U02-SCOPE-BOUNDARY",
+    "GATE-U04-EVIDENCE-RECEIPT",
+    "GATE-U05-STOP-CONDITIONS",
+    "GATE-U08-REPO-PURITY",
+    "GATE-U09-NO-FAKE-GREEN",
+    "GATE-U12-REPORT-OUTPUT-BUDGET",
+    "GATE-U13-PYTHON-TYPE-SAFETY",
+    "GATE-U14-WHOLE-REPO-SCOPE-RECON",
+    "GATE-U15-OPERATIONALITY-IMPACT",
+    "GATE-U16-BILINGUAL-UI",
+    "GATE-U17-DELIVERABLE-PACKAGE",
+    "GATE-U18-AGENT-FACTORY-COMPLIANCE",
+    "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+    "GATE-U20-AGENT-KPD-SELF-REVIEW",
+    "GATE-U21-COMMAND-CHUNKING"
+  ],
+  "accepted_stop_conditions": [
+    "BLOCKED_HEAD_MISMATCH",
+    "BLOCKED_REPO_ROOT_MISMATCH",
+    "BLOCKED_SCOPE_VIOLATION",
+    "BLOCKED_FORBIDDEN_PATH_TOUCH",
+    "BLOCKED_REQUIREMENT_AMBIGUITY",
+    "BLOCKED_REQUIRED_ARTIFACT_MISSING",
+    "BLOCKED_API_SMOKE_FAILURE",
+    "BLOCKED_TERMINAL_SECURITY_FAILURE",
+    "BLOCKED_REPORT_BUDGET_EXCEEDED"
+  ],
+  "scope_boundary": {
+    "allowed_write_paths": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-SANCTUM-MINI-MECHANICUS-LIVE-TERMINAL-PC-V0_3/"
+    ],
+    "forbidden_paths": [
+      "THRONE",
+      "CUSTODES",
+      ".git/",
+      "IMPERIUM_TEST_VERSION/",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/*/RUNS/"
+    ]
+  },
+  "touched_paths": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-SANCTUM-MINI-MECHANICUS-LIVE-TERMINAL-PC-V0_3/"
+  ],
+  "forbidden_paths": [
+    "THRONE",
+    "CUSTODES",
+    ".git/",
+    "IMPERIUM_TEST_VERSION/",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/*/RUNS/"
+  ],
+  "expected_receipts": [
+    "SANCTUM_MINI_MECHANICUS_LIVE_TERMINAL_V0_3_REPORT.md",
+    "sanctum_mini_mechanicus_live_terminal_v0_3_report.json",
+    "LIVE_TERMINAL_API_REPORT.md",
+    "CENTER_VIEWPORT_UX_REPORT.md",
+    "ACTION_SECURITY_REPORT.md",
+    "BLOCKED_COMMAND_PROBE_REPORT.md",
+    "API_TERMINAL_EXECUTE_SAMPLE.json",
+    "API_TERMINAL_HISTORY_SAMPLE.json",
+    "SERVER_SMOKE_TEST_LOG.md",
+    "FRONTEND_BEHAVIOR_CAPTURE.md",
+    "USAGE_GUIDE_OWNER_RU.md",
+    "VISUAL_GAP_REPORT.md",
+    "FAKE_GREEN_GUARD_REPORT.md",
+    "GIT_STATUS_BEFORE.txt",
+    "GIT_STATUS_AFTER.txt",
+    "TASK_RECEIPT.json",
+    "OFFICIO_ROLE_ACK_SERVITOR_PRIME.json"
+  ],
+  "repo_recon_required": false,
+  "script_absorption_required": false,
+  "clarification_needed": [
+    "existing_dirty_state_allowed_by_task_contract",
+    "manual_terminal_input_must_be_static_allowlist_mapping_only",
+    "no_commit_no_push"
+  ],
+  "verdict": "PASS"
+}

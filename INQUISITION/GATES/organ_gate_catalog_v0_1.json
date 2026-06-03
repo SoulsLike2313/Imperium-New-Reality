@@ -1,0 +1,46 @@
+{
+  "schema_id": "newgen_organ_gate_catalog_v0_1",
+  "organ_id": "INQUISITION",
+  "version": "v0_1",
+  "gates": [
+    {
+      "gate_id": "GATE_INQ_NO_FAKE_GREEN",
+      "severity": "BLOCK",
+      "purpose": "PASS claim requires concrete evidence references.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "wave2_organ_tui_smoke_report.json",
+        "closure_receipt.json"
+      ]
+    },
+    {
+      "gate_id": "GATE_INQ_DIRTY_WORK_DETECTION",
+      "severity": "BLOCK",
+      "purpose": "Dirty work and unresolved unsafe changes must block closure.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "git_diff_paths",
+        "FINAL_REPORT.md"
+      ]
+    },
+    {
+      "gate_id": "GATE_INQ_DUPLICATE_AND_HERESY_CHECK",
+      "severity": "BLOCK",
+      "purpose": "Duplicate drift, contradiction, and semantic heresy checks are mandatory.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "important_six_interaction_simulation_v0_1.json",
+        "json_parse_validation_report.json"
+      ]
+    },
+    {
+      "gate_id": "GATE_INQ_SPECULUM_HARD_AUDIT",
+      "severity": "WARN_TO_BLOCK",
+      "purpose": "Speculum-style readability/explainability audit must be explicit.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "FINAL_REPORT.md"
+      ]
+    }
+  ]
+}

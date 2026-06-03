@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Setting Change Receipt",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "setting_id",
+    "change_type",
+    "previous_state",
+    "new_state",
+    "changed_by",
+    "changed_at_utc",
+    "evidence_paths",
+    "verdict"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string"
+    },
+    "setting_id": {
+      "type": "string"
+    },
+    "change_type": {
+      "type": "string",
+      "enum": [
+        "CREATE",
+        "UPDATE",
+        "DEPRECATE",
+        "TOMBSTONE",
+        "ROLLBACK"
+      ]
+    },
+    "previous_state": {
+      "type": "string"
+    },
+    "new_state": {
+      "type": "string"
+    },
+    "changed_by": {
+      "type": "string"
+    },
+    "changed_at_utc": {
+      "type": "string"
+    },
+    "evidence_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "WARN",
+        "BLOCKED",
+        "FAIL"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
+

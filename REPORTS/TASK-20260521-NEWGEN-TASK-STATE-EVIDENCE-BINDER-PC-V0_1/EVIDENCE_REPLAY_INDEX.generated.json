@@ -1,0 +1,67 @@
+{
+  "schema_version": "0.1",
+  "task_id": "TASK-20260521-NEWGEN-TASK-STATE-EVIDENCE-BINDER-PC-V0_1",
+  "session_id": "SERVITOR-SESSION-NEWGEN-ASTRONOMICON-FORMATION-SAMPLE-V0_1-V0_1",
+  "run_ids": [
+    "RUN-001-FOUNDATION"
+  ],
+  "rerun_decision_ids": [
+    "RERUN-DECISION-001"
+  ],
+  "organ_packet_refs": [
+    "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+  ],
+  "task_kernel_ref": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/EXAMPLES/SAMPLE_TASK_KERNEL_OBJECT_V0_1.json",
+  "evidence_items": [
+    {
+      "evidence_id": "EVID-001-TASK_KERNEL",
+      "kind": "TASK_KERNEL",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/EXAMPLES/SAMPLE_TASK_KERNEL_OBJECT_V0_1.json",
+      "status": "PRESENT"
+    },
+    {
+      "evidence_id": "EVID-002-SCOPE_MERGE",
+      "kind": "ORGAN_SCOPE_MERGE_RECORD",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-8-ORGAN-SCOPING-CORRIDOR-PC-V0_1/ORGAN_SCOPE_MERGE_RECORD.generated.json",
+      "status": "PRESENT"
+    },
+    {
+      "evidence_id": "EVID-003-SERVITOR_SESSION",
+      "kind": "SERVITOR_SESSION",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/SERVITOR_EXECUTION_SESSION.generated.json",
+      "status": "PRESENT"
+    },
+    {
+      "evidence_id": "EVID-004-RUN_RECORD",
+      "kind": "RUN_RECORD",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/RUN_RECORD_001.generated.json",
+      "status": "PRESENT"
+    },
+    {
+      "evidence_id": "EVID-005-RERUN_DECISION",
+      "kind": "RERUN_DECISION",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/RERUN_DECISION_RECORD.generated.json",
+      "status": "PRESENT"
+    }
+  ],
+  "replay_order": [
+    "EVID-001-TASK_KERNEL",
+    "EVID-002-SCOPE_MERGE",
+    "EVID-003-SERVITOR_SESSION",
+    "EVID-004-RUN_RECORD",
+    "EVID-005-RERUN_DECISION"
+  ],
+  "missing_evidence": [],
+  "truth_claims_allowed": [
+    "FOUNDATION_ONLY transition proposal generation",
+    "Replay index creation from bounded known records",
+    "Explicit missing evidence warnings"
+  ],
+  "truth_claims_forbidden": [
+    "production orchestration is ready",
+    "live autonomous execution is proven",
+    "live organ dialogue is proven",
+    "full visual brain readiness is proven"
+  ],
+  "created_at_utc": "2026-05-21T20:23:06Z"
+}

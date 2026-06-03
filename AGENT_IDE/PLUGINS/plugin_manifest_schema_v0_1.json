@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IMPERIUM Agent IDE Read-only Provider Manifest V0.1",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "providers"
+  ],
+  "properties": {
+    "manifest_version": {
+      "type": "string"
+    },
+    "providers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "provider_id",
+          "enabled",
+          "kind",
+          "source_key",
+          "relative_path",
+          "parse_mode",
+          "required"
+        ],
+        "properties": {
+          "provider_id": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "builtin_readonly_descriptor"
+            ]
+          },
+          "source_key": {
+            "type": "string"
+          },
+          "relative_path": {
+            "type": "string"
+          },
+          "parse_mode": {
+            "type": "string",
+            "enum": [
+              "json",
+              "jsonl"
+            ]
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,50 @@
+{
+  "schema_id": "OPERATOR_COCKPIT_RESEARCH_DOSSIER_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1",
+  "generated_at_utc": "2026-05-23T20:44:27Z",
+  "sources": [
+    {
+      "source_url": "https://www.nasa.gov/reference/appendix-f-vol-2/",
+      "title": "NASA Appendix F Display Standard",
+      "takeaway": "Use dedicated always-visible key info, stale-data indicators, clear threshold violations, and explicit command feedback states.",
+      "candidate_application": "Top truth strip stays persistent; status pills and warning lamps are explicit; action result panel remains visible."
+    },
+    {
+      "source_url": "https://www.nasa.gov/reference/10-0-crew-interfaces-vol-2/",
+      "title": "NASA Crew Interfaces Vol.2",
+      "takeaway": "Critical data must be at the right detail level without repetitive navigation, with clear stale/missing cues.",
+      "candidate_application": "Dense summary-first cards and compressed sections reduce navigation hops while preserving source refs."
+    },
+    {
+      "source_url": "https://d1.awsstatic.com/builderslibrary/pdfs/building-dashboards-for-operational-visibility-johnoshea.pdf",
+      "title": "AWS Builders Library - Operational Visibility Dashboards",
+      "takeaway": "Put highest-importance metrics at the top, standardize layout conventions, aggregate first then drill down.",
+      "candidate_application": "Candidate track uses scan-first top band, stronger hierarchy, and scroll-capped detail lists for drilldown."
+    },
+    {
+      "source_url": "https://nasa.github.io/openmct/docs/about-open-mct/",
+      "title": "Open MCT About",
+      "takeaway": "Mission control UI should unify telemetry views in one place and reduce operator context-switching.",
+      "candidate_application": "All required operator zones remain on one shell with focused grouping for session, transfer, evidence, and actions."
+    },
+    {
+      "source_url": "https://nasa.github.io/openmct/plugins/",
+      "title": "Open MCT Plugins Catalog",
+      "takeaway": "Use compact status widgets and condensed latest-value views while preserving time-bound controls.",
+      "candidate_application": "Compression style emphasizes condensed value cards and compact lists over long raw text walls."
+    },
+    {
+      "source_url": "https://docs.auterion.com/vehicle-operation/auterion-mission-control/ui-breakdown/fly/monitoring-the-flight",
+      "title": "Auterion Mission Control - Monitoring the Flight",
+      "takeaway": "A top-bar at-a-glance status + highly visible warnings + telemetry panel helps rapid flight-state understanding.",
+      "candidate_application": "Candidate shell reinforces at-a-glance truth band and keeps warnings visually prominent."
+    },
+    {
+      "source_url": "https://www.inoc.com/blog/noc-dashboards",
+      "title": "INOC NOC Dashboards",
+      "takeaway": "NOC dashboards must keep low cognitive load while quickly signaling when deeper investigation is needed.",
+      "candidate_application": "Candidate layout compresses noise and favors anomaly signaling with bounded, readable sections."
+    }
+  ],
+  "notes": "Research was used as design direction only. No production-readiness claim is derived from references alone."
+}

@@ -1,0 +1,52 @@
+{
+  "schema_id": "newgen_organ_shell_schema_v0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "version",
+    "organ_id",
+    "runtime_contract_ref",
+    "command_schema_ref",
+    "theme_registry_ref",
+    "commands"
+  ],
+  "properties": {
+    "schema_id": {
+      "type": "string",
+      "const": "newgen_organ_shell_instance_v0_1"
+    },
+    "version": {
+      "type": "string"
+    },
+    "organ_id": {
+      "type": "string"
+    },
+    "runtime_contract_ref": {
+      "type": "string"
+    },
+    "command_schema_ref": {
+      "type": "string"
+    },
+    "theme_registry_ref": {
+      "type": "string"
+    },
+    "commands": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "$ref": "organ_shell_command_schema_v0_1.json"
+      }
+    },
+    "safe_mode": {
+      "type": "boolean"
+    },
+    "allow_arbitrary_execution": {
+      "type": "boolean",
+      "const": false
+    },
+    "report_root": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

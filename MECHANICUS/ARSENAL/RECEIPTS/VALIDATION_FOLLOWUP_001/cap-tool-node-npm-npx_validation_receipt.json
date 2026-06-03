@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-arsenal-validation-followup-pc-v0_1:cap-tool-node-npm-npx:p3_visual_readiness:cap-tool-node-npm-npx",
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1",
+  "capability_id": "CAP-TOOL-NODE-NPM-NPX",
+  "validator": "mechanicus_validation_followup_001_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T18:54:03Z",
+  "status": "PASS",
+  "summary": "CAP-TOOL-NODE-NPM-NPX: PASS via P3_VISUAL_READINESS:CAP-TOOL-NODE-NPM-NPX. promotion_recommendation=PROMOTE_SANDBOX",
+  "check_name": "P3_VISUAL_READINESS:CAP-TOOL-NODE-NPM-NPX",
+  "command_or_check": "node --version && npm --version && where.exe node && where.exe npm",
+  "exit_code": 0,
+  "stdout_excerpt": "$ node --version\nv24.15.0\n\n$ npm --version\n11.12.1\n\n$ where.exe node\nC:\\Program Files\\nodejs\\node.exe\n\n$ where.exe npm\nC:\\Program Files\\nodejs\\npm\nC:\\Program Files\\nodejs\\npm.cmd",
+  "stderr_excerpt": "",
+  "side_effects": [
+    "read-only detection commands",
+    "receipt json created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_FOLLOWUP_001/cap-tool-node-npm-npx_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "PROMOTE_SANDBOX",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_FOLLOWUP_001/cap-tool-node-npm-npx_validation_receipt.json"
+  ]
+}

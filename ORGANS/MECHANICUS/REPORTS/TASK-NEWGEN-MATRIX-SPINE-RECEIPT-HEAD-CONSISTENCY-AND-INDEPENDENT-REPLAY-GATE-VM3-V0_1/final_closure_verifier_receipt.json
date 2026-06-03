@@ -1,0 +1,60 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1",
+  "base_head": "c10f2b1c46d19e6a7614e25c4eff57b46b8baef5",
+  "implementation_head": "PENDING_IMPLEMENTATION_HEAD",
+  "proof_head": "PENDING_PROOF_HEAD",
+  "closure_bundle_head": "PENDING_CLOSURE_BUNDLE_HEAD",
+  "final_verifier_head": "PENDING_FINAL_VERIFIER_HEAD",
+  "remote_head_after_bundle": "PENDING_REMOTE_HEAD_AFTER_PUSH",
+  "worktree_clean_after_bundle": false,
+  "origin_master_sync_after_bundle": false,
+  "base_commit_url": "https://github.com/SoulsLike2313/Imperium-/commit/c10f2b1c46d19e6a7614e25c4eff57b46b8baef5",
+  "implementation_commit_url": "PENDING_IMPLEMENTATION_COMMIT_URL",
+  "proof_commit_url": "PENDING_PROOF_COMMIT_URL",
+  "closure_bundle_commit_url": "PENDING_CLOSURE_BUNDLE_COMMIT_URL",
+  "final_verifier_commit_url": "PENDING_FINAL_VERIFIER_COMMIT_URL",
+  "remote_commit_url": "PENDING_REMOTE_COMMIT_URL",
+  "hard_red_team_verdict_path": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/hard_red_team_verdict.json",
+  "next_pipeline_handoff_path": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/NEXT_PIPELINE_HANDOFF.json",
+  "independent_replay_status": "NONE",
+  "independent_replay_receipt_path": "",
+  "independent_replay_head": "",
+  "claim_ledger_path": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/claim_ledger.jsonl",
+  "claim_statuses_seen": [
+    "TRUE",
+    "TRUE_WITH_SCOPE"
+  ],
+  "heads_intentionally_collapsed": false,
+  "runtime_outputs": [
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json",
+      "classification": "CURATED_EVIDENCE",
+      "commit_decision": "COMMIT",
+      "reason": "Primary machine receipt for validator result."
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/matrix_validator_run/matrix_spine_validation_failures.jsonl",
+      "classification": "RUNTIME_EPHEMERAL",
+      "commit_decision": "EXCLUDE",
+      "reason": "Verbose runtime stream retained outside curated closure evidence.",
+      "sha256": "UNRESOLVED_UNTIL_FINAL_BUNDLE_COMMIT",
+      "retention_or_quarantine_policy": "KEEP_OUTSIDE_GIT",
+      "quarantine_path": "",
+      "private_or_secret_risk": false,
+      "owner_visible_summary": "Excluded runtime stream documented in runtime_excluded_output_manifest.json."
+    }
+  ],
+  "empty_or_ambiguous_fields": [
+    "implementation_head",
+    "proof_head",
+    "closure_bundle_head",
+    "final_verifier_head",
+    "remote_head_after_bundle"
+  ],
+  "caps_triggered": [
+    "CAP_NO_INDEPENDENT_REPLAY",
+    "CAP_HEADS_MIXED_OR_AMBIGUOUS"
+  ],
+  "verdict": "PASS_WITH_WARNINGS",
+  "notes": "Head placeholders must be replaced after commit/push finalization."
+}

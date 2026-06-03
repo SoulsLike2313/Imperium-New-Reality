@@ -1,0 +1,46 @@
+{
+  "schema_id": "newgen_organ_gate_catalog_v0_1",
+  "organ_id": "DOCTRINARIUM",
+  "version": "v0_1",
+  "gates": [
+    {
+      "gate_id": "GATE_DOCTRINARIUM_READ_FIRST",
+      "severity": "BLOCK",
+      "purpose": "No scoped work before read-first route and preflight.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "doctrinarium_preflight_output.json",
+        "applicable_doctrinarium_gates.json"
+      ]
+    },
+    {
+      "gate_id": "GATE_NO_GENERIC_PASS",
+      "severity": "BLOCK",
+      "purpose": "Reject generic PASS; require scoped verdict.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "FINAL_REPORT.md",
+        "closure_receipt.json"
+      ]
+    },
+    {
+      "gate_id": "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+      "severity": "BLOCK",
+      "purpose": "Every strong claim must have evidence path.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "wave1_organ_tui_smoke_report.json",
+        "organ_interaction_simulation_v0_1.json"
+      ]
+    },
+    {
+      "gate_id": "GATE_NOT_PROVEN_BOUNDARY",
+      "severity": "WARN_TO_BLOCK",
+      "purpose": "Bound claims to Wave 1 only.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "FINAL_REPORT.md"
+      ]
+    }
+  ]
+}

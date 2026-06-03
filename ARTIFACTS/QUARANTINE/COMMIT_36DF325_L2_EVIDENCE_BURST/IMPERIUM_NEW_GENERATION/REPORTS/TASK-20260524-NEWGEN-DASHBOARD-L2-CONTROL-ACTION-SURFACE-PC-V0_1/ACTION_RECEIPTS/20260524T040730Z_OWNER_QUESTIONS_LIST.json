@@ -1,0 +1,57 @@
+{
+  "schema_id": "important_six_dashboard_action_receipt_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+  "action_id": "OWNER_QUESTIONS_LIST",
+  "owner_organ": "OFFICIO_AGENTIS",
+  "dashboard_button_group": "Owner Intent / Questions",
+  "safety_class": "READ_ONLY",
+  "started_at_utc": "2026-05-24T04:07:30Z",
+  "finished_at_utc": "2026-05-24T04:07:30Z",
+  "duration_ms": 0,
+  "status": "PASS",
+  "summary": "Owner questions loaded: open=2",
+  "payload": {},
+  "details": {
+    "schema_id": "important_six_owner_questions_v0_1",
+    "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+    "generated_at_utc": "2026-05-24T04:07:30Z",
+    "questions": [
+      {
+        "question_id": "Q-DIFF-AUTO-MERGE",
+        "organ": "OFFICIO_AGENTIS",
+        "severity": "HIGH",
+        "question": "Оставлять ли только ручной diff decision без auto merge/push?",
+        "evidence": [
+          "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_server_v0_2.py"
+        ],
+        "required_decision": "CONFIRM_MANUAL_ONLY_DIFF_GATE",
+        "status": "OPEN",
+        "created_at_utc": "2026-05-24T04:04:08Z",
+        "_path": "IMPERIUM_NEW_GENERATION/OWNER_INTENT/QUESTIONS/Q_DIFF_AUTO_MERGE.json"
+      },
+      {
+        "question_id": "Q-TRANSFER-LIVE-ENABLE",
+        "organ": "TRANSFER_ZONE",
+        "severity": "MEDIUM",
+        "question": "Разрешить ли переход с DRY_RUN на live transfer для VM2/VM3?",
+        "evidence": [
+          "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/transfer_zone_config_v0_1.json",
+          "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1"
+        ],
+        "required_decision": "APPROVE_LIVE_TRANSFER_OR_KEEP_DRY_RUN",
+        "status": "OPEN",
+        "created_at_utc": "2026-05-24T04:04:08Z",
+        "_path": "IMPERIUM_NEW_GENERATION/OWNER_INTENT/QUESTIONS/Q_TRANSFER_LIVE_ENABLE.json"
+      }
+    ],
+    "decision_records_recent": [
+      "IMPERIUM_NEW_GENERATION/OWNER_INTENT/DECISIONS/DIFF_DECISION_20260524T040728Z.json",
+      "IMPERIUM_NEW_GENERATION/OWNER_INTENT/DECISIONS/DIFF_DECISION_20260524T040445Z.json",
+      "IMPERIUM_NEW_GENERATION/OWNER_INTENT/DECISIONS/DIFF_DECISION_20260524T040443Z.json"
+    ],
+    "note_records_recent": [
+      "IMPERIUM_NEW_GENERATION/OWNER_INTENT/NOTES/OWNER_NOTE_20260524T040445Z.json"
+    ]
+  },
+  "receipt_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/ACTION_RECEIPTS/20260524T040730Z_OWNER_QUESTIONS_LIST.json"
+}

@@ -1,0 +1,47 @@
+{
+  "schema_id": "newgen_organ_verdict_v0_1",
+  "organ_id": "INQUISITION",
+  "task_id": "TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1",
+  "mode": "IMPORTANT_SIX_SIM",
+  "verdict": "BLOCK",
+  "applied_rules": [
+    "GATE_INQ_NO_FAKE_GREEN",
+    "GATE_INQ_DIRTY_WORK_DETECTION",
+    "GATE_INQ_DUPLICATE_AND_HERESY_CHECK",
+    "GATE_INQ_SPECULUM_HARD_AUDIT"
+  ],
+  "required_actions": [
+    "Run anti-fake-green and evidence-reference checks",
+    "Check for dirty work and duplicate drift",
+    "Enforce readability and explainability of closure artifacts",
+    "Apply hard Speculum-style audit gate before PASS"
+  ],
+  "forbidden_actions": [
+    "Claim PASS without evidence chain",
+    "Ignore dirty or duplicate findings",
+    "Ignore semantic contradiction in owner-facing output"
+  ],
+  "evidence_required": [
+    "wave2_organ_tui_smoke_report.json",
+    "closure_receipt.json",
+    "git_diff_paths",
+    "FINAL_REPORT.md",
+    "important_six_interaction_simulation_v0_1.json",
+    "json_parse_validation_report.json"
+  ],
+  "owner_question": null,
+  "not_proven": [
+    "Strategium/Schola/Custodes/Throne implementation",
+    "live Owner Verdict Needed UI button",
+    "production autonomy",
+    "full organ intelligence",
+    "full external adapter layer"
+  ],
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/INQUISITION/GATES/organ_gate_catalog_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/organ_route_plan.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json"
+  ],
+  "question": "What fake-green, dirty, duplicate, and semantic risks must be checked?",
+  "generated_at_utc": "2026-05-24T02:00:00.546420+00:00"
+}

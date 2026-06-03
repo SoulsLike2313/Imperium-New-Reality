@@ -1,0 +1,33 @@
+{
+  "schema_version": "astronomicon.ghost_evolve.accepted_upgrades.v0_1",
+  "accepted_local_upgrades": [
+    {
+      "upgrade_id": "ASTRO-UPGRADE-0001",
+      "title": "Task essence schema and checker",
+      "reason": "Makes task essence machine-validated and reusable.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TASK_ESSENCE/task_essence_schema_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_task_essence_checker_v0_1.py"
+      ]
+    },
+    {
+      "upgrade_id": "ASTRO-UPGRADE-0002",
+      "title": "Route packet schema and checker",
+      "reason": "Creates canonical Servitor/WARP-template route packet contract.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TASK_ESSENCE/task_route_packet_schema_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_route_packet_checker_v0_1.py"
+      ]
+    },
+    {
+      "upgrade_id": "ASTRO-UPGRADE-0003",
+      "title": "Read-only TUI and smoke runner",
+      "reason": "Provides inspectable route-body status without mutation behavior.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/astronomicon_tui_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_tui_smoke_v0_1.py"
+      ]
+    }
+  ],
+  "updated_at_utc": "2026-05-27T12:05:00Z"
+}

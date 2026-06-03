@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:tar_zip_runtime_availability:tool_detection:tar_zip_runtime_availability",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "TAR_ZIP_RUNTIME_AVAILABILITY",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:44Z",
+  "status": "PASS",
+  "summary": "TAR_ZIP_RUNTIME_AVAILABILITY: PASS via tool_detection:TAR_ZIP_RUNTIME_AVAILABILITY. promotion_recommendation=KEEP_CANDIDATE",
+  "check_name": "tool_detection:TAR_ZIP_RUNTIME_AVAILABILITY",
+  "command_or_check": "tar --version || python -c \"import zipfile, tarfile; print('zip_tar_ok')\"",
+  "exit_code": 0,
+  "stdout_excerpt": "$ tar --version\nbsdtar 3.5.2 - libarchive 3.5.2 zlib/1.2.5.f-ipp\n\n$ python -c \"import zipfile, tarfile; print('zip_tar_ok')\"\nzip_tar_ok",
+  "stderr_excerpt": "",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/tar-zip-runtime-availability_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "KEEP_CANDIDATE",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/tar-zip-runtime-availability_validation_receipt.json"
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": "MECHANICUS_REFERENCE_OPERATOR_SHELL_REPORT_V0_1",
+  "task_id": "TASK-20260520-MECHANICUS-REFERENCE-OPERATOR-SHELL-VM2-V0_1",
+  "generated_at_utc": "2026-05-20T00:56:09.762233+00:00",
+  "git_truth": {
+    "head": "41e30242c1afe7ce74f6b3e472464f774822f07f",
+    "branch": "master",
+    "expected_base_head": "41e30242c1afe7ce74f6b3e472464f774822f07f"
+  },
+  "officio_acceptance": {
+    "normalized_decision": "ACCEPT_WITH_WARNINGS",
+    "normalized_reason": "unsupported schema_version: TASK_CONTRACT_V0_1"
+  },
+  "implementation": {
+    "updated_files": [
+      "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/base_half_cli.py",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/SHELL/SHELL_CONTRACT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/STATE/current_status.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/REPORTS/base_half_check_report.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/REPORTS/base_half_check_report.md"
+    ],
+    "shell_commands_required": [
+      "shell --once help",
+      "shell --once status",
+      "shell --once tools",
+      "shell --once identity",
+      "shell --once check"
+    ]
+  },
+  "shell_checks": {
+    "shell_help_transcript_exists": true,
+    "shell_status_transcript_exists": true,
+    "shell_tools_transcript_exists": true,
+    "shell_identity_transcript_exists": true,
+    "shell_check_transcript_exists": true,
+    "layout_proof_pass": true,
+    "tool_registry_connected": true,
+    "fake_shell_proof_pass": true
+  },
+  "renderer_diagnostic": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-REFERENCE-OPERATOR-SHELL-VM2-V0_1/RENDERER_DIAGNOSTIC.json",
+  "fake_shell_proof_report": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-REFERENCE-OPERATOR-SHELL-VM2-V0_1/FAKE_SHELL_PROOF_REPORT.md",
+  "scope_boundary": {
+    "changed_paths": [
+      "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/base_half_cli.py",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/REPORTS/base_half_check_report.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/REPORTS/base_half_check_report.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/SHELL/SHELL_CONTRACT.md",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/STATE/current_status.json",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-REFERENCE-OPERATOR-SHELL-VM2-V0_1/"
+    ],
+    "git_status_short": [
+      " M IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/base_half_cli.py",
+      " M IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/REPORTS/base_half_check_report.json",
+      " M IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/REPORTS/base_half_check_report.md",
+      " M IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/SHELL/SHELL_CONTRACT.md",
+      " M IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/STATE/current_status.json",
+      " M IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py",
+      "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-REFERENCE-OPERATOR-SHELL-VM2-V0_1/"
+    ]
+  },
+  "visual_status_inferred": "PASS_RICH_OPERATOR_SHELL",
+  "verdict": "PASS_MECHANICUS_REFERENCE_OPERATOR_SHELL_V0_1"
+}

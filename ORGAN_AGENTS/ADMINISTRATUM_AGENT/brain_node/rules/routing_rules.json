@@ -1,0 +1,57 @@
+{
+  "rule_set": "routing_rules_v1",
+  "routes": [
+    {
+      "when": {
+        "risk_level": "HIGH"
+      },
+      "route_to": [
+        "CUSTODES_AGENT",
+        "INQUISITION_AGENT"
+      ]
+    },
+    {
+      "when": {
+        "artifact_type": "POLICY_DOC"
+      },
+      "route_to": [
+        "DOCTRINARIUM_AGENT"
+      ]
+    },
+    {
+      "when": {
+        "artifact_type": "SCRIPT"
+      },
+      "route_to": [
+        "MECHANICUS_AGENT"
+      ]
+    },
+    {
+      "when": {
+        "zone_class": "ADVISORY"
+      },
+      "route_to": [
+        "ASTRONOMICON_AGENT"
+      ]
+    },
+    {
+      "when": {
+        "category": "learning"
+      },
+      "route_to": [
+        "SCHOLA_IMPERIALIS_AGENT"
+      ]
+    },
+    {
+      "when": {
+        "needs_owner_decision": true
+      },
+      "route_to": [
+        "THRONE_AGENT"
+      ]
+    }
+  ],
+  "default_route": [
+    "MECHANICUS_AGENT"
+  ]
+}

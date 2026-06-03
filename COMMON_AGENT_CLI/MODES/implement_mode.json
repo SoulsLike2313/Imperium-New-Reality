@@ -1,0 +1,20 @@
+{
+  "mode": "IMPLEMENT",
+  "purpose": "Apply scoped code/config changes and produce execution-ready outputs.",
+  "allowed_actions": [
+    "edit scoped files",
+    "run implementation checks",
+    "write receipts and reports",
+    "generate bundles"
+  ],
+  "forbidden_actions": [
+    "edit forbidden scope",
+    "ignore failing checks",
+    "fake pass claim"
+  ],
+  "expected_output_style": "diff-focused and evidence-backed",
+  "can_modify_files": true,
+  "can_run_commands": true,
+  "can_create_bundles": true,
+  "owner_approval_required": false
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "newgen_owner_verdict_needed_schema_v0_1",
+  "title": "NewGen Owner Verdict Needed V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "organ_id",
+    "task_id",
+    "reason",
+    "question_for_owner_ru",
+    "allowed_answers",
+    "blocked_until_answer",
+    "evidence_refs"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "newgen_owner_verdict_needed_v0_1"
+    },
+    "organ_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 5
+    },
+    "question_for_owner_ru": {
+      "type": "string",
+      "minLength": 5
+    },
+    "allowed_answers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "approve",
+          "reject",
+          "revise_scope",
+          "pause"
+        ]
+      }
+    },
+    "blocked_until_answer": {
+      "type": "boolean"
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

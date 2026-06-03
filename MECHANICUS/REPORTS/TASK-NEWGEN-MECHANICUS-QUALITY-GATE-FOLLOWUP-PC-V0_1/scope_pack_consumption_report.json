@@ -1,0 +1,127 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-QUALITY-GATE-FOLLOWUP-PC-V0_1",
+  "generated_at_utc": "2026-05-24T22:14:08Z",
+  "checker": "mechanicus_scope_pack_consumer_v0_1.py",
+  "scope_root": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1",
+  "required_scope_files": {
+    "code_quality_task": "scope_code_quality_task_v0_1.json",
+    "json_schema_validation_task": "scope_json_schema_validation_task_v0_1.json",
+    "mechanicus_tool_validation_task": "scope_mechanicus_tool_validation_task_v0_1.json",
+    "repo_hygiene_task": "scope_repo_hygiene_task_v0_1.json",
+    "taskpack_generation_task": "scope_taskpack_generation_task_v0_1.json",
+    "controlled_tool_provision_task": "scope_controlled_tool_provision_task_v0_1.json"
+  },
+  "consumed_scope_packs": [
+    {
+      "scope_id": "code_quality_task",
+      "scope_file": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/scope_code_quality_task_v0_1.json",
+      "exists": true,
+      "required_gates_count": 14,
+      "required_receipts_count": 26,
+      "forbidden_actions_count": 4,
+      "canon_allowed_count": 2,
+      "sandbox_allowed_count": 14
+    },
+    {
+      "scope_id": "json_schema_validation_task",
+      "scope_file": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/scope_json_schema_validation_task_v0_1.json",
+      "exists": true,
+      "required_gates_count": 14,
+      "required_receipts_count": 24,
+      "forbidden_actions_count": 3,
+      "canon_allowed_count": 3,
+      "sandbox_allowed_count": 4
+    },
+    {
+      "scope_id": "mechanicus_tool_validation_task",
+      "scope_file": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/scope_mechanicus_tool_validation_task_v0_1.json",
+      "exists": true,
+      "required_gates_count": 14,
+      "required_receipts_count": 29,
+      "forbidden_actions_count": 3,
+      "canon_allowed_count": 3,
+      "sandbox_allowed_count": 4
+    },
+    {
+      "scope_id": "repo_hygiene_task",
+      "scope_file": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/scope_repo_hygiene_task_v0_1.json",
+      "exists": true,
+      "required_gates_count": 14,
+      "required_receipts_count": 23,
+      "forbidden_actions_count": 3,
+      "canon_allowed_count": 1,
+      "sandbox_allowed_count": 5
+    },
+    {
+      "scope_id": "taskpack_generation_task",
+      "scope_file": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/scope_taskpack_generation_task_v0_1.json",
+      "exists": true,
+      "required_gates_count": 14,
+      "required_receipts_count": 23,
+      "forbidden_actions_count": 3,
+      "canon_allowed_count": 1,
+      "sandbox_allowed_count": 1
+    },
+    {
+      "scope_id": "controlled_tool_provision_task",
+      "scope_file": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/scope_controlled_tool_provision_task_v0_1.json",
+      "exists": true,
+      "required_gates_count": 14,
+      "required_receipts_count": 26,
+      "forbidden_actions_count": 4,
+      "canon_allowed_count": 2,
+      "sandbox_allowed_count": 13
+    }
+  ],
+  "missing_scope_packs": [],
+  "summary": {
+    "required_scope_count": 6,
+    "consumed_scope_count": 6,
+    "missing_scope_count": 0,
+    "required_gate_union_count": 14,
+    "forbidden_action_union_count": 20,
+    "required_receipt_union_count": 89,
+    "required_gate_union": [
+      "GATE-U00-GIT-TRUTH",
+      "GATE-U01-ROLE-ACK",
+      "GATE-U02-SCOPE-BOUNDARY",
+      "GATE-U04-EVIDENCE-RECEIPT",
+      "GATE-U05-STOP-CONDITIONS",
+      "GATE-U08-REPO-PURITY",
+      "GATE-U09-NO-FAKE-GREEN",
+      "GATE-U12-REPORT-OUTPUT-BUDGET",
+      "GATE-U13-PYTHON-TYPE-SAFETY",
+      "GATE-U14-WHOLE-REPO-SCOPE-RECON",
+      "GATE-U15-OPERATIONALITY-IMPACT",
+      "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+      "GATE-U20-AGENT-KPD-SELF-REVIEW",
+      "GATE-U21-COMMAND-CHUNKING"
+    ],
+    "forbidden_action_union": [
+      "broad full repo cleanup",
+      "chat-only prompts when dossier required",
+      "fake CANON",
+      "fake PASS without schema evidence",
+      "global mutation outside task scope",
+      "manual-only JSON trust",
+      "missing acceptance gates",
+      "network provisioning without Owner approval",
+      "pre-commit hook auto-enable",
+      "pre-commit hooks auto-enable",
+      "pyright install",
+      "receipt omission for critical validation claim",
+      "runtime-junk cleanup without evidence receipt",
+      "schema bypass",
+      "silent install",
+      "silent package installation",
+      "status changes without receipt",
+      "taskpack without closure receipt",
+      "unapproved package provisioning",
+      "unreviewed deletion"
+    ]
+  },
+  "warnings": [],
+  "errors": [],
+  "verdict": "PASS",
+  "raw_dump_status": "COMPACT_ONLY"
+}

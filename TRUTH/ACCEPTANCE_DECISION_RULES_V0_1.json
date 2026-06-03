@@ -1,0 +1,193 @@
+{
+  "schema_id": "ACCEPTANCE_DECISION_RULES_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-PQG-PARTIAL-ACCEPTANCE-MAP-VM3-V0_1",
+  "generated_at_utc": "2026-05-22T18:54:31Z",
+  "input_contract": {
+    "normalized_status_values": [
+      "PASS",
+      "PASS_STRICT",
+      "PASS_WITH_WARN",
+      "WARN",
+      "BLOCK",
+      "PARTIAL",
+      "UNKNOWN",
+      "MISSING",
+      "FOUNDATION_ONLY",
+      "PENDING_POST_COMMIT",
+      "STALE"
+    ],
+    "freshness_values": [
+      "CURRENT",
+      "STALE",
+      "UNKNOWN",
+      "MISSING",
+      "FOUNDATION_ONLY",
+      "PARTIAL"
+    ],
+    "required_inputs": [
+      "normalized_status",
+      "evidence_present",
+      "freshness",
+      "reason_present",
+      "owner_decision_confirmed",
+      "contract_basis_present",
+      "production_claim_requested"
+    ]
+  },
+  "rules": [
+    {
+      "rule_id": "NO_EVIDENCE_NO_STRICT_PASS",
+      "priority": 10,
+      "when": {
+        "candidate_outcome_any_of": [
+          "PASS_STRICT",
+          "PASS_WITH_WARN"
+        ],
+        "evidence_present": false
+      },
+      "then_outcome": "FAKE_GREEN_RISK",
+      "rationale": "Green-like outcomes require explicit evidence links.",
+      "no_fake_green": true
+    },
+    {
+      "rule_id": "UNKNOWN_CANNOT_CONTINUE_AS_GREEN",
+      "priority": 20,
+      "when": {
+        "normalized_status": "UNKNOWN"
+      },
+      "then_outcome": "UNKNOWN",
+      "rationale": "UNKNOWN must stay non-green until direct proof exists.",
+      "no_fake_green": true
+    },
+    {
+      "rule_id": "MISSING_IS_BLOCKING_FOR_ACCEPTANCE",
+      "priority": 30,
+      "when": {
+        "normalized_status": "MISSING"
+      },
+      "then_outcome": "MISSING",
+      "rationale": "Missing artifacts block acceptance progression.",
+      "no_fake_green": true
+    },
+    {
+      "rule_id": "STALE_EVIDENCE_REQUIRES_REFRESH",
+      "priority": 40,
+      "when": {
+        "freshness": "STALE"
+      },
+      "then_outcome": "STALE",
+      "rationale": "Stale proof cannot represent current acceptance truth.",
+      "no_fake_green": true
+    },
+    {
+      "rule_id": "PARTIAL_REQUIRES_REASON_AND_OWNER_OR_CONTRACT_BASIS",
+      "priority": 50,
+      "when": {
+        "normalized_status": "PARTIAL",
+        "evidence_present": true,
+        "reason_present": true,
+        "owner_or_contract_basis": true
+      },
+      "then_outcome": "PARTIAL_ACCEPTED",
+      "rationale": "Partial can proceed only with explicit reason and decision basis.",
+      "no_fake_green": true
+    },
+    {
+      "rule_id": "PARTIAL_WITHOUT_BASIS_IS_BLOCKED",
+      "priority": 60,
+      "when": {
+        "normalized_status": "PARTIAL",
+        "reason_present": false,
+        "owner_or_contract_basis": false
+      },
+      "then_outcome": "PARTIAL_BLOCKED",
+      "rationale": "Partial without explicit basis is blocked to avoid hidden risk.",
+      "no_fake_green": true
+    },
+    {
+      "rule_id": "FOUNDATION_ONLY_REMAINS_FOUNDATION",
+      "priority": 70,
+      "when": {
+        "normalized_status": "FOUNDATION_ONLY"
+      },
+      "then_outcome": "FOUNDATION_ONLY",
+      "rationale": "Foundation status is useful but not a production claim.",
+      "no_fake_green": true
+    },
+    {
+      "rule_id": "STRICT_PASS_REQUIRES_CURRENT_EVIDENCE",
+      "priority": 80,
+      "when": {
+        "normalized_status_any_of": [
+          "PASS",
+          "PASS_STRICT"
+        ],
+        "evidence_present": true,
+        "freshness": "CURRENT",
+        "production_claim_requested": false
+      },
+      "then_outcome": "PASS_STRICT",
+      "rationale": "Strict pass requires current evidence and bounded claim scope.",
+      "no_fake_green": true
+    },
+    {
+      "rule_id": "PASS_WITH_WARN_RETAINS_WARN_BOUNDARY",
+      "priority": 90,
+      "when": {
+        "normalized_status_any_of": [
+          "PASS_WITH_WARN",
+          "WARN"
+        ],
+        "evidence_present": true
+      },
+      "then_outcome": "PASS_WITH_WARN",
+      "rationale": "Warnings must remain explicit; no silent strict upgrade.",
+      "no_fake_green": true
+    },
+    {
+      "rule_id": "NOT_READY_FOR_UNSET_OR_PENDING",
+      "priority": 100,
+      "when": {
+        "normalized_status_any_of": [
+          "PENDING_POST_COMMIT",
+          "NOT_READY"
+        ]
+      },
+      "then_outcome": "NOT_READY",
+      "rationale": "Pending or precondition-missing states are not acceptance-ready.",
+      "no_fake_green": true
+    },
+    {
+      "rule_id": "BLOCK_REMAINS_BLOCKED",
+      "priority": 110,
+      "when": {
+        "normalized_status": "BLOCK"
+      },
+      "then_outcome": "BLOCKED",
+      "rationale": "Block status must remain hard-blocked in acceptance map.",
+      "no_fake_green": true
+    }
+  ],
+  "priority_order": [
+    "NO_EVIDENCE_NO_STRICT_PASS",
+    "UNKNOWN_CANNOT_CONTINUE_AS_GREEN",
+    "MISSING_IS_BLOCKING_FOR_ACCEPTANCE",
+    "STALE_EVIDENCE_REQUIRES_REFRESH",
+    "PARTIAL_REQUIRES_REASON_AND_OWNER_OR_CONTRACT_BASIS",
+    "PARTIAL_WITHOUT_BASIS_IS_BLOCKED",
+    "FOUNDATION_ONLY_REMAINS_FOUNDATION",
+    "STRICT_PASS_REQUIRES_CURRENT_EVIDENCE",
+    "PASS_WITH_WARN_RETAINS_WARN_BOUNDARY",
+    "NOT_READY_FOR_UNSET_OR_PENDING",
+    "BLOCK_REMAINS_BLOCKED"
+  ],
+  "no_fake_green_rules": [
+    "NO_EVIDENCE_NO_STRICT_PASS",
+    "UNKNOWN_CANNOT_CONTINUE_AS_GREEN",
+    "PARTIAL_REQUIRES_REASON_AND_OWNER_OR_CONTRACT_BASIS"
+  ],
+  "limitations": [
+    "Rules are deterministic and foundation-oriented.",
+    "Rules do not override explicit BLOCKED contract outcomes."
+  ]
+}

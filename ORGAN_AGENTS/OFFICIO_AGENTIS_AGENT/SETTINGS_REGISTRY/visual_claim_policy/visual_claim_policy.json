@@ -1,0 +1,33 @@
+{
+  "setting_id": "SET-VISUAL-CLAIM-POLICY-V0_1",
+  "title": "Visual Claim Policy",
+  "version": "v0_1",
+  "state": "ACTIVE",
+  "scope": "visual readiness and shell UI claims",
+  "applies_to_roles": [
+    "SERVITOR"
+  ],
+  "applies_to_modes": [
+    "EXECUTOR"
+  ],
+  "visual_claim_policy": {
+    "requires_screenshot_evidence": true,
+    "blocked_code_if_missing": "BLOCKED_VISUAL_EVIDENCE_MISSING",
+    "default_for_v0_1": "no_visual_done_claims_without_evidence"
+  },
+  "machine_rule": {
+    "done_visual_claim_without_screenshot": "BLOCKED_VISUAL_EVIDENCE_MISSING"
+  },
+  "human_summary": "Visual claims are blocked without screenshot evidence.",
+  "acceptance_tests": [
+    "visual done claims include screenshot path"
+  ],
+  "evidence_required": [
+    "screenshots/*.png or blocker code"
+  ],
+  "dependencies": [],
+  "conflicts_with": [],
+  "supersedes": [],
+  "rollback_plan": "restore previous policy and rerun visual claim checks",
+  "owner_approval_required": true
+}

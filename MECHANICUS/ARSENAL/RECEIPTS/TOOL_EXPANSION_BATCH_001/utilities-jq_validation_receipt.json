@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:utilities_jq:tool_detection:utilities_jq",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "UTILITIES_JQ",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:43Z",
+  "status": "PASS",
+  "summary": "UTILITIES_JQ: PASS via tool_detection:UTILITIES_JQ. promotion_recommendation=PROMOTE_SANDBOX",
+  "check_name": "tool_detection:UTILITIES_JQ",
+  "command_or_check": "jq --version",
+  "exit_code": 0,
+  "stdout_excerpt": "$ jq --version\njq-1.8.1",
+  "stderr_excerpt": "",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-jq_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "PROMOTE_SANDBOX",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-jq_validation_receipt.json"
+  ]
+}

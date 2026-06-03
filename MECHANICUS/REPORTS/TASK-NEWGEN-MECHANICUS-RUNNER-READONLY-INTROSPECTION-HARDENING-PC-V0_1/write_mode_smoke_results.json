@@ -1,0 +1,24 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-RUNNER-READONLY-INTROSPECTION-HARDENING-PC-V0_1",
+  "description": "Explicit write mode checkers write only to current task report folder via --report-output.",
+  "results": [
+    {
+      "command": "python e:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\check_owner_approved_tool_normalization_v0_1.py --report-output e:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-RUNNER-READONLY-INTROSPECTION-HARDENING-PC-V0_1\\smoke_normalization_check_report.json",
+      "exit_code": 0,
+      "stdout": "{\"task_id\": \"TASK-NEWGEN-MECHANICUS-OWNER-APPROVED-TOOLS-REGISTRY-NORMALIZATION-PC-V0_1\", \"verdict\": \"PASS\", \"write_mode\": true, \"written_report_path\": \"E:/IMPERIUM/IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-RUNNER-READONLY-INTROSPECTION-HARDENING-PC-V0_1/smoke_normalization_check_report.json\", \"violations_count\": 0, \"warnings_count\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python e:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\check_mechanicus_owner_approval_matrix_v0_1.py --report-output e:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-RUNNER-READONLY-INTROSPECTION-HARDENING-PC-V0_1\\smoke_matrix_check_report.json",
+      "exit_code": 0,
+      "stdout": "{\"task_id\": \"TASK-NEWGEN-MECHANICUS-ARSENAL-OWNER-APPROVAL-MATRIX-PC-V0_1\", \"verdict\": \"PASS\", \"write_mode\": true, \"written_report_path\": \"E:/IMPERIUM/IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-RUNNER-READONLY-INTROSPECTION-HARDENING-PC-V0_1/smoke_matrix_check_report.json\", \"violations_count\": 0, \"warnings_count\": 0}\n",
+      "stderr": ""
+    },
+    {
+      "command": "python e:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\check_mechanicus_arsenal_foundation_v0_1.py --report-output e:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-RUNNER-READONLY-INTROSPECTION-HARDENING-PC-V0_1\\smoke_arsenal_foundation_check_report.json",
+      "exit_code": 0,
+      "stdout": "{\"task_id\": \"TASK-NEWGEN-MECHANICUS-ARSENAL-INTAKE-FOUNDATION-PC-V0_1\", \"verdict\": \"PASS\", \"write_mode\": true, \"written_report_path\": \"E:/IMPERIUM/IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-RUNNER-READONLY-INTROSPECTION-HARDENING-PC-V0_1/smoke_arsenal_foundation_check_report.json\", \"violations_count\": 0, \"warnings_count\": 0}\n",
+      "stderr": ""
+    }
+  ]
+}

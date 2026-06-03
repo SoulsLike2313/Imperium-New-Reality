@@ -1,0 +1,51 @@
+{
+  "schema_version": "0.1",
+  "task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+  "session_id": "SERVITOR-SESSION-NEWGEN-ASTRONOMICON-FORMATION-SAMPLE-V0_1-V0_1",
+  "run_ids": [
+    "RUN-001-FOUNDATION"
+  ],
+  "rerun_decision_ids": [
+    "RERUN-DECISION-001"
+  ],
+  "organ_packet_refs": [
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-8-ORGAN-SCOPING-CORRIDOR-PC-V0_1/ORGAN_SCOPE_MERGE_RECORD.generated.json"
+  ],
+  "task_kernel_ref": "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/EXAMPLES/SAMPLE_TASK_KERNEL_OBJECT_V0_1.json",
+  "evidence_items": [
+    {
+      "evidence_id": "EVID-SESSION",
+      "kind": "SESSION_RECORD",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/SERVITOR_EXECUTION_SESSION.generated.json",
+      "status": "PRESENT"
+    },
+    {
+      "evidence_id": "EVID-RUN",
+      "kind": "RUN_RECORD",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/RUN_RECORD_001.generated.json",
+      "status": "PRESENT"
+    },
+    {
+      "evidence_id": "EVID-RERUN",
+      "kind": "RERUN_DECISION",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/RERUN_DECISION_RECORD.generated.json",
+      "status": "PRESENT"
+    }
+  ],
+  "replay_order": [
+    "EVID-SESSION",
+    "EVID-RUN",
+    "EVID-RERUN"
+  ],
+  "missing_evidence": [],
+  "truth_claims_allowed": [
+    "FOUNDATION_ONLY state transition proposal generation",
+    "Replayable evidence index construction from bounded records"
+  ],
+  "truth_claims_forbidden": [
+    "production orchestration is ready",
+    "live autonomous execution is proven",
+    "live organ dialogue is proven"
+  ],
+  "created_at_utc": "2026-05-21T00:00:00Z"
+}

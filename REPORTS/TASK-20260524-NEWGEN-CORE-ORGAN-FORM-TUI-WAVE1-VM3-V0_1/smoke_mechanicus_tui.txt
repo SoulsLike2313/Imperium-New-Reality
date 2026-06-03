@@ -1,0 +1,30 @@
+╭────────────────────────────── WAVE1 ORGAN TUI ───────────────────────────────╮
+│ MECHANICUS                                                                   │
+│ responsibility: Tool capability governance and TUI runtime readiness.        │
+│ verdict: PASS                                                                │
+│ mode: SMOKE                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+                               Servitor Interface                               
+┏━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Block        ┃ Value                                                         ┃
+┡━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ Ask          │ Is Rich available for Wave 1 TUI mandatory renderer?          │
+│              │ What tool registry entry proves this capability?              │
+│              │ What controlled install path is required if missing?          │
+│ Warn/Block   │ WARN on partial registry metadata                             │
+│              │ BLOCK when mandatory renderer capability is missing           │
+│ Gate Catalog │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ State        │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ Contract     │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ Identity     │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+└──────────────┴───────────────────────────────────────────────────────────────┘
+                            Gate Preview                            
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━┓
+┃ Gate ID                                ┃ Severity      ┃ Verdict ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━┩
+│ GATE_RICH_MANDATORY_FOR_WAVE1_TUI      │ BLOCK         │ PASS    │
+│ GATE_CONTROLLED_CAPABILITY_ACQUISITION │ BLOCK         │ PASS    │
+│ GATE_SCRIPT_ARTIFACT_PRESERVATION      │ WARN_TO_BLOCK │ PASS    │
+│ GATE_COMMAND_CHUNKING_DISCIPLINE       │ WARN_TO_BLOCK │ PASS    │
+└────────────────────────────────────────┴───────────────┴─────────┘
+SMOKE_OK_MECHANICUS_TUI_V0_1

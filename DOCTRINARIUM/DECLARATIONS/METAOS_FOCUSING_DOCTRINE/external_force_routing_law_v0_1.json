@@ -1,0 +1,26 @@
+{
+  "schema_id": "newgen_metaos_law_v0_1",
+  "law_id": "EXTERNAL_FORCE_ROUTING_LAW",
+  "status": "ACTIVE_FOUNDATION",
+  "summary": "External LLM/tools/services are outside core and must be routed through organ contracts or adapters.",
+  "applies_to": [
+    "cloud LLM APIs",
+    "local LLM runtimes",
+    "external tools/services and adapters"
+  ],
+  "requires": [
+    "organ-managed entry point",
+    "capability/evidence declaration",
+    "audit visibility for outputs and risks"
+  ],
+  "blocks": [
+    "declaring external services as core organs",
+    "direct unmanaged external dependency injection",
+    "bypassing organ gates for external calls"
+  ],
+  "evidence_required": [
+    "Mechanicus capability truth",
+    "Inquisition audit references"
+  ],
+  "generated_at_utc": "2026-05-24T01:53:56+00:00"
+}

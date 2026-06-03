@@ -1,0 +1,140 @@
+{
+  "schema_version": "MECHANICUS_TOOL_REGISTRY_INTEGRATION_REPORT_V0_1",
+  "task_id": "TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2",
+  "generated_at_utc": "2026-05-19T22:37:19.249007Z",
+  "base_head_expected": "821561a8bf642c3f3c2fce2cb9bf3a45a770646b",
+  "base_head_observed": "821561a8bf642c3f3c2fce2cb9bf3a45a770646b",
+  "head_match_expected": true,
+  "registry_source": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOL_INDEX.json",
+  "registry_check": {
+    "path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2/tool_registry_check_report.json",
+    "verdict": "PASS",
+    "errors": [],
+    "warnings": []
+  },
+  "officio_acceptance_repair": {
+    "evidence_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2/OFFICIO_RUNTIME/run_20260519T223330204386Z_task_acceptance_check/task_acceptance_check/task_acceptance_check.json",
+    "decision": "ACCEPT",
+    "missing_fields": [],
+    "contract_field_support": {
+      "schema_version": "IMPERIUM_TASK_CONTRACT_V0_2",
+      "schema_supported": true,
+      "expected_heads": [
+        "821561a8bf642c3f3c2fce2cb9bf3a45a770646b"
+      ],
+      "allowed_scope_count": 10,
+      "forbidden_scope_count": 6,
+      "required_outputs_count": 8,
+      "commit_push_default": true,
+      "supports_modern_fields": {
+        "expected_base_head": true,
+        "expected_head": true,
+        "allowed_scope": true,
+        "forbidden_scope": true,
+        "required_outputs": true,
+        "commit_push_default": true
+      }
+    },
+    "warn_task_acceptance_field_mismatch_present": false
+  },
+  "organ_tool_views": {
+    "INQUISITION_AGENT": {
+      "verdict": "PASS",
+      "relevant_tools_count": 6,
+      "available_tools_count": 2,
+      "missing_tools_count": 4,
+      "warnings_count": 0,
+      "warnings": []
+    },
+    "MECHANICUS_AGENT": {
+      "verdict": "PASS",
+      "relevant_tools_count": 16,
+      "available_tools_count": 9,
+      "missing_tools_count": 7,
+      "warnings_count": 0,
+      "warnings": []
+    },
+    "ADMINISTRATUM_AGENT": {
+      "verdict": "PASS",
+      "relevant_tools_count": 4,
+      "available_tools_count": 3,
+      "missing_tools_count": 1,
+      "warnings_count": 0,
+      "warnings": []
+    },
+    "ASTRONOMICON_AGENT": {
+      "verdict": "WARN",
+      "relevant_tools_count": 4,
+      "available_tools_count": 3,
+      "missing_tools_count": 1,
+      "warnings_count": 1,
+      "warnings": [
+        "virtual_focus_capability_unprobed:ASTRONOMICON_AGENT:future_graph_task_map_tools"
+      ]
+    },
+    "STRATEGIUM_AGENT": {
+      "verdict": "WARN",
+      "relevant_tools_count": 5,
+      "available_tools_count": 3,
+      "missing_tools_count": 2,
+      "warnings_count": 1,
+      "warnings": [
+        "virtual_focus_capability_unprobed:STRATEGIUM_AGENT:report_csv_tools"
+      ]
+    },
+    "OFFICIO_AGENTIS_AGENT": {
+      "verdict": "WARN",
+      "relevant_tools_count": 4,
+      "available_tools_count": 3,
+      "missing_tools_count": 1,
+      "warnings_count": 1,
+      "warnings": [
+        "virtual_focus_capability_unprobed:OFFICIO_AGENTIS_AGENT:internal_contract_checker"
+      ]
+    },
+    "SCHOLA_IMPERIALIS_AGENT": {
+      "verdict": "WARN",
+      "relevant_tools_count": 4,
+      "available_tools_count": 2,
+      "missing_tools_count": 2,
+      "warnings_count": 1,
+      "warnings": [
+        "virtual_focus_capability_unprobed:SCHOLA_IMPERIALIS_AGENT:regression_corpus_tools"
+      ]
+    },
+    "DOCTRINARIUM_AGENT": {
+      "verdict": "WARN",
+      "relevant_tools_count": 5,
+      "available_tools_count": 4,
+      "missing_tools_count": 1,
+      "warnings_count": 1,
+      "warnings": [
+        "virtual_focus_capability_unprobed:DOCTRINARIUM_AGENT:doctrine_law_validators"
+      ]
+    }
+  },
+  "sweep": {
+    "path_json": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2/eight_organ_tool_command_sweep_report.json",
+    "path_md": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2/EIGHT_ORGAN_TOOL_COMMAND_SWEEP_REPORT.md",
+    "verdict": "PASS",
+    "failures": [],
+    "warnings_count": 0
+  },
+  "scope_guard": {
+    "forbidden_hits": [],
+    "changed_paths_count": 34
+  },
+  "policy_ack": {
+    "no_install_without_owner_gate": true,
+    "install_commands_executed": [],
+    "fake_green_policy": "missing tools reported as missing or unknown with warnings"
+  },
+  "aggregate_warnings": [
+    "ASTRONOMICON_AGENT:virtual_focus_capability_unprobed:ASTRONOMICON_AGENT:future_graph_task_map_tools",
+    "STRATEGIUM_AGENT:virtual_focus_capability_unprobed:STRATEGIUM_AGENT:report_csv_tools",
+    "OFFICIO_AGENTIS_AGENT:virtual_focus_capability_unprobed:OFFICIO_AGENTIS_AGENT:internal_contract_checker",
+    "SCHOLA_IMPERIALIS_AGENT:virtual_focus_capability_unprobed:SCHOLA_IMPERIALIS_AGENT:regression_corpus_tools",
+    "DOCTRINARIUM_AGENT:virtual_focus_capability_unprobed:DOCTRINARIUM_AGENT:doctrine_law_validators"
+  ],
+  "verdict": "PASS"
+}

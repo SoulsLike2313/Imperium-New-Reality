@@ -1,0 +1,48 @@
+{
+  "schema_id": "OWNER_QUESTION_PRIORITY_RULES_V0_1",
+  "version": "0.1",
+  "blocking_levels": [
+    "BLOCKING",
+    "NON_BLOCKING",
+    "WARN_ONLY"
+  ],
+  "blocking_level_rules": {
+    "BLOCKING": {
+      "rank": 1,
+      "owner_response_expectation": "ASAP",
+      "default_sla_hours": 4,
+      "action_gate": "STOP_UNTIL_OWNER_DECISION"
+    },
+    "NON_BLOCKING": {
+      "rank": 2,
+      "owner_response_expectation": "SCHEDULED",
+      "default_sla_hours": 24,
+      "action_gate": "CONTINUE_WITH_WARN"
+    },
+    "WARN_ONLY": {
+      "rank": 3,
+      "owner_response_expectation": "REVIEW_RECOMMENDED",
+      "default_sla_hours": 72,
+      "action_gate": "NO_HARD_BLOCK"
+    }
+  },
+  "decision_type_weights": {
+    "RISK_ACCEPTANCE": 100,
+    "APPROVAL": 90,
+    "MERGE_DECISION": 85,
+    "TOOL_DECISION": 80,
+    "SCOPE_DECISION": 75,
+    "CLARIFICATION": 60,
+    "REJECTION": 60
+  },
+  "sorting_contract": [
+    "blocking_level_rules.rank ASC",
+    "decision_type_weights DESC",
+    "created_at_utc ASC"
+  ],
+  "global_invariants": [
+    "BLOCKING_QUESTIONS_MUST_BE_VISIBLE",
+    "WARN_ONLY_CANNOT_HIDE_STALE_EVIDENCE",
+    "FOUNDATION_ONLY_NO_LIVE_AUTONOMY"
+  ]
+}

@@ -1,0 +1,320 @@
+[
+  {
+    "pattern_id": "PATTERN-MCP-CLIENT-SERVER-TOOL-BOUNDARY",
+    "source_systems": [
+      "Model Context Protocol"
+    ],
+    "source_ids": [
+      "SRC-MCP-SPEC-2025-06-18"
+    ],
+    "pattern_type": "tool_context_protocol",
+    "summary": "Separate the agent/host from tool/resource servers using explicit protocol boundaries and schema-based messages.",
+    "imperium_translation": "SKILL_BUNDLE_PROTOCOL + TOOL_STATE_PROTOCOL",
+    "adopt": "ADAPT_AS_IMPERIUM_NATIVE",
+    "usefulness": "VERY_HIGH",
+    "risk": "MEDIUM",
+    "risks": [
+      "Remote servers can become uncontrolled capability surfaces",
+      "Tool descriptions may mislead agents if not audited",
+      "Protocol adoption can create dependency creep"
+    ],
+    "rules_for_imperium": [
+      "Do not install MCP as a host requirement for New Generation V1.",
+      "Represent every local skill as a skill bundle with manifest, input schema, output schema, side effects, receipts, and owner/custodes admission.",
+      "Separate tool discovery from tool execution.",
+      "Never let tool descriptions override Doctrinarium/Custodes policy."
+    ]
+  },
+  {
+    "pattern_id": "PATTERN-LANGGRAPH-CHECKPOINTED-ROUTES",
+    "source_systems": [
+      "LangGraph"
+    ],
+    "source_ids": [
+      "SRC-LANGGRAPH-PERSISTENCE"
+    ],
+    "pattern_type": "stateful_route_checkpoint",
+    "summary": "Persist state at every step so human review, resume, memory, time travel, and fault recovery are possible.",
+    "imperium_translation": "ROUTE_CHECKPOINT_PROTOCOL",
+    "adopt": "ADAPT_AS_IMPERIUM_NATIVE",
+    "usefulness": "VERY_HIGH",
+    "risk": "LOW",
+    "risks": [
+      "Checkpoint bloat",
+      "Leaking sensitive context into long-term state",
+      "Confusing runtime state with canon"
+    ],
+    "rules_for_imperium": [
+      "Every route step writes a checkpoint card.",
+      "Every checkpoint has run_id, route_id, agent_id, input_refs, output_refs, verdict, and resume_policy.",
+      "Human/Owner approval checkpoints are first-class route nodes.",
+      "Checkpoint data goes to RUNS layer unless promoted through gates."
+    ]
+  },
+  {
+    "pattern_id": "PATTERN-CLAUDE-SUBAGENT-MD-FRONTMATTER",
+    "source_systems": [
+      "Claude Code subagents"
+    ],
+    "source_ids": [
+      "SRC-CLAUDE-CODE-SUBAGENTS"
+    ],
+    "pattern_type": "agent_identity_contract",
+    "summary": "Define specialized agents in human-readable files with frontmatter/config describing identity, scope, tools, memory, and appearance.",
+    "imperium_translation": "ORGAN_AGENT_PROTOCOL",
+    "adopt": "ADAPT_AS_IMPERIUM_NATIVE",
+    "usefulness": "HIGH",
+    "risk": "LOW",
+    "risks": [
+      "Too much authority by default",
+      "Tool access leakage",
+      "Subagent identity collisions"
+    ],
+    "rules_for_imperium": [
+      "Every Organ-Agent gets AGENT_MANIFEST.json plus ROLE_CONTRACT.md.",
+      "Tool access is allowlisted, not inherited by default.",
+      "Memory scope is explicit: none, run-only, agent-owned, permanent, correction-only.",
+      "Visual CLI identity is documented but never replaces machine status."
+    ]
+  },
+  {
+    "pattern_id": "PATTERN-CLAUDE-HOOKED-AGENT-LIFECYCLE",
+    "source_systems": [
+      "Claude Code hooks"
+    ],
+    "source_ids": [
+      "SRC-CLAUDE-CODE-HOOKS"
+    ],
+    "pattern_type": "agent_lifecycle_events",
+    "summary": "Start/stop hooks expose agent lifecycle events, transcript paths, and context injection points.",
+    "imperium_translation": "AGENT_EVENT_LEDGER + RECEIPT_CONTRACT",
+    "adopt": "ADAPT_AS_IMPERIUM_NATIVE",
+    "usefulness": "HIGH",
+    "risk": "MEDIUM",
+    "risks": [
+      "Hooks can become hidden behavior",
+      "Injected context can bypass governance",
+      "Lifecycle logs can bloat"
+    ],
+    "rules_for_imperium": [
+      "All lifecycle injections must be visible in run receipts.",
+      "AgentStart and AgentStop events go to event ledger.",
+      "No hidden context injection; added context must be declared.",
+      "Transcript and outbox paths are recorded as evidence refs."
+    ]
+  },
+  {
+    "pattern_id": "PATTERN-SWE-ACI-ACTION-INTERFACE",
+    "source_systems": [
+      "SWE-agent"
+    ],
+    "source_ids": [
+      "SRC-SWE-AGENT-ARCHITECTURE",
+      "SRC-SWE-AGENT-ACI"
+    ],
+    "pattern_type": "agent_computer_interface",
+    "summary": "The agent performs better when the computer interface is intentionally designed: commands, tools, environment, parser, and history handling are shaped for the task.",
+    "imperium_translation": "IMPERIUM_AGENT_COMPUTER_INTERFACE",
+    "adopt": "ADAPT_AS_IMPERIUM_NATIVE",
+    "usefulness": "VERY_HIGH",
+    "risk": "MEDIUM",
+    "risks": [
+      "Over-broad shell access",
+      "Long command avalanches",
+      "Output floods",
+      "Action parsing errors"
+    ],
+    "rules_for_imperium": [
+      "Local Organ-Agents expose narrow CLI commands, not arbitrary shell by default.",
+      "Every action has an action_card with expected inputs/outputs/side_effects.",
+      "History/context is summarized by explicit processors, not silently truncated.",
+      "Command chunking and report budget are enforced."
+    ]
+  },
+  {
+    "pattern_id": "PATTERN-SWE-TRAJECTORY-INSPECTOR",
+    "source_systems": [
+      "SWE-agent"
+    ],
+    "source_ids": [
+      "SRC-SWE-AGENT-TRAJECTORIES"
+    ],
+    "pattern_type": "execution_trace_inspection",
+    "summary": "Agent work should produce inspectable trajectories, not only final answers.",
+    "imperium_translation": "ROUTE_SESSION_TRAJECTORY + SANCTUM_TRACE_VIEW",
+    "adopt": "ADAPT_AS_IMPERIUM_NATIVE",
+    "usefulness": "HIGH",
+    "risk": "LOW",
+    "risks": [
+      "Trace privacy",
+      "Trace bloat",
+      "Trace unreadability"
+    ],
+    "rules_for_imperium": [
+      "Route sessions write JSONL event traces.",
+      "Owner-readable trace summaries are generated separately from machine traces.",
+      "Sanctum reads trace indexes, not full flood logs.",
+      "Trace retention and compression policy required."
+    ]
+  },
+  {
+    "pattern_id": "PATTERN-OPENHANDS-SANDBOXED-END-TO-END-WORKSPACE",
+    "source_systems": [
+      "OpenHands"
+    ],
+    "source_ids": [
+      "SRC-OPENHANDS-SITE",
+      "SRC-OPENHANDS-PAPER"
+    ],
+    "pattern_type": "sandboxed_workspace_action",
+    "summary": "Coding agents need a controlled workspace to plan, edit, execute commands, test, and produce end-to-end changes.",
+    "imperium_translation": "WORKSPACE_PERMISSION_BOUNDARY + EXECUTION_SANDBOX_PROTOCOL",
+    "adopt": "ADAPT_SELECTIVELY",
+    "usefulness": "HIGH",
+    "risk": "HIGH",
+    "risks": [
+      "Autonomous edits can overreach",
+      "Parallel work can conflict",
+      "Sandbox escape or path confusion",
+      "Misplaced trust in external platform"
+    ],
+    "rules_for_imperium": [
+      "Organ-Agents do not directly mutate canon; Servitor performs controlled implementation.",
+      "Execution sandboxes must have allowed paths, deny paths, cleanup, receipts, and rollback plan.",
+      "Parallelism requires Custodes concurrency admission.",
+      "Large-repo dependency mapping should become an Administratum/Mechanicus capability."
+    ]
+  },
+  {
+    "pattern_id": "PATTERN-METAGPT-SOP-TEAM-PIPELINE",
+    "source_systems": [
+      "MetaGPT"
+    ],
+    "source_ids": [
+      "SRC-METAGPT-DOCS"
+    ],
+    "pattern_type": "role_sop_pipeline",
+    "summary": "Complex output can be created by role-specialized agents following standardized operating procedures and passing structured artifacts downstream.",
+    "imperium_translation": "ORGAN_SOP_PIPELINE",
+    "adopt": "ADAPT_AS_IMPERIUM_NATIVE",
+    "usefulness": "HIGH",
+    "risk": "MEDIUM",
+    "risks": [
+      "Theatrical roles without real gates",
+      "Cascading hallucination",
+      "Overproduced documents without execution proof"
+    ],
+    "rules_for_imperium": [
+      "Every organ role needs concrete input/output schemas and stop conditions.",
+      "Downstream agents must validate upstream artifacts, not blindly accept them.",
+      "SOP outputs must be tied to receipts and gates.",
+      "Avoid free-form roleplay; use Organ contracts."
+    ]
+  },
+  {
+    "pattern_id": "PATTERN-CREWAI-FLOW-MANAGER-CREW-INTELLIGENCE",
+    "source_systems": [
+      "CrewAI"
+    ],
+    "source_ids": [
+      "SRC-CREWAI-DOCS",
+      "SRC-CREWAI-INTRO"
+    ],
+    "pattern_type": "flow_control_and_delegated_agent_teams",
+    "summary": "Separate structured flow control from collaborative agent teams: flows manage state/branches, crews solve delegated tasks.",
+    "imperium_translation": "SANCTUM_ROUTE_MANAGER + CONTROLLED_ORGAN_GROUPS",
+    "adopt": "ADAPT_AS_IMPERIUM_NATIVE",
+    "usefulness": "HIGH",
+    "risk": "MEDIUM",
+    "risks": [
+      "Autonomous crews can chatter",
+      "Memory extraction can store junk",
+      "Flow complexity can hide failure"
+    ],
+    "rules_for_imperium": [
+      "Sanctum/route manager controls flow, not free agent chat.",
+      "Organ groups are invoked only through route cards.",
+      "Memory extraction requires provenance and learning policy.",
+      "Guardrails and observability are mandatory."
+    ]
+  },
+  {
+    "pattern_id": "PATTERN-AUTOGEN-TYPED-ASYNC-AGENT-NETWORK",
+    "source_systems": [
+      "AutoGen"
+    ],
+    "source_ids": [
+      "SRC-AUTOGEN-MS-RESEARCH"
+    ],
+    "pattern_type": "typed_async_multi_agent_system",
+    "summary": "Agents communicate through asynchronous messages and modular typed components, with tracing/debugging and cross-language extensibility.",
+    "imperium_translation": "ORGAN_EVENT_BUS + TYPED_MESSAGE_PROTOCOL",
+    "adopt": "ADAPT_SELECTIVELY",
+    "usefulness": "HIGH",
+    "risk": "MEDIUM",
+    "risks": [
+      "Distributed complexity",
+      "Out-of-order events",
+      "Hard debugging if typed receipts are weak"
+    ],
+    "rules_for_imperium": [
+      "All agent messages use typed envelopes.",
+      "Async messaging allowed only with route/session IDs and ordering rules.",
+      "Cross-language adapters must declare runtime, dependencies, and receipts.",
+      "Observability is part of the protocol, not optional."
+    ]
+  },
+  {
+    "pattern_id": "PATTERN-AUTOGEN-AGENT-AS-TOOL-CONCURRENCY-LIMIT",
+    "source_systems": [
+      "AutoGen"
+    ],
+    "source_ids": [
+      "SRC-AUTOGEN-AGENTS"
+    ],
+    "pattern_type": "agent_as_tool_and_concurrency_control",
+    "summary": "Agents can be wrapped as tools, but side-effectful/internal-state tools must not run in unsafe parallel.",
+    "imperium_translation": "AGENT_AS_TOOL_ADMISSION + SIDE_EFFECT_LOCK",
+    "adopt": "ADAPT_AS_IMPERIUM_NATIVE",
+    "usefulness": "VERY_HIGH",
+    "risk": "LOW",
+    "risks": [
+      "State conflicts",
+      "Double writes",
+      "Non-deterministic behavior"
+    ],
+    "rules_for_imperium": [
+      "Every Organ-Agent callable as a tool must declare side_effects and concurrency_policy.",
+      "Disable parallel calls for stateful agents unless explicitly admitted.",
+      "Set max_tool_iterations / max_route_steps budgets.",
+      "Structured outputs require schema validation."
+    ]
+  },
+  {
+    "pattern_id": "PATTERN-CLI-VISUAL-COMFORT-STATUS-FIRST",
+    "source_systems": [
+      "Owner requirement",
+      "Claude Code subagent color identity as weak reference"
+    ],
+    "source_ids": [
+      "SRC-CLAUDE-CODE-SUBAGENTS"
+    ],
+    "pattern_type": "operator_visual_comfort",
+    "summary": "CLI interactions should be readable, colored, panel-based, and status-first, without hiding evidence or faking success.",
+    "imperium_translation": "CLI_VISUAL_COMFORT_CONTRACT",
+    "adopt": "ADAPT_AS_IMPERIUM_NATIVE",
+    "usefulness": "HIGH",
+    "risk": "LOW",
+    "risks": [
+      "Pretty UI masking real errors",
+      "ANSI issues on Windows",
+      "Heavy TUI dependencies causing lag"
+    ],
+    "rules_for_imperium": [
+      "Default CLI output uses readable sections, icons/symbols only if encoding-safe, color bands, status badges, and concise tables.",
+      "No green for unverified status.",
+      "Machine outputs are JSON/JSONL; visual CLI is a presentation layer.",
+      "Start with no external dependency or optional Rich/Textual adapter behind a verified capability gate."
+    ]
+  }
+]

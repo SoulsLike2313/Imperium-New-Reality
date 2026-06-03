@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Contour Route Receipt",
+  "type": "object",
+  "required": [
+    "contour",
+    "task_id",
+    "zip_path",
+    "route_mode",
+    "intake_verdict",
+    "resolver_verdict",
+    "launch_card_state",
+    "verdict"
+  ],
+  "properties": {
+    "contour": {
+      "enum": [
+        "PC",
+        "VM3",
+        "VM2"
+      ]
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "zip_path": {
+      "type": "string"
+    },
+    "route_mode": {
+      "enum": [
+        "LIVE",
+        "DRY_RUN",
+        "BLOCKED",
+        "ROUTE_MISSING"
+      ]
+    },
+    "intake_verdict": {
+      "type": "string"
+    },
+    "resolver_verdict": {
+      "type": "string"
+    },
+    "launch_card_state": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string"
+    }
+  }
+}

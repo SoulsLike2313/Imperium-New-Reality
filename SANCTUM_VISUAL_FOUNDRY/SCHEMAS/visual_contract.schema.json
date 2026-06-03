@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Visual Contract",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "target_slice",
+    "required_regions",
+    "interaction_model",
+    "truth_rules",
+    "responsive_targets"
+  ],
+  "properties": {
+    "contract_id": {"type": "string"},
+    "target_slice": {"type": "string"},
+    "required_regions": {"type": "array", "items": {"type": "string"}},
+    "interaction_model": {"type": "object"},
+    "truth_rules": {"type": "array", "items": {"type": "string"}},
+    "hard_forbidden": {"type": "array", "items": {"type": "string"}},
+    "responsive_targets": {"type": "array", "items": {"type": "string"}},
+    "acceptance_statement": {"type": "string"}
+  }
+}

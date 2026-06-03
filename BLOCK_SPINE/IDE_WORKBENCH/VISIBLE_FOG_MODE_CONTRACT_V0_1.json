@@ -1,0 +1,25 @@
+{
+  "contract_id": "VISIBLE_FOG_MODE_CONTRACT_V0_1",
+  "status": "CANDIDATE_NOT_CANON",
+  "modes": [
+    {
+      "mode": "VISIBLE_WORKBENCH",
+      "description": "Commands, receipts, and evidence are shown in real time.",
+      "requirements": [
+        "LIVE_COMMAND_FEED",
+        "EVIDENCE_BOUNDARY_BADGE",
+        "CAP_STATUS_PANEL"
+      ]
+    },
+    {
+      "mode": "FOG_BACKEND",
+      "description": "Background execution with mandatory post-run receipt publication.",
+      "requirements": [
+        "RUN_ID",
+        "SUMMARY_RECEIPT",
+        "CAP_DELTA_RECEIPT"
+      ]
+    }
+  ],
+  "safety_rule": "FOG mode cannot claim PASS without replayable receipts."
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "important_six.dashboard_action_run_result.v0_1",
+  "title": "Important Six Dashboard Action Run Result",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "action_id",
+    "status",
+    "summary",
+    "receipt_path",
+    "details",
+    "generated_at_utc"
+  ],
+  "properties": {
+    "schema_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "action_id": {
+      "type": "string",
+      "minLength": 4
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "FAIL",
+        "BLOCKED"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "receipt_path": {
+      "type": "string",
+      "minLength": 4
+    },
+    "details": {
+      "type": "object"
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "minLength": 20
+    }
+  },
+  "additionalProperties": true
+}

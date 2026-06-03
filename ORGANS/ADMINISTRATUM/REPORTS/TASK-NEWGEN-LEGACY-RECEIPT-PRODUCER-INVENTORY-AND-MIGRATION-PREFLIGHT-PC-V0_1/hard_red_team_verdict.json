@@ -1,0 +1,58 @@
+{
+  "task_id": "TASK-NEWGEN-LEGACY-RECEIPT-PRODUCER-INVENTORY-AND-MIGRATION-PREFLIGHT-PC-V0_1",
+  "builder_claims": [
+    {
+      "claim_id": "C001",
+      "claim": "Script-first discovery now maps receipt producers and dangerous legacy fields",
+      "evidence": "receipt_producer_inventory.json + legacy_receipt_field_scan_result.json"
+    },
+    {
+      "claim_id": "C002",
+      "claim": "Migration priorities are explicit by P0/P1/P2/P3",
+      "evidence": "receipt_producer_migration_priority_matrix.json"
+    },
+    {
+      "claim_id": "C003",
+      "claim": "Stage 0 closeout has actionable next pipeline and does not mass-migrate",
+      "evidence": "STAGE_0_RECEIPT_SANITATION_CLOSEOUT_REPORT.md + NEXT_PIPELINE_HANDOFF.json"
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "A001",
+      "target_claim": "C001",
+      "result": "PASS",
+      "detail": "Inventory is replayable and machine-readable; checker classifies dangerous fields instead of blindly failing."
+    },
+    {
+      "attack_id": "A002",
+      "target_claim": "C002",
+      "result": "WARN",
+      "detail": "P0 remains 4 and unknown/manual-review remains 272; clean PASS must stay blocked."
+    },
+    {
+      "attack_id": "A003",
+      "target_claim": "C003",
+      "result": "PASS",
+      "detail": "No mass migration attempted; outputs are preflight-only and within task scope."
+    },
+    {
+      "attack_id": "A004",
+      "target_claim": "GLOBAL",
+      "result": "WARN",
+      "detail": "Scanner heuristics may still miss edge-case producers or over-classify some legacy conventions; independent review required."
+    }
+  ],
+  "downgrade_rules_applied": [
+    "P0_REMAINING_BLOCKS_CLEAN_PASS",
+    "UNKNOWN_REQUIRES_REVIEW_PRESENT->PASS_WITH_WARNINGS",
+    "NO_RUNTIME_WARP_CLAIM->PASS_SCOPE_OK",
+    "NO_MASS_MIGRATION_IN_PREFLIGHT->PASS_SCOPE_OK"
+  ],
+  "final_verdict": "PASS_WITH_WARNINGS",
+  "blocked_clean_pass_reasons": [
+    "CAP_P0_PRODUCER_RISK_UNRESOLVED",
+    "CAP_LEGACY_RECEIPT_PRODUCERS_UNCLASSIFIED"
+  ],
+  "generated_at_utc": "2026-05-30T20:52:35Z"
+}

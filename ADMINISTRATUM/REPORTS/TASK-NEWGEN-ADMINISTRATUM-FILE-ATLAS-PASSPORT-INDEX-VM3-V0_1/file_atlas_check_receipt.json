@@ -1,0 +1,119 @@
+{
+  "task_id": "TASK-NEWGEN-ADMINISTRATUM-FILE-ATLAS-PASSPORT-INDEX-VM3-V0_1",
+  "checker": "administratum_file_atlas_checker_v0_1.py",
+  "status": "PASS",
+  "fail_count": 0,
+  "warn_count": 1,
+  "checks": [
+    {
+      "check_id": "required_file.file_passport_schema_v0_1.json",
+      "status": "PASS",
+      "detail": "exists"
+    },
+    {
+      "check_id": "required_file.file_atlas_index_v0_1.json",
+      "status": "PASS",
+      "detail": "exists"
+    },
+    {
+      "check_id": "required_file.file_passports_v0_1.jsonl",
+      "status": "PASS",
+      "detail": "exists"
+    },
+    {
+      "check_id": "required_file.organ_file_map_v0_1.json",
+      "status": "PASS",
+      "detail": "exists"
+    },
+    {
+      "check_id": "required_file.role_rule_surface_index_v0_1.json",
+      "status": "PASS",
+      "detail": "exists"
+    },
+    {
+      "check_id": "required_file.language_gate_surface_index_v0_1.json",
+      "status": "PASS",
+      "detail": "exists"
+    },
+    {
+      "check_id": "required_file.tui_surface_index_v0_1.json",
+      "status": "PASS",
+      "detail": "exists"
+    },
+    {
+      "check_id": "required_file.checker_tool_index_v0_1.json",
+      "status": "PASS",
+      "detail": "exists"
+    },
+    {
+      "check_id": "required_file.report_receipt_index_v0_1.json",
+      "status": "PASS",
+      "detail": "exists"
+    },
+    {
+      "check_id": "required_file.route_connection_surface_index_v0_1.json",
+      "status": "PASS",
+      "detail": "exists"
+    },
+    {
+      "check_id": "required_file.owner_pain_to_file_map_v0_1.json",
+      "status": "PASS",
+      "detail": "exists"
+    },
+    {
+      "check_id": "required_file.gap_success_index_v0_1.json",
+      "status": "PASS",
+      "detail": "exists"
+    },
+    {
+      "check_id": "required_file.README_FILE_ATLAS_V0_1.md",
+      "status": "PASS",
+      "detail": "exists"
+    },
+    {
+      "check_id": "organs.five_scanned",
+      "status": "PASS",
+      "detail": "all required organs indexed"
+    },
+    {
+      "check_id": "passports.non_empty",
+      "status": "PASS",
+      "detail": "1807"
+    },
+    {
+      "check_id": "passports.required_fields",
+      "status": "PASS",
+      "detail": "required fields present in sampled passports"
+    },
+    {
+      "check_id": "owner_pains.required_ids",
+      "status": "PASS",
+      "detail": "all required pain IDs present"
+    },
+    {
+      "check_id": "route.alias_imperium_vm3",
+      "status": "PASS",
+      "detail": "alias evidence present"
+    },
+    {
+      "check_id": "tools.index_present",
+      "status": "PASS",
+      "detail": "76"
+    },
+    {
+      "check_id": "tui.index_present",
+      "status": "PASS",
+      "detail": "16"
+    },
+    {
+      "check_id": "language.future_task_declared",
+      "status": "PASS",
+      "detail": "TASK-NEWGEN-OFFICIO-LANGUAGE-GATE-HARDENING-PC-V0_1"
+    },
+    {
+      "check_id": "quality.unknown_file_kind",
+      "status": "WARN",
+      "detail": "unknown_file_kind_count=371"
+    }
+  ]
+}

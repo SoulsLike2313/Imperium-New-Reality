@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRANSFER_CONTOUR_RECORD_V0_1",
+  "type": "object",
+  "required": [
+    "contour_id",
+    "display_name",
+    "role",
+    "status",
+    "status_reason",
+    "route_config_status",
+    "last_probe_receipt_ref",
+    "last_updated_utc",
+    "claim_boundary"
+  ],
+  "properties": {
+    "contour_id": { "enum": ["PC", "VM2", "VM3"] },
+    "display_name": { "type": "string" },
+    "role": { "type": "string" },
+    "status": {
+      "enum": [
+        "ONLINE",
+        "OFFLINE",
+        "UNKNOWN",
+        "NOT_CONFIGURED",
+        "ERROR",
+        "DRY_RUN_READY",
+        "SENT",
+        "FETCHED",
+        "NOT_READY",
+        "BLOCKED"
+      ]
+    },
+    "status_reason": { "type": "string" },
+    "route_config_status": {
+      "enum": ["CONFIGURED", "CONFIGURED_NOT_VERIFIED", "NOT_CONFIGURED"]
+    },
+    "last_probe_receipt_ref": {
+      "type": ["string", "null"]
+    },
+    "last_updated_utc": { "type": "string" },
+    "claim_boundary": { "const": "FOUNDATION_ONLY" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,51 @@
+{
+  "visual_unit_id": "SANCTUM.BRAIN_FIELD.ORGAN_RING.THRONE_NODE_LOCKED",
+  "parent": "SANCTUM.BRAIN_FIELD.ORGAN_RING",
+  "type": "organ_node_locked",
+  "visual_owner": "SANCTUM_SHELL",
+  "truth_owner": "THRONE_AGENT",
+  "data_source_owner": "OWNER_GATE_REQUIRED",
+  "organ_subject": "THRONE_AGENT",
+  "implementation_owner": "VISUAL_FOUNDRY",
+  "purpose": "Locked THRONE organ lane requiring explicit owner gate before activation.",
+  "backend_source": "OWNER_GATE_REQUIRED",
+  "backend_source_status": "locked",
+  "allowed_states": [
+    "locked",
+    "owner_gate_required",
+    "unknown"
+  ],
+  "truth_rules": [
+    "Locked state must never be rendered as active or connected.",
+    "Activation requires explicit owner gate and backend onboarding task."
+  ],
+  "visual_tokens": "organ_ring_tokens",
+  "texture": "imperial_gold_edge",
+  "glow": {
+    "enabled": true,
+    "color_token": "imperial_gold_edge",
+    "default_intensity": 0.2
+  },
+  "motion": {
+    "enabled": false,
+    "animation": "ambient_disabled",
+    "perf_tier": "STATIC",
+    "disable_in_reduced_motion": true
+  },
+  "perf_tier": "STATIC",
+  "proof_requirements": [
+    "Locked status and owner-gate requirement shown in reports."
+  ],
+  "integration_status": "locked",
+  "fake_green_risks": [
+    "Locked lane represented as implementable-ready without owner gate."
+  ],
+  "owner_group": "SANCTUM",
+  "owner_organ": "THRONE_AGENT",
+  "accessibility_rules": [
+    "State must not be encoded by color alone.",
+    "RU/EN labels must remain explicit for status tags."
+  ],
+  "change_safety": "Topology hardening scope only; no final UI readiness claims.",
+  "backend_source_unknown_reason": "Locked governance lane; no active backend binding in current stage."
+}

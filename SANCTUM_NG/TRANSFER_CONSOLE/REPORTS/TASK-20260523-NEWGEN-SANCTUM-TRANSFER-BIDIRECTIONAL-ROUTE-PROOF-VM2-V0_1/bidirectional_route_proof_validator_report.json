@@ -1,0 +1,174 @@
+{
+  "schema_id": "BIDIRECTIONAL_ROUTE_PROOF_VALIDATOR_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1",
+  "generated_at_utc": "2026-05-23T03:31:05Z",
+  "verdict": "PASS",
+  "allowed_final_verdict": "PASS_FOR_TWO_CONFIRMED_BOUNDED_VM2_VM3_TRANSFER_ROUTES_ONLY",
+  "checks": [
+    {
+      "check_id": "summary_exists",
+      "status": "PASS",
+      "details": "bidirectional route probe report exists and parses"
+    },
+    {
+      "check_id": "required_routes_present",
+      "status": "PASS",
+      "details": "required VM2<->VM3 route entries are present"
+    },
+    {
+      "check_id": "route_vm2_to_vm3_proved",
+      "status": "PASS",
+      "details": "VM2_TO_VM3 status is PROVED"
+    },
+    {
+      "check_id": "route_vm3_to_vm2_proved",
+      "status": "PASS",
+      "details": "VM3_TO_VM2 status is PROVED"
+    },
+    {
+      "check_id": "both_routes_proved_for_full_pass",
+      "status": "PASS",
+      "details": "both routes are proved"
+    },
+    {
+      "check_id": "probe_refs_count",
+      "status": "PASS",
+      "details": "probe refs include both routes"
+    },
+    {
+      "check_id": "probe_payloads_parse",
+      "status": "PASS",
+      "details": "all probe refs parse as JSON objects"
+    },
+    {
+      "check_id": "probe_vm2_to_vm3_hash_size_match",
+      "status": "PASS",
+      "details": "VM2_TO_VM3 hash/size match is true"
+    },
+    {
+      "check_id": "probe_vm2_to_vm3_status_proved",
+      "status": "PASS",
+      "details": "VM2_TO_VM3 probe status is PROVED"
+    },
+    {
+      "check_id": "probe_vm3_to_vm2_hash_size_match",
+      "status": "PASS",
+      "details": "VM3_TO_VM2 hash/size match is true"
+    },
+    {
+      "check_id": "probe_vm3_to_vm2_status_proved",
+      "status": "PASS",
+      "details": "VM3_TO_VM2 probe status is PROVED"
+    },
+    {
+      "check_id": "auth_vm2_to_vm3_status",
+      "status": "PASS",
+      "details": "VM2_TO_VM3 auth log status is PASS"
+    },
+    {
+      "check_id": "auth_vm2_to_vm3_path_exists",
+      "status": "PASS",
+      "details": "VM2_TO_VM3 auth log path exists"
+    },
+    {
+      "check_id": "auth_vm3_to_vm2_status",
+      "status": "PASS",
+      "details": "VM3_TO_VM2 auth log status is PASS"
+    },
+    {
+      "check_id": "auth_vm3_to_vm2_path_exists",
+      "status": "PASS",
+      "details": "VM3_TO_VM2 auth log path exists"
+    },
+    {
+      "check_id": "request_refs_count",
+      "status": "PASS",
+      "details": "request refs include two route entries"
+    },
+    {
+      "check_id": "result_refs_count",
+      "status": "PASS",
+      "details": "result refs include two route entries"
+    },
+    {
+      "check_id": "request_payloads_parse",
+      "status": "PASS",
+      "details": "all request refs parse as JSON"
+    },
+    {
+      "check_id": "result_payloads_parse",
+      "status": "PASS",
+      "details": "all result refs parse as JSON"
+    },
+    {
+      "check_id": "request_no_forbidden_fields",
+      "status": "PASS",
+      "details": "request payloads contain no forbidden shell fields"
+    },
+    {
+      "check_id": "result_no_forbidden_fields",
+      "status": "PASS",
+      "details": "result payloads contain no forbidden shell fields"
+    },
+    {
+      "check_id": "runner_ledger_routes_present",
+      "status": "PASS",
+      "details": "runner ledger contains both route entries for current task"
+    },
+    {
+      "check_id": "view_state_exists",
+      "status": "PASS",
+      "details": "transfer console view state exists"
+    },
+    {
+      "check_id": "view_state_vm2_to_vm3_matches",
+      "status": "PASS",
+      "details": "view state VM2_TO_VM3 matches summary status"
+    },
+    {
+      "check_id": "view_state_vm3_to_vm2_matches",
+      "status": "PASS",
+      "details": "view state VM3_TO_VM2 matches summary status"
+    },
+    {
+      "check_id": "mechanicus_matrix_exists",
+      "status": "PASS",
+      "details": "mechanicus matrix exists and parses"
+    },
+    {
+      "check_id": "matrix_route_ids_present",
+      "status": "PASS",
+      "details": "matrix includes bidirectional route connection ids"
+    },
+    {
+      "check_id": "matrix_vm2_to_vm3_alias_bounded_route_live_verified",
+      "status": "PASS",
+      "details": "VM2_TO_VM3_ALIAS_BOUNDED_ROUTE is marked live_verified=true"
+    },
+    {
+      "check_id": "matrix_vm3_to_vm2_alias_bounded_route_live_verified",
+      "status": "PASS",
+      "details": "VM3_TO_VM2_ALIAS_BOUNDED_ROUTE is marked live_verified=true"
+    },
+    {
+      "check_id": "mechanicus_route_proof_record_exists",
+      "status": "PASS",
+      "details": "mechanicus bidirectional route proof record exists"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "refs": {
+    "summary_ref": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1/bidirectional_route_probe_report.json",
+    "view_state_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+    "runner_ledger_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/ledgers/transfer_action_runner_ledger.jsonl",
+    "mechanicus_matrix_ref": "IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/SSH_CONNECTION_MATRIX_V0_1.json",
+    "mechanicus_route_proof_ref": "IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/VM2_VM3_BIDIRECTIONAL_ROUTE_PROOF_V0_1.json"
+  },
+  "claim_boundary": "FOUNDATION_ONLY",
+  "not_proven": [
+    "production orchestration",
+    "arbitrary remote shell",
+    "global all-contour transfer readiness"
+  ]
+}

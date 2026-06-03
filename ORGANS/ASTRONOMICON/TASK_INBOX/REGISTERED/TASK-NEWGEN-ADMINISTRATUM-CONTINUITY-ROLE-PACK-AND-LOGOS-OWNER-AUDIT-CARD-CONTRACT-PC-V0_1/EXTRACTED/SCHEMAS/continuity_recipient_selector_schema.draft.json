@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Continuity Recipient Selector",
+  "type": "object",
+  "required": [
+    "recipient_target",
+    "core_continuity_truth_policy",
+    "role_pack_policy"
+  ],
+  "properties": {
+    "recipient_target": {
+      "type": "string",
+      "enum": [
+        "LOGOS_PRIME",
+        "INQUISITOR",
+        "SPECULUM"
+      ]
+    },
+    "core_continuity_truth_policy": {
+      "type": "string",
+      "const": "ROLE_NEUTRAL_SAME_PROJECT_TRUTH"
+    },
+    "role_pack_policy": {
+      "type": "string",
+      "const": "SEPARATE_ROLE_PACK_DOES_NOT_ALTER_CONTINUITY_TRUTH"
+    },
+    "owner_facing_language": {
+      "type": "string",
+      "enum": [
+        "RU_THROUGH_OFFICIO",
+        "EN_ONLY"
+      ]
+    },
+    "include_private_data": {
+      "type": "boolean",
+      "const": false
+    },
+    "required_receipts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

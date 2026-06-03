@@ -1,0 +1,100 @@
+{
+  "schema_version": "imperium.mechanicus.agent_ide.tool_registration_entries.v0_1",
+  "task_id": "TASK-NEWGEN-AGENT-IDE-DUAL-SURFACE-SELF-VALIDATOR-BLOCK-FOUNDATION-PC-V0_1",
+  "owner_organ": "MECHANICUS",
+  "tools": [
+    {
+      "tool_id": "AGENT_IDE_VIEW_MODEL_BUILDER_V0_2",
+      "owner_organ": "AGENT_IDE+MECHANICUS",
+      "path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/VIEW_MODEL/agent_ide_view_model_builder_v0_2.py",
+      "command": "python IMPERIUM_NEW_GENERATION/AGENT_IDE/VIEW_MODEL/agent_ide_view_model_builder_v0_2.py",
+      "inputs": [
+        "Administratum File Atlas sources",
+        "Block Foundation seed files",
+        "optional self_validation_summary.json"
+      ],
+      "outputs": [
+        "IMPERIUM_NEW_GENERATION/AGENT_IDE/VIEW_MODEL/ide_view_model_v0_2.json",
+        "IMPERIUM_NEW_GENERATION/AGENT_IDE/VIEW_MODEL/dashboard_view_model_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/AGENT_IDE/VIEW_MODEL/block_view_model_v0_1.json"
+      ],
+      "risk_level": "LOW",
+      "validation_route": "SELF_VALIDATOR/view_model_receipt.json",
+      "last_receipt_or_report_path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/REPORTS/TASK-NEWGEN-AGENT-IDE-DUAL-SURFACE-SELF-VALIDATOR-BLOCK-FOUNDATION-PC-V0_1/view_model_receipt.json"
+    },
+    {
+      "tool_id": "AGENT_IDE_WEB_PROJECTION_SERVER_V0_1",
+      "owner_organ": "AGENT_IDE+MECHANICUS",
+      "path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/WEB_PROJECTION/agent_ide_web_projection_server_v0_1.py",
+      "command": "python IMPERIUM_NEW_GENERATION/AGENT_IDE/WEB_PROJECTION/agent_ide_web_projection_server_v0_1.py --host 127.0.0.1 --port 4173",
+      "inputs": [
+        "Shared dashboard_view_model_v0_1.json",
+        "Shared block_view_model_v0_1.json"
+      ],
+      "outputs": [
+        "http://127.0.0.1:4173/",
+        "/api/view-model",
+        "/api/block-view-model",
+        "/api/health"
+      ],
+      "risk_level": "MEDIUM",
+      "validation_route": "SELF_VALIDATOR/web_projection_receipt.json",
+      "last_receipt_or_report_path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/REPORTS/TASK-NEWGEN-AGENT-IDE-DUAL-SURFACE-SELF-VALIDATOR-BLOCK-FOUNDATION-PC-V0_1/web_projection_receipt.json"
+    },
+    {
+      "tool_id": "AGENT_IDE_SELF_VALIDATOR_V0_1",
+      "owner_organ": "AGENT_IDE+MECHANICUS",
+      "path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/SELF_VALIDATOR/agent_ide_self_validator_v0_1.py",
+      "command": "python IMPERIUM_NEW_GENERATION/AGENT_IDE/SELF_VALIDATOR/agent_ide_self_validator_v0_1.py",
+      "inputs": [
+        "Shared view model builder outputs",
+        "Desktop smoke check",
+        "Web projection health/projection checks",
+        "Optional Playwright capture"
+      ],
+      "outputs": [
+        "source_truth_receipt.json",
+        "view_model_receipt.json",
+        "desktop_ide_smoke_receipt.json",
+        "web_projection_receipt.json",
+        "truth_parity_receipt.json",
+        "self_validation_summary.json"
+      ],
+      "risk_level": "MEDIUM",
+      "validation_route": "SELF_VALIDATOR/self_validation_summary.json",
+      "last_receipt_or_report_path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/REPORTS/TASK-NEWGEN-AGENT-IDE-DUAL-SURFACE-SELF-VALIDATOR-BLOCK-FOUNDATION-PC-V0_1/self_validation_summary.json"
+    },
+    {
+      "tool_id": "AGENT_IDE_PLAYWRIGHT_CAPTURE_V0_1",
+      "owner_organ": "AGENT_IDE+MECHANICUS",
+      "path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/PLAYWRIGHT/agent_ide_playwright_capture_v0_1.py",
+      "command": "python IMPERIUM_NEW_GENERATION/AGENT_IDE/PLAYWRIGHT/agent_ide_playwright_capture_v0_1.py --port 4173",
+      "inputs": [
+        "Running local projection server",
+        "Playwright CLI availability"
+      ],
+      "outputs": [
+        "playwright_screenshot_manifest.json",
+        "screenshots/*.png"
+      ],
+      "risk_level": "LOW",
+      "validation_route": "SELF_VALIDATOR/playwright_capture_receipt.json",
+      "last_receipt_or_report_path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/REPORTS/TASK-NEWGEN-AGENT-IDE-DUAL-SURFACE-SELF-VALIDATOR-BLOCK-FOUNDATION-PC-V0_1/playwright_capture_receipt.json"
+    },
+    {
+      "tool_id": "AGENT_IDE_BLOCK_REGISTRY_CHECKER_V0_1",
+      "owner_organ": "AGENT_IDE+MECHANICUS",
+      "path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/TOOLS/agent_ide_block_registry_checker_v0_1.py",
+      "command": "python IMPERIUM_NEW_GENERATION/AGENT_IDE/TOOLS/agent_ide_block_registry_checker_v0_1.py",
+      "inputs": [
+        "BLOCK_FOUNDATION/*.json"
+      ],
+      "outputs": [
+        "block_registry_check_receipt.json"
+      ],
+      "risk_level": "LOW",
+      "validation_route": "TOOLS/block_registry_check_receipt.json",
+      "last_receipt_or_report_path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/REPORTS/TASK-NEWGEN-AGENT-IDE-DUAL-SURFACE-SELF-VALIDATOR-BLOCK-FOUNDATION-PC-V0_1/block_registry_check_receipt.json"
+    }
+  ]
+}

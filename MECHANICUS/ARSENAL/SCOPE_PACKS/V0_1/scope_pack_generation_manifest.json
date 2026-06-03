@@ -1,0 +1,108 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "generated_at_utc": "2026-05-24T23:34:05Z",
+  "exporter": "mechanicus_capability_scope_exporter_v0_2.py",
+  "repo_root": "E:\\IMPERIUM",
+  "source_registry": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json",
+  "source_usage_map": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/FIELD_GUIDES/BATCH_001/ARSENAL_AGENT_USAGE_MAP_BATCH_001.json",
+  "output_root": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1",
+  "scope_pack_schema": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/scope_pack_schema_v0_1.json",
+  "scope_pack_index_ru": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/SCOPE_PACKS_INDEX_RU.md",
+  "scope_pack_count": 7,
+  "scope_packs": [
+    {
+      "scope_id": "code_quality_task",
+      "filename": "scope_code_quality_task_v0_1.json",
+      "path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/scope_code_quality_task_v0_1.json",
+      "canon_allowed_count": 2,
+      "sandbox_allowed_count": 14,
+      "candidate_context_only_count": 1,
+      "owner_decision_required_count": 12,
+      "forbidden_count": 1
+    },
+    {
+      "scope_id": "json_schema_validation_task",
+      "filename": "scope_json_schema_validation_task_v0_1.json",
+      "path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/scope_json_schema_validation_task_v0_1.json",
+      "canon_allowed_count": 3,
+      "sandbox_allowed_count": 6,
+      "candidate_context_only_count": 5,
+      "owner_decision_required_count": 12,
+      "forbidden_count": 0
+    },
+    {
+      "scope_id": "mechanicus_tool_validation_task",
+      "filename": "scope_mechanicus_tool_validation_task_v0_1.json",
+      "path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/scope_mechanicus_tool_validation_task_v0_1.json",
+      "canon_allowed_count": 3,
+      "sandbox_allowed_count": 5,
+      "candidate_context_only_count": 11,
+      "owner_decision_required_count": 12,
+      "forbidden_count": 0
+    },
+    {
+      "scope_id": "controlled_tool_provision_task",
+      "filename": "scope_controlled_tool_provision_task_v0_1.json",
+      "path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/scope_controlled_tool_provision_task_v0_1.json",
+      "canon_allowed_count": 2,
+      "sandbox_allowed_count": 14,
+      "candidate_context_only_count": 3,
+      "owner_decision_required_count": 12,
+      "forbidden_count": 0
+    },
+    {
+      "scope_id": "repo_hygiene_task",
+      "filename": "scope_repo_hygiene_task_v0_1.json",
+      "path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/scope_repo_hygiene_task_v0_1.json",
+      "canon_allowed_count": 1,
+      "sandbox_allowed_count": 5,
+      "candidate_context_only_count": 12,
+      "owner_decision_required_count": 12,
+      "forbidden_count": 0
+    },
+    {
+      "scope_id": "taskpack_generation_task",
+      "filename": "scope_taskpack_generation_task_v0_1.json",
+      "path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/scope_taskpack_generation_task_v0_1.json",
+      "canon_allowed_count": 1,
+      "sandbox_allowed_count": 3,
+      "candidate_context_only_count": 13,
+      "owner_decision_required_count": 12,
+      "forbidden_count": 0
+    },
+    {
+      "scope_id": "visual_readiness_task",
+      "filename": "scope_visual_readiness_task_v0_1.json",
+      "path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/scope_visual_readiness_task_v0_1.json",
+      "canon_allowed_count": 0,
+      "sandbox_allowed_count": 2,
+      "candidate_context_only_count": 13,
+      "owner_decision_required_count": 12,
+      "forbidden_count": 2
+    }
+  ],
+  "missing_focus_capabilities_by_scope": {
+    "code_quality_task": [],
+    "json_schema_validation_task": [],
+    "mechanicus_tool_validation_task": [],
+    "controlled_tool_provision_task": [],
+    "repo_hygiene_task": [],
+    "taskpack_generation_task": [],
+    "visual_readiness_task": []
+  },
+  "reserved_owner_decision_capabilities": [
+    "CLOUD_LLM_ADAPTERS_CLOUD_MODEL_ROUTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_CLOUD_RECEIPT_MODEL_CANDIDATE",
+    "CLOUD_LLM_ADAPTERS_COST_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_OPENAI_COMPATIBLE_API_ADAPTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_PRIVACY_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_SECRET_POLICY_GATE",
+    "LOCAL_LLM_LLAMACPP_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LM_STUDIO_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LOCAL_MODEL_RUNNER_RESERVED",
+    "LOCAL_LLM_MODEL_CAPABILITY_CARD_PATTERN",
+    "LOCAL_LLM_OLLAMA_RESERVED_CANDIDATE",
+    "LOCAL_LLM_OPENAI_COMPATIBLE_LOCAL_ENDPOINT_PATTERN"
+  ],
+  "last_generated_from_commit": "5d22657b2fe8a319c9a4636549c53bfcc2ffa119"
+}

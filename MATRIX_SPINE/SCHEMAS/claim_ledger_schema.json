@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Claim Ledger Entry Schema",
+  "type": "object",
+  "required": [
+    "claim_id",
+    "claim",
+    "owner_organ",
+    "capability_class",
+    "evidence_level",
+    "evidence_path",
+    "replay_command",
+    "cap_applied",
+    "red_team_verdict",
+    "final_claim_status"
+  ],
+  "properties": {
+    "claim_id": {
+      "type": "string"
+    },
+    "claim": {
+      "type": "string"
+    },
+    "owner_organ": {
+      "type": "string"
+    },
+    "capability_class": {
+      "type": "string",
+      "enum": [
+        "LOCAL_SCRIPT_FIRST",
+        "LOCAL_MANUAL_COMMAND",
+        "CANDIDATE_SCRIPT_FIRST",
+        "AGENT_REASONING_ONLY",
+        "EXTERNAL_RESEARCH",
+        "OWNER_MANUAL_CONFIRMATION",
+        "FUTURE_CAPABILITY_GAP"
+      ]
+    },
+    "evidence_level": {
+      "type": "string"
+    },
+    "evidence_path": {
+      "type": "string"
+    },
+    "replay_command": {
+      "type": "string"
+    },
+    "cap_applied": {
+      "type": "string"
+    },
+    "red_team_verdict": {
+      "type": "string"
+    },
+    "final_claim_status": {
+      "type": "string",
+      "enum": [
+        "TRUE",
+        "TRUE_WITH_SCOPE",
+        "PARTIAL",
+        "OVERCLAIM",
+        "UNKNOWN",
+        "FALSE_IF_CLAIMED",
+        "UNPROVEN",
+        "BLOCKED_BY_CAP"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

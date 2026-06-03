@@ -1,0 +1,61 @@
+{
+  "schema_version": "TASK_VOLUME_CONTROL_V0_1",
+  "generated_at_utc": "2026-05-20T01:57:40.273492Z",
+  "task_id": "TASK-20260520-MECHANICUS-VISUAL-SHELL-V0_2",
+  "task_size_class": "MEGA",
+  "context_budget_class": "EXTREME",
+  "organ_count": 1,
+  "expected_file_touch_class": "FILES_80_PLUS",
+  "expected_command_count_class": "CMDS_140_PLUS",
+  "expected_evidence_volume_class": "EVIDENCE_EXTREME",
+  "accuracy_risk": "CRITICAL",
+  "checkpoint_required": true,
+  "checkpoint_cadence": "PER_STAGE",
+  "split_required_if": [
+    "scope spans 3 or more organs",
+    "required checks exceed 5 commands",
+    "evidence references exceed one report package",
+    "mixed control/docs/cli/report planes exceed single-pass safety"
+  ],
+  "continuation_protocol_required": true,
+  "recommended_execution_phases": [
+    {
+      "phase_id": "S1",
+      "phase_name": "control_design",
+      "goal": "task control docs and schemas",
+      "checkpoint_gate": true
+    },
+    {
+      "phase_id": "S2",
+      "phase_name": "builders",
+      "goal": "CLI tools and skeleton generators",
+      "checkpoint_gate": true
+    },
+    {
+      "phase_id": "S3",
+      "phase_name": "validation",
+      "goal": "compile/help/example checks",
+      "checkpoint_gate": true
+    },
+    {
+      "phase_id": "S4",
+      "phase_name": "organ_alignment",
+      "goal": "responsibility alignment",
+      "checkpoint_gate": true
+    },
+    {
+      "phase_id": "S5",
+      "phase_name": "report_and_release",
+      "goal": "reports, receipts, commit",
+      "checkpoint_gate": true
+    }
+  ],
+  "classification_trace": {
+    "scope_count": 8,
+    "required_checks_count": 9,
+    "organs_detected": [
+      "MECHANICUS_AGENT"
+    ],
+    "source_schema_version": "TASK_CONTRACT_V0_1"
+  }
+}

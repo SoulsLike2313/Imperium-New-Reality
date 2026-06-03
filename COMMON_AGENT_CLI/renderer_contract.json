@@ -1,0 +1,23 @@
+{
+  "version": "0.1.0",
+  "renderer_truth": {
+    "allowed_values": [
+      "rich",
+      "ansi_fallback"
+    ],
+    "selection_rules": [
+      {
+        "if": "python rich import succeeds and rich rendering path is active",
+        "renderer": "rich"
+      },
+      {
+        "if": "rich import fails or rich rendering path disabled",
+        "renderer": "ansi_fallback"
+      }
+    ],
+    "forbidden_claims": [
+      "renderer=rich when rich import fails",
+      "renderer=rich when only plain text fallback path is used"
+    ]
+  }
+}

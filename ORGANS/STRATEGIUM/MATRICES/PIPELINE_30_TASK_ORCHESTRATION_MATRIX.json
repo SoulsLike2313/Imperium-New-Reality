@@ -1,0 +1,81 @@
+{
+  "matrix_id": "PIPELINE_30_TASK_ORCHESTRATION_MATRIX",
+  "version": "0.1-candidate-seed",
+  "owner_organ": "Strategium",
+  "support_organs": [
+    "Administratum",
+    "Mechanicus",
+    "Inquisition",
+    "Schola Imperialis"
+  ],
+  "purpose": "Future domain seed for high-discipline orchestration of 30+ tasks toward stable PASS_WITH_WARNINGS/PASS gating.",
+  "used_by": [
+    "STRATEGIUM",
+    "OWNER",
+    "SERVITOR",
+    "SCHOLA",
+    "INQUISITOR"
+  ],
+  "required_questions": [
+    "What is the source of truth for this claim?",
+    "Which organ owns the rule?",
+    "What evidence level proves it?",
+    "What cap applies if evidence is missing?",
+    "What would make this claim fake-green?"
+  ],
+  "pass_criteria": [
+    "All criteria include owner value, evidence, and PASS/WARN/BLOCK logic.",
+    "Current status is explicit per criterion.",
+    "No real-use execution claim is made without required evidence."
+  ],
+  "warn_criteria": [
+    "Some criteria are still UNKNOWN but improvement hooks exist.",
+    "Pilot is preflight-ready only with warnings/caps."
+  ],
+  "block_criteria": [
+    "Required criterion has BLOCK state.",
+    "Matrix claims active production capability without evidence."
+  ],
+  "fake_green_flags": [
+    "CLAIM_WITHOUT_REPLAY",
+    "AGENT_REASONING_AS_SYSTEM_CAPABILITY",
+    "STALE_RECEIPT",
+    "DIRTY_STATE_HIDDEN",
+    "OWNER_DECISION_MISSING"
+  ],
+  "evidence_requirements": [
+    "NEXT_PIPELINE_HANDOFF receipts",
+    "claim ledger chain"
+  ],
+  "current_status": "CANDIDATE_NOT_CANON",
+  "next_action": "Keep as candidate seed; connect to one safe pilot design task without active execution claims.",
+  "criteria": [
+    {
+      "criterion_id": "P30-01",
+      "plain_language_meaning": "Pipelines maintain handoff continuity and cap visibility across long chains.",
+      "owner_value": "Scalable campaign execution with low context-loss.",
+      "owner_organ": "Administratum",
+      "support_organs": [
+        "Strategium",
+        "Schola Imperialis",
+        "Inquisition"
+      ],
+      "evidence_required": [
+        "NEXT_PIPELINE_HANDOFF receipts",
+        "claim ledger chain"
+      ],
+      "pass_logic": "Each task outputs handoff + cap state + next gate with no contradictions.",
+      "warn_logic": "Handoffs exist but incomplete chain validation.",
+      "block_logic": "Pipeline claims 30+ orchestration without continuity evidence.",
+      "current_status": "CANDIDATE_SEED",
+      "next_improvement_hook": "Create continuity checker for N-task chain integrity."
+    }
+  ],
+  "candidate_repo_location": "IMPERIUM_NEW_GENERATION/ORGANS/STRATEGIUM/MATRICES/PIPELINE_30_TASK_ORCHESTRATION_MATRIX.md",
+  "seed_status": "CANDIDATE_SEED",
+  "not_active_claims": [
+    "No real-use execution claim.",
+    "No WARP unlock claim.",
+    "No production finance/freelance claim."
+  ]
+}

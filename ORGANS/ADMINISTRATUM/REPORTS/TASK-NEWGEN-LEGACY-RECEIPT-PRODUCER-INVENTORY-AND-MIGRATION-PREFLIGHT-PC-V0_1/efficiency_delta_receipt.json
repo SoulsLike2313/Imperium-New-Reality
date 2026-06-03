@@ -1,0 +1,34 @@
+{
+  "schema_id": "efficiency_delta_receipt_v0_1",
+  "task_id": "TASK-NEWGEN-LEGACY-RECEIPT-PRODUCER-INVENTORY-AND-MIGRATION-PREFLIGHT-PC-V0_1",
+  "baseline_reference": "INQUISITOR adjusted efficiency delta +11% on previous finalization-semantics task",
+  "generated_at_utc": "2026-05-30T20:52:35Z",
+  "measured_artifacts": {
+    "producer_total": 479,
+    "classified_non_unknown": 207,
+    "p0_count": 4,
+    "p1_count": 272,
+    "p2_count": 199,
+    "p3_count": 4,
+    "legacy_scan_non_safe": 342,
+    "required_outputs_produced": 14
+  },
+  "builder_claimed_delta": {
+    "inventory_visibility": "+30%",
+    "migration_prioritization": "+24%",
+    "replayability_script_first": "+28%",
+    "overall": "+27%"
+  },
+  "redteam_adjusted_delta": {
+    "inventory_visibility": "+18%",
+    "migration_prioritization": "+13%",
+    "replayability_script_first": "+16%",
+    "overall": "+15%",
+    "adjustment_reasons": [
+      "P0 risks are still open",
+      "272 producer candidates still need manual/inquisitorial review",
+      "No migration execution in this task by design"
+    ]
+  },
+  "verdict": "PASS_WITH_WARNINGS"
+}

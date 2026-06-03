@@ -1,0 +1,86 @@
+{
+  "rule_set": "repo_zone_classification_rules_v1",
+  "default_zone": "DIRTY_UNKNOWN",
+  "zone_patterns": [
+    {
+      "zone": "CANON_CORE",
+      "prefixes": [
+        "ORGANS/"
+      ],
+      "trust": "CANON_TRUSTED"
+    },
+    {
+      "zone": "SANCTUM_UI",
+      "prefixes": [
+        "ORGANS/SANCTUM/"
+      ],
+      "trust": "CANON_TRUSTED"
+    },
+    {
+      "zone": "SECOND_BRAIN",
+      "prefixes": [
+        "IMPERIUM_TEST_VERSION/SECOND_BRAIN/"
+      ],
+      "trust": "TEST_RUNTIME"
+    },
+    {
+      "zone": "TEST_VERSION",
+      "prefixes": [
+        "IMPERIUM_TEST_VERSION/"
+      ],
+      "trust": "TEST_RUNTIME"
+    },
+    {
+      "zone": "NEW_GENERATION_SANDBOX",
+      "prefixes": [
+        "IMPERIUM_NEW_GENERATION/"
+      ],
+      "trust": "SANDBOX_TRUSTED_IF_CLEAN"
+    },
+    {
+      "zone": "RUNTIME_OUTPUT",
+      "prefixes": [
+        "IMPERIUM_NEW_GENERATION/RUNS/",
+        "IMPERIUM_NEW_GENERATION/RUNTIME/"
+      ],
+      "trust": "RUNTIME_NOT_CANON"
+    },
+    {
+      "zone": "LOCAL_PRIVATE",
+      "prefixes": [
+        "IMPERIUM_CONTEXT/",
+        "E:/IMPERIUM_CONTEXT/"
+      ],
+      "trust": "PRIVATE_UNTRACKED"
+    }
+  ],
+  "artifact_markers": {
+    "RECEIPT": [
+      "receipt",
+      "receipts"
+    ],
+    "REPORT": [
+      "report",
+      "reports"
+    ],
+    "POLICY": [
+      "policy",
+      "POLICIES"
+    ],
+    "DOCTRINE": [
+      "doctrine",
+      "DOCTRINARIUM"
+    ],
+    "SCHEMA": [
+      "schema",
+      ".json"
+    ],
+    "SCRIPT": [
+      ".py",
+      ".ps1",
+      ".sh",
+      ".bat",
+      ".cmd"
+    ]
+  }
+}

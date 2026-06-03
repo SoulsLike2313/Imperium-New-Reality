@@ -1,0 +1,39 @@
+{
+  "task_id": "TASK-NEGATIVE-FIXTURE",
+  "target_commit_for_review": "",
+  "base_head": "c10f2b1c46d19e6a7614e25c4eff57b46b8baef5",
+  "implementation_head": "3aa07798217fff0f594214d203e1783307a03a5e",
+  "proof_head": "9f4d2438c8ec51f42574e4cf6b66c24dc9221607",
+  "closure_bundle_head": "75cf5f87a59688d2bec2584ec3f3eb5460094f8a",
+  "final_verifier_head": "75cf5f87a59688d2bec2584ec3f3eb5460094f8a",
+  "remote_head_after_bundle": "75cf5f87a59688d2bec2584ec3f3eb5460094f8a",
+  "claim_ledger_path": "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/TEMPLATES/CLAIM_LEDGER_TEMPLATE.jsonl",
+  "independent_replay_status": "NONE",
+  "commit_urls": {
+    "implementation": "https://github.com/example/commit/impl",
+    "proof": "https://github.com/example/commit/proof",
+    "closure_bundle": "https://github.com/example/commit/closure",
+    "remote": "https://github.com/example/commit/remote",
+    "final_verifier": "https://github.com/example/commit/verifier"
+  },
+  "changed_paths_summary": [
+    "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/**"
+  ],
+  "primary_report_paths": [
+    "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/example/matrix_spine_validation_summary.json"
+  ],
+  "replay_commands": [
+    "bash IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_matrix_spine_validation.sh"
+  ],
+  "servitor_claimed_efficiency_delta": {
+    "mechanicus": 10,
+    "inquisition": 11,
+    "officio": 7,
+    "administratum": 8,
+    "overall": 13
+  },
+  "known_caps_or_warnings": [
+    "CAP_NO_INDEPENDENT_REPLAY"
+  ],
+  "next_allowed_task_candidate": "TASKPACK_INQUISITOR_COMMIT_MATRIX_SEMANTIC_REVIEW_V0_1.zip"
+}

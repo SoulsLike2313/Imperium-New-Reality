@@ -1,0 +1,101 @@
+{
+  "matrix_id": "GHOST_EVOLVE_V2_EXECUTION_LAW_MATRIX",
+  "version": "0.4-candidate",
+  "owner_organ": "Doctrinarium",
+  "support_organs": [
+    "Inquisition",
+    "Mechanicus",
+    "Administratum"
+  ],
+  "purpose": "Defines Ghost_Evolve V2 law: entry, organ questioning, build/red-team switch, capability split, reusable residue.",
+  "used_by": [
+    "INQUISITOR",
+    "GPT_LOGOS",
+    "SERVITOR",
+    "SCHOLA"
+  ],
+  "inputs": [
+    "declared_HEAD",
+    "taskpack",
+    "organ_authority_files",
+    "receipts",
+    "Owner_decisions"
+  ],
+  "outputs": [
+    "GHOST_EVOLVE_V2_EXECUTION_LAW_MATRIX.md",
+    "GHOST_EVOLVE_V2_EXECUTION_LAW_MATRIX.json",
+    "verdict_or_route_update"
+  ],
+  "required_questions": [
+    "What is the source of truth for this claim?",
+    "Which organ owns the rule?",
+    "What evidence level proves it?",
+    "What cap applies if evidence is missing?",
+    "What would make this claim fake-green?"
+  ],
+  "required_fields": [
+    "matrix_id",
+    "owner_organ",
+    "purpose",
+    "inputs",
+    "outputs",
+    "required_questions",
+    "pass_criteria",
+    "warn_criteria",
+    "block_criteria",
+    "fake_green_flags",
+    "score_caps",
+    "evidence_requirements",
+    "candidate_repo_location",
+    "current_status",
+    "next_action"
+  ],
+  "pass_criteria": [
+    "All required fields present",
+    "Owner organ declared",
+    "Evidence level E3+ for runtime claims or explicit cap",
+    "Fake-green flags reviewed"
+  ],
+  "warn_criteria": [
+    "Candidate location only",
+    "Evidence below E3 but not claiming runtime",
+    "Owner decision pending"
+  ],
+  "block_criteria": [
+    "Owner unknown",
+    "Capability claimed without evidence",
+    "Contradicts declared HEAD or dirty/provenance state"
+  ],
+  "fake_green_flags": [
+    "CLAIM_WITHOUT_REPLAY",
+    "AGENT_REASONING_AS_SYSTEM_CAPABILITY",
+    "STALE_RECEIPT",
+    "DIRTY_STATE_HIDDEN",
+    "OWNER_DECISION_MISSING"
+  ],
+  "score_caps": [
+    {
+      "if": "evidence_level <= E1_FILE_EXISTS",
+      "cap": 35
+    },
+    {
+      "if": "runtime_claim_without_replay",
+      "cap": 40
+    },
+    {
+      "if": "owner_decision_required_but_missing",
+      "cap": 60
+    }
+  ],
+  "evidence_requirements": [
+    "E1 minimum for existence",
+    "E3 for executed behavior",
+    "E4 for stable pass",
+    "E5 for audit confidence",
+    "E6 for Owner-facing UX acceptance"
+  ],
+  "receipt_schema_reference": "SCHEMAS/matrix_definition_schema.json",
+  "expected_repo_location_candidate": "IMPERIUM_NEW_GENERATION/ORGANS/DOCTRINARIUM/MATRICES/GHOST_EVOLVE_V2_EXECUTION_LAW_MATRIX.md",
+  "current_status": "CANDIDATE",
+  "next_action": "Owner review -> V0.5 correction -> selected organ placement task"
+}

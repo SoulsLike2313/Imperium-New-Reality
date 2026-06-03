@@ -1,0 +1,57 @@
+{
+  "visual_unit_id": "SANCTUM.COMMAND_SURFACE",
+  "parent": "SANCTUM.CONTROL_SURFACES",
+  "type": "command_surface",
+  "visual_owner": "SANCTUM_SHELL",
+  "truth_owner": "OFFICIO_AGENTIS_AGENT",
+  "data_source_owner": "SANCTUM_STATE_BUILDER",
+  "organ_subject": "SYSTEM",
+  "implementation_owner": "VISUAL_FOUNDRY",
+  "purpose": "Command dispatch surface with backend allowlist enforcement.",
+  "backend_source": {
+    "type": "api_actions",
+    "paths": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/api/actions.py",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/static/app.js"
+    ]
+  },
+  "backend_source_status": "candidate",
+  "allowed_states": [
+    "ready",
+    "pending",
+    "blocked",
+    "error",
+    "unknown"
+  ],
+  "truth_rules": [
+    "Unallowlisted commands must render BLOCKED with reason."
+  ],
+  "visual_tokens": "command_surface_tokens",
+  "texture": "glass_holograph_panel",
+  "glow": {
+    "enabled": true,
+    "color_token": "law_seal_amber",
+    "default_intensity": 0.25
+  },
+  "motion": {
+    "enabled": true,
+    "animation": "panel_slide_right",
+    "perf_tier": "CHEAP",
+    "disable_in_reduced_motion": true
+  },
+  "perf_tier": "CHEAP",
+  "proof_requirements": [
+    "Backend allowlist source referenced in truth map."
+  ],
+  "integration_status": "candidate",
+  "fake_green_risks": [
+    "Command appears executable despite backend block."
+  ],
+  "owner_group": "SANCTUM",
+  "owner_organ": "OFFICIO_AGENTIS_AGENT",
+  "accessibility_rules": [
+    "State must not be encoded by color alone.",
+    "RU/EN labels must remain explicit for status tags."
+  ],
+  "change_safety": "Topology hardening scope only; no final UI readiness claims."
+}

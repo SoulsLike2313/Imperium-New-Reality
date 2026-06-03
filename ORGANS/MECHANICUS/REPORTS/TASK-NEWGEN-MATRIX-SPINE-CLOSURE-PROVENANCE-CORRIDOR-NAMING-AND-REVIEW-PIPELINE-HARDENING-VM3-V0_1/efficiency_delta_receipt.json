@@ -1,0 +1,101 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1",
+  "timestamp_utc": "2026-05-30T14:58:44Z",
+  "base_head": "935dc33b52e8915aae71611fad48c91135c4e800",
+  "implementation_head": "",
+  "closure_head": "",
+  "baseline": {
+    "mechanicus_validator_readiness": 64,
+    "inquisition_fake_green_resistance": 41,
+    "officio_entry_contract_readiness": 44,
+    "administratum_receipt_closure_readiness": 46,
+    "overall_candidate_usefulness": 69
+  },
+  "after": {
+    "mechanicus_validator_readiness": 84,
+    "inquisition_fake_green_resistance": 62,
+    "officio_entry_contract_readiness": 55,
+    "administratum_receipt_closure_readiness": 60,
+    "overall_candidate_usefulness": 88
+  },
+  "delta": {
+    "mechanicus_validator_readiness": 20,
+    "inquisition_fake_green_resistance": 21,
+    "officio_entry_contract_readiness": 11,
+    "administratum_receipt_closure_readiness": 14,
+    "overall_candidate_usefulness": 19
+  },
+  "scales": {
+    "mechanicus_validator_readiness": {
+      "before": 64,
+      "after": 84,
+      "delta": 20,
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json"
+      ]
+    },
+    "inquisition_fake_green_resistance": {
+      "before": 41,
+      "after": 62,
+      "delta": 21,
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json"
+      ]
+    },
+    "officio_entry_contract_readiness": {
+      "before": 44,
+      "after": 55,
+      "delta": 11,
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/synthetic_corridor_receipt.json"
+      ]
+    },
+    "administratum_receipt_closure_readiness": {
+      "before": 46,
+      "after": 60,
+      "delta": 14,
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/synthetic_corridor_receipt.json"
+      ]
+    },
+    "overall_candidate_usefulness": {
+      "before": 69,
+      "after": 88,
+      "delta": 19,
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/synthetic_corridor_receipt.json"
+      ]
+    }
+  },
+  "verdict": "PASS_WITH_WARNINGS",
+  "confidence": "HIGH",
+  "caps_triggered": [],
+  "evidence": [
+    {
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json",
+      "negative_fixture_total": 18,
+      "negative_fixture_detected": 18,
+      "fail_count": 0,
+      "warn_count": 0
+    },
+    {
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/synthetic_corridor_receipt.json",
+      "passed_steps": 5,
+      "overall": "PASS"
+    },
+    {
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/hard_red_team_verdict.json",
+      "read_ok": true,
+      "caps_detected": [
+        "CAP_NO_INDEPENDENT_REPLAY"
+      ],
+      "error": ""
+    }
+  ],
+  "notes": [
+    "Five-scale score is deterministic and stdlib-only.",
+    "Synthetic corridor is accepted by taskpack and marked synthetic-only.",
+    "Red-team caps are consumed by scorer penalties before verdict emission."
+  ]
+}

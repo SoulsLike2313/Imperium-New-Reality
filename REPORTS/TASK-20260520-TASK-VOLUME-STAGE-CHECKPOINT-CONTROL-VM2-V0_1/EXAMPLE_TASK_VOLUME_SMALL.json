@@ -1,0 +1,34 @@
+{
+  "schema_version": "TASK_VOLUME_CONTROL_V0_1",
+  "generated_at_utc": "2026-05-19T23:55:06.036480Z",
+  "task_id": "TASK-EXAMPLE-SMALL-V0_1",
+  "task_size_class": "SMALL",
+  "context_budget_class": "LOW",
+  "organ_count": 1,
+  "expected_file_touch_class": "FILES_1_10",
+  "expected_command_count_class": "CMDS_1_20",
+  "expected_evidence_volume_class": "EVIDENCE_LOW",
+  "accuracy_risk": "LOW",
+  "checkpoint_required": false,
+  "checkpoint_cadence": "END_ONLY",
+  "split_required_if": [
+    "scope spans 3 or more organs",
+    "required checks exceed 5 commands",
+    "evidence references exceed one report package"
+  ],
+  "continuation_protocol_required": false,
+  "recommended_execution_phases": [
+    {
+      "phase_id": "S1",
+      "phase_name": "single_pass",
+      "goal": "bounded execution and report",
+      "checkpoint_gate": true
+    }
+  ],
+  "classification_trace": {
+    "scope_count": 1,
+    "required_checks_count": 1,
+    "organs_detected": [],
+    "source_schema_version": "TASK_CONTRACT_V0_1"
+  }
+}

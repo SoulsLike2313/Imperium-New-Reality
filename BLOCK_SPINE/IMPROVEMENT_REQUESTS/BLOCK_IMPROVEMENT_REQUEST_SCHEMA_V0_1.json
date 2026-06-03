@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://imperium.local/schemas/block_improvement_request.schema.json",
+  "title": "Block Improvement Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "source_block",
+    "pain",
+    "evidence",
+    "requested_improvement",
+    "expected_output",
+    "risk",
+    "owner_organ",
+    "support_organs",
+    "validation_needed",
+    "context_needed",
+    "success_criteria"
+  ],
+  "properties": {
+    "request_id": { "type": "string" },
+    "source_block": { "type": "string" },
+    "pain": { "type": "string", "minLength": 8 },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    },
+    "requested_improvement": { "type": "string", "minLength": 8 },
+    "expected_output": { "type": "string", "minLength": 8 },
+    "risk": {
+      "type": "object",
+      "required": ["level", "notes"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "type": "string", "enum": ["LOW", "MEDIUM", "HIGH"] },
+        "notes": { "type": "string" }
+      }
+    },
+    "owner_organ": { "type": "string" },
+    "support_organs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "validation_needed": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "context_needed": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "success_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" }
+    }
+  }
+}

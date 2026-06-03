@@ -1,0 +1,77 @@
+{
+  "schema_id": "newgen_organ_route_phases_v0_1",
+  "version": "0.1",
+  "status": "DRAFT",
+  "task_id": "TASK-20260524-NEWGEN-OWNER-ORGAN-DEPENDENCY-MAP-INGEST-VM3-V0_1",
+  "phases": [
+    {
+      "phase_id": "front_door",
+      "purpose": "agent entry, law and role boot",
+      "organs": [
+        "DOCTRINARIUM",
+        "OFFICIO_AGENTIS"
+      ],
+      "entry_required": true
+    },
+    {
+      "phase_id": "task_routing_registration",
+      "purpose": "task route framing, registration, continuity",
+      "organs": [
+        "ASTRONOMICON",
+        "ADMINISTRATUM"
+      ],
+      "entry_required": true
+    },
+    {
+      "phase_id": "capability_execution",
+      "purpose": "tool/capability admission and execution support",
+      "organs": [
+        "MECHANICUS"
+      ],
+      "entry_required": true
+    },
+    {
+      "phase_id": "audit_guard",
+      "purpose": "dirt/duplicate/fake-green/scope protection",
+      "organs": [
+        "INQUISITION"
+      ],
+      "entry_required": true
+    },
+    {
+      "phase_id": "learning_training",
+      "purpose": "lessons and training decomposition",
+      "organs": [
+        "SCHOLA"
+      ],
+      "entry_required": false
+    },
+    {
+      "phase_id": "strategy_development",
+      "purpose": "large strategy, resource and development routing",
+      "organs": [
+        "STRATEGIUM"
+      ],
+      "entry_required": false
+    },
+    {
+      "phase_id": "future_core_guard",
+      "purpose": "future protection/core absorption layers",
+      "organs": [
+        "CUSTODES",
+        "THRONE"
+      ],
+      "entry_required": false,
+      "implementation_status": "reserved_not_implemented_in_this_task"
+    }
+  ],
+  "route_order": [
+    "front_door",
+    "task_routing_registration",
+    "capability_execution",
+    "audit_guard",
+    "learning_training",
+    "strategy_development",
+    "future_core_guard"
+  ]
+}

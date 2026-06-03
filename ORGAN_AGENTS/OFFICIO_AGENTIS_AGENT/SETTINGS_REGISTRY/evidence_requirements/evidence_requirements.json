@@ -1,0 +1,72 @@
+{
+  "setting_id": "SET-EVIDENCE-REQUIREMENTS-V0_1",
+  "title": "Evidence Requirements",
+  "version": "v0_1",
+  "state": "ACTIVE",
+  "scope": "claim to evidence binding",
+  "applies_to_roles": [
+    "SERVITOR",
+    "LOGOS_PRIME",
+    "LOGOS_SPECULUM"
+  ],
+  "applies_to_modes": [
+    "EXECUTOR",
+    "AUDITOR",
+    "ARCHITECT",
+    "REPAIRER"
+  ],
+  "rules": [
+    {
+      "claim_type": "visual_change",
+      "required_evidence": [
+        "before_after_screenshot_or_blocked_marker"
+      ]
+    },
+    {
+      "claim_type": "git_clean",
+      "required_evidence": [
+        "git status --short output"
+      ]
+    },
+    {
+      "claim_type": "push",
+      "required_evidence": [
+        "remote head hash or github commit url"
+      ]
+    },
+    {
+      "claim_type": "schema",
+      "required_evidence": [
+        "schema validator output"
+      ]
+    },
+    {
+      "claim_type": "response_contract",
+      "required_evidence": [
+        "compliance check output"
+      ]
+    },
+    {
+      "claim_type": "done_claim",
+      "required_evidence": [
+        "requirement matrix row and evidence paths"
+      ]
+    }
+  ],
+  "machine_rule": {
+    "done_requires_evidence": true
+  },
+  "human_summary": "Every claim type maps to mandatory evidence.",
+  "acceptance_tests": [
+    "DONE without evidence is rejected"
+  ],
+  "evidence_required": [
+    "compliance check output",
+    "requirement matrix"
+  ],
+  "dependencies": [],
+  "conflicts_with": [],
+  "supersedes": [],
+  "rollback_plan": "restore previous evidence map and rerun checks",
+  "owner_approval_required": true
+}

@@ -1,0 +1,22 @@
+{
+  "receipt_id": "task-newgen-mechanicus-controlled-tool-provision-pc-v0_1:jsonschema:install",
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+  "tool": "jsonschema",
+  "package": "jsonschema",
+  "install_command": "python -m pip install --user jsonschema",
+  "started_at_utc": "2026-05-24T19:34:13Z",
+  "finished_at_utc": "2026-05-24T19:34:23Z",
+  "exit_code": 0,
+  "stdout_excerpt": "Collecting jsonschema\n  Using cached jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)\nRequirement already satisfied: attrs>=22.2.0 in c:\\users\\pc\\appdata\\local\\programs\\python\\python312\\lib\\site-packages (from jsonschema) (25.4.0)\nCollecting jsonschema-specifications>=2023.03.6 (from jsonschema)\n  Using cached jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)\nCollecting referencing>=0.28.4 (from jsonschema)\n  Using cached referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)\nCollecting rpds-py>=0.25.0 (from jsonschema)\n  Downloading rpds_py-0.30.0-cp312-cp312-win_amd64.whl.metadata (4.2 kB)\nRequirement already satisfied: typing-extensions>=4.4.0 in c:\\users\\pc\\appdata\\local\\programs\\python\\python312\\lib\\site-packages (from referencing>=0.28.4->jsonschema) (4.15.0)\nUsing cached jsonschema-4.26.0-py3-none-any.whl (90 kB)\nUsing cached jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)\nUsing cached referencing-0.37.0-py3-none-any.whl (26 kB)\nDownloading rpds_py-0.30.0-cp312-cp312-win_amd64.whl (240 kB)\nInstalling collected packages: rpds-py, referencing, jsonschema-specifications, jsonschema\nSuccessfully installed jsonschema-4.26.0 jsonschema-specificat...<truncated>",
+  "stderr_excerpt": "WARNING: The script jsonschema.exe is installed in 'C:\\Users\\PC\\AppData\\Roaming\\Python\\Python312\\Scripts' which is not on PATH.\n  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.\n\n[notice] A new release of pip is available: 25.0.1 -> 26.1.1\n[notice] To update, run: python.exe -m pip install --upgrade pip",
+  "network_used": true,
+  "install_scope": "user",
+  "install_performed": true,
+  "side_effects": [
+    "user-site pip installation attempted",
+    "no global installer used"
+  ],
+  "post_install_validation_command": "python -c \"import importlib.metadata as m; print(m.version('jsonschema'))\"",
+  "post_install_validation_result": "PASS",
+  "verdict": "PASS"
+}

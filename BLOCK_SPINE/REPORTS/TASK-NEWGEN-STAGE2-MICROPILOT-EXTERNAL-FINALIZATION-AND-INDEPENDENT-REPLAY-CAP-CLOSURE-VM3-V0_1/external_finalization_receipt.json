@@ -1,0 +1,38 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1",
+  "previous_task_id": "TASK-NEWGEN-STAGE2-MICROPILOT-VM3-CONTEXT-PACK-EXECUTION-V0_1",
+  "receipt_verdict": "PASS_WITH_WARNINGS",
+  "evidence_sources": [
+    {
+      "type": "OWNER_PROVIDED_EXTERNAL_REVIEW_SYNTHESIS",
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1/EXTRACTED/INPUTS/review_synthesis_from_owner_provided_external_reviews.json",
+      "accepted_head": "f3123e5b089821487d9891b156351ba4006f349c",
+      "inquisitor_verdict": "PASS_WITH_WARNINGS__STAGE2_MICROPILOT_ACCEPTED__CONTEXT_ECONOMY_PROVEN__CAPS_ACTIVE",
+      "speculum_verdict": "PASS_WITH_WARNINGS__CONTEXT_PACK_EXECUTION_REAL__MEASURABLE_CONTEXT_ECONOMY__BLOCK_CLEAN_PASS_EXTERNAL_FINALIZATION_INDEPENDENT_REPLAY_AND_STAGE_CAPS"
+    },
+    {
+      "type": "PREVIOUS_STAGE2_HARD_RED_TEAM",
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/BLOCK_SPINE/REPORTS/TASK-NEWGEN-STAGE2-MICROPILOT-VM3-CONTEXT-PACK-EXECUTION-V0_1/hard_red_team_verdict.json",
+      "sha256": "8a5a921c9bf70eddab4160641d6a1a60ba24f521cb37ea3e70dea636ddb40ba9",
+      "note": "Confirms prior PASS_WITH_WARNINGS and two target caps remained open at that stage."
+    },
+    {
+      "type": "PREVIOUS_STAGE2_COMMIT_PUSH_RECEIPT",
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/BLOCK_SPINE/REPORTS/TASK-NEWGEN-STAGE2-MICROPILOT-VM3-CONTEXT-PACK-EXECUTION-V0_1/commit_push_receipt.json",
+      "sha256": "1d921205fdff00e0495c0ab0902a2a2a840957a2ceee440f977149a22ddd5fbe",
+      "note": "Confirms previous stage closure at head 5fe85a57 with warnings."
+    },
+    {
+      "type": "CURRENT_REPO_TRUTH",
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/BLOCK_SPINE/REPORTS/TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1/repo_truth_probe.json",
+      "head": "f3123e5b089821487d9891b156351ba4006f349c",
+      "origin_master_equals_head": true
+    }
+  ],
+  "cap_status": "NARROWED",
+  "limitations": [
+    "Raw external review ZIP bundles are not present inside this VM3 repository.",
+    "Receipt is grounded in owner-provided external review synthesis plus local repo receipts.",
+    "This task does not claim external-environment replay execution."
+  ]
+}

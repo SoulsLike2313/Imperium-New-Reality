@@ -1,0 +1,26 @@
+{
+  "task_id": "TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-ROLE-PACK-AND-LOGOS-OWNER-AUDIT-CARD-CONTRACT-PC-V0_1",
+  "questions": [
+    {
+      "question": "What is source of truth?",
+      "answer": "Organ-owned contracts/schemas and taskpack-required report artifacts in this repository."
+    },
+    {
+      "question": "Which organ owns rule?",
+      "answer": "Administratum (continuity), Officio (response/role lane), Inquisition (clean-context), Mechanicus (validation)."
+    },
+    {
+      "question": "What evidence level proves behavior?",
+      "answer": "E1-E3: files created, parse checks executed, receipts written."
+    },
+    {
+      "question": "What cap applies if evidence missing?",
+      "answer": "At minimum WARN with fake-green prevention; clean PASS blocked."
+    },
+    {
+      "question": "What would make claim fake-green?",
+      "answer": "Claiming clean PASS while global caps remain or without validation receipts."
+    }
+  ],
+  "verdict": "PASS_WITH_WARNINGS"
+}

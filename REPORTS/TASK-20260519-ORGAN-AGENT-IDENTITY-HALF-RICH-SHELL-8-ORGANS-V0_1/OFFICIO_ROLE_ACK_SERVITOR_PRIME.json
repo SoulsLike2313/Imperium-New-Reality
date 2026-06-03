@@ -1,0 +1,87 @@
+{
+  "schema_version": "OFFICIO_ROLE_ACK_SERVITOR_PRIME_V0_1",
+  "generated_at_utc": "2026-05-19T19:18:57.8542428Z",
+  "task_id": "TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1",
+  "role": "SERVITOR_PRIME",
+  "role_pack_request": {
+    "command": "pack-build-role --agent SERVITOR_PRIME",
+    "runner": "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/TOOLS/officio_agent_runner.py",
+    "role_pack_zip": "E:\\IMPERIUM_CONTEXT\\LOCAL\\OFFICIO_AGENTIS\\RUNS\\run_20260519T191747807496Z_pack_build_role\\role_packs\\SERVITOR_PRIME_ROLE_PACK.zip",
+    "role_pack_manifest": "E:\\IMPERIUM_CONTEXT\\LOCAL\\OFFICIO_AGENTIS\\RUNS\\run_20260519T191747807496Z_pack_build_role\\role_pack_work\\SERVITOR_PRIME\\MANIFEST.json",
+    "role_pack_receipt": "E:\\IMPERIUM_CONTEXT\\LOCAL\\OFFICIO_AGENTIS\\RUNS\\run_20260519T191747807496Z_pack_build_role\\receipts\\pack_build_role_SERVITOR_PRIME_receipt.json",
+    "role_profile": "E:\\IMPERIUM_CONTEXT\\LOCAL\\OFFICIO_AGENTIS\\RUNS\\run_20260519T191747797502Z_role_get\\role_get\\SERVITOR_PRIME\\ROLE_PROFILE.md",
+    "execution_settings": "E:\\IMPERIUM_CONTEXT\\LOCAL\\OFFICIO_AGENTIS\\RUNS\\run_20260519T191747797502Z_settings_get\\settings_get\\SERVITOR_PRIME_EXECUTOR\\EXECUTION_SETTINGS.md",
+    "stop_conditions": "E:\\IMPERIUM_CONTEXT\\LOCAL\\OFFICIO_AGENTIS\\RUNS\\run_20260519T191747797502Z_settings_get\\settings_get\\SERVITOR_PRIME_EXECUTOR\\STOP_CONDITIONS.json",
+    "evidence_policy": "E:\\IMPERIUM_CONTEXT\\LOCAL\\OFFICIO_AGENTIS\\RUNS\\run_20260519T191747797502Z_settings_get\\settings_get\\SERVITOR_PRIME_EXECUTOR\\EVIDENCE_POLICY.md",
+    "response_contract": "E:\\IMPERIUM_CONTEXT\\LOCAL\\OFFICIO_AGENTIS\\RUNS\\run_20260519T191747797502Z_settings_get\\settings_get\\SERVITOR_PRIME_EXECUTOR\\RESPONSE_CONTRACT.md",
+    "task_acceptance_check": "E:\\IMPERIUM_CONTEXT\\LOCAL\\OFFICIO_AGENTIS\\RUNS\\run_20260519T191754490209Z_task_acceptance_check\\task_acceptance_check\\task_acceptance_check.json"
+  },
+  "role_pack_read_ack": {
+    "role_pack_md": "READ",
+    "execution_settings": "READ",
+    "stop_conditions": "READ",
+    "evidence_policy": "READ",
+    "response_contract": "READ",
+    "read_order": "READ"
+  },
+  "GATE_ACK": {
+    "task_id": "TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1",
+    "current_head": "676cb88570f2a028307f9a27fe2dfa50ef531ce1",
+    "gatepack_path": "ORGANS/DOCTRINARIUM/GATES/GATE_REGISTRY_V0_1.json",
+    "gatepack_sha256": "df1aec635b1f1b6619e9444768f7e88ffdfb8f6f88c9c62be959ea8dd212c149",
+    "read_gates": [
+      "GATE-U00-GIT-TRUTH",
+      "GATE-U01-ROLE-ACK",
+      "GATE-U02-SCOPE-BOUNDARY",
+      "GATE-U04-EVIDENCE-RECEIPT",
+      "GATE-U05-STOP-CONDITIONS",
+      "GATE-U08-REPO-PURITY",
+      "GATE-U09-NO-FAKE-GREEN",
+      "GATE-U12-REPORT-OUTPUT-BUDGET",
+      "GATE-U13-PYTHON-TYPE-SAFETY",
+      "GATE-U14-WHOLE-REPO-SCOPE-RECON",
+      "GATE-U15-OPERATIONALITY-IMPACT",
+      "GATE-U16-BILINGUAL-UI",
+      "GATE-U17-DELIVERABLE-PACKAGE",
+      "GATE-U18-AGENT-FACTORY-COMPLIANCE",
+      "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+      "GATE-U20-AGENT-KPD-SELF-REVIEW",
+      "GATE-U21-COMMAND-CHUNKING"
+    ],
+    "accepted_stop_conditions": [
+      "BLOCKED_DIRTY_START",
+      "BLOCKED_HEAD_MISMATCH",
+      "BLOCKED_SCOPE_VIOLATION",
+      "BLOCKED_REQUIRED_ASSET_MISSING",
+      "BLOCKED_RESPONSE_CONTRACT_FAILED",
+      "BLOCKED_THRONE_OR_CUSTODES_TOUCH"
+    ],
+    "scope_boundary": "Build Identity Half + Rich Shell only for 8 allowed organ agents and common CLI support; explicitly exclude THRONE/CUSTODES paths.",
+    "touched_paths": [
+      "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/INQUISITION_AGENT/",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ASTRONOMICON_AGENT/",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/STRATEGIUM_AGENT/",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/SCHOLA_IMPERIALIS_AGENT/",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/DOCTRINARIUM_AGENT/",
+      "IMPERIUM_NEW_GENERATION/REPORTS/"
+    ],
+    "forbidden_paths": [
+      "*THRONE*",
+      "*CUSTODES*"
+    ],
+    "expected_receipts": [
+      "OFFICIO_ROLE_ACK_SERVITOR_PRIME.json",
+      "EIGHT_ORGAN_IDENTITY_RICH_SHELL_RUN_REPORT.md",
+      "eight_organ_identity_rich_shell_run_report.json",
+      "TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1_RECEIPT.json"
+    ],
+    "repo_recon_required": true,
+    "script_absorption_required": false,
+    "clarification_needed": "Officio task_acceptance_check returned CLARIFICATION_REQUIRED for missing formal fields in taskpack, but Owner prompt + task_contract.json provide required scope/head/outputs.",
+    "verdict": "PASS"
+  }
+}

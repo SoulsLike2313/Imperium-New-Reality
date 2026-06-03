@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.newgen.mechanicus.arsenal.capability_card.v0_1",
+  "title": "Mechanicus Arsenal Capability Card V0.1",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "capability_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "LANGUAGES",
+        "TOOLS",
+        "UTILITIES",
+        "UI_FRAMEWORKS",
+        "DATABASES",
+        "SEARCH_INDEXING",
+        "VISUAL_TESTING",
+        "CODE_QUALITY",
+        "LOCAL_LLM",
+        "CLOUD_LLM_ADAPTERS",
+        "PROMPTING_PATTERNS",
+        "ALGORITHMS",
+        "REFERENCE_CODE",
+        "EXAMPLES",
+        "PLAYBOOKS"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "CANDIDATE",
+        "SANDBOX",
+        "CANON",
+        "QUARANTINE",
+        "REJECTED"
+      ]
+    },
+    "owner_organ": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "what_problem_it_solves": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "built_in",
+        "repo_existing",
+        "external_tool",
+        "practice",
+        "reference_code",
+        "algorithm",
+        "database",
+        "adapter"
+      ]
+    },
+    "source_url_or_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "license_or_trust_note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "install_required": {
+      "type": "boolean"
+    },
+    "install_gate": {
+      "type": "string",
+      "minLength": 1
+    },
+    "validation_commands": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "expected_receipts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "safety_notes": {
+      "type": "string",
+      "minLength": 1
+    },
+    "security_notes": {
+      "type": "string",
+      "minLength": 1
+    },
+    "offline_or_network_dependency": {
+      "type": "string",
+      "enum": [
+        "offline_preferred",
+        "network_optional",
+        "network_required"
+      ]
+    },
+    "promoted_by_receipt": {
+      "type": "string",
+      "minLength": 1
+    },
+    "last_reviewed_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "next_review_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "limitations": {
+      "type": "string",
+      "minLength": 1
+    },
+    "allowed_use_cases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "forbidden_use_cases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "canon_evidence_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "capability_id",
+    "name",
+    "category",
+    "status",
+    "owner_organ",
+    "purpose",
+    "what_problem_it_solves",
+    "source_type",
+    "source_url_or_path",
+    "license_or_trust_note",
+    "install_required",
+    "install_gate",
+    "validation_commands",
+    "expected_receipts",
+    "safety_notes",
+    "security_notes",
+    "offline_or_network_dependency",
+    "promoted_by_receipt",
+    "last_reviewed_utc",
+    "next_review_reason",
+    "limitations",
+    "allowed_use_cases",
+    "forbidden_use_cases"
+  ]
+}

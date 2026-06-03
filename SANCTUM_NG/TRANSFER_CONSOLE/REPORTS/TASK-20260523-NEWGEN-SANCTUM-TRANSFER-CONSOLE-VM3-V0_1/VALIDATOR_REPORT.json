@@ -1,0 +1,87 @@
+{
+  "schema_version": "0.1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1",
+  "generated_at_utc": "2026-05-22T23:47:25Z",
+  "verdict": "WARN",
+  "checks": [
+    {
+      "check_id": "core_files_exist",
+      "status": "PASS",
+      "details": "core files exist (registry/runner/schemas/state)"
+    },
+    {
+      "check_id": "schema_parse",
+      "status": "PASS",
+      "details": "state schema parses as JSON object"
+    },
+    {
+      "check_id": "phase_registry_parse",
+      "status": "PASS",
+      "details": "phase registry parses as JSON object"
+    },
+    {
+      "check_id": "phase_registry_coverage",
+      "status": "PASS",
+      "details": "registry covers phases 1..10 with required fields"
+    },
+    {
+      "check_id": "state_parse",
+      "status": "PASS",
+      "details": "state parses as JSON object"
+    },
+    {
+      "check_id": "minimum_shape",
+      "status": "PASS",
+      "details": "minimum required state keys are present"
+    },
+    {
+      "check_id": "phase_coverage_1_10",
+      "status": "PASS",
+      "details": "all phases 1..10 are present in generated state"
+    },
+    {
+      "check_id": "no_proved_without_evidence",
+      "status": "PASS",
+      "details": "all PROVED phases have evidence refs"
+    },
+    {
+      "check_id": "mode_read_only_foundation",
+      "status": "PASS",
+      "details": "mode is READ_ONLY_FOUNDATION"
+    },
+    {
+      "check_id": "forbidden_production_claims_absent",
+      "status": "PASS",
+      "details": "truth flags block production/live/autonomous claims"
+    },
+    {
+      "check_id": "communication_gate_shape",
+      "status": "PASS",
+      "details": "communication gate contains required fields"
+    },
+    {
+      "check_id": "app_files_exist",
+      "status": "PASS",
+      "details": "app files exist"
+    },
+    {
+      "check_id": "report_files_exist",
+      "status": "WARN",
+      "details": "one or more required report files are missing"
+    },
+    {
+      "check_id": "schema_id_match",
+      "status": "PASS",
+      "details": "schema title matches SANCTUM_NG_STATE_V0_1"
+    }
+  ],
+  "warnings": [
+    "report_files_exist:one or more required report files are missing"
+  ],
+  "blockers": [],
+  "state_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+  "schema_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/sanctum_ng_state.schema.json",
+  "registry_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_PHASE_REGISTRY_V0_1.json",
+  "report_dir": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1",
+  "no_fake_green_note": "PASS/WARN here validates bounded foundation truth shell only; no production or autonomy claim is made."
+}

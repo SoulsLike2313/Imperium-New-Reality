@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "case_id",
+    "agent",
+    "classification",
+    "summary"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string"
+    },
+    "agent": {
+      "type": "string"
+    },
+    "classification": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "approved": {
+      "type": "boolean"
+    }
+  }
+}

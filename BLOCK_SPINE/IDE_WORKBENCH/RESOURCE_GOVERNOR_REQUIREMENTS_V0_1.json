@@ -1,0 +1,26 @@
+{
+  "requirements_id": "RESOURCE_GOVERNOR_REQUIREMENTS_V0_1",
+  "status": "CANDIDATE_NOT_CANON",
+  "governed_dimensions": [
+    "cpu_percent",
+    "memory_mb",
+    "disk_io_mb_s",
+    "token_budget",
+    "runtime_seconds"
+  ],
+  "minimum_controls": [
+    "soft_limit_warning",
+    "hard_limit_block",
+    "per_task_budget_profile",
+    "receipt_logging"
+  ],
+  "required_receipts": [
+    "resource_snapshot_before.json",
+    "resource_snapshot_after.json",
+    "resource_budget_decision.json"
+  ],
+  "caps_on_violation": [
+    "CAP_RESOURCE_GOVERNOR_CONTRACT_MISSING",
+    "CAP_NO_EFFICIENCY_DELTA"
+  ]
+}

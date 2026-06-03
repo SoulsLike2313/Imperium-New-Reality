@@ -1,0 +1,27 @@
+{
+  "task_id": "MECHANICUS_FORGE_CLIENT_V0_2_MANUAL_GIFT",
+  "created_utc": "2026-05-25T00:02:29Z",
+  "organ": "MECHANICUS",
+  "mode": "GE_LITE_MANUAL_GIFT",
+  "learning_delta": [
+    "V0.1 static Rich snapshot becomes V0.2 personal Textual client.",
+    "PowerShell scroll problem is avoided by staying inside an app surface.",
+    "Mechanicus gains folder freshness visibility.",
+    "Future action sockets remain visually stable for later buttons."
+  ],
+  "reusable_capability": {
+    "name": "mechanicus_forge_client_v0_2",
+    "entrypoint": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/mechanicus_forge_client_v0_2.py",
+    "launcher": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/LAUNCH_MECHANICUS_FORGE_CLIENT_V0_2.cmd"
+  },
+  "eval_or_smoke": [
+    "py -3 -m py_compile mechanicus_forge_client_v0_2.py",
+    "py -3 -c \"import rich, textual; print('deps ok')\"",
+    "manual launch via LAUNCH_MECHANICUS_FORGE_CLIENT_V0_2.cmd"
+  ],
+  "pain_pattern": {
+    "id": "PAIN-TUI-STATIC-RICH-POWERSHELL-SCROLL-001",
+    "symptom": "Rich snapshot prints into PowerShell history and forces Owner to scroll.",
+    "mitigation": "Use Textual client / alternate-screen TUI instead of one-shot static print."
+  }
+}

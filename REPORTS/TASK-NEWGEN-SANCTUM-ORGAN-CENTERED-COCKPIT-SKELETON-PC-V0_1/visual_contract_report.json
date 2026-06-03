@@ -1,0 +1,59 @@
+{
+  "schema_id": "newgen_visual_contract_report_v0_1",
+  "task_id": "TASK-NEWGEN-SANCTUM-ORGAN-CENTERED-COCKPIT-SKELETON-PC-V0_1",
+  "generated_at_utc": "2026-05-24T15:20:27Z",
+  "visual_contract_source": "TASK DOSSIER VISUAL_CONTRACT.md",
+  "verdict": "PASS_WITH_WARNINGS",
+  "zones": [
+    {
+      "zone": "top system truth strip",
+      "present": true,
+      "source": "important_six_organ_cockpit_v0_1.html (.truth-strip)"
+    },
+    {
+      "zone": "center organ shell grid with six organs",
+      "present": true,
+      "source": "important_six_organ_cockpit_v0_1.html (#organGrid) + JS seed organs[6]"
+    },
+    {
+      "zone": "right Owner Decision Queue",
+      "present": true,
+      "source": "important_six_organ_cockpit_v0_1.html (#ownerQueueList)"
+    },
+    {
+      "zone": "bottom evidence/history",
+      "present": true,
+      "source": "important_six_organ_cockpit_v0_1.html (#evidenceTableBody, #historyList)"
+    },
+    {
+      "zone": "secondary action drawer",
+      "present": true,
+      "source": "important_six_organ_cockpit_v0_1.html (#actionDrawer) and JS open/close handlers",
+      "dominates_first_screen": false
+    }
+  ],
+  "anti_fail_checks": {
+    "action_cards_dominate": false,
+    "generic_admin_panel_impression": false,
+    "owner_decision_queue_absent": false,
+    "evidence_zone_absent": false,
+    "implied_fake_green": false
+  },
+  "visual_evidence": {
+    "screenshots": [
+      {
+        "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-SANCTUM-ORGAN-CENTERED-COCKPIT-SKELETON-PC-V0_1/VISUAL_EVIDENCE/important_six_organ_cockpit_en_1920x1400.png",
+        "sha256": "A38FAD05D5EB4C2DCCAF6152DFD844A6326B519F98E639D7CDC9259D26DD1E42"
+      },
+      {
+        "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-SANCTUM-ORGAN-CENTERED-COCKPIT-SKELETON-PC-V0_1/VISUAL_EVIDENCE/important_six_organ_cockpit_ru_1920x1400.png",
+        "sha256": "507E39B162FD6EAD3BCFCB861A9BED80B00357BA2D9300D4EFC726833612D3B5"
+      }
+    ]
+  },
+  "warnings": [
+    "Data is static seed for architecture validation only.",
+    "No live backend binding yet; status values are explicitly marked seed/not-proven."
+  ]
+}
+

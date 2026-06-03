@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:algorithms_runtime_junk_classifier:tool_detection:algorithms_runtime_junk_classifier",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "ALGORITHMS_RUNTIME_JUNK_CLASSIFIER",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:45Z",
+  "status": "PASS",
+  "summary": "ALGORITHMS_RUNTIME_JUNK_CLASSIFIER: PASS via tool_detection:ALGORITHMS_RUNTIME_JUNK_CLASSIFIER. promotion_recommendation=PROMOTE_SANDBOX",
+  "check_name": "tool_detection:ALGORITHMS_RUNTIME_JUNK_CLASSIFIER",
+  "command_or_check": "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/newgen_repo_hygiene_check_v0_1.py --help",
+  "exit_code": 0,
+  "stdout_excerpt": "$ python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/newgen_repo_hygiene_check_v0_1.py --help\nusage: newgen_repo_hygiene_check_v0_1.py [-h] [--task-id TASK_ID]\n                                         [--repo-root REPO_ROOT] --output\n                                         OUTPUT\n\nReport-only NewGen hygiene scan (no deletion).\n\noptions:\n  -h, --help            show this help message and exit\n  --tas...<truncated>",
+  "stderr_excerpt": "",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/algorithms-runtime-junk-classifier_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "PROMOTE_SANDBOX",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/algorithms-runtime-junk-classifier_validation_receipt.json"
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "schema_version": "0.1",
+  "task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+  "set_live_status": "FOUNDATION_STUB",
+  "required_organs": [
+    "ASTRONOMICON",
+    "OFFICIO_AGENTIS",
+    "DOCTRINARIUM",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "packet_sources": [
+    {
+      "organ_id": "ASTRONOMICON",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+    },
+    {
+      "organ_id": "DOCTRINARIUM",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+    },
+    {
+      "organ_id": "INQUISITION",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+    },
+    {
+      "organ_id": "SCHOLA_IMPERIALIS",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+    }
+  ],
+  "packets": [
+    {
+      "organ_id": "ASTRONOMICON",
+      "task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+      "source_type": "SAMPLE_PACKET",
+      "packet_status": "EXAMPLE_ONLY",
+      "live_status": "EXAMPLE_ONLY",
+      "scope_advice": [
+        "Define task stages before implementation actions."
+      ],
+      "required_checks": [
+        "Stage coverage check"
+      ],
+      "evidence_required": [
+        "Stage map file path"
+      ],
+      "owner_questions": [
+        "Should stage priorities be strict or adaptive?"
+      ],
+      "warnings": [
+        "NOT_LIVE_AGENT",
+        "FOUNDATION_ONLY_SOURCE"
+      ]
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+      "source_type": "SAMPLE_PACKET",
+      "packet_status": "EXAMPLE_ONLY",
+      "live_status": "EXAMPLE_ONLY",
+      "scope_advice": [
+        "Require role/settings ACK before mutable execution."
+      ],
+      "required_checks": [
+        "ACK existence check"
+      ],
+      "evidence_required": [
+        "OFFICIO_ROLE_ACK json"
+      ],
+      "owner_questions": [
+        "Need stricter language gate now?"
+      ],
+      "warnings": [
+        "NOT_LIVE_AGENT",
+        "FOUNDATION_ONLY_SOURCE"
+      ]
+    },
+    {
+      "organ_id": "DOCTRINARIUM",
+      "task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+      "source_type": "SAMPLE_PACKET",
+      "packet_status": "EXAMPLE_ONLY",
+      "live_status": "EXAMPLE_ONLY",
+      "scope_advice": [
+        "Bind verdicts to concrete evidence paths."
+      ],
+      "required_checks": [
+        "Evidence completeness check"
+      ],
+      "evidence_required": [
+        "Validator report"
+      ],
+      "owner_questions": [
+        "Need stricter PASS gate for example artifacts?"
+      ],
+      "warnings": [
+        "NOT_LIVE_AGENT",
+        "FOUNDATION_ONLY_SOURCE"
+      ]
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+      "source_type": "SAMPLE_PACKET",
+      "packet_status": "EXAMPLE_ONLY",
+      "live_status": "EXAMPLE_ONLY",
+      "scope_advice": [
+        "Keep owner report compact and path-first."
+      ],
+      "required_checks": [
+        "Receipt field completeness"
+      ],
+      "evidence_required": [
+        "FINAL_RECEIPT.json",
+        "OWNER_REPORT_RU.md"
+      ],
+      "owner_questions": [
+        "Need additional handoff artifact?"
+      ],
+      "warnings": [
+        "NOT_LIVE_AGENT",
+        "FOUNDATION_ONLY_SOURCE"
+      ]
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+      "source_type": "SAMPLE_PACKET",
+      "packet_status": "EXAMPLE_ONLY",
+      "live_status": "EXAMPLE_ONLY",
+      "scope_advice": [
+        "Use reusable validator patterns and classify script maturity."
+      ],
+      "required_checks": [
+        "JSON parse",
+        "Enum and organ coverage check"
+      ],
+      "evidence_required": [
+        "VALIDATOR_REPORT.json"
+      ],
+      "owner_questions": [
+        "Promote validator after next task?"
+      ],
+      "warnings": [
+        "NOT_LIVE_AGENT",
+        "FOUNDATION_ONLY_SOURCE"
+      ]
+    },
+    {
+      "organ_id": "INQUISITION",
+      "task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+      "source_type": "SAMPLE_PACKET",
+      "packet_status": "EXAMPLE_ONLY",
+      "live_status": "EXAMPLE_ONLY",
+      "scope_advice": [
+        "Treat unproven runtime claims as blocked."
+      ],
+      "required_checks": [
+        "Forbidden path check",
+        "Out-of-scope organ check"
+      ],
+      "evidence_required": [
+        "CHANGED_FILES_STATUS.md"
+      ],
+      "owner_questions": [
+        "Require contradiction matrix in next task?"
+      ],
+      "warnings": [
+        "NOT_LIVE_AGENT",
+        "FOUNDATION_ONLY_SOURCE"
+      ]
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+      "source_type": "SAMPLE_PACKET",
+      "packet_status": "EXAMPLE_ONLY",
+      "live_status": "EXAMPLE_ONLY",
+      "scope_advice": [
+        "Sequence: admission -> contracts -> validator -> evidence pack."
+      ],
+      "required_checks": [
+        "Deliverable completeness"
+      ],
+      "evidence_required": [
+        "Required file list"
+      ],
+      "owner_questions": [
+        "Is next task kernel registry admitted immediately?"
+      ],
+      "warnings": [
+        "NOT_LIVE_AGENT",
+        "FOUNDATION_ONLY_SOURCE"
+      ]
+    },
+    {
+      "organ_id": "SCHOLA_IMPERIALIS",
+      "task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+      "source_type": "SAMPLE_PACKET",
+      "packet_status": "EXAMPLE_ONLY",
+      "live_status": "EXAMPLE_ONLY",
+      "scope_advice": [
+        "Capture skills and learning gaps for future task kernel."
+      ],
+      "required_checks": [
+        "Skill coverage check"
+      ],
+      "evidence_required": [
+        "Skill references in packet fields"
+      ],
+      "owner_questions": [
+        "Need dedicated training packet schema next?"
+      ],
+      "warnings": [
+        "NOT_LIVE_AGENT",
+        "FOUNDATION_ONLY_SOURCE"
+      ]
+    }
+  ],
+  "truth_note": "Generated in foundation mode; no live autonomous organ agent communication claimed."
+}

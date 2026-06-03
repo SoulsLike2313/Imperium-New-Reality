@@ -1,0 +1,126 @@
+{
+  "schema_id": "legacy_receipt_field_delta_scan_v0_1",
+  "task_id": "TASK-NEWGEN-LEGACY-RECEIPT-P0-PRODUCER-REMEDIATION-PC-V0_1",
+  "generated_at_utc": "2026-05-30T21:31:49Z",
+  "mode": "DELTA_ONLY_FOUR_P0_PRODUCERS",
+  "checker": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/TOOLS/receipt_producer_inventory_preflight_v0_1.py",
+  "commands": {
+    "before": "python ...receipt_producer_inventory_preflight_v0_1.py --scan-root .../_delta_scan_before/scan_root --report-root .../_delta_scan_before/out",
+    "after": "python ...receipt_producer_inventory_preflight_v0_1.py --scan-root .../_delta_scan_after/scan_root --report-root .../_delta_scan_after/out"
+  },
+  "before_summary": {
+    "MANUAL_REVIEW": 9,
+    "LIKELY_SELF_HEAD_RISK": 4
+  },
+  "after_summary": {
+    "SAFE_NEW_SEMANTICS": 6
+  },
+  "p0_count_before": 4,
+  "p0_count_after": 0,
+  "path_deltas": [
+    {
+      "path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_scope_exporter_v0_2.py",
+      "before": {
+        "classification": "LEGACY_AMBIGUOUS_HEADS",
+        "risk_level": "P0",
+        "dangerous_fields_found": [
+          "PASS",
+          "commit_hash",
+          "head"
+        ],
+        "legacy_field_checker_status": "MANUAL_REVIEW"
+      },
+      "after": {
+        "classification": "MIGRATED_TO_EXTERNAL_FINALIZATION",
+        "risk_level": "P3",
+        "dangerous_fields_found": [
+          "PASS"
+        ],
+        "legacy_field_checker_status": "SAFE_NEW_SEMANTICS"
+      },
+      "delta": {
+        "risk_score_shift": "P0->P3",
+        "p0_resolved": true
+      }
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_quality_gate_runner_v0_1.py",
+      "before": {
+        "classification": "LEGACY_AMBIGUOUS_HEADS",
+        "risk_level": "P0",
+        "dangerous_fields_found": [
+          "PASS",
+          "head",
+          "remote_head"
+        ],
+        "legacy_field_checker_status": "MANUAL_REVIEW"
+      },
+      "after": {
+        "classification": "MIGRATED_TO_EXTERNAL_FINALIZATION",
+        "risk_level": "P3",
+        "dangerous_fields_found": [
+          "PASS",
+          "head"
+        ],
+        "legacy_field_checker_status": "SAFE_NEW_SEMANTICS"
+      },
+      "delta": {
+        "risk_score_shift": "P0->P3",
+        "p0_resolved": true
+      }
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "before": {
+        "classification": "LEGACY_AMBIGUOUS_HEADS",
+        "risk_level": "P0",
+        "dangerous_fields_found": [
+          "PASS",
+          "head",
+          "remote_head"
+        ],
+        "legacy_field_checker_status": "MANUAL_REVIEW"
+      },
+      "after": {
+        "classification": "MIGRATED_TO_EXTERNAL_FINALIZATION",
+        "risk_level": "P3",
+        "dangerous_fields_found": [
+          "PASS"
+        ],
+        "legacy_field_checker_status": "SAFE_NEW_SEMANTICS"
+      },
+      "delta": {
+        "risk_score_shift": "P0->P3",
+        "p0_resolved": true
+      }
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/TOOLS/TOOL_ADMISSION/newgen_tool_admission_builder_v0_1.py",
+      "before": {
+        "classification": "LEGACY_SELF_HEAD_RISK",
+        "risk_level": "P0",
+        "dangerous_fields_found": [
+          "PASS",
+          "final_head",
+          "head",
+          "remote_head"
+        ],
+        "legacy_field_checker_status": "LIKELY_SELF_HEAD_RISK"
+      },
+      "after": {
+        "classification": "MIGRATED_TO_EXTERNAL_FINALIZATION",
+        "risk_level": "P3",
+        "dangerous_fields_found": [
+          "PASS",
+          "head"
+        ],
+        "legacy_field_checker_status": "SAFE_NEW_SEMANTICS"
+      },
+      "delta": {
+        "risk_score_shift": "P0->P3",
+        "p0_resolved": true
+      }
+    }
+  ],
+  "verdict": "PASS_WITH_WARNINGS"
+}
