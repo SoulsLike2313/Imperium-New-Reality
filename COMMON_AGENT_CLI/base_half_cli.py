@@ -13,6 +13,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
+for candidate in Path(__file__).resolve().parents:
+    if all((candidate / marker).is_file() for marker in ("EPOCH_MANIFEST.json", "NEW_REALITY_SCOPE_LOCK.md", "AGENTS.md")):
+        if str(candidate) not in sys.path:
+            sys.path.insert(0, str(candidate))
+        break
+
+from ORGAN_AGENT_COMMON.root_resolution import default_runs_path  # noqa: E402
 from tool_registry_reader import build_organ_tool_view, default_tool_index_path
 try:
     from operator_shell_widgets import (
@@ -119,10 +126,8 @@ class OrganConfig:
         runtime_base = os.environ.get("IMPERIUM_ORGAN_RUNTIME_ROOT")
         if runtime_base:
             base = Path(runtime_base)
-        elif os.name == "nt":
-            base = Path(r"E:\IMPERIUM_CONTEXT\LOCAL\ORGAN_AGENT_IDENTITY_RICH_SHELL_RUNS")
         else:
-            base = Path("/tmp/IMPERIUM_CONTEXT/LOCAL/ORGAN_AGENT_IDENTITY_RICH_SHELL_RUNS")
+            base = default_runs_path("COMMON_AGENT_CLI", "ORGAN_AGENT_IDENTITY_RICH_SHELL_RUNS", start=Path(__file__))
         return base / TASK_ID_IDENTITY_RICH / "ORGANS" / self.organ_name
 
 

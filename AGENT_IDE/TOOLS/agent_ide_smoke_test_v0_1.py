@@ -8,6 +8,14 @@ from typing import Any, Dict
 
 import sys
 
+for candidate in Path(__file__).resolve().parents:
+    if all((candidate / marker).is_file() for marker in ("EPOCH_MANIFEST.json", "NEW_REALITY_SCOPE_LOCK.md", "AGENTS.md")):
+        if str(candidate) not in sys.path:
+            sys.path.insert(0, str(candidate))
+        break
+
+from ORGAN_AGENT_COMMON.root_resolution import resolve_new_reality_root, resolve_output_path  # noqa: E402
+
 APP_DIR = Path(__file__).resolve().parents[1] / "APP"
 if str(APP_DIR) not in sys.path:
     sys.path.insert(0, str(APP_DIR))
@@ -24,13 +32,13 @@ def main() -> int:
     parser.add_argument(
         "--receipt-out",
         default=(
-            "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/AGENT_IDE/REPORTS/"
+            "AGENT_IDE/REPORTS/"
             "TASK-NEWGEN-READONLY-AGENT-IDE-V0_1-PC/ide_smoke_receipt.json"
         ),
     )
     args = parser.parse_args()
 
-    repo_root = Path(args.repo_root).resolve() if args.repo_root else None
+    repo_root = resolve_new_reality_root(args.repo_root or None, start=Path(__file__)).active_root
     summary = run_smoke(repo_root)
 
     status = "PASS"
@@ -54,7 +62,7 @@ def main() -> int:
         "notes": notes,
     }
 
-    receipt_path = Path(args.receipt_out).resolve()
+    receipt_path = resolve_output_path(args.receipt_out, repo_root)
     receipt_path.parent.mkdir(parents=True, exist_ok=True)
     receipt_path.write_text(json.dumps(receipt, indent=2, ensure_ascii=False), encoding="utf-8")
     print(json.dumps(receipt, indent=2, ensure_ascii=False))

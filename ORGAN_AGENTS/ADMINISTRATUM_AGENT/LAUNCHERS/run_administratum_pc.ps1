@@ -1,11 +1,14 @@
 $ErrorActionPreference = "Stop"
 
 $RepoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScriptRoot))
+$RootResolver = Join-Path $RepoRoot "ORGAN_AGENT_COMMON/root_resolution.ps1"
+. $RootResolver
+$RepoRoot = Resolve-NewRealityRoot -RepoRoot $RepoRoot
 $Runner = Join-Path $RepoRoot "ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py"
 $TransferRoot = if ($env:ADMINISTRATUM_TRANSFER_ROOT) {
     $env:ADMINISTRATUM_TRANSFER_ROOT
 } else {
-    "E:\IMPERIUM_CONTEXT\LOCAL\ADMINISTRATUM_TRANSFER"
+    Join-Path $RepoRoot "RUNS/ADMINISTRATUM_AGENT/ADMINISTRATUM_TRANSFER"
 }
 
 Set-Location $RepoRoot

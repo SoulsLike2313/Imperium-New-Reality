@@ -3,15 +3,24 @@ from __future__ import annotations
 import argparse
 import json
 import subprocess
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Set
 
+for candidate in Path(__file__).resolve().parents:
+    if all((candidate / marker).is_file() for marker in ("EPOCH_MANIFEST.json", "NEW_REALITY_SCOPE_LOCK.md", "AGENTS.md")):
+        if str(candidate) not in sys.path:
+            sys.path.insert(0, str(candidate))
+        break
+
+from ORGAN_AGENT_COMMON.root_resolution import resolve_new_reality_root, resolve_output_path  # noqa: E402
+
 
 TASK_ID = "TASK-NEWGEN-AGENT-IDE-DUAL-SURFACE-SELF-VALIDATOR-BLOCK-FOUNDATION-PC-V0_1"
 ALLOWED_PREFIXES = [
-    "IMPERIUM_NEW_GENERATION/AGENT_IDE/",
-    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-AGENT-IDE-DUAL-SURFACE-SELF-VALIDATOR-BLOCK-FOUNDATION-PC-V0_1/",
+    "AGENT_IDE/",
+    "MECHANICUS/REPORTS/TASK-NEWGEN-AGENT-IDE-DUAL-SURFACE-SELF-VALIDATOR-BLOCK-FOUNDATION-PC-V0_1/",
 ]
 
 
@@ -40,18 +49,18 @@ def _collect_changed_paths(repo_root: Path) -> List[str]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Scope checker for Agent IDE dual-surface task.")
-    parser.add_argument("--repo-root", default="E:/IMPERIUM")
+    parser.add_argument("--repo-root", default="", help="Optional New Reality repo root override.")
     parser.add_argument(
         "--receipt-out",
         default=(
-            "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/AGENT_IDE/REPORTS/"
+            "AGENT_IDE/REPORTS/"
             "TASK-NEWGEN-AGENT-IDE-DUAL-SURFACE-SELF-VALIDATOR-BLOCK-FOUNDATION-PC-V0_1/"
             "receipts/scope_boundary_receipt.json"
         ),
     )
     args = parser.parse_args()
 
-    repo_root = Path(args.repo_root).resolve()
+    repo_root = resolve_new_reality_root(args.repo_root or None, start=Path(__file__)).active_root
     changed_paths = _collect_changed_paths(repo_root)
     normalized = [path.replace("\\", "/") for path in changed_paths]
     out_of_scope = []
@@ -69,7 +78,7 @@ def main() -> int:
         "out_of_scope_paths": out_of_scope,
     }
 
-    receipt_path = Path(args.receipt_out).resolve()
+    receipt_path = resolve_output_path(args.receipt_out, repo_root)
     receipt_path.parent.mkdir(parents=True, exist_ok=True)
     receipt_path.write_text(json.dumps(receipt, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(json.dumps(receipt, indent=2, ensure_ascii=False))

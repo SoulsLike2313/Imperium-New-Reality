@@ -2,21 +2,32 @@ param(
   [ValidateSet('stable', 'candidate', 'legacy')]
   [string]$Mode = 'stable',
   [int]$Port = 8765,
-  [string]$RepoRoot = 'E:\IMPERIUM',
+  [string]$RepoRoot = '',
   [switch]$NoBrowser
 )
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
+$ScriptFile = $MyInvocation.MyCommand.Path
+$Search = Split-Path -Parent $ScriptFile
+while ($Search -and -not (Test-Path -LiteralPath (Join-Path $Search 'ORGAN_AGENT_COMMON/root_resolution.ps1') -PathType Leaf)) {
+  $Parent = Split-Path -Parent $Search
+  if ($Parent -eq $Search) { break }
+  $Search = $Parent
+}
+$RootResolver = Join-Path $Search 'ORGAN_AGENT_COMMON/root_resolution.ps1'
+. $RootResolver
+$RepoRoot = Resolve-NewRealityRoot -RepoRoot $RepoRoot -StartPath $PSScriptRoot
+
 if (-not (Test-Path -LiteralPath $RepoRoot)) {
   throw "Repo root not found: $RepoRoot"
 }
 
 $relativePath = switch ($Mode) {
-  'stable'    { 'IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.html' }
-  'candidate' { 'IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_candidate.html' }
-  'legacy'    { 'IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/index.html' }
+  'stable'    { 'SANCTUM_NG/APP/operator_cockpit_l1.html' }
+  'candidate' { 'SANCTUM_NG/APP/operator_cockpit_candidate.html' }
+  'legacy'    { 'SANCTUM_NG/APP/index.html' }
 }
 
 $pythonCmd = Get-Command python -ErrorAction SilentlyContinue

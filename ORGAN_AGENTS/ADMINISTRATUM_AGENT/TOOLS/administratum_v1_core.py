@@ -16,15 +16,23 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable, Dict, Iterable, List, Optional, Sequence, Tuple
 
+for candidate in Path(__file__).resolve().parents:
+    if all((candidate / marker).is_file() for marker in ("EPOCH_MANIFEST.json", "NEW_REALITY_SCOPE_LOCK.md", "AGENTS.md")):
+        if str(candidate) not in sys.path:
+            sys.path.insert(0, str(candidate))
+        break
+
+from ORGAN_AGENT_COMMON.root_resolution import resolve_repo_path  # noqa: E402
+
 AGENT_ROOT = Path(__file__).resolve().parents[1]
-NEW_GENERATION_ROOT = AGENT_ROOT.parents[1]
-REPO_ROOT = AGENT_ROOT.parents[2]
+REPO_ROOT = resolve_repo_path(start=Path(__file__))
+NEW_GENERATION_ROOT = REPO_ROOT
 RUNS_ROOT = NEW_GENERATION_ROOT / "RUNS" / "ADMINISTRATUM_AGENT"
 RULES_ROOT = AGENT_ROOT / "brain_node" / "rules"
 STATE_ROOT = AGENT_ROOT / "state"
 
-DEFAULT_CONTEXT_LOCAL = Path("E:/IMPERIUM_CONTEXT/LOCAL")
-DEFAULT_CONTEXT_PRIVATE = Path("E:/IMPERIUM_CONTEXT/PRIVATE")
+DEFAULT_CONTEXT_LOCAL = RUNS_ROOT / "CONTEXT_LOCAL"
+DEFAULT_CONTEXT_PRIVATE = RUNS_ROOT / "CONTEXT_PRIVATE_METADATA"
 
 SKILL_IDS = [
     "build_repo_inventory",
@@ -380,7 +388,7 @@ def classify_zone(rel_path: str, is_inside_repo: bool) -> str:
         return "FORBIDDEN"
 
     path_norm = rel_path.replace("\\", "/")
-    if path_norm.startswith("IMPERIUM_NEW_GENERATION/RUNS/") or path_norm.startswith("IMPERIUM_NEW_GENERATION/RUNTIME/"):
+    if path_norm.startswith("RUNS/") or path_norm.startswith("RUNTIME/"):
         return "RUNTIME_OUTPUT"
 
     rules = rule_json("repo_zone_classification_rules.json")
@@ -390,8 +398,8 @@ def classify_zone(rel_path: str, is_inside_repo: bool) -> str:
             if path_norm.startswith(prefix):
                 return zone
 
-    if path_norm.startswith("IMPERIUM_NEW_GENERATION/"):
-        return "NEW_GENERATION_SANDBOX"
+    if is_inside_repo:
+        return "NEW_REALITY_SANDBOX"
     return "DIRTY_UNKNOWN"
 
 
@@ -991,7 +999,7 @@ def detect_dirty_runtime_outputs(
         "tracked_runtime_paths": tracked_runtime_paths,
         "modified_runtime_paths": modified_runtime_paths,
         "recommended_action": (
-            "Keep runtime files under IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT and avoid tracked architecture pollution."
+            "Keep runtime files under RUNS/ADMINISTRATUM_AGENT and avoid tracked architecture pollution."
             if dirty_detected
             else "No runtime pollution detected by current rules."
         ),
@@ -2006,13 +2014,13 @@ def build_cu_index(
         units.append(_unit_row("skill_definition", sm.get("skill_id", skill_manifest.parent.name), "skill_manifest", skill_manifest))
 
     for metric_name in METRIC_FIELDS:
-        units.append(_unit_row("metric_definition", metric_name, "metrics_contract", REPO_ROOT / "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_v1_core.py"))
+        units.append(_unit_row("metric_definition", metric_name, "metrics_contract", REPO_ROOT / "ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_v1_core.py"))
 
     for marker in PRIVATE_NAME_MARKERS:
-        units.append(_unit_row("redaction_pattern", marker, "private_redaction", REPO_ROOT / "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_v1_core.py"))
+        units.append(_unit_row("redaction_pattern", marker, "private_redaction", REPO_ROOT / "ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_v1_core.py"))
 
     for marker in ["RUNS/", "RUNTIME/", "IMPERIUM_CONTEXT/LOCAL", "IMPERIUM_CONTEXT/PRIVATE"]:
-        units.append(_unit_row("path_recognizer", marker, "path_classification", REPO_ROOT / "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_v1_core.py"))
+        units.append(_unit_row("path_recognizer", marker, "path_classification", REPO_ROOT / "ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_v1_core.py"))
 
     dedup: Dict[str, Dict[str, Any]] = {}
     for unit in units:

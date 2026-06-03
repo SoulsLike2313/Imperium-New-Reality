@@ -4,19 +4,27 @@ import argparse
 import json
 import os
 import subprocess
+import sys
 from collections import Counter
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+for candidate in Path(__file__).resolve().parents:
+    if all((candidate / marker).is_file() for marker in ("EPOCH_MANIFEST.json", "NEW_REALITY_SCOPE_LOCK.md", "AGENTS.md")):
+        if str(candidate) not in sys.path:
+            sys.path.insert(0, str(candidate))
+        break
+
+from ORGAN_AGENT_COMMON.root_resolution import resolve_repo_path  # noqa: E402
 from mechanicus_validation_receipt_builder_v0_1 import build_validation_receipt, write_receipt
 
 
 TASK_ID = "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1"
 EXPECTED_STARTING_HEAD = "8eb214c47fb14077ec638f1ef561607ee142b99f"
 EXPECTED_BRANCH = "master"
-EXPECTED_REPO_ROOT = "E:/IMPERIUM"
+EXPECTED_REPO_ROOT = resolve_repo_path(start=Path(__file__)).as_posix()
 NEXT_ALLOWED_TASK = "TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1"
 NEXT_TASK_IF_INSTALL_APPROVAL_PENDING = "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1"
 DOSSIER_ZIP = Path(
@@ -24,29 +32,29 @@ DOSSIER_ZIP = Path(
 )
 
 REPORT_ROOT_REL = (
-    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/"
+    "MECHANICUS/REPORTS/"
     "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1"
 )
-RECEIPTS_ROOT_REL = "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_FOLLOWUP_001"
+RECEIPTS_ROOT_REL = "MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_FOLLOWUP_001"
 DETECTION_MATRIX_REL = (
-    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/VALIDATION/VALIDATION_FOLLOWUP_001/"
+    "MECHANICUS/ARSENAL/VALIDATION/VALIDATION_FOLLOWUP_001/"
     "mechanicus_tool_detection_matrix_v0_1.json"
 )
 PROVISION_PLAN_REL = (
-    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/VALIDATION/VALIDATION_FOLLOWUP_001/"
+    "MECHANICUS/ARSENAL/VALIDATION/VALIDATION_FOLLOWUP_001/"
     "mechanicus_provision_plan_v0_1.md"
 )
 OWNER_QUESTIONS_REL = (
-    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/OWNER_QUESTIONS/"
+    "MECHANICUS/ARSENAL/OWNER_QUESTIONS/"
     "mechanicus_install_approval_questions_validation_followup_001.json"
 )
 CODE_SCOPE_EXPORT_REL = (
-    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/EXPORTS/capability_scope_code_quality_v0_1.json"
+    "MECHANICUS/ARSENAL/EXPORTS/capability_scope_code_quality_v0_1.json"
 )
 VISUAL_SCOPE_EXPORT_REL = (
-    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/EXPORTS/capability_scope_visual_readiness_v0_1.json"
+    "MECHANICUS/ARSENAL/EXPORTS/capability_scope_visual_readiness_v0_1.json"
 )
-REGISTRY_REL = "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json"
+REGISTRY_REL = "MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json"
 
 REPORT_FILES_REQUIRED = [
     "FINAL_REPORT.md",
@@ -433,14 +441,14 @@ def build_gate_ack(
         "- scope_boundary: Detect P1/P3 availability, generate Owner-gated install plan, validate present tools with receipts, "
         "update capabilities only where evidence permits, no install/provision execution.\n"
         "- touched_paths:\n"
-        "  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/VALIDATION/VALIDATION_FOLLOWUP_001/*\n"
-        "  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/OWNER_QUESTIONS/*\n"
-        "  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/EXPORTS/*\n"
-        "  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_FOLLOWUP_001/*\n"
-        "  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-NODE-NPM-NPX.json (if evidence supports promotion)\n"
-        "  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json (only if status change occurs)\n"
-        "  - IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_validation_followup_001_runner_v0_1.py\n"
-        "  - IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1/*\n"
+        "  - MECHANICUS/ARSENAL/VALIDATION/VALIDATION_FOLLOWUP_001/*\n"
+        "  - MECHANICUS/ARSENAL/OWNER_QUESTIONS/*\n"
+        "  - MECHANICUS/ARSENAL/EXPORTS/*\n"
+        "  - MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_FOLLOWUP_001/*\n"
+        "  - MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-NODE-NPM-NPX.json (if evidence supports promotion)\n"
+        "  - MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json (only if status change occurs)\n"
+        "  - MECHANICUS/TOOLS/mechanicus_validation_followup_001_runner_v0_1.py\n"
+        "  - MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1/*\n"
         "- forbidden_paths:\n"
         "  - ORGANS/SANCTUM/**\n"
         "  - IMPERIUM_TEST_VERSION/**\n"
@@ -545,7 +553,7 @@ def rebuild_registry(repo_root: Path, task_id: str) -> None:
 
 
 def run_fake_canon_detector(repo_root: Path, report_root: Path) -> dict[str, Any]:
-    script = repo_root / "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_fake_canon_detector_v0_2.py"
+    script = repo_root / "MECHANICUS/TOOLS/mechanicus_fake_canon_detector_v0_2.py"
     output = report_root / "fake_canon_detector_report.json"
     env = os.environ.copy()
     env["PYTHONDONTWRITEBYTECODE"] = "1"
@@ -788,7 +796,7 @@ def main() -> int:
     if root.rstrip("/") != EXPECTED_REPO_ROOT.rstrip("/"):
         raise RuntimeError(f"repo root mismatch: expected {EXPECTED_REPO_ROOT}, got {root}")
     allowed_dirty_suffixes = {
-        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_validation_followup_001_runner_v0_1.py",
+        "MECHANICUS/TOOLS/mechanicus_validation_followup_001_runner_v0_1.py",
     }
     if status_before:
         dirty_lines = [line.strip() for line in status_before.splitlines() if line.strip()]
@@ -1178,7 +1186,7 @@ def main() -> int:
                 "No pre-existing follow-up orchestrator for this exact P1/P3 gatepack.",
             ],
             "generated_tools_to_preserve": [
-                "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_validation_followup_001_runner_v0_1.py",
+                "MECHANICUS/TOOLS/mechanicus_validation_followup_001_runner_v0_1.py",
             ],
             "recommended_script_absorption": [
                 "Absorb follow-up runner into reusable Mechanicus validation corridor after strict typing review.",
@@ -1214,7 +1222,7 @@ def main() -> int:
             CODE_SCOPE_EXPORT_REL,
             VISUAL_SCOPE_EXPORT_REL,
         ],
-        "runner_script": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_validation_followup_001_runner_v0_1.py",
+        "runner_script": "MECHANICUS/TOOLS/mechanicus_validation_followup_001_runner_v0_1.py",
         "next_task_recommendation": (
             NEXT_TASK_IF_INSTALL_APPROVAL_PENDING if owner_questions else NEXT_ALLOWED_TASK
         ),

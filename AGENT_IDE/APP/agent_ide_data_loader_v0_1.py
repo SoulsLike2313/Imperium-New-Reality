@@ -7,9 +7,9 @@ from typing import Any, Dict, Iterable, List, Optional
 from agent_ide_models_v0_1 import FilePassport, IdeViewModel, ProviderDescriptor, TASK_ID
 
 
-CONFIG_RELATIVE_PATH = Path("IMPERIUM_NEW_GENERATION/AGENT_IDE/APP/agent_ide_config_v0_1.json")
+CONFIG_RELATIVE_PATH = Path("AGENT_IDE/APP/agent_ide_config_v0_1.json")
 PROVIDER_REGISTRY_RELATIVE_PATH = Path(
-    "IMPERIUM_NEW_GENERATION/AGENT_IDE/PLUGINS/builtin_readonly_providers_v0_1.json"
+    "AGENT_IDE/PLUGINS/builtin_readonly_providers_v0_1.json"
 )
 
 
@@ -215,4 +215,3 @@ def build_view_model(repo_root: Optional[Path] = None) -> IdeViewModel:
 
 def build_view_model_dict(repo_root: Optional[Path] = None) -> Dict[str, Any]:
     return build_view_model(repo_root).to_dict()
-

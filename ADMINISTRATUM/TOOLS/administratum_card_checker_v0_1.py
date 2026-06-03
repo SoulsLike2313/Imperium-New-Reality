@@ -130,7 +130,7 @@ def run_checks() -> dict[str, Any]:
         "session_id": "seed.warp.session.001",
         "task_id": "FUTURE_TASK_ID",
         "starting_head": "HEAD_PLACEHOLDER",
-        "workspace_path": "E:/IMPERIUM_CONTEXT/LOCAL/WARP/SESSION_001",
+        "workspace_path": "RUNS/WARP/SESSION_001",
         "organ_packets": [],
         "receipts": [],
         "diffs": [],

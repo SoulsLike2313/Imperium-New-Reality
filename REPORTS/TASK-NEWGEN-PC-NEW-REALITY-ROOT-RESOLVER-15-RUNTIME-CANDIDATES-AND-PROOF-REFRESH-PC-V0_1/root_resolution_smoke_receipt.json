@@ -1,0 +1,48 @@
+{
+  "task_id": "TASK-NEWGEN-PC-NEW-REALITY-ROOT-RESOLVER-15-RUNTIME-CANDIDATES-AND-PROOF-REFRESH-PC-V0_1",
+  "receipt_type": "root_resolution_smoke_receipt",
+  "timestamp_utc": "2026-06-03T12:16:08+00:00",
+  "checks": {
+    "explicit_cli_arg": {
+      "active_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+      "resolution_method": "explicit_cli_arg",
+      "epoch_manifest_found": true,
+      "scope_lock_found": true,
+      "agents_md_found": true
+    },
+    "environment": {
+      "active_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+      "resolution_method": "environment",
+      "epoch_manifest_found": true,
+      "scope_lock_found": true,
+      "agents_md_found": true
+    },
+    "auto_discovery": {
+      "active_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+      "resolution_method": "auto_discovery",
+      "epoch_manifest_found": true,
+      "scope_lock_found": true,
+      "agents_md_found": true
+    },
+    "ancient_empire_block": {
+      "attempted_root": "E:/IMPERIUM",
+      "blocked": true,
+      "error": "Ancient Empire root is not an active New Reality root: E:\\IMPERIUM"
+    },
+    "powershell_helper": {
+      "command": [
+        "pwsh",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        ". ./ORGAN_AGENT_COMMON/root_resolution.ps1; Resolve-NewRealityRoot -RepoRoot 'E:/IMPERIUM_NEW_GENERATION_NEW_REALITY'"
+      ],
+      "returncode": 0,
+      "stdout": "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY",
+      "stderr": "",
+      "status": "PASS"
+    }
+  },
+  "verdict": "PASS"
+}

@@ -15,6 +15,14 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+for candidate in Path(__file__).resolve().parents:
+    if all((candidate / marker).is_file() for marker in ("EPOCH_MANIFEST.json", "NEW_REALITY_SCOPE_LOCK.md", "AGENTS.md")):
+        if str(candidate) not in sys.path:
+            sys.path.insert(0, str(candidate))
+        break
+
+from ORGAN_AGENT_COMMON.root_resolution import default_runs_path, resolve_repo_path  # noqa: E402
+
 try:
     from rich.console import Console
     from rich.layout import Layout
@@ -29,11 +37,11 @@ except Exception:
 
 TASK_ID_DEFAULT = "TASK-20260519-COMMON-AGENT-CLI-KILO-LIKE-HERALDRY-V0_1"
 STATUS_READY = "FOUNDATION_V0_1_READY_FOR_REVIEW"
-DEFAULT_RUNTIME_ROOT = Path(r"E:\IMPERIUM_CONTEXT\LOCAL\OFFICIO_AGENTIS\RUNS")
 
 ROOT = Path(__file__).resolve().parent.parent
-REPO_ROOT = ROOT.parent.parent.parent
-COMMON_CLI_ROOT = REPO_ROOT / "IMPERIUM_NEW_GENERATION" / "COMMON_AGENT_CLI"
+REPO_ROOT = resolve_repo_path(start=Path(__file__))
+DEFAULT_RUNTIME_ROOT = default_runs_path("OFFICIO_AGENTIS", "RUNS", start=Path(__file__))
+COMMON_CLI_ROOT = REPO_ROOT / "COMMON_AGENT_CLI"
 if str(COMMON_CLI_ROOT) not in sys.path:
     sys.path.insert(0, str(COMMON_CLI_ROOT))
 

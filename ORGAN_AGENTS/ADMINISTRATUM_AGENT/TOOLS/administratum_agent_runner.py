@@ -35,6 +35,8 @@ except Exception:  # pragma: no cover - environment dependent
 
 from administratum_v1_core import (
     AGENT_ROOT,
+    DEFAULT_CONTEXT_LOCAL,
+    DEFAULT_CONTEXT_PRIVATE,
     NEW_GENERATION_ROOT,
     REPO_ROOT,
     RUNS_ROOT,
@@ -77,6 +79,7 @@ from administratum_v1_core import (
     write_skill_receipt,
     kpd_from_reports,
 )
+from ORGAN_AGENT_COMMON.root_resolution import resolve_new_reality_root
 from administratum_dossier_factory import (
     build_dossier_package,
     detect_oss_availability,
@@ -128,8 +131,8 @@ HEAVY_DIRTY_COMMANDS = {
     "build-agent-handoff-context",
 }
 ADMITTED_DIRTY_PREFIXES = (
-    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/",
-    "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/",
+    "ORGAN_AGENTS/ADMINISTRATUM_AGENT/",
+    "RUNS/ADMINISTRATUM_AGENT/",
 )
 BASE_HALF_TASK_ID = "TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1"
 BASE_HALF_REQUIRED_COMMANDS = ["status", "check", "where", "identity", "tools", "pack", "shell", "help"]
@@ -151,7 +154,8 @@ BASE_HALF_STATE_PATH = AGENT_ROOT / "STATE" / "current_status.json"
 BASE_HALF_REPORT_JSON_PATH = AGENT_ROOT / "REPORTS" / "base_half_check_report.json"
 BASE_HALF_REPORT_MD_PATH = AGENT_ROOT / "REPORTS" / "base_half_check_report.md"
 BASE_HALF_RUNTIME_ROOT = (
-    Path("E:/IMPERIUM_CONTEXT/LOCAL/ORGAN_AGENT_BASE_HALF_RUNS")
+    RUNS_ROOT
+    / "ORGAN_AGENT_BASE_HALF_RUNS"
     / BASE_HALF_TASK_ID
     / "ORGANS"
     / "ADMINISTRATUM_AGENT"
@@ -595,10 +599,7 @@ def _report_verdict_to_command_verdict(verdict: str) -> str:
 
 
 def _resolve_repo_path(path_text: str) -> Path:
-    path = Path(path_text)
-    if path.is_absolute():
-        return path.resolve()
-    return (REPO_ROOT / path).resolve()
+    return resolve_new_reality_root(path_text or None, start=Path(__file__)).active_root
 
 
 def _resolve_json_report(path_text: str) -> Path:
@@ -822,8 +823,8 @@ def _build_access_map(ctx: CommandContext, dirty_after: bool) -> Dict[str, Any]:
         "written_roots": written_roots,
         "private_roots_metadata_only": private_roots,
         "forbidden_roots_not_touched": [
-            "E:/IMPERIUM/ORGANS/SANCTUM",
-            "E:/IMPERIUM/IMPERIUM_TEST_VERSION",
+            "ANCIENT_EMPIRE_REFERENCE:ORGANS/SANCTUM",
+            "ANCIENT_EMPIRE_REFERENCE:IMPERIUM_TEST_VERSION",
         ],
         "runtime_output_dir": str(ctx.run_dir),
         "files_written_by_category": files_written_by_category,
@@ -1642,7 +1643,7 @@ def command_inventory(args: argparse.Namespace, renderer: Renderer) -> int:
         verdict=inv.report.get("verdict", "PASS"),
         summary="Repository inventory built.",
         outputs=[inv, Path(inv.report.get("objects_jsonl_path", ""))],
-        input_refs=[str(repo_root), "E:/IMPERIUM"],
+        input_refs=[str(repo_root)],
         warnings=inv.report.get("warnings", []),
         details=inv.report,
         progress=rail,
@@ -1867,8 +1868,8 @@ def command_scan_context(args: argparse.Namespace, renderer: Renderer) -> int:
     local_root = Path(args.local_root).resolve()
     private_root = Path(args.private_root).resolve()
     rail = ProgressRail(renderer, ctx)
-    rail.start(1, "git_truth_and_dirty_state", target="E:/IMPERIUM")
-    rail.done(1, f"dirty={str(ctx.dirty_before).lower()}", target="E:/IMPERIUM")
+    rail.start(1, "git_truth_and_dirty_state", target=str(REPO_ROOT))
+    rail.done(1, f"dirty={str(ctx.dirty_before).lower()}", target=str(REPO_ROOT))
     rail.start(2, "scanning_context_metadata", target="IMPERIUM_CONTEXT")
     scan = scan_imperium_context(
         ctx.run_id,
@@ -1897,7 +1898,7 @@ def command_scan_context(args: argparse.Namespace, renderer: Renderer) -> int:
         verdict=verdict,
         summary="Context scan completed (metadata-only).",
         outputs=[scan, Path(scan.report.get("index_jsonl_path", ""))],
-        input_refs=[str(local_root), str(private_root), "E:/IMPERIUM_CONTEXT"],
+        input_refs=[str(local_root), str(private_root), "NEW_REALITY_RUNS_CONTEXT"],
         warnings=warnings,
         details=scan.report,
         progress=rail,
@@ -1957,7 +1958,7 @@ def command_collect_reality_snapshot(args: argparse.Namespace, renderer: Rendere
         verdict=verdict,
         summary="Reality snapshot collected.",
         outputs=[snap],
-        input_refs=[str(repo_root), "E:/IMPERIUM"],
+        input_refs=[str(repo_root)],
         warnings=warnings,
         details=snap.report,
         progress=rail,
@@ -1974,7 +1975,7 @@ def command_collect_continuity_pack(args: argparse.Namespace, renderer: Renderer
     dirty_admission = _dirty_admission_state("collect-continuity-pack")
     rail.start(1, "reading_repo_state", target=str(repo_root))
     rail.done(1, f"dirty={str(ctx.dirty_before).lower()}", target=str(repo_root))
-    rail.start(2, "scanning_context_metadata", target="IMPERIUM_CONTEXT")
+    rail.start(2, "scanning_context_metadata", target="NEW_REALITY_RUNS_CONTEXT")
     if args.include_context:
         scan = scan_imperium_context(
             ctx.run_id,
@@ -2052,7 +2053,7 @@ def command_collect_continuity_pack(args: argparse.Namespace, renderer: Renderer
         verdict=verdict,
         summary="Continuity pack collected.",
         outputs=[inv, prov, useful, dirty, routing, reality, context_chain, pack],
-        input_refs=[str(repo_root), "E:/IMPERIUM", str(Path(args.local_root).resolve()), str(Path(args.private_root).resolve())],
+        input_refs=[str(repo_root), str(Path(args.local_root).resolve()), str(Path(args.private_root).resolve())],
         warnings=warnings,
         details=pack.report,
         progress=rail,
@@ -3402,7 +3403,7 @@ def command_check_all(args: argparse.Namespace, renderer: Renderer) -> int:
     after = subprocess.run(["git", "status", "--porcelain"], cwd=repo_root, capture_output=True, text=True, check=False)
     after_set = {line[3:] for line in after.stdout.splitlines() if len(line) > 3}
     new_dirty = sorted(after_set - before_set)
-    outside_runs = [p for p in new_dirty if not p.startswith("IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/")]
+    outside_runs = [p for p in new_dirty if not p.startswith("RUNS/ADMINISTRATUM_AGENT/")]
     tests.append(_test_result("shell_and_checks_do_not_dirty_outside_runs", len(outside_runs) == 0, outside_runs))
 
     total = len(tests)
@@ -3443,7 +3444,7 @@ def command_check_all(args: argparse.Namespace, renderer: Renderer) -> int:
         verdict=verdict if verdict == "PASS" else "BLOCKED",
         summary="Acceptance check suite completed.",
         outputs=[report_path, report_md, kpd_path, thinking_path, inv, prov, useful, dirty, routing, continuity, verify, handoff, cu],
-        input_refs=[str(repo_root), "E:/IMPERIUM", str(Path(args.local_root).resolve()), str(Path(args.private_root).resolve())],
+        input_refs=[str(repo_root), str(Path(args.local_root).resolve()), str(Path(args.private_root).resolve())],
         warnings=warnings,
         details=report,
         next_actions=["Review failed checks before claiming PASS."] if failed else ["All checks passed."],
@@ -3576,7 +3577,7 @@ def _show_shell_welcome(renderer: Renderer) -> None:
         renderer._rich_console.print(Panel(Text("\n".join(status_lines), style="cyan"), title="STATUS", border_style="bright_blue"))
         renderer._rich_console.print(Panel(Text("\n".join(recent_lines), style="bright_black"), title="RECENT ACTIVITY", border_style="bright_black"))
         renderer._rich_console.print(Panel(Text("\n".join(rites_lines), style="green"), title="AVAILABLE RITES", border_style="green"))
-        if Path("E:/IMPERIUM_CONTEXT/PRIVATE").exists():
+        if DEFAULT_CONTEXT_PRIVATE.exists():
             renderer._rich_console.print(
                 Panel(
                     Text("PRIVATE context detected. Metadata-only indexing and no-git-export rules are active.", style="yellow"),
@@ -3591,7 +3592,7 @@ def _show_shell_welcome(renderer: Renderer) -> None:
     print(renderer.panel("STATUS", status_lines, color="cyan"))
     print(renderer.panel("RECENT ACTIVITY", recent_lines, color="gray"))
     print(renderer.panel("AVAILABLE RITES", rites_lines, color="green"))
-    if Path("E:/IMPERIUM_CONTEXT/PRIVATE").exists():
+    if DEFAULT_CONTEXT_PRIVATE.exists():
         print(renderer.panel("SAFETY NOTICE", ["PRIVATE context detected. Metadata-only indexing and no-git-export rules are active."], color="yellow"))
     print("ADMINISTRATUM://LOCAL >")
 
@@ -3751,7 +3752,7 @@ def _shell_dispatch_line(line: str, renderer: Renderer) -> int:
         )
     if cmd == "/scan-context":
         return command_scan_context(
-            argparse.Namespace(local_root="E:/IMPERIUM_CONTEXT/LOCAL", private_root="E:/IMPERIUM_CONTEXT/PRIVATE", out=None),
+            argparse.Namespace(local_root=str(DEFAULT_CONTEXT_LOCAL), private_root=str(DEFAULT_CONTEXT_PRIVATE), out=None),
             renderer,
         )
     if cmd == "/continuity-pack":
@@ -3759,8 +3760,8 @@ def _shell_dispatch_line(line: str, renderer: Renderer) -> int:
             argparse.Namespace(
                 repo_root=str(REPO_ROOT),
                 include_context=True,
-                local_root="E:/IMPERIUM_CONTEXT/LOCAL",
-                private_root="E:/IMPERIUM_CONTEXT/PRIVATE",
+                local_root=str(DEFAULT_CONTEXT_LOCAL),
+                private_root=str(DEFAULT_CONTEXT_PRIVATE),
                 provenance_limit=300,
                 inventory_max_files=1200,
                 out=None,
@@ -3777,8 +3778,8 @@ def _shell_dispatch_line(line: str, renderer: Renderer) -> int:
         return command_check_all(
             argparse.Namespace(
                 repo_root=str(REPO_ROOT),
-                local_root="E:/IMPERIUM_CONTEXT/LOCAL",
-                private_root="E:/IMPERIUM_CONTEXT/PRIVATE",
+                local_root=str(DEFAULT_CONTEXT_LOCAL),
+                private_root=str(DEFAULT_CONTEXT_PRIVATE),
                 inventory_max_files=1000,
                 out=None,
             ),
@@ -4255,15 +4256,15 @@ def build_parser() -> argparse.ArgumentParser:
     p_merge.set_defaults(func=command_merge_summary)
 
     p_scan = sub.add_parser("scan-imperium-context", help="Scan LOCAL/PRIVATE context roots in metadata-only mode.")
-    p_scan.add_argument("--local-root", default="E:/IMPERIUM_CONTEXT/LOCAL")
-    p_scan.add_argument("--private-root", default="E:/IMPERIUM_CONTEXT/PRIVATE")
+    p_scan.add_argument("--local-root", default=str(DEFAULT_CONTEXT_LOCAL))
+    p_scan.add_argument("--private-root", default=str(DEFAULT_CONTEXT_PRIVATE))
     p_scan.add_argument("--out", default=None)
     p_scan.set_defaults(func=command_scan_context)
 
     p_cls_ctx = sub.add_parser("classify-local-context", help="Classify local/private context and detect export risk.")
     p_cls_ctx.add_argument("--scan-report", default=None)
-    p_cls_ctx.add_argument("--local-root", default="E:/IMPERIUM_CONTEXT/LOCAL")
-    p_cls_ctx.add_argument("--private-root", default="E:/IMPERIUM_CONTEXT/PRIVATE")
+    p_cls_ctx.add_argument("--local-root", default=str(DEFAULT_CONTEXT_LOCAL))
+    p_cls_ctx.add_argument("--private-root", default=str(DEFAULT_CONTEXT_PRIVATE))
     p_cls_ctx.add_argument("--out", default=None)
     p_cls_ctx.set_defaults(func=command_classify_local_context)
 
@@ -4275,8 +4276,8 @@ def build_parser() -> argparse.ArgumentParser:
     p_pack = sub.add_parser("collect-continuity-pack", help="Collect continuity pack for handoff.")
     p_pack.add_argument("--repo-root", default=str(REPO_ROOT))
     p_pack.add_argument("--include-context", default="true", help="true/false; metadata-only when true.")
-    p_pack.add_argument("--local-root", default="E:/IMPERIUM_CONTEXT/LOCAL")
-    p_pack.add_argument("--private-root", default="E:/IMPERIUM_CONTEXT/PRIVATE")
+    p_pack.add_argument("--local-root", default=str(DEFAULT_CONTEXT_LOCAL))
+    p_pack.add_argument("--private-root", default=str(DEFAULT_CONTEXT_PRIVATE))
     p_pack.add_argument("--provenance-limit", type=int, default=400)
     p_pack.add_argument("--inventory-max-files", type=int, default=2500)
     p_pack.add_argument("--out", default=None)
@@ -4353,8 +4354,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     p_check = sub.add_parser("check-all", help="Run full Administratum hardening check suite.")
     p_check.add_argument("--repo-root", default=str(REPO_ROOT))
-    p_check.add_argument("--local-root", default="E:/IMPERIUM_CONTEXT/LOCAL")
-    p_check.add_argument("--private-root", default="E:/IMPERIUM_CONTEXT/PRIVATE")
+    p_check.add_argument("--local-root", default=str(DEFAULT_CONTEXT_LOCAL))
+    p_check.add_argument("--private-root", default=str(DEFAULT_CONTEXT_PRIVATE))
     p_check.add_argument("--inventory-max-files", type=int, default=1500)
     p_check.add_argument("--out", default=None)
     p_check.set_defaults(func=command_check_all)
