@@ -1,0 +1,18 @@
+{
+  "verdict": "PASS_WITH_WARNINGS",
+  "hard_checks": {
+    "head_status_evidence_boundary_match": true,
+    "dirty_provenance_contradiction": false,
+    "stale_receipt": false,
+    "role_authority_read": true,
+    "manual_reasoning_claimed_as_capability": false,
+    "missing_replay_command": false,
+    "commit_push_policy_compliance": false,
+    "output_format_match": true,
+    "private_local_leak_risk": false
+  },
+  "caps_triggered": [
+    "CAP_REMOTE_PUSH_NOT_AUTHORIZED"
+  ],
+  "downgrade_reason": "Remote push is explicitly not Owner-authorized for this separate New Reality repo."
+}

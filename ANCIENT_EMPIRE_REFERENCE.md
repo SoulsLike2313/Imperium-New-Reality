@@ -1,17 +1,33 @@
 # Ancient Empire Reference
 
-Status: PRESERVED_NO_DELETION
+Status: READ_ONLY_ARCHAEOLOGY_V0_1
 
-Ancient Empire root: $old
-Source NewGen path: $source
-New Reality root: $target
-Recorded branch: $branch
-Recorded HEAD: $head
-Recorded origin/master: $origin
-Recorded remote HEAD: $remote
-Recorded dirty entries: 4
-Git truth repair timestamp UTC: $ts
+Ancient Empire is not the active New Reality work truth.
 
-This task preserves Ancient Empire as archaeology and precedent memory. It does not delete, move, or rewrite the old repository, and it does not remove IMPERIUM_NEW_GENERATION from Ancient Empire.
+Remote:
 
-Future salvage from Ancient Empire requires SALVAGE_REQUEST admission and a receipt.
+```text
+https://github.com/SoulsLike2313/Imperium-
+```
+
+Reference freeze commit:
+
+```text
+448150be7b4984b755828bc2f89b5bd1156de37d
+```
+
+Local archaeology root:
+
+```text
+E:/IMPERIUM
+```
+
+Access mode:
+
+```text
+READ_ONLY_REFERENCE_REQUIRES_TASK_ADMISSION
+```
+
+## Policy
+
+Ancient Empire may be read only when the active task explicitly grants reference access and records evidence. It must not be mutated, committed to, pushed to, rewritten, or treated as active remote truth for New Reality.

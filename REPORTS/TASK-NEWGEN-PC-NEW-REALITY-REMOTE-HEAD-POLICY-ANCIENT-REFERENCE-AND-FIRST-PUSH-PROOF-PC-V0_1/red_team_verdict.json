@@ -1,0 +1,19 @@
+{
+  "task_id": "TASK-NEWGEN-PC-NEW-REALITY-REMOTE-HEAD-POLICY-ANCIENT-REFERENCE-AND-FIRST-PUSH-PROOF-PC-V0_1",
+  "timestamp_utc": "2026-06-03T16:06:09+00:00",
+  "mode": "HARD_RED_TEAM",
+  "checks": {
+    "remote_url_exact": "PASS",
+    "remote_unrelated_history": "PASS",
+    "force_push": "PASS",
+    "ancient_mutation": "PASS_WITH_WARNINGS",
+    "remote_head_equality": "PENDING",
+    "closure_self_reference": "WARN_DISCLOSED"
+  },
+  "clean_pass_allowed_from_bundle_only": false,
+  "surviving_warnings": [
+    "Ancient Empire had pre-existing dirty/untracked state.",
+    "A committed receipt cannot contain a cryptographic proof of its own future commit hash; final equality is rechecked after push."
+  ],
+  "final_verdict": "PENDING"
+}
