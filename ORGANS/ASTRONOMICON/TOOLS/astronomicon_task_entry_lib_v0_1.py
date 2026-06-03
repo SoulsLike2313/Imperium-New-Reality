@@ -109,9 +109,23 @@ def normalize_path(path: str | Path) -> Path:
     return (Path.cwd() / p).resolve()
 
 
+def _layout_prefix(repo: Path) -> str:
+    if (repo / "ORGANS/ASTRONOMICON").exists():
+        return ""
+    return "IMPERIUM_NEW_GENERATION/"
+
+
+def _repo_rel(repo: Path, relative_path: str) -> str:
+    return f"{_layout_prefix(repo)}{relative_path}"
+
+
+def _astronomicon_root(repo: Path) -> Path:
+    return repo / _repo_rel(repo, "ORGANS/ASTRONOMICON")
+
+
 def build_context(repo_root: str | Path) -> dict[str, Path]:
     repo = normalize_path(repo_root)
-    astro = repo / "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON"
+    astro = _astronomicon_root(repo)
     corridor = astro / "TASK_ENTRY_CORRIDOR"
     return {
         "repo_root": repo,
@@ -129,19 +143,27 @@ def build_context(repo_root: str | Path) -> dict[str, Path]:
     }
 
 
-def required_organ_read_first_map() -> dict[str, str]:
+def required_organ_read_first_map(repo_root: str | Path | None = None) -> dict[str, str]:
+    repo = normalize_path(repo_root) if repo_root is not None else None
+    prefix = _layout_prefix(repo) if repo is not None else "IMPERIUM_NEW_GENERATION/"
     return {
-        organ: f"IMPERIUM_NEW_GENERATION/ORGANS/{organ}/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md"
+        organ: f"{prefix}ORGANS/{organ}/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md"
         for organ in REQUIRED_ORGANS
     }
 
 
-def required_read_order() -> list[str]:
+def required_read_order(repo_root: str | Path | None = None) -> list[str]:
+    repo = normalize_path(repo_root) if repo_root is not None else None
+    matrix_spine = (
+        _repo_rel(repo, "MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md")
+        if repo is not None
+        else "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md"
+    )
     read_order = [
         "AGENTS.md",
-        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md",
+        matrix_spine,
     ]
-    read_order.extend(required_organ_read_first_map().values())
+    read_order.extend(required_organ_read_first_map(repo).values())
     return read_order
 
 
@@ -393,6 +415,7 @@ def build_route_manifest(
     extracted_path: Path,
     manifest: dict[str, Any],
     route_template: dict[str, Any],
+    repo_root: Path,
 ) -> dict[str, Any]:
     route = dict(route_template)
     route["task_id"] = task_id
@@ -400,7 +423,7 @@ def build_route_manifest(
     route["source_zip_path"] = str(source_zip_path).replace("\\", "/")
     route["extracted_taskpack_path"] = str(extracted_path).replace("\\", "/")
     route["required_organs"] = REQUIRED_ORGANS
-    route["read_order"] = required_read_order()
+    route["read_order"] = required_read_order(repo_root)
     route["entry_ack_required"] = True
     route["resolver_receipt_required"] = True
     route["caps_to_carry"] = list(DEFAULT_STAGE2_CAPS)
@@ -413,7 +436,7 @@ def build_route_manifest(
 def build_start_ack_template(task_id: str, repo_root: Path) -> dict[str, Any]:
     organs: dict[str, Any] = {}
     missing: list[str] = []
-    for organ, rel in required_organ_read_first_map().items():
+    for organ, rel in required_organ_read_first_map(repo_root).items():
         full = repo_root / rel
         found = full.exists()
         if not found:
@@ -757,6 +780,7 @@ def register_taskpack(
         extracted_path=extract_path,
         manifest=manifest,
         route_template=route_template_data,
+        repo_root=ctx["repo_root"],
     )
     route_manifest_path = registered_task_path / "TASK_ROUTE_MANIFEST.json"
     write_json(route_manifest_path, route_manifest)

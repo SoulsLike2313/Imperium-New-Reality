@@ -42,7 +42,7 @@ def _print_current_expected(repo_root: Path) -> None:
 
 
 def _owner_repair_hint(repo_root: Path) -> str:
-    script = "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_bootstrap_repair_v0_1.py"
+    script = "ORGANS/ASTRONOMICON/TOOLS/astronomicon_bootstrap_repair_v0_1.py"
     return f"python {script} --repo-root \"{repo_root}\" --force"
 
 
@@ -89,6 +89,9 @@ def main() -> int:
     if args.register_zip:
         result = register_taskpack(repo_root=repo_root, source_zip_path=args.register_zip)
         _print_json_block("TASKPACK ADMISSION RESULT", result)
+        if result.get("admission_verdict") == "ADMISSION_BLOCK":
+            print("\n== OWNER ACTION REQUIRED (RU) ==")
+            print("Taskpack admission вернул BLOCK. Launch card и start task не выпускаются.")
         return 0 if result.get("admission_verdict") in {"ADMISSION_PASS", "ADMISSION_PASS_WITH_WARNINGS"} else 1
 
     if args.resolve_task_id:

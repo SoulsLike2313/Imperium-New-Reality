@@ -12,10 +12,10 @@ from typing import Any
 DEFAULT_TASK_ID = "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1"
 
 DEFAULT_ROUTE_TEMPLATE_REL = Path(
-    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json"
+    "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json"
 )
 DEFAULT_START_ACK_TEMPLATE_REL = Path(
-    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json"
+    "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json"
 )
 
 REQUIRED_ORGANS = [
@@ -27,19 +27,6 @@ REQUIRED_ORGANS = [
     "INQUISITION",
     "STRATEGIUM",
     "SCHOLA_IMPERIALIS",
-]
-
-REQUIRED_READ_ORDER = [
-    "AGENTS.md",
-    "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md",
-    "IMPERIUM_NEW_GENERATION/ORGANS/DOCTRINARIUM/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
-    "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
-    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
-    "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
-    "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
-    "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
-    "IMPERIUM_NEW_GENERATION/ORGANS/STRATEGIUM/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
-    "IMPERIUM_NEW_GENERATION/ORGANS/SCHOLA_IMPERIALIS/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
 ]
 
 ROUTE_REQUIRED_FIELDS = [
@@ -73,6 +60,36 @@ def utc_now() -> str:
 
 def normalize_repo_root(repo_root: str | Path) -> Path:
     return Path(repo_root).expanduser().resolve()
+
+
+def layout_prefix(repo_root: Path) -> str:
+    if (repo_root / "ORGANS/ASTRONOMICON").exists():
+        return ""
+    return "IMPERIUM_NEW_GENERATION/"
+
+
+def default_route_template_rel(repo_root: Path) -> Path:
+    if (repo_root / DEFAULT_ROUTE_TEMPLATE_REL).exists():
+        return DEFAULT_ROUTE_TEMPLATE_REL
+    return Path("IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json")
+
+
+def default_start_ack_template_rel(repo_root: Path) -> Path:
+    if (repo_root / DEFAULT_START_ACK_TEMPLATE_REL).exists():
+        return DEFAULT_START_ACK_TEMPLATE_REL
+    return Path("IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json")
+
+
+def required_read_order(repo_root: Path) -> list[str]:
+    prefix = layout_prefix(repo_root)
+    return [
+        "AGENTS.md",
+        f"{prefix}MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md",
+        *[
+            f"{prefix}ORGANS/{organ}/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md"
+            for organ in REQUIRED_ORGANS
+        ],
+    ]
 
 
 def normalize_path(path: str | Path, repo_root: Path) -> Path:
@@ -115,7 +132,7 @@ def _read_json_utf8(path: Path) -> tuple[dict[str, Any] | None, list[str], bool]
     return payload, issues, bom_present
 
 
-def _validate_route_payload(payload: dict[str, Any]) -> tuple[list[str], list[str], list[str]]:
+def _validate_route_payload(payload: dict[str, Any], repo_root: Path) -> tuple[list[str], list[str], list[str]]:
     issues: list[str] = []
     missing_fields = [field for field in ROUTE_REQUIRED_FIELDS if field not in payload]
     if missing_fields:
@@ -135,9 +152,9 @@ def _validate_route_payload(payload: dict[str, Any]) -> tuple[list[str], list[st
     read_order = payload.get("read_order")
     if not isinstance(read_order, list):
         issues.append("read_order must be a list.")
-        read_order_missing = list(REQUIRED_READ_ORDER)
+        read_order_missing = list(required_read_order(repo_root))
     else:
-        read_order_missing = [entry for entry in REQUIRED_READ_ORDER if entry not in read_order]
+        read_order_missing = [entry for entry in required_read_order(repo_root) if entry not in read_order]
         if read_order_missing:
             issues.append("read_order missing required entries: " + ", ".join(read_order_missing))
 
@@ -168,8 +185,8 @@ def run_preflight(
     task_id: str = DEFAULT_TASK_ID,
 ) -> dict[str, Any]:
     repo = normalize_repo_root(repo_root)
-    route_path = normalize_path(route_template_path or DEFAULT_ROUTE_TEMPLATE_REL, repo)
-    start_path = normalize_path(start_ack_template_path or DEFAULT_START_ACK_TEMPLATE_REL, repo)
+    route_path = normalize_path(route_template_path or default_route_template_rel(repo), repo)
+    start_path = normalize_path(start_ack_template_path or default_start_ack_template_rel(repo), repo)
 
     caps: list[str] = []
     warnings: list[str] = []
@@ -206,7 +223,7 @@ def run_preflight(
             route_validation_issues.extend(read_issues)
         else:
             extra_issues, route_required_organs_missing, route_required_read_order_missing = _validate_route_payload(
-                route_payload or {}
+                route_payload or {}, repo
             )
             route_validation_issues.extend(extra_issues)
             if route_required_organs_missing:

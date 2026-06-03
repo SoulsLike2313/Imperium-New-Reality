@@ -15,13 +15,13 @@ if __package__ in (None, ""):
     sys.path.append(str(Path(__file__).resolve().parent))
 
 from astronomicon_bootstrap_preflight_v0_1 import (  # noqa: E402
-    DEFAULT_ROUTE_TEMPLATE_REL,
-    DEFAULT_START_ACK_TEMPLATE_REL,
     DEFAULT_TASK_ID,
     REQUIRED_ORGANS,
-    REQUIRED_READ_ORDER,
+    default_route_template_rel,
+    default_start_ack_template_rel,
     normalize_path,
     normalize_repo_root,
+    required_read_order,
     run_preflight,
     to_posix,
     utc_now,
@@ -70,14 +70,14 @@ def load_json_allow_bom(path: Path) -> tuple[dict[str, Any] | None, list[str]]:
     return payload, issues
 
 
-def default_route_template() -> dict[str, Any]:
+def default_route_template(repo_root: Path) -> dict[str, Any]:
     return {
         "schema_version": "0.1",
         "template_id": "TASK_ROUTE_MANIFEST_TEMPLATE_V0_1",
         "task_id": "",
         "taskpack_zip_path": "",
         "extracted_taskpack_path": "",
-        "read_order": list(REQUIRED_READ_ORDER),
+        "read_order": list(required_read_order(repo_root)),
         "required_organs": list(REQUIRED_ORGANS),
         "entry_ack_required": True,
         "resolver_receipt_required": True,
@@ -178,11 +178,11 @@ def run_repair(
     task_id: str = DEFAULT_TASK_ID,
 ) -> dict[str, Any]:
     repo = normalize_repo_root(repo_root)
-    route_path = normalize_path(route_template_path or DEFAULT_ROUTE_TEMPLATE_REL, repo)
-    start_path = normalize_path(start_ack_template_path or DEFAULT_START_ACK_TEMPLATE_REL, repo)
+    route_path = normalize_path(route_template_path or default_route_template_rel(repo), repo)
+    start_path = normalize_path(start_ack_template_path or default_start_ack_template_rel(repo), repo)
 
     actions = [
-        _repair_single_template(route_path, force=force, fallback_payload=default_route_template()),
+        _repair_single_template(route_path, force=force, fallback_payload=default_route_template(repo)),
         _repair_single_template(start_path, force=force, fallback_payload=default_start_ack_template()),
     ]
 
