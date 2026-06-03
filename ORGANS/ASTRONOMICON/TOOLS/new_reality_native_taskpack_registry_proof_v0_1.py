@@ -206,10 +206,13 @@ def register_or_reuse_smoke(
     _, zip_path = make_smoke_taskpack(repo_root, report_dir, smoke_task_id)
     if reuse_existing_smoke and registry_has_task(ctx, smoke_task_id):
         prior = read_registered_admission(ctx, smoke_task_id)
+        prior_verdict = str(prior.get("admission_verdict", "ADMISSION_BLOCK"))
         return {
             **prior,
-            "admission_verdict": "ADMISSION_PASS_WITH_WARNINGS",
-            "registration_mode": "REUSED_EXISTING_NATIVE_SMOKE",
+            "admission_verdict": prior_verdict,
+            "registration_mode": "NEW_REALITY_NATIVE_TARGET_REUSED_FOR_POST_FINALIZATION",
+            "original_registration_proof": True,
+            "fresh_registration_in_this_run": False,
             "reused_existing_smoke": True,
             "source_zip_path_for_replay": to_posix(zip_path),
         }
