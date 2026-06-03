@@ -1,0 +1,55 @@
+{
+  "task_id": "TASK-NEWGEN-PC-NEW-REALITY-REMOTE-TREE-BUNDLE-CLOSURE-VALIDATOR-PC-V0_1",
+  "timestamp_utc": "2026-06-03T17:08:10Z",
+  "claims": [
+    {
+      "claim_id": "C001",
+      "claim": "Active root is New Reality.",
+      "evidence": "remote_tree_bundle_closure_receipt.json",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C002",
+      "claim": "Origin remote URL is the authorized New Reality remote.",
+      "evidence": "remote_tree_bundle_closure_receipt.json",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C003",
+      "claim": "Native Astronomicon registry replay resolves this task without Ancient bridge.",
+      "evidence": "native_registry_replay_receipt.json",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C004",
+      "claim": "Invalid taskpack blocks without launch card or start-task emission.",
+      "evidence": "invalid_taskpack_no_launch_recheck_receipt.json",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C005",
+      "claim": "Ancient Empire was not mutated by this task.",
+      "evidence": "ancient_readonly_guard_receipt.json",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C006",
+      "claim": "Report bundle exists and its SHA256 is recorded in sha256sums.txt.",
+      "evidence": "bundle_contract_receipt.json",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C007",
+      "claim": "Machine artifacts are UTF-8, no-BOM, and do not contain Cyrillic machine text.",
+      "evidence": "RED_TEAM_VERDICT.json",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C008",
+      "claim": "Final git equality proof is by git commands, not browser assumption.",
+      "evidence": "final_remote_closure_receipt.json",
+      "verdict": "PASS"
+    }
+  ],
+  "verdict": "PASS_WITH_SELF_REFERENCE_LIMIT"
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "remote_tree_bundle_closure_receipt_v0_1",
+  "type": "object",
+  "required": [
+    "task_id",
+    "verdict",
+    "active_root",
+    "remote_url",
+    "branch",
+    "local_head",
+    "origin_master",
+    "head_equals_origin_master",
+    "worktree_clean",
+    "report_bundle_path",
+    "report_bundle_sha256",
+    "ancient_empire_mutated"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string"
+    },
+    "active_root": {
+      "type": "string"
+    },
+    "remote_url": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "local_head": {
+      "type": "string"
+    },
+    "origin_master": {
+      "type": "string"
+    },
+    "ls_remote_master": {
+      "type": "string"
+    },
+    "head_equals_origin_master": {
+      "type": "boolean"
+    },
+    "worktree_clean": {
+      "type": "boolean"
+    },
+    "report_bundle_path": {
+      "type": "string"
+    },
+    "report_bundle_sha256": {
+      "type": "string"
+    },
+    "ancient_empire_mutated": {
+      "type": "boolean"
+    },
+    "self_reference_limit": {
+      "type": "string"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

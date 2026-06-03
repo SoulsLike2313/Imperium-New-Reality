@@ -1,0 +1,30 @@
+{
+  "task_id": "TASK-NEWGEN-PC-NEW-REALITY-REMOTE-TREE-BUNDLE-CLOSURE-VALIDATOR-PC-V0_1",
+  "timestamp_utc": "2026-06-03T17:08:10Z",
+  "LOCAL_SCRIPT_FIRST": [
+    "TOOLS/NEW_REALITY_VALIDATORS/validate_remote_tree_bundle_closure_v0_1.py --phase prepare",
+    "TOOLS/NEW_REALITY_VALIDATORS/validate_remote_tree_bundle_closure_v0_1.py --phase finalize",
+    "TOOLS/NEW_REALITY_VALIDATORS/validate_remote_tree_bundle_closure_v0_1.py --phase verify",
+    "ORGANS/ASTRONOMICON/TOOLS/astronomicon_task_id_resolver_v0_1.py",
+    "ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_intake_v0_1.py"
+  ],
+  "LOCAL_MANUAL_COMMAND": [
+    "git status --short --branch",
+    "git add",
+    "git commit",
+    "git push origin master",
+    "git ls-remote origin refs/heads/master"
+  ],
+  "CANDIDATE_SCRIPT_FIRST": [],
+  "AGENT_REASONING_ONLY": [
+    "A committed receipt cannot contain the hash of the future commit that will contain that receipt."
+  ],
+  "EXTERNAL_RESEARCH": [],
+  "OWNER_MANUAL_CONFIRMATION": [
+    "Taskpack authorizes the New Reality remote URL and master branch for this closure task."
+  ],
+  "FUTURE_CAPABILITY_GAP": [
+    "Browser-level GitHub UI visibility is optional and not claimed by this validator."
+  ],
+  "verdict": "PASS"
+}

@@ -1,0 +1,21 @@
+{
+  "task_id": "TASK-NEWGEN-PC-NEW-REALITY-REMOTE-TREE-BUNDLE-CLOSURE-VALIDATOR-PC-V0_1",
+  "timestamp_utc": "2026-06-03T17:08:10Z",
+  "mode": "HARD_RED_TEAM",
+  "checks": {
+    "remote_tree_bundle_closure": "PASS",
+    "native_registry_replay": "PASS",
+    "invalid_taskpack_no_launch": "PASS",
+    "ancient_readonly_guard": "PASS",
+    "bundle_contract": "PASS",
+    "machine_artifact_encoding": "PASS",
+    "browser_github_visibility": "NOT_CLAIMED",
+    "git_self_reference_limit": "WARN_DISCLOSED"
+  },
+  "encoding_issues": [],
+  "surviving_warnings": [
+    "Final committed receipt has an accepted git self-reference limit.",
+    "Browser-level GitHub UI visibility was not checked and is not claimed."
+  ],
+  "verdict": "PASS_WITH_SELF_REFERENCE_LIMIT"
+}
