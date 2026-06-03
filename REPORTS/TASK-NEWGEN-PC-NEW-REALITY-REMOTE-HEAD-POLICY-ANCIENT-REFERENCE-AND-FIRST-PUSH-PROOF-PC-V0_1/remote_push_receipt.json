@@ -1,13 +1,29 @@
 {
-  "verdict": "PENDING",
+  "task_id": "TASK-NEWGEN-PC-NEW-REALITY-REMOTE-HEAD-POLICY-ANCIENT-REFERENCE-AND-FIRST-PUSH-PROOF-PC-V0_1",
+  "receipt_type": "remote_push_receipt",
+  "timestamp_utc": "2026-06-03T16:07:40+00:00",
+  "verdict": "PASS",
   "remote_url": "https://github.com/SoulsLike2313/Imperium-New-Reality.git",
   "branch": "master",
-  "local_head": "4a6f7d5af0230ac8554c9d3a82b5f3e5b1ccd165",
-  "remote_head": "",
-  "remote_head_equals_local_head": false,
-  "push_performed": false,
+  "local_head": "53b5b2436629993686361886b7d70b4c230288ab",
+  "remote_head": "53b5b2436629993686361886b7d70b4c230288ab",
+  "remote_head_equals_local_head": true,
+  "push_performed": true,
   "force_push_used": false,
-  "warnings": [
-    "Remote push has not been executed in this receipt phase."
-  ]
+  "remote_probe": {
+    "command": [
+      "git",
+      "ls-remote",
+      "--heads",
+      "https://github.com/SoulsLike2313/Imperium-New-Reality.git"
+    ],
+    "returncode": 0,
+    "stdout": "53b5b2436629993686361886b7d70b4c230288ab\trefs/heads/master",
+    "stderr": "",
+    "status": "PASS",
+    "heads": {
+      "master": "53b5b2436629993686361886b7d70b4c230288ab"
+    }
+  },
+  "warnings": []
 }
