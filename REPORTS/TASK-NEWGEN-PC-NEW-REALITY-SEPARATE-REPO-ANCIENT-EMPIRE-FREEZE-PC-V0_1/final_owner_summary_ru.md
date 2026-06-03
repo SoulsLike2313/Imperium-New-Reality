@@ -17,3 +17,5 @@ PASS_WITH_WARNINGS. Ancient Empire stayed preserved; New Reality exists as local
 
 ## FINAL_OWNER_SUMMARY_RU
 Шаг выполнен локально: создан New Reality root и отдельный git repo. Старый Ancient Empire не удалялся и HEAD не переписывался. Итог не clean PASS, потому что старый repo был грязный до старта, есть старые absolute/root ссылки, и push запрещен без Owner-authorized remote.
+## RECEIPT_REPAIR
+Git truth repair applied: old branch/head fields were corrected from direct git commands and committed.

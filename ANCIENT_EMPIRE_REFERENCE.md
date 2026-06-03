@@ -2,14 +2,15 @@
 
 Status: PRESERVED_NO_DELETION
 
-Ancient Empire root: $OldRoot
-Source NewGen path: $Source
-New Reality root: $Target
-Recorded branch: $oldBranch
-Recorded HEAD: $oldHead
-Recorded origin/master: $originMaster
-Recorded remote HEAD: $remoteHead
+Ancient Empire root: $old
+Source NewGen path: $source
+New Reality root: $target
+Recorded branch: $branch
+Recorded HEAD: $head
+Recorded origin/master: $origin
+Recorded remote HEAD: $remote
 Recorded dirty entries: 4
+Git truth repair timestamp UTC: $ts
 
 This task preserves Ancient Empire as archaeology and precedent memory. It does not delete, move, or rewrite the old repository, and it does not remove IMPERIUM_NEW_GENERATION from Ancient Empire.
 

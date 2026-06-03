@@ -39,8 +39,8 @@ function Normalize-PathText([string]$Path) {
     return ($Path -replace "\\", "/")
 }
 
-function Get-GitOutput([string]$Repo, [string[]]$Args) {
-    $out = & git -C $Repo @Args 2>$null
+function Get-GitOutput([string]$Repo, [string[]]$GitArgs) {
+    $out = & git -C $Repo @GitArgs 2>$null
     if ($LASTEXITCODE -ne 0) { return "" }
     return (($out -join "`n").Trim())
 }
@@ -207,11 +207,11 @@ if (Test-Path -LiteralPath $Target) {
 New-Item -ItemType Directory -Path $Target -Force | Out-Null
 New-Item -ItemType Directory -Path $Report -Force | Out-Null
 
-$oldBranch = Get-GitOutput $OldRoot @("branch", "--show-current")
-$oldHead = Get-GitOutput $OldRoot @("rev-parse", "HEAD")
-$oldHeadShort = Get-GitOutput $OldRoot @("rev-parse", "--short", "HEAD")
-$originMaster = Get-GitOutput $OldRoot @("rev-parse", "--verify", "origin/master")
-$remoteHead = Get-GitOutput $OldRoot @("symbolic-ref", "--short", "refs/remotes/origin/HEAD")
+$oldBranch = Get-GitOutput -Repo $OldRoot -GitArgs @("branch", "--show-current")
+$oldHead = Get-GitOutput -Repo $OldRoot -GitArgs @("rev-parse", "HEAD")
+$oldHeadShort = Get-GitOutput -Repo $OldRoot -GitArgs @("rev-parse", "--short", "HEAD")
+$originMaster = Get-GitOutput -Repo $OldRoot -GitArgs @("rev-parse", "--verify", "origin/master")
+$remoteHead = Get-GitOutput -Repo $OldRoot -GitArgs @("symbolic-ref", "--short", "refs/remotes/origin/HEAD")
 $oldDirty = @(& git -C $OldRoot status --short 2>$null)
 $oldTop = Get-TopLevelInventory $OldRoot
 $sourceTop = Get-TopLevelInventory $Source
@@ -549,7 +549,7 @@ $rootInventory = [ordered]@{
 }
 Write-JsonFile (Join-Path $Report "new_reality_root_inventory.json") $rootInventory
 
-$oldHeadAfterCopy = Get-GitOutput $OldRoot @("rev-parse", "HEAD")
+$oldHeadAfterCopy = Get-GitOutput -Repo $OldRoot -GitArgs @("rev-parse", "HEAD")
 $oldDirtyAfterCopy = @(& git -C $OldRoot status --short 2>$null)
 $noDeletion = [ordered]@{
     timestamp_utc = $createdUtc
