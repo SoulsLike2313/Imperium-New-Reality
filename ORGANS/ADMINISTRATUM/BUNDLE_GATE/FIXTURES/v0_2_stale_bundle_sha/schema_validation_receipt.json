@@ -1,0 +1,50 @@
+{
+  "task_id": "FIXTURE-V0_2_STALE_BUNDLE_SHA",
+  "schema_validation_verdict": "BUNDLE_SCHEMA_BLOCK",
+  "schemas_checked": [
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/adjacent_receipts_manifest.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/administratum_bundle_gate_receipt.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/bundle_file_inventory.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/capability_split_receipt.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/claim_ledger.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/commit_chain_identifiers.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/final_owner_summary_boundary.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/git_closure_and_remote_closure_proof.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/red_team_verdict.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/scope_lock_no_ancient_mutation_receipt.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/task_identity_and_report_metadata.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/worktree_clean_or_explicit_cap_receipt.schema.json"
+  ],
+  "files_checked": [
+    "CAPABILITY_SPLIT_RECEIPT.json",
+    "CLAIM_LEDGER.json",
+    "OFFICIO_LOCALIZATION_REFERENCE.json",
+    "RED_TEAM_VERDICT.json",
+    "TASK_FOCUS_PACKET.json",
+    "adjacent_receipts_manifest.json",
+    "bundle_file_inventory.json",
+    "commit_chain_receipt.json",
+    "git_closure_receipt.json",
+    "no_ancient_mutation_receipt.json",
+    "remote_closure_receipt.json",
+    "sha256sums.txt"
+  ],
+  "errors": [
+    {
+      "class_id": "bundle_manifest_and_file_inventory",
+      "path": "bundle_file_inventory.json",
+      "field": "bundle_sha256",
+      "message": "bundle_sha256 is stale or mismatched; actual 43eb211d5759b417494402902b4d2d14f7887715a784759a4b8741deec50ae93",
+      "severity": "BLOCK"
+    },
+    {
+      "class_id": "sha256_sums",
+      "path": "sha256sums.txt",
+      "field": "line_1",
+      "message": "sha256 mismatch for task_report_bundle.zip; actual 43eb211d5759b417494402902b4d2d14f7887715a784759a4b8741deec50ae93",
+      "severity": "BLOCK"
+    }
+  ],
+  "warnings": [],
+  "created_utc": "2026-06-04T16:14:55Z"
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Adjacent Receipts Manifest",
+  "type": "object",
+  "required": ["task_id", "adjacent_files"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "manifest_type": {"type": "string"},
+    "matrix_version": {"type": "string"},
+    "adjacent_files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "class_ids", "status"],
+        "properties": {
+          "path": {"type": "string"},
+          "class_ids": {"type": "array", "items": {"type": "string"}},
+          "status": {"type": "string"},
+          "reason": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

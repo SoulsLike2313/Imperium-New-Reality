@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Final Owner Summary Boundary",
+  "type": "object",
+  "required": ["task_id"],
+  "anyOf": [
+    {"required": ["owner_facing_language_boundary"]},
+    {"required": ["owner_language_boundary"]},
+    {"required": ["machine_artifact_language"]}
+  ],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "owner_facing_language_boundary": {"type": "string"},
+    "owner_language_boundary": {"type": "string"},
+    "machine_artifact_language": {"type": "string"}
+  },
+  "additionalProperties": true
+}

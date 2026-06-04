@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "No Ancient Mutation Receipt",
+  "type": "object",
+  "required": ["task_id", "active_root", "write_attempted", "mutation_detected"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "active_root": {"type": "string", "minLength": 1},
+    "ancient_path": {"type": "string"},
+    "write_attempted": {"type": "boolean"},
+    "mutation_detected": {"type": "boolean"},
+    "ancient_empire_mutated": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}

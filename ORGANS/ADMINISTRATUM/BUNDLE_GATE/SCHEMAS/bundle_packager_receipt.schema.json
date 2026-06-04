@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bundle Packager Receipt",
+  "type": "object",
+  "required": ["task_id", "verdict", "gate_verdict_before_packaging", "bundle_created", "authority_boundary"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "verdict": {"enum": ["BUNDLE_PACKAGING_PASS", "BUNDLE_PACKAGING_BLOCK"]},
+    "gate_verdict_before_packaging": {"type": "string"},
+    "bundle_created": {"type": "boolean"},
+    "authority_boundary": {"const": "composition_schema_only"},
+    "bundle": {"type": ["object", "null"]}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,25 @@
+{
+  "task_id": "TASK-NEWGEN-PC-ADMINISTRATUM-BUNDLE-GATE-SCHEMA-VALIDATION-ANTI-FAKE-GREEN-REPLAY-PC-V0_1",
+  "claims": [
+    {
+      "claim": "Administratum Bundle Gate V0.2 source files, contract, schema matrix, schemas, and fixtures exist under ORGANS/ADMINISTRATUM/BUNDLE_GATE.",
+      "evidence": "ORGANS/ADMINISTRATUM/BUNDLE_GATE/",
+      "verdict": "PASS"
+    },
+    {
+      "claim": "Positive fixture passes and negative anti-fake-green fixtures block.",
+      "evidence": "anti_fake_green_fixture_receipt.json",
+      "verdict": "PASS"
+    },
+    {
+      "claim": "V0.2 real-report replay is read-only and records migration blocks for old report folders.",
+      "evidence": "real_report_replay_receipt.json",
+      "verdict": "PASS_WITH_MIGRATION_BLOCKS"
+    },
+    {
+      "claim": "Packager creates task_report_bundle.zip only after Administratum V0.2 gate pass.",
+      "evidence": "bundle_packager_receipt.json",
+      "verdict": "PASS"
+    }
+  ]
+}

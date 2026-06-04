@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Red Team Verdict",
+  "type": "object",
+  "required": ["task_id", "verdict"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "verdict": {"type": "string"},
+    "review_scope": {"type": "string"},
+    "residual_risk": {"type": "array"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Commit Chain Identifiers",
+  "type": "object",
+  "required": ["task_id"],
+  "anyOf": [
+    {"required": ["commit_ids"]},
+    {"required": ["head_commit"]},
+    {"required": ["head"]},
+    {"required": ["branch"]},
+    {"required": ["self_reference_limit"]}
+  ],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "commit_ids": {"type": "array", "items": {"type": "string"}},
+    "head_commit": {"type": "string"},
+    "head": {"type": "string"},
+    "branch": {"type": "string"},
+    "self_reference_limit": {"type": "string"}
+  },
+  "additionalProperties": true
+}

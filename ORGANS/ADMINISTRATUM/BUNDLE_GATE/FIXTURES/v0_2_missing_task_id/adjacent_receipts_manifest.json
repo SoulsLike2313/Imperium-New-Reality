@@ -1,0 +1,79 @@
+{
+  "manifest_type": "adjacent_receipts_manifest",
+  "task_id": "FIXTURE-V0_2_MISSING_TASK_ID",
+  "matrix_version": "0.2",
+  "timestamp_utc": "2026-06-04T16:14:43Z",
+  "reason": "Self-reference-limited final proof files are stored next to the final bundle.",
+  "adjacent_files": [
+    {
+      "path": "task_report_bundle.zip",
+      "class_ids": [],
+      "reason": "The bundle cannot include itself.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    },
+    {
+      "path": "sha256sums.txt",
+      "class_ids": [
+        "sha256_sums"
+      ],
+      "reason": "Final sums record the final bundle hash and remain adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    },
+    {
+      "path": "bundle_file_inventory.json",
+      "class_ids": [
+        "bundle_manifest_and_file_inventory"
+      ],
+      "reason": "Inventory records the final included file set and remains adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    },
+    {
+      "path": "administratum_bundle_gate_v0_2_receipt.json",
+      "class_ids": [
+        "administratum_composition_receipt"
+      ],
+      "reason": "Gate receipt records the final bundle hash and remains adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    },
+    {
+      "path": "bundle_packager_receipt.json",
+      "class_ids": [],
+      "reason": "Packager receipt records the final bundle hash and remains adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    },
+    {
+      "path": "commit_chain_receipt.json",
+      "class_ids": [
+        "commit_chain_identifiers"
+      ],
+      "reason": "Final commit identifiers have a natural self-reference limit.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    },
+    {
+      "path": "git_closure_receipt.json",
+      "class_ids": [
+        "commit_chain_identifiers",
+        "git_closure_and_remote_closure_proof",
+        "worktree_clean_or_explicit_cap_receipt"
+      ],
+      "reason": "Final clean-worktree proof is verified after push without rewriting committed receipts.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    },
+    {
+      "path": "remote_head_proof_receipt.json",
+      "class_ids": [
+        "git_closure_and_remote_closure_proof"
+      ],
+      "reason": "Exact origin/master equality is verified after push without rewriting committed receipts.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    },
+    {
+      "path": "remote_closure_receipt.json",
+      "class_ids": [
+        "git_closure_and_remote_closure_proof"
+      ],
+      "reason": "Remote closure receipt is adjacent because final push proof is live-verified after commit.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    }
+  ]
+}

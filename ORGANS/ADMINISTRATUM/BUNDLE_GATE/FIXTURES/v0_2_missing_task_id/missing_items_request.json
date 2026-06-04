@@ -1,0 +1,25 @@
+{
+  "verdict": "BUNDLE_SCHEMA_BLOCK",
+  "task_id": "FIXTURE-V0_2_MISSING_TASK_ID",
+  "matrix_version": "0.2",
+  "checked_path": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/FIXTURES/v0_2_missing_task_id",
+  "missing_required_items": [],
+  "invalid_fields": [
+    {
+      "class_id": "claim_ledger",
+      "path": "CLAIM_LEDGER.json",
+      "field": "$",
+      "message": "$.task_id: required field missing",
+      "severity": "BLOCK"
+    },
+    {
+      "class_id": "claim_ledger",
+      "path": "CLAIM_LEDGER.json",
+      "field": "task_id",
+      "message": "required task_id is missing",
+      "severity": "BLOCK"
+    }
+  ],
+  "required_action": "Add missing report bundle classes or repair invalid required fields, then replay Administratum V0.2.",
+  "timestamp_utc": "2026-06-04T16:14:55Z"
+}

@@ -1,0 +1,25 @@
+{
+  "task_id": "FIXTURE-V0_2_MISSING_TASK_ID",
+  "digest_verdict": "BUNDLE_SCHEMA_BLOCK",
+  "checked_path": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/FIXTURES/v0_2_missing_task_id",
+  "missing_required_files": [],
+  "invalid_required_fields": [
+    {
+      "class_id": "claim_ledger",
+      "path": "CLAIM_LEDGER.json",
+      "field": "$",
+      "message": "$.task_id: required field missing",
+      "severity": "BLOCK"
+    },
+    {
+      "class_id": "claim_ledger",
+      "path": "CLAIM_LEDGER.json",
+      "field": "task_id",
+      "message": "required task_id is missing",
+      "severity": "BLOCK"
+    }
+  ],
+  "warning_fields": [],
+  "owner_action_required": true,
+  "created_utc": "2026-06-04T16:14:55Z"
+}

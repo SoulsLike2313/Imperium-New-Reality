@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scope Lock No Ancient Mutation Receipt",
+  "type": "object",
+  "required": ["task_id", "active_root"],
+  "anyOf": [
+    {"required": ["ancient_empire_mutated"]},
+    {"required": ["mutation_detected"]},
+    {"required": ["write_attempted"]}
+  ],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "active_root": {"type": "string", "minLength": 1},
+    "ancient_empire_mutated": {"type": "boolean"},
+    "mutation_detected": {"type": "boolean"},
+    "write_attempted": {"type": "boolean"},
+    "forbidden_write_roots": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Capability Split Receipt",
+  "type": "object",
+  "required": ["task_id"],
+  "anyOf": [
+    {"required": ["verdict"]},
+    {"required": ["owned_claims"]},
+    {"required": ["capabilities"]}
+  ],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "verdict": {"type": "string"},
+    "owned_claims": {"type": "array"},
+    "capabilities": {"type": "array"},
+    "authority_boundary": {"type": "string"}
+  },
+  "additionalProperties": true
+}

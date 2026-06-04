@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Task Identity And Report Metadata",
+  "type": "object",
+  "required": ["task_id"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "step_name": {"type": "string"},
+    "active_root": {"type": "string"},
+    "machine_artifact_language": {"type": "string"}
+  },
+  "additionalProperties": true
+}
