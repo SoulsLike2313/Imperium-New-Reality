@@ -1,0 +1,13 @@
+{
+  "verdict": "PASS_WITH_SELF_REFERENCE_LIMIT",
+  "task_id": "TASK-NEWGEN-PC-ADMINISTRATUM-TASK-REPORT-BUNDLE-GATE-MATRIX-AND-PACKAGER-PC-V0_1",
+  "branch": "master",
+  "worktree_clean": false,
+  "phase": "pre_commit_bundle_assembly",
+  "self_reference_limit": "This receipt is adjacent to the bundle and is committed with the task artifacts; final no-write git status is verified after push.",
+  "required_no_write_verification": [
+    "git status --porcelain",
+    "git rev-parse HEAD",
+    "git ls-remote origin refs/heads/master"
+  ]
+}

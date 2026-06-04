@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "verdict",
+    "task_id",
+    "matrix_version",
+    "checked_path",
+    "missing_required_items",
+    "bundle_created"
+  ],
+  "properties": {
+    "verdict": {
+      "enum": [
+        "BUNDLE_COMPOSITION_PASS",
+        "BUNDLE_COMPOSITION_BLOCK"
+      ]
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "matrix_version": {
+      "type": "string"
+    },
+    "checked_path": {
+      "type": "string"
+    },
+    "missing_required_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "bundle_created": {
+      "type": "boolean"
+    }
+  }
+}

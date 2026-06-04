@@ -1,0 +1,57 @@
+{
+  "manifest_type": "adjacent_receipts_manifest",
+  "task_id": "FIXTURE-MISSING",
+  "matrix_version": "0.1",
+  "timestamp_utc": "2026-06-04T15:07:14Z",
+  "reason": "Self-reference-limited files are stored next to the final bundle.",
+  "adjacent_files": [
+    {
+      "path": "task_report_bundle.zip",
+      "class_ids": [],
+      "reason": "The bundle cannot include itself.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    },
+    {
+      "path": "sha256sums.txt",
+      "class_ids": [
+        "sha256_sums"
+      ],
+      "reason": "Final sums record the final bundle hash and remain adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    },
+    {
+      "path": "bundle_file_inventory.json",
+      "class_ids": [
+        "bundle_manifest_and_file_inventory"
+      ],
+      "reason": "Inventory records the final included file set and remains adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    },
+    {
+      "path": "administratum_bundle_composition_receipt.json",
+      "class_ids": [
+        "administratum_composition_receipt"
+      ],
+      "reason": "Composition receipt records final bundle creation state and remains adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    },
+    {
+      "path": "git_closure_receipt.json",
+      "class_ids": [
+        "commit_chain_identifiers",
+        "git_closure_and_remote_closure_proof",
+        "worktree_clean_or_explicit_cap_receipt"
+      ],
+      "reason": "Final git closure may be refreshed after the bundle commit.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    },
+    {
+      "path": "remote_closure_receipt.json",
+      "class_ids": [
+        "git_closure_and_remote_closure_proof"
+      ],
+      "reason": "Final remote closure may be refreshed after push.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    }
+  ]
+}

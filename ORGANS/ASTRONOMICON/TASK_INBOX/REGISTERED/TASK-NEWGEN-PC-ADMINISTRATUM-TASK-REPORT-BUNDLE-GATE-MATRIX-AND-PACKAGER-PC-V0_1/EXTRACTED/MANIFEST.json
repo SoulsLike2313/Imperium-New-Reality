@@ -1,0 +1,71 @@
+{
+  "task_id": "TASK-NEWGEN-PC-ADMINISTRATUM-TASK-REPORT-BUNDLE-GATE-MATRIX-AND-PACKAGER-PC-V0_1",
+  "task_name": "Administratum Task Report Bundle Gate Matrix and Packager",
+  "task_type": "NEW_REALITY_IMPLEMENTATION_AND_PROOF",
+  "version": "0.1",
+  "created_utc": "2026-06-04T00:00:00Z",
+  "contour": "PC",
+  "active_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "remote": "https://github.com/SoulsLike2313/Imperium-New-Reality.git",
+  "branch": "master",
+  "route_mode": "NEW_REALITY_NATIVE_ASTRONOMICON",
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "required_organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "owner_facing_runtime_language": "RUSSIAN_OWNER_FACING_RUNTIME_OUTPUT_ROUTED_THROUGH_OFFICIO_AGENTIS",
+  "machine_artifact_language": "English",
+  "language_and_encoding_policy": {
+    "policy_id": "IMPERIUM_OFFICIO_LANGUAGE_AND_ENCODING_POLICY_V0_1",
+    "taskpack_internal_files": "ENGLISH_UTF8_NO_BOM_ONLY",
+    "canonical_repo_artifacts": "ENGLISH_UTF8_NO_BOM_ONLY",
+    "owner_facing_russian_runtime_output": "ALLOWED_ONLY_THROUGH_OFFICIO_AGENTIS_RUNTIME_CONTRACT_AND_NOT_AS_CANONICAL_MACHINE_ARTIFACT",
+    "cyrillic_in_taskpack": "FORBIDDEN",
+    "localization_exception": "OFFICIO_AGENTIS_OWNER_FACING_RUNTIME_OUTPUT_ONLY",
+    "owner_language_authority": "OFFICIO_AGENTIS",
+    "officio_authority_document": "OFFICIO_OWNER_LANGUAGE_ROUTING.md",
+    "officio_runtime_contract_required": true
+  },
+  "ancient_empire_policy": {
+    "status": "READ_ONLY_ARCHAEOLOGY",
+    "url": "https://github.com/SoulsLike2313/Imperium-",
+    "reference_commit": "448150be7b4984b755828bc2f89b5bd1156de37d",
+    "mutation_allowed": false,
+    "access_allowed_by_default": false
+  },
+  "scope_lock": {
+    "write_allowed_only_under": [
+      "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY"
+    ],
+    "forbidden_write_roots": [
+      "E:/IMPERIUM"
+    ],
+    "vm_sync_allowed": false,
+    "external_install_allowed": false
+  },
+  "expected_primary_outputs": [
+    "ORGANS/ADMINISTRATUM/BUNDLE_GATE/TASK_REPORT_BUNDLE_MATRIX.md",
+    "ORGANS/ADMINISTRATUM/BUNDLE_GATE/administratum_bundle_gate_v0_1.py",
+    "ORGANS/ADMINISTRATUM/BUNDLE_GATE/administratum_bundle_packager_v0_1.py",
+    "ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/task_report_bundle_matrix.schema.json",
+    "ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/missing_items_request.schema.json",
+    "ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/bundle_composition_receipt.schema.json",
+    "REPORTS/{TASK_ID}/task_report_bundle.zip"
+  ]
+}

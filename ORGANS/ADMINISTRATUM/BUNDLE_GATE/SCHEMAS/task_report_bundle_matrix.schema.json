@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "matrix_version",
+    "classes"
+  ],
+  "properties": {
+    "matrix_version": {
+      "type": "string"
+    },
+    "classes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "class_id",
+          "required",
+          "patterns"
+        ],
+        "properties": {
+          "class_id": {
+            "type": "string"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          },
+          "patterns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "adjacent_allowed": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}
