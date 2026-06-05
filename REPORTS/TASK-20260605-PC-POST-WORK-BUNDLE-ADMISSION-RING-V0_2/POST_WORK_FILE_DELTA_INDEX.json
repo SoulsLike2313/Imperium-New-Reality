@@ -1,0 +1,56 @@
+{
+  "schema_version": "post_work.file_delta_index.v0_2",
+  "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_2",
+  "created_at_utc": "2026-06-05T17:13:20Z",
+  "entry_head": "af01d79e7c674922ac28a3d6e2c535ceef5558e2",
+  "files": [
+    {
+      "path": ".gitignore",
+      "change_type": "modified",
+      "owner_organ": "ADMINISTRATUM",
+      "purpose": "Ignore generated post-work zip payloads while keeping index/hash evidence."
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/",
+      "change_type": "modified",
+      "owner_organ": "ADMINISTRATUM",
+      "purpose": "V0.2 contract, schemas, checker, closure updater, repair loop, templates, and fixtures."
+    },
+    {
+      "path": "ORGANS/_POST_WORK_RING/",
+      "change_type": "modified",
+      "owner_organ": "CUSTODES",
+      "purpose": "V0.2 organ ring contract and schema-backed organ/repair receipts."
+    },
+    {
+      "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_2/",
+      "change_type": "added",
+      "owner_organ": "ASTRONOMICON",
+      "purpose": "Registered V0.2 taskpack and route evidence."
+    },
+    {
+      "path": "ORGANS/ASTRONOMICON/TASK_REGISTRY/",
+      "change_type": "modified",
+      "owner_organ": "ASTRONOMICON",
+      "purpose": "Current expected task and registry update for V0.2."
+    },
+    {
+      "path": "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_2/",
+      "change_type": "added",
+      "owner_organ": "ADMINISTRATUM",
+      "purpose": "V0.2 task report bundle, receipts, indexes, fixture receipt, and owner summary."
+    }
+  ],
+  "github_safe_artifacts_only": true,
+  "local_heavy_artifacts": [
+    {
+      "path": "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/ADMINISTRATUM_BUNDLE_CONTRACT_RECEIPT.zip",
+      "sha256": "a4cb451786bce064b1caeac6cd1145e9cd5bcf01229c067c7fb3d1753f1dce22",
+      "size_bytes": 20207,
+      "storage_policy": "LOCAL_ONLY_IGNORED_BY_GIT",
+      "visibility_policy": "index/hash only",
+      "owner_organ": "ADMINISTRATUM",
+      "reason_not_committed": "Archive payload duplicates committed V0.1 receipts and is not canonical source."
+    }
+  ]
+}

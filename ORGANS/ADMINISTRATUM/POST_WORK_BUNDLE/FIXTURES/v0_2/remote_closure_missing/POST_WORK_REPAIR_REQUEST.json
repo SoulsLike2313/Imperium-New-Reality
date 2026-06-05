@@ -1,0 +1,22 @@
+{
+  "schema_version": "post_work.repair_request.v0_2",
+  "task_id": "FIXTURE-REMOTE_CLOSURE_MISSING",
+  "repair_request_id": "REPAIR-FIXTURE-REMOTE_CLOSURE_MISSING-001",
+  "created_at_utc": "2026-06-05T17:19:20Z",
+  "blocked_verdict": "POST_WORK_BUNDLE_SCHEMA_BLOCK",
+  "owner_organ": "ADMINISTRATUM",
+  "trigger_issue": "Post-work bundle V0.2 checker found blocking defects.",
+  "requested_repairs": [
+    {
+      "issue_id": "REPAIR-001-required_report_file",
+      "path": "REMOTE_CLOSURE_RECEIPT.json",
+      "repair_action": "missing required report file"
+    },
+    {
+      "issue_id": "REPAIR-002-receipt_index_path",
+      "path": "POST_WORK_RECEIPT_INDEX.json",
+      "repair_action": "receipt path target not found: REMOTE_CLOSURE_RECEIPT.json"
+    }
+  ],
+  "status": "OPEN"
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": "administratum.post_work_fixture_suite_receipt.v0_2",
+  "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_2",
+  "created_at_utc": "2026-06-05T17:19:20Z",
+  "fixture_verdict": "PASS",
+  "repair_loop_proof": {
+    "block_fixture": "required_organ_block",
+    "pass_fixture": "required_organ_block_repaired",
+    "block_created_repair_request": true
+  },
+  "fixture_rows": [
+    {
+      "fixture": "valid_bundle",
+      "expected": "POST_WORK_BUNDLE_SCHEMA_PASS",
+      "actual": "POST_WORK_BUNDLE_SCHEMA_PASS",
+      "expectation_met": true,
+      "block_count": 0,
+      "repair_request_created": false
+    },
+    {
+      "fixture": "missing_organ_receipt",
+      "expected": "POST_WORK_BUNDLE_SCHEMA_BLOCK",
+      "actual": "POST_WORK_BUNDLE_SCHEMA_BLOCK",
+      "expectation_met": true,
+      "block_count": 2,
+      "repair_request_created": true
+    },
+    {
+      "fixture": "malformed_receipt",
+      "expected": "POST_WORK_BUNDLE_SCHEMA_BLOCK",
+      "actual": "POST_WORK_BUNDLE_SCHEMA_BLOCK",
+      "expectation_met": true,
+      "block_count": 6,
+      "repair_request_created": true
+    },
+    {
+      "fixture": "required_organ_block",
+      "expected": "POST_WORK_BUNDLE_SCHEMA_BLOCK",
+      "actual": "POST_WORK_BUNDLE_SCHEMA_BLOCK",
+      "expectation_met": true,
+      "block_count": 1,
+      "repair_request_created": true
+    },
+    {
+      "fixture": "required_organ_block_repaired",
+      "expected": "POST_WORK_BUNDLE_SCHEMA_PASS",
+      "actual": "POST_WORK_BUNDLE_SCHEMA_PASS",
+      "expectation_met": true,
+      "block_count": 0,
+      "repair_request_created": false
+    },
+    {
+      "fixture": "remote_closure_missing",
+      "expected": "POST_WORK_BUNDLE_SCHEMA_BLOCK",
+      "actual": "POST_WORK_BUNDLE_SCHEMA_BLOCK",
+      "expectation_met": true,
+      "block_count": 2,
+      "repair_request_created": true
+    },
+    {
+      "fixture": "heavy_artifact_without_index",
+      "expected": "POST_WORK_BUNDLE_SCHEMA_BLOCK",
+      "actual": "POST_WORK_BUNDLE_SCHEMA_BLOCK",
+      "expectation_met": true,
+      "block_count": 1,
+      "repair_request_created": true
+    }
+  ]
+}

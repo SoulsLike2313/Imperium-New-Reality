@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Post Work Bundle Manifest V0.1",
+  "title": "Post Work Bundle Manifest V0.2",
   "type": "object",
   "required": [
     "schema_version",
@@ -14,7 +14,8 @@
     "receipt_index",
     "organ_ring_receipt",
     "github_safe_index",
-    "heavy_artifact_policy"
+    "heavy_artifact_policy",
+    "remote_proof"
   ],
   "properties": {
     "schema_version": {"type": "string"},
@@ -32,6 +33,19 @@
     "github_safe_index": {"type": "boolean"},
     "heavy_artifact_policy": {"type": "string", "minLength": 1},
     "local_heavy_artifacts": {"type": "array"},
+    "remote_proof": {
+      "type": "object",
+      "required": ["pre_commit_head", "expected_commit_message", "post_push_head", "origin_master_head", "local_equals_origin", "no_write_after_remote_proof"],
+      "properties": {
+        "pre_commit_head": {"type": "string"},
+        "expected_commit_message": {"type": "string"},
+        "post_push_head": {"type": "string"},
+        "origin_master_head": {"type": "string"},
+        "local_equals_origin": {"type": ["boolean", "string"]},
+        "no_write_after_remote_proof": {"type": ["boolean", "string"]}
+      },
+      "additionalProperties": true
+    },
     "self_reference_boundary": {"type": "string"}
   },
   "additionalProperties": true

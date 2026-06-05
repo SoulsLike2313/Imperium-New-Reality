@@ -1,0 +1,18 @@
+{
+  "schema_version": "mechanicus.tool_delta_receipt.v0_2",
+  "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_2",
+  "created_at_utc": "2026-06-05T17:13:20Z",
+  "owner_organ": "MECHANICUS",
+  "tools_added": [
+    {"path": "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_bundle_checker_v0_2.py", "dependencies": "standard_library_only", "purpose": "Schema-backed post-work bundle validation and repair request emission."},
+    {"path": "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_closure_updater_v0_2.py", "dependencies": "standard_library_only", "purpose": "Pre-commit closure receipt and post-push no-write remote proof."}
+  ],
+  "packages_installed": [],
+  "validation_commands": [
+    "python -c \"import ast, pathlib; ast.parse(pathlib.Path('ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_bundle_checker_v0_2.py').read_text(encoding='utf-8'))\"",
+    "python -c \"import ast, pathlib; ast.parse(pathlib.Path('ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_closure_updater_v0_2.py').read_text(encoding='utf-8'))\"",
+    "python ORGANS\\ADMINISTRATUM\\POST_WORK_BUNDLE\\administratum_post_work_bundle_checker_v0_2.py --repo-root . --run-fixtures ORGANS\\ADMINISTRATUM\\POST_WORK_BUNDLE\\FIXTURES\\v0_2 --fixture-result-out REPORTS\\TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_2\\ADMINISTRATUM_POST_WORK_FIXTURE_SUITE_RECEIPT.json",
+    "python ORGANS\\ADMINISTRATUM\\POST_WORK_BUNDLE\\administratum_post_work_bundle_checker_v0_2.py --repo-root . --task-id TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_2 --report-dir REPORTS\\TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_2 --out REPORTS\\TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_2\\ADMINISTRATUM_POST_WORK_BUNDLE_CHECKER_REPORT.json"
+  ],
+  "status": "PASS"
+}

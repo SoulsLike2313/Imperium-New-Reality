@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Post Work File Delta Index V0.2",
+  "type": "object",
+  "required": ["schema_version", "task_id", "entry_head", "files", "github_safe_artifacts_only", "local_heavy_artifacts"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "task_id": {"type": "string", "minLength": 1},
+    "created_at_utc": {"type": "string"},
+    "entry_head": {"type": "string", "minLength": 1},
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "change_type", "owner_organ", "purpose"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "change_type": {"type": "string", "minLength": 1},
+          "owner_organ": {"type": "string", "minLength": 1},
+          "purpose": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": true
+      }
+    },
+    "github_safe_artifacts_only": {"type": "boolean"},
+    "local_heavy_artifacts": {"type": "array"}
+  },
+  "additionalProperties": true
+}
