@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Organ Post Work Receipt V0.1",
+  "type": "object",
+  "required": [
+    "organ_id",
+    "task_id",
+    "status",
+    "owned_checks",
+    "evidence_paths",
+    "learned_rules"
+  ],
+  "properties": {
+    "organ_id": {"type": "string", "minLength": 1},
+    "task_id": {"type": "string", "minLength": 1},
+    "status": {
+      "type": "string",
+      "enum": [
+        "IMPLEMENTED",
+        "IMPLEMENTED_WITH_WARNINGS",
+        "NOT_YET_IMPLEMENTED",
+        "BLOCK"
+      ]
+    },
+    "owned_checks": {"type": "array"},
+    "evidence_paths": {"type": "array"},
+    "learned_rules": {"type": "array"},
+    "limitation_reason": {"type": "string"},
+    "next_task_route": {"type": "string"}
+  },
+  "additionalProperties": true
+}

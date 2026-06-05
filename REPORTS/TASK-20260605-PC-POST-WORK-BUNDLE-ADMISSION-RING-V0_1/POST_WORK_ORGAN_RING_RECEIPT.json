@@ -1,0 +1,193 @@
+{
+  "schema_version": "post_work.organ_ring_receipt.v0_1",
+  "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+  "created_at_utc": "2026-06-05T16:21:56Z",
+  "required_organs_source": "ORGANS/_POST_WORK_RING/REQUIRED_9_ORGANS_V0_1.json",
+  "organ_receipts": [
+    {
+      "organ_id": "ASTRONOMICON",
+      "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+      "status": "IMPLEMENTED_WITH_WARNINGS",
+      "owned_checks": [
+        "Registered taskpack exists under TASK_INBOX/REGISTERED.",
+        "Route manifest and extracted manifest are indexed.",
+        "Task registry changes are included in file delta index."
+      ],
+      "evidence_paths": [
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/TASKPACK.zip",
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/TASK_ROUTE_MANIFEST.json",
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/EXTRACTED/MANIFEST.json"
+      ],
+      "learned_rules": [
+        "Post-work bundles must preserve taskpack provenance and route evidence.",
+        "A completed task needs next-task routing evidence, not just a commit."
+      ],
+      "warnings": [
+        "Registered intake route lists eight organs; post-work admission ring adds narrow Custodes as the ninth organ."
+      ]
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+      "status": "IMPLEMENTED",
+      "owned_checks": [
+        "Servitor role entry receipt exists.",
+        "Owner-facing final summary is Russian after role entry.",
+        "Machine receipts remain English UTF-8 without BOM."
+      ],
+      "evidence_paths": [
+        "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/OFFICIO_ROLE_ENTRY_RECEIPT.json",
+        "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/FINAL_OWNER_SUMMARY_RU.md"
+      ],
+      "learned_rules": [
+        "Final owner communication belongs under Officio language discipline.",
+        "Role entry evidence must precede task mutation."
+      ]
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+      "status": "IMPLEMENTED_WITH_WARNINGS",
+      "owned_checks": [
+        "Bundle contract, schemas, index card, manifest, receipt index, and delta index exist.",
+        "Checker produces structural pass or block only.",
+        "Heavy artifact policy is represented."
+      ],
+      "evidence_paths": [
+        "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/POST_WORK_BUNDLE_CONTRACT_V0_1.md",
+        "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/SCHEMAS/post_work_bundle_manifest.schema.json",
+        "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/POST_WORK_BUNDLE_INDEX_CARD.json",
+        "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/ADMINISTRATUM_POST_WORK_BUNDLE_RECEIPT.json"
+      ],
+      "learned_rules": [
+        "A post-work bundle is a historical delta, not just a narrative report.",
+        "GitHub receives indexes and small canonical evidence, not unbounded local dumps."
+      ],
+      "warnings": [
+        "V0.1 is structural admission only."
+      ]
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+      "status": "IMPLEMENTED",
+      "owned_checks": [
+        "Standard-library checker exists and is runnable.",
+        "No package installation is required.",
+        "Validation commands are captured in Mechanicus receipt."
+      ],
+      "evidence_paths": [
+        "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_bundle_checker_v0_1.py",
+        "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/MECHANICUS_TOOL_DELTA_RECEIPT.json"
+      ],
+      "learned_rules": [
+        "Bundle admission must be executable as a command, not only documented.",
+        "Future expansion should add schema validation without introducing dependencies unless approved."
+      ]
+    },
+    {
+      "organ_id": "DOCTRINARIUM",
+      "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+      "status": "IMPLEMENTED_WITH_WARNINGS",
+      "owned_checks": [
+        "Scope limits are recorded in contracts and receipts.",
+        "Forbidden PASS claims are listed.",
+        "Ancient Empire and parent paths remain outside active runtime."
+      ],
+      "evidence_paths": [
+        "AGENTS.md",
+        "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/POST_WORK_BUNDLE_CONTRACT_V0_1.md",
+        "ORGANS/CUSTODES/ORGAN_MATRIX_AUDIT/CUSTODES_ORGAN_MATRIX_AUDIT_CONTRACT_V0_1.md"
+      ],
+      "learned_rules": [
+        "No final PASS without evidence receipts and remote proof.",
+        "Post-work checker authority must be bounded to the checks it actually performs."
+      ],
+      "warnings": [
+        "No full semantic truth claim is made by this V0.1 layer."
+      ]
+    },
+    {
+      "organ_id": "INQUISITION",
+      "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+      "status": "IMPLEMENTED_WITH_WARNINGS",
+      "owned_checks": [
+        "Fake-green scan receipt exists.",
+        "Dirty-state origin is separated between registered task input and task-created output.",
+        "Self-reference boundary is explicit for closure receipts."
+      ],
+      "evidence_paths": [
+        "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/INQUISITION_CONTRADICTION_SCAN_RECEIPT.json",
+        "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/GIT_CLOSURE_RECEIPT.json",
+        "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/REMOTE_CLOSURE_RECEIPT.json"
+      ],
+      "learned_rules": [
+        "Pending evidence must be named as pending, not converted into PASS.",
+        "Receipt claims must match validator authority."
+      ],
+      "warnings": [
+        "Remote equality is proven only after push by final no-write commands."
+      ]
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+      "status": "IMPLEMENTED",
+      "owned_checks": [
+        "Micro and macro deltas are indexed.",
+        "Next recommended route is recorded.",
+        "KPD is limited to measurable structural coverage."
+      ],
+      "evidence_paths": [
+        "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/NEXT_TASK_ROUTE.json",
+        "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/POST_WORK_FILE_DELTA_INDEX.json"
+      ],
+      "learned_rules": [
+        "Next task routing is part of completion evidence.",
+        "Macro delta should be represented as durable contracts and tools."
+      ]
+    },
+    {
+      "organ_id": "SCHOLA_IMPERIALIS",
+      "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+      "status": "IMPLEMENTED",
+      "owned_checks": [
+        "Enhanced Ghost Evolve receipt exists.",
+        "Reusable contracts, schemas, template, checker, and next-task route exist.",
+        "Teaching is stored in repo artifacts, not only final response."
+      ],
+      "evidence_paths": [
+        "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/SCHOLA_ENHANCED_GHOST_EVOLVE_RECEIPT.json",
+        "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/ORGAN_TEACHING_DELTA_RECEIPT.json",
+        "ORGANS/_POST_WORK_RING/ORGAN_POST_WORK_RECEIPT_TEMPLATE.json"
+      ],
+      "learned_rules": [
+        "Organ learning must be made executable or inspectable through repo-visible artifacts.",
+        "Future tasks should reuse the receipt template and checker before final PASS."
+      ]
+    },
+    {
+      "organ_id": "CUSTODES",
+      "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+      "status": "IMPLEMENTED_WITH_WARNINGS",
+      "owned_checks": [
+        "All nine required organs have receipt rows.",
+        "No organ receipt is missing required V0.1 fields.",
+        "Custodes scope remains narrow organ matrix audit only."
+      ],
+      "evidence_paths": [
+        "ORGANS/CUSTODES/ORGAN_MATRIX_AUDIT/CUSTODES_ORGAN_MATRIX_AUDIT_CONTRACT_V0_1.md",
+        "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/CUSTODES_ORGAN_MATRIX_AUDIT_RECEIPT.json",
+        "ORGANS/_POST_WORK_RING/REQUIRED_9_ORGANS_V0_1.json"
+      ],
+      "learned_rules": [
+        "Custodes can audit required receipt matrix shape without claiming full admission authority.",
+        "Missing organs should block or carry explicit limitation routing."
+      ],
+      "warnings": [
+        "This task does not create a full Custodes/Throne runtime organ."
+      ]
+    }
+  ],
+  "ring_verdict": "NINE_ORGAN_RING_REPRESENTED_WITH_WARNINGS"
+}

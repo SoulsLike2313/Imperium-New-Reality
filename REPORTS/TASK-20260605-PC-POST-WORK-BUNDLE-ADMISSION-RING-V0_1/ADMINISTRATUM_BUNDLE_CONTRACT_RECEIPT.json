@@ -1,0 +1,21 @@
+{
+  "schema_version": "administratum.bundle_contract_receipt.v0_1",
+  "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+  "created_at_utc": "2026-06-05T16:21:56Z",
+  "owner_organ": "ADMINISTRATUM",
+  "contract_path": "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/POST_WORK_BUNDLE_CONTRACT_V0_1.md",
+  "contract_status": "CANDIDATE_V0_1",
+  "schemas": [
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/SCHEMAS/post_work_bundle_manifest.schema.json",
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/SCHEMAS/organ_post_work_receipt.schema.json",
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/SCHEMAS/bundle_index_card.schema.json"
+  ],
+  "checker": "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_bundle_checker_v0_1.py",
+  "internalized_rules": [
+    "A completed task requires bundle evidence beyond git commit existence.",
+    "Missing required post-work organs must block or be explicitly routed as limitations.",
+    "GitHub-safe bundle index must stay separate from local heavy artifact storage.",
+    "Administratum V0.1 may claim only structural pass or structural block."
+  ],
+  "status": "IMPLEMENTED"
+}

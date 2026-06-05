@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Post Work Bundle Manifest V0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task_id",
+    "bundle_id",
+    "active_root",
+    "registered_taskpack",
+    "route_manifest",
+    "entry_head",
+    "file_delta_index",
+    "receipt_index",
+    "organ_ring_receipt",
+    "github_safe_index",
+    "heavy_artifact_policy"
+  ],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "task_id": {"type": "string", "minLength": 1},
+    "bundle_id": {"type": "string", "minLength": 1},
+    "active_root": {"type": "string", "minLength": 1},
+    "registered_taskpack": {"type": "string", "minLength": 1},
+    "route_manifest": {"type": "string", "minLength": 1},
+    "entry_head": {"type": "string", "minLength": 1},
+    "post_task_local_head": {"type": "string"},
+    "remote_head_after_push": {"type": "string"},
+    "file_delta_index": {"type": "string", "minLength": 1},
+    "receipt_index": {"type": "string", "minLength": 1},
+    "organ_ring_receipt": {"type": "string", "minLength": 1},
+    "github_safe_index": {"type": "boolean"},
+    "heavy_artifact_policy": {"type": "string", "minLength": 1},
+    "local_heavy_artifacts": {"type": "array"},
+    "self_reference_boundary": {"type": "string"}
+  },
+  "additionalProperties": true
+}
