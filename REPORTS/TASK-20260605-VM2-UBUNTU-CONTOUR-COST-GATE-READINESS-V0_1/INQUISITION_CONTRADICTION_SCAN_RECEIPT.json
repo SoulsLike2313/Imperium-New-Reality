@@ -1,0 +1,18 @@
+{
+  "schema_version": "inquisition.contradiction_scan_receipt.v0_1",
+  "task_id": "TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1",
+  "created_at_utc": "2026-06-05T18:13:32Z",
+  "owner_organ": "INQUISITION",
+  "fake_green_scan": "PASS_WITH_WARNINGS",
+  "claims_rejected": [
+    "No production readiness claim.",
+    "No WARP readiness claim.",
+    "No full Custodes or Throne authority claim.",
+    "No fake numeric token usage."
+  ],
+  "warnings": [
+    "Post-work V0.2 checker is expected to warn or block on VM2 because its active root constant is Windows-specific.",
+    "File count exceeds the planned target because the task minimum output list is larger than the target."
+  ],
+  "status": "PASS_WITH_WARNINGS"
+}

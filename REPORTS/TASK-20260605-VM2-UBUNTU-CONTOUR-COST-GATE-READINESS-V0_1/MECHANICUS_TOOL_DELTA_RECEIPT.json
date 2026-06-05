@@ -1,0 +1,15 @@
+{
+  "schema_version": "mechanicus.tool_delta_receipt.v0_1",
+  "task_id": "TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1",
+  "created_at_utc": "2026-06-05T18:13:32Z",
+  "owner_organ": "MECHANICUS",
+  "tools_added": [
+    {
+      "tool_id": "STRATEGIUM_TASK_COST_CHECKER_V0_1",
+      "script_path": "ORGANS/STRATEGIUM/COST_GATE/strategium_task_cost_checker_v0_1.py",
+      "tool_card_path": "ORGANS/MECHANICUS/TOOLS/STRATEGIUM_TASK_COST_CHECKER_TOOL_CARD.json",
+      "fixture_replay": "python3 ORGANS/STRATEGIUM/COST_GATE/strategium_task_cost_checker_v0_1.py --run-fixtures --out REPORTS/TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1/strategium_task_cost_checker_fixture_report.json"
+    }
+  ],
+  "status": "PASS"
+}

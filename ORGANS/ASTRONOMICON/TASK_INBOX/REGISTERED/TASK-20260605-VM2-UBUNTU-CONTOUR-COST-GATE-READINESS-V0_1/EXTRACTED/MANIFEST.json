@@ -1,0 +1,73 @@
+{
+  "schema_version": "imperium.taskpack.manifest.v0_1",
+  "task_id": "TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1",
+  "task_title": "VM2 Ubuntu contour readiness probe and Strategium cost gate micro task",
+  "target_contour": "VM2_UBUNTU_OVER_SSH_FROM_PC",
+  "execution_mode": "SERVITOR",
+  "primary_organ": "STRATEGIUM",
+  "support_organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "required_post_work_organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS",
+    "CUSTODES"
+  ],
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH UTF8 NO_BOM only. No Cyrillic in taskpack internal files.",
+    "canonical_repo_artifacts": "ENGLISH UTF8 NO_BOM for JSON, schemas, scripts, validators, machine receipts, and contracts unless an existing canon explicitly requires otherwise.",
+    "owner_facing_russian_runtime_output": "Owner-facing live response and final summary MUST be Russian after OFFICIO role entry and must be routed through OFFICIO authority.",
+    "cyrillic_in_taskpack": "Forbidden in taskpack internal files. Owner Russian is allowed only after OFFICIO runtime gate.",
+    "localization_exception": "Only OFFICIO-routed owner-facing runtime output may use Russian. Machine artifacts stay ENGLISH UTF8 NO_BOM."
+  },
+  "enhanced_ghost_evolve": {
+    "mode": "ULTIMATE_ORGAN_TEACHING_LIGHTWEIGHT",
+    "purpose": "Teach organs without expanding scope. Convert lessons into contracts, schemas, templates, validators, receipts, or next-route cards.",
+    "hard_rule": "If a new rule is discovered, it must be captured in an organ-owned artifact or in an explicit Schola next-learning receipt."
+  },
+  "scope_boundary": {
+    "allowed": [
+      "VM2 Ubuntu sync/readiness proof",
+      "Windows PC to Ubuntu VM2 path and shell compatibility probe",
+      "Strategium task budget and cost receipt v0.1 micro foundation",
+      "Mechanicus registration for any new cost checker script",
+      "Post-work bundle receipt for this micro task"
+    ],
+    "forbidden": [
+      "No WARP implementation",
+      "No IDE refactor",
+      "No unrelated organ rewrite",
+      "No Ancient Empire access unless explicit salvage request exists",
+      "No large bundle redesign beyond micro cost gate"
+    ]
+  },
+  "budget_policy": {
+    "budget_class": "SMALL_TO_MEDIUM",
+    "max_files_changed_target": 20,
+    "stop_if_scope_expands": true,
+    "cost_tracking_required": true
+  }
+}

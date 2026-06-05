@@ -1,0 +1,48 @@
+{
+  "schema_version": "strategium.task_cost_checker_fixture_report.v0_1",
+  "created_at_utc": "2026-06-05T18:22:15Z",
+  "fixtures_root": "/home/vboxuser2/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/STRATEGIUM/COST_GATE/FIXTURES",
+  "results": [
+    {
+      "task_id": "FIXTURE-STRATEGIUM-COST-POSITIVE",
+      "budget_card": "/home/vboxuser2/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/STRATEGIUM/COST_GATE/FIXTURES/positive_minimal/TASK_BUDGET_CARD.json",
+      "cost_receipt": "/home/vboxuser2/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/STRATEGIUM/COST_GATE/FIXTURES/positive_minimal/TASK_COST_RECEIPT.json",
+      "kpd_delta_receipt": "/home/vboxuser2/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/STRATEGIUM/COST_GATE/FIXTURES/positive_minimal/KPD_DELTA_RECEIPT.json",
+      "error_count": 0,
+      "errors": [],
+      "verdict": "PASS",
+      "fixture_name": "positive_minimal",
+      "expected_verdict": "PASS",
+      "expectation_met": true
+    },
+    {
+      "task_id": "FIXTURE-STRATEGIUM-COST-NEGATIVE",
+      "budget_card": "/home/vboxuser2/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/STRATEGIUM/COST_GATE/FIXTURES/negative_missing_budget_class/TASK_BUDGET_CARD.json",
+      "cost_receipt": "/home/vboxuser2/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/STRATEGIUM/COST_GATE/FIXTURES/negative_missing_budget_class/TASK_COST_RECEIPT.json",
+      "kpd_delta_receipt": "/home/vboxuser2/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/STRATEGIUM/COST_GATE/FIXTURES/negative_missing_budget_class/KPD_DELTA_RECEIPT.json",
+      "error_count": 3,
+      "errors": [
+        {
+          "file": "TASK_BUDGET_CARD",
+          "field": "budget_class_planned",
+          "message": "required field missing"
+        },
+        {
+          "file": "TASK_BUDGET_CARD",
+          "field": "budget_class_planned",
+          "message": "unknown or missing budget class"
+        },
+        {
+          "file": "TASK_COST_RECEIPT",
+          "field": "budget_class_planned",
+          "message": "does not match task budget card"
+        }
+      ],
+      "verdict": "BLOCK",
+      "fixture_name": "negative_missing_budget_class",
+      "expected_verdict": "BLOCK",
+      "expectation_met": true
+    }
+  ],
+  "verdict": "PASS"
+}

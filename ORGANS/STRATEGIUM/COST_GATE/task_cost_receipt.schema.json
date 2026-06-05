@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Strategium Task Cost Receipt V0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task_id",
+    "budget_class_planned",
+    "actual_cost_class",
+    "files_changed_count",
+    "commands_run_count",
+    "validators_run_count",
+    "wall_time_minutes",
+    "token_usage",
+    "owner_intervention_count",
+    "scope_expansion_count",
+    "kpd_verdict",
+    "next_task_budget_recommendation"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "strategium.task_cost_receipt.v0_1"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "budget_class_planned": {
+      "type": "string",
+      "enum": [
+        "TINY",
+        "SMALL",
+        "SMALL_TO_MEDIUM",
+        "MEDIUM",
+        "LARGE"
+      ]
+    },
+    "actual_cost_class": {
+      "type": "string",
+      "enum": [
+        "TINY",
+        "SMALL",
+        "SMALL_TO_MEDIUM",
+        "MEDIUM",
+        "LARGE"
+      ]
+    },
+    "files_changed_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "commands_run_count": {
+      "$ref": "#/$defs/count_or_unknown"
+    },
+    "validators_run_count": {
+      "$ref": "#/$defs/count_or_unknown"
+    },
+    "wall_time_minutes": {
+      "$ref": "#/$defs/number_or_unknown"
+    },
+    "token_usage": {
+      "$ref": "#/$defs/count_or_unknown"
+    },
+    "owner_intervention_count": {
+      "$ref": "#/$defs/count_or_unknown"
+    },
+    "scope_expansion_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "kpd_verdict": {
+      "type": "string",
+      "minLength": 1
+    },
+    "next_task_budget_recommendation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "overrun_reason": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "unknown_with_reason": {
+      "type": "object",
+      "required": [
+        "status",
+        "reason"
+      ],
+      "properties": {
+        "status": {
+          "const": "UNKNOWN_WITH_REASON"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "count_or_unknown": {
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "$ref": "#/$defs/unknown_with_reason"
+        }
+      ]
+    },
+    "number_or_unknown": {
+      "oneOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "$ref": "#/$defs/unknown_with_reason"
+        }
+      ]
+    }
+  },
+  "additionalProperties": true
+}

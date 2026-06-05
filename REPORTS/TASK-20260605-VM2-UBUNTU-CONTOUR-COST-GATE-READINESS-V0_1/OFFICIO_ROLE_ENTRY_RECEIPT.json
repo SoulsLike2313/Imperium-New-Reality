@@ -1,0 +1,48 @@
+{
+  "schema_version": "officio.role_entry_receipt.v0_1",
+  "task_id": "TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1",
+  "created_at_utc": "2026-06-05T18:13:32Z",
+  "role_id": "SERVITOR_PRIME",
+  "owner_organ": "OFFICIO_AGENTIS",
+  "role_source": "OFFICIO_AGENTIS/ROLES/servitor_role_v0_1.md",
+  "required_ack": {
+    "ROLE_ACK": true,
+    "LANGUAGE_ACK": true,
+    "SCOPE_ACK": true,
+    "STOP_CONDITIONS_ACK": true,
+    "FORBIDDEN_ACTIONS_ACK": true
+  },
+  "language_policy": {
+    "owner_facing_after_role_entry": "RU",
+    "machine_artifacts": "ENGLISH_UTF8_NO_BOM"
+  },
+  "accepted_stop_conditions": [
+    "VM2 repo not synced with origin/master at start and cannot be safely synced",
+    "unexplained dirty worktree before work",
+    "scope expansion into WARP, IDE, or broad bundle redesign",
+    "required machine artifact would need Cyrillic text",
+    "cost gate grows beyond micro scope",
+    "fake green risk"
+  ],
+  "scope_boundary": {
+    "allowed_paths": [
+      "ORGANS/STRATEGIUM/COST_GATE/",
+      "ORGANS/MECHANICUS/TOOLS/",
+      "REPORTS/TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1/",
+      "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1/"
+    ],
+    "forbidden_paths": [
+      "parent folders outside New Reality root",
+      "Ancient Empire context",
+      "WARP implementation",
+      "IDE refactor"
+    ]
+  },
+  "gatepack_path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1",
+  "gatepack_sha256": "6e42ad0d955fdcdf4d6dd3c6686d8155e30ecbee431675bedf2c130d5fba6ef8",
+  "current_head_at_entry": "64840a6b159e32e432b6b6f0d00059c624e1b0ac",
+  "verdict": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "Worktree was already dirty from Astronomicon task registration; dirty state is explained in VM2 readiness receipt."
+  ]
+}
