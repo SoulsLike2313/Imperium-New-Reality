@@ -1,0 +1,79 @@
+{
+  "schema_version": "astronomicon.task_route_packet.v0_1",
+  "task_id": "TASK-20260605-NEWGEN-PC-ADMINISTRATUM-CURRENT-TRUTH-HEAD-CORRECTION-V0_1",
+  "target_contour": "PC_LOCAL_NEW_REALITY_ROOT_ONLY",
+  "execution_mode": "SERVITOR",
+  "primary_organ": "ADMINISTRATUM",
+  "support_organs": [
+    "ASTRONOMICON",
+    "CUSTODES",
+    "INQUISITION",
+    "DOCTRINARIUM"
+  ],
+  "phases": [
+    {
+      "phase_id": "PHASE_00_ROOT_AND_REGISTRATION_PROOF",
+      "goal": "Prove root, branch, origin, and task registration before any correction mutation.",
+      "deliverables": [
+        "registration_receipt.json",
+        "root_branch_origin_proof.txt",
+        "pre_task_git_status.txt"
+      ]
+    },
+    {
+      "phase_id": "PHASE_01_CURRENT_TRUTH_INSPECTION",
+      "goal": "Inspect current truth files and identify exact HEAD drift scope.",
+      "deliverables": [
+        "current_truth_inspection_receipt.json",
+        "old_vs_actual_head_delta.md"
+      ]
+    },
+    {
+      "phase_id": "PHASE_02_MINIMAL_REPAIR",
+      "goal": "Repair only the minimum Administratum current truth data needed to align with actual HEAD.",
+      "deliverables": [
+        "changed_files_manifest.json",
+        "diff_summary.md"
+      ]
+    },
+    {
+      "phase_id": "PHASE_03_VALIDATION_AND_REPORT",
+      "goal": "Run available validators and produce owner-facing Russian final summary with no fake pass.",
+      "deliverables": [
+        "validation_receipts/*.json",
+        "final_owner_summary_ru.md",
+        "git_closure_receipt.json"
+      ]
+    }
+  ],
+  "required_receipts": [
+    "ADMINISTRATUM task_session_card_v0_1",
+    "ASTRONOMICON task_essence_checker_report",
+    "ASTRONOMICON route_packet_checker_report",
+    "ADMINISTRATUM current_truth_checker_report or UNKNOWN_WITH_REASON",
+    "CUSTODES scope boundary receipt or inline bounded verdict",
+    "INQUISITION no-unrelated-mutation receipt or inline bounded verdict",
+    "git_closure_receipt"
+  ],
+  "stop_conditions": [
+    "Active root is not E:/IMPERIUM_NEW_GENERATION_NEW_REALITY.",
+    "Git branch is not master or origin is not SoulsLike2313/Imperium-New-Reality.git.",
+    "Working tree is dirty before registration/execution and the dirt is not from this task registration.",
+    "current_head_card_v0_1.json is missing or structurally unreadable.",
+    "A required correction would require Ancient/parent/private path access without explicit salvage admission.",
+    "Validation produces BLOCK/FAIL and cannot be repaired within this task scope."
+  ],
+  "forbidden_actions": [
+    "Editing files outside E:/IMPERIUM_NEW_GENERATION_NEW_REALITY.",
+    "Touching old Imperium as working root.",
+    "Force push, history rewrite, broad cleanup, or unrelated refactor.",
+    "Claiming validators passed when they were not run.",
+    "Building post-work organ ring in this correction task."
+  ],
+  "not_proven_boundary": [
+    "This task does not prove full organ post-work admission ring.",
+    "This task does not prove all New Reality cards are semantically current.",
+    "This task does not prove global Inquisition clean pass or Custodes clean pass.",
+    "Remote closure is only proven if git ls-remote equals local HEAD after push."
+  ]
+}

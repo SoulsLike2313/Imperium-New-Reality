@@ -1,0 +1,59 @@
+{
+  "schema_version": "astronomicon.taskpack.manifest.v0_1",
+  "task_id": "TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1",
+  "task_title": "PC current truth head correction plus Astronomicon entry corridor save with Officio role and Russian owner output",
+  "created_at_utc": "2026-06-05T15:10:20Z",
+  "target_contour": "PC",
+  "execution_mode": "SERVITOR",
+  "working_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "branch": "master",
+  "primary_organ": "ADMINISTRATUM",
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "support_organs": [
+    "ASTRONOMICON",
+    "OFFICIO_AGENTIS",
+    "DOCTRINARIUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH UTF8 NO_BOM only. Root taskpack files must contain no Cyrillic and no mojibake.",
+    "canonical_repo_artifacts": "ENGLISH UTF8 NO_BOM by default. Russian is allowed only for explicitly owner-facing reports or when Officio grants a localization exception receipt.",
+    "owner_facing_russian_runtime_output": "Owner-facing runtime output must switch to Russian only after OFFICIO_AGENTIS role entry and must be routed through OFFICIO authority.",
+    "cyrillic_in_taskpack": "FORBIDDEN in root internal taskpack files. Use English descriptions for Russian-output requirements.",
+    "localization_exception": "OFFICIO_AGENTIS may authorize Russian for final owner-facing summary; code, schemas, manifests, and machine receipts stay ENGLISH UTF8 NO_BOM unless a receipt says otherwise."
+  },
+  "mandatory_role_entry": {
+    "servitor_identity": "The agent must enter Servitor role through OFFICIO_AGENTIS before mutation.",
+    "officio_gate": "Read or inspect OFFICIO_AGENTIS role/contract files available in the repo and produce an Officio role-entry receipt before editing.",
+    "owner_language_after_gate": "After the Officio meeting, owner-facing replies and final owner summary must be in Russian. Internal artifacts stay English."
+  },
+  "preserve_bootstrap_patches": {
+    "must_commit_and_push": true,
+    "patch_scope": [
+      "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+      "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+      "Astronomicon taskpack form documentation or contract created by this task",
+      "Administratum current truth HEAD/card correction created by this task",
+      "Receipts proving validation, commit, push, and remote head closure"
+    ],
+    "encoding_requirement": "All JSON/MD canonical artifacts created by this task must be UTF8 NO_BOM unless an existing contract requires otherwise."
+  },
+  "not_proven_boundary": [
+    "Do not claim full semantic truth of the whole Imperium.",
+    "Do not claim all organs are fully implemented.",
+    "Do not claim clean pass if Inquisition or Custodes receipts are absent.",
+    "Missing metrics must be UNKNOWN_WITH_REASON, not green."
+  ]
+}
