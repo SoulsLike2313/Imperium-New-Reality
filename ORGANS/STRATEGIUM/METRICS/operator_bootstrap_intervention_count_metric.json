@@ -1,0 +1,13 @@
+{
+  "schema_version": "imperium.organ_metric.v0_1",
+  "metric_id": "operator_bootstrap_intervention_count",
+  "owner_organ": "STRATEGIUM",
+  "purpose": "Count owner/operator interventions needed to bootstrap a task beyond normal taskpack admission.",
+  "unit": "count",
+  "inputs": [
+    "OFFICIO_ROLE_ENTRY_RECEIPT.json",
+    "PRE_EXISTING_DIRT_CLASSIFICATION_RECEIPT.json"
+  ],
+  "formula": "Manual interventions recorded in task receipts.",
+  "current_measurement_policy": "Measured from local task receipts; defaults to zero only when receipts explicitly say so."
+}

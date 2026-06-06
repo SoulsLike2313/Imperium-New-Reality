@@ -21,6 +21,36 @@
       "source_pattern": "Questionable or quarantine material may be treated as truth by convenience.",
       "preventive_rule": "Active use of quarantine requires explicit salvage or admission receipt.",
       "future_checker_hook": "Quarantine policy checker scans declared active evidence paths for SUPPORT/QUESTIONABLE_OR_QUARANTINE."
+    },
+    {
+      "alert_id": "POWERSHELL_TO_SSH_QUOTING_FAILURE",
+      "source_pattern": "PowerShell quoting differs from remote shell quoting and can corrupt command payloads.",
+      "preventive_rule": "Prefer local script files, JSON args, or single-shell execution when crossing PowerShell to SSH boundaries.",
+      "future_checker_hook": "Mechanicus command wrappers flag nested shell quoting chains before remote execution."
+    },
+    {
+      "alert_id": "VM2_REMOTE_GIT_HTTPS_CREDENTIAL_FAILURE",
+      "source_pattern": "Remote git HTTPS push can fail on VM2 because credentials are unavailable or mismatched.",
+      "preventive_rule": "Treat remote push proof as pending until git ls-remote confirms the target branch head.",
+      "future_checker_hook": "Post-work remote closure checker compares local HEAD and origin/master after push."
+    },
+    {
+      "alert_id": "DIRTY_WORKTREE_BLOCKING_REMOTE_ROUTE",
+      "source_pattern": "Unclassified local changes make remote route and push closure unsafe.",
+      "preventive_rule": "Classify pre-existing dirt before repair, then commit or explicitly block with evidence.",
+      "future_checker_hook": "Pre-existing dirt receipt is required before post-work bundle PASS."
+    },
+    {
+      "alert_id": "POST_PUSH_SELF_REFERENCE_PROOF_BOUNDARY",
+      "source_pattern": "Reports edited after remote proof invalidate local-equals-origin evidence.",
+      "preventive_rule": "Record post-push proof only after all report writes are complete, then avoid further writes before final response.",
+      "future_checker_hook": "Remote closure receipt records no_write_after_remote_proof as true only after final status verification."
+    },
+    {
+      "alert_id": "TASKPACK_LANGUAGE_GATE_EXACT_ENGLISH_UTF8_POLICY",
+      "source_pattern": "Machine artifacts can drift into localized or non-UTF8 content.",
+      "preventive_rule": "Keep machine JSON artifacts English, UTF-8, no BOM; reserve Russian for owner-facing summaries.",
+      "future_checker_hook": "Language gate scans taskpack and bundle machine artifacts before PASS."
     }
   ]
 }

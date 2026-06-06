@@ -1,0 +1,13 @@
+{
+  "schema_version": "imperium.organ_metric.v0_1",
+  "metric_id": "core_shape_compliance_score",
+  "owner_organ": "STRATEGIUM",
+  "purpose": "Estimate how much of the active repository shape matches the required nine-organ plus support-zone contract.",
+  "unit": "score_0_to_100",
+  "inputs": [
+    "CORE_SELF_VALIDATION_REPORT.json",
+    "CORE_FILE_CLASSIFIER_DRY_RUN_REPORT.json"
+  ],
+  "formula": "100 minus weighted penalties for blockers, unknown owner classifications, and active quarantine violations.",
+  "current_measurement_policy": "Measured per task report; unknown external resource usage remains UNKNOWN_WITH_REASON."
+}

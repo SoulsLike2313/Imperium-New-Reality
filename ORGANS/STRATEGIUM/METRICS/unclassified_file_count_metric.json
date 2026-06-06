@@ -1,0 +1,13 @@
+{
+  "schema_version": "imperium.organ_metric.v0_1",
+  "metric_id": "unclassified_file_count",
+  "owner_organ": "STRATEGIUM",
+  "purpose": "Count paths that the dry-run classifier cannot assign to a known owner or future-scope bucket.",
+  "unit": "count",
+  "inputs": [
+    "CORE_FILE_CLASSIFIER_DRY_RUN_REPORT.json",
+    "core_migration_queue_v0_1.json"
+  ],
+  "formula": "classification_counts.UNKNOWN_OWNER",
+  "current_measurement_policy": "Measured by core_file_classifier_dry_run_v0_2.py."
+}

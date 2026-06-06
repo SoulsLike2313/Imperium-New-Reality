@@ -1,0 +1,58 @@
+{
+  "schema_version": "imperium.astronomicon.taskpack_manifest.v0_1",
+  "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_3",
+  "task_title": "Post Work Bundle Admission Ring V0.3 - Standard Task Completion Closure Route",
+  "target_contour": "PC",
+  "execution_mode": "SERVITOR",
+  "primary_organ": "ADMINISTRATUM",
+  "support_organs": [
+    "ASTRONOMICON",
+    "OFFICIO_AGENTIS",
+    "MECHANICUS",
+    "DOCTRINARIUM",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS",
+    "CUSTODES"
+  ],
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS",
+    "CUSTODES"
+  ],
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "All taskpack internal files are ENGLISH UTF8 NO_BOM ASCII-safe text only.",
+    "canonical_repo_artifacts": "Canonical machine-readable repo artifacts must be ENGLISH UTF8 NO_BOM unless an explicit OFFICIO routed owner-language exception is written.",
+    "owner_facing_russian_runtime_output": "Owner-facing live and final runtime output must be Russian after OFFICIO_AGENTIS role entry and must be routed through OFFICIO authority.",
+    "cyrillic_in_taskpack": "Forbidden in taskpack internal files. Owner Russian is described in ENGLISH and routed through OFFICIO.",
+    "localization_exception": "OFFICIO_AGENTIS may require Russian owner-facing summaries after role entry; machine artifacts remain ENGLISH UTF8 NO_BOM."
+  },
+  "source_context": {
+    "previous_task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_2",
+    "previous_result": "PASS_WITH_WARNINGS_PUSHED",
+    "previous_commit_reported_by_owner": "64840a6b159e32e432b6b6f0d00059c624e1b0ac",
+    "v0_2_result_summary": "Schema-backed checker, closure updater, and repair loop were created. V0.3 must integrate them into standard task completion closure."
+  },
+  "hard_boundaries": [
+    "Do not claim full semantic truth.",
+    "Do not claim full Custodes or Throne authority.",
+    "Do not claim WARP readiness.",
+    "Do not use Ancient Empire as runtime root.",
+    "Do not create fake green PASS.",
+    "Do not finish without commit, push, git clean proof, and origin/master equality proof."
+  ],
+  "enhanced_ghost_evolve": {
+    "mode": "ULTIMATE_ORGAN_TEACHING",
+    "required": true,
+    "meaning": "Servitor must teach internal organs through contracts, schemas, templates, validators, receipts, checkers, and next-route cards. New knowledge must be placed into organ-owned artifacts, not only final summaries."
+  },
+  "expected_owner_final_language": "RUSSIAN_THROUGH_OFFICIO",
+  "created_by": "Logos-Prime",
+  "created_at_utc": "2026-06-05T17:34:44Z"
+}

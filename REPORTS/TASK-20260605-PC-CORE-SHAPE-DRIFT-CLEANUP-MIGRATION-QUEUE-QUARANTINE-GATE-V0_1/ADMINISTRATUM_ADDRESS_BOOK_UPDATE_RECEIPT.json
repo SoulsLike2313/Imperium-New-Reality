@@ -1,0 +1,23 @@
+{
+  "schema_version": "imperium.administratum_address_book_update_receipt.v0_1",
+  "task_id": "TASK-20260605-PC-CORE-SHAPE-DRIFT-CLEANUP-MIGRATION-QUEUE-QUARANTINE-GATE-V0_1",
+  "created_at_utc": "2026-06-06T18:25:18Z",
+  "owner_organ": "ADMINISTRATUM",
+  "updated_or_created": [
+    "ORGANS/ADMINISTRATUM/MIGRATION_QUEUE/CORE_MIGRATION_QUEUE_CONTRACT_V0_1.md",
+    "ORGANS/ADMINISTRATUM/MIGRATION_QUEUE/core_migration_queue_v0_1.json",
+    "ORGANS/ADMINISTRATUM/MIGRATION_QUEUE/core_migration_queue_summary.md"
+  ],
+  "existing_address_book_mappings_used": [
+    "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/core_address_book_seed.json",
+    "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/file_ownership_map_seed.json",
+    "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/support_zone_map_seed.json"
+  ],
+  "queue_verdict": "PASS_WITH_WARNINGS",
+  "unknown_owner_count": 0,
+  "verdict": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "Address-book seed mappings were not rewritten; migration queue is the V0.1 update artifact."
+  ],
+  "blockers": []
+}

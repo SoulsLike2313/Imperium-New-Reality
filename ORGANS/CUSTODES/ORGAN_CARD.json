@@ -1,0 +1,21 @@
+{
+  "schema_version": "imperium.organ_card.v0_1",
+  "organ_id": "CUSTODES",
+  "root_path": "ORGANS/CUSTODES",
+  "life_zone_path": "ORGANS/CUSTODES",
+  "primary_duty": "Narrow organ life-zone and matrix audit authority.",
+  "status": "ACTIVE_CORE_ORGAN_METADATA_V0_1",
+  "owned_metrics": [
+    "organ_life_completeness_score"
+  ],
+  "owned_matrices": [
+    "ORGANS/CUSTODES/ORGAN_LIFE_AUDIT/custodes_organ_life_audit_matrix.json"
+  ],
+  "validators": [
+    "ORGANS/_CORE_GOVERNANCE/TOOLS/organ_life_validator_v0_1.py",
+    "ORGANS/_CORE_GOVERNANCE/TOOLS/core_shape_self_checker_v0_2.py"
+  ],
+  "warnings": [
+    "Custodes authority is narrow: this metadata does not claim full semantic truth or full repository admission."
+  ]
+}

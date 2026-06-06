@@ -1,0 +1,64 @@
+{
+  "schema_version": "imperium.astronomicon.taskpack.manifest.v0_1",
+  "task_id": "TASK-20260605-PC-CORE-SHAPE-DRIFT-CLEANUP-MIGRATION-QUEUE-QUARANTINE-GATE-V0_1",
+  "task_title": "Core Shape Drift Cleanup, Registry Closure, Migration Queue, and Quarantine Gate V0.1",
+  "contour": "PC",
+  "route_mode": "LIVE",
+  "primary_organ": "ADMINISTRATUM",
+  "support_organs": [
+    "ASTRONOMICON",
+    "OFFICIO_AGENTIS",
+    "MECHANICUS",
+    "DOCTRINARIUM",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS",
+    "CUSTODES"
+  ],
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS",
+    "CUSTODES"
+  ],
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH UTF8 NO_BOM only. No Cyrillic text inside taskpack machine or markdown files.",
+    "canonical_repo_artifacts": "ENGLISH UTF8 NO_BOM for JSON schemas, machine receipts, validators, matrices, and contracts unless an explicit OFFICIO owner-facing Russian exception is declared.",
+    "owner_facing_russian_runtime_output": "Russian owner-facing final summary is allowed only through OFFICIO_AGENTIS authority and must not contaminate machine JSON. Owner-facing Russian must be routed through OFFICIO.",
+    "cyrillic_in_taskpack": "FORBIDDEN",
+    "localization_exception": "Only runtime owner-facing FINAL_OWNER_SUMMARY_RU.md may be Russian through OFFICIO authority; taskpack itself remains ENGLISH UTF8 NO_BOM."
+  },
+  "enhanced_ghost_evolve": {
+    "mode": "ULTIMATE_ORGAN_TEACHING_ARCHITECTURE_CLEANUP",
+    "requirement": "Every repeated manual fix, repo-shape rule, metric, matrix, alert, quarantine rule, contour lesson, or validation rule discovered during the task must be converted into durable organ knowledge: contract, schema, matrix, validator, template, receipt, address-book entry, or next-task card.",
+    "servitor_load_reduction": "Servitor must reduce future manual context load by moving decisions into organs, support runtime, validators, metrics, and Administratum indexes."
+  },
+  "hard_scope": {
+    "root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+    "forbidden": [
+      "Ancient Empire active use",
+      "parent folder mutation",
+      "mass delete",
+      "mass move without migration queue and owner approval",
+      "quarantine active-use",
+      "fake PASS without bundle closure",
+      "claiming full semantic truth"
+    ],
+    "allowed": [
+      "registry dirt closure",
+      "post-work V0_3 residue classification/closure",
+      "Custodes metadata repair",
+      "core checker hardening",
+      "dry-run classification",
+      "migration queue creation",
+      "quarantine gate creation",
+      "post-work bundle closure",
+      "commit and push"
+    ]
+  }
+}

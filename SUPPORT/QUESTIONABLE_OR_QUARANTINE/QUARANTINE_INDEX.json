@@ -1,11 +1,19 @@
 {
-  "schema_version": "imperium.quarantine_index.v0_1",
-  "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+  "schema_version": "imperium.quarantine_index.v0_2",
+  "task_id": "TASK-20260605-PC-CORE-SHAPE-DRIFT-CLEANUP-MIGRATION-QUEUE-QUARANTINE-GATE-V0_1",
   "owner_organ": "INQUISITION",
   "active_use_default": false,
+  "active_use_policy": {
+    "default_verdict": "BLOCK",
+    "exception_required": true,
+    "exception_field": "allowed_active_use_exceptions",
+    "checker": "ORGANS/_CORE_GOVERNANCE/TOOLS/quarantine_active_use_checker_v0_1.py"
+  },
+  "allowed_active_use_exceptions": [],
   "items": [],
   "warnings": [
-    "Root-level legacy or questionable candidates are reported by core_shape_self_checker_v0_1.py; they are not physically moved by this task."
+    "Root-level legacy or questionable candidates are reported by core_shape_self_checker_v0_2.py; they are not physically moved by this task.",
+    "Policy, report, taskpack, migration queue, and Schola learning references are references only and do not authorize active use."
   ],
   "blockers": [],
   "next_action": "Populate only through explicit quarantine or salvage workflow."
