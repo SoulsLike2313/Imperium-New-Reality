@@ -1,10 +1,14 @@
 {
-  "schema_version": "imperium.core_migration_queue.v0_1",
+  "schema_version": "imperium.core_file_classifier_dry_run_report.v0_2",
   "task_id": "TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1",
-  "created_at_utc": "2026-06-06T18:57:36Z",
+  "timestamp_utc": "2026-06-06T18:57:35Z",
+  "verdict": "PASS_WITH_WARNINGS",
   "mode": "DRY_RUN_ONLY",
   "move_or_delete_performed": false,
-  "entry_count": 53,
+  "import_rewrite_performed": false,
+  "required_organ_count": 9,
+  "scanned_entry_count": 53,
+  "reported_entry_limit": 1000,
   "classification_counts": {
     "LEGACY_ACCEPTED": 2,
     "COMMON_SUPPORT": 38,
@@ -12,29 +16,42 @@
     "FUTURE_SCOPE": 1,
     "QUARANTINE_CANDIDATE": 1
   },
-  "recommended_action_counts": {
-    "KEEP": 51,
-    "FUTURE_SCOPE_HOLD": 2
+  "drift_type_counts": {
+    "ACCEPTED_LEGACY": 1,
+    "CORE_CONTAINER": 1,
+    "ACTIVE_ORGAN": 9,
+    "TASK_INBOX_ACTIVE_ADMISSION": 1,
+    "TASK_INBOX_RESIDUE": 29,
+    "POST_WORK_RESIDUE": 4,
+    "REGISTRY_DRIFT": 2,
+    "FUTURE_SCOPE": 1,
+    "CORE_GOVERNANCE_SUPPORT": 1,
+    "REPORT_EVIDENCE": 1,
+    "SUPPORT_CONTAINER": 1,
+    "COMMON_SUPPORT": 1,
+    "QUARANTINE_ZONE": 1
   },
-  "allowed_classifications": [
-    "ORGAN_HOME",
+  "queue_classifications": [
     "COMMON_SUPPORT",
-    "QUARANTINE_CANDIDATE",
+    "FUTURE_SCOPE",
     "LEGACY_ACCEPTED",
-    "UNKNOWN_OWNER",
-    "FUTURE_SCOPE"
+    "ORGAN_HOME",
+    "QUARANTINE_CANDIDATE",
+    "UNKNOWN_OWNER"
   ],
-  "allowed_recommended_actions": [
+  "recommended_actions": [
+    "FUTURE_SCOPE_HOLD",
+    "INVESTIGATE",
     "KEEP",
     "MOVE_TO_ORGAN",
-    "MOVE_TO_SUPPORT",
     "MOVE_TO_QUARANTINE",
-    "INVESTIGATE",
-    "FUTURE_SCOPE_HOLD"
+    "MOVE_TO_SUPPORT"
   ],
   "entries": [
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "AGENTS.md",
+      "kind": "file",
       "classification": "LEGACY_ACCEPTED",
       "owner_organ": "ADMINISTRATUM",
       "recommended_action": "KEEP",
@@ -46,10 +63,14 @@
       "evidence": [
         "root AGENTS contract"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ADMINISTRATUM",
       "recommended_action": "KEEP",
@@ -61,10 +82,14 @@
       "evidence": [
         "core shape contract"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ADMINISTRATUM",
+      "kind": "directory",
       "classification": "ORGAN_HOME",
       "owner_organ": "ADMINISTRATUM",
       "recommended_action": "KEEP",
@@ -76,10 +101,14 @@
       "evidence": [
         "required 9-organ registry"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON",
+      "kind": "directory",
       "classification": "ORGAN_HOME",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -91,10 +120,14 @@
       "evidence": [
         "required 9-organ registry"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-CORE-SHAPE-DRIFT-CLEANUP-MIGRATION-QUEUE-QUARANTINE-GATE-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -106,10 +139,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -121,10 +158,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -136,10 +177,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_2",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -151,10 +196,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_3",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -166,10 +215,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -181,10 +234,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -196,10 +253,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -211,10 +272,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -226,10 +291,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-SKILL-AND-LOGOS-HANDOFF-BRIDGE-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -241,10 +310,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-ROLE-PACK-AND-LOGOS-OWNER-AUDIT-CARD-CONTRACT-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -256,10 +329,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -271,10 +348,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -286,10 +367,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-ASTRONOMICON-TASKPACK-SKILL-TUI-CONTOUR-ROUTER-AND-VM-LAUNCH-CARD-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -301,10 +386,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-BLOCK-SPINE-CONTEXT-PACK-AND-LLM-FOCUS-OPTIMIZATION-VM3-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -316,10 +405,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -331,10 +424,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-LANGUAGE-BACKLOG-PHASED-REMEDIATION-AND-RETENTION-CHECKER-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -346,10 +443,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-LANGUAGE-GATE-INDEPENDENT-REPLAY-STRICT-SCOPE-LEGACY-BACKLOG-RETENTION-POLICY-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -361,10 +462,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-PC-ADMINISTRATUM-BUNDLE-GATE-SCHEMA-VALIDATION-ANTI-FAKE-GREEN-REPLAY-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -376,10 +481,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-PC-ADMINISTRATUM-TASK-REPORT-BUNDLE-GATE-MATRIX-AND-PACKAGER-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -391,10 +500,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-PC-FINAL-REMOTE-CLOSURE-NATIVE-REPLAY-SMOKE-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -406,10 +519,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-PC-NATIVE-TASKPACK-REGISTRY-SMOKE-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -421,10 +538,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-PC-NEW-REALITY-FINAL-REMOTE-CLOSURE-RECEIPT-AND-NATIVE-REPLAY-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -436,10 +557,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-PC-NEW-REALITY-REMOTE-HEAD-POLICY-ANCIENT-REFERENCE-AND-FIRST-PUSH-PROOF-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -451,10 +576,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-PC-NEW-REALITY-REMOTE-TREE-BUNDLE-CLOSURE-VALIDATOR-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -466,10 +595,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-PC-NEW-REALITY-SELF-FIX-CLEAN-DEV-ENV-SERVITOR-CONTROL-MECHANICUS-SKILL-ARSENAL-AND-REPO-STERILIZATION-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -481,10 +614,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-PC-NEW-REALITY-SEPARATE-REPO-ANCIENT-EMPIRE-FREEZE-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -496,10 +633,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -511,10 +652,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-STAGE2-MICROPILOT-RAW-EXTERNAL-REVIEW-BUNDLE-ATTACH-AND-FINALIZE-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -526,10 +671,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-STAGE2-MICROPILOT-VM3-CONTEXT-PACK-EXECUTION-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -541,10 +690,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -556,10 +709,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -571,10 +728,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-VM3-ASTRONOMICON-REGISTRATION-AND-EXECUTION-ROUTE-PROOF-UBUNTU-V0_1",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -586,10 +747,14 @@
       "evidence": [
         "registered taskpack path"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json",
+      "kind": "file",
       "classification": "ORGAN_HOME",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -602,10 +767,14 @@
         "tracked registry file",
         "git status"
       ],
-      "git_status": " M"
+      "git_status": " M",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json",
+      "kind": "file",
       "classification": "ORGAN_HOME",
       "owner_organ": "ASTRONOMICON",
       "recommended_action": "KEEP",
@@ -618,10 +787,14 @@
         "tracked registry file",
         "git status"
       ],
-      "git_status": " M"
+      "git_status": " M",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/CUSTODES",
+      "kind": "directory",
       "classification": "ORGAN_HOME",
       "owner_organ": "CUSTODES",
       "recommended_action": "KEEP",
@@ -633,10 +806,14 @@
       "evidence": [
         "required 9-organ registry"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/DOCTRINARIUM",
+      "kind": "directory",
       "classification": "ORGAN_HOME",
       "owner_organ": "DOCTRINARIUM",
       "recommended_action": "KEEP",
@@ -648,10 +825,14 @@
       "evidence": [
         "required 9-organ registry"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/INQUISITION",
+      "kind": "directory",
       "classification": "ORGAN_HOME",
       "owner_organ": "INQUISITION",
       "recommended_action": "KEEP",
@@ -663,10 +844,14 @@
       "evidence": [
         "required 9-organ registry"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/MECHANICUS",
+      "kind": "directory",
       "classification": "ORGAN_HOME",
       "owner_organ": "MECHANICUS",
       "recommended_action": "KEEP",
@@ -678,10 +863,14 @@
       "evidence": [
         "required 9-organ registry"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/OFFICIO_AGENTIS",
+      "kind": "directory",
       "classification": "ORGAN_HOME",
       "owner_organ": "OFFICIO_AGENTIS",
       "recommended_action": "KEEP",
@@ -693,10 +882,14 @@
       "evidence": [
         "required 9-organ registry"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/SCHOLA_IMPERIALIS",
+      "kind": "directory",
       "classification": "ORGAN_HOME",
       "owner_organ": "SCHOLA_IMPERIALIS",
       "recommended_action": "KEEP",
@@ -708,10 +901,14 @@
       "evidence": [
         "required 9-organ registry"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/SPECULUM",
+      "kind": "directory",
       "classification": "FUTURE_SCOPE",
       "owner_organ": "CUSTODES",
       "recommended_action": "FUTURE_SCOPE_HOLD",
@@ -723,10 +920,14 @@
       "evidence": [
         "core scope excludes non-required organ homes"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/STRATEGIUM",
+      "kind": "directory",
       "classification": "ORGAN_HOME",
       "owner_organ": "STRATEGIUM",
       "recommended_action": "KEEP",
@@ -738,10 +939,14 @@
       "evidence": [
         "required 9-organ registry"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/_CORE_GOVERNANCE",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ADMINISTRATUM",
       "recommended_action": "KEEP",
@@ -753,10 +958,14 @@
       "evidence": [
         "core shape contract"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "ORGANS/_POST_WORK_RING",
+      "kind": "directory",
       "classification": "LEGACY_ACCEPTED",
       "owner_organ": "ADMINISTRATUM",
       "recommended_action": "FUTURE_SCOPE_HOLD",
@@ -768,10 +977,14 @@
       "evidence": [
         "accepted legacy support"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "REPORTS",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ADMINISTRATUM",
       "recommended_action": "KEEP",
@@ -783,10 +996,14 @@
       "evidence": [
         "post-work bundle contract"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "SUPPORT",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ADMINISTRATUM",
       "recommended_action": "KEEP",
@@ -798,10 +1015,14 @@
       "evidence": [
         "support contract"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "SUPPORT/COMMON_IMPERIUM_SUPPORT",
+      "kind": "directory",
       "classification": "COMMON_SUPPORT",
       "owner_organ": "ADMINISTRATUM",
       "recommended_action": "KEEP",
@@ -813,10 +1034,14 @@
       "evidence": [
         "support contract"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     },
     {
+      "schema_version": "imperium.core_file_ownership_entry.v0_2",
       "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE",
+      "kind": "directory",
       "classification": "QUARANTINE_CANDIDATE",
       "owner_organ": "INQUISITION",
       "recommended_action": "KEEP",
@@ -828,7 +1053,9 @@
       "evidence": [
         "quarantine ban contract"
       ],
-      "git_status": ""
+      "git_status": "",
+      "dry_run_only": true,
+      "move_or_delete_performed": false
     }
   ],
   "warnings": [
@@ -851,5 +1078,5 @@
     }
   ],
   "blockers": [],
-  "verdict": "PASS_WITH_WARNINGS"
+  "next_action": "Feed entries into core_migration_queue_builder_v0_1.py; no physical migration is authorized by this classifier."
 }

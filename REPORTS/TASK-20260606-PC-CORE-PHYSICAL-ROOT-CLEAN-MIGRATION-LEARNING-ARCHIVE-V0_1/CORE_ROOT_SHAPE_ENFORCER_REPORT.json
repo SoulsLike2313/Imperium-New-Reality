@@ -1,0 +1,44 @@
+{
+  "schema_version": "imperium.core_root_shape_enforcer_report.v0_1",
+  "task_id": "TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1",
+  "created_at_utc": "2026-06-06T18:58:22Z",
+  "mode": "DRY_RUN",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "ORGANS/_CORE_GOVERNANCE/TOOLS/core_migration_executor_v0_1.py",
+        "--root",
+        ".",
+        "--task-id",
+        "TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1",
+        "--report-out",
+        "REPORTS\\TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1\\CORE_PHYSICAL_MIGRATION_REPORT.json",
+        "--receipt-out",
+        "REPORTS\\TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1\\CORE_MIGRATION_EXECUTION_RECEIPT.json"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "nation_full_path_len\": 0,\n      \"longest_source_path\": \"\",\n      \"execution_status\": \"PLANNED\",\n      \"command\": [],\n      \"stderr\": \"\"\n    },\n    {\n      \"path\": \"AGENTS.md\",\n      \"kind\": \"file\",\n      \"tracked_file_count\": 1,\n      \"untracked_file_count\": 0,\n      \"classification\": \"TECHNICAL_ROOT_EXCEPTION\",\n      \"planned_action\": \"HOLD_WITH_REASON\",\n      \"destination\": \"\",\n      \"reason\": \"Root agent contract must remain at repository root.\",\n      \"suspected_owner\": \"ADMINISTRATUM\",\n      \"active_use_allowed\": true,\n      \"quarantine_index_required\": false,\n      \"hold_reasons\": [\n        \"Root agent contract must remain at repository root.\"\n      ],\n      \"max_destination_full_path_len\": 0,\n      \"longest_source_path\": \"\",\n      \"execution_status\": \"PLANNED\",\n      \"command\": [],\n      \"stderr\": \"\"\n    },\n    {\n      \"path\": \"ORGANS\",\n      \"kind\": \"directory\",\n      \"tracked_file_count\": 3869,\n      \"untracked_file_count\": 22,\n      \"classification\": \"TECHNICAL_ROOT_EXCEPTION\",\n      \"planned_action\": \"HOLD_WITH_REASON\",\n      \"destination\": \"\",\n      \"reason\": \"Canonical organ container.\",\n      \"suspected_owner\": \"ADMINISTRATUM\",\n      \"active_use_allowed\": true,\n      \"quarantine_index_required\": false,\n      \"hold_reasons\": [\n        \"Canonical organ container.\"\n      ],\n      \"max_destination_full_path_len\": 0,\n      \"longest_source_path\": \"\",\n      \"execution_status\": \"PLANNED\",\n      \"command\": [],\n      \"stderr\": \"\"\n    },\n    {\n      \"path\": \"REPORTS\",\n      \"kind\": \"directory\",\n      \"tracked_file_count\": 1881,\n      \"untracked_file_count\": 15,\n      \"classification\": \"TECHNICAL_ROOT_EXCEPTION\",\n      \"planned_action\": \"HOLD_WITH_REASON\",\n      \"destination\": \"\",\n      \"reason\": \"Root report evidence path is required by current and historical task contracts.\",\n      \"suspected_owner\": \"ADMINISTRATUM\",\n      \"active_use_allowed\": true,\n      \"quarantine_index_required\": false,\n      \"hold_reasons\": [\n        \"Root report evidence path is required by current and historical task contracts.\"\n      ],\n      \"max_destination_full_path_len\": 0,\n      \"longest_source_path\": \"\",\n      \"execution_status\": \"PLANNED\",\n      \"command\": [],\n      \"stderr\": \"\"\n    },\n    {\n      \"path\": \"SUPPORT\",\n      \"kind\": \"directory\",\n      \"tracked_file_count\": 2407,\n      \"untracked_file_count\": 1,\n      \"classification\": \"TECHNICAL_ROOT_EXCEPTION\",\n      \"planned_action\": \"HOLD_WITH_REASON\",\n      \"destination\": \"\",\n      \"reason\": \"Canonical support container.\",\n      \"suspected_owner\": \"ADMINISTRATUM\",\n      \"active_use_allowed\": true,\n      \"quarantine_index_required\": false,\n      \"hold_reasons\": [\n        \"Canonical support container.\"\n      ],\n      \"max_destination_full_path_len\": 0,\n      \"longest_source_path\": \"\",\n      \"execution_status\": \"PLANNED\",\n      \"command\": [],\n      \"stderr\": \"\"\n    }\n  ],\n  \"no_destructive_delete_performed\": true,\n  \"git_mv_used_for_tracked_moves\": true,\n  \"verdict\": \"PASS\",\n  \"warnings\": [],\n  \"blockers\": []\n}\n",
+      "stderr_tail": "",
+      "status": "PASS"
+    },
+    {
+      "command": [
+        "python",
+        "ORGANS/_CORE_GOVERNANCE/TOOLS/core_active_root_allowlist_checker_v0_1.py",
+        "--root",
+        ".",
+        "--task-id",
+        "TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1",
+        "--out",
+        "REPORTS\\TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1\\CORE_ACTIVE_ROOT_ALLOWLIST_CHECK_REPORT.json"
+      ],
+      "exit_code": 0,
+      "stdout_tail": "},\n    {\n      \"name\": \"ORGANS\",\n      \"kind\": \"directory\",\n      \"classification\": \"ALLOWED_ACTIVE_ROOT\",\n      \"status\": \"PASS\"\n    },\n    {\n      \"name\": \"REPORTS\",\n      \"kind\": \"directory\",\n      \"classification\": \"HOLD_WITH_REASON\",\n      \"status\": \"PASS_WITH_WARNINGS\",\n      \"hold_reason\": \"Root report evidence path is required by current and historical task contracts.\"\n    },\n    {\n      \"name\": \"SUPPORT\",\n      \"kind\": \"directory\",\n      \"classification\": \"ALLOWED_ACTIVE_ROOT\",\n      \"status\": \"PASS\"\n    }\n  ],\n  \"active_root_entry_count\": 5,\n  \"active_root_impurity_count\": 0,\n  \"hold_count\": 3,\n  \"remaining_top_level_entries\": [\n    \".gitignore\",\n    \"AGENTS.md\",\n    \"ORGANS\",\n    \"REPORTS\",\n    \"SUPPORT\"\n  ],\n  \"hold_items\": [\n    {\n      \"name\": \".gitignore\",\n      \"kind\": \"file\",\n      \"classification\": \"HOLD_WITH_REASON\",\n      \"status\": \"PASS_WITH_WARNINGS\",\n      \"hold_reason\": \"Git ignore policy file must remain at repository root.\"\n    },\n    {\n      \"name\": \"AGENTS.md\",\n      \"kind\": \"file\",\n      \"classification\": \"HOLD_WITH_REASON\",\n      \"status\": \"PASS_WITH_WARNINGS\",\n      \"hold_reason\": \"Root agent contract must remain at repository root.\"\n    },\n    {\n      \"name\": \"REPORTS\",\n      \"kind\": \"directory\",\n      \"classification\": \"HOLD_WITH_REASON\",\n      \"status\": \"PASS_WITH_WARNINGS\",\n      \"hold_reason\": \"Root report evidence path is required by current and historical task contracts.\"\n    }\n  ],\n  \"impurity_items\": [],\n  \"organ_checks\": [\n    {\n      \"organ_id\": \"ADMINISTRATUM\",\n      \"path\": \"ORGANS/ADMINISTRATUM\",\n      \"exists\": true,\n      \"status\": \"PASS\"\n    },\n    {\n      \"organ_id\": \"ASTRONOMICON\",\n      \"path\": \"ORGANS/ASTRONOMICON\",\n      \"exists\": true,\n      \"status\": \"PASS\"\n    },\n    {\n      \"organ_id\": \"CUSTODES\",\n      \"path\": \"ORGANS/CUSTODES\",\n      \"exists\": true,\n      \"status\": \"PASS\"\n    },\n    {\n      \"organ_id\": \"DOCTRINARIUM\",\n      \"path\": \"ORGANS/DOCTRINARIUM\",\n      \"exists\": true,\n      \"status\": \"PASS\"\n    },\n    {\n      \"organ_id\": \"INQUISITION\",\n      \"path\": \"ORGANS/INQUISITION\",\n      \"exists\": true,\n      \"status\": \"PASS\"\n    },\n    {\n      \"organ_id\": \"MECHANICUS\",\n      \"path\": \"ORGANS/MECHANICUS\",\n      \"exists\": true,\n      \"status\": \"PASS\"\n    },\n    {\n      \"organ_id\": \"OFFICIO_AGENTIS\",\n      \"path\": \"ORGANS/OFFICIO_AGENTIS\",\n      \"exists\": true,\n      \"status\": \"PASS\"\n    },\n    {\n      \"organ_id\": \"SCHOLA_IMPERIALIS\",\n      \"path\": \"ORGANS/SCHOLA_IMPERIALIS\",\n      \"exists\": true,\n      \"status\": \"PASS\"\n    },\n    {\n      \"organ_id\": \"STRATEGIUM\",\n      \"path\": \"ORGANS/STRATEGIUM\",\n      \"exists\": true,\n      \"status\": \"PASS\"\n    }\n  ],\n  \"support_checks\": [\n    {\n      \"path\": \"SUPPORT/COMMON_IMPERIUM_SUPPORT\",\n      \"exists\": true\n    },\n    {\n      \"path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE\",\n      \"exists\": true\n    }\n  ],\n  \"verdict\": \"PASS_WITH_WARNINGS\",\n  \"warnings\": [\n    {\n      \"id\": \"TECHNICAL_OR_SAFETY_HOLDS_REMAIN\",\n      \"count\": 3\n    }\n  ],\n  \"blockers\": []\n}\n",
+      "stderr_tail": "",
+      "status": "PASS"
+    }
+  ],
+  "verdict": "PASS",
+  "blockers": []
+}

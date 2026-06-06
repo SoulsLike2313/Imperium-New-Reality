@@ -1,0 +1,21 @@
+{
+  "schema_version": "imperium.receipt.v0_1",
+  "task_id": "TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1",
+  "organ": "MECHANICUS",
+  "action": "core_physical_migration_toolchain_delta",
+  "timestamp_utc": "2026-06-06T19:02:23Z",
+  "tools_added": [
+    "ORGANS/_CORE_GOVERNANCE/TOOLS/core_root_shape_enforcer_v0_1.py",
+    "ORGANS/_CORE_GOVERNANCE/TOOLS/core_migration_executor_v0_1.py",
+    "ORGANS/_CORE_GOVERNANCE/TOOLS/core_active_root_allowlist_checker_v0_1.py"
+  ],
+  "tools_modified": [
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_bundle_checker_v0_2.py"
+  ],
+  "tool_cards": [
+    "ORGANS/MECHANICUS/TOOLS/CORE_PHYSICAL_MIGRATION_TOOLCHAIN_CARD.json"
+  ],
+  "py_compile_verdict": "PASS",
+  "root_marker_compatibility_delta": "post-work checker v0_2 now accepts migrated EPOCH_MANIFEST and NEW_REALITY_SCOPE_LOCK in SUPPORT/COMMON_IMPERIUM_SUPPORT/ROOT_IMPORTED_COMMON_SUPPORT.",
+  "verdict": "PASS"
+}

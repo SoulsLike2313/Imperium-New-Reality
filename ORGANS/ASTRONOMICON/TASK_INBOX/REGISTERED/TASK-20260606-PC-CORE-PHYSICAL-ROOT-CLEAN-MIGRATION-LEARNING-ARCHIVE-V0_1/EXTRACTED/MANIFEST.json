@@ -1,0 +1,40 @@
+{
+  "schema_version": "imperium.taskpack.manifest.v0_1",
+  "task_id": "TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1",
+  "title": "Physical root cleanup into 9 organ homes plus support, quarantine gate, and learning archive",
+  "contour": "PC",
+  "priority": "HIGH_ARCHITECTURE_CLEANUP",
+  "execution_mode": "LARGE_BUT_GATED_PHYSICAL_MIGRATION",
+  "organs": [
+    "ADMINISTRATUM",
+    "ASTRONOMICON",
+    "CUSTODES",
+    "DOCTRINARIUM",
+    "INQUISITION",
+    "MECHANICUS",
+    "OFFICIO_AGENTIS",
+    "SCHOLA_IMPERIALIS",
+    "STRATEGIUM"
+  ],
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH UTF8 NO_BOM only. No Cyrillic in machine taskpack internals.",
+    "canonical_repo_artifacts": "ENGLISH UTF8 NO_BOM for JSON, schemas, matrices, validators, receipts, and machine-readable contracts.",
+    "owner_facing_russian_runtime_output": "Owner-facing summaries and final response must be Russian, routed through OFFICIO_AGENTIS authority.",
+    "cyrillic_in_taskpack": "FORBIDDEN except inside explicit owner-facing Russian output instructions routed through OFFICIO.",
+    "localization_exception": "Russian is allowed only for FINAL_OWNER_SUMMARY_RU.md and owner-facing runtime text after OFFICIO role entry."
+  },
+  "enhanced_ghost_evolve": "ULTIMATE_ORGAN_TEACHING_PHYSICAL_CORE_CLEANUP",
+  "non_negotiable_shape": {
+    "active_root_directories": [
+      "ORGANS",
+      "SUPPORT"
+    ],
+    "organ_count": 9,
+    "support_required": true,
+    "quarantine_active_use_banned": true,
+    "mass_delete_allowed": false,
+    "git_mv_required_for_moves": true
+  },
+  "owner_intent_summary": "Make repository visibly and mechanically strict: active core root should be only 9 organ homes and SUPPORT. Move legacy pain, failed front/back experiments, sanctum/visual brain/training layers, duplicate organ mirrors, and unclear old zones out of active root into quarantine or learning archive. Keep history, do not delete blindly. Organs must guard shape with matrices, metrics, validators, receipts, and alerts.",
+  "created_by": "Logos-Prime"
+}

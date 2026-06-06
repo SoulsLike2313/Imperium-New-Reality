@@ -1,0 +1,19 @@
+{
+  "schema_version": "post_work.repair_request.v0_2",
+  "task_id": "TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1",
+  "repair_request_id": "REPAIR-TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1-BOOTSTRAP-001",
+  "created_at_utc": "2026-06-06T19:04:02Z",
+  "blocked_verdict": "POST_WORK_BUNDLE_SCHEMA_BLOCK_BOOTSTRAP_ONLY",
+  "owner_organ": "ADMINISTRATUM",
+  "trigger_issue": "First checker run could not validate its own report path before the checker report file existed.",
+  "requested_repairs": [
+    {
+      "issue_id": "REPAIR-001-CHECKER_REPORT_BOOTSTRAP",
+      "path": "POST_WORK_RECEIPT_INDEX.json",
+      "repair_action": "Materialize checker report and rerun bundle checker."
+    }
+  ],
+  "status": "CLOSED_SUPERSEDED_BY_RERUN_PASS",
+  "closing_report": "REPORTS/TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1/ADMINISTRATUM_POST_WORK_BUNDLE_CHECKER_REPORT.json",
+  "closing_verdict": "POST_WORK_BUNDLE_SCHEMA_PASS"
+}

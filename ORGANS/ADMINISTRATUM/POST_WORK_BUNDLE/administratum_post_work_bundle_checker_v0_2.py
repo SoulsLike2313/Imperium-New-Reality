@@ -16,6 +16,19 @@ from typing import Any
 
 TASK_ID_DEFAULT = "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_2"
 ACTIVE_ROOT = "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY"
+ROOT_MARKER_ALTERNATES = {
+    "EPOCH_MANIFEST.json": [
+        "EPOCH_MANIFEST.json",
+        "SUPPORT/COMMON_IMPERIUM_SUPPORT/ROOT_IMPORTED_COMMON_SUPPORT/EPOCH_MANIFEST.json",
+    ],
+    "NEW_REALITY_SCOPE_LOCK.md": [
+        "NEW_REALITY_SCOPE_LOCK.md",
+        "SUPPORT/COMMON_IMPERIUM_SUPPORT/ROOT_IMPORTED_COMMON_SUPPORT/NEW_REALITY_SCOPE_LOCK.md",
+    ],
+    "AGENTS.md": [
+        "AGENTS.md",
+    ],
+}
 PASS_VERDICT = "POST_WORK_BUNDLE_SCHEMA_PASS"
 BLOCK_VERDICT = "POST_WORK_BUNDLE_SCHEMA_BLOCK"
 REPAIR_VERDICT = "POST_WORK_REPAIR_REQUEST_EMITTED"
@@ -123,10 +136,13 @@ def sha256_file(path: Path) -> str:
 
 def resolve_repo_root(value: str) -> Path:
     root = Path(value or ".").resolve()
-    markers = ["EPOCH_MANIFEST.json", "NEW_REALITY_SCOPE_LOCK.md", "AGENTS.md"]
-    if all((root / marker).is_file() for marker in markers):
+    missing = []
+    for marker, candidates in ROOT_MARKER_ALTERNATES.items():
+        if not any((root / candidate).is_file() for candidate in candidates):
+            missing.append(marker)
+    if not missing:
         return root
-    raise SystemExit(f"repo root missing New Reality markers: {to_posix(root)}")
+    raise SystemExit(f"repo root missing New Reality markers {missing}: {to_posix(root)}")
 
 
 def ensure_under(root: Path, path: Path) -> Path:

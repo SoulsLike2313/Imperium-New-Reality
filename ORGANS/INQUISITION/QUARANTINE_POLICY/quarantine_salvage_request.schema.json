@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Quarantine Salvage Request V0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task_id",
+    "original_path",
+    "quarantine_path",
+    "salvage_reason",
+    "requested_owner_organ",
+    "active_use_requested"
+  ],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "task_id": {"type": "string"},
+    "original_path": {"type": "string"},
+    "quarantine_path": {"type": "string"},
+    "salvage_reason": {"type": "string"},
+    "requested_owner_organ": {"type": "string"},
+    "active_use_requested": {"type": "boolean"},
+    "evidence_paths": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}
