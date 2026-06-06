@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Support Classification V0.1",
+  "type": "object",
+  "required": ["schema_version", "path", "classification", "owner_organ", "supported_organs", "allowed_use", "evidence"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "path": {"type": "string", "minLength": 1},
+    "classification": {"type": "string", "enum": ["ORGAN_OWNED", "COMMON_SUPPORT", "QUESTIONABLE_OR_QUARANTINE", "UNKNOWN_WITH_REASON"]},
+    "owner_organ": {"type": "string", "minLength": 1},
+    "supported_organs": {"type": "array"},
+    "allowed_use": {"type": "string", "minLength": 1},
+    "evidence": {"type": "array"},
+    "warnings": {"type": "array"}
+  },
+  "additionalProperties": true
+}

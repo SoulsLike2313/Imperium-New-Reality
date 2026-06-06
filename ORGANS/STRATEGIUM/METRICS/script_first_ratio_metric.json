@@ -1,0 +1,10 @@
+{
+  "schema_version": "imperium.organ_metric.v0_1",
+  "metric_id": "script_first_ratio",
+  "owner_organ": "STRATEGIUM",
+  "purpose": "Measure replacement of manual judgment with replayable validators.",
+  "inputs": ["manual checks", "scripted checks"],
+  "calculation": "scripted checks divided by total checks",
+  "unit": "ratio",
+  "unknown_policy": "UNKNOWN_WITH_REASON when manual checks are not enumerated"
+}

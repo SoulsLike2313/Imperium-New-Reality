@@ -1,0 +1,10 @@
+{
+  "schema_version": "imperium.organ_metric.v0_1",
+  "metric_id": "known_alert_prevention",
+  "owner_organ": "STRATEGIUM",
+  "purpose": "Measure whether known alerts become preventive checker hooks.",
+  "inputs": ["known alerts", "preventive rules", "checker hooks"],
+  "calculation": "known alerts with preventive checker hook divided by known alerts",
+  "unit": "ratio",
+  "unknown_policy": "UNKNOWN_WITH_REASON when alert inventory is incomplete"
+}

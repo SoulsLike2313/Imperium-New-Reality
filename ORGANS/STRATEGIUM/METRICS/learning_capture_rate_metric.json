@@ -1,0 +1,10 @@
+{
+  "schema_version": "imperium.organ_metric.v0_1",
+  "metric_id": "learning_capture_rate",
+  "owner_organ": "STRATEGIUM",
+  "purpose": "Measure conversion of discovered gaps into Schola lessons or preventive rules.",
+  "inputs": ["discovered gaps", "captured learning rules"],
+  "calculation": "captured learning rules divided by discovered gaps",
+  "unit": "ratio",
+  "unknown_policy": "UNKNOWN_WITH_REASON when discovered gaps are not enumerated"
+}

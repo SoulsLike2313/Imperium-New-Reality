@@ -1,0 +1,564 @@
+{
+  "schema_version": "imperium.core_self_validation_report.v0_1",
+  "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+  "timestamp_utc": "2026-06-06T17:09:55Z",
+  "verdict": "PASS_WITH_WARNINGS",
+  "required_organs": [
+    {
+      "organ_id": "ADMINISTRATUM",
+      "root_path": "ORGANS/ADMINISTRATUM",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/ADMINISTRATUM",
+      "life_zone_exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "ASTRONOMICON",
+      "root_path": "ORGANS/ASTRONOMICON",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/ASTRONOMICON",
+      "life_zone_exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "CUSTODES",
+      "root_path": "ORGANS/CUSTODES",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/CUSTODES",
+      "life_zone_exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "DOCTRINARIUM",
+      "root_path": "ORGANS/DOCTRINARIUM",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/DOCTRINARIUM",
+      "life_zone_exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "INQUISITION",
+      "root_path": "ORGANS/INQUISITION",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/INQUISITION",
+      "life_zone_exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "root_path": "ORGANS/MECHANICUS",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/MECHANICUS",
+      "life_zone_exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "root_path": "ORGANS/OFFICIO_AGENTIS",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/OFFICIO_AGENTIS",
+      "life_zone_exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "SCHOLA_IMPERIALIS",
+      "root_path": "ORGANS/SCHOLA_IMPERIALIS",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/SCHOLA_IMPERIALIS",
+      "life_zone_exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "root_path": "ORGANS/STRATEGIUM",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/STRATEGIUM",
+      "life_zone_exists": true,
+      "status": "PASS"
+    }
+  ],
+  "support_zones": {
+    "SUPPORT/COMMON_IMPERIUM_SUPPORT": {
+      "path": "SUPPORT/COMMON_IMPERIUM_SUPPORT",
+      "exists": true,
+      "is_dir": true
+    },
+    "SUPPORT/QUESTIONABLE_OR_QUARANTINE": {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE",
+      "exists": true,
+      "is_dir": true
+    }
+  },
+  "quarantine_zone": {
+    "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE",
+    "exists": true,
+    "is_dir": true
+  },
+  "core_governance_files": [
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/CORE_SHAPE_CONTRACT_V0_1.md",
+      "exists": true,
+      "is_dir": false
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/REQUIRED_9_ORGANS_V0_1.json",
+      "exists": true,
+      "is_dir": false
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/ORGAN_LIFE_ZONE_CONTRACT_V0_1.md",
+      "exists": true,
+      "is_dir": false
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/SUPPORT_ZONE_CONTRACT_V0_1.md",
+      "exists": true,
+      "is_dir": false
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/QUARANTINE_USE_BAN_CONTRACT_V0_1.md",
+      "exists": true,
+      "is_dir": false
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/CORE_SELF_VALIDATION_CONTRACT_V0_1.md",
+      "exists": true,
+      "is_dir": false
+    }
+  ],
+  "unexpected_top_level": [
+    {
+      "path": "ADMINISTRATUM",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "AGENTS.md",
+      "kind": "file",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "AGENT_DIRECTIVES",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "AGENT_IDE",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "ANCIENT_EMPIRE_REFERENCE.md",
+      "kind": "file",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "ARCHITECTURE",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "ARCHIVE",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "ARTIFACTS",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "ASTRONOMICON",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "AUTHORITY_DRAFTS",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "BLOCK_SPINE",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "COMMON_AGENT_CLI",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "CONTRACTS",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "CORE",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "DECLARATION_OF_FORM",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "DOCS",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "DOCTRINARIUM",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "EPOCH_MANIFEST.json",
+      "kind": "file",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "EXCHANGE",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "INQUISITION",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "INTAKE",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "LEDGER",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "MATRIX_SPINE",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "MECHANICUS",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "NEW_GENERATION_MANIFEST.json",
+      "kind": "file",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "NEW_REALITY_REMOTE_HEAD_CONTRACT.md",
+      "kind": "file",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "NEW_REALITY_SCOPE_LOCK.md",
+      "kind": "file",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "OFFICIO_AGENTIS",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "ORGAN_AGENTS",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "ORGAN_AGENT_COMMON",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "ORGAN_DIALOGUE",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "PROTOCOLS",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "QUARANTINE",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "README.md",
+      "kind": "file",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "RECEIPTS",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "REMOTE_POLICY.md",
+      "kind": "file",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "RESEARCH",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "ROOT_RESOLUTION_CONTRACT.md",
+      "kind": "file",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "RUNS",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "SALVAGE_REQUEST_TEMPLATE.json",
+      "kind": "file",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "SANCTUM_MINI",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "SANCTUM_NG",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "SANCTUM_VISUAL_FOUNDRY",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "SCHEMAS",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "SKILLS",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "STRESS_TESTS",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "TASKS",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "TASK_CONTROL",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "TOOLS",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "TRUTH",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    },
+    {
+      "path": "VISUAL_BRAIN",
+      "kind": "directory",
+      "classification": "LEGACY_OR_UNMAPPED_TOP_LEVEL",
+      "required_action": "classify in dry-run before any migration"
+    }
+  ],
+  "unclassified_or_questionable_candidates": [
+    {
+      "path": "ANCIENT_EMPIRE_REFERENCE.md",
+      "reason": "Name requires explicit classification before active core use."
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION",
+      "reason": "Name requires explicit classification before active core use."
+    },
+    {
+      "path": "QUARANTINE",
+      "reason": "Name requires explicit classification before active core use."
+    },
+    {
+      "path": "ORGANS/SPECULUM",
+      "reason": "Name requires explicit classification before active core use."
+    }
+  ],
+  "organ_life_minimum_checks": [
+    {
+      "organ_id": "ADMINISTRATUM",
+      "life_zone_exists": true,
+      "identity_file_exists": false,
+      "task_participation_exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "ASTRONOMICON",
+      "life_zone_exists": true,
+      "identity_file_exists": false,
+      "task_participation_exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "CUSTODES",
+      "life_zone_exists": true,
+      "identity_file_exists": false,
+      "task_participation_exists": false,
+      "status": "PASS_WITH_WARNINGS"
+    },
+    {
+      "organ_id": "DOCTRINARIUM",
+      "life_zone_exists": true,
+      "identity_file_exists": false,
+      "task_participation_exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "INQUISITION",
+      "life_zone_exists": true,
+      "identity_file_exists": false,
+      "task_participation_exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "life_zone_exists": true,
+      "identity_file_exists": false,
+      "task_participation_exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "life_zone_exists": true,
+      "identity_file_exists": false,
+      "task_participation_exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "SCHOLA_IMPERIALIS",
+      "life_zone_exists": true,
+      "identity_file_exists": false,
+      "task_participation_exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "life_zone_exists": true,
+      "identity_file_exists": false,
+      "task_participation_exists": true,
+      "status": "PASS"
+    }
+  ],
+  "alerts": [
+    {
+      "id": "QUESTIONABLE_OR_LEGACY_CANDIDATES_PRESENT",
+      "severity": "WARN",
+      "candidates": [
+        {
+          "path": "ANCIENT_EMPIRE_REFERENCE.md",
+          "reason": "Name requires explicit classification before active core use."
+        },
+        {
+          "path": "IMPERIUM_NEW_GENERATION",
+          "reason": "Name requires explicit classification before active core use."
+        },
+        {
+          "path": "QUARANTINE",
+          "reason": "Name requires explicit classification before active core use."
+        },
+        {
+          "path": "ORGANS/SPECULUM",
+          "reason": "Name requires explicit classification before active core use."
+        }
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "id": "LEGACY_OR_UNMAPPED_TOP_LEVEL_PRESENT",
+      "count": 52,
+      "meaning": "Not a V0.1 blocker; migration is dry-run only in this task."
+    },
+    {
+      "id": "ORGAN_LIFE_MINIMUM_METADATA_GAP",
+      "organ_id": "CUSTODES",
+      "meaning": "Life zone exists but identity/task participation metadata is incomplete."
+    }
+  ],
+  "blockers": [],
+  "next_action": "Use dry-run classifier and organ life validator before any migration."
+}

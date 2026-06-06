@@ -1,0 +1,33 @@
+{
+  "schema_version": "post_work.inquisition_contradiction_scan_receipt.v0_2",
+  "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+  "timestamp_utc": "2026-06-06T17:18:17Z",
+  "owner_organ": "INQUISITION",
+  "verdict": "PASS_WITH_WARNINGS",
+  "checked_evidence": [
+    "ORGANS/INQUISITION/QUARANTINE_POLICY/ACTIVE_USE_OF_QUARANTINE_BAN_V0_1.md",
+    "ORGANS/INQUISITION/QUARANTINE_POLICY/quarantine_violation_matrix.json",
+    "ORGANS/INQUISITION/QUARANTINE_POLICY/unowned_file_alert_matrix.json",
+    "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+    "REPORTS/TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1/CORE_SELF_VALIDATION_REPORT.json",
+    "REPORTS/TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1/CORE_FILE_CLASSIFIER_DRY_RUN_REPORT.json"
+  ],
+  "warnings": [
+    "V0.1 does not physically migrate legacy top-level paths.",
+    "Core self-checker reports PASS_WITH_WARNINGS because legacy top-level paths remain unmapped.",
+    "CUSTODES life zone exists but has a metadata gap: no task participation packet.",
+    "Pre-existing Astronomicon registry modifications and POST-WORK-BUNDLE-ADMISSION-RING-V0_3 are not part of the scoped commit."
+  ],
+  "blockers": [],
+  "next_action": "Do not summarize this bundle as clean PASS; preserve PASS_WITH_WARNINGS.",
+  "status": "PASS_WITH_WARNINGS",
+  "fake_green_scan": "PASS_WITH_WARNINGS",
+  "forbidden_claims_checked": [
+    "no full cleanup claim",
+    "no full semantic validation claim",
+    "no quarantine active-source use",
+    "no mass migration",
+    "no Throne implementation"
+  ],
+  "contradictions": []
+}

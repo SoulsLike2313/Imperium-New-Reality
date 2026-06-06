@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Imperium Organ Card V0.1",
+  "type": "object",
+  "required": ["schema_version", "organ_id", "root_path", "life_zone_path", "primary_duty", "status"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "organ_id": {"type": "string", "minLength": 1},
+    "root_path": {"type": "string", "minLength": 1},
+    "life_zone_path": {"type": "string", "minLength": 1},
+    "primary_duty": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "minLength": 1},
+    "owned_metrics": {"type": "array"},
+    "owned_matrices": {"type": "array"},
+    "validators": {"type": "array"},
+    "warnings": {"type": "array"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "imperium.organ_matrix.v0_1",
+  "matrix_id": "known_alert_to_preventive_rule_matrix",
+  "owner_organ": "SCHOLA_IMPERIALIS",
+  "purpose": "Convert known alerts into preventive rules and future checker hooks.",
+  "rows": [
+    {
+      "alert_id": "SANDBOX_READ_GATE_BLOCKED",
+      "source_pattern": "Required gate file could not be read before implementation.",
+      "preventive_rule": "Do not issue implementation PASS until all task gate files are readable and recorded in admission evidence.",
+      "future_checker_hook": "Admission checker verifies TASK_SPEC, OUTPUT_REQUIREMENTS, ACCEPTANCE_GATES, route manifest, start ACK, resolver receipt, and admission receipt are readable."
+    },
+    {
+      "alert_id": "LEGACY_TOP_LEVEL_PRESENT",
+      "source_pattern": "Repository has useful legacy top-level paths outside target shape.",
+      "preventive_rule": "Classify legacy paths in dry-run before any migration or active authority claim.",
+      "future_checker_hook": "Core shape checker emits PASS_WITH_WARNINGS while legacy top-level paths remain unmapped."
+    },
+    {
+      "alert_id": "QUARANTINE_AS_ACTIVE_SOURCE_RISK",
+      "source_pattern": "Questionable or quarantine material may be treated as truth by convenience.",
+      "preventive_rule": "Active use of quarantine requires explicit salvage or admission receipt.",
+      "future_checker_hook": "Quarantine policy checker scans declared active evidence paths for SUPPORT/QUESTIONABLE_OR_QUARANTINE."
+    }
+  ]
+}

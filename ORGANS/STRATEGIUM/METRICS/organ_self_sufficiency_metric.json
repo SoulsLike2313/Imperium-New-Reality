@@ -1,0 +1,10 @@
+{
+  "schema_version": "imperium.organ_metric.v0_1",
+  "metric_id": "organ_self_sufficiency",
+  "owner_organ": "STRATEGIUM",
+  "purpose": "Measure whether required organs have mapped life zones and local checks.",
+  "inputs": ["required organ count", "life zone existence", "organ-local validator or matrix evidence"],
+  "calculation": "required organs with life zone evidence divided by 9",
+  "unit": "ratio",
+  "unknown_policy": "UNKNOWN_WITH_REASON when evidence is not machine-readable"
+}

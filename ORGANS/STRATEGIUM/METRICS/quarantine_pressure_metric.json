@@ -1,0 +1,10 @@
+{
+  "schema_version": "imperium.organ_metric.v0_1",
+  "metric_id": "quarantine_pressure",
+  "owner_organ": "STRATEGIUM",
+  "purpose": "Measure pressure from questionable or banned material on active work.",
+  "inputs": ["quarantine item count", "active-use violations", "salvage receipts"],
+  "calculation": "quarantine items plus violations minus admitted salvage receipts",
+  "unit": "count",
+  "unknown_policy": "UNKNOWN_WITH_REASON when quarantine inventory is incomplete"
+}

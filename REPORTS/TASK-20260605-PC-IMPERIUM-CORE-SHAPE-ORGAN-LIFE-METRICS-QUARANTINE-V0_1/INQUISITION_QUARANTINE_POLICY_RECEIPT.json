@@ -1,0 +1,19 @@
+{
+  "schema_version": "imperium.inquisition_quarantine_policy_receipt.v0_1",
+  "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+  "timestamp_utc": "2026-06-06T17:18:17Z",
+  "owner_organ": "INQUISITION",
+  "verdict": "PASS_WITH_WARNINGS",
+  "checked_evidence": [
+    "ORGANS/INQUISITION/QUARANTINE_POLICY/ACTIVE_USE_OF_QUARANTINE_BAN_V0_1.md",
+    "ORGANS/INQUISITION/QUARANTINE_POLICY/quarantine_violation_matrix.json",
+    "ORGANS/INQUISITION/QUARANTINE_POLICY/unowned_file_alert_matrix.json",
+    "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+    "REPORTS/TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1/CORE_SELF_VALIDATION_REPORT.json"
+  ],
+  "warnings": [
+    "Questionable candidates exist but were not used as active source: ANCIENT_EMPIRE_REFERENCE.md, IMPERIUM_NEW_GENERATION, QUARANTINE, ORGANS/SPECULUM."
+  ],
+  "blockers": [],
+  "next_action": "Create salvage/admission receipts before any active use of quarantine or questionable candidates."
+}

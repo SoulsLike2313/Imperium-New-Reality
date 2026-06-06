@@ -1,0 +1,136 @@
+{
+  "schema_version": "post_work.organ_ring_receipt.v0_2",
+  "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+  "created_at_utc": "2026-06-06T17:18:17Z",
+  "required_organs_source": "ORGANS/_POST_WORK_RING/REQUIRED_9_ORGANS_V0_1.json",
+  "organ_receipts": [
+    {
+      "organ_id": "ASTRONOMICON",
+      "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+      "status": "IMPLEMENTED_WITH_WARNINGS",
+      "owned_checks": [
+        "Taskpack registered and route/ACK read."
+      ],
+      "evidence_paths": [
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1/TASKPACK.zip",
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1/TASK_ROUTE_MANIFEST.json"
+      ],
+      "learned_rules": [
+        "Taskpack admission must be readable before implementation."
+      ]
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+      "status": "IMPLEMENTED_WITH_WARNINGS",
+      "owned_checks": [
+        "Role ACK and RU final discipline enforced."
+      ],
+      "evidence_paths": [
+        "REPORTS/TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1/OFFICIO_ROLE_ENTRY_RECEIPT.json"
+      ],
+      "learned_rules": [
+        "Correct owner-facing language drift immediately."
+      ]
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+      "status": "IMPLEMENTED_WITH_WARNINGS",
+      "owned_checks": [
+        "Address book seed and bundle receipts created."
+      ],
+      "evidence_paths": [
+        "REPORTS/TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1/ADMINISTRATUM_ADDRESS_BOOK_SEED_RECEIPT.json"
+      ],
+      "learned_rules": [
+        "Do not confuse Git commit with full historical bundle."
+      ]
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+      "status": "IMPLEMENTED_WITH_WARNINGS",
+      "owned_checks": [
+        "Offline validators created and replayed."
+      ],
+      "evidence_paths": [
+        "REPORTS/TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1/MECHANICUS_TOOL_REGISTRATION_RECEIPT.json"
+      ],
+      "learned_rules": [
+        "Tool registry mutation should be its own admission task."
+      ]
+    },
+    {
+      "organ_id": "DOCTRINARIUM",
+      "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+      "status": "IMPLEMENTED",
+      "owned_checks": [
+        "Forbidden claims and scope boundaries preserved."
+      ],
+      "evidence_paths": [
+        "ORGANS/_CORE_GOVERNANCE/CORE_SHAPE_CONTRACT_V0_1.md"
+      ],
+      "learned_rules": [
+        "V0.1 can claim structural authority only."
+      ]
+    },
+    {
+      "organ_id": "INQUISITION",
+      "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+      "status": "IMPLEMENTED_WITH_WARNINGS",
+      "owned_checks": [
+        "Quarantine ban and contradiction scan created."
+      ],
+      "evidence_paths": [
+        "REPORTS/TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1/INQUISITION_CONTRADICTION_SCAN_RECEIPT.json"
+      ],
+      "learned_rules": [
+        "PASS_WITH_WARNINGS must not become clean PASS."
+      ]
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+      "status": "IMPLEMENTED_WITH_WARNINGS",
+      "owned_checks": [
+        "Seven metrics and KPD/cost receipt created."
+      ],
+      "evidence_paths": [
+        "REPORTS/TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1/STRATEGIUM_METRICS_REGISTRY_RECEIPT.json"
+      ],
+      "learned_rules": [
+        "Unknown resource measurements must stay UNKNOWN_WITH_REASON."
+      ]
+    },
+    {
+      "organ_id": "SCHOLA_IMPERIALIS",
+      "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+      "status": "IMPLEMENTED",
+      "owned_checks": [
+        "Aggressive learning matrix and validator created."
+      ],
+      "evidence_paths": [
+        "REPORTS/TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1/SCHOLA_AGGRESSIVE_LEARNING_RECEIPT.json"
+      ],
+      "learned_rules": [
+        "Turn repeated manual gates into checker hooks."
+      ]
+    },
+    {
+      "organ_id": "CUSTODES",
+      "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+      "status": "IMPLEMENTED_WITH_WARNINGS",
+      "owned_checks": [
+        "Organ life audit matrix and receipt created."
+      ],
+      "evidence_paths": [
+        "REPORTS/TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1/CUSTODES_ORGAN_LIFE_AUDIT_RECEIPT.json"
+      ],
+      "learned_rules": [
+        "Custodes V0.1 audit is narrow; no Throne authority claim."
+      ]
+    }
+  ],
+  "ring_verdict": "NINE_ORGAN_RING_REPRESENTED_WITH_WARNINGS"
+}

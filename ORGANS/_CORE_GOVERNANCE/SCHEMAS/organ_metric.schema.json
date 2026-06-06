@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Organ Metric V0.1",
+  "type": "object",
+  "required": ["schema_version", "metric_id", "owner_organ", "purpose", "inputs", "calculation", "unit", "unknown_policy"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "metric_id": {"type": "string", "minLength": 1},
+    "owner_organ": {"type": "string", "minLength": 1},
+    "purpose": {"type": "string", "minLength": 1},
+    "inputs": {"type": "array"},
+    "calculation": {"type": "string", "minLength": 1},
+    "unit": {"type": "string", "minLength": 1},
+    "unknown_policy": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": true
+}
