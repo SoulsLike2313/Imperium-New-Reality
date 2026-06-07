@@ -11,6 +11,7 @@ STATUS_PATHS = {
     "workbench": "ORGANS/IMPERIAL_IDE/WORKBENCH/INTEGRATION_STATUS.json",
     "warp": "ORGANS/IMPERIAL_IDE/WARP/INTEGRATION_STATUS.json",
     "metaos": "ORGANS/IMPERIAL_IDE/METAOS/INTEGRATION_STATUS.json",
+    "ops": "ORGANS/IMPERIAL_IDE/OPS/INTEGRATION_STATUS.json",
 }
 
 SMOKE_PATHS = {
@@ -19,6 +20,8 @@ SMOKE_PATHS = {
     "warp": ["ORGANS/IMPERIAL_IDE/WARP/warp_smoke.py"],
     "metaos": ["ORGANS/IMPERIAL_IDE/METAOS/metaos_smoke.py"],
     "bundle_gate": ["ORGANS/ADMINISTRATUM/BUNDLE_GATES/administratum_bundle_gate_adapter.py", "--smoke"],
+    "ops": ["ORGANS/IMPERIAL_IDE/OPS/CLI/imperial_ide_ops_cli.py", "smoke"],
+    "ops_tui": ["ORGANS/IMPERIAL_IDE/OPS/TUI/imperial_ide_ops_tui.py", "--smoke"],
 }
 
 
@@ -64,7 +67,73 @@ def _launch_plan(component: str, surface: str, command: str) -> dict[str, Any]:
     }
 
 
+def _run_ops_cli(repo_root: Path, args: list[str]) -> dict[str, Any]:
+    argv = [sys.executable, "ORGANS/IMPERIAL_IDE/OPS/CLI/imperial_ide_ops_cli.py", *args]
+    completed = subprocess.run(
+        argv,
+        cwd=repo_root,
+        env={**os.environ, "IMPERIUM_ROOT": str(repo_root)},
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        timeout=120,
+        check=False,
+    )
+    stdout = completed.stdout.strip()
+    payload: Any = stdout
+    try:
+        payload = json.loads(stdout)
+    except json.JSONDecodeError:
+        pass
+    return {
+        "status": "PASS_WITH_WARNINGS" if completed.returncode == 0 else "BLOCKED",
+        "component": "ops",
+        "command": args[0] if args else "",
+        "argv": argv,
+        "exit_code": completed.returncode,
+        "payload": payload,
+        "stderr": completed.stderr[-2000:].strip(),
+        "real_execution": False,
+    }
+
+
+def _sample_intent_args(title: str = "OPS task console shell sample") -> list[str]:
+    return [
+        "--title", title,
+        "--goal", "Build an Astronomicon compatible task from inside Imperial IDE OPS",
+        "--type", "integration",
+        "--scope", "IMPERIAL_IDE",
+        "--risk", "CONTROLLED_WRITE",
+        "--push", "VALIDATED_PUSH",
+    ]
+
+
 def route_surface(repo_root: Path, command: str, args: list[str]) -> dict[str, Any]:
+    if command in {"ops", "task-console"}:
+        data = load_status(repo_root, "ops")
+        data["launch_command"] = "python ORGANS/IMPERIAL_IDE/OPS/CLI/imperial_ide_ops_cli.py smoke"
+        data["tui_command"] = "python ORGANS/IMPERIAL_IDE/OPS/TUI/imperial_ide_ops_tui.py"
+        return data
+    if command == "ops-smoke":
+        return _run_fixed(repo_root, "ops")
+    if command == "classify-task":
+        return _run_ops_cli(repo_root, ["classify", *_sample_intent_args()])
+    if command == "build-taskpack":
+        return _run_ops_cli(repo_root, ["build-taskpack", *_sample_intent_args()])
+    if command == "register-taskpack":
+        return _run_ops_cli(repo_root, ["register", *_sample_intent_args()])
+    if command == "launch-card":
+        return _run_ops_cli(repo_root, ["launch-card", *_sample_intent_args()])
+    if command == "lifecycle":
+        return _run_ops_cli(repo_root, ["lifecycle", *_sample_intent_args()])
+    if command == "lifecycle-smoke":
+        return _run_fixed(repo_root, "ops")
+    if command == "git-closure":
+        return _run_ops_cli(repo_root, ["git-status", "--repo", str(repo_root)])
+    if command == "task-templates":
+        return _run_ops_cli(repo_root, ["task-templates"])
+
     if command in {"workbench", "workbench-status"}:
         return load_status(repo_root, "workbench")
     if command == "workbench-tui":

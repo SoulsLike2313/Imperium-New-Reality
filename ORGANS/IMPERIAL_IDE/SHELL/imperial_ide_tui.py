@@ -22,6 +22,13 @@ MENU = [
     ("14", "warp-smoke"),
     ("15", "metaos"),
     ("16", "metaos-smoke"),
+    ("17", "ops"),
+    ("18", "task-console"),
+    ("19", "build-taskpack"),
+    ("20", "register-taskpack"),
+    ("21", "launch-card"),
+    ("22", "lifecycle-smoke"),
+    ("23", "git-closure"),
     ("0", "exit"),
 ]
 

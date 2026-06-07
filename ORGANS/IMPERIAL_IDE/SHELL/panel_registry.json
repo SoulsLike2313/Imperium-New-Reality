@@ -212,6 +212,92 @@
       ],
       "risk_class": "LOW_STUB_ORCHESTRATION",
       "current_status": "ACTIVE_ORCHESTRATION_CANDIDATE"
+    },
+    {
+      "panel_id": "ops_task_console",
+      "title": "Task Console",
+      "owner_organ": "IMPERIAL_IDE",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/OPS/INTEGRATION_STATUS.json",
+        "ORGANS/IMPERIAL_IDE/OPS/ENGINE/imperium_ops/task_console.py"
+      ],
+      "commands": [
+        "ops",
+        "task-console",
+        "classify-task"
+      ],
+      "risk_class": "LOW_DRY_RUN",
+      "current_status": "ACTIVE_TASK_CONSOLE_DRY_RUN"
+    },
+    {
+      "panel_id": "ops_taskpack_builder",
+      "title": "Taskpack Builder",
+      "owner_organ": "ASTRONOMICON",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/OPS/ENGINE/imperium_ops/taskpack_builder.py",
+        "ORGANS/IMPERIAL_IDE/OPS/TEMPLATES/task_templates.json"
+      ],
+      "commands": [
+        "build-taskpack",
+        "task-templates"
+      ],
+      "risk_class": "LOW_DRY_RUN",
+      "current_status": "ACTIVE_ASTRONOMICON_COMPATIBLE_BUILDER"
+    },
+    {
+      "panel_id": "ops_astronomicon_registration",
+      "title": "Astronomicon Registration",
+      "owner_organ": "ASTRONOMICON",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/OPS/ENGINE/imperium_ops/astronomicon_register.py"
+      ],
+      "commands": [
+        "register-taskpack"
+      ],
+      "risk_class": "LOW_DRY_RUN",
+      "current_status": "DRY_RUN_ACTIVE_LIVE_GATE_BLOCKED"
+    },
+    {
+      "panel_id": "ops_launch_card",
+      "title": "Launch Card",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/OPS/ENGINE/imperium_ops/launch_card.py"
+      ],
+      "commands": [
+        "launch-card"
+      ],
+      "risk_class": "LOW_DRY_RUN",
+      "current_status": "ACTIVE_DRY_RUN_CARD_VIEWER"
+    },
+    {
+      "panel_id": "ops_lifecycle",
+      "title": "Lifecycle",
+      "owner_organ": "ADMINISTRATUM",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/OPS/ENGINE/imperium_ops/lifecycle.py",
+        "ORGANS/ADMINISTRATUM/BUNDLE_GATES/administratum_bundle_gate_adapter.py"
+      ],
+      "commands": [
+        "lifecycle",
+        "lifecycle-smoke"
+      ],
+      "risk_class": "LOW_DRY_RUN_AND_LOCAL_SMOKE",
+      "current_status": "ACTIVE_DRY_RUN_LIFECYCLE"
+    },
+    {
+      "panel_id": "ops_git_closure",
+      "title": "Git Closure",
+      "owner_organ": "INQUISITION",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/OPS/ENGINE/imperium_ops/git_closure.py",
+        "ORGANS/MECHANICUS/REGISTRY/command_policy.json"
+      ],
+      "commands": [
+        "git-closure"
+      ],
+      "risk_class": "LOW_DRY_RUN",
+      "current_status": "VALIDATED_PUSH_GATE_ONLY"
     }
   ]
 }

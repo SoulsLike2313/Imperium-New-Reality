@@ -232,6 +232,83 @@
       "risk_class": "LOW_DRY_RUN",
       "argument_required": false,
       "real_execution": false
+    },
+    {
+      "command": "ops",
+      "description": "Show OPS task console integration status",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "ops-smoke",
+      "description": "Run OPS task console smoke",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "task-console",
+      "description": "Show Task Console launch plan and status",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "classify-task",
+      "description": "Classify a sample TaskIntent without crashing",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "build-taskpack",
+      "description": "Build an Astronomicon-compatible sample taskpack under OPS/STAGING",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "register-taskpack",
+      "description": "Dry-run register a sample taskpack under OPS/STAGING",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "launch-card",
+      "description": "Render a launch card for a dry-run built taskpack",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "lifecycle",
+      "description": "Run the OPS lifecycle dry-run for a sample task",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "lifecycle-smoke",
+      "description": "Run OPS lifecycle smoke and fake-green trap",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "git-closure",
+      "description": "Show OPS git closure status without pushing",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "task-templates",
+      "description": "Show reusable OPS task template library",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
     }
   ]
 }

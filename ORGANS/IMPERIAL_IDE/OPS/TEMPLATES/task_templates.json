@@ -1,0 +1,127 @@
+{
+  "schema_version": "imperial_ide.ops.task_templates.v0_1",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPS-INTEGRATION-TASK-CONSOLE-ACTIVATION-PC-V0_1",
+  "templates": [
+    {
+      "template_id": "audit",
+      "title": "Audit Task",
+      "default_scope": "FULL_REPO",
+      "default_risk": "READ_ONLY",
+      "default_organs": ["INQUISITION", "ADMINISTRATUM"],
+      "default_allowed_write_scope": ["REPORTS/<task_id>/"],
+      "default_forbidden_actions": ["delete_files", "real_servitor_execution", "unsafe_shell"],
+      "default_outputs": ["audit_report.md", "audit_receipt.json"],
+      "push_policy": "validated push is allowed and expected after validation, scope check, secret check, and task policy"
+    },
+    {
+      "template_id": "repair",
+      "title": "Repair Task",
+      "default_scope": "IMPERIAL_IDE",
+      "default_risk": "CONTROLLED_WRITE",
+      "default_organs": ["MECHANICUS", "INQUISITION", "ADMINISTRATUM"],
+      "default_allowed_write_scope": ["ORGANS/IMPERIAL_IDE/**", "REPORTS/<task_id>/**"],
+      "default_forbidden_actions": ["destructive_cleanup", "unsafe_shell", "stage_secret"],
+      "default_outputs": ["repair_receipt.json", "validation_receipt.json"],
+      "push_policy": "validated push is allowed and expected after validation, scope check, secret check, and task policy"
+    },
+    {
+      "template_id": "build",
+      "title": "Build Task",
+      "default_scope": "IMPERIAL_IDE",
+      "default_risk": "CONTROLLED_WRITE",
+      "default_organs": ["STRATEGIUM", "MECHANICUS", "INQUISITION"],
+      "default_allowed_write_scope": ["ORGANS/IMPERIAL_IDE/**", "REPORTS/<task_id>/**"],
+      "default_forbidden_actions": ["live_llm_backend", "unsafe_shell", "kernel_write_without_gate"],
+      "default_outputs": ["build_receipt.json", "smoke_receipt.json"],
+      "push_policy": "validated push is allowed and expected after validation, scope check, secret check, and task policy"
+    },
+    {
+      "template_id": "integration",
+      "title": "Integration Task",
+      "default_scope": "IMPERIAL_IDE",
+      "default_risk": "CONTROLLED_WRITE",
+      "default_organs": ["ASTRONOMICON", "MECHANICUS", "ADMINISTRATUM", "INQUISITION"],
+      "default_allowed_write_scope": ["ORGANS/IMPERIAL_IDE/**", "ORGANS/MECHANICUS/**", "REPORTS/<task_id>/**"],
+      "default_forbidden_actions": ["replace_existing_shell", "unsafe_shell", "stage_runtime"],
+      "default_outputs": ["integration_receipt.json", "wiring_receipt.json"],
+      "push_policy": "validated push is allowed and expected after validation, scope check, secret check, and task policy"
+    },
+    {
+      "template_id": "cleanup_staging",
+      "title": "Cleanup Staging Task",
+      "default_scope": "PC_ONLY",
+      "default_risk": "CLEANUP_STAGING",
+      "default_organs": ["ADMINISTRATUM", "INQUISITION"],
+      "default_allowed_write_scope": ["ORGANS/IMPERIAL_IDE/**/STAGING/**", "REPORTS/<task_id>/**"],
+      "default_forbidden_actions": ["delete_source_files", "delete_without_owner_batch", "git_clean_fd"],
+      "default_outputs": ["cleanup_plan.json", "cleanup_receipt.json"],
+      "push_policy": "validated push is allowed and expected after validation, scope check, secret check, and task policy"
+    },
+    {
+      "template_id": "mechanicus_tool",
+      "title": "Mechanicus Tool Task",
+      "default_scope": "MECHANICUS_ONLY",
+      "default_risk": "CONTROLLED_WRITE",
+      "default_organs": ["MECHANICUS", "INQUISITION"],
+      "default_allowed_write_scope": ["ORGANS/MECHANICUS/**", "REPORTS/<task_id>/**"],
+      "default_forbidden_actions": ["unregistered_tool_execution", "unsafe_shell", "stage_secret"],
+      "default_outputs": ["tool_card.json", "mechanicus_validation_receipt.json"],
+      "push_policy": "validated push is allowed and expected after validation, scope check, secret check, and task policy"
+    },
+    {
+      "template_id": "ide_extension",
+      "title": "Imperial IDE Extension Task",
+      "default_scope": "IMPERIAL_IDE",
+      "default_risk": "CONTROLLED_WRITE",
+      "default_organs": ["OFFICIO_AGENTIS", "MECHANICUS", "INQUISITION"],
+      "default_allowed_write_scope": ["ORGANS/IMPERIAL_IDE/EXTENSIONS/**", "REPORTS/<task_id>/**"],
+      "default_forbidden_actions": ["enable_unreviewed_extension", "unsafe_shell", "live_llm_backend"],
+      "default_outputs": ["extension_manifest.json", "extension_validation_receipt.json"],
+      "push_policy": "validated push is allowed and expected after validation, scope check, secret check, and task policy"
+    },
+    {
+      "template_id": "warp_experiment",
+      "title": "WARP Experiment Task",
+      "default_scope": "WARP_ONLY",
+      "default_risk": "CONTROLLED_WRITE",
+      "default_organs": ["STRATEGIUM", "INQUISITION", "ADMINISTRATUM"],
+      "default_allowed_write_scope": ["ORGANS/IMPERIAL_IDE/WARP/**", "REPORTS/<task_id>/**"],
+      "default_forbidden_actions": ["kernel_promotion", "stage_runtime", "unsafe_shell"],
+      "default_outputs": ["warp_manifest.json", "warp_gate_receipt.json"],
+      "push_policy": "validated push is allowed and expected after validation, scope check, secret check, and task policy"
+    },
+    {
+      "template_id": "metaos_orchestration",
+      "title": "MetaOS Orchestration Task",
+      "default_scope": "IMPERIAL_IDE",
+      "default_risk": "CONTROLLED_WRITE",
+      "default_organs": ["MECHANICUS", "ADMINISTRATUM", "INQUISITION"],
+      "default_allowed_write_scope": ["ORGANS/IMPERIAL_IDE/METAOS/**", "REPORTS/<task_id>/**"],
+      "default_forbidden_actions": ["live_llm_backend", "real_servitor_execution", "stage_runtime"],
+      "default_outputs": ["metaos_route_receipt.json", "metaos_smoke_receipt.json"],
+      "push_policy": "validated push is allowed and expected after validation, scope check, secret check, and task policy"
+    },
+    {
+      "template_id": "governance_update",
+      "title": "Governance Update Task",
+      "default_scope": "FULL_REPO",
+      "default_risk": "CONTROLLED_WRITE",
+      "default_organs": ["DOCTRINARIUM", "INQUISITION", "ADMINISTRATUM"],
+      "default_allowed_write_scope": ["ORGANS/_CORE_GOVERNANCE/**", "ORGANS/DOCTRINARIUM/**", "REPORTS/<task_id>/**"],
+      "default_forbidden_actions": ["canon_claim_without_receipts", "unsafe_shell", "delete_files"],
+      "default_outputs": ["governance_delta.md", "canon_receipt.json"],
+      "push_policy": "validated push is allowed and expected after validation, scope check, secret check, and task policy"
+    },
+    {
+      "template_id": "report_generation",
+      "title": "Report Generation Task",
+      "default_scope": "PC_ONLY",
+      "default_risk": "READ_ONLY",
+      "default_organs": ["ADMINISTRATUM", "OFFICIO_AGENTIS"],
+      "default_allowed_write_scope": ["REPORTS/<task_id>/**"],
+      "default_forbidden_actions": ["modify_source", "unsafe_shell", "fake_green_pass"],
+      "default_outputs": ["FINAL_OWNER_SUMMARY_RU.md", "report_receipt.json"],
+      "push_policy": "validated push is allowed and expected after validation, scope check, secret check, and task policy"
+    }
+  ]
+}

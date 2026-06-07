@@ -14,6 +14,9 @@ COMMANDS = [
     "workbench-status", "warp", "warp-open", "warp-list", "warp-status",
     "warp-gate", "warp-smoke", "metaos", "metaos-smoke", "metaos-route",
     "metaos-servitor", "metaos-bundle-gate", "metaos-chronicle",
+    "ops", "ops-smoke", "task-console", "classify-task", "build-taskpack",
+    "register-taskpack", "launch-card", "lifecycle", "lifecycle-smoke",
+    "git-closure", "task-templates",
 ]
 
 

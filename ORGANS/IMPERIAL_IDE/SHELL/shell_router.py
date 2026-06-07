@@ -20,11 +20,25 @@ RISK = {
     "warp-smoke": "LOW_LOCAL_SMOKE",
     "metaos-smoke": "LOW_LOCAL_SMOKE",
     "metaos-bundle-gate": "LOW_LOCAL_SMOKE",
+    "ops-smoke": "LOW_LOCAL_SMOKE",
+    "lifecycle-smoke": "LOW_LOCAL_SMOKE",
     "warp-open": "LOW_DRY_RUN",
     "warp-gate": "LOW_DRY_RUN",
     "metaos-route": "LOW_DRY_RUN",
     "metaos-servitor": "LOW_DRY_RUN",
     "metaos-chronicle": "LOW_DRY_RUN",
+    "classify-task": "LOW_DRY_RUN",
+    "build-taskpack": "LOW_DRY_RUN",
+    "register-taskpack": "LOW_DRY_RUN",
+    "launch-card": "LOW_DRY_RUN",
+    "lifecycle": "LOW_DRY_RUN",
+    "git-closure": "LOW_DRY_RUN",
+}
+
+OPS_COMMANDS = {
+    "ops", "ops-smoke", "task-console", "classify-task", "build-taskpack",
+    "register-taskpack", "launch-card", "lifecycle", "lifecycle-smoke",
+    "git-closure", "task-templates",
 }
 
 INTEGRATION_COMMANDS = {
@@ -32,7 +46,7 @@ INTEGRATION_COMMANDS = {
     "workbench-status", "warp", "warp-open", "warp-list", "warp-status",
     "warp-gate", "warp-smoke", "metaos", "metaos-smoke", "metaos-route",
     "metaos-servitor", "metaos-bundle-gate", "metaos-chronicle",
-}
+} | OPS_COMMANDS
 
 
 def _status_from(data: Any) -> str:
@@ -55,7 +69,9 @@ def route(command: str, args: list[str] | None = None) -> dict[str, Any]:
     data_sources: list[str] = []
     tools_invoked: list[str] = []
     dry_run = command == "dry-run-tool" or command in {
-        "warp-open", "warp-gate", "metaos-route", "metaos-servitor", "metaos-chronicle"
+        "warp-open", "warp-gate", "metaos-route", "metaos-servitor", "metaos-chronicle",
+        "classify-task", "build-taskpack", "register-taskpack", "launch-card",
+        "lifecycle", "git-closure", "task-console",
     }
 
     if command in {"tools", "capabilities", "policy", "dry-run-tool", "doctor", "validate"}:
@@ -161,19 +177,27 @@ def route(command: str, args: list[str] | None = None) -> dict[str, Any]:
     elif command in INTEGRATION_COMMANDS:
         from integration_surfaces import route_surface
         data = route_surface(state.repo_root, command, args)
-        component = command.split("-", 1)[0]
-        status_path = {
-            "workbench": "ORGANS/IMPERIAL_IDE/WORKBENCH/INTEGRATION_STATUS.json",
-            "warp": "ORGANS/IMPERIAL_IDE/WARP/INTEGRATION_STATUS.json",
-            "metaos": "ORGANS/IMPERIAL_IDE/METAOS/INTEGRATION_STATUS.json",
-        }.get(component)
-        data_sources = [status_path] if status_path else []
-        if "smoke" in command or command == "metaos-bundle-gate":
-            tools_invoked = [{
-                "workbench": "MECHANICUS_WORKBENCH_BRIDGE",
-                "warp": "MECHANICUS_WARP_BRIDGE",
-                "metaos": "MECHANICUS_METAOS_BRIDGE",
-            }[component]]
+        if command in OPS_COMMANDS:
+            data_sources = [
+                "ORGANS/IMPERIAL_IDE/OPS/INTEGRATION_STATUS.json",
+                "ORGANS/IMPERIAL_IDE/OPS/ENGINE/imperium_ops",
+            ]
+            if "smoke" in command:
+                tools_invoked = ["IMPERIAL_IDE_OPS_TASK_CONSOLE"]
+        else:
+            component = command.split("-", 1)[0]
+            status_path = {
+                "workbench": "ORGANS/IMPERIAL_IDE/WORKBENCH/INTEGRATION_STATUS.json",
+                "warp": "ORGANS/IMPERIAL_IDE/WARP/INTEGRATION_STATUS.json",
+                "metaos": "ORGANS/IMPERIAL_IDE/METAOS/INTEGRATION_STATUS.json",
+            }.get(component)
+            data_sources = [status_path] if status_path else []
+            if "smoke" in command or command == "metaos-bundle-gate":
+                tools_invoked = [{
+                    "workbench": "MECHANICUS_WORKBENCH_BRIDGE",
+                    "warp": "MECHANICUS_WARP_BRIDGE",
+                    "metaos": "MECHANICUS_METAOS_BRIDGE",
+                }[component]]
     elif command == "help":
         data = _palette(state)
         data["status"] = "PASS"

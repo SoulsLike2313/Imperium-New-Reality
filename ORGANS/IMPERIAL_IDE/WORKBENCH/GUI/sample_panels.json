@@ -11,6 +11,12 @@
     {"panel_id": "extensions", "title": "Extensions", "owner_organ": "OFFICIO_AGENTIS", "data_sources": ["extensions"], "commands": ["extensions"], "risk_class": "read_only", "current_status": "ACTIVE"},
     {"panel_id": "workspace", "title": "Workspace", "owner_organ": "ADMINISTRATUM", "data_sources": ["workspace"], "commands": ["workspace"], "risk_class": "read_only", "current_status": "ACTIVE"},
     {"panel_id": "validation", "title": "Validation", "owner_organ": "INQUISITION", "data_sources": ["validate"], "commands": ["validate"], "risk_class": "read_only", "current_status": "PASS_WITH_WARNINGS"},
-    {"panel_id": "servitor_capsules", "title": "Servitor Capsules", "owner_organ": "OFFICIO_AGENTIS", "data_sources": ["capsules.config.json"], "commands": ["capsule-status", "capsule-dry-run"], "risk_class": "dry_run", "current_status": "DRY_RUN_CANDIDATE"}
+    {"panel_id": "servitor_capsules", "title": "Servitor Capsules", "owner_organ": "OFFICIO_AGENTIS", "data_sources": ["capsules.config.json"], "commands": ["capsule-status", "capsule-dry-run"], "risk_class": "dry_run", "current_status": "DRY_RUN_CANDIDATE"},
+    {"panel_id": "ops_task_console", "title": "Task Console", "owner_organ": "IMPERIAL_IDE", "data_sources": ["OPS/INTEGRATION_STATUS.json"], "commands": ["task-console", "classify-task"], "risk_class": "dry_run", "current_status": "ACTIVE_TASK_CONSOLE_DRY_RUN"},
+    {"panel_id": "ops_taskpack_builder", "title": "Taskpack Builder", "owner_organ": "ASTRONOMICON", "data_sources": ["OPS/taskpack_builder.py"], "commands": ["build-taskpack", "task-templates"], "risk_class": "dry_run", "current_status": "ACTIVE_ASTRONOMICON_COMPATIBLE_BUILDER"},
+    {"panel_id": "ops_astronomicon_registration", "title": "Astronomicon Registration", "owner_organ": "ASTRONOMICON", "data_sources": ["OPS/astronomicon_register.py"], "commands": ["register-taskpack"], "risk_class": "dry_run", "current_status": "DRY_RUN_ACTIVE_LIVE_GATE_BLOCKED"},
+    {"panel_id": "ops_launch_card", "title": "Launch Card", "owner_organ": "OFFICIO_AGENTIS", "data_sources": ["OPS/launch_card.py"], "commands": ["launch-card"], "risk_class": "dry_run", "current_status": "ACTIVE_DRY_RUN_CARD_VIEWER"},
+    {"panel_id": "ops_lifecycle", "title": "Lifecycle", "owner_organ": "ADMINISTRATUM", "data_sources": ["OPS/lifecycle.py"], "commands": ["lifecycle", "lifecycle-smoke"], "risk_class": "dry_run", "current_status": "ACTIVE_DRY_RUN_LIFECYCLE"},
+    {"panel_id": "ops_git_closure", "title": "Git Closure", "owner_organ": "INQUISITION", "data_sources": ["OPS/git_closure.py"], "commands": ["git-closure"], "risk_class": "dry_run", "current_status": "VALIDATED_PUSH_GATE_ONLY"}
   ]
 }

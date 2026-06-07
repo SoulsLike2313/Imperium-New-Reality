@@ -1,0 +1,38 @@
+{
+  "schema_version": "astronomicon.task_start_ack_template.v0_1",
+  "template_id": "TASK_START_ACK_TEMPLATE_PC_OPS_INTEGRATION_V0_1",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPS-INTEGRATION-TASK-CONSOLE-ACTIVATION-PC-V0_1",
+  "contour": "PC",
+  "copy_message_to_servitor": "start task",
+  "start_ack_required_fields": [
+    "task_id",
+    "repo_root",
+    "git_status",
+    "head_sha",
+    "origin_master_sha",
+    "bundled_ops_source_found",
+    "source_archive_hash",
+    "ops_import_plan",
+    "known_bugfix_plan",
+    "astronomicon_builder_plan",
+    "gui_tui_cli_wiring_plan",
+    "safety_plan",
+    "known_blockers",
+    "allowed_write_scope",
+    "forbidden_actions",
+    "validated_push_policy",
+    "planned_outputs"
+  ],
+  "do_not_claim": [
+    "clean_pass",
+    "remote_route",
+    "vm2_execution",
+    "vm3_execution",
+    "full_gui_ide_complete",
+    "real_servitor_execution_enabled",
+    "unsafe_shell_enabled",
+    "live_llm_backend_enabled",
+    "astronomicon_live_registration_if_only_dry_run",
+    "push_done_without_receipt"
+  ]
+}
