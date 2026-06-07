@@ -4,7 +4,7 @@
 
 Что исправлено:
 
-- Read-only команды проверены no-dirty guard: tracked diff до/после не изменился.
+- Read-only команды теперь проходят no-dirty guard: tracked diff до/после не меняется.
 - TUI Agents and Servitors показывает real 12-servitor registry как primary view; Alpha/Beta/Gamma не является primary roster.
 - Command palette валидна, help отдаёт valid JSON, missing handler entries закрыты.
 - Daily Operations Shell открыт командами daily-ops, operator-board, next-action и task-flow.
@@ -21,4 +21,10 @@
 - destructive cleanup;
 - live registration без Owner token LIVE.
 
-Git/push: pending until final validation, commit and push receipt is updated.
+Git/push:
+
+- Main commit pushed: 1ed48ad56757c2334a508825aef3c6d70f470dc0.
+- Post-push HEAD equals origin/master: True.
+- Старые unrelated report edits и старый ZIP оставлены unstaged и классифицированы.
+
+Следующий рекомендуемый task: owner review live registration promotion или отдельный real servitor gate.
