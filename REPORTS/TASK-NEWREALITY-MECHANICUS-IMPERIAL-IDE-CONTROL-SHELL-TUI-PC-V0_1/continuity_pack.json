@@ -1,13 +1,38 @@
 {
   "receipt_type": "continuity_pack",
   "task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1",
-  "timestamp_utc": "2026-06-07T11:44:17Z",
+  "timestamp_utc": "2026-06-07T11:52:41Z",
   "primary_report_root": "REPORTS/TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1",
   "shell_status": "CONTROL_SHELL_ACTIVE_V0_1",
+  "validated_output_commit_sha": "dd25a288beff9a4cb01c49c8ed8cf8b625154c3c",
   "cli_path": "ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py",
   "tui_path": "ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_tui.py",
   "launcher_path": "ORGANS/IMPERIAL_IDE/run_imperial_ide.ps1",
   "bridge_path": "ORGANS/IMPERIAL_IDE/BRIDGES/mechanicus_shell_bridge.py",
+  "available_cli_commands": [
+    "doctor",
+    "status",
+    "dashboard",
+    "tasks",
+    "current-task",
+    "reports",
+    "latest-report",
+    "receipts",
+    "tools",
+    "capabilities",
+    "policy",
+    "extensions",
+    "workspace",
+    "validate",
+    "dry-run-tool",
+    "help"
+  ],
+  "safety_limits": [
+    "No unrestricted shell execution",
+    "No real arbitrary tool execution",
+    "No full GUI IDE claim",
+    "Dry-run gateway remains default"
+  ],
   "next_recommended_task": "Build the first local GUI workbench over the control-shell router and Mechanicus dry-run bridge.",
   "pre_existing_dirty_warning": {
     "path": "REPORTS/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/astronomicon_local_pc_registration_and_route_drift_report.zip",
@@ -16,5 +41,6 @@
     "task_scope": false,
     "staged": false,
     "pushed": false
-  }
+  },
+  "verdict": "PASS_WITH_WARNINGS_PUSHED_READY_FOR_GUI_WORKBENCH_BUILD"
 }

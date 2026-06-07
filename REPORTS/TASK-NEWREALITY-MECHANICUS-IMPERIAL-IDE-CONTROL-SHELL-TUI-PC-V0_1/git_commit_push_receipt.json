@@ -1,14 +1,36 @@
 {
   "receipt_type": "git_commit_push_receipt",
   "task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1",
-  "timestamp_utc": "2026-06-07T11:44:17Z",
-  "phase": "PRE_PUSH_PLACEHOLDER",
-  "commit_sha": null,
-  "origin_master_sha": null,
-  "head_equals_origin_master_after_push": null,
-  "git_status_after_push": null,
-  "pushed_files_summary": null,
-  "validation_summary": "pending final validation and staged scope gate",
+  "timestamp_utc": "2026-06-07T11:52:41Z",
+  "phase": "VALIDATED_OUTPUT_PUSHED_RECEIPT_UPDATE_COMMIT_PENDING",
+  "commit_sha": "dd25a288beff9a4cb01c49c8ed8cf8b625154c3c",
+  "origin_master_sha": "dd25a288beff9a4cb01c49c8ed8cf8b625154c3c",
+  "head_equals_origin_master_after_push": true,
+  "git_status_after_push": [
+    " D REPORTS/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/astronomicon_local_pc_registration_and_route_drift_report.zip"
+  ],
+  "pushed_files_summary": {
+    "validated_output_commit_files": 69,
+    "added_files": 60,
+    "modified_files": 9,
+    "deleted_files": 0,
+    "primary_areas": [
+      "ORGANS/ASTRONOMICON task admission and registry",
+      "ORGANS/IMPERIAL_IDE control shell, TUI, panels, docs, workspace, extensions",
+      "ORGANS/MECHANICUS registry and IDE bridge",
+      "REPORTS/TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1 receipts"
+    ]
+  },
+  "validation_summary": {
+    "required_outputs": "48 checked; 0 missing",
+    "json_parse": "30 working-tree JSON and 32 staged JSON parsed; 0 invalid",
+    "python_compile": "22 Python files compiled; 0 failures",
+    "cli_smoke": "16 commands tested; 11 PASS; 5 PASS_WITH_WARNINGS; 0 required BLOCKED",
+    "tui_smoke": "PASS_WITH_WARNINGS; full_gui_implemented=false",
+    "mechanicus_doctor": "PASS_WITH_WARNINGS; arbitrary shell execution false",
+    "unsafe_negative_test": "PASS; arbitrary.shell returned BLOCKED and executed=false",
+    "staged_scope": "69 staged files; 0 disallowed; 0 secret hits; 0 staged deletions"
+  },
   "pre_existing_dirty_warning": {
     "path": "REPORTS/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/astronomicon_local_pc_registration_and_route_drift_report.zip",
     "status": "PRE_EXISTING_DELETED_UNSTAGED",
@@ -17,6 +39,6 @@
     "staged": false,
     "pushed": false
   },
-  "self_reference_boundary": "Receipt will be updated after validated-output push.",
-  "verdict": "PENDING"
+  "self_reference_boundary": "This receipt records the validated-output commit and push. The receipt-update commit follows this file content, so its own SHA is verified in the final operator response instead of being self-embedded.",
+  "verdict": "PASS_WITH_WARNINGS_PUSHED_READY_FOR_GUI_WORKBENCH_BUILD"
 }
