@@ -5,9 +5,13 @@ Status: CANDIDATE_V0_1
 ## Commands
 
 - taskpack-manager: list generated station taskpacks.
+- taskpacks: short alias for the generated taskpack list.
 - taskpack-list: alias for the same list view.
 - taskpack-inspect [TASK_ID]: inspect one generated taskpack, or latest when omitted.
-- validate-taskpack [TASK_ID]: validate required root files for a generated taskpack.
+- taskpack-validate [TASK_ID]: validate required root files for the latest or selected generated taskpack.
+- taskpack-open [TASK_ID]: print a copy-ready command for opening the taskpack folder.
+- taskpack-copy-path [TASK_ID]: print a copy-ready command for copying the TASKPACK.zip path.
+- validate-taskpack [TASK_ID]: compatibility command; when omitted it may build and validate a sample taskpack.
 
 ## Required evidence
 

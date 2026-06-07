@@ -41,8 +41,12 @@ RISK = {
     "lifecycle": "LOW_DRY_RUN",
     "git-closure": "LOW_DRY_RUN",
     "taskpack-manager": "LOW_READ_ONLY",
+    "taskpacks": "LOW_READ_ONLY",
     "taskpack-list": "LOW_READ_ONLY",
     "taskpack-inspect": "LOW_READ_ONLY",
+    "taskpack-validate": "LOW_DRY_RUN",
+    "taskpack-open": "LOW_READ_ONLY",
+    "taskpack-copy-path": "LOW_READ_ONLY",
     "show-json": "LOW_READ_ONLY",
     "show-summary": "LOW_READ_ONLY",
     "path-actions": "LOW_READ_ONLY",
@@ -70,7 +74,8 @@ STATION_COMMANDS = {
     "agent-status", "task-console", "new-task", "build-taskpack",
     "validate-taskpack", "register-taskpack", "launch-card", "handoff-card",
     "lifecycle", "reports-latest", "receipts-latest", "safety", "git-closure",
-    "station-ux-smoke", "taskpack-manager", "taskpack-list", "taskpack-inspect",
+    "station-ux-smoke", "taskpack-manager", "taskpacks", "taskpack-list", "taskpack-inspect",
+    "taskpack-validate", "taskpack-open", "taskpack-copy-path",
     "show-json", "show-summary", "path-actions", "dirty-classifier",
     "live-registration-promote",
 }
@@ -107,7 +112,7 @@ def route(command: str, args: list[str] | None = None) -> dict[str, Any]:
     dry_run = not live_registration and not promotion_live and (command == "dry-run-tool" or command in {
         "warp-open", "warp-gate", "metaos-route", "metaos-servitor", "metaos-chronicle",
         "classify-task", "build-taskpack", "register-taskpack", "launch-card",
-        "validate-taskpack", "handoff-card", "lifecycle", "git-closure", "task-console",
+        "validate-taskpack", "taskpack-validate", "handoff-card", "lifecycle", "git-closure", "task-console",
         "new-task", "dirty-classifier", "live-registration-promote",
     })
 

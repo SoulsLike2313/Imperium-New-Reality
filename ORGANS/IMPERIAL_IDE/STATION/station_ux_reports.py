@@ -106,8 +106,12 @@ def _required_cli_commands() -> list[str]:
     return [
         "station-ux-smoke",
         "taskpack-manager",
+        "taskpacks",
         "taskpack-list",
         "taskpack-inspect",
+        "taskpack-validate",
+        "taskpack-open",
+        "taskpack-copy-path",
         "show-json",
         "show-summary",
         "launch-card",

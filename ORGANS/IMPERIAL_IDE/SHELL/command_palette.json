@@ -367,6 +367,34 @@
       "real_execution": false
     },
     {
+      "command": "taskpacks",
+      "description": "List generated Station taskpacks",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "taskpack-validate",
+      "description": "Validate the latest or selected generated Station taskpack",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "taskpack-open",
+      "description": "Print a copy-ready command for opening a generated taskpack folder",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "taskpack-copy-path",
+      "description": "Print a copy-ready command for copying a generated TASKPACK.zip path",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
       "command": "handoff-card",
       "description": "Render a Servitor Prime external handoff card",
       "risk_class": "LOW_DRY_RUN",

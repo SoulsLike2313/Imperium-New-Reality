@@ -1,0 +1,43 @@
+{
+  "schema_version": "imperial_ide.taskpack_manager.schema.v0_1",
+  "generated_taskpacks_root": "ORGANS/IMPERIAL_IDE/STATION/generated_taskpacks",
+  "required_root_files": [
+    "MANIFEST.json",
+    "TASK_SPEC.md",
+    "ACCEPTANCE_GATES.md",
+    "OUTPUT_REQUIREMENTS.md",
+    "TASK_ROUTE_MANIFEST_TEMPLATE.json",
+    "TASK_START_ACK_TEMPLATE.json"
+  ],
+  "required_list_fields": [
+    "status",
+    "generated_taskpacks_found",
+    "generated_taskpacks_root",
+    "latest_taskpack_path",
+    "latest_taskpack_sha256",
+    "items",
+    "open_or_copy_actions_available"
+  ],
+  "required_inspect_fields": [
+    "status",
+    "taskpack_id",
+    "taskpack_path",
+    "taskpack_zip_path",
+    "latest_taskpack_sha256",
+    "extracted_path",
+    "extracted_root_files_found",
+    "missing_required_root_files",
+    "validation_status",
+    "dry_run_registration_status",
+    "live_promotion_available",
+    "open_or_copy_actions_available",
+    "path_actions"
+  ],
+  "validation_states": [
+    "PASS",
+    "PASS_WITH_WARNINGS",
+    "BLOCKED"
+  ],
+  "live_registration_default": "DRY_RUN",
+  "archive_policy": "OWNER_APPROVAL_REQUIRED_NON_DESTRUCTIVE_MOVE_ONLY"
+}

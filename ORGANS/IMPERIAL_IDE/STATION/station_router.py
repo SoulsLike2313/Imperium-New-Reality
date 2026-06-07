@@ -88,10 +88,28 @@ def route(command: str, args: list[str] | None = None, repo_root: Path | None = 
     if command == "build-taskpack":
         title, goal, template = _intent_text(args)
         return workflow.build_taskpack(title, goal, template)
-    if command in {"taskpack-manager", "taskpack-list"}:
+    if command in {"taskpack-manager", "taskpacks", "taskpack-list"}:
         return list_taskpacks(repo)
     if command == "taskpack-inspect":
         return inspect_taskpack(repo, args[0] if args else "")
+    if command == "taskpack-validate":
+        return validate_generated_taskpack(repo, args[0] if args else "")
+    if command in {"taskpack-open", "taskpack-copy-path"}:
+        inspected = inspect_taskpack(repo, args[0] if args else "")
+        if inspected.get("status") == "BLOCKED":
+            return inspected
+        target_key = "taskpack_path" if command == "taskpack-open" else "taskpack_zip_path"
+        path_action = actions_for_path(repo, inspected[target_key])
+        command_key = "open_path_command" if command == "taskpack-open" else "copy_path_command"
+        return {
+            "status": "PASS_WITH_WARNINGS",
+            "taskpack_id": inspected["taskpack_id"],
+            "action": command,
+            "target_path": path_action["path"],
+            "copy_ready_command": path_action[command_key],
+            "path_actions": path_action,
+            "executed": False,
+        }
     if command == "validate-taskpack":
         if args and not args[0].startswith("TASK-"):
             return workflow.validate_taskpack(args[0])

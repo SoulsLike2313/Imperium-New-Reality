@@ -20,7 +20,8 @@ COMMANDS = [
     "station", "station-tui", "station-gui", "station-smoke", "agents",
     "agent-status", "new-task", "validate-taskpack", "handoff-card",
     "reports-latest", "receipts-latest", "safety", "station-ux-smoke",
-    "taskpack-manager", "taskpack-list", "taskpack-inspect", "show-json",
+    "taskpack-manager", "taskpacks", "taskpack-list", "taskpack-inspect",
+    "taskpack-validate", "taskpack-open", "taskpack-copy-path", "show-json",
     "show-summary", "path-actions", "dirty-classifier", "live-registration-promote",
 ]
 
