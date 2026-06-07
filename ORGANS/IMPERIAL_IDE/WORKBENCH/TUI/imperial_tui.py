@@ -118,20 +118,20 @@ def nebula_bar(width):
     return "".join(out)
 
 
-def box(title, lines, width=74, color=A["gold"]):
+def box(title, lines, width=0, color=A["gold"]):
+    if not width:
+        width = tui_width()
     tl, tr, bl, br = G["tl"], G["tr"], G["bl"], G["br"]
     h, v = G["h"], G["v"]
     t = " %s " % title
-    top = tl + t + h * (width - 2 - len(t)) + tr
+    top = tl + t + h * max(0, width - 2 - len(t)) + tr
     print(c(color, top, bold=True))
+    inner = max(10, width - 4)
     for ln in lines:
+        ln = clip(ln, inner)
         raw = _visible(ln)
-        pad = width - 2 - len(raw)
-        if pad < 0:
-            ln = ln[:width - 2]
-            pad = 0
-        print(c(color, v) + " " + ln + " " * (pad - 1 if pad else 0) +
-              c(color, v))
+        pad = max(0, inner - len(raw))
+        print(c(color, v) + " " + ln + " " * pad + " " + c(color, v))
     print(c(color, bl + h * (width - 2) + br, bold=True))
 
 
@@ -141,8 +141,23 @@ def _visible(s):
     return re.sub(r"\x1b\[[0-9;]*m", "", s)
 
 
+def tui_width(default=96):
+    try:
+        cols = os.get_terminal_size().columns
+        return max(74, min(118, cols - 4))
+    except Exception:
+        return default
+
+
+def clip(text, limit):
+    raw = _visible(str(text))
+    if len(raw) <= limit:
+        return str(text)
+    return str(text)[:max(0, limit - 1)] + "…"
+
+
 def banner():
-    w = 74
+    w = tui_width()
     print()
     print(nebula_bar(w))
     print(c(A["chrome"], "   %s  I M P E R I A L   I D E   \u2014   N E B U L A   T U I" %
@@ -251,27 +266,32 @@ def render_panels():
 def render_capsules():
     caps = load_capsules()
     lines = []
+    lines.append(c(A["chrome"], "ID".ljust(18)) + c(A["text_muted"], "ROLE".ljust(24)) + c(A["text_muted"], "ORGAN".ljust(18)) + c(A["text_muted"], "STATUS"))
+    lines.append(c(A["text_muted"], "-" * min(92, tui_width() - 8)))
     for cap in caps:
+        ident = cap.get("organ", "")
+        label = cap.get("label", "")
+        status = cap.get("status", "")
+        status_col = A["alert_red"] if "BLOCK" in str(status).upper() else (A["ok_green"] if str(status).upper() == "ACTIVE" else A["text_muted"])
         lines.append("%s %s  %s  %s  %s" % (
             c(A["plasma_hot"], G["cog"]),
-            c(A["gold"], cap["organ"].ljust(18)),
-            c(A["chrome"], cap["label"][:20].ljust(20)),
-            c(A["text_muted"], (cap.get("owner_organ") or "").ljust(12)),
-            c(A["text_muted"], cap.get("status") or ("cooldown:%ss" % cap.get("rate_limit_cooldown_s", 8)))))
-        lines.append("    mode:%s handoff:%s current:%s" % (
+            c(A["gold"], ident[:16].ljust(16)),
+            c(A["chrome"], label[:22].ljust(22)),
+            c(A["text_muted"], (cap.get("owner_organ") or "")[:16].ljust(16)),
+            c(status_col, status or "UNKNOWN")))
+        lines.append("    mode:%s  handoff:%s  current:%s" % (
             cap.get("mode", ""),
             cap.get("handoff_mode", ""),
-            cap.get("current_task_id", "")[:44],
+            cap.get("current_task_id", "")[:52],
         ))
-        lines.append("    allow:%s" % ", ".join(cap.get("allowed_actions", [])[:3]))
-        lines.append("    block:%s" % ", ".join(cap.get("blocked_actions", [])[:3]))
-    lines.append("")
-    lines.append(c(A["text_muted"],
-                   "real 12-servitor registry is PRIMARY; legacy Alpha/Beta/Gamma is debug-only"))
-    lines.append(c(A["text_muted"],
-                   "Servitor Prime mode: EXTERNAL_HANDOFF_ONLY; real execution remains gated"))
+        allow = ", ".join(cap.get("allowed_actions", [])[:3]) or "read_state"
+        block = ", ".join(cap.get("blocked_actions", [])[:3]) or "unsafe_execution"
+        lines.append("    allow:%s" % allow)
+        lines.append("    block:%s" % block)
+        lines.append("")
+    lines.append(c(A["ok_green"], "PRIMARY: real 12-servitor registry"))
+    lines.append(c(A["text_muted"], "Legacy Alpha/Beta/Gamma is debug-only; real execution remains gated."))
     box("%s SERVITOR ROSTER" % G["cog"], lines, color=A["gold"])
-
 
 def render_menu():
     lines = []
@@ -292,10 +312,14 @@ def render_station_result(title, command, args=None):
     raw = json.dumps(result, ensure_ascii=False, indent=2).splitlines()
     lines = _summary_lines(command, result)
     lines.append("")
+    lines.append(c(A["gold"], "Operator hint:"))
+    lines.extend(_action_lines(command, result))
+    lines.append("")
     lines.append("Full JSON: python ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py full-json")
-    lines.append("Preview:")
-    lines.extend(line[:68] for line in raw[:16])
-    if len(raw) > 16:
+    preview_count = 34 if command in {"full-json", "show-json"} else 8
+    lines.append("Machine preview:")
+    lines.extend(line[:max(68, tui_width()-10)] for line in raw[:preview_count])
+    if len(raw) > preview_count:
         lines.append("... preview truncated; Full JSON command shows complete payload")
     color = A["alert_red"] if result.get("status") == "BLOCKED" else A["nebula_bright"]
     box("%s %s" % (G["star"], title.upper()), lines, color=color)
@@ -303,11 +327,22 @@ def render_station_result(title, command, args=None):
 
 
 def _summary_lines(command, result):
-    lines = ["status: %s" % result.get("status", "UNKNOWN")]
-    if command in {"daily-ops", "operator-board"}:
+    status = result.get("status", "UNKNOWN")
+    lines = [c(A["ok_green"] if str(status).startswith("PASS") else A["warn_amber"], "status: %s" % status)]
+    if command in {"station", "dashboard", "show-summary", "full-json"}:
+        snapshot = result.get("snapshot", result.get("data", {}))
+        repo = (snapshot.get("repo") or result.get("repo") or {}) if isinstance(snapshot, dict) else {}
+        git = (snapshot.get("git_closure") or result.get("git_closure") or {}) if isinstance(snapshot, dict) else {}
+        lines.extend([
+            "surface: Operational Station",
+            "repo: %s" % repo.get("root", ""),
+            "git: %s / dirty:%s" % (git.get("branch", "master"), git.get("dirty_count", "?")),
+            "next: open Daily Ops or Next Action",
+        ])
+    elif command in {"daily-ops", "operator-board"}:
         board = result.get("board", {})
         lines.extend([
-            "surface: DAILY OPERATIONS",
+            "surface: Daily Ops Board",
             "current task: %s" % board.get("current_task", {}).get("task_id", ""),
             "agents: %s" % board.get("agent_roster_summary", {}).get("agent_count", 0),
             "dirty: %s paths" % board.get("dirty_state", {}).get("dirty_count", 0),
@@ -315,15 +350,31 @@ def _summary_lines(command, result):
         ])
     elif command == "agents":
         lines.extend([
-            "real servitors visible: %s" % result.get("agent_count", 0),
-            "current task: %s" % result.get("current_expected_task_id", ""),
+            "real servitors visible: %s" % result.get("agent_count", len(result.get("agents", []))),
+            "Prime: external handoff only",
             "execution: gated",
         ])
-    elif command in {"taskpack-manager", "taskpack-inspect"}:
+    elif command in {"taskpack-manager", "taskpacks"}:
         lines.extend([
-            "generated taskpacks: %s" % result.get("generated_taskpacks_found", "selected"),
-            "latest/selected: %s" % result.get("taskpack_id", result.get("latest_taskpack_path", "")),
-            "next: inspect, validate, open, copy path, or review promotion",
+            "generated taskpacks: %s" % result.get("generated_taskpacks_found", 0),
+            "latest: %s" % result.get("latest_taskpack_path", ""),
+            "sha: %s" % result.get("latest_taskpack_sha256", "")[:16],
+            "next: inspect / validate / copy path / review promotion",
+        ])
+    elif command == "taskpack-inspect":
+        lines.extend([
+            "selected: %s" % result.get("taskpack_id", "latest"),
+            "validation: %s" % result.get("validation_status", ""),
+            "registration: %s" % result.get("dry_run_registration_status", ""),
+            "next: Launch Card or Handoff Card",
+        ])
+    elif command in {"launch-card", "handoff-card"}:
+        lines.extend([
+            "task: %s" % result.get("task_id", ""),
+            "dry-run: %s" % result.get("dry_run_status", result.get("admission_state", "")),
+            "live: %s" % result.get("live_state", ""),
+            "execution_done: %s" % result.get("execution_done", False),
+            "next: copy handoff block to Servitor Prime",
         ])
     elif command == "next-action":
         lines.append("next: %s" % result.get("next_action", ""))
@@ -339,10 +390,34 @@ def _summary_lines(command, result):
             "push gate: %s" % result.get("push_allowed_state", ""),
             "next: stage only validated current task outputs",
         ])
+    elif command == "safety":
+        lines.extend([
+            "real execution: gated",
+            "live LLM: gated",
+            "unsafe shell: blocked",
+            "next: review gates before opening capability",
+        ])
     else:
         lines.append("next: use Full JSON for complete machine-readable state")
-    return lines[:12]
+    return lines[:14]
 
+
+def _action_lines(command, result):
+    if command in {"station", "dashboard"}:
+        return ["[02] Daily Ops for owner workflow", "[03] Next Action for immediate step", "[25] Git Closure before committing"]
+    if command in {"daily-ops", "operator-board"}:
+        return ["Use Task Flow for the cycle", "Use Taskpack Manager for ZIPs", "Use Handoff Card for Servitor Prime copy block"]
+    if command in {"taskpack-manager", "taskpack-inspect", "taskpacks"}:
+        return ["Inspect selected/latest taskpack", "Validate before registration", "Copy ZIP path only from path_actions"]
+    if command in {"launch-card", "handoff-card"}:
+        return ["Copy only the handoff block", "Do not treat handoff-ready as execution-done", "Live registration requires explicit owner confirmation"]
+    if command == "agents":
+        return ["This is the real 12-servitor roster", "Prime is external handoff only", "Legacy capsules are debug-only"]
+    if command in {"dirty-classifier", "git-closure"}:
+        return ["Stage only validated in-scope outputs", "Keep old unrelated ZIPs unstaged", "No delete/quarantine without owner approval"]
+    if command == "safety":
+        return ["Real execution, live LLM, unsafe shell, VM routes remain gated"]
+    return ["Open Full JSON only when raw machine payload is needed"]
 
 def bridge_status():
     lines = [

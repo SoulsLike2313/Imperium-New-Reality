@@ -7,7 +7,9 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import shlex
+import tempfile
 import shutil
 import subprocess
 import sys
@@ -237,6 +239,240 @@ def print_launch_card(card_text: str) -> None:
     print("=" * 60)
     print(card_text)
     print("=" * 60)
+
+
+def ascii_safe(value: str) -> str:
+    return value.encode("ascii", "ignore").decode("ascii").strip()
+
+
+def slugify(value: str, fallback: str = "HANDY-MANUAL-PATCH") -> str:
+    safe = ascii_safe(value).upper()
+    safe = re.sub(r"[^A-Z0-9]+", "-", safe).strip("-")
+    safe = re.sub(r"-+", "-", safe)
+    return safe or fallback
+
+
+def split_csv_lines(value: str) -> list[str]:
+    items: list[str] = []
+    for part in re.split(r"[,;\n]+", value or ""):
+        item = part.strip().replace("\\", "/")
+        if item:
+            items.append(item)
+    return items
+
+
+def write_text(path: Path, text: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding="utf-8")
+
+
+def make_handy_taskpack(
+    *,
+    repo_root: Path,
+    title: str,
+    intent: str,
+    h_repo_root: str,
+    files_to_read: list[str],
+    files_to_patch: list[str],
+    output_zip: str | None = None,
+) -> tuple[Path, dict[str, Any]]:
+    title_ascii = ascii_safe(title) or "Imperium H manual patch"
+    intent_ascii = ascii_safe(intent) or "Manual chat-driven patch in Imperium H contour."
+    stem = slugify(title_ascii)
+    task_id = f"H-TASK-NEWREALITY-{stem}-PC-V0_1"
+    h_repo = ascii_safe(h_repo_root) or "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY_H"
+    if output_zip:
+        zip_path = normalize_path(output_zip, repo_root)
+    else:
+        downloads = Path.home() / "Downloads"
+        zip_path = downloads / f"{task_id}.zip"
+
+    created_at = utc_now()
+    manifest = {
+        "schema_version": "astronomicon.taskpack.v0_1",
+        "taskpack_id": task_id,
+        "task_id": task_id,
+        "title": title_ascii,
+        "task_class": "HANDY_IMPERIUM_H",
+        "created_from_contour": "PC",
+        "target_contour": "IMPERIUM_H",
+        "execution_mode": "MANUAL_CHAT_PATCH_ZIP",
+        "author_identity": "IMPERIUM_H <imperium_h@local>",
+        "base_repo_expected": h_repo,
+        "merge_policy": "OWNER_ACCEPTANCE_THEN_CHERRY_PICK_TO_MAIN",
+        "patch_delivery": "ZIP_WITH_APPLY_AND_ROLLBACK",
+        "manual_test_required": True,
+        "commit_policy": "PATCH_DOES_NOT_COMMIT; OWNER_COMMITS_IN_H_AFTER_MANUAL_ACCEPTANCE",
+        "created_at_utc": created_at,
+        "intent": intent_ascii,
+        "files_to_read": files_to_read,
+        "files_to_patch": files_to_patch,
+        "allowed_write_scope": files_to_patch or ["ORGANS/IMPERIAL_IDE/**"],
+        "forbidden_actions": [
+            "direct_mainline_mutation",
+            "auto_commit",
+            "auto_push",
+            "delete_without_owner_approval",
+            "enable_real_servitor_execution",
+            "enable_live_llm_backend",
+            "enable_unsafe_shell",
+            "remote_vm_route",
+        ],
+    }
+
+    required_organs = [
+        "DOCTRINARIUM",
+        "OFFICIO_AGENTIS",
+        "ASTRONOMICON",
+        "ADMINISTRATUM",
+        "MECHANICUS",
+        "INQUISITION",
+        "STRATEGIUM",
+        "SCHOLA_IMPERIALIS",
+    ]
+    organ_route = {
+        "DOCTRINARIUM": "manual task doctrine, candidate/canon vocabulary, and no-overclaim rules",
+        "OFFICIO_AGENTIS": "owner-facing handoff text and H workflow summaries",
+        "ASTRONOMICON": "local PC admission, route receipt, and launch card evidence",
+        "ADMINISTRATUM": "manual patch evidence, receipts, and continuity ledger",
+        "MECHANICUS": "patch scope, validators, and no unsafe execution policy",
+        "INQUISITION": "manual acceptance gate, no fake-green closure, and rollback proof",
+        "STRATEGIUM": "operator workflow and next patch plan",
+        "SCHOLA_IMPERIALIS": "operator training notes and H workflow lessons",
+    }
+    language_policy = {
+        "taskpack_internal_files": "ENGLISH_UTF8_NO_BOM_NO_CYRILLIC",
+        "canonical_repo_artifacts": "ENGLISH_UTF8_NO_BOM",
+        "owner_facing_russian_runtime_output": {
+            "allowed": True,
+            "language": "RUSSIAN",
+            "encoding": "UTF8_NO_BOM",
+            "authority": "OFFICIO_AGENTIS",
+            "required_route": "OFFICIO_AGENTIS_OWNER_FACING_FINAL_RESPONSE",
+            "allowed_files": [
+                "README_RU.md",
+                "REPORTS/<task_id>/FINAL_OWNER_SUMMARY_RU.md",
+            ],
+            "not_allowed_in_taskpack_root_files": True,
+        },
+        "cyrillic_in_taskpack": {
+            "allowed": False,
+            "scope": "MANIFEST.json, TASK_SPEC.md, ACCEPTANCE_GATES.md, OUTPUT_REQUIREMENTS.md, TASK_ROUTE_MANIFEST_TEMPLATE.json, TASK_START_ACK_TEMPLATE.json, README.md",
+            "owner_facing_russian_runtime_exception": {
+                "allowed": True,
+                "authority": "OFFICIO_AGENTIS",
+                "scope": "runtime owner-facing files only",
+            },
+        },
+        "localization_exception": {
+            "allowed": True,
+            "authority": "OFFICIO_AGENTIS",
+            "scope": "owner-facing runtime files only after Officio role entry",
+            "allowed_language": "RUSSIAN",
+            "allowed_encoding": "UTF8_NO_BOM",
+            "forbidden_scope": "taskpack internal root files",
+        },
+    }
+    manifest["organs"] = required_organs
+    manifest["required_organs"] = required_organs
+    manifest["organ_route"] = organ_route
+    manifest["route_manifest_template"] = "TASK_ROUTE_MANIFEST_TEMPLATE.json"
+    manifest["task_start_ack_template"] = "TASK_START_ACK_TEMPLATE.json"
+    manifest["language_and_encoding_policy"] = language_policy
+
+    task_spec = f"""# TASK SPEC\n\n## Task ID\n\n{task_id}\n\n## Class\n\nHANDY_IMPERIUM_H manual chat-driven patch task.\n\n## Title\n\n{title_ascii}\n\n## Intent\n\n{intent_ascii}\n\n## Target\n\nWork only in Imperium H contour: {h_repo}\n\n## Workflow\n\n1. Gather evidence ZIP from the H contour.\n2. Review files in chat.\n3. Produce PATCH-H ZIP with APPLY_PATCH.ps1 and ROLLBACK_PATCH.ps1.\n4. Apply patch in H contour only.\n5. Owner manually tests.\n6. If accepted, Owner commits with IMPERIUM_H author identity.\n7. Mainline receives the work only by reviewed cherry-pick.\n\n## Files to read\n\n{chr(10).join('- ' + x for x in files_to_read) if files_to_read else '- To be declared in evidence ZIP.'}\n\n## Files to patch\n\n{chr(10).join('- ' + x for x in files_to_patch) if files_to_patch else '- To be declared before patching.'}\n"""
+    acceptance = """# ACCEPTANCE GATES\n\n- H repo author is IMPERIUM_H <imperium_h@local>.\n- Patch is delivered as ZIP.\n- APPLY_PATCH.ps1 checks it is running inside an _H repo.\n- Patch does not commit automatically.\n- Rollback path exists.\n- Owner manually verifies the result.\n- Only accepted changes may be committed in H.\n- Mainline receives changes only by reviewed cherry-pick.\n- No real execution, live LLM, unsafe shell, VM route, or destructive cleanup is enabled.\n"""
+    output_requirements = """# OUTPUT REQUIREMENTS\n\nExpected chat-side artifact:\n\n- PATCH-H-*.zip\n- PATCH_MANIFEST.json\n- README_RU.md\n- APPLY_PATCH.ps1\n- ROLLBACK_PATCH.ps1\n- PATCH_FILES/\n\nExpected H-side verification:\n\n- git diff --stat\n- manual TUI/GUI smoke as appropriate\n- optional H commit by Owner after acceptance\n"""
+    route_template = {
+        "schema_version": "astronomicon.task_route_manifest_template.v0_1",
+        "task_id": task_id,
+        "route_mode": "HANDY_MANUAL_CHAT_PATCH_ZIP",
+        "target_contour": "IMPERIUM_H",
+        "base_repo_expected": h_repo,
+        "organs": required_organs,
+        "required_organs": required_organs,
+        "organ_route": organ_route,
+        "files_to_read": files_to_read,
+        "files_to_patch": files_to_patch,
+        "allowed_write_scope": manifest["allowed_write_scope"],
+        "forbidden_actions": manifest["forbidden_actions"],
+        "language_and_encoding_policy": language_policy,
+        "merge_policy": "OWNER_ACCEPTANCE_THEN_CHERRY_PICK_TO_MAIN",
+    }
+    start_ack = {
+        "schema_version": "astronomicon.task_start_ack_template.v0_1",
+        "task_id": task_id,
+        "copy_message_to_chat": "start H task",
+        "required_ack_fields": [
+            "task_id",
+            "h_repo_root",
+            "h_branch",
+            "git_author",
+            "files_to_read",
+            "files_to_patch",
+            "patch_zip_expected",
+            "rollback_plan",
+            "manual_test_plan",
+        ],
+    }
+
+    with tempfile.TemporaryDirectory(prefix="imperium_h_taskpack_") as tmp_name:
+        tmp = Path(tmp_name)
+        write_text(tmp / "MANIFEST.json", json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
+        write_text(tmp / "TASK_SPEC.md", task_spec)
+        write_text(tmp / "ACCEPTANCE_GATES.md", acceptance)
+        write_text(tmp / "OUTPUT_REQUIREMENTS.md", output_requirements)
+        write_text(tmp / "TASK_ROUTE_MANIFEST_TEMPLATE.json", json.dumps(route_template, ensure_ascii=False, indent=2) + "\n")
+        write_text(tmp / "TASK_START_ACK_TEMPLATE.json", json.dumps(start_ack, ensure_ascii=False, indent=2) + "\n")
+        write_text(tmp / "README.md", "Imperium H handy taskpack for manual chat-driven patch workflow.\n")
+        zip_path.parent.mkdir(parents=True, exist_ok=True)
+        if zip_path.exists():
+            zip_path.unlink()
+        with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+            for file_path in tmp.rglob("*"):
+                if file_path.is_file():
+                    zf.write(file_path, file_path.relative_to(tmp).as_posix())
+    manifest["zip_path"] = str(zip_path).replace("\\", "/")
+    manifest["zip_sha256"] = compute_sha256(zip_path)
+    return zip_path, manifest
+
+
+def handy_registration_interactive(repo_root: Path) -> None:
+    print("")
+    print("== IMPERIUM_H HANDY TASK REGISTRATION ==")
+    print("This creates a local H taskpack for manual chat-driven patch work.")
+    title = input("H task title: ").strip() or "Imperium H manual patch"
+    intent = input("Intent / goal: ").strip() or title
+    default_h_repo = str(repo_root).replace("\\", "/")
+    if not default_h_repo.endswith("_H"):
+        default_h_repo = default_h_repo + "_H"
+    h_repo = input(f"H repo root [{default_h_repo}]: ").strip() or default_h_repo
+    read_raw = input("Files to read (comma separated): ").strip()
+    patch_raw = input("Files to patch (comma separated): ").strip()
+    out_raw = input("Output ZIP path (blank=Downloads): ").strip()
+    zip_path, manifest = make_handy_taskpack(
+        repo_root=repo_root,
+        title=title,
+        intent=intent,
+        h_repo_root=h_repo,
+        files_to_read=split_csv_lines(read_raw),
+        files_to_patch=split_csv_lines(patch_raw),
+        output_zip=out_raw or None,
+    )
+    print("")
+    print("HANDY taskpack created:")
+    print(str(zip_path).replace("\\", "/"))
+    print("SHA256:", manifest.get("zip_sha256"))
+    print("")
+    answer = input("Register this HANDY taskpack on PC now? (yes/no): ").strip().lower()
+    if answer not in {"y", "yes"}:
+        print(json.dumps({"status": "HANDY_TASKPACK_CREATED_NOT_REGISTERED", "task_id": manifest["task_id"], "zip_path": manifest["zip_path"]}, ensure_ascii=False, indent=2))
+        return
+    contour_receipt, vm_receipt = pc_registration(repo_root, zip_path, print_card=True)
+    contour_receipt["handy_taskpack_manifest"] = manifest
+    vm_receipt["handy_taskpack"] = True
+    print(json.dumps(contour_receipt, ensure_ascii=False, indent=2))
+    print(json.dumps(vm_receipt, ensure_ascii=False, indent=2))
 
 
 def pc_registration(repo_root: Path, zip_path: Path, *, print_card: bool) -> tuple[dict[str, Any], dict[str, Any]]:
@@ -722,20 +958,24 @@ def interactive_loop(repo_root: Path) -> int:
         print("")
         print("== ASTRONOMICON TASKPACK REGISTRATION SKILL V0.1 ==")
         print("1) Register on PC")
-        print("2) Register on VM3")
-        print("3) Register on VM2")
-        print("4) Exit")
+        print("2) Register HANDY / IMPERIUM_H task on PC")
+        print("3) Register on VM3")
+        print("4) Register on VM2")
+        print("5) Exit")
         choice = input("Select: ").strip()
-        if choice == "4":
+        if choice == "5":
             return 0
-        if choice not in {"1", "2", "3"}:
+        if choice == "2":
+            handy_registration_interactive(repo_root)
+            continue
+        if choice not in {"1", "3", "4"}:
             print("Unknown option.")
             continue
         zip_input = input("Taskpack ZIP path: ").strip()
         if not zip_input:
             print("ZIP path is required.")
             continue
-        contour = {"1": "PC", "2": "VM3", "3": "VM2"}[choice]
+        contour = {"1": "PC", "3": "VM3", "4": "VM2"}[choice]
         live_remote = False
         if contour in {"VM3", "VM2"}:
             live_answer = input("Execute remote route live? (yes/no): ").strip().lower()
@@ -768,6 +1008,7 @@ def main() -> int:
     parser.add_argument("--vm-launch-card-receipt-out", default="", help="Write launch-card receipt JSON.")
     parser.add_argument("--print-launch-card", action="store_true", help="Print launch card in direct mode.")
     parser.add_argument("--discovery-smoke", action="store_true", help="Run read-only PC discovery smoke.")
+    parser.add_argument("--handy", action="store_true", help="Create/register an IMPERIUM_H handy taskpack interactively.")
     args = parser.parse_args()
 
     repo_root, repo_root_discovery = resolve_repo_root(args.repo_root if args.repo_root else None)
@@ -779,6 +1020,10 @@ def main() -> int:
         smoke = discovery_smoke(repo_root, route_discovery)
         print(json.dumps(smoke, ensure_ascii=False, indent=2))
         return 0 if smoke.get("verdict") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
+    if args.handy:
+        handy_registration_interactive(repo_root)
+        return 0
 
     if args.interactive or not args.zip_path:
         return interactive_loop(repo_root)

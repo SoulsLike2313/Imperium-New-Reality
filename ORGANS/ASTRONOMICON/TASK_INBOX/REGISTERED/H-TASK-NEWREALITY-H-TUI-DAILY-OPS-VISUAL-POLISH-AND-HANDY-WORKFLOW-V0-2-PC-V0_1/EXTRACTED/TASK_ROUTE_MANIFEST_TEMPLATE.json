@@ -1,0 +1,109 @@
+{
+  "schema_version": "astronomicon.task_route_manifest_template.v0_1",
+  "task_id": "H-TASK-NEWREALITY-H-TUI-DAILY-OPS-VISUAL-POLISH-AND-HANDY-WORKFLOW-V0-2-PC-V0_1",
+  "route_mode": "HANDY_MANUAL_CHAT_PATCH_ZIP",
+  "target_contour": "IMPERIUM_H",
+  "base_repo_expected": "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY_H",
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "required_organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "organ_route": {
+    "DOCTRINARIUM": "manual task doctrine, candidate/canon vocabulary, and no-overclaim rules",
+    "OFFICIO_AGENTIS": "owner-facing handoff text and H workflow summaries",
+    "ASTRONOMICON": "local PC admission, route receipt, and launch card evidence",
+    "ADMINISTRATUM": "manual patch evidence, receipts, and continuity ledger",
+    "MECHANICUS": "patch scope, validators, and no unsafe execution policy",
+    "INQUISITION": "manual acceptance gate, no fake-green closure, and rollback proof",
+    "STRATEGIUM": "operator workflow and next patch plan",
+    "SCHOLA_IMPERIALIS": "operator training notes and H workflow lessons"
+  },
+  "files_to_read": [
+    "AGENTS.md",
+    "ORGANS/IMPERIAL_IDE/WORKBENCH/TUI",
+    "ORGANS/IMPERIAL_IDE/STATION",
+    "ORGANS/IMPERIAL_IDE/SHELL",
+    "ORGANS/IMPERIAL_IDE/AGENTS",
+    "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL",
+    "ORGANS/ASTRONOMICON/TASK_REGISTRY",
+    "ORGANS/ASTRONOMICON/TASK_INBOX"
+  ],
+  "files_to_patch": [
+    "ORGANS/IMPERIAL_IDE/WORKBENCH/TUI/imperial_tui.py",
+    "ORGANS/IMPERIAL_IDE/STATION/daily_ops_shell.py",
+    "ORGANS/IMPERIAL_IDE/STATION/operator_next_action.py",
+    "ORGANS/IMPERIAL_IDE/STATION/taskpack_manager.py",
+    "ORGANS/IMPERIAL_IDE/STATION/dirty_classifier.py",
+    "ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py",
+    "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py"
+  ],
+  "allowed_write_scope": [
+    "ORGANS/IMPERIAL_IDE/WORKBENCH/TUI/imperial_tui.py",
+    "ORGANS/IMPERIAL_IDE/STATION/daily_ops_shell.py",
+    "ORGANS/IMPERIAL_IDE/STATION/operator_next_action.py",
+    "ORGANS/IMPERIAL_IDE/STATION/taskpack_manager.py",
+    "ORGANS/IMPERIAL_IDE/STATION/dirty_classifier.py",
+    "ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py",
+    "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py"
+  ],
+  "forbidden_actions": [
+    "direct_mainline_mutation",
+    "auto_commit",
+    "auto_push",
+    "delete_without_owner_approval",
+    "enable_real_servitor_execution",
+    "enable_live_llm_backend",
+    "enable_unsafe_shell",
+    "remote_vm_route"
+  ],
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH_UTF8_NO_BOM_NO_CYRILLIC",
+    "canonical_repo_artifacts": "ENGLISH_UTF8_NO_BOM",
+    "owner_facing_russian_runtime_output": {
+      "allowed": true,
+      "language": "RUSSIAN",
+      "encoding": "UTF8_NO_BOM",
+      "authority": "OFFICIO_AGENTIS",
+      "required_route": "OFFICIO_AGENTIS_OWNER_FACING_FINAL_RESPONSE",
+      "allowed_files": [
+        "README_RU.md",
+        "REPORTS/<task_id>/FINAL_OWNER_SUMMARY_RU.md"
+      ],
+      "not_allowed_in_taskpack_root_files": true
+    },
+    "cyrillic_in_taskpack": {
+      "allowed": false,
+      "scope": "MANIFEST.json, TASK_SPEC.md, ACCEPTANCE_GATES.md, OUTPUT_REQUIREMENTS.md, TASK_ROUTE_MANIFEST_TEMPLATE.json, TASK_START_ACK_TEMPLATE.json, README.md",
+      "owner_facing_russian_runtime_exception": {
+        "allowed": true,
+        "authority": "OFFICIO_AGENTIS",
+        "scope": "runtime owner-facing files only"
+      }
+    },
+    "localization_exception": {
+      "allowed": true,
+      "authority": "OFFICIO_AGENTIS",
+      "scope": "owner-facing runtime files only after Officio role entry",
+      "allowed_language": "RUSSIAN",
+      "allowed_encoding": "UTF8_NO_BOM",
+      "forbidden_scope": "taskpack internal root files"
+    }
+  },
+  "merge_policy": "OWNER_ACCEPTANCE_THEN_CHERRY_PICK_TO_MAIN"
+}
