@@ -19,8 +19,8 @@
 
 Git/push:
 
-- Push state: NOT_RUN_YET.
+- Push state: PASS_WITH_WARNINGS_PUSHED.
 - Dirty state: ALLOWED_AFTER_STAGING_VALIDATED_IN_SCOPE_ONLY_WITH_WARNINGS.
 - Рекомендация: Stage only validated in-scope task outputs; keep known unrelated ZIPs unstaged; do not delete files.
 
-Следующий рекомендуемый task: owner review live-registration promotion gate или отдельный real execution gate, если нужно открыть выполнение.
+Следующий рекомендуемый task: owner review live-registration promotion gate или отдельный real execution gate, если нужно открыть выполнение. Post-push HEAD equals origin/master: True.
