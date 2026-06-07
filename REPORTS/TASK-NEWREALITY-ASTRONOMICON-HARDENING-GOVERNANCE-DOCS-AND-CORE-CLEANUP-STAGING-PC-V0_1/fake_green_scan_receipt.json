@@ -1,0 +1,68 @@
+{
+  "receipt_type": "fake_green_scan_receipt",
+  "task_id": "TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1",
+  "timestamp_utc": "2026-06-07T10:39:55Z",
+  "scan_scope": [
+    ".gitignore",
+    "AGENTS.md",
+    "ORGANS/_CORE_GOVERNANCE/CONSTITUTION/CONSTITUTION_OF_THE_IMPERIUM_RU.md",
+    "ORGANS/_CORE_GOVERNANCE/CONSTITUTION/CONSTITUTION_OF_THE_IMPERIUM.md",
+    "ORGANS/_CORE_GOVERNANCE/EMPEROR/PASSPORT_OF_THE_EMPEROR_RU.md",
+    "ORGANS/_CORE_GOVERNANCE/EMPEROR/PASSPORT_OF_THE_EMPEROR.md",
+    "ORGANS/_CORE_GOVERNANCE/GOVERNANCE_INDEX.json",
+    "ORGANS/_CORE_GOVERNANCE/README.md",
+    "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/README.md",
+    "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/SKILL_MANIFEST.json",
+    "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py",
+    "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+    "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1/**",
+    "ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json",
+    "ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json",
+    "ORGANS/ASTRONOMICON/TOOLS/astronomicon_task_entry_lib_v0_1.py",
+    "REPORTS/TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1/**"
+  ],
+  "claims_checked": [
+    {
+      "claim": "Required artifacts exist",
+      "evidence": "REPORTS/TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1/validation_receipt.json required_files_exist",
+      "verdict": "SUPPORTED"
+    },
+    {
+      "claim": "Astronomicon bootstrap is repaired for PC discovery",
+      "evidence": "REPORTS/TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1/astronomicon_smoke_receipt.json and latest validation smoke",
+      "verdict": "SUPPORTED_WITH_WARNINGS"
+    },
+    {
+      "claim": "Governance docs are final canon",
+      "evidence": "Not claimed; documents state CANON_CANDIDATE",
+      "verdict": "NOT_CLAIMED"
+    },
+    {
+      "claim": "Cleanup was executed",
+      "evidence": "Not claimed; cleanup_performed=false across cleanup receipts",
+      "verdict": "NOT_CLAIMED"
+    },
+    {
+      "claim": "Local route config is safe to push",
+      "evidence": "Not claimed; route config is ignored and not staged",
+      "verdict": "NOT_CLAIMED"
+    },
+    {
+      "claim": "No secrets in changed files",
+      "evidence": "secret_hits=0 for key/token patterns",
+      "verdict": "SUPPORTED"
+    },
+    {
+      "claim": "VM2/VM3 or Ancient admission happened",
+      "evidence": "Not claimed; forbidden_actions show false",
+      "verdict": "NOT_CLAIMED"
+    },
+    {
+      "claim": "git diff --cached --check is clean",
+      "evidence": "Not claimed; extra check reported generated taskpack/registry CRLF/trailing-whitespace warnings.",
+      "verdict": "NOT_CLAIMED"
+    }
+  ],
+  "result": "NO_FAKE_GREEN_DETECTED",
+  "overall_verdict": "PASS_WITH_WARNINGS"
+}

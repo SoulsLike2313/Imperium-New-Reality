@@ -23,6 +23,11 @@ REQUIRED_ORGANS = [
     "SCHOLA_IMPERIALIS",
 ]
 
+MATRIX_SPINE_CURRENT_REL = (
+    "SUPPORT/COMMON_IMPERIUM_SUPPORT/ROOT_IMPORTED_COMMON_SUPPORT/MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md"
+)
+MATRIX_SPINE_ROOT_REL = "MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md"
+
 DEFAULT_STAGE2_CAPS = [
     "CAP_STAGE1_WITH_WARNINGS_ONLY",
     "CAP_NO_IDE_VISUAL_RELEASE_YET",
@@ -123,10 +128,36 @@ def _astronomicon_root(repo: Path) -> Path:
     return repo / _repo_rel(repo, "ORGANS/ASTRONOMICON")
 
 
+def _first_existing_path(repo: Path, candidates: list[str]) -> Path:
+    for rel in candidates:
+        path = repo / rel
+        if path.exists():
+            return path
+    return repo / candidates[0]
+
+
+def _path_candidate_strings(repo: Path, candidates: list[str]) -> list[str]:
+    return [str(repo / rel).replace("\\\\", "/") for rel in candidates]
+
+
 def build_context(repo_root: str | Path) -> dict[str, Path]:
     repo = normalize_path(repo_root)
     astro = _astronomicon_root(repo)
     corridor = astro / "TASK_ENTRY_CORRIDOR"
+    route_template = _first_existing_path(
+        repo,
+        [
+            "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+            "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+        ],
+    )
+    start_ack_template = _first_existing_path(
+        repo,
+        [
+            "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+            "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+        ],
+    )
     return {
         "repo_root": repo,
         "astronomicon_root": astro,
@@ -136,8 +167,8 @@ def build_context(repo_root: str | Path) -> dict[str, Path]:
         "task_registry": astro / "TASK_REGISTRY/task_registry.json",
         "legacy_stage1_registry": astro / "TASK_REGISTRY/TASK_ID_REGISTRY_STAGE1.json",
         "current_expected": astro / "TASK_REGISTRY/current_expected_task.json",
-        "task_route_manifest_template": corridor / "TASK_ROUTE_MANIFEST_TEMPLATE.json",
-        "task_start_ack_template": corridor / "TASK_START_ACK_TEMPLATE.json",
+        "task_route_manifest_template": route_template,
+        "task_start_ack_template": start_ack_template,
         "taskpack_admission_contract": corridor / "TASKPACK_ADMISSION_CONTRACT.json",
         "taskpack_intake_contract": corridor / "TASKPACK_INTAKE_CONTRACT.json",
     }
@@ -154,11 +185,14 @@ def required_organ_read_first_map(repo_root: str | Path | None = None) -> dict[s
 
 def required_read_order(repo_root: str | Path | None = None) -> list[str]:
     repo = normalize_path(repo_root) if repo_root is not None else None
-    matrix_spine = (
-        _repo_rel(repo, "MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md")
-        if repo is not None
-        else "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md"
-    )
+    if repo is None:
+        matrix_spine = MATRIX_SPINE_CURRENT_REL
+    elif (repo / MATRIX_SPINE_CURRENT_REL).exists():
+        matrix_spine = MATRIX_SPINE_CURRENT_REL
+    elif (repo / MATRIX_SPINE_ROOT_REL).exists():
+        matrix_spine = MATRIX_SPINE_ROOT_REL
+    else:
+        matrix_spine = MATRIX_SPINE_CURRENT_REL
     read_order = [
         "AGENTS.md",
         matrix_spine,
@@ -466,6 +500,7 @@ def block_admission_result(
     caps: list[str],
     warnings: list[str],
     detail: str,
+    diagnostics: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     return {
         "timestamp_utc": utc_now(),
@@ -485,6 +520,7 @@ def block_admission_result(
         "current_expected_task_updated": False,
         "caps_triggered": caps,
         "warnings": warnings + [detail],
+        "diagnostics": diagnostics or {},
     }
 
 
@@ -508,18 +544,60 @@ def register_taskpack(
 
     route_template_path = ctx["task_route_manifest_template"]
     start_ack_template_path = ctx["task_start_ack_template"]
+    template_diagnostics = {
+        "admission_stage": "pre_taskpack_scan",
+        "blocked_before_taskpack_scan": True,
+        "route_manifest_template_searched_paths": _path_candidate_strings(
+            ctx["repo_root"],
+            [
+                "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+                "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+            ],
+        ),
+        "task_start_ack_template_searched_paths": _path_candidate_strings(
+            ctx["repo_root"],
+            [
+                "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+                "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+            ],
+        ),
+        "selected_route_manifest_template": str(route_template_path).replace("\\\\", "/"),
+        "selected_task_start_ack_template": str(start_ack_template_path).replace("\\\\", "/"),
+    }
+    if "IMPERIUM_NEW_GENERATION" in str(route_template_path).replace("\\\\", "/"):
+        warnings.append("LEGACY_ROUTE_TEMPLATE_PATH_WARN: old-prefix route manifest template selected as fallback.")
+    if "IMPERIUM_NEW_GENERATION" in str(start_ack_template_path).replace("\\\\", "/"):
+        warnings.append("LEGACY_START_ACK_TEMPLATE_PATH_WARN: old-prefix start ACK template selected as fallback.")
     if not route_template_path.exists():
         caps.append("CAP_ROUTE_MANIFEST_TEMPLATE_MISSING")
-        return block_admission_result(source_zip, caps, warnings, "Route manifest template is missing.")
+        return block_admission_result(
+            source_zip,
+            caps,
+            warnings,
+            "Route manifest template is missing.",
+            template_diagnostics,
+        )
     if not start_ack_template_path.exists():
         caps.append("CAP_TASK_START_ACK_TEMPLATE_MISSING")
-        return block_admission_result(source_zip, caps, warnings, "Task start ACK template is missing.")
+        return block_admission_result(
+            source_zip,
+            caps,
+            warnings,
+            "Task start ACK template is missing.",
+            template_diagnostics,
+        )
 
     try:
         route_template_data = read_json(route_template_path)
     except Exception as exc:
         caps.append("CAP_ROUTE_MANIFEST_TEMPLATE_INVALID")
-        return block_admission_result(source_zip, caps, warnings, f"Invalid route template JSON: {exc}")
+        return block_admission_result(
+            source_zip,
+            caps,
+            warnings,
+            f"Invalid route template JSON: {exc}",
+            template_diagnostics,
+        )
 
     route_issues = validate_route_template(route_template_data)
     if route_issues:

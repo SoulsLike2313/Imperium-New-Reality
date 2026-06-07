@@ -1,0 +1,59 @@
+{
+  "receipt_type": "cleanup_allowlist",
+  "task_id": "TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1",
+  "status": "PROPOSED_ONLY",
+  "cleanup_performed": false,
+  "entries": [
+    {
+      "id": "OLD_PREFIX_RESIDUE_REVIEW",
+      "zone": "LEGACY",
+      "paths": [
+        "IMPERIUM_NEW_GENERATION/**"
+      ],
+      "allowed_future_action": "classify_then_quarantine_or_delete_after_owner_approval",
+      "evidence_path": "REPORTS/TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1/old_prefix_residue_scan.json",
+      "needs_owner_approval_before_move": true
+    },
+    {
+      "id": "RUNTIME_CACHE_REVIEW",
+      "zone": "RUNTIME",
+      "paths": [
+        "**/__pycache__/**",
+        "**/*.pyc"
+      ],
+      "allowed_future_action": "delete_cache_after_clean_git_scope_validation",
+      "evidence_path": "REPORTS/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/astronomicon_local_pc_registration_and_route_drift_report.md",
+      "needs_owner_approval_before_move": false
+    },
+    {
+      "id": "REPORT_ARCHIVE_COMPACTION",
+      "zone": "REPORT",
+      "paths": [
+        "REPORTS/**"
+      ],
+      "allowed_future_action": "deduplicate_or_archive_after_manifested_batch_plan",
+      "evidence_path": "REPORTS/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/astronomicon_local_pc_registration_and_route_drift_report.md",
+      "needs_owner_approval_before_move": true
+    },
+    {
+      "id": "QUARANTINE_RETENTION_REVIEW",
+      "zone": "QUARANTINE",
+      "paths": [
+        "SUPPORT/QUESTIONABLE_OR_QUARANTINE/**"
+      ],
+      "allowed_future_action": "index_only_until_owner_approval",
+      "evidence_path": "REPORTS/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/astronomicon_local_pc_registration_and_route_drift_report.md",
+      "needs_owner_approval_before_move": true
+    },
+    {
+      "id": "TASKPACK_ARTIFACT_RETENTION",
+      "zone": "ORGAN_RECEIPT",
+      "paths": [
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/**"
+      ],
+      "allowed_future_action": "retain_zip_hash_and_extracted_manifest_unless_owner_changes_retention_law",
+      "evidence_path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED",
+      "needs_owner_approval_before_move": true
+    }
+  ]
+}

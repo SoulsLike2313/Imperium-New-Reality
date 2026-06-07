@@ -4,10 +4,11 @@
   "owner_organ": "ASTRONOMICON",
   "version": "0.1.0",
   "status": "CANDIDATE_STAGE1",
-  "truth_source": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_intake_v0_1.py + IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_task_id_resolver_v0_1.py",
+  "truth_source": "ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_intake_v0_1.py + ORGANS/ASTRONOMICON/TOOLS/astronomicon_task_id_resolver_v0_1.py",
   "entrypoints": [
-    "python IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py --interactive",
-    "python IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py --zip-path <ZIP_PATH> --contour <PC|VM3|VM2>"
+    "python ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py --interactive",
+    "python ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py --zip-path <ZIP_PATH> --contour <PC|VM3|VM2>",
+    "python ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py --discovery-smoke"
   ],
   "supported_contours": [
     "PC",

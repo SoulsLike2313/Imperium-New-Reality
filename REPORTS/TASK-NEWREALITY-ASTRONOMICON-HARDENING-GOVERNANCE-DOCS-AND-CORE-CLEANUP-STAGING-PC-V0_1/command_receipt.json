@@ -1,0 +1,64 @@
+{
+  "schema_version": "imperium.command_receipt.v0_1",
+  "task_id": "TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1",
+  "phase": "preflight_initial",
+  "contour": "PC",
+  "repo_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "head_sha_at_preflight": "ab00e858f6953c5db0fe26f06f3fe6856c42d07e",
+  "origin_master_sha_at_preflight": "ab00e858f6953c5db0fe26f06f3fe6856c42d07e",
+  "head_equals_origin_master_at_preflight": true,
+  "dirty_state_at_preflight": [
+    " M ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json",
+    " M ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json",
+    "?? ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1/"
+  ],
+  "dirty_state_classification": "CURRENT_TASK_ASTRONOMICON_REGISTRATION_ONLY_BEFORE_IMPLEMENTATION",
+  "local_route_configs_detected": [
+    {
+      "path": "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json",
+      "status": "ignored_local_operator_config",
+      "commit_allowed": false
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json",
+      "status": "ignored_old_prefix_residue",
+      "commit_allowed": false
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/ROOT_QUARANTINE/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json",
+      "status": "ignored_quarantined_residue",
+      "commit_allowed": false
+    }
+  ],
+  "commands": [
+    {"command": "git rev-parse --show-toplevel", "exit_code": 0, "result": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY"},
+    {"command": "git status --short", "exit_code": 0, "result": "registration-only dirty state for this task"},
+    {"command": "git status -sb", "exit_code": 0, "result": "## master...origin/master plus registration files"},
+    {"command": "git rev-parse HEAD", "exit_code": 0, "result": "ab00e858f6953c5db0fe26f06f3fe6856c42d07e"},
+    {"command": "git rev-parse origin/master", "exit_code": 0, "result": "ab00e858f6953c5db0fe26f06f3fe6856c42d07e"},
+    {"command": "git branch --show-current", "exit_code": 0, "result": "master"},
+    {"command": "git status --porcelain=v1 --ignored", "exit_code": 0, "result": "local config and runtime ignored entries detected"},
+    {"command": "Get-ChildItem -Recurse -Force -File -Filter contour_route_config.json", "exit_code": 0, "result": "three local/quarantine route config paths detected"},
+    {"command": "Get-Content taskpack specs, gates, manifests, admission, resolver, Officio contracts", "exit_code": 0, "result": "authority read before writes"},
+    {"command": "Get-Content previous self-analysis report and Astronomicon skill files", "exit_code": 0, "result": "drift inputs read before writes"}
+  ],
+  "forbidden_actions_confirmed_not_run": [
+    "VM2 action",
+    "VM3 action",
+    "remote route",
+    "delete",
+    "mass move",
+    "git reset --hard",
+    "git clean",
+    "Ancient import"
+  ],
+  "implementation_validation_commands": [
+    {"command": "python -m py_compile ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py", "exit_code": 0, "result": "PASS"},
+    {"command": "python -m py_compile ORGANS/ASTRONOMICON/TOOLS/astronomicon_task_entry_lib_v0_1.py", "exit_code": 0, "result": "PASS"},
+    {"command": "python ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py --discovery-smoke", "exit_code": 0, "result": "PASS_WITH_WARNINGS at 2026-06-07T10:39:55Z"},
+    {"command": "ConvertFrom-Json over governance/report JSON", "exit_code": 0, "result": "json_count=41"},
+    {"command": "Required artifact Test-Path sweep", "exit_code": 0, "result": "required_count=34 after git receipt"},
+    {"command": "git diff --name-only plus git ls-files --others --exclude-standard scope gate", "exit_code": 0, "result": "scope_file_count=53"},
+    {"command": "changed-file secret scan for private key, ghp_, sk-, AKIA patterns", "exit_code": 0, "result": "secret_hits=0"}
+  ]
+}

@@ -4,7 +4,9 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import os
 import shlex
 import shutil
 import subprocess
@@ -24,6 +26,11 @@ STEP_NAME = "ASTRONOMICON TASKPACK REGISTRATION SKILL TUI CONTOUR ROUTER AND VM 
 PASS_ADMISSION = {"ADMISSION_PASS", "ADMISSION_PASS_WITH_WARNINGS"}
 PASS_RESOLVER = {"PASS", "PASS_WITH_WARNINGS"}
 VALID_CONTOURS = {"PC", "VM3", "VM2"}
+CURRENT_ROUTE_CONFIG_REL = "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json"
+LEGACY_ROUTE_CONFIG_REL = (
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json"
+)
+ROOT_MARKERS = ("AGENTS.md", "ORGANS/ASTRONOMICON", "ORGANS/ASTRONOMICON/TOOLS")
 
 
 def normalize_path(path_value: str | Path, base: Path | None = None) -> Path:
@@ -39,6 +46,17 @@ def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def compute_sha256(path: Path) -> str:
+    hasher = hashlib.sha256()
+    with path.open("rb") as fh:
+        while True:
+            chunk = fh.read(1024 * 1024)
+            if not chunk:
+                break
+            hasher.update(chunk)
+    return hasher.hexdigest()
+
+
 def run_cmd(args: list[str], *, cwd: Path | None = None) -> tuple[int, str, str]:
     proc = subprocess.run(
         args,
@@ -48,6 +66,58 @@ def run_cmd(args: list[str], *, cwd: Path | None = None) -> tuple[int, str, str]
         check=False,
     )
     return proc.returncode, proc.stdout.strip(), proc.stderr.strip()
+
+
+def is_repo_root(candidate: Path) -> bool:
+    return all((candidate / marker).exists() for marker in ROOT_MARKERS[:2])
+
+
+def walk_up_repo_root(start: Path) -> tuple[Path | None, list[str]]:
+    searched: list[str] = []
+    current = start.resolve()
+    if current.is_file():
+        current = current.parent
+    for candidate in [current, *current.parents]:
+        searched.append(str(candidate).replace("\\", "/"))
+        if is_repo_root(candidate):
+            return candidate, searched
+    return None, searched
+
+
+def resolve_repo_root(repo_root_arg: str | Path | None = None) -> tuple[Path, dict[str, Any]]:
+    searched: list[str] = []
+    if repo_root_arg:
+        explicit = normalize_path(repo_root_arg)
+        searched.append(str(explicit).replace("\\", "/"))
+        if is_repo_root(explicit):
+            return explicit, {
+                "repo_root_source": "explicit_arg",
+                "searched_paths": searched,
+                "warnings": [],
+            }
+        raise ValueError("Explicit --repo-root is not a New Reality root. Searched: " + ", ".join(searched))
+
+    rc, stdout, _stderr = run_cmd(["git", "rev-parse", "--show-toplevel"])
+    if rc == 0 and stdout:
+        git_root = normalize_path(stdout)
+        searched.append(str(git_root).replace("\\", "/"))
+        if is_repo_root(git_root):
+            return git_root, {
+                "repo_root_source": "git_rev_parse",
+                "searched_paths": searched,
+                "warnings": [],
+            }
+
+    script_root, script_searched = walk_up_repo_root(Path(__file__).resolve())
+    searched.extend(script_searched)
+    if script_root is not None:
+        return script_root, {
+            "repo_root_source": "script_walk_up",
+            "searched_paths": searched,
+            "warnings": [],
+        }
+
+    raise ValueError("Cannot resolve New Reality repo root. Searched: " + ", ".join(searched))
 
 
 def load_taskpack_manifest(zip_path: Path) -> dict[str, Any]:
@@ -93,10 +163,47 @@ def build_launch_card(task_id: str, registered_task_path: str, taskpack_path: st
 
 
 def default_route_config_path(repo_root: Path) -> Path:
-    return (
-        repo_root
-        / "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json"
-    )
+    return repo_root / CURRENT_ROUTE_CONFIG_REL
+
+
+def legacy_route_config_path(repo_root: Path) -> Path:
+    return repo_root / LEGACY_ROUTE_CONFIG_REL
+
+
+def discover_route_config(repo_root: Path, explicit_route_config: str | Path | None = None) -> dict[str, Any]:
+    warnings: list[str] = []
+    searched: list[str] = []
+    env_path = os.environ.get("ASTRONOMICON_ROUTE_CONFIG", "").strip()
+    candidates: list[tuple[str, Path]] = []
+    if explicit_route_config:
+        candidates.append(("explicit_arg", normalize_path(explicit_route_config, repo_root)))
+    if env_path:
+        candidates.append(("env_ASTRONOMICON_ROUTE_CONFIG", normalize_path(env_path, repo_root)))
+    candidates.append(("current_root_operator_config", default_route_config_path(repo_root)))
+    candidates.append(("legacy_old_prefix_fallback", legacy_route_config_path(repo_root)))
+
+    for source, path in candidates:
+        searched.append(str(path).replace("\\", "/"))
+        if path.exists():
+            if source == "legacy_old_prefix_fallback":
+                warnings.append("LEGACY_ROUTE_CONFIG_PATH_WARN: old-prefix route config was selected as fallback.")
+            return {
+                "route_config_path": str(path).replace("\\", "/"),
+                "route_config_source": source,
+                "route_config_exists": True,
+                "route_config_sha256": compute_sha256(path),
+                "searched_paths": searched,
+                "warnings": warnings,
+            }
+
+    return {
+        "route_config_path": str(default_route_config_path(repo_root)).replace("\\", "/"),
+        "route_config_source": "missing_default_current_root",
+        "route_config_exists": False,
+        "route_config_sha256": "",
+        "searched_paths": searched,
+        "warnings": warnings + ["Route config missing; PC contour does not require it."],
+    }
 
 
 def load_route_config(route_config_path: Path) -> dict[str, Any]:
@@ -203,6 +310,7 @@ def remote_registration(
     zip_path: Path,
     *,
     route_config: dict[str, Any],
+    route_config_discovery: dict[str, Any],
     live_remote: bool,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     manifest = load_taskpack_manifest(zip_path)
@@ -225,6 +333,7 @@ def remote_registration(
             "resolver_verdict": "NOT_RUN",
             "launch_card_state": "LIMITATION_RECEIPT",
             "verdict": "WARN_ROUTE_MISSING",
+            "route_config_discovery": route_config_discovery,
             "warnings": notes,
         }
         vm_receipt = {
@@ -235,6 +344,7 @@ def remote_registration(
             "terminal_opened_or_explained": True,
             "copy_message": "start task",
             "verdict": "WARN_ROUTE_MISSING",
+            "route_config_discovery": route_config_discovery,
             "warnings": notes,
         }
         return contour_receipt, vm_receipt
@@ -257,6 +367,7 @@ def remote_registration(
             "resolver_verdict": "NOT_RUN",
             "launch_card_state": "LIMITATION_RECEIPT",
             "verdict": "BLOCK_CONFIG_INVALID",
+            "route_config_discovery": route_config_discovery,
             "warnings": notes,
         }
         vm_receipt = {
@@ -267,6 +378,7 @@ def remote_registration(
             "terminal_opened_or_explained": True,
             "copy_message": "start task",
             "verdict": "BLOCK_CONFIG_INVALID",
+            "route_config_discovery": route_config_discovery,
             "warnings": notes,
         }
         return contour_receipt, vm_receipt
@@ -280,12 +392,12 @@ def remote_registration(
             "copy_zip": f"scp {zip_path} {ssh_alias}:{remote_zip_path}",
             "intake": (
                 f"ssh {ssh_alias} \"cd {remote_repo_root} && {remote_python} "
-                "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_intake_v0_1.py "
+                "ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_intake_v0_1.py "
                 f"--repo-root . --zip-path {remote_zip_path} --receipt-out {intake_receipt_path}\""
             ),
             "resolver": (
                 f"ssh {ssh_alias} \"cd {remote_repo_root} && {remote_python} "
-                "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_task_id_resolver_v0_1.py "
+                "ORGANS/ASTRONOMICON/TOOLS/astronomicon_task_id_resolver_v0_1.py "
                 f"--repo-root . --task-id {task_id} --receipt-out {resolver_receipt_path}\""
             ),
         }
@@ -299,6 +411,7 @@ def remote_registration(
             "resolver_verdict": "NOT_RUN",
             "launch_card_state": "LIMITATION_RECEIPT",
             "verdict": "WARN_DRY_RUN_ONLY",
+            "route_config_discovery": route_config_discovery,
             "command_preview": preview,
         }
         vm_receipt = {
@@ -309,6 +422,7 @@ def remote_registration(
             "terminal_opened_or_explained": True,
             "copy_message": "start task",
             "verdict": "WARN_DRY_RUN_ONLY",
+            "route_config_discovery": route_config_discovery,
             "warnings": ["Route available in config but executed in dry-run mode."],
         }
         return contour_receipt, vm_receipt
@@ -325,6 +439,7 @@ def remote_registration(
             "resolver_verdict": "NOT_RUN",
             "launch_card_state": "LIMITATION_RECEIPT",
             "verdict": "BLOCK_REMOTE_TOOLING_MISSING",
+            "route_config_discovery": route_config_discovery,
             "warnings": notes,
         }
         vm_receipt = {
@@ -335,6 +450,7 @@ def remote_registration(
             "terminal_opened_or_explained": True,
             "copy_message": "start task",
             "verdict": "BLOCK_REMOTE_TOOLING_MISSING",
+            "route_config_discovery": route_config_discovery,
             "warnings": notes,
         }
         return contour_receipt, vm_receipt
@@ -353,6 +469,7 @@ def remote_registration(
             "resolver_verdict": "NOT_RUN",
             "launch_card_state": "LIMITATION_RECEIPT",
             "verdict": "BLOCK_REMOTE_STATUS_FAILED",
+            "route_config_discovery": route_config_discovery,
             "warnings": notes,
         }
         vm_receipt = {
@@ -363,6 +480,7 @@ def remote_registration(
             "terminal_opened_or_explained": True,
             "copy_message": "start task",
             "verdict": "BLOCK_REMOTE_STATUS_FAILED",
+            "route_config_discovery": route_config_discovery,
             "warnings": notes,
         }
         return contour_receipt, vm_receipt
@@ -378,6 +496,7 @@ def remote_registration(
             "resolver_verdict": "NOT_RUN",
             "launch_card_state": "LIMITATION_RECEIPT",
             "verdict": "BLOCK_REMOTE_DIRTY_WORKTREE",
+            "route_config_discovery": route_config_discovery,
             "warnings": notes,
         }
         vm_receipt = {
@@ -388,6 +507,7 @@ def remote_registration(
             "terminal_opened_or_explained": True,
             "copy_message": "start task",
             "verdict": "BLOCK_REMOTE_DIRTY_WORKTREE",
+            "route_config_discovery": route_config_discovery,
             "warnings": notes,
         }
         return contour_receipt, vm_receipt
@@ -406,6 +526,7 @@ def remote_registration(
             "resolver_verdict": "NOT_RUN",
             "launch_card_state": "LIMITATION_RECEIPT",
             "verdict": "BLOCK_REMOTE_SYNC_FAILED",
+            "route_config_discovery": route_config_discovery,
             "warnings": notes,
         }
         vm_receipt = {
@@ -416,6 +537,7 @@ def remote_registration(
             "terminal_opened_or_explained": True,
             "copy_message": "start task",
             "verdict": "BLOCK_REMOTE_SYNC_FAILED",
+            "route_config_discovery": route_config_discovery,
             "warnings": notes,
         }
         return contour_receipt, vm_receipt
@@ -433,6 +555,7 @@ def remote_registration(
             "resolver_verdict": "NOT_RUN",
             "launch_card_state": "LIMITATION_RECEIPT",
             "verdict": "BLOCK_REMOTE_TRANSFER_FAILED",
+            "route_config_discovery": route_config_discovery,
             "warnings": notes,
         }
         vm_receipt = {
@@ -443,6 +566,7 @@ def remote_registration(
             "terminal_opened_or_explained": True,
             "copy_message": "start task",
             "verdict": "BLOCK_REMOTE_TRANSFER_FAILED",
+            "route_config_discovery": route_config_discovery,
             "warnings": notes,
         }
         return contour_receipt, vm_receipt
@@ -450,7 +574,7 @@ def remote_registration(
     intake_cmd = (
         f"cd {shell_q(remote_repo_root)} && "
         f"{shell_q(remote_python)} "
-        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_intake_v0_1.py "
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_intake_v0_1.py "
         f"--repo-root . --zip-path {shell_q(remote_zip_path)} --receipt-out {shell_q(intake_receipt_path)}"
     )
     run_cmd(["ssh", ssh_alias, intake_cmd])
@@ -462,7 +586,7 @@ def remote_registration(
     resolver_cmd = (
         f"cd {shell_q(remote_repo_root)} && "
         f"{shell_q(remote_python)} "
-        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_task_id_resolver_v0_1.py "
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_task_id_resolver_v0_1.py "
         f"--repo-root . --task-id {shell_q(task_id)} --receipt-out {shell_q(resolver_receipt_path)}"
     )
     run_cmd(["ssh", ssh_alias, resolver_cmd])
@@ -514,6 +638,7 @@ def remote_registration(
         "launch_card_state": launch_state,
         "verdict": verdict,
         "warnings": notes,
+        "route_config_discovery": route_config_discovery,
         "remote_zip_path": remote_zip_path,
         "remote_repo_root": remote_repo_root,
         "remote_intake_receipt_path": intake_receipt_path,
@@ -532,6 +657,7 @@ def remote_registration(
         "verdict": verdict,
         "launch_card_state": launch_state,
         "warnings": notes,
+        "route_config_discovery": route_config_discovery,
     }
     return contour_receipt, vm_receipt
 
@@ -542,6 +668,7 @@ def execute_registration(
     zip_path: Path,
     contour: str,
     route_config_path: Path,
+    route_config_discovery: dict[str, Any] | None,
     live_remote: bool,
     print_card: bool,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
@@ -549,15 +676,45 @@ def execute_registration(
     if contour_upper not in VALID_CONTOURS:
         raise ValueError(f"Unsupported contour: {contour}")
     if contour_upper == "PC":
-        return pc_registration(repo_root, zip_path, print_card=print_card)
+        contour_receipt, vm_receipt = pc_registration(repo_root, zip_path, print_card=print_card)
+        contour_receipt["route_config_loaded"] = False
+        contour_receipt["route_config_discovery"] = route_config_discovery or {}
+        vm_receipt["route_config_loaded"] = False
+        vm_receipt["route_config_discovery"] = route_config_discovery or {}
+        return contour_receipt, vm_receipt
     route_config = load_route_config(route_config_path)
     return remote_registration(
         contour_upper,
         repo_root,
         zip_path,
         route_config=route_config,
+        route_config_discovery=route_config_discovery or {},
         live_remote=live_remote,
     )
+
+
+def discovery_smoke(repo_root: Path, route_config_discovery: dict[str, Any]) -> dict[str, Any]:
+    route_template = repo_root / "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json"
+    start_ack_template = repo_root / "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json"
+    matrix_spine = (
+        repo_root
+        / "SUPPORT/COMMON_IMPERIUM_SUPPORT/ROOT_IMPORTED_COMMON_SUPPORT/MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md"
+    )
+    return {
+        "timestamp_utc": utc_now(),
+        "repo_root": str(repo_root).replace("\\", "/"),
+        "contour": "PC",
+        "remote_route_attempted": False,
+        "route_template_path": str(route_template).replace("\\", "/"),
+        "route_template_exists": route_template.exists(),
+        "start_ack_template_path": str(start_ack_template).replace("\\", "/"),
+        "start_ack_template_exists": start_ack_template.exists(),
+        "matrix_spine_path": str(matrix_spine).replace("\\", "/"),
+        "matrix_spine_exists": matrix_spine.exists(),
+        "route_config_loaded_for_pc": False,
+        "route_config_discovery": route_config_discovery,
+        "verdict": "PASS_WITH_WARNINGS" if route_template.exists() and start_ack_template.exists() else "BLOCK",
+    }
 
 
 def interactive_loop(repo_root: Path) -> int:
@@ -583,12 +740,14 @@ def interactive_loop(repo_root: Path) -> int:
         if contour in {"VM3", "VM2"}:
             live_answer = input("Execute remote route live? (yes/no): ").strip().lower()
             live_remote = live_answer in {"y", "yes"}
-        route_config_path = default_route_config_path(repo_root)
+        route_discovery = discover_route_config(repo_root)
+        route_config_path = normalize_path(route_discovery["route_config_path"])
         contour_receipt, vm_receipt = execute_registration(
             repo_root=repo_root,
             zip_path=normalize_path(zip_input, repo_root),
             contour=contour,
             route_config_path=route_config_path,
+            route_config_discovery=route_discovery,
             live_remote=live_remote,
             print_card=True,
         )
@@ -599,7 +758,7 @@ def interactive_loop(repo_root: Path) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Astronomicon Taskpack Registration Skill v0.1")
-    parser.add_argument("--repo-root", default=".", help="Repository root.")
+    parser.add_argument("--repo-root", default="", help="Repository root.")
     parser.add_argument("--zip-path", default="", help="Taskpack ZIP path.")
     parser.add_argument("--contour", default="PC", help="Target contour: PC | VM3 | VM2")
     parser.add_argument("--route-config", default="", help="Route config JSON path.")
@@ -608,23 +767,29 @@ def main() -> int:
     parser.add_argument("--contour-receipt-out", default="", help="Write contour receipt JSON.")
     parser.add_argument("--vm-launch-card-receipt-out", default="", help="Write launch-card receipt JSON.")
     parser.add_argument("--print-launch-card", action="store_true", help="Print launch card in direct mode.")
+    parser.add_argument("--discovery-smoke", action="store_true", help="Run read-only PC discovery smoke.")
     args = parser.parse_args()
 
-    repo_root = normalize_path(args.repo_root)
+    repo_root, repo_root_discovery = resolve_repo_root(args.repo_root if args.repo_root else None)
+    route_discovery = discover_route_config(repo_root, args.route_config if args.route_config else None)
+    route_config_path = normalize_path(route_discovery["route_config_path"])
+    route_discovery["repo_root_discovery"] = repo_root_discovery
+
+    if args.discovery_smoke:
+        smoke = discovery_smoke(repo_root, route_discovery)
+        print(json.dumps(smoke, ensure_ascii=False, indent=2))
+        return 0 if smoke.get("verdict") in {"PASS", "PASS_WITH_WARNINGS"} else 1
+
     if args.interactive or not args.zip_path:
         return interactive_loop(repo_root)
 
     zip_path = normalize_path(args.zip_path, repo_root)
-    route_config_path = (
-        normalize_path(args.route_config, repo_root)
-        if args.route_config
-        else default_route_config_path(repo_root)
-    )
     contour_receipt, vm_receipt = execute_registration(
         repo_root=repo_root,
         zip_path=zip_path,
         contour=args.contour,
         route_config_path=route_config_path,
+        route_config_discovery=route_discovery,
         live_remote=args.live_remote,
         print_card=args.print_launch_card,
     )

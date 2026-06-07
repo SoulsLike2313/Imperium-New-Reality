@@ -1,0 +1,74 @@
+{
+  "receipt_type": "zone_classification_rules_effective",
+  "task_id": "TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1",
+  "status": "EFFECTIVE_FOR_STAGING_ONLY",
+  "cleanup_performed": false,
+  "rules": [
+    {
+      "zone": "CORE_ROOT_CONTRACT",
+      "match": [
+        "AGENTS.md",
+        ".gitignore"
+      ],
+      "action": "edit_only_with_task_scope_and_validation"
+    },
+    {
+      "zone": "CORE_GOVERNANCE",
+      "match": [
+        "ORGANS/_CORE_GOVERNANCE/**"
+      ],
+      "action": "candidate governance docs; no final canon without owner"
+    },
+    {
+      "zone": "ACTIVE_ORGAN",
+      "match": [
+        "ORGANS/ASTRONOMICON/**",
+        "ORGANS/MECHANICUS/**"
+      ],
+      "action": "active task scope in this task"
+    },
+    {
+      "zone": "SUPPORT",
+      "match": [
+        "SUPPORT/COMMON_IMPERIUM_SUPPORT/**"
+      ],
+      "action": "read/reference only in this task"
+    },
+    {
+      "zone": "REPORT",
+      "match": [
+        "REPORTS/**"
+      ],
+      "action": "write receipts only; do not compact in this task"
+    },
+    {
+      "zone": "LEGACY_PREFIX_RESIDUE",
+      "match": [
+        "IMPERIUM_NEW_GENERATION/**"
+      ],
+      "action": "ignore/stage for future review; no move/delete"
+    },
+    {
+      "zone": "QUARANTINE",
+      "match": [
+        "SUPPORT/QUESTIONABLE_OR_QUARANTINE/**"
+      ],
+      "action": "not active truth by default; no move/delete"
+    },
+    {
+      "zone": "RUNTIME_CACHE",
+      "match": [
+        "**/__pycache__/**",
+        "**/*.pyc"
+      ],
+      "action": "future generated-cache cleanup only"
+    },
+    {
+      "zone": "UNKNOWN",
+      "match": [
+        "unmatched paths"
+      ],
+      "action": "block automated move/delete"
+    }
+  ]
+}

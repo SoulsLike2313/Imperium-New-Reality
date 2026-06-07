@@ -1,0 +1,90 @@
+{
+  "receipt_type": "validation_receipt",
+  "task_id": "TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1",
+  "timestamp_utc": "2026-06-07T10:39:55Z",
+  "validation_mode": "CONTROLLED_WRITE_WITH_VALIDATED_PUSH_PRECOMMIT",
+  "checks": [
+    {
+      "id": "required_files_exist",
+      "command_summary": "Test-Path over required governance/report outputs",
+      "exit_code": 0,
+      "evidence": "required_count=34",
+      "verdict": "PASS"
+    },
+    {
+      "id": "json_parse",
+      "command_summary": "ConvertFrom-Json over ORGANS/_CORE_GOVERNANCE and task report JSON files",
+      "exit_code": 0,
+      "evidence": "json_count=41",
+      "verdict": "PASS"
+    },
+    {
+      "id": "py_compile_registration_skill",
+      "command": "python -m py_compile ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py",
+      "exit_code": 0,
+      "verdict": "PASS"
+    },
+    {
+      "id": "py_compile_task_entry_lib",
+      "command": "python -m py_compile ORGANS/ASTRONOMICON/TOOLS/astronomicon_task_entry_lib_v0_1.py",
+      "exit_code": 0,
+      "verdict": "PASS"
+    },
+    {
+      "id": "astronomicon_discovery_smoke",
+      "command": "python ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py --discovery-smoke",
+      "exit_code": 0,
+      "evidence": {
+        "timestamp_utc": "2026-06-07T10:39:55Z",
+        "verdict": "PASS_WITH_WARNINGS",
+        "remote_route_attempted": false,
+        "route_config_loaded_for_pc": false,
+        "route_template_exists": true,
+        "start_ack_template_exists": true,
+        "matrix_spine_exists": true,
+        "route_config_sha256": "4ba1e09821e3f0ec4eccc48d0147475360d32b7fdf62465bd77abeba2eb9833b"
+      },
+      "verdict": "PASS_WITH_WARNINGS"
+    },
+    {
+      "id": "git_diff_scope",
+      "command_summary": "git diff --name-only plus git ls-files --others --exclude-standard matched against allowed task scope",
+      "exit_code": 0,
+      "evidence": "scope_file_count=53",
+      "verdict": "PASS"
+    },
+    {
+      "id": "secret_scan",
+      "command_summary": "Select-String changed files for private key, ghp_, sk-, and AKIA patterns",
+      "exit_code": 0,
+      "evidence": "secret_hits=0",
+      "verdict": "PASS"
+    },
+    {
+      "id": "ignored_local_config",
+      "command_summary": "git status --porcelain=v1 --ignored",
+      "exit_code": 0,
+      "evidence": [
+        "!! ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json",
+        "!! IMPERIUM_NEW_GENERATION/"
+      ],
+      "verdict": "PASS"
+    }
+  ],
+  "forbidden_actions": {
+    "vm2_vm3_accessed": false,
+    "ancient_or_parent_accessed": false,
+    "destructive_cleanup_performed": false,
+    "mass_move_or_delete_performed": false,
+    "local_route_config_staged": false,
+    "remote_route_attempted": false
+  },
+  "overall_verdict": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "Astronomicon discovery smoke reports PASS_WITH_WARNINGS because local operator route config exists but is not loaded for PC.",
+    "Governance documents remain CANON_CANDIDATE pending owner promotion.",
+    "Cleanup is staged only; no move/delete was performed."
+    ,
+    "Extra non-gate git diff --cached --check reported CRLF/trailing-whitespace warnings in generated registered taskpack/registry JSON artifacts; this was recorded as a warning, not a PASS gate."
+  ]
+}

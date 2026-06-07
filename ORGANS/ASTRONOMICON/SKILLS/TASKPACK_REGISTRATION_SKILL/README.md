@@ -13,13 +13,13 @@ Register taskpack ZIP files through an operator-friendly Skill while keeping Ast
 Interactive:
 
 ```powershell
-python IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py --repo-root . --interactive
+python ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py --interactive
 ```
 
 Direct command:
 
 ```powershell
-python IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py --repo-root . --zip-path C:\path\TASKPACK.zip --contour PC
+python ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py --zip-path C:\path\TASKPACK.zip --contour PC
 ```
 
 ## Contours
@@ -33,6 +33,10 @@ python IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_
 Copy and customize:
 
 `contour_route_config.example.json` -> `contour_route_config.json`
+
+Discovery order is explicit `--route-config`, `ASTRONOMICON_ROUTE_CONFIG`,
+current-root `ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json`,
+then old-prefix compatibility fallback with a warning. PC registration does not require route config.
 
 If route config is missing or disabled, VM routes emit explicit `ROUTE_MISSING` receipts and do not claim live success.
 
