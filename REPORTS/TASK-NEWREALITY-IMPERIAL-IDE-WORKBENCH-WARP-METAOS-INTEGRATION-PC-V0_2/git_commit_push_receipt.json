@@ -1,12 +1,44 @@
 {
   "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2",
-  "timestamp": "2026-06-07T15:05:00Z",
-  "phase": "PRE_PUSH_PLACEHOLDER",
-  "commit_sha": null,
-  "origin_master_sha": null,
-  "head_equals_origin_master_after_push": null,
-  "git_status_after_push": null,
-  "pushed_files_summary": null,
-  "validation_summary": "pending final staged scope gate and validated push",
-  "verdict": "PENDING"
+  "timestamp": "2026-06-07T15:10:31Z",
+  "phase": "VALIDATED_OUTPUT_PUSHED_RECEIPT_UPDATE_COMMIT_PENDING",
+  "commit_sha": "1fbe6949ea85fcf451313d7379ccef50587bb601",
+  "origin_master_sha": "1fbe6949ea85fcf451313d7379ccef50587bb601",
+  "head_equals_origin_master_after_push": true,
+  "git_status_after_push": [
+    "?? REPORTS/TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1/astronomicon_dashboard_integration_receipt.zip"
+  ],
+  "pushed_files_summary": {
+    "validated_output_commit_files": 135,
+    "primary_areas": [
+      "Astronomicon task admission with bundled source archives",
+      "Imperial IDE Workbench, WARP, MetaOS, shell commands, panels, docs, and launchers",
+      "Mechanicus triple bridge adapters and registry policy",
+      "Administratum bundle gate adapter",
+      "Report receipts for task closure"
+    ],
+    "runtime_paths_staged": false,
+    "deleted_files": 0
+  },
+  "validation_summary": {
+    "required_outputs": "39 checked; 0 missing",
+    "source_bundle_hashes": "3/3 matched manifest",
+    "json_parse": "71 working-tree JSON and 53 staged JSON parsed; 0 invalid",
+    "python_compile": "45 Python files compiled; 0 failures",
+    "workbench_smoke": "TUI PASS; structural GUI PASS_WITH_WARNINGS; interactive Windows GUI pending",
+    "warp_smoke": "PASS; fake-green discarded; release manifest only; kernel untouched",
+    "metaos_smoke": "PASS; deterministic stubs only",
+    "administratum_gate": "HELD and RELEASED behavior tested",
+    "mechanicus_bridge": "known dry-run PASS_WITH_WARNINGS; unknown and real execution BLOCKED",
+    "staged_scope": "135 files; 0 disallowed; 0 runtime paths; 0 secret hits"
+  },
+  "pre_existing_dirty_warning": {
+    "path": "REPORTS/TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1/astronomicon_dashboard_integration_receipt.zip",
+    "status": "PRE_EXISTING_UNTRACKED_UNSTAGED",
+    "task_scope": false,
+    "staged": false,
+    "pushed": false
+  },
+  "self_reference_boundary": "This receipt records the validated-output commit and push. The receipt-update commit SHA is verified in final operator response instead of being self-embedded.",
+  "verdict": "PASS_WITH_WARNINGS_PUSHED_READY_FOR_WINDOWS_GUI_SMOKE"
 }

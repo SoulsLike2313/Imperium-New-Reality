@@ -4,7 +4,9 @@
 
 ## Результат
 
-`PASS_WITH_WARNINGS` до validated push.
+`PASS_WITH_WARNINGS_PUSHED_READY_FOR_WINDOWS_GUI_SMOKE`.
+
+Validated-output commit отправлен в `origin/master`: `1fbe6949ea85fcf451313d7379ccef50587bb601`.
 
 ## Где интегрировано
 
@@ -24,4 +26,4 @@
 
 Full IDE completion, real servitor execution, unrestricted tool execution, live LLM backend и WARP promotion to kernel не включены.
 
-Push receipt будет обновлён после validated push.
+Следующий шаг: owner Windows GUI smoke, затем отдельный gate-дизайн для live tool execution и LLM backend.

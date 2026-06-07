@@ -1,11 +1,42 @@
 {
   "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2",
-  "timestamp": "2026-06-07T15:05:00Z",
+  "timestamp": "2026-06-07T15:10:31Z",
   "primary_report_root": "REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2",
+  "validated_output_commit_sha": "1fbe6949ea85fcf451313d7379ccef50587bb601",
   "workbench_status": "ACTIVE_SURFACE_CANDIDATE",
   "warp_status": "ACTIVE_HOT_ZONE",
   "metaos_status": "ACTIVE_ORCHESTRATION_CANDIDATE",
-  "launchers": ["ORGANS/IMPERIAL_IDE/run_imperial_workbench.ps1", "ORGANS/IMPERIAL_IDE/run_warp_zone.ps1", "ORGANS/IMPERIAL_IDE/run_metaos_smoke.ps1"],
-  "next_recommended_task": "Owner Windows GUI smoke and future real-execution/LLM gate design.",
-  "verdict": "PASS_WITH_WARNINGS_PRE_PUSH"
+  "launchers": [
+    "ORGANS/IMPERIAL_IDE/run_imperial_workbench.ps1",
+    "ORGANS/IMPERIAL_IDE/run_warp_zone.ps1",
+    "ORGANS/IMPERIAL_IDE/run_metaos_smoke.ps1"
+  ],
+  "shell_commands_added": [
+    "workbench",
+    "workbench-tui",
+    "workbench-gui",
+    "workbench-smoke",
+    "workbench-status",
+    "warp",
+    "warp-open",
+    "warp-list",
+    "warp-status",
+    "warp-gate",
+    "warp-smoke",
+    "metaos",
+    "metaos-smoke",
+    "metaos-route",
+    "metaos-servitor",
+    "metaos-bundle-gate",
+    "metaos-chronicle"
+  ],
+  "blocked_until_future_gate": [
+    "interactive Windows GUI proof",
+    "real servitor execution",
+    "live LLM backend",
+    "WARP promotion to kernel",
+    "unrestricted shell execution"
+  ],
+  "next_recommended_task": "Owner Windows GUI smoke, then real-execution and live LLM gate design.",
+  "verdict": "PASS_WITH_WARNINGS_PUSHED_READY_FOR_WINDOWS_GUI_SMOKE"
 }
