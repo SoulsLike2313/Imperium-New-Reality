@@ -13,9 +13,14 @@
 - Cleanup переведен в staging-модель: allowlist, denylist, batch plan, unknown-zone rules; move/delete не выполнялись.
 - Mechanicus получил registry seed и требования к reusable tool interface.
 
+## Git closure
+
+- Validated-output commit pushed: `6f204ad45d93c769afcbae3a805c3cab163ebbc0`.
+- `git_commit_push_receipt.json` обновлен после push; commit, содержащий сам receipt-update, проверяется финальным `git status`/`origin/master`, потому что SHA коммита нельзя самовстроить в файл внутри этого же SHA.
+
 ## Важные предупреждения
 
 - Governance docs имеют статус `CANON_CANDIDATE`, не final canon.
 - Local route config найден и захеширован, но не staged и не loaded для PC.
 - Old-prefix residue найден и оставлен на месте до отдельного owner-approved cleanup.
-- Push receipt обновляется после фактического push.
+- Extra non-gate `git diff --cached --check` показал CRLF/trailing-whitespace warning в generated taskpack/registry artifacts.

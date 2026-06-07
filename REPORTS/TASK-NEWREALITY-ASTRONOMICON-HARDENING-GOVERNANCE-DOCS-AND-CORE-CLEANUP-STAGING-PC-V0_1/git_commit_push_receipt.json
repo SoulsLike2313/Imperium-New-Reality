@@ -1,16 +1,33 @@
 {
   "receipt_type": "git_commit_push_receipt",
   "task_id": "TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1",
-  "phase": "PRE_PUSH_PLACEHOLDER",
-  "status": "PENDING_VALIDATED_PUSH",
+  "phase": "POST_VALIDATED_OUTPUTS_PUSH",
+  "status": "VALIDATED_OUTPUTS_PUSHED",
   "receipt_created_pre_push": true,
-  "self_reference_boundary": "A git commit cannot contain its own final SHA inside a file that participates in that SHA. This receipt will be updated after the first validated-output push with the pushed commit SHA, then pushed as a receipt-update commit.",
-  "validated_outputs_commit_sha": null,
-  "validated_outputs_push_completed": false,
-  "receipt_update_commit_sha": null,
-  "receipt_update_push_completed": false,
-  "head_equals_origin_master_after_push": null,
+  "self_reference_boundary": "A git commit cannot contain its own final SHA inside a file that participates in that SHA. This receipt records the validated-output commit pushed before this receipt update. The receipt-update commit containing this final receipt is verified by final git status/final response, not self-embedded here.",
   "branch": "master",
   "remote": "origin",
-  "verdict": "PENDING"
+  "validated_outputs_commit_sha": "6f204ad45d93c769afcbae3a805c3cab163ebbc0",
+  "validated_outputs_push_completed": true,
+  "head_sha_after_validated_outputs_push": "6f204ad45d93c769afcbae3a805c3cab163ebbc0",
+  "origin_master_sha_after_validated_outputs_push": "6f204ad45d93c769afcbae3a805c3cab163ebbc0",
+  "head_equals_origin_master_after_validated_outputs_push": true,
+  "receipt_update_commit_sha": "SELF_REFERENCE_BOUNDARY_NOT_EMBEDDED",
+  "receipt_update_push_completed": "TO_BE_VERIFIED_AFTER_RECEIPT_UPDATE_PUSH",
+  "validations_before_validated_outputs_commit": {
+    "required_files": "required_count=34",
+    "json_parse": "json_count=41",
+    "py_compile": "PASS",
+    "astronomicon_discovery_smoke": "PASS_WITH_WARNINGS",
+    "scope_gate": "scope_file_count=53",
+    "secret_scan": "secret_hits=0",
+    "local_route_config_staged": false
+  },
+  "warnings": [
+    "Governance documents are CANON_CANDIDATE, not final canon.",
+    "Cleanup is staged only; no move/delete performed.",
+    "Local route config and old-prefix residue remain ignored and untracked.",
+    "Extra non-gate diff check reported CRLF/trailing-whitespace warnings in generated taskpack/registry artifacts."
+  ],
+  "verdict": "PASS_WITH_WARNINGS"
 }
