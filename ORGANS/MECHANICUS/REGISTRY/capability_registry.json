@@ -1,8 +1,8 @@
 {
   "schema_version": "mechanicus.capability_registry.v0_1",
   "registry_status": "CANON_ACTIVE_SEED",
-  "task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1",
-  "updated_at_utc": "2026-06-07T11:08:13Z",
+  "task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1",
+  "updated_at_utc": "2026-06-07T11:41:29Z",
   "capabilities": [
     {
       "capability_id": "TOOL_REGISTRY_AUTHORITY",
@@ -42,9 +42,21 @@
     },
     {
       "capability_id": "IDE_TOOL_BRIDGE",
-      "status": "CANDIDATE",
-      "owner_tool_id": "MECHANICUS_COMMAND_GATEWAY",
-      "description": "Future IDE requests tools through Mechanicus receipts."
+      "status": "PROVEN",
+      "owner_tool_id": "MECHANICUS_IDE_SHELL_BRIDGE",
+      "description": "Imperial IDE requests registry reads and dry-run tools through Mechanicus receipts."
+    },
+    {
+      "capability_id": "IMPERIAL_IDE_CONTROL_DASHBOARD",
+      "status": "PROVEN",
+      "owner_tool_id": "IMPERIAL_IDE_CONTROL_SHELL",
+      "description": "Read-only dashboards for governance, tasks, reports, receipts, tools, capabilities, extensions, and workspace."
+    },
+    {
+      "capability_id": "IMPERIAL_IDE_MENU_TUI",
+      "status": "PROVEN",
+      "owner_tool_id": "IMPERIAL_IDE_TUI",
+      "description": "Menu-based local TUI with a non-interactive smoke mode."
     }
   ]
 }

@@ -1,0 +1,161 @@
+{
+  "schema_version": "imperial_ide.panel_registry.v0_1",
+  "task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1",
+  "registry_status": "CONTROL_SHELL_ACTIVE",
+  "panels": [
+    {
+      "panel_id": "overview",
+      "title": "Overview",
+      "owner_organ": "IMPERIAL_IDE",
+      "data_sources": [
+        "AGENTS.md",
+        "ORGANS/_CORE_GOVERNANCE/GOVERNANCE_INDEX.json",
+        "git"
+      ],
+      "commands": [
+        "dashboard",
+        "status"
+      ],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "PROVEN_FOR_CONTROL_SHELL_V0_1"
+    },
+    {
+      "panel_id": "governance",
+      "title": "Governance",
+      "owner_organ": "DOCTRINARIUM",
+      "data_sources": [
+        "ORGANS/_CORE_GOVERNANCE/GOVERNANCE_INDEX.json"
+      ],
+      "commands": [
+        "status",
+        "dashboard"
+      ],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "PROVEN_FOR_CONTROL_SHELL_V0_1"
+    },
+    {
+      "panel_id": "astronomicon_tasks",
+      "title": "Astronomicon Tasks",
+      "owner_organ": "ASTRONOMICON",
+      "data_sources": [
+        "ORGANS/ASTRONOMICON/TASK_REGISTRY",
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED"
+      ],
+      "commands": [
+        "tasks",
+        "current-task"
+      ],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "PROVEN_FOR_CONTROL_SHELL_V0_1"
+    },
+    {
+      "panel_id": "reports",
+      "title": "Reports",
+      "owner_organ": "ADMINISTRATUM",
+      "data_sources": [
+        "REPORTS"
+      ],
+      "commands": [
+        "reports",
+        "latest-report"
+      ],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "PROVEN_FOR_CONTROL_SHELL_V0_1"
+    },
+    {
+      "panel_id": "receipts",
+      "title": "Receipts",
+      "owner_organ": "ADMINISTRATUM",
+      "data_sources": [
+        "REPORTS",
+        "ORGANS/IMPERIAL_IDE/RECEIPTS"
+      ],
+      "commands": [
+        "receipts"
+      ],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "PROVEN_FOR_CONTROL_SHELL_V0_1"
+    },
+    {
+      "panel_id": "mechanicus_tools",
+      "title": "Mechanicus Tools",
+      "owner_organ": "MECHANICUS",
+      "data_sources": [
+        "ORGANS/MECHANICUS/REGISTRY/tool_registry.json"
+      ],
+      "commands": [
+        "tools",
+        "dry-run-tool"
+      ],
+      "risk_class": "LOW_DRY_RUN",
+      "current_status": "PROVEN_FOR_CONTROL_SHELL_V0_1"
+    },
+    {
+      "panel_id": "capabilities",
+      "title": "Capabilities",
+      "owner_organ": "MECHANICUS",
+      "data_sources": [
+        "ORGANS/MECHANICUS/REGISTRY/capability_registry.json"
+      ],
+      "commands": [
+        "capabilities"
+      ],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "PROVEN_FOR_CONTROL_SHELL_V0_1"
+    },
+    {
+      "panel_id": "command_policy",
+      "title": "Command Policy",
+      "owner_organ": "MECHANICUS",
+      "data_sources": [
+        "ORGANS/MECHANICUS/REGISTRY/command_policy.json"
+      ],
+      "commands": [
+        "policy"
+      ],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "PROVEN_FOR_CONTROL_SHELL_V0_1"
+    },
+    {
+      "panel_id": "extensions",
+      "title": "Extensions",
+      "owner_organ": "IMPERIAL_IDE",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/EXTENSIONS/extension_registry.json"
+      ],
+      "commands": [
+        "extensions"
+      ],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "PROVEN_FOR_CONTROL_SHELL_V0_1"
+    },
+    {
+      "panel_id": "workspace",
+      "title": "Workspace",
+      "owner_organ": "IMPERIAL_IDE",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/WORKSPACE/workspace_state.json"
+      ],
+      "commands": [
+        "workspace"
+      ],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "PROVEN_FOR_CONTROL_SHELL_V0_1"
+    },
+    {
+      "panel_id": "validation",
+      "title": "Validation",
+      "owner_organ": "INQUISITION",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/SHELL",
+        "ORGANS/MECHANICUS/REGISTRY"
+      ],
+      "commands": [
+        "doctor",
+        "validate"
+      ],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "PROVEN_FOR_CONTROL_SHELL_V0_1"
+    }
+  ]
+}

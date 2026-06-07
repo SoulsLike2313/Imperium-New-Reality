@@ -1,0 +1,97 @@
+{
+  "receipt_type": "validation_receipt",
+  "task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1",
+  "timestamp_utc": "2026-06-07T11:51:22Z",
+  "phase": "PRE_STAGE_VALIDATION_COMPLETE",
+  "checks": [
+    {
+      "id": "required_outputs",
+      "status": "PASS",
+      "evidence": "48 required files checked; 0 missing"
+    },
+    {
+      "id": "json_parse",
+      "status": "PASS",
+      "evidence": "30 JSON files parsed; 0 invalid"
+    },
+    {
+      "id": "python_compile",
+      "status": "PASS",
+      "evidence": "22 Python files compiled; 0 failures"
+    },
+    {
+      "id": "required_cli_commands",
+      "status": "PASS_WITH_WARNINGS",
+      "evidence": "16 tested; 11 PASS; 5 PASS_WITH_WARNINGS; 0 required commands BLOCKED"
+    },
+    {
+      "id": "mechanicus_doctor",
+      "status": "PASS_WITH_WARNINGS",
+      "evidence": "9 tools loaded; JSON and Python inventories valid; real execution remains blocked"
+    },
+    {
+      "id": "imperial_ide_validate",
+      "status": "PASS"
+    },
+    {
+      "id": "tui_non_interactive_smoke",
+      "status": "PASS_WITH_WARNINGS",
+      "evidence": "10 menu entries; full_gui_implemented=false"
+    },
+    {
+      "id": "powershell_launcher_smoke",
+      "status": "PASS_WITH_WARNINGS"
+    },
+    {
+      "id": "panel_registry",
+      "status": "PASS",
+      "evidence": "11 panels; 0 invalid"
+    },
+    {
+      "id": "extension_loader",
+      "status": "PASS",
+      "evidence": "4 records; 0 unrestricted permissions"
+    },
+    {
+      "id": "workspace_state",
+      "status": "PASS",
+      "evidence": "DRY_RUN_ONLY; unsafe_shell_available=false"
+    },
+    {
+      "id": "unsafe_tool_negative_test",
+      "status": "PASS",
+      "evidence": "arbitrary.shell returned BLOCKED, executed=false, unsafe_shell_available=false"
+    },
+    {
+      "id": "astronomicon_admission_files",
+      "status": "PASS_WITH_WARNINGS",
+      "evidence": "Task admitted and route/start templates present; admission verdict remains PASS_WITH_WARNINGS by policy"
+    },
+    {
+      "id": "working_diff_check",
+      "status": "PASS_WITH_WARNINGS",
+      "evidence": "git diff --check passes with repository CRLF convention declared via core.whitespace=cr-at-eol"
+    },
+    {
+      "id": "staged_scope_and_secret_gate",
+      "status": "PASS_WITH_WARNINGS",
+      "evidence": "69 staged files; 0 disallowed; 0 staged deletions; 0 VM2/VM3 paths; 0 secret hits; 32 staged JSON parse"
+    }
+  ],
+  "safety": {
+    "arbitrary_shell_execution": false,
+    "real_tool_execution_enabled": false,
+    "vm2_or_vm3_commands_run": false,
+    "destructive_cleanup_performed": false,
+    "full_gui_claimed": false
+  },
+  "pre_existing_dirty_warning": {
+    "path": "REPORTS/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/astronomicon_local_pc_registration_and_route_drift_report.zip",
+    "status": "PRE_EXISTING_DELETED_UNSTAGED",
+    "owner_policy": "report warning and continue",
+    "task_scope": false,
+    "staged": false,
+    "pushed": false
+  },
+  "overall_verdict": "PASS_WITH_WARNINGS"
+}

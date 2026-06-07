@@ -1,0 +1,181 @@
+{
+  "schema_version": "astronomicon.taskpack.v0_1",
+  "taskpack_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1",
+  "task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1",
+  "title": "Mechanicus powered Imperial IDE control shell and TUI foundation on PC",
+  "created_from_contour": "PC",
+  "target_contour": "PC",
+  "registration_mode": "ASTRONOMICON_STAGE2_LOCAL_PC_TASKPACK",
+  "execution_mode": "CONTROLLED_WRITE_WITH_VALIDATED_PUSH",
+  "mission_summary": "Build the first controlled local management shell for Imperium New Reality: a Mechanicus-backed Imperial IDE CLI and TUI foundation with dashboards for tasks, reports, receipts, tools, capabilities, governance, and dry-run tool invocation.",
+  "active_truth_scope": "IMPERIUM_NEW_REALITY_PC_CURRENT_ROOT_ONLY",
+  "remote_contours": {
+    "VM2": "OUT_OF_SCOPE",
+    "VM3": "OUT_OF_SCOPE"
+  },
+  "strategic_intent": {
+    "kernel": "Imperium New Reality is the kernel of the future custom IDE.",
+    "shell": "This task creates the first controlled shell that can be used from the repository and later embedded into the IDE.",
+    "mechanicus": "Mechanicus must mediate tools, validation, receipts, and command safety.",
+    "ide": "Imperial IDE must grow as an extension-capable local development surface over the kernel.",
+    "safety": "No unrestricted real command execution is enabled in this task."
+  },
+  "source_context_to_consider": [
+    "ORGANS/_CORE_GOVERNANCE/GOVERNANCE_INDEX.json",
+    "ORGANS/_CORE_GOVERNANCE/EMPEROR/PASSPORT_OF_THE_EMPEROR.md",
+    "ORGANS/_CORE_GOVERNANCE/CONSTITUTION/CONSTITUTION_OF_THE_IMPERIUM.md",
+    "AGENTS.md",
+    "ORGANS/MECHANICUS/",
+    "ORGANS/IMPERIAL_IDE/",
+    "REPORTS/TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1/",
+    "Owner direction: move toward a managed custom IDE shell, with Mechanicus as tool guardian and validator"
+  ],
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "required_organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "organ_route": {
+    "DOCTRINARIUM": "ensure the shell follows active governance and does not overclaim full IDE completion",
+    "OFFICIO_AGENTIS": "owner-facing Russian final summary and operator-facing command notes",
+    "ASTRONOMICON": "task registry, current task, launch card, taskpack and report browsing integration",
+    "ADMINISTRATUM": "receipts, continuity pack, command history, report retention and push closure",
+    "MECHANICUS": "tool registry, command policy, validators, dry-run gateway, command receipts",
+    "INQUISITION": "safety gates, fake-green block, unsafe execution block, validation downgrade",
+    "STRATEGIUM": "large-step sequencing, KPD, shell roadmap, next build ladder",
+    "SCHOLA_IMPERIALIS": "operating lessons, reusable shell patterns, owner workflow learning"
+  },
+  "route_manifest_template": "TASK_ROUTE_MANIFEST_TEMPLATE.json",
+  "task_start_ack_template": "TASK_START_ACK_TEMPLATE.json",
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH_UTF8_NO_BOM_NO_CYRILLIC",
+    "canonical_repo_artifacts": "ENGLISH_UTF8_NO_BOM",
+    "owner_facing_russian_runtime_output": {
+      "allowed": true,
+      "language": "RUSSIAN",
+      "encoding": "UTF8_NO_BOM",
+      "authority": "OFFICIO_AGENTIS",
+      "required_route": "OFFICIO_AGENTIS_OWNER_FACING_FINAL_RESPONSE",
+      "allowed_files": [
+        "REPORTS/TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1/FINAL_OWNER_SUMMARY_RU.md"
+      ],
+      "not_allowed_in_taskpack_root_files": true
+    },
+    "cyrillic_in_taskpack": {
+      "allowed": false,
+      "scope": "MANIFEST.json, TASK_SPEC.md, ACCEPTANCE_GATES.md, OUTPUT_REQUIREMENTS.md, TASK_ROUTE_MANIFEST_TEMPLATE.json, TASK_START_ACK_TEMPLATE.json"
+    },
+    "localization_exception": {
+      "allowed": true,
+      "authority": "OFFICIO_AGENTIS",
+      "scope": "owner-facing runtime files only after Officio role entry",
+      "forbidden_scope": "taskpack internal files"
+    }
+  },
+  "git_push_policy": {
+    "push_allowed": true,
+    "push_required_for_success": true,
+    "allowed_when": [
+      "git diff is inside allowed_write_scope",
+      "all required outputs exist",
+      "JSON files parse successfully",
+      "created Python files compile",
+      "Imperial IDE CLI smoke tests pass or exact blockers are recorded",
+      "Imperial IDE TUI non-interactive smoke passes or exact blockers are recorded",
+      "Mechanicus doctor and dry-run gateway remain safe",
+      "no secret files or local operator configs are staged",
+      "no destructive cleanup is performed",
+      "commit message includes task_id",
+      "post-push HEAD equals origin/master"
+    ],
+    "forbidden_push_cases": [
+      "changes outside allowed_write_scope",
+      "failed validation without explicit BLOCK verdict",
+      "secrets, credentials, or local operator configs staged",
+      "destructive cleanup or delete without owner batch approval",
+      "unrestricted shell execution enabled",
+      "fake-green closure",
+      "VM2 or VM3 changes"
+    ],
+    "required_after_push_receipts": [
+      "commit_sha",
+      "origin_master_sha",
+      "head_equals_origin_master_after_push",
+      "git_status_after_push",
+      "pushed_files_summary"
+    ]
+  },
+  "owner_decisions_preapproved_for_this_task": {
+    "OD_PC_ONLY": "approved",
+    "OD_MANAGED_IDE_CONTROL_SHELL": "approved",
+    "OD_MECHANICUS_DRY_RUN_GATEWAY_INTEGRATION": "approved",
+    "OD_TASK_REPORT_RECEIPT_DASHBOARDS": "approved",
+    "OD_EXTENSION_REGISTRY_SEED": "approved",
+    "OD_VALIDATED_PUSH": "approved"
+  },
+  "owner_decisions_not_approved_for_this_task": {
+    "OD_DELETE": "not approved",
+    "OD_MASS_MOVE": "not approved",
+    "OD_REMOTE_CONTOURS": "not approved",
+    "OD_UNRESTRICTED_SHELL_EXECUTION": "not approved",
+    "OD_FULL_GUI_IDE_IMPLEMENTATION": "not approved",
+    "OD_BACKGROUND_DAEMON": "not approved"
+  },
+  "allowed_write_scope": [
+    "AGENTS.md",
+    ".gitignore",
+    "ORGANS/ASTRONOMICON/**",
+    "ORGANS/MECHANICUS/**",
+    "ORGANS/IMPERIAL_IDE/**",
+    "REPORTS/TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1/**"
+  ],
+  "local_only_allowed_operations_not_to_commit": [
+    ".git/info/exclude update for local contour_route_config.json if needed"
+  ],
+  "forbidden_actions": [
+    "delete_files_without_owner_batch_approval",
+    "mass_move_core_files_without_owner_batch_approval",
+    "reset_hard",
+    "git_clean_fd",
+    "admit_quarantine_to_canon",
+    "remote_route_to_vm2",
+    "remote_route_to_vm3",
+    "live_transfer_to_other_contours",
+    "push_outside_allowed_write_scope",
+    "push_failed_validation_outputs",
+    "push_dirty_runtime_or_secret_files",
+    "push_destructive_changes_without_owner_approval",
+    "unsafe_shell_command_gateway",
+    "unvalidated_tool_execution",
+    "real_tool_execution_without_allowlist_and_receipt",
+    "claim_full_gui_ide_complete",
+    "fake_green_clean_pass_claim",
+    "rewrite_report_history"
+  ],
+  "primary_outputs": [
+    "Imperial IDE CLI control shell",
+    "Imperial IDE TUI/menu shell foundation",
+    "Mechanicus-backed tool and capability dashboards",
+    "Astronomicon task and report dashboard integration",
+    "Receipt viewer and command history model",
+    "Extension registry seed and extension loader contract",
+    "Workspace state model update",
+    "PowerShell launcher for the shell",
+    "Validation, smoke, commit, and push receipts"
+  ]
+}

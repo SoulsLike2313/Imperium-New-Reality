@@ -1,70 +1,139 @@
 {
-  "schema_version": "imperial_ide.extension_registry.v0_1",
-  "registry_status": "FOUNDATION_CANDIDATE",
-  "task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1",
-  "updated_at_utc": "2026-06-07T11:08:13Z",
+  "schema_version": "imperial_ide.extension_registry.v0_2",
+  "registry_status": "CONTROL_SHELL_ACTIVE",
+  "task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1",
+  "updated_at_utc": "2026-06-07T11:40:31Z",
   "extensions": [
     {
       "extension_id": "taskpack_control",
-      "status": "CANDIDATE",
+      "name": "Astronomicon Taskpack Control",
+      "status": "PROVEN",
+      "owner_organ": "ASTRONOMICON",
       "permissions": [
         "read_task_registry",
         "read_taskpack",
-        "request_mechanicus_dry_run"
+        "read_route_receipts"
       ],
       "panels": [
-        "active_task",
-        "task_route",
+        "astronomicon_tasks",
         "validation"
       ],
       "commands": [
-        "open_taskpack",
-        "show_route_manifest",
-        "request_validation"
+        "tasks",
+        "current-task",
+        "validate"
       ],
       "tools": [
-        "MECHANICUS_CLI",
         "ASTRONOMICON_TASKPACK_REGISTRATION_SKILL_V0_1"
       ],
+      "tool_permissions": [
+        "dry_run",
+        "read_only"
+      ],
+      "risk_class": "LOW_READ_ONLY",
       "risks": [
-        "must not mutate task registry without task scope"
+        "task registry mutation remains unavailable"
       ],
       "receipts": [
-        "ide_tool_invocation_receipt"
+        "shell_command_receipt"
       ],
+      "receipts_required": true,
       "validation": {
         "required": true,
-        "current_task": "schema_parse_only"
-      }
+        "status": "PROVEN_FOR_CONTROL_SHELL_V0_1"
+      },
+      "validation_required": true,
+      "unrestricted_execution": false
     },
     {
       "extension_id": "receipt_inspector",
-      "status": "CANDIDATE",
+      "name": "Receipt Inspector",
+      "status": "PROVEN",
+      "owner_organ": "ADMINISTRATUM",
       "permissions": [
         "read_reports",
         "read_receipts"
       ],
       "panels": [
-        "receipt_browser",
-        "git_truth"
+        "reports",
+        "receipts"
       ],
       "commands": [
-        "open_receipt",
-        "compare_receipt_to_git"
+        "reports",
+        "latest-report",
+        "receipts"
       ],
       "tools": [
         "MECHANICUS_VALIDATE"
       ],
+      "tool_permissions": [
+        "read_only"
+      ],
+      "risk_class": "LOW_READ_ONLY",
       "risks": [
         "stale report interpretation"
       ],
       "receipts": [
-        "receipt_inspection_receipt"
+        "shell_command_receipt"
       ],
+      "receipts_required": true,
       "validation": {
         "required": true,
-        "current_task": "schema_parse_only"
-      }
+        "status": "PROVEN_FOR_CONTROL_SHELL_V0_1"
+      },
+      "validation_required": true,
+      "unrestricted_execution": false
+    },
+    {
+      "extension_id": "mechanicus_control",
+      "name": "Mechanicus Control Surface",
+      "status": "PROVEN",
+      "owner_organ": "MECHANICUS",
+      "permissions": [
+        "read_tool_registry",
+        "read_capability_registry",
+        "read_command_policy",
+        "request_dry_run"
+      ],
+      "panels": [
+        "mechanicus_tools",
+        "capabilities",
+        "command_policy",
+        "validation"
+      ],
+      "commands": [
+        "tools",
+        "capabilities",
+        "policy",
+        "doctor",
+        "validate",
+        "dry-run-tool"
+      ],
+      "tools": [
+        "MECHANICUS_CLI",
+        "MECHANICUS_DOCTOR",
+        "MECHANICUS_VALIDATE",
+        "MECHANICUS_COMMAND_GATEWAY"
+      ],
+      "tool_permissions": [
+        "dry_run",
+        "read_only"
+      ],
+      "risk_class": "LOW_DRY_RUN",
+      "risks": [
+        "real execution remains blocked"
+      ],
+      "receipts": [
+        "shell_command_receipt",
+        "mechanicus_command_receipt"
+      ],
+      "receipts_required": true,
+      "validation": {
+        "required": true,
+        "status": "PROVEN_FOR_CONTROL_SHELL_V0_1"
+      },
+      "validation_required": true,
+      "unrestricted_execution": false
     }
   ]
 }

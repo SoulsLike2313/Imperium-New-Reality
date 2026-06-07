@@ -1,8 +1,8 @@
 {
   "schema_version": "mechanicus.tool_registry.v0_1",
   "registry_status": "CANON_ACTIVE_SEED",
-  "task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1",
-  "updated_at_utc": "2026-06-07T11:08:13Z",
+  "task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1",
+  "updated_at_utc": "2026-06-07T11:41:29Z",
   "owner_organ": "MECHANICUS",
   "policy_path": "ORGANS/MECHANICUS/REGISTRY/command_policy.json",
   "tools": [
@@ -86,6 +86,56 @@
       "risk_class": "LOW_LOCAL",
       "command_execution": "NO_REMOTE_ROUTE_FOR_PC_DISCOVERY",
       "last_validation_task_id": "TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1"
+    },
+    {
+      "tool_id": "IMPERIAL_IDE_CONTROL_SHELL",
+      "name": "Imperial IDE Control Shell",
+      "status": "PROVEN",
+      "path": "ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py",
+      "entrypoints": [
+        "doctor",
+        "dashboard",
+        "tasks",
+        "reports",
+        "receipts",
+        "tools",
+        "capabilities",
+        "policy",
+        "extensions",
+        "workspace",
+        "validate",
+        "dry-run-tool"
+      ],
+      "risk_class": "LOW_LOCAL_READ_ONLY_AND_DRY_RUN",
+      "command_execution": "NO_ARBITRARY_SHELL",
+      "last_validation_task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1"
+    },
+    {
+      "tool_id": "IMPERIAL_IDE_TUI",
+      "name": "Imperial IDE Menu TUI",
+      "status": "PROVEN",
+      "path": "ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_tui.py",
+      "entrypoints": [
+        "--smoke",
+        "--command"
+      ],
+      "risk_class": "LOW_LOCAL_READ_ONLY",
+      "command_execution": "NO_ARBITRARY_SHELL",
+      "last_validation_task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1"
+    },
+    {
+      "tool_id": "MECHANICUS_IDE_SHELL_BRIDGE",
+      "name": "Mechanicus Imperial IDE Shell Bridge",
+      "status": "PROVEN",
+      "path": "ORGANS/IMPERIAL_IDE/BRIDGES/mechanicus_shell_bridge.py",
+      "entrypoints": [
+        "registry_read",
+        "doctor",
+        "dry_run_tool"
+      ],
+      "risk_class": "LOW_LOCAL_DRY_RUN",
+      "command_execution": "DRY_RUN_ONLY_ALLOWLISTED",
+      "last_validation_task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1"
     }
   ]
 }

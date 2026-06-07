@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://imperial_ide/shell/shell_command_receipt.v0_1",
+  "title": "Imperial IDE Shell Command Receipt",
+  "type": "object",
+  "required": [
+    "timestamp_utc",
+    "command",
+    "args",
+    "repo_root",
+    "status",
+    "risk_class",
+    "data_sources",
+    "tools_invoked",
+    "dry_run",
+    "output_summary",
+    "receipt_path"
+  ],
+  "properties": {
+    "timestamp_utc": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "command": {
+      "type": "string"
+    },
+    "args": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "repo_root": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "risk_class": {
+      "type": "string"
+    },
+    "data_sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tools_invoked": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dry_run": {
+      "type": "boolean"
+    },
+    "output_summary": {
+      "type": "string"
+    },
+    "receipt_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

@@ -6,7 +6,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-TASK_ID = "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1"
+TASK_ID = "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1"
 ROOT_MARKERS = ("AGENTS.md", "ORGANS")
 TOOL_REGISTRY = "ORGANS/MECHANICUS/REGISTRY/tool_registry.json"
 CAPABILITY_REGISTRY = "ORGANS/MECHANICUS/REGISTRY/capability_registry.json"
@@ -25,6 +25,12 @@ JSON_FILES = [
     "ORGANS/IMPERIAL_IDE/SCHEMAS/ide_panel_registry.schema.json",
     "ORGANS/IMPERIAL_IDE/EXTENSIONS/extension_registry.json",
     "ORGANS/IMPERIAL_IDE/WORKSPACE/workspace_model.json",
+    "ORGANS/IMPERIAL_IDE/SHELL/panel_registry.json",
+    "ORGANS/IMPERIAL_IDE/SHELL/command_palette.json",
+    "ORGANS/IMPERIAL_IDE/SHELL/shell_command_receipt.schema.json",
+    "ORGANS/IMPERIAL_IDE/SHELL/shell_command_history.json",
+    "ORGANS/IMPERIAL_IDE/WORKSPACE/workspace_state.json",
+    "ORGANS/IMPERIAL_IDE/EXTENSIONS/example_mechanicus_extension.json",
 ]
 PYTHON_FILES = [
     "ORGANS/MECHANICUS/TOOLS/mechanicus_cli.py",
@@ -32,6 +38,14 @@ PYTHON_FILES = [
     "ORGANS/MECHANICUS/TOOLS/mechanicus_inventory.py",
     "ORGANS/MECHANICUS/TOOLS/mechanicus_validate.py",
     "ORGANS/MECHANICUS/TOOLS/mechanicus_command_gateway.py",
+    "ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py",
+    "ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_tui.py",
+    "ORGANS/IMPERIAL_IDE/SHELL/shell_router.py",
+    "ORGANS/IMPERIAL_IDE/SHELL/shell_state.py",
+    "ORGANS/IMPERIAL_IDE/SHELL/shell_receipts.py",
+    "ORGANS/IMPERIAL_IDE/BRIDGES/mechanicus_shell_bridge.py",
+    "ORGANS/IMPERIAL_IDE/EXTENSIONS/extension_loader.py",
+    "ORGANS/IMPERIAL_IDE/WORKSPACE/workspace_state_manager.py",
 ]
 
 
