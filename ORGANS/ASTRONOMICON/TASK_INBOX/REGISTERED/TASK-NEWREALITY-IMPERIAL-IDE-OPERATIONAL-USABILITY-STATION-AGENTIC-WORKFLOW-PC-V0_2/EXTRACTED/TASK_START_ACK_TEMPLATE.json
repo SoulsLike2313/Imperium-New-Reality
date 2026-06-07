@@ -1,0 +1,40 @@
+{
+  "schema_version": "astronomicon.task_start_ack_template.v0_1",
+  "template_id": "TASK_START_ACK_TEMPLATE_PC_OPERATIONAL_USABILITY_STATION_V0_2",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-USABILITY-STATION-AGENTIC-WORKFLOW-PC-V0_2",
+  "contour": "PC",
+  "copy_message_to_servitor": "start task",
+  "start_ack_required_fields": [
+    "task_id",
+    "repo_root",
+    "git_status",
+    "head_sha",
+    "origin_master_sha",
+    "current_workbench_tui_status",
+    "current_workbench_gui_status",
+    "current_ops_status",
+    "agent_registry_plan",
+    "station_ui_plan",
+    "task_console_plan",
+    "live_registration_gate_plan",
+    "safety_plan",
+    "known_blockers",
+    "allowed_write_scope",
+    "forbidden_actions",
+    "validated_push_policy",
+    "planned_outputs"
+  ],
+  "do_not_claim": [
+    "clean_pass",
+    "remote_route",
+    "vm2_execution",
+    "vm3_execution",
+    "full_ide_complete",
+    "real_servitor_execution_enabled",
+    "autonomous_agent_loop_ready",
+    "unsafe_shell_enabled",
+    "live_llm_backend_enabled",
+    "human_handoff_eliminated_if_handoff_cards_are_still_required",
+    "push_done_without_receipt"
+  ]
+}

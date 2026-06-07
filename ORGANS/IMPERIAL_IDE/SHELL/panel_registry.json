@@ -1,7 +1,7 @@
 {
-  "schema_version": "imperial_ide.panel_registry.v0_2",
-  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2",
-  "registry_status": "CONTROL_SHELL_WITH_CANDIDATE_SURFACES_ACTIVE",
+  "schema_version": "imperial_ide.panel_registry.v0_3",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-USABILITY-STATION-AGENTIC-WORKFLOW-PC-V0_2",
+  "registry_status": "OPERATIONAL_STATION_ACTIVE_WITH_GATED_EXECUTION",
   "panels": [
     {
       "panel_id": "overview",
@@ -298,6 +298,150 @@
       ],
       "risk_class": "LOW_DRY_RUN",
       "current_status": "VALIDATED_PUSH_GATE_ONLY"
+    },
+    {
+      "panel_id": "operational_dashboard",
+      "title": "Operational Dashboard",
+      "owner_organ": "IMPERIAL_IDE",
+      "data_sources": ["ORGANS/IMPERIAL_IDE/STATION/station_state.py"],
+      "commands": ["station", "station-smoke"],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "ACTIVE"
+    },
+    {
+      "panel_id": "station_task_console",
+      "title": "Station Task Console",
+      "owner_organ": "IMPERIAL_IDE",
+      "data_sources": ["ORGANS/IMPERIAL_IDE/OPS/TEMPLATES/task_templates.json"],
+      "commands": ["task-console", "new-task"],
+      "risk_class": "LOW_DRY_RUN",
+      "current_status": "ACTIVE"
+    },
+    {
+      "panel_id": "station_taskpack_builder",
+      "title": "Station Taskpack Builder",
+      "owner_organ": "ASTRONOMICON",
+      "data_sources": ["ORGANS/IMPERIAL_IDE/STATION/generated_taskpacks"],
+      "commands": ["build-taskpack", "validate-taskpack"],
+      "risk_class": "LOW_DRY_RUN",
+      "current_status": "ACTIVE"
+    },
+    {
+      "panel_id": "live_registration_gate",
+      "title": "Live Registration Gate",
+      "owner_organ": "ASTRONOMICON",
+      "data_sources": ["ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL"],
+      "commands": ["register-taskpack"],
+      "risk_class": "HIGH_LOCAL_GATED",
+      "current_status": "WARNING"
+    },
+    {
+      "panel_id": "station_launch_card",
+      "title": "Launch Card and Handoff",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "data_sources": ["ORGANS/IMPERIAL_IDE/STATION/station_workflow.py"],
+      "commands": ["launch-card", "handoff-card"],
+      "risk_class": "LOW_DRY_RUN",
+      "current_status": "ACTIVE"
+    },
+    {
+      "panel_id": "agent_roster",
+      "title": "Agent Roster",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "data_sources": ["ORGANS/IMPERIAL_IDE/AGENTS/agent_registry.json"],
+      "commands": ["agents", "agent-status"],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "ACTIVE"
+    },
+    {
+      "panel_id": "servitor_matrix",
+      "title": "Servitor Matrix",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "data_sources": ["ORGANS/IMPERIAL_IDE/AGENTS/servitor_roster.json"],
+      "commands": ["agents"],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "ACTIVE"
+    },
+    {
+      "panel_id": "task_lifecycle",
+      "title": "Task Lifecycle",
+      "owner_organ": "ADMINISTRATUM",
+      "data_sources": ["ORGANS/IMPERIAL_IDE/STATION/lifecycle_state.json"],
+      "commands": ["lifecycle"],
+      "risk_class": "LOW_DRY_RUN",
+      "current_status": "ACTIVE"
+    },
+    {
+      "panel_id": "reports_browser",
+      "title": "Reports Browser",
+      "owner_organ": "ADMINISTRATUM",
+      "data_sources": ["REPORTS"],
+      "commands": ["reports-latest"],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "ACTIVE"
+    },
+    {
+      "panel_id": "receipts_browser",
+      "title": "Receipts Browser",
+      "owner_organ": "ADMINISTRATUM",
+      "data_sources": ["REPORTS", "ORGANS/IMPERIAL_IDE/STATION/receipts"],
+      "commands": ["receipts-latest"],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "ACTIVE"
+    },
+    {
+      "panel_id": "safety_center",
+      "title": "Safety Center",
+      "owner_organ": "INQUISITION",
+      "data_sources": ["ORGANS/IMPERIAL_IDE/STATION/station_state.py"],
+      "commands": ["safety"],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "WARNING"
+    },
+    {
+      "panel_id": "station_git_closure",
+      "title": "Station Git Closure",
+      "owner_organ": "INQUISITION",
+      "data_sources": ["git"],
+      "commands": ["git-closure"],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "WARNING"
+    },
+    {
+      "panel_id": "warp_workspace",
+      "title": "WARP Workspace",
+      "owner_organ": "WARP",
+      "data_sources": ["ORGANS/IMPERIAL_IDE/WARP/INTEGRATION_STATUS.json"],
+      "commands": ["warp", "warp-open", "warp-status"],
+      "risk_class": "LOW_ISOLATED_RUNTIME",
+      "current_status": "CANDIDATE"
+    },
+    {
+      "panel_id": "metaos_router",
+      "title": "MetaOS Router",
+      "owner_organ": "METAOS",
+      "data_sources": ["ORGANS/IMPERIAL_IDE/METAOS/INTEGRATION_STATUS.json"],
+      "commands": ["metaos", "metaos-route"],
+      "risk_class": "LOW_DRY_RUN",
+      "current_status": "CANDIDATE"
+    },
+    {
+      "panel_id": "station_mechanicus_tools",
+      "title": "Station Mechanicus Tools",
+      "owner_organ": "MECHANICUS",
+      "data_sources": ["ORGANS/MECHANICUS/REGISTRY/tool_registry.json"],
+      "commands": ["tools", "policy", "validate"],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "ACTIVE"
+    },
+    {
+      "panel_id": "station_settings",
+      "title": "Station Settings",
+      "owner_organ": "IMPERIAL_IDE",
+      "data_sources": ["ORGANS/IMPERIAL_IDE/STATION/station_panels.json"],
+      "commands": ["help", "station-tui", "station-gui"],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "ACTIVE"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
-  "schema_version": "imperial_ide.command_palette.v0_2",
-  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2",
+  "schema_version": "imperial_ide.command_palette.v0_3",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-USABILITY-STATION-AGENTIC-WORKFLOW-PC-V0_2",
   "commands": [
     {
       "command": "doctor",
@@ -306,6 +306,90 @@
     {
       "command": "task-templates",
       "description": "Show reusable OPS task template library",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "station",
+      "description": "Show the unified operational truth dashboard",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "station-tui",
+      "description": "Show the primary Workbench TUI launch command",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "station-gui",
+      "description": "Show the Workbench GUI launch command",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "station-smoke",
+      "description": "Run station workflow and lifecycle smokes",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "agents",
+      "description": "Show the twelve-role agent and servitor registry",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "agent-status",
+      "description": "Show one agent card by agent id",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": true,
+      "real_execution": false
+    },
+    {
+      "command": "new-task",
+      "description": "Create and classify a local task intent",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "validate-taskpack",
+      "description": "Validate a generated taskpack or build and validate a sample",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "handoff-card",
+      "description": "Render a Servitor Prime external handoff card",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "reports-latest",
+      "description": "Show latest station-visible reports",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "receipts-latest",
+      "description": "Show latest station-visible receipts",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "safety",
+      "description": "Show explicit safety center state",
       "risk_class": "LOW_READ_ONLY",
       "argument_required": false,
       "real_execution": false

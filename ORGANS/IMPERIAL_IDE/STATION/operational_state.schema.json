@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperial_ide.operational_state.schema.v0_2",
+  "type": "object",
+  "required": ["schema_version", "state", "repo", "task", "agents", "safety", "git_closure"],
+  "properties": {
+    "schema_version": {"const": "imperial_ide.operational_state.v0_2"},
+    "state": {"enum": ["LIVE", "DRY_RUN", "BLOCKED", "CANDIDATE", "ACTIVE", "WARNING", "FAILED", "UNKNOWN"]},
+    "repo": {"type": "object"},
+    "task": {"type": "object"},
+    "agents": {"type": "object"},
+    "safety": {"type": "object"},
+    "git_closure": {"type": "object"}
+  },
+  "additionalProperties": true
+}

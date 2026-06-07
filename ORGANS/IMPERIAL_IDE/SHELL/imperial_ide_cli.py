@@ -17,6 +17,9 @@ COMMANDS = [
     "ops", "ops-smoke", "task-console", "classify-task", "build-taskpack",
     "register-taskpack", "launch-card", "lifecycle", "lifecycle-smoke",
     "git-closure", "task-templates",
+    "station", "station-tui", "station-gui", "station-smoke", "agents",
+    "agent-status", "new-task", "validate-taskpack", "handoff-card",
+    "reports-latest", "receipts-latest", "safety",
 ]
 
 

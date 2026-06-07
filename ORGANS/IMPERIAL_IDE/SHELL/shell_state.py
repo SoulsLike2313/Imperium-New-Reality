@@ -5,7 +5,7 @@ import subprocess
 from pathlib import Path
 from typing import Any
 
-TASK_ID = "TASK-NEWREALITY-IMPERIAL-IDE-OPS-INTEGRATION-TASK-CONSOLE-ACTIVATION-PC-V0_1"
+TASK_ID = "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-USABILITY-STATION-AGENTIC-WORKFLOW-PC-V0_2"
 
 
 def find_repo_root(start: Path | None = None) -> Path:
@@ -121,6 +121,15 @@ class RepositoryState:
             "ORGANS/IMPERIAL_IDE/METAOS/INTEGRATION_STATUS.json",
             "ORGANS/IMPERIAL_IDE/OPS/INTEGRATION_STATUS.json",
             "ORGANS/IMPERIAL_IDE/OPS/TEMPLATES/task_templates.json",
+            "ORGANS/IMPERIAL_IDE/STATION/station_panels.json",
+            "ORGANS/IMPERIAL_IDE/STATION/operational_state.schema.json",
+            "ORGANS/IMPERIAL_IDE/STATION/lifecycle_stage.schema.json",
+            "ORGANS/IMPERIAL_IDE/STATION/lifecycle_state.json",
+            "ORGANS/IMPERIAL_IDE/AGENTS/agent_registry.json",
+            "ORGANS/IMPERIAL_IDE/AGENTS/servitor_roster.json",
+            "ORGANS/IMPERIAL_IDE/AGENTS/agent_card.schema.json",
+            "ORGANS/IMPERIAL_IDE/AGENTS/agent_status.schema.json",
+            "ORGANS/IMPERIAL_IDE/AGENTS/agent_runtime_state.json",
             "ORGANS/MECHANICUS/IDE_BRIDGE/workbench_warp_metaos_bridge_policy.json",
             "ORGANS/ADMINISTRATUM/BUNDLE_GATES/bundle_gate_policy.json",
             "ORGANS/MECHANICUS/REGISTRY/tool_registry.json",

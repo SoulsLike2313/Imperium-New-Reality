@@ -23,6 +23,31 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PKG_ROOT = os.path.dirname(HERE)
+IDE_ROOT = os.path.dirname(PKG_ROOT)
+STATION_ROOT = os.path.join(IDE_ROOT, "STATION")
+if STATION_ROOT not in sys.path:
+    sys.path.insert(0, STATION_ROOT)
+
+from station_router import route as station_route
+
+OPERATIONAL_MENU = [
+    ("Dashboard", "station"),
+    ("Task Console", "task-console"),
+    ("Task Templates", "task-console"),
+    ("Build Taskpack", "build-taskpack"),
+    ("Register Taskpack", "register-taskpack"),
+    ("Launch Card", "launch-card"),
+    ("Agents and Servitors", "agents"),
+    ("Astronomicon", "task-console"),
+    ("Mechanicus", "safety"),
+    ("WARP", "station"),
+    ("MetaOS", "station"),
+    ("Reports", "reports-latest"),
+    ("Receipts", "receipts-latest"),
+    ("Safety", "safety"),
+    ("Git Closure", "git-closure"),
+    ("Settings", "settings"),
+]
 
 with open(os.path.join(PKG_ROOT, "THEME", "imperium_theme.json"), "r",
           encoding="utf-8") as fh:
@@ -178,14 +203,28 @@ def render_capsules():
 
 
 def render_menu():
-    lines = [
-        "%s  [1] Organ panels" % c(A["plasma"], G["star"]),
-        "%s  [2] Servitor capsules" % c(A["plasma"], G["cog"]),
-        "%s  [3] Dispatch task (dry-run)" % c(A["plasma"], G["diamond"]),
-        "%s  [4] Mechanicus dry-run bridge status" % c(A["plasma"], G["diamond"]),
-        "%s  [q] Quit" % c(A["alert_red"], G["skull"]),
-    ]
+    lines = []
+    for index, (label, _) in enumerate(OPERATIONAL_MENU, 1):
+        lines.append("%s  [%02d] %s" % (c(A["plasma"], G["diamond"]), index, label))
+    lines.append("%s  [q] Quit" % c(A["alert_red"], G["skull"]))
     box("%s COMMAND MENU" % G["aquila"], lines, color=A["chrome"])
+
+
+def render_station_result(title, command, args=None):
+    if command == "settings":
+        bridge_status()
+        return {"status": "PASS_WITH_WARNINGS", "surface": "SETTINGS"}
+    try:
+        result = station_route(command, args or [])
+    except Exception as exc:
+        result = {"status": "BLOCKED", "reason": str(exc), "command": command}
+    raw = json.dumps(result, ensure_ascii=False, indent=2).splitlines()
+    lines = [line[:68] for line in raw[:28]]
+    if len(raw) > len(lines):
+        lines.append("... output truncated; use Imperial IDE shell for full JSON")
+    color = A["alert_red"] if result.get("status") == "BLOCKED" else A["nebula_bright"]
+    box("%s %s" % (G["star"], title.upper()), lines, color=color)
+    return result
 
 
 def bridge_status():
@@ -209,9 +248,13 @@ def smoke():
     bridge_status()
     print()
     render_menu()
-    print(c(A["ok_green"], "\n[SMOKE] all TUI surfaces rendered. full_gui_implemented=false; "
-            "tui_render=PASS"))
-    return 0
+    station = render_station_result("Station Smoke", "station-smoke")
+    labels_ok = all(label for label, _ in OPERATIONAL_MENU) and len(OPERATIONAL_MENU) == 16
+    status = "PASS_WITH_WARNINGS" if station.get("status") != "BLOCKED" and labels_ok else "BLOCKED"
+    print(c(A["ok_green"] if status != "BLOCKED" else A["alert_red"],
+            "\n[SMOKE] operational menus=%s; station=%s; tui_render=%s" %
+            (len(OPERATIONAL_MENU), station.get("status"), status)))
+    return 0 if status != "BLOCKED" else 2
 
 
 def interactive():
@@ -223,19 +266,29 @@ def interactive():
         except (EOFError, KeyboardInterrupt):
             print()
             break
-        if choice == "1":
-            render_panels()
-        elif choice == "2":
-            render_capsules()
-        elif choice == "3":
-            task = input(c(A["plasma"], "  task text > ")).strip()
-            print(c(A["nebula_bright"],
-                    "  [DRY_RUN] would round-robin '%s' across active capsules." % task))
-        elif choice == "4":
-            bridge_status()
-        elif choice in ("q", "quit", "exit"):
+        if choice in ("q", "quit", "exit"):
             print(c(A["gold"], "  %s Ave Omnissiah." % G["aquila"]))
             break
+        try:
+            index = int(choice) - 1
+        except ValueError:
+            index = -1
+        if 0 <= index < len(OPERATIONAL_MENU):
+            label, command = OPERATIONAL_MENU[index]
+            args = []
+            if command in {"task-console", "build-taskpack", "register-taskpack", "launch-card"}:
+                task = input(c(A["plasma"], "  task title (blank=sample) > ")).strip()
+                if task:
+                    args.append(task)
+            if command == "register-taskpack":
+                live = input(c(A["warn_amber"], "  type LIVE for governed local registration; Enter=dry-run > ")).strip()
+                if live == "LIVE":
+                    args.insert(0, "live")
+            render_station_result(label, command, args)
+            if label == "Agents and Servitors":
+                render_capsules()
+            elif label == "Astronomicon":
+                render_panels()
         else:
             print(c(A["alert_red"], "  unknown command"))
     return 0

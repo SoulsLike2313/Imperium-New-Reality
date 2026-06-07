@@ -1,0 +1,109 @@
+from __future__ import annotations
+
+import argparse
+import json
+from pathlib import Path
+from typing import Any
+
+from lifecycle_tracker import smoke as lifecycle_smoke
+from station_state import StationState, find_repo_root
+from station_workflow import StationWorkflow
+
+DEFAULT_TITLE = "Station operator sample task"
+DEFAULT_GOAL = "Build and validate an Astronomicon-compatible taskpack inside Imperial IDE"
+
+
+def _intent_text(args: list[str]) -> tuple[str, str, str]:
+    template = "integration"
+    words = list(args)
+    if words and words[0].startswith("template="):
+        template = words.pop(0).split("=", 1)[1] or template
+    title = " ".join(words).strip() or DEFAULT_TITLE
+    return title, DEFAULT_GOAL if title == DEFAULT_TITLE else title, template
+
+
+def route(command: str, args: list[str] | None = None, repo_root: Path | None = None) -> dict[str, Any]:
+    args = list(args or [])
+    repo = (repo_root or find_repo_root()).resolve()
+    state = StationState(repo)
+    workflow = StationWorkflow(repo)
+
+    if command in {"station", "dashboard"}:
+        return {"status": "PASS_WITH_WARNINGS", "surface": "OPERATIONAL_STATION", "snapshot": state.snapshot()}
+    if command == "station-tui":
+        return {
+            "status": "PASS_WITH_WARNINGS",
+            "surface": "WORKBENCH_TUI",
+            "launch_command": "python ORGANS/IMPERIAL_IDE/WORKBENCH/TUI/imperial_tui.py",
+            "executed": False,
+        }
+    if command == "station-gui":
+        return {
+            "status": "PASS_WITH_WARNINGS",
+            "surface": "WORKBENCH_GUI",
+            "launch_command": "python ORGANS/IMPERIAL_IDE/WORKBENCH/GUI/imperial_gui_workbench.py",
+            "executed": False,
+            "manual_windows_interaction_required": True,
+        }
+    if command == "station-smoke":
+        result = workflow.smoke()
+        result["lifecycle_tracker_smoke"] = lifecycle_smoke()
+        return result
+    if command == "agents":
+        return {"status": "PASS", **state.agent_state()}
+    if command == "agent-status":
+        agent_id = args[0] if args else ""
+        agents = state.agent_state()["agents"]
+        agent = next((item for item in agents if item["agent_id"] == agent_id), None)
+        return {"status": "PASS" if agent else "BLOCKED", "agent": agent, "requested_agent_id": agent_id}
+    if command in {"task-console", "new-task"}:
+        title, goal, template = _intent_text(args)
+        _, preview = workflow.create_intent(title, goal, template)
+        preview["templates"] = workflow.templates()["templates"]
+        return preview
+    if command == "build-taskpack":
+        title, goal, template = _intent_text(args)
+        return workflow.build_taskpack(title, goal, template)
+    if command == "validate-taskpack":
+        if args:
+            return workflow.validate_taskpack(args[0])
+        built = workflow.build_taskpack(DEFAULT_TITLE, DEFAULT_GOAL, "integration")
+        return workflow.validate_taskpack(built["extracted_path"])
+    if command == "register-taskpack":
+        live = bool(args and args[0].lower() == "live")
+        title_args = args[1:] if live else args
+        title, goal, template = _intent_text(title_args)
+        return workflow.register_taskpack(title, goal, template, live=live)
+    if command == "launch-card":
+        title, goal, template = _intent_text(args)
+        return workflow.launch_card(title, goal, template)
+    if command == "handoff-card":
+        title, goal, template = _intent_text(args)
+        return workflow.handoff_card(title, goal, template)
+    if command == "lifecycle":
+        title, goal, template = _intent_text(args)
+        return workflow.lifecycle(title, goal, template)
+    if command == "reports-latest":
+        return {"status": "PASS_WITH_WARNINGS", **state.reports_state()}
+    if command == "receipts-latest":
+        return {"status": "PASS_WITH_WARNINGS", **state.receipts_state()}
+    if command == "safety":
+        return {"status": "PASS_WITH_WARNINGS", **state.safety_state()}
+    if command == "git-closure":
+        return {"status": "PASS_WITH_WARNINGS", **state.git_state()}
+    return {"status": "BLOCKED", "reason": "unknown_station_command", "command": command}
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Imperial IDE operational station router")
+    parser.add_argument("command")
+    parser.add_argument("command_args", nargs="*")
+    parser.add_argument("--compact", action="store_true")
+    parsed = parser.parse_args(argv)
+    result = route(parsed.command, parsed.command_args)
+    print(json.dumps(result, ensure_ascii=False, indent=None if parsed.compact else 2))
+    return 2 if result.get("status") == "BLOCKED" else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

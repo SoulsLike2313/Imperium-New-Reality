@@ -5,7 +5,12 @@ from pathlib import Path
 from typing import Any
 
 IDE_ROOT = Path(__file__).resolve().parents[1]
-for module_dir in (IDE_ROOT / "BRIDGES", IDE_ROOT / "EXTENSIONS", IDE_ROOT / "WORKSPACE"):
+for module_dir in (
+    IDE_ROOT / "BRIDGES",
+    IDE_ROOT / "EXTENSIONS",
+    IDE_ROOT / "WORKSPACE",
+    IDE_ROOT / "STATION",
+):
     module_path = str(module_dir)
     if module_path not in sys.path:
         sys.path.insert(0, module_path)
@@ -21,6 +26,7 @@ RISK = {
     "metaos-smoke": "LOW_LOCAL_SMOKE",
     "metaos-bundle-gate": "LOW_LOCAL_SMOKE",
     "ops-smoke": "LOW_LOCAL_SMOKE",
+    "station-smoke": "LOW_LOCAL_SMOKE",
     "lifecycle-smoke": "LOW_LOCAL_SMOKE",
     "warp-open": "LOW_DRY_RUN",
     "warp-gate": "LOW_DRY_RUN",
@@ -33,12 +39,28 @@ RISK = {
     "launch-card": "LOW_DRY_RUN",
     "lifecycle": "LOW_DRY_RUN",
     "git-closure": "LOW_DRY_RUN",
+    "station": "LOW_READ_ONLY",
+    "station-tui": "LOW_READ_ONLY",
+    "station-gui": "LOW_READ_ONLY",
+    "agents": "LOW_READ_ONLY",
+    "agent-status": "LOW_READ_ONLY",
+    "new-task": "LOW_DRY_RUN",
+    "validate-taskpack": "LOW_DRY_RUN",
+    "handoff-card": "LOW_DRY_RUN",
+    "reports-latest": "LOW_READ_ONLY",
+    "receipts-latest": "LOW_READ_ONLY",
+    "safety": "LOW_READ_ONLY",
 }
 
 OPS_COMMANDS = {
-    "ops", "ops-smoke", "task-console", "classify-task", "build-taskpack",
-    "register-taskpack", "launch-card", "lifecycle", "lifecycle-smoke",
-    "git-closure", "task-templates",
+    "ops", "ops-smoke", "classify-task", "lifecycle-smoke", "task-templates",
+}
+
+STATION_COMMANDS = {
+    "station", "station-tui", "station-gui", "station-smoke", "agents",
+    "agent-status", "task-console", "new-task", "build-taskpack",
+    "validate-taskpack", "register-taskpack", "launch-card", "handoff-card",
+    "lifecycle", "reports-latest", "receipts-latest", "safety", "git-closure",
 }
 
 INTEGRATION_COMMANDS = {
@@ -68,11 +90,13 @@ def route(command: str, args: list[str] | None = None) -> dict[str, Any]:
     bridge = None
     data_sources: list[str] = []
     tools_invoked: list[str] = []
-    dry_run = command == "dry-run-tool" or command in {
+    live_registration = command == "register-taskpack" and bool(args) and args[0].lower() == "live"
+    dry_run = not live_registration and (command == "dry-run-tool" or command in {
         "warp-open", "warp-gate", "metaos-route", "metaos-servitor", "metaos-chronicle",
         "classify-task", "build-taskpack", "register-taskpack", "launch-card",
-        "lifecycle", "git-closure", "task-console",
-    }
+        "validate-taskpack", "handoff-card", "lifecycle", "git-closure", "task-console",
+        "new-task",
+    })
 
     if command in {"tools", "capabilities", "policy", "dry-run-tool", "doctor", "validate"}:
         from mechanicus_shell_bridge import MechanicusShellBridge
@@ -174,6 +198,17 @@ def route(command: str, args: list[str] | None = None) -> dict[str, Any]:
             "ORGANS/MECHANICUS/REGISTRY/command_policy.json",
         ]
         tools_invoked = [target] if target else []
+    elif command in STATION_COMMANDS:
+        from station_router import route as route_station
+        data = route_station(command, args, state.repo_root)
+        data_sources = [
+            "ORGANS/IMPERIAL_IDE/STATION",
+            "ORGANS/IMPERIAL_IDE/AGENTS/agent_registry.json",
+        ]
+        if "smoke" in command:
+            tools_invoked = ["IMPERIAL_IDE_OPERATIONAL_STATION"]
+        elif command == "register-taskpack" and live_registration:
+            tools_invoked = ["ASTRONOMICON_LOCAL_REGISTRATION_GATE"]
     elif command in INTEGRATION_COMMANDS:
         from integration_surfaces import route_surface
         data = route_surface(state.repo_root, command, args)

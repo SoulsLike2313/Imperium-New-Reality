@@ -20,6 +20,7 @@ RUN:
 """
 import json
 import os
+import subprocess
 import sys
 import threading
 import queue
@@ -35,6 +36,18 @@ except Exception as exc:  # pragma: no cover
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 PKG_ROOT = os.path.dirname(HERE)
+
+OPERATIONAL_ACTIONS = [
+    ("DASHBOARD", "station"),
+    ("NEW TASK", "new-task"),
+    ("BUILD", "build-taskpack"),
+    ("REGISTER DRY", "register-taskpack"),
+    ("LAUNCH", "launch-card"),
+    ("AGENTS", "agents"),
+    ("LIFECYCLE", "lifecycle"),
+    ("SAFETY", "safety"),
+    ("GIT", "git-closure"),
+]
 
 
 # --------------------------------------------------------------------------
@@ -310,19 +323,25 @@ class Workbench(tk.Tk):
         # center: panel detail
         center = ttk.Frame(body, style="TFrame")
         center.grid(row=0, column=1, sticky="nsew", padx=1)
-        center.rowconfigure(2, weight=1)
+        center.rowconfigure(3, weight=1)
         center.columnconfigure(0, weight=1)
         self.panel_title = ttk.Label(center, text="", style="Head.TLabel")
         self.panel_title.grid(row=0, column=0, sticky="w", padx=16, pady=(14, 2))
         self.panel_sub = ttk.Label(center, text="", style="Muted.TLabel")
         self.panel_sub.grid(row=1, column=0, sticky="w", padx=16)
+        actions = tk.Frame(center, bg=C["panel"])
+        actions.grid(row=2, column=0, sticky="ew", padx=12, pady=(8, 0))
+        for label, command in OPERATIONAL_ACTIONS:
+            self._metal_button(
+                actions, label, lambda cmd=command: self.run_station_command(cmd), small=True
+            ).pack(side="left", padx=2)
         self.panel_tree = ttk.Treeview(center, columns=("k", "v"), show="headings",
                                        height=10)
         self.panel_tree.heading("k", text="FIELD")
         self.panel_tree.heading("v", text="VALUE")
         self.panel_tree.column("k", width=220, anchor="w")
         self.panel_tree.column("v", width=520, anchor="w")
-        self.panel_tree.grid(row=2, column=0, sticky="nsew", padx=16, pady=12)
+        self.panel_tree.grid(row=3, column=0, sticky="nsew", padx=16, pady=12)
 
         # right: servitor capsule rack
         rack = ttk.Frame(body, style="Raised.TFrame", width=320)
@@ -430,6 +449,39 @@ class Workbench(tk.Tk):
             self.panel_tree.insert("", "end", values=(k, v))
         self.log("Opened panel: %s" % pid, "dim")
 
+    def run_station_command(self, command):
+        cli = cli_path()
+        if not cli or not REPO_ROOT:
+            self.log("BLOCKED: live repository shell is unavailable.", "err")
+            return
+        argv = [sys.executable, cli, command, "--compact"]
+        task_text = self.task_entry.get().strip()
+        if task_text and command in {"new-task", "build-taskpack", "register-taskpack", "launch-card", "lifecycle"}:
+            argv.insert(-1, task_text)
+        try:
+            completed = subprocess.run(
+                argv,
+                cwd=REPO_ROOT,
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                errors="replace",
+                timeout=120,
+                check=False,
+            )
+            payload = json.loads(completed.stdout)
+            data = payload.get("data", payload)
+            self.panel_tree.delete(*self.panel_tree.get_children())
+            for key, value in data.items():
+                if isinstance(value, (dict, list)):
+                    value = json.dumps(value, ensure_ascii=False)
+                self.panel_tree.insert("", "end", values=(key, str(value)[:1000]))
+            status = payload.get("receipt", {}).get("status", data.get("status", "UNKNOWN"))
+            self.log("Station %s -> %s" % (command, status),
+                     "err" if status == "BLOCKED" else "ok")
+        except Exception as exc:
+            self.log("BLOCKED: station command failed: %s" % exc, "err")
+
     def start_capsule(self, cap):
         cap.start()
         self.log("Capsule %s STARTED" % cap.id, "ok")
@@ -516,8 +568,16 @@ def _mix(a, b, t):
 
 
 def smoke():
+    required_panels = {
+        "operational_dashboard", "station_task_console", "station_taskpack_builder",
+        "live_registration_gate", "station_launch_card", "agent_roster",
+        "servitor_matrix", "task_lifecycle", "reports_browser", "receipts_browser",
+        "safety_center", "station_git_closure", "warp_workspace", "metaos_router",
+        "station_mechanicus_tools", "station_settings",
+    }
+    panel_ids = {panel.get("panel_id") for panel in load_panels()}
     payload = {
-        "status": "PASS_WITH_WARNINGS",
+        "status": "PASS_WITH_WARNINGS" if required_panels <= panel_ids else "BLOCKED",
         "surface": "WORKBENCH_GUI_CANDIDATE",
         "mode": "LIVE_READ_ONLY" if REPO_ROOT else "SAMPLE",
         "repo_root": REPO_ROOT,
@@ -528,6 +588,10 @@ def smoke():
         "window_created": False,
         "real_execution_blocked": True,
         "full_ide_complete": False,
+        "operational_action_commands": [command for _, command in OPERATIONAL_ACTIONS],
+        "operational_actions_wired": cli_path() is not None,
+        "required_station_panels_present": sorted(required_panels & panel_ids),
+        "missing_station_panels": sorted(required_panels - panel_ids),
     }
     print(json.dumps(payload, ensure_ascii=False, indent=2))
     return 0
