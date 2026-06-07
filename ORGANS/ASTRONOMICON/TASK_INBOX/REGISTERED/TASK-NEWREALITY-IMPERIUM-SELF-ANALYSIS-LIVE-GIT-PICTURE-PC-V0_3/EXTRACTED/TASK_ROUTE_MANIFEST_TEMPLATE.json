@@ -1,0 +1,65 @@
+{
+  "schema_version": "astronomicon.task_route_manifest_template.v0_1",
+  "template_id": "TASK_ROUTE_MANIFEST_TEMPLATE_PC_READ_ONLY_SELF_ANALYSIS_V0_1",
+  "task_id": "TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3",
+  "contour": "PC",
+  "route_mode": "LOCAL_PC_READ_ONLY_SELF_ANALYSIS",
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "required_organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "read_first_order": [
+    "AGENTS.md",
+    "MANIFEST.json",
+    "TASK_SPEC.md",
+    "ACCEPTANCE_GATES.md",
+    "OUTPUT_REQUIREMENTS.md",
+    "TASK_ROUTE_MANIFEST_TEMPLATE.json",
+    "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ENTRY_CORRIDOR_CONTRACT.md",
+    "ORGANS/*/READ_FIRST_TASK_PARTICIPATION.md"
+  ],
+  "expected_registered_outputs": {
+    "task_route_manifest": "TASK_ROUTE_MANIFEST.json",
+    "task_start_ack_template": "TASK_START_ACK_TEMPLATE.json",
+    "extracted_manifest": "EXTRACTED/MANIFEST.json"
+  },
+  "allowed_write_scope": [
+    "REPORTS/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/**",
+    "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/**",
+    "ORGANS/ASTRONOMICON/TASK_REGISTRY/**"
+  ],
+  "forbidden_actions": [
+    "delete_files",
+    "move_core_files",
+    "rewrite_AGENTS_md",
+    "rewrite_constitution",
+    "rewrite_emperor_passport",
+    "admit_quarantine_to_canon",
+    "salvage_ancient_files",
+    "reset_hard",
+    "git_clean_fd",
+    "push_without_owner_approval",
+    "remote_route_to_vm2",
+    "remote_route_to_vm3",
+    "live_transfer_to_other_contours",
+    "freelance_production_claim",
+    "warp_activation"
+  ],
+  "owner_message": "start task"
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": "astronomicon.taskpack.v0_1",
+  "taskpack_id": "TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3",
+  "task_id": "TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3",
+  "title": "Imperium New Reality full self-analysis live git picture on PC",
+  "created_from_contour": "PC",
+  "target_contour": "PC",
+  "registration_mode": "ASTRONOMICON_STAGE2_LOCAL_PC_TASKPACK",
+  "execution_mode": "READ_ONLY_SELF_ANALYSIS_WITH_REPORT_OUTPUTS",
+  "mission_summary": "Produce a full live picture of Imperium New Reality from the PC git workspace, including organ map, core support report quarantine split, Astronomicon route config drift, Mechanicus readiness, and next task recommendations.",
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "required_organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "organ_route": {
+    "DOCTRINARIUM": "canon and candidate classification, forbidden claims, law gaps",
+    "OFFICIO_AGENTIS": "role, language, owner facing summary, response contract",
+    "ASTRONOMICON": "task identity, local admission, route manifest, current expected task",
+    "ADMINISTRATUM": "continuity, evidence, receipts, report storage",
+    "MECHANICUS": "read only command inventory, scripts, validators, local tool readiness",
+    "INQUISITION": "fake green blocks, downgrade, risk register",
+    "STRATEGIUM": "priority, cost, KPD, next task selection",
+    "SCHOLA_IMPERIALIS": "lessons, reusable patterns, follow up learning"
+  },
+  "route_manifest_template": "TASK_ROUTE_MANIFEST_TEMPLATE.json",
+  "task_start_ack_template": "TASK_START_ACK_TEMPLATE.json",
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH_UTF8_NO_BOM_NO_CYRILLIC",
+    "canonical_repo_artifacts": "ENGLISH_UTF8_NO_BOM",
+    "owner_facing_russian_runtime_output": {
+      "allowed": true,
+      "language": "RUSSIAN",
+      "encoding": "UTF8_NO_BOM",
+      "authority": "OFFICIO_AGENTIS",
+      "required_route": "OFFICIO_AGENTIS_OWNER_FACING_FINAL_RESPONSE",
+      "allowed_files": [
+        "REPORTS/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/FINAL_OWNER_SUMMARY_RU.md"
+      ],
+      "not_allowed_in_taskpack_root_files": true
+    },
+    "cyrillic_in_taskpack": {
+      "allowed": false,
+      "scope": "MANIFEST.json, TASK_SPEC.md, ACCEPTANCE_GATES.md, OUTPUT_REQUIREMENTS.md, TASK_ROUTE_MANIFEST_TEMPLATE.json, TASK_START_ACK_TEMPLATE.json"
+    },
+    "localization_exception": {
+      "allowed": true,
+      "authority": "OFFICIO_AGENTIS",
+      "scope": "owner facing final summary only after Officio role entry",
+      "forbidden_scope": "taskpack internal files"
+    }
+  },
+  "caps_to_carry": [
+    "CAP_STAGE2_WITH_WARNINGS_ONLY",
+    "CAP_NO_CLEAN_PASS",
+    "CAP_NO_DESTRUCTIVE_CLEANUP",
+    "CAP_NO_WARP_RUNTIME",
+    "CAP_NO_REMOTE_ROUTE",
+    "CAP_NO_VM2",
+    "CAP_NO_LIVE_TRANSFER",
+    "CAP_NO_FREELANCE_PRODUCTION_CLAIM",
+    "CAP_ANCIENT_REPO_READ_ONLY",
+    "CAP_NEW_REALITY_ONLY_AS_ACTIVE_TRUTH"
+  ],
+  "allowed_write_scope": [
+    "REPORTS/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/**",
+    "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/**",
+    "ORGANS/ASTRONOMICON/TASK_REGISTRY/**"
+  ],
+  "forbidden_actions": [
+    "delete_files",
+    "move_core_files",
+    "rewrite_AGENTS_md",
+    "rewrite_constitution",
+    "rewrite_emperor_passport",
+    "admit_quarantine_to_canon",
+    "salvage_ancient_files",
+    "reset_hard",
+    "git_clean_fd",
+    "push_without_owner_approval",
+    "remote_route_to_vm2",
+    "remote_route_to_vm3",
+    "live_transfer_to_other_contours",
+    "freelance_production_claim",
+    "warp_activation"
+  ],
+  "primary_outputs": [
+    "IMPERIUM_NEW_REALITY_FULL_PICTURE.md",
+    "imperium_new_reality_full_picture.json",
+    "LIVE_GIT_ADDENDUM_PC.md",
+    "organ_core_map.json",
+    "zone_inventory.json",
+    "astronomicon_local_pc_registration_and_route_drift_report.md",
+    "mechanicus_current_readiness_snapshot.md",
+    "passport_constitution_agents_patch_plan.md",
+    "servitor_next_task_recommendation.md",
+    "FINAL_OWNER_SUMMARY_RU.md"
+  ]
+}

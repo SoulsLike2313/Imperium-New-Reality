@@ -1,0 +1,202 @@
+{
+  "schema_version": "imperium.organ_core_map.v0_1",
+  "task_id": "TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3",
+  "required_core_source": "ORGANS/_CORE_GOVERNANCE/REQUIRED_9_ORGANS_V0_1.json",
+  "required_core_status": "CANDIDATE_V0_1",
+  "records": [
+    {
+      "organ_id": "_CORE_GOVERNANCE",
+      "path": "ORGANS/_CORE_GOVERNANCE",
+      "file_count": 46,
+      "known_contract_files": [
+        "ORGANS/_CORE_GOVERNANCE/CORE_SHAPE_CONTRACT_V0_1.md",
+        "ORGANS/_CORE_GOVERNANCE/ORGAN_LIFE_ZONE_CONTRACT_V0_1.md",
+        "ORGANS/_CORE_GOVERNANCE/SUPPORT_ZONE_CONTRACT_V0_1.md"
+      ],
+      "known_tool_files": [
+        "ORGANS/_CORE_GOVERNANCE/TOOLS/core_shape_master_check_v0_1.py",
+        "ORGANS/_CORE_GOVERNANCE/TOOLS/core_file_classifier_dry_run_v0_2.py",
+        "ORGANS/_CORE_GOVERNANCE/TOOLS/quarantine_active_use_checker_v0_1.py"
+      ],
+      "known_report_files": [],
+      "current_status": "AUXILIARY_GOVERNANCE_CANDIDATE_ACTIVE",
+      "risks": ["Candidate authority; not a required organ.", "Tool ownership is split between governance location and Mechanicus registration cards."],
+      "next_required_action": "Keep as the machine-checkable governance home and define canon admission/ownership explicitly."
+    },
+    {
+      "organ_id": "_POST_WORK_RING",
+      "path": "ORGANS/_POST_WORK_RING",
+      "file_count": 6,
+      "known_contract_files": [
+        "ORGANS/_POST_WORK_RING/POST_WORK_ORGAN_RING_CONTRACT_V0_1.md",
+        "ORGANS/_POST_WORK_RING/POST_WORK_ORGAN_RING_CONTRACT_V0_2.md"
+      ],
+      "known_tool_files": [],
+      "known_report_files": [],
+      "current_status": "AUXILIARY_POST_WORK_CANDIDATE_ACTIVE",
+      "risks": ["Versioned ring contracts coexist and require an explicit current-version pointer."],
+      "next_required_action": "Declare the authoritative ring version and enforce it through Administratum closure."
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "path": "ORGANS/ADMINISTRATUM",
+      "file_count": 758,
+      "known_contract_files": [
+        "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/CORE_ADDRESS_BOOK_CONTRACT_V0_1.md",
+        "ORGANS/ADMINISTRATUM/BUNDLE_GATE/ADMINISTRATUM_BUNDLE_GATE_V0_2_CONTRACT.md",
+        "ORGANS/ADMINISTRATUM/CONTRACTS/EVIDENCE_LEDGER_AND_CONTINUITY_CONTRACT.md"
+      ],
+      "known_tool_files": [
+        "ORGANS/ADMINISTRATUM/BUNDLE_GATE/administratum_bundle_gate_v0_2.py",
+        "ORGANS/ADMINISTRATUM/BUNDLE_GATE/administratum_bundle_packager_v0_2.py",
+        "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_bundle_checker_v0_2.py"
+      ],
+      "known_report_files": ["ORGANS/ADMINISTRATUM/REPORTS"],
+      "current_status": "REQUIRED_CANDIDATE_LIFE_ZONE_PRESENT",
+      "risks": ["Large legacy mirror and report history inflate semantic search.", "Closure semantics still include candidate contracts."],
+      "next_required_action": "Publish one active continuity/closure index that excludes legacy mirrors by default."
+    },
+    {
+      "organ_id": "ASTRONOMICON",
+      "path": "ORGANS/ASTRONOMICON",
+      "file_count": 987,
+      "known_contract_files": [
+        "ORGANS/ASTRONOMICON/CONTRACTS/TASKPACK_SELF_START_READ_ORDER_CONTRACT.md",
+        "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ENTRY_CORRIDOR_CONTRACT.md",
+        "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASKPACK_ADMISSION_CONTRACT.json"
+      ],
+      "known_tool_files": [
+        "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py",
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_intake_v0_1.py",
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_task_id_resolver_v0_1.py",
+        "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TOOLS/check_task_entry_route_v0_1.py"
+      ],
+      "known_report_files": ["ORGANS/ASTRONOMICON/REPORTS"],
+      "current_status": "REQUIRED_CANDIDATE_LIFE_ZONE_PRESENT_LOCAL_PC_REGISTRATION_PROVEN",
+      "risks": ["Default route config path uses removed IMPERIUM_NEW_GENERATION prefix.", "Ignored legacy-prefix residue masks the bug.", "Route manifest read order points to a missing root Matrix Spine path."],
+      "next_required_action": "Implement canonical root-relative discovery with PC-first routing and legacy fallback warnings."
+    },
+    {
+      "organ_id": "CUSTODES",
+      "path": "ORGANS/CUSTODES",
+      "file_count": 6,
+      "known_contract_files": [
+        "ORGANS/CUSTODES/ORGAN_CONTRACT.md",
+        "ORGANS/CUSTODES/ORGAN_LIFE_AUDIT/ORGAN_LIFE_AUDIT_CONTRACT_V0_1.md",
+        "ORGANS/CUSTODES/ORGAN_MATRIX_AUDIT/CUSTODES_ORGAN_MATRIX_AUDIT_CONTRACT_V0_1.md"
+      ],
+      "known_tool_files": [],
+      "known_report_files": [],
+      "current_status": "REQUIRED_CANDIDATE_NARROW_AUDIT_AUTHORITY",
+      "risks": ["Very small body; authority is deliberately audit-only and not owner override."],
+      "next_required_action": "Retain narrow audit scope and add a current organ-card/index without expanding authority."
+    },
+    {
+      "organ_id": "DOCTRINARIUM",
+      "path": "ORGANS/DOCTRINARIUM",
+      "file_count": 72,
+      "known_contract_files": [
+        "ORGANS/DOCTRINARIUM/TASK_PARTICIPATION/TASK_PARTICIPATION_CONTRACT.json",
+        "ORGANS/DOCTRINARIUM/LAWS"
+      ],
+      "known_tool_files": [],
+      "known_report_files": ["ORGANS/DOCTRINARIUM/LEGACY_IMPORTED_ROOT_MIRROR/DOCTRINARIUM/GATE_SPINE/REPORTS"],
+      "current_status": "REQUIRED_CANDIDATE_LIFE_ZONE_PRESENT",
+      "risks": ["Most laws remain candidate.", "No current-root script-first law admission entrypoint was found."],
+      "next_required_action": "Create a current-root doctrine index and explicit candidate-to-canon review queue."
+    },
+    {
+      "organ_id": "INQUISITION",
+      "path": "ORGANS/INQUISITION",
+      "file_count": 139,
+      "known_contract_files": [
+        "ORGANS/INQUISITION/CONTRACTS/HARD_RED_TEAM_CLOSURE_GATE.md",
+        "ORGANS/INQUISITION/CONTRACTS/CAP_CLOSURE_SEMANTICS_CONTRACT.md",
+        "ORGANS/INQUISITION/TASK_PARTICIPATION/TASK_PARTICIPATION_CONTRACT.json"
+      ],
+      "known_tool_files": [
+        "ORGANS/INQUISITION/TOOLS/inquisition_mojibake_filter_v0_1.py",
+        "ORGANS/INQUISITION/TOOLS/run_language_encoding_fixtures_v0_1.py"
+      ],
+      "known_report_files": ["ORGANS/INQUISITION/REPORTS"],
+      "current_status": "REQUIRED_CANDIDATE_LIFE_ZONE_PRESENT",
+      "risks": ["Hard red-team remains partly manual.", "Cross-task cap history is report-local."],
+      "next_required_action": "Add a central claim/cap index and preserve quarantine active-use checks as hard gates."
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "path": "ORGANS/MECHANICUS",
+      "file_count": 1690,
+      "known_contract_files": [
+        "ORGANS/MECHANICUS/CONTRACTS/SCRIPT_FIRST_HARNESS_CONTRACT.md",
+        "ORGANS/MECHANICUS/CONTRACTS/MATRIX_SPINE_VALIDATOR_RUNTIME_CONTRACT_V0_1.md",
+        "ORGANS/MECHANICUS/ARSENAL/CANONIZATION_POLICY.md"
+      ],
+      "known_tool_files": [
+        "ORGANS/MECHANICUS/TOOLS/check_external_finalization_semantics_v0_1.py",
+        "ORGANS/MECHANICUS/TOOLS/receipt_producer_inventory_preflight_v0_1.py",
+        "ORGANS/MECHANICUS/TOOLS/CORE_SHAPE_DRIFT_TOOLCHAIN_CARD.json",
+        "ORGANS/MECHANICUS/TOOLS/CORE_PHYSICAL_MIGRATION_TOOLCHAIN_CARD.json"
+      ],
+      "known_report_files": ["ORGANS/MECHANICUS/REPORTS"],
+      "current_status": "REQUIRED_CANDIDATE_LIFE_ZONE_PRESENT_PARTIALLY_SCRIPT_FIRST",
+      "risks": ["Only two active scripts are physically under current Mechanicus TOOLS.", "Most mass arsenal material is in a legacy mirror.", "Some tool-card entrypoints retain the removed root prefix."],
+      "next_required_action": "Build a current-root executable tool registry with replay status and path validation."
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "path": "ORGANS/OFFICIO_AGENTIS",
+      "file_count": 141,
+      "known_contract_files": [
+        "ORGANS/OFFICIO_AGENTIS/CONTRACTS/OFFICIO_ROLE_ENTRY_CONTRACT.md",
+        "ORGANS/OFFICIO_AGENTIS/CONTRACTS/OWNER_FACING_RU_RESPONSE_CONTRACT.md",
+        "ORGANS/OFFICIO_AGENTIS/CONTRACTS/officio_final_owner_response_contract.md"
+      ],
+      "known_tool_files": [],
+      "known_report_files": ["ORGANS/OFFICIO_AGENTIS/LEGACY_IMPORTED_ROOT_MIRROR/OFFICIO_AGENTIS/REPORTS"],
+      "current_status": "REQUIRED_CANDIDATE_LIFE_ZONE_PRESENT_POLICY_ACTIVE",
+      "risks": ["Response contracts exist in current and legacy locations.", "Language enforcement is policy-first rather than a single hard gate."],
+      "next_required_action": "Publish one current response-contract index and machine-check the four-part final shape."
+    },
+    {
+      "organ_id": "SCHOLA_IMPERIALIS",
+      "path": "ORGANS/SCHOLA_IMPERIALIS",
+      "file_count": 21,
+      "known_contract_files": [
+        "ORGANS/SCHOLA_IMPERIALIS/CONTRACTS/LESSON_CAPTURE_CONTRACT.md",
+        "ORGANS/SCHOLA_IMPERIALIS/LEARNING/AGGRESSIVE_ORGAN_LEARNING_CONTRACT_V0_1.md",
+        "ORGANS/SCHOLA_IMPERIALIS/LEARNING/legacy_pain_learning_archive_contract_v0_1.md"
+      ],
+      "known_tool_files": ["ORGANS/SCHOLA_IMPERIALIS/LEARNING/schola_learning_capture_validator_v0_1.py"],
+      "known_report_files": [],
+      "current_status": "REQUIRED_CANDIDATE_LIFE_ZONE_PRESENT",
+      "risks": ["Learning capture remains largely manual.", "Cross-task learning schema is not centralized."],
+      "next_required_action": "Index lessons by source task, preventive rule, and script-first follow-up."
+    },
+    {
+      "organ_id": "SPECULUM",
+      "path": "ORGANS/SPECULUM",
+      "file_count": 1,
+      "known_contract_files": ["ORGANS/SPECULUM/CONTRACTS/review_reinforcement_proposals_contract_v0_1.md"],
+      "known_tool_files": [],
+      "known_report_files": [],
+      "current_status": "NON_CORE_REVIEW_AUXILIARY_MINIMAL",
+      "risks": ["Not listed in REQUIRED_9_ORGANS_V0_1; purpose is not visible from a root index."],
+      "next_required_action": "Classify explicitly as auxiliary, future, or candidate and state active-use boundaries."
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "path": "ORGANS/STRATEGIUM",
+      "file_count": 55,
+      "known_contract_files": [
+        "ORGANS/STRATEGIUM/COST_GATE/TASK_BUDGET_CONTRACT_V0_1.md",
+        "ORGANS/STRATEGIUM/TASK_PARTICIPATION/TASK_PARTICIPATION_CONTRACT.json"
+      ],
+      "known_tool_files": ["ORGANS/STRATEGIUM/COST_GATE/strategium_task_cost_checker_v0_1.py"],
+      "known_report_files": [],
+      "current_status": "REQUIRED_CANDIDATE_LIFE_ZONE_PRESENT",
+      "risks": ["Prioritization is structured but manual.", "V0.1 cost checker does not measure actual token/time/command cost."],
+      "next_required_action": "Add measured local task-cost telemetry without remote dependency."
+    }
+  ]
+}
