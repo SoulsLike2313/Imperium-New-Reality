@@ -1,23 +1,43 @@
 {
   "receipt_type": "git_commit_push_receipt",
   "task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1",
-  "timestamp_utc": "2026-06-07T11:10:26Z",
-  "phase": "PRE_PUSH_PLACEHOLDER",
-  "status": "PENDING_VALIDATED_PUSH",
-  "commit_sha": null,
-  "origin_master_sha": null,
-  "head_equals_origin_master_after_push": null,
-  "git_status_after_push": null,
-  "pushed_files_summary": null,
-  "validation_summary": "required_count=50; changed_json_count=35; py_compile=PASS; mechanicus_doctor=PASS_WITH_WARNINGS; astronomicon_smoke=PASS_WITH_WARNINGS; staged_scope_count=66; staged_secret_hits=0",
-  "self_reference_boundary": "This receipt will be updated after the validated-output push; the final receipt update commit is verified by final git status and final response.",
+  "timestamp_utc": "2026-06-07T11:14:04Z",
+  "phase": "POST_VALIDATED_OUTPUTS_PUSH",
+  "status": "VALIDATED_OUTPUTS_PUSHED",
+  "commit_sha": "24e752d7ffada557b59012eebe24b7105f147fcc",
+  "origin_master_sha": "24e752d7ffada557b59012eebe24b7105f147fcc",
+  "head_equals_origin_master_after_push": true,
+  "git_status_after_push": [
+    "## master...origin/master",
+    " D REPORTS/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/astronomicon_local_pc_registration_and_route_drift_report.zip"
+  ],
+  "pushed_files_summary": {
+    "staged_files_pushed": 66,
+    "governance_canonized": true,
+    "mechanicus_ultra_foundation_created": true,
+    "imperial_ide_foundation_created": true,
+    "astronomicon_pc_launcher_created": true,
+    "reports_created": true,
+    "out_of_scope_deletion_pushed": false
+  },
+  "validation_summary": {
+    "required_outputs": "required_count=50",
+    "changed_json_parse": "json_count=35",
+    "py_compile": "PASS",
+    "mechanicus_validate": "PASS",
+    "mechanicus_doctor": "PASS_WITH_WARNINGS",
+    "mechanicus_gateway_dry_run": "PASS_WITH_WARNINGS",
+    "astronomicon_smoke": "PASS_WITH_WARNINGS",
+    "staged_scope": "staged_scope_count=66",
+    "staged_secret_scan": "staged_secret_hits=0"
+  },
   "pre_existing_dirty_out_of_scope": {
     "path": "REPORTS/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/astronomicon_local_pc_registration_and_route_drift_report.zip",
     "status": "DELETED_IN_WORKTREE_BEFORE_TASK_EDITS",
-    "allowed_write_scope": false,
     "owner_instruction": "ignore and continue; owner will clean manually",
     "staged": false,
     "pushed": false
   },
-  "verdict": "PENDING"
+  "self_reference_boundary": "This receipt records the validated-output commit pushed before the receipt update. The later receipt-update commit cannot embed its own final SHA without changing it; final HEAD/origin is reported in the final response.",
+  "verdict": "PASS_WITH_WARNINGS_PUSHED_READY_FOR_MECHANICUS_IDE_NEXT_BUILD"
 }

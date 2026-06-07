@@ -4,7 +4,7 @@
 
 ## Результат
 
-`PASS_WITH_WARNINGS` после validated push, если финальный git gate пройдет.
+`PASS_WITH_WARNINGS_PUSHED_READY_FOR_MECHANICUS_IDE_NEXT_BUILD`.
 
 ## Что сделано
 
@@ -13,11 +13,16 @@
 - Imperial IDE получил foundation: contracts, schemas, extension registry, workspace model и Mechanicus bridge.
 - Astronomicon получил PC launcher и launch note; remote route не включался.
 
+## Git
+
+- Validated-output commit pushed: `24e752d7ffada557b59012eebe24b7105f147fcc`.
+- Out-of-scope deletion из старого отчета не staged и не pushed.
+
 ## Важные ограничения
 
 - Полный GUI IDE не реализован и не заявлен.
 - Не все tools доказаны; unrestricted real execution остается blocked.
-- Pre-existing deletion из старого отчета оставлена нестейдженной по owner override.
+- Рабочее дерево после push сохраняет owner-ignored deletion, которую владелец очистит вручную.
 
 ## Следующая задача
 
