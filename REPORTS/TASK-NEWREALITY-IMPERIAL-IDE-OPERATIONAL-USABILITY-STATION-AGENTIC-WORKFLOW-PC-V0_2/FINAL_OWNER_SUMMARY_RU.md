@@ -27,4 +27,6 @@ python ORGANS/IMPERIAL_IDE/WORKBENCH/GUI/imperial_gui_workbench.py
 python ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py station
 ```
 
-Предварительный вердикт: `PASS_WITH_WARNINGS_PUSH_PENDING`.
+Git push: `PASS`. Implementation commit: `53b9e30a4998362c2c50e3134ae26aa93cf4ecc0`.
+
+Итоговый вердикт: `PASS_WITH_WARNINGS_PUSHED_READY_FOR_OWNER_OPERATIONAL_USE`.
