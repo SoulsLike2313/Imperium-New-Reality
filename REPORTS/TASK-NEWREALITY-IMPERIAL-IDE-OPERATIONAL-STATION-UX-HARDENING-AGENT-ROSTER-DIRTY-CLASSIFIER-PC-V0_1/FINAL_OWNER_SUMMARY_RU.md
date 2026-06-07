@@ -23,4 +23,6 @@ Git/push:
 - Dirty state: ALLOWED_AFTER_STAGING_VALIDATED_IN_SCOPE_ONLY_WITH_WARNINGS.
 - Рекомендация: Stage only validated in-scope task outputs; keep known unrelated ZIPs unstaged; do not delete files.
 
-Следующий рекомендуемый task: owner review live-registration promotion gate или отдельный real execution gate, если нужно открыть выполнение. Post-push HEAD equals origin/master: True.
+Taskpack CLI-контракт дополнен обязательными aliases `taskpacks`, `taskpack-validate`, `taskpack-open`, `taskpack-copy-path`; schema добавлена и проверена. Корректирующий commit `85cac4b2d929ea1032f627885abe67299753dc9a` pushed, post-push HEAD equals origin/master: True.
+
+Следующий рекомендуемый task: owner review live-registration promotion gate или отдельный real execution gate, если нужно открыть выполнение.
