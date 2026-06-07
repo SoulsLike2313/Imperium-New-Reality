@@ -12,10 +12,11 @@ STAGES = [
     "POLICY_CHECKED",
     "TASKPACK_BUILT",
     "TASKPACK_VALIDATED",
-    "REGISTERED",
+    "DRY_RUN_REGISTERED",
+    "LIVE_REGISTERED",
     "LAUNCH_CARD_READY",
     "HANDOFF_READY",
-    "EXECUTION_PENDING",
+    "EXECUTION_STARTED",
     "REPORT_DETECTED",
     "VALIDATION_DETECTED",
     "BUNDLE_GATE_CHECKED",
@@ -36,7 +37,7 @@ def new_lifecycle(task_id: str) -> dict[str, Any]:
         "stages": [
             {
                 "stage": name,
-                "state": "EXECUTION_PENDING" if name == "EXECUTION_PENDING" else "UNKNOWN",
+                "state": "BLOCKED" if name == "EXECUTION_STARTED" else "UNKNOWN",
                 "detail": "",
                 "updated_at_utc": utc_now(),
             }
@@ -54,8 +55,8 @@ def set_stage(state: dict[str, Any], stage: str, value: str, detail: str = "") -
     record.update({"state": value, "detail": detail, "updated_at_utc": utc_now()})
     if stage == "HANDOFF_READY" and value in {"ACTIVE", "LIVE", "DRY_RUN"}:
         state["handoff_ready"] = True
-    if stage == "EXECUTION_PENDING":
-        state["execution_complete"] = False
+    if stage == "EXECUTION_STARTED" and value in {"ACTIVE", "LIVE"}:
+        state["execution_complete"] = True
 
 
 def write_state(path: Path, state: dict[str, Any]) -> str:
@@ -68,14 +69,16 @@ def smoke() -> dict[str, Any]:
     state = new_lifecycle("TASK-NEWREALITY-STATION-LIFECYCLE-SMOKE-PC-V0_1")
     set_stage(state, "INTENT_CAPTURED", "ACTIVE", "smoke intent")
     set_stage(state, "HANDOFF_READY", "DRY_RUN", "copy-ready Servitor Prime handoff")
-    set_stage(state, "EXECUTION_PENDING", "BLOCKED", "real servitor execution remains gated")
+    set_stage(state, "DRY_RUN_REGISTERED", "DRY_RUN", "dry-run registration state is separate")
+    set_stage(state, "LIVE_REGISTERED", "BLOCKED", "live registration was not run")
+    set_stage(state, "EXECUTION_STARTED", "BLOCKED", "real servitor execution remains gated")
     return {
         "status": "PASS_WITH_WARNINGS",
         "stage_count": len(state["stages"]),
         "required_stage_count": len(STAGES),
         "handoff_ready": state["handoff_ready"],
         "execution_complete": state["execution_complete"],
-        "execution_pending_state": next(
-            item["state"] for item in state["stages"] if item["stage"] == "EXECUTION_PENDING"
+        "execution_started_state": next(
+            item["state"] for item in state["stages"] if item["stage"] == "EXECUTION_STARTED"
         ),
     }

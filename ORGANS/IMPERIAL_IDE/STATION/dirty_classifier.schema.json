@@ -1,0 +1,31 @@
+{
+  "schema_version": "imperial_ide.dirty_classifier.schema.v0_1",
+  "required_fields": [
+    "task_id",
+    "dirty_count",
+    "classified_items",
+    "known_zip_1_classification",
+    "known_zip_2_classification",
+    "secrets_detected",
+    "runtime_artifacts_detected",
+    "stage_candidates",
+    "quarantine_candidates",
+    "push_allowed_state",
+    "recommended_action",
+    "timestamp"
+  ],
+  "categories": [
+    "CANONICAL_REPORT_ARTIFACT",
+    "FRESH_TASK_OUTPUT_CANDIDATE",
+    "OLD_UNRELATED_ARTIFACT",
+    "RUNTIME_ARTIFACT",
+    "GENERATED_TASKPACK_RUNTIME",
+    "LOCAL_CONFIG",
+    "SECRET_RISK",
+    "STAGE_CANDIDATE",
+    "IGNORE_CANDIDATE",
+    "QUARANTINE_CANDIDATE",
+    "DELETE_REQUIRES_OWNER_APPROVAL",
+    "UNKNOWN_REVIEW_REQUIRED"
+  ]
+}

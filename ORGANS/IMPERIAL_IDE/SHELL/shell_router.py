@@ -27,6 +27,7 @@ RISK = {
     "metaos-bundle-gate": "LOW_LOCAL_SMOKE",
     "ops-smoke": "LOW_LOCAL_SMOKE",
     "station-smoke": "LOW_LOCAL_SMOKE",
+    "station-ux-smoke": "LOW_LOCAL_SMOKE",
     "lifecycle-smoke": "LOW_LOCAL_SMOKE",
     "warp-open": "LOW_DRY_RUN",
     "warp-gate": "LOW_DRY_RUN",
@@ -39,6 +40,14 @@ RISK = {
     "launch-card": "LOW_DRY_RUN",
     "lifecycle": "LOW_DRY_RUN",
     "git-closure": "LOW_DRY_RUN",
+    "taskpack-manager": "LOW_READ_ONLY",
+    "taskpack-list": "LOW_READ_ONLY",
+    "taskpack-inspect": "LOW_READ_ONLY",
+    "show-json": "LOW_READ_ONLY",
+    "show-summary": "LOW_READ_ONLY",
+    "path-actions": "LOW_READ_ONLY",
+    "dirty-classifier": "LOW_READ_ONLY",
+    "live-registration-promote": "HIGH_LOCAL_GATED",
     "station": "LOW_READ_ONLY",
     "station-tui": "LOW_READ_ONLY",
     "station-gui": "LOW_READ_ONLY",
@@ -61,6 +70,9 @@ STATION_COMMANDS = {
     "agent-status", "task-console", "new-task", "build-taskpack",
     "validate-taskpack", "register-taskpack", "launch-card", "handoff-card",
     "lifecycle", "reports-latest", "receipts-latest", "safety", "git-closure",
+    "station-ux-smoke", "taskpack-manager", "taskpack-list", "taskpack-inspect",
+    "show-json", "show-summary", "path-actions", "dirty-classifier",
+    "live-registration-promote",
 }
 
 INTEGRATION_COMMANDS = {
@@ -91,11 +103,12 @@ def route(command: str, args: list[str] | None = None) -> dict[str, Any]:
     data_sources: list[str] = []
     tools_invoked: list[str] = []
     live_registration = command == "register-taskpack" and bool(args) and args[0].lower() == "live"
-    dry_run = not live_registration and (command == "dry-run-tool" or command in {
+    promotion_live = command == "live-registration-promote" and bool(args) and args[0] == "CONFIRM_LIVE_REGISTRATION"
+    dry_run = not live_registration and not promotion_live and (command == "dry-run-tool" or command in {
         "warp-open", "warp-gate", "metaos-route", "metaos-servitor", "metaos-chronicle",
         "classify-task", "build-taskpack", "register-taskpack", "launch-card",
         "validate-taskpack", "handoff-card", "lifecycle", "git-closure", "task-console",
-        "new-task",
+        "new-task", "dirty-classifier", "live-registration-promote",
     })
 
     if command in {"tools", "capabilities", "policy", "dry-run-tool", "doctor", "validate"}:
@@ -208,6 +221,8 @@ def route(command: str, args: list[str] | None = None) -> dict[str, Any]:
         if "smoke" in command:
             tools_invoked = ["IMPERIAL_IDE_OPERATIONAL_STATION"]
         elif command == "register-taskpack" and live_registration:
+            tools_invoked = ["ASTRONOMICON_LOCAL_REGISTRATION_GATE"]
+        elif command == "live-registration-promote" and promotion_live:
             tools_invoked = ["ASTRONOMICON_LOCAL_REGISTRATION_GATE"]
     elif command in INTEGRATION_COMMANDS:
         from integration_surfaces import route_surface

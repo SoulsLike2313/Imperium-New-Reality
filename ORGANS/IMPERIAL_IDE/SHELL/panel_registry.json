@@ -1,6 +1,6 @@
 {
   "schema_version": "imperial_ide.panel_registry.v0_3",
-  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-USABILITY-STATION-AGENTIC-WORKFLOW-PC-V0_2",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1",
   "registry_status": "OPERATIONAL_STATION_ACTIVE_WITH_GATED_EXECUTION",
   "panels": [
     {
@@ -405,6 +405,63 @@
       "data_sources": ["git"],
       "commands": ["git-closure"],
       "risk_class": "LOW_READ_ONLY",
+      "current_status": "WARNING"
+    },
+    {
+      "panel_id": "json_summary_viewer",
+      "title": "Summary and Full JSON Viewer",
+      "owner_organ": "IMPERIAL_IDE",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/STATION/summary_renderer.py",
+        "ORGANS/IMPERIAL_IDE/STATION/json_viewer.py"
+      ],
+      "commands": ["show-summary", "show-json", "path-actions"],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "ACTIVE"
+    },
+    {
+      "panel_id": "taskpack_manager",
+      "title": "Taskpack Manager",
+      "owner_organ": "ASTRONOMICON",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/STATION/taskpack_manager.py",
+        "ORGANS/IMPERIAL_IDE/STATION/generated_taskpacks"
+      ],
+      "commands": ["taskpack-manager", "taskpack-list", "taskpack-inspect", "validate-taskpack"],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "ACTIVE"
+    },
+    {
+      "panel_id": "handoff_card",
+      "title": "Handoff Card",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "data_sources": ["ORGANS/IMPERIAL_IDE/STATION/handoff_card_viewer.py"],
+      "commands": ["handoff-card"],
+      "risk_class": "LOW_DRY_RUN",
+      "current_status": "ACTIVE"
+    },
+    {
+      "panel_id": "dirty_classifier",
+      "title": "Dirty Classifier",
+      "owner_organ": "INQUISITION",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/STATION/dirty_classifier.py",
+        "git status --porcelain=v1 -uall"
+      ],
+      "commands": ["dirty-classifier"],
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "WARNING"
+    },
+    {
+      "panel_id": "live_registration_promotion",
+      "title": "Live Registration Promotion",
+      "owner_organ": "ASTRONOMICON",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/STATION/live_registration_promoter.py",
+        "ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json"
+      ],
+      "commands": ["live-registration-promote"],
+      "risk_class": "HIGH_LOCAL_GATED",
       "current_status": "WARNING"
     },
     {

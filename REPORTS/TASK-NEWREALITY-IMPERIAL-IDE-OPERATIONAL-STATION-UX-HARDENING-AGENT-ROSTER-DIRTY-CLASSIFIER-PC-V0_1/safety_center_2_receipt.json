@@ -1,0 +1,60 @@
+{
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1",
+  "status": "PASS_WITH_WARNINGS",
+  "real_servitor_execution": {
+    "allowed_now": false,
+    "reason": "No owner-approved real execution gate is open.",
+    "future_gate": "Dedicated real servitor execution task with receipts."
+  },
+  "live_llm_backend": {
+    "allowed_now": false,
+    "reason": "No live LLM secrets/backend gate is open.",
+    "future_gate": "Dedicated LLM backend task with secret policy."
+  },
+  "unsafe_shell": {
+    "allowed_now": false,
+    "reason": "Mechanicus policy keeps unknown and unsafe commands blocked."
+  },
+  "arbitrary_shell": {
+    "allowed_now": false,
+    "reason": "Must remain false for this task."
+  },
+  "dry_run_default": true,
+  "live_registration": {
+    "allowed_now": true,
+    "scope": "LOCAL_PC_VALIDATED_GENERATED_TASKPACK_ONLY",
+    "confirmation_required": true
+  },
+  "live_registration_scope": "LOCAL_PC_VALIDATED_GENERATED_TASKPACK_ONLY",
+  "push_gate": "ALLOWED_AFTER_STAGING_VALIDATED_IN_SCOPE_ONLY_WITH_WARNINGS",
+  "dirty_state": {
+    "dirty_count": 73,
+    "push_allowed_state": "ALLOWED_AFTER_STAGING_VALIDATED_IN_SCOPE_ONLY_WITH_WARNINGS",
+    "recommended_action": "Stage only validated in-scope task outputs; keep known unrelated ZIPs unstaged; do not delete files."
+  },
+  "secrets_state": {
+    "secrets_detected": false,
+    "secret_items": []
+  },
+  "runtime_state": {
+    "runtime_artifacts_detected": false,
+    "runtime_items": []
+  },
+  "remote_contours": {
+    "VM2": "DISABLED_OUT_OF_SCOPE",
+    "VM3": "DISABLED_OUT_OF_SCOPE"
+  },
+  "destructive_cleanup": {
+    "allowed_now": false,
+    "reason": "Deletion/quarantine requires owner-approved batch plan."
+  },
+  "real_servitor_execution_enabled": false,
+  "live_llm_backend_enabled": false,
+  "unsafe_shell_available": false,
+  "arbitrary_shell_allowed": false,
+  "remote_contours_enabled": false,
+  "destructive_cleanup_enabled": false,
+  "push_gate_state": "ALLOWED_AFTER_STAGING_VALIDATED_IN_SCOPE_ONLY_WITH_WARNINGS",
+  "result": "PASS_WITH_WARNINGS",
+  "timestamp": "2026-06-07T20:33:34Z"
+}

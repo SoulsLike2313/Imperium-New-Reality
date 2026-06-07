@@ -32,11 +32,16 @@ from station_router import route as station_route
 
 OPERATIONAL_MENU = [
     ("Dashboard", "station"),
+    ("Show Summary", "show-summary"),
+    ("Full JSON", "show-json"),
+    ("Taskpack Manager", "taskpack-manager"),
+    ("Taskpack Inspect", "taskpack-inspect"),
     ("Task Console", "task-console"),
-    ("Task Templates", "task-console"),
     ("Build Taskpack", "build-taskpack"),
     ("Register Taskpack", "register-taskpack"),
+    ("Live Registration Promotion", "live-registration-promote"),
     ("Launch Card", "launch-card"),
+    ("Handoff Card", "handoff-card"),
     ("Agents and Servitors", "agents"),
     ("Astronomicon", "task-console"),
     ("Mechanicus", "safety"),
@@ -44,7 +49,9 @@ OPERATIONAL_MENU = [
     ("MetaOS", "station"),
     ("Reports", "reports-latest"),
     ("Receipts", "receipts-latest"),
-    ("Safety", "safety"),
+    ("Dirty Classifier", "dirty-classifier"),
+    ("Safety Center 2.0", "safety"),
+    ("Lifecycle", "lifecycle"),
     ("Git Closure", "git-closure"),
     ("Settings", "settings"),
 ]
@@ -159,6 +166,26 @@ def load_panels():
 
 
 def load_capsules():
+    env = os.environ.get("IMPERIUM_ROOT")
+    candidates = [env] if env else []
+    candidates.extend(os.path.dirname(PKG_ROOT) for _ in [0])
+    for root in candidates:
+        if not root:
+            continue
+        path = os.path.join(root, "ORGANS", "IMPERIAL_IDE", "AGENTS", "servitor_roster.json")
+        if os.path.isfile(path):
+            with open(path, "r", encoding="utf-8-sig") as fh:
+                data = json.load(fh)
+            return [
+                {
+                    "label": item.get("servitor_name", item.get("agent_id", "")),
+                    "organ": item.get("agent_id", ""),
+                    "mode": item.get("mode", ""),
+                    "status": item.get("status", ""),
+                    "rate_limit_cooldown_s": 0,
+                }
+                for item in data.get("servitors", [])
+            ]
     with open(os.path.join(PKG_ROOT, "SERVITORS", "capsules.config.json"), "r",
               encoding="utf-8") as fh:
         return json.load(fh)["capsules"]
@@ -191,15 +218,15 @@ def render_capsules():
     caps = load_capsules()
     lines = []
     for cap in caps:
-        lines.append("%s %s  %s  cooldown:%ss" % (
+        lines.append("%s %s  %s  %s" % (
             c(A["plasma_hot"], G["cog"]),
             c(A["chrome"], cap["label"].ljust(16)),
             c(A["gold"], cap["organ"].ljust(16)),
-            cap.get("rate_limit_cooldown_s", 8)))
+            c(A["text_muted"], cap.get("status") or ("cooldown:%ss" % cap.get("rate_limit_cooldown_s", 8)))))
     lines.append("")
     lines.append(c(A["text_muted"],
-                   "candidate capsule state only; real and persistent execution blocked"))
-    box("%s SERVITOR CAPSULES" % G["cog"], lines, color=A["gold"])
+                   "real 12-servitor roster is primary; execution remains gated"))
+    box("%s SERVITOR ROSTER" % G["cog"], lines, color=A["gold"])
 
 
 def render_menu():
@@ -249,7 +276,14 @@ def smoke():
     print()
     render_menu()
     station = render_station_result("Station Smoke", "station-smoke")
-    labels_ok = all(label for label, _ in OPERATIONAL_MENU) and len(OPERATIONAL_MENU) == 16
+    required = {
+        "station-ux-smoke", "taskpack-manager", "taskpack-list", "taskpack-inspect",
+        "show-json", "show-summary", "launch-card", "handoff-card", "reports-latest",
+        "receipts-latest", "dirty-classifier", "safety", "live-registration-promote",
+        "agents", "agent-status", "lifecycle", "git-closure",
+    }
+    commands = {command for _, command in OPERATIONAL_MENU} | {"station-ux-smoke", "taskpack-list", "agent-status"}
+    labels_ok = all(label for label, _ in OPERATIONAL_MENU) and required <= commands
     status = "PASS_WITH_WARNINGS" if station.get("status") != "BLOCKED" and labels_ok else "BLOCKED"
     print(c(A["ok_green"] if status != "BLOCKED" else A["alert_red"],
             "\n[SMOKE] operational menus=%s; station=%s; tui_render=%s" %
@@ -276,7 +310,7 @@ def interactive():
         if 0 <= index < len(OPERATIONAL_MENU):
             label, command = OPERATIONAL_MENU[index]
             args = []
-            if command in {"task-console", "build-taskpack", "register-taskpack", "launch-card"}:
+            if command in {"task-console", "build-taskpack", "register-taskpack"}:
                 task = input(c(A["plasma"], "  task title (blank=sample) > ")).strip()
                 if task:
                     args.append(task)

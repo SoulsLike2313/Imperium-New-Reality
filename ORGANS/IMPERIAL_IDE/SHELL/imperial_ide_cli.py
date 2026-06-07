@@ -19,7 +19,9 @@ COMMANDS = [
     "git-closure", "task-templates",
     "station", "station-tui", "station-gui", "station-smoke", "agents",
     "agent-status", "new-task", "validate-taskpack", "handoff-card",
-    "reports-latest", "receipts-latest", "safety",
+    "reports-latest", "receipts-latest", "safety", "station-ux-smoke",
+    "taskpack-manager", "taskpack-list", "taskpack-inspect", "show-json",
+    "show-summary", "path-actions", "dirty-classifier", "live-registration-promote",
 ]
 
 

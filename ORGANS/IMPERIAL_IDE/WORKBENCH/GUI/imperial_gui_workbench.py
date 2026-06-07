@@ -39,13 +39,22 @@ PKG_ROOT = os.path.dirname(HERE)
 
 OPERATIONAL_ACTIONS = [
     ("DASHBOARD", "station"),
+    ("SUMMARY", "show-summary"),
+    ("FULL JSON", "show-json"),
+    ("TASKPACKS", "taskpack-manager"),
+    ("INSPECT", "taskpack-inspect"),
     ("NEW TASK", "new-task"),
     ("BUILD", "build-taskpack"),
     ("REGISTER DRY", "register-taskpack"),
     ("LAUNCH", "launch-card"),
+    ("HANDOFF", "handoff-card"),
     ("AGENTS", "agents"),
+    ("REPORTS", "reports-latest"),
+    ("RECEIPTS", "receipts-latest"),
+    ("DIRTY", "dirty-classifier"),
     ("LIFECYCLE", "lifecycle"),
-    ("SAFETY", "safety"),
+    ("SAFETY 2.0", "safety"),
+    ("PROMOTE", "live-registration-promote"),
     ("GIT", "git-closure"),
 ]
 
@@ -122,6 +131,26 @@ def load_panels():
 
 
 def load_capsules():
+    if REPO_ROOT:
+        roster = os.path.join(REPO_ROOT, "ORGANS", "IMPERIAL_IDE", "AGENTS", "servitor_roster.json")
+        if os.path.isfile(roster):
+            try:
+                with open(roster, "r", encoding="utf-8-sig") as fh:
+                    data = json.load(fh)
+                return [
+                    {
+                        "capsule_id": item.get("agent_id", ""),
+                        "label": item.get("servitor_name", item.get("agent_id", "")),
+                        "organ": item.get("agent_id", ""),
+                        "rate_limit_cooldown_s": 0,
+                        "command_template": [],
+                        "status": item.get("status", ""),
+                        "mode": item.get("mode", ""),
+                    }
+                    for item in data.get("servitors", [])
+                ]
+            except Exception:
+                pass
     path = os.path.join(PKG_ROOT, "SERVITORS", "capsules.config.json")
     with open(path, "r", encoding="utf-8") as fh:
         return json.load(fh)["capsules"]
@@ -347,7 +376,7 @@ class Workbench(tk.Tk):
         rack = ttk.Frame(body, style="Raised.TFrame", width=320)
         rack.grid(row=0, column=2, sticky="ns")
         rack.grid_propagate(False)
-        ttk.Label(rack, text="\u2699  SERVITOR CAPSULES", style="Head.TLabel",
+        ttk.Label(rack, text="\u2699  SERVITOR ROSTER", style="Head.TLabel",
                   background=C["panel_raised"]).pack(anchor="w", padx=14, pady=(14, 6))
         self.capsule_widgets = {}
         for cap in self.capsules:
@@ -573,7 +602,9 @@ def smoke():
         "live_registration_gate", "station_launch_card", "agent_roster",
         "servitor_matrix", "task_lifecycle", "reports_browser", "receipts_browser",
         "safety_center", "station_git_closure", "warp_workspace", "metaos_router",
-        "station_mechanicus_tools", "station_settings",
+        "station_mechanicus_tools", "station_settings", "taskpack_manager",
+        "dirty_classifier", "live_registration_promotion", "json_summary_viewer",
+        "handoff_card",
     }
     panel_ids = {panel.get("panel_id") for panel in load_panels()}
     payload = {

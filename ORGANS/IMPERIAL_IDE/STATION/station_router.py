@@ -6,7 +6,18 @@ from pathlib import Path
 from typing import Any
 
 from lifecycle_tracker import smoke as lifecycle_smoke
+from dirty_classifier import classify_dirty
+from handoff_card_viewer import view_handoff_card
+from json_viewer import view_json_path, view_payload
+from launch_card_viewer import view_launch_card
+from live_registration_promoter import promotion_state
+from path_actions import actions_for_path
+from receipts_browser import list_receipts
+from reports_browser import list_reports
+from safety_center import safety_summary
 from station_state import StationState, find_repo_root
+from summary_renderer import summarize_payload
+from taskpack_manager import inspect_taskpack, list_taskpacks, validate_taskpack as validate_generated_taskpack
 from station_workflow import StationWorkflow
 
 DEFAULT_TITLE = "Station operator sample task"
@@ -49,6 +60,19 @@ def route(command: str, args: list[str] | None = None, repo_root: Path | None = 
         result = workflow.smoke()
         result["lifecycle_tracker_smoke"] = lifecycle_smoke()
         return result
+    if command == "station-ux-smoke":
+        from station_ux_reports import build_task_receipts
+        return build_task_receipts(repo)
+    if command == "show-summary":
+        payload = state.snapshot()
+        return {"status": "PASS_WITH_WARNINGS", "summary": summarize_payload("Operational Station", payload)}
+    if command == "show-json":
+        if args:
+            return view_json_path(repo, args[0])
+        return view_payload("Operational Station snapshot", state.snapshot())
+    if command == "path-actions":
+        target = args[0] if args else "ORGANS/IMPERIAL_IDE/STATION"
+        return {"status": "PASS", "path_actions": actions_for_path(repo, target)}
     if command == "agents":
         return {"status": "PASS", **state.agent_state()}
     if command == "agent-status":
@@ -64,9 +88,15 @@ def route(command: str, args: list[str] | None = None, repo_root: Path | None = 
     if command == "build-taskpack":
         title, goal, template = _intent_text(args)
         return workflow.build_taskpack(title, goal, template)
+    if command in {"taskpack-manager", "taskpack-list"}:
+        return list_taskpacks(repo)
+    if command == "taskpack-inspect":
+        return inspect_taskpack(repo, args[0] if args else "")
     if command == "validate-taskpack":
-        if args:
+        if args and not args[0].startswith("TASK-"):
             return workflow.validate_taskpack(args[0])
+        if args:
+            return validate_generated_taskpack(repo, args[0])
         built = workflow.build_taskpack(DEFAULT_TITLE, DEFAULT_GOAL, "integration")
         return workflow.validate_taskpack(built["extracted_path"])
     if command == "register-taskpack":
@@ -75,22 +105,31 @@ def route(command: str, args: list[str] | None = None, repo_root: Path | None = 
         title, goal, template = _intent_text(title_args)
         return workflow.register_taskpack(title, goal, template, live=live)
     if command == "launch-card":
-        title, goal, template = _intent_text(args)
-        return workflow.launch_card(title, goal, template)
+        return view_launch_card(repo, args[0] if args else "")
     if command == "handoff-card":
-        title, goal, template = _intent_text(args)
-        return workflow.handoff_card(title, goal, template)
+        return view_handoff_card(repo, args[0] if args else "")
     if command == "lifecycle":
         title, goal, template = _intent_text(args)
         return workflow.lifecycle(title, goal, template)
     if command == "reports-latest":
-        return {"status": "PASS_WITH_WARNINGS", **state.reports_state()}
+        return list_reports(repo)
     if command == "receipts-latest":
-        return {"status": "PASS_WITH_WARNINGS", **state.receipts_state()}
+        return list_receipts(repo)
+    if command == "dirty-classifier":
+        return classify_dirty(repo)
     if command == "safety":
-        return {"status": "PASS_WITH_WARNINGS", **state.safety_state()}
+        return safety_summary(repo)
+    if command == "live-registration-promote":
+        token = args[0] if args and args[0] == "CONFIRM_LIVE_REGISTRATION" else ""
+        taskpack_id = args[1] if token and len(args) > 1 else (args[0] if args and not token else "")
+        return promotion_state(repo, taskpack_id, token)
     if command == "git-closure":
-        return {"status": "PASS_WITH_WARNINGS", **state.git_state()}
+        git_state = state.git_state()
+        git_state["dirty_classification"] = classify_dirty(repo)
+        git_state["classified_dirty_table"] = git_state["dirty_classification"].get("classified_items", [])
+        git_state["push_allowed_state"] = git_state["dirty_classification"].get("push_allowed_state")
+        git_state["recommended_action"] = git_state["dirty_classification"].get("recommended_action")
+        return {"status": "PASS_WITH_WARNINGS", **git_state}
     return {"status": "BLOCKED", "reason": "unknown_station_command", "command": command}
 
 

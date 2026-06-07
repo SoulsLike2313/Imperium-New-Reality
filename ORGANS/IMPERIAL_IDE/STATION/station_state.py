@@ -143,6 +143,11 @@ class StationState:
         }
 
     def safety_state(self) -> dict[str, Any]:
+        try:
+            from safety_center import safety_summary
+            return safety_summary(self.repo_root)
+        except Exception:
+            pass
         policy = read_json(self.rel("ORGANS/MECHANICUS/REGISTRY/command_policy.json"), {})
         ops = read_json(self.rel("ORGANS/IMPERIAL_IDE/OPS/INTEGRATION_STATUS.json"), {})
         staged_result = git(self.repo_root, "diff", "--cached", "--name-only")

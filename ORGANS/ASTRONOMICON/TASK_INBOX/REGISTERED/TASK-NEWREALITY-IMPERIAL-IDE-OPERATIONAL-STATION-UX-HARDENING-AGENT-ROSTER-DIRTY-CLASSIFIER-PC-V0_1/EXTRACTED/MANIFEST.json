@@ -1,0 +1,251 @@
+{
+  "schema_version": "astronomicon.taskpack.v0_1",
+  "taskpack_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1",
+  "title": "Imperial IDE operational station UX hardening, real agent roster, taskpack manager, viewers, dirty classifier, and live registration promotion",
+  "created_from_contour": "PC",
+  "target_contour": "PC",
+  "registration_mode": "ASTRONOMICON_STAGE2_LOCAL_PC_TASKPACK",
+  "execution_mode": "CONTROLLED_WRITE_WITH_VALIDATED_PUSH",
+  "mission_summary": "Harden the Operational Station MVP into a daily-usable operator interface: human summaries, full JSON view, copy/open actions, real 12-servitor roster, taskpack manager, launch/handoff card viewers, reports/receipts browser, dirty classifier, safety center 2.0, lifecycle UI, git closure UI, and live-registration promotion flow.",
+  "active_truth_scope": "IMPERIUM_NEW_REALITY_PC_CURRENT_ROOT_ONLY",
+  "remote_contours": {
+    "VM2": "OUT_OF_SCOPE",
+    "VM3": "OUT_OF_SCOPE"
+  },
+  "strategic_intent": {
+    "owner_goal": "The Owner must operate the system from inside Imperial IDE without manually hunting paths, JSON fragments, or ZIP files.",
+    "kernel": "Imperium New Reality remains the script-first AI MetaOS kernel.",
+    "station": "Operational Station becomes the practical daily workflow layer.",
+    "tui": "Workbench TUI is the fast operator console and must retain the liked visual style.",
+    "gui": "Workbench GUI is the visual cockpit and must show the same truthful station state.",
+    "agents": "All agents are visible as organ servitors. Servitor Prime is the external LLM handoff servitor until live backend is opened.",
+    "truth": "The station must distinguish dry-run, candidate, canon, live, blocked, warning, failed, and completed states.",
+    "safety": "Real servitor execution, live LLM backend, arbitrary shell, and remote contours remain gated."
+  },
+  "source_context_to_consider": [
+    "AGENTS.md",
+    "ORGANS/_CORE_GOVERNANCE/",
+    "ORGANS/IMPERIAL_IDE/STATION/",
+    "ORGANS/IMPERIAL_IDE/AGENTS/",
+    "ORGANS/IMPERIAL_IDE/WORKBENCH/TUI/imperial_tui.py",
+    "ORGANS/IMPERIAL_IDE/WORKBENCH/GUI/imperial_gui_workbench.py",
+    "ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py",
+    "ORGANS/IMPERIAL_IDE/OPS/",
+    "ORGANS/IMPERIAL_IDE/STATION/generated_taskpacks/",
+    "ORGANS/IMPERIAL_IDE/STATION/receipts/runtime/",
+    "ORGANS/MECHANICUS/REGISTRY/command_policy.json",
+    "ORGANS/ASTRONOMICON/",
+    "REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-USABILITY-STATION-AGENTIC-WORKFLOW-PC-V0_2/FINAL_OWNER_SUMMARY_RU.md",
+    "REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-USABILITY-STATION-AGENTIC-WORKFLOW-PC-V0_2/"
+  ],
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "required_organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "required_servitor_roster": [
+    "SERVITOR_PRIME",
+    "SERVITOR_ASTRONOMICON",
+    "SERVITOR_MECHANICUS",
+    "SERVITOR_ADMINISTRATUM",
+    "SERVITOR_INQUISITION",
+    "SERVITOR_STRATEGIUM",
+    "SERVITOR_DOCTRINARIUM",
+    "SERVITOR_OFFICIO_AGENTIS",
+    "SERVITOR_SCHOLA_IMPERIALIS",
+    "SERVITOR_WARP",
+    "SERVITOR_METAOS",
+    "SERVITOR_IMPERIAL_IDE"
+  ],
+  "organ_route": {
+    "DOCTRINARIUM": "operational doctrine, agent taxonomy, state vocabulary, no-overclaim rules",
+    "OFFICIO_AGENTIS": "owner-facing summaries, Russian runbooks, labels, launch card copy, human UX wording",
+    "ASTRONOMICON": "dry-run to live local promotion, registration receipts, current expected task visibility, launch card state",
+    "ADMINISTRATUM": "reports browser, receipts browser, dirty classifier ledger, continuity, taskpack archive, git closure receipts",
+    "MECHANICUS": "tool and command validation, taskpack validation, safety checks, unknown-tool blocks, JSON viewer safety",
+    "INQUISITION": "fake-green blocking, safety center 2.0, candidate versus canon truth, dirty risk classes",
+    "STRATEGIUM": "operator workflow, menus, taskpack manager UX, next-step recommendations, daily-use KPD",
+    "SCHOLA_IMPERIALIS": "training mode, user guide, recipes, smoke workflow lessons"
+  },
+  "route_manifest_template": "TASK_ROUTE_MANIFEST_TEMPLATE.json",
+  "task_start_ack_template": "TASK_START_ACK_TEMPLATE.json",
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH_UTF8_NO_BOM_NO_CYRILLIC",
+    "canonical_repo_artifacts": "ENGLISH_UTF8_NO_BOM",
+    "owner_facing_russian_runtime_output": {
+      "allowed": true,
+      "language": "RUSSIAN",
+      "encoding": "UTF8_NO_BOM",
+      "authority": "OFFICIO_AGENTIS",
+      "required_route": "OFFICIO_AGENTIS_OWNER_FACING_FINAL_RESPONSE",
+      "allowed_files": [
+        "REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/FINAL_OWNER_SUMMARY_RU.md",
+        "ORGANS/IMPERIAL_IDE/DOCS/OPERATIONAL_STATION_UX_GUIDE_RU.md",
+        "ORGANS/IMPERIAL_IDE/STATION/RUN_FIRST_RU.md"
+      ],
+      "not_allowed_in_taskpack_root_files": true
+    },
+    "cyrillic_in_taskpack": {
+      "allowed": false,
+      "scope": "MANIFEST.json, TASK_SPEC.md, ACCEPTANCE_GATES.md, OUTPUT_REQUIREMENTS.md, TASK_ROUTE_MANIFEST_TEMPLATE.json, TASK_START_ACK_TEMPLATE.json, BLUEPRINTS/*.md",
+      "owner_facing_russian_runtime_exception": {
+        "allowed": true,
+        "authority": "OFFICIO_AGENTIS",
+        "scope": "runtime owner-facing files only"
+      }
+    },
+    "localization_exception": {
+      "allowed": true,
+      "authority": "OFFICIO_AGENTIS",
+      "scope": "owner-facing runtime files only after Officio role entry",
+      "allowed_language": "RUSSIAN",
+      "allowed_encoding": "UTF8_NO_BOM",
+      "forbidden_scope": "taskpack internal root files and BLUEPRINTS"
+    }
+  },
+  "git_push_policy": {
+    "push_allowed": true,
+    "push_required_for_success": true,
+    "allowed_when": [
+      "git diff is inside allowed_write_scope",
+      "all required outputs exist",
+      "all JSON files parse",
+      "created or modified Python files compile",
+      "Workbench TUI opens or exact blocker is recorded",
+      "Workbench GUI structural smoke passes or exact blocker is recorded",
+      "real 12-servitor roster is primary view",
+      "taskpack manager can list inspect validate and expose generated TASKPACK.zip paths",
+      "reports and receipts browser can show summaries and raw paths",
+      "dirty classifier identifies old unrelated ZIPs fresh generated artifacts runtime files secrets and stage candidates",
+      "live registration promotion requires owner confirmation and does not auto-replace active current task",
+      "dangerous capabilities remain gated",
+      "post-push HEAD equals origin/master"
+    ],
+    "forbidden_push_cases": [
+      "changes outside allowed_write_scope",
+      "failed validation without explicit BLOCK verdict",
+      "secrets or local configs staged",
+      "destructive cleanup or delete without owner batch approval",
+      "unrestricted real execution enabled",
+      "unsafe shell execution enabled",
+      "live LLM backend enabled with secrets",
+      "fake-green closure",
+      "VM2 or VM3 changes",
+      "legacy Alpha/Beta/Gamma remains the only agent display",
+      "UI claims execution done when only handoff is ready",
+      "dry-run registration is displayed as live canon",
+      "candidate task is displayed as canonical current task"
+    ],
+    "required_after_push_receipts": [
+      "commit_sha",
+      "origin_master_sha",
+      "head_equals_origin_master_after_push",
+      "git_status_after_push",
+      "pushed_files_summary"
+    ]
+  },
+  "owner_decisions_preapproved_for_this_task": {
+    "OD_PC_ONLY": "approved",
+    "OD_UX_HARDENING": "approved",
+    "OD_REAL_AGENT_ROSTER_PRIMARY_VIEW": "approved",
+    "OD_TASKPACK_MANAGER": "approved",
+    "OD_FULL_JSON_VIEWER": "approved",
+    "OD_COPY_OPEN_ACTIONS": "approved",
+    "OD_LAUNCH_HANDOFF_CARD_VIEWER": "approved",
+    "OD_REPORTS_RECEIPTS_BROWSER": "approved",
+    "OD_DIRTY_STATE_CLASSIFIER": "approved",
+    "OD_SAFETY_CENTER_2": "approved",
+    "OD_LIVE_REGISTRATION_PROMOTION_FLOW": "approved",
+    "OD_VALIDATED_PUSH": "approved"
+  },
+  "owner_decisions_not_approved_for_this_task": {
+    "OD_DELETE": "not approved",
+    "OD_MASS_MOVE": "not approved",
+    "OD_REMOTE_CONTOURS": "not approved",
+    "OD_REAL_SERVITOR_EXECUTION": "not approved",
+    "OD_LIVE_LLM_BACKEND_WITH_SECRETS": "not approved",
+    "OD_UNRESTRICTED_SHELL_EXECUTION": "not approved",
+    "OD_BACKGROUND_AUTOSTART_DAEMON": "not approved",
+    "OD_PRODUCTION_AUTONOMOUS_AGENT_LOOP": "not approved"
+  },
+  "allowed_write_scope": [
+    ".gitignore",
+    "AGENTS.md",
+    "ORGANS/IMPERIAL_IDE/**",
+    "ORGANS/MECHANICUS/**",
+    "ORGANS/ASTRONOMICON/**",
+    "ORGANS/ADMINISTRATUM/**",
+    "REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/**"
+  ],
+  "runtime_paths_to_ignore": [
+    "ORGANS/IMPERIAL_IDE/STATION/RUNTIME/",
+    "ORGANS/IMPERIAL_IDE/STATION/runtime/",
+    "ORGANS/IMPERIAL_IDE/STATION/generated_taskpacks/",
+    "ORGANS/IMPERIAL_IDE/STATION/receipts/runtime/",
+    "ORGANS/IMPERIAL_IDE/OPS/STAGING/",
+    "ORGANS/IMPERIAL_IDE/OPS/RUNTIME/",
+    "ORGANS/IMPERIAL_IDE/WARP/runtime/",
+    "ORGANS/IMPERIAL_IDE/METAOS/runtime/",
+    "**/__pycache__/",
+    "**/*.pyc"
+  ],
+  "known_dirty_items_to_classify": [
+    "REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-USABILITY-STATION-AGENTIC-WORKFLOW-PC-V0_2/agent_registry_receipt.zip",
+    "REPORTS/TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1/astronomicon_dashboard_integration_receipt.zip"
+  ],
+  "forbidden_actions": [
+    "delete_files_without_owner_batch_approval",
+    "mass_move_core_files_without_owner_batch_approval",
+    "reset_hard",
+    "git_clean_fd",
+    "replace_workbench_tui_with_weaker_disconnected_tui",
+    "hide_dry_run_as_live_execution",
+    "show_legacy_alpha_beta_gamma_as_primary_agent_model",
+    "enable_real_servitor_execution",
+    "enable_unrestricted_shell_execution",
+    "enable_live_llm_backend_with_secrets",
+    "start_background_daemon",
+    "remote_route_to_vm2",
+    "remote_route_to_vm3",
+    "push_outside_allowed_write_scope",
+    "push_failed_validation_outputs",
+    "push_dirty_runtime_or_secret_files",
+    "push_destructive_changes_without_owner_approval",
+    "claim_full_ide_complete",
+    "claim_autonomous_agent_loop_ready",
+    "fake_green_clean_pass_claim",
+    "rewrite_report_history"
+  ],
+  "primary_outputs": [
+    "Workbench TUI UX hardening",
+    "Workbench GUI UX hardening",
+    "real 12-servitor agent roster as primary view",
+    "Taskpack Manager",
+    "full JSON viewer and human summary renderer",
+    "copy/open actions for files folders ZIPs receipts launch card handoff card",
+    "Launch Card and Handoff Card viewer",
+    "Reports and Receipts browser",
+    "Dirty State Classifier",
+    "Safety Center 2.0",
+    "Live Registration Promotion Flow",
+    "Lifecycle Tracker UI",
+    "Git Closure UI with dirty classification",
+    "documentation receipts validation commit and push"
+  ]
+}
