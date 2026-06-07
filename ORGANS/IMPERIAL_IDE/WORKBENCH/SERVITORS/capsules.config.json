@@ -1,0 +1,31 @@
+{
+  "schema": "servitor_capsules_v0_2_candidate",
+  "status": "DRY_RUN_CANDIDATE",
+  "execution_mode": "DRY_RUN_ONLY",
+  "persistent_runtime_enabled": false,
+  "real_execution_enabled": false,
+  "note": "Capsules model owner-visible state only. Real dispatch and background supervision require a future owner-approved gate.",
+  "capsules": [
+    {
+      "capsule_id": "CAP-ALPHA",
+      "label": "Servitor Alpha",
+      "organ": "OFFICIO_AGENTIS",
+      "rate_limit_cooldown_s": 8,
+      "command_template": []
+    },
+    {
+      "capsule_id": "CAP-BETA",
+      "label": "Servitor Beta",
+      "organ": "MECHANICUS",
+      "rate_limit_cooldown_s": 8,
+      "command_template": []
+    },
+    {
+      "capsule_id": "CAP-GAMMA",
+      "label": "Servitor Gamma",
+      "organ": "ASTRONOMICON",
+      "rate_limit_cooldown_s": 12,
+      "command_template": []
+    }
+  ]
+}

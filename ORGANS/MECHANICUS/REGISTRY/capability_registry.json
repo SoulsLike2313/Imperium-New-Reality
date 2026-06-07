@@ -1,8 +1,8 @@
 {
   "schema_version": "mechanicus.capability_registry.v0_1",
   "registry_status": "CANON_ACTIVE_SEED",
-  "task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1",
-  "updated_at_utc": "2026-06-07T11:41:29Z",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2",
+  "updated_at_utc": "2026-06-07T14:58:00Z",
   "capabilities": [
     {
       "capability_id": "TOOL_REGISTRY_AUTHORITY",
@@ -57,6 +57,30 @@
       "status": "PROVEN",
       "owner_tool_id": "IMPERIAL_IDE_TUI",
       "description": "Menu-based local TUI with a non-interactive smoke mode."
+    },
+    {
+      "capability_id": "IMPERIAL_IDE_WORKBENCH_SURFACE",
+      "status": "ACTIVE_CANDIDATE",
+      "owner_tool_id": "MECHANICUS_WORKBENCH_BRIDGE",
+      "description": "Owner-facing TUI and candidate GUI over live read-only shell data."
+    },
+    {
+      "capability_id": "IMPERIAL_IDE_WARP_HOT_ZONE",
+      "status": "ACTIVE_CANDIDATE",
+      "owner_tool_id": "MECHANICUS_WARP_BRIDGE",
+      "description": "Ignored isolated runtime with fake-green gate and release-manifest-only output."
+    },
+    {
+      "capability_id": "IMPERIAL_IDE_METAOS_ORCHESTRATION",
+      "status": "ACTIVE_CANDIDATE",
+      "owner_tool_id": "MECHANICUS_METAOS_BRIDGE",
+      "description": "Deterministic stub routing, one-shot servitor model, and candidate chronicles."
+    },
+    {
+      "capability_id": "ADMINISTRATUM_RELEASE_MANIFEST_GATE",
+      "status": "PROVEN",
+      "owner_tool_id": "ADMINISTRATUM_CANDIDATE_BUNDLE_GATE",
+      "description": "Return HELD or RELEASED from evidence while never promoting to kernel automatically."
     }
   ]
 }

@@ -1,0 +1,29 @@
+{
+  "package": "IMPERIUM_WARP_ZONE_V0_1",
+  "status": "CANDIDATE_NOT_CANON",
+  "validated_at": "2026-06-07",
+  "environment": "Amazon Linux 2023 sandbox, Python 3.13 (no display, no pwsh)",
+  "checks": [
+    {"check": "py_compile ENGINE/*.py LAUNCHER/*.py UI/*.py warp_smoke.py", "result": "PASS", "evidence_level": "E3"},
+    {"check": "all CONTRACTS/*.json + SAMPLE/*.json parse with jq", "result": "PASS", "evidence_level": "E3"},
+    {"check": "warp_smoke.py scenario 1 (fake-green)", "result": "PASS", "evidence_level": "E3", "note": "verdict=DISCARD, kernel untouched=True"},
+    {"check": "warp_smoke.py scenario 2 (honest pass)", "result": "PASS", "evidence_level": "E3", "note": "verdict=RELEASE, status=PENDING_OWNER_APPROVAL, kernel_touched=False"},
+    {"check": "UI/warp_tui.py --smoke --no-color", "result": "PASS", "evidence_level": "E3", "note": "renders participants/plan/criteria/diffs/gate"},
+    {"check": "LAUNCHER/warp_launcher.py open + list", "result": "PASS", "evidence_level": "E3", "note": "opens session, advances to PLAN, lists it"},
+    {"check": "LAUNCHER/warp_autostart_hook.open_for_task(auto)", "result": "PASS", "evidence_level": "E3", "note": "7 participants registered, stage=PLAN"}
+  ],
+  "not_validated": [
+    {"item": "UI/warp_gui_panel.py (Tkinter GUI + WARP button)", "reason": "no display in sandbox", "action": "проверь на PC: python UI/warp_gui_panel.py"},
+    {"item": "LAUNCHER/warp_launcher.ps1", "reason": "pwsh not installed in sandbox", "action": "проверь на PC в PowerShell"}
+  ],
+  "core_safety_guarantees_proven": [
+    "Запись идёт только в artifacts/, ядро (baseline) остаётся byte-for-byte неизменным",
+    "fake-green (pass без доказательств) → DISCARD",
+    "RELEASE выходит как PENDING_OWNER_APPROVAL, kernel_touched=False"
+  ],
+  "honest_limitations": [
+    "Механикус-бридж по умолчанию dry-run — реального исполнения инструментов нет",
+    "Промоут RELEASED-артефакта в ядро пока ручной (по одобрению)",
+    "Это инженерная форма, не канон — канонизация по OD-CANON"
+  ]
+}

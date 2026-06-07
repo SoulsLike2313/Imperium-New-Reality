@@ -1,0 +1,16 @@
+{
+  "panels": [
+    {"panel_id": "overview", "title": "Overview", "owner_organ": "_CORE_GOVERNANCE", "data_sources": ["status", "doctor"], "commands": ["status", "doctor"], "risk_class": "read_only", "current_status": "ACTIVE"},
+    {"panel_id": "governance", "title": "Governance", "owner_organ": "DOCTRINARIUM", "data_sources": ["passport", "constitution"], "commands": ["policy"], "risk_class": "read_only", "current_status": "CANON_CANDIDATE"},
+    {"panel_id": "astronomicon_tasks", "title": "Astronomicon Tasks", "owner_organ": "ASTRONOMICON", "data_sources": ["tasks", "current-task"], "commands": ["tasks", "current-task"], "risk_class": "read_only", "current_status": "PASS_WITH_WARNINGS"},
+    {"panel_id": "reports", "title": "Reports", "owner_organ": "ADMINISTRATUM", "data_sources": ["reports", "latest-report"], "commands": ["reports", "latest-report"], "risk_class": "read_only", "current_status": "ACTIVE"},
+    {"panel_id": "receipts", "title": "Receipts", "owner_organ": "INQUISITION", "data_sources": ["receipts"], "commands": ["receipts"], "risk_class": "read_only", "current_status": "ACTIVE"},
+    {"panel_id": "mechanicus_tools", "title": "Mechanicus Tools", "owner_organ": "MECHANICUS", "data_sources": ["tools"], "commands": ["tools", "dry-run-tool"], "risk_class": "dry_run", "current_status": "ACTIVE"},
+    {"panel_id": "capabilities", "title": "Capabilities", "owner_organ": "MECHANICUS", "data_sources": ["capabilities"], "commands": ["capabilities"], "risk_class": "read_only", "current_status": "ACTIVE"},
+    {"panel_id": "command_policy", "title": "Command Policy", "owner_organ": "INQUISITION", "data_sources": ["policy"], "commands": ["policy"], "risk_class": "read_only", "current_status": "CANON_ACTIVE"},
+    {"panel_id": "extensions", "title": "Extensions", "owner_organ": "OFFICIO_AGENTIS", "data_sources": ["extensions"], "commands": ["extensions"], "risk_class": "read_only", "current_status": "ACTIVE"},
+    {"panel_id": "workspace", "title": "Workspace", "owner_organ": "ADMINISTRATUM", "data_sources": ["workspace"], "commands": ["workspace"], "risk_class": "read_only", "current_status": "ACTIVE"},
+    {"panel_id": "validation", "title": "Validation", "owner_organ": "INQUISITION", "data_sources": ["validate"], "commands": ["validate"], "risk_class": "read_only", "current_status": "PASS_WITH_WARNINGS"},
+    {"panel_id": "servitor_capsules", "title": "Servitor Capsules", "owner_organ": "OFFICIO_AGENTIS", "data_sources": ["capsules.config.json"], "commands": ["capsule-status", "capsule-dry-run"], "risk_class": "dry_run", "current_status": "DRY_RUN_CANDIDATE"}
+  ]
+}

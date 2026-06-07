@@ -1,7 +1,7 @@
 {
-  "schema_version": "imperial_ide.panel_registry.v0_1",
-  "task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1",
-  "registry_status": "CONTROL_SHELL_ACTIVE",
+  "schema_version": "imperial_ide.panel_registry.v0_2",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2",
+  "registry_status": "CONTROL_SHELL_WITH_CANDIDATE_SURFACES_ACTIVE",
   "panels": [
     {
       "panel_id": "overview",
@@ -156,6 +156,62 @@
       ],
       "risk_class": "LOW_READ_ONLY",
       "current_status": "PROVEN_FOR_CONTROL_SHELL_V0_1"
+    },
+    {
+      "panel_id": "workbench",
+      "title": "Imperial Workbench",
+      "owner_organ": "IMPERIAL_IDE",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/WORKBENCH/INTEGRATION_STATUS.json",
+        "ORGANS/MECHANICUS/IDE_BRIDGE/workbench_bridge_adapter.py"
+      ],
+      "commands": [
+        "workbench",
+        "workbench-tui",
+        "workbench-gui",
+        "workbench-smoke",
+        "workbench-status"
+      ],
+      "risk_class": "LOW_READ_ONLY_AND_LOCAL_SMOKE",
+      "current_status": "ACTIVE_SURFACE_CANDIDATE"
+    },
+    {
+      "panel_id": "warp",
+      "title": "WARP Hot Zone",
+      "owner_organ": "IMPERIAL_IDE",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/WARP/INTEGRATION_STATUS.json",
+        "ORGANS/ADMINISTRATUM/BUNDLE_GATES/bundle_gate_policy.json"
+      ],
+      "commands": [
+        "warp",
+        "warp-open",
+        "warp-list",
+        "warp-status",
+        "warp-gate",
+        "warp-smoke"
+      ],
+      "risk_class": "LOW_ISOLATED_RUNTIME",
+      "current_status": "ACTIVE_HOT_ZONE"
+    },
+    {
+      "panel_id": "metaos",
+      "title": "MetaOS Orchestration",
+      "owner_organ": "IMPERIAL_IDE",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/METAOS/INTEGRATION_STATUS.json",
+        "ORGANS/MECHANICUS/IDE_BRIDGE/metaos_bridge_adapter.py"
+      ],
+      "commands": [
+        "metaos",
+        "metaos-smoke",
+        "metaos-route",
+        "metaos-servitor",
+        "metaos-bundle-gate",
+        "metaos-chronicle"
+      ],
+      "risk_class": "LOW_STUB_ORCHESTRATION",
+      "current_status": "ACTIVE_ORCHESTRATION_CANDIDATE"
     }
   ]
 }

@@ -16,6 +16,12 @@ MENU = [
     ("8", "extensions"),
     ("9", "workspace"),
     ("10", "validate"),
+    ("11", "workbench-status"),
+    ("12", "workbench-smoke"),
+    ("13", "warp-status"),
+    ("14", "warp-smoke"),
+    ("15", "metaos"),
+    ("16", "metaos-smoke"),
     ("0", "exit"),
 ]
 

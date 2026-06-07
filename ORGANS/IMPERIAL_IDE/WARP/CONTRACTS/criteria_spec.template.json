@@ -1,0 +1,12 @@
+{
+  "criteria_spec_id": "WARP_CRITERIA_TEMPLATE_V0_1",
+  "description": "Шаблон definition-of-done для задачи в WARP. Копируй в task descriptor.criteria.",
+  "min_evidence_default": "E3",
+  "criteria": [
+    {"id": "builds", "metric": "builds", "required": true, "expect": true, "min_evidence": "E3", "note": "код собирается/компилируется"},
+    {"id": "tests_pass", "metric": "tests_pass", "required": true, "expect": true, "min_evidence": "E4", "note": "тесты проходят при повторном запуске"},
+    {"id": "no_core_pollution", "metric": "no_core_pollution", "required": true, "expect": true, "min_evidence": "E3", "note": "нет прямых записей в ядро"},
+    {"id": "diffs_reviewed", "metric": "diffs_reviewed", "required": true, "expect": true, "min_evidence": "E5", "note": "дифы просмотрены/одобрены"},
+    {"id": "owner_ux_ok", "metric": "owner_ux_ok", "required": false, "expect": true, "min_evidence": "E6", "note": "владелец видел результат в IDE"}
+  ]
+}

@@ -16,6 +16,22 @@ from shell_state import RepositoryState
 
 RISK = {
     "dry-run-tool": "LOW_DRY_RUN",
+    "workbench-smoke": "LOW_LOCAL_SMOKE",
+    "warp-smoke": "LOW_LOCAL_SMOKE",
+    "metaos-smoke": "LOW_LOCAL_SMOKE",
+    "metaos-bundle-gate": "LOW_LOCAL_SMOKE",
+    "warp-open": "LOW_DRY_RUN",
+    "warp-gate": "LOW_DRY_RUN",
+    "metaos-route": "LOW_DRY_RUN",
+    "metaos-servitor": "LOW_DRY_RUN",
+    "metaos-chronicle": "LOW_DRY_RUN",
+}
+
+INTEGRATION_COMMANDS = {
+    "workbench", "workbench-tui", "workbench-gui", "workbench-smoke",
+    "workbench-status", "warp", "warp-open", "warp-list", "warp-status",
+    "warp-gate", "warp-smoke", "metaos", "metaos-smoke", "metaos-route",
+    "metaos-servitor", "metaos-bundle-gate", "metaos-chronicle",
 }
 
 
@@ -38,7 +54,9 @@ def route(command: str, args: list[str] | None = None) -> dict[str, Any]:
     bridge = None
     data_sources: list[str] = []
     tools_invoked: list[str] = []
-    dry_run = command == "dry-run-tool"
+    dry_run = command == "dry-run-tool" or command in {
+        "warp-open", "warp-gate", "metaos-route", "metaos-servitor", "metaos-chronicle"
+    }
 
     if command in {"tools", "capabilities", "policy", "dry-run-tool", "doctor", "validate"}:
         from mechanicus_shell_bridge import MechanicusShellBridge
@@ -140,6 +158,22 @@ def route(command: str, args: list[str] | None = None) -> dict[str, Any]:
             "ORGANS/MECHANICUS/REGISTRY/command_policy.json",
         ]
         tools_invoked = [target] if target else []
+    elif command in INTEGRATION_COMMANDS:
+        from integration_surfaces import route_surface
+        data = route_surface(state.repo_root, command, args)
+        component = command.split("-", 1)[0]
+        status_path = {
+            "workbench": "ORGANS/IMPERIAL_IDE/WORKBENCH/INTEGRATION_STATUS.json",
+            "warp": "ORGANS/IMPERIAL_IDE/WARP/INTEGRATION_STATUS.json",
+            "metaos": "ORGANS/IMPERIAL_IDE/METAOS/INTEGRATION_STATUS.json",
+        }.get(component)
+        data_sources = [status_path] if status_path else []
+        if "smoke" in command or command == "metaos-bundle-gate":
+            tools_invoked = [{
+                "workbench": "MECHANICUS_WORKBENCH_BRIDGE",
+                "warp": "MECHANICUS_WARP_BRIDGE",
+                "metaos": "MECHANICUS_METAOS_BRIDGE",
+            }[component]]
     elif command == "help":
         data = _palette(state)
         data["status"] = "PASS"

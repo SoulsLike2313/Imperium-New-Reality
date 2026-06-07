@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 
 from shell_router import route
 
@@ -9,6 +10,10 @@ COMMANDS = [
     "doctor", "status", "dashboard", "tasks", "current-task", "reports",
     "latest-report", "receipts", "tools", "capabilities", "policy",
     "extensions", "workspace", "validate", "dry-run-tool", "help",
+    "workbench", "workbench-tui", "workbench-gui", "workbench-smoke",
+    "workbench-status", "warp", "warp-open", "warp-list", "warp-status",
+    "warp-gate", "warp-smoke", "metaos", "metaos-smoke", "metaos-route",
+    "metaos-servitor", "metaos-bundle-gate", "metaos-chronicle",
 ]
 
 
@@ -21,6 +26,10 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
     args = build_parser().parse_args(argv)
     result = route(args.command, args.command_args)
     print(json.dumps(result, ensure_ascii=False, indent=None if args.compact else 2))

@@ -1,0 +1,28 @@
+{
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2",
+  "timestamp": "2026-06-07T15:09:00Z",
+  "phase": "PRE_STAGE_VALIDATION_COMPLETE",
+  "checks": [
+    {"id": "source_bundle_hashes", "status": "PASS", "evidence": "3/3 SHA256 matched manifest"},
+    {"id": "required_outputs", "status": "PASS", "evidence": "39 required files checked; 0 missing"},
+    {"id": "json_parse", "status": "PASS", "evidence": "71 JSON files parsed; 0 invalid"},
+    {"id": "python_compile", "status": "PASS", "evidence": "45 Python files compiled; 0 failures"},
+    {"id": "workbench_smoke", "status": "PASS_WITH_WARNINGS", "evidence": "TUI and structural GUI smoke passed; interactive Windows GUI smoke pending"},
+    {"id": "warp_smoke", "status": "PASS", "evidence": "engine and TUI smoke passed; kernel untouched"},
+    {"id": "metaos_smoke", "status": "PASS", "evidence": "deterministic stub smoke passed"},
+    {"id": "administratum_bundle_gate", "status": "PASS", "evidence": "HELD and RELEASED behavior tested"},
+    {"id": "mechanicus_triple_bridge", "status": "PASS_WITH_WARNINGS", "evidence": "dry-run known tools passed; unknown and real execution blocked"},
+    {"id": "shell_integration_commands", "status": "PASS_WITH_WARNINGS", "evidence": "17/17 new shell commands parsed and returned non-BLOCKED receipts"},
+    {"id": "runtime_gitignore", "status": "PASS", "evidence": "runtime probes ignored"},
+    {"id": "unsafe_pattern_audit", "status": "PASS", "evidence": "no unsafe AllowReal, Start-Process, Invoke-Expression, os.system, or shell=True patterns in active integration scope"},
+    {"id": "staged_scope_and_secret_gate", "status": "PASS_WITH_WARNINGS", "evidence": "135 staged files; 0 disallowed; 0 runtime paths; 0 deletions; 0 VM2/VM3 paths; 0 secret hits; 53 staged JSON valid"}
+  ],
+  "pre_existing_dirty_warning": {
+    "path": "REPORTS/TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1/astronomicon_dashboard_integration_receipt.zip",
+    "status": "PRE_EXISTING_UNTRACKED_UNSTAGED",
+    "task_scope": false,
+    "staged": false,
+    "pushed": false
+  },
+  "overall_verdict": "PASS_WITH_WARNINGS_READY_FOR_VALIDATED_PUSH"
+}

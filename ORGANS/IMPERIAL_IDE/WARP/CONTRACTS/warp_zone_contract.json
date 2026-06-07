@@ -1,0 +1,26 @@
+{
+  "contract_id": "WARP_ZONE_CONTRACT_V0_1",
+  "status": "CANDIDATE_NOT_CANON",
+  "principle": "Ядро живёт отдельно. IDE садится поверх ядра и оркестрирует ресурсы. WARP — воркрум, вся грязь и рантаймы здесь.",
+  "layers": {
+    "KERNEL": {"role": "protected_core", "access": "read_only_baseline", "mutated_by": "gated_release_plan_only"},
+    "IDE": {"role": "orchestrator", "sits": "on_top_of_kernel", "controls": "resources_and_warp_lifecycle"},
+    "WARP": {"role": "hot_workroom", "holds": ["runtimes", "products", "dev_waste", "diffs", "metrics"], "location": "WARP/runtime/<session>/"}
+  },
+  "lifecycle": ["INTAKE", "PLAN", "BUILD", "VALIDATE", "GATE", "RELEASED|HELD|DISCARDED"],
+  "kinds": ["CORE_CHANGE", "IMPERIUM_FORCE", "THIRD_PARTY"],
+  "entry": {
+    "auto": "candidate hook exists but autostart registration is disabled",
+    "manual": "WARP button in IDE calls the same with trigger='manual'"
+  },
+  "hard_rules": [
+    "Никакая работа не пишет в ядро напрямую — только в WARP/runtime/<session>/artifacts/",
+    "Продукт покидает WARP только через GATE с вердиктом RELEASE",
+    "GATE=DISCARD при fake-green (pass без доказательств >= порога)",
+    "Release manifest cannot promote to CORE; a future owner gate is required",
+    "Всё события пишутся в append-only events.jsonl (анти fake-green)"
+  ],
+  "min_evidence_default": "E3",
+  "evidence_ladder": {"E1": "exists", "E2": "self-claim", "E3": "executed", "E4": "stable replay", "E5": "audit", "E6": "owner UX"},
+  "artifacts_per_session": ["events.jsonl", "session_manifest.json", "artifacts/", "release_manifest.json|discard_receipt.json"]
+}

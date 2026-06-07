@@ -1,6 +1,6 @@
 {
-  "schema_version": "imperial_ide.command_palette.v0_1",
-  "task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1",
+  "schema_version": "imperial_ide.command_palette.v0_2",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2",
   "commands": [
     {
       "command": "doctor",
@@ -111,6 +111,125 @@
       "command": "help",
       "description": "Show command palette",
       "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "workbench",
+      "description": "Show Workbench integration status",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "workbench-tui",
+      "description": "Return the Workbench TUI operator launch plan",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "workbench-gui",
+      "description": "Return the candidate GUI operator launch plan",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "workbench-smoke",
+      "description": "Run fixed Workbench TUI and structural GUI smokes",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "workbench-status",
+      "description": "Show normalized Workbench candidate status",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "warp",
+      "description": "Show WARP integration status",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "warp-open",
+      "description": "Return an isolated WARP session launch plan",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "warp-list",
+      "description": "List local ignored WARP sessions",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "warp-status",
+      "description": "Show WARP hot-zone candidate status",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "warp-gate",
+      "description": "Return the release-manifest gate launch plan",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "warp-smoke",
+      "description": "Run fixed WARP isolation and fake-green smoke",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "metaos",
+      "description": "Show MetaOS orchestration candidate status",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "metaos-smoke",
+      "description": "Run fixed MetaOS deterministic-stub smoke",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "metaos-route",
+      "description": "Return a deterministic stub route plan",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "metaos-servitor",
+      "description": "Return a one-shot thin-servitor dry-run plan",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "metaos-bundle-gate",
+      "description": "Run Administratum HELD and RELEASED gate smoke",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "metaos-chronicle",
+      "description": "Return the ignored-runtime chronicle plan",
+      "risk_class": "LOW_DRY_RUN",
       "argument_required": false,
       "real_execution": false
     }

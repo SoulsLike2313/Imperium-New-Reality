@@ -1,0 +1,23 @@
+{
+  "report_id": "IMPERIAL_IDE_WORKBENCH_V0_1_VALIDATION",
+  "status": "CANDIDATE_NOT_CANON",
+  "generated_in": "linux_sandbox_amazon_linux_2023_python_3.13",
+  "honest_note": "Проверено только то, что реально запускалось в Linux-песочнице. GUI/WPF/PowerShell требуют дисплея/Windows и НЕ запускались здесь.",
+  "checks": [
+    {"id": "py_compile_gui", "target": "GUI/imperial_gui_workbench.py", "result": "PASS", "evidence": "E3_compiled"},
+    {"id": "py_compile_tui", "target": "TUI/imperial_tui.py", "result": "PASS", "evidence": "E3_compiled"},
+    {"id": "py_compile_capsule", "target": "SERVITORS/servitor_capsule.py", "result": "PASS", "evidence": "E3_compiled"},
+    {"id": "py_compile_bridge", "target": "BRIDGES/mechanicus_workbench_bridge.py", "result": "PASS", "evidence": "E3_compiled"},
+    {"id": "tui_smoke", "target": "TUI/imperial_tui.py --smoke --no-color", "result": "PASS", "evidence": "E4_executed_renders_panels_capsules_bridge"},
+    {"id": "json_parse_all", "target": "6 JSON files", "result": "PASS", "evidence": "E3_all_parse"},
+    {"id": "gui_runtime", "target": "GUI/imperial_gui_workbench.py", "result": "NOT_TESTED", "reason": "no_display_in_sandbox", "evidence": "E1_exists_compiles"},
+    {"id": "powershell_supervisor_runtime", "target": "SERVITORS/servitor_capsule_supervisor.ps1", "result": "NOT_TESTED", "reason": "no_windows_powershell_in_sandbox", "evidence": "E1_exists"},
+    {"id": "csharp_wpf_build", "target": "NATIVE_CSHARP/", "result": "NOT_TESTED", "reason": "no_dotnet_wpf_windows_in_sandbox", "evidence": "E1_exists"},
+    {"id": "live_mechanicus_bridge", "target": "mechanicus_workbench_bridge.py LIVE mode", "result": "NOT_TESTED", "reason": "live_repo_on_E_drive_not_accessible", "evidence": "E1_sample_mode_path_only"}
+  ],
+  "owner_actions_required": [
+    "Запустить GUI на Windows и подтвердить визуальный вид",
+    "Проверить LIVE-режим моста с IMPERIUM_ROOT=E:\\...",
+    "(опц.) Собрать C#/WPF через dotnet publish"
+  ]
+}
