@@ -1,0 +1,41 @@
+{
+  "schema_version": "mechanicus.command_policy.v0_1",
+  "policy_status": "CANON_ACTIVE_SEED",
+  "task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1",
+  "updated_at_utc": "2026-06-07T11:08:13Z",
+  "arbitrary_shell_execution_allowed": false,
+  "dry_run_required_by_default": true,
+  "allowlisted_tool_ids_for_dry_run": [
+    "MECHANICUS_CLI",
+    "MECHANICUS_DOCTOR",
+    "MECHANICUS_INVENTORY",
+    "MECHANICUS_VALIDATE",
+    "MECHANICUS_COMMAND_GATEWAY",
+    "ASTRONOMICON_TASKPACK_REGISTRATION_SKILL_V0_1"
+  ],
+  "blocked_actions": [
+    "arbitrary_shell",
+    "remote_route_vm2",
+    "remote_route_vm3",
+    "delete_files",
+    "mass_move",
+    "stage_local_config",
+    "stage_secret",
+    "execute_unregistered_tool"
+  ],
+  "receipt_required_for": [
+    "doctor",
+    "inventory",
+    "validate-json",
+    "dry-run-tool",
+    "future_real_execution"
+  ],
+  "future_real_execution_requirements": [
+    "owner approval",
+    "sandbox contract",
+    "argument schema",
+    "per-tool allowlist",
+    "preflight receipt",
+    "post-run receipt"
+  ]
+}

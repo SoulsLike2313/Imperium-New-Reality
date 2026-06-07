@@ -1,0 +1,70 @@
+{
+  "schema_version": "imperial_ide.extension_registry.v0_1",
+  "registry_status": "FOUNDATION_CANDIDATE",
+  "task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1",
+  "updated_at_utc": "2026-06-07T11:08:13Z",
+  "extensions": [
+    {
+      "extension_id": "taskpack_control",
+      "status": "CANDIDATE",
+      "permissions": [
+        "read_task_registry",
+        "read_taskpack",
+        "request_mechanicus_dry_run"
+      ],
+      "panels": [
+        "active_task",
+        "task_route",
+        "validation"
+      ],
+      "commands": [
+        "open_taskpack",
+        "show_route_manifest",
+        "request_validation"
+      ],
+      "tools": [
+        "MECHANICUS_CLI",
+        "ASTRONOMICON_TASKPACK_REGISTRATION_SKILL_V0_1"
+      ],
+      "risks": [
+        "must not mutate task registry without task scope"
+      ],
+      "receipts": [
+        "ide_tool_invocation_receipt"
+      ],
+      "validation": {
+        "required": true,
+        "current_task": "schema_parse_only"
+      }
+    },
+    {
+      "extension_id": "receipt_inspector",
+      "status": "CANDIDATE",
+      "permissions": [
+        "read_reports",
+        "read_receipts"
+      ],
+      "panels": [
+        "receipt_browser",
+        "git_truth"
+      ],
+      "commands": [
+        "open_receipt",
+        "compare_receipt_to_git"
+      ],
+      "tools": [
+        "MECHANICUS_VALIDATE"
+      ],
+      "risks": [
+        "stale report interpretation"
+      ],
+      "receipts": [
+        "receipt_inspection_receipt"
+      ],
+      "validation": {
+        "required": true,
+        "current_task": "schema_parse_only"
+      }
+    }
+  ]
+}

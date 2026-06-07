@@ -1,0 +1,91 @@
+{
+  "schema_version": "mechanicus.tool_registry.v0_1",
+  "registry_status": "CANON_ACTIVE_SEED",
+  "task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1",
+  "updated_at_utc": "2026-06-07T11:08:13Z",
+  "owner_organ": "MECHANICUS",
+  "policy_path": "ORGANS/MECHANICUS/REGISTRY/command_policy.json",
+  "tools": [
+    {
+      "tool_id": "MECHANICUS_CLI",
+      "name": "Mechanicus CLI",
+      "status": "PROVEN",
+      "path": "ORGANS/MECHANICUS/TOOLS/mechanicus_cli.py",
+      "entrypoints": [
+        "doctor",
+        "inventory",
+        "validate-json",
+        "list-tools",
+        "list-capabilities",
+        "policy",
+        "emit-receipt",
+        "dry-run-tool"
+      ],
+      "risk_class": "LOW_LOCAL_DRY_RUN",
+      "command_execution": "NO_ARBITRARY_SHELL",
+      "last_validation_task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1"
+    },
+    {
+      "tool_id": "MECHANICUS_DOCTOR",
+      "name": "Mechanicus Doctor",
+      "status": "PROVEN",
+      "path": "ORGANS/MECHANICUS/TOOLS/mechanicus_doctor.py",
+      "entrypoints": [
+        "doctor"
+      ],
+      "risk_class": "LOW_LOCAL_READ_ONLY",
+      "command_execution": "NO_ARBITRARY_SHELL",
+      "last_validation_task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1"
+    },
+    {
+      "tool_id": "MECHANICUS_INVENTORY",
+      "name": "Mechanicus Inventory",
+      "status": "PROVEN",
+      "path": "ORGANS/MECHANICUS/TOOLS/mechanicus_inventory.py",
+      "entrypoints": [
+        "inventory",
+        "list-tools",
+        "list-capabilities"
+      ],
+      "risk_class": "LOW_LOCAL_READ_ONLY",
+      "command_execution": "NO_ARBITRARY_SHELL",
+      "last_validation_task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1"
+    },
+    {
+      "tool_id": "MECHANICUS_VALIDATE",
+      "name": "Mechanicus JSON Validator",
+      "status": "PROVEN",
+      "path": "ORGANS/MECHANICUS/TOOLS/mechanicus_validate.py",
+      "entrypoints": [
+        "validate-json"
+      ],
+      "risk_class": "LOW_LOCAL_READ_ONLY",
+      "command_execution": "NO_ARBITRARY_SHELL",
+      "last_validation_task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1"
+    },
+    {
+      "tool_id": "MECHANICUS_COMMAND_GATEWAY",
+      "name": "Mechanicus Command Gateway",
+      "status": "PROVEN",
+      "path": "ORGANS/MECHANICUS/TOOLS/mechanicus_command_gateway.py",
+      "entrypoints": [
+        "dry-run-tool"
+      ],
+      "risk_class": "LOW_LOCAL_DRY_RUN",
+      "command_execution": "DRY_RUN_ONLY_ALLOWLISTED",
+      "last_validation_task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1"
+    },
+    {
+      "tool_id": "ASTRONOMICON_TASKPACK_REGISTRATION_SKILL_V0_1",
+      "name": "Astronomicon Taskpack Registration Skill",
+      "status": "PROVEN",
+      "path": "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py",
+      "entrypoints": [
+        "--discovery-smoke"
+      ],
+      "risk_class": "LOW_LOCAL",
+      "command_execution": "NO_REMOTE_ROUTE_FOR_PC_DISCOVERY",
+      "last_validation_task_id": "TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1"
+    }
+  ]
+}

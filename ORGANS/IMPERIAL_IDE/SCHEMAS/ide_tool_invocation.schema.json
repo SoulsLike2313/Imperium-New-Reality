@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://imperial_ide/schemas/ide_tool_invocation.v0_1",
+  "title": "Imperial IDE Tool Invocation",
+  "type": "object",
+  "required": [
+    "request_id",
+    "tool_id",
+    "mechanicus_mode",
+    "dry_run",
+    "receipt_required"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "tool_id": {
+      "type": "string"
+    },
+    "mechanicus_mode": {
+      "type": "string"
+    },
+    "dry_run": {
+      "type": "boolean"
+    },
+    "arguments": {
+      "type": "object"
+    },
+    "receipt_required": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

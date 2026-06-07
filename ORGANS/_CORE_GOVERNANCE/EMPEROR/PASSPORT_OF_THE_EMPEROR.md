@@ -1,7 +1,10 @@
 # Passport of the Emperor
 
-Status: `CANON_CANDIDATE`
+Status: `CANON_ACTIVE`
 Scope: `E:/IMPERIUM_NEW_GENERATION_NEW_REALITY`
+Owner canonization approval: `true`
+Canonization task: `TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1`
+Canonization timestamp UTC: `2026-06-07T11:08:13Z`
 
 ## 1. Owner Sovereignty
 
@@ -37,4 +40,4 @@ Owner-facing summaries must be direct, in Russian when required by Officio, and 
 
 ## 9. Relationship To Other Authorities
 
-This Passport sits below `AGENTS.md` and owner direct instruction, and above organ-local preferences. It does not claim that every desired capability already exists; it defines how capabilities are admitted and proven.
+This Passport is the first active governance document in the canonical authority order. It is followed by the Constitution, `AGENTS.md`, organ contracts, Astronomicon taskpacks, Mechanicus tool cards and validators, then reports and receipts. It does not claim that every desired capability already exists; it defines how capabilities are admitted and proven.

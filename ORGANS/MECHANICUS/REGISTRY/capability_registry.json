@@ -1,0 +1,50 @@
+{
+  "schema_version": "mechanicus.capability_registry.v0_1",
+  "registry_status": "CANON_ACTIVE_SEED",
+  "task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1",
+  "updated_at_utc": "2026-06-07T11:08:13Z",
+  "capabilities": [
+    {
+      "capability_id": "TOOL_REGISTRY_AUTHORITY",
+      "status": "PROVEN",
+      "owner_tool_id": "MECHANICUS_CLI",
+      "description": "Read and expose tool registry records."
+    },
+    {
+      "capability_id": "CAPABILITY_REGISTRY_AUTHORITY",
+      "status": "PROVEN",
+      "owner_tool_id": "MECHANICUS_CLI",
+      "description": "Read and expose capability records."
+    },
+    {
+      "capability_id": "JSON_STRUCTURE_VALIDATION",
+      "status": "PROVEN",
+      "owner_tool_id": "MECHANICUS_VALIDATE",
+      "description": "Parse JSON files using Python standard library."
+    },
+    {
+      "capability_id": "COMMAND_POLICY_REPORTING",
+      "status": "PROVEN",
+      "owner_tool_id": "MECHANICUS_CLI",
+      "description": "Expose command policy as data."
+    },
+    {
+      "capability_id": "DRY_RUN_TOOL_INVOCATION",
+      "status": "PROVEN",
+      "owner_tool_id": "MECHANICUS_COMMAND_GATEWAY",
+      "description": "Emit dry-run receipts for allowlisted tools without execution."
+    },
+    {
+      "capability_id": "REAL_TOOL_EXECUTION_GATEWAY",
+      "status": "BLOCKED",
+      "owner_tool_id": "MECHANICUS_COMMAND_GATEWAY",
+      "description": "Real execution is blocked until owner-approved sandbox and command policy exist."
+    },
+    {
+      "capability_id": "IDE_TOOL_BRIDGE",
+      "status": "CANDIDATE",
+      "owner_tool_id": "MECHANICUS_COMMAND_GATEWAY",
+      "description": "Future IDE requests tools through Mechanicus receipts."
+    }
+  ]
+}

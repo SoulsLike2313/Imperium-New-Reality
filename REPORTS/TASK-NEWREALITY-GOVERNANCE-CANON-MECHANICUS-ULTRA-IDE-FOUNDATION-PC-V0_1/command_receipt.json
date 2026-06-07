@@ -1,0 +1,77 @@
+{
+  "receipt_type": "command_receipt",
+  "task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1",
+  "timestamp_utc": "2026-06-07T11:10:26Z",
+  "repo_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "head_sha_at_preflight": "b7e5d4947bff2b127b370641caf7b03179213134",
+  "origin_master_sha_at_preflight": "b7e5d4947bff2b127b370641caf7b03179213134",
+  "head_equals_origin_master_at_preflight": true,
+  "pre_existing_dirty_out_of_scope": {
+    "path": "REPORTS/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/astronomicon_local_pc_registration_and_route_drift_report.zip",
+    "status": "DELETED_IN_WORKTREE_BEFORE_TASK_EDITS",
+    "allowed_write_scope": false,
+    "owner_instruction": "ignore and continue; owner will clean manually",
+    "staged": false,
+    "pushed": false
+  },
+  "commands": [
+    {
+      "command": "git rev-parse --show-toplevel",
+      "exit_code": 0,
+      "result": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY"
+    },
+    {
+      "command": "git status --porcelain=v1 --ignored",
+      "exit_code": 0,
+      "result": "task registration dirty plus pre-existing out-of-scope deletion"
+    },
+    {
+      "command": "Get-Content AGENTS.md and governance docs",
+      "exit_code": 0,
+      "result": "authority read before writes"
+    },
+    {
+      "command": "Get-Content taskpack manifest/spec/gates/output requirements",
+      "exit_code": 0,
+      "result": "task scope read before writes"
+    },
+    {
+      "command": "ConvertFrom-Json over foundation JSON files",
+      "exit_code": 0,
+      "result": "foundation_json_count=14; changed_json_count=35"
+    },
+    {
+      "command": "python -m py_compile Mechanicus Python files",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "command": "python ORGANS/MECHANICUS/TOOLS/mechanicus_cli.py doctor",
+      "exit_code": 0,
+      "result": "PASS_WITH_WARNINGS at 2026-06-07T11:11:13Z"
+    },
+    {
+      "command": "python ORGANS/MECHANICUS/TOOLS/mechanicus_cli.py dry-run-tool MECHANICUS_DOCTOR",
+      "exit_code": 0,
+      "result": "PASS_WITH_WARNINGS at 2026-06-07T11:11:14Z"
+    },
+    {
+      "command": "powershell -ExecutionPolicy Bypass -File ORGANS/ASTRONOMICON/run_astronomicon_pc.ps1 --discovery-smoke",
+      "exit_code": 0,
+      "result": "PASS_WITH_WARNINGS at 2026-06-07T11:11:15Z"
+    }
+  ],
+  "forbidden_actions_confirmed_not_run": [
+    "VM2 route",
+    "VM3 route",
+    "remote contour transfer",
+    "delete",
+    "mass move",
+    "git reset --hard",
+    "git clean",
+    "unsafe arbitrary shell gateway",
+    "stage local route config",
+    "stage secret"
+  ],
+  "verdict": "PASS_WITH_WARNINGS"
+}

@@ -1,17 +1,20 @@
 # Конституция Империума
 
-Статус: `CANON_CANDIDATE`
+Статус: `CANON_ACTIVE`
 Область: `E:/IMPERIUM_NEW_GENERATION_NEW_REALITY`
+Owner canonization approval: `true`
+Canonization task: `TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1`
+Canonization timestamp UTC: `2026-06-07T11:08:13Z`
 
 ## 1. Иерархия власти
 
-1. Прямая инструкция владельца.
-2. Корневой контракт `AGENTS.md`.
-3. Паспорт Императора.
-4. Конституция Империума.
-5. Контракты органов и принятые task participation.
-6. Route manifests и task receipts Astronomicon.
-7. Live git truth и validation receipts.
+1. Паспорт Императора.
+2. Конституция Империума.
+3. Корневой контракт `AGENTS.md`.
+4. Контракты органов и read-first files.
+5. Taskpacks Astronomicon.
+6. Tool cards и validators.
+7. Reports и receipts.
 
 ## 2. Базовые органы
 

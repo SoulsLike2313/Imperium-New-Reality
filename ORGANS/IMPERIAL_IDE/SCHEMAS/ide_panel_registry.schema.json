@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://imperial_ide/schemas/ide_panel_registry.v0_1",
+  "title": "Imperial IDE Panel Registry",
+  "type": "object",
+  "required": [
+    "panels"
+  ],
+  "properties": {
+    "panels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "panel_id",
+          "status",
+          "purpose"
+        ],
+        "properties": {
+          "panel_id": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "PROVEN",
+              "CANDIDATE",
+              "MISSING",
+              "BLOCKED"
+            ]
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "required_permissions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

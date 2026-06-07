@@ -1,0 +1,178 @@
+{
+  "schema_version": "astronomicon.taskpack.v0_1",
+  "taskpack_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1",
+  "task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1",
+  "title": "Governance canonization, Mechanicus ultra foundation, and custom IDE foundation on PC",
+  "created_from_contour": "PC",
+  "target_contour": "PC",
+  "registration_mode": "ASTRONOMICON_STAGE2_LOCAL_PC_TASKPACK",
+  "execution_mode": "CONTROLLED_WRITE_WITH_VALIDATED_PUSH",
+  "mission_summary": "Canonize approved governance documents, harden the local task-entry path, build the first Mechanicus ultra-form foundation as guardian and validator of tools, and create the first custom IDE foundation contracts for Imperium New Reality.",
+  "active_truth_scope": "IMPERIUM_NEW_REALITY_PC_CURRENT_ROOT_ONLY",
+  "remote_contours": {
+    "VM2": "OUT_OF_SCOPE",
+    "VM3": "OUT_OF_SCOPE"
+  },
+  "strategic_intent": {
+    "core": "Imperium New Reality becomes the kernel of the future custom IDE.",
+    "ide": "The IDE must be built as an extension-capable development zone over the kernel.",
+    "mechanicus": "Mechanicus is prioritized because it owns tool registry, validation, command receipts, and safe invocation of tools inside the IDE.",
+    "product_direction": "Future owner requests should move toward request-to-product execution through taskpacks, tools, validation, reports, and pushed receipts."
+  },
+  "source_context_to_consider": [
+    "REPORTS/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/",
+    "REPORTS/TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1/",
+    "ORGANS/_CORE_GOVERNANCE/",
+    "AGENTS.md",
+    "Owner decision: governance candidates may be canonized now",
+    "Owner direction: build larger steps toward a custom IDE, not only external IDE integration",
+    "Owner direction: Mechanicus must become the first ultra-form organ because it guards and validates all tools"
+  ],
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "required_organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "organ_route": {
+    "DOCTRINARIUM": "canonization law, authority wording, capability and IDE concepts",
+    "OFFICIO_AGENTIS": "owner-facing Russian summaries, role entry, language and communication authority",
+    "ASTRONOMICON": "local task entry, registry, route manifest, start ACK, taskpack admission health",
+    "ADMINISTRATUM": "receipts, continuity, report bundles, commit and push closure",
+    "MECHANICUS": "tool registry, command gateway, validators, command receipts, IDE tool invocation foundation",
+    "INQUISITION": "fake-green prevention, safety gates, destructive action blocks, validation downgrade",
+    "STRATEGIUM": "large-step sequencing, KPD, product orientation, next task ladder",
+    "SCHOLA_IMPERIALIS": "lessons, reusable patterns, IDE operating doctrine, operator workflow learning"
+  },
+  "route_manifest_template": "TASK_ROUTE_MANIFEST_TEMPLATE.json",
+  "task_start_ack_template": "TASK_START_ACK_TEMPLATE.json",
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH_UTF8_NO_BOM_NO_CYRILLIC",
+    "canonical_repo_artifacts": "ENGLISH_UTF8_NO_BOM",
+    "owner_facing_russian_runtime_output": {
+      "allowed": true,
+      "language": "RUSSIAN",
+      "encoding": "UTF8_NO_BOM",
+      "authority": "OFFICIO_AGENTIS",
+      "required_route": "OFFICIO_AGENTIS_OWNER_FACING_FINAL_RESPONSE",
+      "allowed_files": [
+        "REPORTS/TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1/FINAL_OWNER_SUMMARY_RU.md",
+        "ORGANS/_CORE_GOVERNANCE/EMPEROR/PASSPORT_OF_THE_EMPEROR_RU.md",
+        "ORGANS/_CORE_GOVERNANCE/CONSTITUTION/CONSTITUTION_OF_THE_IMPERIUM_RU.md"
+      ],
+      "not_allowed_in_taskpack_root_files": true
+    },
+    "cyrillic_in_taskpack": {
+      "allowed": false,
+      "scope": "MANIFEST.json, TASK_SPEC.md, ACCEPTANCE_GATES.md, OUTPUT_REQUIREMENTS.md, TASK_ROUTE_MANIFEST_TEMPLATE.json, TASK_START_ACK_TEMPLATE.json"
+    },
+    "localization_exception": {
+      "allowed": true,
+      "authority": "OFFICIO_AGENTIS",
+      "scope": "owner-facing runtime files only after Officio role entry",
+      "forbidden_scope": "taskpack internal files"
+    }
+  },
+  "git_push_policy": {
+    "push_allowed": true,
+    "push_required_for_success": true,
+    "allowed_when": [
+      "git diff is inside allowed_write_scope",
+      "all required outputs exist",
+      "JSON files parse successfully",
+      "new Python files compile if Python files are created",
+      "Mechanicus smoke tests pass or exact blockers are recorded",
+      "IDE foundation contracts and schemas validate as JSON or Markdown",
+      "no secret files or local operator configs are staged",
+      "no destructive cleanup is performed",
+      "commit message includes task_id",
+      "post-push HEAD equals origin/master"
+    ],
+    "forbidden_push_cases": [
+      "changes outside allowed_write_scope",
+      "failed validation without explicit BLOCK verdict",
+      "secrets, credentials, or local operator configs staged",
+      "destructive cleanup or delete without owner batch approval",
+      "fake-green closure",
+      "VM2 or VM3 changes"
+    ],
+    "required_after_push_receipts": [
+      "commit_sha",
+      "origin_master_sha",
+      "head_equals_origin_master_after_push",
+      "git_status_after_push",
+      "pushed_files_summary"
+    ]
+  },
+  "owner_decisions_preapproved_for_this_task": {
+    "OD_PC_ONLY": "approved",
+    "OD_GOVERNANCE_CANONIZATION": "approved",
+    "OD_AGENTS_BOOT_LAW_PATCH": "approved",
+    "OD_ASTRONOMICON_LOCAL_HARDENING": "approved",
+    "OD_MECHANICUS_ULTRA_FOUNDATION": "approved",
+    "OD_CUSTOM_IDE_FOUNDATION_CONTRACTS": "approved",
+    "OD_VALIDATED_PUSH": "approved"
+  },
+  "owner_decisions_not_approved_for_this_task": {
+    "OD_DELETE": "not approved",
+    "OD_MASS_MOVE": "not approved",
+    "OD_REMOTE_CONTOURS": "not approved",
+    "OD_FULL_GUI_IDE_IMPLEMENTATION": "not approved in this task",
+    "OD_UNSAFE_COMMAND_EXECUTION_GATEWAY": "not approved"
+  },
+  "allowed_write_scope": [
+    "AGENTS.md",
+    ".gitignore",
+    "ORGANS/_CORE_GOVERNANCE/**",
+    "ORGANS/ASTRONOMICON/**",
+    "ORGANS/MECHANICUS/**",
+    "ORGANS/IMPERIAL_IDE/**",
+    "REPORTS/TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1/**"
+  ],
+  "local_only_allowed_operations_not_to_commit": [
+    ".git/info/exclude update for local contour_route_config.json if needed"
+  ],
+  "forbidden_actions": [
+    "delete_files_without_owner_batch_approval",
+    "mass_move_core_files_without_owner_batch_approval",
+    "reset_hard",
+    "git_clean_fd",
+    "admit_quarantine_to_canon",
+    "salvage_ancient_files_into_active_core",
+    "remote_route_to_vm2",
+    "remote_route_to_vm3",
+    "live_transfer_to_other_contours",
+    "push_outside_allowed_write_scope",
+    "push_failed_validation_outputs",
+    "push_dirty_runtime_or_secret_files",
+    "push_destructive_changes_without_owner_approval",
+    "unsafe_shell_command_gateway",
+    "unvalidated_tool_execution",
+    "claim_full_ide_complete",
+    "fake_green_clean_pass_claim",
+    "rewrite_report_history"
+  ],
+  "primary_outputs": [
+    "Governance docs upgraded from CANON_CANDIDATE to CANON_ACTIVE if validation passes",
+    "AGENTS.md patched as boot-law entrypoint",
+    "Astronomicon local hardening receipts",
+    "Mechanicus ultra-form registry and schema foundation",
+    "Mechanicus local CLI or command surface seed",
+    "Imperial IDE foundation contracts and extension model",
+    "Validated commit and push receipt"
+  ]
+}

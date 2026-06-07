@@ -1,7 +1,10 @@
 # Паспорт Императора
 
-Статус: `CANON_CANDIDATE`
+Статус: `CANON_ACTIVE`
 Область: `E:/IMPERIUM_NEW_GENERATION_NEW_REALITY`
+Owner canonization approval: `true`
+Canonization task: `TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1`
+Canonization timestamp UTC: `2026-06-07T11:08:13Z`
 
 ## 1. Суверенитет владельца
 
@@ -37,4 +40,4 @@ Owner-facing summaries должны быть прямыми, на русском
 
 ## 9. Отношение к другим источникам власти
 
-Этот Паспорт ниже `AGENTS.md` и прямой инструкции владельца, но выше локальных предпочтений органов. Он не утверждает, что все желаемые возможности уже существуют; он задает порядок допуска и доказательства возможностей.
+Этот Паспорт является первым активным governance-документом в каноническом порядке власти. Далее идут Конституция, `AGENTS.md`, контракты органов, taskpacks Astronomicon, tool cards и validators Mechanicus, затем reports и receipts. Он не утверждает, что все желаемые возможности уже существуют; он задает порядок допуска и доказательства возможностей.

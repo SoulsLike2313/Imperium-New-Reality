@@ -1,12 +1,12 @@
 # Core Governance
 
-Status: `CANON_CANDIDATE`
+Status: `CANON_ACTIVE`
 Owner: Doctrinarium
 Custodian: Administratum
 Guard: Custodes
 Russian mirror custodian: Officio
 
-This directory stages root-level governance documents for the New Reality repository. The documents are candidates until the owner explicitly promotes them to final canon.
+This directory contains active root-level governance documents for the New Reality repository. They were canonized by owner-approved task `TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1`.
 
 ## Documents
 
@@ -21,5 +21,11 @@ This directory stages root-level governance documents for the New Reality reposi
 1. `AGENTS.md` remains the immediate root contract for agents operating in this repository.
 2. These governance documents do not grant access outside this repository root.
 3. These governance documents do not make quarantine, Ancient, VM2, VM3, or report archives active truth by default.
-4. Any final canon promotion requires an owner decision and a receipt.
+4. Future governance amendments require owner decision, task scope, validation, and receipt.
 5. PASS claims require receipts, validation evidence, and current git truth.
+
+## Canonization
+
+Owner canonization approval: `true`
+Canonization task: `TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1`
+Canonization timestamp UTC: `2026-06-07T11:08:13Z`

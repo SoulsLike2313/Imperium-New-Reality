@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://imperial_ide/schemas/ide_workspace_state.v0_1",
+  "title": "Imperial IDE Workspace State",
+  "type": "object",
+  "required": [
+    "workspace_id",
+    "kernel_root",
+    "active_task",
+    "panels",
+    "receipts"
+  ],
+  "properties": {
+    "workspace_id": {
+      "type": "string"
+    },
+    "kernel_root": {
+      "type": "string"
+    },
+    "active_task": {
+      "type": "string"
+    },
+    "panels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "receipts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "product_workspaces": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

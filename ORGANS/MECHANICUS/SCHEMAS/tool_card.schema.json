@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://mechanicus/schemas/tool_card.v0_1",
+  "title": "Mechanicus Tool Card",
+  "type": "object",
+  "required": [
+    "tool_id",
+    "status",
+    "path",
+    "risk_class",
+    "command_execution"
+  ],
+  "properties": {
+    "tool_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "PROVEN",
+        "CANDIDATE",
+        "MISSING",
+        "BLOCKED"
+      ]
+    },
+    "path": {
+      "type": "string"
+    },
+    "entrypoints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risk_class": {
+      "type": "string"
+    },
+    "command_execution": {
+      "type": "string"
+    },
+    "last_validation_task_id": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

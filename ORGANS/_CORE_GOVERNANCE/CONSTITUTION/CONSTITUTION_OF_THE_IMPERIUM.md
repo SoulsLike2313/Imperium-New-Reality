@@ -1,17 +1,20 @@
 # Constitution of the Imperium
 
-Status: `CANON_CANDIDATE`
+Status: `CANON_ACTIVE`
 Scope: `E:/IMPERIUM_NEW_GENERATION_NEW_REALITY`
+Owner canonization approval: `true`
+Canonization task: `TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1`
+Canonization timestamp UTC: `2026-06-07T11:08:13Z`
 
 ## 1. Authority Hierarchy
 
-1. Owner direct instruction.
-2. `AGENTS.md` root contract.
-3. Passport of the Emperor.
-4. Constitution of the Imperium.
-5. Organ contracts and accepted task participation.
-6. Astronomicon route manifests and task receipts.
-7. Live git truth and validation receipts.
+1. Emperor Passport.
+2. Constitution of the Imperium.
+3. `AGENTS.md` root contract.
+4. Organ contracts and read-first files.
+5. Astronomicon taskpacks.
+6. Tool cards and validators.
+7. Reports and receipts.
 
 ## 2. Baseline Organs
 
