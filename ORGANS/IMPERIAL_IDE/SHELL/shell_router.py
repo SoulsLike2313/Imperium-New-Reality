@@ -17,6 +17,7 @@ for module_dir in (
 
 from shell_receipts import build_receipt
 from shell_state import RepositoryState
+from read_only_policy import command_mutation_profile
 
 
 RISK = {
@@ -37,9 +38,9 @@ RISK = {
     "classify-task": "LOW_DRY_RUN",
     "build-taskpack": "LOW_DRY_RUN",
     "register-taskpack": "LOW_DRY_RUN",
-    "launch-card": "LOW_DRY_RUN",
-    "lifecycle": "LOW_DRY_RUN",
-    "git-closure": "LOW_DRY_RUN",
+    "launch-card": "LOW_READ_ONLY",
+    "lifecycle": "LOW_READ_ONLY",
+    "git-closure": "LOW_READ_ONLY",
     "taskpack-manager": "LOW_READ_ONLY",
     "taskpacks": "LOW_READ_ONLY",
     "taskpack-list": "LOW_READ_ONLY",
@@ -48,6 +49,7 @@ RISK = {
     "taskpack-open": "LOW_READ_ONLY",
     "taskpack-copy-path": "LOW_READ_ONLY",
     "show-json": "LOW_READ_ONLY",
+    "full-json": "LOW_READ_ONLY",
     "show-summary": "LOW_READ_ONLY",
     "path-actions": "LOW_READ_ONLY",
     "dirty-classifier": "LOW_READ_ONLY",
@@ -59,10 +61,15 @@ RISK = {
     "agent-status": "LOW_READ_ONLY",
     "new-task": "LOW_DRY_RUN",
     "validate-taskpack": "LOW_DRY_RUN",
-    "handoff-card": "LOW_DRY_RUN",
+    "handoff-card": "LOW_READ_ONLY",
     "reports-latest": "LOW_READ_ONLY",
     "receipts-latest": "LOW_READ_ONLY",
     "safety": "LOW_READ_ONLY",
+    "daily-ops": "LOW_READ_ONLY",
+    "next-action": "LOW_READ_ONLY",
+    "operator-board": "LOW_READ_ONLY",
+    "task-flow": "LOW_READ_ONLY",
+    "task-flow-smoke": "LOW_LOCAL_SMOKE",
 }
 
 OPS_COMMANDS = {
@@ -76,8 +83,9 @@ STATION_COMMANDS = {
     "lifecycle", "reports-latest", "receipts-latest", "safety", "git-closure",
     "station-ux-smoke", "taskpack-manager", "taskpacks", "taskpack-list", "taskpack-inspect",
     "taskpack-validate", "taskpack-open", "taskpack-copy-path",
-    "show-json", "show-summary", "path-actions", "dirty-classifier",
-    "live-registration-promote",
+    "show-json", "full-json", "show-summary", "path-actions", "dirty-classifier",
+    "live-registration-promote", "daily-ops", "next-action", "operator-board",
+    "task-flow", "task-flow-smoke",
 }
 
 INTEGRATION_COMMANDS = {
@@ -108,13 +116,15 @@ def route(command: str, args: list[str] | None = None) -> dict[str, Any]:
     data_sources: list[str] = []
     tools_invoked: list[str] = []
     live_registration = command == "register-taskpack" and bool(args) and args[0].lower() == "live"
-    promotion_live = command == "live-registration-promote" and bool(args) and args[0] == "CONFIRM_LIVE_REGISTRATION"
+    promotion_live = command == "live-registration-promote" and bool(args) and args[0] == "LIVE"
     dry_run = not live_registration and not promotion_live and (command == "dry-run-tool" or command in {
         "warp-open", "warp-gate", "metaos-route", "metaos-servitor", "metaos-chronicle",
-        "classify-task", "build-taskpack", "register-taskpack", "launch-card",
-        "validate-taskpack", "taskpack-validate", "handoff-card", "lifecycle", "git-closure", "task-console",
-        "new-task", "dirty-classifier", "live-registration-promote",
+        "classify-task", "build-taskpack", "register-taskpack",
+        "validate-taskpack", "taskpack-validate", "task-console",
+        "new-task", "live-registration-promote",
     })
+    mutation_profile = command_mutation_profile(command)
+    mutates_repo = bool(mutation_profile.get("mutates_repo")) or live_registration or promotion_live
 
     if command in {"tools", "capabilities", "policy", "dry-run-tool", "doctor", "validate"}:
         from mechanicus_shell_bridge import MechanicusShellBridge
@@ -270,6 +280,7 @@ def route(command: str, args: list[str] | None = None) -> dict[str, Any]:
         data_sources=data_sources,
         tools_invoked=tools_invoked,
         dry_run=dry_run,
+        mutates_repo=mutates_repo,
         output_summary=f"{command}:{status}",
     )
     return {"data": data, "receipt": receipt}

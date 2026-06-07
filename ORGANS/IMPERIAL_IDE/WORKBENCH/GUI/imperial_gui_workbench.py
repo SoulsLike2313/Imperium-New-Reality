@@ -39,8 +39,10 @@ PKG_ROOT = os.path.dirname(HERE)
 
 OPERATIONAL_ACTIONS = [
     ("DASHBOARD", "station"),
+    ("DAILY OPS", "daily-ops"),
+    ("NEXT", "next-action"),
     ("SUMMARY", "show-summary"),
-    ("FULL JSON", "show-json"),
+    ("FULL JSON", "full-json"),
     ("TASKPACKS", "taskpack-manager"),
     ("INSPECT", "taskpack-inspect"),
     ("NEW TASK", "new-task"),
@@ -604,7 +606,7 @@ def smoke():
         "safety_center", "station_git_closure", "warp_workspace", "metaos_router",
         "station_mechanicus_tools", "station_settings", "taskpack_manager",
         "dirty_classifier", "live_registration_promotion", "json_summary_viewer",
-        "handoff_card",
+        "handoff_card", "daily_ops_shell",
     }
     panel_ids = {panel.get("panel_id") for panel in load_panels()}
     payload = {

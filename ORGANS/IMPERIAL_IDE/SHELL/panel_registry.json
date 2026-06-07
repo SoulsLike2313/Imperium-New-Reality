@@ -341,7 +341,20 @@
       "owner_organ": "OFFICIO_AGENTIS",
       "data_sources": ["ORGANS/IMPERIAL_IDE/STATION/station_workflow.py"],
       "commands": ["launch-card", "handoff-card"],
-      "risk_class": "LOW_DRY_RUN",
+      "risk_class": "LOW_READ_ONLY",
+      "current_status": "ACTIVE"
+    },
+    {
+      "panel_id": "daily_ops_shell",
+      "title": "Daily Operations Shell",
+      "owner_organ": "IMPERIAL_IDE",
+      "data_sources": [
+        "ORGANS/IMPERIAL_IDE/STATION/daily_ops_shell.py",
+        "ORGANS/IMPERIAL_IDE/STATION/daily_ops_state.py",
+        "ORGANS/IMPERIAL_IDE/STATION/operator_next_action.py"
+      ],
+      "commands": ["daily-ops", "operator-board", "next-action", "task-flow", "task-flow-smoke"],
+      "risk_class": "LOW_READ_ONLY_AND_LOCAL_SMOKE",
       "current_status": "ACTIVE"
     },
     {
@@ -368,7 +381,7 @@
       "owner_organ": "ADMINISTRATUM",
       "data_sources": ["ORGANS/IMPERIAL_IDE/STATION/lifecycle_state.json"],
       "commands": ["lifecycle"],
-      "risk_class": "LOW_DRY_RUN",
+      "risk_class": "LOW_READ_ONLY",
       "current_status": "ACTIVE"
     },
     {
@@ -438,7 +451,7 @@
       "owner_organ": "OFFICIO_AGENTIS",
       "data_sources": ["ORGANS/IMPERIAL_IDE/STATION/handoff_card_viewer.py"],
       "commands": ["handoff-card"],
-      "risk_class": "LOW_DRY_RUN",
+      "risk_class": "LOW_READ_ONLY",
       "current_status": "ACTIVE"
     },
     {

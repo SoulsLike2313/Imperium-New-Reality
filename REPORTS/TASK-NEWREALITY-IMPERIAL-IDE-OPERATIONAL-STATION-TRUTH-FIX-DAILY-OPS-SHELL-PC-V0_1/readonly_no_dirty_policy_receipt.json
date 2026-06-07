@@ -1,0 +1,55 @@
+{
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-TRUTH-FIX-DAILY-OPS-SHELL-PC-V0_1",
+  "status": "PASS_WITH_WARNINGS",
+  "read_only_commands": [
+    "help",
+    "station",
+    "agents",
+    "agent-status",
+    "taskpack-manager",
+    "taskpacks",
+    "taskpack-list",
+    "taskpack-inspect",
+    "taskpack-open",
+    "taskpack-copy-path",
+    "dirty-classifier",
+    "safety",
+    "git-closure",
+    "reports-latest",
+    "receipts-latest",
+    "show-summary",
+    "show-json",
+    "full-json",
+    "launch-card",
+    "handoff-card",
+    "daily-ops",
+    "next-action",
+    "operator-board",
+    "task-flow",
+    "lifecycle"
+  ],
+  "dry_run_commands": [
+    "new-task",
+    "task-console",
+    "build-taskpack",
+    "register-taskpack",
+    "validate-taskpack",
+    "taskpack-validate"
+  ],
+  "smoke_commands": [
+    "station-smoke",
+    "station-ux-smoke",
+    "task-flow-smoke",
+    "workbench-smoke",
+    "lifecycle-smoke"
+  ],
+  "rules": [
+    "read-only commands must not modify tracked repository files",
+    "read-only commands may print receipts to stdout",
+    "optional runtime receipts must stay under ignored runtime paths",
+    "tracked report receipts are written only by explicit smoke or report finalization commands",
+    "post-push inspection must not rewrite committed report receipts",
+    "command receipts must include mutates_repo"
+  ],
+  "timestamp": "2026-06-07T21:19:16Z"
+}

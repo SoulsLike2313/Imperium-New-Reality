@@ -22,7 +22,9 @@ COMMANDS = [
     "reports-latest", "receipts-latest", "safety", "station-ux-smoke",
     "taskpack-manager", "taskpacks", "taskpack-list", "taskpack-inspect",
     "taskpack-validate", "taskpack-open", "taskpack-copy-path", "show-json",
-    "show-summary", "path-actions", "dirty-classifier", "live-registration-promote",
+    "full-json", "show-summary", "path-actions", "dirty-classifier",
+    "live-registration-promote", "daily-ops", "next-action", "operator-board",
+    "task-flow", "task-flow-smoke",
 ]
 
 

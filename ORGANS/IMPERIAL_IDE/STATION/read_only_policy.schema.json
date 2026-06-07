@@ -1,0 +1,26 @@
+{
+  "schema_version": "imperial_ide.read_only_policy.schema.v0_1",
+  "required_command_receipt_fields": [
+    "command",
+    "status",
+    "risk_class",
+    "dry_run",
+    "mutates_repo",
+    "real_execution",
+    "unsafe_shell_available"
+  ],
+  "read_only_rules": [
+    "READ_ONLY_COMMANDS_DO_NOT_MODIFY_TRACKED_FILES",
+    "READ_ONLY_RECEIPTS_PRINT_TO_STDOUT",
+    "OPTIONAL_RUNTIME_RECEIPTS_USE_IGNORED_RUNTIME_PATHS",
+    "TRACKED_REPORT_RECEIPTS_REQUIRE_EXPLICIT_SMOKE_OR_FINALIZATION",
+    "POST_PUSH_INSPECTION_DOES_NOT_REWRITE_COMMITTED_REPORTS"
+  ],
+  "allowed_mutation_modes": [
+    "EXPLICIT_SMOKE",
+    "EXPLICIT_VALIDATION",
+    "EXPLICIT_TASK_BUILD",
+    "EXPLICIT_REGISTRATION",
+    "EXPLICIT_REPORT_FINALIZATION"
+  ]
+}

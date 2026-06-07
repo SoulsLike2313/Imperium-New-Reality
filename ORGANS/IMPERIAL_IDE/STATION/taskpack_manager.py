@@ -80,10 +80,13 @@ def inspect_taskpack(repo_root: Path, taskpack_id: str = "") -> dict[str, Any]:
     missing = [name for name in REQUIRED_ROOT_FILES if name not in root_files]
     receipt = _receipt_for(repo, selected.name)
     validation_status = "PASS" if zip_path.is_file() and not missing else "BLOCKED"
+    path_actions = actions_for_path(repo, selected)
+    zip_actions = actions_for_path(repo, zip_path) if zip_path.is_file() else {}
     return {
         "status": "PASS_WITH_WARNINGS" if validation_status == "PASS" else "BLOCKED",
         "taskpack_id": selected.name,
         "title": manifest.get("title", ""),
+        "status_label": validation_status,
         "taskpack_path": selected.relative_to(repo).as_posix(),
         "taskpack_zip_path": zip_path.relative_to(repo).as_posix() if zip_path.is_file() else "",
         "latest_taskpack_sha256": _sha256(zip_path) if zip_path.is_file() else "",
@@ -94,14 +97,25 @@ def inspect_taskpack(repo_root: Path, taskpack_id: str = "") -> dict[str, Any]:
         "dry_run_registration_status": "RECEIPT_FOUND" if receipt else "NOT_REGISTERED_BY_STATION_RUNTIME",
         "dry_run_registration_receipt": receipt.relative_to(repo).as_posix() if receipt else "",
         "live_promotion_available": validation_status == "PASS",
+        "live_promotion_review_command": f"python ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py live-registration-promote {selected.name}",
+        "launch_card_command": f"python ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py launch-card {selected.name}",
+        "handoff_card_command": f"python ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py handoff-card {selected.name}",
+        "open_folder_command": path_actions.get("open_path_command", ""),
+        "copy_path_command": zip_actions.get("copy_path_command", path_actions.get("copy_path_command", "")),
         "open_or_copy_actions_available": True,
-        "path_actions": actions_for_path(repo, selected),
+        "path_actions": path_actions,
+        "zip_path_actions": zip_actions,
     }
 
 
 def list_taskpacks(repo_root: Path, limit: int = 20) -> dict[str, Any]:
     repo = repo_root.resolve()
-    items = [inspect_taskpack(repo, item.name) for item in _taskpack_dirs(repo)[:limit]]
+    items = []
+    for index, item in enumerate(_taskpack_dirs(repo)[:limit], 1):
+        inspected = inspect_taskpack(repo, item.name)
+        inspected["index"] = index
+        inspected["select_command"] = f"python ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py taskpack-inspect {item.name}"
+        items.append(inspected)
     latest = items[0] if items else None
     return {
         "status": "PASS_WITH_WARNINGS" if items else "BLOCKED",

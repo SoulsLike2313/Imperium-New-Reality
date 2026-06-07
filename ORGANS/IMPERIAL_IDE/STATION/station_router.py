@@ -6,7 +6,10 @@ from pathlib import Path
 from typing import Any
 
 from lifecycle_tracker import smoke as lifecycle_smoke
+from daily_ops_shell import daily_ops, next_action, smoke as daily_ops_smoke, task_flow
+from daily_ops_state import lifecycle_summary
 from dirty_classifier import classify_dirty
+from git_closure import plan_git_closure
 from handoff_card_viewer import view_handoff_card
 from json_viewer import view_json_path, view_payload
 from launch_card_viewer import view_launch_card
@@ -66,7 +69,7 @@ def route(command: str, args: list[str] | None = None, repo_root: Path | None = 
     if command == "show-summary":
         payload = state.snapshot()
         return {"status": "PASS_WITH_WARNINGS", "summary": summarize_payload("Operational Station", payload)}
-    if command == "show-json":
+    if command in {"show-json", "full-json"}:
         if args:
             return view_json_path(repo, args[0])
         return view_payload("Operational Station snapshot", state.snapshot())
@@ -127,8 +130,16 @@ def route(command: str, args: list[str] | None = None, repo_root: Path | None = 
     if command == "handoff-card":
         return view_handoff_card(repo, args[0] if args else "")
     if command == "lifecycle":
-        title, goal, template = _intent_text(args)
-        return workflow.lifecycle(title, goal, template)
+        current = state.task_state().get("current", {})
+        return lifecycle_summary(current.get("task_id", ""))
+    if command in {"daily-ops", "operator-board"}:
+        return daily_ops(repo)
+    if command == "next-action":
+        return next_action(repo)
+    if command == "task-flow":
+        return task_flow(repo)
+    if command == "task-flow-smoke":
+        return daily_ops_smoke(repo)
     if command == "reports-latest":
         return list_reports(repo)
     if command == "receipts-latest":
@@ -138,16 +149,11 @@ def route(command: str, args: list[str] | None = None, repo_root: Path | None = 
     if command == "safety":
         return safety_summary(repo)
     if command == "live-registration-promote":
-        token = args[0] if args and args[0] == "CONFIRM_LIVE_REGISTRATION" else ""
+        token = args[0] if args and args[0] == "LIVE" else ""
         taskpack_id = args[1] if token and len(args) > 1 else (args[0] if args and not token else "")
         return promotion_state(repo, taskpack_id, token)
     if command == "git-closure":
-        git_state = state.git_state()
-        git_state["dirty_classification"] = classify_dirty(repo)
-        git_state["classified_dirty_table"] = git_state["dirty_classification"].get("classified_items", [])
-        git_state["push_allowed_state"] = git_state["dirty_classification"].get("push_allowed_state")
-        git_state["recommended_action"] = git_state["dirty_classification"].get("recommended_action")
-        return {"status": "PASS_WITH_WARNINGS", **git_state}
+        return plan_git_closure(repo)
     return {"status": "BLOCKED", "reason": "unknown_station_command", "command": command}
 
 

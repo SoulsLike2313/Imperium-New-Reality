@@ -1,6 +1,6 @@
 {
   "schema_version": "imperial_ide.command_palette.v0_3",
-  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-USABILITY-STATION-AGENTIC-WORKFLOW-PC-V0_2",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-TRUTH-FIX-DAILY-OPS-SHELL-PC-V0_1",
   "commands": [
     {
       "command": "doctor",
@@ -278,14 +278,14 @@
     {
       "command": "launch-card",
       "description": "Render a launch card for a dry-run built taskpack",
-      "risk_class": "LOW_DRY_RUN",
+      "risk_class": "LOW_READ_ONLY",
       "argument_required": false,
       "real_execution": false
     },
     {
       "command": "lifecycle",
-      "description": "Run the OPS lifecycle dry-run for a sample task",
-      "risk_class": "LOW_DRY_RUN",
+      "description": "Show read-only lifecycle state for the current task",
+      "risk_class": "LOW_READ_ONLY",
       "argument_required": false,
       "real_execution": false
     },
@@ -299,7 +299,7 @@
     {
       "command": "git-closure",
       "description": "Show OPS git closure status without pushing",
-      "risk_class": "LOW_DRY_RUN",
+      "risk_class": "LOW_READ_ONLY",
       "argument_required": false,
       "real_execution": false
     },
@@ -334,6 +334,13 @@
     {
       "command": "station-smoke",
       "description": "Run station workflow and lifecycle smokes",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "station-ux-smoke",
+      "description": "Run explicit Station UX report-writing smoke",
       "risk_class": "LOW_LOCAL_SMOKE",
       "argument_required": false,
       "real_execution": false
@@ -374,6 +381,27 @@
       "real_execution": false
     },
     {
+      "command": "taskpack-manager",
+      "description": "Show the Taskpack Manager board",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "taskpack-list",
+      "description": "List generated Station taskpacks with index and status",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "taskpack-inspect",
+      "description": "Inspect the latest or selected generated Station taskpack",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
       "command": "taskpack-validate",
       "description": "Validate the latest or selected generated Station taskpack",
       "risk_class": "LOW_DRY_RUN",
@@ -397,7 +425,84 @@
     {
       "command": "handoff-card",
       "description": "Render a Servitor Prime external handoff card",
-      "risk_class": "LOW_DRY_RUN",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "show-json",
+      "description": "Show full JSON for the Station snapshot or a repo JSON path",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "full-json",
+      "description": "Alias for full JSON Station view",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "show-summary",
+      "description": "Show a human summary before raw JSON",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "path-actions",
+      "description": "Show copy-ready open/copy commands for a repo path",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "dirty-classifier",
+      "description": "Classify current dirty paths without staging or deletion",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "live-registration-promote",
+      "description": "Review live registration promotion; default is no live run",
+      "risk_class": "HIGH_LOCAL_GATED",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "daily-ops",
+      "description": "Show the Daily Operations board",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "next-action",
+      "description": "Show the next recommended operator action",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "operator-board",
+      "description": "Alias for the Daily Operations board",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "task-flow",
+      "description": "Show the Daily Operations task workflow",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "task-flow-smoke",
+      "description": "Run Daily Operations structural smoke",
+      "risk_class": "LOW_LOCAL_SMOKE",
       "argument_required": false,
       "real_execution": false
     },

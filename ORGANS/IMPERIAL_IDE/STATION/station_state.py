@@ -134,11 +134,18 @@ class StationState:
         runtime_path = self.rel("ORGANS/IMPERIAL_IDE/AGENTS/agent_runtime_state.json")
         registry = read_json(registry_path, {"agents": []})
         runtime = read_json(runtime_path, {"agents": []})
+        current_task_id = self.task_state().get("current", {}).get("task_id", "")
+        agents = []
+        for item in registry.get("agents", []):
+            agent = dict(item)
+            agent["current_expected_task_id"] = current_task_id
+            agents.append(agent)
         return {
             "state": "ACTIVE" if registry.get("agents") else "UNKNOWN",
             "registry_path": registry_path.relative_to(self.repo_root).as_posix(),
-            "agent_count": len(registry.get("agents", [])),
-            "agents": registry.get("agents", []),
+            "agent_count": len(agents),
+            "current_expected_task_id": current_task_id,
+            "agents": agents,
             "runtime": runtime,
         }
 

@@ -9,9 +9,10 @@ from typing import Any
 
 from safety_center import safety_summary
 from taskpack_manager import inspect_taskpack
+from dirty_classifier import classify_dirty
 
 
-CONFIRMATION_TOKEN = "CONFIRM_LIVE_REGISTRATION"
+CONFIRMATION_TOKEN = "LIVE"
 
 
 def utc_now() -> str:
@@ -31,6 +32,7 @@ def promotion_state(repo_root: Path, taskpack_id: str = "", confirmation_token: 
     current_expected_path = repo / "ORGANS" / "ASTRONOMICON" / "TASK_REGISTRY" / "current_expected_task.json"
     current_expected = _read_json(current_expected_path, {})
     safety = safety_summary(repo)
+    dirty = classify_dirty(repo)
     blockers: list[str] = []
     if candidate.get("status") == "BLOCKED":
         blockers.append("generated taskpack is not available or valid")
@@ -40,6 +42,8 @@ def promotion_state(repo_root: Path, taskpack_id: str = "", confirmation_token: 
         blockers.append("candidate ZIP path is missing")
 
     confirmed = confirmation_token == CONFIRMATION_TOKEN
+    canon_task_id = str(current_expected.get("task_id", ""))
+    candidate_task_id = str(candidate.get("taskpack_id", ""))
     base = {
         "task_id": candidate.get("taskpack_id", ""),
         "dry_run_default": True,
@@ -47,6 +51,13 @@ def promotion_state(repo_root: Path, taskpack_id: str = "", confirmation_token: 
         "explicit_owner_confirmation_required": True,
         "confirmation_token_required": CONFIRMATION_TOKEN,
         "confirmation_received": confirmed,
+        "candidate_state": "CANDIDATE_GENERATED_TASKPACK",
+        "canon_state": "CURRENT_EXPECTED_TASK",
+        "candidate_versus_canon_state": {
+            "candidate_task_id": candidate_task_id,
+            "canon_current_expected_task_id": canon_task_id,
+            "same_task": candidate_task_id == canon_task_id,
+        },
         "current_candidate_task": candidate,
         "current_expected_task": current_expected,
         "current_expected_task_impact_visible": True,
@@ -56,6 +67,13 @@ def promotion_state(repo_root: Path, taskpack_id: str = "", confirmation_token: 
             "scope": "LOCAL_PC_ONLY",
         },
         "safety_checks": safety,
+        "dirty_state_checks": {
+            "status": dirty.get("status"),
+            "dirty_count": dirty.get("dirty_count"),
+            "unclassified_count": dirty.get("unclassified_count"),
+            "secrets_detected": dirty.get("secrets_detected"),
+            "push_allowed_state": dirty.get("push_allowed_state"),
+        },
         "scope_checks": {
             "remote_contours": "OUT_OF_SCOPE",
             "real_servitor_execution": "NOT_REQUIRED",
@@ -67,9 +85,15 @@ def promotion_state(repo_root: Path, taskpack_id: str = "", confirmation_token: 
     }
 
     if blockers:
-        return {**base, "status": "BLOCKED", "promotion_state": "PROMOTION_BLOCKED", "result": "PROMOTION_BLOCKED"}
+        return {**base, "status": "BLOCKED", "promotion_state": "REVIEW_BLOCKED", "result": "REVIEW_BLOCKED"}
     if not confirmed:
-        return {**base, "status": "PASS_WITH_WARNINGS", "promotion_state": "PROMOTION_AVAILABLE", "result": "PROMOTION_AVAILABLE"}
+        return {
+            **base,
+            "status": "PASS_WITH_WARNINGS",
+            "promotion_state": "REVIEW_AVAILABLE",
+            "confirmation_state": "CONFIRMATION_REQUIRED",
+            "result": "LIVE_NOT_RUN",
+        }
 
     skill = (
         repo

@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-TASK_ID = "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1"
+TASK_ID = "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-TRUTH-FIX-DAILY-OPS-SHELL-PC-V0_1"
 
 
 def utc_now() -> str:
@@ -22,6 +22,7 @@ def build_receipt(
     data_sources: list[str],
     tools_invoked: list[str],
     dry_run: bool,
+    mutates_repo: bool,
     output_summary: str,
     receipt_path: str | None = None,
 ) -> dict[str, Any]:
@@ -36,6 +37,7 @@ def build_receipt(
         "data_sources": data_sources,
         "tools_invoked": tools_invoked,
         "dry_run": dry_run,
+        "mutates_repo": mutates_repo,
         "real_execution": False,
         "unsafe_shell_available": False,
         "output_summary": output_summary,

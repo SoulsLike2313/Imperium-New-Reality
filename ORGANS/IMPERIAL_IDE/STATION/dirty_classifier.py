@@ -24,6 +24,7 @@ RUNTIME_PREFIXES = (
     "ORGANS/IMPERIAL_IDE/WARP/RUNTIME/",
     "ORGANS/IMPERIAL_IDE/OPS/STAGING/",
 )
+REPORT_TASK_RE = re.compile(r"^REPORTS/(TASK-[^/]+)/")
 
 
 def utc_now() -> str:
@@ -77,6 +78,9 @@ def _classify_path(path: str, status: str, task_id: str) -> dict[str, Any]:
     category = "UNKNOWN_REVIEW_REQUIRED"
     recommendation = "Review manually before staging or pushing."
 
+    report_match = REPORT_TASK_RE.match(path)
+    report_task_id = report_match.group(1) if report_match else ""
+
     if SECRET_RE.search(path):
         category = "SECRET_RISK"
         push_blocking = True
@@ -98,6 +102,9 @@ def _classify_path(path: str, status: str, task_id: str) -> dict[str, Any]:
         category = "CANONICAL_REPORT_ARTIFACT"
         stage_allowed = True
         recommendation = "Stage after validation with the current task outputs."
+    elif report_task_id:
+        category = "OLD_UNRELATED_REPORT_ARTIFACT"
+        recommendation = "Keep unstaged for this task. Do not push unrelated report edits."
     elif current_taskpack_prefix and path.startswith(current_taskpack_prefix):
         category = "STAGE_CANDIDATE"
         stage_allowed = True
@@ -126,6 +133,7 @@ def _classify_path(path: str, status: str, task_id: str) -> dict[str, Any]:
 
     return {
         "category": category,
+        "report_task_id": report_task_id,
         "stage_allowed": stage_allowed,
         "push_blocking": push_blocking,
         "recommended_action": recommendation,
@@ -145,17 +153,29 @@ def classify_dirty(repo_root: Path) -> dict[str, Any]:
 
     secret_items = [item for item in items if item["category"] == "SECRET_RISK"]
     runtime_items = [item for item in items if item["category"] in {"RUNTIME_ARTIFACT", "GENERATED_TASKPACK_RUNTIME"}]
+    generated_taskpack_runtime = [item for item in items if item["category"] == "GENERATED_TASKPACK_RUNTIME"]
+    local_configs = [item for item in items if item["category"] == "LOCAL_CONFIG"]
     unknown_items = [item for item in items if item["category"] == "UNKNOWN_REVIEW_REQUIRED"]
     staged_blockers = [
         item for item in items
         if item["is_staged"] and (item["push_blocking"] or not item["stage_allowed"])
     ]
     stage_candidates = [item for item in items if item["stage_allowed"]]
+    current_task_report_artifacts = [item for item in items if item["category"] == "CANONICAL_REPORT_ARTIFACT"]
+    old_unrelated_artifacts = [
+        item for item in items
+        if item["category"] in {"OLD_UNRELATED_ARTIFACT", "OLD_UNRELATED_REPORT_ARTIFACT", "FRESH_TASK_OUTPUT_CANDIDATE"}
+    ]
+    keep_unstaged = [item for item in items if not item["stage_allowed"] and not item["push_blocking"]]
+    owner_decision_needed = [
+        item for item in items
+        if item["category"] in {"QUARANTINE_CANDIDATE", "OLD_UNRELATED_ARTIFACT", "OLD_UNRELATED_REPORT_ARTIFACT"}
+    ]
     quarantine_candidates = [
         item for item in items
         if item["category"] in {"QUARANTINE_CANDIDATE", "OLD_UNRELATED_ARTIFACT"}
     ]
-    if secret_items or staged_blockers or unknown_items:
+    if secret_items or local_configs or staged_blockers or unknown_items:
         push_allowed_state = "BLOCKED_BY_DIRTY_CLASSIFICATION"
     elif items:
         push_allowed_state = "ALLOWED_AFTER_STAGING_VALIDATED_IN_SCOPE_ONLY_WITH_WARNINGS"
@@ -166,18 +186,34 @@ def classify_dirty(repo_root: Path) -> dict[str, Any]:
         "status": "PASS_WITH_WARNINGS" if push_allowed_state != "BLOCKED_BY_DIRTY_CLASSIFICATION" else "BLOCKED",
         "task_id": task_id,
         "dirty_count": len(items),
+        "classified_count": len(items) - len(unknown_items),
+        "unclassified_count": len(unknown_items),
         "classified_items": items,
+        "current_task_report_artifacts": current_task_report_artifacts,
+        "old_unrelated_artifacts": old_unrelated_artifacts,
         "known_zip_1_classification": next((item for item in items if item["path"] == KNOWN_FRESH_ZIP), None),
         "known_zip_2_classification": next((item for item in items if item["path"] == KNOWN_OLDER_ZIP), None),
         "secrets_detected": bool(secret_items),
+        "secret_risks": secret_items,
         "secret_items": secret_items,
+        "local_configs": local_configs,
         "runtime_artifacts_detected": bool(runtime_items),
         "runtime_items": runtime_items,
+        "runtime_artifacts": runtime_items,
+        "generated_taskpack_runtime": generated_taskpack_runtime,
         "stage_candidates": stage_candidates,
+        "keep_unstaged": keep_unstaged,
         "quarantine_candidates": quarantine_candidates,
+        "owner_decision_needed": owner_decision_needed,
         "unknown_items": unknown_items,
         "staged_blockers": staged_blockers,
         "push_allowed_state": push_allowed_state,
+        "recommended_commands": [
+            "git add -- <validated current task paths only>",
+            "git diff --cached --check",
+            "git commit -m \"<TASK_ID> validated outputs\"",
+            "git push origin master",
+        ],
         "recommended_action": (
             "Stage only validated in-scope task outputs; keep known unrelated ZIPs unstaged; do not delete files."
             if items else
