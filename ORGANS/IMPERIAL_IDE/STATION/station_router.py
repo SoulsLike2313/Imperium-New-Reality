@@ -44,6 +44,25 @@ def route(command: str, args: list[str] | None = None, repo_root: Path | None = 
 
     if command in {"station", "dashboard"}:
         return {"status": "PASS_WITH_WARNINGS", "surface": "OPERATIONAL_STATION", "snapshot": state.snapshot()}
+    if command == "launcher":
+        return {
+            "status": "PASS_WITH_WARNINGS",
+            "surface": "IMPERIAL_LAUNCHER_HOME",
+            "launch_command": "python ORGANS/IMPERIAL_IDE/LAUNCHER/imperial_launcher.py",
+            "smoke_command": "python ORGANS/IMPERIAL_IDE/LAUNCHER/imperial_launcher.py --smoke",
+            "role": "primary_owner_home",
+            "tui_role": "fallback_debug",
+            "executed": False,
+            "real_execution_enabled": False,
+        }
+    if command == "launcher-smoke":
+        return {
+            "status": "PASS_WITH_WARNINGS",
+            "surface": "IMPERIAL_LAUNCHER_HOME_SMOKE",
+            "launcher_available": (repo / "ORGANS" / "IMPERIAL_IDE" / "LAUNCHER" / "imperial_launcher.py").is_file(),
+            "launch_command": "python ORGANS/IMPERIAL_IDE/LAUNCHER/imperial_launcher.py",
+            "smoke_command": "python ORGANS/IMPERIAL_IDE/LAUNCHER/imperial_launcher.py --smoke",
+        }
     if command == "station-tui":
         return {
             "status": "PASS_WITH_WARNINGS",

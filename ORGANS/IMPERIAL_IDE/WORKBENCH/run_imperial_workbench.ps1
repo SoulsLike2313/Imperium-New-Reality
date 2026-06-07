@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
-    [ValidateSet('gui', 'tui', 'smoke', 'status', 'supervisor-smoke')]
-    [string]$Surface = 'gui',
+    [ValidateSet('launcher', 'gui', 'tui', 'smoke', 'status', 'supervisor-smoke')]
+    [string]$Surface = 'launcher',
     [string]$Root = $env:IMPERIUM_ROOT
 )
 
@@ -11,6 +11,7 @@ if (-not $python) { throw 'Python is required on PATH.' }
 if ($Root) { $env:IMPERIUM_ROOT = $Root }
 
 switch ($Surface) {
+    'launcher' { & $python.Source (Join-Path $PSScriptRoot '../LAUNCHER/imperial_launcher.py') }
     'gui' { & $python.Source (Join-Path $PSScriptRoot 'GUI/imperial_gui_workbench.py') }
     'tui' { & $python.Source (Join-Path $PSScriptRoot 'TUI/imperial_tui.py') }
     'smoke' { & $python.Source (Join-Path $PSScriptRoot 'TUI/imperial_tui.py') --smoke }

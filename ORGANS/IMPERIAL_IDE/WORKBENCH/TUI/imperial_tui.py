@@ -31,6 +31,7 @@ if STATION_ROOT not in sys.path:
 from station_router import route as station_route
 
 OPERATIONAL_MENU = [
+    ("Imperial Launcher Home", "launcher"),
     ("Dashboard", "station"),
     ("Daily Ops", "daily-ops"),
     ("Next Action", "next-action"),
@@ -302,6 +303,29 @@ def render_menu():
 
 
 def render_station_result(title, command, args=None):
+    if command == "launcher":
+        result = {
+            "status": "PASS_WITH_WARNINGS",
+            "surface": "IMPERIAL_LAUNCHER_HOME",
+            "launch_command": "python ORGANS/IMPERIAL_IDE/LAUNCHER/imperial_launcher.py",
+            "smoke_command": "python ORGANS/IMPERIAL_IDE/LAUNCHER/imperial_launcher.py --smoke",
+            "tui_role": "fallback_debug",
+            "executed": False,
+        }
+        lines = [
+            c(A["ok_green"], "status: PASS_WITH_WARNINGS"),
+            "surface: Personal Launcher Home",
+            "role: premium owner-facing entry point",
+            "terminal TUI: fallback/debug",
+            "",
+            c(A["gold"], "Run:"),
+            "python ORGANS/IMPERIAL_IDE/LAUNCHER/imperial_launcher.py",
+            "",
+            c(A["gold"], "Smoke:"),
+            "python ORGANS/IMPERIAL_IDE/LAUNCHER/imperial_launcher.py --smoke",
+        ]
+        box("%s IMPERIAL LAUNCHER HOME" % G["star"], lines, color=A["plasma_hot"])
+        return result
     if command == "settings":
         bridge_status()
         return {"status": "PASS_WITH_WARNINGS", "surface": "SETTINGS"}
@@ -442,7 +466,7 @@ def smoke():
     render_menu()
     station = render_station_result("Daily Ops Smoke", "daily-ops")
     required = {
-        "station-ux-smoke", "taskpack-manager", "taskpacks", "taskpack-list", "taskpack-inspect",
+        "launcher", "station-ux-smoke", "taskpack-manager", "taskpacks", "taskpack-list", "taskpack-inspect",
         "taskpack-validate", "taskpack-open", "taskpack-copy-path",
         "show-json", "full-json", "show-summary", "launch-card", "handoff-card", "reports-latest",
         "receipts-latest", "dirty-classifier", "safety", "live-registration-promote",
@@ -450,7 +474,7 @@ def smoke():
         "next-action", "operator-board", "task-flow", "task-flow-smoke",
     }
     commands = {command for _, command in OPERATIONAL_MENU} | {
-        "station-ux-smoke", "operator-board", "taskpacks", "taskpack-list", "agent-status",
+        "launcher", "station-ux-smoke", "operator-board", "taskpacks", "taskpack-list", "agent-status",
         "taskpack-validate", "taskpack-open", "taskpack-copy-path", "task-flow-smoke", "show-json",
     }
     labels_ok = all(label for label, _ in OPERATIONAL_MENU) and required <= commands
