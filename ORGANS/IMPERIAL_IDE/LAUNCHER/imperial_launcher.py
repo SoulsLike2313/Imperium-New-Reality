@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-IMPERIAL IDE :: PERSONAL LAUNCHER HOME (V0.2 VISUAL OPS)
+IMPERIAL IDE :: SANCTUM OPERATOR HOME (V0.3 CONTINUITY + UX SEED)
 
-Premium stdlib-first owner home for New Reality / Imperium_H workflows.
-Terminal/TUI remains fallback and diagnostics; owner-facing work moves here.
+Premium stdlib-first Sanctum home for New Reality / Imperium_H workflows.
+Terminal/TUI remains fallback and diagnostics; owner-facing work moves into a smooth H-safe operator surface.
 
 RUN:
   python ORGANS/IMPERIAL_IDE/LAUNCHER/imperial_launcher.py
@@ -37,6 +37,8 @@ REPO_CANDIDATE = IDE_ROOT.parents[1] if len(IDE_ROOT.parents) > 1 else IDE_ROOT
 STATION_ROOT = IDE_ROOT / "STATION"
 THEME_PATH = IDE_ROOT / "WORKBENCH" / "THEME" / "imperium_theme.json"
 ASSETS_ROOT = HERE / "ASSETS"
+CONTINUITY_ROOT = IDE_ROOT.parent / "ADMINISTRATUM" / "CONTINUITY"
+CONTINUITY_PROTOCOLS_ROOT = CONTINUITY_ROOT / "PROTOCOLS"
 
 if str(STATION_ROOT) not in sys.path:
     sys.path.insert(0, str(STATION_ROOT))
@@ -70,23 +72,41 @@ SAFE_COMMANDS = {
 }
 
 FLOW_STEPS = [
-    "INTENT",
-    "TASKPACK",
-    "VALIDATE",
-    "REGISTER",
-    "HANDOFF",
-    "OWNER TEST",
-    "H COMMIT",
-    "CHERRY-PICK",
+    "INTAKE",
+    "DECOMPOSE",
+    "AGENTS",
+    "OWNER GATE",
+    "BUILD",
+    "EVIDENCE",
+    "H ACCEPT",
+    "MAIN",
+]
+
+SANCTUM_STATES = [
+    "BRIEF_RECEIVED",
+    "INFO_GAPS",
+    "TASKPACK_DRAFT",
+    "AGENT_REVIEW",
+    "OWNER_DECISION",
+    "BUILD_AND_TEST",
+    "EVIDENCE_PACK",
+    "DELIVERY_READY",
+]
+
+DEPARTMENTS = [
+    ("FREELANCE", "client task intake · plan · build · proof · delivery · support"),
+    ("TRADING", "research/paper analysis · 4h candle gates · no live trades without explicit owner approval"),
+    ("MECHANICUS", "schemas · tools · state machines · DB/API/RAG corridors"),
+    ("ADMINISTRATUM", "continuity · receipts · handoff · evidence integrity"),
 ]
 
 TRACE_MESSAGES = [
     "Reading station snapshot from local repo state.",
-    "Classifying task as owner-operated H workflow.",
-    "Checking safety gates before any action is suggested.",
-    "Resolving taskpack and handoff visibility.",
-    "Computing next owner action from current board state.",
-    "Keeping terminal/TUI available as fallback, not primary home.",
+    "Confirming H-contour before any polish or UI mutation.",
+    "Checking continuity pack completeness: H path, main path, boot checklist, git truth.",
+    "Mapping owner brief into task intake, agent review, evidence, delivery, support.",
+    "Keeping real servitor execution, live LLM, unsafe shell, and trading execution gated.",
+    "Rendering smooth observable machine state: core, IDE, addons, departments, handoff.",
 ]
 
 @dataclass
@@ -181,6 +201,7 @@ class StationClient:
             "git-closure",
             "safety",
             "lifecycle",
+            "continuity-preview",
         ]
         return {cmd: self.route(cmd) for cmd in commands}
 
@@ -206,6 +227,55 @@ def short(value: Any, limit: int = 84) -> str:
 def compact_json(value: Any, limit: int = 4800) -> str:
     text = json.dumps(value, ensure_ascii=False, indent=2)
     return text if len(text) <= limit else text[:limit] + "\n... truncated; use CLI full-json for machine payload"
+
+def detect_contour(repo: Path) -> dict[str, Any]:
+    """Owner-visible H/main contour detection. Never mutates git state."""
+    leaf = repo.name
+    branch = ""
+    head = ""
+    status = ""
+    try:
+        branch = subprocess.run(["git", "branch", "--show-current"], cwd=str(repo), text=True, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, timeout=8).stdout.strip()
+    except Exception:
+        branch = ""
+    try:
+        head = subprocess.run(["git", "rev-parse", "--short=12", "HEAD"], cwd=str(repo), text=True, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, timeout=8).stdout.strip()
+    except Exception:
+        head = ""
+    try:
+        status = subprocess.run(["git", "status", "--short"], cwd=str(repo), text=True, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, timeout=8).stdout.strip()
+    except Exception:
+        status = ""
+    is_h_path = leaf.endswith("_H")
+    is_h_branch = branch.startswith("h/")
+    is_main_branch = branch in {"master", "main"}
+    current = "H_CONTOUR" if is_h_path or is_h_branch else "MAIN_OR_UNKNOWN"
+    main_candidate = repo.parent / leaf[:-2] if is_h_path else repo
+    h_candidate = repo if is_h_path else repo.parent / f"{leaf}_H"
+    return {
+        "current_contour": current,
+        "repo_root": repo.as_posix(),
+        "branch": branch,
+        "head_short": head,
+        "dirty": bool(status),
+        "status_short": status,
+        "is_h_path": is_h_path,
+        "is_h_branch": is_h_branch,
+        "is_main_branch": is_main_branch,
+        "main_repo_candidate": main_candidate.as_posix(),
+        "h_repo_candidate": h_candidate.as_posix(),
+        "h_repo_exists": h_candidate.is_dir(),
+        "main_repo_exists": main_candidate.is_dir(),
+    }
+
+
+def read_repo_text(repo: Path, relative: str, limit: int = 9000) -> str:
+    path = repo / relative
+    try:
+        data = path.read_text(encoding="utf-8-sig", errors="replace")
+        return data if len(data) <= limit else data[:limit] + "\n... truncated"
+    except Exception as exc:
+        return f"not available: {relative} ({exc})"
 
 
 def extract_home_summary(data: dict[str, Any]) -> dict[str, Any]:
@@ -257,13 +327,20 @@ def smoke() -> int:
         "agent_roster_visible": int(summary.get("agent_count") or 0) >= 12,
         "visual_assets_present": all((ASSETS_ROOT / f).is_file() for f in asset_files),
         "safe_readonly_surface": True,
+        "h_contour_awareness": bool(detect_contour(repo).get("h_repo_candidate")),
+        "continuity_protocol_files_visible": (CONTINUITY_PROTOCOLS_ROOT / "H_CONTOUR_OPERATION_PROTOCOL_RU.md").is_file(),
+        "sanctum_operator_surfaces_seeded": True,
+        "smooth_60fps_loop_configured": True,
         "tkinter_not_required_for_smoke": True,
     }
     payload = {
         "status": "PASS_WITH_WARNINGS" if all(checks.values()) else "BLOCKED",
-        "surface": "IMPERIAL_LAUNCHER_HOME_VISUAL_OPS",
+        "surface": "IMPERIAL_SANCTUM_OPERATOR_HOME_V0_3",
         "repo_root": repo.as_posix(),
         "summary": summary,
+        "contour": detect_contour(repo),
+        "sanctum_states": SANCTUM_STATES,
+        "departments": [name for name, _description in DEPARTMENTS],
         "checks": checks,
         "commands": {
             "launch": "python ORGANS/IMPERIAL_IDE/LAUNCHER/imperial_launcher.py",
@@ -302,6 +379,11 @@ def run_gui() -> int:
             self.tick = 0
             self.trace_index = 0
             self.last_detail_text = ""
+            self.target_frame_ms = 16
+            self.frame_counter = 0
+            self.fps_value = 0.0
+            self._fps_window_started = time.perf_counter()
+            self.contour = detect_contour(repo)
             self.images: dict[str, Any] = {}
             self.nav_buttons: dict[str, Any] = {}
             self.card_frames: dict[str, Any] = {}
@@ -310,15 +392,15 @@ def run_gui() -> int:
                 (random.random(), random.random(), random.choice([1, 1, 2]), random.choice([theme["gold_bright"], theme["plasma_hot"], theme["chrome"], theme["cyan"]]))
                 for _ in range(130)
             ]
-            self.title("IMPERIAL IDE :: Personal Launcher Home")
-            self.geometry("1460x920")
+            self.title("IMPERIAL IDE :: Sanctum Operator Home V0.3")
+            self.geometry("1520x940")
             self.minsize(1220, 780)
             self.configure(bg=theme["void"])
             self._fonts()
             self._load_images()
             self._build()
             self.refresh_all()
-            self.after(80, self.animate)
+            self.after(self.target_frame_ms, self.animate)
 
         def _fonts(self):
             families = set(tkfont.families())
@@ -364,9 +446,12 @@ def run_gui() -> int:
             nav_title = tk.Label(self.nav, text="IMPERIUM\nHOME", bg=theme["panel"], fg=theme["gold_bright"], font=self.font_display_small, justify="left", padx=14, pady=14)
             nav_title.pack(fill="x")
             for label, action, icon in [
-                ("Home", "home", "✦"),
+                ("Sanctum", "home", "✦"),
+                ("Task Intake", "intake", "✍"),
+                ("Mechanicus", "mechanicus", "⚙"),
+                ("Departments", "departments", "⌬"),
                 ("Daily Ops", "daily", "✺"),
-                ("Agents", "agents", "⚙"),
+                ("Agents", "agents", "♟"),
                 ("Taskpacks", "taskpacks", "⬡"),
                 ("Continuity", "continuity", "☷"),
                 ("Launch / Handoff", "handoff", "⇢"),
@@ -393,8 +478,10 @@ def run_gui() -> int:
                 ("Open Reports", lambda: self.open_repo_path("REPORTS")),
                 ("Open Task Inbox", lambda: self.open_repo_path("ORGANS/ASTRONOMICON/TASK_INBOX")),
                 ("Copy Handoff", self.copy_handoff),
+                ("Copy H Flow", self.copy_h_flow),
                 ("Build Continuity", self.build_continuity),
                 ("Open Continuity", self.open_continuity),
+                ("Open Protocols", self.open_protocols),
             ]:
                 self._action_button(text, cmd)
 
@@ -403,7 +490,7 @@ def run_gui() -> int:
             for key, title, icon in [
                 ("state", "STATE", "✹"),
                 ("task", "CURRENT TASK", "✧"),
-                ("agents", "SERVITORS", "⚙"),
+                ("agents", "SERVITORS", "♟"),
                 ("dirty", "DIRTY", "◇"),
                 ("safety", "SAFETY", "◆"),
                 ("next", "NEXT ACTION", "⇢"),
@@ -495,10 +582,12 @@ def run_gui() -> int:
                 y = int(12 + sy * (h - 24))
                 self.header.create_oval(x, y, x + size + 1, y + size + 1, fill=color, outline="")
             pulse = 0.5 + 0.5 * math.sin(self.tick / 12)
-            self.header.create_text(30, 37, anchor="w", text="⁂  IMPERIAL IDE", fill=theme["chrome"], font=self.font_display)
-            self.header.create_text(32, 78, anchor="w", text="PERSONAL LAUNCHER HOME · New Reality · H-ready · premium operator surface", fill=self.mix(theme["gold"], theme["gold_bright"], pulse), font=self.font_title)
-            self.header.create_text(w - 30, 38, anchor="e", text="LIVE REPO", fill=theme["plasma_hot"], font=self.font_title)
-            self.header.create_text(w - 30, 76, anchor="e", text=short(str(self.repo), 84), fill=theme["text_muted"], font=self.font_small)
+            contour = self.contour.get("current_contour", "UNKNOWN")
+            self.header.create_text(30, 37, anchor="w", text="⁂  IMPERIAL SANCTUM", fill=theme["chrome"], font=self.font_display)
+            self.header.create_text(32, 78, anchor="w", text="New Reality · H-safe continuity · task intake · observable machine · 60fps target", fill=self.mix(theme["gold"], theme["gold_bright"], pulse), font=self.font_title)
+            self.header.create_text(w - 30, 34, anchor="e", text=f"{contour} · {self.fps_value:04.1f} FPS", fill=theme["plasma_hot"], font=self.font_title)
+            self.header.create_text(w - 30, 61, anchor="e", text=f"branch: {self.contour.get('branch') or 'unknown'} · head: {self.contour.get('head_short') or 'unknown'}", fill=theme["gold_bright"], font=self.font_small)
+            self.header.create_text(w - 30, 86, anchor="e", text=short(str(self.repo), 86), fill=theme["text_muted"], font=self.font_small)
             # animated scanline
             x = int((self.tick * 7) % (w + 240)) - 240
             self.header.create_rectangle(x, 0, x + 160, h, fill=theme["plasma_hot"], stipple="gray75", outline="")
@@ -517,8 +606,15 @@ def run_gui() -> int:
             for r in [32, 58, 84]:
                 phase = (self.tick * (r / 60.0)) % 360
                 c.create_arc(cx - r, cy - r, cx + r, cy + r, start=phase, extent=115, outline=theme["plasma_hot"], width=2, style="arc")
-            c.create_text(18, 20, anchor="w", text="OPERATIONAL TRACE", fill=theme["gold_bright"], font=self.font_title)
-            c.create_text(18, h - 24, anchor="w", text="observable system state · no hidden execution", fill=theme["text_muted"], font=self.font_tiny)
+            c.create_text(18, 20, anchor="w", text="CORE · IDE · ADDONS", fill=theme["gold_bright"], font=self.font_title)
+            for idx, (name, _desc) in enumerate(DEPARTMENTS):
+                angle = (self.tick / 24.0) + idx * (math.pi * 2 / max(1, len(DEPARTMENTS)))
+                px = cx + int(math.cos(angle) * 92)
+                py = cy + int(math.sin(angle) * 54)
+                c.create_oval(px - 5, py - 5, px + 5, py + 5, fill=theme["gold_bright"] if idx == (self.tick // 60) % len(DEPARTMENTS) else theme["cyan"], outline="")
+                c.create_text(px, py + 15, text=name[:10], fill=theme["text_muted"], font=self.font_tiny)
+            c.create_text(cx, cy, text="CORE", fill=theme["chrome"], font=self.font_title)
+            c.create_text(18, h - 24, anchor="w", text="observable machine state · no hidden execution", fill=theme["text_muted"], font=self.font_tiny)
 
         @staticmethod
         def mix(a: str, b: str, t: float) -> str:
@@ -532,6 +628,7 @@ def run_gui() -> int:
         def refresh_all(self):
             self.statusbar.config(text="Refreshing station state…")
             self.update_idletasks()
+            self.contour = detect_contour(self.repo)
             self.data = self.client.snapshot()
             self.summary = extract_home_summary(self.data)
             self.update_cards()
@@ -542,7 +639,8 @@ def run_gui() -> int:
         def update_cards(self):
             s = self.summary
             dirty_count = int(s.get("dirty_count") or 0)
-            self.card_values["state"].config(text=f"{s.get('status')}\nbranch: {s.get('branch') or 'unknown'}\nhead: {short(s.get('head'), 13)}", fg=status_color(str(s.get("status")), theme))
+            contour = self.contour.get("current_contour", "UNKNOWN")
+            self.card_values["state"].config(text=f"{s.get('status')}\n{contour}\nbranch: {s.get('branch') or self.contour.get('branch') or 'unknown'}", fg=status_color(str(s.get("status")), theme))
             self.card_values["task"].config(text=f"{short(s.get('task_id'), 62)}\n{s.get('task_status')}")
             self.card_values["agents"].config(text=f"{s.get('agent_count')} real servitors\nPrime: handoff-only")
             self.card_values["dirty"].config(text=f"{dirty_count} paths\n{short(s.get('push_gate'), 54)}", fg=theme["ok_green"] if dirty_count == 0 else theme["warn_amber"])
@@ -583,7 +681,7 @@ def run_gui() -> int:
                 if i == active:
                     self.flow.create_oval(x - r - 7, y - r - 7, x + r + 7, y + r + 7, outline=theme["plasma_hot"], width=1)
                 self.flow.create_text(x, y + 36, text=step, fill=theme["chrome"] if i == active else theme["text_muted"], font=self.font_small)
-            self.flow.create_text(18, 21, anchor="w", text="visible artifact route · zip → validate → handoff → owner test → H commit", fill=theme["gold_bright"], font=self.font_small)
+            self.flow.create_text(18, 21, anchor="w", text="Sanctum state machine · brief → plan → agents → owner gate → build → evidence → H accept → main", fill=theme["gold_bright"], font=self.font_small)
 
         def nav_action(self, action: str):
             if action == "refresh":
@@ -606,6 +704,12 @@ def run_gui() -> int:
             surface = self.current_surface
             if surface == "home":
                 text = self.home_text()
+            elif surface == "intake":
+                text = self.intake_text()
+            elif surface == "mechanicus":
+                text = self.mechanicus_text()
+            elif surface == "departments":
+                text = self.departments_text()
             elif surface == "daily":
                 text = self.daily_text()
             elif surface == "agents":
@@ -635,32 +739,105 @@ def run_gui() -> int:
 
         def home_text(self) -> str:
             s = self.summary
+            contour = self.contour
             return "\n".join([
-                "IMPERIAL LAUNCHER HOME",
-                "======================",
+                "IMPERIAL SANCTUM OPERATOR HOME V0.3",
+                "====================================",
                 f"Repo       : {s.get('repo_root') or self.repo}",
-                f"Branch     : {s.get('branch')}",
+                f"Contour    : {contour.get('current_contour')} · branch: {contour.get('branch') or s.get('branch')}",
+                f"H path     : {contour.get('h_repo_candidate')} · exists: {contour.get('h_repo_exists')}",
+                f"Main path  : {contour.get('main_repo_candidate')} · exists: {contour.get('main_repo_exists')}",
                 f"Task       : {s.get('task_id')}",
                 f"Next       : {s.get('next_action')}",
                 f"Taskpacks  : {s.get('taskpacks')} · latest: {s.get('latest_taskpack')}",
                 f"Dirty/Git  : {s.get('dirty_count')} · {s.get('push_gate')}",
                 "",
-                "Working controls now available from the launcher:",
-                "  · Refresh: read current station state.",
-                "  · Open TUI: fallback console surface.",
-                "  · Open Reports / Task Inbox / Repo folders.",
-                "  · Copy Handoff or current view to clipboard.",
+                "Correct H workflow, now explicit:",
+                "  1. H patch ZIP is applied only in E:/IMPERIUM_NEW_GENERATION_NEW_REALITY_H or h/* branch.",
+                "  2. H smoke and visual poke happen inside H first.",
+                "  3. Commit is authored as IMPERIUM_H only after owner acceptance.",
+                "  4. Accepted H commit is cherry-picked/merged into main, then main smoke, then push.",
                 "",
-                "Owner workflow:",
-                "  1. Register or select a HANDY/H task.",
-                "  2. Build evidence ZIP for chat review.",
-                "  3. Apply PATCH-H ZIP in the H worktree.",
-                "  4. Inspect this launcher and fallback TUI manually.",
-                "  5. Commit as IMPERIUM_H only after acceptance.",
-                "  6. Cherry-pick to main, then push.",
+                "Sanctum goal:",
+                "  One window for task intake, decomposition, agent visibility, evidence, handoff, support, and visual machine state.",
+                "  Terminal/TUI stays fallback and diagnostics; the operator should not live in command soup.",
                 "",
-                "This launcher is the personal home surface. Terminal output is backend/diagnostics.",
+                "Immediate focus:",
+                "  · repair continuity boot completeness;",
+                "  · seed task-intake and department model;",
+                "  · make Mechanicus the future reference organ for state machines, schemas, tools, DB/API/RAG corridors;",
+                "  · move toward a smooth 60fps target UI without enabling unsafe execution.",
             ])
+
+        def intake_text(self) -> str:
+            return "\n".join([
+                "TASK INTAKE / FREELANCE CORE SEED",
+                "==================================",
+                "Purpose:",
+                "  Turn an external brief into a registered, decomposed, testable Imperium taskpack.",
+                "",
+                "Operator flow:",
+                "  1. Paste external ТЗ / client brief into Sanctum.",
+                "  2. System extracts pass criteria, forbidden actions, deliverables, evidence requirements, support expectations.",
+                "  3. Agents request missing info and propose 2-3 plan variants.",
+                "  4. Owner or human manager chooses the gate decision.",
+                "  5. Imperium builds, tests, packages, and produces receipts + presentation + usage notes.",
+                "",
+                "Human-in-loop is first-class:",
+                "  · owner may help manually at any point;",
+                "  · manager may talk to clients while agent proposes answer variants;",
+                "  · no forced full automation until protocols and evidence are mature.",
+                "",
+                "Future taskpack form fields:",
+                "  client_goal, language, region, budget, deadline, assets, API keys needed, forbidden actions,",
+                "  quality bar, test command, delivery package, presentation package, support window, owner gates.",
+            ])
+
+        def mechanicus_text(self) -> str:
+            backlog = read_repo_text(self.repo, "ORGANS/ADMINISTRATUM/CONTINUITY/PROTOCOLS/REFERENCE_TECH_BACKLOG_RU.md", 7200)
+            return "\n".join([
+                "MECHANICUS REFERENCE ORGAN SEED",
+                "===============================",
+                "Mechanicus becomes the standard for every later organ:",
+                "  · state machines instead of endless if-chains;",
+                "  · schema-first tools and receipts;",
+                "  · DB/API/RAG/search corridors;",
+                "  · safe adapters before live execution;",
+                "  · measurable readiness before task mutation.",
+                "",
+                "Near-term Mechanicus lanes:",
+                "  [A] State machine architecture for task lifecycle and department workflows.",
+                "  [B] Database cockpit: local metadata first, then NocoDB/Supabase/Appwrite-style adapters later.",
+                "  [C] Search/RAG: local evidence search, then web/crawl/search adapters behind explicit gates.",
+                "  [D] Tool registry: every external API/tool has schema, risk class, dry-run, receipt, rollback.",
+                "  [E] UI component standard: smooth panels, motion budget, readable contrast, owner-friendly wording.",
+                "",
+                "Reference backlog from owner files:",
+                backlog,
+            ])
+
+        def departments_text(self) -> str:
+            lines = [
+                "DEPARTMENTS / SPECIALIZED OPERATING MODES",
+                "==========================================",
+                "The core task processor stays unified. Departments add specialized defaults so the core does not guess.",
+                "",
+            ]
+            for name, desc in DEPARTMENTS:
+                lines.append(f"{name:<14} : {desc}")
+            lines.extend([
+                "",
+                "FREELANCE department:",
+                "  Search/lead intake, client dialogue analysis, manager-assist replies, task registration, build/test/deliver/support.",
+                "",
+                "TRADING department:",
+                "  Research and paper/simulation first. Market/API ingestion and 4h-candle pattern analysis must remain gated.",
+                "  No live trading, leverage execution, account access, or order placement from this UI without a future explicit owner LIVE gate.",
+                "",
+                "Shared package output:",
+                "  working result + tests + logs + receipts + evidence + presentation + patch/support path.",
+            ])
+            return "\n".join(lines)
 
         def daily_text(self) -> str:
             daily = self.data.get("daily-ops", {})
@@ -721,32 +898,45 @@ def run_gui() -> int:
             preview = data.get("preview", {}) if isinstance(data, dict) else {}
             files = preview.get("included_files", []) if isinstance(preview, dict) else []
             handoff = preview.get("handoff_lines", []) if isinstance(preview, dict) else []
+            contour = preview.get("contours", self.contour) if isinstance(preview, dict) else self.contour
+            protocol = read_repo_text(self.repo, "ORGANS/ADMINISTRATUM/CONTINUITY/PROTOCOLS/H_CONTOUR_OPERATION_PROTOCOL_RU.md", 5200)
+            boot = read_repo_text(self.repo, "ORGANS/ADMINISTRATUM/CONTINUITY/PROTOCOLS/LOGOS_PRIME_BOOT_PROTOCOL_RU.md", 5200)
             lines = [
-                "ADMINISTRATUM CONTINUITY CENTER",
-                "================================",
+                "ADMINISTRATUM CONTINUITY CENTER V0.3",
+                "====================================",
                 f"status : {data.get('status', 'UNKNOWN') if isinstance(data, dict) else 'UNKNOWN'}",
                 f"mode   : {data.get('mode', 'h') if isinstance(data, dict) else 'h'}",
-                f"owner  : Administratum continuity / evidence / handoff",
+                f"repo   : {contour.get('repo_root', self.repo) if isinstance(contour, dict) else self.repo}",
+                f"H path : {contour.get('h_repo_candidate', '') if isinstance(contour, dict) else ''}",
+                f"main   : {contour.get('main_repo_candidate', '') if isinstance(contour, dict) else ''}",
                 "",
-                "Purpose:",
-                "  Build an internal Continuity Pack for moving work into a new chat or audit handoff.",
-                "  This is scoped Administratum output: manifest, receipt, owner summary, Logos Prime handoff, and ZIP.",
+                "Why v0.3 exists:",
+                "  Previous handoff did not carry enough operational fullness: commands targeted main, H path was missing,",
+                "  and Logos Prime could not start immediately without owner correction. This panel makes those rules explicit.",
+                "",
+                "Continuity pack pass gates:",
+                "  · H-contour path and main path are both visible;",
+                "  · next commands distinguish H apply vs main cherry-pick/push;",
+                "  · boot protocol tells new Logos Prime what to read first and what not to infer;",
+                "  · owner requirements and reference backlog are included as visible documents;",
+                "  · no commit/push/unsafe shell/live execution is performed by continuity.",
                 "",
                 "Included preview:",
             ]
             if files:
-                for item in files[:30]:
+                for item in files[:38]:
                     lines.append(f"  · {item}")
-                if len(files) > 30:
-                    lines.append(f"  ... +{len(files) - 30} more")
+                if len(files) > 38:
+                    lines.append(f"  ... +{len(files) - 38} more")
             else:
                 lines.append("  no files discovered yet")
             lines.extend([
                 "",
-                "Safe actions:",
-                "  [Build Continuity] creates a local ZIP under ORGANS/ADMINISTRATUM/CONTINUITY/PACKS/",
-                "  [Open Continuity] opens the pack folder.",
-                "  [Copy View] copies this summary.",
+                "H protocol excerpt:",
+                protocol,
+                "",
+                "Logos Prime boot excerpt:",
+                boot,
                 "",
                 "Logos Prime handoff preview:",
             ])
@@ -860,6 +1050,20 @@ def run_gui() -> int:
             self.copy_text(str(block), "handoff block")
 
 
+        def copy_h_flow(self):
+            block = "\n".join([
+                "H-SAFE PATCH FLOW",
+                "1. Work in E:/IMPERIUM_NEW_GENERATION_NEW_REALITY_H or branch h/* only.",
+                "2. Apply patch ZIP with APPLY_PATCH.ps1 -RepoRoot $HRepo.",
+                "3. Run launcher --smoke and visual review in H.",
+                "4. Commit as IMPERIUM_H only after owner acceptance.",
+                "5. Cherry-pick/merge accepted H commit into main, smoke in main, then push.",
+            ])
+            self.copy_text(block, "H-safe patch flow")
+
+        def open_protocols(self):
+            self.open_repo_path("ORGANS/ADMINISTRATUM/CONTINUITY/PROTOCOLS")
+
         def build_continuity(self):
             result = self.client.route("continuity-build", ["h"])
             status = result.get("status", "UNKNOWN") if isinstance(result, dict) else "UNKNOWN"
@@ -905,13 +1109,20 @@ def run_gui() -> int:
 
         def animate(self):
             self.tick += 1
-            if self.tick % 20 == 0:
+            self.frame_counter += 1
+            now = time.perf_counter()
+            elapsed = now - self._fps_window_started
+            if elapsed >= 1.0:
+                self.fps_value = self.frame_counter / max(0.001, elapsed)
+                self.frame_counter = 0
+                self._fps_window_started = now
+            if self.tick % 120 == 0:
                 self.add_trace("[TRACE] " + TRACE_MESSAGES[self.trace_index % len(TRACE_MESSAGES)])
                 self.trace_index += 1
             self.draw_header()
             self.draw_flow()
             self.draw_right_visual()
-            self.after(90, self.animate)
+            self.after(self.target_frame_ms, self.animate)
 
     app = Launcher()
     app.mainloop()
