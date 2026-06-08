@@ -1,28 +1,143 @@
 {
   "status": "PASS_WITH_WARNINGS",
-  "surface": "WEB_SANCTUM_OPERATIONAL_SPINE_AND_WARP_V0_5",
-  "generated_at_utc": "STATIC_SEED_REPLACED_BY_BRIDGE",
+  "surface": "WEB_SANCTUM_STAGE_LOOP_POLISH_AND_COPY_CONTOUR_V0_8_1",
+  "version": "0.8.1",
+  "generated_at_utc": "2026-06-08T16:02:45Z",
   "contour": {
-    "current_contour": "H_OR_WARP_CONTOUR",
-    "repo_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY_H",
-    "branch": "h/manual-ops-polish-v0_1",
-    "head": "unknown",
-    "main_repo_candidate": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
-    "h_repo_candidate": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY_H"
+    "current_contour": "WARP_CONTOUR",
+    "repo_root": "E:/IMPERIUM_WARPS/WARP-20260608-182627",
+    "branch": "warp/warp-20260608-182627",
+    "head": "6a2c7114f63a1b38a75fccee01685dec1e1b441c",
+    "dirty_count": 22
   },
   "task": {
-    "id": "NO_ACTIVE_TASK",
-    "status": "WAITING_FOR_ASTRONOMICON_TASKPACK",
-    "next_action": "Create WARP, export task form ZIP, register taskpack through Astronomicon PC."
+    "id": "H-TASK-NEWREALITY-PC-SERVITOR-WARP-RUNTIME-ACTIVE-TASK-STAGE-LEDGER-V0_7",
+    "status": "ACTIVE_TASK_REGISTERED",
+    "registered_path": "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ORGANS\\ASTRONOMICON\\TASK_INBOX\\REGISTERED\\H-TASK-NEWREALITY-PC-SERVITOR-WARP-RUNTIME-ACTIVE-TASK-STAGE-LEDGER-V0_7",
+    "admission_verdict": "PASS_WITH_WARNINGS",
+    "caps": "{\"contour\":\"PC\",\"mode\":\"LIVE\"}",
+    "warnings": [
+      "Legacy template advisory warnings preserved"
+    ],
+    "receipt_path": "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ORGANS\\ASTRONOMICON\\TASK_INBOX\\REGISTERED\\H-TASK-NEWREALITY-PC-SERVITOR-WARP-RUNTIME-ACTIVE-TASK-STAGE-LEDGER-V0_7\\TASK_RESOLUTION\\RESOLVER_RESULT.json",
+    "activated_at_utc": "2026-06-08T16:02:26Z",
+    "next_action": "Start Work in the selected WARP.",
+    "runtime_state_path": "E:\\IMPERIUM_LOCAL_HANDOFF\\WARP_RUNS\\_registry\\active_task.json"
   },
   "warp": {
-    "mode": "NO_WARP_SELECTED",
-    "path": "",
+    "mode": "WORK_ACTIVE",
+    "warp_id": "WARP-20260608-182627",
+    "path": "E:\\IMPERIUM_WARPS\\WARP-20260608-182627",
+    "created_at_utc": "2026-06-08T15:26:33Z",
+    "main_source": "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY",
+    "base_head": "6a2c7114f63a1b38a75fccee01685dec1e1b441c",
+    "strategy": "git_worktree",
     "active_task_required": true,
     "stage_progress": {
-      "done": 0,
-      "total": 0
-    }
+      "done": 2,
+      "total": 6
+    },
+    "last_action": "start-work",
+    "state_origin": "LEGACY_SOURCE_SEED_READ_ONLY",
+    "runtime_registry_path": "E:\\IMPERIUM_LOCAL_HANDOFF\\WARP_RUNS\\_registry\\warp_registry.json",
+    "active_task_id": "H-TASK-NEWREALITY-PC-SERVITOR-WARP-RUNTIME-ACTIVE-TASK-STAGE-LEDGER-V0_7",
+    "current_stage": "work_started",
+    "started_at_utc": "2026-06-08T16:02:26Z",
+    "runtime_path": "E:\\IMPERIUM_LOCAL_HANDOFF\\WARP_RUNS\\WARP-20260608-182627",
+    "branch": "warp/warp-20260608-182627",
+    "dirty_status": "DIRTY",
+    "dirty_count": 22,
+    "dirty_preview": [
+      "M ORGANS/ADMINISTRATUM/REPORTS/final_report_bundle_builder_v0_1.py",
+      " M ORGANS/IMPERIAL_IDE/WARP/warp_manager.py",
+      " M ORGANS/IMPERIAL_IDE/WARP/warp_registry.json",
+      " M ORGANS/IMPERIAL_IDE/WEB_SANCTUM/RUN_WEB_SANCTUM.ps1",
+      " M ORGANS/IMPERIAL_IDE/WEB_SANCTUM/RUN_WEB_SANCTUM_ACTIONS.ps1",
+      " M ORGANS/IMPERIAL_IDE/WEB_SANCTUM/app/imperium_snapshot.json",
+      " M ORGANS/IMPERIAL_IDE/WEB_SANCTUM/app/index.html",
+      " M ORGANS/IMPERIAL_IDE/WEB_SANCTUM/app/main.js",
+      " M ORGANS/IMPERIAL_IDE/WEB_SANCTUM/app/styles.css",
+      " M ORGANS/IMPERIAL_IDE/WEB_SANCTUM/docs/PLAYWRIGHT_EVIDENCE_RUN_RU.md",
+      " M ORGANS/IMPERIAL_IDE/WEB_SANCTUM/package-lock.json",
+      " M ORGANS/IMPERIAL_IDE/WEB_SANCTUM/package.json",
+      " M ORGANS/IMPERIAL_IDE/WEB_SANCTUM/playwright.config.ts",
+      " M ORGANS/IMPERIAL_IDE/WEB_SANCTUM/tests/web_sanctum.spec.ts",
+      " M ORGANS/IMPERIAL_IDE/WEB_SANCTUM/tests/web_sanctum_screenshots.spec.ts",
+      " M ORGANS/IMPERIAL_IDE/WEB_SANCTUM/tools/export_sanctum_snapshot.py",
+      " M ORGANS/IMPERIAL_IDE/WEB_SANCTUM/tools/local_bridge.py",
+      " M ORGANS/IMPERIAL_IDE/WEB_SANCTUM/tools/web_sanctum_smoke.py",
+      " M ORGANS/MECHANICUS/TOOL_REGISTRY/mechanicus_tool_registry_v0_1.py",
+      " M ORGANS/MECHANICUS/TOOL_REGISTRY/tool_registry.json"
+    ]
+  },
+  "stage_ledger": {
+    "status": "PASS",
+    "surface": "IMPERIUM_WARP_RUNTIME_ACTIVE_TASK_STAGE_LEDGER_V0_7",
+    "warp_id": "WARP-20260608-182627",
+    "task_id": "H-TASK-NEWREALITY-PC-SERVITOR-WARP-RUNTIME-ACTIVE-TASK-STAGE-LEDGER-V0_7",
+    "current_stage": "work_started",
+    "created_at_utc": "2026-06-08T16:02:26Z",
+    "updated_at_utc": "2026-06-08T16:02:26Z",
+    "stages": [
+      {
+        "stage_id": "task_admitted",
+        "status": "PASS",
+        "updated_at_utc": "2026-06-08T16:02:26Z",
+        "evidence": [
+          "astronomicon_admission_receipt"
+        ]
+      },
+      {
+        "stage_id": "work_started",
+        "status": "ACTIVE",
+        "updated_at_utc": "2026-06-08T16:02:26Z",
+        "evidence": [
+          "work_started_receipt"
+        ]
+      },
+      {
+        "stage_id": "implementation",
+        "status": "PENDING",
+        "updated_at_utc": null,
+        "evidence": []
+      },
+      {
+        "stage_id": "validation",
+        "status": "PENDING",
+        "updated_at_utc": null,
+        "evidence": []
+      },
+      {
+        "stage_id": "report_bundle",
+        "status": "PENDING",
+        "updated_at_utc": null,
+        "evidence": []
+      },
+      {
+        "stage_id": "owner_review",
+        "status": "PENDING",
+        "updated_at_utc": null,
+        "evidence": []
+      }
+    ],
+    "events": [
+      {
+        "event": "task_admitted",
+        "status": "PASS",
+        "at_utc": "2026-06-08T16:02:26Z"
+      },
+      {
+        "event": "work_started",
+        "status": "PASS",
+        "at_utc": "2026-06-08T16:02:26Z"
+      }
+    ]
+  },
+  "runtime_paths": {
+    "runtime_root": "E:\\IMPERIUM_LOCAL_HANDOFF\\WARP_RUNS",
+    "registry": "E:\\IMPERIUM_LOCAL_HANDOFF\\WARP_RUNS\\_registry\\warp_registry.json",
+    "active_task": "E:\\IMPERIUM_LOCAL_HANDOFF\\WARP_RUNS\\_registry\\active_task.json",
+    "run_dir": "E:\\IMPERIUM_LOCAL_HANDOFF\\WARP_RUNS\\WARP-20260608-182627"
   },
   "departments": [
     "FREELANCE",
@@ -38,10 +153,361 @@
     "STRATEGIUM",
     "SCHOLA_IMPERIALIS"
   ],
+  "jobs": [],
+  "actions": {
+    "refresh_snapshot": {
+      "action_id": "refresh_snapshot",
+      "label": "Refresh snapshot",
+      "kind": "read",
+      "handler": "snapshot",
+      "command": null,
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 20,
+      "writes_allowed": false,
+      "allowed_write_roots": [],
+      "safety": "READ_ONLY",
+      "evidence_outputs": [
+        "api_snapshot"
+      ],
+      "arbitrary_shell": false
+    },
+    "create_warp": {
+      "action_id": "create_warp",
+      "label": "Create WARP",
+      "kind": "warp",
+      "handler": "warp_manager:create",
+      "command": [
+        "python",
+        "warp_manager.py",
+        "create"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 240,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_WARPS",
+        "E:/IMPERIUM_LOCAL_HANDOFF/WARP_RUNS"
+      ],
+      "safety": "COPY_CONTOUR_NO_GIT_METADATA",
+      "evidence_outputs": [
+        "warp_marker",
+        "runtime_registry"
+      ],
+      "arbitrary_shell": false
+    },
+    "start_work": {
+      "action_id": "start_work",
+      "label": "Start Work",
+      "kind": "warp",
+      "handler": "warp_manager:start-work",
+      "command": [
+        "python",
+        "warp_manager.py",
+        "start-work"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 60,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/WARP_RUNS"
+      ],
+      "safety": "REQUIRES_ACTIVE_TASK_AND_WARP",
+      "evidence_outputs": [
+        "stage_ledger",
+        "administratum_receipts",
+        "stage_gates",
+        "inquisition_findings"
+      ],
+      "arbitrary_shell": false
+    },
+    "export_task_template": {
+      "action_id": "export_task_template",
+      "label": "Download Task Form ZIP",
+      "kind": "taskpack",
+      "handler": "warp_manager:export-task-template",
+      "command": [
+        "python",
+        "warp_manager.py",
+        "export-task-template"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 60,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/TASK_FORMS"
+      ],
+      "safety": "LOCAL_HANDOFF_ONLY",
+      "evidence_outputs": [
+        "taskpack_template_zip"
+      ],
+      "arbitrary_shell": false
+    },
+    "register_taskpack_pc": {
+      "action_id": "register_taskpack_pc",
+      "label": "Register Taskpack on PC",
+      "kind": "astronomicon",
+      "handler": "astronomicon_taskpack_registration_skill",
+      "command": [
+        "python",
+        "astronomicon_taskpack_registration_skill_v0_1.py"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 180,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_WARPS",
+        "E:/IMPERIUM_LOCAL_HANDOFF/WARP_RUNS"
+      ],
+      "safety": "ASTRONOMICON_ADMISSION_ALLOWLIST",
+      "evidence_outputs": [
+        "admission_receipt",
+        "runtime_active_task"
+      ],
+      "arbitrary_shell": false
+    },
+    "validate_warp": {
+      "action_id": "validate_warp",
+      "label": "WARP Validation",
+      "kind": "validation",
+      "handler": "warp_manager:validate",
+      "command": [
+        "python",
+        "warp_manager.py",
+        "validate"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 120,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/WARP_RUNS"
+      ],
+      "safety": "INQUISITION_READ_MOSTLY",
+      "evidence_outputs": [
+        "inquisition_findings"
+      ],
+      "arbitrary_shell": false
+    },
+    "build_report_bundle": {
+      "action_id": "build_report_bundle",
+      "label": "Final Report Bundle",
+      "kind": "administratum",
+      "handler": "final_report_bundle_builder:build",
+      "command": [
+        "python",
+        "final_report_bundle_builder_v0_1.py",
+        "build"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 180,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/SERVITOR_OUTPUTS"
+      ],
+      "safety": "REPORT_OUTPUT_ONLY",
+      "evidence_outputs": [
+        "final_report_bundle_zip",
+        "final_report_manifest"
+      ],
+      "arbitrary_shell": false
+    },
+    "mechanicus_register_tool": {
+      "action_id": "mechanicus_register_tool",
+      "label": "Ensure action registry",
+      "kind": "mechanicus",
+      "handler": "mechanicus_tool_registry:ensure-defaults",
+      "command": [
+        "python",
+        "mechanicus_tool_registry_v0_1.py",
+        "ensure-defaults"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 60,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_WARPS"
+      ],
+      "safety": "TOOL_REGISTRY_ONLY",
+      "evidence_outputs": [
+        "tool_registry"
+      ],
+      "arbitrary_shell": false
+    },
+    "mechanicus_list_tools": {
+      "action_id": "mechanicus_list_tools",
+      "label": "List Mechanicus tools",
+      "kind": "mechanicus",
+      "handler": "mechanicus_tool_registry:list",
+      "command": [
+        "python",
+        "mechanicus_tool_registry_v0_1.py",
+        "list"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 60,
+      "writes_allowed": false,
+      "allowed_write_roots": [],
+      "safety": "READ_ONLY",
+      "evidence_outputs": [
+        "tool_registry_snapshot"
+      ],
+      "arbitrary_shell": false
+    },
+    "run_playwright": {
+      "action_id": "run_playwright",
+      "label": "Run Playwright",
+      "kind": "evidence",
+      "handler": "playwright:test",
+      "command": [
+        "playwright",
+        "test"
+      ],
+      "cwd": "WEB_SANCTUM",
+      "timeout_sec": 300,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/SERVITOR_OUTPUTS"
+      ],
+      "safety": "EVIDENCE_OUTPUT_ONLY",
+      "evidence_outputs": [
+        "playwright_results",
+        "html_report"
+      ],
+      "arbitrary_shell": false
+    },
+    "run_playwright_screenshots": {
+      "action_id": "run_playwright_screenshots",
+      "label": "Collect screenshots",
+      "kind": "evidence",
+      "handler": "playwright:screenshots",
+      "command": [
+        "playwright",
+        "test",
+        "web_sanctum_screenshots.spec.ts"
+      ],
+      "cwd": "WEB_SANCTUM",
+      "timeout_sec": 300,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/SERVITOR_OUTPUTS"
+      ],
+      "safety": "EVIDENCE_OUTPUT_ONLY",
+      "evidence_outputs": [
+        "owner_visible_screenshots"
+      ],
+      "arbitrary_shell": false
+    },
+    "open_warp": {
+      "action_id": "open_warp",
+      "label": "Open WARP folder",
+      "kind": "open",
+      "handler": "explorer",
+      "command": [
+        "explorer",
+        "{warp_path}"
+      ],
+      "cwd": "WARP_ROOT",
+      "timeout_sec": 20,
+      "writes_allowed": false,
+      "allowed_write_roots": [],
+      "safety": "EXPLORER_ONLY",
+      "evidence_outputs": [
+        "operator_visible_folder"
+      ],
+      "arbitrary_shell": false
+    },
+    "open_reports": {
+      "action_id": "open_reports",
+      "label": "Open reports",
+      "kind": "open",
+      "handler": "explorer",
+      "command": [
+        "explorer",
+        "{output_root}"
+      ],
+      "cwd": "OUTPUT_ROOT",
+      "timeout_sec": 20,
+      "writes_allowed": false,
+      "allowed_write_roots": [],
+      "safety": "EXPLORER_ONLY",
+      "evidence_outputs": [
+        "operator_visible_folder"
+      ],
+      "arbitrary_shell": false
+    },
+    "open_playwright_report": {
+      "action_id": "open_playwright_report",
+      "label": "Open Playwright report",
+      "kind": "open",
+      "handler": "playwright:show-report",
+      "command": [
+        "playwright",
+        "show-report"
+      ],
+      "cwd": "WEB_SANCTUM",
+      "timeout_sec": 20,
+      "writes_allowed": false,
+      "allowed_write_roots": [],
+      "safety": "LOCAL_REPORT_ONLY",
+      "evidence_outputs": [
+        "html_report"
+      ],
+      "arbitrary_shell": false
+    },
+    "open_tui": {
+      "action_id": "open_tui",
+      "label": "Open TUI",
+      "kind": "open",
+      "handler": "imperial_tui",
+      "command": [
+        "python",
+        "imperial_tui.py"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 20,
+      "writes_allowed": false,
+      "allowed_write_roots": [],
+      "safety": "DETACHED_LOCAL_TOOL",
+      "evidence_outputs": [
+        "operator_visible_process"
+      ],
+      "arbitrary_shell": false
+    },
+    "open_tk": {
+      "action_id": "open_tk",
+      "label": "Open Tk fallback",
+      "kind": "open",
+      "handler": "imperial_launcher",
+      "command": [
+        "python",
+        "imperial_launcher.py"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 20,
+      "writes_allowed": false,
+      "allowed_write_roots": [],
+      "safety": "DETACHED_LOCAL_TOOL",
+      "evidence_outputs": [
+        "operator_visible_process"
+      ],
+      "arbitrary_shell": false
+    }
+  },
   "safety": {
     "real_execution_enabled": false,
     "live_llm_backend_enabled": false,
     "unsafe_shell_enabled": false,
-    "trading_execution_enabled": false
+    "trading_execution_enabled": false,
+    "commit_push_exposed": false
+  },
+  "runtime_hygiene": {
+    "status": "NOT_RUN",
+    "surface": "IMPERIUM_RUNTIME_HYGIENE_V0_8_1",
+    "ttl_days": 3,
+    "policy": "scan-only in Web Sanctum; CLI prune requires --apply"
+  },
+  "resource_fleet": {
+    "status": "NOT_RUN",
+    "surface": "IMPERIUM_RESOURCE_FLEET_NODE_PROBE_V0_8_1",
+    "note": "node probe required before portable node joins workload routing"
   }
 }

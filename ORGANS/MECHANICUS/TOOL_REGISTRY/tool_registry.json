@@ -1,3 +1,494 @@
 {
-  "tools": []
+  "surface": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+  "tools": [
+    {
+      "id": "refresh_snapshot",
+      "action_id": "refresh_snapshot",
+      "handler": "snapshot",
+      "command": null,
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 20,
+      "writes_allowed": false,
+      "allowed_write_roots": [],
+      "safety": "READ_ONLY",
+      "evidence_outputs": [
+        "api_snapshot"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T15:23:01Z"
+    },
+    {
+      "id": "create_warp",
+      "action_id": "create_warp",
+      "handler": "warp_manager:create",
+      "command": [
+        "python",
+        "warp_manager.py",
+        "create"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 240,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_WARPS",
+        "E:/IMPERIUM_LOCAL_HANDOFF/WARP_RUNS"
+      ],
+      "safety": "COPY_CONTOUR_NO_GIT_METADATA",
+      "evidence_outputs": [
+        "warp_marker",
+        "runtime_registry"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T15:23:01Z"
+    },
+    {
+      "id": "start_work",
+      "action_id": "start_work",
+      "handler": "warp_manager:start-work",
+      "command": [
+        "python",
+        "warp_manager.py",
+        "start-work"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 60,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/WARP_RUNS"
+      ],
+      "safety": "REQUIRES_ACTIVE_TASK_AND_WARP",
+      "evidence_outputs": [
+        "stage_ledger",
+        "administratum_receipts",
+        "stage_gates",
+        "inquisition_findings"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T15:23:01Z"
+    },
+    {
+      "id": "export_task_template",
+      "action_id": "export_task_template",
+      "handler": "warp_manager:export-task-template",
+      "command": [
+        "python",
+        "warp_manager.py",
+        "export-task-template"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 60,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/TASK_FORMS"
+      ],
+      "safety": "LOCAL_HANDOFF_ONLY",
+      "evidence_outputs": [
+        "taskpack_template_zip"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T15:57:46Z"
+    },
+    {
+      "id": "register_taskpack_pc",
+      "action_id": "register_taskpack_pc",
+      "handler": "astronomicon_taskpack_registration_skill",
+      "command": [
+        "python",
+        "astronomicon_taskpack_registration_skill_v0_1.py"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 180,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_WARPS",
+        "E:/IMPERIUM_LOCAL_HANDOFF/WARP_RUNS"
+      ],
+      "safety": "ASTRONOMICON_ADMISSION_ALLOWLIST",
+      "evidence_outputs": [
+        "admission_receipt",
+        "runtime_active_task"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T15:23:01Z"
+    },
+    {
+      "id": "validate_warp",
+      "action_id": "validate_warp",
+      "handler": "warp_manager:validate",
+      "command": [
+        "python",
+        "warp_manager.py",
+        "validate"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 120,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/WARP_RUNS"
+      ],
+      "safety": "INQUISITION_READ_MOSTLY",
+      "evidence_outputs": [
+        "inquisition_findings"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T15:23:01Z"
+    },
+    {
+      "id": "build_report_bundle",
+      "action_id": "build_report_bundle",
+      "handler": "final_report_bundle_builder:build",
+      "command": [
+        "python",
+        "final_report_bundle_builder_v0_1.py",
+        "build"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 180,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/SERVITOR_OUTPUTS"
+      ],
+      "safety": "REPORT_OUTPUT_ONLY",
+      "evidence_outputs": [
+        "final_report_bundle_zip",
+        "final_report_manifest"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T15:23:01Z"
+    },
+    {
+      "id": "mechanicus_register_tool",
+      "action_id": "mechanicus_register_tool",
+      "handler": "mechanicus_tool_registry:ensure-defaults",
+      "command": [
+        "python",
+        "mechanicus_tool_registry_v0_1.py",
+        "ensure-defaults"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 60,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_WARPS"
+      ],
+      "safety": "TOOL_REGISTRY_ONLY",
+      "evidence_outputs": [
+        "tool_registry"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T15:57:46Z"
+    },
+    {
+      "id": "mechanicus_list_tools",
+      "action_id": "mechanicus_list_tools",
+      "handler": "mechanicus_tool_registry:list",
+      "command": [
+        "python",
+        "mechanicus_tool_registry_v0_1.py",
+        "list"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 60,
+      "writes_allowed": false,
+      "allowed_write_roots": [],
+      "safety": "READ_ONLY",
+      "evidence_outputs": [
+        "tool_registry_snapshot"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T15:57:46Z"
+    },
+    {
+      "id": "run_playwright",
+      "action_id": "run_playwright",
+      "handler": "playwright:test",
+      "command": [
+        "playwright",
+        "test"
+      ],
+      "cwd": "WEB_SANCTUM",
+      "timeout_sec": 300,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/SERVITOR_OUTPUTS"
+      ],
+      "safety": "EVIDENCE_OUTPUT_ONLY",
+      "evidence_outputs": [
+        "playwright_results",
+        "html_report"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T15:57:46Z"
+    },
+    {
+      "id": "run_playwright_screenshots",
+      "action_id": "run_playwright_screenshots",
+      "handler": "playwright:screenshots",
+      "command": [
+        "playwright",
+        "test",
+        "web_sanctum_screenshots.spec.ts"
+      ],
+      "cwd": "WEB_SANCTUM",
+      "timeout_sec": 300,
+      "writes_allowed": true,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/SERVITOR_OUTPUTS"
+      ],
+      "safety": "EVIDENCE_OUTPUT_ONLY",
+      "evidence_outputs": [
+        "owner_visible_screenshots"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T15:23:01Z"
+    },
+    {
+      "id": "open_warp",
+      "action_id": "open_warp",
+      "handler": "explorer",
+      "command": [
+        "explorer",
+        "{warp_path}"
+      ],
+      "cwd": "WARP_ROOT",
+      "timeout_sec": 20,
+      "writes_allowed": false,
+      "allowed_write_roots": [],
+      "safety": "EXPLORER_ONLY",
+      "evidence_outputs": [
+        "operator_visible_folder"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T15:57:46Z"
+    },
+    {
+      "id": "open_reports",
+      "action_id": "open_reports",
+      "handler": "explorer",
+      "command": [
+        "explorer",
+        "{output_root}"
+      ],
+      "cwd": "OUTPUT_ROOT",
+      "timeout_sec": 20,
+      "writes_allowed": false,
+      "allowed_write_roots": [],
+      "safety": "EXPLORER_ONLY",
+      "evidence_outputs": [
+        "operator_visible_folder"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T15:57:46Z"
+    },
+    {
+      "id": "open_playwright_report",
+      "action_id": "open_playwright_report",
+      "handler": "playwright:show-report",
+      "command": [
+        "playwright",
+        "show-report"
+      ],
+      "cwd": "WEB_SANCTUM",
+      "timeout_sec": 20,
+      "writes_allowed": false,
+      "allowed_write_roots": [],
+      "safety": "LOCAL_REPORT_ONLY",
+      "evidence_outputs": [
+        "html_report"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T15:57:46Z"
+    },
+    {
+      "id": "open_tui",
+      "action_id": "open_tui",
+      "handler": "imperial_tui",
+      "command": [
+        "python",
+        "imperial_tui.py"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 20,
+      "writes_allowed": false,
+      "allowed_write_roots": [],
+      "safety": "DETACHED_LOCAL_TOOL",
+      "evidence_outputs": [
+        "operator_visible_process"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T15:57:46Z"
+    },
+    {
+      "id": "open_tk",
+      "action_id": "open_tk",
+      "handler": "imperial_launcher",
+      "command": [
+        "python",
+        "imperial_launcher.py"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 20,
+      "writes_allowed": false,
+      "allowed_write_roots": [],
+      "safety": "DETACHED_LOCAL_TOOL",
+      "evidence_outputs": [
+        "operator_visible_process"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T15:57:46Z"
+    },
+    {
+      "id": "runtime_hygiene_scan",
+      "action_id": "runtime_hygiene_scan",
+      "handler": "runtime_hygiene:scan",
+      "command": [
+        "python",
+        "imperium_runtime_hygiene_v0_1.py",
+        "scan"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 90,
+      "writes_allowed": false,
+      "allowed_write_roots": [],
+      "safety": "SCAN_ONLY_NO_DELETE",
+      "evidence_outputs": [
+        "runtime_hygiene_report"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T16:50:00Z"
+    },
+    {
+      "id": "node_probe",
+      "action_id": "node_probe",
+      "handler": "resource_fleet:node-probe",
+      "command": [
+        "python",
+        "imperium_node_probe_v0_1.py"
+      ],
+      "cwd": "REPO_ROOT",
+      "timeout_sec": 60,
+      "writes_allowed": false,
+      "allowed_write_roots": [],
+      "safety": "READ_ONLY_NODE_DIAGNOSTIC",
+      "evidence_outputs": [
+        "node_probe_report"
+      ],
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "source": "MECHANICUS_ACTION_REGISTRY_V0_8_1",
+      "registered_at_utc": "2026-06-08T16:50:00Z"
+    },
+    {
+      "action_id": "stage_start_current",
+      "label": "Start next stage",
+      "kind": "stage",
+      "safety": "ADMINISTRATUM_STAGE_RECEIPT",
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/WARP_RUNS"
+      ],
+      "evidence_outputs": [
+        "stage_ledger",
+        "promotion_preview"
+      ]
+    },
+    {
+      "action_id": "stage_submit_evidence",
+      "label": "Mark stage evidence",
+      "kind": "stage",
+      "safety": "EVIDENCE_MARKER_ONLY",
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/WARP_RUNS"
+      ],
+      "evidence_outputs": [
+        "stage_ledger",
+        "promotion_preview"
+      ]
+    },
+    {
+      "action_id": "stage_run_gate",
+      "label": "Run stage gate",
+      "kind": "stage",
+      "safety": "ASTRONOMICON_STAGE_GATE",
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/WARP_RUNS"
+      ],
+      "evidence_outputs": [
+        "stage_ledger",
+        "promotion_preview"
+      ]
+    },
+    {
+      "action_id": "stage_close_stage",
+      "label": "Close current stage",
+      "kind": "stage",
+      "safety": "GATE_REQUIRED_STAGE_CLOSE",
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/WARP_RUNS"
+      ],
+      "evidence_outputs": [
+        "stage_ledger",
+        "promotion_preview"
+      ]
+    },
+    {
+      "action_id": "promotion_preview",
+      "label": "Promotion Preview",
+      "kind": "promotion",
+      "safety": "NO_COMMIT_NO_PUSH_PREVIEW",
+      "arbitrary_shell": false,
+      "commit_push_exposed": false,
+      "allowed_write_roots": [
+        "E:/IMPERIUM_LOCAL_HANDOFF/WARP_RUNS"
+      ],
+      "evidence_outputs": [
+        "stage_ledger",
+        "promotion_preview"
+      ]
+    }
+  ],
+  "status": "PASS",
+  "schema_version": "0.8.1",
+  "updated_at_utc": "2026-06-08T15:57:46Z"
 }

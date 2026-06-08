@@ -1,0 +1,34 @@
+{
+  "schema_version": "0.8.1",
+  "surface": "IMPERIUM_RUNTIME_HYGIENE_POLICY_V0_8_1",
+  "canonical_aliases": {
+    "MAIN_REPO": "canonical pushed source repository",
+    "H_CONTOUR": "manual owner review contour",
+    "WARP_ROOT": "temporary work contours",
+    "LOCAL_HANDOFF": "local runtime, evidence, forms and reports",
+    "TASK_FORMS": "downloaded/fillable Astronomicon task forms",
+    "WARP_RUNS": "runtime ledgers and job receipts",
+    "SERVITOR_OUTPUTS": "servitor-produced evidence and patch bundles",
+    "REPORT_BUNDLES": "final owner-visible delivery bundles",
+    "RESOURCE_FLEET": "known machines and portable node diagnostics"
+  },
+  "default_ttl_days": 3,
+  "protected": [
+    "MAIN_REPO",
+    "H_CONTOUR",
+    "WARP_RUNS/_registry",
+    "active WARP path",
+    "active run directory"
+  ],
+  "volatile_roots": [
+    "TASK_FORMS",
+    "SERVITOR_OUTPUTS",
+    "REPORT_BUNDLES",
+    "WARP_RUNS/* except _registry and active run",
+    "WARP_ROOT/* except active WARP"
+  ],
+  "web_actions": {
+    "runtime_hygiene_scan": "scan only, no deletion",
+    "runtime_hygiene_prune": "CLI only, requires --apply"
+  }
+}

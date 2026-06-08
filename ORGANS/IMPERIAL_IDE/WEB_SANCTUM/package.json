@@ -1,17 +1,17 @@
 {
-  "name": "imperium-web-sanctum-v050",
-  "version": "0.5.0",
+  "name": "imperium-web-sanctum-v081",
+  "version": "0.8.1",
   "private": true,
-  "description": "Imperium Web Sanctum v0.5 - operational spine, Warp zones, Astronomicon task registration, report bundles, Mechanicus registry",
+  "description": "Imperium Web Sanctum v0.8.1 - copy-contour Inquisition fix, quiet bridge, polished stage motion",
   "scripts": {
     "snapshot": "python ./tools/export_sanctum_snapshot.py --repo ../../..",
     "smoke": "python ./tools/web_sanctum_smoke.py",
-    "serve": "python ./tools/local_bridge.py --repo-root ../../.. --port 8790",
-    "serve:actions": "python ./tools/local_bridge.py --repo-root ../../.. --port 8790 --actions",
+    "serve": "python ./tools/local_bridge.py --repo-root ../../.. --port 8792",
+    "serve:actions": "python ./tools/local_bridge.py --repo-root ../../.. --port 8792 --actions",
     "test:pw": "playwright test",
     "test:pw:screenshots": "playwright test tests/web_sanctum_screenshots.spec.ts --project=chromium",
-    "test:pw:report": "playwright show-report --port 9334",
-    "test:pw:report:alt": "playwright show-report --port 9335"
+    "test:pw:report": "playwright show-report --port 9338",
+    "test:pw:report:alt": "playwright show-report --port 9339"
   },
   "devDependencies": {
     "@playwright/test": "latest"

@@ -1,14 +1,5 @@
-# Playwright evidence run v0.5
+# Playwright evidence run v0.8.1
 
-Commands:
+Web Sanctum v0.8.1 writes Playwright traces, screenshots and HTML report to `E:/IMPERIUM_LOCAL_HANDOFF/SERVITOR_OUTPUTS/H-TASK-NEWREALITY-PC-SERVITOR-WARP-RUNTIME-FULL-STAGE-LOOP-V0_8_1/playwright` by default.
 
-```powershell
-cd E:\IMPERIUM_NEW_GENERATION_NEW_REALITY_H\ORGANS\IMPERIAL_IDE\WEB_SANCTUM
-npm install
-npx playwright install chromium
-npm run test:pw
-npm run test:pw:screenshots
-npm run test:pw:report
-```
-
-Screenshots are produced under `test-results/screenshots` and may be included in the final report bundle.
+Screenshots cover Sanctum, WARP, Task Register, Astronomicon, Mechanicus, Jobs, Stage Control, Runtime Hygiene, Inquisition, Report Bundle, Promotion Preview and Playwright.
