@@ -57,6 +57,10 @@ RISK = {
     "station": "LOW_READ_ONLY",
     "launcher": "LOW_READ_ONLY",
     "launcher-smoke": "LOW_LOCAL_SMOKE",
+    "continuity-preview": "LOW_READ_ONLY",
+    "continuity-build": "LOW_SCOPED_WRITE",
+    "continuity-smoke": "LOW_LOCAL_SMOKE",
+    "continuity-open": "LOW_READ_ONLY",
     "station-tui": "LOW_READ_ONLY",
     "station-gui": "LOW_READ_ONLY",
     "agents": "LOW_READ_ONLY",
@@ -79,7 +83,7 @@ OPS_COMMANDS = {
 }
 
 STATION_COMMANDS = {
-    "station", "launcher", "launcher-smoke", "station-tui", "station-gui", "station-smoke", "agents",
+    "station", "launcher", "launcher-smoke", "continuity-preview", "continuity-build", "continuity-smoke", "continuity-open", "station-tui", "station-gui", "station-smoke", "agents",
     "agent-status", "task-console", "new-task", "build-taskpack",
     "validate-taskpack", "register-taskpack", "launch-card", "handoff-card",
     "lifecycle", "reports-latest", "receipts-latest", "safety", "git-closure",

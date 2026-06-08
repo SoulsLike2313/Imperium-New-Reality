@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -22,6 +23,10 @@ from station_state import StationState, find_repo_root
 from summary_renderer import summarize_payload
 from taskpack_manager import inspect_taskpack, list_taskpacks, validate_taskpack as validate_generated_taskpack
 from station_workflow import StationWorkflow
+
+ADMIN_CONTINUITY_ROOT = Path(__file__).resolve().parents[2] / "ADMINISTRATUM" / "CONTINUITY"
+if str(ADMIN_CONTINUITY_ROOT) not in sys.path:
+    sys.path.insert(0, str(ADMIN_CONTINUITY_ROOT))
 
 DEFAULT_TITLE = "Station operator sample task"
 DEFAULT_GOAL = "Build and validate an Astronomicon-compatible taskpack inside Imperial IDE"
@@ -63,6 +68,20 @@ def route(command: str, args: list[str] | None = None, repo_root: Path | None = 
             "launch_command": "python ORGANS/IMPERIAL_IDE/LAUNCHER/imperial_launcher.py",
             "smoke_command": "python ORGANS/IMPERIAL_IDE/LAUNCHER/imperial_launcher.py --smoke",
         }
+    if command == "continuity-preview":
+        from continuity_pack_builder import preview_pack
+        mode = args[0] if args else "h"
+        return preview_pack(repo, mode)
+    if command == "continuity-build":
+        from continuity_pack_builder import build_pack
+        mode = args[0] if args else "h"
+        return build_pack(repo, mode)
+    if command == "continuity-smoke":
+        from continuity_pack_builder import smoke as continuity_smoke
+        return continuity_smoke(repo)
+    if command == "continuity-open":
+        target = repo / "ORGANS" / "ADMINISTRATUM" / "CONTINUITY" / "PACKS"
+        return {"status": "PASS_WITH_WARNINGS", "path_actions": actions_for_path(repo, target.as_posix()), "executed": False}
     if command == "station-tui":
         return {
             "status": "PASS_WITH_WARNINGS",

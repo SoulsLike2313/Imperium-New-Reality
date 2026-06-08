@@ -62,6 +62,9 @@ SAFE_COMMANDS = {
     "git-closure",
     "safety",
     "lifecycle",
+    "continuity-preview",
+    "continuity-build",
+    "continuity-smoke",
     "reports-latest",
     "receipts-latest",
 }
@@ -235,6 +238,9 @@ def extract_home_summary(data: dict[str, Any]) -> dict[str, Any]:
         "taskpacks": taskpacks.get("generated_taskpacks_found", 0),
         "latest_taskpack": taskpacks.get("latest_taskpack_path", ""),
         "handoff_ready": bool(handoff.get("copy_ready_servitor_prime_block") or launch.get("copy_ready_servitor_prime_block")),
+        "continuity_status": (data.get("continuity-preview", {}) or {}).get("status", ""),
+        "continuity_mode": (data.get("continuity-preview", {}) or {}).get("mode", ""),
+        "continuity_files": len(((data.get("continuity-preview", {}) or {}).get("preview", {}) or {}).get("included_files", [])),
     }
 
 
@@ -362,6 +368,7 @@ def run_gui() -> int:
                 ("Daily Ops", "daily", "✺"),
                 ("Agents", "agents", "⚙"),
                 ("Taskpacks", "taskpacks", "⬡"),
+                ("Continuity", "continuity", "☷"),
                 ("Launch / Handoff", "handoff", "⇢"),
                 ("Dirty / Git", "dirty", "◇"),
                 ("Safety", "safety", "◆"),
@@ -386,6 +393,8 @@ def run_gui() -> int:
                 ("Open Reports", lambda: self.open_repo_path("REPORTS")),
                 ("Open Task Inbox", lambda: self.open_repo_path("ORGANS/ASTRONOMICON/TASK_INBOX")),
                 ("Copy Handoff", self.copy_handoff),
+                ("Build Continuity", self.build_continuity),
+                ("Open Continuity", self.open_continuity),
             ]:
                 self._action_button(text, cmd)
 
@@ -603,6 +612,8 @@ def run_gui() -> int:
                 text = self.agents_text()
             elif surface == "taskpacks":
                 text = self.taskpacks_text()
+            elif surface == "continuity":
+                text = self.continuity_text()
             elif surface == "handoff":
                 text = self.handoff_text()
             elif surface == "dirty":
@@ -702,6 +713,49 @@ def run_gui() -> int:
                 lines.append("No generated taskpacks visible in current station root.")
             lines.append("")
             lines.append("Buttons: Open Task Inbox / Open Reports / Copy View are available in the launcher chrome.")
+            return "\n".join(lines)
+
+
+        def continuity_text(self) -> str:
+            data = self.data.get("continuity-preview", {})
+            preview = data.get("preview", {}) if isinstance(data, dict) else {}
+            files = preview.get("included_files", []) if isinstance(preview, dict) else []
+            handoff = preview.get("handoff_lines", []) if isinstance(preview, dict) else []
+            lines = [
+                "ADMINISTRATUM CONTINUITY CENTER",
+                "================================",
+                f"status : {data.get('status', 'UNKNOWN') if isinstance(data, dict) else 'UNKNOWN'}",
+                f"mode   : {data.get('mode', 'h') if isinstance(data, dict) else 'h'}",
+                f"owner  : Administratum continuity / evidence / handoff",
+                "",
+                "Purpose:",
+                "  Build an internal Continuity Pack for moving work into a new chat or audit handoff.",
+                "  This is scoped Administratum output: manifest, receipt, owner summary, Logos Prime handoff, and ZIP.",
+                "",
+                "Included preview:",
+            ]
+            if files:
+                for item in files[:30]:
+                    lines.append(f"  · {item}")
+                if len(files) > 30:
+                    lines.append(f"  ... +{len(files) - 30} more")
+            else:
+                lines.append("  no files discovered yet")
+            lines.extend([
+                "",
+                "Safe actions:",
+                "  [Build Continuity] creates a local ZIP under ORGANS/ADMINISTRATUM/CONTINUITY/PACKS/",
+                "  [Open Continuity] opens the pack folder.",
+                "  [Copy View] copies this summary.",
+                "",
+                "Logos Prime handoff preview:",
+            ])
+            lines.extend([f"  {line}" for line in handoff[:18]] or ["  Build a pack to generate LOGOS_PRIME_HANDOFF_SUMMARY_RU.md"])
+            lines.extend([
+                "",
+                "Forbidden:",
+                "  no commit, no push, no registry mutation, no real execution, no unsafe shell.",
+            ])
             return "\n".join(lines)
 
         def handoff_text(self) -> str:
@@ -804,6 +858,21 @@ def run_gui() -> int:
             handoff = self.data.get("handoff-card", {})
             block = handoff.get("copy_ready_servitor_prime_block") or launch.get("copy_ready_servitor_prime_block") or self.handoff_text()
             self.copy_text(str(block), "handoff block")
+
+
+        def build_continuity(self):
+            result = self.client.route("continuity-build", ["h"])
+            status = result.get("status", "UNKNOWN") if isinstance(result, dict) else "UNKNOWN"
+            pack_path = result.get("pack_zip_path", "") if isinstance(result, dict) else ""
+            self.add_trace(f"[{status}] Continuity pack build requested: {pack_path}")
+            self.statusbar.config(text=f"Continuity pack: {status} · {pack_path}")
+            self.data["continuity-preview"] = self.client.route("continuity-preview", ["h"])
+            self.current_surface = "continuity"
+            self.render_current_surface()
+            self.update_nav_selection()
+
+        def open_continuity(self):
+            self.open_repo_path("ORGANS/ADMINISTRATUM/CONTINUITY/PACKS")
 
         def open_repo_path(self, relative: str):
             self.open_path((self.repo / relative).resolve())

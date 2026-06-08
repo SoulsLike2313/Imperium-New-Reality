@@ -50,3 +50,18 @@ powershell -ExecutionPolicy Bypass -File ORGANS\IMPERIAL_IDE\run_imperial_ide.ps
 ```
 
 Tool requests remain dry-run first and are mediated by Mechanicus.
+
+
+## Administratum Continuity Center V0.1
+
+Continuity Pack is now an IDE-visible Administratum function. It previews and builds local ignored packs with manifest, receipt, owner summary, and Logos Prime handoff for safe transition into a new chat or audit handoff.
+
+Commands:
+
+```powershell
+python ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py continuity-preview h
+python ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py continuity-build h
+python ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py continuity-smoke
+```
+
+Safety: no commit, no push, no live LLM, no real servitor execution, no unsafe shell.

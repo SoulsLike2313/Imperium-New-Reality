@@ -1,0 +1,17 @@
+{
+  "schema_version": "administratum.continuity_pack.v0_1",
+  "owner_organ": "ADMINISTRATUM",
+  "purpose": "Internal continuity pack for new chat / Logos Prime / audit handoff.",
+  "modes": ["quick", "h", "full"],
+  "required_outputs": [
+    "CONTINUITY_PACK.zip",
+    "CONTINUITY_MANIFEST.json",
+    "CONTINUITY_RECEIPT.json",
+    "OWNER_CONTINUITY_SUMMARY_RU.md",
+    "LOGOS_PRIME_HANDOFF_SUMMARY_RU.md",
+    "NEXT_HANDOFF_CARD.md"
+  ],
+  "allowed_actions": ["read_repo_state", "read_task_registry", "read_reports_index", "write_scoped_pack", "write_receipt", "copy_handoff", "open_pack_folder"],
+  "forbidden_actions": ["commit", "push", "delete", "unsafe_shell", "live_llm", "real_servitor_execution", "task_registry_mutation"],
+  "writes_scope": "ORGANS/ADMINISTRATUM/CONTINUITY/PACKS"
+}

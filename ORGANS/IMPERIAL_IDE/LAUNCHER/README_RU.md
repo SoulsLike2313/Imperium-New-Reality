@@ -15,3 +15,8 @@ Safety:
 - no unsafe shell;
 - no auto commit/push;
 - only read-only station routes and safe local open/copy helpers.
+
+
+## Administratum Continuity Center V0.1
+
+Launcher integrates a Continuity surface and safe buttons for Build Continuity / Open Continuity. The pack builder lives under `ORGANS/ADMINISTRATUM/CONTINUITY/` and writes ignored local pack outputs for new chat / Logos Prime handoff.

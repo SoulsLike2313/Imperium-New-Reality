@@ -540,6 +540,34 @@
       "risk_class": "LOW_READ_ONLY",
       "argument_required": false,
       "real_execution": false
+    },
+    {
+      "command": "continuity-preview",
+      "description": "Preview Administratum Continuity Pack contents without writing outputs",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "continuity-build",
+      "description": "Build scoped Administratum Continuity Pack ZIP with manifest, receipt, owner summary, and Logos Prime handoff",
+      "risk_class": "LOW_SCOPED_WRITE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "continuity-smoke",
+      "description": "Validate Continuity Pack builder and current repo context without creating a pack",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "continuity-open",
+      "description": "Return safe local open/copy actions for the Continuity Pack folder",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
     }
   ]
 }
