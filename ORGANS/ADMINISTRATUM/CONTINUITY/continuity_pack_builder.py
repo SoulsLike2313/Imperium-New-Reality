@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-ADMINISTRATUM CONTINUITY PACK BUILDER V0.3
+ADMINISTRATUM CONTINUITY PACK BUILDER V0.4
 
 Hardened continuity builder for Logos Prime handoff, H-contour/manual patch flow,
 owner-visible boot protocol, and evidence/readiness preservation.
@@ -27,7 +27,7 @@ import zipfile
 from pathlib import Path
 from typing import Any
 
-SCHEMA_VERSION = "administratum.continuity_pack.v0_3"
+SCHEMA_VERSION = "administratum.continuity_pack.v0_4"
 MODES = {"quick", "h", "full"}
 HERE = Path(__file__).resolve().parent
 PACKS_ROOT = HERE / "PACKS"
@@ -43,6 +43,9 @@ OWNER_FACING_TEXT_FILES = {
     "NEXT_COMMANDS_H_SAFE_RU.md",
     "OWNER_REQUIREMENTS_FREELANCE_CORE_RU.md",
     "REFERENCE_TECH_BACKLOG_RU.md",
+    "ORGAN_DEPARTMENT_MODEL_RU.md",
+    "MECHANICUS_EXEMPLAR_PROTOCOL_RU.md",
+    "SANCTUM_SMOOTHNESS_ACCEPTANCE_RU.md",
 }
 
 
@@ -225,6 +228,7 @@ def h_protocol_text(contours: dict[str, Any]) -> str:
         "- Не считать `repo_root` из manifest рабочей зоной H-polish, если есть H-contour rule.",
         "- Не восстанавливать скрытые рассуждения прошлого чата.",
         "- Не включать real servitor execution, live LLM, unsafe shell, автокоммит или autopush.",
+        "- Не путать departments и organs: Freelance/Trading — departments; Mechanicus/etc — organs.",
     ])
 
 
@@ -319,12 +323,78 @@ def next_commands_text(contours: dict[str, Any]) -> str:
     ])
 
 
+def organ_department_model_text() -> str:
+    return "\n".join([
+        "# ORGAN / DEPARTMENT MODEL RU",
+        "",
+        "## Исправление v0.4",
+        "",
+        "Freelance и Trading — это департаменты: специализированные режимы обработки задач вокруг единого ядра.",
+        "Mechanicus, Administratum, Inquisition, Astronomicon и Officio Agentis — это органы ядра Imperium.",
+        "Не смешивать эти категории в continuity, UI, task intake и handoff.",
+        "",
+        "## Departments",
+        "",
+        "- Freelance: brief -> client clarification -> taskpack -> build/test -> evidence -> delivery -> support.",
+        "- Trading: research -> paper/simulation -> 4h candle hypothesis -> pattern score -> owner review. No live orders.",
+        "",
+        "## Organs",
+        "",
+        "- Mechanicus: state machines, schemas, tool safety, DB/API/RAG/search corridors.",
+        "- Administratum: continuity, records, receipts, handoff.",
+        "- Inquisition: evidence integrity, receipt audit, forbidden-action watch.",
+        "- Astronomicon: task linkage, taskpack routing, next-action navigation.",
+        "- Officio Agentis: handoff readiness, agent operations, external/internal coordination.",
+    ])
+
+
+def mechanicus_exemplar_protocol_text() -> str:
+    return "\n".join([
+        "# MECHANICUS EXEMPLAR PROTOCOL RU",
+        "",
+        "Mechanicus становится первым эталонным органом. Его паттерн позже переносится на другие органы с их идентикой.",
+        "",
+        "## Pass gates",
+        "",
+        "- State machine before growth: no endless if-chain architecture.",
+        "- Schema-first tools: input/output schema, risk class, dry-run, receipt, rollback.",
+        "- DB/API/RAG/search corridors are gated adapters, not hidden powers.",
+        "- Evidence and tests must be visible before mutation becomes accepted.",
+        "- UI must show readiness, missing pieces, and next safe action.",
+        "",
+        "## Current v0.4 state",
+        "",
+        "- Launcher Mechanicus page exposes readiness lanes.",
+        "- A minimal stdlib state-machine seed is included under ORGANS/MECHANICUS/STATE_MACHINE.",
+        "- No live execution is enabled.",
+    ])
+
+
+def sanctum_smoothness_acceptance_text() -> str:
+    return "\n".join([
+        "# SANCTUM SMOOTHNESS ACCEPTANCE RU",
+        "",
+        "v0.3 showed 32-42 FPS and a heavy purple header artifact. v0.4 focuses on smoother daily use.",
+        "",
+        "## Acceptance",
+        "",
+        "- Header has no big blocky purple scanline artifact.",
+        "- Visual Quality modes are available: Performance, Balanced, Cinematic.",
+        "- Default Performance mode reduces redraw pressure.",
+        "- FPS is measured owner-visibly; target remains 60 FPS, actual depends on host machine/Tkinter.",
+        "- Smoothness work must not enable unsafe execution, live LLM, or trading execution.",
+    ])
+
+
 def collect_owner_requirements(repo: Path) -> dict[str, str]:
     files = {
         "owner_requirements": PROTOCOLS_ROOT / "OWNER_REQUIREMENTS_FREELANCE_CORE_RU.md",
         "reference_backlog": PROTOCOLS_ROOT / "REFERENCE_TECH_BACKLOG_RU.md",
         "h_protocol": PROTOCOLS_ROOT / "H_CONTOUR_OPERATION_PROTOCOL_RU.md",
         "boot_protocol": PROTOCOLS_ROOT / "LOGOS_PRIME_BOOT_PROTOCOL_RU.md",
+        "organ_department_model": PROTOCOLS_ROOT / "ORGAN_DEPARTMENT_MODEL_RU.md",
+        "mechanicus_exemplar": PROTOCOLS_ROOT / "MECHANICUS_EXEMPLAR_PROTOCOL_RU.md",
+        "sanctum_smoothness": PROTOCOLS_ROOT / "SANCTUM_SMOOTHNESS_ACCEPTANCE_RU.md",
     }
     return {key: read_text(path, 80_000) for key, path in files.items() if path.is_file()}
 
@@ -416,6 +486,8 @@ def collect_preview(repo: Path, mode: str) -> dict[str, Any]:
             "mechanicus_priority": "Mechanicus becomes reference organ: state machines, schemas, tool safety, DB/API/RAG/search corridors.",
             "freelance_core": "External brief -> taskpack -> agents -> owner gates -> build/test -> evidence -> delivery -> support.",
             "trading_department_gate": "Research/paper/simulation first; no live trading/order placement without future explicit owner LIVE gate.",
+            "organ_department_boundary": "Freelance/Trading are departments; Mechanicus/Administratum/Inquisition/Astronomicon/Officio Agentis are organs.",
+            "v0_4_priority": "Mechanicus exemplar + Sanctum smoothness + task intake draft fields, without live execution.",
         },
         "owner_reference_docs_present": sorted(owner_docs.keys()),
         "forbidden_actions": ["commit", "push", "delete", "unsafe_shell", "live_llm", "real_servitor_execution", "task_registry_mutation", "live_trading_execution"],
@@ -433,6 +505,9 @@ def collect_preview(repo: Path, mode: str) -> dict[str, Any]:
             "next_commands_h_safe_included": (protocols_dir / "NEXT_COMMANDS_H_SAFE_RU.md").is_file(),
             "owner_requirements_included": (protocols_dir / "OWNER_REQUIREMENTS_FREELANCE_CORE_RU.md").is_file(),
             "reference_backlog_included": (protocols_dir / "REFERENCE_TECH_BACKLOG_RU.md").is_file(),
+            "organ_department_model_included": (protocols_dir / "ORGAN_DEPARTMENT_MODEL_RU.md").is_file(),
+            "mechanicus_exemplar_protocol_included": (protocols_dir / "MECHANICUS_EXEMPLAR_PROTOCOL_RU.md").is_file(),
+            "sanctum_smoothness_acceptance_included": (protocols_dir / "SANCTUM_SMOOTHNESS_ACCEPTANCE_RU.md").is_file(),
         },
     }
 
@@ -443,7 +518,7 @@ def preview_pack(repo: Path | str | None = None, mode: str = "h") -> dict[str, A
     return {
         "status": "PASS_WITH_WARNINGS",
         "organ": "ADMINISTRATUM",
-        "surface": "CONTINUITY_CENTER_V0_3",
+        "surface": "CONTINUITY_CENTER_V0_4",
         "mode": preview["mode"],
         "preview": preview,
         "executed": False,
@@ -473,10 +548,10 @@ def make_owner_summary(preview: dict[str, Any], pack_zip_name: str) -> str:
         f"Origin/master: `{git.get('origin_master')}`",
         f"Pack ZIP: `{pack_zip_name}`",
         "",
-        "## Что исправлено в v0.3",
+        "## Что добавлено в v0.4",
         "",
-        "Continuity больше не должен оставлять Logos Prime без H-path, H/main flow, boot checklist и owner priorities.",
-        "Следующий Logos Prime обязан прочитать H_CONTOUR_OPERATION_PROTOCOL_RU.md перед выдачей команд.",
+        "Continuity теперь фиксирует границу: Freelance/Trading — департаменты, Mechanicus/Administratum/Inquisition/Astronomicon/Officio Agentis — органы.",
+        "Mechanicus выбран как первый эталонный орган, а Sanctum получает adaptive smoothness pass.",
         "",
         "## Continuity pass gates",
         "",
@@ -531,6 +606,9 @@ def make_logos_summary(preview: dict[str, Any]) -> str:
         "- NEXT_COMMANDS_H_SAFE_RU.md",
         "- OWNER_REQUIREMENTS_FREELANCE_CORE_RU.md",
         "- REFERENCE_TECH_BACKLOG_RU.md",
+        "- ORGAN_DEPARTMENT_MODEL_RU.md",
+        "- MECHANICUS_EXEMPLAR_PROTOCOL_RU.md",
+        "- SANCTUM_SMOOTHNESS_ACCEPTANCE_RU.md",
         "",
         "## Запрещено",
         "",
@@ -562,6 +640,9 @@ def build_pack(repo: Path | str | None = None, mode: str = "h") -> dict[str, Any
         "LOGOS_PRIME_BOOT_PROTOCOL_RU.md": boot_protocol_text(),
         "OPERATIONAL_GAPS_CAUGHT_RU.md": operational_gaps_text(),
         "NEXT_COMMANDS_H_SAFE_RU.md": next_commands_text(contours),
+        "ORGAN_DEPARTMENT_MODEL_RU.md": organ_department_model_text(),
+        "MECHANICUS_EXEMPLAR_PROTOCOL_RU.md": mechanicus_exemplar_protocol_text(),
+        "SANCTUM_SMOOTHNESS_ACCEPTANCE_RU.md": sanctum_smoothness_acceptance_text(),
     }
     for name, text in generated_protocols.items():
         write_pack_text(pack_dir / name, name, text)
@@ -596,7 +677,7 @@ def build_pack(repo: Path | str | None = None, mode: str = "h") -> dict[str, Any
                     pass
     zip_hash_before_receipt = sha256_file(zip_path)
     receipt_base = {
-        "schema_version": "administratum.continuity_pack_receipt.v0_3",
+        "schema_version": "administratum.continuity_pack_receipt.v0_4",
         "status": "PASS_WITH_WARNINGS",
         "created_utc": manifest["created_utc"],
         "mode": preview["mode"],
@@ -636,7 +717,7 @@ def build_pack(repo: Path | str | None = None, mode: str = "h") -> dict[str, Any
     return {
         "status": "PASS_WITH_WARNINGS",
         "organ": "ADMINISTRATUM",
-        "surface": "CONTINUITY_CENTER_V0_3",
+        "surface": "CONTINUITY_CENTER_V0_4",
         "mode": preview["mode"],
         "pack_dir": pack_dir.as_posix(),
         "pack_zip_path": zip_path.as_posix(),
@@ -670,11 +751,14 @@ def smoke(repo: Path | str | None = None) -> dict[str, Any]:
         "no_commit_no_push": True,
         "owner_facing_bom_policy": True,
         "machine_json_plain_utf8_policy": True,
+        "organ_department_model_visible": bool(gates.get("organ_department_model_included")),
+        "mechanicus_exemplar_protocol_visible": bool(gates.get("mechanicus_exemplar_protocol_included")),
+        "sanctum_smoothness_acceptance_visible": bool(gates.get("sanctum_smoothness_acceptance_included")),
     }
     return {
         "status": "PASS_WITH_WARNINGS" if all(checks.values()) else "BLOCKED",
         "organ": "ADMINISTRATUM",
-        "surface": "CONTINUITY_CENTER_SMOKE_V0_3",
+        "surface": "CONTINUITY_CENTER_SMOKE_V0_4",
         "schema_version": SCHEMA_VERSION,
         "repo_root": root.as_posix(),
         "contours": preview.get("contours", {}),
@@ -693,7 +777,7 @@ def main(argv: list[str] | None = None) -> int:
         sys.stdout.reconfigure(encoding="utf-8")
     except Exception:
         pass
-    parser = argparse.ArgumentParser(description="Administratum Continuity Pack Builder V0.3")
+    parser = argparse.ArgumentParser(description="Administratum Continuity Pack Builder V0.4")
     parser.add_argument("--preview", nargs="?", const="h", choices=sorted(MODES))
     parser.add_argument("--build", nargs="?", const="h", choices=sorted(MODES))
     parser.add_argument("--smoke", action="store_true")
