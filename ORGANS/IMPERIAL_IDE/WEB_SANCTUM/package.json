@@ -1,8 +1,8 @@
 {
-  "name": "imperium-web-sanctum-v081",
-  "version": "0.8.1",
+  "name": "imperium-web-sanctum-v084-visual-inquisition",
+  "version": "0.8.4",
   "private": true,
-  "description": "Imperium Web Sanctum v0.8.1 - copy-contour Inquisition fix, quiet bridge, polished stage motion",
+  "description": "Imperium Web Sanctum v0.8.4 - Playwright / Visual Inquisition evidence spine",
   "scripts": {
     "snapshot": "python ./tools/export_sanctum_snapshot.py --repo ../../..",
     "smoke": "python ./tools/web_sanctum_smoke.py",
@@ -11,7 +11,12 @@
     "test:pw": "playwright test",
     "test:pw:screenshots": "playwright test tests/web_sanctum_screenshots.spec.ts --project=chromium",
     "test:pw:report": "playwright show-report --port 9338",
-    "test:pw:report:alt": "playwright show-report --port 9339"
+    "test:pw:report:alt": "playwright show-report --port 9339",
+    "audit:mega": "node ./tools/sanctum_visual_inquisition_audit_v0_1.cjs --profile balanced --safe-actions",
+    "audit:mega:headed": "node ./tools/sanctum_visual_inquisition_audit_v0_1.cjs --profile balanced --safe-actions --headed",
+    "audit:mega:light": "node ./tools/sanctum_visual_inquisition_audit_v0_1.cjs --profile light --safe-actions",
+    "audit:mega:full": "node ./tools/sanctum_visual_inquisition_audit_v0_1.cjs --profile full --safe-actions",
+    "audit:mega:dry": "node ./tools/sanctum_visual_inquisition_audit_v0_1.cjs --dry-run"
   },
   "devDependencies": {
     "@playwright/test": "latest"

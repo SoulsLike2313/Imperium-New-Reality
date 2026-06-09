@@ -14,8 +14,8 @@ manager = (root.parents[0] / "WARP" / "warp_manager.py").read_text(encoding="utf
 mechanicus = (root.parents[1] / "MECHANICUS" / "TOOL_REGISTRY" / "mechanicus_tool_registry_v0_1.py").read_text(encoding="utf-8")
 
 checks = {
-    "package_v081": "imperium-web-sanctum-v081" in package and "0.8.1" in package,
-    "surface_v081": "WEB_SANCTUM_STAGE_LOOP_POLISH_AND_COPY_CONTOUR_V0_8_1" in main_js and "WEB_SANCTUM_STAGE_LOOP_POLISH_AND_COPY_CONTOUR_V0_8_1" in bridge,
+    "package_v083": "imperium-web-sanctum-v083-data-atlas" in package and "0.8.3" in package,
+    "surface_v083": "WEB_SANCTUM_DATA_ATLAS_CARTOGRAPHIUM_V0_8_3" in main_js and "WEB_SANCTUM_DATA_ATLAS_CARTOGRAPHIUM_V0_8_3" in bridge,
     "runtime_registry_outside_source": "WARP_RUNS" in manager and "legacy_registry_path" in manager and "write_json(legacy_registry_path" not in manager,
     "stage_ledger_required_files": all(name in manager for name in ["stage_ledger.json", "administratum_receipts.jsonl", "astronomicon_stage_gates.json", "inquisition_findings.json"]),
     "structured_start_work_block": "NO_ACTIVE_ASTRONOMICON_TASKPACK" in manager and "NO_WARP_SELECTED" in manager,
@@ -33,7 +33,9 @@ checks = {
     "visual_premium_layer": all(token in styles for token in ["cathedral", "embers", "vault-lines", "stage-rail", "job-card", "job-summary", "action-pulse", "buttonSweep"]),
     "runtime_hygiene_present": "runtime_hygiene_scan" in bridge and "imperium_runtime_hygiene_v0_1.py" in bridge and "Runtime Hygiene" in html,
     "node_probe_present": "node_probe" in bridge and "imperium_node_probe_v0_1.py" in bridge,
+    "data_atlas_present": all(token in html for token in ["page-atlas", "Data Atlas / Атлас данных", "atlas-explorer", "atlas-passport-trace"]) and "data_atlas_scan" in bridge and "data_atlas_scanner_v0_1.py" in bridge,
+    "data_atlas_read_only": "READ_ONLY_CARTOGRAPHY_NO_DELETE_NO_MOVE" in bridge and "shell=True" not in bridge,
     "owner_visible_no_old_versions": all(token not in html and token not in main_js and token not in package for token in ["V0.6", "V0.7", "V0.8<", "0.6.0", "0.7.0", "0.8.0"]),
 }
 
-print(json.dumps({"status": "PASS" if all(checks.values()) else "FAIL", "surface": "WEB_SANCTUM_STAGE_LOOP_POLISH_AND_COPY_CONTOUR_V0_8_1", "checks": checks}, indent=2))
+print(json.dumps({"status": "PASS" if all(checks.values()) else "FAIL", "surface": "WEB_SANCTUM_DATA_ATLAS_CARTOGRAPHIUM_V0_8_3", "checks": checks}, indent=2))

@@ -1,5 +1,5 @@
-const VERSION = "0.8.1";
-const SURFACE = "WEB_SANCTUM_STAGE_LOOP_POLISH_AND_COPY_CONTOUR_V0_8_1";
+const VERSION = "0.8.4.1";
+const SURFACE = "WEB_SANCTUM_VISUAL_INQUISITION_FAST_NAV_V0_8_4_1";
 const STAGES = ["task_admitted", "work_started", "implementation", "validation", "report_bundle", "owner_review", "promotion_ready"];
 
 let snapshot = null;
@@ -11,6 +11,12 @@ let currentJobId = null;
 let currentJobRaw = null;
 let currentJobTab = "summary";
 let jobFilter = "all";
+let dataAtlas = null;
+let atlasLang = "ru";
+let atlasHealthFilter = "all";
+let atlasSelectedEntity = null;
+let currentPage = "sanctum";
+let atlasLoadPromise = null;
 
 window.__SANCTUM_READY = false;
 const $ = (id) => document.getElementById(id);
@@ -131,7 +137,24 @@ function renderContour() {
   setText("warpRuntimePath", warp.runtime_path || snapshot?.runtime_paths?.run_dir || "not created");
 
   const operator = $("operatorText");
-  if (operator) operator.textContent = JSON.stringify(snapshot, null, 2);
+  if (operator) {
+    const operatorView = snapshot ? {
+      status: snapshot.status,
+      surface: snapshot.surface,
+      version: snapshot.version,
+      generated_at_utc: snapshot.generated_at_utc,
+      contour: snapshot.contour,
+      task: snapshot.task,
+      warp: snapshot.warp,
+      stage_ledger: snapshot.stage_ledger,
+      runtime_paths: snapshot.runtime_paths,
+      jobs: (snapshot.jobs || []).map((job) => ({ job_id: job.job_id, action: job.action, status: job.status, summary: job.summary })),
+      data_atlas: snapshot.data_atlas ? { status: snapshot.data_atlas.status, version: snapshot.data_atlas.version, summary: snapshot.data_atlas.summary } : null,
+      actions_count: Object.keys(snapshot.actions || {}).length,
+      safety: snapshot.safety,
+    } : {};
+    operator.textContent = JSON.stringify(operatorView, null, 2);
+  }
   const warpStatus = $("warpStatus");
   if (warpStatus) warpStatus.textContent = JSON.stringify({ warp, task, stage_ledger: snapshot?.stage_ledger, runtime_paths: snapshot?.runtime_paths }, null, 2);
   renderStageRail();
@@ -168,10 +191,256 @@ function renderOrbit() {
   });
 }
 
+
+function atlasT(ru, en) {
+  return atlasLang === "ru" ? ru : en;
+}
+
+function formatBytes(bytes) {
+  const value = Number(bytes || 0);
+  if (value < 1024) return `${value} B`;
+  if (value < 1024 * 1024) return `${(value / 1024).toFixed(1)} KB`;
+  if (value < 1024 * 1024 * 1024) return `${(value / 1024 / 1024).toFixed(1)} MB`;
+  return `${(value / 1024 / 1024 / 1024).toFixed(1)} GB`;
+}
+
+function atlasEntityText(entity) {
+  return [
+    entity.path,
+    entity.organ,
+    entity.type,
+    entity.health,
+    entity.git_state,
+    entity.lifecycle,
+    entity.cleanup_lane,
+    entity.owner_summary,
+    entity.recommendation_ru,
+    entity.recommendation_en,
+    entity.purpose_ru,
+    entity.purpose_en,
+    ...(entity.flags || []),
+  ].join(" ").toLowerCase();
+}
+
+function atlasFilteredEntities() {
+  const atlas = dataAtlas || snapshot?.data_atlas || {};
+  const entities = atlas.entities || [];
+  const query = ($("atlasSearch")?.value || "").toLowerCase().trim();
+  return entities.filter((entity) => {
+    const flags = entity.flags || [];
+    const matchesFilter = atlasHealthFilter === "all" || entity.health === atlasHealthFilter || flags.includes(atlasHealthFilter);
+    const matchesQuery = !query || atlasEntityText(entity).includes(query);
+    return matchesFilter && matchesQuery;
+  });
+}
+
+function atlasLaneTitle(lane) {
+  const titles = {
+    source_runtime_leaks: ["Runtime leaks", "Утечки runtime"],
+    git_dirty_review: ["Git dirty review", "Проверка git-грязи"],
+    archive_lifecycle_review: ["Archive lifecycle", "Жизненный цикл архивов"],
+    duplicate_review: ["Duplicate review", "Проверка дублей"],
+    legacy_quarantine_review: ["Legacy quarantine", "Исторический карантин"],
+    passport_needed: ["Passports needed", "Нужны паспорта"],
+    unknown_semantics: ["Unknown semantics", "Неясный смысл"],
+    large_file_review: ["Large files", "Крупные файлы"],
+    clean_source: ["Clean source", "Чистый source"],
+  };
+  const item = titles[lane] || [lane, lane];
+  return atlasT(item[1], item[0]);
+}
+
+function atlasEntityDigest(entity) {
+  if (!entity) return atlasT("Сущность не выбрана.", "No entity selected.");
+  const recommendation = atlasT(entity.recommendation_ru || "Решение не задано.", entity.recommendation_en || "No recommendation.");
+  return [
+    `${atlasT("Путь", "Path")}: ${entity.path || "none"}`,
+    `${atlasT("Орган", "Organ")}: ${entity.organ || "none"}`,
+    `${atlasT("Тип", "Type")}: ${entity.type || "unknown"} · ${entity.kind || "file"} · ${formatBytes(entity.size_bytes)}`,
+    `${atlasT("Состояние", "State")}: ${entity.health || "UNKNOWN"} · git:${entity.git_state || "unknown"} · passport:${entity.passport || "unknown"}`,
+    `${atlasT("Зачем здесь", "Why it exists")}: ${atlasT(entity.purpose_ru || "назначение неизвестно", entity.purpose_en || "purpose unknown")}`,
+    `${atlasT("Краткий смысл", "Owner summary")}: ${entity.owner_summary || entity.summary || "not inferred"}`,
+    `${atlasT("Линия очистки", "Cleanup lane")}: ${atlasLaneTitle(entity.cleanup_lane || "clean_source")}`,
+    `${atlasT("Рекомендация", "Recommendation")}: ${recommendation}`,
+    `${atlasT("Флаги", "Flags")}: ${(entity.flags || []).join(" · ") || "none"}`,
+  ].join("\n");
+}
+
+function atlasDigest(atlas) {
+  const summary = atlas?.summary || {};
+  const lanes = atlas?.cleanup_lanes || {};
+  const topLanes = Object.entries(lanes)
+    .filter(([lane]) => lane !== "clean_source")
+    .sort((a, b) => (Number(b[1].critical || 0) - Number(a[1].critical || 0)) || (Number(b[1].warning || 0) - Number(a[1].warning || 0)) || (Number(b[1].count || 0) - Number(a[1].count || 0)))
+    .slice(0, 8)
+    .map(([lane, info]) => `- ${atlasLaneTitle(lane)}: ${info.count || 0} · critical:${info.critical || 0} · warning:${info.warning || 0}`);
+  return [
+    `${atlasT("Сводка Atlas", "Atlas summary")}: ${atlas?.status || "NOT_LOADED"}`,
+    `${atlasT("Индексировано", "Indexed")}: ${summary.entities_total || atlas?.entities_total || 0} ${atlasT("сущностей", "entities")} · ${summary.files_total || 0} files · ${summary.directories_total || 0} dirs`,
+    `${atlasT("Грязь", "Dirt")}: ${summary.dirty_total || 0} · critical:${summary.critical_total || 0} · warning:${summary.warning_total || 0}`,
+    `${atlasT("Паспорта", "Passports")}: ${summary.passport_coverage_percent || 0}% · missing:${summary.missing_passports_total || 0}`,
+    `${atlasT("Сырые JSON-данные доступны через", "Raw JSON is available through")}: /api/data-atlas`,
+    "",
+    atlasT("Линии очистки:", "Cleanup lanes:"),
+    ...(topLanes.length ? topLanes : [atlasT("- Нет активных линий очистки.", "- No active cleanup lanes.")]),
+  ].join("\n");
+}
+
+function renderAtlasPassport(entity) {
+  atlasSelectedEntity = entity || atlasSelectedEntity;
+  const selected = atlasSelectedEntity;
+  if (!selected) return;
+  setText("atlasPassportHealth", selected.health || "UNKNOWN");
+  setText("atlasPassportPath", selected.path || "none");
+  setText("atlasPassportOrgan", selected.organ || "none");
+  setText("atlasPassportType", `${selected.type || "unknown"} · ${selected.kind || "file"} · ${formatBytes(selected.size_bytes)}`);
+  setText("atlasPassportPurpose", atlasT(selected.purpose_ru || "назначение неизвестно", selected.purpose_en || "purpose unknown"));
+  setText("atlasPassportLifecycle", `${selected.lifecycle || "unknown"} · git:${selected.git_state || "unknown"} · passport:${selected.passport || "unknown"}`);
+  setText("atlasPassportFlags", (selected.flags || []).join(" · ") || "none");
+  setText("atlasPassportLane", atlasLaneTitle(selected.cleanup_lane || "clean_source"));
+  setText("atlasPassportAction", atlasT(selected.recommendation_ru || "Действие не требуется.", selected.recommendation_en || "No action required."));
+  setText("atlasPassportTrace", atlasEntityDigest(selected));
+}
+
+function renderDataAtlas() {
+  const atlas = dataAtlas || snapshot?.data_atlas || {};
+  const summary = atlas.summary || {};
+  setText("atlasDoctrine", atlas.doctrine ? atlasT(atlas.doctrine.ru, atlas.doctrine.en) : atlasT("Атлас ещё не загружен.", "Atlas is not loaded yet."));
+  setText("atlasStatusSeal", atlas.status || "NOT_LOADED");
+  setText("atlasTotal", summary.entities_total ?? atlas.entities_total ?? 0);
+  setText("atlasReturned", `${atlas.entities_returned ?? (atlas.entities || []).length ?? 0} loaded / ${summary.files_total || 0} files · ${summary.directories_total || 0} dirs`);
+  setText("atlasDirty", summary.dirty_total ?? 0);
+  setText("atlasLeaks", summary.source_runtime_leaks_total ?? 0);
+  setText("atlasDuplicates", summary.duplicate_groups_total ?? 0);
+  setText("atlasPassports", `${summary.passport_coverage_percent ?? 0}%`);
+  setText("atlasPassportMissing", `missing: ${summary.missing_passports_total ?? 0}`);
+  setText("atlasArchives", summary.archive_review_total ?? 0);
+
+  const organMap = $("atlasOrganMap");
+  if (organMap) {
+    organMap.innerHTML = "";
+    const organs = Object.entries(atlas.by_organ || {}).sort((a, b) => (b[1].critical - a[1].critical) || (b[1].warning - a[1].warning) || (b[1].total - a[1].total));
+    organs.forEach(([organ, stats]) => {
+      const total = Math.max(1, Number(stats.total || 0));
+      const warnPercent = Math.min(100, Math.round(((Number(stats.warning || 0) + Number(stats.critical || 0)) / total) * 100));
+      const card = document.createElement("button");
+      card.className = `atlas-organ-card ${Number(stats.critical || 0) ? "critical" : Number(stats.warning || 0) ? "warning" : "safe"}`;
+      card.innerHTML = `<b>${organ}</b><span>${stats.total || 0} entities · ${stats.files || 0} files · ${stats.warning || 0} warn · ${stats.critical || 0} critical</span><i style="width:${warnPercent}%"></i>`;
+      card.onclick = () => {
+        const search = $("atlasSearch");
+        if (search) search.value = organ;
+        renderDataAtlas();
+      };
+      organMap.appendChild(card);
+    });
+  }
+
+  const lanesRoot = $("atlasCleanupLanes");
+  if (lanesRoot) {
+    lanesRoot.innerHTML = "";
+    const lanes = Object.entries(atlas.cleanup_lanes || {}).sort((a, b) => (Number(b[1].critical || 0) - Number(a[1].critical || 0)) || (Number(b[1].warning || 0) - Number(a[1].warning || 0)) || (Number(b[1].count || 0) - Number(a[1].count || 0)));
+    lanes.filter(([lane]) => lane !== "clean_source").slice(0, 12).forEach(([lane, info]) => {
+      const card = document.createElement("button");
+      card.className = `atlas-lane-card ${Number(info.critical || 0) ? "critical" : Number(info.warning || 0) ? "warning" : "safe"}`;
+      const recommendation = atlasT(info.recommendation_ru || "", info.recommendation_en || "");
+      card.innerHTML = `<b>${atlasLaneTitle(lane)}</b><span>${info.count || 0} entities · critical:${info.critical || 0} · warning:${info.warning || 0}</span><small>${recommendation}</small>`;
+      card.onclick = () => {
+        const search = $("atlasSearch");
+        if (search) search.value = lane.replaceAll("_", " ");
+        atlasHealthFilter = "all";
+        const select = $("atlasHealthFilter");
+        if (select) select.value = "all";
+        renderDataAtlas();
+      };
+      lanesRoot.appendChild(card);
+    });
+    if (!lanesRoot.children.length) lanesRoot.innerHTML = `<div class="muted">${atlasT("Активных линий очистки нет.", "No active cleanup lanes.")}</div>`;
+  }
+
+  const matrix = $("atlasLifecycleMatrix");
+  if (matrix) {
+    matrix.innerHTML = "";
+    const rows = Object.entries(atlas.by_lifecycle || {}).sort((a, b) => Number(b[1] || 0) - Number(a[1] || 0));
+    rows.forEach(([life, count]) => {
+      const row = document.createElement("div");
+      row.className = "atlas-matrix-row";
+      row.innerHTML = `<b>${life}</b><span>${count}</span>`;
+      matrix.appendChild(row);
+    });
+    if (!matrix.children.length) matrix.innerHTML = `<div class="muted">${atlasT("Матрица ещё не загружена.", "Matrix not loaded yet.")}</div>`;
+  }
+
+  const dirtList = $("atlasDirtList");
+  if (dirtList) {
+    dirtList.innerHTML = "";
+    (atlas.dirty_priority || []).slice(0, 14).forEach((entity) => {
+      const row = document.createElement("button");
+      row.className = `atlas-dirt-row ${String(entity.health || "").toLowerCase()}`;
+      row.innerHTML = `<b>${entity.health}</b><span>${entity.path}</span><small>${atlasLaneTitle(entity.cleanup_lane || "clean_source")} · ${(entity.flags || []).join(" · ") || entity.type}</small>`;
+      row.onclick = () => renderAtlasPassport(entity);
+      dirtList.appendChild(row);
+    });
+    if (!dirtList.children.length) dirtList.innerHTML = `<div class="muted">${atlasT("Грязь не найдена.", "No dirt detected.")}</div>`;
+  }
+
+  const explorer = $("atlasExplorer");
+  const filtered = atlasFilteredEntities();
+  setText("atlasExplorerCount", `${filtered.length} / ${atlas.entities_total || summary.entities_total || 0}`);
+  if (explorer) {
+    explorer.innerHTML = "";
+    filtered.slice(0, 260).forEach((entity) => {
+      const row = document.createElement("button");
+      row.className = `atlas-entity-row ${String(entity.health || "").toLowerCase()}`;
+      row.innerHTML = `<b>${entity.path}</b><span>${entity.organ} · ${entity.type} · ${entity.health} · ${formatBytes(entity.size_bytes)}</span><small>${atlasLaneTitle(entity.cleanup_lane || "clean_source")} · ${atlasT(entity.purpose_ru || "", entity.purpose_en || "")} ${(entity.flags || []).length ? " · " + entity.flags.join(" · ") : ""}</small>`;
+      row.onclick = () => renderAtlasPassport(entity);
+      explorer.appendChild(row);
+    });
+    if (filtered.length > 260) {
+      const more = document.createElement("div");
+      more.className = "atlas-more muted";
+      more.textContent = atlasT(`Показаны первые 260. Уточни поиск, чтобы сузить ${filtered.length} результатов.`, `Showing first 260. Refine search to narrow ${filtered.length} results.`);
+      explorer.appendChild(more);
+    }
+    if (!filtered.length) explorer.innerHTML = `<div class="muted">${atlasT("Ничего не найдено по фильтру.", "No entities match this filter.")}</div>`;
+  }
+
+  if (!atlasSelectedEntity && (atlas.dirty_priority || [])[0]) renderAtlasPassport(atlas.dirty_priority[0]);
+  setText("atlasTrace", atlasDigest(atlas));
+}
+
+async function refreshDataAtlas(force = false) {
+  const path = force ? "/api/data-atlas?force=1" : "/api/data-atlas";
+  const atlas = await api(path);
+  dataAtlas = atlas;
+  atlasSelectedEntity = null;
+  renderDataAtlas();
+  return atlas;
+}
+
+function ensureAtlasLoaded(force = false) {
+  if (!force && dataAtlas && dataAtlas.status && dataAtlas.status !== "NOT_LOADED" && (dataAtlas.entities || dataAtlas.summary)) {
+    return Promise.resolve(dataAtlas);
+  }
+  if (!force && atlasLoadPromise) return atlasLoadPromise;
+  setText("atlasDoctrine", atlasT("Atlas загружается в фоне; навигация Sanctum не должна ждать сканер.", "Atlas is loading in the background; Sanctum navigation must not wait for the scanner."));
+  atlasLoadPromise = refreshDataAtlas(force).catch((error) => {
+    console.error(error);
+    toast("Atlas load failed");
+    return null;
+  }).finally(() => {
+    atlasLoadPromise = null;
+  });
+  return atlasLoadPromise;
+}
+
 function showPage(page) {
+  currentPage = page || "sanctum";
   document.querySelectorAll(".page").forEach((element) => element.classList.remove("active"));
-  $(`page-${page}`)?.classList.add("active");
-  document.querySelectorAll("[data-page]").forEach((button) => button.classList.toggle("active", button.dataset.page === page));
+  $(`page-${currentPage}`)?.classList.add("active");
+  document.querySelectorAll("[data-page]").forEach((button) => button.classList.toggle("active", button.dataset.page === currentPage));
+  if (currentPage === "atlas") {
+    ensureAtlasLoaded(false);
+  }
 }
 
 function jobClass(status) {
@@ -279,7 +548,13 @@ function routeJobResult(job) {
     mechanicus_list_tools: "mechanicusTrace",
     run_playwright: "playwrightTrace",
     run_playwright_screenshots: "playwrightTrace",
+    visual_inquisition_audit_light: "playwrightTrace",
+    visual_inquisition_audit_balanced: "playwrightTrace",
+    visual_inquisition_audit_balanced_headed: "playwrightTrace",
+    visual_inquisition_audit_full: "playwrightTrace",
+    open_visual_audit_outputs: "playwrightTrace",
     runtime_hygiene_scan: "hygieneTrace",
+    data_atlas_scan: "atlasTrace",
     node_probe: "hygieneTrace",
     stage_start_current: "stageTrace",
     stage_submit_evidence: "stageTrace",
@@ -291,6 +566,10 @@ function routeJobResult(job) {
   if (target) setText(target, JSON.stringify(job.result || job, null, 2));
   if (job.action === "register_taskpack_pc") renderAdmission(job.result);
   if (job.action === "promotion_preview") renderPromotion(job.result);
+  if (job.action === "data_atlas_scan") {
+    // Job payload is compact by design; load the full Atlas through its dedicated cached endpoint.
+    ensureAtlasLoaded(false);
+  }
 }
 
 async function refreshJobs() {
@@ -321,6 +600,8 @@ async function refreshSnapshot(includeJobs = true) {
   renderFlow();
   renderOrbit();
   renderStageControl();
+  if (!dataAtlas && snapshot?.data_atlas && snapshot.data_atlas.status !== "NOT_LOADED") dataAtlas = snapshot.data_atlas;
+  if (currentPage === "atlas") renderDataAtlas();
   window.__SANCTUM_READY = true;
 }
 
@@ -347,7 +628,7 @@ async function sendAction(actionId, sourceButton = null) {
       toast(`job accepted: ${actionId}`);
       await refreshJobs();
       loadJob(data.job_id);
-      showPage(actionId === "register_taskpack_pc" ? "register" : actionId.startsWith("stage_") ? "stage" : actionId === "promotion_preview" ? "promotion" : "jobs");
+      showPage(actionId === "register_taskpack_pc" ? "register" : actionId === "data_atlas_scan" ? "atlas" : actionId.startsWith("stage_") ? "stage" : actionId === "promotion_preview" ? "promotion" : "jobs");
       return data;
     }
     toast(`${actionId}: ${data.status || "done"}`);
@@ -368,6 +649,8 @@ function paletteItems() {
     { label: "Go Jobs", page: "jobs" },
     { label: "Go Stage Control", page: "stage" },
     { label: "Go Runtime Hygiene", page: "hygiene" },
+    { label: "Go Data Atlas", page: "atlas" },
+    { label: "Go Playwright Visual Inquisition", page: "playwright" },
     { label: "Go Validation", page: "validation" },
     { label: "Go Reports", page: "reports" },
     { label: "Go Promotion Preview", page: "promotion" },
@@ -377,6 +660,10 @@ function paletteItems() {
     { label: "Run Stage Gate", action: "stage_run_gate" },
     { label: "Promotion Preview", action: "promotion_preview" },
     { label: "Scan Runtime Hygiene", action: "runtime_hygiene_scan" },
+    { label: "Scan Data Atlas", action: "data_atlas_scan" },
+    { label: "Run Mega Visual Audit", action: "visual_inquisition_audit_balanced" },
+    { label: "Run Light Visual Audit", action: "visual_inquisition_audit_light" },
+    { label: "Open Visual Audit Outputs", action: "open_visual_audit_outputs" },
     { label: "Probe This Node", action: "node_probe" },
   ];
 }
@@ -433,6 +720,9 @@ function bind() {
   $("copySnapshot")?.addEventListener("click", () => copyText(JSON.stringify(snapshot, null, 2), "snapshot copied"));
   $("copyWarpPath")?.addEventListener("click", () => copyText(snapshot?.warp?.path || "", "WARP path copied"));
   $("refreshJobs")?.addEventListener("click", refreshJobs);
+  $("atlasSearch")?.addEventListener("input", renderDataAtlas);
+  $("atlasHealthFilter")?.addEventListener("change", (event) => { atlasHealthFilter = event.target.value || "all"; renderDataAtlas(); });
+  $("atlasLangToggle")?.addEventListener("click", () => { atlasLang = atlasLang === "ru" ? "en" : "ru"; renderDataAtlas(); renderAtlasPassport(atlasSelectedEntity); toast(atlasLang === "ru" ? "язык: русский" : "language: English"); });
   $("jobFilter")?.addEventListener("change", (event) => { jobFilter = event.target.value || "all"; renderJobs(); });
   document.querySelectorAll("[data-job-tab]").forEach((button) => button.addEventListener("click", () => renderJobDetail(button.dataset.jobTab)));
   $("paletteSearch")?.addEventListener("input", renderPalette);
@@ -456,7 +746,8 @@ async function boot() {
   bind();
   await detectBridge();
   await refreshSnapshot();
-  setInterval(refreshJobs, 2500);
+  // Data Atlas is intentionally lazy-loaded; scanning 10k+ files during boot makes every navigation feel broken.
+  setInterval(refreshJobs, 5000);
 }
 
 boot().catch((error) => {

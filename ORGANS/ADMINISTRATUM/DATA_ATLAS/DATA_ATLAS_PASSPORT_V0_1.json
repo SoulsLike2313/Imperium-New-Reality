@@ -1,0 +1,14 @@
+{
+  "passport_id": "ADMINISTRATUM_DATA_ATLAS_CARTOGRAPHIUM_V0_1",
+  "title_ru": "Атлас данных / Картографиум",
+  "title_en": "Data Atlas / Cartographium",
+  "organ": "ADMINISTRATUM",
+  "surface": "WEB_SANCTUM_DATA_ATLAS_CARTOGRAPHIUM_V0_8_3",
+  "mode": "read_only",
+  "purpose_ru": "Показывать owner-visible карту файлов, органов, паспортов, грязи, дублей и lifecycle без удаления и без произвольного shell.",
+  "purpose_en": "Show an owner-visible map of files, organs, passports, dirt, duplicates and lifecycle without deletion or arbitrary shell.",
+  "inputs": ["repo filesystem", "git ls-files", "git status", "git ignored status"],
+  "outputs": ["/api/data-atlas", "snapshot.data_atlas", "Sanctum Data Atlas room"],
+  "safety": ["READ_ONLY", "NO_DELETE", "NO_MOVE", "NO_COMMIT", "NO_PUSH", "NO_ARBITRARY_SHELL"],
+  "next_steps": ["owner reviews atlas", "classify false positives", "add full passport authoring", "add cleanup proposal flow"]
+}

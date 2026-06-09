@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Imperial Sanctum V0.8.1</title>
+  <title>Imperial Sanctum V0.8.4 · Visual Inquisition</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-surface="WEB_SANCTUM_STAGE_LOOP_POLISH_AND_COPY_CONTOUR_V0_8_1">
+<body data-surface="WEB_SANCTUM_PLAYWRIGHT_VISUAL_INQUISITION_V0_8_4">
   <div class="bg"><div class="cathedral"></div><div class="fog"></div><div class="embers"></div><div class="vault-lines"></div></div>
   <div id="web-sanctum-root" data-testid="web-sanctum-root" class="shell">
     <header class="topbar relic-frame">
       <div><span class="eyebrow">IMPERIUM NEW REALITY · WEB SANCTUM</span><h1>IMPERIAL SANCTUM</h1><p id="contour" data-testid="contour" class="contour">LOADING</p></div>
-      <div class="pills"><span id="versionPill" data-testid="version-pill">V0.8.1</span><span id="bridgePill" data-testid="bridge-pill">bridge: probing</span><span id="jobPill" data-testid="job-pill">jobs: 0</span></div>
+      <div class="pills"><span id="versionPill" data-testid="version-pill">V0.8.4</span><span id="bridgePill" data-testid="bridge-pill">bridge: probing</span><span id="jobPill" data-testid="job-pill">jobs: 0</span></div>
     </header>
     <aside class="sidebar relic-frame">
       <button data-testid="nav-sanctum" data-page="sanctum" class="active">☀ Sanctum</button>
@@ -22,10 +22,11 @@
       <button data-testid="nav-jobs" data-page="jobs">☷ Jobs</button>
       <button data-testid="nav-stage" data-page="stage">⚖ Stage Control</button>
       <button data-testid="nav-hygiene" data-page="hygiene">♜ Runtime Hygiene</button>
+      <button data-testid="nav-atlas" data-page="atlas">🜁 Data Atlas</button>
       <button data-testid="nav-validation" data-page="validation">◆ Inquisition</button>
       <button data-testid="nav-reports" data-page="reports">▣ Report Bundle</button>
       <button data-testid="nav-promotion" data-page="promotion">♔ Promotion Preview</button>
-      <button data-testid="nav-playwright" data-page="playwright">▣ Playwright</button>
+      <button data-testid="nav-playwright" data-page="playwright">▣ Playwright / Visual Inquisition</button>
       <button data-testid="quality-button" id="qualityButton" class="utility">Quality: Performance</button>
       <button data-testid="command-palette-button" id="paletteButton" class="utility">Command Palette</button>
       <button data-testid="copy-snapshot" id="copySnapshot" class="utility">Copy snapshot</button>
@@ -43,6 +44,9 @@
         <button data-action="stage_submit_evidence" data-testid="stage-evidence-top">Mark Evidence</button>
         <button data-action="stage_run_gate" data-testid="stage-gate-top">Run Stage Gate</button>
         <button data-action="runtime_hygiene_scan" data-testid="runtime-hygiene-scan-top">Runtime Hygiene</button>
+        <button data-action="data_atlas_scan" data-testid="data-atlas-scan-top">Data Atlas Scan</button>
+        <button data-action="visual_inquisition_audit_balanced" data-testid="visual-inquisition-audit-top">Mega Visual Audit</button>
+        <button data-action="open_visual_audit_outputs" data-testid="open-visual-audit-top">Open Audit Outputs</button>
         <button data-action="open_tui" data-testid="open-tui">Open TUI</button>
         <button data-action="open_warp" data-testid="open-warp">Open WARP</button>
       </section>
@@ -134,6 +138,79 @@
         <pre id="stageTrace" data-testid="stage-trace">No stage action yet.</pre>
       </section>
 
+      <section id="page-atlas" data-testid="page-atlas" class="page">
+        <div class="section-heading">
+          <div><span class="eyebrow">ADMINISTRATUM · CARTOGRAPHIUM</span><h2>Data Atlas / Атлас данных</h2></div>
+          <div class="button-row"><button id="atlasLangToggle" data-testid="atlas-lang-toggle">RU / EN</button><button data-action="data_atlas_scan" data-testid="data-atlas-scan">Scan Atlas</button></div>
+        </div>
+        <p id="atlasDoctrine" class="muted">Read-only map of files, owners, passports, dirt and duplicate clusters.</p>
+        <div class="cards six atlas-kpis" data-testid="atlas-kpis">
+          <article class="card"><h3>Entities / Сущности</h3><b id="atlasTotal">0</b><span id="atlasReturned">waiting</span></article>
+          <article class="card"><h3>Dirt / Грязь</h3><b id="atlasDirty">0</b><span>warning + critical</span></article>
+          <article class="card"><h3>Runtime leaks</h3><b id="atlasLeaks">0</b><span>source contamination</span></article>
+          <article class="card"><h3>Duplicates</h3><b id="atlasDuplicates">0</b><span>hash groups</span></article>
+          <article class="card"><h3>Passports</h3><b id="atlasPassports">0%</b><span id="atlasPassportMissing">missing: 0</span></article>
+          <article class="card"><h3>Archives / ZIP</h3><b id="atlasArchives">0</b><span>review lifecycle</span></article>
+        </div>
+        <div class="atlas-layout">
+          <article class="panel atlas-map-panel">
+            <div class="section-heading"><h3>Organ map / Карта органов</h3><span id="atlasStatusSeal" class="seal">NOT_LOADED</span></div>
+            <div id="atlasOrganMap" data-testid="atlas-organ-map" class="atlas-organ-map"></div>
+          </article>
+          <article class="panel atlas-dirt-panel">
+            <h3>Priority dirt / Приоритетная грязь</h3>
+            <div id="atlasDirtList" data-testid="atlas-dirt-list" class="atlas-dirt-list"></div>
+          </article>
+        </div>
+        <div class="atlas-layout atlas-lanes-layout">
+          <article class="panel atlas-lanes-panel">
+            <div class="section-heading"><h3>Cleanup lanes / Линии очистки</h3><span class="seal">READ_ONLY</span></div>
+            <p class="muted">Группы решений: что переносить, что паспортизировать, что отправлять в архивный контур.</p>
+            <div id="atlasCleanupLanes" data-testid="atlas-cleanup-lanes" class="atlas-cleanup-lanes"></div>
+          </article>
+          <article class="panel atlas-matrix-panel">
+            <h3>Lifecycle matrix / Матрица жизненного цикла</h3>
+            <div id="atlasLifecycleMatrix" data-testid="atlas-lifecycle-matrix" class="atlas-lifecycle-matrix"></div>
+          </article>
+        </div>
+        <div class="atlas-layout explorer-layout">
+          <article class="panel atlas-explorer-panel">
+            <div class="section-heading"><h3>Entity Explorer / Реестр сущностей</h3><span id="atlasExplorerCount" class="seal">0</span></div>
+            <div class="atlas-controls">
+              <input id="atlasSearch" data-testid="atlas-search" placeholder="Search path, organ, type, flag / Поиск по пути, органу, типу, флагу" />
+              <select id="atlasHealthFilter" data-testid="atlas-health-filter">
+                <option value="all">all / всё</option>
+                <option value="CRITICAL">critical</option>
+                <option value="WARNING">warning</option>
+                <option value="SAFE">safe</option>
+                <option value="NO_PASSPORT">no passport</option>
+                <option value="DUPLICATE_HASH">duplicates</option>
+                <option value="SOURCE_RUNTIME_LEAK">runtime leak</option>
+                <option value="ARCHIVE_REVIEW">archive review</option>
+                <option value="QUARANTINE_REVIEW">quarantine review</option>
+                <option value="DUPLICATE_HASH">duplicate hash</option>
+              </select>
+            </div>
+            <div id="atlasExplorer" data-testid="atlas-explorer" class="atlas-explorer"></div>
+          </article>
+          <article class="panel atlas-passport-panel">
+            <div class="section-heading"><h3>Passport / Паспорт</h3><span id="atlasPassportHealth" class="seal">SELECT_ENTITY</span></div>
+            <dl class="facts atlas-passport-facts">
+              <div><dt>Path</dt><dd id="atlasPassportPath">none</dd></div>
+              <div><dt>Organ</dt><dd id="atlasPassportOrgan">none</dd></div>
+              <div><dt>Type</dt><dd id="atlasPassportType">none</dd></div>
+              <div><dt>Purpose</dt><dd id="atlasPassportPurpose">none</dd></div>
+              <div><dt>Lifecycle</dt><dd id="atlasPassportLifecycle">none</dd></div>
+              <div><dt>Flags</dt><dd id="atlasPassportFlags">none</dd></div>
+              <div><dt>Lane</dt><dd id="atlasPassportLane">none</dd></div>
+              <div><dt>Action</dt><dd id="atlasPassportAction">none</dd></div>
+            </dl>
+            <pre id="atlasPassportTrace" data-testid="atlas-passport-trace">Select any entity to see the human-readable passport digest.</pre>
+          </article>
+        </div>
+        <pre id="atlasTrace" data-testid="atlas-trace">No Data Atlas scan yet. Raw JSON is no longer the primary view.</pre>
+      </section>
+
       <section id="page-validation" data-testid="page-validation" class="page"><h2>Inquisition · WARP Validation</h2><p>Checks dirty scope, forbidden generated files, ZIP/template residue, diff stat and unchanged base HEAD. Commit and push remain unavailable.</p><div class="cards three"><article class="card"><h3>Dirty Scope</h3><b>classified in WARP</b><span>source and evidence are explicit</span></article><article class="card"><h3>Generated Files</h3><b>outside source</b><span>node_modules and reports are forbidden</span></article><article class="card"><h3>Git Boundary</h3><b>base HEAD unchanged</b><span>no commit or push action</span></article></div><button data-action="validate_warp" data-testid="validate-warp-page">Run WARP Validation</button><pre id="validationTrace" data-testid="validation-trace">No validation yet.</pre></section>
 
 
@@ -153,7 +230,28 @@
         <pre id="promotionTrace" data-testid="promotion-trace">No promotion preview yet.</pre>
       </section>
 
-      <section id="page-playwright" data-testid="page-playwright" class="page"><h2>Playwright Evidence Center</h2><p>Browser checks and screenshots write to the Servitor output directory, never into source.</p><button data-action="run_playwright" data-testid="run-playwright">Run Playwright</button><button data-action="run_playwright_screenshots" data-testid="run-playwright-screenshots">Collect Screenshots</button><button data-action="open_playwright_report">Open Report</button><pre id="playwrightTrace" data-testid="playwright-trace">No Playwright action yet.</pre></section>
+      <section id="page-playwright" data-testid="page-playwright" data-sanctum-section="playwright-visual-inquisition" class="page">
+        <div class="section-heading"><div><span class="eyebrow">SPECULUM · INQUISITION · PLAYWRIGHT</span><h2>Playwright / Visual Inquisition</h2></div><span class="seal">EVIDENCE_OUTPUT_ONLY</span></div>
+        <p class="muted">Штатный орган зрения Web Sanctum: протыкает UI, собирает API/git truth, CSV-карты боли и лёгкие визуальные evidence bundles вне source repo.</p>
+        <div class="cards three visual-audit-cards">
+          <article class="card"><h3>Light Audit</h3><b>fast · jpeg</b><span>быстрая карта секций, CSV/JSON/MD, минимум скринов</span></article>
+          <article class="card"><h3>Balanced Audit</h3><b>default</b><span>ключевые PNG + массовые JPEG quality 76 + pain map</span></article>
+          <article class="card"><h3>Full Audit</h3><b>deep capture</b><span>больше scroll tiles, DOM/console/network evidence</span></article>
+        </div>
+        <div class="button-row visual-audit-actions">
+          <button data-action="visual_inquisition_audit_light" data-testid="visual-audit-light">Run Light Audit</button>
+          <button data-action="visual_inquisition_audit_balanced" data-testid="visual-audit-balanced">Run Mega Audit</button>
+          <button data-action="visual_inquisition_audit_full" data-testid="visual-audit-full">Run Full Audit</button>
+          <button data-action="visual_inquisition_audit_balanced_headed" data-testid="visual-audit-headed">Run Headed</button>
+          <button data-action="open_visual_audit_outputs" data-testid="open-visual-audit-outputs">Open Last Audit Bundle</button>
+          <button data-action="open_playwright_report" data-testid="open-playwright-report">Open Legacy Report</button>
+        </div>
+        <div class="visual-audit-grid">
+          <article class="panel"><h3>Evidence Policy</h3><ul class="compact-list"><li>key screenshots: PNG</li><li>bulk scroll tiles: JPEG</li><li>maps: CSV</li><li>truth: JSON</li><li>owner report: Markdown</li></ul></article>
+          <article class="panel"><h3>Agent Contract</h3><ul class="compact-list"><li>no arbitrary shell</li><li>no source evidence sprawl</li><li>safe-actions only by default</li><li>outputs under LOCAL_HANDOFF</li></ul></article>
+        </div>
+        <pre id="playwrightTrace" data-testid="playwright-trace">No Visual Inquisition audit yet.</pre>
+      </section>
     </main>
   </div>
   <div id="actionPulse" class="action-pulse" aria-hidden="true"><span></span><b>machine spirit working</b></div>
