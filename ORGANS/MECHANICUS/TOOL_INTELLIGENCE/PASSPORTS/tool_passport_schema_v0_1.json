@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.mechanicus.tool_passport_schema.v0_1",
+  "title": "Imperium Mechanicus Tool Passport V0.1",
+  "type": "object",
+  "required": [
+    "tool_id",
+    "name",
+    "owner_organ",
+    "language",
+    "path",
+    "purpose_ru",
+    "purpose_en",
+    "safety",
+    "validation",
+    "when_to_use",
+    "when_not_to_use"
+  ],
+  "properties": {
+    "tool_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "owner_organ": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "purpose_ru": {
+      "type": "string"
+    },
+    "purpose_en": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "side_effects": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "safety": {
+      "type": "string",
+      "enum": [
+        "READ_ONLY",
+        "LOCAL_HANDOFF_ONLY",
+        "EVIDENCE_OUTPUT_ONLY",
+        "SOURCE_WRITE_ALLOWLISTED",
+        "DANGEROUS_REQUIRES_OWNER"
+      ]
+    },
+    "validation": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "when_to_use": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "when_not_to_use": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "registered_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "data_atlas_visibility": {
+      "type": "object"
+    },
+    "replacement_candidates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

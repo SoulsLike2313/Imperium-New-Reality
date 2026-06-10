@@ -1,0 +1,40 @@
+{
+  "schema_version": "imperium.mechanicus.task_assessment_template.v0_1",
+  "fields": {
+    "task_id": "owner/task identifier",
+    "task_summary_ru": "human task summary",
+    "task_class": [
+      "ui",
+      "data_scan",
+      "repo_index",
+      "local_daemon",
+      "native_cli",
+      "reporting",
+      "cleanup",
+      "validation",
+      "research"
+    ],
+    "constraints": [
+      "speed",
+      "safety",
+      "portability",
+      "windows_local",
+      "low_dependency",
+      "large_repo",
+      "human_readable"
+    ],
+    "recommended_language": "language id from registry",
+    "recommended_tools": [
+      "tool ids or candidate tools"
+    ],
+    "algorithm_notes": "short algorithm approach",
+    "why_this_choice": "owner-readable reasoning",
+    "why_not_others": "compare alternatives",
+    "validation_route": [
+      "commands/checks"
+    ],
+    "data_atlas_visibility": "what Atlas should show after work",
+    "mechanicus_registration": "new/updated passport ids",
+    "risk": "LOW/MEDIUM/HIGH"
+  }
+}

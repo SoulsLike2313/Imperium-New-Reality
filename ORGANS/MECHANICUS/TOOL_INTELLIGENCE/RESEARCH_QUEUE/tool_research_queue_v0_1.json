@@ -1,0 +1,57 @@
+{
+  "schema_version": "imperium.mechanicus.research_queue.v0_1",
+  "purpose": "Queue candidate technologies for future evaluation before adoption.",
+  "items": [
+    {
+      "id": "rust_repo_indexer",
+      "priority": "HIGH",
+      "question_ru": "Стоит ли вынести быстрый Data Atlas indexer/hash scanner в Rust?",
+      "candidate_languages": [
+        "rust",
+        "python"
+      ],
+      "decision_gate": "Only after Python scanner becomes too slow or too memory-heavy."
+    },
+    {
+      "id": "sqlite_atlas_index",
+      "priority": "HIGH",
+      "question_ru": "Нужен ли SQLite индекс для Data Atlas, чтобы быстро искать/фильтровать сущности?",
+      "candidate_languages": [
+        "sqlite_sql",
+        "python"
+      ],
+      "decision_gate": "Admit when JSON snapshot becomes too heavy for UI/API."
+    },
+    {
+      "id": "go_local_watcher",
+      "priority": "MEDIUM",
+      "question_ru": "Нужен ли Go watcher daemon для repo/runtime changes?",
+      "candidate_languages": [
+        "go",
+        "python"
+      ],
+      "decision_gate": "Admit when polling from Python/Node becomes fragile."
+    },
+    {
+      "id": "typescript_web_sanctum_refactor",
+      "priority": "HIGH",
+      "question_ru": "Стоит ли переводить крупные части Web Sanctum main.js на TypeScript?",
+      "candidate_languages": [
+        "typescript",
+        "javascript_node"
+      ],
+      "decision_gate": "Admit when UI state grows beyond safe plain JS refactor."
+    },
+    {
+      "id": "tree_sitter_code_intelligence",
+      "priority": "MEDIUM",
+      "question_ru": "Нужен ли tree-sitter для языковой карты и code intelligence?",
+      "candidate_languages": [
+        "rust",
+        "python",
+        "javascript_node"
+      ],
+      "decision_gate": "Admit when extension-based classification is not enough."
+    }
+  ]
+}
