@@ -1,0 +1,22 @@
+{
+  "schema": "imperium.inquisition.policy.evidence_vault_batch_receipt_verification.v0_1",
+  "surface": "INQUISITION_EVIDENCE_VAULT_BATCH_RECEIPT_VERIFICATION_POLICY_V0_1",
+  "version": "0.1.0",
+  "mode": "read_only_verify_register",
+  "allows": [
+    "read Evidence Vault pack folder",
+    "verify EVIDENCE_PACK.zip hash and payload hashes",
+    "verify sidecars, manifest, receipt, SQLite and file counts",
+    "write verification outputs to external out-root",
+    "emit Data Atlas registration artifact"
+  ],
+  "forbids": [
+    "source deletion",
+    "source movement",
+    "source rewrite",
+    "creating a new Vault pack",
+    "modifying existing Vault pack",
+    "cherry-pick/main transfer"
+  ],
+  "owner_gate": "PASS permits cleanup proposal planning only; deletion/move requires separate future owner gate."
+}
