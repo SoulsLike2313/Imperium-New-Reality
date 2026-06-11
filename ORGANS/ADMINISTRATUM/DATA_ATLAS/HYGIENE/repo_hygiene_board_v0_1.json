@@ -1,0 +1,26 @@
+{
+  "schema": "imperium.data_atlas.repo_hygiene_board.v0_1",
+  "card_id": "data_atlas.repo_hygiene_board.v0_9_0",
+  "owner_organ": "ADMINISTRATUM",
+  "producer": "ORGANS/INQUISITION/REPORTING/inquisition_repo_hygiene_classifier_v0_1.py",
+  "inputs": [
+    "git ls-files",
+    "Mechanicus tool passports",
+    "repo paths"
+  ],
+  "outputs": [
+    "REPO_HYGIENE_CLASSIFICATION_REPORT.json",
+    "OWNER_HYGIENE_BOARD_RU.md",
+    "HYGIENE_LANE_QUEUE.jsonl",
+    "REPO_HYGIENE_INDEX.sqlite"
+  ],
+  "lanes": [
+    "KEEP_SOURCE",
+    "PASSPORT_REQUIRED",
+    "PACK_TO_VAULT_CANDIDATE",
+    "FIXTURE_MANIFEST_REQUIRED",
+    "OWNER_REVIEW_MOVE",
+    "SAFE_RUNTIME_DELETE"
+  ],
+  "owner_decision": "Use board to approve next migration/passporting batch; do not delete from board alone."
+}

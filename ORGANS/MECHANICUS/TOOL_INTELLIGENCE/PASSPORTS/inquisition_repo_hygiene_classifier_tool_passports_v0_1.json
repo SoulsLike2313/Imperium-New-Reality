@@ -1,0 +1,54 @@
+{
+  "schema": "imperium.mechanicus.tool_passports.v0_1",
+  "passports": [
+    {
+      "tool_id": "inquisition.repo_hygiene_classifier",
+      "name": "Repo Hygiene Classifier",
+      "owner_organ": "INQUISITION",
+      "language": "python",
+      "path": "ORGANS/INQUISITION/REPORTING/inquisition_repo_hygiene_classifier_v0_1.py",
+      "purpose_ru": "Read-only классификация git-tracked файлов по hygiene lanes для Batch 001.",
+      "purpose_en": "Read-only classification of git-tracked files into hygiene lanes for Batch 001.",
+      "inputs": [
+        "repo",
+        "out_root",
+        "Mechanicus passport JSON files",
+        "git ls-files"
+      ],
+      "outputs": [
+        "REPO_HYGIENE_CLASSIFICATION_REPORT.json",
+        "OWNER_HYGIENE_BOARD_RU.md",
+        "HYGIENE_LANE_QUEUE.jsonl",
+        "HYGIENE_LANE_QUEUE.csv",
+        "REPO_HYGIENE_INDEX.sqlite"
+      ],
+      "side_effects": [
+        "writes reports only to requested out_root"
+      ],
+      "safety": "READ_ONLY_SOURCE_NO_MUTATION",
+      "validation": [
+        "python -m py_compile",
+        "run classifier to external out_root",
+        "verify git status unchanged",
+        "verify SQLite opens"
+      ],
+      "when_to_use": [
+        "Before Evidence Vault migration",
+        "Before passporting batch",
+        "Before cleanup"
+      ],
+      "when_not_to_use": [
+        "To delete files",
+        "To move source automatically",
+        "To bypass owner review"
+      ],
+      "registered_actions": [
+        "repo_hygiene_classify",
+        "repo_hygiene_lane_queue_build"
+      ],
+      "data_atlas_visibility": {
+        "linked_card": "data_atlas.repo_hygiene_board.v0_9_0"
+      }
+    }
+  ]
+}
