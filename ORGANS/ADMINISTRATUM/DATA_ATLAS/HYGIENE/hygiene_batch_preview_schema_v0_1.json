@@ -1,0 +1,23 @@
+{
+  "schema": "imperium.schema_descriptor.v0_1",
+  "schema_id": "imperium.owner_gated_hygiene_batch_preview.v0_1",
+  "required_fields": [
+    "schema",
+    "surface",
+    "status",
+    "source_head_short",
+    "batch_id",
+    "target_organ",
+    "target_lane",
+    "candidate_total",
+    "owner_gate",
+    "outputs"
+  ],
+  "allowed_status": ["PASS_HYGIENE_BATCH_PREVIEW_BUILT"],
+  "safety_contract": {
+    "mode": "read_only_owner_gated_preview",
+    "must_not_delete_source": true,
+    "must_not_move_source": true,
+    "must_not_pack_to_vault_without_later_gate": true
+  }
+}

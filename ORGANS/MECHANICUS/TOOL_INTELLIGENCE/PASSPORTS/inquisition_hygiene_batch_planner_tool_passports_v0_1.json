@@ -1,0 +1,28 @@
+{
+  "schema": "imperium.mechanicus.tool_passports.v0_1",
+  "passports": [
+    {
+      "tool_id": "inquisition.hygiene_batch_planner.v0_1",
+      "path": "ORGANS/INQUISITION/REPORTING/inquisition_hygiene_batch_planner_v0_1.py",
+      "owner_organ": "INQUISITION",
+      "kind": "read_only_batch_preview_planner",
+      "write_scope": "external_out_root_only",
+      "source_mutation": false,
+      "requires_owner_gate_for_execution": true,
+      "inputs": ["REPO_HYGIENE_CLASSIFICATION_REPORT.json", "HYGIENE_LANE_QUEUE.jsonl"],
+      "outputs": [
+        "BATCH_001_PREVIEW.json",
+        "BATCH_001_CANDIDATES.jsonl",
+        "BATCH_001_PREVIEW.sqlite",
+        "BATCH_001_VISUAL_PROOF_DASHBOARD.html"
+      ],
+      "validation_recipe": [
+        "py_compile planner",
+        "run classifier",
+        "build batch preview",
+        "open sqlite",
+        "verify no source mutation and no output under repo"
+      ]
+    }
+  ]
+}
