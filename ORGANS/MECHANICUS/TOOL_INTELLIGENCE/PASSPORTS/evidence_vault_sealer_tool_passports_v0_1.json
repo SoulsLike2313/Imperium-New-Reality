@@ -6,17 +6,33 @@
       "owner_organ": "MECHANICUS",
       "path": "ORGANS/MECHANICUS/EVIDENCE_VAULT/evidence_vault_sealer_v0_1.py",
       "language": "python",
-      "purpose": "Seal Evidence Vault HOT_BUFFER into canonical EVIDENCE_PACK.zip with manifest/index/summary.",
+      "purpose": "Seal Evidence Vault HOT_BUFFER into canonical EVIDENCE_PACK.zip with manifest/index/summary and protected final report output-root contract.",
       "write_scope": [
         "EVIDENCE_VAULT/packs",
         "EVIDENCE_VAULT/indexes",
-        "LOCAL_HANDOFF/SERVITOR_OUTPUTS"
+        "EVIDENCE_VAULT/reports",
+        "EVIDENCE_VAULT/logs/sealer",
+        "pack_root/SEALER_REPORT"
       ],
       "destructive_default": false,
       "destructive_flags": [
         "--delete-buffer-after-seal"
       ],
-      "validation_recipe": "Run smoke sealer on SMOKE patch id and verify EVIDENCE_PACK.zip + manifest + SHA256SUMS."
+      "validation_recipe": "Run safe destructive smoke and unsafe output-root negative test; verify report survives under pack_root/SEALER_REPORT and buffer is deleted.",
+      "version": "0.1.1",
+      "output_root_contract_v0_8_9_2": {
+        "delete_buffer_after_seal_default_report_root": "pack_root/SEALER_REPORT",
+        "forbidden": [
+          "out_root inside buffer_path when --delete-buffer-after-seal is set"
+        ],
+        "blocking_gate": "BLOCK_UNSAFE_SEALER_REPORT_ROOT",
+        "sidecar_refresh_after_buffer_delete": [
+          "EVIDENCE_MANIFEST.json",
+          "MACHINE_INDEX.json",
+          "OWNER_SUMMARY_RU.md",
+          "indexes/latest_manifest.json"
+        ]
+      }
     }
   ]
 }

@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.1",
+  "tool_passports": [
+    {
+      "tool_id": "inquisition.evidence_sealer_contract_gate",
+      "owner_organ": "INQUISITION",
+      "path": "ORGANS/INQUISITION/REPORTING/inquisition_evidence_sealer_contract_gate_v0_1.py",
+      "language": "python",
+      "purpose": "Read-only contract and health gate for Evidence Vault sealer output roots and sealed pack sidecars.",
+      "write_scope": [
+        "optional LOCAL_HANDOFF/Vault report output only when --out-report-root is provided"
+      ],
+      "destructive_default": false,
+      "destructive_flags": [],
+      "validation_recipe": "py_compile; run contract PASS and BLOCK cases; run health check on sealed pack smoke output."
+    }
+  ]
+}

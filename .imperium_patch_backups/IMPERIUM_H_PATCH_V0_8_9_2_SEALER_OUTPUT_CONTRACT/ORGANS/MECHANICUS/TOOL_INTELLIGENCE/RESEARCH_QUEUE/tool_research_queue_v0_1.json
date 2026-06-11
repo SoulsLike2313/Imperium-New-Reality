@@ -52,47 +52,6 @@
         "javascript_node"
       ],
       "decision_gate": "Admit when extension-based classification is not enough."
-    },
-    {
-      "id": "imperium_intelligence_pack_builder",
-      "priority": "HIGH",
-      "question_ru": "Заменить ли crude codebase pack на лёгкий Intelligence Pack с manifests/indexes/slices/edges?",
-      "candidate_languages": [
-        "python",
-        "sqlite_sql"
-      ],
-      "decision_gate": "Admit immediately after v0.8.9.2 as handoff/codebase pack replacement."
-    },
-    {
-      "id": "atlas_sqlite_index_builder",
-      "priority": "HIGH",
-      "question_ru": "Нужен ли SQLite индекс для файлов, evidence, organs, passports и findings?",
-      "candidate_languages": [
-        "python",
-        "sqlite_sql"
-      ],
-      "decision_gate": "Admit when Data Atlas or handoff packs exceed fast human/machine readability."
-    },
-    {
-      "id": "graph_edge_exporter",
-      "priority": "HIGH",
-      "question_ru": "Нужно ли экспортировать связи Imperium в graph edges для будущего Graph Atlas/GraphRAG-like retrieval?",
-      "candidate_languages": [
-        "python",
-        "jsonl",
-        "sqlite_sql"
-      ],
-      "decision_gate": "Admit when patch closure needs machine-readable relations, not only markdown."
-    },
-    {
-      "id": "duckdb_local_analytics_probe",
-      "priority": "MEDIUM",
-      "question_ru": "Нужен ли DuckDB для быстрых локальных OLAP-запросов по evidence/report/index таблицам?",
-      "candidate_languages": [
-        "python",
-        "sql"
-      ],
-      "decision_gate": "Evaluate after SQLite index foundation; DuckDB only if analytical scans outgrow SQLite."
     }
   ]
 }

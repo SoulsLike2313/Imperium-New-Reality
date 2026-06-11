@@ -21,7 +21,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Tuple
 
 SURFACE = "MECHANICUS_EVIDENCE_VAULT_SEALER_V0_1"
-VERSION = "0.1.1"
+VERSION = "0.1.0"
 
 SCREEN_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".gif"}
 JSON_EXTS = {".json", ".jsonl"}
@@ -177,126 +177,6 @@ def pack_root_for(vault_root: Path, patch_id: str) -> Path:
     return vault_root / "packs" / f"{now.year:04d}" / f"{now.month:02d}" / safe_id(patch_id)
 
 
-def norm_abs(path: Path) -> str:
-    """Return an absolute, normalized path string for write-root safety checks."""
-    try:
-        return os.path.normcase(os.path.abspath(str(path)))
-    except Exception:
-        return os.path.normcase(str(path))
-
-
-def path_is_inside(child: Path, parent: Path) -> bool:
-    """True when child is parent or a descendant of parent.
-
-    This check intentionally avoids Path.relative_to so it works across existing and
-    not-yet-created report directories on Windows and POSIX alike.
-    """
-    child_s = norm_abs(child)
-    parent_s = norm_abs(parent)
-    try:
-        return os.path.commonpath([child_s, parent_s]) == parent_s
-    except Exception:
-        return False
-
-
-def build_output_root_contract(args: argparse.Namespace) -> Tuple[Path, Dict[str, object]]:
-    """Resolve final report output root and protect destructive seal mode.
-
-    Contract V0.8.9.2:
-    - when --delete-buffer-after-seal is used, the sealer final report must not be
-      written under the buffer that is going to be deleted;
-    - default destructive seal reports go into the sealed pack folder so the proof
-      survives buffer deletion;
-    - explicit unsafe report roots are blocked before seal/delete.
-    """
-    vault_root = Path(args.vault_root)
-    patch_id = args.patch_id
-    buffer_path = resolve_buffer(vault_root, patch_id, args.buffer_path)
-    pack_root = Path(args.pack_root) if args.pack_root else pack_root_for(vault_root, patch_id)
-    delete_after_seal = bool(getattr(args, "delete_buffer_after_seal", False))
-    explicit_out_root = bool(getattr(args, "out_root", ""))
-
-    if explicit_out_root:
-        out_root = Path(args.out_root)
-        output_root_policy = "EXPLICIT_OPERATOR_ROOT"
-    elif args.mode == "seal" and delete_after_seal:
-        out_root = pack_root / "SEALER_REPORT"
-        output_root_policy = "DEFAULT_TO_SEALED_PACK_REPORT_ROOT"
-    else:
-        out_root = vault_root / "reports"
-        output_root_policy = "DEFAULT_TO_VAULT_REPORTS"
-
-    out_inside_buffer = path_is_inside(out_root, buffer_path)
-    out_inside_pack = path_is_inside(out_root, pack_root)
-    out_inside_logs = path_is_inside(out_root, vault_root / "logs" / "sealer")
-    out_inside_reports = path_is_inside(out_root, vault_root / "reports")
-
-    allowed = True
-    gate_state = "PASS_OUTPUT_ROOT_CONTRACT"
-    severity = "INFO"
-    reason = "Output root survives current mode."
-    recommended_action = "Continue."
-
-    if args.mode == "seal" and delete_after_seal and out_inside_buffer:
-        allowed = False
-        gate_state = "BLOCK_UNSAFE_SEALER_REPORT_ROOT"
-        severity = "CRITICAL"
-        reason = "--delete-buffer-after-seal would delete or recreate the same tree selected for the final sealer report."
-        recommended_action = "Use no --out-root in destructive seal mode, or set --out-root to the sealed pack folder or $VAULT/logs/sealer."
-    elif args.mode == "seal" and delete_after_seal and not (out_inside_pack or out_inside_logs or out_inside_reports):
-        gate_state = "WARN_NON_CANONICAL_SEALER_REPORT_ROOT"
-        severity = "WARNING"
-        reason = "Final report root is outside the deleted buffer, but also outside the canonical Vault report roots."
-        recommended_action = "Prefer default sealed-pack report root or $VAULT/logs/sealer for durable evidence closure."
-
-    contract = {
-        "contract_id": "mechanicus.evidence_vault_sealer.output_root_contract.v0_8_9_2",
-        "gate_state": gate_state,
-        "severity": severity,
-        "allowed": allowed,
-        "mode": args.mode,
-        "delete_buffer_after_seal": delete_after_seal,
-        "explicit_out_root": explicit_out_root,
-        "output_root_policy": output_root_policy,
-        "buffer_path": str(buffer_path),
-        "pack_root": str(pack_root),
-        "resolved_output_root": str(out_root),
-        "output_root_inside_buffer": out_inside_buffer,
-        "output_root_inside_pack_root": out_inside_pack,
-        "output_root_inside_vault_logs": out_inside_logs,
-        "output_root_inside_vault_reports": out_inside_reports,
-        "reason": reason,
-        "recommended_action_ru": recommended_action,
-    }
-    return out_root, contract
-
-
-def unsafe_output_root_report(args: argparse.Namespace, contract: Dict[str, object]) -> Dict[str, object]:
-    vault_root = Path(args.vault_root)
-    patch_id = args.patch_id
-    buffer_path = resolve_buffer(vault_root, patch_id, args.buffer_path)
-    pack_root = Path(args.pack_root) if args.pack_root else pack_root_for(vault_root, patch_id)
-    return {
-        "status": "FAIL_UNSAFE_OUTPUT_ROOT",
-        "surface": SURFACE,
-        "version": VERSION,
-        "generated_at_utc": utc_now(),
-        "mode": args.mode,
-        "dry_run": bool(getattr(args, "dry_run", False)),
-        "manifest": {
-            "patch_id": patch_id,
-            "storage_zone": "HOT_BUFFER",
-            "buffer_path": str(buffer_path),
-            "pack_path": str(pack_root / "EVIDENCE_PACK.zip"),
-            "raw_buffer_deleted": False,
-        },
-        "pack_path": str(pack_root / "EVIDENCE_PACK.zip"),
-        "actions": ["blocked_before_seal:unsafe_output_root_contract"],
-        "output_root_contract": contract,
-        "error": contract.get("reason"),
-    }
-
-
 def seal(args: argparse.Namespace) -> Dict[str, object]:
     vault_root = Path(args.vault_root)
     patch_id = args.patch_id
@@ -399,14 +279,6 @@ def seal(args: argparse.Namespace) -> Dict[str, object]:
             manifest["raw_buffer_deleted"] = True
             actions.append(f"deleted_buffer_after_seal:{buffer_path}")
             write_json(pack_root / "EVIDENCE_MANIFEST.json", manifest)
-            write_json(pack_root / "MACHINE_INDEX.json", {"manifest": manifest, "files": file_rows})
-            write_owner_summary(pack_root / "OWNER_SUMMARY_RU.md", {
-                "status": "PASS_SEALED_BUFFER_DELETED",
-                "generated_at_utc": created_at,
-                "manifest": manifest,
-                "pack_path": str(pack_path),
-                "pack_sha256": pack_sha,
-            })
             write_json(indexes / "latest_manifest.json", manifest)
         else:
             actions.append("skip_delete_buffer:pack_verification_failed")
@@ -459,27 +331,17 @@ def main(argv: Optional[List[str]] = None) -> int:
     ap.add_argument("--delete-buffer-after-seal", action="store_true")
     args = ap.parse_args(argv)
 
-    out_root, output_contract = build_output_root_contract(args)
-    if not output_contract.get("allowed", True):
-        safe_report_root = Path(args.vault_root) / "logs" / "sealer" / "blocked_output_root"
-        report = unsafe_output_root_report(args, output_contract)
-        out_dir = output_report(safe_report_root, report)
-        report["output_root"] = str(out_dir)
-        write_json(out_dir / "MACHINE_REPORT.json", report)
-        print(json.dumps({k: v for k, v in report.items() if k != "file_rows"}, ensure_ascii=False, indent=2))
-        return 2
-
     if args.mode == "seal":
         report = seal(args)
     else:
         report = inspect(args)
 
-    report["output_root_contract"] = output_contract
+    out_root = Path(args.out_root) if args.out_root else Path(args.vault_root) / "reports"
     out_dir = output_report(out_root, report)
     report["output_root"] = str(out_dir)
     # Rewrite with output_root included.
     write_json(out_dir / "MACHINE_REPORT.json", report)
-    print(json.dumps({k: v for k, v in report.items() if k != "file_rows"}, ensure_ascii=False, indent=2))
+    print(json.dumps({k:v for k,v in report.items() if k != "file_rows"}, ensure_ascii=False, indent=2))
     return 0 if not str(report.get("status", "")).startswith("FAIL") else 2
 
 

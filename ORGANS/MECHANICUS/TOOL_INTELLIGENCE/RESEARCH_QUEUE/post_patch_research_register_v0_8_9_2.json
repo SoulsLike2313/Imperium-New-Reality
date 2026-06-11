@@ -1,0 +1,51 @@
+{
+  "schema_version": "imperium.mechanicus.post_patch_research_register.v0_1",
+  "patch": "v0.8.9.2",
+  "created_local": "2026-06-11",
+  "purpose_ru": "Зафиксировать post-patch research и архитектурные импульсы после sealer output-root contract patch.",
+  "sources": [
+    {
+      "id": "sqlite_application_file_format",
+      "url": "https://sqlite.org/appfileformat.html",
+      "lesson_ru": "SQLite можно рассматривать как application file format вместо pile-of-files, когда нужен локальный индекс/атомарность/переносимость."
+    },
+    {
+      "id": "sqlite_benefits_file_format",
+      "url": "https://sqlite.org/aff_short.html",
+      "lesson_ru": "Разнородное содержимое, которое иначе стало бы кучей файлов, можно упаковать в один queryable файл."
+    },
+    {
+      "id": "duckdb",
+      "url": "https://duckdb.org/",
+      "lesson_ru": "In-process SQL OLAP полезен как вдохновение для локальной аналитики по JSON/CSV/Parquet/index outputs без отдельного сервера."
+    },
+    {
+      "id": "microsoft_graphrag",
+      "url": "https://microsoft.github.io/graphrag/",
+      "lesson_ru": "Knowledge graph + community summaries дают образ будущего Graph Atlas: связи важнее плоских markdown-отчётов."
+    },
+    {
+      "id": "datahub",
+      "url": "https://github.com/datahub-project/datahub",
+      "lesson_ru": "Data catalog должен знать ownership, discovery, governance, observability и lineage; Data Atlas должен двигаться в эту сторону."
+    }
+  ],
+  "register_through_mechanicus_next": [
+    "imperium_intelligence_pack_builder",
+    "atlas_sqlite_index_builder",
+    "graph_edge_exporter",
+    "evidence_vault_health_checker",
+    "post_patch_research_register"
+  ],
+  "doctrine_updates": [
+    "Storage / Index / Graph Doctrine V0.1",
+    "Report that proves deletion must not live in deleted root",
+    "Packs are transport; indexes are memory"
+  ],
+  "agent_improvement": {
+    "MECHANICUS": "knows sealer output-root contract and registered sealer passport",
+    "INQUISITION": "can block unsafe destructive seal before delete",
+    "DATA_ATLAS": "gets sealed pack health card schema",
+    "DOCTRINARIUM": "receives storage/index/graph doctrine"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "imperium.inquisition.evidence_sealer_contract_gate_policy.v0_1",
+  "patch_version": "v0.8.9.2",
+  "purpose_ru": "Блокировать destructive seal, если итоговый отчёт sealer-а пишется внутрь удаляемого HOT_BUFFER.",
+  "gate_states": [
+    {
+      "state": "PASS_OUTPUT_ROOT_CONTRACT",
+      "blocking": false
+    },
+    {
+      "state": "WARN_NON_CANONICAL_SEALER_REPORT_ROOT",
+      "blocking": false
+    },
+    {
+      "state": "BLOCK_UNSAFE_SEALER_REPORT_ROOT",
+      "blocking": true
+    },
+    {
+      "state": "PASS_SEALED_PACK_HEALTH",
+      "blocking": false
+    },
+    {
+      "state": "FAIL_SEALED_PACK_HEALTH",
+      "blocking": true
+    }
+  ],
+  "destructive_mode_rule": {
+    "when": [
+      "sealer mode seal",
+      "--delete-buffer-after-seal"
+    ],
+    "forbid": [
+      "out_root inside buffer_path"
+    ],
+    "prefer": [
+      "pack_root/SEALER_REPORT",
+      "$VAULT/logs/sealer"
+    ],
+    "fallback_report_root": "$VAULT/logs/sealer/blocked_output_root"
+  },
+  "owner_review": "Required before changing this rule to allow source or buffer report roots."
+}
