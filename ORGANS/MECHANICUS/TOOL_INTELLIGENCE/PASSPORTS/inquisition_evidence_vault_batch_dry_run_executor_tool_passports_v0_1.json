@@ -1,0 +1,24 @@
+{
+  "schema": "imperium.tool_passport.v0_1",
+  "tool_id": "inquisition.evidence_vault_batch_dry_run_executor.v0_1",
+  "owner_organ": "INQUISITION",
+  "path": "ORGANS/INQUISITION/REPORTING/inquisition_evidence_vault_batch_dry_run_executor_v0_1.py",
+  "capability": "Read-only Evidence Vault batch execution rehearsal with source existence checks, SHA256 computation, staging preview and Trinity Plus visual proof.",
+  "writes_only_to": [
+    "explicit --out-root"
+  ],
+  "forbidden_actions": [
+    "source_delete",
+    "source_move",
+    "source_rewrite",
+    "vault_pack_creation",
+    "git_push"
+  ],
+  "validation_recipe": [
+    "python -m py_compile tool",
+    "run against a pack plan and file manifest",
+    "verify report, JSONL/CSV, SHA256SUMS, SQLite and dashboard outputs",
+    "verify no source mutation and no Vault pack creation"
+  ],
+  "trinity_plus": true
+}

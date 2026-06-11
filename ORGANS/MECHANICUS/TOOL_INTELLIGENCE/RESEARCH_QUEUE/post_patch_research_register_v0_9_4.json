@@ -1,0 +1,15 @@
+{
+  "schema": "imperium.research_register.v0_1",
+  "patch_id": "v0.9.4",
+  "topic": "Evidence Vault Batch 001 dry-run execution rehearsal",
+  "mechanicus_registrations": [
+    "inquisition.evidence_vault_batch_dry_run_executor.v0_1",
+    "evidence_vault_batch_dry_run_output_contract.v0_1"
+  ],
+  "architecture_inspirations": [
+    "OCI image layout",
+    "SLSA provenance",
+    "in-toto attestations and link metadata"
+  ],
+  "next_decision_gate": "Only after dry-run PASS should execution copy/pack patch be prepared; source deletion remains blocked."
+}

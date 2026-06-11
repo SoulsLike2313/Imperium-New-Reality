@@ -1,0 +1,25 @@
+{
+  "schema": "imperium.data_atlas.card.v0_1",
+  "card_id": "data_atlas.evidence_vault_batch_dry_run.v0_1",
+  "title_ru": "Evidence Vault Batch 001 Dry-run",
+  "owner_organ": "ADMINISTRATUM",
+  "producer_organ": "INQUISITION",
+  "reads": [
+    "EVIDENCE_VAULT_BATCH_001_PACK_PLAN.json",
+    "EVIDENCE_VAULT_BATCH_001_FILE_MANIFEST_PREVIEW.jsonl"
+  ],
+  "writes": [
+    "dry-run report",
+    "file checks",
+    "sha256 preview",
+    "sqlite index",
+    "visual proof"
+  ],
+  "does_not_do": [
+    "copy source",
+    "move source",
+    "delete source",
+    "create vault pack"
+  ],
+  "trinity_plus": true
+}

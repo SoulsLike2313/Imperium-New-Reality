@@ -1,0 +1,27 @@
+{
+  "schema": "imperium.schema.evidence_vault_batch_dry_run.v0_1",
+  "required_fields": [
+    "schema",
+    "surface",
+    "version",
+    "status",
+    "patch_id",
+    "batch_id",
+    "mode",
+    "planned_candidates_total",
+    "checks",
+    "outputs",
+    "owner_gate"
+  ],
+  "checks_fields": [
+    "existing_files_total",
+    "missing_files_total",
+    "hash_match_total",
+    "hash_mismatch_total",
+    "total_bytes_actual",
+    "copy_executed",
+    "move_executed",
+    "pack_created",
+    "source_delete_allowed"
+  ]
+}

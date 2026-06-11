@@ -1,0 +1,13 @@
+{
+  "schema": "imperium.mechanicus.research_register.v0_1",
+  "patch_id": "v0.9.4-FIX1",
+  "topic": "SQLite safe column naming for generated machine indexes",
+  "findings": [
+    "Avoid SQL keyword-like column names in generated SQLite schemas.",
+    "Keep JSON report compatibility while mapping to SQL-safe names.",
+    "SQLite validation must be part of Trinity Plus smoke for every machine index."
+  ],
+  "doctrine_candidates": [
+    "Add SQL_SAFE_COLUMN_NAMES to future storage/index doctrine."
+  ]
+}

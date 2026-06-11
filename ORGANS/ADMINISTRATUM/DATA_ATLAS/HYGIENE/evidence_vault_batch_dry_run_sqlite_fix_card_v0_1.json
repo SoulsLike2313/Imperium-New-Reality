@@ -1,0 +1,22 @@
+{
+  "schema": "imperium.data_atlas.card.v0_1",
+  "card_id": "DATA_ATLAS_EVIDENCE_VAULT_BATCH_DRY_RUN_SQLITE_FIX_CARD_V0_1",
+  "patch_id": "v0.9.4-FIX1",
+  "surface": "Evidence Vault Batch 001 Dry-Run SQLite Fix",
+  "owner_summary_ru": "Исправляет SQL keyword collision: dry-run SQLite table больше не использует колонку exists.",
+  "changed_files": [
+    "ORGANS/INQUISITION/REPORTING/inquisition_evidence_vault_batch_dry_run_executor_v0_1.py"
+  ],
+  "safety_contract": {
+    "copy_source": false,
+    "move_source": false,
+    "delete_source": false,
+    "pack_to_vault": false,
+    "writes_under_repo": false
+  },
+  "validation": [
+    "python -m py_compile dry-run executor",
+    "run v0.9.4 smoke again",
+    "verify EVIDENCE_VAULT_BATCH_001_DRY_RUN.sqlite contains dry_run_items"
+  ]
+}
