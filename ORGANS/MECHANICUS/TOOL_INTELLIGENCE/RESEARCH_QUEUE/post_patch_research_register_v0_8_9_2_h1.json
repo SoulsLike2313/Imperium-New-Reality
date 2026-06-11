@@ -1,0 +1,30 @@
+{
+  "schema": "imperium.post_patch_research_register.v0_1",
+  "patch_id": "v0.8.9.2-H1",
+  "title": "Backup hygiene and pre-commit transfer readiness",
+  "research_focus": "source vs local operator state; git index cleanup; pre-commit hygiene gates",
+  "external_inspirations": [
+    {
+      "name": "Git ignore model",
+      "takeaway": ".gitignore prevents new untracked matches from being added, but it does not remove files already tracked. Imperium needs ignore + index cleanup."
+    },
+    {
+      "name": "git rm --cached",
+      "takeaway": "Use index removal while keeping local operator backup files on disk."
+    },
+    {
+      "name": "pre-commit gate pattern",
+      "takeaway": "Fast local checks should catch hygiene defects before commit history is produced."
+    }
+  ],
+  "mechanicus_registration_targets": [
+    "inquisition.patch_backup_hygiene_gate",
+    "imperium_intelligence_pack_builder dependency: PASS_PATCH_BACKUP_HYGIENE"
+  ],
+  "doctrine_updates": [
+    "Ignore is not cleanup; tracked dirt needs explicit index-removal receipt.",
+    "Patch backups are rollback aids, not source artifacts.",
+    "H patch closure must include no-local-only-tracked proof."
+  ],
+  "next_patch_pressure": "Use this hygiene gate as a prerequisite for lightweight Intelligence Pack Builder."
+}
