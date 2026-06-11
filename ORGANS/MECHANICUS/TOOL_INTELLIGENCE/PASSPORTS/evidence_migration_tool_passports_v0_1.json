@@ -1,0 +1,23 @@
+{
+  "schema": "imperium.mechanicus.tool_passports.v0_1",
+  "version": "0.1.0",
+  "tools": [
+    {
+      "tool_id": "inquisition.evidence_migration_planner",
+      "owner_organ": "INQUISITION",
+      "script_path": "ORGANS/INQUISITION/REPORTING/inquisition_evidence_migration_planner_v0_1.py",
+      "language": "python",
+      "purpose_ru": "Строит план миграции evidence/archive/cache грязи из source repo в Evidence Vault или review lanes.",
+      "write_mode": "reports_only_by_default",
+      "destructive_by_default": false,
+      "validation_recipe": "py_compile plus smoke report generation",
+      "outputs": [
+        "MACHINE_REPORT.json",
+        "OWNER_READABLE_REPORT_RU.md",
+        "migration_plan.csv",
+        "lane_counts.csv",
+        "vault_pack_groups.csv"
+      ]
+    }
+  ]
+}

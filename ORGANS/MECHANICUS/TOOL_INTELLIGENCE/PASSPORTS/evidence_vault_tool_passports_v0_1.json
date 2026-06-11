@@ -1,0 +1,38 @@
+{
+  "passport_set_id": "mechanicus.evidence_vault_tool_passports.v0_1",
+  "status": "ACTIVE_DRAFT",
+  "tools": [
+    {
+      "tool_id": "mechanicus.evidence_vault_packager",
+      "owner_organ": "MECHANICUS",
+      "path": "ORGANS/MECHANICUS/EVIDENCE_VAULT/evidence_vault_packager_v0_1.py",
+      "language": "python",
+      "purpose_ru": "Создаёт HOT_BUFFER, запечатывает evidence pack, пишет manifest/index/summary.",
+      "write_scope": [
+        "E:/IMPERIUM_EVIDENCE_VAULT",
+        "E:/_LOCAL_HANDOFF/SERVITOR_OUTPUTS"
+      ],
+      "source_write": false,
+      "validation": [
+        "python -m py_compile",
+        "--mode init --dry-run",
+        "--mode inspect"
+      ]
+    },
+    {
+      "tool_id": "inquisition.evidence_write_guard",
+      "owner_organ": "INQUISITION",
+      "path": "ORGANS/INQUISITION/REPORTING/inquisition_evidence_write_guard_v0_1.py",
+      "language": "python",
+      "purpose_ru": "Read-only аудит записи evidence/storage zones, ловит raw evidence/cache/runtime в source и expired buffers.",
+      "write_scope": [
+        "E:/_LOCAL_HANDOFF/SERVITOR_OUTPUTS"
+      ],
+      "source_write": false,
+      "validation": [
+        "python -m py_compile",
+        "read-only audit run"
+      ]
+    }
+  ]
+}

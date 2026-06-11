@@ -1,0 +1,74 @@
+{
+  "registry_id": "inquisition_risk_registry_v0_1",
+  "version": "0.1.0",
+  "purpose_ru": "Базовый реестр типов бед, которые Инквизиция должна уметь находить и объяснять.",
+  "default_mode": "read_only_detect_and_report",
+  "risk_types": [
+    {
+      "risk_type": "ENCODING_MOJIBAKE",
+      "default_severity": "CRITICAL",
+      "owner_organ": "INQUISITION",
+      "description_ru": "Сломанная кодировка или glyph mojibake в source/UI/docs."
+    },
+    {
+      "risk_type": "SOURCE_RUNTIME_LEAK",
+      "default_severity": "CRITICAL",
+      "owner_organ": "ADMINISTRATUM",
+      "description_ru": "Runtime/output/local handoff следы попали внутрь source tree."
+    },
+    {
+      "risk_type": "GENERATED_ARTIFACT_IN_SOURCE",
+      "default_severity": "WARNING",
+      "owner_organ": "ADMINISTRATUM",
+      "description_ru": "Generated/cache/report artifacts лежат в source и требуют lifecycle решения."
+    },
+    {
+      "risk_type": "PYTHON_CACHE_IN_SOURCE",
+      "default_severity": "WARNING",
+      "owner_organ": "MECHANICUS",
+      "description_ru": "__pycache__/.pyc найден в source tree."
+    },
+    {
+      "risk_type": "ARCHIVE_REVIEW_REQUIRED",
+      "default_severity": "WARNING",
+      "owner_organ": "DATA_ATLAS",
+      "description_ru": "ZIP/архив внутри source требует review lifecycle."
+    },
+    {
+      "risk_type": "LEGACY_MIRROR_CONTAMINATION",
+      "default_severity": "INFO",
+      "owner_organ": "DATA_ATLAS",
+      "description_ru": "Legacy mirror требует изоляции, паспорта или плана миграции."
+    },
+    {
+      "risk_type": "NO_TOOL_PASSPORT",
+      "default_severity": "WARNING",
+      "owner_organ": "MECHANICUS",
+      "description_ru": "Tool-like script не имеет Mechanicus паспорта."
+    },
+    {
+      "risk_type": "NO_VALIDATION_RECIPE",
+      "default_severity": "WARNING",
+      "owner_organ": "MECHANICUS",
+      "description_ru": "Инструмент не имеет явного validation recipe."
+    },
+    {
+      "risk_type": "ACTION_REGISTRY_DRIFT",
+      "default_severity": "WARNING",
+      "owner_organ": "MECHANICUS",
+      "description_ru": "Action registry не совпадает с фактическими tool passports/actions."
+    },
+    {
+      "risk_type": "WRITE_ACTION_WITHOUT_SAFETY",
+      "default_severity": "CRITICAL",
+      "owner_organ": "MECHANICUS",
+      "description_ru": "Action может писать без понятной safety модели."
+    },
+    {
+      "risk_type": "VERSION_DRIFT",
+      "default_severity": "WARNING",
+      "owner_organ": "ADMINISTRATUM",
+      "description_ru": "Версии в UI/API/package/docs расходятся."
+    }
+  ]
+}

@@ -35,3 +35,14 @@ ORGANS/IMPERIAL_IDE/STATION/RUNTIME/
 ORGANS/IMPERIAL_IDE/STATION/runtime/
 ORGANS/IMPERIAL_IDE/STATION/generated_taskpacks/
 ORGANS/IMPERIAL_IDE/STATION/receipts/runtime/
+# Inquisition generated source cache guard
+*.py[cod]
+
+# IMPERIUM Evidence/Runtime hygiene guard
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+**/playwright-report/
+**/test-results/
+**/*.trace.zip
+**/*.har

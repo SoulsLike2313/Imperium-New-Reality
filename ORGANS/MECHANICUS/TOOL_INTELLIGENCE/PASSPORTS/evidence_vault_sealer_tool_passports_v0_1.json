@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1",
+  "tool_passports": [
+    {
+      "tool_id": "mechanicus.evidence_vault_sealer",
+      "owner_organ": "MECHANICUS",
+      "path": "ORGANS/MECHANICUS/EVIDENCE_VAULT/evidence_vault_sealer_v0_1.py",
+      "language": "python",
+      "purpose": "Seal Evidence Vault HOT_BUFFER into canonical EVIDENCE_PACK.zip with manifest/index/summary.",
+      "write_scope": [
+        "EVIDENCE_VAULT/packs",
+        "EVIDENCE_VAULT/indexes",
+        "LOCAL_HANDOFF/SERVITOR_OUTPUTS"
+      ],
+      "destructive_default": false,
+      "destructive_flags": [
+        "--delete-buffer-after-seal"
+      ],
+      "validation_recipe": "Run smoke sealer on SMOKE patch id and verify EVIDENCE_PACK.zip + manifest + SHA256SUMS."
+    }
+  ]
+}

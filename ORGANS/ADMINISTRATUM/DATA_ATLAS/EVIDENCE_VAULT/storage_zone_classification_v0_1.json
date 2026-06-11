@@ -1,0 +1,69 @@
+{
+  "classification_id": "data_atlas.storage_zones.v0_1",
+  "status": "ACTIVE_DRAFT",
+  "zones": [
+    {
+      "zone": "SOURCE_REPO",
+      "allowed": [
+        "source",
+        "docs",
+        "schemas",
+        "policies",
+        "small fixtures with lifecycle"
+      ],
+      "forbidden": [
+        "raw screenshots",
+        "playwright reports",
+        "runtime json",
+        "debug dumps",
+        "unsealed evidence",
+        "large transient archives"
+      ]
+    },
+    {
+      "zone": "EVIDENCE_VAULT_BUFFER",
+      "root_hint": "E:/IMPERIUM_EVIDENCE_VAULT/buffer/active",
+      "allowed": [
+        "temporary raw evidence during active patch run"
+      ],
+      "retention": "HOT_BUFFER until sealed"
+    },
+    {
+      "zone": "EVIDENCE_VAULT_PACKS",
+      "root_hint": "E:/IMPERIUM_EVIDENCE_VAULT/packs",
+      "allowed": [
+        "sealed evidence packs",
+        "manifest",
+        "summary",
+        "sha256"
+      ],
+      "retention": "by manifest"
+    },
+    {
+      "zone": "EVIDENCE_VAULT_QUARANTINE",
+      "root_hint": "E:/IMPERIUM_EVIDENCE_VAULT/quarantine",
+      "allowed": [
+        "owner-reviewed TTL expired or dirty data pending purge"
+      ],
+      "retention": "separate purge gate"
+    },
+    {
+      "zone": "LOCAL_HANDOFF",
+      "root_hint": "E:/_LOCAL_HANDOFF",
+      "allowed": [
+        "manual patch exchange",
+        "short-lived import/export",
+        "operator handoff"
+      ],
+      "retention": "not canonical archive"
+    },
+    {
+      "zone": "RUNTIME_PROTECTED",
+      "allowed": [
+        "current registries",
+        "state needed for running system"
+      ],
+      "retention": "protected, not TTL garbage"
+    }
+  ]
+}

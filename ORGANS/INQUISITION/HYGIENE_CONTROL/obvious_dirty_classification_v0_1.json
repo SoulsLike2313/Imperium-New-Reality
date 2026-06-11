@@ -1,0 +1,58 @@
+{
+  "classification_id": "inquisition.obvious_dirty_classification.v0_1",
+  "version": "0.1.0",
+  "classes": [
+    {
+      "class": "SOURCE_GENERATED_CACHE",
+      "severity": "WARNING",
+      "examples": [
+        "__pycache__",
+        "*.pyc",
+        ".pytest_cache"
+      ],
+      "source_action": "delete_only_if_untracked_and_owner_approved",
+      "local_action": "delete_or_quarantine_after_ttl"
+    },
+    {
+      "class": "SOURCE_RUNTIME_EVIDENCE_LEAK",
+      "severity": "CRITICAL",
+      "examples": [
+        "playwright-report",
+        "test-results",
+        "screenshots",
+        "SERVITOR_OUTPUTS"
+      ],
+      "source_action": "move_to_local_handoff_by_patch",
+      "local_action": "ttl_48_quarantine"
+    },
+    {
+      "class": "ARCHIVE_IN_SOURCE",
+      "severity": "WARNING",
+      "examples": [
+        "*.zip",
+        "*.7z",
+        "*.rar"
+      ],
+      "source_action": "classify_fixture_or_quarantine",
+      "local_action": "ttl_48_review"
+    },
+    {
+      "class": "UNREGISTERED_TOOL",
+      "severity": "WARNING",
+      "examples": [
+        "tool-like .py/.ps1/.js not in Mechanicus passports"
+      ],
+      "source_action": "create_passport_or_mark_legacy",
+      "local_action": "not_applicable"
+    },
+    {
+      "class": "UNKNOWN_ORGAN_FOLDER",
+      "severity": "CRITICAL",
+      "examples": [
+        "new folder under ORGANS not in approved organ list"
+      ],
+      "source_action": "block_until_classified",
+      "local_action": "not_applicable"
+    }
+  ]
+}

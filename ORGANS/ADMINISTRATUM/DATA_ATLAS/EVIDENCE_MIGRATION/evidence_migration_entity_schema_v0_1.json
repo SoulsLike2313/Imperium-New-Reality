@@ -1,0 +1,20 @@
+{
+  "schema": "imperium.data_atlas.evidence_migration_entity.v0_1",
+  "required": [
+    "path",
+    "storage_zone",
+    "risk_type",
+    "migration_lane",
+    "proposed_action"
+  ],
+  "properties": {
+    "path": "repo-relative source path",
+    "storage_zone": "SOURCE_REPO | EVIDENCE_VAULT | LOCAL_HANDOFF | QUARANTINE",
+    "risk_type": "SOURCE_EVIDENCE_LEAK | SOURCE_ARCHIVE_REVIEW | SOURCE_RUNTIME_CACHE",
+    "migration_lane": "PACK_TO_VAULT_CANDIDATE | OWNER_REVIEW_MOVE | OWNER_REVIEW_CLASSIFY | FIXTURE_ALLOWED_NEEDS_MANIFEST | SAFE_CACHE_DELETE | QUARANTINE_CANDIDATE | KEEP_SOURCE_REGISTER_FIXTURE",
+    "proposed_action": "owner-readable next action",
+    "vault_pack_group": "suggested evidence pack grouping",
+    "size_bytes": "integer",
+    "confidence": "LOW | MEDIUM | HIGH"
+  }
+}
