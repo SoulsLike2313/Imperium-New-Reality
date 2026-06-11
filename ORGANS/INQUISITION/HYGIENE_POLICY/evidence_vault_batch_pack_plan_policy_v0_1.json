@@ -1,0 +1,23 @@
+{
+  "schema": "imperium.inquisition.policy.v0_1",
+  "policy_id": "inquisition.evidence_vault_batch_pack_plan_policy.v0_1",
+  "mode": "read_only_plan",
+  "allowed_actions": [
+    "read_repo_files",
+    "read_batch_preview",
+    "write_plan_to_external_out_root",
+    "write_visual_proof"
+  ],
+  "forbidden_actions": [
+    "copy_to_vault",
+    "delete_source",
+    "move_source",
+    "git_rm",
+    "rewrite_source"
+  ],
+  "owner_gate_required_for_next_step": true,
+  "lanes": {
+    "PACK_TO_VAULT_CANDIDATE": "Can be planned for Evidence Vault copy/pack after owner approval.",
+    "SOURCE_DELETE": "Out of scope and blocked."
+  }
+}
