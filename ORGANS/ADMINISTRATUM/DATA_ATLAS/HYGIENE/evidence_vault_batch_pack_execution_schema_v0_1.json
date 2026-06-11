@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.evidence_vault_batch_pack_execution.v0_1",
+  "type": "object",
+  "required": ["schema", "status", "pack_zip_sha256", "packed_total", "source_delete_performed", "source_move_performed"],
+  "properties": {
+    "schema": {"const": "imperium.evidence_vault_batch_pack_execution.v0_1"},
+    "status": {"type": "string"},
+    "packed_total": {"type": "integer", "minimum": 0},
+    "missing_total": {"type": "integer", "minimum": 0},
+    "sha256_mismatch_total": {"type": "integer", "minimum": 0},
+    "pack_zip_sha256": {"type": "string"},
+    "source_delete_performed": {"const": false},
+    "source_move_performed": {"const": false},
+    "source_rewrite_performed": {"const": false}
+  }
+}

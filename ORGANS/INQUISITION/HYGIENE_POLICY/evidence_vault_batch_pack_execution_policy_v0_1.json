@@ -1,0 +1,24 @@
+{
+  "schema": "imperium.evidence_vault_batch_pack_execution_policy.v0_1",
+  "surface": "INQUISITION_EVIDENCE_VAULT_BATCH_PACK_EXECUTION_POLICY_V0_1",
+  "version": "0.1.0",
+  "status": "ACTIVE_OWNER_GATE_REQUIRED",
+  "batch_id": "BATCH_001_REPORTS_LEGACY_PACK_TO_VAULT",
+  "allowed_actions": [
+    "read source files",
+    "compute sha256",
+    "copy into Evidence Vault pack zip",
+    "write Vault manifest/index/receipt/proof",
+    "write external handoff proof"
+  ],
+  "forbidden_actions": [
+    "delete source",
+    "move source",
+    "rewrite source",
+    "rewrite git history",
+    "write runtime outputs under source repo",
+    "push to main/origin"
+  ],
+  "required_owner_token": "APPROVE_EVIDENCE_VAULT_BATCH_001_COPY_PACK_NO_SOURCE_DELETE",
+  "next_gate": "After successful pack execution, verify sealed receipt and register Data Atlas pack. Source cleanup remains a later proposal only."
+}
