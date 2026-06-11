@@ -1,0 +1,29 @@
+{
+  "schema": "imperium.tool_passport_registry.v0_1",
+  "version": "0.1.0",
+  "passports": [
+    {
+      "tool_id": "mechanicus.patch_visual_proof.bilingual_roadmap.v0_1",
+      "tool_path": "ORGANS/MECHANICUS/VISUAL_PROOF/imperium_patch_visual_proof_v0_1.py",
+      "owner_organ": "MECHANICUS",
+      "supporting_organs": ["ADMINISTRATUM", "INQUISITION", "DOCTRINARIUM"],
+      "capability": "Build bilingual Trinity Plus visual proof with roadmap progress, terminal/markdown/html/machine outputs, and optional Rich terminal rendering.",
+      "write_scope": "Explicit --out-root only; no source mutation.",
+      "reads": ["repo hygiene classification report JSON"],
+      "writes": [
+        "TRINITY_PLUS_VISUAL_PROOF_TERMINAL_BILINGUAL.txt",
+        "TRINITY_PLUS_VISUAL_PROOF_RU.md",
+        "TRINITY_PLUS_VISUAL_PROOF_EN.md",
+        "TRINITY_PLUS_VISUAL_PROOF_BILINGUAL.md",
+        "TRINITY_PLUS_VISUAL_PROOF_DASHBOARD.html",
+        "TRINITY_PLUS_VISUAL_PROOF_MACHINE.json"
+      ],
+      "safety": [
+        "read-only with respect to source repository",
+        "plain fallback required when Rich is absent",
+        "progress is operator indicator, not cleanup authorization"
+      ],
+      "validation": "py_compile plus smoke generation from repo hygiene classification report."
+    }
+  ]
+}
