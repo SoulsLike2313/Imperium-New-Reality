@@ -1,0 +1,25 @@
+{
+  "schema": "imperium.tool_passport.v0_1",
+  "tools": [
+    {
+      "tool_id": "mechanicus.imperium_intelligence_pack_builder",
+      "name": "Imperium Intelligence Pack Builder",
+      "owner_organ": "MECHANICUS",
+      "language": "python",
+      "path": "ORGANS/MECHANICUS/INTELLIGENCE_PACK/imperium_intelligence_pack_builder_v0_1.py",
+      "purpose_ru": "Собирает лёгкий handoff pack: manifest, indexes, graph edges, SQLite index и selected source slices вместо crude repo dump.",
+      "purpose_en": "Builds lightweight handoff pack with manifest, indexes, graph edges, SQLite index, and selected source slices instead of crude repo dump.",
+      "write_scope": ["external_out_root"],
+      "repo_write_default": false,
+      "outputs": [
+        "IMPERIUM_INTELLIGENCE_PACK_*.zip",
+        "MANIFEST.json",
+        "TREE_INDEX.jsonl",
+        "DEPENDENCY_EDGES.jsonl",
+        "ATLAS_INDEX.sqlite",
+        "PATCH_TARGET_SLICES"
+      ],
+      "validation_recipe": "python -m py_compile; build smoke pack; run Inquisition intelligence pack hygiene gate."
+    }
+  ]
+}

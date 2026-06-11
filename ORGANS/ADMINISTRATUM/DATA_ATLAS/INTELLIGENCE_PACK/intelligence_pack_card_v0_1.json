@@ -1,0 +1,32 @@
+{
+  "schema": "imperium.data_atlas.card.v0_1",
+  "card_id": "data_atlas.intelligence_pack.v0_1",
+  "title": "Imperium Intelligence Pack",
+  "owner_organ": "ADMINISTRATUM",
+  "visible_entity": "lightweight_handoff_pack",
+  "health_states": [
+    "PASS_INTELLIGENCE_PACK_BUILT",
+    "PASS_INTELLIGENCE_PACK_HYGIENE",
+    "FAIL_INTELLIGENCE_PACK_HYGIENE"
+  ],
+  "required_artifacts": [
+    "MANIFEST.json",
+    "GIT_TRUTH.json",
+    "TREE_INDEX.jsonl",
+    "FILE_KIND_COUNTS.json",
+    "ORGAN_MAP.json",
+    "TOOL_PASSPORT_INDEX.json",
+    "DEPENDENCY_EDGES.jsonl",
+    "SOURCE_SLICE_MANIFEST.json",
+    "ATLAS_INDEX.sqlite",
+    "OWNER_SUMMARY_RU.md"
+  ],
+  "forbidden_defaults": [
+    "crude_repo_dump",
+    "raw_evidence",
+    "runtime_cache",
+    "local_patch_backups",
+    "smoke_vaults",
+    "nested_archives_without_fixture_manifest"
+  ]
+}
