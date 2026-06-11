@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Mechanicus: Imperium Intelligence Pack Builder v0.1.0
+Mechanicus: Imperium Intelligence Pack Builder v0.1.2
 
 Builds a lightweight, machine-readable repo intelligence pack instead of a crude
-codebase dump. Default output is external to the source repo. The pack contains
-manifest, git truth, tree index, organ map, file-kind counts, dependency edges,
-tool passport index, SQL-ready SQLite index, owner summary, and selected source
-slices.
+codebase dump. v0.1.2 adds a non-self-referential receipt contract: the ZIP
+contains manifest/index/edges/slices, while final ZIP SHA256 and closure proof
+live in sidecar receipt files next to the ZIP.
 """
 from __future__ import annotations
 
@@ -25,7 +24,7 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
 SURFACE = "MECHANICUS_IMPERIUM_INTELLIGENCE_PACK_BUILDER_V0_1"
-VERSION = "0.1.1"
+VERSION = "0.1.2"
 
 TEXT_EXTS = {
     ".py", ".ps1", ".md", ".txt", ".json", ".jsonl", ".yaml", ".yml",
@@ -104,22 +103,6 @@ def git_truth(repo: Path) -> Dict[str, object]:
     return fields
 
 
-def list_repo_files(repo: Path) -> List[str]:
-    code, out, _ = run_git(repo, ["ls-files"])
-    files: List[str] = []
-    if code == 0 and out.strip():
-        files = [norm_rel(x) for x in out.splitlines() if x.strip()]
-    else:
-        for root, dirs, names in os.walk(repo):
-            root_p = Path(root)
-            rel_root = norm_rel(str(root_p.relative_to(repo))) if root_p != repo else ""
-            dirs[:] = [d for d in dirs if d not in FORBIDDEN_PARTS and d != ".git"]
-            for name in names:
-                rel = norm_rel(str((root_p / name).relative_to(repo)))
-                files.append(rel)
-    return sorted(set(f for f in files if not is_forbidden_repo_path(f)))
-
-
 def is_forbidden_repo_path(rel: str) -> bool:
     rel = norm_rel(rel)
     for prefix in ROOT_LOCAL_PREFIXES:
@@ -134,9 +117,24 @@ def is_forbidden_repo_path(rel: str) -> bool:
     return False
 
 
-def sha256_file(path: Path, max_bytes: int = 2_000_000) -> Optional[str]:
+def list_repo_files(repo: Path) -> List[str]:
+    code, out, _ = run_git(repo, ["ls-files"])
+    files: List[str] = []
+    if code == 0 and out.strip():
+        files = [norm_rel(x) for x in out.splitlines() if x.strip()]
+    else:
+        for root, dirs, names in os.walk(repo):
+            root_p = Path(root)
+            dirs[:] = [d for d in dirs if d not in FORBIDDEN_PARTS and d != ".git"]
+            for name in names:
+                rel = norm_rel(str((root_p / name).relative_to(repo)))
+                files.append(rel)
+    return sorted(set(f for f in files if not is_forbidden_repo_path(f)))
+
+
+def sha256_file(path: Path, max_bytes: Optional[int] = 2_000_000) -> Optional[str]:
     try:
-        if path.stat().st_size > max_bytes:
+        if max_bytes is not None and path.stat().st_size > max_bytes:
             return None
         h = hashlib.sha256()
         with path.open("rb") as f:
@@ -145,6 +143,13 @@ def sha256_file(path: Path, max_bytes: int = 2_000_000) -> Optional[str]:
         return h.hexdigest()
     except Exception:
         return None
+
+
+def sha256_file_required(path: Path) -> str:
+    digest = sha256_file(path, max_bytes=None)
+    if not digest:
+        raise RuntimeError(f"Unable to hash required artifact: {path}")
+    return digest
 
 
 def classify_ext(ext: str) -> str:
@@ -356,19 +361,15 @@ def copy_slices(repo: Path, files: List[str], dest: Path, max_file_bytes: int, m
 def zip_dir(src_dir: Path, zip_path: Path) -> str:
     if zip_path.exists():
         zip_path.unlink()
-    h = hashlib.sha256()
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
         for p in sorted(src_dir.rglob("*")):
             if p.is_file():
                 arc = p.relative_to(src_dir).as_posix()
                 zf.write(p, arc)
-    with zip_path.open("rb") as f:
-        for chunk in iter(lambda: f.read(65536), b""):
-            h.update(chunk)
-    return h.hexdigest()
+    return sha256_file_required(zip_path)
 
 
-def owner_summary(manifest, kind_counts, organ_map, slices, zip_path: Path) -> str:
+def owner_summary(manifest, kind_counts, organ_map, slices, zip_name: str, receipt: Optional[Dict[str, object]] = None) -> str:
     lines = [
         f"# Imperium Intelligence Pack — {manifest['patch_id']}",
         "",
@@ -379,10 +380,16 @@ def owner_summary(manifest, kind_counts, organ_map, slices, zip_path: Path) -> s
         f"- Source slices included: {len(slices)}",
         f"- SQLite index: {manifest['sqlite_index']}",
         f"- Dependency edges: {manifest['dependency_edges_total']}",
-        f"- ZIP: {zip_path.name}",
-        "",
-        "## Файловые классы",
+        f"- ZIP: {zip_name}",
     ]
+    if receipt:
+        artifact = receipt.get("artifact", {}) if isinstance(receipt, dict) else {}
+        lines += [
+            f"- Final ZIP SHA256: {artifact.get('sha256')}",
+            f"- Final ZIP bytes: {artifact.get('size_bytes')}",
+            "- Digest contract: final ZIP hash lives in sidecar receipt, not inside the ZIP manifest.",
+        ]
+    lines += ["", "## Файловые классы"]
     for k, v in sorted(kind_counts.items()):
         lines.append(f"- {k}: {v}")
     lines += ["", "## Органы"]
@@ -392,8 +399,19 @@ def owner_summary(manifest, kind_counts, organ_map, slices, zip_path: Path) -> s
         "",
         "## Правило",
         "Default handoff теперь должен быть manifest/index/edges/slices, а не полный dump репозитория.",
+        "Final ZIP SHA256 не хранится внутри ZIP manifest; он хранится в sidecar receipt рядом с ZIP.",
     ]
     return "\n".join(lines) + "\n"
+
+
+def sidecar_paths(out_root: Path, pack_id: str) -> Dict[str, Path]:
+    base = out_root / pack_id
+    return {
+        "manifest": base.with_suffix(".INTELLIGENCE_PACK_MANIFEST.json"),
+        "sha256sums": base.with_suffix(".FINAL_SHA256SUMS.txt"),
+        "machine_receipt": base.with_suffix(".MACHINE_RECEIPT.json"),
+        "owner_summary": base.with_suffix(".OWNER_SUMMARY_RU.md"),
+    }
 
 
 def build(args: argparse.Namespace) -> Dict[str, object]:
@@ -432,6 +450,18 @@ def build(args: argparse.Namespace) -> Dict[str, object]:
         "sqlite_index": "ATLAS_INDEX.sqlite",
         "default_handoff_law": "manifest/index/edges/slices; no crude full repo dump by default",
         "forbidden_defaults": ["repo_dump", "raw_evidence", "runtime_cache", "local_patch_backups", "smoke_vaults", "nested_archives_without_fixture_manifest"],
+        "digest_contract": {
+            "contract_id": "mechanicus.intelligence_pack.final_digest_contract.v0_8_9_4",
+            "final_zip_sha256_location": "sidecar:FINAL_SHA256SUMS.txt and sidecar:MACHINE_RECEIPT.json",
+            "self_referential_pack_hash_inside_zip_manifest": False,
+            "reason": "A final ZIP hash cannot be stable when stored inside the ZIP that it hashes.",
+        },
+        "sidecar_contract": {
+            "manifest": "<pack_id>.INTELLIGENCE_PACK_MANIFEST.json",
+            "sha256sums": "<pack_id>.FINAL_SHA256SUMS.txt",
+            "machine_receipt": "<pack_id>.MACHINE_RECEIPT.json",
+            "owner_summary": "<pack_id>.OWNER_SUMMARY_RU.md",
+        },
     }
 
     write_json(staging / "MANIFEST.json", manifest)
@@ -447,15 +477,49 @@ def build(args: argparse.Namespace) -> Dict[str, object]:
     write_sqlite(staging / "ATLAS_INDEX.sqlite", indexes["tree_rows"], indexes["edges"], indexes["tool_passports"], manifest)
 
     zip_path = out_root / f"{pack_id}.zip"
-    summary = owner_summary(manifest, indexes["kind_counts"], indexes["organ_map"], slices, zip_path)
-    (staging / "OWNER_SUMMARY_RU.md").write_text(summary, encoding="utf-8", newline="\n")
+    (staging / "OWNER_SUMMARY_RU.md").write_text(owner_summary(manifest, indexes["kind_counts"], indexes["organ_map"], slices, zip_path.name), encoding="utf-8", newline="\n")
+    embedded_manifest_sha256 = sha256_file_required(staging / "MANIFEST.json")
     pack_sha = zip_dir(staging, zip_path)
-    manifest["pack_zip"] = str(zip_path)
-    manifest["pack_sha256"] = pack_sha
-    manifest["pack_size_bytes"] = zip_path.stat().st_size
-    write_json(staging / "MANIFEST.json", manifest)
-    (staging / "OWNER_SUMMARY_RU.md").write_text(owner_summary(manifest, indexes["kind_counts"], indexes["organ_map"], slices, zip_path), encoding="utf-8", newline="\n")
-    pack_sha = zip_dir(staging, zip_path)
+    pack_size = zip_path.stat().st_size
+
+    paths = sidecar_paths(out_root, pack_id)
+    final_manifest = dict(manifest)
+    final_manifest.update({
+        "pack_zip": str(zip_path),
+        "pack_sha256": pack_sha,
+        "pack_size_bytes": pack_size,
+        "embedded_manifest_sha256": embedded_manifest_sha256,
+        "receipt_sidecars": {k: str(v) for k, v in paths.items()},
+    })
+    receipt = {
+        "status": "PASS_INTELLIGENCE_PACK_RECEIPT_WRITTEN",
+        "surface": SURFACE,
+        "version": VERSION,
+        "generated_at_utc": utc_now(),
+        "contract_id": "mechanicus.intelligence_pack.final_digest_contract.v0_8_9_4",
+        "artifact": {
+            "path": str(zip_path),
+            "filename": zip_path.name,
+            "sha256": pack_sha,
+            "size_bytes": pack_size,
+        },
+        "embedded_manifest": {
+            "path_in_zip": "MANIFEST.json",
+            "sha256": embedded_manifest_sha256,
+            "contains_final_zip_sha256": False,
+        },
+        "sidecars": {k: str(v) for k, v in paths.items()},
+        "verification_recipe": [
+            "Compute SHA256 over the final ZIP bytes.",
+            "Compare it with FINAL_SHA256SUMS.txt, MACHINE_RECEIPT.json and INTELLIGENCE_PACK_MANIFEST.json.",
+            "Do not require MANIFEST.json inside the ZIP to contain the final ZIP hash.",
+        ],
+    }
+
+    write_json(paths["manifest"], final_manifest)
+    write_json(paths["machine_receipt"], receipt)
+    paths["sha256sums"].write_text(f"{pack_sha}  {zip_path.name}\n", encoding="utf-8", newline="\n")
+    paths["owner_summary"].write_text(owner_summary(final_manifest, indexes["kind_counts"], indexes["organ_map"], slices, zip_path.name, receipt), encoding="utf-8", newline="\n")
 
     report = {
         "status": "PASS_INTELLIGENCE_PACK_BUILT",
@@ -465,16 +529,17 @@ def build(args: argparse.Namespace) -> Dict[str, object]:
         "pack_dir": str(staging),
         "pack_zip": str(zip_path),
         "pack_sha256": pack_sha,
-        "pack_size_bytes": zip_path.stat().st_size,
-        "manifest": manifest,
-        "recommended_next_action_ru": "Run Inquisition intelligence pack hygiene gate on pack_zip, then upload this lightweight pack instead of crude repo dump.",
+        "pack_size_bytes": pack_size,
+        "sidecars": {k: str(v) for k, v in paths.items()},
+        "manifest": final_manifest,
+        "recommended_next_action_ru": "Run Inquisition intelligence pack hygiene gate and receipt gate on pack_zip, then upload ZIP plus receipt sidecars instead of crude repo dump.",
     }
     write_json(out_root / "LATEST_INTELLIGENCE_PACK_REPORT.json", report)
     return report
 
 
 def main(argv: Optional[List[str]] = None) -> int:
-    ap = argparse.ArgumentParser(description="Build Imperium Intelligence Pack v0.1")
+    ap = argparse.ArgumentParser(description="Build Imperium Intelligence Pack v0.1.2")
     ap.add_argument("--repo", required=True, help="Path to Imperium repo")
     ap.add_argument("--out-root", required=True, help="External output root for pack")
     ap.add_argument("--patch-id", default="INTELLIGENCE-PACK-V0_1")

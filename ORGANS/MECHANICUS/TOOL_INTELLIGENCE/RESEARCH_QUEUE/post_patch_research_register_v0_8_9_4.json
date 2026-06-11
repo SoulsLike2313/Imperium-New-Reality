@@ -1,0 +1,28 @@
+{
+  "schema": "imperium.post_patch_research_register.v0_1",
+  "patch_id": "v0.8.9.4",
+  "topic": "Intelligence Pack Receipt / Final Digest Contract",
+  "references": [
+    {
+      "name": "SQLite As An Application File Format",
+      "url": "https://sqlite.org/appfileformat.html",
+      "adopted_as": "local portable queryable pack index inspiration"
+    },
+    {
+      "name": "SLSA Provenance",
+      "url": "https://slsa.dev/spec/v1.0/provenance",
+      "adopted_as": "artifact receipt/provenance inspiration, not full SLSA compliance yet"
+    },
+    {
+      "name": "W3C Verifiable Credential Data Integrity",
+      "url": "https://www.w3.org/TR/vc-data-integrity/",
+      "adopted_as": "future structured document integrity/proof direction"
+    }
+  ],
+  "mechanicus_registration_candidates": [
+    "intelligence_pack_receipt_gate",
+    "artifact_attestation_writer_future",
+    "sidecar_manifest_indexer"
+  ],
+  "decision": "Admit v0.8.9.4 receipt sidecars now; defer signatures/attestations until pack contract is stable."
+}

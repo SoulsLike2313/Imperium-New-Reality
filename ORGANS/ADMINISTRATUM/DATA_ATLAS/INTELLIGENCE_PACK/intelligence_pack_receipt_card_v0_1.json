@@ -1,0 +1,25 @@
+{
+  "schema": "imperium.data_atlas.card.v0_1",
+  "card_id": "data_atlas.intelligence_pack_receipt_contract.v0_1",
+  "title_ru": "Intelligence Pack Receipt Contract",
+  "owner_organ": "ADMINISTRATUM",
+  "watched_artifacts": [
+    "<pack_id>.zip",
+    "<pack_id>.INTELLIGENCE_PACK_MANIFEST.json",
+    "<pack_id>.FINAL_SHA256SUMS.txt",
+    "<pack_id>.MACHINE_RECEIPT.json",
+    "<pack_id>.OWNER_SUMMARY_RU.md"
+  ],
+  "health_fields": [
+    "zip_exists",
+    "final_sha256sums_exists",
+    "machine_receipt_exists",
+    "sidecar_manifest_exists",
+    "owner_summary_exists",
+    "actual_zip_sha256_matches_receipt",
+    "embedded_manifest_has_no_final_zip_sha256",
+    "embedded_manifest_digest_matches_sidecar"
+  ],
+  "blocking_gate": "INQUISITION_INTELLIGENCE_PACK_RECEIPT_GATE_V0_1",
+  "owner_rule_ru": "ZIP handoff должен идти вместе с sidecar receipt; final ZIP SHA256 не хранится внутри ZIP manifest."
+}

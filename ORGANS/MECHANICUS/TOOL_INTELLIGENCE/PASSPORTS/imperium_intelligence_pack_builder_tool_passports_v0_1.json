@@ -1,25 +1,29 @@
 {
-  "schema": "imperium.tool_passport.v0_1",
+  "schema": "imperium.tool_passports.v0_1",
   "tools": [
     {
       "tool_id": "mechanicus.imperium_intelligence_pack_builder",
       "name": "Imperium Intelligence Pack Builder",
       "owner_organ": "MECHANICUS",
-      "language": "python",
       "path": "ORGANS/MECHANICUS/INTELLIGENCE_PACK/imperium_intelligence_pack_builder_v0_1.py",
-      "purpose_ru": "Собирает лёгкий handoff pack: manifest, indexes, graph edges, SQLite index и selected source slices вместо crude repo dump.",
-      "purpose_en": "Builds lightweight handoff pack with manifest, indexes, graph edges, SQLite index, and selected source slices instead of crude repo dump.",
-      "write_scope": ["external_out_root"],
-      "repo_write_default": false,
-      "outputs": [
-        "IMPERIUM_INTELLIGENCE_PACK_*.zip",
-        "MANIFEST.json",
-        "TREE_INDEX.jsonl",
-        "DEPENDENCY_EDGES.jsonl",
-        "ATLAS_INDEX.sqlite",
-        "PATCH_TARGET_SLICES"
+      "language": "python",
+      "version": "0.1.2",
+      "purpose_ru": "Собирает лёгкий handoff pack: manifest, indexes, SQLite, graph edges, source slices и sidecar receipt.",
+      "purpose_en": "Builds a lightweight handoff pack with manifest, indexes, SQLite, graph edges, source slices and sidecar receipt.",
+      "writes": [
+        "external_out_root/<pack_id>.zip",
+        "external_out_root/<pack_id>.INTELLIGENCE_PACK_MANIFEST.json",
+        "external_out_root/<pack_id>.FINAL_SHA256SUMS.txt",
+        "external_out_root/<pack_id>.MACHINE_RECEIPT.json",
+        "external_out_root/<pack_id>.OWNER_SUMMARY_RU.md",
+        "external_out_root/LATEST_INTELLIGENCE_PACK_REPORT.json"
       ],
-      "validation_recipe": "python -m py_compile; build smoke pack; run Inquisition intelligence pack hygiene gate."
+      "write_scope": [
+        "external_out_root only"
+      ],
+      "destructive_default": false,
+      "validation_recipe": "Run builder, Inquisition hygiene gate, and Inquisition receipt gate. Verify final ZIP SHA256 matches sidecars.",
+      "receipt_contract": "mechanicus.intelligence_pack.final_digest_contract.v0_8_9_4"
     }
   ]
 }
