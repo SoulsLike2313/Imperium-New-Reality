@@ -30,7 +30,7 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
 SURFACE = "INQUISITION_EVIDENCE_VAULT_BATCH_PACK_PLAN_V0_1"
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 SCHEMA = "imperium.evidence_vault_batch_pack_plan.v0_1"
 DEFAULT_BATCH_ID = "BATCH_001_REPORTS_LEGACY_PACK_TO_VAULT_PLAN"
 
@@ -231,10 +231,54 @@ def human_bytes(n: int) -> str:
     return f"{n} B"
 
 
+
+
+def resolve_repo_files_total(preview: Dict[str, Any], repo: Path) -> int:
+    """Return a stable denominator for repo-share percentages.
+
+    Batch preview v0.9.2 stores repo total as classification_files_total, while
+    older/alternative reports may expose repo_files_total or files_total.  The
+    previous v0.9.3 planner only checked repo_files_total/files_total, which
+    collapsed to 1 when consuming the real v0.9.2 preview and rendered
+    200400.0% instead of 22.4% in the owner dashboard.
+    """
+    for key in (
+        "repo_files_total",
+        "files_total",
+        "classification_files_total",
+        "source_files_total",
+        "repo_total",
+    ):
+        value = preview.get(key)
+        try:
+            n = int(value or 0)
+        except Exception:
+            n = 0
+        if n > 0:
+            return n
+    try:
+        out = subprocess.check_output(["git", "-C", str(repo), "ls-files"], text=True, errors="replace")
+        n = len([line for line in out.splitlines() if line.strip()])
+        if n > 0:
+            return n
+    except Exception:
+        pass
+    return 0
+
+
+def ratio_percent(numerator: int, denominator: int) -> Tuple[float, float]:
+    denominator = int(denominator or 0)
+    if denominator <= 0:
+        return 0.0, 0.0
+    ratio = max(0.0, min(1.0, float(numerator or 0) / float(denominator)))
+    return ratio, ratio * 100.0
+
 def build_terminal(plan: Dict[str, Any], rows: List[Dict[str, Any]]) -> str:
-    total_repo = max(1, int(plan.get("repo_files_total", 0) or 0))
+    total_repo = int(plan.get("repo_files_total", 0) or 0)
     selected = int(plan.get("planned_candidates_total", 0) or 0)
-    pct = selected / total_repo
+    pct = float(plan.get("repo_share_ratio", 0.0) or 0.0)
+    if not pct:
+        pct, _ = ratio_percent(selected, total_repo)
     lines = []
     lines.append("=" * 78)
     lines.append("IMPERIUM TRINITY PLUS — EVIDENCE VAULT BATCH 001 PACK PLAN")
@@ -280,8 +324,10 @@ def html_bar(pct: float) -> str:
 
 def build_dashboard(plan: Dict[str, Any], rows: List[Dict[str, Any]], path: Path) -> None:
     selected = int(plan.get("planned_candidates_total", 0) or 0)
-    repo_total = max(1, int(plan.get("repo_files_total", 0) or 0))
-    repo_share = selected / repo_total * 100
+    repo_total = int(plan.get("repo_files_total", 0) or 0)
+    repo_share = float(plan.get("repo_share_percent", 0.0) or 0.0)
+    if not repo_share:
+        _, repo_share = ratio_percent(selected, repo_total)
     top = top_dirs(rows)[:25]
     sample = rows[:75]
     css = """
@@ -432,6 +478,9 @@ def build(args: argparse.Namespace) -> Dict[str, Any]:
     now = datetime.now(timezone.utc)
     vault_pack_root_preview = str(Path(args.vault_root) / "packs" / f"{now.year:04d}" / f"{now.month:02d}" / args.batch_id)
     head = git_head(repo)
+    repo_files_total = resolve_repo_files_total(preview, repo)
+    repo_share_ratio, repo_share_percent = ratio_percent(len(planned_rows), repo_files_total)
+
     plan = {
         "schema": SCHEMA,
         "surface": SURFACE,
@@ -445,7 +494,10 @@ def build(args: argparse.Namespace) -> Dict[str, Any]:
         "patch_id": args.patch_id,
         "batch_id": args.batch_id,
         "mode": "read_only_pack_plan_no_copy_no_delete",
-        "repo_files_total": int(preview.get("repo_files_total") or preview.get("files_total") or 0),
+        "repo_files_total": repo_files_total,
+        "repo_share_ratio": repo_share_ratio,
+        "repo_share_percent": repo_share_percent,
+        "repo_share_percent_display": f"{repo_share_percent:.1f}%",
         "candidate_pool_total": pool_total,
         "planned_candidates_total": len(planned_rows),
         "rejected_candidates_total": len(rejected),
