@@ -1,0 +1,36 @@
+{
+  "schema_id": "imperium.tool_passport.v0_2",
+  "tool_id": "passport_migrator",
+  "name": "Passport Migrator",
+  "version": "v0_2",
+  "owner_organ": "MECHANICUS",
+  "lang": "python",
+  "build_system": "stdlib",
+  "validators": [
+    {
+      "name": "syntax",
+      "exec": "python -m py_compile {repo}/ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORT_MIGRATOR/passport_migrator_v0_2.py",
+      "timeout_seconds": 10
+    },
+    {
+      "name": "self_test",
+      "exec": "python {repo}/ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORT_MIGRATOR/passport_migrator_v0_2.py --self-test",
+      "timeout_seconds": 15
+    },
+    {
+      "name": "dry_run",
+      "exec": "python {repo}/ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORT_MIGRATOR/passport_migrator_v0_2.py --repo {repo} --dry-run --quiet",
+      "timeout_seconds": 30
+    }
+  ],
+  "observability": {
+    "stdout": "rich",
+    "metrics": ["elapsed_ms", "total", "planned", "applied", "manual_migration_needed", "skipped_not_a_tool_passport", "skipped_meta_schema", "parse_error"]
+  },
+  "exec_mode": "static",
+  "owner_gated": true,
+  "capability_tags": ["migrator", "mechanicus", "refactor", "passport", "classifier"],
+  "depends_on": ["passport_index_builder"],
+  "doctrine_ref": "ORGANS/DOCTRINARIUM/LAWS/PASSPORT_MIGRATION_DOCTRINE_V0_1_RU.md",
+  "tool_path": "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORT_MIGRATOR/passport_migrator_v0_2.py"
+}
