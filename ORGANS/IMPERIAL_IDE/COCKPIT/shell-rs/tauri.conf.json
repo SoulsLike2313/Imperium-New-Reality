@@ -1,0 +1,32 @@
+{
+  "productName": "Imperial IDE Cockpit",
+  "version": "0.1.0",
+  "identifier": "imperium.imperial-ide.cockpit",
+  "build": {
+    "frontendDist": "../app-ts/dist",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "cd ../app-ts && pnpm dev",
+    "beforeBuildCommand": "cd ../app-ts && pnpm build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Imperial IDE Cockpit",
+        "width": 1400,
+        "height": 900,
+        "minWidth": 900,
+        "minHeight": 600,
+        "resizable": true,
+        "fullscreen": false,
+        "decorations": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {\n    "active": true,
+    "targets": "all",
+    "icon": []
+  }
+}

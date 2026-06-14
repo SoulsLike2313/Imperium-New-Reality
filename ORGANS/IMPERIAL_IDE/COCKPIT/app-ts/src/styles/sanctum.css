@@ -1,0 +1,86 @@
+/* ==================================================
+   IMPERIAL IDE COCKPIT :: SANCTUM DESIGN TOKENS
+   Единый источник истины для всех компонентов.
+   Не изменять без ведома Lord-Regent IMPERIAL_IDE.
+   ================================================== */
+
+:root {
+  /* -- Palette -- */
+  --bg:         #07050a;
+  --bg-surface: #0f0c14;
+  --bg-raised:  #161020;
+  --gold:       #d9bd70;
+  --gold-dim:   #8a7644;
+  --violet:     #8b5cf6;
+  --violet-dim: #4c2d99;
+  --pass:       #7fd2a4;
+  --fail:       #e58388;
+  --warn:       #f5c842;
+  --muted:      #4a4560;
+  --fg:         #e8e4f0;
+  --fg-dim:     #9a94a8;
+
+  /* -- Shape -- */
+  --radius:     14px;
+  --radius-sm:  8px;
+  --radius-lg:  20px;
+
+  /* -- Spacing -- */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-12: 48px;
+
+  /* -- Typography -- */
+  --font-sans:  "Inter", system-ui, sans-serif;
+  --font-serif: "Georgia", serif;
+  --font-mono:  "JetBrains Mono", "Fira Code", monospace;
+
+  --text-xs:   11px;
+  --text-sm:   13px;
+  --text-base: 15px;
+  --text-lg:   18px;
+  --text-xl:   22px;
+  --text-2xl:  28px;
+
+  /* -- Borders -- */
+  --border:       1px solid rgba(217, 189, 112, 0.15);
+  --border-focus: 1px solid var(--gold);
+  --border-pass:  1px solid rgba(127, 210, 164, 0.4);
+  --border-fail:  1px solid rgba(229, 131, 136, 0.4);
+
+  /* -- Shadows -- */
+  --shadow-panel: 0 4px 24px rgba(0, 0, 0, 0.6);
+  --shadow-popup: 0 8px 48px rgba(0, 0, 0, 0.8);
+
+  /* -- Transitions -- */
+  --transition: 150ms ease;
+}
+
+/* Reset + base */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color:      var(--fg);
+  font-family: var(--font-sans);
+  font-size:  var(--text-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+code, pre, kbd { font-family: var(--font-mono); }
+
+a { color: var(--gold); text-decoration: none; }
+a:hover { color: var(--fg); }
+
+::selection { background: var(--violet-dim); color: var(--fg); }
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-dim); }
