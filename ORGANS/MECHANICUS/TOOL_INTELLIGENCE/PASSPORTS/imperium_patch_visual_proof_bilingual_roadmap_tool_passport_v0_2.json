@@ -1,0 +1,64 @@
+{
+  "schema_id": "imperium.tool_passport.v0_2",
+  "tool_id": "imperium_patch_visual_proof_bilingual_roadmap",
+  "name": "Imperium Patch Visual Proof Bilingual Roadmap",
+  "version": "v0_2",
+  "owner_organ": "MECHANICUS",
+  "lang": "python",
+  "validators": [
+    {
+      "id": "syntax",
+      "type": "command",
+      "command": "python -m py_compile {tool_path}",
+      "timeout_seconds": 10
+    }
+  ],
+  "exec_mode": "static",
+  "owner_gated": true,
+  "_draft": true,
+  "_auto_registered_at": "2026-06-14T17:12:48Z",
+  "_auto_registrar_version": "v0_2",
+  "_confidence": {
+    "owner_organ": "from_path",
+    "lang": "fallback_default",
+    "validators": "auto_minimal",
+    "exec_mode": "fallback_default",
+    "owner_gated": "safe_default_true"
+  },
+  "_source_paths": [],
+  "_legacy_passport_path": "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORTS/imperium_patch_visual_proof_bilingual_roadmap_tool_passports_v0_1.json",
+  "_legacy_extras": {
+    "schema": "imperium.tool_passport_registry.v0_1",
+    "passports": [
+      {
+        "tool_id": "mechanicus.patch_visual_proof.bilingual_roadmap.v0_1",
+        "tool_path": "ORGANS/MECHANICUS/VISUAL_PROOF/imperium_patch_visual_proof_v0_1.py",
+        "owner_organ": "MECHANICUS",
+        "supporting_organs": [
+          "ADMINISTRATUM",
+          "INQUISITION",
+          "DOCTRINARIUM"
+        ],
+        "capability": "Build bilingual Trinity Plus visual proof with roadmap progress, terminal/markdown/html/machine outputs, and optional Rich terminal rendering.",
+        "write_scope": "Explicit --out-root only; no source mutation.",
+        "reads": [
+          "repo hygiene classification report JSON"
+        ],
+        "writes": [
+          "TRINITY_PLUS_VISUAL_PROOF_TERMINAL_BILINGUAL.txt",
+          "TRINITY_PLUS_VISUAL_PROOF_RU.md",
+          "TRINITY_PLUS_VISUAL_PROOF_EN.md",
+          "TRINITY_PLUS_VISUAL_PROOF_BILINGUAL.md",
+          "TRINITY_PLUS_VISUAL_PROOF_DASHBOARD.html",
+          "TRINITY_PLUS_VISUAL_PROOF_MACHINE.json"
+        ],
+        "safety": [
+          "read-only with respect to source repository",
+          "plain fallback required when Rich is absent",
+          "progress is operator indicator, not cleanup authorization"
+        ],
+        "validation": "py_compile plus smoke generation from repo hygiene classification report."
+      }
+    ]
+  }
+}

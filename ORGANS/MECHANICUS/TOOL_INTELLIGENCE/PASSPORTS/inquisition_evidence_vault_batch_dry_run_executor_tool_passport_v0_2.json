@@ -1,0 +1,60 @@
+{
+  "schema_id": "imperium.tool_passport.v0_2",
+  "tool_id": "inquisition_evidence_vault_batch_dry_run_executor",
+  "name": "Inquisition Evidence Vault Batch Dry Run Executor",
+  "version": "v0_2",
+  "owner_organ": "INQUISITION",
+  "lang": "python",
+  "validators": [
+    {
+      "id": "syntax",
+      "type": "command",
+      "command": "python -m py_compile {tool_path}",
+      "timeout_seconds": 10
+    },
+    {
+      "id": "help",
+      "type": "command",
+      "command": "python {tool_path} --help",
+      "timeout_seconds": 5
+    }
+  ],
+  "exec_mode": "static",
+  "owner_gated": false,
+  "_draft": false,
+  "_auto_registered_at": "2026-06-14T17:12:49Z",
+  "_auto_registrar_version": "v0_2",
+  "_confidence": {
+    "owner_organ": "preserved",
+    "lang": "from_source_ext",
+    "validators": "auto_built",
+    "exec_mode": "from_source_scan",
+    "owner_gated": "from_source_scan"
+  },
+  "_source_paths": [
+    "ORGANS/INQUISITION/REPORTING/inquisition_evidence_vault_batch_dry_run_executor_v0_1.py"
+  ],
+  "_legacy_passport_path": "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORTS/inquisition_evidence_vault_batch_dry_run_executor_tool_passports_v0_1.json",
+  "_legacy_extras": {
+    "schema": "imperium.tool_passport.v0_1",
+    "path": "ORGANS/INQUISITION/REPORTING/inquisition_evidence_vault_batch_dry_run_executor_v0_1.py",
+    "capability": "Read-only Evidence Vault batch execution rehearsal with source existence checks, SHA256 computation, staging preview and Trinity Plus visual proof.",
+    "writes_only_to": [
+      "explicit --out-root"
+    ],
+    "forbidden_actions": [
+      "source_delete",
+      "source_move",
+      "source_rewrite",
+      "vault_pack_creation",
+      "git_push"
+    ],
+    "validation_recipe": [
+      "python -m py_compile tool",
+      "run against a pack plan and file manifest",
+      "verify report, JSONL/CSV, SHA256SUMS, SQLite and dashboard outputs",
+      "verify no source mutation and no Vault pack creation"
+    ],
+    "trinity_plus": true
+  }
+}

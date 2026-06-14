@@ -1,0 +1,59 @@
+{
+  "schema_id": "imperium.tool_passport.v0_2",
+  "tool_id": "inquisition_evidence_vault_batch_receipt_verifier",
+  "name": "Inquisition Evidence Vault Batch Receipt Verifier",
+  "version": "v0_2",
+  "owner_organ": "INQUISITION",
+  "lang": "python",
+  "validators": [
+    {
+      "id": "syntax",
+      "type": "command",
+      "command": "python -m py_compile {tool_path}",
+      "timeout_seconds": 10
+    },
+    {
+      "id": "help",
+      "type": "command",
+      "command": "python {tool_path} --help",
+      "timeout_seconds": 5
+    }
+  ],
+  "exec_mode": "static",
+  "owner_gated": false,
+  "_draft": false,
+  "_auto_registered_at": "2026-06-14T17:12:50Z",
+  "_auto_registrar_version": "v0_2",
+  "_confidence": {
+    "owner_organ": "preserved",
+    "lang": "from_source_ext",
+    "validators": "auto_built",
+    "exec_mode": "from_source_scan",
+    "owner_gated": "from_source_scan"
+  },
+  "_source_paths": [
+    "ORGANS/INQUISITION/REPORTING/inquisition_evidence_vault_batch_receipt_verifier_v0_1.py"
+  ],
+  "_legacy_passport_path": "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORTS/inquisition_evidence_vault_batch_receipt_verifier_tool_passports_v0_1.json",
+  "_legacy_extras": {
+    "schema": "imperium.mechanicus.tool_passport.v0_1",
+    "tool": "inquisition_evidence_vault_batch_receipt_verifier_v0_1.py",
+    "supporting_organs": [
+      "ADMINISTRATUM",
+      "MECHANICUS"
+    ],
+    "capability": "Verify Evidence Vault Batch 001 receipt and emit Data Atlas registration artifact.",
+    "write_scope": "external out-root only",
+    "read_scope": [
+      "Evidence Vault pack folder",
+      "source repo git metadata"
+    ],
+    "forbidden_actions": [
+      "source delete",
+      "source move",
+      "source rewrite",
+      "Vault pack mutation"
+    ],
+    "validation_recipe": "Run SMOKE_COMMANDS.ps1 for synthetic pack, then VERIFY_COMMANDS.ps1 against real Vault pack. PASS requires sidecars/hash/zip/sqlite/counts."
+  }
+}

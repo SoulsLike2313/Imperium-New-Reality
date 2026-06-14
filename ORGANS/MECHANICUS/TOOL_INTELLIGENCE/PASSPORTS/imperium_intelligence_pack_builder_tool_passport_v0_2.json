@@ -1,0 +1,67 @@
+{
+  "schema_id": "imperium.tool_passport.v0_2",
+  "tool_id": "imperium_intelligence_pack_builder",
+  "name": "Imperium Intelligence Pack Builder",
+  "version": "v0_2",
+  "owner_organ": "MECHANICUS",
+  "lang": "python",
+  "validators": [
+    {
+      "id": "syntax",
+      "type": "command",
+      "command": "python -m py_compile {tool_path}",
+      "timeout_seconds": 10
+    },
+    {
+      "id": "help",
+      "type": "command",
+      "command": "python {tool_path} --help",
+      "timeout_seconds": 5
+    }
+  ],
+  "exec_mode": "static",
+  "owner_gated": true,
+  "_draft": false,
+  "_auto_registered_at": "2026-06-14T17:12:48Z",
+  "_auto_registrar_version": "v0_2",
+  "_confidence": {
+    "owner_organ": "from_path",
+    "lang": "from_source_ext",
+    "validators": "auto_built",
+    "exec_mode": "from_source_scan",
+    "owner_gated": "from_source_scan"
+  },
+  "_source_paths": [
+    "ORGANS/MECHANICUS/INTELLIGENCE_PACK/imperium_intelligence_pack_builder_v0_1.py"
+  ],
+  "_legacy_passport_path": "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORTS/imperium_intelligence_pack_builder_tool_passports_v0_1.json",
+  "_legacy_extras": {
+    "schema": "imperium.tool_passports.v0_1",
+    "tools": [
+      {
+        "tool_id": "mechanicus.imperium_intelligence_pack_builder",
+        "name": "Imperium Intelligence Pack Builder",
+        "owner_organ": "MECHANICUS",
+        "path": "ORGANS/MECHANICUS/INTELLIGENCE_PACK/imperium_intelligence_pack_builder_v0_1.py",
+        "language": "python",
+        "version": "0.1.2",
+        "purpose_ru": "Собирает лёгкий handoff pack: manifest, indexes, SQLite, graph edges, source slices и sidecar receipt.",
+        "purpose_en": "Builds a lightweight handoff pack with manifest, indexes, SQLite, graph edges, source slices and sidecar receipt.",
+        "writes": [
+          "external_out_root/<pack_id>.zip",
+          "external_out_root/<pack_id>.INTELLIGENCE_PACK_MANIFEST.json",
+          "external_out_root/<pack_id>.FINAL_SHA256SUMS.txt",
+          "external_out_root/<pack_id>.MACHINE_RECEIPT.json",
+          "external_out_root/<pack_id>.OWNER_SUMMARY_RU.md",
+          "external_out_root/LATEST_INTELLIGENCE_PACK_REPORT.json"
+        ],
+        "write_scope": [
+          "external_out_root only"
+        ],
+        "destructive_default": false,
+        "validation_recipe": "Run builder, Inquisition hygiene gate, and Inquisition receipt gate. Verify final ZIP SHA256 matches sidecars.",
+        "receipt_contract": "mechanicus.intelligence_pack.final_digest_contract.v0_8_9_4"
+      }
+    ]
+  }
+}
