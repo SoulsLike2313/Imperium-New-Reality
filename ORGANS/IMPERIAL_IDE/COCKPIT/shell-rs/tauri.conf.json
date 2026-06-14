@@ -9,24 +9,14 @@
     "beforeBuildCommand": "cd ../app-ts && pnpm build"
   },
   "app": {
-    "windows": [
-      {
-        "title": "Imperial IDE Cockpit",
-        "width": 1400,
-        "height": 900,
-        "minWidth": 900,
-        "minHeight": 600,
-        "resizable": true,
-        "fullscreen": false,
-        "decorations": false
-      }
-    ],
-    "security": {
-      "csp": null
-    }
+    "windows": [{
+      "title": "Imperial IDE Cockpit",
+      "width": 1400, "height": 900,
+      "minWidth": 900, "minHeight": 600,
+      "resizable": true, "fullscreen": false,
+      "decorations": false
+    }],
+    "security": { "csp": null }
   },
-  "bundle": {\n    "active": true,
-    "targets": "all",
-    "icon": []
-  }
+  "bundle": { "active": true, "targets": "all", "icon": [] }
 }

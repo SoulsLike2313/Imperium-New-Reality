@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { CSSProperties } from "react";
 import PatchManager from "./panels/PatchManager";
 import WarpZone    from "./panels/WarpZone";
 import DiffRoom    from "./panels/DiffRoom";
@@ -12,64 +13,64 @@ const TABS: { id: PanelId; label: string }[] = [
   { id: "diff",  label: "Diff Room" },
 ];
 
+const S: Record<string, CSSProperties> = {
+  root: {
+    display: "flex", flexDirection: "column", height: "100vh",
+    background: "var(--bg)", color: "var(--fg)",
+    fontFamily: "var(--font-sans)", overflow: "hidden",
+  },
+  header: {
+    display: "flex", alignItems: "center", padding: "0 var(--sp-4)",
+    height: "44px", borderBottom: "var(--border)",
+    flexShrink: 0, userSelect: "none",
+  },
+  title: {
+    fontFamily: "var(--font-serif)", color: "var(--gold)",
+    fontWeight: 700, fontSize: "var(--text-lg)", letterSpacing: "0.12em",
+  },
+  version: {
+    marginLeft: "auto", fontSize: "var(--text-xs)",
+    color: "var(--muted)", fontFamily: "var(--font-mono)",
+  },
+  nav: {
+    display: "flex", gap: "var(--sp-1)", padding: "var(--sp-2) var(--sp-4)",
+    borderBottom: "var(--border)", flexShrink: 0,
+    background: "var(--bg-surface)",
+  },
+  main: { flex: 1, overflow: "auto", padding: "var(--sp-4)" },
+};
+
+function tabStyle(active: boolean): CSSProperties {
+  return {
+    background:    active ? "var(--violet-dim)" : "transparent",
+    color:         active ? "var(--fg)"         : "var(--fg-dim)",
+    border:        "var(--border)",
+    borderRadius:  "var(--radius-sm)",
+    padding:       "4px 14px",
+    cursor:        "pointer",
+    fontFamily:    "var(--font-mono)",
+    fontSize:      "var(--text-sm)",
+    transition:    "var(--transition)",
+  };
+}
+
 export default function App() {
   const [active, setActive] = useState<PanelId>("patch");
-
   return (
-    <div style=
-      display:       "flex",
-      flexDirection: "column",
-      height:        "100vh",
-      background:    "var(--bg)",
-    >
-      {/* Title bar */}
-      <header style=
-        display:        "flex",
-        alignItems:     "center",
-        gap:            "var(--sp-4)",
-        padding:        "var(--sp-3) var(--sp-6)",
-        borderBottom:   "var(--border)",
-        background:     "var(--bg-surface)",
-        userSelect:     "none",
-        WebkitAppRegion: "drag" as React.CSSProperties["WebkitAppRegion"],
-      >
-        <span style= color: "var(--gold)", fontFamily: "var(--font-mono)", fontSize: "var(--text-sm)" >
-          IMPERIAL IDE
-        </span>
-        <span style= color: "var(--muted)", fontSize: "var(--text-xs)" >COCKPIT v0.1</span>
+    <div style={S.root}>
+      <header style={S.header}>
+        <span style={S.title}>IMPERIAL IDE</span>
+        <span style={S.version}>COCKPIT v0.1</span>
       </header>
-
-      {/* Tab bar */}
-      <nav style=
-        display:      "flex",
-        gap:          "var(--sp-1)",
-        padding:      "var(--sp-2) var(--sp-4)",
-        borderBottom: "var(--border)",
-        background:   "var(--bg-surface)",
-      >
+      <nav style={S.nav}>
         {TABS.map((t) => (
-          <button
-            key={t.id}
-            onClick={() => setActive(t.id)}
-            style=
-              padding:      "var(--sp-2) var(--sp-4)",
-              borderRadius: "var(--radius-sm)",
-              border:       active === t.id ? "var(--border-focus)" : "var(--border)",
-              background:   active === t.id ? "var(--bg-raised)" : "transparent",
-              color:        active === t.id ? "var(--gold)" : "var(--fg-dim)",
-              fontFamily:   "var(--font-sans)",
-              fontSize:     "var(--text-sm)",
-              cursor:       "pointer",
-              transition:   "var(--transition)",
-            
-          >
+          <button key={t.id} onClick={() => setActive(t.id)}
+                  style={tabStyle(active === t.id)}>
             {t.label}
           </button>
         ))}
       </nav>
-
-      {/* Panel area */}
-      <main style= flex: 1, overflow: "hidden" >
+      <main style={S.main}>
         {active === "patch" && <PatchManager />}
         {active === "warp"  && <WarpZone />}
         {active === "diff"  && <DiffRoom />}

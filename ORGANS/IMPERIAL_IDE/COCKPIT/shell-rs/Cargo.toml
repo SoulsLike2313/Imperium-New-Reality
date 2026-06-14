@@ -3,21 +3,15 @@ name = "imperial-ide-cockpit"
 version = "0.1.0"
 edition = "2021"
 
-# See https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [lib]
 name = "cockpit_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
-tauri-build = { version = "2", features = [] }
+tauri-build = { version = "2", default-features = false }
 
 [dependencies]
-tauri       = { version = "2", features = [] }
-tauri-plugin-shell  = "2"
-serde       = { version = "1", features = ["derive"] }
-serde_json  = "1"
-
-[profile.release]
-panic   = "abort"
-codegen-units = 1
+# default-features=false drops 'compression' which pulls reqwest -> version conflict
+tauri = { version = "2", default-features = false, features = ["wry"] }
+serde      = { version = "1", features = ["derive"] }
+serde_json = "1"

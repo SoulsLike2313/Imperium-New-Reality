@@ -1,15 +1,12 @@
-use tauri::Manager;
-
 #[tauri::command]
 fn greet(name: &str) -> String {
-    format!("Imperium IDE Cockpit v0.1 :: {}", name)
+    format!("Imperial IDE Cockpit v0.1 :: {}", name)
 }
 
 pub fn run() {
     tauri::Builder::default()
-        .plugin(tauri_plugin_shell::init())
         .invoke_handler(tauri::generate_handler![greet])
         .setup(|_app| Ok(()))
         .run(tauri::generate_context!())
-        .expect("error while running Cockpit application");
+        .expect("error while running Cockpit");
 }

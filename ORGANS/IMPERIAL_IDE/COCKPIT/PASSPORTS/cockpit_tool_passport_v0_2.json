@@ -7,7 +7,7 @@
   "lang": "mixed",
   "exec_mode": "live",
   "owner_gated": false,
-  "description": "Tauri 2.x desktop IDE for the Imperium: Patch Manager, Warp Zone, Diff Room panels. Sanctum design system.",
+  "description": "Tauri 2.x desktop IDE: Patch Manager, Warp Zone, Diff Room. Sanctum design system.",
   "validators": [
     {
       "id": "cargo_check",
@@ -23,10 +23,9 @@
     }
   ],
   "tech_stack": {
-    "backend":  "Rust + Tauri 2.x",
+    "backend": "Rust + Tauri 2.x",
     "frontend": "React 18 + TypeScript (strict) + Vite 5",
-    "styling":  "Sanctum CSS tokens (sanctum.css)"
+    "styling": "Sanctum CSS tokens"
   },
-  "panels": ["PatchManager", "WarpZone", "DiffRoom"],
-  "sanctum_tokens": "app-ts/src/styles/sanctum.css"
+  "panels": ["PatchManager", "WarpZone", "DiffRoom"]
 }

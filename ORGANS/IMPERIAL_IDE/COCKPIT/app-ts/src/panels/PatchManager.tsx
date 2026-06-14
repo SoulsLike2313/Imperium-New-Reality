@@ -1,56 +1,54 @@
 import { useState } from "react";
+import type { CSSProperties } from "react";
 
 type PatchStatus = "pending" | "applied" | "failed";
+interface PatchEntry { id: string; version: string; summary: string; status: PatchStatus; }
 
-interface PatchEntry {
-  id: string;
-  version: string;
-  summary: string;
-  status: PatchStatus;
-}
-
-const MOCK_PATCHES: PatchEntry[] = [
-  { id: "v0.10.3", version: "v0.10.3", summary: "Mechanicus passport auto-registrar + VERIFY receipt-JSON fix", status: "applied" },
-  { id: "v0.10.4", version: "v0.10.4", summary: "Passport v0_2 auto-drafts (20 passports)", status: "applied" },
-  { id: "step-6",  version: "step-6",  summary: "Cockpit skeleton + Sanctum tokens", status: "pending" },
+const MOCK: PatchEntry[] = [
+  { id:"v0.10.3", version:"v0.10.3", summary:"Mechanicus passport auto-registrar + VERIFY receipt-JSON fix", status:"applied" },
+  { id:"v0.10.4", version:"v0.10.4", summary:"Passport v0_2 auto-drafts (20 passports)",                     status:"applied" },
+  { id:"step-6",  version:"step-6",  summary:"Cockpit skeleton + Sanctum tokens",                            status:"applied" },
 ];
 
-const STATUS_COLOR: Record<PatchStatus, string> = {
-  applied: "var(--pass)",
-  pending: "var(--gold)",
-  failed:  "var(--fail)",
+const STATUS_COL: Record<PatchStatus, string> = {
+  applied:"var(--pass)", pending:"var(--gold)", failed:"var(--fail)",
 };
 
-export default function PatchManager() {
-  const [selected, setSelected] = useState<string | null>(null);
+const S: Record<string, CSSProperties> = {
+  section: { padding:"var(--sp-4)" },
+  heading: { fontFamily:"var(--font-mono)", color:"var(--gold)",
+             fontSize:"var(--text-sm)", marginBottom:"var(--sp-4)", letterSpacing:"0.08em" },
+  table:   { width:"100%", borderCollapse:"collapse" },
+  th:      { textAlign:"left", padding:"6px 10px", fontSize:"var(--text-xs)",
+             color:"var(--muted)", fontFamily:"var(--font-mono)", borderBottom:"var(--border)" },
+  td:      { padding:"8px 10px", fontSize:"var(--text-sm)",
+             borderBottom:"1px solid rgba(255,255,255,0.04)" },
+  tdMono:  { padding:"8px 10px", fontSize:"var(--text-sm)",
+             borderBottom:"1px solid rgba(255,255,255,0.04)", fontFamily:"var(--font-mono)" },
+};
 
+function rowStyle(sel: boolean): CSSProperties {
+  return { background: sel ? "var(--violet-dim)" : "transparent", cursor:"pointer" };
+}
+function statusTd(s: PatchStatus): CSSProperties {
+  return { ...S.tdMono, color: STATUS_COL[s] };
+}
+
+export default function PatchManager() {
+  const [sel, setSel] = useState<string | null>(null);
   return (
-    <section style= padding: "var(--sp-6)" >
-      <h2 style= color: "var(--gold)", fontFamily: "var(--font-mono)", marginBottom: "var(--sp-4)" >
-        // PATCH MANAGER
-      </h2>
-      <table style= width: "100%", borderCollapse: "collapse" >
+    <section style={S.section}>
+      <h2 style={S.heading}>// PATCH MANAGER</h2>
+      <table style={S.table}>
         <thead>
-          <tr style= borderBottom: "var(--border)" >
-            {["Version", "Summary", "Status"].map((h) => (
-              <th key={h} style= padding: "var(--sp-2) var(--sp-3)", textAlign: "left", color: "var(--fg-dim)", fontSize: "var(--text-sm)", fontFamily: "var(--font-mono)" >{h}</th>
-            ))}
-          </tr>
+          <tr>{["Version","Summary","Status"].map((h)=><th key={h} style={S.th}>{h}</th>)}</tr>
         </thead>
         <tbody>
-          {MOCK_PATCHES.map((p) => (
-            <tr
-              key={p.id}
-              onClick={() => setSelected(p.id === selected ? null : p.id)}
-              style=
-                cursor: "pointer",
-                background: selected === p.id ? "var(--bg-raised)" : "transparent",
-                borderBottom: "var(--border)",
-              
-            >
-              <td style= padding: "var(--sp-2) var(--sp-3)", fontFamily: "var(--font-mono)", color: "var(--gold)" >{p.version}</td>
-              <td style= padding: "var(--sp-2) var(--sp-3)", fontSize: "var(--text-sm)" >{p.summary}</td>
-              <td style= padding: "var(--sp-2) var(--sp-3)", fontFamily: "var(--font-mono)", fontSize: "var(--text-sm)", color: STATUS_COLOR[p.status] >{p.status}</td>
+          {MOCK.map((p) => (
+            <tr key={p.id} onClick={()=>setSel(p.id===sel?null:p.id)} style={rowStyle(p.id===sel)}>
+              <td style={S.tdMono}>{p.version}</td>
+              <td style={S.td}>{p.summary}</td>
+              <td style={statusTd(p.status)}>{p.status}</td>
             </tr>
           ))}
         </tbody>
