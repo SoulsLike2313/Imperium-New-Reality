@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.rollout_ledger.v0_1",
+  "title": "Imperium Validator Rollout Ledger v0_1",
+  "description": "Ledger of validator executions across all tool passports, produced by validator_rollout_v0_1.py.",
+  "type": "object",
+  "required": ["schema_id", "generated_at", "repo_root", "total_passports", "total_validators", "results"],
+  "properties": {
+    "schema_id":         { "const": "imperium.rollout_ledger.v0_1" },
+    "generated_at":      { "type": "string", "format": "date-time" },
+    "generator":         { "type": "string" },
+    "repo_root":         { "type": "string" },
+    "total_passports":   { "type": "integer", "minimum": 0 },
+    "total_validators":  { "type": "integer", "minimum": 0 },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "passed":        { "type": "integer" },
+        "failed":        { "type": "integer" },
+        "timed_out":     { "type": "integer" },
+        "errored":       { "type": "integer" },
+        "skipped":       { "type": "integer" },
+        "no_validators": { "type": "integer" }
+      }
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["tool_id", "validator_name", "status", "elapsed_ms"],
+        "properties": {
+          "tool_id":         { "type": "string" },
+          "passport_path":   { "type": "string" },
+          "validator_name":  { "type": "string" },
+          "exec":            { "type": "string" },
+          "status":          { "enum": ["pass", "fail", "timeout", "error", "skipped", "no_validators"] },
+          "exit_code":       { "type": ["integer", "null"] },
+          "elapsed_ms":      { "type": "integer" },
+          "stdout_tail":     { "type": "string" },
+          "stderr_tail":     { "type": "string" }
+        }
+      }
+    }
+  }
+}

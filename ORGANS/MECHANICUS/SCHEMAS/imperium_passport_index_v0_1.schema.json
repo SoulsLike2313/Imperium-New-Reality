@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "imperium.passport_index.v0_1",
+  "title": "Imperium Passport Index v0_1",
+  "description": "Aggregated index of all tool passports discovered under ORGANS/ at a point in time.",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "generated_at",
+    "generator",
+    "repo_root",
+    "total_passports",
+    "schema_compliance",
+    "by_organ",
+    "by_lang",
+    "by_exec_mode",
+    "by_capability",
+    "passports"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_id":       { "type": "string", "const": "imperium.passport_index.v0_1" },
+    "generated_at":    { "type": "string" },
+    "generator":       { "type": "string" },
+    "repo_root":       { "type": "string" },
+    "total_passports": { "type": "integer", "minimum": 0 },
+    "schema_compliance": {
+      "type": "object",
+      "required": ["v0_2_compliant", "v0_1_legacy", "non_compliant", "errors"],
+      "additionalProperties": false,
+      "properties": {
+        "v0_2_compliant": { "type": "integer", "minimum": 0 },
+        "v0_1_legacy":    { "type": "integer", "minimum": 0 },
+        "non_compliant":  { "type": "integer", "minimum": 0 },
+        "errors":         { "type": "array", "items": { "type": "object" } }
+      }
+    },
+    "by_organ":      { "type": "object", "additionalProperties": { "type": "integer" } },
+    "by_lang":       { "type": "object", "additionalProperties": { "type": "integer" } },
+    "by_exec_mode":  { "type": "object", "additionalProperties": { "type": "integer" } },
+    "by_capability": { "type": "object", "additionalProperties": { "type": "integer" } },
+    "passports": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["passport_path", "schema_version", "valid"],
+        "additionalProperties": true,
+        "properties": {
+          "passport_path":  { "type": "string" },
+          "schema_version": { "type": "string" },
+          "valid":          { "type": "boolean" },
+          "errors":         { "type": "array", "items": { "type": "string" } },
+          "tool_id":        { "type": "string" },
+          "name":           { "type": "string" },
+          "version":        { "type": "string" },
+          "owner_organ":    { "type": "string" },
+          "lang":           { "type": "string" },
+          "exec_mode":      { "type": "string" },
+          "owner_gated":    { "type": "boolean" },
+          "capability_tags": { "type": "array", "items": { "type": "string" } },
+          "tool_path":      { "type": "string" },
+          "tool_path_exists": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

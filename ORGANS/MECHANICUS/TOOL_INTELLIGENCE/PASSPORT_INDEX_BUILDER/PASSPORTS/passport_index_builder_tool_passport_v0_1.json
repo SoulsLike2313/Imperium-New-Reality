@@ -1,0 +1,33 @@
+{
+  "schema_id": "imperium.tool_passport.v0_2",
+  "tool_id": "passport_index_builder",
+  "name": "Passport Index Builder",
+  "version": "v0_1",
+  "owner_organ": "MECHANICUS",
+  "lang": "python",
+  "build_system": "stdlib",
+  "validators": [
+    {
+      "name": "syntax",
+      "exec": "python -m py_compile {repo}/ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORT_INDEX_BUILDER/passport_index_builder_v0_1.py",
+      "timeout_seconds": 10
+    },
+    {
+      "name": "self_test",
+      "exec": "python {repo}/ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORT_INDEX_BUILDER/passport_index_builder_v0_1.py --self-test",
+      "timeout_seconds": 10
+    }
+  ],
+  "io_contract": {
+    "output_schema": "ORGANS/MECHANICUS/SCHEMAS/imperium_passport_index_v0_1.schema.json"
+  },
+  "observability": {
+    "stdout": "rich",
+    "metrics": ["elapsed_ms", "total_passports", "v0_2_compliant", "v0_1_legacy", "non_compliant"]
+  },
+  "exec_mode": "static",
+  "owner_gated": false,
+  "capability_tags": ["indexer", "scanner", "validator", "mechanicus"],
+  "doctrine_ref": "ORGANS/DOCTRINARIUM/LAWS/MECHANICUS_PASSPORT_DOCTRINE_V0_2_RU.md",
+  "tool_path": "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORT_INDEX_BUILDER/passport_index_builder_v0_1.py"
+}
