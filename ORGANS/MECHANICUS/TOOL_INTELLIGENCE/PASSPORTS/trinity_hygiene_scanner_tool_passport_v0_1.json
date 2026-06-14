@@ -1,0 +1,32 @@
+{
+  "tool_id": "trinity_hygiene_scanner_v0_1",
+  "organ": "ADMINISTRATUM",
+  "kind": "classifier",
+  "entrypoint": "ORGANS/ADMINISTRATUM/HYGIENE/trinity_hygiene_scanner_v0_1.py",
+  "cli": "python trinity_hygiene_scanner_v0_1.py <repo> [--out ledger.json] [--apply-quarantine --owner-approve]",
+  "default_mode": "dry-run (classification only; no moves)",
+  "outputs": [
+    "QUARANTINE_LEDGER.json",
+    "RESTORE_MANIFEST.json (only on quarantine)"
+  ],
+  "exit_codes": {
+    "0": "ok",
+    "2": "refused (gate not satisfied)"
+  },
+  "deps": [
+    "python3 stdlib only"
+  ],
+  "safety": [
+    "never deletes",
+    "unknown zones block automation",
+    "protected zones never auto-moved",
+    "quarantine requires --owner-approve"
+  ],
+  "authority_refs": [
+    "Constitution §9",
+    "Constitution §6",
+    "Passport §1",
+    "Passport §5"
+  ],
+  "reusable": true
+}

@@ -1,0 +1,33 @@
+{
+  "$id": "imperium.quarantine_ledger.v0_1",
+  "title": "Trinity Hygiene Quarantine Ledger v0_1",
+  "description": "Classification ledger. NO deletion. Quarantine = MOVE to staging with restore manifest.",
+  "required": [
+    "ledger_schema",
+    "repo",
+    "generated",
+    "mode",
+    "counts",
+    "blocked_unknown",
+    "auto_quarantine_allowed",
+    "items"
+  ],
+  "categories": [
+    "clutter",
+    "unknown",
+    "keep"
+  ],
+  "proposed_actions": [
+    "stage_quarantine",
+    "owner_review",
+    "keep"
+  ],
+  "invariants": [
+    "mode in {dry-run, quarantine}",
+    "dry-run MUST NOT move or delete anything",
+    "auto_quarantine_allowed == (blocked_unknown == 0)",
+    "quarantine MOVES only items with proposed_action=stage_quarantine; never deletes",
+    "quarantine requires owner_approve AND blocked_unknown==0",
+    "protected_prefixes are never auto-moved (downgraded to owner_review)"
+  ]
+}
