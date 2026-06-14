@@ -1,522 +1,369 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 """
-imperium.passport_migrator.v0_2 - passport_migrator v0_2
+passport_migrator_v0_2 (refined classifier)
 
-Upgrade over v0_1:
-  - explicit classifier that separates tool-passports from organ/data/agent passports,
-    JSON Schemas, and other artefacts caught by the broad name match.
-  - new statuses: 'skipped_not_a_tool_passport' and 'skipped_meta_schema' which
-    do NOT trigger a non-zero exit and do NOT count against manual_migration_needed.
-  - tolerant filename parser (handles typo 'tool_passports' with trailing s).
+Mechanicus tool: migrates canonical-shape legacy v0_1 tool-passports to v0_2
+in-place (rewrites schema_id, validates required fields). Refuses to guess
+missing fields. Now also recognizes meta-schema files by filename prefix
+(tool_passport_schema_*, imperium_tool_passport_*, imperium_passport_index_*,
+file_passport_schema_*) and routes them to skipped_meta_schema.
 
-Usage identical to v0_1:
-    python passport_migrator_v0_2.py --repo <REPO> --dry-run [--out PATH] [--quiet]
-    python passport_migrator_v0_2.py --repo <REPO> --apply   [--out PATH] [--quiet]
+For non-canonical legacy passports requiring field-inference, use the sibling
+tool passport_v0_2_auto_registrar.
+
+Usage:
     python passport_migrator_v0_2.py --self-test
+    python passport_migrator_v0_2.py --repo <repo_root> --out <ledger.json> --dry-run
+    python passport_migrator_v0_2.py --repo <repo_root> --out <ledger.json> --apply
 """
+
 from __future__ import annotations
+
 import argparse
 import json
+import os
 import re
 import shutil
 import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
 
-SCHEMA_ID_V0_2   = "imperium.tool_passport.v0_2"
-SCHEMA_ID_LEDGER = "imperium.passport_migration_ledger.v0_2"
-
-OWNER_ORGAN_ENUM = {
-    "MECHANICUS", "IMPERIAL_IDE", "DOCTRINARIUM", "OFFICIO_AGENTIS",
-    "SPECULUM", "INQUISITOR", "OBSERVATORIUM", "_CORE_GOVERNANCE",
-}
-LANG_ENUM = {
-    "python", "rust", "typescript", "javascript",
-    "powershell", "css", "html", "markdown", "mixed",
-}
-EXEC_MODE_ENUM = {"static", "sim", "paper", "shadow", "live"}
-
-EXT_TO_LANG = {
-    ".py":  "python",
-    ".rs":  "rust",
-    ".ts":  "typescript",
-    ".tsx": "typescript",
-    ".js":  "javascript",
-    ".jsx": "javascript",
-    ".ps1": "powershell",
-    ".css": "css",
-    ".html":"html",
-    ".md":  "markdown",
-}
-
-# Tolerant: matches both `_tool_passport_v0_1.json` and `_tool_passports_v0_1.json` (typo).
-PASSPORT_NAME_RE = re.compile(
-    r"^(?P<tool>[a-z][a-z0-9_]*?)_tool_passports?_v(?P<ver>[0-9_]+)\.json$",
-    re.IGNORECASE,
+SCHEMA_ID_V0_2 = "imperium.tool_passport.v0_2"
+LEDGER_SCHEMA_ID = "imperium.passport_migration_ledger.v0_1"
+MIGRATOR_VERSION = "v0_2"
+REQUIRED_FIELDS_V0_2 = (
+    "tool_id", "name", "version", "owner_organ",
+    "lang", "validators", "exec_mode", "owner_gated",
 )
-TOOL_ID_RE = re.compile(r"^[a-z][a-z0-9_]*$")
-VERSION_RE = re.compile(r"^v[0-9]+(_[0-9]+)*$")
 
-# Path / name fragments that mean the file is NOT a tool passport.
-NOT_TOOL_PATH_FRAGMENTS = (
-    "/BLOCK/PASSPORT/",           # ORGANS/<ORGAN>/BLOCK/PASSPORT/ORGAN_BLOCK_PASSPORT_*
-    "/DATA_ATLAS/",               # ORGANS/ADMINISTRATUM/DATA_ATLAS/DATA_ATLAS_PASSPORT_*
-    "/EMPEROR/PASSPORT_OF_THE_EMPEROR",
-    "/ROLE_PACKS/",               # role pack passports
-    "/AGENT_PASSPORTS/",
-    "/LEGACY_IMPORTED_ROOT_MIRROR/",
+_LEGACY_FILE_RE = re.compile(r"^(.+)_tool_passport[s]?_v[0-9_]+\.json$")
+_META_SCHEMA_PREFIXES = (
+    "tool_passport_schema",
+    "imperium_tool_passport",
+    "imperium_passport_index",
+    "file_passport_schema",
 )
-NOT_TOOL_FILENAME_RE = re.compile(
-    r"^("
-    r"ORGAN_BLOCK_PASSPORT|DATA_ATLAS_PASSPORT|FILE_PASSPORT|"
-    r"file_passport_schema|emperor_passport|agent_passport|role_pack"
-    r")",
-    re.IGNORECASE,
-)
-NOT_TOOL_SCHEMA_IDS = {
-    "imperium.organ_block_passport.v0_1",
-    "imperium.data_atlas_passport.v0_1",
-    "imperium.file_passport.v0_1",
-    "imperium.emperor_passport.v0_1",
-    "imperium.agent_passport.v0_1",
-    "imperium.role_pack_passport.v0_1",
-}
 
 
-def find_passport_candidates(repo: Path):
-    organs = repo / "ORGANS"
-    if not organs.exists():
-        return []
-    cand = set()
-    for p in organs.rglob("*_tool_passport*.json"):
-        if p.is_file():
-            cand.add(p.resolve())
-    for d in organs.rglob("PASSPORTS"):
-        if d.is_dir():
-            for p in d.glob("*.json"):
-                cand.add(p.resolve())
-    for p in organs.rglob("*passport*.json"):
-        if p.is_file():
-            cand.add(p.resolve())
-    return sorted(cand)
+def _utc_now_iso() -> str:
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def load_json(path: Path):
+def _read_json(path: Path) -> Optional[dict]:
     try:
-        return json.loads(path.read_text(encoding="utf-8-sig")), None
-    except Exception as e:
-        return None, str(e)
+        raw = path.read_bytes()
+    except OSError:
+        return None
+    if raw.startswith(b"\xef\xbb\xbf"):
+        raw = raw[3:]
+    try:
+        return json.loads(raw.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError):
+        return None
 
 
-def preclassify_by_path(path: Path) -> str | None:
-    """Returns a 'skip' classification when the file is clearly not a tool passport,
-    based purely on path/name (cheap, no JSON load)."""
-    name = path.name
-    posix = str(path).replace("\\", "/")
-    if name.endswith(".schema.json"):
+def _write_json(path: Path, data: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    text = json.dumps(data, ensure_ascii=False, indent=2, sort_keys=False)
+    path.write_bytes(text.encode("utf-8"))
+
+
+def classify(passport_path: Path, j: Optional[dict]) -> str:
+    name = passport_path.name
+    name_lower = name.lower()
+    posix = passport_path.as_posix()
+
+    if j is None:
+        return "parse_error"
+
+    # 1) meta-schema by extension
+    if name_lower.endswith(".schema.json"):
         return "skipped_meta_schema"
-    if NOT_TOOL_FILENAME_RE.match(name):
+
+    # 2) meta-schema by filename prefix (NEW in v0.10.3)
+    for stem in _META_SCHEMA_PREFIXES:
+        if name_lower.startswith(stem):
+            return "skipped_meta_schema"
+
+    # 3) organ block / data atlas
+    if "ORGAN_BLOCK_PASSPORT" in name or "/BLOCK/PASSPORT/" in posix:
         return "skipped_not_a_tool_passport"
-    for frag in NOT_TOOL_PATH_FRAGMENTS:
-        if frag in posix:
-            return "skipped_not_a_tool_passport"
-    return None
+    if "DATA_ATLAS_PASSPORT" in name or "/DATA_ATLAS/" in posix:
+        return "skipped_not_a_tool_passport"
 
+    schema_id = (j.get("schema_id") or "").lower()
 
-def classify(passport, path: Path) -> str:
-    pre = preclassify_by_path(path)
-    if pre:
-        return pre
-    if not isinstance(passport, dict):
-        return "non_compliant"
-    sid = passport.get("schema_id")
-    if sid == SCHEMA_ID_V0_2:
+    # 4) already v0_2 (canonical)
+    if schema_id == SCHEMA_ID_V0_2:
         return "skipped_already_v0_2"
-    if isinstance(sid, str) and sid in NOT_TOOL_SCHEMA_IDS:
-        return "skipped_not_a_tool_passport"
-    if isinstance(sid, str) and "tool_passport" in sid:
+
+    # 5) explicit v0_1 tool passport by schema_id
+    if "tool_passport" in schema_id:
         return "legacy"
-    # heuristic: looks like a tool passport if it has tool_id + validators or version
-    if isinstance(passport.get("tool_id"), str) and (
-        "validators" in passport or "version" in passport
-    ):
+
+    # 6) filename pattern
+    if _LEGACY_FILE_RE.match(name):
         return "legacy"
+
     return "non_compliant"
 
 
-def derive_tool_id(passport, path: Path):
-    if isinstance(passport, dict):
-        for k in ("tool_id", "id"):
-            v = passport.get(k)
-            if isinstance(v, str) and TOOL_ID_RE.match(v):
-                return v
-    m = PASSPORT_NAME_RE.match(path.name)
-    if m:
-        return m.group("tool").lower()
-    stem = path.stem.lower()
-    stem = re.sub(r"_?passports?.*$", "", stem)
-    stem = re.sub(r"[^a-z0-9]+", "_", stem).strip("_")
-    if TOOL_ID_RE.match(stem):
-        return stem
-    return None
+def _check_required(j: dict) -> List[str]:
+    missing: List[str] = []
+    for k in REQUIRED_FIELDS_V0_2:
+        v = j.get(k)
+        if v is None or (isinstance(v, str) and v == "") or (isinstance(v, (list, dict)) and len(v) == 0):
+            missing.append(k)
+    return missing
 
 
-def derive_owner_organ(path: Path):
-    parts = set(path.parts)
-    for organ in OWNER_ORGAN_ENUM:
-        if organ in parts:
-            return organ
-    return None
+def _backup(path: Path, backup_dir: Path) -> Path:
+    backup_dir.mkdir(parents=True, exist_ok=True)
+    target = backup_dir / path.name
+    n = 1
+    while target.exists():
+        target = backup_dir / (path.stem + ("_%02d" % n) + path.suffix)
+        n += 1
+    shutil.copy2(path, target)
+    return target
 
 
-def derive_tool_path(passport, path: Path, repo: Path):
-    if isinstance(passport, dict):
-        tp = passport.get("tool_path")
-        if isinstance(tp, str) and tp:
-            return tp
-    parent_dir = path.parent
-    if parent_dir.name == "PASSPORTS":
-        parent_dir = parent_dir.parent
-    for ext in (".py", ".rs", ".ts", ".tsx", ".js", ".ps1"):
-        for f in parent_dir.glob(f"*{ext}"):
-            try:
-                rel = f.resolve().relative_to(repo.resolve())
-                return str(rel).replace("\\", "/")
-            except ValueError:
-                continue
-    return None
+def _migrate_inplace(path: Path, j: dict, backup_dir: Path) -> Tuple[Path, Path]:
+    backup_path = _backup(path, backup_dir)
+    j2 = dict(j)
+    j2["schema_id"] = SCHEMA_ID_V0_2
+    if not isinstance(j2.get("version"), str) or not j2["version"].startswith("v"):
+        j2["version"] = "v0_2"
+    _write_json(path, j2)
+    return path, backup_path
 
 
-def derive_lang(passport, path: Path, repo: Path):
-    if isinstance(passport, dict):
-        l = passport.get("lang")
-        if l in LANG_ENUM:
-            return l
-    tp = derive_tool_path(passport, path, repo)
-    if tp:
-        ext = Path(tp).suffix.lower()
-        if ext in EXT_TO_LANG:
-            return EXT_TO_LANG[ext]
-    return None
+_SEARCH_GLOBS = (
+    "ORGANS/**/*_tool_passport_v*.json",
+    "ORGANS/**/*_tool_passports_v*.json",
+    "ORGANS/**/PASSPORTS/*.json",
+)
 
 
-def build_v0_2(passport, path: Path, repo: Path):
-    p = passport if isinstance(passport, dict) else {}
-    missing = []
-    notes = []
-    new = {"schema_id": SCHEMA_ID_V0_2}
-
-    tool_id = derive_tool_id(p, path)
-    if not tool_id:
-        missing.append("tool_id")
-    else:
-        new["tool_id"] = tool_id
-        if p.get("tool_id") != tool_id:
-            notes.append(f"tool_id derived: {tool_id}")
-
-    name = p.get("name") if isinstance(p.get("name"), str) else None
-    if not name and tool_id:
-        name = tool_id.replace("_", " ").title()
-        notes.append(f"name derived from tool_id: {name}")
-    if not name:
-        missing.append("name")
-    else:
-        new["name"] = name
-
-    version = p.get("version") if isinstance(p.get("version"), str) else None
-    if not version or not VERSION_RE.match(version):
-        m = PASSPORT_NAME_RE.match(path.name)
-        if m:
-            version = "v" + m.group("ver")
-            notes.append(f"version derived from filename: {version}")
-        else:
-            version = "v0_1"
-            notes.append("version defaulted to v0_1")
-    new["version"] = version
-
-    organ = p.get("owner_organ")
-    if organ not in OWNER_ORGAN_ENUM:
-        organ = derive_owner_organ(path)
-        if organ:
-            notes.append(f"owner_organ derived from path: {organ}")
-    if organ not in OWNER_ORGAN_ENUM:
-        missing.append("owner_organ")
-    else:
-        new["owner_organ"] = organ
-
-    lang = derive_lang(p, path, repo)
-    if lang not in LANG_ENUM:
-        missing.append("lang")
-    else:
-        new["lang"] = lang
-
-    validators = p.get("validators")
-    cleaned = []
-    if isinstance(validators, list):
-        for v in validators:
-            if (
-                isinstance(v, dict)
-                and isinstance(v.get("name"), str)
-                and isinstance(v.get("exec"), str)
-            ):
-                ent = {"name": v["name"], "exec": v["exec"]}
-                tos = v.get("timeout_seconds")
-                if isinstance(tos, (int, float)) and 1 <= tos <= 300:
-                    ent["timeout_seconds"] = tos
-                cleaned.append(ent)
-    if cleaned:
-        new["validators"] = cleaned
-    else:
-        missing.append("validators")
-
-    exec_mode = p.get("exec_mode")
-    if exec_mode not in EXEC_MODE_ENUM:
-        exec_mode = "static"
-        notes.append("exec_mode defaulted to static")
-    new["exec_mode"] = exec_mode
-
-    owner_gated = p.get("owner_gated")
-    if not isinstance(owner_gated, bool):
-        owner_gated = False
-        notes.append("owner_gated defaulted to false")
-    new["owner_gated"] = owner_gated
-
-    for opt in (
-        "build_system", "io_contract", "observability",
-        "capability_tags", "depends_on", "doctrine_ref",
-        "tool_path", "created_at",
-    ):
-        if opt in p and p[opt] is not None:
-            new[opt] = p[opt]
-
-    if "tool_path" not in new:
-        tp = derive_tool_path(p, path, repo)
-        if tp:
-            new["tool_path"] = tp
-            notes.append(f"tool_path derived: {tp}")
-
-    new["updated_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    return new, missing, notes
+def find_passports(repo_root: Path) -> List[Path]:
+    seen: Dict[str, Path] = {}
+    for pat in _SEARCH_GLOBS:
+        for p in repo_root.glob(pat):
+            if p.is_file():
+                seen[p.as_posix()] = p
+    return sorted(seen.values(), key=lambda x: x.as_posix())
 
 
-def canonical_name(tool_id: str, version: str) -> str:
-    return f"{tool_id}_tool_passport_{version}.json"
+def migrate_one(passport_path: Path, repo_root: Path, backup_dir: Path, dry_run: bool) -> dict:
+    rel = passport_path.relative_to(repo_root).as_posix() if passport_path.is_relative_to(repo_root) else passport_path.as_posix()
+    j = _read_json(passport_path)
+    cls = classify(passport_path, j)
 
+    if cls == "parse_error":
+        return {"path": rel, "status": "parse_error", "missing": [], "notes": ["json parse failed"]}
+    if cls in ("skipped_meta_schema", "skipped_not_a_tool_passport", "skipped_already_v0_2", "non_compliant"):
+        if cls == "non_compliant":
+            return {"path": rel, "status": "manual_migration_needed", "missing": ["schema_id-not-recognized"], "notes": ["shape not recognized as tool passport"]}
+        return {"path": rel, "status": cls, "missing": [], "notes": []}
 
-def migrate_one(path: Path, repo: Path, apply: bool, backup_dir: Path):
-    rel = str(path.relative_to(repo)).replace("\\", "/")
-    passport, err = load_json(path)
-    if err:
-        return {"path": rel, "status": "parse_error", "error": err}
-    klass = classify(passport, path)
-    if klass in ("skipped_already_v0_2", "skipped_meta_schema", "skipped_not_a_tool_passport"):
-        return {"path": rel, "status": klass, "schema_classification_before": klass}
-    if klass == "non_compliant":
+    # legacy -> field check
+    assert j is not None
+    missing = _check_required(j)
+    if missing:
         return {
             "path": rel,
             "status": "manual_migration_needed",
-            "missing": ["schema_id-not-recognized"],
-            "notes": ["file matches passport-like name but schema_id/structure unrecognized"],
-            "schema_classification_before": klass,
+            "missing": missing,
+            "notes": ["required v0_2 fields missing; use passport_v0_2_auto_registrar to draft, or edit manually"],
         }
-    new, missing, notes = build_v0_2(passport, path, repo)
-    target_dir = path.parent
-    if target_dir.name != "PASSPORTS":
-        target_dir = target_dir / "PASSPORTS"
-        notes.append("relocated into PASSPORTS/ subdirectory")
-    target_name = canonical_name(new["tool_id"], new["version"]) if "tool_id" in new and "version" in new else None
-    target_path = (target_dir / target_name) if target_name else None
-    target_rel = (
-        str(target_path.relative_to(repo)).replace("\\", "/") if target_path else None
-    )
-    result = {
+
+    if dry_run:
+        return {
+            "path": rel,
+            "status": "planned",
+            "missing": [],
+            "notes": ["all required fields present; would migrate schema_id -> v0_2"],
+        }
+
+    _, backup_path = _migrate_inplace(passport_path, j, backup_dir)
+    backup_rel = backup_path.relative_to(repo_root).as_posix() if backup_path.is_relative_to(repo_root) else backup_path.as_posix()
+    return {
         "path": rel,
-        "status": "manual_migration_needed" if missing else ("applied" if apply else "planned"),
-        "missing": missing,
-        "notes": notes,
-        "target_path": target_rel,
-        "schema_classification_before": klass,
+        "status": "applied",
+        "missing": [],
+        "notes": ["schema_id -> v0_2"],
+        "backup_path": backup_rel,
     }
-    if missing or not target_path:
-        return result
-    if apply:
-        bk = backup_dir / rel
-        bk.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(path, bk)
-        target_path.parent.mkdir(parents=True, exist_ok=True)
-        target_path.write_text(
-            json.dumps(new, indent=2, ensure_ascii=False) + "\n",
-            encoding="utf-8",
-        )
-        if target_path.resolve() != path.resolve():
-            path.unlink()
-            result["removed_old"] = rel
-    return result
 
 
-def self_test():
+def run(repo_root: Path, out_path: Path, dry_run: bool) -> int:
+    start = time.time()
+    ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    backup_dir = repo_root / "ORGANS" / "MECHANICUS" / "TOOL_INTELLIGENCE" / "PASSPORT_MIGRATOR" / "BACKUPS" / ts
+
+    passports = find_passports(repo_root)
+    results: List[dict] = []
+    summary: Dict[str, int] = {
+        "total": 0,
+        "skipped_already_v0_2": 0,
+        "skipped_meta_schema": 0,
+        "skipped_not_a_tool_passport": 0,
+        "planned": 0,
+        "applied": 0,
+        "manual_migration_needed": 0,
+        "parse_error": 0,
+    }
+
+    for pp in passports:
+        r = migrate_one(pp, repo_root, backup_dir, dry_run=dry_run)
+        results.append(r)
+        summary["total"] += 1
+        st = r.get("status")
+        if st in summary:
+            summary[st] += 1
+
+    elapsed_ms = int((time.time() - start) * 1000)
+    ledger = {
+        "schema_id": LEDGER_SCHEMA_ID,
+        "generated_at": _utc_now_iso(),
+        "generator": "passport_migrator_v0_2",
+        "generator_version": MIGRATOR_VERSION,
+        "mode": "dry_run" if dry_run else "apply",
+        "repo_root": repo_root.as_posix(),
+        "backup_dir": backup_dir.as_posix(),
+        "elapsed_ms": elapsed_ms,
+        "summary": summary,
+        "results": results,
+    }
+    _write_json(out_path, ledger)
+
+    print("")
+    print("=== passport_migrator_v0_2 :: %s ===" % ("dry_run" if dry_run else "apply"))
+    for k in ("total", "skipped_already_v0_2", "skipped_meta_schema", "skipped_not_a_tool_passport",
+              "planned", "applied", "manual_migration_needed", "parse_error"):
+        print("  %-32s = %d" % (k, summary[k]))
+    print("  ledger                          -> %s" % out_path.as_posix())
+
+    if summary["manual_migration_needed"] > 0:
+        return 1
+    if summary["parse_error"] > 0:
+        return 1
+    return 0
+
+
+def _self_test() -> int:
     import tempfile
-    with tempfile.TemporaryDirectory() as td:
-        repo = Path(td)
-        # case 1: legacy good
-        good = repo / "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/SAMPLE"
-        (good / "PASSPORTS").mkdir(parents=True)
-        (good / "sample_v0_1.py").write_text("# stub\n")
-        legacy = {
+    failures = 0
+    with tempfile.TemporaryDirectory() as tmp:
+        repo = Path(tmp)
+        pdir = repo / "ORGANS" / "MECHANICUS" / "TOOL_INTELLIGENCE" / "PASSPORTS"
+        pdir.mkdir(parents=True)
+        blockdir = repo / "ORGANS" / "INQUISITION" / "BLOCK" / "PASSPORT"
+        blockdir.mkdir(parents=True)
+        backup_dir = repo / "_b"
+
+        # case 1: legacy good (all fields present) -> planned
+        legacy_good = {
             "schema_id": "imperium.tool_passport.v0_1",
             "tool_id": "sample",
             "name": "Sample",
             "version": "v0_1",
             "owner_organ": "MECHANICUS",
-            "validators": [{"name": "syntax", "exec": "python -m py_compile {tool_path}"}],
+            "lang": "python",
+            "validators": [{"id": "syntax", "type": "command", "command": "python -m py_compile x", "timeout_seconds": 10}],
+            "exec_mode": "static",
+            "owner_gated": False,
         }
-        lp = good / "PASSPORTS" / "sample_passport.json"
-        lp.write_text(json.dumps(legacy), encoding="utf-8")
-        # case 2: organ block passport (must be filtered)
-        ob = repo / "ORGANS/INQUISITION/BLOCK/PASSPORT"
-        ob.mkdir(parents=True)
-        ob_path = ob / "ORGAN_BLOCK_PASSPORT_V0_1.json"
-        ob_path.write_text(json.dumps({
-            "schema_id": "imperium.organ_block_passport.v0_1",
-            "organ": "INQUISITION",
-        }), encoding="utf-8")
-        # case 3: json schema (must be filtered by extension)
-        sch = repo / "ORGANS/MECHANICUS/SCHEMAS"
-        sch.mkdir(parents=True)
-        sch_path = sch / "imperium_tool_passport_v0_2.schema.json"
-        sch_path.write_text(json.dumps({
-            "$schema": "https://json-schema.org/draft/2020-12/schema",
-            "title": "tool passport v0_2",
-        }), encoding="utf-8")
-        # case 4: typo filename (passports with trailing s)
-        ev = repo / "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORTS"
-        ev.mkdir(parents=True)
-        ev_path = ev / "evidence_sealer_tool_passports_v0_1.json"
-        ev_path.write_text(json.dumps({
-            "schema_id": "imperium.tool_passport.v0_1",
-            "tool_id": "evidence_sealer",
-        }), encoding="utf-8")
-        # case 5: bad legacy (no validators)
-        bad = repo / "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/BAD"
-        (bad / "PASSPORTS").mkdir(parents=True)
-        bp = bad / "PASSPORTS" / "bad_passport.json"
-        bp.write_text(json.dumps({
-            "schema_id": "imperium.tool_passport.v0_1",
-            "tool_id": "bad",
-        }), encoding="utf-8")
-        (bad / "bad.py").write_text("# stub\n")
-        backup_dir = repo / "_BK"
-        r1 = migrate_one(lp,      repo, apply=False, backup_dir=backup_dir)
-        r2 = migrate_one(ob_path, repo, apply=False, backup_dir=backup_dir)
-        r3 = migrate_one(sch_path,repo, apply=False, backup_dir=backup_dir)
-        r4 = migrate_one(ev_path, repo, apply=False, backup_dir=backup_dir)
-        r5 = migrate_one(bp,      repo, apply=False, backup_dir=backup_dir)
-        print(f"case 1 legacy good        : {r1['status']}")
-        print(f"case 2 organ block        : {r2['status']}")
-        print(f"case 3 json schema        : {r3['status']}")
-        print(f"case 4 typo evidence      : {r4['status']} missing={r4.get('missing', [])}")
-        print(f"case 5 bad legacy         : {r5['status']} missing={r5.get('missing', [])}")
-        assert r1["status"] == "planned", r1
-        assert r2["status"] == "skipped_not_a_tool_passport", r2
-        assert r3["status"] == "skipped_meta_schema", r3
-        # case 4: missing validators (evidence has tool_id+schema_id but no validators)
-        assert r4["status"] == "manual_migration_needed", r4
-        assert "validators" in r4["missing"], r4
-        # apply case 1
-        ra = migrate_one(lp, repo, apply=True, backup_dir=backup_dir)
-        assert ra["status"] == "applied", ra
-        new_path = repo / ra["target_path"]
-        loaded = json.loads(new_path.read_text(encoding="utf-8"))
-        assert loaded["schema_id"] == SCHEMA_ID_V0_2
-        assert loaded["lang"] == "python"
-    print("self-test ok")
-    return 0
+        p1 = pdir / "sample_tool_passport_v0_1.json"
+        _write_json(p1, legacy_good)
+        r1 = migrate_one(p1, repo, backup_dir, dry_run=True)
+        ok1 = r1["status"] == "planned"
+        print("case 1 legacy good           : %s  (%s)" % ("OK" if ok1 else "FAIL", r1["status"]))
+        if not ok1: failures += 1
+
+        # case 2: organ block -> skipped_not_a_tool_passport
+        p2 = blockdir / "ORGAN_BLOCK_PASSPORT_V0_1.json"
+        _write_json(p2, {"schema_id": "imperium.organ_block_passport.v0_1"})
+        r2 = migrate_one(p2, repo, backup_dir, dry_run=True)
+        ok2 = r2["status"] == "skipped_not_a_tool_passport"
+        print("case 2 organ block           : %s  (%s)" % ("OK" if ok2 else "FAIL", r2["status"]))
+        if not ok2: failures += 1
+
+        # case 3: .schema.json -> skipped_meta_schema
+        p3 = pdir / "some.schema.json"
+        _write_json(p3, {"type": "object"})
+        r3 = migrate_one(p3, repo, backup_dir, dry_run=True)
+        ok3 = r3["status"] == "skipped_meta_schema"
+        print("case 3 .schema.json          : %s  (%s)" % ("OK" if ok3 else "FAIL", r3["status"]))
+        if not ok3: failures += 1
+
+        # case 4: NEW - tool_passport_schema_v0_1.json -> skipped_meta_schema (filename prefix rule)
+        p4 = pdir / "tool_passport_schema_v0_1.json"
+        _write_json(p4, {"schema_id": "imperium.tool_passport_schema.v0_1", "type": "object"})
+        r4 = migrate_one(p4, repo, backup_dir, dry_run=True)
+        ok4 = r4["status"] == "skipped_meta_schema"
+        print("case 4 tool_passport_schema  : %s  (%s) <NEW>" % ("OK" if ok4 else "FAIL", r4["status"]))
+        if not ok4: failures += 1
+
+        # case 5: legacy missing fields -> manual_migration_needed
+        p5 = pdir / "evidence_x_tool_passports_v0_1.json"
+        _write_json(p5, {"schema_id": "imperium.tool_passport.v0_1"})
+        r5 = migrate_one(p5, repo, backup_dir, dry_run=True)
+        ok5 = r5["status"] == "manual_migration_needed" and "validators" in r5["missing"]
+        print("case 5 typo evidence missing : %s  (%s missing=%s)" % ("OK" if ok5 else "FAIL", r5["status"], r5.get("missing")))
+        if not ok5: failures += 1
+
+        # case 6: apply mode migrates schema_id
+        r6 = migrate_one(p1, repo, backup_dir, dry_run=False)
+        ok6 = r6["status"] == "applied"
+        if ok6:
+            j_after = _read_json(p1)
+            ok6 = j_after is not None and j_after.get("schema_id") == SCHEMA_ID_V0_2
+        print("case 6 apply migrates schema : %s  (%s)" % ("OK" if ok6 else "FAIL", r6["status"]))
+        if not ok6: failures += 1
+
+    if failures == 0:
+        print("self-test ok (6 cases)")
+        return 0
+    print("self-test FAILED: %d failures" % failures)
+    return 1
 
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--repo", type=str)
-    parser.add_argument("--out", type=str, default=None)
-    parser.add_argument("--dry-run", action="store_true")
-    parser.add_argument("--apply", action="store_true")
-    parser.add_argument("--self-test", action="store_true")
-    parser.add_argument("--quiet", action="store_true")
-    args = parser.parse_args()
+def main(argv: Optional[List[str]] = None) -> int:
+    ap = argparse.ArgumentParser(description="Mechanicus passport migrator v0_2")
+    ap.add_argument("--repo", type=str, default=None)
+    ap.add_argument("--out", type=str, default=None)
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--apply", action="store_true")
+    ap.add_argument("--self-test", action="store_true")
+    args = ap.parse_args(argv)
 
     if args.self_test:
-        return self_test()
+        return _self_test()
 
-    if not args.repo:
-        print("ERROR: --repo required (or --self-test)", file=sys.stderr)
+    if not args.dry_run and not args.apply:
+        print("error: one of --dry-run / --apply / --self-test required", file=sys.stderr)
         return 2
-    if args.apply and args.dry_run:
-        print("ERROR: --apply and --dry-run are mutually exclusive", file=sys.stderr)
-        return 2
-    if not args.apply and not args.dry_run:
-        args.dry_run = True
-
-    repo = Path(args.repo).resolve()
-    if not repo.exists():
-        print(f"ERROR: repo not found: {repo}", file=sys.stderr)
+    if args.dry_run and args.apply:
+        print("error: --dry-run and --apply are mutually exclusive", file=sys.stderr)
         return 2
 
-    t0 = time.time()
-    candidates = find_passport_candidates(repo)
-    ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
-    backup_dir = repo / "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORT_MIGRATOR/BACKUPS" / ts
+    repo = Path(args.repo) if args.repo else Path.cwd()
+    if not repo.is_dir():
+        print("error: repo root not found: %s" % repo, file=sys.stderr)
+        return 2
 
-    results = []
-    for c in candidates:
-        r = migrate_one(c, repo, apply=args.apply, backup_dir=backup_dir)
-        results.append(r)
-        if not args.quiet:
-            print(f"[{r['status']:30}] {r['path']}")
-            if r.get("missing"):
-                print(f"  missing: {r['missing']}")
-            for n in r.get("notes", []):
-                print(f"  note   : {n}")
-            if r.get("target_path"):
-                print(f"  target : {r['target_path']}")
+    if not args.out:
+        ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+        args.out = str(repo / "_LOCAL_HANDOFF" / "MIGRATION" / ("v0_2_migration_%s.json" % ts))
 
-    summary = {
-        "total":                       len(results),
-        "skipped_already_v0_2":        sum(1 for r in results if r["status"] == "skipped_already_v0_2"),
-        "skipped_meta_schema":         sum(1 for r in results if r["status"] == "skipped_meta_schema"),
-        "skipped_not_a_tool_passport": sum(1 for r in results if r["status"] == "skipped_not_a_tool_passport"),
-        "planned":                     sum(1 for r in results if r["status"] == "planned"),
-        "applied":                     sum(1 for r in results if r["status"] == "applied"),
-        "manual_migration_needed":     sum(1 for r in results if r["status"] == "manual_migration_needed"),
-        "parse_error":                 sum(1 for r in results if r["status"] == "parse_error"),
-    }
+    out_path = Path(args.out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
 
-    ledger = {
-        "schema_id":    SCHEMA_ID_LEDGER,
-        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "generator":    "imperium.passport_migrator.v0_2",
-        "mode":         "apply" if args.apply else "dry_run",
-        "repo_root":    str(repo),
-        "backup_dir":   str(backup_dir) if args.apply else None,
-        "elapsed_ms":   int((time.time() - t0) * 1000),
-        "summary":      summary,
-        "results":      results,
-    }
-
-    if args.out:
-        Path(args.out).parent.mkdir(parents=True, exist_ok=True)
-        Path(args.out).write_text(
-            json.dumps(ledger, indent=2, ensure_ascii=False),
-            encoding="utf-8",
-        )
-        if not args.quiet:
-            print(f"\nledger written -> {args.out}")
-
-    if not args.quiet:
-        print(f"\nsummary: {summary}")
-
-    if summary["parse_error"] or summary["manual_migration_needed"]:
-        return 1
-    return 0
+    return run(repo, out_path, dry_run=args.dry_run)
 
 
 if __name__ == "__main__":
