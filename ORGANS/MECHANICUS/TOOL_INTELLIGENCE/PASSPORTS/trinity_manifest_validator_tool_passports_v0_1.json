@@ -1,0 +1,26 @@
+{
+  "tool_id": "trinity_manifest_validator_v0_2",
+  "organ": "INQUISITION",
+  "kind": "validator",
+  "entrypoint": "ORGANS/INQUISITION/REPORTING/trinity_manifest_validator_v0_2.py",
+  "cli": "python trinity_manifest_validator_v0_2.py <manifest.json> [--out receipt.json]",
+  "inputs": [
+    "manifest.json conforming to imperium.trinity_patch_manifest.v0_2"
+  ],
+  "outputs": [
+    "validation receipt JSON (result PASS/FAIL, errors[])"
+  ],
+  "exit_codes": {
+    "0": "PASS",
+    "1": "FAIL"
+  },
+  "deps": [
+    "python3 stdlib only"
+  ],
+  "authority_refs": [
+    "Constitution §4 (evidence)",
+    "Constitution §6 (reusable tools)",
+    "Passport §5 (no fake green)"
+  ],
+  "reusable": true
+}

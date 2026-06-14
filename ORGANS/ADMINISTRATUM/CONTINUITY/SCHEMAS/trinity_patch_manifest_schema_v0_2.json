@@ -1,0 +1,251 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "imperium.trinity_patch_manifest.v0_2",
+  "title": "Imperium Trinity Patch Manifest (hardened form v0_2)",
+  "type": "object",
+  "direction_taxonomy_14": [
+    "GOVERNANCE",
+    "CLEANUP_HYGIENE",
+    "PASSPORTING",
+    "VALIDATION_PROOF",
+    "CONTINUITY",
+    "TOOLING_MECHANICUS",
+    "UX_OBSERVABILITY",
+    "ROUTING_TASKING",
+    "SECURITY",
+    "GHOST_EVOLVE_LEARNING",
+    "KNOWLEDGE_SCHOLA",
+    "STRATEGY_STRATEGIUM",
+    "EXTERNAL_TRADING",
+    "EXTERNAL_FREELANCE_DELIVERY"
+  ],
+  "valid_forms": [
+    5,
+    7,
+    10,
+    14
+  ],
+  "execution_modes": [
+    "static",
+    "sim",
+    "paper",
+    "shadow",
+    "live"
+  ],
+  "required": [
+    "manifest_schema",
+    "patch_id",
+    "patch_type",
+    "version",
+    "authority_refs",
+    "scope",
+    "dirty_scope_expectation",
+    "forbidden_actions_checked",
+    "rollback",
+    "git_truth",
+    "function_directions"
+  ],
+  "x_invariants": [
+    "manifest_schema MUST equal 'imperium.trinity_patch_manifest.v0_2'",
+    "authority_refs MUST list >=1 canon clause (Passport/Constitution)",
+    "dirty_scope_expectation in {additive_only, classification_only, move_only, mixed}",
+    "function_directions.target_form in {5,7,10,14}",
+    "declared directions count MUST equal target_form",
+    "each ACTIVE direction MUST carry a proof_receipt",
+    "each DORMANT direction MUST carry dormant_declaration AND execution_mode=static",
+    "etalon=true REQUIRES target_form=14 AND all 14 taxonomy directions declared",
+    "execution_mode=live is BLOCKED unless owner_canon_amendment_ref is present"
+  ],
+  "properties": {
+    "manifest_schema": {
+      "const": "imperium.trinity_patch_manifest.v0_2"
+    },
+    "patch_id": {
+      "type": "string"
+    },
+    "patch_type": {
+      "type": "string",
+      "enum": [
+        "TRINITY_PLUS",
+        "TRINITY_HYGIENE",
+        "TRINITY_GHOST_EVOLVE",
+        "TRINITY_MULTI"
+      ]
+    },
+    "version": {
+      "type": "string"
+    },
+    "authority_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "in_paths",
+        "out_paths"
+      ],
+      "properties": {
+        "in_paths": {
+          "type": "array"
+        },
+        "out_paths": {
+          "type": "array"
+        }
+      }
+    },
+    "dirty_scope_expectation": {
+      "enum": [
+        "additive_only",
+        "classification_only",
+        "move_only",
+        "mixed"
+      ]
+    },
+    "forbidden_actions_checked": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "owner_decision_required": {
+      "type": "string"
+    },
+    "owner_canon_amendment_ref": {
+      "type": "string"
+    },
+    "rollback": {
+      "type": "object",
+      "required": [
+        "backup_root",
+        "strategy"
+      ]
+    },
+    "git_truth": {
+      "type": "object",
+      "required": [
+        "expected_before",
+        "expected_after",
+        "contour"
+      ]
+    },
+    "ghost_evolve": {
+      "type": "object",
+      "properties": {
+        "self_describe": {
+          "type": "boolean"
+        },
+        "self_prove": {
+          "type": "boolean"
+        },
+        "self_heal": {
+          "type": "boolean"
+        },
+        "self_direct": {
+          "type": "boolean"
+        },
+        "learning_receipt": {
+          "type": "string"
+        }
+      }
+    },
+    "function_directions": {
+      "type": "object",
+      "required": [
+        "target_form",
+        "declared_count",
+        "directions"
+      ],
+      "properties": {
+        "target_form": {
+          "enum": [
+            5,
+            7,
+            10,
+            14
+          ]
+        },
+        "declared_count": {
+          "type": "integer"
+        },
+        "active_count": {
+          "type": "integer"
+        },
+        "dormant_count": {
+          "type": "integer"
+        },
+        "etalon": {
+          "type": "boolean"
+        },
+        "directions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "direction_id",
+              "function",
+              "organ",
+              "execution_mode"
+            ],
+            "properties": {
+              "direction_id": {
+                "enum": [
+                  "GOVERNANCE",
+                  "CLEANUP_HYGIENE",
+                  "PASSPORTING",
+                  "VALIDATION_PROOF",
+                  "CONTINUITY",
+                  "TOOLING_MECHANICUS",
+                  "UX_OBSERVABILITY",
+                  "ROUTING_TASKING",
+                  "SECURITY",
+                  "GHOST_EVOLVE_LEARNING",
+                  "KNOWLEDGE_SCHOLA",
+                  "STRATEGY_STRATEGIUM",
+                  "EXTERNAL_TRADING",
+                  "EXTERNAL_FREELANCE_DELIVERY"
+                ]
+              },
+              "function": {
+                "type": "string"
+              },
+              "organ": {
+                "type": "string"
+              },
+              "capability": {
+                "type": "string"
+              },
+              "status": {
+                "enum": [
+                  "active",
+                  "dormant"
+                ]
+              },
+              "execution_mode": {
+                "enum": [
+                  "static",
+                  "sim",
+                  "paper",
+                  "shadow",
+                  "live"
+                ]
+              },
+              "owner_gated": {
+                "type": "boolean"
+              },
+              "proof_receipt": {
+                "type": "string"
+              },
+              "dormant_declaration": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
