@@ -1,0 +1,28 @@
+{
+  "schema_id": "imperium.tool_passport.v0_2",
+  "tool_id": "toolchain_probe",
+  "name": "Toolchain Probe",
+  "version": "v0_3",
+  "owner_organ": "MECHANICUS",
+  "lang": "python",
+  "build_system": "stdlib",
+  "validators": [
+    {
+      "name": "syntax",
+      "exec": "python -m py_compile {repo}/ORGANS/MECHANICUS/TOOL_INTELLIGENCE/TOOLCHAIN_PROBE/toolchain_probe_v0_3.py",
+      "timeout_seconds": 10
+    }
+  ],
+  "io_contract": {
+    "output_schema": "ORGANS/MECHANICUS/SCHEMAS/imperium_toolchain_inventory_v0_1.schema.json"
+  },
+  "observability": {
+    "stdout": "rich",
+    "metrics": ["elapsed_ms", "tools_ok", "tools_missing", "required_for_tauri_ready"]
+  },
+  "exec_mode": "static",
+  "owner_gated": false,
+  "capability_tags": ["probe", "inventory", "toolchain", "mechanicus", "read_only"],
+  "doctrine_ref": "ORGANS/DOCTRINARIUM/LAWS/MECHANICUS_PASSPORT_DOCTRINE_V0_2_RU.md",
+  "tool_path": "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/TOOLCHAIN_PROBE/toolchain_probe_v0_3.py"
+}
