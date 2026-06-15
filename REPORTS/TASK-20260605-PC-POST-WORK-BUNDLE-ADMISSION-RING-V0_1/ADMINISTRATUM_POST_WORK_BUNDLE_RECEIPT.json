@@ -1,0 +1,35 @@
+{
+  "schema_version": "administratum.post_work_bundle_receipt.v0_1",
+  "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+  "created_at_utc": "2026-06-05T16:21:56Z",
+  "owner_organ": "ADMINISTRATUM",
+  "bundle_admission_evidence": true,
+  "admission_layer": "POST_WORK_BUNDLE_STRUCTURAL_V0_1",
+  "contract_path": "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/POST_WORK_BUNDLE_CONTRACT_V0_1.md",
+  "checker_path": "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_bundle_checker_v0_1.py",
+  "schema_paths": [
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/SCHEMAS/post_work_bundle_manifest.schema.json",
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/SCHEMAS/organ_post_work_receipt.schema.json",
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/SCHEMAS/bundle_index_card.schema.json"
+  ],
+  "report_paths": [
+    "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/POST_WORK_BUNDLE_MANIFEST.json",
+    "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/POST_WORK_BUNDLE_INDEX_CARD.json",
+    "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/POST_WORK_RECEIPT_INDEX.json",
+    "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/POST_WORK_FILE_DELTA_INDEX.json"
+  ],
+  "checks_claimed": [
+    "Core bundle files exist and parse.",
+    "Required report files exist and parse.",
+    "Registered taskpack evidence is locatable.",
+    "All nine post-work organs are represented.",
+    "Heavy artifacts inside report directory are indexed.",
+    "Machine artifacts are intended as UTF-8 without BOM."
+  ],
+  "checker_report_path": "REPORTS/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/ADMINISTRATUM_POST_WORK_BUNDLE_CHECKER_REPORT.json",
+  "checker_verdict": "POST_WORK_BUNDLE_STRUCTURAL_PASS",
+  "checker_issue_count": 0,
+  "checker_block_count": 0,
+  "authority_boundary": "Structural admission only. This receipt does not claim full semantic truth, full Custodes authority, or runtime production readiness.",
+  "status": "POST_WORK_BUNDLE_STRUCTURAL_PASS"
+}

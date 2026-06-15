@@ -1,0 +1,21 @@
+{
+  "task_id": "MECHANICUS_FORGE_CLIENT_V0_4_RITE_SKIN_MANUAL_GIFT",
+  "created_utc": "2026-05-25T00:08:32Z",
+  "organ": "MECHANICUS",
+  "mode": "GE_LITE_VISUAL_POLISH",
+  "learning_delta": [
+    "V0.4 applies stronger Mechanicus rite styling while preserving V0.3 surfaces.",
+    "Style layer is separated via subclass + dedicated CSS.",
+    "No read/write behavior changed."
+  ],
+  "reusable_capability": {
+    "name": "mechanicus_forge_client_v0_4",
+    "entrypoint": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/mechanicus_forge_client_v0_4.py",
+    "launcher": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/LAUNCH_MECHANICUS_FORGE_CLIENT_V0_4.cmd"
+  },
+  "eval_or_smoke": [
+    "py -3 -m py_compile mechanicus_forge_client_v0_4.py",
+    "manual launch via LAUNCH_MECHANICUS_FORGE_CLIENT_V0_4.cmd"
+  ],
+  "read_only": true
+}

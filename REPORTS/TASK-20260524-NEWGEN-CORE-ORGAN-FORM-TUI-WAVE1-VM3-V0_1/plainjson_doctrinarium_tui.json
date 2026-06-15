@@ -1,0 +1,135 @@
+{
+  "organ_id": "DOCTRINARIUM",
+  "rich_available": true,
+  "smoke_mode": false,
+  "responsibility": "Law and gate admission for NewGen tasks.",
+  "bundle": {
+    "identity_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/IDENTITY/organ_identity_v0_1.md",
+    "contract_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/CONTRACTS/servitor_contract_v0_1.md",
+    "gate_catalog_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATES/organ_gate_catalog_v0_1.json",
+    "state_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/STATE/current_state_v0_1.json",
+    "template_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TEMPLATES/organ_verdict_template_v0_1.json",
+    "gate_catalog": {
+      "schema_id": "newgen_organ_gate_catalog_v0_1",
+      "organ_id": "DOCTRINARIUM",
+      "version": "v0_1",
+      "gates": [
+        {
+          "gate_id": "GATE_DOCTRINARIUM_READ_FIRST",
+          "severity": "BLOCK",
+          "purpose": "No scoped work before read-first route and preflight.",
+          "expected_verdict": "PASS",
+          "evidence_required": [
+            "doctrinarium_preflight_output.json",
+            "applicable_doctrinarium_gates.json"
+          ]
+        },
+        {
+          "gate_id": "GATE_NO_GENERIC_PASS",
+          "severity": "BLOCK",
+          "purpose": "Reject generic PASS; require scoped verdict.",
+          "expected_verdict": "PASS",
+          "evidence_required": [
+            "FINAL_REPORT.md",
+            "closure_receipt.json"
+          ]
+        },
+        {
+          "gate_id": "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+          "severity": "BLOCK",
+          "purpose": "Every strong claim must have evidence path.",
+          "expected_verdict": "PASS",
+          "evidence_required": [
+            "wave1_organ_tui_smoke_report.json",
+            "organ_interaction_simulation_v0_1.json"
+          ]
+        },
+        {
+          "gate_id": "GATE_NOT_PROVEN_BOUNDARY",
+          "severity": "WARN_TO_BLOCK",
+          "purpose": "Bound claims to Wave 1 only.",
+          "expected_verdict": "PASS",
+          "evidence_required": [
+            "FINAL_REPORT.md"
+          ]
+        }
+      ]
+    },
+    "state": {
+      "schema_id": "newgen_organ_state_v0_1",
+      "organ_id": "DOCTRINARIUM",
+      "version": "v0_1",
+      "default_verdict": "PASS",
+      "responsibility": "Law and gate admission for NewGen tasks.",
+      "servitor_ask": [
+        "What doctrinal gates apply to this task now?",
+        "What evidence is mandatory before PASS claim?",
+        "What is explicitly not proven in this slice?"
+      ],
+      "warn_block_profile": [
+        "WARN on partial execution with explicit not-run boundary",
+        "BLOCK on generic pass or missing evidence refs"
+      ],
+      "required_actions": [
+        "Run and store preflight output before edits",
+        "Bind final verdict to scoped Wave 1 slice only"
+      ],
+      "forbidden_actions": [
+        "Claim complete Important Six",
+        "Claim production autonomy"
+      ],
+      "evidence_refs": [
+        "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/gate_registry_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/doctrinarium_preflight_output.json"
+      ],
+      "last_updated_utc": "2026-05-24T01:20:00Z"
+    },
+    "template": {
+      "schema_id": "newgen_organ_verdict_v0_1",
+      "organ_id": "DOCTRINARIUM",
+      "task_id": "<TASK_ID>",
+      "mode": "SERVITOR_QUERY",
+      "verdict": "PASS|WARN|BLOCK|OWNER_VERDICT_NEEDED",
+      "applied_rules": [],
+      "required_actions": [],
+      "forbidden_actions": [],
+      "evidence_required": [],
+      "owner_question": null,
+      "not_proven": [],
+      "evidence_refs": []
+    }
+  },
+  "verdict": {
+    "schema_id": "newgen_organ_verdict_v0_1",
+    "organ_id": "DOCTRINARIUM",
+    "task_id": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+    "mode": "SMOKE",
+    "verdict": "PASS",
+    "applied_rules": [
+      "GATE_DOCTRINARIUM_READ_FIRST",
+      "GATE_NO_GENERIC_PASS",
+      "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+      "GATE_NOT_PROVEN_BOUNDARY"
+    ],
+    "required_actions": [
+      "Run and store preflight output before edits",
+      "Bind final verdict to scoped Wave 1 slice only"
+    ],
+    "forbidden_actions": [
+      "Claim complete Important Six",
+      "Claim production autonomy"
+    ],
+    "evidence_required": [],
+    "owner_question": null,
+    "not_proven": [
+      "complete Important Six",
+      "Astronomicon/Inquisition TUI in this task",
+      "production autonomy"
+    ],
+    "evidence_refs": [
+      "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/gate_registry_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/doctrinarium_preflight_output.json"
+    ],
+    "generated_at_utc": "2026-05-24T01:27:12.582031+00:00"
+  }
+}

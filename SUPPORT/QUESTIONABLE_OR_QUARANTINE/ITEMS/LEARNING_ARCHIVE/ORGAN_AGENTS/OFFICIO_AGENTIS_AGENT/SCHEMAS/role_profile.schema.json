@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Role Profile",
+  "type": "object",
+  "required": [
+    "agent",
+    "role_name",
+    "default_mode",
+    "obligations",
+    "ack_required"
+  ],
+  "properties": {
+    "agent": {
+      "type": "string"
+    },
+    "role_name": {
+      "type": "string"
+    },
+    "default_mode": {
+      "type": "string"
+    },
+    "obligations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ack_required": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}
+

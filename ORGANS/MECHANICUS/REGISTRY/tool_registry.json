@@ -1,0 +1,196 @@
+{
+  "schema_version": "mechanicus.tool_registry.v0_1",
+  "registry_status": "CANON_ACTIVE_SEED",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2",
+  "updated_at_utc": "2026-06-07T14:58:00Z",
+  "owner_organ": "MECHANICUS",
+  "policy_path": "ORGANS/MECHANICUS/REGISTRY/command_policy.json",
+  "tools": [
+    {
+      "tool_id": "MECHANICUS_CLI",
+      "name": "Mechanicus CLI",
+      "status": "PROVEN",
+      "path": "ORGANS/MECHANICUS/TOOLS/mechanicus_cli.py",
+      "entrypoints": [
+        "doctor",
+        "inventory",
+        "validate-json",
+        "list-tools",
+        "list-capabilities",
+        "policy",
+        "emit-receipt",
+        "dry-run-tool"
+      ],
+      "risk_class": "LOW_LOCAL_DRY_RUN",
+      "command_execution": "NO_ARBITRARY_SHELL",
+      "last_validation_task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1"
+    },
+    {
+      "tool_id": "MECHANICUS_DOCTOR",
+      "name": "Mechanicus Doctor",
+      "status": "PROVEN",
+      "path": "ORGANS/MECHANICUS/TOOLS/mechanicus_doctor.py",
+      "entrypoints": [
+        "doctor"
+      ],
+      "risk_class": "LOW_LOCAL_READ_ONLY",
+      "command_execution": "NO_ARBITRARY_SHELL",
+      "last_validation_task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1"
+    },
+    {
+      "tool_id": "MECHANICUS_INVENTORY",
+      "name": "Mechanicus Inventory",
+      "status": "PROVEN",
+      "path": "ORGANS/MECHANICUS/TOOLS/mechanicus_inventory.py",
+      "entrypoints": [
+        "inventory",
+        "list-tools",
+        "list-capabilities"
+      ],
+      "risk_class": "LOW_LOCAL_READ_ONLY",
+      "command_execution": "NO_ARBITRARY_SHELL",
+      "last_validation_task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1"
+    },
+    {
+      "tool_id": "MECHANICUS_VALIDATE",
+      "name": "Mechanicus JSON Validator",
+      "status": "PROVEN",
+      "path": "ORGANS/MECHANICUS/TOOLS/mechanicus_validate.py",
+      "entrypoints": [
+        "validate-json"
+      ],
+      "risk_class": "LOW_LOCAL_READ_ONLY",
+      "command_execution": "NO_ARBITRARY_SHELL",
+      "last_validation_task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1"
+    },
+    {
+      "tool_id": "MECHANICUS_COMMAND_GATEWAY",
+      "name": "Mechanicus Command Gateway",
+      "status": "PROVEN",
+      "path": "ORGANS/MECHANICUS/TOOLS/mechanicus_command_gateway.py",
+      "entrypoints": [
+        "dry-run-tool"
+      ],
+      "risk_class": "LOW_LOCAL_DRY_RUN",
+      "command_execution": "DRY_RUN_ONLY_ALLOWLISTED",
+      "last_validation_task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1"
+    },
+    {
+      "tool_id": "ASTRONOMICON_TASKPACK_REGISTRATION_SKILL_V0_1",
+      "name": "Astronomicon Taskpack Registration Skill",
+      "status": "PROVEN",
+      "path": "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py",
+      "entrypoints": [
+        "--discovery-smoke"
+      ],
+      "risk_class": "LOW_LOCAL",
+      "command_execution": "NO_REMOTE_ROUTE_FOR_PC_DISCOVERY",
+      "last_validation_task_id": "TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1"
+    },
+    {
+      "tool_id": "IMPERIAL_IDE_CONTROL_SHELL",
+      "name": "Imperial IDE Control Shell",
+      "status": "PROVEN",
+      "path": "ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py",
+      "entrypoints": [
+        "doctor",
+        "dashboard",
+        "tasks",
+        "reports",
+        "receipts",
+        "tools",
+        "capabilities",
+        "policy",
+        "extensions",
+        "workspace",
+        "validate",
+        "dry-run-tool"
+      ],
+      "risk_class": "LOW_LOCAL_READ_ONLY_AND_DRY_RUN",
+      "command_execution": "NO_ARBITRARY_SHELL",
+      "last_validation_task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1"
+    },
+    {
+      "tool_id": "IMPERIAL_IDE_TUI",
+      "name": "Imperial IDE Menu TUI",
+      "status": "PROVEN",
+      "path": "ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_tui.py",
+      "entrypoints": [
+        "--smoke",
+        "--command"
+      ],
+      "risk_class": "LOW_LOCAL_READ_ONLY",
+      "command_execution": "NO_ARBITRARY_SHELL",
+      "last_validation_task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1"
+    },
+    {
+      "tool_id": "MECHANICUS_IDE_SHELL_BRIDGE",
+      "name": "Mechanicus Imperial IDE Shell Bridge",
+      "status": "PROVEN",
+      "path": "ORGANS/IMPERIAL_IDE/BRIDGES/mechanicus_shell_bridge.py",
+      "entrypoints": [
+        "registry_read",
+        "doctor",
+        "dry_run_tool"
+      ],
+      "risk_class": "LOW_LOCAL_DRY_RUN",
+      "command_execution": "DRY_RUN_ONLY_ALLOWLISTED",
+      "last_validation_task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1"
+    },
+    {
+      "tool_id": "MECHANICUS_WORKBENCH_BRIDGE",
+      "name": "Mechanicus Workbench Bridge Adapter",
+      "status": "ACTIVE_CANDIDATE",
+      "path": "ORGANS/MECHANICUS/IDE_BRIDGE/workbench_bridge_adapter.py",
+      "entrypoints": [
+        "snapshot",
+        "dry_run_tool",
+        "request_real_execution_blocked"
+      ],
+      "risk_class": "LOW_LOCAL_DRY_RUN",
+      "command_execution": "DRY_RUN_ONLY_RECEIPTED",
+      "last_validation_task_id": "TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2"
+    },
+    {
+      "tool_id": "MECHANICUS_WARP_BRIDGE",
+      "name": "Mechanicus WARP Bridge Adapter",
+      "status": "ACTIVE_CANDIDATE",
+      "path": "ORGANS/MECHANICUS/IDE_BRIDGE/warp_bridge_adapter.py",
+      "entrypoints": [
+        "snapshot",
+        "dry_run_tool",
+        "request_real_execution_blocked"
+      ],
+      "risk_class": "LOW_LOCAL_DRY_RUN",
+      "command_execution": "DRY_RUN_ONLY_RECEIPTED",
+      "last_validation_task_id": "TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2"
+    },
+    {
+      "tool_id": "MECHANICUS_METAOS_BRIDGE",
+      "name": "Mechanicus MetaOS Bridge Adapter",
+      "status": "ACTIVE_CANDIDATE",
+      "path": "ORGANS/MECHANICUS/IDE_BRIDGE/metaos_bridge_adapter.py",
+      "entrypoints": [
+        "snapshot",
+        "dry_run_tool",
+        "request_real_execution_blocked"
+      ],
+      "risk_class": "LOW_LOCAL_DRY_RUN",
+      "command_execution": "DRY_RUN_ONLY_RECEIPTED",
+      "last_validation_task_id": "TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2"
+    },
+    {
+      "tool_id": "ADMINISTRATUM_CANDIDATE_BUNDLE_GATE",
+      "name": "Administratum WARP MetaOS Bundle Gate",
+      "status": "ACTIVE",
+      "path": "ORGANS/ADMINISTRATUM/BUNDLE_GATES/administratum_bundle_gate_adapter.py",
+      "entrypoints": [
+        "--smoke",
+        "--bundle"
+      ],
+      "risk_class": "LOW_LOCAL_VALIDATION",
+      "command_execution": "RELEASE_MANIFEST_ONLY_NO_KERNEL_PROMOTION",
+      "last_validation_task_id": "TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2"
+    }
+  ]
+}

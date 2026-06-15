@@ -1,0 +1,35 @@
+{
+  "schema_version": "imperium.taskpack/1",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-TASK-CONSOLE-AND-TASKPACK-BUILDER-PC-V0_1",
+  "title": "Imperial IDE operational engine: Task Console + Taskpack Builder + full lifecycle",
+  "created_from_contour": "PC",
+  "target_contour": "PC",
+  "registration_mode": "ASTRONOMICON_STAGE2_LOCAL_PC_TASKPACK_WITH_BUNDLED_SOURCES",
+  "execution_mode": "CONTROLLED_WRITE_WITH_VALIDATED_PUSH",
+  "status": "CANDIDATE_NOT_CANON",
+  "mission_summary": "Add an operational engine so the owner can run the full task loop (idea -> taskpack -> Astronomicon -> launch card -> servitor handoff -> validation -> receipts -> bundle gate -> anti-fake-green -> owner summary -> git closure -> next task) from inside the Imperial IDE, dry-run by default.",
+  "task_type": "build",
+  "scope": "IMPERIAL_IDE",
+  "risk": "CONTROLLED_WRITE",
+  "organs_route": ["ASTRONOMICON", "MECHANICUS", "INQUISITION", "ADMINISTRATUM"],
+  "allowed_write_scope": ["ORGANS/IMPERIAL_IDE/OPS/", "STAGING/"],
+  "forbidden_actions": [
+    "kernel write without release gate",
+    "real servitor execution",
+    "live LLM backend",
+    "push without scope+secret check",
+    "destructive cleanup without owner approval",
+    "fake-green PASS"
+  ],
+  "push_policy": "VALIDATED_PUSH",
+  "source_bundles": {},
+  "remote_contours": {"VM2": "OUT_OF_SCOPE", "VM3": "OUT_OF_SCOPE"},
+  "strategic_intent": {
+    "kernel": "untouched without release gate",
+    "workbench": "GUI panels wrap this engine later",
+    "warp": "lifecycle stage 8 binds to WARP session",
+    "metaos": "lifecycle stage 3 route preview",
+    "mechanicus": "lifecycle stage 4 policy check",
+    "operator_goal": "set and close tasks from inside the IDE, no manual ZIP"
+  }
+}

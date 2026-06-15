@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ORGAN_DIALOGUE_EVENT_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "event_id",
+    "thread_id",
+    "timestamp_utc",
+    "event_type",
+    "actor",
+    "payload_ref",
+    "foundation_only"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "ORGAN_DIALOGUE_EVENT_V0_1"
+    },
+    "event_id": {
+      "type": "string"
+    },
+    "thread_id": {
+      "type": "string"
+    },
+    "timestamp_utc": {
+      "type": "string"
+    },
+    "event_type": {
+      "enum": [
+        "REQUEST_EMITTED",
+        "RESPONSE_RECORDED",
+        "THREAD_SUMMARY_UPDATED"
+      ]
+    },
+    "actor": {
+      "type": "string"
+    },
+    "payload_ref": {
+      "type": "string"
+    },
+    "foundation_only": {
+      "const": true
+    },
+    "note": {
+      "type": "string"
+    }
+  }
+}

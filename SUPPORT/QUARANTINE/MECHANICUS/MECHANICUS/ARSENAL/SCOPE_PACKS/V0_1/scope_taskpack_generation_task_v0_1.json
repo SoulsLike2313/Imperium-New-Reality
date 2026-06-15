@@ -1,0 +1,108 @@
+{
+  "scope_id": "taskpack_generation_task",
+  "version": "0.1",
+  "generated_at_utc": "2026-05-24T23:34:05Z",
+  "source_registry": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json",
+  "purpose": "Structured ZIP dossier/taskpack generation with read-first/language/gate contracts and closure receipts.",
+  "target_task_types": [
+    "taskpack_generation",
+    "zip_dossier_build",
+    "gatepack_assembly"
+  ],
+  "canon_allowed": [
+    "CAP-TOOL-RECEIPT-MODELS-VALIDATORS"
+  ],
+  "sandbox_allowed": [
+    "TOOLS_RECEIPT_VALIDATOR",
+    "UTILITIES_ARCHIVE_MANIFEST_GENERATOR",
+    "UTILITIES_SHA256_HASHING"
+  ],
+  "candidate_context_only": [
+    "EXAMPLES_TASKPACK_EXAMPLE",
+    "PLAYBOOKS_COMMIT_PUSH_GATE_PLAYBOOK",
+    "PROMPTING_PATTERNS_4_PART_OWNER_REPORT_PROMPT",
+    "PROMPTING_PATTERNS_OWNER_DECISION_QUEUE_PROMPT",
+    "PROMPTING_PATTERNS_READ_FIRST_GATE_PROMPT",
+    "PROMPTING_PATTERNS_STRUCTURED_ZIP_DOSSIER_PROMPT",
+    "PROMPTING_PATTERNS_TASK_CONTINUATION_PROMPT",
+    "PROMPTING_PATTERNS_VOLUME_BUDGET_PROMPT",
+    "REFERENCE_CODE_OWNER_QUESTION_SCHEMA",
+    "REFERENCE_CODE_VALIDATION_RECEIPT_SCHEMA",
+    "TOOLS_COMMIT_PUSH_WORKFLOW",
+    "TOOLS_TASKPACK_DOSSIER_BUILDER",
+    "UTILITIES_7_ZIP"
+  ],
+  "owner_decision_required": [
+    "CLOUD_LLM_ADAPTERS_CLOUD_MODEL_ROUTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_CLOUD_RECEIPT_MODEL_CANDIDATE",
+    "CLOUD_LLM_ADAPTERS_COST_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_OPENAI_COMPATIBLE_API_ADAPTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_PRIVACY_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_SECRET_POLICY_GATE",
+    "LOCAL_LLM_LLAMACPP_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LM_STUDIO_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LOCAL_MODEL_RUNNER_RESERVED",
+    "LOCAL_LLM_MODEL_CAPABILITY_CARD_PATTERN",
+    "LOCAL_LLM_OLLAMA_RESERVED_CANDIDATE",
+    "LOCAL_LLM_OPENAI_COMPATIBLE_LOCAL_ENDPOINT_PATTERN"
+  ],
+  "forbidden": [],
+  "required_receipts": [
+    "cap-tool-receipt-models-validators_receipt.json",
+    "closure_receipt.json",
+    "examples-taskpack-example_validation_receipt.json",
+    "playbooks-commit-push-gate-playbook_validation_receipt.json",
+    "prompting-patterns-4-part-owner-report-prompt_validation_receipt.json",
+    "prompting-patterns-owner-decision-queue-prompt_validation_receipt.json",
+    "prompting-patterns-read-first-gate-prompt_validation_receipt.json",
+    "prompting-patterns-structured-zip-dossier-prompt_validation_receipt.json",
+    "prompting-patterns-task-continuation-prompt_validation_receipt.json",
+    "prompting-patterns-volume-budget-prompt_validation_receipt.json",
+    "reference-code-owner-question-schema_validation_receipt.json",
+    "reference-code-validation-receipt-schema_validation_receipt.json",
+    "scope_pack_check_report.json",
+    "src/imperium/receipts/__init__.py",
+    "src/imperium/receipts/model.py",
+    "src/imperium/receipts/validator.py",
+    "taskpack_manifest.json",
+    "tools-commit-push-workflow_validation_receipt.json",
+    "tools-receipt-validator_validation_receipt.json",
+    "tools-taskpack-dossier-builder_validation_receipt.json",
+    "utilities-7-zip_validation_receipt.json",
+    "utilities-archive-manifest-generator_validation_receipt.json",
+    "utilities-sha256-hashing_validation_receipt.json"
+  ],
+  "required_gates": [
+    "GATE-U00-GIT-TRUTH",
+    "GATE-U01-ROLE-ACK",
+    "GATE-U02-SCOPE-BOUNDARY",
+    "GATE-U04-EVIDENCE-RECEIPT",
+    "GATE-U05-STOP-CONDITIONS",
+    "GATE-U08-REPO-PURITY",
+    "GATE-U09-NO-FAKE-GREEN",
+    "GATE-U12-REPORT-OUTPUT-BUDGET",
+    "GATE-U13-PYTHON-TYPE-SAFETY",
+    "GATE-U14-WHOLE-REPO-SCOPE-RECON",
+    "GATE-U15-OPERATIONALITY-IMPACT",
+    "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+    "GATE-U20-AGENT-KPD-SELF-REVIEW",
+    "GATE-U21-COMMAND-CHUNKING"
+  ],
+  "warnings": [
+    "Taskpack generation must keep machine artifacts UTF-8 safe and owner summaries RU-ready."
+  ],
+  "examples_of_use": [
+    "Build dossier files: TASK.md + TASK.json + ACCEPTANCE_GATES.md + templates",
+    "Attach _MANIFEST.json and hash ZIP before handoff"
+  ],
+  "future_promotion_candidates": [
+    "TOOLS_TASKPACK_DOSSIER_BUILDER",
+    "UTILITIES_ARCHIVE_MANIFEST_GENERATOR"
+  ],
+  "forbidden_actions": [
+    "chat-only prompts when dossier required",
+    "missing acceptance gates",
+    "taskpack without closure receipt"
+  ],
+  "last_generated_from_commit": "5d22657b2fe8a319c9a4636549c53bfcc2ffa119"
+}

@@ -1,0 +1,28 @@
+{
+  "view_id": "AGENT_HARNESS_VIEW_MODEL_CANDIDATE_V0_1",
+  "scope": "DATA_MODEL_ONLY_NO_VISUAL_UI",
+  "panels": [
+    {
+      "panel": "entry_ack",
+      "source": "ghost_evolve_entry_ack.json"
+    },
+    {
+      "panel": "repo_truth",
+      "source": "repo_truth_probe.json"
+    },
+    {
+      "panel": "organ_participation",
+      "source": "eight_organ_participation_summary.json"
+    },
+    {
+      "panel": "red_team",
+      "source": "hard_red_team_verdict.json"
+    }
+  ],
+  "warnings": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME"
+  ],
+  "no_fake_buttons": true
+}

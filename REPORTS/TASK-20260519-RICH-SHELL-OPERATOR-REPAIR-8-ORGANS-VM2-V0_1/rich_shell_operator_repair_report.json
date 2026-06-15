@@ -1,0 +1,58 @@
+{
+  "schema_version": "RICH_SHELL_OPERATOR_REPAIR_REPORT_V0_1",
+  "task_id": "TASK-20260519-RICH-SHELL-OPERATOR-REPAIR-8-ORGANS-VM2-V0_1",
+  "generated_at_utc": "2026-05-19T21:09:01Z",
+  "repo_root": "/home/vboxuser2/IMPERIUM_WORK/Imperium-",
+  "branch": "master",
+  "head_at_report_time": "57cf210f2516fb001adc42a4f283a8bd4e647ec8",
+  "expected_start_head": "57cf210f2516fb001adc42a4f283a8bd4e647ec8",
+  "dirty_start_policy": "DIRTY_ALLOWED_WITH_GUARD_FOR_PRIOR_ALLOWED_SCOPE",
+  "dirty_start_captured": true,
+  "scope_guard": {
+    "forbidden_tokens_checked": [
+      "THRONE",
+      "CUSTODES"
+    ],
+    "forbidden_token_hits": 0,
+    "scope_verdict": "PASS"
+  },
+  "implemented_repairs": [
+    {
+      "path": "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/base_half_cli.py",
+      "summary": "Added operator shell zone layout and shell --once output flow for base-half shell UX proof."
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/TOOLS/officio_agent_runner.py",
+      "summary": "Added shell --once support and /identity alias mapped to role-get."
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py",
+      "summary": "Added /identity shell alias for operator identity rite parity."
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/run_eight_organ_operator_shell_sweep.py",
+      "summary": "Implemented eight-organ shell sweep with transcripts, diagnostics, matrix, and WARN/ERROR/BLOCKER register."
+    }
+  ],
+  "sweep_summary": {
+    "organs_total": 8,
+    "warn": 0,
+    "error": 0,
+    "blocker": 0,
+    "verdict": "PASS_RICH_OPERATOR_SHELL_8_ORGANS"
+  },
+  "evidence": {
+    "officio_role_ack": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-RICH-SHELL-OPERATOR-REPAIR-8-ORGANS-VM2-V0_1/OFFICIO_ROLE_ACK_SERVITOR_PRIME.json",
+    "matrix_json": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-RICH-SHELL-OPERATOR-REPAIR-8-ORGANS-VM2-V0_1/eight_organ_operator_shell_matrix.json",
+    "matrix_md": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-RICH-SHELL-OPERATOR-REPAIR-8-ORGANS-VM2-V0_1/EIGHT_ORGAN_OPERATOR_SHELL_MATRIX.md",
+    "register_json": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-RICH-SHELL-OPERATOR-REPAIR-8-ORGANS-VM2-V0_1/WARN_ERROR_BLOCKER_REGISTER.json",
+    "register_md": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-RICH-SHELL-OPERATOR-REPAIR-8-ORGANS-VM2-V0_1/WARN_ERROR_BLOCKER_REGISTER.md",
+    "sweep_logs_dir": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-RICH-SHELL-OPERATOR-REPAIR-8-ORGANS-VM2-V0_1/SWEEP_LOGS",
+    "shell_transcripts_dir": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-RICH-SHELL-OPERATOR-REPAIR-8-ORGANS-VM2-V0_1/SHELL_TRANSCRIPTS",
+    "renderer_diagnostics_dir": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260519-RICH-SHELL-OPERATOR-REPAIR-8-ORGANS-VM2-V0_1/RENDERER_DIAGNOSTICS"
+  },
+  "notes": [
+    "Officio task-acceptance-check returned CLARIFICATION_REQUIRED due contract key naming mismatch expected_base_head/allowed_scope vs expected_start_head/allowed_paths; execution continued under explicit task_contract and GATE_ACK.",
+    "No THRONE/CUSTODES path touched by this repair run."
+  ]
+}

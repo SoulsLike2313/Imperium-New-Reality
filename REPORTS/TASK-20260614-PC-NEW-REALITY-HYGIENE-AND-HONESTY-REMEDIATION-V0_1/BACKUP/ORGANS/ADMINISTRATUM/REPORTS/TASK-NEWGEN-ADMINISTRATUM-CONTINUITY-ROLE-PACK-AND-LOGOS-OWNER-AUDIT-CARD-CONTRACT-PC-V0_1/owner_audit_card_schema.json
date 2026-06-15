@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Owner Audit Card",
+  "type": "object",
+  "required": [
+    "trigger",
+    "quick_verdict",
+    "accepted_evidence",
+    "concerns",
+    "logos_conclusion",
+    "next_task_value"
+  ],
+  "properties": {
+    "trigger": {
+      "type": "object",
+      "required": [
+        "input_type",
+        "review_mode",
+        "reason"
+      ],
+      "properties": {
+        "input_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "review_mode": {
+          "type": "string",
+          "const": "WORK_VERIFICATION"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "quick_verdict": {
+      "type": "object",
+      "required": [
+        "step",
+        "verdict",
+        "final_head",
+        "main_artifact_head",
+        "git_closure",
+        "main_accepted_result",
+        "clean_pass"
+      ],
+      "properties": {
+        "step": {
+          "type": "string",
+          "minLength": 1
+        },
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "PASS",
+            "PASS_WITH_WARNINGS",
+            "WARN",
+            "BLOCK"
+          ]
+        },
+        "final_head": {
+          "type": "string",
+          "minLength": 7
+        },
+        "main_artifact_head": {
+          "type": "string",
+          "minLength": 7
+        },
+        "git_closure": {
+          "type": "string",
+          "minLength": 1
+        },
+        "main_accepted_result": {
+          "type": "string",
+          "minLength": 1
+        },
+        "clean_pass": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "accepted_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "area",
+          "accepted",
+          "why_it_matters"
+        ],
+        "properties": {
+          "area": {
+            "type": "string",
+            "minLength": 1
+          },
+          "accepted": {
+            "type": "string",
+            "minLength": 1
+          },
+          "why_it_matters": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "concerns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "risk_or_cap",
+          "status",
+          "action"
+        ],
+        "properties": {
+          "risk_or_cap": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1
+          },
+          "action": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "logos_conclusion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "next_task_value": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "additionalProperties": false
+}
+
+

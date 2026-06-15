@@ -1,0 +1,35 @@
+{
+  "capability_id": "CAP-PLAYBOOK-VISUAL-SCREENSHOT-GATE",
+  "name": "visual screenshot gate practice",
+  "category": "PLAYBOOKS",
+  "status": "SANDBOX",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Link visual verdicts to screenshot/report evidence.",
+  "what_problem_it_solves": "Lowers fake-green risk in visual acceptance flows.",
+  "source_type": "practice",
+  "source_url_or_path": "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/evidence_policy_for_cli.json",
+  "license_or_trust_note": "Internal repo evidence controlled by IMPERIUM.",
+  "install_required": false,
+  "install_gate": "GATE-U09-NO-FAKE-GREEN",
+  "validation_commands": [
+    "validate:cap-playbook-visual-screenshot-gate"
+  ],
+  "expected_receipts": [
+    "cap-playbook-visual-screenshot-gate_receipt.json"
+  ],
+  "safety_notes": "Use only in bounded task scope; no blind runtime mutation.",
+  "security_notes": "Do not bypass path, command, and evidence gates.",
+  "offline_or_network_dependency": "offline_preferred",
+  "promoted_by_receipt": "NOT_PROMOTED",
+  "last_reviewed_utc": "2026-05-24T00:00:00Z",
+  "next_review_reason": "Needs broader cross-organ compliance audit.",
+  "limitations": "Current evidence is not full-repo coverage.",
+  "allowed_use_cases": [
+    "Bounded task execution under Mechanicus policy",
+    "Evidence-backed validation and report generation"
+  ],
+  "forbidden_use_cases": [
+    "Production-ready claim without receipts",
+    "Out-of-scope or unbounded execution"
+  ]
+}

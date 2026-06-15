@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "New Reality Remote Tree Bundle Closure Receipt V0.1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "task_id",
+    "verdict",
+    "active_root",
+    "remote_url",
+    "branch",
+    "local_head",
+    "origin_master",
+    "head_equals_origin_master",
+    "worktree_clean",
+    "report_bundle_path",
+    "report_bundle_sha256",
+    "ancient_empire_mutated"
+  ],
+  "properties": {
+    "task_id": {
+      "const": "TASK-NEWGEN-PC-NEW-REALITY-REMOTE-TREE-BUNDLE-CLOSURE-VALIDATOR-PC-V0_1"
+    },
+    "receipt_type": {
+      "const": "remote_tree_bundle_closure_receipt"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "PASS_WITH_SELF_REFERENCE_LIMIT",
+        "PASS_WITH_WARNINGS",
+        "BLOCK"
+      ]
+    },
+    "active_root": {
+      "type": "string"
+    },
+    "remote_url": {
+      "type": "string"
+    },
+    "remote_url_expected": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "local_head": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "local_head_is_commit": {
+      "type": "boolean"
+    },
+    "origin_master": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "origin_master_resolves": {
+      "type": "boolean"
+    },
+    "ls_remote_master": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "head_equals_origin_master": {
+      "type": "boolean"
+    },
+    "ls_remote_equals_local_head": {
+      "type": "boolean"
+    },
+    "ls_remote_equals_origin_master": {
+      "type": "boolean"
+    },
+    "worktree_clean": {
+      "type": "boolean"
+    },
+    "status_short_branch_at_observation": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "report_bundle_path": {
+      "type": "string"
+    },
+    "report_bundle_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "sha256sums_path": {
+      "type": "string"
+    },
+    "bundle_sha256_matches_sha256sums": {
+      "type": "boolean"
+    },
+    "bundle_contains_final_closure_receipt": {
+      "type": "boolean"
+    },
+    "bundle_records_self_reference_limit": {
+      "type": "boolean"
+    },
+    "ancient_empire_mutated": {
+      "type": "boolean"
+    },
+    "invalid_taskpack_blocked_no_launch": {
+      "type": "boolean"
+    },
+    "machine_artifacts_encoding_verdict": {
+      "type": "string"
+    },
+    "self_reference_limit": {
+      "type": "string"
+    },
+    "remote_visibility_proof": {
+      "type": "string"
+    },
+    "browser_github_ui_visibility": {
+      "type": "string"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

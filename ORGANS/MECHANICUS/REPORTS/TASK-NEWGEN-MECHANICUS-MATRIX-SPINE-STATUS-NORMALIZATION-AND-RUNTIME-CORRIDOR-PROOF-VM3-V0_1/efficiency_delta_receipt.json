@@ -1,0 +1,92 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1",
+  "timestamp_utc": "2026-05-29T23:59:43Z",
+  "base_head": "922160728f64482a83f88e1e873a99b460094f8a",
+  "implementation_head": "ee6f4c5c1170ddc0d241b4a333bc67249307343b",
+  "closure_head": "ee6f4c5c1170ddc0d241b4a333bc67249307343b",
+  "baseline": {
+    "mechanicus_validator_readiness": 64,
+    "inquisition_fake_green_resistance": 41,
+    "officio_entry_contract_readiness": 44,
+    "administratum_receipt_closure_readiness": 46,
+    "overall_candidate_usefulness": 69
+  },
+  "after": {
+    "mechanicus_validator_readiness": 84,
+    "inquisition_fake_green_resistance": 60,
+    "officio_entry_contract_readiness": 55,
+    "administratum_receipt_closure_readiness": 60,
+    "overall_candidate_usefulness": 85
+  },
+  "delta": {
+    "mechanicus_validator_readiness": 20,
+    "inquisition_fake_green_resistance": 19,
+    "officio_entry_contract_readiness": 11,
+    "administratum_receipt_closure_readiness": 14,
+    "overall_candidate_usefulness": 16
+  },
+  "scales": {
+    "mechanicus_validator_readiness": {
+      "before": 64,
+      "after": 84,
+      "delta": 20,
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json"
+      ]
+    },
+    "inquisition_fake_green_resistance": {
+      "before": 41,
+      "after": 60,
+      "delta": 19,
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json"
+      ]
+    },
+    "officio_entry_contract_readiness": {
+      "before": 44,
+      "after": 55,
+      "delta": 11,
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1/synthetic_corridor_receipt.json"
+      ]
+    },
+    "administratum_receipt_closure_readiness": {
+      "before": 46,
+      "after": 60,
+      "delta": 14,
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1/synthetic_corridor_receipt.json"
+      ]
+    },
+    "overall_candidate_usefulness": {
+      "before": 69,
+      "after": 85,
+      "delta": 16,
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1/synthetic_corridor_receipt.json"
+      ]
+    }
+  },
+  "verdict": "PASS_WITH_WARNINGS",
+  "confidence": "HIGH",
+  "caps_triggered": [],
+  "evidence": [
+    {
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json",
+      "negative_fixture_total": 13,
+      "negative_fixture_detected": 13,
+      "fail_count": 0,
+      "warn_count": 0
+    },
+    {
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1/synthetic_corridor_receipt.json",
+      "passed_steps": 5,
+      "overall": "PASS"
+    }
+  ],
+  "notes": [
+    "Five-scale score is deterministic and stdlib-only.",
+    "Synthetic corridor is accepted by taskpack and marked not_real_warp=true."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE1-DIRTY-FILES-CLASSIFICATION-AND-CLEANUP-PC-V0_1",
+  "timestamp_utc": "2026-05-31T00:26:57Z",
+  "baseline_problem": "Pre-existing dirty worktree cap blocked clean task-start trust boundary.",
+  "intervention": "Classified all dirty paths and applied admitted cleanup actions with receipts.",
+  "measured_delta_percent": 18,
+  "measurement_basis": [
+    "dirty_paths_classified_100_percent",
+    "unsafe_actions_avoided",
+    "pre-existing_dirty_paths_resolved"
+  ],
+  "negative_caps_remaining": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_SYNTHETIC_ONLY_UNTIL_REAL_USE_PILOT",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME"
+  ],
+  "cap_no_efficiency_delta_triggered": false
+}

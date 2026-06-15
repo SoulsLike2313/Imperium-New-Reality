@@ -1,0 +1,20 @@
+{
+  "candidate_id": "wasmer_sandbox_candidate_v0_1",
+  "name": "Wasmer sandbox candidate",
+  "type": "sandbox",
+  "category": "sandbox",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Evaluate WebAssembly sandbox execution for constrained tool trials.",
+  "first_safe_use_case": "Run a tiny deterministic fixture in an isolated sandbox with no filesystem mutation outside a temp output path.",
+  "risk": "Sandbox claims can be false if filesystem, network, and process boundaries are not independently checked.",
+  "admission_mode": "CANDIDATE_ONLY_NO_INSTALL",
+  "install_status": "NOT_INSTALLED",
+  "receipt_requirements": [
+    "sandbox boundary receipt",
+    "input output hash receipt",
+    "network disabled proof",
+    "cleanup receipt"
+  ],
+  "canon_after_successful_cycles": 10
+}
+

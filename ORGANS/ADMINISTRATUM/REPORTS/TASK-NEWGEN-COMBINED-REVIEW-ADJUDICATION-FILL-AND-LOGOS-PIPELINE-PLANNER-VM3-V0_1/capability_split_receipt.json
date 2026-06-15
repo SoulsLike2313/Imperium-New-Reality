@@ -1,0 +1,47 @@
+{
+  "task_id": "TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1",
+  "items": [
+    {
+      "output_or_action": "Collect embedded review ZIPs and verify hashes",
+      "classification": "LOCAL_SCRIPT_FIRST",
+      "evidence": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/review_input_inventory.json",
+      "owner_organ": "Mechanicus",
+      "gap_or_replay": "Replayable with sha256sum and unzip -l commands"
+    },
+    {
+      "output_or_action": "Build combined adjudication JSON",
+      "classification": "LOCAL_SCRIPT_FIRST",
+      "evidence": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/COMBINED_REVIEW_ADJUDICATION_RECEIPT.json",
+      "owner_organ": "Administratum",
+      "gap_or_replay": "Replayable by regenerating from taskpack templates and review summaries"
+    },
+    {
+      "output_or_action": "Summarize Inquisitor/Speculum findings",
+      "classification": "AGENT_REASONING_ONLY",
+      "evidence": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/inquisitor_review_summary.json",
+      "owner_organ": "Inquisition",
+      "gap_or_replay": "Candidate for future script parser over review JSON bundles"
+    },
+    {
+      "output_or_action": "Prepare next pipeline planner candidate",
+      "classification": "AGENT_REASONING_ONLY",
+      "evidence": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/LOGOS_PIPELINE_PLANNER_CANDIDATE.json",
+      "owner_organ": "Strategium",
+      "gap_or_replay": "Requires Owner choice; cannot auto-admit as canon"
+    },
+    {
+      "output_or_action": "Owner policy confirmation on fallback/replay strictness",
+      "classification": "OWNER_MANUAL_CONFIRMATION",
+      "evidence": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/OWNER_QUESTIONS_SIMPLE_RU.md",
+      "owner_organ": "Officio Agentis",
+      "gap_or_replay": "Pending Owner response"
+    }
+  ],
+  "summary": {
+    "local_script_first": 2,
+    "agent_reasoning_only": 2,
+    "owner_manual_confirmation": 1,
+    "future_capability_gap": 0
+  },
+  "verdict": "PASS_WITH_WARNINGS"
+}

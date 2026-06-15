@@ -1,0 +1,23 @@
+{
+  "schema_id": "pc_to_vm3_direct_route_card_v0_1",
+  "route_id": "PC_TO_VM3_DIRECT",
+  "alias": "imperium-vm3",
+  "remote_user": "vboxuser3",
+  "remote_inbox": "/home/vboxuser3/IMPERIUM_VM3_INBOX",
+  "status": "PROVED_BY_TASKPACK_DELIVERY_SHA256",
+  "proof": {
+    "proof_type": "DIRECT_SSH_SCP_TASKPACK_DELIVERY",
+    "proof_task_id": "TASK-NEWGEN-VM3-CONTOUR-INITIATION-VALIDATION-UBUNTU-V0_1",
+    "proof_sha256": "5a71cf8a61c588b87888d4c1f98309933805771ed8d71cfde5376ae59f05199a",
+    "proof_source": "taskpack_owner_truth"
+  },
+  "canonical_commands": {
+    "probe": "ssh imperium-vm3 \"hostname; whoami; pwd\"",
+    "send": "scp <taskpack.zip> imperium-vm3:/home/vboxuser3/IMPERIUM_VM3_INBOX/",
+    "verify": "ssh imperium-vm3 \"sha256sum /home/vboxuser3/IMPERIUM_VM3_INBOX/<taskpack.zip>\""
+  },
+  "security_notes": [
+    "Do not store private key contents in this repository."
+  ],
+  "registered_at_utc": "2026-05-27T11:59:00Z"
+}

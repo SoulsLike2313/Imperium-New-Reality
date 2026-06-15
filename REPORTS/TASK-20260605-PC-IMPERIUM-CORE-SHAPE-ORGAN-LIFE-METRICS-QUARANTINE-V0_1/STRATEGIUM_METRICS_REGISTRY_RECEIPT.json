@@ -1,0 +1,31 @@
+{
+  "schema_version": "imperium.metrics_registry_receipt.v0_1",
+  "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+  "timestamp_utc": "2026-06-06T17:18:17Z",
+  "owner_organ": "STRATEGIUM",
+  "verdict": "PASS_WITH_WARNINGS",
+  "checked_evidence": [
+    "ORGANS/STRATEGIUM/METRICS/IMPERIUM_METRICS_REGISTRY_V0_1.md",
+    "ORGANS/STRATEGIUM/METRICS/organ_self_sufficiency_metric.json",
+    "ORGANS/STRATEGIUM/METRICS/context_locality_metric.json",
+    "ORGANS/STRATEGIUM/METRICS/script_first_ratio_metric.json",
+    "ORGANS/STRATEGIUM/METRICS/servitor_load_reduction_metric.json",
+    "ORGANS/STRATEGIUM/METRICS/quarantine_pressure_metric.json",
+    "ORGANS/STRATEGIUM/METRICS/learning_capture_rate_metric.json",
+    "ORGANS/STRATEGIUM/METRICS/known_alert_prevention_metric.json"
+  ],
+  "warnings": [
+    "Token, CPU, RAM, and VRAM usage were not measured."
+  ],
+  "blockers": [],
+  "next_action": "Add measured runtime/resource counters in V0.2 if required.",
+  "planned_cost_class": "MEDIUM",
+  "actual_cost_class": "MEDIUM",
+  "file_count": 62,
+  "checker_command_count": 5,
+  "kpd_verdict": "FOUNDATION_DELIVERED_WITH_WARNINGS",
+  "token_usage": "UNKNOWN_WITH_REASON: API token accounting unavailable in local repo.",
+  "cpu_usage": "UNKNOWN_WITH_REASON: not measured by task tooling.",
+  "ram_usage": "UNKNOWN_WITH_REASON: not measured by task tooling.",
+  "vram_usage": "UNKNOWN_WITH_REASON: not used or measured."
+}

@@ -1,0 +1,52 @@
+{
+  "organ_id": "OFFICIO_AGENTIS",
+  "status": "ACTIVE",
+  "default_role": "SERVITOR_PRIME",
+  "active_roles": [
+    "LOGOS_PRIME",
+    "SERVITOR_PRIME",
+    "LOGOS_SPECULUM",
+    "ADVISOR_SERVITOR"
+  ],
+  "roles": [
+    {
+      "role_id": "LOGOS_PRIME",
+      "status": "ACTIVE",
+      "purpose": "Planning and coordination within explicit boundaries.",
+      "role_pack_ref": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/OFFICIO_LOGOS_PRIME_ROLE_PACK_V0_1.json"
+    },
+    {
+      "role_id": "SERVITOR_PRIME",
+      "status": "ACTIVE",
+      "purpose": "Primary bounded execution role for local task delivery.",
+      "role_pack_ref": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/OFFICIO_PC_SERVITOR_ROLE_PACK_V0_1.json"
+    },
+    {
+      "role_id": "LOGOS_SPECULUM",
+      "status": "ACTIVE",
+      "purpose": "Risk and fake-green challenger role.",
+      "role_pack_ref": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/OFFICIO_LOGOS_SPECULUM_ROLE_PACK_V0_1.json"
+    },
+    {
+      "role_id": "ADVISOR_SERVITOR",
+      "status": "ACTIVE",
+      "purpose": "Advisory/external route for optional perspective, not primary execution authority.",
+      "role_pack_ref": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/OFFICIO_LOCAL_ORGAN_AGENT_ROLE_PACK_V0_1.json"
+    }
+  ],
+  "block_count": 9,
+  "ghost_evolve": {
+    "accepted_count": 3,
+    "rejected_count": 3
+  },
+  "rules": {
+    "grammar_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/RULES/stop_warn_pass_grammar_v0_1.md",
+    "taskpack_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/RULES/taskpack_acceptance_rules_v0_1.md",
+    "response_contract_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/RULES/final_response_contract_v0_1.md"
+  },
+  "evidence": {
+    "task_report_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1"
+  },
+  "missing": [],
+  "warnings": []
+}

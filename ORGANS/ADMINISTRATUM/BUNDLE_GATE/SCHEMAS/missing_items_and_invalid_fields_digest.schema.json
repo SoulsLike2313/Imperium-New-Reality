@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Missing Items And Invalid Fields Digest",
+  "type": "object",
+  "required": ["task_id", "digest_verdict", "missing_required_files", "invalid_required_fields", "owner_action_required"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "digest_verdict": {"type": "string"},
+    "missing_required_files": {"type": "array", "items": {"type": "string"}},
+    "invalid_required_fields": {"type": "array"},
+    "owner_action_required": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}

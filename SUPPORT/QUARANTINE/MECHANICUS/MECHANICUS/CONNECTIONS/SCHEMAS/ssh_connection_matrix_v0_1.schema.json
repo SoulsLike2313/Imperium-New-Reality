@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/SCHEMAS/ssh_connection_matrix_v0_1.schema.json",
+  "title": "SSH Connection Matrix V0.1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "generated_at_utc",
+    "private_key_material_allowed_in_repo",
+    "connections"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "SSH_CONNECTION_MATRIX_V0_1"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at_utc": {
+      "type": "string",
+      "minLength": 1
+    },
+    "private_key_material_allowed_in_repo": {
+      "type": "boolean",
+      "const": false
+    },
+    "connections": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "connection_id",
+          "alias",
+          "contour",
+          "status",
+          "route",
+          "user",
+          "repo_path",
+          "live_verified"
+        ],
+        "properties": {
+          "connection_id": {
+            "type": "string"
+          },
+          "alias": {
+            "type": "string"
+          },
+          "contour": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "route": {
+            "type": "string"
+          },
+          "host": {
+            "type": "string"
+          },
+          "port": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "user": {
+            "type": "string"
+          },
+          "repo_path": {
+            "type": "string"
+          },
+          "key_reference_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "live_verified": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

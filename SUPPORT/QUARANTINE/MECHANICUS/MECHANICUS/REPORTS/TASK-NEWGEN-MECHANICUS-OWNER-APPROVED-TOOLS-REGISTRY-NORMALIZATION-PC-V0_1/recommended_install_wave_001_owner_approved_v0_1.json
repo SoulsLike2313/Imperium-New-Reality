@@ -1,0 +1,65 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-OWNER-APPROVED-TOOLS-REGISTRY-NORMALIZATION-PC-V0_1",
+  "generated_at_utc": "2026-05-25T21:26:12Z",
+  "wave_id": "INSTALL_WAVE_001_OWNER_APPROVED_NORMALIZED",
+  "policy": "Normalization/planning artifact only. No tool installation in this task.",
+  "item_count": 4,
+  "items": [
+    {
+      "capability_id": "UTILITIES_7_ZIP",
+      "display_name": "7-Zip CLI",
+      "category": "UTILITIES",
+      "owner_decision": "approve",
+      "approved_for_install_wave_001": true,
+      "install_allowed_in_this_task": false,
+      "install_next_task_required": true,
+      "detect_command": "7z i",
+      "install_command_candidate": "winget install 7zip.7zip",
+      "validation_command": "validate:utilities-7-zip",
+      "stress_test_candidate": "Manual stress candidate: run detect+validate 3x and compare receipt stability.",
+      "receipt_required": true
+    },
+    {
+      "capability_id": "MARKDOWNLINT_CLI",
+      "display_name": "markdownlint CLI",
+      "category": "CODE_QUALITY",
+      "owner_decision": "approve",
+      "approved_for_install_wave_001": true,
+      "install_allowed_in_this_task": false,
+      "install_next_task_required": true,
+      "detect_command": "markdownlint --version",
+      "install_command_candidate": "npm install -g markdownlint-cli",
+      "validation_command": "validate:markdownlint-cli",
+      "stress_test_candidate": "Manual stress candidate: run detect+validate 3x and compare receipt stability.",
+      "receipt_required": true
+    },
+    {
+      "capability_id": "CHECK_JSONSCHEMA_CLI",
+      "display_name": "check-jsonschema CLI",
+      "category": "CODE_QUALITY",
+      "owner_decision": "approve",
+      "approved_for_install_wave_001": true,
+      "install_allowed_in_this_task": false,
+      "install_next_task_required": true,
+      "detect_command": "check-jsonschema --version",
+      "install_command_candidate": "python -m pip install --user check-jsonschema",
+      "validation_command": "validate:check-jsonschema-cli",
+      "stress_test_candidate": "Manual stress candidate: run detect+validate 3x and compare receipt stability.",
+      "receipt_required": true
+    },
+    {
+      "capability_id": "YAMLLINT_CLI",
+      "display_name": "yamllint",
+      "category": "CODE_QUALITY",
+      "owner_decision": "approve",
+      "approved_for_install_wave_001": true,
+      "install_allowed_in_this_task": false,
+      "install_next_task_required": true,
+      "detect_command": "yamllint --version",
+      "install_command_candidate": "python -m pip install --user yamllint",
+      "validation_command": "validate:yamllint-cli",
+      "stress_test_candidate": "Manual stress candidate: run detect+validate 3x and compare receipt stability.",
+      "receipt_required": true
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "receipt_type": "duplicate_and_legacy_map",
+  "task_id": "TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1",
+  "source": "REPORTS/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/astronomicon_local_pc_registration_and_route_drift_report.md",
+  "status": "STAGING_MAP_ONLY",
+  "cleanup_performed": false,
+  "previous_snapshot_figures": {
+    "duplicate_groups": 327,
+    "duplicate_files": 1500,
+    "redundant_bytes": 274977578,
+    "old_prefix_residue_files": 5,
+    "organ_legacy_mirror_files": 1905,
+    "learning_archive_files": 1766,
+    "root_quarantine_files": 3390,
+    "report_zone_files": 2483
+  },
+  "current_task_confirmed_old_prefix_files": [
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ENTRY_CORRIDOR_CONTRACT.json",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ENTRY_CORRIDOR_CONTRACT.md",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json"
+  ],
+  "recommended_future_maps": [
+    {
+      "zone": "LEGACY_PREFIX_RESIDUE",
+      "action": "owner-approved quarantine/delete decision",
+      "blockers": [
+        "local route config present",
+        "legacy template copies need provenance review"
+      ]
+    },
+    {
+      "zone": "REPORT_DUPLICATES",
+      "action": "archive compaction with manifest and rollback plan",
+      "blockers": [
+        "report retention law not finalized"
+      ]
+    },
+    {
+      "zone": "ORGAN_LEGACY_MIRROR",
+      "action": "index before any move",
+      "blockers": [
+        "active truth boundary must be confirmed per organ"
+      ]
+    },
+    {
+      "zone": "ROOT_QUARANTINE",
+      "action": "retain until quarantine law and owner decision",
+      "blockers": [
+        "quarantine is not active truth by default"
+      ]
+    }
+  ],
+  "verdict": "PASS_WITH_WARNINGS"
+}

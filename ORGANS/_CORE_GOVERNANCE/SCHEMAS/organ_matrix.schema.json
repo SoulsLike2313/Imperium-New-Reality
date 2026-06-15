@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Organ Matrix V0.1",
+  "type": "object",
+  "required": ["schema_version", "matrix_id", "owner_organ", "purpose", "rows"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "matrix_id": {"type": "string", "minLength": 1},
+    "owner_organ": {"type": "string", "minLength": 1},
+    "purpose": {"type": "string", "minLength": 1},
+    "rows": {"type": "array"}
+  },
+  "additionalProperties": true
+}

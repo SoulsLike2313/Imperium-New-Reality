@@ -1,0 +1,130 @@
+{
+  "task_id": "TASK-NEWGEN-FIVE-ORGAN-ALIGNMENT-CHECK-VM3-V0_1",
+  "matrix_schema": "five_organ_alignment_matrix.v0_1",
+  "allowed_status_levels_used": [
+    "REFERENCE",
+    "ACCEPTED_FIRST_BODY",
+    "CURRENT_TRUTH_BASE_ACCEPTED",
+    "BODY_SEED_ACCEPTED",
+    "WARN_NEEDS_ALIGNMENT"
+  ],
+  "rows": [
+    {
+      "organ_id": "MECHANICUS",
+      "status": "REFERENCE",
+      "exists": true,
+      "body_or_seed": true,
+      "capability_block": true,
+      "foundation_block": true,
+      "tui_or_readonly_surface": true,
+      "checker_or_scripts": true,
+      "reports_or_receipts": true,
+      "ghost_evolve_evidence": true,
+      "owner_pain_relevance_recorded": true,
+      "ide_readonly_block_ready": true,
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/IDENTITY/organ_identity_v0_1.md",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/STATE/current_state_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TUI/mechanicus_tui_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_scope_packs_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1/FINAL_REPORT.md",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1/ghost_evolve_batch_002_training_proof.json"
+      ]
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "status": "ACCEPTED_FIRST_BODY",
+      "exists": true,
+      "body_or_seed": true,
+      "capability_block": true,
+      "foundation_block": true,
+      "tui_or_readonly_surface": true,
+      "checker_or_scripts": true,
+      "reports_or_receipts": true,
+      "ghost_evolve_evidence": true,
+      "owner_pain_relevance_recorded": true,
+      "ide_readonly_block_ready": true,
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/BODY/officio_agentis_body_manifest_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLES/role_registry_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/STATE/current_state_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/officio_agentis_tui_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_response_contract_checker_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/FINAL_REPORT.md",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/GHOST_EVOLVE/accepted_local_upgrades_index_v0_1.json"
+      ]
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "status": "CURRENT_TRUTH_BASE_ACCEPTED",
+      "exists": true,
+      "body_or_seed": true,
+      "capability_block": true,
+      "foundation_block": true,
+      "tui_or_readonly_surface": true,
+      "checker_or_scripts": true,
+      "reports_or_receipts": true,
+      "ghost_evolve_evidence": true,
+      "owner_pain_relevance_recorded": true,
+      "ide_readonly_block_ready": true,
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/BODY/administratum_body_manifest_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/CURRENT_TRUTH/active_organs_index_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/GATES/organ_gate_catalog_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/administratum_tui_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS/administratum_current_truth_checker_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS/TASK-NEWGEN-VM3-CONTOUR-INITIATION-VALIDATION-UBUNTU-V0_1/FINAL_REPORT.md",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/GHOST_EVOLVE/accepted_local_upgrades_index_v0_1.json"
+      ]
+    },
+    {
+      "organ_id": "INQUISITION",
+      "status": "WARN_NEEDS_ALIGNMENT",
+      "exists": true,
+      "body_or_seed": false,
+      "capability_block": false,
+      "foundation_block": true,
+      "tui_or_readonly_surface": true,
+      "checker_or_scripts": false,
+      "reports_or_receipts": false,
+      "ghost_evolve_evidence": false,
+      "owner_pain_relevance_recorded": false,
+      "ide_readonly_block_ready": false,
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/INQUISITION/IDENTITY/organ_identity_v0_1.md",
+        "IMPERIUM_NEW_GENERATION/INQUISITION/CONTRACTS/servitor_contract_v0_1.md",
+        "IMPERIUM_NEW_GENERATION/INQUISITION/GATES/organ_gate_catalog_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/INQUISITION/TUI/inquisition_tui_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/INQUISITION/REPORTS/README.md"
+      ]
+    },
+    {
+      "organ_id": "ASTRONOMICON",
+      "status": "BODY_SEED_ACCEPTED",
+      "exists": true,
+      "body_or_seed": true,
+      "capability_block": true,
+      "foundation_block": true,
+      "tui_or_readonly_surface": true,
+      "checker_or_scripts": true,
+      "reports_or_receipts": true,
+      "ghost_evolve_evidence": true,
+      "owner_pain_relevance_recorded": true,
+      "ide_readonly_block_ready": true,
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/BODY/astronomicon_body_manifest_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/ROUTING/route_decision_registry_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/GATES/organ_gate_catalog_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/astronomicon_tui_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_route_packet_checker_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/REPORTS/TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1/FINAL_REPORT.md",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/GHOST_EVOLVE/accepted_local_upgrades_index_v0_1.json"
+      ]
+    }
+  ],
+  "strongest_organ": "MECHANICUS",
+  "weakest_organ": "INQUISITION",
+  "inquisition_ready_for_ide_warp_preparation": false,
+  "inquisition_blocker_summary": "Нет body-manifest/checker/schema/registry и task-level receipt-цепочки в REPORTS; требуется V0_2 hardening до IDE/WARP readiness."
+}

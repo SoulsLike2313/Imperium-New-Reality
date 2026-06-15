@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Visual Concept Card",
+  "type": "object",
+  "required": ["concept_id", "concept_name", "core_idea", "strengths", "risks"],
+  "properties": {
+    "concept_id": {"type": "string"},
+    "concept_name": {"type": "string"},
+    "core_idea": {"type": "string"},
+    "brain_treatment": {"type": "string"},
+    "panel_treatment": {"type": "string"},
+    "strengths": {"type": "array", "items": {"type": "string"}},
+    "risks": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  }
+}

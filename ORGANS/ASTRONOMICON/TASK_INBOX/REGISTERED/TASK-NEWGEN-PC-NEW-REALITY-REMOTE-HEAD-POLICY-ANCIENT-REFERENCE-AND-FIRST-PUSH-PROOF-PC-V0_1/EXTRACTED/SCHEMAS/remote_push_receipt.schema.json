@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "New Reality Remote Push Receipt",
+  "type": "object",
+  "required": [
+    "verdict",
+    "remote_url",
+    "local_head",
+    "remote_head",
+    "remote_head_equals_local_head",
+    "push_performed",
+    "force_push_used"
+  ],
+  "properties": {
+    "verdict": {
+      "type": "string"
+    },
+    "remote_url": {
+      "type": "string"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "local_head": {
+      "type": "string"
+    },
+    "remote_head": {
+      "type": "string"
+    },
+    "remote_head_equals_local_head": {
+      "type": "boolean"
+    },
+    "push_performed": {
+      "type": "boolean"
+    },
+    "force_push_used": {
+      "type": "boolean"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

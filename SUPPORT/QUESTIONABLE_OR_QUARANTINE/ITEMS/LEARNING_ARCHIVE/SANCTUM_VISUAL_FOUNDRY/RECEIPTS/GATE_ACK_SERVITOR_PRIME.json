@@ -1,0 +1,56 @@
+{
+  "task_id": "TASK-20260520-NEWGEN-SANCTUM-VISUAL-FOUNDRY-MECHANICUS-CONSOLE-SLICE-V0_1",
+  "timestamp_utc": "2026-05-20T18:02:05Z",
+  "current_head": "5acae4b332b3e4b03e47e47cafd4133944f2b1f9",
+  "gatepack_path": "C:\\Users\\PC\\Downloads\\TASK-20260520-NEWGEN-SANCTUM-VISUAL-FOUNDRY-MECHANICUS-CONSOLE-SLICE-V0_1_TASKPACK.zip",
+  "gatepack_sha256": "5BC5092384297336310F22EE11D84445878E20D056CB5C87D65BC3EE6D4C60A6",
+  "read_gates": [
+    "GATE-U00-GIT-TRUTH",
+    "GATE-U01-ROLE-ACK",
+    "GATE-U02-SCOPE-BOUNDARY",
+    "GATE-U04-EVIDENCE-RECEIPT",
+    "GATE-U05-STOP-CONDITIONS",
+    "GATE-U08-REPO-PURITY",
+    "GATE-U09-NO-FAKE-GREEN",
+    "GATE-U12-REPORT-OUTPUT-BUDGET",
+    "GATE-U13-PYTHON-TYPE-SAFETY",
+    "GATE-U14-WHOLE-REPO-SCOPE-RECON",
+    "GATE-U15-OPERATIONALITY-IMPACT",
+    "GATE-U16-BILINGUAL-UI",
+    "GATE-U17-DELIVERABLE-PACKAGE",
+    "GATE-U18-AGENT-FACTORY-COMPLIANCE",
+    "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+    "GATE-U20-AGENT-KPD-SELF-REVIEW",
+    "GATE-U21-COMMAND-CHUNKING"
+  ],
+  "accepted_stop_conditions": [
+    "Forbidden-scope path appears in diff.",
+    "Required visual evidence cannot be produced.",
+    "Unexpected unrelated file changes appear during execution.",
+    "Contract JSON/schema validation cannot be satisfied safely.",
+    "A required command fails with no bounded fallback."
+  ],
+  "scope_boundary": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\**",
+  "touched_paths": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/**"
+  ],
+  "forbidden_paths": [
+    "ORGANS/**",
+    "SANCTUM/**",
+    "IMPERIUM_TEST_VERSION/**",
+    "VM2 paths"
+  ],
+  "expected_receipts": [
+    "RECEIPTS/FINAL_RECEIPT.json",
+    "REPORTS/validation_report.json",
+    "REPORTS/OWNER_REPORT_RU.md",
+    "REPORTS/visual_evidence_index.md",
+    "REPORTS/manual_open_instructions.md",
+    "RECEIPTS/AGENT_KPD_SELF_REVIEW.json"
+  ],
+  "repo_recon_required": false,
+  "script_absorption_required": true,
+  "clarification_needed": "Worktree started dirty due to pre-existing current_status.json; excluded from edits.",
+  "verdict": "PASS"
+}
+

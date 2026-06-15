@@ -1,0 +1,189 @@
+{
+  "schema_version": "0.1",
+  "formation_id": "FORMATION-REQ-20260521-ASTRONOMICON-TASK-FORMATION-SAMPLE",
+  "source_request_id": "REQ-20260521-ASTRONOMICON-TASK-FORMATION-SAMPLE",
+  "task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+  "owner_intent": {
+    "raw_text": "PC only. Build Astronomicon Task Formation V0.1 so a short owner intent becomes a task kernel draft and stage map preview. Keep it foundation-only with evidence records and validator output.",
+    "summary": "Astronomicon task formation foundation from short owner intent.",
+    "language": "EN"
+  },
+  "scope": {
+    "mode": "bounded_foundation",
+    "purpose": "Transform short owner intent into deterministic Astronomicon formation artifacts.",
+    "non_goals": [
+      "No live organ packet runtime",
+      "No autonomous execution orchestrator",
+      "No production readiness claim"
+    ]
+  },
+  "allowed_paths": [
+    "IMPERIUM_NEW_GENERATION/ARCHITECTURE/",
+    "IMPERIUM_NEW_GENERATION/CONTRACTS/",
+    "IMPERIUM_NEW_GENERATION/TASKS/",
+    "IMPERIUM_NEW_GENERATION/TOOLS/",
+    "IMPERIUM_NEW_GENERATION/REPORTS/"
+  ],
+  "forbidden_paths": [
+    "ORGANS/**",
+    "SANCTUM/**",
+    "IMPERIUM_TEST_VERSION/**",
+    ".git/**"
+  ],
+  "required_organs": [
+    "ASTRONOMICON",
+    "OFFICIO_AGENTIS",
+    "DOCTRINARIUM",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "task_kernel_draft": {
+    "task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+    "task_title": "Astronomicon Formation Draft: Astronomicon task formation foundation from short owner intent.",
+    "status": "DRAFT",
+    "scope": {
+      "mode": "bounded_foundation",
+      "purpose": "Bridge owner short intent into a Task Kernel-ready draft object.",
+      "non_goals": [
+        "No live multi-organ runtime",
+        "No autonomous rerun loop",
+        "No production orchestration claim"
+      ]
+    },
+    "allowed_paths": [
+      "IMPERIUM_NEW_GENERATION/ARCHITECTURE/",
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/",
+      "IMPERIUM_NEW_GENERATION/TASKS/",
+      "IMPERIUM_NEW_GENERATION/TOOLS/",
+      "IMPERIUM_NEW_GENERATION/REPORTS/"
+    ],
+    "forbidden_paths": [
+      "ORGANS/**",
+      "SANCTUM/**",
+      "IMPERIUM_TEST_VERSION/**",
+      ".git/**"
+    ],
+    "required_organs": [
+      "ASTRONOMICON",
+      "OFFICIO_AGENTIS",
+      "DOCTRINARIUM",
+      "ADMINISTRATUM",
+      "MECHANICUS",
+      "INQUISITION",
+      "STRATEGIUM",
+      "SCHOLA_IMPERIALIS"
+    ],
+    "required_skills": [
+      "agent.read_first_admission.v0_1",
+      "agent.scope_boundary_control.v0_1",
+      "agent.super_skepticism_loop.v0_1",
+      "agent.proof_record_writer.v0_1"
+    ],
+    "evidence_policy": {
+      "required_receipts": [
+        "OFFICIO_ROLE_ACK_OR_WARN.json",
+        "STEP_PROOF_RECORDS.jsonl",
+        "VALIDATOR_REPORT.json",
+        "FINAL_RECEIPT.json",
+        "OWNER_REPORT_RU.md"
+      ],
+      "proof_record_required": true,
+      "validator_required": true
+    },
+    "task_kernel_contract_ref": "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/TASK_KERNEL_V0_1.schema.json",
+    "task_registry_index_ref": "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/TASK_REGISTRY_INDEX_V0_1.schema.json",
+    "organ_packet_contract_ref": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/ORGAN_PACKET_SET_V0_1.schema.json"
+  },
+  "stage_map_preview": [
+    {
+      "stage_id": "S1_INTAKE_NORMALIZE",
+      "owner_organ": "ASTRONOMICON",
+      "goal": "Normalize short owner intent into structured intake vectors.",
+      "entry_state": "DRAFT",
+      "exit_state": "REGISTERED",
+      "exit_criteria": [
+        "Owner intent summary is explicit",
+        "Scope boundaries are declared"
+      ],
+      "evidence_expected": [
+        "TASK_FORMATION_REQUEST_V0_1 input parsed",
+        "STEP_PROOF_RECORDS entry for intake"
+      ]
+    },
+    {
+      "stage_id": "S2_ROLE_AND_GATES",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "goal": "Align formation output with role contracts and mandatory gates.",
+      "entry_state": "REGISTERED",
+      "exit_state": "SCOPING_WITH_ORGANS",
+      "exit_criteria": [
+        "OFFICIO ACK/WARN exists",
+        "No-fake-green constraints are explicit"
+      ],
+      "evidence_expected": [
+        "OFFICIO_ROLE_ACK_OR_WARN.json",
+        "GATE_ACK markdown"
+      ]
+    },
+    {
+      "stage_id": "S3_DRAFT_KERNEL_AND_STAGE_MAP",
+      "owner_organ": "DOCTRINARIUM",
+      "goal": "Generate draft kernel-compatible fields and stage map preview.",
+      "entry_state": "SCOPING_WITH_ORGANS",
+      "exit_state": "READY_FOR_SERVITOR",
+      "exit_criteria": [
+        "Task Kernel draft fields are present",
+        "Stage map has bounded exit criteria"
+      ],
+      "evidence_expected": [
+        "Generated TASK_FORMATION_RECORD_V0_1"
+      ]
+    },
+    {
+      "stage_id": "S4_VALIDATE_AND_RECEIPT",
+      "owner_organ": "MECHANICUS",
+      "goal": "Validate artifacts and produce report bundle evidence.",
+      "entry_state": "READY_FOR_SERVITOR",
+      "exit_state": "PASSED_WITH_WARNINGS",
+      "exit_criteria": [
+        "Validator status PASS or PASS_WITH_WARNINGS",
+        "No forbidden paths touched"
+      ],
+      "evidence_expected": [
+        "VALIDATOR_REPORT.json",
+        "CHANGED_FILES_STATUS.md"
+      ]
+    },
+    {
+      "stage_id": "S5_OWNER_START_BLOCK",
+      "owner_organ": "ADMINISTRATUM",
+      "goal": "Deliver Servitor start block and owner-facing summary path.",
+      "entry_state": "PASSED_WITH_WARNINGS",
+      "exit_state": "CLOSED",
+      "exit_criteria": [
+        "Servitor start block has 2-5 lines",
+        "Final report path is explicit"
+      ],
+      "evidence_expected": [
+        "OWNER_REPORT_RU.md",
+        "FINAL_RECEIPT.json"
+      ]
+    }
+  ],
+  "servitor_start_block": [
+    "TASK: TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+    "MODE: PC only. Work inside E:\\IMPERIUM and IMPERIUM_NEW_GENERATION only.",
+    "READ FIRST: Task Formation contracts + Task Kernel Registry + Organ Packet Protocol.",
+    "GOAL: Convert short owner intent into draft kernel + stage map foundation (Astronomicon task formation foundation from short owner intent.).",
+    "FINISH: proof records + validator report + receipt bundle + commit+push if safe."
+  ],
+  "owner_questions": [],
+  "limitations": [
+    "Foundation-only output. No live multi-organ orchestration claim.",
+    "No autonomous Servitor run/rerun runtime is implemented in this version."
+  ],
+  "self_verdict": "PROVED"
+}

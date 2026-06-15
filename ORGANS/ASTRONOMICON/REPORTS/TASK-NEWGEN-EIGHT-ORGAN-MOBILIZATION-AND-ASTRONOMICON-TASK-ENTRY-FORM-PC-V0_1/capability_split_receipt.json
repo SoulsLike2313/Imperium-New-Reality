@@ -1,0 +1,24 @@
+{
+  "task_id": "TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1",
+  "timestamp_utc": "2026-05-30T22:42:13Z",
+  "LOCAL_SCRIPT_FIRST": [
+    "Build artifacts via scripts/astronomicon_stage1_mobilization_builder_v0_1.py",
+    "Validate route via TASK_ENTRY_CORRIDOR/TOOLS/check_task_entry_route_v0_1.py"
+  ],
+  "LOCAL_MANUAL_COMMAND": [
+    "git status --short",
+    "git rev-parse --abbrev-ref HEAD",
+    "git rev-parse HEAD"
+  ],
+  "CANDIDATE_SCRIPT_FIRST": [
+    "scripts/foundational_organs_v1/check_foundational_organs_v1_all.py"
+  ],
+  "AGENT_REASONING_ONLY": [
+    "Owner-facing synthesis and choice of next pipeline task under Stage1 caps."
+  ],
+  "EXTERNAL_RESEARCH": [],
+  "OWNER_MANUAL_CONFIRMATION": [],
+  "FUTURE_CAPABILITY_GAP": [
+    "Canon admission of Astronomicon entry checker and production inbox transport."
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Efficiency Delta Receipt Schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "baseline",
+    "after",
+    "delta",
+    "verdict",
+    "caps_triggered",
+    "evidence"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "after": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "delta": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "WARN",
+        "BLOCK"
+      ]
+    },
+    "caps_triggered": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

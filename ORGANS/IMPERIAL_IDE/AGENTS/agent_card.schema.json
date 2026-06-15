@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agent_card.schema.json",
+  "title": "Imperial IDE Agent Card",
+  "type": "object",
+  "required": [
+    "agent_id", "display_name", "servitor_name", "owner_organ", "role",
+    "capabilities", "allowed_actions", "blocked_actions", "status",
+    "current_task_id", "last_receipt_path", "risk_class", "execution_mode",
+    "handoff_mode"
+  ],
+  "properties": {
+    "agent_id": {"type": "string", "pattern": "^[A-Z0-9_]+$"},
+    "display_name": {"type": "string", "minLength": 1},
+    "servitor_name": {"type": "string", "minLength": 1},
+    "owner_organ": {"type": "string", "minLength": 1},
+    "role": {"type": "string", "minLength": 1},
+    "capabilities": {"type": "array", "items": {"type": "string"}},
+    "allowed_actions": {"type": "array", "items": {"type": "string"}},
+    "blocked_actions": {"type": "array", "items": {"type": "string"}},
+    "status": {"enum": ["ACTIVE", "DRY_RUN", "CANDIDATE", "BLOCKED", "STALE", "UNAVAILABLE"]},
+    "current_task_id": {"type": ["string", "null"]},
+    "last_receipt_path": {"type": ["string", "null"]},
+    "risk_class": {"enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]},
+    "execution_mode": {"enum": ["READ_ONLY", "DRY_RUN", "LOCAL_GATED", "EXTERNAL_HANDOFF_ONLY"]},
+    "handoff_mode": {"enum": ["NONE", "CARD", "REQUIRED"]}
+  },
+  "additionalProperties": false
+}

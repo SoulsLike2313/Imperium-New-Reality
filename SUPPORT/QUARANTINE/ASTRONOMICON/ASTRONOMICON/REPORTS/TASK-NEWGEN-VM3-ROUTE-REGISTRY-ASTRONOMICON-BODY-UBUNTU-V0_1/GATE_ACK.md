@@ -1,0 +1,66 @@
+GATE_ACK:
+- task_id: TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1
+- current_head: 5528b58d965c7a7b338233c8b007008dc81066a3
+- gatepack_path: /home/vboxuser3/IMPERIUM_VM3_INBOX/TASKPACK_NEWGEN_VM3_ROUTE_REGISTRY_ASTRONOMICON_BODY_UBUNTU_V0_1.zip
+- gatepack_sha256: 0dc3c4c0fff42ff918002c39df1886f22c575b039531c356f8c7728b26a9ce6e
+- read_gates:
+  - GATE-U00-GIT-TRUTH
+  - GATE-U01-ROLE-ACK
+  - GATE-U02-SCOPE-BOUNDARY
+  - GATE-U04-EVIDENCE-RECEIPT
+  - GATE-U05-STOP-CONDITIONS
+  - GATE-U08-REPO-PURITY
+  - GATE-U09-NO-FAKE-GREEN
+  - GATE-U12-REPORT-OUTPUT-BUDGET
+  - GATE-U13-PYTHON-TYPE-SAFETY
+  - GATE-U14-WHOLE-REPO-SCOPE-RECON
+  - GATE-U15-OPERATIONALITY-IMPACT
+  - GATE-U16-BILINGUAL-UI
+  - GATE-U17-DELIVERABLE-PACKAGE
+  - GATE-U18-AGENT-FACTORY-COMPLIANCE
+  - GATE-U19-SCRIPT-ARTIFACT-PRESERVATION
+  - GATE-U20-AGENT-KPD-SELF-REVIEW
+  - GATE-U21-COMMAND-CHUNKING
+- accepted_stop_conditions:
+  - STOP if local HEAD, branch, or root mismatches required taskpack truth.
+  - STOP if any edit is required outside declared ASTRONOMICON scope.
+  - STOP if critical receipts cannot be produced.
+  - STOP if route proof fields conflict with prior accepted evidence.
+  - STOP if checker/smoke validation fails and cannot be repaired in-scope.
+- scope_boundary: Build route registry report bundle and Astronomicon first body only under IMPERIUM_NEW_GENERATION/ASTRONOMICON/** for task TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1.
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/ASTRONOMICON/README.md
+  - IMPERIUM_NEW_GENERATION/ASTRONOMICON/BODY/**
+  - IMPERIUM_NEW_GENERATION/ASTRONOMICON/TASK_ESSENCE/**
+  - IMPERIUM_NEW_GENERATION/ASTRONOMICON/ROUTING/**
+  - IMPERIUM_NEW_GENERATION/ASTRONOMICON/FIXTURES/**
+  - IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_task_essence_checker_v0_1.py
+  - IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_route_packet_checker_v0_1.py
+  - IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_tui_smoke_v0_1.py
+  - IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/astronomicon_tui_v0_1.py
+  - IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/LAUNCH_ASTRONOMICON_TUI_V0_1.sh
+  - IMPERIUM_NEW_GENERATION/ASTRONOMICON/GHOST_EVOLVE/**
+  - IMPERIUM_NEW_GENERATION/ASTRONOMICON/REPORTS/TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1/**
+- forbidden_paths:
+  - ORGANS/**
+  - IMPERIUM_TEST_VERSION/**
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/**
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/**
+  - IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/**
+  - IMPERIUM_NEW_GENERATION/INQUISITION/**
+  - IMPERIUM_NEW_GENERATION/ADMINISTRATUM/**
+  - .git/**
+- expected_receipts:
+  - route_registration_receipt.json
+  - pc_to_vm3_direct_route_card.json
+  - pc_to_vm3_direct_route_receipt.json
+  - owner_pain_map.json
+  - organ_entry_ack.json
+  - ghost_evolve_sidecar.json
+  - receipts/receipt_index.json
+  - receipts/validation_receipt.json
+  - receipts/scope_boundary_receipt.json
+- repo_recon_required: true
+- script_absorption_required: scripts are directly created in ASTRONOMICON/TOOLS and ASTRONOMICON/TUI (no temporary helper script deletion).
+- clarification_needed: none
+- verdict: PASS

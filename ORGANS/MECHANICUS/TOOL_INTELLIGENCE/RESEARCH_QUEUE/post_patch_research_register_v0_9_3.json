@@ -1,0 +1,24 @@
+{
+  "schema": "imperium.post_patch_research_register.v0_1",
+  "patch_id": "v0.9.3",
+  "topics": [
+    {
+      "name": "OCI Image Layout",
+      "takeaway": "Use content-addressed blobs/refs/manifests as inspiration for Evidence Vault pack layout."
+    },
+    {
+      "name": "SLSA provenance",
+      "takeaway": "Execution receipts should describe produced artifacts and build/execution context."
+    },
+    {
+      "name": "in-toto attestations",
+      "takeaway": "Future pack execution can express verifiable claims about steps performed and order."
+    }
+  ],
+  "mechanicus_registration": [
+    "inquisition.evidence_vault_batch_pack_plan.v0_1"
+  ],
+  "doctrine_updates": [
+    "EVIDENCE_VAULT_BATCH_PACK_PLAN_DOCTRINE_V0_1.md"
+  ]
+}

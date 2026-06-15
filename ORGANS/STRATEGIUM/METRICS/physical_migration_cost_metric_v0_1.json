@@ -1,0 +1,37 @@
+{
+  "schema_version": "imperium.organ_metric.v0_1",
+  "metric_id": "physical_migration_cost_metric_v0_1",
+  "owner_organ": "STRATEGIUM",
+  "purpose": "Measure cost and risk of physical root cleanup.",
+  "unit": "mixed_receipt_values",
+  "inputs": [
+    "CORE_PHYSICAL_MIGRATION_REPORT.json",
+    "CORE_MIGRATION_EXECUTION_RECEIPT.json"
+  ],
+  "fields": [
+    "moved_count",
+    "hold_count",
+    "tracked_file_moves",
+    "untracked_moves",
+    "path_length_holds",
+    "validator_runtime"
+  ],
+  "current_measurement": {
+    "task_id": "TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1",
+    "measured_at_utc": "2026-06-06T19:02:23Z",
+    "moved_count": 52,
+    "migration_hold_count": 5,
+    "active_root_technical_hold_count": 3,
+    "tracked_git_mv_count": 50,
+    "untracked_move_count": 2,
+    "path_length_holds": 0,
+    "classification_counts": {
+      "LEGACY_LEARNING_ARCHIVE": 13,
+      "LEGACY_ROOT_ORGAN_MIRROR": 6,
+      "ROOT_COMMON_SUPPORT": 29,
+      "ROOT_QUARANTINE_CANDIDATE": 4
+    },
+    "validator_runtime": "MEASURED_BY_COMMAND_RECEIPTS_ONLY; per-command wall times retained in terminal receipts, not normalized in metric."
+  },
+  "current_measurement_policy": "Measured from migration report and command receipts; CPU/RAM/VRAM remain UNKNOWN_WITH_REASON unless locally probed."
+}

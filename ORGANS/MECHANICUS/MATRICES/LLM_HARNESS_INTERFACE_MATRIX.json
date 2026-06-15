@@ -1,0 +1,54 @@
+{
+  "matrix_id": "LLM_HARNESS_INTERFACE_MATRIX",
+  "version": "0.1-candidate",
+  "owner_organ": "Mechanicus",
+  "support_organs": [
+    "Officio Agentis",
+    "Astronomicon",
+    "Inquisition"
+  ],
+  "purpose": "Defines script-first interface between local tools/organ packets and a large LLM: gather settings, package context, validate output, store receipts.",
+  "used_by": [
+    "GPT_LOGOS",
+    "SERVITOR",
+    "INQUISITOR"
+  ],
+  "required_questions": [
+    "What script/tool gathers the focus packet?",
+    "What files are allowed into context?",
+    "What output schema must be returned?",
+    "Which commands verify the result?",
+    "How is leakage/private boundary prevented?"
+  ],
+  "pass_criteria": [
+    "Context packet has manifest",
+    "Output has schema",
+    "Replay command exists or gap declared",
+    "Private boundary is declared"
+  ],
+  "warn_criteria": [
+    "Harness is manual but documented",
+    "Tool is candidate not canon",
+    "Replay missing but no runtime PASS claimed"
+  ],
+  "block_criteria": [
+    "Broad private context included without policy",
+    "No manifest",
+    "No output schema",
+    "Claims replay but no command"
+  ],
+  "fake_green_flags": [
+    "CONTEXT_DUMP_WITHOUT_MANIFEST",
+    "PRIVATE_LEAK_RISK",
+    "OUTPUT_UNSCHEMAED",
+    "NO_REPLAY"
+  ],
+  "evidence_requirements": [
+    "context_manifest",
+    "tool_card",
+    "replay_command",
+    "validation_receipt"
+  ],
+  "current_status": "CANDIDATE_NOT_CANON",
+  "next_action": "Implement schema validation and runtime receipt generation in a later Servitor task."
+}

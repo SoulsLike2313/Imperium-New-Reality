@@ -1,0 +1,29 @@
+{
+  "task_id": "TASK-20260520-SANCTUM-MINI-MECHANICUS-LIVE-TERMINAL-PC-V0_3",
+  "generated_at_utc": "2026-05-20T11:28:33.5880699Z",
+  "branch": "master",
+  "head": "b84d32ac33bf921b0da6cc8a727dea1792008e67",
+  "verdict": "PASS_WITH_WARNINGS_OWNER_REVIEW_READY_NO_COMMIT",
+  "api_terminal_execute_sample": "API_TERMINAL_EXECUTE_SAMPLE.json",
+  "api_terminal_history_sample": "API_TERMINAL_HISTORY_SAMPLE.json",
+  "blocked_probe_sample": "BLOCKED_COMMAND_PROBE_SAMPLE.json",
+  "changed_backend_files": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/server.py",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/api/actions.py",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/api/state_builder.py"
+  ],
+  "changed_frontend_files": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/static/index.html",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/static/app.js",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/static/styles.css",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/README.md"
+  ],
+  "safety_verdict": {
+    "arbitrary_shell": "BLOCKED",
+    "allowlist_manual_input_only": "PASS",
+    "blocked_probe_commands": 6,
+    "blocked_probe_all_blocked": true
+  },
+  "no_commit": true,
+  "no_push": true
+}

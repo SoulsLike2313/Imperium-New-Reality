@@ -1,0 +1,159 @@
+{
+  "schema_id": "p0_before_after_remediation_matrix_v0_1",
+  "task_id": "TASK-NEWGEN-LEGACY-RECEIPT-P0-PRODUCER-REMEDIATION-PC-V0_1",
+  "generated_at_utc": "2026-05-30T21:31:49Z",
+  "items": [
+    {
+      "producer_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_scope_exporter_v0_2.py",
+      "owner_organ": "MECHANICUS",
+      "before_classification": "LEGACY_AMBIGUOUS_HEADS",
+      "before_dangerous_fields": [
+        "PASS",
+        "commit_hash",
+        "head"
+      ],
+      "before_evidence": [
+        "legacy_receipt_field_delta_scan.json:path_deltas[0].before"
+      ],
+      "remediation_actions": [
+        "Replaced ambiguous/self-head semantics with explicit external-finalization taxonomy fields.",
+        "Added receipt_subject_head/receipt_content_head/external_delivery_head/remote_head_after_push split.",
+        "Added self_head_paradox_handled and clean_pass_allowed/caps_triggered guardrails.",
+        "Removed legacy plain tokens triggering P0 (final_head, commit_hash, remote_head, plain head markers)."
+      ],
+      "after_classification": "REMEDIATED",
+      "after_dangerous_fields": [
+        "PASS"
+      ],
+      "after_evidence": [
+        "legacy_receipt_field_delta_scan.json:path_deltas[0].after"
+      ],
+      "remaining_warnings": [
+        "Independent Inquisitor/Speculum commit review still required before Stage 1 admission.",
+        "P1/unknown producers from Stage 0 remain outside current scope."
+      ],
+      "stage1_impact": "ALLOWS_STAGE1_WITH_WARNING",
+      "before_risk_level": "P0",
+      "after_risk_level": "P3",
+      "before_legacy_field_checker_status": "MANUAL_REVIEW",
+      "after_legacy_field_checker_status": "SAFE_NEW_SEMANTICS"
+    },
+    {
+      "producer_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_quality_gate_runner_v0_1.py",
+      "owner_organ": "MECHANICUS",
+      "before_classification": "LEGACY_AMBIGUOUS_HEADS",
+      "before_dangerous_fields": [
+        "PASS",
+        "head",
+        "remote_head"
+      ],
+      "before_evidence": [
+        "legacy_receipt_field_delta_scan.json:path_deltas[1].before"
+      ],
+      "remediation_actions": [
+        "Replaced ambiguous/self-head semantics with explicit external-finalization taxonomy fields.",
+        "Added receipt_subject_head/receipt_content_head/external_delivery_head/remote_head_after_push split.",
+        "Added self_head_paradox_handled and clean_pass_allowed/caps_triggered guardrails.",
+        "Removed legacy plain tokens triggering P0 (final_head, commit_hash, remote_head, plain head markers)."
+      ],
+      "after_classification": "REMEDIATED",
+      "after_dangerous_fields": [
+        "PASS",
+        "head"
+      ],
+      "after_evidence": [
+        "legacy_receipt_field_delta_scan.json:path_deltas[1].after"
+      ],
+      "remaining_warnings": [
+        "Independent Inquisitor/Speculum commit review still required before Stage 1 admission.",
+        "P1/unknown producers from Stage 0 remain outside current scope."
+      ],
+      "stage1_impact": "ALLOWS_STAGE1_WITH_WARNING",
+      "before_risk_level": "P0",
+      "after_risk_level": "P3",
+      "before_legacy_field_checker_status": "MANUAL_REVIEW",
+      "after_legacy_field_checker_status": "SAFE_NEW_SEMANTICS"
+    },
+    {
+      "producer_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+      "owner_organ": "UNKNOWN",
+      "before_classification": "LEGACY_AMBIGUOUS_HEADS",
+      "before_dangerous_fields": [
+        "PASS",
+        "head",
+        "remote_head"
+      ],
+      "before_evidence": [
+        "legacy_receipt_field_delta_scan.json:path_deltas[2].before"
+      ],
+      "remediation_actions": [
+        "Replaced ambiguous/self-head semantics with explicit external-finalization taxonomy fields.",
+        "Added receipt_subject_head/receipt_content_head/external_delivery_head/remote_head_after_push split.",
+        "Added self_head_paradox_handled and clean_pass_allowed/caps_triggered guardrails.",
+        "Removed legacy plain tokens triggering P0 (final_head, commit_hash, remote_head, plain head markers)."
+      ],
+      "after_classification": "REMEDIATED",
+      "after_dangerous_fields": [
+        "PASS"
+      ],
+      "after_evidence": [
+        "legacy_receipt_field_delta_scan.json:path_deltas[2].after"
+      ],
+      "remaining_warnings": [
+        "Independent Inquisitor/Speculum commit review still required before Stage 1 admission.",
+        "P1/unknown producers from Stage 0 remain outside current scope."
+      ],
+      "stage1_impact": "ALLOWS_STAGE1_WITH_WARNING",
+      "before_risk_level": "P0",
+      "after_risk_level": "P3",
+      "before_legacy_field_checker_status": "MANUAL_REVIEW",
+      "after_legacy_field_checker_status": "SAFE_NEW_SEMANTICS"
+    },
+    {
+      "producer_path": "IMPERIUM_NEW_GENERATION/TOOLS/TOOL_ADMISSION/newgen_tool_admission_builder_v0_1.py",
+      "owner_organ": "UNKNOWN",
+      "before_classification": "LEGACY_SELF_HEAD_RISK",
+      "before_dangerous_fields": [
+        "PASS",
+        "final_head",
+        "head",
+        "remote_head"
+      ],
+      "before_evidence": [
+        "legacy_receipt_field_delta_scan.json:path_deltas[3].before"
+      ],
+      "remediation_actions": [
+        "Replaced ambiguous/self-head semantics with explicit external-finalization taxonomy fields.",
+        "Added receipt_subject_head/receipt_content_head/external_delivery_head/remote_head_after_push split.",
+        "Added self_head_paradox_handled and clean_pass_allowed/caps_triggered guardrails.",
+        "Removed legacy plain tokens triggering P0 (final_head, commit_hash, remote_head, plain head markers)."
+      ],
+      "after_classification": "REMEDIATED",
+      "after_dangerous_fields": [
+        "PASS",
+        "head"
+      ],
+      "after_evidence": [
+        "legacy_receipt_field_delta_scan.json:path_deltas[3].after"
+      ],
+      "remaining_warnings": [
+        "Independent Inquisitor/Speculum commit review still required before Stage 1 admission.",
+        "P1/unknown producers from Stage 0 remain outside current scope."
+      ],
+      "stage1_impact": "ALLOWS_STAGE1_WITH_WARNING",
+      "before_risk_level": "P0",
+      "after_risk_level": "P3",
+      "before_legacy_field_checker_status": "LIKELY_SELF_HEAD_RISK",
+      "after_legacy_field_checker_status": "SAFE_NEW_SEMANTICS"
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "remediated": 4,
+    "downgraded_with_reason": 0,
+    "not_producer_with_evidence": 0,
+    "blocked": 0,
+    "p0_before": 4,
+    "p0_after": 0
+  }
+}

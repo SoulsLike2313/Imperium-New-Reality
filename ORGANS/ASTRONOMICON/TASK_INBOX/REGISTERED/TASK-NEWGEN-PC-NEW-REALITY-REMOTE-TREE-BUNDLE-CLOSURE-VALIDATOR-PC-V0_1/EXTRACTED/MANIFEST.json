@@ -1,0 +1,50 @@
+{
+  "task_id": "TASK-NEWGEN-PC-NEW-REALITY-REMOTE-TREE-BUNDLE-CLOSURE-VALIDATOR-PC-V0_1",
+  "taskpack_version": "0.1",
+  "created_utc": "2026-06-03T12:55:00Z",
+  "contour": "PC",
+  "route_mode": "LIVE",
+  "target_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "target_remote": "https://github.com/SoulsLike2313/Imperium-New-Reality.git",
+  "ancient_empire_reference": {
+    "url": "https://github.com/SoulsLike2313/Imperium-",
+    "freeze_commit": "448150be7b4984b755828bc2f89b5bd1156de37d",
+    "access_mode": "read_only_reference_only_when_task_explicitly_requires_it"
+  },
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "route_manifest_template": "ROUTE_MANIFEST_TEMPLATE.json",
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH_UTF8_NO_BOM_ONLY",
+    "canonical_repo_artifacts": "ENGLISH_UTF8_NO_BOM_ONLY",
+    "owner_facing_russian_runtime_output": "ALLOWED_ONLY_THROUGH_OFFICIO_AGENTIS_RUNTIME_CONTRACT",
+    "cyrillic_in_taskpack": "FORBIDDEN",
+    "localization_exception": "OFFICIO_OWNER_FACING_RUNTIME_ONLY_NOT_MACHINE_BUNDLE"
+  },
+  "officio_authority": {
+    "owner_language_routing": "OFFICIO_AGENTIS",
+    "final_response_contract": "STEP_VERDICT_COMMITS_OWNER_COMMENTS_WITH_BUNDLE_PATH_AND_SHA256"
+  },
+  "scope_lock": {
+    "active_root_only": true,
+    "ancient_empire_mutation": "FORBIDDEN",
+    "vm_sync": "FORBIDDEN_IN_THIS_TASK",
+    "throne_changes": "FORBIDDEN_IN_THIS_TASK"
+  },
+  "required_files": [
+    "START_HERE.md",
+    "TASK_SPEC.md",
+    "ACCEPTANCE_GATES.md",
+    "OUTPUT_REQUIREMENTS.md",
+    "ROUTE_MANIFEST_TEMPLATE.json"
+  ],
+  "output_contract": "OUTPUT_REQUIREMENTS.md"
+}

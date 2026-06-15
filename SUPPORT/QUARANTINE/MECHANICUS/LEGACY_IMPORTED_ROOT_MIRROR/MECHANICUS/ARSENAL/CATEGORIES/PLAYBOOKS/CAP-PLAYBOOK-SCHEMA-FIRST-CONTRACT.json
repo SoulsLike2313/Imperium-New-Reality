@@ -1,0 +1,39 @@
+{
+  "capability_id": "CAP-PLAYBOOK-SCHEMA-FIRST-CONTRACT",
+  "name": "schema-first JSON contract practice",
+  "category": "PLAYBOOKS",
+  "status": "CANON",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Schema-first rule for critical JSON artifacts.",
+  "what_problem_it_solves": "Prevents malformed contracts and report drift.",
+  "source_type": "practice",
+  "source_url_or_path": "IMPERIUM_NEW_GENERATION/CONTRACTS",
+  "license_or_trust_note": "Internal repo evidence controlled by IMPERIUM.",
+  "install_required": false,
+  "install_gate": "GATE-U09-NO-FAKE-GREEN",
+  "validation_commands": [
+    "validate:cap-playbook-schema-first-contract"
+  ],
+  "expected_receipts": [
+    "cap-playbook-schema-first-contract_receipt.json"
+  ],
+  "safety_notes": "Use only in bounded task scope; no blind runtime mutation.",
+  "security_notes": "Do not bypass path, command, and evidence gates.",
+  "offline_or_network_dependency": "offline_preferred",
+  "promoted_by_receipt": "REPO_EVIDENCE_PATHS",
+  "last_reviewed_utc": "2026-05-24T00:00:00Z",
+  "next_review_reason": "Review when contract families evolve.",
+  "limitations": "Coverage quality depends on maintained schema scope.",
+  "allowed_use_cases": [
+    "Bounded task execution under Mechanicus policy",
+    "Evidence-backed validation and report generation"
+  ],
+  "forbidden_use_cases": [
+    "Production-ready claim without receipts",
+    "Out-of-scope or unbounded execution"
+  ],
+  "canon_evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/TASK_KERNEL_V0_1.schema.json",
+    "IMPERIUM_NEW_GENERATION/CONTRACTS/TOOL_ADMISSION/TOOL_CANDIDATE_RECORD.schema.json"
+  ]
+}

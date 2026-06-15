@@ -1,0 +1,12 @@
+{
+  "schema_version": "imperium.organ_matrix.v0_1",
+  "matrix_id": "custodes_organ_life_audit_matrix",
+  "owner_organ": "CUSTODES",
+  "purpose": "Audit organ life zone representation without claiming full semantic authority.",
+  "rows": [
+    {"check_id": "NINE_ORGANS_REGISTERED", "severity": "BLOCK", "pass_condition": "REQUIRED_9_ORGANS_V0_1.json contains exactly nine unique required organs."},
+    {"check_id": "LIFE_ZONE_PATH_EXISTS", "severity": "BLOCK", "pass_condition": "Every required organ root_path and life_zone_path exists."},
+    {"check_id": "TASK_REQUIRED_ORGAN_ZONE_EXISTS", "severity": "BLOCK", "pass_condition": "Task-required zones exist for Administratum, Strategium, Schola, Inquisition, and Custodes."},
+    {"check_id": "METADATA_GAP_VISIBLE", "severity": "WARN", "pass_condition": "Missing identity/task participation metadata is reported as warning, not hidden."}
+  ]
+}

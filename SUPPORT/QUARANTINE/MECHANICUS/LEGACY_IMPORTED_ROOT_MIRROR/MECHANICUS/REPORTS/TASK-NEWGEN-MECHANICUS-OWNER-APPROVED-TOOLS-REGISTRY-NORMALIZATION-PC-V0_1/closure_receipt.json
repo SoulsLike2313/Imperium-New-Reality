@@ -1,0 +1,40 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-OWNER-APPROVED-TOOLS-REGISTRY-NORMALIZATION-PC-V0_1",
+  "generated_at_utc": "2026-05-25T21:27:30Z",
+  "verdict": "PASS",
+  "required_final_state": {
+    "json_parse_pass": true,
+    "py_compile_new_scripts": true,
+    "no_install_actions": true,
+    "report_bundle_exists": true,
+    "ghost_evolve_sidecar_exists": true
+  },
+  "quality_gate_snapshot": {
+    "normalization_checker_verdict": "PASS",
+    "normalized_tools_count": 4,
+    "wave_001_item_count": 4,
+    "install_actions_performed": false,
+    "normalization_checker_violations": 0,
+    "normalization_checker_warnings": 0
+  },
+  "artifact_paths": {
+    "report_root": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-OWNER-APPROVED-TOOLS-REGISTRY-NORMALIZATION-PC-V0_1",
+    "normalization_map": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-OWNER-APPROVED-TOOLS-REGISTRY-NORMALIZATION-PC-V0_1/owner_approved_tools_normalization_map_v0_1.json",
+    "wave_001": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-OWNER-APPROVED-TOOLS-REGISTRY-NORMALIZATION-PC-V0_1/recommended_install_wave_001_owner_approved_v0_1.json",
+    "normalization_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-OWNER-APPROVED-TOOLS-REGISTRY-NORMALIZATION-PC-V0_1/normalization_receipt.json",
+    "normalization_checker": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-OWNER-APPROVED-TOOLS-REGISTRY-NORMALIZATION-PC-V0_1/normalization_check_report.json",
+    "alias_map": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/owner_approved_tool_aliases_v0_1.json",
+    "checker_script": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_owner_approved_tool_normalization_v0_1.py"
+  },
+  "script_artifact_preservation": {
+    "task_id": "TASK-NEWGEN-MECHANICUS-OWNER-APPROVED-TOOLS-REGISTRY-NORMALIZATION-PC-V0_1",
+    "artifacts": [
+      {
+        "artifact_id": "check_owner_approved_tool_normalization_v0_1",
+        "original_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_owner_approved_tool_normalization_v0_1.py",
+        "result": "WORKED",
+        "recommendation": "ABSORB_NOW"
+      }
+    ]
+  }
+}

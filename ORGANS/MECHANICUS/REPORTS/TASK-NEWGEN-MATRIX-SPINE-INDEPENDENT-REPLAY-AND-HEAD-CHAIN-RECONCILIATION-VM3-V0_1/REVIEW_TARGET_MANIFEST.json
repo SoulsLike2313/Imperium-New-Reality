@@ -1,0 +1,72 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-INDEPENDENT-REPLAY-AND-HEAD-CHAIN-RECONCILIATION-VM3-V0_1",
+  "review_target_head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+  "review_target_type": "IMPLEMENTATION",
+  "accepted_continuity_head": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+  "implementation_truth_status": "RESOLVED",
+  "implementation_truth_head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+  "proof_head": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+  "closure_bundle_head": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+  "head_chain": {
+    "base_head": "3aa07798217fff0f594214d203e1783307a03a5e",
+    "previous_closure_head": "c10f2b1c46d19e6a7614e25c4eff57b46b8baef5",
+    "accepted_continuity_head": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+    "proof_receipt_head": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+    "closure_bundle_head": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+    "remote_head_after_push": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7"
+  },
+  "commit_urls": {
+    "review_target": "https://github.com/SoulsLike2313/Imperium-/commit/d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+    "implementation_truth": "https://github.com/SoulsLike2313/Imperium-/commit/d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+    "proof": "https://github.com/SoulsLike2313/Imperium-/commit/10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+    "closure_bundle": "https://github.com/SoulsLike2313/Imperium-/commit/10d4649e64bb9b3565e579c00af88d7bd8f93ba7"
+  },
+  "report_paths": [
+    "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-INDEPENDENT-REPLAY-AND-HEAD-CHAIN-RECONCILIATION-VM3-V0_1/head_chain_reconciliation_report.md",
+    "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-INDEPENDENT-REPLAY-AND-HEAD-CHAIN-RECONCILIATION-VM3-V0_1/HEAD_CHAIN_RECEIPT.json"
+  ],
+  "replay_commands": [
+    "git cat-file -e d6768e53a8041acfbf23d6c44b80f8088d32bd92^{commit}",
+    "git merge-base --is-ancestor d6768e53a8041acfbf23d6c44b80f8088d32bd92 10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+    "git merge-base --is-ancestor 3aa07798217fff0f594214d203e1783307a03a5e 10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+    "python3 IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/validate_matrix_spine.py --repo-root /home/vboxuser3/IMPERIUM_WORK/Imperium- --output-dir /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-INDEPENDENT-REPLAY-AND-HEAD-CHAIN-RECONCILIATION-VM3-V0_1/matrix_validator_run"
+  ],
+  "independent_replay": {
+    "runner": "SEPARATE_REPLAY_RUNNER",
+    "commands": [
+      "git cat-file -e d6768e53a8041acfbf23d6c44b80f8088d32bd92^{commit}",
+      "git merge-base --is-ancestor d6768e53a8041acfbf23d6c44b80f8088d32bd92 10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+      "git merge-base --is-ancestor 3aa07798217fff0f594214d203e1783307a03a5e 10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+      "python3 IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/validate_matrix_spine.py --repo-root /home/vboxuser3/IMPERIUM_WORK/Imperium- --output-dir /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-INDEPENDENT-REPLAY-AND-HEAD-CHAIN-RECONCILIATION-VM3-V0_1/matrix_validator_run"
+    ]
+  },
+  "reviewer_targets": {
+    "inquisitor": {
+      "target_head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92"
+    },
+    "speculum": {
+      "target_head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92"
+    }
+  },
+  "caps_reviewers_must_apply": [
+    "CAP_REVIEW_TARGET_CONFLICT",
+    "CAP_REVIEW_TARGET_MANIFEST_MISSING",
+    "CAP_IMPLEMENTATION_TRUTH_UNRESOLVED",
+    "CAP_NO_INDEPENDENT_REPLAY",
+    "CAP_HEAD_CHAIN_INCOMPLETE",
+    "CAP_REVIEWERS_CAN_DIVERGE",
+    "CAP_WARP_CLAIMED_WITHOUT_UNLOCK",
+    "CAP_NO_EFFICIENCY_DELTA"
+  ],
+  "questions_for_inquisitor": [
+    "Подтверждает ли evidence, что d6768e5 является прямым implementation anchor contested scope?",
+    "Есть ли признаки скрытого расхождения review_target между reviewer roles?"
+  ],
+  "questions_for_speculum": [
+    "Подтверждается ли технически, что оба reviewer targets совпадают с review_target_head?",
+    "Есть ли обход clean PASS при отсутствии independent replay?"
+  ],
+  "notes_for_logos": "Review target is intentionally normalized to one implementation anchor (d6768e5) while continuity/proof remains at 10d4649.",
+  "warp_runtime_claimed": false,
+  "warp_unlocked": false
+}

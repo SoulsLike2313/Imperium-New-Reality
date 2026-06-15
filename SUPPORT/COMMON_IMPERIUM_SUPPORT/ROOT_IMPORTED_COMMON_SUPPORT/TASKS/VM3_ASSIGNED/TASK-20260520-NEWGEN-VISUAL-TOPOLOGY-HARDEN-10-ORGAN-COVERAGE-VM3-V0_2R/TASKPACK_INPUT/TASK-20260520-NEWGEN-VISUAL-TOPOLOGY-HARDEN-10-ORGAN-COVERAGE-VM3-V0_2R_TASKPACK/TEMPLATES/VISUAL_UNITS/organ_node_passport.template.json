@@ -1,0 +1,55 @@
+{
+  "visual_unit_id": "SANCTUM.BRAIN_FIELD.ORGAN_RING.MECHANICUS_NODE",
+  "parent": "SANCTUM.BRAIN_FIELD.ORGAN_RING",
+  "type": "organ_node",
+  "visual_owner": "SANCTUM_SHELL",
+  "truth_owner": "MECHANICUS_OR_ADMINISTRATUM",
+  "data_source_owner": "MECHANICUS_AGENT",
+  "organ_subject": "MECHANICUS",
+  "implementation_owner": "VISUAL_FOUNDRY",
+  "purpose": "Represent one organ node in the Sanctum brain field.",
+  "backend_source": "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/state/current_status.json",
+  "backend_source_status": "candidate",
+  "backend_source_unknown_reason": "",
+  "allowed_states": [
+    "placeholder",
+    "stub",
+    "candidate",
+    "idle",
+    "active",
+    "warn",
+    "error",
+    "blocked",
+    "locked",
+    "unknown"
+  ],
+  "truth_rules": [
+    "Must not show active unless backend source or event stream proves activity.",
+    "Must show UNKNOWN if backend source cannot be read.",
+    "Must not invent PASS/ready state."
+  ],
+  "visual_tokens": "mechanicus_node_tokens",
+  "texture": "forge_metal_dark",
+  "glow": {
+    "enabled": true,
+    "state_bound": true,
+    "default_intensity": 0.25
+  },
+  "motion": {
+    "enabled": true,
+    "pattern": "pulse_breath",
+    "perf_tier": "CHEAP",
+    "disable_in_reduced_motion": true
+  },
+  "perf_tier": "CHEAP",
+  "proof_requirements": [
+    "unit passport validation",
+    "backend truth map entry",
+    "future screenshot when implemented"
+  ],
+  "integration_status": "candidate",
+  "fake_green_risks": [
+    "showing active without source",
+    "showing ready without receipt"
+  ]
+}

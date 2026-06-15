@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "important_six.owner_diff_decision.v0_1",
+  "title": "Owner Diff Decision",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "task_id",
+    "decision",
+    "created_at_utc"
+  ],
+  "properties": {
+    "decision_id": { "type": "string", "minLength": 8 },
+    "task_id": { "type": "string", "minLength": 8 },
+    "decision": { "type": "string", "enum": ["APPROVE", "REJECT", "NEEDS_REWORK"] },
+    "note_ru": { "type": "string" },
+    "author": { "type": "string", "default": "OWNER" },
+    "local_head": { "type": "string" },
+    "remote_head": { "type": "string" },
+    "created_at_utc": { "type": "string", "minLength": 20 }
+  },
+  "additionalProperties": true
+}

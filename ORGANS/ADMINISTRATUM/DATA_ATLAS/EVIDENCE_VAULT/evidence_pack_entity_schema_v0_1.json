@@ -1,0 +1,87 @@
+{
+  "schema_id": "data_atlas.evidence_pack_entity.v0_1",
+  "status": "ACTIVE_DRAFT",
+  "description_ru": "Схема карточки Evidence Pack для Data Atlas.",
+  "required_fields": [
+    "evidence_pack_id",
+    "patch_id",
+    "created_at_utc",
+    "storage_zone",
+    "retention_class",
+    "pack_path",
+    "manifest_path",
+    "sha256",
+    "raw_buffer_deleted"
+  ],
+  "fields": {
+    "evidence_pack_id": {
+      "type": "string"
+    },
+    "patch_id": {
+      "type": "string"
+    },
+    "created_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source_repo_head": {
+      "type": "string"
+    },
+    "h_contour": {
+      "type": "boolean"
+    },
+    "storage_zone": {
+      "type": "enum",
+      "values": [
+        "HOT_BUFFER",
+        "SEALED_PACK",
+        "PINNED_EVIDENCE",
+        "TTL_48",
+        "QUARANTINE",
+        "PURGE_ALLOWED"
+      ]
+    },
+    "retention_class": {
+      "type": "enum",
+      "values": [
+        "PINNED_EVIDENCE",
+        "TTL_48",
+        "OWNER_REVIEW",
+        "PURGE_ALLOWED"
+      ]
+    },
+    "ttl_hours": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "pack_path": {
+      "type": "string"
+    },
+    "manifest_path": {
+      "type": "string"
+    },
+    "owner_summary_path": {
+      "type": "string"
+    },
+    "machine_index_path": {
+      "type": "string"
+    },
+    "sha256": {
+      "type": "string"
+    },
+    "raw_buffer_deleted": {
+      "type": "boolean"
+    },
+    "contents": {
+      "type": "object"
+    },
+    "linked_findings": {
+      "type": "array"
+    },
+    "linked_tools": {
+      "type": "array"
+    }
+  }
+}

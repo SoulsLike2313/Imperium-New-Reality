@@ -1,0 +1,39 @@
+{
+  "cmd": [
+    "python",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/INQUISITION_AGENT/TOOLS/inquisition_agent_runner.py",
+    "shell",
+    "--once",
+    "help"
+  ],
+  "returncode": 0,
+  "severity": "WARN",
+  "stdout": "{\n  \"organ\": \"INQUISITION_AGENT\",\n  \"runner\": \"inquisition_agent_runner.py\",\n  \"commands\": [\n    \"status\",\n    \"check\",\n    \"where\",\n    \"identity\",\n    \"pack\",\n    \"shell\",\n    \"help\",\n    \"fake-green-check\",\n    \"scope-drift-check\",\n    \"hygiene-scan\",\n    \"audit-claims\"\n  ],\n  \"domain_commands\": {\n    \"fake-green-check\": \"Detect unsupported PASS claims and missing evidence links.\",\n    \"scope-drift-check\": \"Surface changed paths and highlight potential scope drift.\",\n    \"hygiene-scan\": \"Scan Identity Half required files and report missing artifacts.\",\n    \"audit-claims\": \"Summarize claim/evidence anchors for current organ status.\"\n  },\n  \"shell_usage\": \"py -3 TOOLS/inquisition_agent_runner.py shell\",\n  \"visual_status\": \"PASS_RICH\",\n  \"warnings\": []\n}\n",
+  "stderr": "",
+  "json": {
+    "organ": "INQUISITION_AGENT",
+    "runner": "inquisition_agent_runner.py",
+    "commands": [
+      "status",
+      "check",
+      "where",
+      "identity",
+      "pack",
+      "shell",
+      "help",
+      "fake-green-check",
+      "scope-drift-check",
+      "hygiene-scan",
+      "audit-claims"
+    ],
+    "domain_commands": {
+      "fake-green-check": "Detect unsupported PASS claims and missing evidence links.",
+      "scope-drift-check": "Surface changed paths and highlight potential scope drift.",
+      "hygiene-scan": "Scan Identity Half required files and report missing artifacts.",
+      "audit-claims": "Summarize claim/evidence anchors for current organ status."
+    },
+    "shell_usage": "py -3 TOOLS/inquisition_agent_runner.py shell",
+    "visual_status": "PASS_RICH",
+    "warnings": []
+  }
+}

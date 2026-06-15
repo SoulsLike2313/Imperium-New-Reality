@@ -1,0 +1,10 @@
+{
+  "schema_version": "imperium.organ_metric.v0_1",
+  "metric_id": "context_locality",
+  "owner_organ": "STRATEGIUM",
+  "purpose": "Measure how much task context is available inside registered task and organ homes.",
+  "inputs": ["registered taskpack files", "organ participation files", "external context requests"],
+  "calculation": "local required context items divided by total required context items",
+  "unit": "ratio",
+  "unknown_policy": "UNKNOWN_WITH_REASON when external context is not counted"
+}

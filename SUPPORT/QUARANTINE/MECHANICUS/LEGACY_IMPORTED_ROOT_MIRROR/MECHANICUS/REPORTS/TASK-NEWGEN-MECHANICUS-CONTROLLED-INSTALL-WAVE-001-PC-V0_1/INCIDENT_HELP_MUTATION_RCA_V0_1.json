@@ -1,0 +1,76 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1",
+  "incident_id": "INCIDENT-MECH-RUNNER-HELP-MUTATION-20260526",
+  "generated_at_utc": "2026-05-25T22:41:24Z",
+  "incident_phase": "pre-wave001-containment",
+  "trigger_command": "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_controlled_provision_runner_v0_1.py --help",
+  "observed_behavior": "Command expected to be introspection but executed full provision workflow and wrote tracked files.",
+  "root_cause": {
+    "argument_parsing_before_writes": "NO",
+    "report_receipt_generation_before_argument_parsing": "YES",
+    "import_time_side_effect_writes": "NO_EVIDENCE_IN_IMPORTS",
+    "help_initializes_real_execution": "YES",
+    "reason": "Script has no argparse/read-only mode. __main__ unconditionally calls main(), and main() creates report dirs and writes receipts/registry/report artifacts.",
+    "source": {
+      "file": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_controlled_provision_runner_v0_1.py",
+      "entrypoint": "if __name__ == \"__main__\": raise SystemExit(main())",
+      "main_function_line": 495,
+      "first_write_path_init_line": 499,
+      "write_functions": "write_json(), write_text(), rebuild_registry(), run_scope_exporter(), run_fake_canon_detector() within main execution path",
+      "argparse_present": "NO"
+    }
+  },
+  "changed_files_count": 24,
+  "changed_files": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/EXPORTS/capability_scope_code_quality_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-precommit_validation_receipt.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-pyright-mypy_validation_receipt.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-ruff_validation_receipt.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-tool-jsonschema_validation_receipt.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/code-quality-jsonschema_validation_receipt.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/code-quality-mypy_validation_receipt.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/code-quality-pre-commit_validation_receipt.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/code-quality-ruff_validation_receipt.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/FINAL_REPORT.md",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/administratum_evidence_map.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/capability_scope_code_quality_report.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/capability_status_change_report.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/closure_receipt.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/controlled_provision_results.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/fake_canon_detector_report.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/ghost_evolve_provision_training_proof.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/inquisition_cleanliness_report.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/install_receipts_index.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/registry_sync_report.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/script_artifact_preservation_manifest.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/tool_detection_report.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/validation_receipts_index.json"
+  ],
+  "required_prevention_rules": [
+    "All introspection commands (--help/--version/--list/--show-config) must be strict read-only.",
+    "Parse arguments before any write-capable initialization.",
+    "No repository writes at import time.",
+    "Default mode must be read-only; write mode only with explicit execution flag.",
+    "Any write-capable script must declare output paths before writing.",
+    "Report/registry/receipt writing only inside explicit execution path.",
+    "Add smoke gate: run command, compare git status --short before/after, fail on drift."
+  ],
+  "immediate_containment_plan": [
+    "Save dirty incident evidence.",
+    "Restore unintended out-of-task changes to HEAD.",
+    "Verify clean-state proof with git status --short.",
+    "Continue Wave 001 only after clean-state proof."
+  ],
+  "hardening_followup": {
+    "proposed_task_id": "TASK-NEWGEN-MECHANICUS-RUNNER-READONLY-INTROSPECTION-HARDENING-PC-V0_1",
+    "scope": [
+      "Read-only introspection contract for Mechanicus runners.",
+      "No import-time writes across runner family.",
+      "Explicit execution/write mode gate for mutations.",
+      "Common clean-state smoke test for --help/--version/--list/--show-config.",
+      "Fail CI/checker if read-only command mutates repo."
+    ],
+    "this_task_change_policy": "Do not broad-refactor runner family inside Wave 001 unless tiny safe prerequisite fix is required."
+  }
+}

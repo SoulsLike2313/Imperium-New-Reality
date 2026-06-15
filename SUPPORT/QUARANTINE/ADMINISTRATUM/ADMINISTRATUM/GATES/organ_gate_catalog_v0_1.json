@@ -1,0 +1,47 @@
+{
+  "schema_id": "newgen_organ_gate_catalog_v0_1",
+  "organ_id": "ADMINISTRATUM",
+  "version": "v0_1",
+  "gates": [
+    {
+      "gate_id": "GATE_TASK_REGISTRATION_CONTINUITY",
+      "severity": "BLOCK",
+      "purpose": "Task must be registered and routed with explicit scope records.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "taskpack_scope_ack.json",
+        "organ_route_plan.json"
+      ]
+    },
+    {
+      "gate_id": "GATE_EVIDENCE_PACKAGE_REQUIRED",
+      "severity": "BLOCK",
+      "purpose": "Critical claims require report/receipt package.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "FINAL_REPORT.md",
+        "closure_receipt.json",
+        "wave1_organ_tui_smoke_report.json"
+      ]
+    },
+    {
+      "gate_id": "GATE_REPO_HYGIENE_BOUNDARY",
+      "severity": "BLOCK",
+      "purpose": "No writes outside declared NewGen scope.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "git status --short",
+        "git diff --name-only"
+      ]
+    },
+    {
+      "gate_id": "GATE_SEQUENCE_DISCIPLINE",
+      "severity": "WARN_TO_BLOCK",
+      "purpose": "Boot -> capability -> implementation -> smoke -> closure sequence is required.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "FINAL_REPORT.md"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRANSFER_RESULT_RECORD_V0_1",
+  "type": "object",
+  "required": [
+    "result_id",
+    "request_id",
+    "action_type",
+    "status",
+    "started_utc",
+    "finished_utc",
+    "evidence_refs",
+    "error",
+    "not_proven",
+    "claim_boundary"
+  ],
+  "properties": {
+    "result_id": { "type": "string" },
+    "request_id": { "type": "string" },
+    "action_type": {
+      "enum": [
+        "REGISTER_TASKPACK_SEND",
+        "REGISTER_REPORT_BUNDLE_FETCH",
+        "DRY_RUN_TASKPACK_SEND",
+        "DRY_RUN_REPORT_FETCH",
+        "CHECK_CONTOUR_STATUS",
+        "REFRESH_TRANSFER_CONSOLE_VIEW"
+      ]
+    },
+    "status": {
+      "enum": [
+        "DRY_RUN_READY",
+        "SENT",
+        "FETCHED",
+        "ERROR",
+        "NOT_READY",
+        "BLOCKED",
+        "UNKNOWN"
+      ]
+    },
+    "started_utc": { "type": "string" },
+    "finished_utc": { "type": "string" },
+    "evidence_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "error": {
+      "type": ["string", "null"]
+    },
+    "not_proven": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "claim_boundary": { "const": "FOUNDATION_ONLY" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "mechanicus.tool_delta_receipt.v0_1",
+  "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+  "created_at_utc": "2026-06-05T16:21:56Z",
+  "owner_organ": "MECHANICUS",
+  "tools_added": [
+    {
+      "path": "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_bundle_checker_v0_1.py",
+      "language": "python",
+      "dependencies": "standard_library_only",
+      "purpose": "Validate post-work bundle structural admission for a task report directory."
+    }
+  ],
+  "packages_installed": [],
+  "validation_commands": [
+    "python -m py_compile ORGANS\\ADMINISTRATUM\\POST_WORK_BUNDLE\\administratum_post_work_bundle_checker_v0_1.py",
+    "python ORGANS\\ADMINISTRATUM\\POST_WORK_BUNDLE\\administratum_post_work_bundle_checker_v0_1.py --repo-root . --task-id TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1 --report-dir REPORTS\\TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1 --out REPORTS\\TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1\\ADMINISTRATUM_POST_WORK_BUNDLE_CHECKER_REPORT.json",
+    "git diff --check"
+  ],
+  "known_limits": [
+    "V0.1 checker validates structural presence, JSON parseability, required organ rows, and selected receipt fields.",
+    "V0.1 checker does not perform full JSON Schema draft 2020-12 validation without an added dependency.",
+    "Final remote equality is validated after push by no-write git commands rather than by a committed receipt."
+  ],
+  "validation_results": [
+    {
+      "command": "python -m py_compile ORGANS\\ADMINISTRATUM\\POST_WORK_BUNDLE\\administratum_post_work_bundle_checker_v0_1.py",
+      "exit_code": 0,
+      "note": "Ran before LF writer patch; followed by no-bytecode AST parse after patch."
+    },
+    {
+      "command": "python -c \"import ast, pathlib; ast.parse(pathlib.Path('ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_bundle_checker_v0_1.py').read_text(encoding='utf-8'))\"",
+      "exit_code": 0,
+      "note": "Ran after LF writer patch without bytecode output."
+    },
+    {
+      "command": "python ORGANS\\ADMINISTRATUM\\POST_WORK_BUNDLE\\administratum_post_work_bundle_checker_v0_1.py --repo-root . --task-id TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1 --report-dir REPORTS\\TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1 --out REPORTS\\TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1\\ADMINISTRATUM_POST_WORK_BUNDLE_CHECKER_REPORT.json",
+      "exit_code": 0,
+      "verdict": "POST_WORK_BUNDLE_STRUCTURAL_PASS"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "note": "Passed after LF normalization of task registry JSON files."
+    },
+    {
+      "command": "python ORGANS\\ASTRONOMICON\\TOOLS\\astronomicon_task_id_resolver_v0_1.py --repo-root . --task-id TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1 --actor TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1 --receipt-out REPORTS\\TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1\\ASTRONOMICON_TASK_ID_RESOLVER_RECEIPT.json",
+      "exit_code": 0,
+      "verdict": "PASS_WITH_WARNINGS"
+    },
+    {
+      "command": "python ORGANS\\ASTRONOMICON\\TOOLS\\astronomicon_taskpack_language_gate_v0_1.py --repo-root . --task-id TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1 --receipt-path REPORTS\\TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1\\ASTRONOMICON_TASKPACK_LANGUAGE_GATE_RECEIPT.json",
+      "exit_code": 0,
+      "verdict": "PASS"
+    }
+  ],
+  "status": "VALIDATION_COMMANDS_RAN"
+}

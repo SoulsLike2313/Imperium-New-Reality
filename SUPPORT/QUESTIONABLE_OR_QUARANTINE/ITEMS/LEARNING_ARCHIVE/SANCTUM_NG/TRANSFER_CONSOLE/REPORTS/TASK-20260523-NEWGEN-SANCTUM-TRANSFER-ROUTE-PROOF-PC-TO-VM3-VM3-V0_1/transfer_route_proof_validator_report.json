@@ -1,0 +1,299 @@
+{
+  "schema_id": "TRANSFER_ROUTE_PROOF_VALIDATOR_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1",
+  "generated_at_utc": "2026-05-23T01:48:38Z",
+  "verdict": "PASS",
+  "allowed_final_verdict": "PASS_FOR_ONE_CONFIRMED_BOUNDED_PC_TO_VM3_TRANSFER_ROUTE_ONLY",
+  "checks": [
+    {
+      "check_id": "core_files_exist",
+      "status": "PASS",
+      "details": "runner/contracts/ui files exist"
+    },
+    {
+      "check_id": "delivery_evidence_parse",
+      "status": "PASS",
+      "details": "delivery evidence parses"
+    },
+    {
+      "check_id": "delivery_evidence_required_fields",
+      "status": "PASS",
+      "details": "delivery evidence contains required fields"
+    },
+    {
+      "check_id": "delivery_evidence_route",
+      "status": "PASS",
+      "details": "delivery evidence route is PC_TO_VM3"
+    },
+    {
+      "check_id": "delivery_evidence_action",
+      "status": "PASS",
+      "details": "delivery evidence action is SEND_TASKPACK_ZIP"
+    },
+    {
+      "check_id": "delivery_zip_exists",
+      "status": "PASS",
+      "details": "delivery ZIP exists"
+    },
+    {
+      "check_id": "delivery_zip_sha256_matches",
+      "status": "PASS",
+      "details": "delivery ZIP sha256 matches evidence"
+    },
+    {
+      "check_id": "delivery_zip_size_matches",
+      "status": "PASS",
+      "details": "delivery ZIP size matches evidence"
+    },
+    {
+      "check_id": "unpacked_taskpack_exists",
+      "status": "PASS",
+      "details": "unpacked taskpack exists (derived path)"
+    },
+    {
+      "check_id": "remote_repo_path_matches",
+      "status": "PASS",
+      "details": "remote repo path matches current repo"
+    },
+    {
+      "check_id": "runner_route_proof_confirmed",
+      "status": "PASS",
+      "details": "runner produced PASS for bounded route-proof"
+    },
+    {
+      "check_id": "request_record_exists",
+      "status": "PASS",
+      "details": "request record exists"
+    },
+    {
+      "check_id": "result_record_exists",
+      "status": "PASS",
+      "details": "result record exists"
+    },
+    {
+      "check_id": "view_state_exists",
+      "status": "PASS",
+      "details": "view state exists"
+    },
+    {
+      "check_id": "request_action_allowlisted",
+      "status": "PASS",
+      "details": "request action type is allowlisted"
+    },
+    {
+      "check_id": "request_route_fixed_pc_to_vm3",
+      "status": "PASS",
+      "details": "request route fixed to PC -> VM3"
+    },
+    {
+      "check_id": "request_no_arbitrary_shell_fields",
+      "status": "PASS",
+      "details": "request has no arbitrary shell fields"
+    },
+    {
+      "check_id": "result_no_arbitrary_shell_fields",
+      "status": "PASS",
+      "details": "result has no arbitrary shell fields"
+    },
+    {
+      "check_id": "result_status_confirmed",
+      "status": "PASS",
+      "details": "result status is CONFIRMED"
+    },
+    {
+      "check_id": "result_has_evidence_refs",
+      "status": "PASS",
+      "details": "result contains evidence refs"
+    },
+    {
+      "check_id": "result_evidence_refs_resolve",
+      "status": "PASS",
+      "details": "result evidence refs include evidence file, ZIP, and unpacked path"
+    },
+    {
+      "check_id": "result_contains_route_verdict",
+      "status": "PASS",
+      "details": "result limitations contain route verdict marker"
+    },
+    {
+      "check_id": "result_sha_before_after_matches_zip",
+      "status": "PASS",
+      "details": "result before/after sha256 matches delivered ZIP hash"
+    },
+    {
+      "check_id": "ledger_record_exists",
+      "status": "PASS",
+      "details": "ledger contains CONFIRMED route-proof entry"
+    },
+    {
+      "check_id": "view_state_route_proof_status",
+      "status": "PASS",
+      "details": "view state exposes route_proof_status=CONFIRMED"
+    },
+    {
+      "check_id": "view_state_route_proof_verdict",
+      "status": "PASS",
+      "details": "view state exposes bounded route-proof verdict"
+    },
+    {
+      "check_id": "view_state_vm2_not_claimed",
+      "status": "PASS",
+      "details": "VM2 is not claimed as proven"
+    },
+    {
+      "check_id": "view_state_route_card_confirmed",
+      "status": "PASS",
+      "details": "view state contains confirmed PC_TO_VM3 route card"
+    },
+    {
+      "check_id": "reject_vm2_route_in_route_proof_mode",
+      "status": "PASS",
+      "details": "runner rejects VM2 route in route-proof mode"
+    },
+    {
+      "check_id": "reject_non_allowlisted_action_in_route_proof_mode",
+      "status": "PASS",
+      "details": "runner rejects non-allowlisted action in route-proof mode"
+    },
+    {
+      "check_id": "reject_arbitrary_shell_fields",
+      "status": "PASS",
+      "details": "runner rejects request with arbitrary shell field"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "runner_runs": {
+    "confirmed": {
+      "command": [
+        "python3",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/transfer_action_runner_v0_1.py",
+        "--repo-root",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+        "--task-id",
+        "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1",
+        "--action-id",
+        "SEND_TASKPACK_ZIP",
+        "--mode",
+        "DRY_RUN",
+        "--route-proof-mode",
+        "--delivery-evidence-file",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/INBOX/VM3_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/PC_TO_VM3_DELIVERY_EVIDENCE.json",
+        "--report-dir",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1",
+        "--output-report",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/transfer_route_proof_action_report.json"
+      ],
+      "returncode": 0,
+      "stdout": "transfer_action_runner_status=PASS\ntransfer_action_runner_report=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/transfer_route_proof_action_report.json\ntransfer_action_request_ref=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T014838Z-4F4C6FE0.json\ntransfer_action_result_ref=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T014838Z-6D0AD7B1.json\ntransfer_console_view_state=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+      "stderr": "",
+      "parsed": {
+        "transfer_action_runner_status": "PASS",
+        "transfer_action_runner_report": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/transfer_route_proof_action_report.json",
+        "transfer_action_request_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T014838Z-4F4C6FE0.json",
+        "transfer_action_result_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T014838Z-6D0AD7B1.json",
+        "transfer_console_view_state": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json"
+      }
+    },
+    "invalid_route": {
+      "command": [
+        "python3",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/transfer_action_runner_v0_1.py",
+        "--repo-root",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+        "--task-id",
+        "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1",
+        "--action-id",
+        "SEND_TASKPACK_ZIP",
+        "--source-contour",
+        "VM2",
+        "--target-contour",
+        "VM3",
+        "--route-proof-mode",
+        "--delivery-evidence-file",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/INBOX/VM3_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/PC_TO_VM3_DELIVERY_EVIDENCE.json",
+        "--report-dir",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1"
+      ],
+      "returncode": 1,
+      "stdout": "transfer_action_runner_status=BLOCK\ntransfer_action_runner_report=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/ACTION_LOGS/TRANSFER_ACTION_RUNNER_REPORTS/ACTION-RUNNER-REPORT-20260523T014838Z-83274797.json\ntransfer_action_request_ref=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T014838Z-395B3C63.json\ntransfer_action_result_ref=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T014838Z-6D7C0BC5.json\ntransfer_console_view_state=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+      "stderr": "",
+      "parsed": {
+        "transfer_action_runner_status": "BLOCK",
+        "transfer_action_runner_report": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/ACTION_LOGS/TRANSFER_ACTION_RUNNER_REPORTS/ACTION-RUNNER-REPORT-20260523T014838Z-83274797.json",
+        "transfer_action_request_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T014838Z-395B3C63.json",
+        "transfer_action_result_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T014838Z-6D7C0BC5.json",
+        "transfer_console_view_state": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json"
+      }
+    },
+    "invalid_action": {
+      "command": [
+        "python3",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/transfer_action_runner_v0_1.py",
+        "--repo-root",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+        "--task-id",
+        "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1",
+        "--action-id",
+        "DRY_RUN_TRANSFER",
+        "--route-proof-mode",
+        "--delivery-evidence-file",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/INBOX/VM3_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/PC_TO_VM3_DELIVERY_EVIDENCE.json",
+        "--report-dir",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1"
+      ],
+      "returncode": 1,
+      "stdout": "transfer_action_runner_status=BLOCK\ntransfer_action_runner_report=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/ACTION_LOGS/TRANSFER_ACTION_RUNNER_REPORTS/ACTION-RUNNER-REPORT-20260523T014838Z-662DFC54.json\ntransfer_action_request_ref=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T014838Z-21C0B2DB.json\ntransfer_action_result_ref=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T014838Z-6D67F492.json\ntransfer_console_view_state=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+      "stderr": "",
+      "parsed": {
+        "transfer_action_runner_status": "BLOCK",
+        "transfer_action_runner_report": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/ACTION_LOGS/TRANSFER_ACTION_RUNNER_REPORTS/ACTION-RUNNER-REPORT-20260523T014838Z-662DFC54.json",
+        "transfer_action_request_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T014838Z-21C0B2DB.json",
+        "transfer_action_result_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T014838Z-6D67F492.json",
+        "transfer_console_view_state": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json"
+      }
+    },
+    "forbidden_field": {
+      "command": [
+        "python3",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/transfer_action_runner_v0_1.py",
+        "--repo-root",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+        "--task-id",
+        "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1",
+        "--action-id",
+        "SEND_TASKPACK_ZIP",
+        "--request-file",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/validator_forbidden_field_request.json",
+        "--route-proof-mode",
+        "--delivery-evidence-file",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/INBOX/VM3_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/PC_TO_VM3_DELIVERY_EVIDENCE.json",
+        "--report-dir",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1"
+      ],
+      "returncode": 1,
+      "stdout": "transfer_action_runner_status=BLOCK\ntransfer_action_runner_report=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/ACTION_LOGS/TRANSFER_ACTION_RUNNER_REPORTS/ACTION-RUNNER-REPORT-20260523T014838Z-A413693C.json\ntransfer_action_request_ref=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/VALIDATOR-FORBIDDEN-FIELD.json\ntransfer_action_result_ref=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T014838Z-5E5052DA.json\ntransfer_console_view_state=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+      "stderr": "",
+      "parsed": {
+        "transfer_action_runner_status": "BLOCK",
+        "transfer_action_runner_report": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/ACTION_LOGS/TRANSFER_ACTION_RUNNER_REPORTS/ACTION-RUNNER-REPORT-20260523T014838Z-A413693C.json",
+        "transfer_action_request_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/VALIDATOR-FORBIDDEN-FIELD.json",
+        "transfer_action_result_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T014838Z-5E5052DA.json",
+        "transfer_console_view_state": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json"
+      }
+    }
+  },
+  "refs": {
+    "request_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/TRANSFER-ACTION-REQ-20260523T014838Z-4F4C6FE0.json",
+    "result_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/TRANSFER-ACTION-RESULT-20260523T014838Z-6D0AD7B1.json",
+    "view_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+    "evidence_file": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/INBOX/VM3_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/PC_TO_VM3_DELIVERY_EVIDENCE.json"
+  },
+  "claim_boundary": "FOUNDATION_ONLY",
+  "not_proven": [
+    "VM2 transfer route proof",
+    "VM3 to PC report fetch proof",
+    "production remote orchestration",
+    "arbitrary shell execution"
+  ]
+}

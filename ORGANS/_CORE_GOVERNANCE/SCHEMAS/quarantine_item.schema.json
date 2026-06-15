@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Quarantine Item V0.1",
+  "type": "object",
+  "required": ["schema_version", "path", "reason", "active_use_allowed", "salvage_receipt", "owner_organ", "verdict"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "path": {"type": "string", "minLength": 1},
+    "reason": {"type": "string", "minLength": 1},
+    "active_use_allowed": {"type": "boolean"},
+    "salvage_receipt": {"type": "string"},
+    "owner_organ": {"type": "string", "minLength": 1},
+    "verdict": {"type": "string", "enum": ["BANNED_PENDING_RECEIPT", "ADMITTED_BY_RECEIPT", "BLOCK"]}
+  },
+  "additionalProperties": true
+}

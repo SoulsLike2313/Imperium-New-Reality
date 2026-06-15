@@ -1,0 +1,21 @@
+{
+  "schema_version": "imperium.support_zone_map_seed.v0_1",
+  "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+  "owner_organ": "ADMINISTRATUM",
+  "support_zones": [
+    {
+      "path": "SUPPORT/COMMON_IMPERIUM_SUPPORT",
+      "classification": "COMMON_SUPPORT",
+      "active_use_allowed": true,
+      "supported_organs": ["ADMINISTRATUM", "ASTRONOMICON", "CUSTODES", "DOCTRINARIUM", "INQUISITION", "MECHANICUS", "OFFICIO_AGENTIS", "SCHOLA_IMPERIALIS", "STRATEGIUM"]
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE",
+      "classification": "QUESTIONABLE_OR_QUARANTINE",
+      "active_use_allowed": false,
+      "supported_organs": [],
+      "admission_requirement": "explicit salvage or admission receipt"
+    }
+  ],
+  "next_action": "Add reviewed support records as common support grows."
+}

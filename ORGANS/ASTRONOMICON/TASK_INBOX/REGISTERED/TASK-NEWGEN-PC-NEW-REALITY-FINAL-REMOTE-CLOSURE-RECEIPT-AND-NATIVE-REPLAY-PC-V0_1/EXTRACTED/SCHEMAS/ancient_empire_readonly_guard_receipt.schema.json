@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Ancient Empire Read Only Guard Receipt",
+  "type": "object",
+  "required": [
+    "ancient_path",
+    "ancient_head_before",
+    "ancient_head_after",
+    "ancient_mutated",
+    "verdict"
+  ],
+  "properties": {
+    "ancient_path": {
+      "type": "string"
+    },
+    "ancient_head_before": {
+      "type": "string"
+    },
+    "ancient_head_after": {
+      "type": "string"
+    },
+    "ancient_mutated": {
+      "const": false
+    },
+    "verdict": {
+      "type": "string"
+    }
+  }
+}

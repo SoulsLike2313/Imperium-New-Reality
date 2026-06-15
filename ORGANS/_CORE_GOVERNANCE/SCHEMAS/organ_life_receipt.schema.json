@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Organ Life Receipt V0.1",
+  "type": "object",
+  "required": ["schema_version", "task_id", "organ_id", "timestamp_utc", "verdict", "checked_evidence", "warnings", "blockers", "next_action"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "task_id": {"type": "string", "minLength": 1},
+    "organ_id": {"type": "string", "minLength": 1},
+    "timestamp_utc": {"type": "string", "minLength": 1},
+    "verdict": {"type": "string", "enum": ["PASS", "PASS_WITH_WARNINGS", "BLOCK"]},
+    "checked_evidence": {"type": "array"},
+    "warnings": {"type": "array"},
+    "blockers": {"type": "array"},
+    "next_action": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,68 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1",
+  "generated_at_utc": "2026-05-24T18:54:04Z",
+  "owner_approval_required": true,
+  "owner_approval_questions_count": 11,
+  "owner_questions_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/OWNER_QUESTIONS/mechanicus_install_approval_questions_validation_followup_001.json",
+  "no_install_commands_executed": true,
+  "unsafe_npx_or_downloads_executed": false,
+  "approved_install_commands_executed": [],
+  "blocked_install_candidates": [
+    {
+      "capability_id": "CAP-TOOL-JSONSCHEMA",
+      "tool_name": "jsonschema",
+      "install_command": "python -m pip install jsonschema"
+    },
+    {
+      "capability_id": "CODE_QUALITY_JSONSCHEMA",
+      "tool_name": "jsonschema",
+      "install_command": "python -m pip install jsonschema"
+    },
+    {
+      "capability_id": "CAP-CQ-RUFF",
+      "tool_name": "ruff",
+      "install_command": "python -m pip install ruff"
+    },
+    {
+      "capability_id": "CODE_QUALITY_RUFF",
+      "tool_name": "ruff",
+      "install_command": "python -m pip install ruff"
+    },
+    {
+      "capability_id": "CAP-CQ-PYRIGHT-MYPY",
+      "tool_name": "mypy_or_pyright",
+      "install_command": "Owner decision required: mypy (pip) vs pyright (npm/npx) route"
+    },
+    {
+      "capability_id": "CODE_QUALITY_MYPY",
+      "tool_name": "mypy",
+      "install_command": "python -m pip install mypy"
+    },
+    {
+      "capability_id": "CODE_QUALITY_PYRIGHT",
+      "tool_name": "pyright",
+      "install_command": "npm install -g pyright OR approved local npm/npx path"
+    },
+    {
+      "capability_id": "CAP-CQ-PRECOMMIT",
+      "tool_name": "pre-commit",
+      "install_command": "python -m pip install pre-commit"
+    },
+    {
+      "capability_id": "CODE_QUALITY_PRE_COMMIT",
+      "tool_name": "pre-commit",
+      "install_command": "python -m pip install pre-commit"
+    },
+    {
+      "capability_id": "UI_FRAMEWORKS_REACT",
+      "tool_name": "react",
+      "install_command": "npm install react (in bounded project scope only after Owner approval)"
+    },
+    {
+      "capability_id": "UI_FRAMEWORKS_VITE",
+      "tool_name": "vite",
+      "install_command": "npm install -g vite OR project-local vite only after Owner approval"
+    }
+  ],
+  "verdict": "PASS_WITH_WARNINGS"
+}

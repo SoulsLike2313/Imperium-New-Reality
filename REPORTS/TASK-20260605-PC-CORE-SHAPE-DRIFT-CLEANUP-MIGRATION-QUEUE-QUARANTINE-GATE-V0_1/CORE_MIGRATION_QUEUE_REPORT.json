@@ -1,0 +1,52 @@
+{
+  "schema_version": "imperium.core_migration_queue_report.v0_1",
+  "task_id": "TASK-20260605-PC-CORE-SHAPE-DRIFT-CLEANUP-MIGRATION-QUEUE-QUARANTINE-GATE-V0_1",
+  "created_at_utc": "2026-06-06T18:19:08Z",
+  "verdict": "PASS_WITH_WARNINGS",
+  "queue_path": "ORGANS/ADMINISTRATUM/MIGRATION_QUEUE/core_migration_queue_v0_1.json",
+  "summary_path": "ORGANS/ADMINISTRATUM/MIGRATION_QUEUE/core_migration_queue_summary.md",
+  "classifier_schema_version": "imperium.core_file_classifier_dry_run_report.v0_2",
+  "classifier_verdict": "PASS_WITH_WARNINGS",
+  "queue_entry_count": 56,
+  "classification_counts": {
+    "LEGACY_ACCEPTED": 3,
+    "QUARANTINE_CANDIDATE": 4,
+    "COMMON_SUPPORT": 37,
+    "ORGAN_HOME": 11,
+    "FUTURE_SCOPE": 1
+  },
+  "recommended_action_counts": {
+    "KEEP": 50,
+    "MOVE_TO_QUARANTINE": 3,
+    "FUTURE_SCOPE_HOLD": 3
+  },
+  "warnings": [
+    {
+      "id": "REGISTRY_DRIFT_CLASSIFIED",
+      "count": 2,
+      "meaning": "Allowed only until closure commit captures admission changes."
+    },
+    {
+      "id": "TASK_INBOX_RESIDUE_CLASSIFIED",
+      "count": 28
+    },
+    {
+      "id": "POST_WORK_RESIDUE_CLASSIFIED",
+      "count": 4
+    },
+    {
+      "id": "FUTURE_SCOPE_PRESENT",
+      "count": 1
+    },
+    {
+      "id": "PHYSICAL_MOVE_RECOMMENDATIONS_ARE_DRY_RUN_ONLY",
+      "meaning": "No move was performed by this task."
+    }
+  ],
+  "blockers": [],
+  "no_physical_migration_receipt": {
+    "move_or_delete_performed": false,
+    "import_rewrite_performed": false,
+    "scope": "DRY_RUN_QUEUE_ONLY"
+  }
+}

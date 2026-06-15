@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.administratum.evidence_index.v0_1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "entries"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_kind",
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "evidence_kind": {
+            "type": "string",
+            "enum": [
+              "terminal_transcript",
+              "rich_render_capture",
+              "pdf_page_preview",
+              "browser_screenshot_planned",
+              "file_hash_manifest",
+              "owner_summary_md",
+              "json_sample",
+              "zip_listing",
+              "policy_report"
+            ]
+          },
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          },
+          "bytes": {
+            "type": "integer"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

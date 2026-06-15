@@ -1,0 +1,38 @@
+{
+  "skill_id": "CONTINUITY_PACK_SKILL",
+  "skill_name": "Administratum Continuity Pack Skill",
+  "owner_organ": "ADMINISTRATUM",
+  "version": "0.1.0",
+  "status": "CANDIDATE_STAGE1",
+  "purpose": "Build controlled continuity packs for Logos-Prime handoff and new-chat context recovery.",
+  "required_command_shape": "imperium_build_continuity_pack -Mode LogosPrimeHandoff -IncludeLatestTask -OpenFolder",
+  "python_entrypoint": "python IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/SKILLS/CONTINUITY_PACK_SKILL/administratum_continuity_pack_skill_v0_1.py --repo-root .",
+  "required_pack_contents": [
+    "continuity_pack_manifest.json",
+    "current_truth_snapshot.json",
+    "git_truth_receipt.json",
+    "latest_task_chain.json",
+    "active_caps_snapshot.json",
+    "source_index.json",
+    "private_data_exclusion_receipt.json",
+    "stale_context_audit.json",
+    "logos_prime_handoff_ru.md",
+    "logos_prime_handoff_en.md",
+    "continuity_pack_sha256s.txt"
+  ],
+  "non_goals": [
+    "No full repository dump",
+    "No private/secrets collection",
+    "No cloud upload",
+    "No IDE release",
+    "No WARP runtime claims"
+  ],
+  "caps_carried": [
+    "CAP_DIRTY_START_OWNER_APPROVED_CONTINUATION",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME",
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_VM2_ROUTE_NOT_LIVE_PROVEN",
+    "CAP_VM3_ROUTE_NOT_LIVE_PROVEN"
+  ]
+}

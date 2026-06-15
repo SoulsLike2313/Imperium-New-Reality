@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://imperial_ide/schemas/ide_extension_manifest.v0_2",
+  "title": "Imperial IDE Extension Manifest",
+  "type": "object",
+  "required": [
+    "extension_id",
+    "name",
+    "status",
+    "owner_organ",
+    "permissions",
+    "panels",
+    "commands",
+    "tool_permissions",
+    "risk_class",
+    "receipts_required",
+    "validation_required",
+    "unrestricted_execution"
+  ],
+  "properties": {
+    "extension_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "PROVEN",
+        "CANDIDATE",
+        "MISSING",
+        "BLOCKED"
+      ]
+    },
+    "owner_organ": {
+      "type": "string"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "panels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "commands": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tool_permissions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risk_class": {
+      "type": "string"
+    },
+    "receipts_required": {
+      "type": "boolean"
+    },
+    "validation_required": {
+      "type": "boolean"
+    },
+    "unrestricted_execution": {
+      "const": false
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.newgen.mechanicus.owner_approval_matrix_entry.v0_1",
+  "title": "Mechanicus Owner Approval Matrix Entry V0.1",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "capability_id",
+    "category",
+    "current_status",
+    "what_is_it_ru",
+    "why_needed_ru",
+    "agent_usage_ru",
+    "plus_ru",
+    "minus_risk_ru",
+    "install_needed",
+    "platform_profile_pc_windows",
+    "platform_profile_ubuntu_vm3",
+    "platform_profile_cross_platform",
+    "platform_profile_unknown_notes",
+    "install_command_candidate",
+    "detect_command",
+    "validation_command",
+    "stress_test_candidate",
+    "receipt_required",
+    "recommendation",
+    "owner_decision",
+    "approved_for_install_wave_001",
+    "notes_for_owner_ru"
+  ],
+  "properties": {
+    "capability_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1
+    },
+    "current_status": {
+      "type": "string",
+      "enum": [
+        "CANDIDATE",
+        "SANDBOX",
+        "CANON",
+        "QUARANTINE",
+        "REJECTED"
+      ]
+    },
+    "what_is_it_ru": {
+      "type": "string",
+      "minLength": 1
+    },
+    "why_needed_ru": {
+      "type": "string",
+      "minLength": 1
+    },
+    "agent_usage_ru": {
+      "type": "string",
+      "minLength": 1
+    },
+    "plus_ru": {
+      "type": "string",
+      "minLength": 1
+    },
+    "minus_risk_ru": {
+      "type": "string",
+      "minLength": 1
+    },
+    "install_needed": {
+      "type": "boolean"
+    },
+    "platform_profile_pc_windows": {
+      "type": "string"
+    },
+    "platform_profile_ubuntu_vm3": {
+      "type": "string"
+    },
+    "platform_profile_cross_platform": {
+      "type": "string"
+    },
+    "platform_profile_unknown_notes": {
+      "type": "string"
+    },
+    "install_command_candidate": {
+      "type": "string"
+    },
+    "detect_command": {
+      "type": "string",
+      "minLength": 1
+    },
+    "validation_command": {
+      "type": "string"
+    },
+    "stress_test_candidate": {
+      "type": "string"
+    },
+    "receipt_required": {
+      "type": "string"
+    },
+    "recommendation": {
+      "type": "string",
+      "enum": [
+        "install",
+        "defer",
+        "keep_candidate",
+        "sandbox",
+        "canon_later",
+        "reject",
+        "quarantine"
+      ]
+    },
+    "owner_decision": {
+      "type": "string",
+      "enum": [
+        "approve",
+        "reject",
+        "hold",
+        "pending"
+      ]
+    },
+    "approved_for_install_wave_001": {
+      "type": "boolean"
+    },
+    "notes_for_owner_ru": {
+      "type": "string"
+    }
+  }
+}

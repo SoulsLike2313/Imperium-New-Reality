@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TOOL_ADMISSION_DECISION",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "decision_id",
+    "task_id",
+    "tool_slug",
+    "linked_candidate_id",
+    "linked_risk_ids",
+    "decision_state",
+    "decision_owner_organ",
+    "decision_reason",
+    "allowed_actions",
+    "forbidden_actions",
+    "evidence_refs",
+    "install_allowed_now",
+    "future_install_task_ref",
+    "receipts_required_post_use",
+    "foundation_only",
+    "created_at_utc"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "decision_id": {
+      "type": "string",
+      "pattern": "^TDEC-[0-9]{3}$"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tool_slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9_\\-/]+$"
+    },
+    "linked_candidate_id": {
+      "type": "string",
+      "pattern": "^TCAND-[0-9]{3}$"
+    },
+    "linked_risk_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^TRISK-[0-9]{3}$"
+      }
+    },
+    "decision_state": {
+      "type": "string",
+      "enum": [
+        "CANDIDATE_ONLY",
+        "AVAILABLE_ON_HOST_UNVERIFIED_FOR_IMPERIUM",
+        "AVAILABLE_ON_HOST_VERIFIED_BASIC",
+        "DEFERRED_NEEDS_OWNER",
+        "DEFERRED_NEEDS_ADMISSION_TASK",
+        "BLOCKED_BY_RISK",
+        "APPROVED_FOR_FUTURE_INSTALL_TASK",
+        "APPROVED_FOR_READ_ONLY_USE",
+        "INSTALLED_AND_REGISTERED"
+      ]
+    },
+    "decision_owner_organ": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "allowed_actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "forbidden_actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "install_allowed_now": {
+      "type": "boolean"
+    },
+    "future_install_task_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "receipts_required_post_use": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "foundation_only": {
+      "type": "boolean"
+    },
+    "created_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

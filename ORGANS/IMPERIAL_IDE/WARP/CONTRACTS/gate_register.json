@@ -1,0 +1,14 @@
+{
+  "gate_register_id": "WARP_GATE_REGISTER_V0_1",
+  "status": "CANDIDATE_NOT_CANON",
+  "note": "Шлюзы, которые WARP применяет перед выпуском продукта. Подмножество 12 гейтов системы, релевантное горячей зоне.",
+  "gates": [
+    {"id": "FAKE_GREEN_GATE", "enforced_by": "warp_gate.evaluate", "effect": "DISCARD при pass без доказательств"},
+    {"id": "REPLAY_GATE", "enforced_by": "criteria.min_evidence>=E4", "effect": "требует стабильного повтора"},
+    {"id": "SCOPE_GATE", "enforced_by": "zone_classification", "effect": "правки вне плана/зоны — HOLD"},
+    {"id": "MOVE_DELETE_APPROVAL_GATE", "enforced_by": "release.requires OWNER_APPROVAL", "effect": "CORE-релиз только с одобрения"},
+    {"id": "ROOT_SHAPE_GATE", "enforced_by": "zone UNKNOWN never auto-promoted", "effect": "неизвестная зона не выпускается авто"},
+    {"id": "COMPLETION_CLOSURE_GATE", "enforced_by": "all required criteria met", "effect": "нет полуфабриката на выходе"},
+    {"id": "CONTINUITY_GATE", "enforced_by": "append-only events.jsonl", "effect": "историю нельзя переписать"}
+  ]
+}

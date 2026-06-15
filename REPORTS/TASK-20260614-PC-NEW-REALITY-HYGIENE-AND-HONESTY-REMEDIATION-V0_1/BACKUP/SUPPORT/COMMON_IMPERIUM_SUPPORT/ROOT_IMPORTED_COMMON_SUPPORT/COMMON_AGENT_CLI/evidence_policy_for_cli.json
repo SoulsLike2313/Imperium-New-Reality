@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "evidence_rules": [
+    {
+      "claim": "layout_visible",
+      "required": [
+        "screenshot_if_possible",
+        "shell transcript",
+        "visual_evidence_index.md"
+      ]
+    },
+    {
+      "claim": "color_visible",
+      "required": [
+        "screenshot_or_receipt",
+        "renderer_diagnostic.json",
+        "color_diagnostic.json"
+      ]
+    },
+    {
+      "claim": "crest_visible",
+      "required": [
+        "crest file references",
+        "screenshot_or_transcript",
+        "visual_evidence_index.md"
+      ]
+    },
+    {
+      "claim": "renderer_type",
+      "required": [
+        "renderer_diagnostic.json"
+      ]
+    }
+  ],
+  "fallback_rule": {
+    "when_screenshot_unavailable": "create screenshot_unavailable_receipt.json and downgrade visual verdict to WARN unless policy explicitly allows transcript-only PASS"
+  }
+}

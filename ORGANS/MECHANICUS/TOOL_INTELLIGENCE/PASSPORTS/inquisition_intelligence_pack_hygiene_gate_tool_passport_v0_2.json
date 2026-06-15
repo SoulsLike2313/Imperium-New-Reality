@@ -1,0 +1,57 @@
+{
+  "schema_id": "imperium.tool_passport.v0_2",
+  "tool_id": "inquisition_intelligence_pack_hygiene_gate",
+  "name": "Inquisition Intelligence Pack Hygiene Gate",
+  "version": "v0_2",
+  "owner_organ": "MECHANICUS",
+  "lang": "python",
+  "validators": [
+    {
+      "id": "syntax",
+      "type": "command",
+      "command": "python -m py_compile {tool_path}",
+      "timeout_seconds": 10
+    },
+    {
+      "id": "help",
+      "type": "command",
+      "command": "python {tool_path} --help",
+      "timeout_seconds": 5
+    }
+  ],
+  "exec_mode": "static",
+  "owner_gated": true,
+  "_draft": false,
+  "_auto_registered_at": "2026-06-14T17:12:51Z",
+  "_auto_registrar_version": "v0_2",
+  "_confidence": {
+    "owner_organ": "from_path",
+    "lang": "from_source_ext",
+    "validators": "auto_built",
+    "exec_mode": "from_source_scan",
+    "owner_gated": "from_source_scan"
+  },
+  "_source_paths": [
+    "ORGANS/INQUISITION/REPORTING/inquisition_intelligence_pack_hygiene_gate_v0_1.py"
+  ],
+  "_legacy_passport_path": "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORTS/inquisition_intelligence_pack_hygiene_gate_tool_passports_v0_1.json",
+  "_legacy_extras": {
+    "schema": "imperium.tool_passport.v0_1",
+    "tools": [
+      {
+        "tool_id": "inquisition.intelligence_pack_hygiene_gate",
+        "name": "Intelligence Pack Hygiene Gate",
+        "owner_organ": "INQUISITION",
+        "language": "python",
+        "path": "ORGANS/INQUISITION/REPORTING/inquisition_intelligence_pack_hygiene_gate_v0_1.py",
+        "purpose_ru": "Проверяет Intelligence Pack: обязательные индексы, SQLite, graph edges, отсутствие local/runtime/archive мусора.",
+        "purpose_en": "Checks Intelligence Pack required indexes, SQLite, graph edges, and absence of local/runtime/archive junk.",
+        "safety": "READ_ONLY",
+        "write_scope": [
+          "optional_report_root"
+        ],
+        "validation_recipe": "Run gate on builder-produced smoke pack and expect PASS_INTELLIGENCE_PACK_HYGIENE."
+      }
+    ]
+  }
+}

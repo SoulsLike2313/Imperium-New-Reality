@@ -1,0 +1,38 @@
+{
+  "schema_version": "imperial_ide.daily_ops.schema.v0_1",
+  "required_board_fields": [
+    "system_truth",
+    "current_task",
+    "current_expected_task",
+    "agent_roster_summary",
+    "latest_taskpack",
+    "latest_launch_card",
+    "latest_handoff_card",
+    "lifecycle_state",
+    "safety_state",
+    "dirty_state",
+    "git_closure",
+    "next_recommended_action"
+  ],
+  "required_commands": [
+    "daily-ops",
+    "next-action",
+    "operator-board",
+    "task-flow",
+    "task-flow-smoke"
+  ],
+  "workflow": [
+    "start day",
+    "inspect system",
+    "create task",
+    "build taskpack",
+    "validate",
+    "dry-run register",
+    "review promotion",
+    "copy launch or handoff card",
+    "watch lifecycle",
+    "inspect reports and receipts",
+    "close task",
+    "prepare next task"
+  ]
+}

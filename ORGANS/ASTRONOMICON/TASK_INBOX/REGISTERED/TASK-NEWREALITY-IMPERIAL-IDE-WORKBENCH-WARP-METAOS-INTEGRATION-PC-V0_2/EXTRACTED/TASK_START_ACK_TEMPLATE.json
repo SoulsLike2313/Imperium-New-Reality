@@ -1,0 +1,42 @@
+{
+  "schema_version": "astronomicon.task_start_ack_template.v0_1",
+  "template_id": "TASK_START_ACK_TEMPLATE_PC_WORKBENCH_WARP_METAOS_INTEGRATION_V0_2",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2",
+  "contour": "PC",
+  "copy_message_to_servitor": "start task",
+  "start_ack_required_fields": [
+    "task_id",
+    "repo_root",
+    "git_status",
+    "head_sha",
+    "origin_master_sha",
+    "bundled_source_archives_found",
+    "source_archive_hashes",
+    "workbench_import_plan",
+    "warp_import_plan",
+    "metaos_import_plan",
+    "mechanicus_bridge_plan",
+    "administratum_bundle_gate_plan",
+    "safety_plan",
+    "known_blockers",
+    "allowed_write_scope",
+    "forbidden_actions",
+    "validated_push_policy",
+    "planned_outputs"
+  ],
+  "do_not_claim": [
+    "clean_pass",
+    "remote_route",
+    "vm2_execution",
+    "vm3_execution",
+    "full_gui_ide_complete",
+    "real_servitor_execution_enabled",
+    "allow_real_enabled",
+    "unsafe_shell_enabled",
+    "live_llm_backend_enabled",
+    "wpf_build_proven_without_windows_receipt",
+    "warp_kernel_promotion_done",
+    "metaos_real_llm_performance_proven",
+    "push_done_without_receipt"
+  ]
+}

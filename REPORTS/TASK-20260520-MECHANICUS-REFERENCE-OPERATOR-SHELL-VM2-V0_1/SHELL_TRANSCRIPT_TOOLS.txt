@@ -1,0 +1,500 @@
+╭─────────────────────────────── TOP STATUS BAR ───────────────────────────────╮
+│ organ: MECHANICUS_AGENT                                                      │
+│ organ_mission: Tools, scripts, validators, and tool-registry capability      │
+│ machinery.                                                                   │
+│ backend_truth: head=41e30242c1afe7ce74f6b3e472464f774822f07f branch=master   │
+│ dirty=yes                                                                    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─────────── LEFT WORK ZONE ───────────╮╭───────── RIGHT COMMAND ZONE ─────────╮
+│ latest_output:                       ││ active_command_list:                 │
+│ once_mode_command=tools              ││ status, check, where, identity,      │
+│                                      ││ tools, pack, shell, help, tool-list, │
+│                                      ││ validator-check, capability-map,     │
+│                                      ││ script-receipt-check                 │
+│                                      ││ tool_registry:                       │
+│                                      ││ path=/home/vboxuser2/IMPERIUM_WORK/I │
+│                                      ││ mperium-/IMPERIUM_NEW_GENERATION/ORG │
+│                                      ││ AN_AGENTS/MECHANICUS_AGENT/TOOL_REGI │
+│                                      ││ STRY/TOOL_INDEX.json                 │
+│                                      ││ counts: registered=16 available=9    │
+╰──────────────────────────────────────╯╰──────────────────────────────────────╯
+╭────────────────────────────── BOTTOM EVENT BAR ──────────────────────────────╮
+│ latest_report_path:                                                          │
+│ /home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS │
+│ /MECHANICUS_AGENT/REPORTS/base_half_check_report.json                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+{
+  "schema_version": "ORGAN_TOOL_CAPABILITY_VIEW_V0_1",
+  "generated_at_utc": "2026-05-20T00:53:50.744579Z",
+  "organ_id": "MECHANICUS_AGENT",
+  "registry_source": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOL_INDEX.json",
+  "registry_owner": "MECHANICUS_AGENT",
+  "relevant_tools": [
+    {
+      "tool_id": "bandit",
+      "owner_organ": "INQUISITION_AGENT",
+      "consumer_organs": [
+        "INQUISITION_AGENT",
+        "MECHANICUS_AGENT"
+      ],
+      "availability_status": "KNOWN_NOT_INSTALLED",
+      "capability_summary": "Python security lint checks",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "bandit_report.json"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/bandit.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/bandit.json"
+    },
+    {
+      "tool_id": "duckdb",
+      "owner_organ": "ADMINISTRATUM_AGENT",
+      "consumer_organs": [
+        "ADMINISTRATUM_AGENT",
+        "STRATEGIUM_AGENT",
+        "SCHOLA_IMPERIALIS_AGENT"
+      ],
+      "availability_status": "KNOWN_NOT_INSTALLED",
+      "capability_summary": "query reports, ledgers, CSV/JSON data",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "duckdb_version.txt"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/duckdb.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/duckdb.json"
+    },
+    {
+      "tool_id": "git",
+      "owner_organ": "ADMINISTRATUM_AGENT",
+      "consumer_organs": [
+        "ALL"
+      ],
+      "availability_status": "AVAILABLE_BOTH",
+      "capability_summary": "repository state, diffs, commits, push/pull, provenance",
+      "allowed_use": [
+        "status",
+        "diff",
+        "commit",
+        "push when task contract allows"
+      ],
+      "forbidden_use": [
+        "destructive history rewrite without Owner gate",
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "git_version.txt",
+        "git_status_short.txt",
+        "git_rev_parse_head.txt"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/git.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/git.json"
+    },
+    {
+      "tool_id": "gitleaks",
+      "owner_organ": "INQUISITION_AGENT",
+      "consumer_organs": [
+        "INQUISITION_AGENT",
+        "CUSTODES_LATER",
+        "SERVITOR"
+      ],
+      "availability_status": "KNOWN_NOT_INSTALLED",
+      "capability_summary": "detect possible secrets before commit/admission",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "gitleaks_report.json"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/gitleaks.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/gitleaks.json"
+    },
+    {
+      "tool_id": "jq",
+      "owner_organ": "ADMINISTRATUM_AGENT",
+      "consumer_organs": [
+        "ADMINISTRATUM_AGENT",
+        "MECHANICUS_AGENT",
+        "SERVITOR"
+      ],
+      "availability_status": "AVAILABLE_BOTH",
+      "capability_summary": "inspect and transform JSON on CLI",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "jq_version.txt",
+        "jq_command_log.txt"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/jq.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/jq.json"
+    },
+    {
+      "tool_id": "jsonschema",
+      "owner_organ": "DOCTRINARIUM_AGENT",
+      "consumer_organs": [
+        "DOCTRINARIUM_AGENT",
+        "OFFICIO_AGENTIS_AGENT",
+        "MECHANICUS_AGENT"
+      ],
+      "availability_status": "AVAILABLE_VM2",
+      "capability_summary": "validate JSON artifacts, contracts, policies",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "jsonschema_report.txt"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/jsonschema.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/jsonschema.json"
+    },
+    {
+      "tool_id": "node",
+      "owner_organ": "MECHANICUS_AGENT",
+      "consumer_organs": [
+        "MECHANICUS_AGENT",
+        "SANCTUM_LATER"
+      ],
+      "availability_status": "AVAILABLE_BOTH",
+      "capability_summary": "support frontend tooling and JS-based checks",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "node_version.txt"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/node.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/node.json"
+    },
+    {
+      "tool_id": "npm",
+      "owner_organ": "MECHANICUS_AGENT",
+      "consumer_organs": [
+        "MECHANICUS_AGENT",
+        "SANCTUM_LATER"
+      ],
+      "availability_status": "AVAILABLE_BOTH",
+      "capability_summary": "support frontend package scripts when admitted",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "npm_version.txt"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/npm.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/npm.json"
+    },
+    {
+      "tool_id": "pip-audit",
+      "owner_organ": "INQUISITION_AGENT",
+      "consumer_organs": [
+        "INQUISITION_AGENT",
+        "MECHANICUS_AGENT"
+      ],
+      "availability_status": "AVAILABLE_PC",
+      "capability_summary": "Python dependency vulnerability audit",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "pip_audit_report.json"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/pip-audit.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/pip-audit.json"
+    },
+    {
+      "tool_id": "playwright",
+      "owner_organ": "MECHANICUS_AGENT",
+      "consumer_organs": [
+        "SANCTUM_LATER",
+        "INQUISITION_AGENT",
+        "SERVITOR"
+      ],
+      "availability_status": "KNOWN_NOT_INSTALLED",
+      "capability_summary": "browser UI checks, screenshots, trace evidence",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "playwright_report.txt",
+        "screenshots/"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/playwright.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/playwright.json"
+    },
+    {
+      "tool_id": "pytest",
+      "owner_organ": "MECHANICUS_AGENT",
+      "consumer_organs": [
+        "MECHANICUS_AGENT",
+        "SCHOLA_IMPERIALIS_AGENT",
+        "SERVITOR"
+      ],
+      "availability_status": "AVAILABLE_PC",
+      "capability_summary": "Python tests and regression suite",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "pytest_report.txt"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/pytest.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/pytest.json"
+    },
+    {
+      "tool_id": "ripgrep",
+      "owner_organ": "INQUISITION_AGENT",
+      "consumer_organs": [
+        "INQUISITION_AGENT",
+        "MECHANICUS_AGENT",
+        "ADMINISTRATUM_AGENT",
+        "SERVITOR"
+      ],
+      "availability_status": "AVAILABLE_BOTH",
+      "capability_summary": "fast repo search, scope checks, forbidden-pattern detection",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "ripgrep_log.txt"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/ripgrep.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/ripgrep.json"
+    },
+    {
+      "tool_id": "ruff",
+      "owner_organ": "MECHANICUS_AGENT",
+      "consumer_organs": [
+        "MECHANICUS_AGENT",
+        "SERVITOR"
+      ],
+      "availability_status": "AVAILABLE_VM2",
+      "capability_summary": "Python linting and formatting checks",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "ruff_report.txt"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/ruff.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/ruff.json"
+    },
+    {
+      "tool_id": "semgrep",
+      "owner_organ": "INQUISITION_AGENT",
+      "consumer_organs": [
+        "INQUISITION_AGENT",
+        "MECHANICUS_AGENT",
+        "SERVITOR"
+      ],
+      "availability_status": "KNOWN_NOT_INSTALLED",
+      "capability_summary": "static analysis and policy pattern scanning",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "semgrep_report.json"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/semgrep.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/semgrep.json"
+    },
+    {
+      "tool_id": "uv",
+      "owner_organ": "MECHANICUS_AGENT",
+      "consumer_organs": [
+        "MECHANICUS_AGENT",
+        "SERVITOR"
+      ],
+      "availability_status": "AVAILABLE_BOTH",
+      "capability_summary": "Python package/project environment management",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "uv_version.txt"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/uv.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/uv.json"
+    },
+    {
+      "tool_id": "yq",
+      "owner_organ": "ADMINISTRATUM_AGENT",
+      "consumer_organs": [
+        "ADMINISTRATUM_AGENT",
+        "DOCTRINARIUM_AGENT",
+        "SERVITOR"
+      ],
+      "availability_status": "AVAILABLE_BOTH",
+      "capability_summary": "inspect YAML and config files",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "yq_version.txt"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/yq.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/yq.json"
+    }
+  ],
+  "available_tools": [
+    "git",
+    "jq",
+    "jsonschema",
+    "node",
+    "npm",
+    "ripgrep",
+    "ruff",
+    "uv",
+    "yq"
+  ],
+  "missing_tools": [
+    {
+      "tool_id": "bandit",
+      "availability_status": "KNOWN_NOT_INSTALLED",
+      "reason": "known_not_installed"
+    },
+    {
+      "tool_id": "duckdb",
+      "availability_status": "KNOWN_NOT_INSTALLED",
+      "reason": "known_not_installed"
+    },
+    {
+      "tool_id": "gitleaks",
+      "availability_status": "KNOWN_NOT_INSTALLED",
+      "reason": "known_not_installed"
+    },
+    {
+      "tool_id": "pip-audit",
+      "availability_status": "AVAILABLE_PC",
+      "reason": "available_on_pc_only"
+    },
+    {
+      "tool_id": "playwright",
+      "availability_status": "KNOWN_NOT_INSTALLED",
+      "reason": "known_not_installed"
+    },
+    {
+      "tool_id": "pytest",
+      "availability_status": "AVAILABLE_PC",
+      "reason": "available_on_pc_only"
+    },
+    {
+      "tool_id": "semgrep",
+      "availability_status": "KNOWN_NOT_INSTALLED",
+      "reason": "known_not_installed"
+    }
+  ],
+  "warnings": [],
+  "verdict": "PASS",
+  "evidence_policy": {
+    "install_policy": "NO_INSTALL_WITHOUT_OWNER_GATE",
+    "required": "No fake green. Missing tools are reported as missing with evidence policy.",
+    "field_contract": [
+      "tool_id",
+      "owner_organ",
+      "consumer_organs",
+      "availability_status",
+      "capability_summary",
+      "allowed_use",
+      "forbidden_use",
+      "evidence_required",
+      "failure_policy"
+    ]
+  },
+  "tool_registry_reader": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/tool_registry_reader.py"
+}

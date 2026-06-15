@@ -1,0 +1,35 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-NEWGEN-FIVE-ORGAN-ALIGNMENT-CHECK-VM3-V0_1",
+    "agent_role": "Codex big-model servitor",
+    "useful_outputs": [
+      "five_organ_inventory.json",
+      "five_organ_alignment_matrix.json",
+      "ide_readiness_summary.json",
+      "organ_gap_register.json",
+      "owner_pain_map.json",
+      "next_task_decision.json",
+      "FINAL_REPORT.md"
+    ],
+    "waste_points": [
+      "Один широкий grep по report tree дал избыточный шум; затем разведка была ужата до target paths."
+    ],
+    "missing_tools": [
+      "Нет готового штатного cross-organ alignment checker для NewGen five-organ package."
+    ],
+    "generated_tools_to_preserve": [],
+    "recommended_script_absorption": [
+      "Создать reusable checker: five-organ evidence matrix validator under Administratum or Inquisition."
+    ],
+    "recommended_narrow_agent_profiles": [
+      "NEWGEN_FIVE_ORGAN_ALIGNMENT_AUDITOR_VM"
+    ],
+    "future_prompt_improvements": [
+      "Добавлять в taskpack готовый machine-readable template для five_organ_inventory fields."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Добавить обязательный чек на наличие body/checker/schema/registry минимумов для каждого органа перед IDE-readiness claim."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

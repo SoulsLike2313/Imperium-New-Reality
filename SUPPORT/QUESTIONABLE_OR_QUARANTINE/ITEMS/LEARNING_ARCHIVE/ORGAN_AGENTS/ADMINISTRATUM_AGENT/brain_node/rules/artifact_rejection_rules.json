@@ -1,0 +1,24 @@
+{
+  "rule_set": "artifact_rejection_rules_v1",
+  "rejection_verdicts": [
+    "REJECT_MISSING_PROVENANCE",
+    "REJECT_FORBIDDEN_SCOPE",
+    "REJECT_MUTATION_REQUEST",
+    "REJECT_RUNTIME_AS_CANON",
+    "REJECT_UNSAFE_PRIVATE_CONTEXT",
+    "REJECT_FAKE_GREEN_RISK",
+    "REJECT_UNKNOWN_HIGH_RISK"
+  ],
+  "mutation_keywords": [
+    "delete",
+    "remove",
+    "merge into canon",
+    "promote to canon",
+    "rewrite canon"
+  ],
+  "forbidden_prefixes": [
+    "ORGANS/",
+    "SANCTUM/",
+    "IMPERIUM_TEST_VERSION/"
+  ]
+}

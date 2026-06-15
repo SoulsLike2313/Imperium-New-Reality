@@ -1,0 +1,41 @@
+{
+  "schema_id": "newgen_organ_verdict_v0_1",
+  "organ_id": "ADMINISTRATUM",
+  "task_id": "TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1",
+  "mode": "IMPORTANT_SIX_SIM",
+  "verdict": "PASS",
+  "applied_rules": [
+    "GATE_TASK_REGISTRATION_CONTINUITY",
+    "GATE_EVIDENCE_PACKAGE_REQUIRED",
+    "GATE_REPO_HYGIENE_BOUNDARY",
+    "GATE_SEQUENCE_DISCIPLINE"
+  ],
+  "required_actions": [
+    "Publish final report and closure receipt with evidence paths",
+    "Verify clean worktree and remote sync after push"
+  ],
+  "forbidden_actions": [
+    "Hide dirty state or missing receipts",
+    "Claim pass without smoke evidence"
+  ],
+  "evidence_required": [
+    "taskpack_scope_ack.json",
+    "organ_route_plan.json",
+    "FINAL_REPORT.md",
+    "closure_receipt.json",
+    "wave1_organ_tui_smoke_report.json",
+    "git status --short",
+    "git diff --name-only"
+  ],
+  "owner_question": null,
+  "not_proven": [
+    "full automated archive intelligence",
+    "autonomous stage orchestration"
+  ],
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/taskpack_scope_ack.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/organ_route_plan.json"
+  ],
+  "question": "What history, continuity, and evidence sequence is required?",
+  "generated_at_utc": "2026-05-24T02:00:00.220877+00:00"
+}

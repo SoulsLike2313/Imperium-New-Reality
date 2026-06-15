@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IMPERIUM Agent IDE View Model V0.1",
+  "type": "object",
+  "required": [
+    "task_id",
+    "truth",
+    "warnings",
+    "organs",
+    "file_passports",
+    "unknown_file_kind_count",
+    "role_rule_surface",
+    "language_gate_surface",
+    "checker_tool_surface",
+    "tui_surface",
+    "report_receipt_surface",
+    "route_surface",
+    "owner_pain_map",
+    "gap_success"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "truth": {
+      "type": "object"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "organs": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "file_passports": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "unknown_file_kind_count": {
+      "type": "integer"
+    },
+    "role_rule_surface": {
+      "type": "object"
+    },
+    "language_gate_surface": {
+      "type": "object"
+    },
+    "checker_tool_surface": {
+      "type": "object"
+    },
+    "tui_surface": {
+      "type": "object"
+    },
+    "report_receipt_surface": {
+      "type": "object"
+    },
+    "route_surface": {
+      "type": "object"
+    },
+    "owner_pain_map": {
+      "type": "object"
+    },
+    "gap_success": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,112 @@
+{
+  "schema_id": "important_six_dashboard_l2_action_api_smoke_report_v0_2",
+  "task_id": "TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1",
+  "generated_at_utc": "2026-05-24T06:42:20Z",
+  "base_url": "http://127.0.0.1:8766",
+  "mode": "READ_ONLY_DEFAULT",
+  "verdict": "PASS",
+  "blocked_steps": [],
+  "failed_steps": [],
+  "warning_steps": [],
+  "steps": [
+    {
+      "step": "get_/api/status",
+      "status": "PASS",
+      "details": {
+        "url": "http://127.0.0.1:8766/api/status",
+        "json_type": "dict"
+      }
+    },
+    {
+      "step": "get_/api/actions",
+      "status": "PASS",
+      "details": {
+        "url": "http://127.0.0.1:8766/api/actions",
+        "json_type": "dict"
+      }
+    },
+    {
+      "step": "required_groups_check",
+      "status": "PASS",
+      "details": {
+        "found": [
+          "Administratum",
+          "Astronomicon",
+          "Diff / Approval",
+          "Inquisition",
+          "Mechanicus",
+          "Owner Intent / Questions",
+          "Transfer Zone"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "step": "get_/api/action-history",
+      "status": "PASS",
+      "details": {
+        "url": "http://127.0.0.1:8766/api/action-history",
+        "json_type": "dict"
+      }
+    },
+    {
+      "step": "get_/api/owner-questions",
+      "status": "PASS",
+      "details": {
+        "url": "http://127.0.0.1:8766/api/owner-questions",
+        "json_type": "dict"
+      }
+    },
+    {
+      "step": "get_/api/diff/status",
+      "status": "PASS",
+      "details": {
+        "url": "http://127.0.0.1:8766/api/diff/status",
+        "json_type": "dict"
+      }
+    },
+    {
+      "step": "collect_registry_actions",
+      "status": "PASS",
+      "details": {
+        "count": 16
+      }
+    },
+    {
+      "step": "required_actions_check",
+      "status": "PASS",
+      "details": {
+        "found_count": 16,
+        "missing_actions": []
+      }
+    },
+    {
+      "step": "mutation_mode_skipped_default",
+      "status": "PASS",
+      "details": {
+        "note": "Default smoke is read-only; all POST action-run and owner decision endpoints were skipped.",
+        "skipped_actions": [
+          "ADMIN_FULL_NEWGEN_FILE_AUDIT",
+          "ADMIN_BUILD_CONTINUITY_PACK",
+          "ADMIN_EVIDENCE_REPORT_MAP",
+          "TRANSFER_SEND_TASKPACK_VM2_DRY_RUN",
+          "TRANSFER_SEND_TASKPACK_VM3_DRY_RUN",
+          "TRANSFER_FETCH_REPORT_VM2_DRY_RUN",
+          "TRANSFER_FETCH_REPORT_VM3_DRY_RUN",
+          "MECHANICUS_CHECK_REQUIRED_TOOLS",
+          "MECHANICUS_CHECK_SCRIPTS_VALIDATORS",
+          "INQUISITION_REPO_HYGIENE_AUDIT",
+          "INQUISITION_FAKE_GREEN_RISK_SCAN",
+          "ASTRONOMICON_REGISTER_TASK_DRAFT",
+          "DIFF_COMPARE_HEADS",
+          "OWNER_RECORD_DIFF_DECISION",
+          "OWNER_QUESTIONS_LIST",
+          "OWNER_RECORD_NOTE_OR_DECISION"
+        ],
+        "skipped_direct_endpoints": [
+          "/api/owner-intent/decision"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "imperium.inquisition.repo_hygiene_lane_policy.v0_1",
+  "policy_id": "inquisition.repo_hygiene_lane_policy.v0_9_0",
+  "version": "0.1.0",
+  "owner_organ": "INQUISITION",
+  "mode": "classify_first_no_delete",
+  "lanes": {
+    "KEEP_SOURCE": {
+      "destructive": false,
+      "owner_gate": false
+    },
+    "PASSPORT_REQUIRED": {
+      "destructive": false,
+      "owner_gate": false
+    },
+    "PACK_TO_VAULT_CANDIDATE": {
+      "destructive": false,
+      "owner_gate": true,
+      "requires": [
+        "Evidence Vault pack/copy",
+        "manifest/index",
+        "owner review before source removal"
+      ]
+    },
+    "FIXTURE_MANIFEST_REQUIRED": {
+      "destructive": false,
+      "owner_gate": true,
+      "requires": [
+        "fixture manifest",
+        "source exception",
+        "Data Atlas visibility"
+      ]
+    },
+    "OWNER_REVIEW_MOVE": {
+      "destructive": false,
+      "owner_gate": true
+    },
+    "SAFE_RUNTIME_DELETE": {
+      "destructive": true,
+      "owner_gate": true,
+      "requires": [
+        "explicit delete gate",
+        "git diff review"
+      ]
+    }
+  },
+  "forbidden": [
+    "automatic source evidence deletion",
+    "cleanup without lane",
+    "cleanup without receipt",
+    "hidden repo-local backup tracking"
+  ],
+  "default_next_step": "Generate classification report and queue; do not mutate source."
+}

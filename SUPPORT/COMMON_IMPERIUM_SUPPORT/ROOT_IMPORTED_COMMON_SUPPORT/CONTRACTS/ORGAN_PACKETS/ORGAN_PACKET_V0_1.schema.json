@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NewGen Organ Packet V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "packet_id",
+    "task_id",
+    "organ_id",
+    "packet_status",
+    "live_status",
+    "scope_advice",
+    "required_inputs",
+    "allowed_actions",
+    "forbidden_actions",
+    "required_checks",
+    "evidence_required",
+    "risks",
+    "questions_for_owner",
+    "questions_for_other_organs",
+    "skill_requirements",
+    "tool_requirements",
+    "stop_conditions",
+    "confidence",
+    "proof"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "packet_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "organ_id": {
+      "type": "string",
+      "enum": [
+        "ASTRONOMICON",
+        "OFFICIO_AGENTIS",
+        "DOCTRINARIUM",
+        "ADMINISTRATUM",
+        "MECHANICUS",
+        "INQUISITION",
+        "STRATEGIUM",
+        "SCHOLA_IMPERIALIS"
+      ]
+    },
+    "packet_status": {
+      "type": "string",
+      "enum": [
+        "READY",
+        "READY_WITH_WARNINGS",
+        "BLOCKED",
+        "MISSING_AUTHORITY",
+        "NOT_APPLICABLE",
+        "EXAMPLE_ONLY"
+      ]
+    },
+    "live_status": {
+      "type": "string",
+      "enum": [
+        "LIVE",
+        "STUB",
+        "EXAMPLE_ONLY",
+        "NOT_IMPLEMENTED"
+      ]
+    },
+    "scope_advice": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "required_inputs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "allowed_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "forbidden_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "required_checks": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "evidence_required": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "risks": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "questions_for_owner": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "questions_for_other_organs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "skill_requirements": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "tool_requirements": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "stop_conditions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "PROVED",
+        "STRONG",
+        "PLAUSIBLE",
+        "UNKNOWN",
+        "FAILED",
+        "FAKE_GREEN_RISK"
+      ]
+    },
+    "proof": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["basis_paths", "basis_commands", "limitations"],
+      "properties": {
+        "basis_paths": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "basis_commands": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "limitations": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

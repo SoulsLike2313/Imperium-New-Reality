@@ -1,0 +1,45 @@
+{
+  "schema_version": "schola.enhanced_ghost_evolve_receipt.v0_1",
+  "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+  "created_at_utc": "2026-06-05T16:21:56Z",
+  "owner_organ": "SCHOLA_IMPERIALIS",
+  "enhanced_ghost_evolve_mode": "ULTIMATE_ORGAN_TEACHING",
+  "learning_moved_into_repo": [
+    {
+      "artifact": "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/POST_WORK_BUNDLE_CONTRACT_V0_1.md",
+      "teaches": "Post-work bundle purpose, admission boundary, GitHub-safe policy, and required evidence."
+    },
+    {
+      "artifact": "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/SCHEMAS/post_work_bundle_manifest.schema.json",
+      "teaches": "Stable machine shape for post-work bundle manifests."
+    },
+    {
+      "artifact": "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/SCHEMAS/organ_post_work_receipt.schema.json",
+      "teaches": "Stable machine shape for organ post-work receipts."
+    },
+    {
+      "artifact": "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/SCHEMAS/bundle_index_card.schema.json",
+      "teaches": "Stable machine shape for GitHub-safe bundle index cards."
+    },
+    {
+      "artifact": "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_bundle_checker_v0_1.py",
+      "teaches": "Executable structural checks for future task bundles."
+    },
+    {
+      "artifact": "ORGANS/_POST_WORK_RING/ORGAN_POST_WORK_RECEIPT_TEMPLATE.json",
+      "teaches": "Reusable receipt template for required organs."
+    },
+    {
+      "artifact": "ORGANS/CUSTODES/ORGAN_MATRIX_AUDIT/CUSTODES_ORGAN_MATRIX_AUDIT_CONTRACT_V0_1.md",
+      "teaches": "Narrow Custodes audit boundary without full Throne scope."
+    }
+  ],
+  "anti_pattern_prevented": [
+    "Final answer as the only memory of new rules.",
+    "Document-only completion without a runnable checker.",
+    "Fake green remote proof before push.",
+    "Unindexed heavy artifact dump into GitHub."
+  ],
+  "future_reuse_instruction": "Future completed tasks should create a report directory, fill the index and organ receipts, run the Administratum checker, commit, push, and then produce no-write remote equality proof.",
+  "status": "IMPLEMENTED"
+}

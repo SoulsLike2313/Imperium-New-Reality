@@ -1,0 +1,48 @@
+{
+  "schema_id": "important_six_organ_cockpit_manifest_v0_1",
+  "task_id": "TASK-NEWGEN-SANCTUM-ORGAN-CENTERED-COCKPIT-SKELETON-PC-V0_1",
+  "generated_at_utc": "2026-05-24T15:40:00Z",
+  "mode": "READ_ONLY_STATIC_SKELETON",
+  "claim_boundary": "ORGAN_CENTERED_LAYOUT_ONLY",
+  "files": {
+    "html": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_organ_cockpit_v0_1.html",
+    "css": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_organ_cockpit_v0_1.css",
+    "js": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_organ_cockpit_v0_1.js"
+  },
+  "required_zones": {
+    "top_truth_strip": true,
+    "six_organ_shell_panels": true,
+    "owner_decision_queue": true,
+    "evidence_history_zone": true,
+    "secondary_action_drawer": true
+  },
+  "organs": [
+    "Doctrinarium",
+    "Officio Agentis",
+    "Administratum",
+    "Astronomicon",
+    "Mechanicus",
+    "Inquisition"
+  ],
+  "owner_decision_queue_contract": {
+    "flow": [
+      "uncertainty_detected",
+      "owner_verdict_needed_record_created",
+      "queue_visible_in_cockpit",
+      "owner_decision_creates_receipt",
+      "servitor_continues_under_controlled_protocol"
+    ],
+    "manual_generic_ask_button_primary": false
+  },
+  "safety": {
+    "read_only_default": true,
+    "mutating_endpoints_added": false,
+    "uncontrolled_pty_added": false,
+    "seed_data_labeling": "SEED_DATA_NOT_PROVEN"
+  },
+  "bilingual_ui": {
+    "ru_supported": true,
+    "en_supported": true,
+    "switch_control": "langToggleBtn"
+  }
+}

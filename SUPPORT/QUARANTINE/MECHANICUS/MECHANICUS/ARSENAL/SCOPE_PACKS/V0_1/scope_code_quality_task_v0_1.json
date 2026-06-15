@@ -1,0 +1,117 @@
+{
+  "scope_id": "code_quality_task",
+  "version": "0.1",
+  "generated_at_utc": "2026-05-24T23:34:05Z",
+  "source_registry": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json",
+  "purpose": "Python/code-quality checks for Mechanicus and NewGen scripts with strict no-install drift.",
+  "target_task_types": [
+    "code_quality",
+    "python_quality_gate",
+    "script_quality_hardening"
+  ],
+  "canon_allowed": [
+    "CAP-PLAYBOOK-SCHEMA-FIRST-CONTRACT",
+    "CAP-TOOL-RECEIPT-MODELS-VALIDATORS"
+  ],
+  "sandbox_allowed": [
+    "CAP-CQ-PRECOMMIT",
+    "CAP-CQ-PYRIGHT-MYPY",
+    "CAP-CQ-RUFF",
+    "CAP-LANG-PYTHON312-RUNTIME",
+    "CAP-TOOL-JSONSCHEMA",
+    "CAP-TOOL-PYTEST",
+    "CODE_QUALITY_JSONSCHEMA",
+    "CODE_QUALITY_MYPY",
+    "CODE_QUALITY_PRE_COMMIT",
+    "CODE_QUALITY_PYTEST",
+    "CODE_QUALITY_PY_COMPILE",
+    "CODE_QUALITY_RUFF",
+    "LANGUAGES_PYTHON_312_RUNTIME",
+    "TOOLS_RECEIPT_VALIDATOR"
+  ],
+  "candidate_context_only": [
+    "CODE_QUALITY_SCHEMA_FIRST_VALIDATION"
+  ],
+  "owner_decision_required": [
+    "CLOUD_LLM_ADAPTERS_CLOUD_MODEL_ROUTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_CLOUD_RECEIPT_MODEL_CANDIDATE",
+    "CLOUD_LLM_ADAPTERS_COST_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_OPENAI_COMPATIBLE_API_ADAPTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_PRIVACY_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_SECRET_POLICY_GATE",
+    "LOCAL_LLM_LLAMACPP_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LM_STUDIO_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LOCAL_MODEL_RUNNER_RESERVED",
+    "LOCAL_LLM_MODEL_CAPABILITY_CARD_PATTERN",
+    "LOCAL_LLM_OLLAMA_RESERVED_CANDIDATE",
+    "LOCAL_LLM_OPENAI_COMPATIBLE_LOCAL_ENDPOINT_PATTERN"
+  ],
+  "forbidden": [
+    "CODE_QUALITY_PYRIGHT"
+  ],
+  "required_receipts": [
+    "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/TASK_KERNEL_V0_1.schema.json",
+    "IMPERIUM_NEW_GENERATION/CONTRACTS/TOOL_ADMISSION/TOOL_CANDIDATE_RECORD.schema.json",
+    "cap-cq-precommit_receipt.json",
+    "cap-cq-pyright-mypy_receipt.json",
+    "cap-cq-ruff_receipt.json",
+    "cap-lang-python312-runtime_receipt.json",
+    "cap-playbook-schema-first-contract_receipt.json",
+    "cap-tool-jsonschema_receipt.json",
+    "cap-tool-pytest_receipt.json",
+    "cap-tool-receipt-models-validators_receipt.json",
+    "code-quality-jsonschema_validation_receipt.json",
+    "code-quality-mypy_validation_receipt.json",
+    "code-quality-pre-commit_validation_receipt.json",
+    "code-quality-py-compile_validation_receipt.json",
+    "code-quality-pyright_validation_receipt.json",
+    "code-quality-pytest_validation_receipt.json",
+    "code-quality-ruff_validation_receipt.json",
+    "code-quality-schema-first-validation_validation_receipt.json",
+    "fake_canon_detector_report.json",
+    "languages-python-312-runtime_validation_receipt.json",
+    "python_quality_validation_receipt.json",
+    "scope_pack_check_report.json",
+    "src/imperium/receipts/__init__.py",
+    "src/imperium/receipts/model.py",
+    "src/imperium/receipts/validator.py",
+    "tools-receipt-validator_validation_receipt.json"
+  ],
+  "required_gates": [
+    "GATE-U00-GIT-TRUTH",
+    "GATE-U01-ROLE-ACK",
+    "GATE-U02-SCOPE-BOUNDARY",
+    "GATE-U04-EVIDENCE-RECEIPT",
+    "GATE-U05-STOP-CONDITIONS",
+    "GATE-U08-REPO-PURITY",
+    "GATE-U09-NO-FAKE-GREEN",
+    "GATE-U12-REPORT-OUTPUT-BUDGET",
+    "GATE-U13-PYTHON-TYPE-SAFETY",
+    "GATE-U14-WHOLE-REPO-SCOPE-RECON",
+    "GATE-U15-OPERATIONALITY-IMPACT",
+    "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+    "GATE-U20-AGENT-KPD-SELF-REVIEW",
+    "GATE-U21-COMMAND-CHUNKING"
+  ],
+  "warnings": [
+    "pre-commit is SANDBOX framework only; never auto-enable hooks in this scope.",
+    "CODE_QUALITY_PYRIGHT stays forbidden for execution in this scope."
+  ],
+  "examples_of_use": [
+    "python -m py_compile <script.py>",
+    "python -m ruff check IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS",
+    "python -m mypy IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_scope_exporter_v0_2.py",
+    "python -m pytest <bounded_tests_if_present>"
+  ],
+  "future_promotion_candidates": [
+    "CODE_QUALITY_SCHEMA_FIRST_VALIDATION",
+    "TOOLS_CANDIDATE_CHECK_WORKFLOW"
+  ],
+  "forbidden_actions": [
+    "pre-commit hook auto-enable",
+    "pyright install",
+    "global mutation outside task scope",
+    "silent package installation"
+  ],
+  "last_generated_from_commit": "5d22657b2fe8a319c9a4636549c53bfcc2ffa119"
+}

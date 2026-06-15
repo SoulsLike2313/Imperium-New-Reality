@@ -1,0 +1,15 @@
+{
+  "tool_id": "warp_diff_room_v0_1",
+  "organ": "IMPERIAL_IDE / WEB_SANCTUM",
+  "kind": "observability_renderer",
+  "entrypoint": "ORGANS/IMPERIAL_IDE/WEB_SANCTUM/DIFF_ROOM/warp_diff_room_v0_1.py",
+  "cli": "python warp_diff_room_v0_1.py <repo> [--rev HEAD~1..HEAD] [--out file.html] [--title ...] [--shell-css ...]",
+  "reads_only": ["git rev-parse", "git log -1", "git diff --shortstat", "git diff --name-status", "git diff --no-color"],
+  "writes": ["WARP_DIFF_ROOM.html (self-contained, outside source under _LOCAL_HANDOFF)", "WARP_DIFF_ROOM.summary.json"],
+  "form": "Web Sanctum shell (diff_room_shell.css mirrors WEB_SANCTUM/app/styles.css tokens)",
+  "deps": ["python3 stdlib only", "git"],
+  "safety": ["read-only git", "never commits/pushes/mutates repo", "output only under _LOCAL_HANDOFF"],
+  "future": "mountable as a WARP 'viewing room' tab inside Web Sanctum",
+  "authority_refs": ["Constitution \u00a76", "Constitution \u00a713", "Passport \u00a73"],
+  "reusable": true
+}

@@ -1,0 +1,29 @@
+{
+  "schema_id": "newgen_organ_state_v0_1",
+  "organ_id": "MECHANICUS",
+  "version": "v0_1",
+  "default_verdict": "PASS",
+  "responsibility": "Tool capability governance and TUI runtime readiness.",
+  "servitor_ask": [
+    "Is Rich available for Wave 1 TUI mandatory renderer?",
+    "What tool registry entry proves this capability?",
+    "What controlled install path is required if missing?"
+  ],
+  "warn_block_profile": [
+    "WARN on partial registry metadata",
+    "BLOCK when mandatory renderer capability is missing"
+  ],
+  "required_actions": [
+    "Probe Rich import and version",
+    "Store capability registry evidence under Mechanicus TOOLS_REGISTRY"
+  ],
+  "forbidden_actions": [
+    "Claim TUI visual pass with plain fallback only",
+    "Perform uncontrolled package installs"
+  ],
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/"
+  ],
+  "last_updated_utc": "2026-05-24T01:20:00Z"
+}

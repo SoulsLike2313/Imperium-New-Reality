@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://mechanicus/schemas/tool_invocation.v0_1",
+  "title": "Mechanicus Tool Invocation",
+  "type": "object",
+  "required": [
+    "tool_id",
+    "mode",
+    "dry_run"
+  ],
+  "properties": {
+    "tool_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "dry_run": {
+      "type": "boolean"
+    },
+    "arguments": {
+      "type": "object"
+    },
+    "requested_by": {
+      "type": "string"
+    },
+    "receipt_required": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

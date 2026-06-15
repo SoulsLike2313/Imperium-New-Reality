@@ -1,0 +1,39 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-20260520-NEWGEN-VISUAL-CONCEPT-STRIKE-MULTI-CONCEPT-PC-V0_1",
+    "agent_role": "Codex PC Servitor (big-model lane)",
+    "useful_outputs": [
+      "Five materially distinct static visual concepts",
+      "Per-concept cards with strengths and risks",
+      "Automated screenshot capture across two required viewports",
+      "Comparison matrix and RU owner selection guide",
+      "Validation report and final receipt for concept-candidate readiness"
+    ],
+    "waste_points": [
+      "Initial path lookup consumed extra steps due repeated taskpack extraction path mismatch."
+    ],
+    "missing_tools": [
+      "Unified helper for unpack-and-read taskpack with canonical path auto-resolution"
+    ],
+    "generated_tools_to_preserve": [
+      "PLAYWRIGHT/capture_concept_strike.mjs",
+      "CONCEPT_STRIKE/validate_concepts.py"
+    ],
+    "recommended_script_absorption": [
+      "Absorb capture_concept_strike.mjs as reusable concept-proof runner",
+      "Absorb validate_concepts.py as concept-strike gate checker"
+    ],
+    "recommended_narrow_agent_profiles": [
+      "visual_concept_strike_generator_pc",
+      "visual_concept_comparison_packager_pc"
+    ],
+    "future_prompt_improvements": [
+      "Include canonical unpack target path in taskpack metadata to avoid path ambiguity.",
+      "Include explicit concept IDs in taskpack JSON when fixed naming is expected."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add mandatory check that concepts differ in composition category before acceptance."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

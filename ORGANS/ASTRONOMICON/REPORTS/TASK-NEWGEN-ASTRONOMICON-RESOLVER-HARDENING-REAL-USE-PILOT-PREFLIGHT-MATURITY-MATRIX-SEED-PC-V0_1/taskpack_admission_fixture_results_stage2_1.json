@@ -1,0 +1,282 @@
+[
+  {
+    "case": "missing_zip",
+    "timestamp_utc": "2026-05-30T23:52:59Z",
+    "admission_verdict": "ADMISSION_BLOCK",
+    "task_id": "",
+    "caps_triggered": [
+      "CAP_TASKPACK_ADMISSION_MISSING"
+    ],
+    "warnings": [
+      "ZIP does not exist."
+    ],
+    "raw_receipt": {
+      "timestamp_utc": "2026-05-30T23:52:59Z",
+      "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/fixture_zips_stage2_1/missing.zip",
+      "admission_verdict": "ADMISSION_BLOCK",
+      "manifest_found": false,
+      "task_id_found": false,
+      "task_spec_found": false,
+      "acceptance_gates_found": false,
+      "output_requirements_found": false,
+      "duplicate_task_id": false,
+      "safe_extraction_path": false,
+      "registered_task_path": "",
+      "extracted_path": "",
+      "route_manifest_path": "",
+      "current_expected_task_updated": false,
+      "caps_triggered": [
+        "CAP_TASKPACK_ADMISSION_MISSING"
+      ],
+      "warnings": [
+        "ZIP does not exist."
+      ]
+    }
+  },
+  {
+    "case": "bad_zip",
+    "timestamp_utc": "2026-05-30T23:52:59Z",
+    "admission_verdict": "ADMISSION_BLOCK",
+    "task_id": "",
+    "caps_triggered": [
+      "CAP_TASKPACK_ADMISSION_MISSING"
+    ],
+    "warnings": [
+      "Unreadable ZIP: File is not a zip file"
+    ],
+    "raw_receipt": {
+      "timestamp_utc": "2026-05-30T23:52:59Z",
+      "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/fixture_zips_stage2_1/bad_zip.zip",
+      "admission_verdict": "ADMISSION_BLOCK",
+      "manifest_found": false,
+      "task_id_found": false,
+      "task_spec_found": false,
+      "acceptance_gates_found": false,
+      "output_requirements_found": false,
+      "duplicate_task_id": false,
+      "safe_extraction_path": false,
+      "registered_task_path": "",
+      "extracted_path": "",
+      "route_manifest_path": "",
+      "current_expected_task_updated": false,
+      "caps_triggered": [
+        "CAP_TASKPACK_ADMISSION_MISSING"
+      ],
+      "warnings": [
+        "Unreadable ZIP: File is not a zip file"
+      ]
+    }
+  },
+  {
+    "case": "missing_manifest",
+    "timestamp_utc": "2026-05-30T23:52:59Z",
+    "admission_verdict": "ADMISSION_BLOCK",
+    "task_id": "",
+    "caps_triggered": [
+      "CAP_TASKPACK_ADMISSION_MISSING"
+    ],
+    "warnings": [
+      "Required file missing: MANIFEST.json"
+    ],
+    "raw_receipt": {
+      "timestamp_utc": "2026-05-30T23:52:59Z",
+      "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/fixture_zips_stage2_1/no_manifest.zip",
+      "zip_sha256": "33948ea7cb25939452bd87ae4460ce00f92fc9b4ba8e1869192c6748fff4b9f7",
+      "admission_verdict": "ADMISSION_BLOCK",
+      "manifest_found": false,
+      "task_id_found": false,
+      "task_spec_found": true,
+      "acceptance_gates_found": true,
+      "output_requirements_found": true,
+      "duplicate_task_id": false,
+      "safe_extraction_path": false,
+      "registered_task_path": "",
+      "extracted_path": "",
+      "route_manifest_path": "",
+      "current_expected_task_updated": false,
+      "caps_triggered": [
+        "CAP_TASKPACK_ADMISSION_MISSING"
+      ],
+      "warnings": [
+        "Required file missing: MANIFEST.json"
+      ]
+    }
+  },
+  {
+    "case": "missing_task_id",
+    "timestamp_utc": "2026-05-30T23:52:59Z",
+    "admission_verdict": "ADMISSION_BLOCK",
+    "task_id": "",
+    "caps_triggered": [
+      "CAP_TASKPACK_ADMISSION_MISSING"
+    ],
+    "warnings": [
+      "MANIFEST.json exists but task_id is missing."
+    ],
+    "raw_receipt": {
+      "timestamp_utc": "2026-05-30T23:52:59Z",
+      "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/fixture_zips_stage2_1/no_task_id.zip",
+      "zip_sha256": "957de807cb3e2682008072c44daeb5026cfecf1a236a3450a401f5f75bf0d6b7",
+      "admission_verdict": "ADMISSION_BLOCK",
+      "manifest_found": true,
+      "task_id_found": false,
+      "task_spec_found": true,
+      "acceptance_gates_found": true,
+      "output_requirements_found": true,
+      "duplicate_task_id": false,
+      "safe_extraction_path": false,
+      "registered_task_path": "",
+      "extracted_path": "",
+      "route_manifest_path": "",
+      "current_expected_task_updated": false,
+      "caps_triggered": [
+        "CAP_TASKPACK_ADMISSION_MISSING"
+      ],
+      "warnings": [
+        "MANIFEST.json exists but task_id is missing."
+      ]
+    }
+  },
+  {
+    "case": "manifest_organs_missing_required",
+    "timestamp_utc": "2026-05-30T23:52:59Z",
+    "admission_verdict": "ADMISSION_BLOCK",
+    "task_id": "",
+    "caps_triggered": [
+      "CAP_ROUTE_DOES_NOT_INCLUDE_8_ORGANS"
+    ],
+    "warnings": [
+      "MANIFEST.organs missing required organs: SCHOLA_IMPERIALIS"
+    ],
+    "raw_receipt": {
+      "timestamp_utc": "2026-05-30T23:52:59Z",
+      "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/fixture_zips_stage2_1/manifest_missing_organs.zip",
+      "admission_verdict": "ADMISSION_BLOCK",
+      "manifest_found": false,
+      "task_id_found": false,
+      "task_spec_found": false,
+      "acceptance_gates_found": false,
+      "output_requirements_found": false,
+      "duplicate_task_id": false,
+      "safe_extraction_path": false,
+      "registered_task_path": "",
+      "extracted_path": "",
+      "route_manifest_path": "",
+      "current_expected_task_updated": false,
+      "caps_triggered": [
+        "CAP_ROUTE_DOES_NOT_INCLUDE_8_ORGANS"
+      ],
+      "warnings": [
+        "MANIFEST.organs missing required organs: SCHOLA_IMPERIALIS"
+      ]
+    }
+  },
+  {
+    "case": "unsafe_extraction_path",
+    "timestamp_utc": "2026-05-30T23:52:59Z",
+    "admission_verdict": "ADMISSION_BLOCK",
+    "task_id": "TASK-FIXTURE-UNSAFE",
+    "caps_triggered": [
+      "CAP_UNSAFE_EXTRACTION_PATH_NOT_BLOCKED"
+    ],
+    "warnings": [
+      "Unsafe ZIP members detected: ../escape.txt"
+    ],
+    "raw_receipt": {
+      "timestamp_utc": "2026-05-30T23:52:59Z",
+      "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/fixture_zips_stage2_1/unsafe.zip",
+      "zip_sha256": "3b8b07c9514ec51cd2c6aef67113948c9fcd5237eb87409e998b422c929b917b",
+      "task_id": "TASK-FIXTURE-UNSAFE",
+      "admission_verdict": "ADMISSION_BLOCK",
+      "manifest_found": true,
+      "task_id_found": true,
+      "task_spec_found": true,
+      "acceptance_gates_found": true,
+      "output_requirements_found": true,
+      "duplicate_task_id": false,
+      "safe_extraction_path": false,
+      "registered_task_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/_fixture_sandbox_stage2_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-UNSAFE",
+      "extracted_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/_fixture_sandbox_stage2_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-UNSAFE/EXTRACTED",
+      "route_manifest_path": "",
+      "current_expected_task_updated": false,
+      "caps_triggered": [
+        "CAP_UNSAFE_EXTRACTION_PATH_NOT_BLOCKED"
+      ],
+      "warnings": [
+        "Unsafe ZIP members detected: ../escape.txt"
+      ]
+    }
+  },
+  {
+    "case": "positive_valid_registration",
+    "timestamp_utc": "2026-05-30T23:52:59Z",
+    "admission_verdict": "ADMISSION_PASS",
+    "task_id": "TASK-FIXTURE-STAGE2-1-POSITIVE",
+    "caps_triggered": [
+      "CAP_NO_IDE_VISUAL_RELEASE_YET",
+      "CAP_NO_WARP_RUNTIME",
+      "CAP_STAGE1_WITH_WARNINGS_ONLY"
+    ],
+    "warnings": [],
+    "raw_receipt": {
+      "task_id": "TASK-FIXTURE-STAGE2-1-POSITIVE",
+      "timestamp_utc": "2026-05-30T23:52:59Z",
+      "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/fixture_zips_stage2_1/positive.zip",
+      "zip_sha256": "536576fa98c3a975358961eadf037e834c74b4f22242727cc88f16bfc59ea40a",
+      "admission_verdict": "ADMISSION_PASS",
+      "manifest_found": true,
+      "task_id_found": true,
+      "task_spec_found": true,
+      "acceptance_gates_found": true,
+      "output_requirements_found": true,
+      "duplicate_task_id": false,
+      "safe_extraction_path": true,
+      "registered_task_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/_fixture_sandbox_stage2_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-1-POSITIVE",
+      "extracted_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/_fixture_sandbox_stage2_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-1-POSITIVE/EXTRACTED",
+      "route_manifest_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/_fixture_sandbox_stage2_1/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-STAGE2-1-POSITIVE/TASK_ROUTE_MANIFEST.json",
+      "current_expected_task_updated": true,
+      "caps_triggered": [
+        "CAP_NO_IDE_VISUAL_RELEASE_YET",
+        "CAP_NO_WARP_RUNTIME",
+        "CAP_STAGE1_WITH_WARNINGS_ONLY"
+      ],
+      "warnings": []
+    }
+  },
+  {
+    "case": "duplicate_task_id",
+    "timestamp_utc": "2026-05-30T23:52:59Z",
+    "admission_verdict": "ADMISSION_BLOCK",
+    "task_id": "TASK-FIXTURE-STAGE2-1-POSITIVE",
+    "caps_triggered": [
+      "CAP_DUPLICATE_TASK_ID_NOT_DETECTED"
+    ],
+    "warnings": [
+      "Duplicate task_id detected in registry."
+    ],
+    "raw_receipt": {
+      "timestamp_utc": "2026-05-30T23:52:59Z",
+      "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/fixture_zips_stage2_1/duplicate.zip",
+      "zip_sha256": "536576fa98c3a975358961eadf037e834c74b4f22242727cc88f16bfc59ea40a",
+      "task_id": "TASK-FIXTURE-STAGE2-1-POSITIVE",
+      "admission_verdict": "ADMISSION_BLOCK",
+      "manifest_found": true,
+      "task_id_found": true,
+      "task_spec_found": true,
+      "acceptance_gates_found": true,
+      "output_requirements_found": true,
+      "duplicate_task_id": true,
+      "safe_extraction_path": false,
+      "registered_task_path": "",
+      "extracted_path": "",
+      "route_manifest_path": "",
+      "current_expected_task_updated": false,
+      "caps_triggered": [
+        "CAP_DUPLICATE_TASK_ID_NOT_DETECTED"
+      ],
+      "warnings": [
+        "Duplicate task_id detected in registry."
+      ]
+    }
+  }
+]

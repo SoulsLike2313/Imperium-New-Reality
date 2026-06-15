@@ -1,0 +1,246 @@
+{
+    "task_id":  "TASK-NEWGEN-PC-NEW-REALITY-RUNTIME-PATH-ADAPTER-SMOKE-GATE-PC-V0_1",
+    "timestamp_utc":  "2026-06-03T10:56:57Z",
+    "runtime_critical_candidate_count":  15,
+    "runtime_critical_candidates":  [
+                                        {
+                                            "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ADMINISTRATUM\\TOOLS\\administratum_card_checker_v0_1.py",
+                                            "match_count":  1,
+                                            "adapter_action":  "Replace hard-coded old/private root default with New Reality root resolver or explicit safe parameter.",
+                                            "samples":  [
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ADMINISTRATUM\\TOOLS\\administratum_card_checker_v0_1.py",
+                                                                "line":  133,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "        \"workspace_path\": \"E:/IMPERIUM_CONTEXT/LOCAL/WARP/SESSION_001\","
+                                                            }
+                                                        ]
+                                        },
+                                        {
+                                            "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\AGENT_IDE\\TOOLS\\agent_ide_block_registry_checker_v0_1.py",
+                                            "match_count":  1,
+                                            "adapter_action":  "Replace hard-coded old/private root default with New Reality root resolver or explicit safe parameter.",
+                                            "samples":  [
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\AGENT_IDE\\TOOLS\\agent_ide_block_registry_checker_v0_1.py",
+                                                                "line":  29,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "    parser.add_argument(\"--repo-root\", default=\"E:/IMPERIUM\")"
+                                                            }
+                                                        ]
+                                        },
+                                        {
+                                            "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\AGENT_IDE\\TOOLS\\agent_ide_data_probe_v0_1.py",
+                                            "match_count":  1,
+                                            "adapter_action":  "Replace hard-coded old/private root default with New Reality root resolver or explicit safe parameter.",
+                                            "samples":  [
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\AGENT_IDE\\TOOLS\\agent_ide_data_probe_v0_1.py",
+                                                                "line":  58,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "            \"E:/IMPERIUM/IMPERIUM_NEW_GENERATION/AGENT_IDE/REPORTS/\""
+                                                            }
+                                                        ]
+                                        },
+                                        {
+                                            "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\AGENT_IDE\\TOOLS\\agent_ide_scope_checker_v0_1.py",
+                                            "match_count":  2,
+                                            "adapter_action":  "Replace hard-coded old/private root default with New Reality root resolver or explicit safe parameter.",
+                                            "samples":  [
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\AGENT_IDE\\TOOLS\\agent_ide_scope_checker_v0_1.py",
+                                                                "line":  36,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "    parser.add_argument(\"--repo-root\", default=\"E:/IMPERIUM\")"
+                                                            },
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\AGENT_IDE\\TOOLS\\agent_ide_scope_checker_v0_1.py",
+                                                                "line":  40,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "            \"E:/IMPERIUM/IMPERIUM_NEW_GENERATION/AGENT_IDE/REPORTS/\""
+                                                            }
+                                                        ]
+                                        },
+                                        {
+                                            "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\AGENT_IDE\\TOOLS\\agent_ide_scope_checker_v0_2.py",
+                                            "match_count":  2,
+                                            "adapter_action":  "Replace hard-coded old/private root default with New Reality root resolver or explicit safe parameter.",
+                                            "samples":  [
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\AGENT_IDE\\TOOLS\\agent_ide_scope_checker_v0_2.py",
+                                                                "line":  43,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "    parser.add_argument(\"--repo-root\", default=\"E:/IMPERIUM\")"
+                                                            },
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\AGENT_IDE\\TOOLS\\agent_ide_scope_checker_v0_2.py",
+                                                                "line":  47,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "            \"E:/IMPERIUM/IMPERIUM_NEW_GENERATION/AGENT_IDE/REPORTS/\""
+                                                            }
+                                                        ]
+                                        },
+                                        {
+                                            "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\AGENT_IDE\\TOOLS\\agent_ide_smoke_test_v0_1.py",
+                                            "match_count":  1,
+                                            "adapter_action":  "Replace hard-coded old/private root default with New Reality root resolver or explicit safe parameter.",
+                                            "samples":  [
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\AGENT_IDE\\TOOLS\\agent_ide_smoke_test_v0_1.py",
+                                                                "line":  27,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "            \"E:/IMPERIUM/IMPERIUM_NEW_GENERATION/AGENT_IDE/REPORTS/\""
+                                                            }
+                                                        ]
+                                        },
+                                        {
+                                            "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\COMMON_AGENT_CLI\\base_half_cli.py",
+                                            "match_count":  1,
+                                            "adapter_action":  "Replace hard-coded old/private root default with New Reality root resolver or explicit safe parameter.",
+                                            "samples":  [
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\COMMON_AGENT_CLI\\base_half_cli.py",
+                                                                "line":  123,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "            base = Path(r\"E:\\IMPERIUM_CONTEXT\\LOCAL\\ORGAN_AGENT_IDENTITY_RICH_SHELL_RUNS\")"
+                                                            }
+                                                        ]
+                                        },
+                                        {
+                                            "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\MECHANICUS\\TOOLS\\check_mechanicus_evidence_index_v0_1.py",
+                                            "match_count":  1,
+                                            "adapter_action":  "Replace hard-coded old/private root default with New Reality root resolver or explicit safe parameter.",
+                                            "samples":  [
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\MECHANICUS\\TOOLS\\check_mechanicus_evidence_index_v0_1.py",
+                                                                "line":  165,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "                or path.startswith(\"E:/IMPERIUM_CONTEXT\")"
+                                                            }
+                                                        ]
+                                        },
+                                        {
+                                            "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\MECHANICUS\\TOOLS\\mechanicus_evidence_index_builder_v0_1.py",
+                                            "match_count":  1,
+                                            "adapter_action":  "Replace hard-coded old/private root default with New Reality root resolver or explicit safe parameter.",
+                                            "samples":  [
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\MECHANICUS\\TOOLS\\mechanicus_evidence_index_builder_v0_1.py",
+                                                                "line":  932,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "            or record[\"source_path\"].startswith(\"E:/IMPERIUM_CONTEXT\")"
+                                                            }
+                                                        ]
+                                        },
+                                        {
+                                            "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\MECHANICUS\\TOOLS\\mechanicus_validation_followup_001_runner_v0_1.py",
+                                            "match_count":  1,
+                                            "adapter_action":  "Replace hard-coded old/private root default with New Reality root resolver or explicit safe parameter.",
+                                            "samples":  [
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\MECHANICUS\\TOOLS\\mechanicus_validation_followup_001_runner_v0_1.py",
+                                                                "line":  19,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "EXPECTED_REPO_ROOT = \"E:/IMPERIUM\""
+                                                            }
+                                                        ]
+                                        },
+                                        {
+                                            "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\LAUNCHERS\\run_administratum_pc.ps1",
+                                            "match_count":  1,
+                                            "adapter_action":  "Replace hard-coded old/private root default with New Reality root resolver or explicit safe parameter.",
+                                            "samples":  [
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\LAUNCHERS\\run_administratum_pc.ps1",
+                                                                "line":  8,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "    \"E:\\IMPERIUM_CONTEXT\\LOCAL\\ADMINISTRATUM_TRANSFER\""
+                                                            }
+                                                        ]
+                                        },
+                                        {
+                                            "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\TOOLS\\administratum_agent_runner.py",
+                                            "match_count":  25,
+                                            "adapter_action":  "Replace hard-coded old/private root default with New Reality root resolver or explicit safe parameter.",
+                                            "samples":  [
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\TOOLS\\administratum_agent_runner.py",
+                                                                "line":  154,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "    Path(\"E:/IMPERIUM_CONTEXT/LOCAL/ORGAN_AGENT_BASE_HALF_RUNS\")"
+                                                            },
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\TOOLS\\administratum_agent_runner.py",
+                                                                "line":  825,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "            \"E:/IMPERIUM/ORGANS/SANCTUM\","
+                                                            },
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\TOOLS\\administratum_agent_runner.py",
+                                                                "line":  826,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "            \"E:/IMPERIUM/IMPERIUM_TEST_VERSION\","
+                                                            },
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\TOOLS\\administratum_agent_runner.py",
+                                                                "line":  1645,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "        input_refs=[str(repo_root), \"E:/IMPERIUM\"],"
+                                                            },
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\TOOLS\\administratum_agent_runner.py",
+                                                                "line":  1870,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "    rail.start(1, \"git_truth_and_dirty_state\", target=\"E:/IMPERIUM\")"
+                                                            }
+                                                        ]
+                                        },
+                                        {
+                                            "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\TOOLS\\administratum_v1_core.py",
+                                            "match_count":  2,
+                                            "adapter_action":  "Replace hard-coded old/private root default with New Reality root resolver or explicit safe parameter.",
+                                            "samples":  [
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\TOOLS\\administratum_v1_core.py",
+                                                                "line":  26,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "DEFAULT_CONTEXT_LOCAL = Path(\"E:/IMPERIUM_CONTEXT/LOCAL\")"
+                                                            },
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\TOOLS\\administratum_v1_core.py",
+                                                                "line":  27,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "DEFAULT_CONTEXT_PRIVATE = Path(\"E:/IMPERIUM_CONTEXT/PRIVATE\")"
+                                                            }
+                                                        ]
+                                        },
+                                        {
+                                            "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ORGAN_AGENTS\\OFFICIO_AGENTIS_AGENT\\TOOLS\\officio_agent_runner.py",
+                                            "match_count":  1,
+                                            "adapter_action":  "Replace hard-coded old/private root default with New Reality root resolver or explicit safe parameter.",
+                                            "samples":  [
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\ORGAN_AGENTS\\OFFICIO_AGENTIS_AGENT\\TOOLS\\officio_agent_runner.py",
+                                                                "line":  32,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "DEFAULT_RUNTIME_ROOT = Path(r\"E:\\IMPERIUM_CONTEXT\\LOCAL\\OFFICIO_AGENTIS\\RUNS\")"
+                                                            }
+                                                        ]
+                                        },
+                                        {
+                                            "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\SANCTUM_NG\\OPERATOR_COCKPIT\\TOOLS\\launch_operator_cockpit.ps1",
+                                            "match_count":  1,
+                                            "adapter_action":  "Replace hard-coded old/private root default with New Reality root resolver or explicit safe parameter.",
+                                            "samples":  [
+                                                            {
+                                                                "file":  "E:\\IMPERIUM_NEW_GENERATION_NEW_REALITY\\SANCTUM_NG\\OPERATOR_COCKPIT\\TOOLS\\launch_operator_cockpit.ps1",
+                                                                "line":  5,
+                                                                "class":  "runtime_critical_candidate",
+                                                                "preview":  "  [string]$RepoRoot = \u0027E:\\IMPERIUM\u0027,"
+                                                            }
+                                                        ]
+                                        }
+                                    ],
+    "next_fix_boundary":  "Patch only these runtime script/tool defaults first. Do not rewrite reports, taskpack archives, or historical receipts in the same task.",
+    "verdict":  "WARN_FOLLOWUP_REQUIRED"
+}

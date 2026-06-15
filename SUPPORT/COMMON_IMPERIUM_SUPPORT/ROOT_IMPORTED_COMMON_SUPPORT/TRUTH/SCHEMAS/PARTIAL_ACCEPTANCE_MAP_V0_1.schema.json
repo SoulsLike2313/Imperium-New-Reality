@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PARTIAL_ACCEPTANCE_MAP_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "generated_at_utc",
+    "statuses"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "PARTIAL_ACCEPTANCE_MAP_V0_1"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "source_truth_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "statuses": {
+      "type": "array",
+      "minItems": 11,
+      "items": {
+        "type": "object",
+        "required": [
+          "status",
+          "meaning",
+          "can_continue",
+          "owner_decision_required",
+          "rerun_required",
+          "evidence_required",
+          "freshness_required",
+          "production_claim_allowed",
+          "ui_truth_color_hint",
+          "sanctum_display_label",
+          "next_action",
+          "forbidden_claims"
+        ],
+        "properties": {
+          "status": {
+            "enum": [
+              "PASS_STRICT",
+              "PASS_WITH_WARN",
+              "PARTIAL_ACCEPTED",
+              "PARTIAL_BLOCKED",
+              "FOUNDATION_ONLY",
+              "UNKNOWN",
+              "MISSING",
+              "STALE",
+              "NOT_READY",
+              "BLOCKED",
+              "FAKE_GREEN_RISK"
+            ]
+          },
+          "meaning": {
+            "type": "string"
+          },
+          "can_continue": {
+            "type": "boolean"
+          },
+          "owner_decision_required": {
+            "type": "boolean"
+          },
+          "rerun_required": {
+            "type": "boolean"
+          },
+          "evidence_required": {
+            "type": "boolean"
+          },
+          "freshness_required": {
+            "type": "boolean"
+          },
+          "production_claim_allowed": {
+            "type": "boolean"
+          },
+          "ui_truth_color_hint": {
+            "type": "string"
+          },
+          "sanctum_display_label": {
+            "type": "string"
+          },
+          "next_action": {
+            "type": "string"
+          },
+          "forbidden_claims": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "no_fake_green_invariants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

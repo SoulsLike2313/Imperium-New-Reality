@@ -1,0 +1,30 @@
+# TASKPACK OFFICIO GATE TEMPLATE V0.1
+
+Use this block in future taskpacks before execution starts.
+
+## OFFICIO_GATE_BLOCK
+
+```text
+ROLE_ACK: <role_id accepted>
+LANGUAGE_ACK: owner-facing Russian accepted
+SCOPE_ACK: allowed paths=<...>; forbidden paths=<...>
+STOP_CONDITIONS_ACK: accepted=<non-empty list>
+FORBIDDEN_ACTIONS_ACK: accepted=<non-empty list>
+```
+
+## REQUIRED OFFICIO REFERENCES
+
+- `IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/CONTRACTS/OFFICIO_LANGUAGE_GATE_CONTRACT_V0_1.md`
+- `IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/CONTRACTS/OFFICIO_ROLE_ACK_CONTRACT_V0_1.md`
+- `IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/CONTRACTS/OFFICIO_RESPONSE_CONTRACT_V0_1.md`
+- `IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/CONTRACTS/OFFICIO_STOP_CONDITIONS_V0_1.md`
+- `IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/CONTRACTS/OFFICIO_FORBIDDEN_BEHAVIORS_V0_1.md`
+
+## REQUIRED RESPONSE FORMAT
+
+Final owner response must have exactly 4 numbered parts in Russian:
+
+1. Step name.
+2. Full report path.
+3. Verdict.
+4. 3-4 short owner comments RU.

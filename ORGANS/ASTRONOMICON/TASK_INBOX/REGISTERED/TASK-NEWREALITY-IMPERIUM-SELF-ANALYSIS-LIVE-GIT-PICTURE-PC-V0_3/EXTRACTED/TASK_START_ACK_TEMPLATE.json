@@ -1,0 +1,24 @@
+{
+  "schema_version": "astronomicon.task_start_ack_template.v0_1",
+  "template_id": "TASK_START_ACK_TEMPLATE_PC_READ_ONLY_SELF_ANALYSIS_V0_1",
+  "task_id": "TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3",
+  "contour": "PC",
+  "copy_message_to_servitor": "start task",
+  "start_ack_required_fields": [
+    "task_id",
+    "repo_root",
+    "git_status",
+    "read_first_files",
+    "known_caps",
+    "known_blockers",
+    "planned_outputs"
+  ],
+  "do_not_claim": [
+    "clean_pass",
+    "remote_route",
+    "vm2_execution",
+    "file_cleanup",
+    "canon_admission",
+    "push"
+  ]
+}

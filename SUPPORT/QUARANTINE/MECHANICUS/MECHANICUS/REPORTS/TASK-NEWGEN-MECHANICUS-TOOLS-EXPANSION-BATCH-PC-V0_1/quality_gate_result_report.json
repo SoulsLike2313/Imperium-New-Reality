@@ -1,0 +1,28 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "generated_at_utc": "2026-05-24T23:35:59Z",
+  "checker": "check_mechanicus_evidence_index_v0_1.py",
+  "gates": {
+    "py_compile": "PASS",
+    "ruff": "PASS",
+    "mypy": "PASS_WITH_WARNINGS",
+    "json_parse": "PASS",
+    "query_smoke": "PASS",
+    "sqlite_open": "PASS",
+    "fts_smoke": "PASS",
+    "private_scope_exclusion": "PASS",
+    "record_threshold": "PASS"
+  },
+  "overall_verdict": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "mypy:PASS_WITH_WARNINGS"
+  ],
+  "failures": [],
+  "reports": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1/evidence_index_coverage_report.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1/inquisition_evidence_safety_report.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1/administratum_evidence_index_handoff.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1/ghost_evolve_evidence_index_training_proof.json"
+  ],
+  "raw_dump_status": "COMPACT_ONLY"
+}

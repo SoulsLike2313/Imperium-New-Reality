@@ -1,0 +1,28 @@
+{
+  "task_id": "TASK-NEWGEN-AGENT-IDE-WEB-SHELL-REACT-TAURI-PLAYWRIGHT-PARITY-PC-V0_1",
+  "timestamp_utc": "2026-05-28T15:16:16.146928+00:00",
+  "status": "PASS_WITH_WARNINGS",
+  "probe_result": {
+    "command": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\AGENT_IDE\\TOOLS\\agent_ide_desktop_shell_probe_v0_1.py --repo-root E:\\IMPERIUM",
+    "returncode": 0,
+    "stdout": "{\n  \"probe_receipt_path\": \"E:/IMPERIUM/IMPERIUM_NEW_GENERATION/AGENT_IDE/DESKTOP_SHELL/tauri_probe_receipt.json\",\n  \"decision_receipt_path\": \"E:/IMPERIUM/IMPERIUM_NEW_GENERATION/AGENT_IDE/DESKTOP_SHELL/tauri_or_electron_decision_v0_1.json\",\n  \"decision\": {\n    \"task_id\": \"TASK-NEWGEN-AGENT-IDE-WEB-SHELL-REACT-TAURI-PLAYWRIGHT-PARITY-PC-V0_1\",\n    \"timestamp_utc\": \"2026-05-28T15:16:16.126940+00:00\",\n    \"status\": \"PASS_WITH_WARNINGS\",\n    \"decision\": \"REACT_WEB_ONLY_SCAFFOLD\",\n    \"note\": \"Neither Tauri nor Electron CLI is available. Keep web projection as primary runnable surface.\",\n    \"tauri_reasons\": [],\n    \"prerequisites_missing\": [\n      \"TAURI_TOOLCHAIN\",\n      \"ELECTRON_BINARY\"\n    ]\n  }\n}",
+    "stderr": "",
+    "parsed_stdout": {
+      "probe_receipt_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/AGENT_IDE/DESKTOP_SHELL/tauri_probe_receipt.json",
+      "decision_receipt_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/AGENT_IDE/DESKTOP_SHELL/tauri_or_electron_decision_v0_1.json",
+      "decision": {
+        "task_id": "TASK-NEWGEN-AGENT-IDE-WEB-SHELL-REACT-TAURI-PLAYWRIGHT-PARITY-PC-V0_1",
+        "timestamp_utc": "2026-05-28T15:16:16.126940+00:00",
+        "status": "PASS_WITH_WARNINGS",
+        "decision": "REACT_WEB_ONLY_SCAFFOLD",
+        "note": "Neither Tauri nor Electron CLI is available. Keep web projection as primary runnable surface.",
+        "tauri_reasons": [],
+        "prerequisites_missing": [
+          "TAURI_TOOLCHAIN",
+          "ELECTRON_BINARY"
+        ]
+      }
+    }
+  },
+  "desktop_decision_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/AGENT_IDE/DESKTOP_SHELL/tauri_or_electron_decision_v0_1.json"
+}

@@ -1,0 +1,38 @@
+{
+  "capability_id": "PLAYBOOKS_CANDIDATE_CHECK_PLAYBOOK",
+  "name": "candidate check playbook",
+  "category": "PLAYBOOKS",
+  "status": "CANDIDATE",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Mass intake candidate for candidate check playbook in PLAYBOOKS.",
+  "what_problem_it_solves": "Mass intake seed for PLAYBOOKS.",
+  "source_type": "practice",
+  "source_url_or_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/ARSENAL_INTAKE_PROTOCOL_V0_1.md",
+  "license_or_trust_note": "TO_VERIFY; no promotion beyond CANDIDATE without receipt evidence.",
+  "install_required": false,
+  "install_gate": "GATE-U09-NO-FAKE-GREEN",
+  "validation_commands": [
+    "validate:playbooks-candidate-check-playbook"
+  ],
+  "expected_receipts": [
+    "playbooks-candidate-check-playbook_validation_receipt.json"
+  ],
+  "safety_notes": "Bounded use only; no uncontrolled runtime mutation or hidden side effects.",
+  "security_notes": "No secret handling in this task; obey path, scope, and evidence gates.",
+  "offline_or_network_dependency": "offline_preferred",
+  "promoted_by_receipt": "NOT_PROMOTED",
+  "last_reviewed_utc": "2026-05-24T16:49:31Z",
+  "next_review_reason": "Mass intake seed; requires bounded validation before SANDBOX promotion.",
+  "limitations": "Candidate-only until validation receipts and trust checks exist.",
+  "allowed_use_cases": [
+    "Capability cataloging and validation planning",
+    "Scoped candidate execution after explicit admission gate"
+  ],
+  "forbidden_use_cases": [
+    "Claiming CANON without validation receipt evidence",
+    "Using capability outside bounded task scope"
+  ],
+  "reserved": false,
+  "intake_batch_id": "MECHANICUS-INTAKE-BATCH-PLAYBOOKS-001",
+  "desired_future_status": "CANDIDATE_OR_SANDBOX_AFTER_VALIDATION"
+}

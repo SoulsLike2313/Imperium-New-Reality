@@ -1,0 +1,61 @@
+# GATE_ACK
+
+- task_id: `TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1`
+- current_head: `6f4b09f1e377d75075ba89f258943979cf10c921`
+- gatepack_path: `INBOX/VM3_TASKPACKS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/TASKPACK_TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1`
+- gatepack_sha256: `INBOX/.../TASKPACK_CONTENT_SHA256S.json`
+- read_gates:
+  - `GATE-U00-GIT-TRUTH`
+  - `GATE-U01-ROLE-ACK`
+  - `GATE-U02-SCOPE-BOUNDARY`
+  - `GATE-U04-EVIDENCE-RECEIPT`
+  - `GATE-U05-STOP-CONDITIONS`
+  - `GATE-U08-REPO-PURITY`
+  - `GATE-U09-NO-FAKE-GREEN`
+  - `GATE-U12-REPORT-OUTPUT-BUDGET`
+  - `GATE-U13-PYTHON-TYPE-SAFETY`
+  - `GATE-U14-WHOLE-REPO-SCOPE-RECON`
+  - `GATE-U15-OPERATIONALITY-IMPACT`
+  - `GATE-U16-BILINGUAL-UI`
+  - `GATE-U17-DELIVERABLE-PACKAGE`
+  - `GATE-U19-SCRIPT-ARTIFACT-PRESERVATION`
+  - `GATE-U20-AGENT-KPD-SELF-REVIEW`
+  - `GATE-U21-COMMAND-CHUNKING`
+- accepted_stop_conditions:
+  - `Any touched file outside IMPERIUM_NEW_GENERATION/** report scope => STOP/BLOCK.`
+  - `Any missing/invalid ZIP hash-size-path evidence for PC->VM3 => STOP/BLOCK.`
+  - `Any VM2/ALL route proof claim => STOP/BLOCK.`
+  - `Any arbitrary shell/cmd field accepted => STOP/BLOCK.`
+  - `Any PASS claim without validator/smoke/report receipts => STOP/BLOCK.`
+- scope_boundary: `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/** + IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/** (render only) + report bundle path`
+- touched_paths:
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/transfer_action_runner_v0_1.py`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/validate_transfer_action_runner_v0_1.py`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/smoke_transfer_action_runner_v0_1.py`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_action_request.schema.json`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_action_result.schema.json`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/app.js`
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/**` (only generated receipts/state)
+  - `IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-PC-TO-VM3-VM3-V0_1/**`
+- forbidden_paths:
+  - `ORGANS/**`
+  - `SANCTUM/**`
+  - `IMPERIUM_TEST_VERSION/**`
+  - `.git/**`
+- expected_receipts:
+  - `transfer_route_proof_validator_report.json`
+  - `transfer_route_proof_smoke_report.json`
+  - `closure_receipt.json`
+  - `context_source_mix.json`
+  - `kpd_next_task_slice.md`
+  - `FINAL_REPORT.md`
+- repo_recon_required: `YES (TRANSFER_CONSOLE + APP + MECHANICUS/CONNECTIONS read route complete)`
+- script_absorption_required: `NO_NEW_SCRIPT_FILES (patched existing runner/validator/smoke tools)`
+- clarification_needed: `NO`
+- verdict: `PASS`
+
+Claim boundary:
+- `PASS_FOR_ONE_CONFIRMED_BOUNDED_PC_TO_VM3_TRANSFER_ROUTE_ONLY`
+- `NO_PRODUCTION_REMOTE_ORCHESTRATION`
+- `NO_VM2_ROUTE_PROOF`
+- `NO_ARBITRARY_SHELL`

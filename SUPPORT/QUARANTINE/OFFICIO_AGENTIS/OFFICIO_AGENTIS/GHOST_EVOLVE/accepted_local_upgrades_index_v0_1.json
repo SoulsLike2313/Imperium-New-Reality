@@ -1,0 +1,42 @@
+{
+  "schema_id": "officio_accepted_local_upgrades_index_v0_1",
+  "version": "v0_1",
+  "task_reference": "TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1",
+  "entries": [
+    {
+      "decision_id": "GE-ACC-001",
+      "candidate_name": "officio_agentis_body_manifest_v0_1",
+      "decision": "ACCEPTED_LOCAL_UPGRADE",
+      "reason": "Introduces compact block identities and validation routes for Officio units.",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/BODY/officio_agentis_body_manifest_v0_1.json"
+      ],
+      "status": "ACTIVE"
+    },
+    {
+      "decision_id": "GE-ACC-002",
+      "candidate_name": "officio_readonly_tui_v0_1",
+      "decision": "ACCEPTED_LOCAL_UPGRADE",
+      "reason": "Provides real-data read-only visibility for roles/rules/evidence.",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/officio_agentis_tui_v0_1.py"
+      ],
+      "status": "ACTIVE"
+    },
+    {
+      "decision_id": "GE-ACC-003",
+      "candidate_name": "officio_contract_checker_triplet_v0_1",
+      "decision": "ACCEPTED_LOCAL_UPGRADE",
+      "reason": "Adds role/taskpack/response checkers with report-scoped outputs.",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_role_registry_checker_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_taskpack_acceptance_checker_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_response_contract_checker_v0_1.py"
+      ],
+      "status": "ACTIVE"
+    }
+  ]
+}

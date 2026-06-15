@@ -1,0 +1,35 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "generated_at_utc": "2026-05-24T23:35:59Z",
+  "mechanicus_body_workflow": [
+    "candidate matrix build",
+    "detection runner with receipts",
+    "decision matrix and owner approval queue",
+    "candidate->sandbox promotions under receipts",
+    "scope refresh including evidence_search_task",
+    "evidence index refresh and query smoke",
+    "inquisition/administratum handoff artifacts"
+  ],
+  "reusable_scripts": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_tool_expansion_candidate_builder_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_tool_detection_runner_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_tool_expansion_decision_builder_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_tool_scope_refresh_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_tool_expansion_finalize_v0_1.py"
+  ],
+  "proof_receipts": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/TOOL_EXPANSION/BATCH_001/tool_candidate_matrix_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/TOOL_EXPANSION/BATCH_001/tool_detection_results.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/TOOL_EXPANSION/BATCH_001/tool_decision_matrix_RU.md",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/TOOL_EXPANSION/BATCH_001/owner_install_approval_queue.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/TOOL_EXPANSION/BATCH_001/tool_expansion_scope_updates.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1/evidence_index_refresh_report.json"
+  ],
+  "future_servitor_load_reduction": [
+    "No manual ad-hoc candidate discovery needed.",
+    "No manual receipt schema authoring needed.",
+    "No manual scope-index synchronization needed.",
+    "Evidence refresh is scripted and repeatable."
+  ],
+  "verdict": "PASS"
+}

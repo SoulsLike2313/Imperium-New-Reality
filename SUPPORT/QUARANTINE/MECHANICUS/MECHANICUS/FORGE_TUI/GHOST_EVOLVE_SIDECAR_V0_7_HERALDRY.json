@@ -1,0 +1,21 @@
+{
+  "task_id": "MECHANICUS_FORGE_CLIENT_V0_7_HERALDRY_MANUAL_GIFT",
+  "created_utc": "2026-05-25T00:23:34Z",
+  "organ": "MECHANICUS",
+  "mode": "GE_LITE_HERALDRY_SURFACE",
+  "learning_delta": [
+    "Mechanicus TUI gains modular heraldry panels inside the top strip.",
+    "Heraldry is terminal-native ANSI/block-art rather than image-based.",
+    "Central ritual strip remains stable while left/right panels are separate surfaces."
+  ],
+  "reusable_capability": {
+    "name": "mechanicus_forge_client_v0_7_heraldry",
+    "entrypoint": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/mechanicus_forge_client_v0_7_heraldry.py",
+    "launcher": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/LAUNCH_MECHANICUS_FORGE_CLIENT_V0_7.cmd"
+  },
+  "eval_or_smoke": [
+    "py -3 -m py_compile mechanicus_forge_client_v0_7_heraldry.py",
+    "manual launch via LAUNCH_MECHANICUS_FORGE_CLIENT_V0_7.cmd"
+  ],
+  "read_only": true
+}

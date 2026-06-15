@@ -1,0 +1,36 @@
+{
+  "schema_id": "newgen_organ_state_v0_1",
+  "organ_id": "INQUISITION",
+  "version": "v0_1",
+  "default_verdict": "PASS",
+  "responsibility": "Fake-green detection, dirty work detection, duplicate detection, failure/heresy checks, semantic cleanliness, readability/explainability audits, Speculum-style hard gates.",
+  "servitor_ask": [
+    "What fake-green risks exist in this task?",
+    "What dirty-work or duplicate risks must be blocked?",
+    "Which semantic/readability/explainability checks are mandatory?",
+    "What hard Speculum-style audit gate can stop PASS?"
+  ],
+  "warn_block_profile": [
+    "WARN on partial audit coverage with explicit NOT_RUN boundary",
+    "BLOCK on PASS claim without evidence",
+    "BLOCK on dirty/duplicate drift left unresolved",
+    "BLOCK on unreadable or semantically contradictory closure"
+  ],
+  "required_actions": [
+    "Run anti-fake-green and evidence-reference checks",
+    "Check for dirty work and duplicate drift",
+    "Enforce readability and explainability of closure artifacts",
+    "Apply hard Speculum-style audit gate before PASS"
+  ],
+  "forbidden_actions": [
+    "Claim PASS without evidence chain",
+    "Ignore dirty or duplicate findings",
+    "Ignore semantic contradiction in owner-facing output"
+  ],
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/INQUISITION/GATES/organ_gate_catalog_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/organ_route_plan.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1/wave2_organ_tui_smoke_report.json"
+  ],
+  "last_updated_utc": "2026-05-24T01:57:54+00:00"
+}

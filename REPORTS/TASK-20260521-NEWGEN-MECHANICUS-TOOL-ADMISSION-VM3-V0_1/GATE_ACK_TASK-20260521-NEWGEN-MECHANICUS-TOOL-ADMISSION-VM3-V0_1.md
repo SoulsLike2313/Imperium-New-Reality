@@ -1,0 +1,63 @@
+GATE_ACK:
+- task_id: TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1
+- current_head: 2b4942cb3b713233bd299c5e36dde008aca9ad2c
+- gatepack_path: /home/vboxuser3/IMPERIUM_WORK/Imperium-/INBOX/VM3_TASKPACKS/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1.zip
+- gatepack_sha256: dabbf1432cab5c46178f310bf1b0ce571816e11c7609b6020cb5f323be19041d
+- read_gates:
+  - GATE-U00-GIT-TRUTH
+  - GATE-U01-ROLE-ACK
+  - GATE-U02-SCOPE-BOUNDARY
+  - GATE-U04-EVIDENCE-RECEIPT
+  - GATE-U05-STOP-CONDITIONS
+  - GATE-U08-REPO-PURITY
+  - GATE-U09-NO-FAKE-GREEN
+  - GATE-U12-REPORT-OUTPUT-BUDGET
+  - GATE-U13-PYTHON-TYPE-SAFETY
+  - GATE-U14-WHOLE-REPO-SCOPE-RECON
+  - GATE-U15-OPERATIONALITY-IMPACT
+  - GATE-U16-BILINGUAL-UI
+  - GATE-U17-DELIVERABLE-PACKAGE
+  - GATE-U18-AGENT-FACTORY-COMPLIANCE
+  - GATE-U19-SCRIPT-ARTIFACT-PRESERVATION
+  - GATE-U20-AGENT-KPD-SELF-REVIEW
+  - GATE-U21-COMMAND-CHUNKING
+- accepted_stop_conditions:
+  - Dirty worktree appears before or during scoped edits.
+  - Required starting HEAD cannot be resolved to current commit by safe fast-forward policy.
+  - Any required orientation/gate source is missing without safe warning handling.
+  - Any write goes outside allowed path prefixes.
+  - Any install command for external tooling is attempted.
+  - Builder or validator returns blocking errors.
+  - Commit push cannot be verified against `origin/master`.
+  - Useful generated artifact cannot be preserved in allowed scope.
+- scope_boundary:
+  - IMPERIUM_NEW_GENERATION/ARCHITECTURE/
+  - IMPERIUM_NEW_GENERATION/CONTRACTS/TOOL_ADMISSION/
+  - IMPERIUM_NEW_GENERATION/TOOLS/TOOL_ADMISSION/
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/
+  - IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1/
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/ARCHITECTURE/MECHANICUS_TOOL_ADMISSION_V0_1.md
+  - IMPERIUM_NEW_GENERATION/CONTRACTS/TOOL_ADMISSION/
+  - IMPERIUM_NEW_GENERATION/TOOLS/TOOL_ADMISSION/
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/
+  - IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1/
+- forbidden_paths:
+  - ORGANS/
+  - SANCTUM/
+  - IMPERIUM_TEST_VERSION/
+  - THRONE/
+  - CUSTODES/
+  - .git/
+- expected_receipts:
+  - OFFICIO_DOCTRINARIUM_AUTHORITY_ACK.json
+  - STEP_PROOF_RECORDS.json
+  - VALIDATOR_REPORT.json
+  - CHANGED_FILES_STATUS.md
+  - GIT_CLOSURE_REPORT.json
+  - FINAL_RECEIPT.json
+  - OWNER_REPORT_RU.md
+- repo_recon_required: NO_FOR_WHOLE_REPO_SCOPE
+- script_absorption_required: YES_BUILDER_VALIDATOR_COMMITTED
+- clarification_needed: NO
+- verdict: PASS

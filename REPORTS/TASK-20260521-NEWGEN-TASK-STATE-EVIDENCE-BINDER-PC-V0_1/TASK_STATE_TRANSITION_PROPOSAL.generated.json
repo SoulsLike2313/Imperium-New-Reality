@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.1",
+  "task_id": "TASK-20260521-NEWGEN-TASK-STATE-EVIDENCE-BINDER-PC-V0_1",
+  "source_records": [
+    {
+      "record_kind": "TASK_KERNEL",
+      "path": "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/EXAMPLES/SAMPLE_TASK_KERNEL_OBJECT_V0_1.json",
+      "status": "READ",
+      "input_truth_level": "FOUNDATION_SAMPLE_INPUT"
+    },
+    {
+      "record_kind": "SCOPE_MERGE",
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-8-ORGAN-SCOPING-CORRIDOR-PC-V0_1/ORGAN_SCOPE_MERGE_RECORD.generated.json",
+      "status": "READ",
+      "input_truth_level": "PROVED_FOUNDATION_INPUT"
+    },
+    {
+      "record_kind": "SERVITOR_SESSION",
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/SERVITOR_EXECUTION_SESSION.generated.json",
+      "status": "READ",
+      "input_truth_level": "PROVED_FOUNDATION_INPUT"
+    },
+    {
+      "record_kind": "RUN_RECORD",
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/RUN_RECORD_001.generated.json",
+      "status": "READ",
+      "input_truth_level": "PROVED_FOUNDATION_INPUT"
+    },
+    {
+      "record_kind": "RERUN_DECISION",
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/RERUN_DECISION_RECORD.generated.json",
+      "status": "READ",
+      "input_truth_level": "PROVED_FOUNDATION_INPUT"
+    }
+  ],
+  "current_task_state": "PASSED_WITH_WARNINGS",
+  "proposed_task_state": "PASSED_WITH_WARNINGS",
+  "transition_reason": "State transition proposal was derived from bounded NewGen records with deterministic foundation policy.",
+  "failure_classification": "FOUNDATION_LIMITATION",
+  "rerun_decision": "PASS_WITH_WARNINGS",
+  "owner_escalation_required": false,
+  "organ_escalation_required": false,
+  "fake_green_risk": false,
+  "evidence_index_ref": "EVIDENCE_REPLAY_INDEX.generated.json",
+  "confidence": "STRONG",
+  "foundation_limitations": [
+    "FOUNDATION_ONLY",
+    "NOT_PRODUCTION_EXECUTOR",
+    "No live organ dialogue is claimed."
+  ],
+  "created_at_utc": "2026-05-21T20:23:06Z"
+}

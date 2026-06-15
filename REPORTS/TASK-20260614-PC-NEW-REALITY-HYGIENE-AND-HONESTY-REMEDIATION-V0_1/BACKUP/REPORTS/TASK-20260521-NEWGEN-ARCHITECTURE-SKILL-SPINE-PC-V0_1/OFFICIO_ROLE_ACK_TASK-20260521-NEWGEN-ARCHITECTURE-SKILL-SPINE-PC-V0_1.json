@@ -1,0 +1,48 @@
+{
+  "task_id": "TASK-20260521-NEWGEN-ARCHITECTURE-SKILL-SPINE-PC-V0_1",
+  "status": "OFFICIO_ROLE_ACK",
+  "authority_files_read": [
+    "E:/IMPERIUM/AGENTS.md",
+    "E:/IMPERIUM/ORGANS/DOCTRINARIUM/GATES/GATE_REGISTRY_V0_1.json",
+    "E:/IMPERIUM/ORGANS/DOCTRINARIUM/GATES/UNIVERSAL_GATE_LAWS_V0_1.md",
+    "E:/IMPERIUM/ORGANS/DOCTRINARIUM/GATES/BASE_MANDATORY_GATES_V0_1.md",
+    "E:/IMPERIUM/ORGANS/OFFICIO_AGENTIS/RESPONSE_CONTRACTS/AGENT_GATE_ACK_CONTRACT_V0_1.md",
+    "E:/IMPERIUM/ORGANS/OFFICIO_AGENTIS/AGENT_SETTINGS/BIG_MODEL_AGENT_OPERATING_RULES_V0_1.md",
+    "E:/IMPERIUM/ORGANS/OFFICIO_AGENTIS/RESPONSE_CONTRACTS/AGENT_KPD_SELF_REVIEW_CONTRACT_V0_1.md",
+    "E:/IMPERIUM/ORGANS/MECHANICUS/SCRIPTORIUM/PYTHON_TYPE_SAFETY/SCRIPT_TYPE_SAFETY_POLICY_V0_1.md",
+    "E:/IMPERIUM/ORGANS/MECHANICUS/SCRIPTORIUM/SCRIPT_ARTIFACT_PRESERVATION_POLICY_V0_1.md",
+    "E:/IMPERIUM/ORGANS/MECHANICUS/SCRIPTORIUM/COMMAND_DISCIPLINE/COMMAND_CHUNKING_DISCIPLINE_V0_1.md",
+    "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/PROTOCOLS/organ_agent_base_contract_v0_1.md",
+    "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/THRONE_AGENT/role_contract.md",
+    "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/THRONE_AGENT/operating_rules.md",
+    "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/TASK_CONTROL/ANTI_CRUTCH_PROTOCOL/ANTI_CRUTCH_PROTOCOL.md",
+    "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/CORE/new_generation_scope.json",
+    "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/CORE/canon_write_policy.json"
+  ],
+  "rules_extracted": [
+    "NO_GATE_ACK_NO_WORK before edits.",
+    "Truth check (root/branch/HEAD/status) is mandatory and recorded.",
+    "Writes must stay in explicitly allowed roots; forbidden roots are hard stop.",
+    "No fake green: PASS claims require concrete evidence artifacts.",
+    "Big-model runs must include KPD self-review and script preservation classification.",
+    "Taskpack rules do not override canonical authority (anti-crutch)."
+  ],
+  "response_contract_summary": [
+    "Final owner response must include step, full report path, verdict, RU owner comment, and next allowed task.",
+    "Do not claim implementation/finality without receipts.",
+    "Auto-commit is disabled for this task; Owner decides commit."
+  ],
+  "language_contract_summary": [
+    "Machine-readable artifacts: English and UTF-8 safe.",
+    "Owner-facing report/comment: Russian is allowed and expected.",
+    "No mojibake; bilingual UI principle applies to owner-facing applications."
+  ],
+  "no_fake_green_rules": [
+    "PASS is blocked if required deliverables are missing.",
+    "PLAUSIBLE/UNKNOWN evidence cannot support PASS verdict.",
+    "Validator output and git status must be reported honestly."
+  ],
+  "conflicts_with_taskpack": [],
+  "self_verdict": "PROVED",
+  "timestamp_utc": "2026-05-21T18:30:26Z"
+}

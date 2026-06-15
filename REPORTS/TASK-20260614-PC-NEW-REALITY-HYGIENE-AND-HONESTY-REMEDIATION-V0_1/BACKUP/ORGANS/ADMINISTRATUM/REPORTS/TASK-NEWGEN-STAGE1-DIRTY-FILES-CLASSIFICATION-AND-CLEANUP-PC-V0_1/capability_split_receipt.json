@@ -1,0 +1,31 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE1-DIRTY-FILES-CLASSIFICATION-AND-CLEANUP-PC-V0_1",
+  "timestamp_utc": "2026-05-31T00:26:57Z",
+  "LOCAL_SCRIPT_FIRST": [
+    "git status --porcelain",
+    "git diff on dirty tracked files",
+    "git restore",
+    "Remove-Item transient staging dir",
+    "receipt generation scripts"
+  ],
+  "LOCAL_MANUAL_COMMAND": [
+    "none"
+  ],
+  "CANDIDATE_SCRIPT_FIRST": [
+    "timestamp-only dirty classifier",
+    "taskpack staging auto-cleanup helper"
+  ],
+  "AGENT_REASONING_ONLY": [
+    "owner-organ mapping and final action selection",
+    "learning backlog synthesis"
+  ],
+  "EXTERNAL_RESEARCH": [
+    "none"
+  ],
+  "OWNER_MANUAL_CONFIRMATION": [
+    "not required"
+  ],
+  "FUTURE_CAPABILITY_GAP": [
+    "Astronomicon intake strict-manifest mode blocked this taskpack; needs compatibility mode for stage-specific surgical taskpacks."
+  ]
+}

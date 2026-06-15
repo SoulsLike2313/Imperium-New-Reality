@@ -1,0 +1,86 @@
+{
+  "schema_version": "mechanicus.capability_registry.v0_1",
+  "registry_status": "CANON_ACTIVE_SEED",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2",
+  "updated_at_utc": "2026-06-07T14:58:00Z",
+  "capabilities": [
+    {
+      "capability_id": "TOOL_REGISTRY_AUTHORITY",
+      "status": "PROVEN",
+      "owner_tool_id": "MECHANICUS_CLI",
+      "description": "Read and expose tool registry records."
+    },
+    {
+      "capability_id": "CAPABILITY_REGISTRY_AUTHORITY",
+      "status": "PROVEN",
+      "owner_tool_id": "MECHANICUS_CLI",
+      "description": "Read and expose capability records."
+    },
+    {
+      "capability_id": "JSON_STRUCTURE_VALIDATION",
+      "status": "PROVEN",
+      "owner_tool_id": "MECHANICUS_VALIDATE",
+      "description": "Parse JSON files using Python standard library."
+    },
+    {
+      "capability_id": "COMMAND_POLICY_REPORTING",
+      "status": "PROVEN",
+      "owner_tool_id": "MECHANICUS_CLI",
+      "description": "Expose command policy as data."
+    },
+    {
+      "capability_id": "DRY_RUN_TOOL_INVOCATION",
+      "status": "PROVEN",
+      "owner_tool_id": "MECHANICUS_COMMAND_GATEWAY",
+      "description": "Emit dry-run receipts for allowlisted tools without execution."
+    },
+    {
+      "capability_id": "REAL_TOOL_EXECUTION_GATEWAY",
+      "status": "BLOCKED",
+      "owner_tool_id": "MECHANICUS_COMMAND_GATEWAY",
+      "description": "Real execution is blocked until owner-approved sandbox and command policy exist."
+    },
+    {
+      "capability_id": "IDE_TOOL_BRIDGE",
+      "status": "PROVEN",
+      "owner_tool_id": "MECHANICUS_IDE_SHELL_BRIDGE",
+      "description": "Imperial IDE requests registry reads and dry-run tools through Mechanicus receipts."
+    },
+    {
+      "capability_id": "IMPERIAL_IDE_CONTROL_DASHBOARD",
+      "status": "PROVEN",
+      "owner_tool_id": "IMPERIAL_IDE_CONTROL_SHELL",
+      "description": "Read-only dashboards for governance, tasks, reports, receipts, tools, capabilities, extensions, and workspace."
+    },
+    {
+      "capability_id": "IMPERIAL_IDE_MENU_TUI",
+      "status": "PROVEN",
+      "owner_tool_id": "IMPERIAL_IDE_TUI",
+      "description": "Menu-based local TUI with a non-interactive smoke mode."
+    },
+    {
+      "capability_id": "IMPERIAL_IDE_WORKBENCH_SURFACE",
+      "status": "ACTIVE_CANDIDATE",
+      "owner_tool_id": "MECHANICUS_WORKBENCH_BRIDGE",
+      "description": "Owner-facing TUI and candidate GUI over live read-only shell data."
+    },
+    {
+      "capability_id": "IMPERIAL_IDE_WARP_HOT_ZONE",
+      "status": "ACTIVE_CANDIDATE",
+      "owner_tool_id": "MECHANICUS_WARP_BRIDGE",
+      "description": "Ignored isolated runtime with fake-green gate and release-manifest-only output."
+    },
+    {
+      "capability_id": "IMPERIAL_IDE_METAOS_ORCHESTRATION",
+      "status": "ACTIVE_CANDIDATE",
+      "owner_tool_id": "MECHANICUS_METAOS_BRIDGE",
+      "description": "Deterministic stub routing, one-shot servitor model, and candidate chronicles."
+    },
+    {
+      "capability_id": "ADMINISTRATUM_RELEASE_MANIFEST_GATE",
+      "status": "PROVEN",
+      "owner_tool_id": "ADMINISTRATUM_CANDIDATE_BUNDLE_GATE",
+      "description": "Return HELD or RELEASED from evidence while never promoting to kernel automatically."
+    }
+  ]
+}

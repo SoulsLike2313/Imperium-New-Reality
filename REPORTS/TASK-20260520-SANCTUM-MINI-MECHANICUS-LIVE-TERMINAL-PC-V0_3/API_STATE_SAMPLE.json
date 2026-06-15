@@ -1,0 +1,650 @@
+{
+  "schema_version": "SANCTUM_MINI_STATE_V0_3",
+  "generated_at_utc": "2026-05-20T11:26:54.361524Z",
+  "server": {
+    "status": "PASS",
+    "api_status": "PASS",
+    "active_organ": "MECHANICUS_AGENT",
+    "connection_quality": "PASS"
+  },
+  "repo": {
+    "repo_root": "E:\\IMPERIUM",
+    "head": "b84d32ac33bf921b0da6cc8a727dea1792008e67",
+    "branch": "master",
+    "worktree_state": "DIRTY",
+    "worktree_clean": false,
+    "git_status_short": [
+      "M IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/state/current_status.json",
+      "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-SANCTUM-MINI-ACTIONS-VISUAL-POLISH-PC-V0_2/",
+      "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1/",
+      "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-SANCTUM-MINI-MECHANICUS-LIVE-TERMINAL-PC-V0_3/",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_MINI/"
+    ]
+  },
+  "organs": [
+    {
+      "id": "MECHANICUS_AGENT",
+      "label_en": "Mechanicus",
+      "label_ru": "Механикус",
+      "status": "CONNECTED",
+      "data_class": "REAL"
+    },
+    {
+      "id": "ADMINISTRATUM_AGENT",
+      "label_en": "Administratum",
+      "label_ru": "Администратум",
+      "status": "PLACEHOLDER",
+      "data_class": "PLACEHOLDER"
+    },
+    {
+      "id": "OFFICIO_AGENTIS_AGENT",
+      "label_en": "Officio",
+      "label_ru": "Оффицио",
+      "status": "PLACEHOLDER",
+      "data_class": "PLACEHOLDER"
+    },
+    {
+      "id": "ASTRONOMICON_AGENT",
+      "label_en": "Astronomicon",
+      "label_ru": "Астрономикон",
+      "status": "PLACEHOLDER",
+      "data_class": "PLACEHOLDER"
+    },
+    {
+      "id": "INQUISITION_AGENT",
+      "label_en": "Inquisition",
+      "label_ru": "Инквизиция",
+      "status": "PLACEHOLDER",
+      "data_class": "PLACEHOLDER"
+    },
+    {
+      "id": "DOCTRINARIUM_AGENT",
+      "label_en": "Doctrinarium",
+      "label_ru": "Доктринариум",
+      "status": "PLACEHOLDER",
+      "data_class": "PLACEHOLDER"
+    },
+    {
+      "id": "STRATEGIUM_AGENT",
+      "label_en": "Strategium",
+      "label_ru": "Стратегиум",
+      "status": "PLACEHOLDER",
+      "data_class": "PLACEHOLDER"
+    },
+    {
+      "id": "SCHOLA_IMPERIALIS_AGENT",
+      "label_en": "Schola",
+      "label_ru": "Школа",
+      "status": "PLACEHOLDER",
+      "data_class": "PLACEHOLDER"
+    },
+    {
+      "id": "CUSTODES",
+      "label_en": "Custodes",
+      "label_ru": "Кустодес",
+      "status": "LOCKED",
+      "data_class": "LOCKED"
+    },
+    {
+      "id": "THRONE",
+      "label_en": "Throne",
+      "label_ru": "Трон",
+      "status": "LOCKED",
+      "data_class": "LOCKED"
+    }
+  ],
+  "mechanicus": {
+    "generated_at_utc": "2026-05-20T11:26:54.526286Z",
+    "status": "CONNECTED",
+    "connection_quality": "PASS",
+    "identity": {
+      "organ_id": "MECHANICUS_AGENT",
+      "display_name": "Mechanicus",
+      "profile_source": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\agent_profile.json",
+      "profile_version": "ORGAN_AGENT_PROFILE_BASE_HALF_V0_1",
+      "profile_task_id": "TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1"
+    },
+    "paths": {
+      "repo_root": "E:\\IMPERIUM",
+      "mechanicus_root": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT",
+      "tool_registry": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOL_REGISTRY\\TOOL_INDEX.json",
+      "runner": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py",
+      "reports_root": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS"
+    },
+    "tool_registry": {
+      "status": "CONNECTED",
+      "counts": {
+        "tools_total": 20,
+        "available_both": 7,
+        "available_vm2_only": 6,
+        "available_pc_only": 2,
+        "known_not_installed": 5
+      },
+      "top_unavailable_tools": [
+        {
+          "tool_id": "ruff",
+          "pc_status": "NOT_FOUND_ON_PC",
+          "combined_status": "AVAILABLE_VM2"
+        },
+        {
+          "tool_id": "jsonschema",
+          "pc_status": "NOT_FOUND_ON_PC",
+          "combined_status": "AVAILABLE_VM2"
+        },
+        {
+          "tool_id": "gitleaks",
+          "pc_status": "NOT_FOUND_ON_PC",
+          "combined_status": "KNOWN_NOT_INSTALLED"
+        },
+        {
+          "tool_id": "semgrep",
+          "pc_status": "NOT_FOUND_ON_PC",
+          "combined_status": "KNOWN_NOT_INSTALLED"
+        },
+        {
+          "tool_id": "bandit",
+          "pc_status": "NOT_FOUND_ON_PC",
+          "combined_status": "KNOWN_NOT_INSTALLED"
+        },
+        {
+          "tool_id": "duckdb",
+          "pc_status": "NOT_FOUND_ON_PC",
+          "combined_status": "KNOWN_NOT_INSTALLED"
+        }
+      ],
+      "generated_at_utc": "2026-05-19T22:06:55.328178Z"
+    },
+    "state_excerpt": {
+      "schema_version": "ORGAN_IDENTITY_RICH_STATUS_V0_1",
+      "task_id": "TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1",
+      "base_half_task_id": "TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1",
+      "organ": "MECHANICUS_AGENT",
+      "runner": "mechanicus_agent_runner.py",
+      "timestamp_utc": "2026-05-20T08:46:24.48878+03:00",
+      "status": "READY",
+      "visual_status": "PASS_RICH_OPERATOR_SHELL",
+      "supported_commands": [
+        "status",
+        "check",
+        "where",
+        "identity",
+        "tools",
+        "pack",
+        "shell",
+        "help",
+        "tool-list",
+        "validator-check",
+        "capability-map",
+        "script-receipt-check"
+      ],
+      "active_command_list": [
+        "status",
+        "check",
+        "where",
+        "identity",
+        "tools",
+        "pack",
+        "shell",
+        "help",
+        "tool-list",
+        "validator-check",
+        "capability-map",
+        "script-receipt-check"
+      ],
+      "identity_summary": "Tools, scripts, validators, registry intelligence, and premium Textual operator-console machinery.",
+      "paths": {
+        "organ_root": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT",
+        "runner": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py",
+        "launcher": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\LAUNCHERS\\run_mechanicus_pc.ps1",
+        "identity_baseline_md": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\IDENTITY_BASELINE.md",
+        "identity_profile_md": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\IDENTITY\\IDENTITY_PROFILE.md",
+        "identity_profile_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\IDENTITY\\identity_profile.json",
+        "lore_functions_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\IDENTITY\\lore_functions.json",
+        "domain_commands_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\IDENTITY\\domain_commands.json",
+        "profile_md": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\AGENT_PROFILE.md",
+        "profile_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\agent_profile.json",
+        "state_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\STATE\\current_status.json",
+        "check_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\REPORTS\\base_half_check_report.json",
+        "runtime_root": "E:\\IMPERIUM_CONTEXT\\LOCAL\\ORGAN_AGENT_IDENTITY_RICH_SHELL_RUNS\\TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\\ORGANS\\MECHANICUS_AGENT"
+      },
+      "git": {
+        "head": "b84d32ac33bf921b0da6cc8a727dea1792008e67",
+        "branch": "master",
+        "dirty": "M IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/state/current_status.json\n?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-SANCTUM-MINI-ACTIONS-VISUAL-POLISH-PC-V0_2/\n?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1/\n?? IMPERIUM_NEW_GENERATION/SANCTUM_MINI/"
+      },
+      "backend_truth": {
+        "head": "b84d32ac33bf921b0da6cc8a727dea1792008e67",
+        "branch": "master",
+        "dirty_state": "yes"
+      },
+      "latest_report_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\REPORTS\\base_half_check_report.json",
+      "latest_receipt_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\RECEIPTS\\domain_script_receipt_check_latest.json",
+      "tool_registry": {
+        "registry_source": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOL_REGISTRY\\TOOL_INDEX.json",
+        "registered_tool_count": 20,
+        "available_tool_count": 13,
+        "missing_tool_count": 7,
+        "preview": [
+          "bandit:KNOWN_NOT_INSTALLED",
+          "duckdb:KNOWN_NOT_INSTALLED",
+          "git:AVAILABLE_BOTH",
+          "gitleaks:KNOWN_NOT_INSTALLED",
+          "jq:AVAILABLE_BOTH",
+          "jsonschema:AVAILABLE_VM2"
+        ],
+        "warnings": []
+      },
+      "warn_error_blocker": "none",
+      "renderer_status": {
+        "renderer": "rich",
+        "rich_renderer_available": true,
+        "visual_status": "PASS_RICH_OPERATOR_SHELL",
+        "fallback_reason": []
+      },
+      "rich_renderer_available": true
+    },
+    "latest_reports": [
+      {
+        "task_id": "TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1",
+        "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1",
+        "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1",
+        "latest_report_md": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1\\SANCTUM_MINI_MECHANICUS_HOLDER_V0_1_REPORT.md",
+        "latest_report_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1\\sanctum_mini_mechanicus_holder_v0_1_report.json",
+        "task_receipt": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1\\TASK_RECEIPT.json",
+        "modified_at_utc": "2026-05-20T05:22:50.812932Z"
+      },
+      {
+        "task_id": "TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5",
+        "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5",
+        "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5",
+        "latest_report_md": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\MECHANICUS_TUI_UX_POLISH_V0_5_OWNER_REVIEW_REPORT.md",
+        "latest_report_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\mechanicus_tui_ux_polish_v0_5_owner_review_report.json",
+        "task_receipt": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\TASK_RECEIPT.json",
+        "modified_at_utc": "2026-05-20T04:11:21.501891Z"
+      },
+      {
+        "task_id": "TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4",
+        "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4",
+        "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4",
+        "latest_report_md": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4\\FAKE_SHELL_PROOF_REPORT_V0_4.md",
+        "latest_report_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4\\mechanicus_tui_visual_polish_v0_4_report.json",
+        "task_receipt": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4\\TASK_RECEIPT.json",
+        "modified_at_utc": "2026-05-20T03:36:50.015286Z"
+      },
+      {
+        "task_id": "TASK-20260520-MECHANICUS-TEXTUAL-FULLSCREEN-TUI-PC-V0_3",
+        "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TEXTUAL-FULLSCREEN-TUI-PC-V0_3",
+        "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TEXTUAL-FULLSCREEN-TUI-PC-V0_3",
+        "latest_report_md": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TEXTUAL-FULLSCREEN-TUI-PC-V0_3\\RAW_JSON_SUPPRESSION_REPORT.md",
+        "latest_report_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TEXTUAL-FULLSCREEN-TUI-PC-V0_3\\mechanicus_textual_tui_v0_3_report.json",
+        "task_receipt": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TEXTUAL-FULLSCREEN-TUI-PC-V0_3\\TASK_RECEIPT.json",
+        "modified_at_utc": "2026-05-20T03:00:21.462548Z"
+      },
+      {
+        "task_id": "TASK-20260520-MECHANICUS-VISUAL-SHELL-V0_2",
+        "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-VISUAL-SHELL-V0_2",
+        "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-VISUAL-SHELL-V0_2",
+        "latest_report_md": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-VISUAL-SHELL-V0_2\\RAW_JSON_SUPPRESSION_REPORT.md",
+        "latest_report_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-VISUAL-SHELL-V0_2\\mechanicus_visual_shell_v0_2_report.json",
+        "task_receipt": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-VISUAL-SHELL-V0_2\\TASK_RECEIPT.json",
+        "modified_at_utc": "2026-05-20T03:00:16.161025Z"
+      },
+      {
+        "task_id": "TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2",
+        "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2",
+        "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2",
+        "latest_report_md": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2\\WARN_ERROR_BLOCKER_REPORT.md",
+        "latest_report_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2\\mechanicus_tool_registry_integration_report.json",
+        "task_receipt": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2\\TASK_RECEIPT.json",
+        "modified_at_utc": "2026-05-20T02:12:26.409706Z"
+      }
+    ],
+    "latest_screenshots": [
+      {
+        "file_name": "mechanicus_raw_v0_5.svg",
+        "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\SCREENSHOTS\\mechanicus_raw_v0_5.svg",
+        "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5/SCREENSHOTS/mechanicus_raw_v0_5.svg",
+        "source_task_id": "TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5",
+        "modified_at_utc": "2026-05-20T03:49:54.447463Z"
+      },
+      {
+        "file_name": "mechanicus_check_v0_5.svg",
+        "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\SCREENSHOTS\\mechanicus_check_v0_5.svg",
+        "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5/SCREENSHOTS/mechanicus_check_v0_5.svg",
+        "source_task_id": "TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5",
+        "modified_at_utc": "2026-05-20T03:49:54.029572Z"
+      },
+      {
+        "file_name": "mechanicus_identity_v0_5.svg",
+        "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\SCREENSHOTS\\mechanicus_identity_v0_5.svg",
+        "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5/SCREENSHOTS/mechanicus_identity_v0_5.svg",
+        "source_task_id": "TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5",
+        "modified_at_utc": "2026-05-20T03:49:53.637241Z"
+      },
+      {
+        "file_name": "mechanicus_tools_v0_5.svg",
+        "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\SCREENSHOTS\\mechanicus_tools_v0_5.svg",
+        "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5/SCREENSHOTS/mechanicus_tools_v0_5.svg",
+        "source_task_id": "TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5",
+        "modified_at_utc": "2026-05-20T03:49:53.422294Z"
+      },
+      {
+        "file_name": "mechanicus_dashboard_v0_5.svg",
+        "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\SCREENSHOTS\\mechanicus_dashboard_v0_5.svg",
+        "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5/SCREENSHOTS/mechanicus_dashboard_v0_5.svg",
+        "source_task_id": "TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5",
+        "modified_at_utc": "2026-05-20T03:49:53.190116Z"
+      },
+      {
+        "file_name": "mechanicus_check_v0_4.svg",
+        "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4\\SCREENSHOTS\\mechanicus_check_v0_4.svg",
+        "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4/SCREENSHOTS/mechanicus_check_v0_4.svg",
+        "source_task_id": "TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4",
+        "modified_at_utc": "2026-05-20T03:27:38.373504Z"
+      },
+      {
+        "file_name": "mechanicus_identity_v0_4.svg",
+        "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4\\SCREENSHOTS\\mechanicus_identity_v0_4.svg",
+        "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4/SCREENSHOTS/mechanicus_identity_v0_4.svg",
+        "source_task_id": "TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4",
+        "modified_at_utc": "2026-05-20T03:27:33.595183Z"
+      },
+      {
+        "file_name": "mechanicus_raw_v0_4.svg",
+        "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4\\SCREENSHOTS\\mechanicus_raw_v0_4.svg",
+        "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4/SCREENSHOTS/mechanicus_raw_v0_4.svg",
+        "source_task_id": "TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4",
+        "modified_at_utc": "2026-05-20T03:27:28.99309Z"
+      },
+      {
+        "file_name": "mechanicus_tools_v0_4.svg",
+        "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4\\SCREENSHOTS\\mechanicus_tools_v0_4.svg",
+        "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4/SCREENSHOTS/mechanicus_tools_v0_4.svg",
+        "source_task_id": "TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4",
+        "modified_at_utc": "2026-05-20T03:27:24.443735Z"
+      },
+      {
+        "file_name": "mechanicus_dashboard_v0_4.svg",
+        "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4\\SCREENSHOTS\\mechanicus_dashboard_v0_4.svg",
+        "path_repo_relative": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4/SCREENSHOTS/mechanicus_dashboard_v0_4.svg",
+        "source_task_id": "TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4",
+        "modified_at_utc": "2026-05-20T03:27:20.102896Z"
+      }
+    ],
+    "latest_receipts": [
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1\\TASK_RECEIPT.json",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\TASK_RECEIPT.json",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4\\TASK_RECEIPT.json",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TEXTUAL-FULLSCREEN-TUI-PC-V0_3\\TASK_RECEIPT.json",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-VISUAL-SHELL-V0_2\\TASK_RECEIPT.json"
+    ],
+    "latest_artifacts": {
+      "latest_evidence_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1\\TASK_RECEIPT.json",
+      "latest_screenshot_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\SCREENSHOTS\\mechanicus_raw_v0_5.svg",
+      "latest_report_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1"
+    },
+    "warnings": [],
+    "errors": [],
+    "blocks": [],
+    "missing_data": [],
+    "commands": [
+      {
+        "id": "tui_dashboard",
+        "title_en": "Open Mechanicus TUI command",
+        "title_ru": "Команда запуска Mechanicus TUI",
+        "type": "command",
+        "value": "python E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py shell --once dashboard"
+      },
+      {
+        "id": "visual_status",
+        "title_en": "Run visual-status",
+        "title_ru": "Запуск visual-status",
+        "type": "command",
+        "value": "python E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py shell --once visual-status"
+      },
+      {
+        "id": "visual_tools",
+        "title_en": "Run visual-tools",
+        "title_ru": "Запуск visual-tools",
+        "type": "command",
+        "value": "python E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py shell --once visual-tools"
+      },
+      {
+        "id": "visual_check",
+        "title_en": "Run visual-check",
+        "title_ru": "Запуск visual-check",
+        "type": "command",
+        "value": "python E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py shell --once visual-check"
+      },
+      {
+        "id": "visual_identity",
+        "title_en": "Run visual-identity",
+        "title_ru": "Запуск visual-identity",
+        "type": "command",
+        "value": "python E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py shell --once visual-identity"
+      },
+      {
+        "id": "screenshot_all",
+        "title_en": "Run screenshot all",
+        "title_ru": "Запуск screenshot all",
+        "type": "command",
+        "value": "python E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py shell --screenshot all"
+      },
+      {
+        "id": "open_latest_report",
+        "title_en": "Open latest report path",
+        "title_ru": "Открыть путь к последнему отчёту",
+        "type": "path",
+        "value": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1"
+      },
+      {
+        "id": "open_screenshots",
+        "title_en": "Open screenshots folder/path",
+        "title_ru": "Открыть путь к скриншотам",
+        "type": "path",
+        "value": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\SCREENSHOTS\\mechanicus_raw_v0_5.svg"
+      },
+      {
+        "id": "show_api_json",
+        "title_en": "Show API JSON",
+        "title_ru": "Показать API JSON",
+        "type": "url",
+        "value": "/api/state"
+      }
+    ]
+  },
+  "global_truth": {
+    "connected_organs_count": 1,
+    "placeholders_count": 7,
+    "locked_count": 2,
+    "warnings_count": 1,
+    "errors_count": 0,
+    "blockers_count": 0,
+    "latest_evidence_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1\\TASK_RECEIPT.json",
+    "latest_screenshot_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\SCREENSHOTS\\mechanicus_raw_v0_5.svg",
+    "latest_report_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1",
+    "freshness_reference": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1",
+    "real_vs_placeholder": {
+      "real": [
+        "MECHANICUS_AGENT"
+      ],
+      "placeholder": [
+        "ADMINISTRATUM_AGENT",
+        "OFFICIO_AGENTIS_AGENT",
+        "ASTRONOMICON_AGENT",
+        "INQUISITION_AGENT",
+        "DOCTRINARIUM_AGENT",
+        "STRATEGIUM_AGENT",
+        "SCHOLA_IMPERIALIS_AGENT"
+      ],
+      "locked": [
+        "CUSTODES",
+        "THRONE"
+      ]
+    }
+  },
+  "actions": [
+    {
+      "id": "refresh_state",
+      "title_en": "Refresh State",
+      "title_ru": "Обновить состояние",
+      "type": "action",
+      "value": "refresh_state",
+      "execution": "ALLOWLISTED_API_ACTION"
+    },
+    {
+      "id": "mechanicus_visual_status",
+      "title_en": "Run visual-status",
+      "title_ru": "Запустить visual-status",
+      "type": "action",
+      "value": "mechanicus_visual_status",
+      "execution": "ALLOWLISTED_API_ACTION"
+    },
+    {
+      "id": "mechanicus_visual_tools",
+      "title_en": "Run visual-tools",
+      "title_ru": "Запустить visual-tools",
+      "type": "action",
+      "value": "mechanicus_visual_tools",
+      "execution": "ALLOWLISTED_API_ACTION"
+    },
+    {
+      "id": "mechanicus_visual_check",
+      "title_en": "Run visual-check",
+      "title_ru": "Запустить visual-check",
+      "type": "action",
+      "value": "mechanicus_visual_check",
+      "execution": "ALLOWLISTED_API_ACTION"
+    },
+    {
+      "id": "mechanicus_visual_identity",
+      "title_en": "Run visual-identity",
+      "title_ru": "Запустить visual-identity",
+      "type": "action",
+      "value": "mechanicus_visual_identity",
+      "execution": "ALLOWLISTED_API_ACTION"
+    },
+    {
+      "id": "mechanicus_screenshot_all",
+      "title_en": "Run screenshot all",
+      "title_ru": "Запустить screenshot all",
+      "type": "action",
+      "value": "mechanicus_screenshot_all",
+      "execution": "ALLOWLISTED_API_ACTION"
+    },
+    {
+      "id": "mechanicus_screenshot_command",
+      "title_en": "Show screenshot command",
+      "title_ru": "Показать команду screenshot",
+      "type": "action",
+      "value": "mechanicus_screenshot_command",
+      "execution": "DISPLAY_ONLY_SAFE_FALLBACK"
+    },
+    {
+      "id": "open_or_show_latest_report",
+      "title_en": "Open/show latest report path",
+      "title_ru": "Открыть/показать путь отчёта",
+      "type": "action",
+      "value": "open_or_show_latest_report",
+      "execution": "DISPLAY_ONLY_SAFE_FALLBACK"
+    },
+    {
+      "id": "open_or_show_screenshots_folder",
+      "title_en": "Open/show screenshots folder",
+      "title_ru": "Открыть/показать папку скриншотов",
+      "type": "action",
+      "value": "open_or_show_screenshots_folder",
+      "execution": "DISPLAY_ONLY_SAFE_FALLBACK"
+    },
+    {
+      "id": "show_api_state_json",
+      "title_en": "Show API state JSON",
+      "title_ru": "Показать API state JSON",
+      "type": "action",
+      "value": "show_api_state_json",
+      "execution": "ALLOWLISTED_API_ACTION"
+    },
+    {
+      "id": "show_api_mechanicus_json",
+      "title_en": "Show API mechanicus JSON",
+      "title_ru": "Показать API mechanicus JSON",
+      "type": "action",
+      "value": "show_api_mechanicus_json",
+      "execution": "ALLOWLISTED_API_ACTION"
+    },
+    {
+      "id": "legacy_open_tui_command",
+      "title_en": "Legacy TUI command",
+      "title_ru": "Legacy команда TUI",
+      "type": "display",
+      "value": "python E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py shell --once dashboard",
+      "execution": "LEGACY_DISPLAY_ONLY"
+    }
+  ],
+  "viewport": {
+    "active_organ": "MECHANICUS_AGENT",
+    "mode": "LIVE_TERMINAL_PRIMARY",
+    "live_terminal_allowlist": [
+      "status",
+      "tools",
+      "check",
+      "identity",
+      "where",
+      "help",
+      "raw",
+      "screenshot",
+      "clear"
+    ],
+    "mechanicus_latest_screenshot_url": "/api/mechanicus/screenshot/latest",
+    "fallback_note": "Default center tab is LIVE terminal; screenshot preview is in the EVIDENCE tab."
+  },
+  "micro_log": [
+    {
+      "timestamp_utc": "2026-05-20T11:26:54.361524Z",
+      "status": "PASS",
+      "message": "loaded repo truth"
+    },
+    {
+      "timestamp_utc": "2026-05-20T11:26:54.361524Z",
+      "status": "PASS",
+      "message": "loaded Mechanicus root"
+    },
+    {
+      "timestamp_utc": "2026-05-20T11:26:54.361524Z",
+      "status": "PASS",
+      "message": "loaded tool registry"
+    },
+    {
+      "timestamp_utc": "2026-05-20T11:26:54.361524Z",
+      "status": "PASS",
+      "message": "loaded Mechanicus state"
+    },
+    {
+      "timestamp_utc": "2026-05-20T11:26:54.361524Z",
+      "status": "PASS",
+      "message": "found Mechanicus report dirs: 8"
+    },
+    {
+      "timestamp_utc": "2026-05-20T11:26:54.361524Z",
+      "status": "PASS",
+      "message": "found screenshots: 10"
+    },
+    {
+      "timestamp_utc": "2026-05-20T11:26:54.361524Z",
+      "status": "PASS",
+      "message": "found receipts: 6"
+    },
+    {
+      "timestamp_utc": "2026-05-20T11:26:54.361524Z",
+      "status": "PASS",
+      "message": "API health ready"
+    }
+  ],
+  "truth_notes": [
+    "Only Mechanicus is connected with real data in V0.3.",
+    "Other organs are explicit placeholders.",
+    "Throne and Custodes are locked placeholders.",
+    "Actions are allowlisted API actions; no arbitrary shell execution.",
+    "Primary center focus must remain LIVE terminal viewport for the active organ."
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/CONTRACTS/SKILL_GROWTH/SKILL_GAP_RECORD.schema.json",
+  "title": "Skill Gap Record V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "task_id",
+    "source_failure_type",
+    "source_rerun_decision",
+    "skill_area",
+    "skill_gap_summary",
+    "evidence_ref",
+    "confidence",
+    "status",
+    "mode",
+    "no_production_learning_claim",
+    "created_at_utc"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "record_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "source_failure_type": {
+      "type": "string",
+      "enum": [
+        "TASK_ARCHITECTURE_FAILURE",
+        "SCOPE_AMBIGUITY",
+        "SKILL_GAP",
+        "TOOL_MISSING",
+        "VALIDATOR_FAILURE",
+        "VISUAL_MISMATCH",
+        "FAKE_GREEN_RISK",
+        "OWNER_DECISION_REQUIRED",
+        "FOUNDATION_LIMITATION"
+      ]
+    },
+    "source_rerun_decision": {
+      "type": "string",
+      "enum": [
+        "RERUN_ALLOWED",
+        "RERUN_REQUIRED",
+        "ASK_OWNER",
+        "ASK_ORGAN",
+        "BLOCKED",
+        "PASS_WITH_WARNINGS",
+        "PASS_STRICT"
+      ]
+    },
+    "skill_area": {
+      "type": "string",
+      "minLength": 2
+    },
+    "skill_gap_summary": {
+      "type": "string",
+      "minLength": 3
+    },
+    "evidence_ref": {
+      "type": "string",
+      "minLength": 3
+    },
+    "confidence": {
+      "type": "string",
+      "enum": [
+        "PROVED",
+        "STRONG",
+        "PLAUSIBLE",
+        "UNKNOWN",
+        "FAILED",
+        "FAKE_GREEN_RISK"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "FOUNDATION_SAMPLE",
+        "ADVISORY",
+        "PROPOSED",
+        "ACCEPTED",
+        "REJECTED"
+      ]
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "FOUNDATION_ONLY",
+        "ADVISORY_ONLY",
+        "PRODUCTION"
+      ]
+    },
+    "no_production_learning_claim": {
+      "type": "boolean"
+    },
+    "created_at_utc": {
+      "type": "string",
+      "minLength": 20
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-OWNER-APPROVED-TOOLS-REGISTRY-NORMALIZATION-PC-V0_1",
+  "generated_at_utc": "2026-05-25T21:26:12Z",
+  "records_count": 4,
+  "records": [
+    {
+      "owner_approved_id": "UTILITIES_7_ZIP",
+      "display_name": "7-Zip CLI",
+      "canonical_capability_id": "UTILITIES_7_ZIP",
+      "category": "UTILITIES",
+      "existing_card_found": true,
+      "existing_related_cards": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/UTILITIES_7_ZIP/capability_card.json"
+      ],
+      "action_taken": "already_present",
+      "reason_ru": "Каноническая карта уже существовала и совпадала с owner-approved ID.",
+      "install_wave_001_included": true,
+      "no_install_performed": true
+    },
+    {
+      "owner_approved_id": "MARKDOWNLINT_CLI",
+      "display_name": "markdownlint CLI",
+      "canonical_capability_id": "MARKDOWNLINT_CLI",
+      "category": "CODE_QUALITY",
+      "existing_card_found": false,
+      "existing_related_cards": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PRE_COMMIT/capability_card.json"
+      ],
+      "action_taken": "canonical_card_created",
+      "reason_ru": "Создана отдельная canonical card для owner-approved CLI ID, чтобы исключить ambiguity в install-wave.",
+      "install_wave_001_included": true,
+      "no_install_performed": true
+    },
+    {
+      "owner_approved_id": "CHECK_JSONSCHEMA_CLI",
+      "display_name": "check-jsonschema CLI",
+      "canonical_capability_id": "CHECK_JSONSCHEMA_CLI",
+      "category": "CODE_QUALITY",
+      "existing_card_found": false,
+      "existing_related_cards": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_JSONSCHEMA/capability_card.json",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-JSONSCHEMA.json"
+      ],
+      "action_taken": "canonical_card_created",
+      "reason_ru": "Существующие jsonschema-карты сохранены как related; добавлен отдельный canonical ID под owner-approved check-jsonschema CLI.",
+      "install_wave_001_included": true,
+      "no_install_performed": true
+    },
+    {
+      "owner_approved_id": "YAMLLINT_CLI",
+      "display_name": "yamllint",
+      "canonical_capability_id": "YAMLLINT_CLI",
+      "category": "CODE_QUALITY",
+      "existing_card_found": false,
+      "existing_related_cards": [],
+      "action_taken": "canonical_card_created",
+      "reason_ru": "Создана canonical card по owner-approved ID для строгой YAML lint линии будущих install waves.",
+      "install_wave_001_included": true,
+      "no_install_performed": true
+    }
+  ]
+}

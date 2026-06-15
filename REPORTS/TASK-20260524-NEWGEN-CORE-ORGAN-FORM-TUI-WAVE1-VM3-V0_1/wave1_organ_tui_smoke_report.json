@@ -1,0 +1,68 @@
+{
+  "schema_id": "newgen_wave1_organ_tui_smoke_report_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "doctrinarium_tui_smoke",
+      "command": "python3 IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TUI/doctrinarium_tui_v0_1.py --smoke",
+      "exit_code": 0,
+      "evidence": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/smoke_doctrinarium_tui.txt"
+    },
+    {
+      "name": "officio_tui_smoke",
+      "command": "python3 IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/officio_tui_v0_1.py --smoke",
+      "exit_code": 0,
+      "evidence": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/smoke_officio_tui.txt"
+    },
+    {
+      "name": "mechanicus_tui_smoke",
+      "command": "python3 IMPERIUM_NEW_GENERATION/MECHANICUS/TUI/mechanicus_tui_v0_1.py --smoke",
+      "exit_code": 0,
+      "evidence": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/smoke_mechanicus_tui.txt"
+    },
+    {
+      "name": "administratum_tui_smoke",
+      "command": "python3 IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/administratum_tui_v0_1.py --smoke",
+      "exit_code": 0,
+      "evidence": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/smoke_administratum_tui.txt"
+    },
+    {
+      "name": "doctrinarium_query_sample",
+      "command": "python3 IMPERIUM_NEW_GENERATION/DOCTRINARIUM/TOOLS/doctrinarium_organ_query_v0_1.py --sample",
+      "exit_code": 0,
+      "evidence": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/query_doctrinarium_sample.json"
+    },
+    {
+      "name": "officio_query_sample",
+      "command": "python3 IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_organ_query_v0_1.py --sample",
+      "exit_code": 0,
+      "evidence": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/query_officio_sample.json"
+    },
+    {
+      "name": "mechanicus_query_sample",
+      "command": "python3 IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_organ_query_v0_1.py --sample",
+      "exit_code": 0,
+      "evidence": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/query_mechanicus_sample.json"
+    },
+    {
+      "name": "administratum_query_sample",
+      "command": "python3 IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS/administratum_organ_query_v0_1.py --sample",
+      "exit_code": 0,
+      "evidence": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/query_administratum_sample.json"
+    },
+    {
+      "name": "json_parse_validation",
+      "command": "python3 -m json.tool <each required json>",
+      "exit_code": 0,
+      "evidence": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/json_parse_validation_report.json"
+    }
+  ],
+  "rich_status": {
+    "required": true,
+    "available": true,
+    "registry_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json",
+    "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/20260524_rich_probe_receipt.json"
+  },
+  "generated_at_utc": "2026-05-24T01:27:30Z"
+}

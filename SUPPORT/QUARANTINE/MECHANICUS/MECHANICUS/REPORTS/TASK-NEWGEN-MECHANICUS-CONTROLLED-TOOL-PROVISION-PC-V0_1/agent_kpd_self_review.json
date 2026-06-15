@@ -1,0 +1,34 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+    "agent_role": "Codex big-model execution partner",
+    "useful_outputs": [
+      "Controlled provision runner + install receipt builder + playbook",
+      "Evidence-backed status updates for approved code-quality tools",
+      "Compact Inquisition/Administratum/Ghost_Evolve artifacts"
+    ],
+    "waste_points": [
+      "Duplicate capability-card lineage (CAP-* and CODE_QUALITY_*) increases receipt fan-out."
+    ],
+    "missing_tools": [
+      "No existing dedicated controlled-provision runner before this task."
+    ],
+    "generated_tools_to_preserve": [
+      "mechanicus_controlled_provision_runner_v0_1.py",
+      "mechanicus_install_receipt_builder_v0_1.py"
+    ],
+    "recommended_script_absorption": [
+      "Absorb runner and install receipt builder into standard Mechanicus toolchain."
+    ],
+    "recommended_narrow_agent_profiles": [
+      "Mechanicus Controlled Provision Servitor (approved-install-only lane)."
+    ],
+    "future_prompt_improvements": [
+      "Include explicit capability-id map per approved package in dossier to reduce lookup ambiguity."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add checklist field that compares pre-commit hook hash before/after controlled provision tasks."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

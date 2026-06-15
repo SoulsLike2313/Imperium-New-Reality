@@ -1,0 +1,101 @@
+{
+  "schema_id": "REPORT_STATUS_NORMALIZATION_TABLE_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-PQG-EVIDENCE-MAP-UNIFIED-VM3-V0_1",
+  "generated_at_utc": "2026-05-22T18:54:31Z",
+  "canonical_statuses": [
+    "PASS",
+    "PASS_STRICT",
+    "PASS_WITH_WARN",
+    "WARN",
+    "BLOCK",
+    "PARTIAL",
+    "UNKNOWN",
+    "MISSING",
+    "FOUNDATION_ONLY",
+    "PENDING_POST_COMMIT",
+    "STALE"
+  ],
+  "mappings": [
+    {
+      "raw_status": "PASS",
+      "canonical_status": "PASS",
+      "freshness_hint": "CURRENT",
+      "proof_level_hint": "STRONG",
+      "no_fake_green_note": "PASS remains PASS only with linked evidence."
+    },
+    {
+      "raw_status": "PASS_STRICT",
+      "canonical_status": "PASS_STRICT",
+      "freshness_hint": "CURRENT",
+      "proof_level_hint": "STRONG",
+      "no_fake_green_note": "STRICT PASS still requires receipts and validator proof."
+    },
+    {
+      "raw_status": "PASS_WITH_WARN",
+      "canonical_status": "PASS_WITH_WARN",
+      "freshness_hint": "PARTIAL",
+      "proof_level_hint": "PARTIAL",
+      "no_fake_green_note": "Warnings remain explicit; do not upgrade to strict PASS."
+    },
+    {
+      "raw_status": "WARN",
+      "canonical_status": "WARN",
+      "freshness_hint": "PARTIAL",
+      "proof_level_hint": "PARTIAL",
+      "no_fake_green_note": "WARN is not acceptable as full proof success."
+    },
+    {
+      "raw_status": "BLOCK",
+      "canonical_status": "BLOCK",
+      "freshness_hint": "UNKNOWN",
+      "proof_level_hint": "WEAK",
+      "no_fake_green_note": "BLOCK is never re-labeled as PASS."
+    },
+    {
+      "raw_status": "PARTIAL",
+      "canonical_status": "PARTIAL",
+      "freshness_hint": "PARTIAL",
+      "proof_level_hint": "PARTIAL",
+      "no_fake_green_note": "PARTIAL keeps unresolved boundaries explicit."
+    },
+    {
+      "raw_status": "UNKNOWN",
+      "canonical_status": "UNKNOWN",
+      "freshness_hint": "UNKNOWN",
+      "proof_level_hint": "UNKNOWN",
+      "no_fake_green_note": "UNKNOWN stays UNKNOWN until direct evidence exists."
+    },
+    {
+      "raw_status": "MISSING",
+      "canonical_status": "MISSING",
+      "freshness_hint": "MISSING",
+      "proof_level_hint": "MISSING",
+      "no_fake_green_note": "Missing artifacts are never treated as green."
+    },
+    {
+      "raw_status": "FOUNDATION_ONLY",
+      "canonical_status": "FOUNDATION_ONLY",
+      "freshness_hint": "FOUNDATION_ONLY",
+      "proof_level_hint": "FOUNDATION",
+      "no_fake_green_note": "Foundation-only does not imply production proof."
+    },
+    {
+      "raw_status": "PENDING_POST_COMMIT",
+      "canonical_status": "PENDING_POST_COMMIT",
+      "freshness_hint": "FOUNDATION_ONLY",
+      "proof_level_hint": "FOUNDATION",
+      "no_fake_green_note": "Pending closure cannot be reported as complete PASS."
+    },
+    {
+      "raw_status": "STALE",
+      "canonical_status": "STALE",
+      "freshness_hint": "STALE",
+      "proof_level_hint": "PARTIAL",
+      "no_fake_green_note": "Stale evidence cannot be treated as current truth."
+    }
+  ],
+  "limitations": [
+    "Normalization is deterministic and foundation-oriented.",
+    "Unknown legacy variants default to UNKNOWN to avoid fake-green upgrades."
+  ]
+}

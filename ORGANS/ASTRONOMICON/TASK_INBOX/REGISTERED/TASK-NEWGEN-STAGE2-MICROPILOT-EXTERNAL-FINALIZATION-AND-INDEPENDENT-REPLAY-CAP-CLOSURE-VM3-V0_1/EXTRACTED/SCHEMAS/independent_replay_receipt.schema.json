@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "independent_replay_receipt",
+  "type": "object",
+  "required": [
+    "task_id",
+    "replay_mode",
+    "replay_verdict",
+    "workspace",
+    "head",
+    "comparison",
+    "cap_status",
+    "limitations"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "replay_mode": {
+      "type": "string"
+    },
+    "replay_verdict": {
+      "enum": [
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "FAIL",
+        "BLOCK"
+      ]
+    },
+    "workspace": {
+      "type": "string"
+    },
+    "head": {
+      "type": "string"
+    },
+    "comparison": {
+      "type": "object"
+    },
+    "cap_status": {
+      "enum": [
+        "CLOSED",
+        "NARROWED",
+        "CARRIED",
+        "BLOCKED"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1",
+    "agent_role": "CODEX_BIG_MODEL_SERVITOR",
+    "useful_outputs": [
+      "Root-scoped write gates in L2 actions",
+      "Gateway-first command wrapper with classified fallback",
+      "Canonical verdict normalization across action/server/UI/smoke",
+      "Executable schema gates and new schemas for registry/transfer/receipt/result",
+      "Read-only smoke default with mutation opt-in",
+      "Convergence report bundle with matrix/inventory/closure"
+    ],
+    "waste_points": [
+      "Initial raw boundary scan regex failed once and required rerun with safer substring scan",
+      "Some generated helper logic was duplicated between report scripts instead of centralized utility"
+    ],
+    "missing_tools": [
+      "A reusable in-repo schema-subset validator utility under shared tooling",
+      "A command-allowlist coverage scanner to auto-map L2 commands to gateway IDs"
+    ],
+    "generated_tools_to_preserve": [
+      "No standalone reusable script persisted; generation was inline and results committed as reports"
+    ],
+    "recommended_script_absorption": [
+      "Promote schema-subset validator from actions module into shared Scriptorium utility",
+      "Create shared read-only smoke harness wrapper for NewGen services"
+    ],
+    "recommended_narrow_agent_profiles": [
+      "NEWGEN_VERIFICATION_SPINE_CONVERGENCE_AGENT",
+      "NEWGEN_SCHEMA_GATE_ENFORCEMENT_AGENT",
+      "NEWGEN_READ_ONLY_SMOKE_GUARD_AGENT"
+    ],
+    "future_prompt_improvements": [
+      "Provide explicit commit/push policy in taskpack (required or optional)",
+      "Provide predefined command gateway coverage map for expected L2 commands",
+      "Provide canonical nested-detail status policy to fully remove WARN/BLOCK aliases"
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add gate requiring no legacy verdict aliases even in nested detail payloads",
+      "Add preflight gate checking that service startup does not create runtime artifacts in read-only smoke mode",
+      "Add checklist item for explicit fallback classification count in convergence matrix"
+    ],
+    "kpd_verdict": "PARTIAL"
+  }
+}

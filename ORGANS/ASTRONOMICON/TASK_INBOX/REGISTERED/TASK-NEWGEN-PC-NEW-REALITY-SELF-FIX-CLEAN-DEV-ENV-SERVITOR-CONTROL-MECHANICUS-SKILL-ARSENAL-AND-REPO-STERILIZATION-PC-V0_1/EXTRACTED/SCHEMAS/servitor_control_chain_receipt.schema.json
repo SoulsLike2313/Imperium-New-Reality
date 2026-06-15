@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "verdict",
+    "officio_runtime_contract_issued",
+    "launch_context_injected",
+    "drift_detected",
+    "agent_control_failure",
+    "correction_source"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string"
+    },
+    "officio_runtime_contract_issued": {
+      "type": "boolean"
+    },
+    "launch_context_injected": {
+      "type": "boolean"
+    },
+    "required_owner_facing_language": {
+      "type": "string"
+    },
+    "observed_owner_facing_language": {
+      "type": "string"
+    },
+    "drift_detected": {
+      "type": "boolean"
+    },
+    "agent_control_failure": {
+      "type": "boolean"
+    },
+    "correction_source": {
+      "type": "string"
+    },
+    "next_control_fix": {
+      "type": "string"
+    }
+  }
+}

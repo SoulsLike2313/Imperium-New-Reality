@@ -1,0 +1,17 @@
+{
+  "schema": "imperium.tool_passport.v0_1",
+  "tools": [
+    {
+      "tool_id": "inquisition.intelligence_pack_hygiene_gate",
+      "name": "Intelligence Pack Hygiene Gate",
+      "owner_organ": "INQUISITION",
+      "language": "python",
+      "path": "ORGANS/INQUISITION/REPORTING/inquisition_intelligence_pack_hygiene_gate_v0_1.py",
+      "purpose_ru": "Проверяет Intelligence Pack: обязательные индексы, SQLite, graph edges, отсутствие local/runtime/archive мусора.",
+      "purpose_en": "Checks Intelligence Pack required indexes, SQLite, graph edges, and absence of local/runtime/archive junk.",
+      "safety": "READ_ONLY",
+      "write_scope": ["optional_report_root"],
+      "validation_recipe": "Run gate on builder-produced smoke pack and expect PASS_INTELLIGENCE_PACK_HYGIENE."
+    }
+  ]
+}

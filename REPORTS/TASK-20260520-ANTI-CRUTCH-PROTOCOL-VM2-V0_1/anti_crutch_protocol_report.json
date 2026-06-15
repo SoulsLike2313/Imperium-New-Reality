@@ -1,0 +1,83 @@
+{
+  "schema_version": "ANTI_CRUTCH_PROTOCOL_REPORT_V0_1",
+  "task_id": "TASK-20260520-ANTI-CRUTCH-PROTOCOL-VM2-V0_1",
+  "generated_at_utc": "2026-05-20T00:36:57.339202+00:00",
+  "git_truth": {
+    "head": "849838ab32173909ebce9d715874732e875a654e",
+    "branch": "master",
+    "expected_base_head": "849838ab32173909ebce9d715874732e875a654e"
+  },
+  "officio_acceptance": {
+    "original_decision": "CLARIFICATION_REQUIRED",
+    "original_reasons": [
+      "missing required fields: allowed_scope"
+    ],
+    "normalized_decision": "ACCEPT_WITH_WARNINGS",
+    "normalized_reasons": [
+      "unsupported schema_version: TASK_CONTRACT_V0_1"
+    ]
+  },
+  "deliverables": {
+    "protocol_root": "IMPERIUM_NEW_GENERATION/TASK_CONTROL/ANTI_CRUTCH_PROTOCOL/",
+    "checker": "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/anti_crutch_check.py",
+    "examples_count": 7
+  },
+  "checker_validation": {
+    "py_compile": "PASS",
+    "help": "PASS",
+    "taskpack_scan_primary_verdict": "WARN_TASKPACK_ONLY_WORKAROUND",
+    "checks": {
+      "valid_officio_no_crutch": true,
+      "valid_mechanicus_no_crutch": true,
+      "valid_doctrinarium_no_crutch": true,
+      "invalid_language_promote_officio": true,
+      "invalid_tool_promote_mechanicus": true,
+      "invalid_tool_bypass_blocked": true,
+      "invalid_law_promote_doctrinarium": true,
+      "invalid_fake_green_promote_doctrinarium": true,
+      "invalid_fake_green_promote_inquisition": true
+    },
+    "all_checks_pass": true
+  },
+  "key_verdict_examples": {
+    "taskpack_only_language": [
+      "DEBT_PROMOTE_TO_OFFICIO",
+      "WARN_TASKPACK_ONLY_WORKAROUND"
+    ],
+    "random_tool_instruction": [
+      "BLOCKED_CANONICAL_AUTHORITY_BYPASSED",
+      "DEBT_PROMOTE_TO_MECHANICUS",
+      "WARN_TASKPACK_ONLY_WORKAROUND"
+    ],
+    "fake_green_prompt_only": [
+      "BLOCKED_CANONICAL_AUTHORITY_BYPASSED",
+      "DEBT_PROMOTE_TO_DOCTRINARIUM",
+      "DEBT_PROMOTE_TO_INQUISITION",
+      "DEBT_PROMOTE_TO_MECHANICUS",
+      "WARN_TASKPACK_ONLY_WORKAROUND"
+    ],
+    "canonical_officio": [
+      "NO_CRUTCH_FOUND"
+    ],
+    "canonical_mechanicus": [
+      "NO_CRUTCH_FOUND"
+    ],
+    "canonical_doctrinarium": [
+      "NO_CRUTCH_FOUND"
+    ]
+  },
+  "scope_boundary": {
+    "changed_paths": [
+      "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/anti_crutch_check.py",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-ANTI-CRUTCH-PROTOCOL-VM2-V0_1/",
+      "IMPERIUM_NEW_GENERATION/TASK_CONTROL/ANTI_CRUTCH_PROTOCOL/"
+    ],
+    "git_status_short": [
+      "?? IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/anti_crutch_check.py",
+      "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-ANTI-CRUTCH-PROTOCOL-VM2-V0_1/",
+      "?? IMPERIUM_NEW_GENERATION/TASK_CONTROL/ANTI_CRUTCH_PROTOCOL/"
+    ]
+  },
+  "anti_crutch_statement": "Recurring rules are routed to canonical owner artifacts and checker logic, not kept as taskpack-only notes.",
+  "verdict": "PASS_WITH_WARNINGS"
+}

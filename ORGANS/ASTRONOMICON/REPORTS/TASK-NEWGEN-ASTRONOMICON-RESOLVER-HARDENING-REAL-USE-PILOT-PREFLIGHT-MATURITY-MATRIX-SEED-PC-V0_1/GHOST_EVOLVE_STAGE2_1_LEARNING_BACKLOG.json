@@ -1,0 +1,42 @@
+[
+  {
+    "item_id": "LEARN-S21-001",
+    "issue": "Resolver previously missed admission receipt semantic validation.",
+    "owner_organ": "Astronomicon",
+    "matrix_hook": "ASTRONOMICON_TASK_ENTRY_MATURITY_MATRIX::ATM-02",
+    "future_task": "Add strict receipt schema checker for resolver preflight.",
+    "script_first_candidate": true
+  },
+  {
+    "item_id": "LEARN-S21-002",
+    "issue": "Root _TASKPACK_INBOX staging could be confused with canonical registered path.",
+    "owner_organ": "Inquisition",
+    "matrix_hook": "ASTRONOMICON_TASK_ENTRY_MATURITY_MATRIX::ATM-02",
+    "future_task": "Create dedicated cap checker for canonical path discipline.",
+    "script_first_candidate": true
+  },
+  {
+    "item_id": "LEARN-S21-003",
+    "issue": "Owner real-use intent needs durable preflight gate before runtime.",
+    "owner_organ": "Strategium",
+    "matrix_hook": "REAL_USE_PILOT_READINESS_MATRIX::RUP-01",
+    "future_task": "Run first manual preflight closure review with explicit pilot candidate.",
+    "script_first_candidate": false
+  },
+  {
+    "item_id": "LEARN-S21-004",
+    "issue": "Manual Logos pipeline needs machine-readable registration record.",
+    "owner_organ": "Administratum",
+    "matrix_hook": "MANUAL_LOGOS_PIPELINE_REGISTRATION_MATRIX::MLP-01",
+    "future_task": "Add schema + validator for manual pipeline registration receipts.",
+    "script_first_candidate": true
+  },
+  {
+    "item_id": "LEARN-S21-005",
+    "issue": "Future domains can be overclaimed without seed-status discipline.",
+    "owner_organ": "Strategium",
+    "matrix_hook": "IMPERIUM_MATURITY_TARGET_MATRIX::IMT-03",
+    "future_task": "Introduce seed-status checker over Matrix Spine index.",
+    "script_first_candidate": true
+  }
+]

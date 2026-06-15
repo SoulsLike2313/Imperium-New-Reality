@@ -1,0 +1,31 @@
+{
+  "schema_version": "imperium.command_receipt.v0_1",
+  "task_id": "TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3",
+  "contour": "PC",
+  "remote_commands_executed": false,
+  "destructive_commands_executed": false,
+  "commands": [
+    {"command": "git status --short", "exit_code": 0, "result": "2 modified registry files and one untracked registered task directory."},
+    {"command": "git status -sb", "exit_code": 0, "result": "master...origin/master; dirty registration-only worktree."},
+    {"command": "git rev-parse HEAD", "exit_code": 0, "result": "bc39e376668a9833a70d20e2687cdcf393929aa1"},
+    {"command": "git rev-parse origin/master", "exit_code": 0, "result": "bc39e376668a9833a70d20e2687cdcf393929aa1"},
+    {"command": "git branch --show-current", "exit_code": 0, "result": "master"},
+    {"command": "git log --oneline --decorate -10", "exit_code": 0, "result": "10 commits captured in LIVE_GIT_ADDENDUM_PC.md."},
+    {"command": "git ls-files", "exit_code": 0, "result_count": 8218, "output_sha256": "077e75077b3248d9808a4b1803e7e74ced2b9dcd5f8edb63e30fd09ffc85e3b3"},
+    {"command": "git ls-files -o --exclude-standard", "exit_code": 0, "result_count": 11, "output_sha256": "2c46a81d27698f362d0fa347fe0bea60ea1a7c2515a86b54655670752cc032d5"},
+    {"command": "git status --porcelain=v1 --ignored", "exit_code": 0, "result_count": 17, "output_sha256": "7af1e2f9053aa3c1f1e79dc0be62f2f07e034cbf1ded2a383a84e035537d3904"},
+    {"command": "Get-ChildItem -Recurse -File -Force (physical inventory, .git excluded)", "exit_code": 0, "result_count": 11642, "note": "PowerShell recursion did not use -FollowSymlink; no reparse points were found."},
+    {"command": "Get-ChildItem ORGANS -Directory with recursive file/contract/tool/report counts", "exit_code": 0, "result_count": 12},
+    {"command": "Get-ChildItem SUPPORT -Directory with recursive file counts", "exit_code": 0, "result": "COMMON_IMPERIUM_SUPPORT=637; QUESTIONABLE_OR_QUARANTINE=5159."},
+    {"command": "Get-FileHash SHA256 for duplicate-length candidate files", "exit_code": 0, "result": "327 duplicate groups; 1500 files; 274977578 estimated redundant bytes."},
+    {"command": "rg --files -g *MATRIX_SPINE* -g *matrix_spine*", "exit_code": 0, "result": "Matrix Spine exists under SUPPORT/COMMON_IMPERIUM_SUPPORT/ROOT_IMPORTED_COMMON_SUPPORT, not the route manifest root path."},
+    {"command": "rg contour_route_config|VM2 across Astronomicon and reports", "exit_code": 0, "result": "Found stale default path, live ignored config, legacy ignored-prefix config, and prior VM2 route receipts."},
+    {"command": "rg Emperor Passport and Constitution by file name and content", "exit_code": 0, "result": "No active artifact found; only current task references were present."},
+    {"command": "Get-Content task specification, acceptance gates, output requirements, manifests, organ participation contracts, and cited receipts", "exit_code": 0, "result": "Required authority and evidence sources read within repository root."}
+  ],
+  "limitations": [
+    "No network fetch was run; origin/master is the locally stored remote-tracking ref.",
+    "No VM2 or VM3 command was run.",
+    "No cleanup, move, delete, reset, canon admission, or core-document rewrite was run."
+  ]
+}

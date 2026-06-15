@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ORGAN_DIALOGUE_THREAD_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "thread_id",
+    "demo_task_id",
+    "foundation_only",
+    "live_autonomy",
+    "requests",
+    "responses",
+    "summary"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "ORGAN_DIALOGUE_THREAD_V0_1"
+    },
+    "thread_id": {
+      "type": "string"
+    },
+    "demo_task_id": {
+      "type": "string"
+    },
+    "foundation_only": {
+      "const": true
+    },
+    "live_autonomy": {
+      "const": false
+    },
+    "requests": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "request_id",
+          "target_organ",
+          "request_path"
+        ],
+        "properties": {
+          "request_id": {
+            "type": "string"
+          },
+          "target_organ": {
+            "type": "string"
+          },
+          "request_path": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "responses": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "response_id",
+          "request_id",
+          "organ_id",
+          "response_path",
+          "verdict",
+          "foundation_only"
+        ],
+        "properties": {
+          "response_id": {
+            "type": "string"
+          },
+          "request_id": {
+            "type": "string"
+          },
+          "organ_id": {
+            "type": "string"
+          },
+          "response_path": {
+            "type": "string"
+          },
+          "verdict": {
+            "type": "string"
+          },
+          "foundation_only": {
+            "const": true
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "request_count",
+        "response_count",
+        "warnings_count",
+        "last_event"
+      ],
+      "properties": {
+        "request_count": {
+          "type": "integer"
+        },
+        "response_count": {
+          "type": "integer"
+        },
+        "warnings_count": {
+          "type": "integer"
+        },
+        "last_event": {
+          "type": "string"
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

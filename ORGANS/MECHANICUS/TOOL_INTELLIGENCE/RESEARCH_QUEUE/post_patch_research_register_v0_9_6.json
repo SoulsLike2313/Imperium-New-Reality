@@ -1,0 +1,20 @@
+{
+  "schema": "imperium.mechanicus.research_register.v0_1",
+  "patch": "v0.9.6",
+  "topic": "Evidence Vault receipt verification + Data Atlas registration",
+  "inspirations": [
+    {
+      "name": "OCI Image Layout",
+      "use": "manifest/index/content-addressed pack layout"
+    },
+    {
+      "name": "SLSA provenance",
+      "use": "where/when/how artifact provenance fields"
+    },
+    {
+      "name": "in-toto attestations",
+      "use": "verifiable claims for completed execution step"
+    }
+  ],
+  "decision": "Keep lightweight JSON/SQLite/HTML now; register verified Vault pack before cleanup proposal."
+}

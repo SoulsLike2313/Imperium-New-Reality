@@ -1,0 +1,18 @@
+{
+  "tool_id": "STRATEGIUM_TASK_COST_CHECKER_V0_1",
+  "owner_organ": "MECHANICUS",
+  "subject_organ": "STRATEGIUM",
+  "status": "CANDIDATE_RUNTIME_READY",
+  "risk_status": "LOW_LOCAL_STANDARD_LIBRARY",
+  "command": "python3 ORGANS/STRATEGIUM/COST_GATE/strategium_task_cost_checker_v0_1.py --budget-card <TASK_BUDGET_CARD.json> --cost-receipt <TASK_COST_RECEIPT.json> --kpd-delta <KPD_DELTA_RECEIPT.json> --out <CHECKER_REPORT.json>",
+  "inputs": [
+    "Strategium task budget card JSON",
+    "Strategium task cost receipt JSON",
+    "Strategium KPD delta receipt JSON"
+  ],
+  "outputs": [
+    "Strategium cost checker report JSON"
+  ],
+  "validator_route": "MECHANICUS validates script replay; STRATEGIUM owns budget semantics; INQUISITION reviews fake-green claims.",
+  "evidence_path": "ORGANS/MECHANICUS/TOOLS/STRATEGIUM_TASK_COST_CHECKER_TOOL_CARD.json"
+}

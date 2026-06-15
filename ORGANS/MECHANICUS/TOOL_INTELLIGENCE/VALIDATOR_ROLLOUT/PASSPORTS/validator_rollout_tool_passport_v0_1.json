@@ -1,0 +1,34 @@
+{
+  "schema_id": "imperium.tool_passport.v0_2",
+  "tool_id": "validator_rollout",
+  "name": "Validator Rollout",
+  "version": "v0_1",
+  "owner_organ": "MECHANICUS",
+  "lang": "python",
+  "build_system": "stdlib",
+  "validators": [
+    {
+      "name": "syntax",
+      "exec": "python -m py_compile {repo}/ORGANS/MECHANICUS/TOOL_INTELLIGENCE/VALIDATOR_ROLLOUT/validator_rollout_v0_1.py",
+      "timeout_seconds": 10
+    },
+    {
+      "name": "dry_run",
+      "exec": "python {repo}/ORGANS/MECHANICUS/TOOL_INTELLIGENCE/VALIDATOR_ROLLOUT/validator_rollout_v0_1.py --repo {repo} --dry-run --quiet",
+      "timeout_seconds": 30
+    }
+  ],
+  "io_contract": {
+    "output_schema": "ORGANS/MECHANICUS/SCHEMAS/imperium_rollout_ledger_v0_1.schema.json"
+  },
+  "observability": {
+    "stdout": "rich",
+    "metrics": ["elapsed_ms", "passed", "failed", "timed_out", "errored", "skipped"]
+  },
+  "exec_mode": "static",
+  "owner_gated": true,
+  "capability_tags": ["orchestrator", "validator", "mechanicus", "ledger"],
+  "depends_on": ["passport_index_builder"],
+  "doctrine_ref": "ORGANS/DOCTRINARIUM/LAWS/MECHANICUS_PASSPORT_DOCTRINE_V0_2_RU.md",
+  "tool_path": "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/VALIDATOR_ROLLOUT/validator_rollout_v0_1.py"
+}

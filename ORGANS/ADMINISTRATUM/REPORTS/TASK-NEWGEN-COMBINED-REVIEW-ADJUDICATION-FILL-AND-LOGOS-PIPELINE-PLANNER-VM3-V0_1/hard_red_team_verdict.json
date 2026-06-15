@@ -1,0 +1,74 @@
+{
+  "task_id": "TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1",
+  "timestamp_utc": "2026-05-30T17:47:37Z",
+  "builder_claims": [
+    {
+      "claim_id": "C01",
+      "claim": "Combined review adjudication is now filled with Servitor, Mechanicus, Inquisitor and Speculum evidence.",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/COMBINED_REVIEW_ADJUDICATION_RECEIPT.json",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/review_input_inventory.json"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "claim": "Pipeline next-step decision is easier for Owner/Logos via compact planner and simple questions.",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/LOGOS_PIPELINE_PLANNER_CANDIDATE.json",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/OWNER_QUESTIONS_SIMPLE_RU.md"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "claim": "No clean PASS overclaim is made; surviving caps remain explicit.",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/COMBINED_REVIEW_ADJUDICATION_RECEIPT.json",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/efficiency_delta_receipt.json"
+      ]
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "A01",
+      "target_claim_id": "C01",
+      "attack": "Input review ZIPs may be missing or hash-mismatched, making slot filling fake.",
+      "result": "RESISTED",
+      "downgrade_needed": false,
+      "counter_evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/review_input_inventory.json"
+      ]
+    },
+    {
+      "attack_id": "A02",
+      "target_claim_id": "C02",
+      "attack": "Planner may still be too technical for Owner.",
+      "result": "PARTIAL",
+      "downgrade_needed": true,
+      "counter_evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/OWNER_QUESTIONS_SIMPLE_RU.md"
+      ],
+      "applied_downgrade": "KEEP_PASS_WITH_WARNINGS_UNTIL_OWNER_CONFIRMS"
+    },
+    {
+      "attack_id": "A03",
+      "target_claim_id": "C03",
+      "attack": "Task could hide runtime or WARP claims behind review language.",
+      "result": "RESISTED",
+      "downgrade_needed": false,
+      "counter_evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/ghost_evolve_entry_ack.json"
+      ]
+    }
+  ],
+  "downgrade_rules_applied": [
+    "KEEP_PASS_WITH_WARNINGS_UNTIL_OWNER_CONFIRMS",
+    "NO_CLEAN_PASS_WITHOUT_OWNER_LOGOS_ADJUDICATION"
+  ],
+  "caps_triggered": [
+    "CAP_LOGOS_ADJUDICATION_NOT_OWNER_ACCEPTED",
+    "CAP_NO_INDEPENDENT_REPLAY",
+    "CAP_WARP_CLAIMED_WITHOUT_UNLOCK"
+  ],
+  "final_verdict": "PASS_WITH_WARNINGS",
+  "notes": "Red-team confirms closure improvement without claiming strict PASS or runtime readiness."
+}

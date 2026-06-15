@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "taskpack_admission_regression_fixtures",
+  "type": "object",
+  "required": [
+    "task_id",
+    "fixture_set_verdict",
+    "fixtures"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "fixture_set_verdict": {
+      "enum": [
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "BLOCK"
+      ]
+    },
+    "fixtures": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Servitor Control Chain Receipt",
+  "type": "object",
+  "required": ["task_id", "owner_facing_language_required", "final_response_contract_checked"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "officio_contract_loaded": {"type": "boolean"},
+    "owner_facing_language_required": {"type": "string"},
+    "runtime_language_drift_observed": {"type": "boolean"},
+    "warnings": {"type": "array"},
+    "final_response_contract_checked": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}

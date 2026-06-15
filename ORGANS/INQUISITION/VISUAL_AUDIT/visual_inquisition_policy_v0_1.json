@@ -1,0 +1,21 @@
+{
+  "schema": "imperium.visual_inquisition_policy.v0_1",
+  "surface": "Playwright / Visual Inquisition",
+  "default_profile": "balanced",
+  "allowed_profiles": ["light", "balanced", "full"],
+  "output_root_default": "E:/_LOCAL_HANDOFF/SERVITOR_OUTPUTS/MEGA_PLAYWRIGHT_AUDIT_*",
+  "source_repo_evidence_writes": false,
+  "formats": {
+    "key_screenshots": { "default": "png", "purpose": "control frames where text clarity matters" },
+    "bulk_screenshots": { "default": "jpeg", "quality": 76, "purpose": "navigation sections and scroll tiles" },
+    "tables": { "default": "csv", "purpose": "navigation/action/pain/screenshot maps" },
+    "machine_truth": { "default": "json", "purpose": "API, git and browser logs" },
+    "owner_report": { "default": "markdown", "purpose": "human-readable audit summary" }
+  },
+  "safety": {
+    "arbitrary_shell": false,
+    "commit_push": false,
+    "delete_cleanup": false,
+    "safe_actions_only_by_default": true
+  }
+}

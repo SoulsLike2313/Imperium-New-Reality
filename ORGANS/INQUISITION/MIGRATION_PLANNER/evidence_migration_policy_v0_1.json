@@ -1,0 +1,53 @@
+{
+  "schema": "imperium.inquisition.evidence_migration_policy.v0_1",
+  "version": "0.1.0",
+  "default_mode": "plan_only",
+  "source_repo_is_not_evidence_storage": true,
+  "destructive_actions_default": false,
+  "safe_cache_delete_patterns": [
+    "**/__pycache__/**",
+    "**/*.pyc",
+    "**/.pytest_cache/**"
+  ],
+  "archive_extensions": [
+    ".zip",
+    ".7z",
+    ".rar",
+    ".tar",
+    ".tgz",
+    ".gz"
+  ],
+  "evidence_extensions": [
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".webp",
+    ".gif",
+    ".html",
+    ".trace.zip",
+    ".har"
+  ],
+  "fixture_markers": [
+    "/FIXTURES/",
+    "/fixtures/",
+    "/fixture_zips/",
+    "/TESTS/fixtures/"
+  ],
+  "taskpack_markers": [
+    "/TASK_INBOX/REGISTERED/",
+    "/CONTINUITY/PACKS/"
+  ],
+  "report_markers": [
+    "/REPORTS/",
+    "/reports/"
+  ],
+  "lanes": {
+    "PACK_TO_VAULT_CANDIDATE": "Candidate for sealed Evidence Vault pack.",
+    "OWNER_REVIEW_MOVE": "Move only via owner-reviewed patch.",
+    "OWNER_REVIEW_CLASSIFY": "Lifecycle classification required before action.",
+    "FIXTURE_ALLOWED_NEEDS_MANIFEST": "Can remain only with fixture manifest/source exception.",
+    "SAFE_CACHE_DELETE": "Can be deleted by explicit cache cleanup gate.",
+    "QUARANTINE_CANDIDATE": "Candidate for quarantine, not purge.",
+    "KEEP_SOURCE_REGISTER_FIXTURE": "Keep in source but register in Data Atlas."
+  }
+}

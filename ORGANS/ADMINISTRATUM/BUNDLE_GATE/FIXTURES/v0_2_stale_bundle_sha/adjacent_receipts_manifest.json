@@ -1,0 +1,28 @@
+{
+  "manifest_type": "adjacent_receipts_manifest",
+  "task_id": "FIXTURE-V0_2_STALE_BUNDLE_SHA",
+  "matrix_version": "0.2",
+  "adjacent_files": [
+    {
+      "path": "administratum_bundle_gate_v0_2_receipt.json",
+      "class_ids": [
+        "administratum_composition_receipt"
+      ],
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    },
+    {
+      "path": "bundle_file_inventory.json",
+      "class_ids": [
+        "bundle_manifest_and_file_inventory"
+      ],
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    },
+    {
+      "path": "sha256sums.txt",
+      "class_ids": [
+        "sha256_sums"
+      ],
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT"
+    }
+  ]
+}

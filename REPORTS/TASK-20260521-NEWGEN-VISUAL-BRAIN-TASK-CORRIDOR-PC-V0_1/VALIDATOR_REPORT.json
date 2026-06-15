@@ -1,0 +1,52 @@
+{
+  "schema_version": "0.1",
+  "task_id": "TASK-20260521-NEWGEN-VISUAL-BRAIN-TASK-CORRIDOR-PC-V0_1",
+  "generated_at_utc": "2026-05-21T21:14:02Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "required_file_exists",
+      "status": "PASS",
+      "details": "all required files exist"
+    },
+    {
+      "check_id": "json_parseability",
+      "status": "PASS",
+      "details": "json parse checks passed"
+    },
+    {
+      "check_id": "builder_run",
+      "status": "PASS",
+      "details": "builder generated state"
+    },
+    {
+      "check_id": "generated_state_exists",
+      "status": "PASS",
+      "details": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\VISUAL_BRAIN\\TASK_CORRIDOR_V0_1\\data\\visual_brain_task_corridor_state.generated.json"
+    },
+    {
+      "check_id": "state_shape_no_fake_green",
+      "status": "PASS",
+      "details": "state structure and truth-bound checks passed"
+    },
+    {
+      "check_id": "local_only_static_lab",
+      "status": "PASS",
+      "details": "local static lab has no external references"
+    },
+    {
+      "check_id": "forbidden_paths_not_in_changed_report",
+      "status": "PASS",
+      "details": "no forbidden paths in changed files report"
+    },
+    {
+      "check_id": "forbidden_paths_not_in_git_status",
+      "status": "PASS",
+      "details": "no forbidden paths in git status"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "builder_command": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\TOOLS\\VISUAL_BRAIN\\build_visual_brain_task_corridor_v0_1.py --repo-root E:\\IMPERIUM --task-id TASK-20260521-NEWGEN-VISUAL-BRAIN-TASK-CORRIDOR-PC-V0_1",
+  "no_fake_green_note": "Validator PASS/WARN proves bounded static/read-only corridor integrity only. It does not prove production Visual Brain or live autonomous organ dialogue."
+}

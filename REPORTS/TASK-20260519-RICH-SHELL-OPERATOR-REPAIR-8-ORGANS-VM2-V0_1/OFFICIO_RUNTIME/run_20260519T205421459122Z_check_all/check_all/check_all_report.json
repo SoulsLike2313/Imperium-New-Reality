@@ -1,0 +1,54 @@
+{
+  "checked_at_utc": "2026-05-19T20:54:21+00:00",
+  "verdict": "PASS",
+  "missing_files": [],
+  "invalid_json": [],
+  "settings_index_errors": [],
+  "language_contract_warnings": [],
+  "language_contract_errors": [],
+  "language_contract_details": {
+    "communication_contract_json": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/servitor_communication_contract.json",
+    "bootstrap_directive_json": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/officio_bootstrap_execution_directive.json",
+    "response_contract_md": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/SERVITOR_EXECUTOR_RESPONSE_CONTRACT.md",
+    "required_violation_codes": [
+      "WARN_RESPONSE_LANGUAGE_CONTRACT",
+      "FAIL_RESPONSE_CONTRACT"
+    ],
+    "communication_machine_rule": {
+      "response_shape": [
+        "STEP",
+        "BUNDLE",
+        "VERDICT",
+        "OWNER COMMENTS"
+      ],
+      "owner_live_commentary_language_after_officio_ack": "Russian",
+      "owner_final_comments_language_after_officio_ack": "Russian",
+      "machine_artifact_language": "English",
+      "owner_comment_lines": {
+        "min": 3,
+        "max": 4
+      },
+      "language_violation_codes": [
+        "WARN_RESPONSE_LANGUAGE_CONTRACT",
+        "FAIL_RESPONSE_CONTRACT"
+      ],
+      "style": "dry_strict_engineering"
+    },
+    "bootstrap_machine_rule": {
+      "ack_required_before_serious_work": true,
+      "owner_live_commentary_language_after_officio_ack": "Russian",
+      "owner_final_comments_language_after_officio_ack": "Russian",
+      "machine_artifact_language": "English",
+      "language_violation_codes": [
+        "WARN_RESPONSE_LANGUAGE_CONTRACT",
+        "FAIL_RESPONSE_CONTRACT"
+      ],
+      "ack_required_fields_extension": [
+        "owner_live_commentary_language_after_officio_ack",
+        "owner_final_comments_language_after_officio_ack",
+        "machine_artifact_language",
+        "language_violation_codes"
+      ]
+    }
+  }
+}

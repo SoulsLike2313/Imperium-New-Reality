@@ -1,0 +1,155 @@
+{
+  "inventory_type": "task_report_bundle_file_inventory",
+  "task_id": "FIXTURE-V0_2_MISSING_TASK_ID",
+  "timestamp_utc": "2026-06-04T16:14:43Z",
+  "report_dir": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/FIXTURES/v0_2_missing_task_id",
+  "bundle_path": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/FIXTURES/v0_2_missing_task_id/task_report_bundle.zip",
+  "bundle_sha256": "",
+  "included_file_count": 8,
+  "included_files": [
+    {
+      "path": "CAPABILITY_SPLIT_RECEIPT.json",
+      "size_bytes": 210,
+      "sha256": "79804e4f0f395329d6c76f5169507a6cb66ec36d89203c35e1f084ce59f7e3ed"
+    },
+    {
+      "path": "CLAIM_LEDGER.json",
+      "size_bytes": 173,
+      "sha256": "91f99b5e07b3f0c1c4c4ef1a204db1443d1a2182b2c59b7854205351b2cd2b94"
+    },
+    {
+      "path": "OFFICIO_LOCALIZATION_REFERENCE.json",
+      "size_bytes": 220,
+      "sha256": "e77c5530ba080c119bfdbb5414a61e88445ff5722419a3ba60b8fc891812d136"
+    },
+    {
+      "path": "RED_TEAM_VERDICT.json",
+      "size_bytes": 220,
+      "sha256": "806d8947a606100eef9b57986f455186bc2e88f7d7352c93ca2c7f92bed7e36a"
+    },
+    {
+      "path": "TASK_FOCUS_PACKET.json",
+      "size_bytes": 209,
+      "sha256": "ae4fcf529cf11a072eb63d5d839e7c722159abd26d5928caac917e2ce87541a9"
+    },
+    {
+      "path": "adjacent_receipts_manifest.json",
+      "size_bytes": 2743,
+      "sha256": "b49ab4892edbab3f4bb49b6d7f6e5454d88fef4ac77e08349d2342931cd89dcf"
+    },
+    {
+      "path": "empty.txt",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "no_ancient_mutation_receipt.json",
+      "size_bytes": 269,
+      "sha256": "12594002c379e6703c927d5b4839f80cdfb68287ba5b8ce4c022ae604868719d"
+    }
+  ],
+  "adjacent_self_reference_files": [
+    {
+      "path": "task_report_bundle.zip",
+      "class_ids": [],
+      "reason": "The bundle cannot include itself.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": false,
+      "sha256": ""
+    },
+    {
+      "path": "sha256sums.txt",
+      "class_ids": [
+        "sha256_sums"
+      ],
+      "reason": "Final sums record the final bundle hash and remain adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": ""
+    },
+    {
+      "path": "bundle_file_inventory.json",
+      "class_ids": [
+        "bundle_manifest_and_file_inventory"
+      ],
+      "reason": "Inventory records the final included file set and remains adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": "b81cdb6237729589a1d852f78bec7bd9d0c60baf97e482c6273c5c50d1d91df3"
+    },
+    {
+      "path": "administratum_bundle_gate_v0_2_receipt.json",
+      "class_ids": [
+        "administratum_composition_receipt"
+      ],
+      "reason": "Gate receipt records the final bundle hash and remains adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": false,
+      "sha256": ""
+    },
+    {
+      "path": "bundle_packager_receipt.json",
+      "class_ids": [],
+      "reason": "Packager receipt records the final bundle hash and remains adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": false,
+      "sha256": ""
+    },
+    {
+      "path": "commit_chain_receipt.json",
+      "class_ids": [
+        "commit_chain_identifiers"
+      ],
+      "reason": "Final commit identifiers have a natural self-reference limit.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": "ceab5d572c563d9f71f2527f1d2397b6ed0476b03218d4ab0bc36bbc5ba6e07e"
+    },
+    {
+      "path": "git_closure_receipt.json",
+      "class_ids": [
+        "commit_chain_identifiers",
+        "git_closure_and_remote_closure_proof",
+        "worktree_clean_or_explicit_cap_receipt"
+      ],
+      "reason": "Final clean-worktree proof is verified after push without rewriting committed receipts.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": "aafe7bc977249844c5e2a90c5bc72466ccf95e1d82b018df7e8ff3dedc7614bc"
+    },
+    {
+      "path": "remote_head_proof_receipt.json",
+      "class_ids": [
+        "git_closure_and_remote_closure_proof"
+      ],
+      "reason": "Exact origin/master equality is verified after push without rewriting committed receipts.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": false,
+      "sha256": ""
+    },
+    {
+      "path": "remote_closure_receipt.json",
+      "class_ids": [
+        "git_closure_and_remote_closure_proof"
+      ],
+      "reason": "Remote closure receipt is adjacent because final push proof is live-verified after commit.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": "ccbba8d09a2fb178bf879c2fee0990ee49a6220c80409c5ae0d751e3f4594b8e"
+    }
+  ],
+  "excluded_from_bundle_due_self_reference": [
+    "SELF_REFERENCE_LIMIT.md",
+    "administratum_bundle_gate_v0_2_receipt.json",
+    "bundle_file_inventory.json",
+    "bundle_packager_receipt.json",
+    "commit_chain_receipt.json",
+    "git_closure_receipt.json",
+    "missing_items_request.json",
+    "remote_closure_receipt.json",
+    "remote_head_proof_receipt.json",
+    "sha256sums.txt",
+    "task_report_bundle.zip"
+  ],
+  "authority_boundary": "composition_schema_only"
+}

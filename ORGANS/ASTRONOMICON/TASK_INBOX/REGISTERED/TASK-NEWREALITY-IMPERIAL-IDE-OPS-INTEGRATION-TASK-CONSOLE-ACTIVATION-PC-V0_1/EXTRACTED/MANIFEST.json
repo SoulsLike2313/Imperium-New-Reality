@@ -1,0 +1,232 @@
+{
+  "schema_version": "astronomicon.taskpack.v0_1",
+  "taskpack_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPS-INTEGRATION-TASK-CONSOLE-ACTIVATION-PC-V0_1",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPS-INTEGRATION-TASK-CONSOLE-ACTIVATION-PC-V0_1",
+  "title": "Imperial IDE OPS integration, bugfix, task console activation, and taskpack builder wiring on PC",
+  "created_from_contour": "PC",
+  "target_contour": "PC",
+  "registration_mode": "ASTRONOMICON_STAGE2_LOCAL_PC_TASKPACK_WITH_BUNDLED_SOURCE",
+  "execution_mode": "CONTROLLED_WRITE_WITH_VALIDATED_PUSH",
+  "mission_summary": "Integrate the bundled IMPERIUM_IDE_OPERATIONAL_V0_1 candidate engine into the current Imperial IDE. Patch known example bugs, preserve the correct OPS/ENGINE structure, add Astronomicon-compatible taskpack generation, wire Task Console, Taskpack Builder, Launch Card, Lifecycle, Receipts, and Git Closure into GUI/TUI/CLI, validate, commit, and push.",
+  "active_truth_scope": "IMPERIUM_NEW_REALITY_PC_CURRENT_ROOT_ONLY",
+  "bundled_source_archives": {
+    "IMPERIUM_IDE_OPERATIONAL_V0_1.zip": {
+      "bundled_path": "SOURCE_BUNDLES/IMPERIUM_IDE_OPERATIONAL_V0_1.zip",
+      "sha256": "d156a009e39dbf91fe9eedc23c298e527683cf066234b618c72ef9fb29961d01",
+      "size_bytes": 35628,
+      "file_count": 24,
+      "python_file_count": 12,
+      "top_level_entries": [
+        "IMPERIUM_IDE_OPERATIONAL_V0_1"
+      ],
+      "status": "CANDIDATE_INPUT_BUNDLE"
+    }
+  },
+  "remote_contours": {
+    "VM2": "OUT_OF_SCOPE",
+    "VM3": "OUT_OF_SCOPE"
+  },
+  "strategic_intent": {
+    "kernel": "Imperium New Reality is the kernel.",
+    "imperial_ide": "Imperial IDE must become the place where the Owner creates, registers, launches, tracks, validates, and closes tasks.",
+    "ops": "OPS is the operational task lifecycle engine: task console, builder, registration, launch card, dry-run lifecycle, receipts, bundle gate, and git closure.",
+    "mechanicus": "Mechanicus remains the tool and command validator. OPS must not bypass Mechanicus safety policy.",
+    "astronomicon": "Astronomicon remains the canonical task admission and registry authority.",
+    "administratum": "Administratum owns bundle gates, continuity, receipts, and closure.",
+    "owner_goal": "Stop hand-building taskpacks manually; begin creating tasks from inside Imperial IDE."
+  },
+  "source_context_to_consider": [
+    "ORGANS/IMPERIAL_IDE/SHELL/",
+    "ORGANS/IMPERIAL_IDE/WORKBENCH/",
+    "ORGANS/IMPERIAL_IDE/WARP/",
+    "ORGANS/IMPERIAL_IDE/METAOS/",
+    "ORGANS/MECHANICUS/",
+    "ORGANS/ASTRONOMICON/",
+    "REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2/",
+    "Owner decision: integrate OPS and fix known bugs, keep unsafe execution blocked"
+  ],
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "required_organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "organ_route": {
+    "DOCTRINARIUM": "OPS doctrine, Astronomicon taskpack schema compatibility, no overclaim boundaries",
+    "OFFICIO_AGENTIS": "owner-facing Russian final summary and usage guide",
+    "ASTRONOMICON": "live registration path, taskpack admission compatibility, launch card, registry",
+    "ADMINISTRATUM": "receipts, bundle gate, lifecycle closure, git push receipt, continuity",
+    "MECHANICUS": "policy precheck, dry-run gateway, validation center, command receipt safety",
+    "INQUISITION": "fake-green trap, unsafe execution block, schema validation downgrade",
+    "STRATEGIUM": "operator flow, task templates, next build ladder, KPD of inside-IDE tasking",
+    "SCHOLA_IMPERIALIS": "workflow lessons, task template library, reusable patterns"
+  },
+  "route_manifest_template": "TASK_ROUTE_MANIFEST_TEMPLATE.json",
+  "task_start_ack_template": "TASK_START_ACK_TEMPLATE.json",
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH_UTF8_NO_BOM_NO_CYRILLIC",
+    "canonical_repo_artifacts": "ENGLISH_UTF8_NO_BOM",
+    "bundled_binary_archives": {
+      "allowed": true,
+      "scope": "SOURCE_BUNDLES/*.zip",
+      "note": "Bundled ZIPs are candidate payload archives. Their internal language is handled during integration and not treated as taskpack root policy text."
+    },
+    "owner_facing_russian_runtime_output": {
+      "allowed": true,
+      "language": "RUSSIAN",
+      "encoding": "UTF8_NO_BOM",
+      "authority": "OFFICIO_AGENTIS",
+      "required_route": "OFFICIO_AGENTIS_OWNER_FACING_FINAL_RESPONSE",
+      "allowed_files": [
+        "REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPS-INTEGRATION-TASK-CONSOLE-ACTIVATION-PC-V0_1/FINAL_OWNER_SUMMARY_RU.md",
+        "ORGANS/IMPERIAL_IDE/OPS/RUN_FIRST_RU.md",
+        "ORGANS/IMPERIAL_IDE/DOCS/OPS_TASK_CONSOLE_USER_GUIDE_RU.md"
+      ],
+      "not_allowed_in_taskpack_root_files": true
+    },
+    "cyrillic_in_taskpack": {
+      "allowed": false,
+      "scope": "MANIFEST.json, TASK_SPEC.md, ACCEPTANCE_GATES.md, OUTPUT_REQUIREMENTS.md, TASK_ROUTE_MANIFEST_TEMPLATE.json, TASK_START_ACK_TEMPLATE.json",
+      "binary_bundles_exception": {
+        "allowed": true,
+        "scope": "SOURCE_BUNDLES/*.zip",
+        "reason": "Binary source archives are candidate payloads and are inventoried by receipts."
+      },
+      "owner_facing_russian_runtime_exception": {
+        "allowed": true,
+        "authority": "OFFICIO_AGENTIS",
+        "scope": "runtime owner-facing files only"
+      }
+    },
+    "localization_exception": {
+      "allowed": true,
+      "authority": "OFFICIO_AGENTIS",
+      "scope": "owner-facing runtime files only after Officio role entry",
+      "forbidden_scope": "taskpack internal root files"
+    }
+  },
+  "git_push_policy": {
+    "push_allowed": true,
+    "push_required_for_success": true,
+    "allowed_when": [
+      "source archive hash and inventory are recorded",
+      "OPS is imported under ORGANS/IMPERIAL_IDE/OPS only",
+      "known OPS bugs are fixed or exact blockers are recorded",
+      "Astronomicon-compatible taskpack generation smoke passes or exact blocker is recorded",
+      "GUI/TUI/CLI integrations smoke pass or exact blockers are recorded",
+      "all required outputs exist",
+      "JSON files parse successfully",
+      "created or modified Python files compile",
+      "OPS lifecycle smoke passes",
+      "real servitor execution remains blocked",
+      "live LLM backend remains disabled",
+      "unsafe shell remains blocked",
+      "no secret files or local operator configs are staged",
+      "git diff is inside allowed_write_scope",
+      "commit message includes task_id",
+      "post-push HEAD equals origin/master"
+    ],
+    "forbidden_push_cases": [
+      "changes outside allowed_write_scope",
+      "failed validation without explicit BLOCK verdict",
+      "secrets, credentials, or local operator configs staged",
+      "destructive cleanup or delete without owner batch approval",
+      "unrestricted real execution enabled",
+      "unsafe shell execution enabled",
+      "live LLM backend enabled with secrets",
+      "fake-green closure",
+      "VM2 or VM3 changes"
+    ],
+    "required_after_push_receipts": [
+      "commit_sha",
+      "origin_master_sha",
+      "head_equals_origin_master_after_push",
+      "git_status_after_push",
+      "pushed_files_summary"
+    ]
+  },
+  "owner_decisions_preapproved_for_this_task": {
+    "OD_PC_ONLY": "approved",
+    "OD_OPS_CANDIDATE_IMPORT": "approved",
+    "OD_KNOWN_BUG_FIXES": "approved",
+    "OD_ASTRONOMICON_COMPATIBLE_TASKPACK_MODE": "approved",
+    "OD_TASK_CONSOLE_ACTIVATION": "approved",
+    "OD_WORKBENCH_TUI_CLI_WIRING": "approved",
+    "OD_DRY_RUN_LIFECYCLE": "approved",
+    "OD_VALIDATED_PUSH": "approved"
+  },
+  "owner_decisions_not_approved_for_this_task": {
+    "OD_DELETE": "not approved",
+    "OD_MASS_MOVE": "not approved",
+    "OD_REMOTE_CONTOURS": "not approved",
+    "OD_REAL_SERVITOR_EXECUTION": "not approved",
+    "OD_LIVE_LLM_BACKEND_WITH_SECRETS": "not approved",
+    "OD_UNRESTRICTED_SHELL_EXECUTION": "not approved",
+    "OD_BACKGROUND_AUTOSTART_DAEMON": "not approved"
+  },
+  "allowed_write_scope": [
+    ".gitignore",
+    "AGENTS.md",
+    "ORGANS/IMPERIAL_IDE/**",
+    "ORGANS/MECHANICUS/**",
+    "ORGANS/ASTRONOMICON/**",
+    "ORGANS/ADMINISTRATUM/**",
+    "REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPS-INTEGRATION-TASK-CONSOLE-ACTIVATION-PC-V0_1/**"
+  ],
+  "runtime_paths_to_ignore": [
+    "ORGANS/IMPERIAL_IDE/OPS/STAGING/",
+    "ORGANS/IMPERIAL_IDE/OPS/RUNTIME/",
+    "ORGANS/IMPERIAL_IDE/OPS/runtime/",
+    "ORGANS/IMPERIAL_IDE/OPS/tmp/",
+    "ORGANS/IMPERIAL_IDE/OPS/generated_taskpacks/",
+    "ORGANS/IMPERIAL_IDE/OPS/receipts/runtime/"
+  ],
+  "forbidden_actions": [
+    "delete_files_without_owner_batch_approval",
+    "mass_move_core_files_without_owner_batch_approval",
+    "reset_hard",
+    "git_clean_fd",
+    "replace_existing_imperial_ide_shell_without_safe_bridge",
+    "enable_real_servitor_execution",
+    "enable_unrestricted_shell_execution",
+    "enable_live_llm_backend_with_secrets",
+    "start_background_daemon",
+    "remote_route_to_vm2",
+    "remote_route_to_vm3",
+    "push_outside_allowed_write_scope",
+    "push_failed_validation_outputs",
+    "push_dirty_runtime_or_secret_files",
+    "push_destructive_changes_without_owner_approval",
+    "claim_full_ide_complete",
+    "claim_real_task_execution_if_only_dry_run",
+    "fake_green_clean_pass_claim",
+    "rewrite_report_history"
+  ],
+  "primary_outputs": [
+    "OPS imported under ORGANS/IMPERIAL_IDE/OPS",
+    "Known OPS example bugs patched",
+    "Astronomicon-compatible taskpack builder mode",
+    "Imperial IDE CLI commands for task console and lifecycle",
+    "Workbench panel wiring for Task Console and Taskpack Builder",
+    "TUI operational task console activation",
+    "Live or dry-run Astronomicon registration mode with receipts",
+    "Launch Card viewer",
+    "Lifecycle dry-run execution path",
+    "Git closure panel and receipt",
+    "Safety receipts, validation receipts, commit and push"
+  ]
+}

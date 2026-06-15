@@ -1,0 +1,13 @@
+{
+  "task_id": "TASK-NEWGEN-PC-ADMINISTRATUM-BUNDLE-GATE-SCHEMA-VALIDATION-ANTI-FAKE-GREEN-REPLAY-PC-V0_1",
+  "verdict": "PASS_WITH_SELF_REFERENCE_LIMIT",
+  "branch": "master",
+  "worktree_clean": false,
+  "phase": "pre_final_commit_bundle_assembly",
+  "self_reference_limit": "Final clean worktree proof must be checked after the commit and push without rewriting this receipt.",
+  "required_final_commands": [
+    "git status --short --branch",
+    "git rev-parse HEAD",
+    "git ls-remote origin refs/heads/master"
+  ]
+}

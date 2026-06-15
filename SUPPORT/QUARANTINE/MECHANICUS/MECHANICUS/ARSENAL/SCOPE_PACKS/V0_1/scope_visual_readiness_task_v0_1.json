@@ -1,0 +1,107 @@
+{
+  "scope_id": "visual_readiness_task",
+  "version": "0.1",
+  "generated_at_utc": "2026-05-24T23:34:05Z",
+  "source_registry": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json",
+  "purpose": "Visual readiness only: detect/defer prerequisites and contracts without prototype creation.",
+  "target_task_types": [
+    "visual_readiness",
+    "visual_preflight",
+    "runtime_visual_gate_precheck"
+  ],
+  "canon_allowed": [],
+  "sandbox_allowed": [
+    "CAP-PLAYBOOK-VISUAL-SCREENSHOT-GATE",
+    "CAP-TOOL-NODE-NPM-NPX"
+  ],
+  "candidate_context_only": [
+    "CAP-VIS-PLAYWRIGHT-REGRESSION",
+    "EXAMPLES_VISUAL_GATE_EXAMPLE",
+    "LANGUAGES_HTML_CSS",
+    "LANGUAGES_JAVASCRIPT",
+    "LANGUAGES_TYPESCRIPT",
+    "UI_FRAMEWORKS_PLAIN_HTML_CSS_JS_COCKPIT",
+    "VISUAL_TESTING_PLAYWRIGHT",
+    "VISUAL_TESTING_RESPONSIVE_VIEWPORT_CHECKLIST",
+    "VISUAL_TESTING_SCREENSHOT_BASELINE_PRACTICE",
+    "VISUAL_TESTING_SCREENSHOT_MANIFEST",
+    "VISUAL_TESTING_STATIC_HTML_VISUAL_CHECK",
+    "VISUAL_TESTING_VISUAL_EVIDENCE_REPORT",
+    "VISUAL_TESTING_VISUAL_LAYOUT_CONTRACT"
+  ],
+  "owner_decision_required": [
+    "CLOUD_LLM_ADAPTERS_CLOUD_MODEL_ROUTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_CLOUD_RECEIPT_MODEL_CANDIDATE",
+    "CLOUD_LLM_ADAPTERS_COST_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_OPENAI_COMPATIBLE_API_ADAPTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_PRIVACY_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_SECRET_POLICY_GATE",
+    "LOCAL_LLM_LLAMACPP_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LM_STUDIO_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LOCAL_MODEL_RUNNER_RESERVED",
+    "LOCAL_LLM_MODEL_CAPABILITY_CARD_PATTERN",
+    "LOCAL_LLM_OLLAMA_RESERVED_CANDIDATE",
+    "LOCAL_LLM_OPENAI_COMPATIBLE_LOCAL_ENDPOINT_PATTERN"
+  ],
+  "forbidden": [
+    "UI_FRAMEWORKS_REACT",
+    "UI_FRAMEWORKS_VITE"
+  ],
+  "required_receipts": [
+    "cap-playbook-visual-screenshot-gate_receipt.json",
+    "cap-tool-node-npm-npx_receipt.json",
+    "cap-vis-playwright-regression_receipt.json",
+    "examples-visual-gate-example_validation_receipt.json",
+    "forbidden_capability_guard_report.json",
+    "inquisition_cleanliness_report.json",
+    "languages-html-css_validation_receipt.json",
+    "languages-javascript_validation_receipt.json",
+    "languages-typescript_validation_receipt.json",
+    "scope_pack_check_report.json",
+    "ui-frameworks-plain-html-css-js-cockpit_validation_receipt.json",
+    "ui-frameworks-react_validation_receipt.json",
+    "ui-frameworks-vite_validation_receipt.json",
+    "visual-testing-playwright_validation_receipt.json",
+    "visual-testing-responsive-viewport-checklist_validation_receipt.json",
+    "visual-testing-screenshot-baseline-practice_validation_receipt.json",
+    "visual-testing-screenshot-manifest_validation_receipt.json",
+    "visual-testing-static-html-visual-check_validation_receipt.json",
+    "visual-testing-visual-evidence-report_validation_receipt.json",
+    "visual-testing-visual-layout-contract_validation_receipt.json"
+  ],
+  "required_gates": [
+    "GATE-U00-GIT-TRUTH",
+    "GATE-U01-ROLE-ACK",
+    "GATE-U02-SCOPE-BOUNDARY",
+    "GATE-U04-EVIDENCE-RECEIPT",
+    "GATE-U05-STOP-CONDITIONS",
+    "GATE-U08-REPO-PURITY",
+    "GATE-U09-NO-FAKE-GREEN",
+    "GATE-U12-REPORT-OUTPUT-BUDGET",
+    "GATE-U13-PYTHON-TYPE-SAFETY",
+    "GATE-U14-WHOLE-REPO-SCOPE-RECON",
+    "GATE-U15-OPERATIONALITY-IMPACT",
+    "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+    "GATE-U20-AGENT-KPD-SELF-REVIEW",
+    "GATE-U21-COMMAND-CHUNKING"
+  ],
+  "warnings": [
+    "Playwright capability may be detected but remains deferred for this scope.",
+    "Visual readiness does not authorize runtime prototype execution."
+  ],
+  "examples_of_use": [
+    "Check Node/npm/npx presence and document status only",
+    "Review visual contracts/perf budget without launching prototypes"
+  ],
+  "future_promotion_candidates": [
+    "VISUAL_TESTING_VISUAL_LAYOUT_CONTRACT",
+    "VISUAL_TESTING_SCREENSHOT_BASELINE_PRACTICE"
+  ],
+  "forbidden_actions": [
+    "React/Vite project creation",
+    "Playwright browser install",
+    "visual prototype comparison",
+    "LLM/cloud activation"
+  ],
+  "last_generated_from_commit": "5d22657b2fe8a319c9a4636549c53bfcc2ffa119"
+}

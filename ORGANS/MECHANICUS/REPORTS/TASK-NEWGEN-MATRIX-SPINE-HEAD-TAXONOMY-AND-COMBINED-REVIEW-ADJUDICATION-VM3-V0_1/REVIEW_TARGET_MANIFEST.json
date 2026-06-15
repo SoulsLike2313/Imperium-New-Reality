@@ -1,0 +1,39 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1",
+  "head_taxonomy_manifest_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/HEAD_TAXONOMY_MANIFEST.json",
+  "review_target_head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+  "review_target_type": "IMPLEMENTATION",
+  "artifact_bundle_head": "e4b2c19e6c8aab875e53f086376e875b3a4afd2b",
+  "accepted_continuity_head": "6cc51091ad89238f97f5211ff6d59f0ae9ae53de",
+  "commit_urls": {
+    "review_target": "https://github.com/SoulsLike2313/Imperium-/commit/d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+    "artifact_bundle": "https://github.com/SoulsLike2313/Imperium-/commit/e4b2c19e6c8aab875e53f086376e875b3a4afd2b",
+    "accepted_continuity": "https://github.com/SoulsLike2313/Imperium-/commit/6cc51091ad89238f97f5211ff6d59f0ae9ae53de"
+  },
+  "reviewer_head_taxonomy_paths": {
+    "inquisitor": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/HEAD_TAXONOMY_MANIFEST.json",
+    "speculum": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/HEAD_TAXONOMY_MANIFEST.json"
+  },
+  "independent_replay": {
+    "runner": "SEPARATE_REPLAY_RUNNER",
+    "commands": [
+      "git cat-file -e d6768e53a8041acfbf23d6c44b80f8088d32bd92^{commit}",
+      "git cat-file -e e4b2c19e6c8aab875e53f086376e875b3a4afd2b^{commit}",
+      "git cat-file -e 6cc51091ad89238f97f5211ff6d59f0ae9ae53de^{commit}"
+    ]
+  },
+  "reviewer_instruction": "Inquisitor and Speculum must use this same manifest and same HEAD taxonomy reference.",
+  "caps_reviewers_must_apply": [
+    "CAP_REVIEWERS_USED_DIFFERENT_HEAD_TAXONOMY",
+    "CAP_DECLARED_TARGET_UNFETCHABLE",
+    "CAP_REVIEW_TARGET_TYPO_OR_HASH_MISMATCH",
+    "CAP_REVIEW_TARGET_NOT_SINGLE"
+  ],
+  "questions_for_inquisitor": [
+    "Есть ли семантическое расхождение verdict при едином review_target_head и общем taxonomy manifest?"
+  ],
+  "questions_for_speculum": [
+    "Есть ли технический обход cap-модели при общем taxonomy manifest?"
+  ],
+  "notes_for_logos": "Reviewers must consume one shared taxonomy manifest path and one review target head."
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "imperium.unclassified_files_report.v0_1",
+  "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+  "owner_organ": "ADMINISTRATUM",
+  "verdict": "PASS_WITH_WARNINGS",
+  "checked_evidence": [
+    "core_file_classifier_dry_run_v0_1.py is the canonical replay source for current unclassified top-level paths."
+  ],
+  "unclassified_seed_candidates": [
+    {"path": "legacy top-level directories outside ORGANS/SUPPORT/REPORTS", "reason": "Target shape is not physically migrated in V0.1."}
+  ],
+  "warnings": [
+    "This seed is intentionally conservative and does not claim complete semantic classification."
+  ],
+  "blockers": [],
+  "next_action": "Replay dry-run classifier and review UNKNOWN_WITH_REASON entries."
+}

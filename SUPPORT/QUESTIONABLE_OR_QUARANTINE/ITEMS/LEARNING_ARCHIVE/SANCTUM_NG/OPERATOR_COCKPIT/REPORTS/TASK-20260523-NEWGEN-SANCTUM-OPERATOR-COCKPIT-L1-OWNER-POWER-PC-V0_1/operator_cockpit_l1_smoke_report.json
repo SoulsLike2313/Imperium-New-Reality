@@ -1,0 +1,175 @@
+{
+  "schema_id": "OPERATOR_COCKPIT_L1_SMOKE_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1",
+  "generated_at_utc": "2026-05-23T20:09:56Z",
+  "verdict": "PASS",
+  "local_url": "http://127.0.0.1:8765/IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.html",
+  "steps": [
+    {
+      "step": "build_state",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "python",
+          "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\TOOLS\\operator_cockpit_l1_builder.py",
+          "--repo-root",
+          "E:\\IMPERIUM",
+          "--task-id",
+          "TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1",
+          "--report-dir",
+          "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\REPORTS\\TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1",
+          "--build-small-continuity-pack"
+        ],
+        "returncode": 0,
+        "stdout": "operator_cockpit_state=IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/DATA/operator_cockpit_l1_state.generated.json\noperator_cockpit_build_report=IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/REPORTS/TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1/operator_cockpit_l1_report.json",
+        "stderr": "",
+        "timeout": false
+      }
+    },
+    {
+      "step": "local_url_ready",
+      "status": "PASS",
+      "details": {
+        "url": "http://127.0.0.1:8765/IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.html"
+      }
+    },
+    {
+      "step": "screenshot_overview_1920x1080_en",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+          "--headless=new",
+          "--disable-gpu",
+          "--hide-scrollbars",
+          "--virtual-time-budget=5000",
+          "--user-data-dir=C:\\Users\\PC\\AppData\\Local\\Temp\\imperium_edge_profile_mrf9i64k",
+          "--window-size=1920,1080",
+          "--screenshot=E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\REPORTS\\TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1\\SCREENSHOTS\\overview_1920x1080_en.png",
+          "http://127.0.0.1:8765/IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.html"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "[11080:11004:0523/230947.360:ERROR:chrome\\browser\\task_manager\\providers\\fallback_task_provider.cc:126] Every renderer should have at least one task provided by a primary task provider. If a \"Renderer\" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/40528867.\n363618 bytes written to file E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\REPORTS\\TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1\\SCREENSHOTS\\overview_1920x1080_en.png",
+        "timeout": false
+      }
+    },
+    {
+      "step": "screenshot_overview_1920x1080_ru",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+          "--headless=new",
+          "--disable-gpu",
+          "--hide-scrollbars",
+          "--virtual-time-budget=5000",
+          "--user-data-dir=C:\\Users\\PC\\AppData\\Local\\Temp\\imperium_edge_profile_mrf9i64k",
+          "--window-size=1920,1080",
+          "--screenshot=E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\REPORTS\\TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1\\SCREENSHOTS\\overview_1920x1080_ru.png",
+          "http://127.0.0.1:8765/IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.html?lang=ru"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "[8020:14384:0523/230948.982:ERROR:chrome\\browser\\task_manager\\providers\\fallback_task_provider.cc:126] Every renderer should have at least one task provided by a primary task provider. If a \"Renderer\" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/40528867.\n365272 bytes written to file E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\REPORTS\\TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1\\SCREENSHOTS\\overview_1920x1080_ru.png",
+        "timeout": false
+      }
+    },
+    {
+      "step": "screenshot_evidence_diff_1920x2200_ru",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+          "--headless=new",
+          "--disable-gpu",
+          "--hide-scrollbars",
+          "--virtual-time-budget=5000",
+          "--user-data-dir=C:\\Users\\PC\\AppData\\Local\\Temp\\imperium_edge_profile_mrf9i64k",
+          "--window-size=1920,2200",
+          "--screenshot=E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\REPORTS\\TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1\\SCREENSHOTS\\evidence_diff_1920x2200_ru.png",
+          "http://127.0.0.1:8765/IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.html?lang=ru"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "[6640:1272:0523/230950.432:ERROR:chrome\\browser\\task_manager\\providers\\fallback_task_provider.cc:126] Every renderer should have at least one task provided by a primary task provider. If a \"Renderer\" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/40528867.\n1568698 bytes written to file E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\REPORTS\\TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1\\SCREENSHOTS\\evidence_diff_1920x2200_ru.png",
+        "timeout": false
+      }
+    },
+    {
+      "step": "screenshot_transfer_routes_1920x1500_ru",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+          "--headless=new",
+          "--disable-gpu",
+          "--hide-scrollbars",
+          "--virtual-time-budget=5000",
+          "--user-data-dir=C:\\Users\\PC\\AppData\\Local\\Temp\\imperium_edge_profile_mrf9i64k",
+          "--window-size=1920,1500",
+          "--screenshot=E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\REPORTS\\TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1\\SCREENSHOTS\\transfer_routes_1920x1500_ru.png",
+          "http://127.0.0.1:8765/IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.html?lang=ru"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "[15420:9388:0523/230952.770:ERROR:chrome\\browser\\task_manager\\providers\\fallback_task_provider.cc:126] Every renderer should have at least one task provided by a primary task provider. If a \"Renderer\" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/40528867.\n828449 bytes written to file E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\REPORTS\\TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1\\SCREENSHOTS\\transfer_routes_1920x1500_ru.png",
+        "timeout": false
+      }
+    },
+    {
+      "step": "screenshot_continuity_preview_1366x3200_ru",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+          "--headless=new",
+          "--disable-gpu",
+          "--hide-scrollbars",
+          "--virtual-time-budget=5000",
+          "--user-data-dir=C:\\Users\\PC\\AppData\\Local\\Temp\\imperium_edge_profile_mrf9i64k",
+          "--window-size=1366,3200",
+          "--screenshot=E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\REPORTS\\TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1\\SCREENSHOTS\\continuity_preview_1366x3200_ru.png",
+          "http://127.0.0.1:8765/IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.html?lang=ru"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "[15952:1784:0523/230954.594:ERROR:chrome\\browser\\task_manager\\providers\\fallback_task_provider.cc:126] Every renderer should have at least one task provided by a primary task provider. If a \"Renderer\" fallback task is shown, it is a bug. If you have repro steps, please file a new bug and tag it as a dependency of crbug.com/40528867.\n2111173 bytes written to file E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\REPORTS\\TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1\\SCREENSHOTS\\continuity_preview_1366x3200_ru.png",
+        "timeout": false
+      }
+    },
+    {
+      "step": "server_shutdown",
+      "status": "PASS",
+      "details": {
+        "port": 8765
+      }
+    },
+    {
+      "step": "validate_state",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "python",
+          "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\TOOLS\\operator_cockpit_l1_validator.py",
+          "--repo-root",
+          "E:\\IMPERIUM",
+          "--task-id",
+          "TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1",
+          "--report-dir",
+          "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\SANCTUM_NG\\OPERATOR_COCKPIT\\REPORTS\\TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1"
+        ],
+        "returncode": 0,
+        "stdout": "operator_cockpit_validator_verdict=PASS\noperator_cockpit_validator_report=IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/REPORTS/TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1/operator_cockpit_l1_validator_report.json",
+        "stderr": "",
+        "timeout": false,
+        "validator_verdict": "PASS"
+      }
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "screenshot_matrix_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/REPORTS/TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1/screenshot_matrix.json",
+  "claim_boundary": "READ_ONLY_OWNER_COCKPIT_L1",
+  "note": "If Edge is unavailable, screenshot capture degrades to WARN_SCREENSHOT_TOOL_UNAVAILABLE."
+}

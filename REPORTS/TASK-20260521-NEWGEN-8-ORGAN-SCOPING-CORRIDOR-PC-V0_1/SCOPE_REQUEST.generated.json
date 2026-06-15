@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "request_id": "SCOPE-REQ-TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0-1",
+  "task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+  "source": {
+    "contour": "PC",
+    "formation_record_path": "IMPERIUM_NEW_GENERATION/CONTRACTS/ASTRONOMICON/EXAMPLES/SAMPLE_TASK_FORMATION_RECORD_V0_1.json",
+    "task_kernel_path": "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/EXAMPLES/SAMPLE_TASK_KERNEL_OBJECT_V0_1.json",
+    "collector_mode": "FOUNDATION_V0_1"
+  },
+  "required_organs": [
+    "ASTRONOMICON",
+    "OFFICIO_AGENTIS",
+    "DOCTRINARIUM",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "scope_prompt": "Collect and merge 8-organ task scope in deterministic foundation mode. Use static/sample/stub packets only; do not claim live autonomous agent communication.",
+  "input_artifacts": [
+    "IMPERIUM_NEW_GENERATION/CONTRACTS/ASTRONOMICON/EXAMPLES/SAMPLE_TASK_FORMATION_RECORD_V0_1.json",
+    "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/EXAMPLES/SAMPLE_TASK_KERNEL_OBJECT_V0_1.json",
+    "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+  ],
+  "truth_policy": {
+    "no_fake_live_agent_claims": true,
+    "stub_label_required": true,
+    "allowed_source_types": [
+      "LIVE_AGENT_RESPONSE",
+      "STATIC_FILE",
+      "SAMPLE_PACKET",
+      "FOUNDATION_STUB",
+      "MISSING_IMPLEMENTATION_WARN"
+    ]
+  }
+}

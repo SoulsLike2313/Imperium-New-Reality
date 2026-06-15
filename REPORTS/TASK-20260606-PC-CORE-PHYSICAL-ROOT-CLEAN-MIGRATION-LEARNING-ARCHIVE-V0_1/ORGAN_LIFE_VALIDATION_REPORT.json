@@ -1,0 +1,182 @@
+{
+  "schema_version": "imperium.organ_life_validation_report.v0_1",
+  "task_id": "TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1",
+  "timestamp_utc": "2026-06-06T18:57:42Z",
+  "verdict": "PASS",
+  "organ_checks": [
+    {
+      "organ_id": "ADMINISTRATUM",
+      "root_path": "ORGANS/ADMINISTRATUM",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/ADMINISTRATUM",
+      "life_zone_exists": true,
+      "metadata_present": true,
+      "task_required_zone_checks": [
+        {
+          "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK",
+          "exists": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "organ_id": "ASTRONOMICON",
+      "root_path": "ORGANS/ASTRONOMICON",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/ASTRONOMICON",
+      "life_zone_exists": true,
+      "metadata_present": true,
+      "task_required_zone_checks": [],
+      "status": "PASS"
+    },
+    {
+      "organ_id": "CUSTODES",
+      "root_path": "ORGANS/CUSTODES",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/CUSTODES",
+      "life_zone_exists": true,
+      "metadata_present": true,
+      "task_required_zone_checks": [
+        {
+          "path": "ORGANS/CUSTODES/ORGAN_LIFE_AUDIT",
+          "exists": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "organ_id": "DOCTRINARIUM",
+      "root_path": "ORGANS/DOCTRINARIUM",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/DOCTRINARIUM",
+      "life_zone_exists": true,
+      "metadata_present": true,
+      "task_required_zone_checks": [],
+      "status": "PASS"
+    },
+    {
+      "organ_id": "INQUISITION",
+      "root_path": "ORGANS/INQUISITION",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/INQUISITION",
+      "life_zone_exists": true,
+      "metadata_present": true,
+      "task_required_zone_checks": [
+        {
+          "path": "ORGANS/INQUISITION/QUARANTINE_POLICY",
+          "exists": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "root_path": "ORGANS/MECHANICUS",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/MECHANICUS",
+      "life_zone_exists": true,
+      "metadata_present": true,
+      "task_required_zone_checks": [],
+      "status": "PASS"
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "root_path": "ORGANS/OFFICIO_AGENTIS",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/OFFICIO_AGENTIS",
+      "life_zone_exists": true,
+      "metadata_present": true,
+      "task_required_zone_checks": [],
+      "status": "PASS"
+    },
+    {
+      "organ_id": "SCHOLA_IMPERIALIS",
+      "root_path": "ORGANS/SCHOLA_IMPERIALIS",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/SCHOLA_IMPERIALIS",
+      "life_zone_exists": true,
+      "metadata_present": true,
+      "task_required_zone_checks": [
+        {
+          "path": "ORGANS/SCHOLA_IMPERIALIS/LEARNING",
+          "exists": true
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "root_path": "ORGANS/STRATEGIUM",
+      "root_exists": true,
+      "life_zone_path": "ORGANS/STRATEGIUM",
+      "life_zone_exists": true,
+      "metadata_present": true,
+      "task_required_zone_checks": [
+        {
+          "path": "ORGANS/STRATEGIUM/METRICS",
+          "exists": true
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "schema_checks": [
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/SCHEMAS/organ_card.schema.json",
+      "exists": true
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/SCHEMAS/organ_life_receipt.schema.json",
+      "exists": true
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/SCHEMAS/support_classification.schema.json",
+      "exists": true
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/SCHEMAS/quarantine_item.schema.json",
+      "exists": true
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/SCHEMAS/core_file_ownership_entry.schema.json",
+      "exists": true
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/SCHEMAS/core_self_validation_report.schema.json",
+      "exists": true
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/SCHEMAS/organ_metric.schema.json",
+      "exists": true
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/SCHEMAS/organ_matrix.schema.json",
+      "exists": true
+    }
+  ],
+  "template_checks": [
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/TEMPLATES/ORGAN_CARD_TEMPLATE.json",
+      "exists": true
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/TEMPLATES/ORGAN_LIFE_RECEIPT_TEMPLATE.json",
+      "exists": true
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/TEMPLATES/SUPPORT_CLASSIFICATION_TEMPLATE.json",
+      "exists": true
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/TEMPLATES/QUARANTINE_ITEM_TEMPLATE.json",
+      "exists": true
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/TEMPLATES/CORE_ALERT_TEMPLATE.json",
+      "exists": true
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "next_action": "Use this validator in post-work closure."
+}

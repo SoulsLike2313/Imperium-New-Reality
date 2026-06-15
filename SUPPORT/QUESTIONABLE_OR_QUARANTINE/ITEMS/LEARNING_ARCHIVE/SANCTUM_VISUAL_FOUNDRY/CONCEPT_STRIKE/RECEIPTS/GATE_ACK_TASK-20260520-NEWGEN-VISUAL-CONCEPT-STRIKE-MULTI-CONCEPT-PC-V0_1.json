@@ -1,0 +1,51 @@
+{
+  "task_id": "TASK-20260520-NEWGEN-VISUAL-CONCEPT-STRIKE-MULTI-CONCEPT-PC-V0_1",
+  "timestamp_utc": "2026-05-20T19:11:58Z",
+  "current_head": "4eace969b29f4fe2148920856e6734eb20aad364",
+  "gatepack_path": "C:\\Users\\PC\\Downloads\\TASK-20260520-NEWGEN-VISUAL-CONCEPT-STRIKE-MULTI-CONCEPT-PC-V0_1_TASKPACK.zip",
+  "gatepack_sha256": "B6F2DB74F116E681756A253992FF71779FC1A28D39CC80F4E900DB95708F1324",
+  "read_gates": [
+    "GATE-U00-GIT-TRUTH",
+    "GATE-U01-ROLE-ACK",
+    "GATE-U02-SCOPE-BOUNDARY",
+    "GATE-U04-EVIDENCE-RECEIPT",
+    "GATE-U05-STOP-CONDITIONS",
+    "GATE-U08-REPO-PURITY",
+    "GATE-U09-NO-FAKE-GREEN",
+    "GATE-U12-REPORT-OUTPUT-BUDGET",
+    "GATE-U16-BILINGUAL-UI",
+    "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+    "GATE-U20-AGENT-KPD-SELF-REVIEW",
+    "GATE-U21-COMMAND-CHUNKING"
+  ],
+  "accepted_stop_conditions": [
+    "Any touched path appears outside IMPERIUM_NEW_GENERATION.",
+    "Concepts become near-identical recolors without composition differences.",
+    "Required screenshot pairs per concept cannot be produced.",
+    "Comparison matrix or owner selection guide cannot be produced.",
+    "Task drifts into final implementation claims."
+  ],
+  "scope_boundary": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\**",
+  "touched_paths": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/CONCEPT_STRIKE/**",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/PLAYWRIGHT/capture_concept_strike.mjs"
+  ],
+  "forbidden_paths": [
+    "ORGANS/**",
+    "SANCTUM/**",
+    "IMPERIUM_TEST_VERSION/**",
+    "VM2 paths"
+  ],
+  "expected_receipts": [
+    "CONCEPT_STRIKE/REPORTS/validation_report.json",
+    "CONCEPT_STRIKE/REPORTS/comparison_matrix.md",
+    "CONCEPT_STRIKE/REPORTS/owner_selection_guide_ru.md",
+    "CONCEPT_STRIKE/REPORTS/OWNER_REPORT_RU.md",
+    "CONCEPT_STRIKE/RECEIPTS/FINAL_RECEIPT.json"
+  ],
+  "repo_recon_required": false,
+  "script_absorption_required": true,
+  "clarification_needed": "None",
+  "verdict": "PASS"
+}
+

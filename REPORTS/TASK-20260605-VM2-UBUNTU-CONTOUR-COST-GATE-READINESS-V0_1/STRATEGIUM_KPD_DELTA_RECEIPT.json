@@ -1,0 +1,14 @@
+{
+  "schema_version": "strategium.kpd_delta_receipt.v0_1",
+  "task_id": "TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1",
+  "kpd_before": "VM2 contour readiness and task cost were not represented by a local Strategium gate.",
+  "kpd_after": "VM2 readiness, compatibility, and task cost now have compact receipts plus a replayable Strategium checker.",
+  "kpd_delta": "Future tasks can record budget class, unknown metrics, scope expansion, and next budget recommendation cheaply.",
+  "verdict": "PASS_WITH_WARNINGS",
+  "evidence_paths": [
+    "ORGANS/STRATEGIUM/COST_GATE/TASK_BUDGET_CONTRACT_V0_1.md",
+    "ORGANS/STRATEGIUM/COST_GATE/strategium_task_cost_checker_v0_1.py",
+    "REPORTS/TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1/STRATEGIUM_TASK_COST_RECEIPT.json"
+  ],
+  "next_route": "TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-HARDENING-V0_2"
+}

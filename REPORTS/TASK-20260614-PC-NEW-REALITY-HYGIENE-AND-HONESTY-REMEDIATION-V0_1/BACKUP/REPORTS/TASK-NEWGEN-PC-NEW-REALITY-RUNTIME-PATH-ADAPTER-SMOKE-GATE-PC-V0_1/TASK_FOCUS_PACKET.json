@@ -1,0 +1,36 @@
+{
+    "task_id":  "TASK-NEWGEN-PC-NEW-REALITY-RUNTIME-PATH-ADAPTER-SMOKE-GATE-PC-V0_1",
+    "timestamp_utc":  "2026-06-03T10:56:57Z",
+    "task_intent":  "Prove New Reality can operate as active local root; create receipts only inside New Reality; identify direct external path dependencies and narrow adapter plan.",
+    "allowed_scope":  [
+                          "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY mutation",
+                          "E:/IMPERIUM read-only proof/inspection because taskpack grants it"
+                      ],
+    "forbidden_scope":  [
+                            "VM2 sync",
+                            "VM3 sync",
+                            "Throne provisioning",
+                            "remote creation",
+                            "remote push",
+                            "deletion/cleanup outside New Reality",
+                            "broad historical path rewrite"
+                        ],
+    "required_outputs_checked":  [
+                                     "pc_new_reality_truth_probe.json",
+                                     "new_reality_root_smoke_receipt.json",
+                                     "scope_lock_validation_receipt.json",
+                                     "ancient_empire_no_mutation_receipt.json",
+                                     "external_path_reference_scan.json",
+                                     "runtime_critical_path_dependency_list.json",
+                                     "path_adapter_plan.md",
+                                     "organ_read_smoke_receipt.json",
+                                     "write_probe_receipt.json",
+                                     "git_closure_receipt.json",
+                                     "RED_TEAM_VERDICT.json",
+                                     "final_owner_summary_ru.md",
+                                     "sha256sums.txt",
+                                     "task_report_bundle.zip"
+                                 ],
+    "evidence_boundary":  "PC-local filesystem/git evidence only; no remote/VM claim.",
+    "verdict_policy":  "PASS_WITH_WARNINGS allowed locally because smoke gate passes but runtime-critical path candidates remain and push is forbidden."
+}

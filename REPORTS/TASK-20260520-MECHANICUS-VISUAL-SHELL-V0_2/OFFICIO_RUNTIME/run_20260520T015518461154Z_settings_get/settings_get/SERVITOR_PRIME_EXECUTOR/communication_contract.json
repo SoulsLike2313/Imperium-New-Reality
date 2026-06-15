@@ -1,0 +1,77 @@
+{
+  "setting_id": "SET-COMM-SERVITOR-V0_1",
+  "title": "Servitor Communication Contract",
+  "version": "v0_1",
+  "state": "ACTIVE",
+  "scope": "owner-facing final response and execution dialogue",
+  "applies_to_roles": [
+    "SERVITOR"
+  ],
+  "applies_to_modes": [
+    "EXECUTOR"
+  ],
+  "machine_rule": {
+    "response_shape": [
+      "STEP",
+      "BUNDLE",
+      "VERDICT",
+      "OWNER COMMENTS"
+    ],
+    "authority_chain": [
+      "OFFICIO_BOOTSTRAP_EXECUTION_DIRECTIVE",
+      "LANGUAGE_EXECUTION_CONTRACT",
+      "ROLE_SETTINGS_ACK_PROTOCOL",
+      "SERVITOR_EXECUTOR_RESPONSE_CONTRACT"
+    ],
+    "bootstrap_execution_directive_ref": "SETTINGS_REGISTRY/communication/OFFICIO_BOOTSTRAP_EXECUTION_DIRECTIVE.md",
+    "language_execution_contract_ref": "SETTINGS_REGISTRY/communication/LANGUAGE_EXECUTION_CONTRACT.md",
+    "role_settings_ack_protocol_ref": "RESPONSE_CONTRACTS/ROLE_SETTINGS_ACK_PROTOCOL.md",
+    "owner_live_commentary_language_after_officio_ack": "Russian",
+    "owner_final_comments_language_after_officio_ack": "Russian",
+    "machine_artifact_language": "English",
+    "technical_identifiers_language": "English",
+    "owner_comment_lines": {
+      "min": 3,
+      "max": 4
+    },
+    "language_violation_codes": [
+      "WARN_RESPONSE_LANGUAGE_CONTRACT",
+      "FAIL_RESPONSE_CONTRACT"
+    ],
+    "authority_violation_codes": [
+      "BLOCKED_OFFICIO_ACK_MISSING",
+      "BLOCKED_ROLE_PACK_AUTHORITY_MISSING",
+      "WARN_TASKPACK_ONLY_WORKAROUND_DETECTED"
+    ],
+    "violation_codes": [
+      "WARN_RESPONSE_LANGUAGE_CONTRACT",
+      "FAIL_RESPONSE_CONTRACT",
+      "BLOCKED_OFFICIO_ACK_MISSING",
+      "BLOCKED_ROLE_PACK_AUTHORITY_MISSING",
+      "WARN_TASKPACK_ONLY_WORKAROUND_DETECTED"
+    ],
+    "style": "dry_strict_engineering"
+  },
+  "human_summary": "Servitor uses compact, strict outputs without fake completion phrasing and enforces Officio language authority after role/settings ACK.",
+  "acceptance_tests": [
+    "Final response contains only required sections.",
+    "Owner comments are short Russian lines.",
+    "After Officio ACK, live owner-facing commentary is Russian.",
+    "Technical artifacts remain English.",
+    "Violation codes exist for language/contract breaches.",
+    "Authority chain references are present in role pack outputs."
+  ],
+  "evidence_required": [
+    "RESPONSE_CONTRACTS/SERVITOR_EXECUTOR_RESPONSE_CONTRACT.md",
+    "RESPONSE_CONTRACTS/ROLE_SETTINGS_ACK_PROTOCOL.md",
+    "SETTINGS_REGISTRY/communication/LANGUAGE_EXECUTION_CONTRACT.md",
+    "EXAMPLES/valid_final_responses/servitor_valid_response.txt"
+  ],
+  "dependencies": [
+    "SCHEMAS/response_contract.schema.json"
+  ],
+  "conflicts_with": [],
+  "supersedes": [],
+  "rollback_plan": "Restore previous response contract and flag this setting DEPRECATED.",
+  "owner_approval_required": true
+}

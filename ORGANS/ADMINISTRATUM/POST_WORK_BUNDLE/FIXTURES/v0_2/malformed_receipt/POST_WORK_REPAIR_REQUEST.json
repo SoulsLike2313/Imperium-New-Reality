@@ -1,0 +1,42 @@
+{
+  "schema_version": "post_work.repair_request.v0_2",
+  "task_id": "FIXTURE-MALFORMED_RECEIPT",
+  "repair_request_id": "REPAIR-FIXTURE-MALFORMED_RECEIPT-001",
+  "created_at_utc": "2026-06-05T17:19:20Z",
+  "blocked_verdict": "POST_WORK_BUNDLE_SCHEMA_BLOCK",
+  "owner_organ": "ADMINISTRATUM",
+  "trigger_issue": "Post-work bundle V0.2 checker found blocking defects.",
+  "requested_repairs": [
+    {
+      "issue_id": "REPAIR-001-schema_validation",
+      "path": "POST_WORK_RECEIPT_INDEX.json",
+      "repair_action": "$.receipts: expected array"
+    },
+    {
+      "issue_id": "REPAIR-002-receipt_index",
+      "path": "POST_WORK_RECEIPT_INDEX.json",
+      "repair_action": "missing OFFICIO_AGENTIS receipt index entry for OFFICIO_ROLE_ENTRY_RECEIPT.json"
+    },
+    {
+      "issue_id": "REPAIR-003-receipt_index",
+      "path": "POST_WORK_RECEIPT_INDEX.json",
+      "repair_action": "missing SCHOLA_IMPERIALIS receipt index entry for SCHOLA_ENHANCED_GHOST_EVOLVE_RECEIPT.json"
+    },
+    {
+      "issue_id": "REPAIR-004-receipt_index",
+      "path": "POST_WORK_RECEIPT_INDEX.json",
+      "repair_action": "missing MECHANICUS receipt index entry for MECHANICUS_TOOL_DELTA_RECEIPT.json"
+    },
+    {
+      "issue_id": "REPAIR-005-receipt_index",
+      "path": "POST_WORK_RECEIPT_INDEX.json",
+      "repair_action": "missing INQUISITION receipt index entry for INQUISITION_CONTRADICTION_SCAN_RECEIPT.json"
+    },
+    {
+      "issue_id": "REPAIR-006-receipt_index",
+      "path": "POST_WORK_RECEIPT_INDEX.json",
+      "repair_action": "missing CUSTODES receipt index entry for CUSTODES_ORGAN_MATRIX_AUDIT_RECEIPT.json"
+    }
+  ],
+  "status": "OPEN"
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "LEARN-20260531-001",
+    "dirty_path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/synthetic_task_entry_checker_receipt.json",
+    "source_problem": "Synthetic report rerun changed only timestamps and left tracked dirt outside active task scope.",
+    "affected_organ": "ASTRONOMICON",
+    "problem_type": "TOOLING_GAP",
+    "why_it_matters": "Timestamp-only drift pollutes provenance and blocks clean pass gating.",
+    "future_prevention": "Add deterministic mode or post-checker auto-restore guard for synthetic report timestamps when semantic payload unchanged.",
+    "can_be_script_first": true,
+    "recommended_next_task_or_matrix_update": "Mechanicus candidate script-first checker for timestamp-only drift auto-classification."
+  },
+  {
+    "id": "LEARN-20260531-002",
+    "dirty_path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/_TASKPACK_INBOX/",
+    "source_problem": "Taskpack local extraction inside repo creates avoidable untracked runtime drift.",
+    "affected_organ": "ASTRONOMICON",
+    "problem_type": "TASK_ENTRY_GAP",
+    "why_it_matters": "Runtime staging noise inflates dirty path set and increases fake-green risk.",
+    "future_prevention": "Route ad-hoc taskpack extraction to outside-repo temp dir or auto-clean after read-order completion.",
+    "can_be_script_first": true,
+    "recommended_next_task_or_matrix_update": "Astronomicon intake helper should provide cleanup hook for _TASKPACK_INBOX staging."
+  }
+]

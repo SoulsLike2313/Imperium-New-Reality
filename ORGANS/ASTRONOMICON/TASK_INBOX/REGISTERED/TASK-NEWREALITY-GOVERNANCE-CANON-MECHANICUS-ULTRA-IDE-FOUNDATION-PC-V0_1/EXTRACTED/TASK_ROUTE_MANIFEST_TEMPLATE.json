@@ -1,0 +1,110 @@
+{
+  "schema_version": "astronomicon.task_route_manifest_template.v0_1",
+  "template_id": "TASK_ROUTE_MANIFEST_TEMPLATE_PC_GOVERNANCE_MECHANICUS_IDE_V0_1",
+  "task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1",
+  "contour": "PC",
+  "route_mode": "LOCAL_PC_CONTROLLED_WRITE_WITH_VALIDATED_PUSH",
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "required_organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "read_first_order": [
+    "AGENTS.md",
+    "ORGANS/_CORE_GOVERNANCE/GOVERNANCE_INDEX.json",
+    "ORGANS/_CORE_GOVERNANCE/EMPEROR/PASSPORT_OF_THE_EMPEROR.md",
+    "ORGANS/_CORE_GOVERNANCE/CONSTITUTION/CONSTITUTION_OF_THE_IMPERIUM.md",
+    "REPORTS/TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1/FINAL_OWNER_SUMMARY_RU.md",
+    "MANIFEST.json",
+    "TASK_SPEC.md",
+    "ACCEPTANCE_GATES.md",
+    "OUTPUT_REQUIREMENTS.md",
+    "TASK_ROUTE_MANIFEST_TEMPLATE.json",
+    "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ENTRY_CORRIDOR_CONTRACT.md",
+    "ORGANS/*/READ_FIRST_TASK_PARTICIPATION.md"
+  ],
+  "entrypoints": {
+    "manifest": "MANIFEST.json",
+    "task_spec": "TASK_SPEC.md",
+    "acceptance_gates": "ACCEPTANCE_GATES.md",
+    "output_requirements": "OUTPUT_REQUIREMENTS.md",
+    "route_manifest_template": "TASK_ROUTE_MANIFEST_TEMPLATE.json",
+    "task_start_ack_template": "TASK_START_ACK_TEMPLATE.json"
+  },
+  "allowed_write_scope": [
+    "AGENTS.md",
+    ".gitignore",
+    "ORGANS/_CORE_GOVERNANCE/**",
+    "ORGANS/ASTRONOMICON/**",
+    "ORGANS/MECHANICUS/**",
+    "ORGANS/IMPERIAL_IDE/**",
+    "REPORTS/TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1/**"
+  ],
+  "forbidden_actions": [
+    "delete_files_without_owner_batch_approval",
+    "mass_move_core_files_without_owner_batch_approval",
+    "reset_hard",
+    "git_clean_fd",
+    "admit_quarantine_to_canon",
+    "salvage_ancient_files_into_active_core",
+    "remote_route_to_vm2",
+    "remote_route_to_vm3",
+    "live_transfer_to_other_contours",
+    "push_outside_allowed_write_scope",
+    "push_failed_validation_outputs",
+    "push_dirty_runtime_or_secret_files",
+    "push_destructive_changes_without_owner_approval",
+    "unsafe_shell_command_gateway",
+    "unvalidated_tool_execution",
+    "claim_full_ide_complete",
+    "fake_green_clean_pass_claim",
+    "rewrite_report_history"
+  ],
+  "validated_push_policy": {
+    "push_allowed": true,
+    "push_required_for_success": true,
+    "allowed_when": [
+      "git diff is inside allowed_write_scope",
+      "all required outputs exist",
+      "JSON files parse successfully",
+      "new Python files compile if Python files are created",
+      "Mechanicus smoke tests pass or exact blockers are recorded",
+      "IDE foundation contracts and schemas validate as JSON or Markdown",
+      "no secret files or local operator configs are staged",
+      "no destructive cleanup is performed",
+      "commit message includes task_id",
+      "post-push HEAD equals origin/master"
+    ],
+    "forbidden_push_cases": [
+      "changes outside allowed_write_scope",
+      "failed validation without explicit BLOCK verdict",
+      "secrets, credentials, or local operator configs staged",
+      "destructive cleanup or delete without owner batch approval",
+      "fake-green closure",
+      "VM2 or VM3 changes"
+    ],
+    "required_after_push_receipts": [
+      "commit_sha",
+      "origin_master_sha",
+      "head_equals_origin_master_after_push",
+      "git_status_after_push",
+      "pushed_files_summary"
+    ]
+  },
+  "owner_message": "start task"
+}

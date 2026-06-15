@@ -1,0 +1,43 @@
+{
+  "schema_version": "imperium.core_root_migration_matrix.v0_1",
+  "matrix_id": "core_root_migration_matrix_v0_1",
+  "owner_organ": "ADMINISTRATUM",
+  "guard_organs": [
+    "INQUISITION",
+    "CUSTODES",
+    "MECHANICUS"
+  ],
+  "purpose": "Define physical root cleanup destinations for legacy root clutter.",
+  "rows": [
+    {
+      "classification": "LEGACY_ROOT_ORGAN_MIRROR",
+      "destination_rule": "ORGANS/<ORGAN>/LEGACY_IMPORTED_ROOT_MIRROR/<SOURCE>",
+      "active_use_allowed": false,
+      "default_action": "git mv if path-length and destination safety checks pass"
+    },
+    {
+      "classification": "ROOT_COMMON_SUPPORT",
+      "destination_rule": "SUPPORT/COMMON_IMPERIUM_SUPPORT/ROOT_IMPORTED_COMMON_SUPPORT/<SOURCE>",
+      "active_use_allowed": true,
+      "default_action": "git mv if safety checks pass"
+    },
+    {
+      "classification": "LEGACY_LEARNING_ARCHIVE",
+      "destination_rule": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/<SOURCE>",
+      "active_use_allowed": false,
+      "default_action": "git mv and quarantine index entry"
+    },
+    {
+      "classification": "ROOT_QUARANTINE_CANDIDATE",
+      "destination_rule": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/ROOT_QUARANTINE/<SOURCE>",
+      "active_use_allowed": false,
+      "default_action": "git mv and quarantine index entry"
+    },
+    {
+      "classification": "TECHNICAL_ROOT_EXCEPTION",
+      "destination_rule": "HOLD_WITH_REASON",
+      "active_use_allowed": true,
+      "default_action": "hold only when root-level location is required by git or task evidence"
+    }
+  ]
+}

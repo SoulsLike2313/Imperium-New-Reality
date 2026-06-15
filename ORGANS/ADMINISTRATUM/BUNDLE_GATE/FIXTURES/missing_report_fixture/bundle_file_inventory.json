@@ -1,0 +1,96 @@
+{
+  "inventory_type": "task_report_bundle_file_inventory",
+  "task_id": "FIXTURE-MISSING",
+  "timestamp_utc": "2026-06-04T15:07:14Z",
+  "report_dir": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/FIXTURES/missing_report_fixture",
+  "bundle_path": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/FIXTURES/missing_report_fixture/task_report_bundle.zip",
+  "bundle_sha256": "",
+  "included_file_count": 3,
+  "included_files": [
+    {
+      "path": "TASK_FOCUS_PACKET.json",
+      "size_bytes": 113,
+      "sha256": "b55e5be0153dabbe9410eb1a4c42bdfb5a247f37ad78d88f696d9925a97c315c"
+    },
+    {
+      "path": "adjacent_receipts_manifest.json",
+      "size_bytes": 1879,
+      "sha256": "4e840c10f20682b4d9d18c21b5be17a443b1261540bf2173622cfd4f79522259"
+    },
+    {
+      "path": "no_ancient_mutation_receipt.json",
+      "size_bytes": 93,
+      "sha256": "5ef45d782570d7dc2b9a482472d3ad0b67fee6fd8e67a8f32cd107edea25e517"
+    }
+  ],
+  "adjacent_self_reference_files": [
+    {
+      "path": "task_report_bundle.zip",
+      "class_ids": [],
+      "reason": "The bundle cannot include itself.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": false,
+      "sha256": ""
+    },
+    {
+      "path": "sha256sums.txt",
+      "class_ids": [
+        "sha256_sums"
+      ],
+      "reason": "Final sums record the final bundle hash and remain adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": ""
+    },
+    {
+      "path": "bundle_file_inventory.json",
+      "class_ids": [
+        "bundle_manifest_and_file_inventory"
+      ],
+      "reason": "Inventory records the final included file set and remains adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": "a5ae5c18e513bb880e98c72ac34526081a22268bf839d74e6f6ad7c98cf40dd0"
+    },
+    {
+      "path": "administratum_bundle_composition_receipt.json",
+      "class_ids": [
+        "administratum_composition_receipt"
+      ],
+      "reason": "Composition receipt records final bundle creation state and remains adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": "1a6f65c306971549951529e796da247c38789d31d5d6edf3394fdac99311da84"
+    },
+    {
+      "path": "git_closure_receipt.json",
+      "class_ids": [
+        "commit_chain_identifiers",
+        "git_closure_and_remote_closure_proof",
+        "worktree_clean_or_explicit_cap_receipt"
+      ],
+      "reason": "Final git closure may be refreshed after the bundle commit.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": false,
+      "sha256": ""
+    },
+    {
+      "path": "remote_closure_receipt.json",
+      "class_ids": [
+        "git_closure_and_remote_closure_proof"
+      ],
+      "reason": "Final remote closure may be refreshed after push.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": false,
+      "sha256": ""
+    }
+  ],
+  "excluded_from_bundle_due_self_reference": [
+    "administratum_bundle_composition_receipt.json",
+    "bundle_file_inventory.json",
+    "git_closure_receipt.json",
+    "remote_closure_receipt.json",
+    "sha256sums.txt",
+    "task_report_bundle.zip"
+  ]
+}

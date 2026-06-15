@@ -1,0 +1,109 @@
+{
+  "cmd": [
+    "python",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ASTRONOMICON_AGENT/TOOLS/astronomicon_agent_runner.py",
+    "identity"
+  ],
+  "returncode": 0,
+  "severity": "WARN",
+  "stdout": "{\n  \"organ\": \"ASTRONOMICON_AGENT\",\n  \"summary\": \"Task intake, decomposition, stage maps, and route readiness.\",\n  \"profile\": {\n    \"schema_version\": \"ORGAN_AGENT_PROFILE_BASE_HALF_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1\",\n    \"organ\": \"ASTRONOMICON_AGENT\",\n    \"organ_slug\": \"astronomicon\",\n    \"maturity\": \"BASE_HALF\",\n    \"summary\": \"Task intake, decomposition, stage maps, and route readiness.\",\n    \"mission\": \"Convert broad intent into executable local stages and readiness signals.\",\n    \"required_commands\": [\n      \"status\",\n      \"check\",\n      \"where\",\n      \"identity\",\n      \"pack\",\n      \"shell\",\n      \"help\"\n    ],\n    \"forbidden_organs\": [\n      \"THRONE\",\n      \"CUSTODES\"\n    ],\n    \"visual_status\": \"WARN\"\n  },\n  \"identity_profile\": {\n    \"schema_version\": \"ORGAN_IDENTITY_PROFILE_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n    \"organ\": \"ASTRONOMICON_AGENT\",\n    \"identity_summary\": \"Route tasks, stage maps, and readiness signals for bounded execution.\",\n    \"mission\": \"Convert goals into staged routes with explicit readiness gates and reporting steps.\",\n    \"scope_boundary\": {\n      \"forbidden_terms\": [\n        \"THRONE\",\n        \"CUSTODES\"\n      ],\n      \"allowed_focus\": \"Identity Half + Rich Shell + domain checks for this organ\"\n    },\n    \"domain_commands\": [\n      \"task-route\",\n      \"stage-map-outline\",\n      \"ready-for-agent-check\",\n      \"route-report\"\n    ],\n    \"domain_aliases\": {}\n  },\n  \"lore_functions\": {\n    \"schema_version\": \"ORGAN_LORE_FUNCTIONS_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n    \"organ\": \"ASTRONOMICON_AGENT\",\n    \"functions\": [\n      {\n        \"id\": \"astro-lore-001\",\n        \"name\": \"Task Routing\",\n        \"description\": \"Define intake to completion route for current task.\"\n      },\n      {\n        \"id\": \"astro-lore-002\",\n        \"name\": \"Stage Mapping\",\n        \"description\": \"Emit compact stage map for practical execution.\"\n      },\n      {\n        \"id\": \"astro-lore-003\",\n        \"name\": \"Readiness Probe\",\n        \"description\": \"Check whether required identity/control artifacts are present.\"\n      },\n      {\n        \"id\": \"astro-lore-004\",\n        \"name\": \"Route Report\",\n        \"description\": \"Bundle route references for handoff and audit.\"\n      }\n    ]\n  },\n  \"domain_commands\": {\n    \"schema_version\": \"ORGAN_DOMAIN_COMMANDS_V0_1\",\n    \"task_id\": \"TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\",\n    \"organ\": \"ASTRONOMICON_AGENT\",\n    \"commands\": {\n      \"task-route\": {\n        \"description\": \"Outline canonical intake-to-delivery route stages.\"\n      },\n      \"stage-map-outline\": {\n        \"description\": \"Emit a compact stage map for current task flow.\"\n      },\n      \"ready-for-agent-check\": {\n        \"description\": \"Check readiness of identity artifacts for handoff.\"\n      },\n      \"route-report\": {\n        \"description\": \"Produce route summary with backend path references.\"\n      }\n    },\n    \"alias_map\": {}\n  },\n  \"identity_baseline_excerpt\": \"# IDENTITY BASELINE :: ASTRONOMICON_AGENT\\n\\n## Semantic Role\\n- Task intake, decomposition, stage maps, and route readiness.\\n\\n## Operational Mission\\n- Convert broad intent into executable local stages and readiness signals.\\n\\n## Out Of Scope\\n- THRONE\\n- CUSTODES\\n\\n## Base Half Limits\\n- Skeleton-level semantics only.\\n- Advanced workflows and deep specialization remain future work.\",\n  \"identity_profile_excerpt\": \"# ASTRONOMICON_AGENT Identity Profile\\n\\n- task_id: `TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1`\\n- organ: `ASTRONOMICON_AGENT`\\n- identity_summary: Route tasks, stage maps, and readiness signals for bounded execution.\\n- mission: Convert goals into staged routes with explicit readiness gates and reporting steps.\\n\\n## Domain Command Set\\n- `task-route`: Outline canonical intake-to-delivery route stages.\\n- `stage-map-outline`: Emit a compact stage map for current task flow.\\n- `ready-for-agent-check`: Check readiness of identity artifacts for handoff.\\n- `route-report`: Produce route summary with backend path references.\\n\\n## Scope and Boundaries\\n- Build bounded organ behavior and evidence outputs only.\\n- Never claim PASS without evidence receipts.\\n- Never touch THRONE or CUSTODES paths.\",\n  \"timestamp_utc\": \"2026-05-19T19:31:41.232555+00:00\"\n}\n",
+  "stderr": "",
+  "json": {
+    "organ": "ASTRONOMICON_AGENT",
+    "summary": "Task intake, decomposition, stage maps, and route readiness.",
+    "profile": {
+      "schema_version": "ORGAN_AGENT_PROFILE_BASE_HALF_V0_1",
+      "task_id": "TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1",
+      "organ": "ASTRONOMICON_AGENT",
+      "organ_slug": "astronomicon",
+      "maturity": "BASE_HALF",
+      "summary": "Task intake, decomposition, stage maps, and route readiness.",
+      "mission": "Convert broad intent into executable local stages and readiness signals.",
+      "required_commands": [
+        "status",
+        "check",
+        "where",
+        "identity",
+        "pack",
+        "shell",
+        "help"
+      ],
+      "forbidden_organs": [
+        "THRONE",
+        "CUSTODES"
+      ],
+      "visual_status": "WARN"
+    },
+    "identity_profile": {
+      "schema_version": "ORGAN_IDENTITY_PROFILE_V0_1",
+      "task_id": "TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1",
+      "organ": "ASTRONOMICON_AGENT",
+      "identity_summary": "Route tasks, stage maps, and readiness signals for bounded execution.",
+      "mission": "Convert goals into staged routes with explicit readiness gates and reporting steps.",
+      "scope_boundary": {
+        "forbidden_terms": [
+          "THRONE",
+          "CUSTODES"
+        ],
+        "allowed_focus": "Identity Half + Rich Shell + domain checks for this organ"
+      },
+      "domain_commands": [
+        "task-route",
+        "stage-map-outline",
+        "ready-for-agent-check",
+        "route-report"
+      ],
+      "domain_aliases": {}
+    },
+    "lore_functions": {
+      "schema_version": "ORGAN_LORE_FUNCTIONS_V0_1",
+      "task_id": "TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1",
+      "organ": "ASTRONOMICON_AGENT",
+      "functions": [
+        {
+          "id": "astro-lore-001",
+          "name": "Task Routing",
+          "description": "Define intake to completion route for current task."
+        },
+        {
+          "id": "astro-lore-002",
+          "name": "Stage Mapping",
+          "description": "Emit compact stage map for practical execution."
+        },
+        {
+          "id": "astro-lore-003",
+          "name": "Readiness Probe",
+          "description": "Check whether required identity/control artifacts are present."
+        },
+        {
+          "id": "astro-lore-004",
+          "name": "Route Report",
+          "description": "Bundle route references for handoff and audit."
+        }
+      ]
+    },
+    "domain_commands": {
+      "schema_version": "ORGAN_DOMAIN_COMMANDS_V0_1",
+      "task_id": "TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1",
+      "organ": "ASTRONOMICON_AGENT",
+      "commands": {
+        "task-route": {
+          "description": "Outline canonical intake-to-delivery route stages."
+        },
+        "stage-map-outline": {
+          "description": "Emit a compact stage map for current task flow."
+        },
+        "ready-for-agent-check": {
+          "description": "Check readiness of identity artifacts for handoff."
+        },
+        "route-report": {
+          "description": "Produce route summary with backend path references."
+        }
+      },
+      "alias_map": {}
+    },
+    "identity_baseline_excerpt": "# IDENTITY BASELINE :: ASTRONOMICON_AGENT\n\n## Semantic Role\n- Task intake, decomposition, stage maps, and route readiness.\n\n## Operational Mission\n- Convert broad intent into executable local stages and readiness signals.\n\n## Out Of Scope\n- THRONE\n- CUSTODES\n\n## Base Half Limits\n- Skeleton-level semantics only.\n- Advanced workflows and deep specialization remain future work.",
+    "identity_profile_excerpt": "# ASTRONOMICON_AGENT Identity Profile\n\n- task_id: `TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1`\n- organ: `ASTRONOMICON_AGENT`\n- identity_summary: Route tasks, stage maps, and readiness signals for bounded execution.\n- mission: Convert goals into staged routes with explicit readiness gates and reporting steps.\n\n## Domain Command Set\n- `task-route`: Outline canonical intake-to-delivery route stages.\n- `stage-map-outline`: Emit a compact stage map for current task flow.\n- `ready-for-agent-check`: Check readiness of identity artifacts for handoff.\n- `route-report`: Produce route summary with backend path references.\n\n## Scope and Boundaries\n- Build bounded organ behavior and evidence outputs only.\n- Never claim PASS without evidence receipts.\n- Never touch THRONE or CUSTODES paths.",
+    "timestamp_utc": "2026-05-19T19:31:41.232555+00:00"
+  }
+}

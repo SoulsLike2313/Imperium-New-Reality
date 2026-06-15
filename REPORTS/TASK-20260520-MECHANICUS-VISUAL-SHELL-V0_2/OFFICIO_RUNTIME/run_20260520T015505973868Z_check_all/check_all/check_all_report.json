@@ -1,0 +1,186 @@
+{
+  "checked_at_utc": "2026-05-20T01:55:05+00:00",
+  "verdict": "PASS",
+  "missing_files": [],
+  "invalid_json": [],
+  "settings_index_errors": [],
+  "language_contract_warnings": [],
+  "language_contract_errors": [],
+  "language_contract_details": {
+    "communication_contract_json": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/servitor_communication_contract.json",
+    "bootstrap_directive_json": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/officio_bootstrap_execution_directive.json",
+    "language_execution_contract_json": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/language_execution_contract.json",
+    "role_settings_ack_protocol_json": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/ROLE_SETTINGS_ACK_PROTOCOL.json",
+    "response_contract_md": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/SERVITOR_EXECUTOR_RESPONSE_CONTRACT.md",
+    "required_violation_codes": [
+      "WARN_RESPONSE_LANGUAGE_CONTRACT",
+      "FAIL_RESPONSE_CONTRACT",
+      "BLOCKED_OFFICIO_ACK_MISSING",
+      "BLOCKED_ROLE_PACK_AUTHORITY_MISSING",
+      "WARN_TASKPACK_ONLY_WORKAROUND_DETECTED"
+    ],
+    "communication_machine_rule": {
+      "response_shape": [
+        "STEP",
+        "BUNDLE",
+        "VERDICT",
+        "OWNER COMMENTS"
+      ],
+      "authority_chain": [
+        "OFFICIO_BOOTSTRAP_EXECUTION_DIRECTIVE",
+        "LANGUAGE_EXECUTION_CONTRACT",
+        "ROLE_SETTINGS_ACK_PROTOCOL",
+        "SERVITOR_EXECUTOR_RESPONSE_CONTRACT"
+      ],
+      "bootstrap_execution_directive_ref": "SETTINGS_REGISTRY/communication/OFFICIO_BOOTSTRAP_EXECUTION_DIRECTIVE.md",
+      "language_execution_contract_ref": "SETTINGS_REGISTRY/communication/LANGUAGE_EXECUTION_CONTRACT.md",
+      "role_settings_ack_protocol_ref": "RESPONSE_CONTRACTS/ROLE_SETTINGS_ACK_PROTOCOL.md",
+      "owner_live_commentary_language_after_officio_ack": "Russian",
+      "owner_final_comments_language_after_officio_ack": "Russian",
+      "machine_artifact_language": "English",
+      "technical_identifiers_language": "English",
+      "owner_comment_lines": {
+        "min": 3,
+        "max": 4
+      },
+      "language_violation_codes": [
+        "WARN_RESPONSE_LANGUAGE_CONTRACT",
+        "FAIL_RESPONSE_CONTRACT"
+      ],
+      "authority_violation_codes": [
+        "BLOCKED_OFFICIO_ACK_MISSING",
+        "BLOCKED_ROLE_PACK_AUTHORITY_MISSING",
+        "WARN_TASKPACK_ONLY_WORKAROUND_DETECTED"
+      ],
+      "violation_codes": [
+        "WARN_RESPONSE_LANGUAGE_CONTRACT",
+        "FAIL_RESPONSE_CONTRACT",
+        "BLOCKED_OFFICIO_ACK_MISSING",
+        "BLOCKED_ROLE_PACK_AUTHORITY_MISSING",
+        "WARN_TASKPACK_ONLY_WORKAROUND_DETECTED"
+      ],
+      "style": "dry_strict_engineering"
+    },
+    "bootstrap_machine_rule": {
+      "ack_required_before_serious_work": true,
+      "required_role_pack_authority_artifacts": [
+        "OFFICIO_BOOTSTRAP_EXECUTION_DIRECTIVE.md",
+        "officio_bootstrap_execution_directive.json",
+        "LANGUAGE_EXECUTION_CONTRACT.md",
+        "language_execution_contract.json",
+        "ROLE_SETTINGS_ACK_PROTOCOL.md",
+        "ROLE_SETTINGS_ACK_PROTOCOL.json",
+        "RESPONSE_CONTRACT.md",
+        "STOP_CONDITIONS.json",
+        "EVIDENCE_POLICY.md"
+      ],
+      "authority_chain": [
+        "OFFICIO_BOOTSTRAP_EXECUTION_DIRECTIVE",
+        "LANGUAGE_EXECUTION_CONTRACT",
+        "ROLE_SETTINGS_ACK_PROTOCOL",
+        "SERVITOR_EXECUTOR_RESPONSE_CONTRACT"
+      ],
+      "owner_live_commentary_language_after_officio_ack": "Russian",
+      "owner_final_comments_language_after_officio_ack": "Russian",
+      "machine_artifact_language": "English",
+      "technical_identifiers_language": "English",
+      "violation_codes": [
+        "WARN_RESPONSE_LANGUAGE_CONTRACT",
+        "FAIL_RESPONSE_CONTRACT",
+        "BLOCKED_OFFICIO_ACK_MISSING",
+        "BLOCKED_ROLE_PACK_AUTHORITY_MISSING",
+        "WARN_TASKPACK_ONLY_WORKAROUND_DETECTED"
+      ],
+      "ack_required_fields_extension": [
+        "bootstrap_execution_directive_ref",
+        "language_execution_contract_ref",
+        "role_settings_ack_protocol_ref",
+        "owner_live_commentary_language_after_officio_ack",
+        "owner_final_comments_language_after_officio_ack",
+        "machine_artifact_language",
+        "violation_codes"
+      ],
+      "anti_taskpack_only_workaround": true
+    },
+    "language_execution_machine_rule": {
+      "activation_requires_ack": true,
+      "required_ack_refs": [
+        "ROLE_SETTINGS_ACK_PROTOCOL.md",
+        "OFFICIO_BOOTSTRAP_EXECUTION_DIRECTIVE.md"
+      ],
+      "surface_language_rules": {
+        "owner_live_commentary_after_officio_ack": "Russian",
+        "owner_final_comments_after_officio_ack": "Russian",
+        "technical_identifiers": "English",
+        "code_json_schema": "English",
+        "paths_and_commands": "English",
+        "machine_artifacts": "English"
+      },
+      "violation_codes": [
+        "WARN_RESPONSE_LANGUAGE_CONTRACT",
+        "FAIL_RESPONSE_CONTRACT",
+        "BLOCKED_OFFICIO_ACK_MISSING",
+        "BLOCKED_ROLE_PACK_AUTHORITY_MISSING",
+        "WARN_TASKPACK_ONLY_WORKAROUND_DETECTED"
+      ],
+      "anti_taskpack_only_workaround": true,
+      "required_response_sections": [
+        "STEP",
+        "BUNDLE",
+        "VERDICT",
+        "OWNER COMMENTS"
+      ],
+      "checker_policy_v0_1": {
+        "owner_comment_english_after_ack": "FAIL_RESPONSE_CONTRACT",
+        "owner_live_english_after_ack": "WARN_RESPONSE_LANGUAGE_CONTRACT",
+        "machine_artifact_english": "PASS"
+      }
+    },
+    "ack_protocol_machine_rule": {
+      "required_ack_sections": [
+        "ACK_ROLE",
+        "ACK_SETTINGS"
+      ],
+      "required_ack_role_fields": [
+        "agent_id",
+        "role_name",
+        "role_family",
+        "operating_nature",
+        "default_mode",
+        "role_profile_path",
+        "role_profile_hash",
+        "timestamp_utc"
+      ],
+      "required_ack_settings_fields": [
+        "agent_id",
+        "role_name",
+        "active_mode",
+        "permissions_ref",
+        "forbidden_actions_ref",
+        "stop_conditions_ref",
+        "evidence_policy_ref",
+        "response_contract_ref",
+        "communication_contract_ref",
+        "bootstrap_execution_directive_ref",
+        "language_execution_contract_ref",
+        "role_settings_ack_protocol_ref",
+        "owner_live_commentary_language_after_officio_ack",
+        "owner_final_comments_language_after_officio_ack",
+        "machine_artifact_language",
+        "violation_codes",
+        "settings_hash",
+        "timestamp_utc"
+      ],
+      "required_violation_codes": [
+        "WARN_RESPONSE_LANGUAGE_CONTRACT",
+        "FAIL_RESPONSE_CONTRACT",
+        "BLOCKED_OFFICIO_ACK_MISSING",
+        "BLOCKED_ROLE_PACK_AUTHORITY_MISSING",
+        "WARN_TASKPACK_ONLY_WORKAROUND_DETECTED"
+      ],
+      "failure_verdict_for_missing_ack": "BLOCKED_OFFICIO_ACK_MISSING",
+      "failure_verdict_for_missing_authority_files": "BLOCKED_ROLE_PACK_AUTHORITY_MISSING",
+      "anti_taskpack_only_workaround": true
+    }
+  }
+}

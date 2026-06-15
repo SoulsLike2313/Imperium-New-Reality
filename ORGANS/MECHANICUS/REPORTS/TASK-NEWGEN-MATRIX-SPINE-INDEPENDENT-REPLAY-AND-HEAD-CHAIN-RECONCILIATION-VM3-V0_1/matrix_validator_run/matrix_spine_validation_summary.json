@@ -1,0 +1,302 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1",
+  "timestamp_utc": "2026-05-30T16:48:40Z",
+  "repo_root": "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+  "matrix_files_scanned": 29,
+  "matrix_parse_failures": 0,
+  "issue_counts": {
+    "FAIL": 0,
+    "WARN": 0,
+    "INFO": 0
+  },
+  "verdict": "PASS",
+  "allowed_status_vocab": [
+    "ACTIVE",
+    "BLOCKED",
+    "CANDIDATE",
+    "CANDIDATE_NOT_CANON",
+    "CANON",
+    "DEPRECATED",
+    "QUARANTINE",
+    "WARN"
+  ],
+  "negative_fixture_results": [
+    {
+      "fixture_id": "NF01",
+      "fixture_type": "matrix_payload",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_missing_owner_matrix.json",
+      "title": "matrix owner missing",
+      "expected_issue_code": "MATRIX_OWNER_MISSING",
+      "detected": true,
+      "detected_codes": [
+        "MATRIX_OWNER_MISSING",
+        "MATRIX_SCHEMA_REQUIRED_MISSING"
+      ]
+    },
+    {
+      "fixture_id": "NF02",
+      "fixture_type": "matrix_payload",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_bad_status_matrix.json",
+      "title": "matrix status outside vocabulary",
+      "expected_issue_code": "MATRIX_STATUS_INVALID",
+      "detected": true,
+      "detected_codes": [
+        "MATRIX_STATUS_INVALID",
+        "MATRIX_SCHEMA_PROPERTY_INVALID"
+      ]
+    },
+    {
+      "fixture_id": "NF03",
+      "fixture_type": "matrix_payload",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_missing_support_organs_matrix.json",
+      "title": "matrix support_organs missing",
+      "expected_issue_code": "MATRIX_SUPPORT_ORGANS_INVALID",
+      "detected": true,
+      "detected_codes": [
+        "MATRIX_SUPPORT_ORGANS_INVALID",
+        "MATRIX_SCHEMA_PROPERTY_INVALID"
+      ]
+    },
+    {
+      "fixture_id": "NF04",
+      "fixture_type": "matrix_not_indexed",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_matrix_not_indexed.json",
+      "title": "matrix id missing from matrix spine index",
+      "expected_issue_code": "MATRIX_ID_NOT_IN_INDEX",
+      "detected": true,
+      "detected_codes": [
+        "MATRIX_ID_NOT_IN_INDEX"
+      ]
+    },
+    {
+      "fixture_id": "NF05",
+      "fixture_type": "malformed_json",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_malformed_json_matrix.json",
+      "title": "malformed json fixture",
+      "expected_issue_code": "NEGATIVE_FIXTURE_PARSE_FAIL",
+      "detected": true,
+      "detected_codes": [
+        "NEGATIVE_FIXTURE_PARSE_FAIL"
+      ]
+    },
+    {
+      "fixture_id": "NF06",
+      "fixture_type": "stale_receipt",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_stale_receipt.json",
+      "title": "stale receipt detection",
+      "expected_issue_code": "STALE_RECEIPT_DETECTED",
+      "detected": true,
+      "detected_codes": [
+        "STALE_RECEIPT_DETECTED"
+      ]
+    },
+    {
+      "fixture_id": "NF07",
+      "fixture_type": "closure_receipt",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_closure_missing_implementation_head.json",
+      "title": "missing implementation head in closure receipt",
+      "expected_issue_code": "CAP_EMPTY_IMPLEMENTATION_HEAD",
+      "detected": true,
+      "detected_codes": [
+        "CAP_EMPTY_IMPLEMENTATION_HEAD",
+        "CAP_HEADS_MIXED_OR_AMBIGUOUS",
+        "CAP_NO_INDEPENDENT_REPLAY"
+      ]
+    },
+    {
+      "fixture_id": "NF08",
+      "fixture_type": "closure_receipt",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_closure_missing_closure_head.json",
+      "title": "empty closure bundle head in closure receipt",
+      "expected_issue_code": "CAP_EMPTY_CLOSURE_BUNDLE_HEAD",
+      "detected": true,
+      "detected_codes": [
+        "CAP_EMPTY_CLOSURE_BUNDLE_HEAD",
+        "CAP_NO_INDEPENDENT_REPLAY"
+      ]
+    },
+    {
+      "fixture_id": "NF09",
+      "fixture_type": "closure_receipt",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_fake_pass_without_red_team.json",
+      "title": "fake pass with no red-team receipt",
+      "expected_issue_code": "CLOSURE_RECEIPT_RED_TEAM_MISSING",
+      "detected": true,
+      "detected_codes": [
+        "CLOSURE_RECEIPT_RED_TEAM_MISSING"
+      ]
+    },
+    {
+      "fixture_id": "NF10",
+      "fixture_type": "capability_split",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_capability_script_first_no_replay.json",
+      "title": "script-first capability without replay command",
+      "expected_issue_code": "CAPABILITY_SPLIT_SCRIPT_FIRST_REPLAY_MISSING",
+      "detected": true,
+      "detected_codes": [
+        "CAPABILITY_SPLIT_SCRIPT_FIRST_REPLAY_MISSING"
+      ]
+    },
+    {
+      "fixture_id": "NF11",
+      "fixture_type": "runtime_output",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_runtime_output_unclassified.json",
+      "title": "unclassified runtime output",
+      "expected_issue_code": "CAP_RUNTIME_OUTPUT_UNCLASSIFIED",
+      "detected": true,
+      "detected_codes": [
+        "CAP_RUNTIME_OUTPUT_UNCLASSIFIED"
+      ]
+    },
+    {
+      "fixture_id": "NF12",
+      "fixture_type": "owner_language_contract",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_owner_language_contract_missing.json",
+      "title": "owner-facing language contract missing",
+      "expected_issue_code": "OWNER_LANGUAGE_CONTRACT_MISSING",
+      "detected": true,
+      "detected_codes": [
+        "OWNER_LANGUAGE_CONTRACT_MISSING"
+      ]
+    },
+    {
+      "fixture_id": "NF13",
+      "fixture_type": "red_team_schema",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_red_team_verdict.json",
+      "title": "red-team verdict schema required field missing",
+      "expected_issue_code": "RED_TEAM_SCHEMA_REQUIRED_MISSING",
+      "detected": true,
+      "detected_codes": [
+        "RED_TEAM_SCHEMA_REQUIRED_MISSING"
+      ]
+    },
+    {
+      "fixture_id": "NF14",
+      "fixture_type": "final_closure_verifier",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_final_closure_verifier_missing_final_head.json",
+      "title": "final closure verifier missing final_verifier_head",
+      "expected_issue_code": "CAP_NO_FINAL_CLOSURE_VERIFIER",
+      "detected": true,
+      "detected_codes": [
+        "CAP_NO_FINAL_CLOSURE_VERIFIER"
+      ]
+    },
+    {
+      "fixture_id": "NF15",
+      "fixture_type": "next_pipeline_handoff",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_next_pipeline_handoff_missing_target.json",
+      "title": "next pipeline handoff missing target commit",
+      "expected_issue_code": "CAP_NO_NEXT_PIPELINE_HANDOFF",
+      "detected": true,
+      "detected_codes": [
+        "CAP_NO_NEXT_PIPELINE_HANDOFF"
+      ]
+    },
+    {
+      "fixture_id": "NF16",
+      "fixture_type": "corridor_claim",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_untyped_runtime_corridor_claim.json",
+      "title": "untyped runtime corridor claim",
+      "expected_issue_code": "CAP_UNTYPED_RUNTIME_CLAIM",
+      "detected": true,
+      "detected_codes": [
+        "CAP_UNTYPED_RUNTIME_CLAIM",
+        "CAP_UNTYPED_RUNTIME_CLAIM"
+      ]
+    },
+    {
+      "fixture_id": "NF17",
+      "fixture_type": "corridor_claim",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_synthetic_claimed_as_real_runtime_corridor.json",
+      "title": "synthetic proof claimed as real runtime corridor",
+      "expected_issue_code": "CAP_SYNTHETIC_CLAIMED_AS_REAL",
+      "detected": true,
+      "detected_codes": [
+        "CAP_SYNTHETIC_CLAIMED_AS_REAL"
+      ]
+    },
+    {
+      "fixture_id": "NF18",
+      "fixture_type": "corridor_claim",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_warp_claim_without_unlock.json",
+      "title": "warp corridor claimed without unlock",
+      "expected_issue_code": "CAP_WARP_CLAIMED_WITHOUT_UNLOCK",
+      "detected": true,
+      "detected_codes": [
+        "CAP_WARP_CLAIMED_WITHOUT_UNLOCK"
+      ]
+    },
+    {
+      "fixture_id": "NF19",
+      "fixture_type": "closure_receipt",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_closure_missing_remote_head.json",
+      "title": "missing remote head in closure receipt",
+      "expected_issue_code": "CAP_EMPTY_REMOTE_HEAD",
+      "detected": true,
+      "detected_codes": [
+        "CAP_EMPTY_REMOTE_HEAD",
+        "CAP_NO_INDEPENDENT_REPLAY"
+      ]
+    },
+    {
+      "fixture_id": "NF20",
+      "fixture_type": "efficiency_delta",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_efficiency_self_score_high_without_independent_replay.json",
+      "title": "self-score high without independent replay",
+      "expected_issue_code": "CAP_NO_INDEPENDENT_REPLAY",
+      "detected": true,
+      "detected_codes": [
+        "CAP_NO_INDEPENDENT_REPLAY"
+      ]
+    },
+    {
+      "fixture_id": "NF21",
+      "fixture_type": "final_closure_verifier",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_clean_pass_with_no_independent_replay.json",
+      "title": "clean pass with CAP_NO_INDEPENDENT_REPLAY",
+      "expected_issue_code": "CAP_NO_INDEPENDENT_REPLAY",
+      "detected": true,
+      "detected_codes": [
+        "CAP_NO_INDEPENDENT_REPLAY"
+      ]
+    },
+    {
+      "fixture_id": "NF22",
+      "fixture_type": "final_closure_verifier",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_missing_claim_ledger_closure.json",
+      "title": "missing claim ledger in final closure verifier",
+      "expected_issue_code": "CAP_CLAIM_LEDGER_MISSING",
+      "detected": true,
+      "detected_codes": [
+        "CAP_CLAIM_LEDGER_MISSING"
+      ]
+    },
+    {
+      "fixture_id": "NF23",
+      "fixture_type": "runtime_output",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_runtime_excluded_output_without_hash.json",
+      "title": "excluded runtime output without hash",
+      "expected_issue_code": "CAP_RUNTIME_EXCLUDED_OUTPUT_WITHOUT_HASH",
+      "detected": true,
+      "detected_codes": [
+        "CAP_RUNTIME_EXCLUDED_OUTPUT_WITHOUT_HASH",
+        "CAP_RUNTIME_EXCLUDED_OUTPUT_WITHOUT_HASH",
+        "CAP_RUNTIME_EXCLUDED_OUTPUT_WITHOUT_HASH",
+        "CAP_RUNTIME_EXCLUDED_OUTPUT_WITHOUT_HASH"
+      ]
+    },
+    {
+      "fixture_id": "NF24",
+      "fixture_type": "final_closure_verifier",
+      "fixture": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/invalid_heads_mixed_or_ambiguous.json",
+      "title": "final receipt with implementation and closure mixed",
+      "expected_issue_code": "CAP_HEADS_MIXED_OR_AMBIGUOUS",
+      "detected": true,
+      "detected_codes": [
+        "CAP_HEADS_MIXED_OR_AMBIGUOUS",
+        "CAP_HEADS_MIXED_OR_AMBIGUOUS"
+      ]
+    }
+  ],
+  "cap_codes_detected": []
+}

@@ -1,0 +1,21 @@
+{
+  "task": "Собрать сторонний дашборд метрик (PRODUCTS/dashboard)",
+  "kind": "THIRD_PARTY",
+  "plan": [
+    "Собрать каркас приложения",
+    "Подключить источник данных (read-only из ядра)",
+    "Прогнать тесты и собрать метрики",
+    "Пройти шлюз"
+  ],
+  "criteria": [
+    {"id": "builds", "metric": "builds", "required": true, "expect": true, "min_evidence": "E3"},
+    {"id": "tests_pass", "metric": "tests_pass", "required": true, "expect": true, "min_evidence": "E4"},
+    {"id": "no_core_pollution", "metric": "no_core_pollution", "required": true, "expect": true, "min_evidence": "E3"}
+  ],
+  "participants": {
+    "organs": ["MECHANICUS", "ASTRONOMICON"],
+    "servitors": ["CAP-ALPHA"],
+    "apis": [],
+    "cli": ["imperial_ide_cli"]
+  }
+}

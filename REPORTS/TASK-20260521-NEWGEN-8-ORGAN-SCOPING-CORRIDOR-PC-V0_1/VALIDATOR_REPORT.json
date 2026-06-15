@@ -1,0 +1,60 @@
+{
+  "task_id": "TASK-20260521-NEWGEN-8-ORGAN-SCOPING-CORRIDOR-PC-V0_1",
+  "timestamp_utc": "2026-05-21T19:50:15Z",
+  "validator": "newgen_8_organ_scoping_validator_v0_1.py",
+  "repo_root": "E:/IMPERIUM",
+  "status": "PASS",
+  "checks": [
+    {
+      "check_id": "required_files_exist",
+      "status": "PASS",
+      "details": "all required files exist"
+    },
+    {
+      "check_id": "json_parseability",
+      "status": "PASS",
+      "details": "JSON parseability checks passed"
+    },
+    {
+      "check_id": "collector_run",
+      "status": "PASS",
+      "details": "collector generated outputs"
+    },
+    {
+      "check_id": "generated_outputs_exist",
+      "status": "PASS",
+      "details": "all generated outputs exist"
+    },
+    {
+      "check_id": "eight_organ_coverage_and_merge_shape",
+      "status": "PASS",
+      "details": "8-organ coverage checks passed"
+    },
+    {
+      "check_id": "no_forbidden_live_claims",
+      "status": "PASS",
+      "details": "no forbidden live claims detected"
+    },
+    {
+      "check_id": "forbidden_paths_not_in_changed_files_report",
+      "status": "PASS",
+      "details": "no forbidden paths listed"
+    },
+    {
+      "check_id": "forbidden_paths_not_in_git_status",
+      "status": "PASS",
+      "details": "no forbidden paths touched in git status"
+    }
+  ],
+  "failures": [],
+  "warnings": [],
+  "collector_command": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\TOOLS\\ORGAN_SCOPING\\newgen_8_organ_scope_collector_v0_1.py --repo-root E:\\IMPERIUM --task-id TASK-20260521-NEWGEN-8-ORGAN-SCOPING-CORRIDOR-PC-V0_1 --out-dir E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260521-NEWGEN-8-ORGAN-SCOPING-CORRIDOR-PC-V0_1",
+  "generated_outputs": [
+    "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-8-ORGAN-SCOPING-CORRIDOR-PC-V0_1/SCOPE_REQUEST.generated.json",
+    "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-8-ORGAN-SCOPING-CORRIDOR-PC-V0_1/ORGAN_PACKETS.generated.json",
+    "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-8-ORGAN-SCOPING-CORRIDOR-PC-V0_1/ORGAN_SCOPE_MERGE_RECORD.generated.json"
+  ],
+  "limitations": [
+    "Validator performs deterministic structure checks without external jsonschema engine."
+  ]
+}

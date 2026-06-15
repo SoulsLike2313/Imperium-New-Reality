@@ -1,0 +1,56 @@
+{
+  "schema_id": "imperium.tool_passport.v0_2",
+  "tool_id": "patch_backup_hygiene_gate",
+  "name": "Patch Backup Hygiene Gate",
+  "version": "v0_2",
+  "owner_organ": "MECHANICUS",
+  "lang": "python",
+  "validators": [
+    {
+      "id": "syntax",
+      "type": "command",
+      "command": "python -m py_compile {tool_path}",
+      "timeout_seconds": 10
+    }
+  ],
+  "exec_mode": "static",
+  "owner_gated": true,
+  "_draft": true,
+  "_auto_registered_at": "2026-06-14T17:12:52Z",
+  "_auto_registrar_version": "v0_2",
+  "_confidence": {
+    "owner_organ": "from_path",
+    "lang": "fallback_default",
+    "validators": "auto_minimal",
+    "exec_mode": "fallback_default",
+    "owner_gated": "safe_default_true"
+  },
+  "_source_paths": [],
+  "_legacy_passport_path": "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORTS/patch_backup_hygiene_gate_tool_passports_v0_1.json",
+  "_legacy_extras": {
+    "schema": "imperium.tool_passport.v0_1",
+    "passports": [
+      {
+        "tool_id": "inquisition.patch_backup_hygiene_gate",
+        "name": "Patch Backup Hygiene Gate",
+        "owner_organ": "INQUISITION",
+        "path": "ORGANS/INQUISITION/REPORTING/inquisition_patch_backup_hygiene_gate_v0_1.py",
+        "language": "python",
+        "purpose_ru": "Read-only pre-commit gate: проверяет, что H patch backups, handoff и smoke zones не tracked как source.",
+        "purpose_en": "Read-only pre-commit gate that verifies H patch backups, handoff and smoke zones are not tracked as source.",
+        "write_scope": [],
+        "destructive_default": false,
+        "safety": "READ_ONLY",
+        "validation_recipe": "python -m py_compile; run against H repo; expect PASS_PATCH_BACKUP_HYGIENE after git rm --cached cleanup.",
+        "registered_actions": [
+          "patch_backup_hygiene_scan",
+          "pre_commit_local_only_zone_gate"
+        ],
+        "data_atlas_visibility": {
+          "linked_card": "data_atlas.patch_workflow_hygiene.v0_1",
+          "entity_type": "workflow_hygiene_surface"
+        }
+      }
+    ]
+  }
+}

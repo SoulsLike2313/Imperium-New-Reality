@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TOOL_CANDIDATE_RECORD",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "task_id",
+    "tool_name",
+    "tool_slug",
+    "owner_organ",
+    "capability_summary",
+    "need_reason",
+    "admission_state",
+    "decision_owner_organ",
+    "evidence_required_pre_admission",
+    "receipts_required_post_use",
+    "risk_refs",
+    "no_install_in_v0_1",
+    "install_verified",
+    "future_task_ref",
+    "foundation_only",
+    "created_at_utc"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "record_id": {
+      "type": "string",
+      "pattern": "^TCAND-[0-9]{3}$"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tool_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tool_slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9_\\-/]+$"
+    },
+    "owner_organ": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capability_summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "need_reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "admission_state": {
+      "type": "string",
+      "enum": [
+        "CANDIDATE_ONLY",
+        "AVAILABLE_ON_HOST_UNVERIFIED_FOR_IMPERIUM",
+        "AVAILABLE_ON_HOST_VERIFIED_BASIC",
+        "DEFERRED_NEEDS_OWNER",
+        "DEFERRED_NEEDS_ADMISSION_TASK",
+        "BLOCKED_BY_RISK",
+        "APPROVED_FOR_FUTURE_INSTALL_TASK",
+        "APPROVED_FOR_READ_ONLY_USE",
+        "INSTALLED_AND_REGISTERED"
+      ]
+    },
+    "decision_owner_organ": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_required_pre_admission": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "receipts_required_post_use": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "risk_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^TRISK-[0-9]{3}$"
+      }
+    },
+    "no_install_in_v0_1": {
+      "type": "boolean"
+    },
+    "install_verified": {
+      "type": "boolean"
+    },
+    "install_verification_note": {
+      "type": "string"
+    },
+    "future_task_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "foundation_only": {
+      "type": "boolean"
+    },
+    "forbidden_claims_blocked": {
+      "type": "boolean"
+    },
+    "status_note": {
+      "type": "string"
+    },
+    "created_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

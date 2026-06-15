@@ -1,0 +1,92 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1",
+  "run_id": "vm3-20260529T224543Z",
+  "repo_head": "e8b631e55535263ec6ee8e9864d80427b5c2300e",
+  "contour": "VM3",
+  "read_files": [
+    "AGENTS.md",
+    "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md",
+    "IMPERIUM_NEW_GENERATION/ORGANS/*/READ_FIRST_GHOST_EVOLVE_PACKET.md",
+    "ORGANS/DOCTRINARIUM/GATES/GATE_REGISTRY_V0_1.json",
+    "ORGANS/DOCTRINARIUM/GATES/UNIVERSAL_GATE_LAWS_V0_1.md",
+    "ORGANS/DOCTRINARIUM/GATES/BASE_MANDATORY_GATES_V0_1.md",
+    "ORGANS/OFFICIO_AGENTIS/RESPONSE_CONTRACTS/AGENT_GATE_ACK_CONTRACT_V0_1.md"
+  ],
+  "organ_packets": [
+    {
+      "organ": "DOCTRINARIUM",
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/DOCTRINARIUM/READ_FIRST_GHOST_EVOLVE_PACKET.md"
+    },
+    {
+      "organ": "OFFICIO_AGENTIS",
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/READ_FIRST_GHOST_EVOLVE_PACKET.md"
+    },
+    {
+      "organ": "ASTRONOMICON",
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/READ_FIRST_GHOST_EVOLVE_PACKET.md"
+    },
+    {
+      "organ": "ADMINISTRATUM",
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/READ_FIRST_GHOST_EVOLVE_PACKET.md"
+    },
+    {
+      "organ": "MECHANICUS",
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/READ_FIRST_GHOST_EVOLVE_PACKET.md"
+    },
+    {
+      "organ": "INQUISITION",
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/READ_FIRST_GHOST_EVOLVE_PACKET.md"
+    },
+    {
+      "organ": "STRATEGIUM",
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/STRATEGIUM/READ_FIRST_GHOST_EVOLVE_PACKET.md"
+    },
+    {
+      "organ": "SCHOLA_IMPERIALIS",
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/SCHOLA_IMPERIALIS/READ_FIRST_GHOST_EVOLVE_PACKET.md"
+    }
+  ],
+  "matrix_packs": [
+    {
+      "path": "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.json",
+      "status": "read"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/*/MATRICES/*.json",
+      "status": "inventory scanned"
+    }
+  ],
+  "scope": {
+    "allowed_write_paths": [
+      "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/",
+      "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/",
+      "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/",
+      "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/",
+      "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/",
+      "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/",
+      "IMPERIUM_NEW_GENERATION/ORGANS/DOCTRINARIUM/",
+      "IMPERIUM_NEW_GENERATION/ORGANS/SCHOLA_IMPERIALIS/",
+      "IMPERIUM_NEW_GENERATION/ORGANS/STRATEGIUM/"
+    ],
+    "forbidden_paths": [
+      "THRONE/",
+      "CUSTODES/",
+      "old non-NewGen organ implementations outside task need",
+      "secrets/keys/tokens"
+    ]
+  },
+  "capability_gaps": [
+    {
+      "gap": "Runtime servitor start-task corridor remains unproven end-to-end.",
+      "owner": "Mechanicus + Inquisition",
+      "next_action": "future runtime-corridor proof task"
+    },
+    {
+      "gap": "Canon admission remains outside this task.",
+      "owner": "Doctrinarium",
+      "next_action": "canon process task"
+    }
+  ],
+  "verdict": "PASS_WITH_WARNINGS",
+  "timestamp_utc": "2026-05-29T22:45:43Z"
+}

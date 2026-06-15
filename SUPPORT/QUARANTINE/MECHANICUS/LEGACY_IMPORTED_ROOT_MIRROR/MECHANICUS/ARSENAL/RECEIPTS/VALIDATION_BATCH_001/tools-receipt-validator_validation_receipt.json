@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-arsenal-validation-batch-001-pc-v0_1:tools_receipt_validator:p0_mechanicus_spine:tools_receipt_validator",
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+  "capability_id": "TOOLS_RECEIPT_VALIDATOR",
+  "validator": "mechanicus_capability_validator_v0_1.py",
+  "checked_at_utc": "2026-05-24T18:15:14Z",
+  "status": "PASS",
+  "summary": "TOOLS_RECEIPT_VALIDATOR: PASS via P0_MECHANICUS_SPINE:TOOLS_RECEIPT_VALIDATOR. promotion_recommendation=KEEP_SANDBOX",
+  "check_name": "P0_MECHANICUS_SPINE:TOOLS_RECEIPT_VALIDATOR",
+  "command_or_check": "python -c \"from pathlib import Path; files=['src/imperium/receipts/model.py','src/imperium/receipts/validator.py']; missing=[x for x in files if not Path(x).exists()]; print('missing=' + str(missing)); raise SystemExit(0 if not missing else 2)\"",
+  "exit_code": 0,
+  "stdout_excerpt": "$ python -c \"from pathlib import Path; files=['src/imperium/receipts/model.py','src/imperium/receipts/validator.py']; missing=[x for x in files if not Path(x).exists()]; print('missing=' + str(missing)); raise SystemExit(0 if not missing else 2)\"\nmissing=[]",
+  "stderr_excerpt": "$ python -c \"from pathlib import Path; files=['src/imperium/receipts/model.py','src/imperium/receipts/validator.py']; missing=[x for x in files if not Path(x).exists()]; print('missing=' + str(missing)); raise SystemExit(0 if not missing else 2)\"",
+  "side_effects": [
+    "read-only command execution",
+    "receipt json created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/tools-receipt-validator_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "KEEP_SANDBOX",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/tools-receipt-validator_validation_receipt.json"
+  ]
+}

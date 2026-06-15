@@ -1,0 +1,69 @@
+{
+  "task_id": "TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1",
+  "accepted_local_upgrades": [
+    {
+      "upgrade_id": "GE-ACC-001",
+      "name": "officio_body_manifest_with_block_identity",
+      "reason": "Reusable compact identity map for Officio core units.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/BODY/officio_agentis_body_manifest_v0_1.json"
+      ]
+    },
+    {
+      "upgrade_id": "GE-ACC-002",
+      "name": "officio_contract_checker_triplet",
+      "reason": "Reusable role/taskpack/response validation route with report-scoped outputs.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_role_registry_checker_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_taskpack_acceptance_checker_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_response_contract_checker_v0_1.py"
+      ]
+    },
+    {
+      "upgrade_id": "GE-ACC-003",
+      "name": "officio_readonly_tui_inspector",
+      "reason": "Real data inspection route for body/roles/rules/ghost queues.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/officio_agentis_tui_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/LAUNCH_OFFICIO_AGENTIS_TUI_V0_1.cmd"
+      ]
+    }
+  ],
+  "rejected_noise": [
+    {
+      "noise_id": "GE-REJ-001",
+      "name": "global_block_spine_implementation_now",
+      "reason": "Task requires only Officio-local block-matryoshka identities."
+    },
+    {
+      "noise_id": "GE-REJ-002",
+      "name": "sanctum_dashboard_expansion_now",
+      "reason": "Explicit hard exclusion in taskpack."
+    },
+    {
+      "noise_id": "GE-REJ-003",
+      "name": "full_session_memory_dump",
+      "reason": "Violates anti-bloat and report budget policy."
+    }
+  ],
+  "missing_capabilities": [
+    "unified Officio checker runner wrapper",
+    "formal registration to Administratum card index",
+    "agent factory passport linkage for role registry"
+  ],
+  "modernization_decisions": [
+    "Keep new scripts at TASK_LOCAL maturity for now; no strict-reusable promotion claim.",
+    "Reuse existing officio_response_contract_checker_v0_1.py and validate with PASS fixture.",
+    "Keep TUI read-only and avoid fake action buttons."
+  ],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1/receipts/checker_results.json",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1/receipts/json_parse_receipt.json",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1/receipts/py_compile_receipt.json"
+  ],
+  "next_recommended_improvements": [
+    "Create single Officio body checker runner with typed output schema.",
+    "Add optional RU/EN switch for TUI labels.",
+    "Register Officio block identities in future global Block Spine once scoped."
+  ]
+}

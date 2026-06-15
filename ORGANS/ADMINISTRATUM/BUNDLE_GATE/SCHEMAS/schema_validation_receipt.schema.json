@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Schema Validation Receipt",
+  "type": "object",
+  "required": ["task_id", "schema_validation_verdict", "schemas_checked", "files_checked", "errors", "warnings"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "schema_validation_verdict": {"enum": ["BUNDLE_SCHEMA_PASS", "BUNDLE_SCHEMA_WARN", "BUNDLE_SCHEMA_BLOCK"]},
+    "schemas_checked": {"type": "array", "items": {"type": "string"}},
+    "files_checked": {"type": "array", "items": {"type": "string"}},
+    "errors": {"type": "array"},
+    "warnings": {"type": "array"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://mechanicus/schemas/capability_record.v0_1",
+  "title": "Mechanicus Capability Record",
+  "type": "object",
+  "required": [
+    "capability_id",
+    "status",
+    "description"
+  ],
+  "properties": {
+    "capability_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "PROVEN",
+        "CANDIDATE",
+        "MISSING",
+        "BLOCKED"
+      ]
+    },
+    "owner_tool_id": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

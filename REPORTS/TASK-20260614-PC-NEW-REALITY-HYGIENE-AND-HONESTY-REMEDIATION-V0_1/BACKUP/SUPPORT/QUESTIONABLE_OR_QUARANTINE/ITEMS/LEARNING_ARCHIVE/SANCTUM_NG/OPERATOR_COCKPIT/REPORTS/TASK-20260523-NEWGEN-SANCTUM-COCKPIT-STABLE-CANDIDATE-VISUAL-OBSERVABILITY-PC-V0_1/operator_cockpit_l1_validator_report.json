@@ -1,0 +1,107 @@
+{
+  "schema_id": "OPERATOR_COCKPIT_L1_VALIDATOR_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-COCKPIT-STABLE-CANDIDATE-VISUAL-OBSERVABILITY-PC-V0_1",
+  "generated_at_utc": "2026-05-23T21:06:04Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "core_files_exist",
+      "status": "PASS",
+      "details": "core cockpit files exist"
+    },
+    {
+      "check_id": "state_parse",
+      "status": "PASS",
+      "details": "state file parses"
+    },
+    {
+      "check_id": "schema_id",
+      "status": "PASS",
+      "details": "state schema_id is OPERATOR_COCKPIT_L1_STATE_V0_1"
+    },
+    {
+      "check_id": "claim_boundary",
+      "status": "PASS",
+      "details": "claim boundary is read-only L1"
+    },
+    {
+      "check_id": "five_second_truth_fields",
+      "status": "PASS",
+      "details": "5-second truth fields are populated"
+    },
+    {
+      "check_id": "repo_truth_block_present",
+      "status": "PASS",
+      "details": "repo truth block exists"
+    },
+    {
+      "check_id": "route_commit_reference",
+      "status": "PASS",
+      "details": "route proof commit is referenced"
+    },
+    {
+      "check_id": "action_strip_labels",
+      "status": "PASS",
+      "details": "all required action labels are present"
+    },
+    {
+      "check_id": "action_status_values",
+      "status": "PASS",
+      "details": "action statuses use allowed label set"
+    },
+    {
+      "check_id": "active_actions_have_receipt_mode",
+      "status": "PASS",
+      "details": "active WIRED/DRY_RUN_ONLY actions include backend and receipt mode"
+    },
+    {
+      "check_id": "continuity_panel_present",
+      "status": "PASS",
+      "details": "continuity panel state is present"
+    },
+    {
+      "check_id": "development_preview_panel_present",
+      "status": "PASS",
+      "details": "development preview panel state is present"
+    },
+    {
+      "check_id": "evidence_diff_panel_present",
+      "status": "PASS",
+      "details": "evidence/diff panel state is present"
+    },
+    {
+      "check_id": "visual_identity_markers",
+      "status": "PASS",
+      "details": "visual identity markers are present"
+    },
+    {
+      "check_id": "forbidden_dashboard_patterns_absent",
+      "status": "PASS",
+      "details": "no forbidden generic dashboard patterns found"
+    },
+    {
+      "check_id": "dark_cockpit_theme_present",
+      "status": "PASS",
+      "details": "dark cockpit theme markers are present"
+    },
+    {
+      "check_id": "bilingual_ui_switch_present",
+      "status": "PASS",
+      "details": "RU/EN switch markers are present"
+    },
+    {
+      "check_id": "screenshot_evidence_present",
+      "status": "PASS",
+      "details": "screenshot evidence count=4"
+    },
+    {
+      "check_id": "not_proven_boundary_present",
+      "status": "PASS",
+      "details": "required not_proven boundaries are present"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "claim_boundary": "READ_ONLY_OWNER_COCKPIT_L1",
+  "no_fake_green_note": "Active actions require receipt mode and backend action binding."
+}

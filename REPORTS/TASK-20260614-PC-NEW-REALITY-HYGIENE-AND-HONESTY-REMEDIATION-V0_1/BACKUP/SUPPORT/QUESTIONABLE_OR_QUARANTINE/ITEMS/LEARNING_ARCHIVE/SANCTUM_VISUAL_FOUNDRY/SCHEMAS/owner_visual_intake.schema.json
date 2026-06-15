@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Owner Visual Intake",
+  "type": "object",
+  "required": [
+    "slice",
+    "primary_feeling",
+    "first_glance_priority",
+    "style_mix",
+    "layout_mode",
+    "hard_forbidden",
+    "responsive_targets"
+  ],
+  "properties": {
+    "slice": {"type": "string"},
+    "primary_feeling": {"type": "string"},
+    "first_glance_priority": {"type": "array", "items": {"type": "string"}},
+    "style_mix": {"type": "object"},
+    "visual_intensity": {"type": "string"},
+    "layout_mode": {"type": "string"},
+    "mechanicus_panel_purpose": {"type": "array", "items": {"type": "string"}},
+    "sanctum_level_actions": {"type": "array", "items": {"type": "string"}},
+    "hard_forbidden": {"type": "array", "items": {"type": "string"}},
+    "responsive_targets": {"type": "array", "items": {"type": "string"}}
+  }
+}

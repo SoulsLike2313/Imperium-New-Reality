@@ -1,0 +1,123 @@
+{
+  "schema_version": "0.1",
+  "merge_id": "SCOPE-MERGE-TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0-1",
+  "task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+  "packet_sources": [
+    {
+      "organ_id": "ASTRONOMICON",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+    },
+    {
+      "organ_id": "DOCTRINARIUM",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+    },
+    {
+      "organ_id": "INQUISITION",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+    },
+    {
+      "organ_id": "SCHOLA_IMPERIALIS",
+      "source_type": "SAMPLE_PACKET",
+      "path_or_note": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_PACKETS/EXAMPLES/SAMPLE_TASK_8_ORGAN_PACKET_SET_V0_1.json"
+    }
+  ],
+  "organ_coverage": {
+    "required_count": 8,
+    "covered_count": 8,
+    "missing_organs": []
+  },
+  "merged_scope": {
+    "allowed_paths": [
+      "IMPERIUM_NEW_GENERATION/ARCHITECTURE/",
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/",
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/TASK_KERNEL/",
+      "IMPERIUM_NEW_GENERATION/REPORTS/",
+      "IMPERIUM_NEW_GENERATION/TASKS/",
+      "IMPERIUM_NEW_GENERATION/TASKS/REGISTRY/",
+      "IMPERIUM_NEW_GENERATION/TOOLS/",
+      "IMPERIUM_NEW_GENERATION/TOOLS/VALIDATORS/"
+    ],
+    "forbidden_paths": [
+      ".git/**",
+      "IMPERIUM_TEST_VERSION/**",
+      "ORGANS/**",
+      "SANCTUM/**"
+    ],
+    "required_checks": [
+      "8-organ coverage checks",
+      "ACK existence check",
+      "Deliverable completeness",
+      "Enum and organ coverage check",
+      "Evidence completeness check",
+      "Forbidden path check",
+      "GATE_ACK before edits",
+      "JSON parse",
+      "No fake live-agent claims",
+      "Out-of-scope organ check",
+      "Receipt field completeness",
+      "Schema parse checks",
+      "Skill coverage check",
+      "Stage coverage check"
+    ],
+    "evidence_required": [
+      "CHANGED_FILES_STATUS.md",
+      "DOCTRINARIUM_LAW_ACK_OR_WARN.json",
+      "FINAL_RECEIPT.json",
+      "OFFICIO_ROLE_ACK json",
+      "OFFICIO_ROLE_ACK_OR_WARN.json",
+      "OWNER_REPORT_RU.md",
+      "Required file list",
+      "STEP_PROOF_RECORDS.jsonl",
+      "Skill references in packet fields",
+      "Stage map file path",
+      "VALIDATOR_REPORT.json",
+      "Validator report"
+    ],
+    "owner_questions": [
+      "Is next task kernel registry admitted immediately?",
+      "Need additional handoff artifact?",
+      "Need dedicated training packet schema next?",
+      "Need stricter PASS gate for example artifacts?",
+      "Need stricter language gate now?",
+      "Promote validator after next task?",
+      "Require contradiction matrix in next task?",
+      "Should stage priorities be strict or adaptive?"
+    ],
+    "next_stage_recommendation": "Proceed to guarded per-organ adapter planning with receipt-backed live-source policy."
+  },
+  "conflicts": [],
+  "warnings": [
+    "FOUNDATION_ONLY_SOURCE",
+    "NOT_LIVE_AGENT"
+  ],
+  "readiness": "FOUNDATION_ONLY",
+  "truth_limitations": [
+    "Foundation-only scoping corridor output.",
+    "Packet sources are static/sample/stub unless explicit live receipts exist.",
+    "No production live autonomous multi-organ claim."
+  ],
+  "self_verdict": "STRONG"
+}

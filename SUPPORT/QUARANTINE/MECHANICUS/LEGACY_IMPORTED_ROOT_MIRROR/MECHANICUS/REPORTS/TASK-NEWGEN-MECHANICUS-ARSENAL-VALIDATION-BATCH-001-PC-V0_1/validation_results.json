@@ -1,0 +1,581 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+  "generated_at_utc": "2026-05-24T18:15:17Z",
+  "results": [
+    {
+      "capability_id": "CAP-UTILITY-GIT",
+      "group": "P0_MECHANICUS_SPINE",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/CAP-UTILITY-GIT.json",
+      "previous_status": "SANDBOX",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_SANDBOX",
+      "command_outcomes": [
+        {
+          "command": "git --version",
+          "exit_code": 0,
+          "verdict": "PASS"
+        },
+        {
+          "command": "git status --short",
+          "exit_code": 0,
+          "verdict": "PASS"
+        },
+        {
+          "command": "git rev-parse HEAD",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-utility-git_validation_receipt.json"
+    },
+    {
+      "capability_id": "TOOLS_GIT",
+      "group": "P0_MECHANICUS_SPINE",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_GIT/capability_card.json",
+      "previous_status": "SANDBOX",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_SANDBOX",
+      "command_outcomes": [
+        {
+          "command": "git --version",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/tools-git_validation_receipt.json"
+    },
+    {
+      "capability_id": "CAP-UTILITY-POWERSHELL",
+      "group": "P0_MECHANICUS_SPINE",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/CAP-UTILITY-POWERSHELL.json",
+      "previous_status": "SANDBOX",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_SANDBOX",
+      "command_outcomes": [
+        {
+          "command": "powershell -NoProfile -Command \"$PSVersionTable.PSVersion.ToString()\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-utility-powershell_validation_receipt.json"
+    },
+    {
+      "capability_id": "LANGUAGES_POWERSHELL",
+      "group": "P0_MECHANICUS_SPINE",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/LANGUAGES_POWERSHELL/capability_card.json",
+      "previous_status": "SANDBOX",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_SANDBOX",
+      "command_outcomes": [
+        {
+          "command": "powershell -NoProfile -Command \"$PSVersionTable.PSVersion.ToString()\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/languages-powershell_validation_receipt.json"
+    },
+    {
+      "capability_id": "CAP-LANG-PYTHON312-RUNTIME",
+      "group": "P0_MECHANICUS_SPINE",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/CAP-LANG-PYTHON312-RUNTIME.json",
+      "previous_status": "SANDBOX",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_SANDBOX",
+      "command_outcomes": [
+        {
+          "command": "python --version",
+          "exit_code": 0,
+          "verdict": "PASS"
+        },
+        {
+          "command": "python -c \"import sys; print(sys.executable)\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-lang-python312-runtime_validation_receipt.json"
+    },
+    {
+      "capability_id": "LANGUAGES_PYTHON_312_RUNTIME",
+      "group": "P0_MECHANICUS_SPINE",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/LANGUAGES_PYTHON_312_RUNTIME/capability_card.json",
+      "previous_status": "SANDBOX",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_SANDBOX",
+      "command_outcomes": [
+        {
+          "command": "python --version",
+          "exit_code": 0,
+          "verdict": "PASS"
+        },
+        {
+          "command": "python -c \"import sys; print(sys.executable)\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/languages-python-312-runtime_validation_receipt.json"
+    },
+    {
+      "capability_id": "CAP-TOOL-PATH-POLICY-INTERNAL",
+      "group": "P0_MECHANICUS_SPINE",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-PATH-POLICY-INTERNAL.json",
+      "previous_status": "CANON",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_CANON",
+      "command_outcomes": [
+        {
+          "command": "python -c \"from pathlib import Path; p=Path('src/imperium/security/path_policy.py'); print(p.exists()); raise SystemExit(0 if p.exists() else 2)\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-tool-path-policy-internal_validation_receipt.json"
+    },
+    {
+      "capability_id": "TOOLS_PATH_POLICY",
+      "group": "P0_MECHANICUS_SPINE",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_PATH_POLICY/capability_card.json",
+      "previous_status": "SANDBOX",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_SANDBOX",
+      "command_outcomes": [
+        {
+          "command": "python -c \"from pathlib import Path; p=Path('src/imperium/security/path_policy.py'); print(p.exists()); raise SystemExit(0 if p.exists() else 2)\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/tools-path-policy_validation_receipt.json"
+    },
+    {
+      "capability_id": "CAP-TOOL-COMMAND-GATEWAY-INTERNAL",
+      "group": "P0_MECHANICUS_SPINE",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-COMMAND-GATEWAY-INTERNAL.json",
+      "previous_status": "CANON",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_CANON",
+      "command_outcomes": [
+        {
+          "command": "python -c \"from pathlib import Path; p=Path('src/imperium/security/command_gateway.py'); print(p.exists()); raise SystemExit(0 if p.exists() else 2)\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-tool-command-gateway-internal_validation_receipt.json"
+    },
+    {
+      "capability_id": "TOOLS_COMMAND_GATEWAY",
+      "group": "P0_MECHANICUS_SPINE",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_COMMAND_GATEWAY/capability_card.json",
+      "previous_status": "SANDBOX",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_SANDBOX",
+      "command_outcomes": [
+        {
+          "command": "python -c \"from pathlib import Path; p=Path('src/imperium/security/command_gateway.py'); print(p.exists()); raise SystemExit(0 if p.exists() else 2)\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/tools-command-gateway_validation_receipt.json"
+    },
+    {
+      "capability_id": "CAP-TOOL-RECEIPT-MODELS-VALIDATORS",
+      "group": "P0_MECHANICUS_SPINE",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-RECEIPT-MODELS-VALIDATORS.json",
+      "previous_status": "CANON",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_CANON",
+      "command_outcomes": [
+        {
+          "command": "python -c \"from pathlib import Path; files=['src/imperium/receipts/model.py','src/imperium/receipts/validator.py']; missing=[x for x in files if not Path(x).exists()]; print('missing=' + str(missing)); raise SystemExit(0 if not missing else 2)\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-tool-receipt-models-validators_validation_receipt.json"
+    },
+    {
+      "capability_id": "TOOLS_RECEIPT_VALIDATOR",
+      "group": "P0_MECHANICUS_SPINE",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_RECEIPT_VALIDATOR/capability_card.json",
+      "previous_status": "SANDBOX",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_SANDBOX",
+      "command_outcomes": [
+        {
+          "command": "python -c \"from pathlib import Path; files=['src/imperium/receipts/model.py','src/imperium/receipts/validator.py']; missing=[x for x in files if not Path(x).exists()]; print('missing=' + str(missing)); raise SystemExit(0 if not missing else 2)\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/tools-receipt-validator_validation_receipt.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_PY_COMPILE",
+      "group": "P1_CODE_QUALITY",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PY_COMPILE/capability_card.json",
+      "previous_status": "SANDBOX",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_SANDBOX",
+      "command_outcomes": [
+        {
+          "command": "python -c \"import py_compile,tempfile; files=['IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_arsenal_foundation_v0_1.py','IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_arsenal_mass_intake_v0_1.py']; [py_compile.compile(f, cfile=tempfile.mktemp(suffix='.pyc'), doraise=True) for f in files]; print('py_compile_ok')\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/code-quality-py-compile_validation_receipt.json"
+    },
+    {
+      "capability_id": "CAP-TOOL-JSONSCHEMA",
+      "group": "P1_CODE_QUALITY",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-JSONSCHEMA.json",
+      "previous_status": "CANDIDATE",
+      "validation_verdict": "MISSING",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "command_outcomes": [
+        {
+          "command": "python -c \"import importlib.metadata as m; print(m.version('jsonschema'))\"",
+          "exit_code": 1,
+          "verdict": "MISSING"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-tool-jsonschema_validation_receipt.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_JSONSCHEMA",
+      "group": "P1_CODE_QUALITY",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_JSONSCHEMA/capability_card.json",
+      "previous_status": "CANDIDATE",
+      "validation_verdict": "MISSING",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "command_outcomes": [
+        {
+          "command": "python -c \"import importlib.metadata as m; print(m.version('jsonschema'))\"",
+          "exit_code": 1,
+          "verdict": "MISSING"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/code-quality-jsonschema_validation_receipt.json"
+    },
+    {
+      "capability_id": "CAP-TOOL-PYTEST",
+      "group": "P1_CODE_QUALITY",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-PYTEST.json",
+      "previous_status": "SANDBOX",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_SANDBOX",
+      "command_outcomes": [
+        {
+          "command": "python -m pytest --version",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-tool-pytest_validation_receipt.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_PYTEST",
+      "group": "P1_CODE_QUALITY",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PYTEST/capability_card.json",
+      "previous_status": "SANDBOX",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_SANDBOX",
+      "command_outcomes": [
+        {
+          "command": "python -m pytest --version",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/code-quality-pytest_validation_receipt.json"
+    },
+    {
+      "capability_id": "CAP-CQ-RUFF",
+      "group": "P1_CODE_QUALITY",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CAP-CQ-RUFF.json",
+      "previous_status": "CANDIDATE",
+      "validation_verdict": "MISSING",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "command_outcomes": [
+        {
+          "command": "ruff --version",
+          "exit_code": 1,
+          "verdict": "MISSING"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-cq-ruff_validation_receipt.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_RUFF",
+      "group": "P1_CODE_QUALITY",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_RUFF/capability_card.json",
+      "previous_status": "CANDIDATE",
+      "validation_verdict": "MISSING",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "command_outcomes": [
+        {
+          "command": "ruff --version",
+          "exit_code": 1,
+          "verdict": "MISSING"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/code-quality-ruff_validation_receipt.json"
+    },
+    {
+      "capability_id": "CAP-CQ-PYRIGHT-MYPY",
+      "group": "P1_CODE_QUALITY",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CAP-CQ-PYRIGHT-MYPY.json",
+      "previous_status": "CANDIDATE",
+      "validation_verdict": "MISSING",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "command_outcomes": [
+        {
+          "command": "mypy --version",
+          "exit_code": 1,
+          "verdict": "MISSING"
+        },
+        {
+          "command": "pyright --version",
+          "exit_code": 1,
+          "verdict": "MISSING"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-cq-pyright-mypy_validation_receipt.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_MYPY",
+      "group": "P1_CODE_QUALITY",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_MYPY/capability_card.json",
+      "previous_status": "CANDIDATE",
+      "validation_verdict": "MISSING",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "command_outcomes": [
+        {
+          "command": "mypy --version",
+          "exit_code": 1,
+          "verdict": "MISSING"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/code-quality-mypy_validation_receipt.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_PYRIGHT",
+      "group": "P1_CODE_QUALITY",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PYRIGHT/capability_card.json",
+      "previous_status": "CANDIDATE",
+      "validation_verdict": "MISSING",
+      "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+      "command_outcomes": [
+        {
+          "command": "pyright --version",
+          "exit_code": 1,
+          "verdict": "MISSING"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/code-quality-pyright_validation_receipt.json"
+    },
+    {
+      "capability_id": "DATABASES_SQLITE",
+      "group": "P2_EVIDENCE_SEARCH_LITE",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_SQLITE/capability_card.json",
+      "previous_status": "SANDBOX",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_SANDBOX",
+      "command_outcomes": [
+        {
+          "command": "python -c \"import sqlite3; print(sqlite3.sqlite_version)\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/databases-sqlite_validation_receipt.json"
+    },
+    {
+      "capability_id": "DATABASES_SQLITE_FTS5",
+      "group": "P2_EVIDENCE_SEARCH_LITE",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_SQLITE_FTS5/capability_card.json",
+      "previous_status": "SANDBOX",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_SANDBOX",
+      "command_outcomes": [
+        {
+          "command": "python -c \"import sqlite3; con=sqlite3.connect(':memory:'); con.execute('CREATE VIRTUAL TABLE t USING fts5(content)'); print('fts5_ok')\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/databases-sqlite-fts5_validation_receipt.json"
+    },
+    {
+      "capability_id": "CAP-DB-SQLITE-FTS5-EVIDENCE",
+      "group": "P2_EVIDENCE_SEARCH_LITE",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/CAP-DB-SQLITE-FTS5-EVIDENCE.json",
+      "previous_status": "SANDBOX",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_SANDBOX",
+      "command_outcomes": [
+        {
+          "command": "python -c \"import sqlite3; con=sqlite3.connect(':memory:'); con.execute('CREATE VIRTUAL TABLE t USING fts5(content)'); print('fts5_ok')\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-db-sqlite-fts5-evidence_validation_receipt.json"
+    },
+    {
+      "capability_id": "SEARCH_INDEXING_SQLITE_FTS_SEARCH",
+      "group": "P2_EVIDENCE_SEARCH_LITE",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/SEARCH_INDEXING/SEARCH_INDEXING_SQLITE_FTS_SEARCH/capability_card.json",
+      "previous_status": "SANDBOX",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_SANDBOX",
+      "command_outcomes": [
+        {
+          "command": "python -c \"import sqlite3; con=sqlite3.connect(':memory:'); con.execute('CREATE VIRTUAL TABLE t USING fts5(content)'); print('fts5_ok')\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/search-indexing-sqlite-fts-search_validation_receipt.json"
+    },
+    {
+      "capability_id": "CAP-VIS-PLAYWRIGHT-REGRESSION",
+      "group": "P3_VISUAL_DEFERRED_READINESS_ONLY",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/VISUAL_TESTING/CAP-VIS-PLAYWRIGHT-REGRESSION.json",
+      "previous_status": "CANDIDATE",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_CANDIDATE_READINESS_ONLY",
+      "command_outcomes": [
+        {
+          "command": "python -c \"import playwright; print('playwright_python_available')\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-vis-playwright-regression_validation_receipt.json"
+    },
+    {
+      "capability_id": "VISUAL_TESTING_PLAYWRIGHT",
+      "group": "P3_VISUAL_DEFERRED_READINESS_ONLY",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/VISUAL_TESTING/VISUAL_TESTING_PLAYWRIGHT/capability_card.json",
+      "previous_status": "CANDIDATE",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_CANDIDATE_READINESS_ONLY",
+      "command_outcomes": [
+        {
+          "command": "python -c \"import playwright; print('playwright_python_available')\"",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/visual-testing-playwright_validation_receipt.json"
+    },
+    {
+      "capability_id": "CAP-TOOL-NODE-NPM-NPX",
+      "group": "P3_VISUAL_DEFERRED_READINESS_ONLY",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-NODE-NPM-NPX.json",
+      "previous_status": "CANDIDATE",
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "KEEP_CANDIDATE_READINESS_ONLY",
+      "command_outcomes": [
+        {
+          "command": "node --version",
+          "exit_code": 0,
+          "verdict": "PASS"
+        },
+        {
+          "command": "npm --version",
+          "exit_code": 0,
+          "verdict": "PASS"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-tool-node-npm-npx_validation_receipt.json"
+    },
+    {
+      "capability_id": "UI_FRAMEWORKS_VITE",
+      "group": "P3_VISUAL_DEFERRED_READINESS_ONLY",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UI_FRAMEWORKS/UI_FRAMEWORKS_VITE/capability_card.json",
+      "previous_status": "CANDIDATE",
+      "validation_verdict": "MISSING",
+      "promotion_recommendation": "KEEP_CANDIDATE_READINESS_ONLY",
+      "command_outcomes": [
+        {
+          "command": "vite --version",
+          "exit_code": 1,
+          "verdict": "MISSING"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/ui-frameworks-vite_validation_receipt.json"
+    },
+    {
+      "capability_id": "UI_FRAMEWORKS_REACT",
+      "group": "P3_VISUAL_DEFERRED_READINESS_ONLY",
+      "card_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UI_FRAMEWORKS/UI_FRAMEWORKS_REACT/capability_card.json",
+      "previous_status": "CANDIDATE",
+      "validation_verdict": "MISSING",
+      "promotion_recommendation": "KEEP_CANDIDATE_READINESS_ONLY",
+      "command_outcomes": [
+        {
+          "command": "node -e \"try {console.log(require('react/package.json').version)} catch(e){process.exit(2)}\"",
+          "exit_code": 2,
+          "verdict": "MISSING"
+        }
+      ],
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/ui-frameworks-react_validation_receipt.json"
+    }
+  ],
+  "summary": {
+    "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+    "generated_at_utc": "2026-05-24T18:15:17Z",
+    "scope_source": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1/DOSSIER_SOURCE/VALIDATION_SCOPE_OWNER_APPROVED_V0_1.json",
+    "targets_total": 31,
+    "results_total": 31,
+    "promoted_capabilities_total": 13,
+    "status_change_total": 13,
+    "by_group": {
+      "P0_MECHANICUS_SPINE": {
+        "targets": 12,
+        "PASS": 12,
+        "PASS_WITH_WARNINGS": 0,
+        "FAIL": 0,
+        "MISSING": 0,
+        "BLOCKED": 0
+      },
+      "P1_CODE_QUALITY": {
+        "targets": 10,
+        "PASS": 3,
+        "PASS_WITH_WARNINGS": 0,
+        "FAIL": 0,
+        "MISSING": 7,
+        "BLOCKED": 0
+      },
+      "P2_EVIDENCE_SEARCH_LITE": {
+        "targets": 4,
+        "PASS": 4,
+        "PASS_WITH_WARNINGS": 0,
+        "FAIL": 0,
+        "MISSING": 0,
+        "BLOCKED": 0
+      },
+      "P3_VISUAL_DEFERRED_READINESS_ONLY": {
+        "targets": 5,
+        "PASS": 3,
+        "PASS_WITH_WARNINGS": 0,
+        "FAIL": 0,
+        "MISSING": 2,
+        "BLOCKED": 0
+      }
+    },
+    "reserved_p5_not_validated": [
+      "LOCAL_LLM",
+      "CLOUD_LLM_ADAPTERS",
+      "secrets/API keys",
+      "paid/cloud routes"
+    ]
+  }
+}

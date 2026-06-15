@@ -1,0 +1,89 @@
+{
+  "task_id": "TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1",
+  "starting_head": "2b43737f46595fe9e7f2837276724db2ef56a24e",
+  "ending_head_before_commit": "2b43737f46595fe9e7f2837276724db2ef56a24e",
+  "files_changed": [
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_v1_core.py",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1/IMPLEMENTATION_REPORT_V0_1.md",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1/CHANGED_FILES_V0_1.md",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1/TEST_REPORT_V0_1.md",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1/SELF_ASSESSMENT_V0_1.md",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1/OWNER_QUICKSTART_V0_1.md",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/receipts/TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1_RECEIPT_V0_1.json",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1/OWNER_REPORT_RENDER_SOURCE_V0_1.md",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1/OWNER_REPORT_V0_1.pdf"
+  ],
+  "commands_run": [
+    "git status --short",
+    "git rev-parse --show-toplevel",
+    "git rev-parse HEAD",
+    "git branch --show-current",
+    "git ls-remote origin refs/heads/master",
+    "git stash push -m QUARANTINE pre-task dirty state TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1 -- ORGANS/ADMINISTRATUM/SELF_REPORT.json",
+    "python -m py_compile IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py",
+    "python -m py_compile IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_v1_core.py",
+    "python IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py --help",
+    "python IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py --no-color status",
+    "python IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py --plain-json --no-color status",
+    "python IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py --verbose --no-color status",
+    "python IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py --no-rich --no-color status",
+    "python IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py --rich --no-color status",
+    "python IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py --no-color doctor-rich",
+    "python IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py --no-color inventory --repo-root E:/IMPERIUM",
+    "python IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py --no-color collect-reality-snapshot --repo-root E:/IMPERIUM",
+    "python IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py --no-color collect-continuity-pack --repo-root E:/IMPERIUM --include-context true --inventory-max-files 900 --provenance-limit 220",
+    "python IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py --no-color verify-pack-against-reality --repo-root E:/IMPERIUM",
+    "python IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py --no-color check-all --repo-root E:/IMPERIUM --inventory-max-files 500",
+    "python <inline> generate OWNER_REPORT_RENDER_SOURCE_V0_1.md and OWNER_REPORT_V0_1.pdf from canonical reports/receipt",
+    "python <inline> validate OWNER_REPORT_V0_1.pdf with pypdf"
+  ],
+  "tests_passed": {
+    "cli_help": true,
+    "status": true,
+    "check_all": true,
+    "inventory": true,
+    "collect_reality_snapshot": true,
+    "collect_continuity_pack": true,
+    "verify_pack_against_reality": true,
+    "doctor_rich": true,
+    "plain_json_mode": true,
+    "verbose_mode": true,
+    "no_rich_mode": true,
+    "rich_mode": true,
+    "owner_pdf_render": true
+  },
+  "warnings": [
+    "Rich visual render cannot be fully asserted in non-TTY shell capture mode.",
+    "Continuity collection was executed with inventory/provenance limits for bounded runtime."
+  ],
+  "limitations": [
+    "Status-like commands can emit WARN while repository is dirty from in-progress task edits.",
+    "Continuity maturity self-verdict is evidence-bound and can remain PARTIAL or NOT_READY_FOR_SOLE_HANDOFF."
+  ],
+  "runtime_outputs_written": [
+    "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-154503-b73a0e",
+    "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-154510-8f0cb9",
+    "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-154510-60901f",
+    "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-154510-486a6a",
+    "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-154515-6e9bc4",
+    "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-154521-ee8830",
+    "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-154527-7b3f65",
+    "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-154608-3a4e75",
+    "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-154614-6e45bf",
+    "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-154850-3c2a10",
+    "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/RUN-ADMINISTRATUM-20260518-154856-548305"
+  ],
+  "git_dirty_before": false,
+  "git_dirty_after": true,
+  "private_content_exported": false,
+  "no_git_export_rules_enforced": true,
+  "final_verdict": "PASS_WITH_WARNINGS_READY_FOR_OWNER_REVIEW",
+  "pdf_render_source": "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1/OWNER_REPORT_RENDER_SOURCE_V0_1.md",
+  "pdf_artifact": "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/REPORTS/TASK-20260518-ADMINISTRATUM-OPERATOR-CONTRACT-TRUST-CAPSULE-V0_1/OWNER_REPORT_V0_1.pdf",
+  "pdf_validation": {
+    "parser": "pypdf",
+    "parse_ok": true,
+    "page_count": 3
+  }
+}

@@ -1,0 +1,15 @@
+GATE_ACK:
+- task_id: TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1
+- current_head: 3864b075b1ee8e242c4f14a9d8f01a0455d28245
+- gatepack_path: c:/Users/PC/Downloads/TASKPACK_TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1.zip
+- gatepack_sha256: c2843aac6b14428ba3f41584b587be319aff656be31149a4350c489acbe914c4
+- read_gates: GATE_DOCTRINARIUM_READ_FIRST, GATE_NO_GENERIC_PASS, GATE_NO_GREEN_WITHOUT_EVIDENCE, GATE_OWNER_POWER_DELTA_REQUIRED, GATE_PAIN_PREFLIGHT_REQUIRED, GATE_VISUAL_CONTRACT_REQUIRED, GATE_NO_DEFAULT_DASHBOARD, GATE_SCREENSHOT_EVIDENCE_REQUIRED, GATE_STABLE_CANDIDATE_REQUIRED_FOR_VISUAL_WORK, GATE_RESOURCE_KPD_REQUIRED, GATE_INTERNAL_FUNCTION_MUST_HAVE_ORGAN_OWNER
+- accepted_stop_conditions: git_truth_mismatch; dirty_worktree_before_admission; missing_preflight_or_contract_inputs; owner_verdict_needed_from_organ_route; forbidden_path_required_to_complete_task
+- scope_boundary: IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/** and IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/** only
+- touched_paths: implementation root + task report root only
+- forbidden_paths: ORGANS/**, IMPERIUM_TEST_VERSION/**, .git/**
+- expected_receipts: FINAL_REPORT.md; closure_receipt.json; context_source_mix.json; dashboard_l2_action_api_smoke_report.json; dashboard_l2_playwright_report.json; dashboard_l2_screenshot.png; action_registry_validation_report.json; sample_action_receipts_index.json; json_parse_validation_report.json
+- repo_recon_required: true
+- script_absorption_required: yes_if_new_reusable_tool_created
+- clarification_needed: none
+- verdict: PASS

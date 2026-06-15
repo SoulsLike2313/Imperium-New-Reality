@@ -1,0 +1,46 @@
+{
+  "schema_id": "newgen_organ_gate_catalog_v0_1",
+  "organ_id": "ASTRONOMICON",
+  "version": "v0_1",
+  "gates": [
+    {
+      "gate_id": "GATE_ASTRA_TASK_REGISTRATION_REQUIRED",
+      "severity": "BLOCK",
+      "purpose": "Task must be registered and typed before execution.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "taskpack_scope_ack.json",
+        "organ_route_plan.json"
+      ]
+    },
+    {
+      "gate_id": "GATE_ASTRA_STAGE_ROUTE_REQUIRED",
+      "severity": "BLOCK",
+      "purpose": "Stage route and ordering must be explicit.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "organ_route_plan.json",
+        "important_six_interaction_simulation_v0_1.json"
+      ]
+    },
+    {
+      "gate_id": "GATE_ASTRA_OWNER_PASS_FAIL_REQUIRED",
+      "severity": "BLOCK",
+      "purpose": "Owner comments and pass/fail criteria are mandatory fields.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "important_six_interaction_simulation_ru.md",
+        "FINAL_REPORT.md"
+      ]
+    },
+    {
+      "gate_id": "GATE_ASTRA_ACTIVE_ARCHIVE_TRANSITION",
+      "severity": "WARN_TO_BLOCK",
+      "purpose": "Active/archive transition should be defined before closure.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "closure_receipt.json"
+      ]
+    }
+  ]
+}

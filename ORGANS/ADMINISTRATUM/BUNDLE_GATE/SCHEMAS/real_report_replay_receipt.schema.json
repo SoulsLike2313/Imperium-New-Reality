@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Real Report Replay Receipt",
+  "type": "object",
+  "required": ["task_id", "replay_verdict", "reports_replayed", "pass_count", "warn_count", "block_count"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "replay_verdict": {"type": "string"},
+    "reports_replayed": {"type": "array"},
+    "pass_count": {"type": "integer"},
+    "warn_count": {"type": "integer"},
+    "block_count": {"type": "integer"}
+  },
+  "additionalProperties": true
+}

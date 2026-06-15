@@ -1,0 +1,38 @@
+{
+  "organ": "DOCTRINARIUM",
+  "status": "ACTIVE_FOR_STAGE1",
+  "task_entry_role": "Admits Stage1 execution law, forbidden claims, and candidate/canon boundaries before Astronomicon task entry proceeds.",
+  "required_inputs": [
+    "Matrix Spine Index",
+    "Ghost_Evolve laws"
+  ],
+  "required_outputs": [
+    "Law Admission Gate"
+  ],
+  "matrix_responsibilities": [
+    "GHOST_EVOLVE_V2_EXECUTION_LAW_MATRIX",
+    "ORGAN_RESPONSIBILITY_MATRIX",
+    "GATE_DEDUPLICATION_MATRIX",
+    "CANON_ADMISSION_MATRIX"
+  ],
+  "tools_or_receipts_used": [
+    "scripts/doctrinarium_task_start_gate_v0_1.py",
+    "Get-Content IMPERIUM_NEW_GENERATION/ORGANS/DOCTRINARIUM/READ_FIRST_GHOST_EVOLVE_PACKET.md",
+    "scripts/doctrinarium_check_all_v0_1.py"
+  ],
+  "ide_display_fields": [
+    "status",
+    "forbidden_claims",
+    "admission_level",
+    "stage_caps"
+  ],
+  "failure_caps": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_ORGAN_FILE_DECORATIVE_NOT_USED"
+  ],
+  "known_gaps": [
+    "Most Doctrinarium laws are still candidate and not canon-admitted.",
+    "WARP lock is policy-level and not yet globally enforced by one canonical checker."
+  ],
+  "used_by_astronomicon_task_entry": true
+}

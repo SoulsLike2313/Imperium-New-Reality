@@ -1,0 +1,63 @@
+{
+  "task_id": "TASK-NEWGEN-PC-NEW-REALITY-FINAL-REMOTE-CLOSURE-RECEIPT-AND-NATIVE-REPLAY-PC-V0_1",
+  "taskpack_version": "v0.1",
+  "created_utc": "2026-06-03T16:31:10Z",
+  "contour": "PC",
+  "route_mode": "LIVE",
+  "required_active_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "new_reality_remote": "https://github.com/SoulsLike2313/Imperium-New-Reality.git",
+  "ancient_empire_reference": {
+    "url": "https://github.com/SoulsLike2313/Imperium-.git",
+    "freeze_commit": "448150be7b4984b755828bc2f89b5bd1156de37d",
+    "status": "READ_ONLY_ARCHAEOLOGY_REFERENCE",
+    "mutation_allowed": false
+  },
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH_UTF8_NO_BOM",
+    "canonical_repo_artifacts": "ENGLISH_UTF8_NO_BOM",
+    "owner_facing_russian_runtime_output": "ALLOWED_ONLY_THROUGH_OFFICIO_AGENTIS_RUNTIME_CONTRACT",
+    "cyrillic_in_taskpack": "FORBIDDEN",
+    "localization_exception": "OWNER_CHAT_FINAL_RESPONSE_ONLY_OR_EXPLICIT_OFFICIO_RUNTIME_OWNER_SUMMARY"
+  },
+  "officio_owner_language_authority": {
+    "authority_file": "OFFICIO_OWNER_LANGUAGE_ROUTING.md",
+    "owner_facing_language": "RU",
+    "machine_artifacts_language": "EN",
+    "final_response_contract": "4_PART_OWNER_FINAL_RESPONSE"
+  },
+  "required_files": [
+    "START_HERE.md",
+    "TASK_SPEC.md",
+    "ACCEPTANCE_GATES.md",
+    "OUTPUT_REQUIREMENTS.md",
+    "ROUTE_MANIFEST_TEMPLATE.json",
+    "OFFICIO_OWNER_LANGUAGE_ROUTING.md"
+  ],
+  "route_manifest_template": "ROUTE_MANIFEST_TEMPLATE.json",
+  "expected_outputs": [
+    "REPORTS/{TASK_ID}/pc_new_reality_truth_probe.json",
+    "REPORTS/{TASK_ID}/native_intake_replay_receipt.json",
+    "REPORTS/{TASK_ID}/native_resolver_replay_receipt.json",
+    "REPORTS/{TASK_ID}/no_launch_on_block_replay_receipt.json",
+    "REPORTS/{TASK_ID}/final_remote_closure_receipt.json",
+    "REPORTS/{TASK_ID}/bundle_contract_receipt.json",
+    "REPORTS/{TASK_ID}/ancient_empire_readonly_guard_receipt.json",
+    "REPORTS/{TASK_ID}/RED_TEAM_VERDICT.json",
+    "REPORTS/{TASK_ID}/task_report_bundle.zip"
+  ],
+  "admission_notes": [
+    "This task must be registered using New Reality native Astronomicon.",
+    "Ancient Empire must not be used as active bridge or mutated.",
+    "Remote push to Imperium-New-Reality is Owner-authorized by taskpack."
+  ]
+}

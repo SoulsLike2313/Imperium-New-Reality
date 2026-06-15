@@ -1,0 +1,149 @@
+{
+  "schema_id": "PARTIAL_ACCEPTANCE_MAP_VALIDATOR_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-PQG-PARTIAL-ACCEPTANCE-MAP-VM3-V0_1",
+  "generated_at_utc": "2026-05-22T19:48:23Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "core_partial_acceptance_artifacts_exist",
+      "status": "PASS",
+      "details": "all core partial acceptance artifacts exist"
+    },
+    {
+      "check_id": "py_compile_build_partial_acceptance_map_v0_1.py",
+      "status": "PASS",
+      "details": "build_partial_acceptance_map_v0_1.py compiles"
+    },
+    {
+      "check_id": "py_compile_validate_partial_acceptance_map_v0_1.py",
+      "status": "PASS",
+      "details": "validate_partial_acceptance_map_v0_1.py compiles"
+    },
+    {
+      "check_id": "partial_map_parse",
+      "status": "PASS",
+      "details": "partial map parses"
+    },
+    {
+      "check_id": "rules_parse",
+      "status": "PASS",
+      "details": "rules parse"
+    },
+    {
+      "check_id": "samples_parse",
+      "status": "PASS",
+      "details": "samples parse"
+    },
+    {
+      "check_id": "current_truth_parse",
+      "status": "PASS",
+      "details": "current truth root parses"
+    },
+    {
+      "check_id": "sanctum_state_parse",
+      "status": "PASS",
+      "details": "sanctum state parses"
+    },
+    {
+      "check_id": "partial_map_schema_id",
+      "status": "PASS",
+      "details": "partial map schema_id is correct"
+    },
+    {
+      "check_id": "required_statuses_present",
+      "status": "PASS",
+      "details": "all required statuses are present in partial acceptance map"
+    },
+    {
+      "check_id": "unknown_missing_stale_fake_green_non_green",
+      "status": "PASS",
+      "details": "UNKNOWN/MISSING/STALE/FAKE_GREEN_RISK remain non-green"
+    },
+    {
+      "check_id": "strict_pass_requires_evidence",
+      "status": "PASS",
+      "details": "PASS_STRICT requires evidence"
+    },
+    {
+      "check_id": "partial_accepted_requires_owner_and_evidence",
+      "status": "PASS",
+      "details": "PARTIAL_ACCEPTED requires owner decision and evidence"
+    },
+    {
+      "check_id": "rules_schema_id",
+      "status": "PASS",
+      "details": "rules schema_id is correct"
+    },
+    {
+      "check_id": "required_rule_ids_present",
+      "status": "PASS",
+      "details": "required rule ids are present"
+    },
+    {
+      "check_id": "no_evidence_rule_no_strict_pass",
+      "status": "PASS",
+      "details": "NO_EVIDENCE_NO_STRICT_PASS prevents strict pass"
+    },
+    {
+      "check_id": "partial_basis_rule_strictness",
+      "status": "PASS",
+      "details": "partial acceptance rule requires reason and owner/contract basis"
+    },
+    {
+      "check_id": "samples_schema_id",
+      "status": "PASS",
+      "details": "samples schema_id is correct"
+    },
+    {
+      "check_id": "required_sample_outcomes_present",
+      "status": "PASS",
+      "details": "required sample outcomes are present"
+    },
+    {
+      "check_id": "strict_sample_requires_evidence",
+      "status": "PASS",
+      "details": "strict sample(s) require evidence"
+    },
+    {
+      "check_id": "partial_accepted_sample_requires_basis",
+      "status": "PASS",
+      "details": "PARTIAL_ACCEPTED sample requires reason and owner/contract basis"
+    },
+    {
+      "check_id": "current_truth_has_acceptance_refs",
+      "status": "PASS",
+      "details": "current truth contains acceptance reference paths"
+    },
+    {
+      "check_id": "current_truth_acceptance_layer_foundation",
+      "status": "PASS",
+      "details": "current truth acceptance layer is foundation-only"
+    },
+    {
+      "check_id": "sanctum_current_truth_index_present",
+      "status": "PASS",
+      "details": "sanctum current truth index present"
+    },
+    {
+      "check_id": "sanctum_acceptance_refs_present",
+      "status": "PASS",
+      "details": "sanctum index has acceptance references"
+    },
+    {
+      "check_id": "report_bundle_files_exist",
+      "status": "PASS",
+      "details": "required report bundle files exist"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "validated_paths": {
+    "partial_acceptance_map": "IMPERIUM_NEW_GENERATION/TRUTH/PARTIAL_ACCEPTANCE_MAP_V0_1.json",
+    "acceptance_decision_rules": "IMPERIUM_NEW_GENERATION/TRUTH/ACCEPTANCE_DECISION_RULES_V0_1.json",
+    "acceptance_decision_samples": "IMPERIUM_NEW_GENERATION/TRUTH/ACCEPTANCE_DECISION_SAMPLES_V0_1.json",
+    "current_truth_root": "IMPERIUM_NEW_GENERATION/TRUTH/CURRENT_TRUTH_ROOT_V0_1.json",
+    "sanctum_state": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+    "report_dir": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-PQG-PARTIAL-ACCEPTANCE-MAP-VM3-V0_1"
+  },
+  "no_fake_green_note": "Validator blocks strict-green interpretation for UNKNOWN/MISSING/STALE/FAKE_GREEN_RISK and enforces evidence for PASS_STRICT."
+}

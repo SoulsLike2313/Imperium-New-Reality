@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Salvage Request",
+  "type": "object",
+  "required": [
+    "request_id",
+    "source_epoch",
+    "source_path",
+    "target_path",
+    "reason",
+    "admitting_organ",
+    "status"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "source_epoch": {
+      "const": "ANCIENT_EMPIRE"
+    },
+    "source_path": {
+      "type": "string"
+    },
+    "target_path": {
+      "type": "string"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "admitting_organ": {
+      "type": "string"
+    },
+    "hash": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "PROPOSED",
+        "ADMITTED",
+        "REJECTED",
+        "IMPORTED"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

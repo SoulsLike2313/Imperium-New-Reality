@@ -1,0 +1,31 @@
+{
+  "version": "0.1.0",
+  "required_artifacts": [
+    "renderer_diagnostic.json",
+    "color_diagnostic.json"
+  ],
+  "renderer_diagnostic_schema": {
+    "required_fields": [
+      "rich_installed",
+      "renderer",
+      "color_enabled",
+      "terminal_width",
+      "supports_unicode"
+    ],
+    "types": {
+      "rich_installed": "boolean",
+      "renderer": "string",
+      "color_enabled": "boolean",
+      "terminal_width": "integer",
+      "supports_unicode": "boolean"
+    }
+  },
+  "color_diagnostic_schema": {
+    "required_fields": [
+      "palette_name",
+      "accent_available",
+      "warning_available",
+      "blocker_available"
+    ]
+  }
+}

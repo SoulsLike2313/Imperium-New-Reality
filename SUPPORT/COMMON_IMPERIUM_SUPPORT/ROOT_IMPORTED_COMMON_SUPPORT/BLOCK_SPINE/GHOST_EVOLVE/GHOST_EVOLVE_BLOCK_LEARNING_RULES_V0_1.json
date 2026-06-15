@@ -1,0 +1,31 @@
+{
+  "rules_id": "GHOST_EVOLVE_BLOCK_LEARNING_RULES_V0_1",
+  "status": "CANDIDATE_NOT_CANON",
+  "owner_organ": "SCHOLA_IMPERIALIS",
+  "required_learning_fields": [
+    "learning_id",
+    "source_problem",
+    "evidence_paths",
+    "owning_block",
+    "affected_organ",
+    "cap_mapping",
+    "prevention_rule",
+    "script_first_remediation",
+    "expected_useful_delta",
+    "observed_useful_delta",
+    "status"
+  ],
+  "lifecycle": [
+    "RECORD_PAIN_MEMORY",
+    "RECORD_SUCCESS_MEMORY",
+    "OPEN_IMPROVEMENT_REQUEST",
+    "ASSIGN_OWNER_AND_SUPPORT",
+    "DECLARE_SCRIPT_FIRST_PATH",
+    "VERIFY_CAP_TRANSITION"
+  ],
+  "efficiency_delta_policy": {
+    "requires_before_metric": true,
+    "requires_after_metric": true,
+    "clean_pass_forbidden_when_missing": true
+  }
+}

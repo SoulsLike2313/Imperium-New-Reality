@@ -1,0 +1,48 @@
+{
+  "task_id": "TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1",
+  "timestamp_utc": "2026-05-30T17:47:37Z",
+  "baseline": {
+    "mechanicus": 86,
+    "inquisition": 82,
+    "officio": 79,
+    "administratum": 83,
+    "overall": 83
+  },
+  "after": {
+    "mechanicus": 88,
+    "inquisition": 87,
+    "officio": 82,
+    "administratum": 89,
+    "overall": 86
+  },
+  "delta": {
+    "mechanicus": 2,
+    "inquisition": 5,
+    "officio": 3,
+    "administratum": 6,
+    "overall": 3
+  },
+  "verdict": "PASS_WITH_WARNINGS",
+  "caps_triggered": [
+    "CAP_LOGOS_ADJUDICATION_NOT_OWNER_ACCEPTED",
+    "CAP_NO_INDEPENDENT_REPLAY"
+  ],
+  "evidence": [
+    {
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/COMBINED_REVIEW_ADJUDICATION_RECEIPT.json",
+      "reason": "Merged Inquisitor + Speculum slots and surviving caps unified in one receipt."
+    },
+    {
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/LOGOS_PIPELINE_PLANNER_CANDIDATE.json",
+      "reason": "Next-step alternatives and risks are machine-readable."
+    },
+    {
+      "path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1/OWNER_QUESTIONS_SIMPLE_RU.md",
+      "reason": "Owner decision surface simplified and reduced technical friction."
+    }
+  ],
+  "notes": [
+    "Efficiency gain is governance and routing clarity, not runtime capability uplift.",
+    "Clean PASS is still blocked by Owner-dependent Logos adjudication and independent replay gap."
+  ]
+}

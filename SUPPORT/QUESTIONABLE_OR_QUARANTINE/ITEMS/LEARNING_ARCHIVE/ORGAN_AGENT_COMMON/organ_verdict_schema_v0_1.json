@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "newgen_organ_verdict_schema_v0_1",
+  "title": "NewGen Organ Verdict V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "organ_id",
+    "task_id",
+    "mode",
+    "verdict",
+    "applied_rules",
+    "required_actions",
+    "forbidden_actions",
+    "evidence_required",
+    "owner_question",
+    "not_proven",
+    "evidence_refs"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "newgen_organ_verdict_v0_1"
+    },
+    "organ_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "SERVITOR_QUERY",
+        "SPECULUM_GUARD",
+        "SMOKE"
+      ]
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "WARN",
+        "BLOCK",
+        "OWNER_VERDICT_NEEDED"
+      ]
+    },
+    "applied_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "owner_question": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "not_proven": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

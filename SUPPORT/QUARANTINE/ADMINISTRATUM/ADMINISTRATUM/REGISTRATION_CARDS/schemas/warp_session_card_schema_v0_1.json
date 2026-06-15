@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "administratum/warp_session_card_schema_v0_1",
+  "title": "Administratum WARP Session Card Seed V0.1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "seed_status",
+    "session_id",
+    "task_id",
+    "starting_head",
+    "workspace_path",
+    "final_verdict",
+    "absorption_status"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "warp_session_card_v0_1"
+    },
+    "seed_status": {
+      "const": "FUTURE_COMPATIBLE_SEED"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "starting_head": {
+      "type": "string"
+    },
+    "workspace_path": {
+      "type": "string"
+    },
+    "organ_packets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "receipts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "diffs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "final_verdict": {
+      "type": "string"
+    },
+    "absorption_status": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

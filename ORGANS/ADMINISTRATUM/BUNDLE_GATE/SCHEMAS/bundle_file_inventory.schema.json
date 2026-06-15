@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Task Report Bundle File Inventory",
+  "type": "object",
+  "required": ["task_id", "included_files"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "inventory_type": {"type": "string"},
+    "bundle_path": {"type": "string"},
+    "bundle_sha256": {"type": "string"},
+    "included_file_count": {"type": "integer"},
+    "included_files": {"type": "array"},
+    "adjacent_self_reference_files": {"type": "array"}
+  },
+  "additionalProperties": true
+}

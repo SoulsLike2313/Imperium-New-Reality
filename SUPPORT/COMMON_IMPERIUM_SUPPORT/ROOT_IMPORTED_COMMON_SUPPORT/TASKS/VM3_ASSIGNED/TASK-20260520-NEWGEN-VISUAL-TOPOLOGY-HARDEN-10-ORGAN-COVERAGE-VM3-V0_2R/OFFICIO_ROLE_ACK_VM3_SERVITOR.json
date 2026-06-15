@@ -1,0 +1,73 @@
+{
+  "ack_id": "OFFICIO-ACK-TASK-20260520-NEWGEN-VISUAL-TOPOLOGY-HARDEN-10-ORGAN-COVERAGE-VM3-V0_2R",
+  "task_id": "TASK-20260520-NEWGEN-VISUAL-TOPOLOGY-HARDEN-10-ORGAN-COVERAGE-VM3-V0_2R",
+  "authority_status": "FOUND",
+  "canonical_files_read": [
+    "ORGANS/OFFICIO_AGENTIS/ROLE_CONTRACTS/SERVITOR.json",
+    "ORGANS/OFFICIO_AGENTIS/ROLE_CONTRACTS/SERVITOR.md",
+    "ORGANS/OFFICIO_AGENTIS/CONFIG/SERVITOR_RESPONSE_CONTRACT_V0_1.md",
+    "ORGANS/OFFICIO_AGENTIS/POLICIES/STOP_POLICY.md",
+    "ORGANS/OFFICIO_AGENTIS/POLICIES/LANGUAGE_POLICY.md",
+    "ORGANS/OFFICIO_AGENTIS/POLICIES/EVIDENCE_POLICY.md",
+    "ORGANS/OFFICIO_AGENTIS/REGISTRY/ROLE_REGISTRY.json",
+    "ORGANS/OFFICIO_AGENTIS/REGISTRY/RESPONSE_CONTRACT_REGISTRY.json",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/ROLE_REGISTRY/SERVITOR_PRIME/role_profile.json",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/ROLE_REGISTRY/SERVITOR_PRIME/ROLE_PROFILE.md",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/ROLE_REGISTRY/SERVITOR_PRIME/response_contract_ref.json",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/SERVITOR_EXECUTOR_RESPONSE_CONTRACT.json",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/SERVITOR_EXECUTOR_RESPONSE_CONTRACT.md",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/ROLE_SETTINGS_ACK_PROTOCOL.json",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/RESPONSE_CONTRACTS/ROLE_SETTINGS_ACK_PROTOCOL.md",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/officio_bootstrap_execution_directive.json",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/communication/language_execution_contract.json",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/response_contracts/servitor_response_contract.json",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/stop_conditions/stop_conditions.json",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/evidence_policy/evidence_policy_setting.json",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/task_acceptance/task_acceptance_policy.json",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/response_formats/response_formats.json",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/permissions/permissions.json",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/SETTINGS_REGISTRY/forbidden_actions/forbidden_actions.json"
+  ],
+  "role_family": "SERVITOR",
+  "role_profile": "SERVITOR_PRIME",
+  "execution_contour": "VM3_SSH_EXECUTION",
+  "language_rules": [
+    "After Officio ACK, owner-facing live commentary and final OWNER COMMENTS are Russian.",
+    "Machine artifacts, JSON keys, paths, commands, and identifiers remain English."
+  ],
+  "response_format_rules": [
+    "Required final sections: STEP, BUNDLE, VERDICT, OWNER COMMENTS.",
+    "No PASS without evidence."
+  ],
+  "scope_rules_from_officio": [
+    "Stop on scope violation.",
+    "No out-of-scope writes.",
+    "No destructive actions without explicit owner gate."
+  ],
+  "commit_push_rules_from_officio": [
+    "Commit/push only after admitted scope execution and evidence checks.",
+    "Do not claim remote sync without proof."
+  ],
+  "stop_conditions_from_officio": [
+    "BLOCKED_DIRTY_START",
+    "BLOCKED_HEAD_MISMATCH",
+    "BLOCKED_SCOPE_VIOLATION",
+    "BLOCKED_REQUIREMENT_AMBIGUOUS",
+    "BLOCKED_REQUIRED_ASSET_MISSING",
+    "BLOCKED_SCHEMA_INVALID",
+    "BLOCKED_RESPONSE_CONTRACT_FAILED",
+    "BLOCKED_OFFICIO_ACK_MISSING",
+    "BLOCKED_ROLE_PACK_AUTHORITY_MISSING"
+  ],
+  "evidence_rules_from_officio": [
+    "No evidence = no DONE.",
+    "Checker claims require command/output evidence paths.",
+    "Fake-green claims are forbidden."
+  ],
+  "taskpack_rules_are_task_specific_not_role_authority": true,
+  "limitations": [
+    "Role/profile sources are partially draft/baseline_candidate and treated as active authority with explicit acknowledgment.",
+    "Pre-existing forbidden-scope dirty files are inherited and must remain untouched."
+  ],
+  "role_profile_sha256": "3da8aa18e2659f5bd572e61431741d9fdfe5d62bb9c3f1e5064cf8e239502189"
+}

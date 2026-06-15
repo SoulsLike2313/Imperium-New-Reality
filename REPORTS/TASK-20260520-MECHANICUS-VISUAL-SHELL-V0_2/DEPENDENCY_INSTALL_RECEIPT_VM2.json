@@ -1,0 +1,31 @@
+{
+  "schema_version": "DEPENDENCY_INSTALL_RECEIPT_VM2_V0_2",
+  "task_id": "TASK-20260520-MECHANICUS-VISUAL-SHELL-V0_2",
+  "generated_at_utc": "2026-05-20T01:59:36.475837+00:00",
+  "allowed_packages": [
+    "rich",
+    "textual",
+    "prompt_toolkit",
+    "pyfiglet"
+  ],
+  "install_attempts": [
+    {
+      "command": "python3 -m pip install --user -U textual prompt_toolkit pyfiglet",
+      "result": "FAILED",
+      "reason": "externally-managed-environment (PEP668)"
+    },
+    {
+      "command": "python3 -m pip install --user --break-system-packages -U textual prompt_toolkit pyfiglet",
+      "result": "PASS",
+      "reason": "user-local install with explicit PEP668 override"
+    }
+  ],
+  "package_versions_after_install": {
+    "rich": "15.0.0",
+    "textual": "8.2.7",
+    "prompt_toolkit": "3.0.52",
+    "pyfiglet": "1.0.4"
+  },
+  "install_log_path": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-VISUAL-SHELL-V0_2/DEPENDENCY_INSTALL_VM2.log",
+  "verdict": "PASS"
+}

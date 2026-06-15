@@ -1,0 +1,57 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1",
+  "timestamp_utc": "2026-05-29T22:44:53Z",
+  "baseline": {
+    "mechanicus_validator_readiness": 22,
+    "runtime_enforcement_readiness": 18,
+    "script_first_concept_readiness": 63,
+    "inquisition_closure_static_readiness": 61,
+    "overall_candidate_usefulness": 58
+  },
+  "after": {
+    "mechanicus_validator_readiness": 64,
+    "runtime_enforcement_readiness": 33,
+    "script_first_concept_readiness": 72,
+    "inquisition_closure_static_readiness": 74,
+    "overall_candidate_usefulness": 69
+  },
+  "delta": {
+    "mechanicus_validator_readiness": 42,
+    "runtime_enforcement_readiness": 15,
+    "script_first_concept_readiness": 9,
+    "inquisition_closure_static_readiness": 13,
+    "overall_candidate_usefulness": 11
+  },
+  "verdict": "PASS_WITH_WARNINGS",
+  "evidence": [
+    {
+      "metric": "mechanicus_validator_readiness",
+      "why": "Executable validator suite and replay runners now exist.",
+      "paths": [
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/validate_matrix_spine.py",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_matrix_spine_validation.sh",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1/matrix_spine_validation_receipt.json"
+      ]
+    },
+    {
+      "metric": "runtime_enforcement_readiness",
+      "why": "Receipt-backed validation pipeline exists, but full start-task runtime corridor is still incomplete.",
+      "paths": [
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1/matrix_spine_validation_summary.json",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1/red_team_verdict.json"
+      ]
+    },
+    {
+      "metric": "inquisition_closure_static_readiness",
+      "why": "Hard red-team report/verdict now produced with downgrade rules.",
+      "paths": [
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1/red_team_report.md",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1/red_team_verdict.json"
+      ]
+    }
+  ],
+  "notes": [
+    "Scores remain candidate-level and are not canon admission claims.",
+    "Positive delta is measured from concrete executable and receipt outputs, not text architecture alone."
+  ]
+}

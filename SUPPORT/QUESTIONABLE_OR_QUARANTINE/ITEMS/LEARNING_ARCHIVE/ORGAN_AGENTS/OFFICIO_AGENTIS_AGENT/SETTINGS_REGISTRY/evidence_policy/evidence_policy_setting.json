@@ -1,0 +1,42 @@
+{
+  "setting_id": "SET-EVIDENCE-POLICY-V0_1",
+  "title": "Evidence Policy Setting",
+  "version": "v0_1",
+  "state": "ACTIVE",
+  "scope": "requirement completion and claim verification",
+  "applies_to_roles": [
+    "SERVITOR",
+    "LOGOS_PRIME",
+    "LOGOS_SPECULUM"
+  ],
+  "applies_to_modes": [
+    "EXECUTOR",
+    "AUDITOR",
+    "ARCHITECT",
+    "REPAIRER"
+  ],
+  "machine_rule": {
+    "core_law": "No evidence = no DONE",
+    "claim_evidence_map": [
+      "visual_change => screenshot or BLOCKED_VISUAL_EVIDENCE_MISSING",
+      "transfer_claim => source/target/SHA256/timestamp/receipt",
+      "git_clean_claim => git status --short output",
+      "schema_claim => validator output",
+      "role_settings_claim => generated md+json outputs"
+    ]
+  },
+  "human_summary": "All completion claims require evidence linked in requirement rows.",
+  "acceptance_tests": [
+    "DONE rows without evidence are rejected by compliance check."
+  ],
+  "evidence_required": [
+    "EVIDENCE_POLICY/evidence_policy.json",
+    "compliance-check output"
+  ],
+  "dependencies": [],
+  "conflicts_with": [],
+  "supersedes": [],
+  "rollback_plan": "Rollback to previous evidence mapping and rerun compliance checks.",
+  "owner_approval_required": true
+}
+

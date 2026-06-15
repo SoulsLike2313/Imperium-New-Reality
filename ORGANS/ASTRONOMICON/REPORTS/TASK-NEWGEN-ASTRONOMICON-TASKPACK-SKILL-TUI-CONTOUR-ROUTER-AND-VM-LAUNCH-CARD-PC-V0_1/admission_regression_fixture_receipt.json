@@ -1,0 +1,146 @@
+{
+  "timestamp_utc": "2026-06-01T14:25:20Z",
+  "sandbox_root": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-SKILL-TUI-CONTOUR-ROUTER-AND-VM-LAUNCH-CARD-PC-V0_1/_skill_sandbox",
+  "admission_cases": [
+    {
+      "case_id": "BAD_ZIP_MISSING_MANIFEST",
+      "expected": "ADMISSION_BLOCK",
+      "actual": "ADMISSION_BLOCK",
+      "pass": true,
+      "receipt": {
+        "timestamp_utc": "2026-06-01T14:25:20Z",
+        "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-SKILL-TUI-CONTOUR-ROUTER-AND-VM-LAUNCH-CARD-PC-V0_1/fixture_zips_skill/missing_manifest.zip",
+        "zip_sha256": "5db37ad2ab0960a7eed78284f66192a1003dd0ae584ab36c1e9d8bbaa3b813cb",
+        "admission_verdict": "ADMISSION_BLOCK",
+        "manifest_found": false,
+        "task_id_found": false,
+        "task_spec_found": true,
+        "acceptance_gates_found": true,
+        "output_requirements_found": true,
+        "duplicate_task_id": false,
+        "safe_extraction_path": false,
+        "registered_task_path": "",
+        "extracted_path": "",
+        "route_manifest_path": "",
+        "current_expected_task_updated": false,
+        "caps_triggered": [
+          "CAP_TASKPACK_ADMISSION_MISSING"
+        ],
+        "warnings": [
+          "Required file missing: MANIFEST.json"
+        ]
+      }
+    },
+    {
+      "case_id": "BAD_ZIP_MISSING_LANGUAGE_POLICY",
+      "expected": "ADMISSION_BLOCK",
+      "actual": "ADMISSION_BLOCK",
+      "pass": true,
+      "receipt": {
+        "timestamp_utc": "2026-06-01T14:25:20Z",
+        "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-SKILL-TUI-CONTOUR-ROUTER-AND-VM-LAUNCH-CARD-PC-V0_1/fixture_zips_skill/missing_language_policy.zip",
+        "zip_sha256": "04c32596f014bd22d10b4308bdc5de45358a3a3419f7614f5e177a35ce00b777",
+        "task_id": "TASK-FIXTURE-MISSING-LANG",
+        "admission_verdict": "ADMISSION_BLOCK",
+        "manifest_found": true,
+        "task_id_found": true,
+        "task_spec_found": true,
+        "acceptance_gates_found": true,
+        "output_requirements_found": true,
+        "duplicate_task_id": false,
+        "safe_extraction_path": false,
+        "registered_task_path": "",
+        "extracted_path": "",
+        "route_manifest_path": "",
+        "current_expected_task_updated": false,
+        "language_gate_passed": false,
+        "caps_triggered": [
+          "CAP_ASTRONOMICON_ADMISSION_LANGUAGE_GATE_MISSING",
+          "CAP_OWNER_LANGUAGE_NOT_ROUTED_THROUGH_OFFICIO"
+        ],
+        "warnings": [
+          "MANIFEST.language_and_encoding_policy is missing or not an object."
+        ]
+      }
+    },
+    {
+      "case_id": "BAD_ZIP_MISSING_8_ORGAN_ROUTE",
+      "expected": "ADMISSION_BLOCK",
+      "actual": "ADMISSION_BLOCK",
+      "pass": true,
+      "receipt": {
+        "timestamp_utc": "2026-06-01T14:25:20Z",
+        "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-SKILL-TUI-CONTOUR-ROUTER-AND-VM-LAUNCH-CARD-PC-V0_1/fixture_zips_skill/missing_8_organs.zip",
+        "admission_verdict": "ADMISSION_BLOCK",
+        "language_gate_passed": false,
+        "manifest_found": false,
+        "task_id_found": false,
+        "task_spec_found": false,
+        "acceptance_gates_found": false,
+        "output_requirements_found": false,
+        "duplicate_task_id": false,
+        "safe_extraction_path": false,
+        "registered_task_path": "",
+        "extracted_path": "",
+        "route_manifest_path": "",
+        "current_expected_task_updated": false,
+        "caps_triggered": [
+          "CAP_ROUTE_DOES_NOT_INCLUDE_8_ORGANS"
+        ],
+        "warnings": [
+          "MANIFEST.organs missing required organs: SCHOLA_IMPERIALIS"
+        ]
+      }
+    },
+    {
+      "case_id": "VALID_8_ORGAN_TASKPACK",
+      "expected": "ADMISSION_PASS",
+      "actual": "ADMISSION_PASS",
+      "pass": true,
+      "receipt": {
+        "task_id": "TASK-FIXTURE-VALID-8-ORGAN",
+        "timestamp_utc": "2026-06-01T14:25:20Z",
+        "source_zip_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-SKILL-TUI-CONTOUR-ROUTER-AND-VM-LAUNCH-CARD-PC-V0_1/fixture_zips_skill/valid_8_organ.zip",
+        "zip_sha256": "829f6d816684dc60bc41d79fd022107dea5f6b2a7b9d51523a1e5e908dc94ba0",
+        "admission_verdict": "ADMISSION_PASS",
+        "language_gate_passed": true,
+        "manifest_found": true,
+        "task_id_found": true,
+        "task_spec_found": true,
+        "acceptance_gates_found": true,
+        "output_requirements_found": true,
+        "duplicate_task_id": false,
+        "safe_extraction_path": true,
+        "registered_task_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-SKILL-TUI-CONTOUR-ROUTER-AND-VM-LAUNCH-CARD-PC-V0_1/_skill_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-VALID-8-ORGAN",
+        "extracted_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-SKILL-TUI-CONTOUR-ROUTER-AND-VM-LAUNCH-CARD-PC-V0_1/_skill_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-VALID-8-ORGAN/EXTRACTED",
+        "route_manifest_path": "E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-SKILL-TUI-CONTOUR-ROUTER-AND-VM-LAUNCH-CARD-PC-V0_1/_skill_sandbox/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-FIXTURE-VALID-8-ORGAN/TASK_ROUTE_MANIFEST.json",
+        "current_expected_task_updated": true,
+        "caps_triggered": [
+          "CAP_NO_IDE_VISUAL_RELEASE_YET",
+          "CAP_NO_WARP_RUNTIME",
+          "CAP_STAGE1_WITH_WARNINGS_ONLY"
+        ],
+        "warnings": []
+      }
+    }
+  ],
+  "resolver_case": {
+    "case_id": "UNREGISTERED_TASK_ID_RESOLVE",
+    "expected": "BLOCK",
+    "actual": "BLOCK",
+    "pass": true,
+    "receipt": {
+      "timestamp_utc": "2026-06-01T14:25:20Z",
+      "task_id": "TASK-FIXTURE-UNREGISTERED",
+      "resolver_verdict": "BLOCK",
+      "caps_triggered": [
+        "CAP_REGISTERED_TASK_NOT_RESOLVABLE",
+        "CAP_TASK_ID_RESOLVER_MISSING"
+      ],
+      "warnings": [
+        "Task ID not found in stage2 or stage1 registry."
+      ]
+    }
+  },
+  "all_cases_passed": true
+}

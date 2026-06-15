@@ -1,0 +1,176 @@
++-------------------------------------------------------------------------------------- TOP STATUS BAR --------------------------------------------------------------------------------------+
+| [COG-SIGIL] MECHANICUS_AGENT // OPERATOR_CONSOLE // shell v0.5                                                                                                                             |
+| MECHANICUS_AGENT :: Tools, scripts, validators, registry intelligence, and premium Textual operator-console m...                                                                           |
+| +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ |
+| | MODE                    | HEAD                 | VISUAL                                    | RENDERER            | WORKTREE            | WARN         | ERROR          | BLOCK         | |
+| |-------------------------+----------------------+-------------------------------------------+---------------------+---------------------+--------------+----------------+---------------| |
+| | DASHBOARD               | b79d3b8              | PASS_RICH_OPERATOR_SHELL                  | rich                | DIRTY               | 1            | 0              | 0             | |
+| +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------- LEFT WORK ZONE // CURRENT ACTIVITY ----------------------------------------------------------------------------+
+| +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ |
+| | TIME                        | ITEM                                                     | DETAIL                                                        | STATE                         | |
+| |-----------------------------+----------------------------------------------------------+---------------------------------------------------------------+-------------------------------| |
+| | 03:49:52                    | Repository                                               | .../                                                          | OK                            | |
+| | 03:49:52                    | Backend Truth                                            | HEAD b79d3b8 | master                                         | VERIFIED                      | |
+| | 03:49:52                    | Worktree                                                 | dirty                                                         | WARN                          | |
+| | 03:49:52                    | Visual Status                                            | PASS_RICH_OPERATOR_SHELL                                      | IN_SYNC                       | |
+| +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------- LEFT WORK ZONE // MISSION FOCUS ------------------------------------------------------------------------------+
+| MISSION FOCUS                                                                                                                                                                              |
+| Tools, scripts, validators, registry intelligence, and premium Textual operator-console machinery.                                                                                         |
+|                                                                                                                                                                                            |
+| MODE: DASHBOARD                                                                                                                                                                            |
+| Tools / Scripts / Validators / Registry                                                                                                                                                    |
+| Ownership: Mechanicus tooling execution corridor                                                                                                                                           |
+| Forge. Verify. Automate.                                                                                                                                                                   |
+| By the Omnissiah.                                                                                                                                                                          |
+|                                                                                                                                                                                            |
+| latest_output: once_mode_command=dashboard                                                                                                                                                 |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------- COMMAND ZONE // OPERATOR PALETTE -----------------------------------------------------------------------------+
+| +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ |
+| | CMD                                | SUMMARY                                                                                                                  | KEY                    | |
+| |------------------------------------+--------------------------------------------------------------------------------------------------------------------------+------------------------| |
+| | > status                           | Show dashboard/status operator overview.                                                                                 | F1                     | |
+| | tools                              | Show compact tool registry capabilities.                                                                                 | F2                     | |
+| | identity                           | Show organ identity and mission.                                                                                         | F3                     | |
+| | check                              | Run integrity checks and summary verdict.                                                                                | F4                     | |
+| | where                              | Show important paths and runtime roots.                                                                                  | F5                     | |
+| | pack                               | Build and export runtime package.                                                                                        | F6                     | |
+| | help                               | Show command palette and shell usage.                                                                                    | F7                     | |
+| | raw                                | Open explicit raw/detail mode.                                                                                           | R                      | |
+| | screenshot                         | Save SVG screenshot for mode or all modes.                                                                               | S                      | |
+| | exit                               | Close the operator shell.                                                                                                | ESC                    | |
+| | capability-map                     | Show base and domain capability map for this organ.                                                                      | DOMAIN                 | |
+| | script-receipt-check               | Report receipt coverage for script-oriented runs.                                                                        | DOMAIN                 | |
+| | tool-list                          | List local Mechanicus toolchain artifacts from TOOLS.                                                                    | DOMAIN                 | |
+| | validator-check                    | Validate Identity Half JSON payload integrity.                                                                           | DOMAIN                 | |
+| +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------- TOOL REGISTRY // CAPABILITY OVERVIEW  ---------------------------------------------------------------------------+
+| path: E:\IMPERIUM\IMPERIUM_NEW_GENERATION\ORGAN_AGENTS\MECHANICUS_AGENT\TOOL_REGISTRY\TOOL_INDEX.json                                                                                      |
+| +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ |
+| | registered 20                    | available 13                   | known_not_installed 3                             | missing 0               | warn 0           | error 0           | |
+| +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ |
+|  AVAILABLE_BOTH:2   AVAILABLE_PC:0   AVAILABLE_VM2:1   KNOWN_NOT_INSTALLED:3   MISSING:0   WARN:0   ERROR:0                                                                                |
+| +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ |
+| | TOOL                                                                | OWNER                                                       | STATUS                                             | |
+| |---------------------------------------------------------------------+-------------------------------------------------------------+----------------------------------------------------| |
+| | bandit                                                              | MECHANICUS_AGENT                                            | KNOWN_NOT_INSTALLED                                | |
+| | duckdb                                                              | MECHANICUS_AGENT                                            | KNOWN_NOT_INSTALLED                                | |
+| | git                                                                 | MECHANICUS_AGENT                                            | AVAILABLE_BOTH                                     | |
+| | gitleaks                                                            | MECHANICUS_AGENT                                            | KNOWN_NOT_INSTALLED                                | |
+| | jq                                                                  | MECHANICUS_AGENT                                            | AVAILABLE_BOTH                                     | |
+| | jsonschema                                                          | MECHANICUS_AGENT                                            | AVAILABLE_VM2                                      | |
+| +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------- BOTTOM EVENT BAR -------------------------------------------------------------------------------------+
+| mode: DASHBOARD                                                                                                                                                                            |
+| latest_report: .../.../REPORTS/base_half_check_report.json                                                                                                                                 |
+| latest_receipt: .../.../RECEIPTS/domain_script_receipt_check_latest.json                                                                                                                   |
+| event_summary: WARN=1 ERROR=0 BLOCK=0                                                                                                                                                      |
+| detail_mode: raw payload enabled by explicit request                                                                                                                                       |
+| event_summary: WARN=1 ERROR=0 BLOCK=0                                                                                                                                                      |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------- RAW DETAIL MODE (EXPLICIT) --------------------------------------------------------------------------------+
+| {                                                                                                                                                                                          |
+|   "schema_version": "ORGAN_IDENTITY_RICH_STATUS_V0_1",                                                                                                                                     |
+|   "task_id": "TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1",                                                                                                           |
+|   "base_half_task_id": "TASK-20260519-ORGAN-AGENT-BASE-HALF-8-ORGANS-V0_1",                                                                                                                |
+|   "organ": "MECHANICUS_AGENT",                                                                                                                                                             |
+|   "runner": "mechanicus_agent_runner.py",                                                                                                                                                  |
+|   "timestamp_utc": "2026-05-20T03:49:53.112299+00:00",                                                                                                                                     |
+|   "status": "READY",                                                                                                                                                                       |
+|   "visual_status": "PASS_RICH_OPERATOR_SHELL",                                                                                                                                             |
+|   "supported_commands": [                                                                                                                                                                  |
+|     "status",                                                                                                                                                                              |
+|     "check",                                                                                                                                                                               |
+|     "where",                                                                                                                                                                               |
+|     "identity",                                                                                                                                                                            |
+|     "tools",                                                                                                                                                                               |
+|     "pack",                                                                                                                                                                                |
+|     "shell",                                                                                                                                                                               |
+|     "help",                                                                                                                                                                                |
+|     "tool-list",                                                                                                                                                                           |
+|     "validator-check",                                                                                                                                                                     |
+|     "capability-map",                                                                                                                                                                      |
+|     "script-receipt-check"                                                                                                                                                                 |
+|   ],                                                                                                                                                                                       |
+|   "active_command_list": [                                                                                                                                                                 |
+|     "status",                                                                                                                                                                              |
+|     "check",                                                                                                                                                                               |
+|     "where",                                                                                                                                                                               |
+|     "identity",                                                                                                                                                                            |
+|     "tools",                                                                                                                                                                               |
+|     "pack",                                                                                                                                                                                |
+|     "shell",                                                                                                                                                                               |
+|     "help",                                                                                                                                                                                |
+|     "tool-list",                                                                                                                                                                           |
+|     "validator-check",                                                                                                                                                                     |
+|     "capability-map",                                                                                                                                                                      |
+|     "script-receipt-check"                                                                                                                                                                 |
+|   ],                                                                                                                                                                                       |
+|   "identity_summary": "Tools, scripts, validators, registry intelligence, and premium Textual operator-console machinery.",                                                                |
+|   "paths": {                                                                                                                                                                               |
+|     "organ_root": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT",                                                                                                 |
+|     "runner": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py",                                                                  |
+|     "launcher": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\LAUNCHERS\\run_mechanicus_pc.ps1",                                                                 |
+|     "identity_baseline_md": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\IDENTITY_BASELINE.md",                                                                 |
+|     "identity_profile_md": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\IDENTITY\\IDENTITY_PROFILE.md",                                                         |
+|     "identity_profile_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\IDENTITY\\identity_profile.json",                                                     |
+|     "lore_functions_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\IDENTITY\\lore_functions.json",                                                         |
+|     "domain_commands_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\IDENTITY\\domain_commands.json",                                                       |
+|     "profile_md": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\AGENT_PROFILE.md",                                                                               |
+|     "profile_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\agent_profile.json",                                                                           |
+|     "state_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\STATE\\current_status.json",                                                                     |
+|     "check_json": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\REPORTS\\base_half_check_report.json",                                                           |
+|     "runtime_root": "E:\\IMPERIUM_CONTEXT\\LOCAL\\ORGAN_AGENT_IDENTITY_RICH_SHELL_RUNS\\TASK-20260519-ORGAN-AGENT-IDENTITY-HALF-RICH-SHELL-8-ORGANS-V0_1\\ORGANS\\MECHANICUS_AGENT"        |
+|   },                                                                                                                                                                                       |
+|   "git": {                                                                                                                                                                                 |
+|     "head": "b79d3b856d4d0af0bb65b483a31cb1868eefc4d7",                                                                                                                                    |
+|     "branch": "master",                                                                                                                                                                    |
+|     "dirty": "M IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/base_half_cli.py\n M IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/operator_shell_skin.py\n M                                          |
+| IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/operator_shell_widgets.py\n M IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/textual_operator_shell.py\n M                                              |
+| IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/REPORTS/base_half_check_report.json\n M IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/REPORTS/base_half_check_report.md\n M  |
+| IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/SHELL/SHELL_CONTRACT.md\n M IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py\n M               |
+| IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/state/current_status.json\n?? IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/REPORTS/SCREENSHOTS/\n??                         |
+| IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/SHELL/mechanicus_textual_tui_v0_4.py\n??                                                                                             |
+| IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/SHELL/mechanicus_textual_tui_v0_5.py\n??                                                                                             |
+| IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5/\n?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TUI-VISUAL-POLISH-MAX-PC-V0_4/"  |
+|   },                                                                                                                                                                                       |
+|   "backend_truth": {                                                                                                                                                                       |
+|     "head": "b79d3b856d4d0af0bb65b483a31cb1868eefc4d7",                                                                                                                                    |
+|     "branch": "master",                                                                                                                                                                    |
+|     "dirty_state": "yes"                                                                                                                                                                   |
+|   },                                                                                                                                                                                       |
+|   "latest_report_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\REPORTS\\base_half_check_report.json",                                                     |
+|   "latest_receipt_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\RECEIPTS\\domain_script_receipt_check_latest.json",                                       |
+|   "tool_registry": {                                                                                                                                                                       |
+|     "registry_source": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOL_REGISTRY\\TOOL_INDEX.json",                                                            |
+|     "registered_tool_count": 20,                                                                                                                                                           |
+|     "available_tool_count": 13,                                                                                                                                                            |
+|     "missing_tool_count": 7,                                                                                                                                                               |
+|     "preview": [                                                                                                                                                                           |
+|       "bandit:KNOWN_NOT_INSTALLED",                                                                                                                                                        |
+|       "duckdb:KNOWN_NOT_INSTALLED",                                                                                                                                                        |
+|       "git:AVAILABLE_BOTH",                                                                                                                                                                |
+|       "gitleaks:KNOWN_NOT_INSTALLED",                                                                                                                                                      |
+|       "jq:AVAILABLE_BOTH",                                                                                                                                                                 |
+|       "jsonschema:AVAILABLE_VM2"                                                                                                                                                           |
+|     ],                                                                                                                                                                                     |
+|     "warnings": []                                                                                                                                                                         |
+|   },                                                                                                                                                                                       |
+|   "warn_error_blocker": "none",                                                                                                                                                            |
+|   "renderer_status": {                                                                                                                                                                     |
+|     "renderer": "rich",                                                                                                                                                                    |
+|     "rich_renderer_available": true,                                                                                                                                                       |
+|     "visual_status": "PASS_RICH_OPERATOR_SHELL",                                                                                                                                           |
+|     "fallback_reason": []                                                                                                                                                                  |
+|   },                                                                                                                                                                                       |
+|   "rich_renderer_available": true                                                                                                                                                          |
+| }                                                                                                                                                                                          |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+SHELL_SCREENSHOT_SVG: E:\IMPERIUM\IMPERIUM_NEW_GENERATION\ORGAN_AGENTS\MECHANICUS_AGENT\REPORTS\SCREENSHOTS\mechanicus_raw_v0_5.svg
+SHELL_SCREENSHOT_MODE: raw

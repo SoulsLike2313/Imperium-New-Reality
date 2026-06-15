@@ -1,0 +1,59 @@
+{
+  "schema_version": "TASKPACK_MANIFEST_V0_4",
+  "task_id": "TASK-NEWGEN-PC-NEW-REALITY-REMOTE-HEAD-POLICY-ANCIENT-REFERENCE-AND-FIRST-PUSH-PROOF-PC-V0_1",
+  "task_name": "New Reality remote HEAD policy, Ancient reference, and first push proof",
+  "contour": "PC",
+  "route_mode": "LIVE",
+  "created_utc": "2026-06-03T15:57:48Z",
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "required_organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "owner_authorized_remote_url": "https://github.com/SoulsLike2313/Imperium-New-Reality.git",
+  "ancient_empire_reference": {
+    "url": "https://github.com/SoulsLike2313/Imperium-",
+    "freeze_commit": "448150be7b4984b755828bc2f89b5bd1156de37d",
+    "status": "ARCHAEOLOGY_READ_ONLY_REFERENCE"
+  },
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH_UTF8_NO_BOM",
+    "canonical_repo_artifacts": "ENGLISH_UTF8_NO_BOM",
+    "owner_facing_russian_runtime_output": "ALLOWED_ONLY_THROUGH_OFFICIO_AGENTIS_RUNTIME_CONTRACT",
+    "cyrillic_in_taskpack": "FORBIDDEN",
+    "localization_exception": "OWNER_FACING_RUNTIME_ONLY_VIA_OFFICIO_NOT_IN_MACHINE_BUNDLE",
+    "officio_authority_file": "OFFICIO_OWNER_LANGUAGE_ROUTING.md"
+  },
+  "admission_requirements": {
+    "manifest_found": true,
+    "task_spec_found": true,
+    "acceptance_gates_found": true,
+    "output_requirements_found": true,
+    "route_manifest_template_found": true,
+    "eight_organs_route_required": true,
+    "safe_extraction_required": true
+  },
+  "forbidden_actions": [
+    "do_not_mutate_ancient_empire_repo",
+    "do_not_push_to_ancient_empire_remote",
+    "do_not_force_push_without_owner_explicit_reauthorization",
+    "do_not_claim_clean_pass_without_remote_head_equality_proof",
+    "do_not_use_old_astronomicon_bridge_as_active_runtime"
+  ],
+  "allowed_active_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY"
+}

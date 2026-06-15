@@ -1,0 +1,36 @@
+{
+  "schema_id": "data_atlas.sealed_pack_health_card.v0_1",
+  "introduced_by_patch": "v0.8.9.2",
+  "purpose_ru": "Показывать состояние sealed evidence pack как одной проверяемой сущности, а не россыпи файлов.",
+  "required_fields": [
+    "patch_id",
+    "evidence_pack_id",
+    "pack_path",
+    "manifest_path",
+    "machine_index_path",
+    "owner_summary_path",
+    "sha256sums_path",
+    "raw_buffer_deleted",
+    "sealer_report_root",
+    "health_status"
+  ],
+  "fields": {
+    "health_status": "PASS_SEALED_PACK_HEALTH | PASS_WITH_BUFFER_RETAINED | FAIL_SEALED_PACK_HEALTH",
+    "sidecars": [
+      "EVIDENCE_MANIFEST.json",
+      "MACHINE_INDEX.json",
+      "OWNER_SUMMARY_RU.md",
+      "SHA256SUMS.txt"
+    ],
+    "hash_check": "sha256_matches_manifest",
+    "report_location_safe": "true when sealer report is outside deleted buffer and preferably inside pack/logs/reports",
+    "linked_inquisition_gate": "INQUISITION_EVIDENCE_SEALER_CONTRACT_GATE_V0_1",
+    "linked_mechanicus_tool": "mechanicus.evidence_vault_sealer"
+  },
+  "owner_visible_summary_ru": [
+    "Pack существует?",
+    "Manifest/Index/SHA/Owner summary существуют?",
+    "Raw buffer удалён или осознанно оставлен?",
+    "Итоговый sealer report переживает удаление buffer?"
+  ]
+}

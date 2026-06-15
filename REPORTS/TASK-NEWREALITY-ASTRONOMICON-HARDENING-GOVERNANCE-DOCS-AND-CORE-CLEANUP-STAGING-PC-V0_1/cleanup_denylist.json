@@ -1,0 +1,33 @@
+{
+  "receipt_type": "cleanup_denylist",
+  "task_id": "TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1",
+  "status": "ACTIVE_FOR_THIS_TASK",
+  "cleanup_performed": false,
+  "never_delete": [
+    "AGENTS.md",
+    "ORGANS/_CORE_GOVERNANCE/**",
+    "ORGANS/ASTRONOMICON/TASK_REGISTRY/**",
+    "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/**",
+    "REPORTS/**",
+    ".gitignore",
+    "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/**",
+    "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/**",
+    "ORGANS/ASTRONOMICON/TOOLS/**"
+  ],
+  "do_not_move_in_this_task": [
+    "**/*"
+  ],
+  "local_configs_not_to_stage": [
+    "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json"
+  ],
+  "forbidden_patterns": [
+    "VM2/**",
+    "VM3/**",
+    "ANCIENT/**",
+    "**/*secret*",
+    "**/*token*",
+    "**/*credential*"
+  ],
+  "verdict": "PASS"
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRANSFER_ACTION_LEDGER_ENTRY_V0_1",
+  "type": "object",
+  "required": [
+    "entry_id",
+    "action_type",
+    "status",
+    "timestamp_utc",
+    "request_ref",
+    "result_ref",
+    "notes",
+    "claim_boundary"
+  ],
+  "properties": {
+    "entry_id": { "type": "string" },
+    "action_type": {
+      "enum": [
+        "CHECK_CONTOUR_STATUS",
+        "REGISTER_TASKPACK_SEND",
+        "REGISTER_REPORT_BUNDLE_FETCH",
+        "DRY_RUN_TASKPACK_SEND",
+        "DRY_RUN_REPORT_FETCH",
+        "REFRESH_TRANSFER_CONSOLE_VIEW"
+      ]
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "WARN",
+        "BLOCK",
+        "DRY_RUN_READY",
+        "NOT_READY",
+        "ERROR"
+      ]
+    },
+    "timestamp_utc": { "type": "string" },
+    "request_ref": { "type": ["string", "null"] },
+    "result_ref": { "type": ["string", "null"] },
+    "notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "claim_boundary": { "const": "FOUNDATION_ONLY" }
+  },
+  "additionalProperties": false
+}

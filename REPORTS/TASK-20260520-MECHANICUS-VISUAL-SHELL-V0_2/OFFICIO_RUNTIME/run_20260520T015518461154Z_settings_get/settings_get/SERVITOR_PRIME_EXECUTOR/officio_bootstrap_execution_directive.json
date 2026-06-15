@@ -1,0 +1,76 @@
+{
+  "setting_id": "SET-OFFICIO-BOOTSTRAP-DIRECTIVE-V0_1",
+  "title": "Officio Bootstrap Execution Directive",
+  "version": "v0_1",
+  "state": "ACTIVE",
+  "scope": "role intake authority, language contract enforcement, and execution admission",
+  "applies_to_roles": [
+    "SERVITOR",
+    "SERVITOR_PRIME"
+  ],
+  "applies_to_modes": [
+    "EXECUTOR"
+  ],
+  "machine_rule": {
+    "ack_required_before_serious_work": true,
+    "required_role_pack_authority_artifacts": [
+      "OFFICIO_BOOTSTRAP_EXECUTION_DIRECTIVE.md",
+      "officio_bootstrap_execution_directive.json",
+      "LANGUAGE_EXECUTION_CONTRACT.md",
+      "language_execution_contract.json",
+      "ROLE_SETTINGS_ACK_PROTOCOL.md",
+      "ROLE_SETTINGS_ACK_PROTOCOL.json",
+      "RESPONSE_CONTRACT.md",
+      "STOP_CONDITIONS.json",
+      "EVIDENCE_POLICY.md"
+    ],
+    "authority_chain": [
+      "OFFICIO_BOOTSTRAP_EXECUTION_DIRECTIVE",
+      "LANGUAGE_EXECUTION_CONTRACT",
+      "ROLE_SETTINGS_ACK_PROTOCOL",
+      "SERVITOR_EXECUTOR_RESPONSE_CONTRACT"
+    ],
+    "owner_live_commentary_language_after_officio_ack": "Russian",
+    "owner_final_comments_language_after_officio_ack": "Russian",
+    "machine_artifact_language": "English",
+    "technical_identifiers_language": "English",
+    "violation_codes": [
+      "WARN_RESPONSE_LANGUAGE_CONTRACT",
+      "FAIL_RESPONSE_CONTRACT",
+      "BLOCKED_OFFICIO_ACK_MISSING",
+      "BLOCKED_ROLE_PACK_AUTHORITY_MISSING",
+      "WARN_TASKPACK_ONLY_WORKAROUND_DETECTED"
+    ],
+    "ack_required_fields_extension": [
+      "bootstrap_execution_directive_ref",
+      "language_execution_contract_ref",
+      "role_settings_ack_protocol_ref",
+      "owner_live_commentary_language_after_officio_ack",
+      "owner_final_comments_language_after_officio_ack",
+      "machine_artifact_language",
+      "violation_codes"
+    ],
+    "anti_taskpack_only_workaround": true
+  },
+  "human_summary": "Officio role intake becomes active authority over language/response contract and execution admission.",
+  "acceptance_tests": [
+    "Role pack includes the bootstrap directive in generated outputs.",
+    "Role pack includes language execution contract and role ACK protocol artifacts.",
+    "ACK explicitly confirms language obligations and machine artifact boundary.",
+    "Language violation codes are present in contracts/reports."
+  ],
+  "evidence_required": [
+    "SETTINGS_REGISTRY/communication/OFFICIO_BOOTSTRAP_EXECUTION_DIRECTIVE.md",
+    "SETTINGS_REGISTRY/communication/LANGUAGE_EXECUTION_CONTRACT.md",
+    "SETTINGS_REGISTRY/communication/servitor_communication_contract.json",
+    "RESPONSE_CONTRACTS/ROLE_SETTINGS_ACK_PROTOCOL.md",
+    "TOOLS/officio_agent_runner.py"
+  ],
+  "dependencies": [
+    "SCHEMAS/officio_setting.schema.json"
+  ],
+  "conflicts_with": [],
+  "supersedes": [],
+  "rollback_plan": "Set this directive to DEPRECATED and restore prior communication policy wording.",
+  "owner_approval_required": true
+}

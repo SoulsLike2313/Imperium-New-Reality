@@ -1,0 +1,27 @@
+{
+  "schema_id": "TRANSFER_CONSOLE_ACTION_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1",
+  "generated_at_utc": "2026-05-22T23:47:11Z",
+  "action_id": "DRY_RUN_TASKPACK_SEND",
+  "status": "PASS",
+  "result_status": "DRY_RUN_READY",
+  "request_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/requests/TRANSFER-REQ-20260522T234711Z-73078550.json",
+  "result_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/results/TRANSFER-RESULT-20260522T234711Z-56CC4514.json",
+  "view_state_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/requests/TRANSFER-REQ-20260522T234711Z-73078550.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/results/TRANSFER-RESULT-20260522T234711Z-56CC4514.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/contours/allowed_routes_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/contours/contour_status.latest.json"
+  ],
+  "not_proven": [
+    "No live transfer performed.",
+    "SENT/FETCHED states are blocked without explicit result receipt evidence."
+  ],
+  "known_limitations": [
+    "Foundation-only transfer console flow.",
+    "No production remote orchestration claim.",
+    "No arbitrary shell bridge is used."
+  ],
+  "claim_boundary": "FOUNDATION_ONLY"
+}

@@ -1,0 +1,361 @@
+{
+  "schema_version": "imperium.agent_ide.block_view_model.v0_1",
+  "generated_at_utc": "2026-05-28T15:16:32.757453+00:00",
+  "task_id": "TASK-NEWGEN-AGENT-IDE-WEB-SHELL-REACT-TAURI-PLAYWRIGHT-PARITY-PC-V0_1",
+  "block_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "schema_version": "imperium.agent_ide.block_schema.v0_1",
+    "title": "Agent IDE Block Schema V0.1",
+    "type": "object",
+    "required": [
+      "block_id",
+      "name",
+      "level",
+      "data_sources",
+      "display_contract",
+      "skin_material_ref",
+      "animation_policy_ref",
+      "safety_level",
+      "projection_visibility"
+    ],
+    "properties": {
+      "block_id": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "level": {
+        "type": "string",
+        "enum": [
+          "L0_SYSTEM",
+          "L1_ORGAN",
+          "L2_MACRO",
+          "L3_MICRO",
+          "L4_LEAF_GROUP"
+        ]
+      },
+      "data_sources": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "display_contract": {
+        "type": "object",
+        "required": [
+          "fields",
+          "stale_policy"
+        ],
+        "properties": {
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "stale_policy": {
+            "type": "string"
+          }
+        }
+      },
+      "skin_material_ref": {
+        "type": "string"
+      },
+      "animation_policy_ref": {
+        "type": "string"
+      },
+      "safety_level": {
+        "type": "string",
+        "enum": [
+          "PUBLIC",
+          "SUMMARY_ONLY",
+          "RESTRICTED"
+        ]
+      },
+      "projection_visibility": {
+        "type": "string",
+        "enum": [
+          "FULL",
+          "SUMMARY_ONLY",
+          "HIDDEN"
+        ]
+      }
+    },
+    "additionalProperties": true
+  },
+  "block_registry_seed": {
+    "schema_version": "imperium.agent_ide.block_registry_seed.v0_1",
+    "generated_for_task": "TASK-NEWGEN-AGENT-IDE-DUAL-SURFACE-SELF-VALIDATOR-BLOCK-FOUNDATION-PC-V0_1",
+    "blocks": [
+      {
+        "block_id": "BLK_L0_SESSION_TRUTH",
+        "name": "Session Truth Panel",
+        "level": "L0_SYSTEM",
+        "data_sources": [
+          "truth.git",
+          "truth.loaded_sources"
+        ],
+        "display_contract": {
+          "fields": [
+            "head",
+            "branch",
+            "loaded_sources_count",
+            "missing_sources_count"
+          ],
+          "stale_policy": "SHOW_STALE_BADGE_IF_OLDER_THAN_10_MIN"
+        },
+        "skin_material_ref": "MAT_CARD_GLASS_SAND",
+        "animation_policy_ref": "ANIM_FADE_IN_SOFT",
+        "safety_level": "PUBLIC",
+        "projection_visibility": "FULL"
+      },
+      {
+        "block_id": "BLK_L1_ORGAN_MATRIX",
+        "name": "Five Organ Matrix",
+        "level": "L1_ORGAN",
+        "data_sources": [
+          "organs"
+        ],
+        "display_contract": {
+          "fields": [
+            "organ",
+            "file_count",
+            "status"
+          ],
+          "stale_policy": "SHOW_STALE_BADGE_IF_OLDER_THAN_10_MIN"
+        },
+        "skin_material_ref": "MAT_ORGAN_TILE_AURORA",
+        "animation_policy_ref": "ANIM_STAGGER_LIST",
+        "safety_level": "PUBLIC",
+        "projection_visibility": "FULL"
+      },
+      {
+        "block_id": "BLK_L2_OWNER_PAIN_MAP",
+        "name": "Owner Pain Map",
+        "level": "L2_MACRO",
+        "data_sources": [
+          "owner_pain_surface"
+        ],
+        "display_contract": {
+          "fields": [
+            "pain_id",
+            "severity",
+            "current_status",
+            "next_task_route"
+          ],
+          "stale_policy": "WARN_IF_EMPTY"
+        },
+        "skin_material_ref": "MAT_ALERT_NEUTRAL",
+        "animation_policy_ref": "ANIM_PULSE_LOW",
+        "safety_level": "PUBLIC",
+        "projection_visibility": "FULL"
+      },
+      {
+        "block_id": "BLK_L3_REPORT_RECEIPT_SUMMARY",
+        "name": "Reports And Receipts Summary",
+        "level": "L3_MICRO",
+        "data_sources": [
+          "report_receipt_summary"
+        ],
+        "display_contract": {
+          "fields": [
+            "report_paths_count",
+            "receipt_paths_count"
+          ],
+          "stale_policy": "SHOW_STALE_BADGE_IF_OLDER_THAN_10_MIN"
+        },
+        "skin_material_ref": "MAT_CARD_SOLID_SKY",
+        "animation_policy_ref": "ANIM_NONE",
+        "safety_level": "PUBLIC",
+        "projection_visibility": "FULL"
+      },
+      {
+        "block_id": "BLK_L4_PRIVATE_GUARD",
+        "name": "Projection Privacy Guard",
+        "level": "L4_LEAF_GROUP",
+        "data_sources": [
+          "projection_guard",
+          "classification_surface"
+        ],
+        "display_contract": {
+          "fields": [
+            "private_local_restricted_count",
+            "policy"
+          ],
+          "stale_policy": "WARN_IF_POLICY_MISSING"
+        },
+        "skin_material_ref": "MAT_GUARD_RIBBON",
+        "animation_policy_ref": "ANIM_BADGE_APPEAR",
+        "safety_level": "SUMMARY_ONLY",
+        "projection_visibility": "SUMMARY_ONLY"
+      }
+    ]
+  },
+  "layout_manifest_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "schema_version": "imperium.agent_ide.layout_manifest_schema.v0_1",
+    "type": "object",
+    "required": [
+      "layout_id",
+      "surface",
+      "blocks"
+    ],
+    "properties": {
+      "layout_id": {
+        "type": "string"
+      },
+      "surface": {
+        "type": "string",
+        "enum": [
+          "DESKTOP_IDE",
+          "WEB_PROJECTION"
+        ]
+      },
+      "blocks": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "block_id",
+            "x",
+            "y",
+            "w",
+            "h"
+          ],
+          "properties": {
+            "block_id": {
+              "type": "string"
+            },
+            "x": {
+              "type": "integer"
+            },
+            "y": {
+              "type": "integer"
+            },
+            "w": {
+              "type": "integer"
+            },
+            "h": {
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  },
+  "theme_tokens": {
+    "schema_version": "imperium.agent_ide.theme_tokens.v0_1",
+    "palette": {
+      "bg_base": "#f4efe6",
+      "bg_gradient_start": "#fff6e8",
+      "bg_gradient_end": "#dceaf0",
+      "text_primary": "#1c2a33",
+      "text_muted": "#425b68",
+      "accent_a": "#e76f51",
+      "accent_b": "#2a9d8f",
+      "accent_c": "#264653",
+      "warn": "#c2410c",
+      "danger": "#b91c1c"
+    },
+    "typography": {
+      "font_primary": "'Space Grotesk', 'Segoe UI', sans-serif",
+      "font_mono": "'IBM Plex Mono', 'Consolas', monospace",
+      "scale": {
+        "xs": 12,
+        "sm": 14,
+        "md": 16,
+        "lg": 22,
+        "xl": 30
+      }
+    },
+    "radius": {
+      "sm": 8,
+      "md": 14,
+      "lg": 22
+    },
+    "shadow": {
+      "card": "0 14px 30px rgba(38,70,83,0.14)",
+      "tile": "0 8px 18px rgba(28,42,51,0.11)"
+    }
+  },
+  "material_registry": {
+    "schema_version": "imperium.agent_ide.material_registry.v0_1",
+    "materials": [
+      {
+        "material_id": "MAT_CARD_GLASS_SAND",
+        "kind": "card",
+        "background": "linear-gradient(135deg, #fff6e8, #f4efe6)",
+        "border": "1px solid rgba(38,70,83,0.14)",
+        "text_color": "#1c2a33"
+      },
+      {
+        "material_id": "MAT_ORGAN_TILE_AURORA",
+        "kind": "tile",
+        "background": "linear-gradient(140deg, #dceaf0, #f8f2ea)",
+        "border": "1px solid rgba(42,157,143,0.35)",
+        "text_color": "#1c2a33"
+      },
+      {
+        "material_id": "MAT_ALERT_NEUTRAL",
+        "kind": "alert",
+        "background": "#fff1eb",
+        "border": "1px solid rgba(231,111,81,0.35)",
+        "text_color": "#7c2d12"
+      },
+      {
+        "material_id": "MAT_CARD_SOLID_SKY",
+        "kind": "card",
+        "background": "#eaf4f8",
+        "border": "1px solid rgba(38,70,83,0.17)",
+        "text_color": "#1c2a33"
+      },
+      {
+        "material_id": "MAT_GUARD_RIBBON",
+        "kind": "guard",
+        "background": "repeating-linear-gradient(45deg, #f8dfcc, #f8dfcc 10px, #ffe9d9 10px, #ffe9d9 20px)",
+        "border": "1px solid rgba(194,65,12,0.38)",
+        "text_color": "#7c2d12"
+      }
+    ]
+  },
+  "animation_registry": {
+    "schema_version": "imperium.agent_ide.animation_registry.v0_1",
+    "policies": [
+      {
+        "animation_id": "ANIM_NONE",
+        "kind": "none",
+        "duration_ms": 0,
+        "notes": "For stable data-heavy blocks."
+      },
+      {
+        "animation_id": "ANIM_FADE_IN_SOFT",
+        "kind": "fade",
+        "duration_ms": 420,
+        "easing": "ease-out",
+        "notes": "Used at page load for L0 cards."
+      },
+      {
+        "animation_id": "ANIM_STAGGER_LIST",
+        "kind": "stagger",
+        "duration_ms": 320,
+        "stagger_ms": 80,
+        "notes": "Used for organ tile reveal."
+      },
+      {
+        "animation_id": "ANIM_PULSE_LOW",
+        "kind": "pulse",
+        "duration_ms": 1800,
+        "loop": true,
+        "notes": "Low-intensity pulse for attention blocks."
+      },
+      {
+        "animation_id": "ANIM_BADGE_APPEAR",
+        "kind": "badge_pop",
+        "duration_ms": 260,
+        "notes": "Policy marker for restricted projection zones."
+      }
+    ]
+  },
+  "warnings": []
+}

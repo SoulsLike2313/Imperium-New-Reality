@@ -1,0 +1,149 @@
+{
+  "schema_id": "imperium.toolchain_inventory.v0_1",
+  "probe_version": "v0_3",
+  "host": {
+    "hostname": "DESKTOP-1V26009",
+    "os": "Windows-10-10.0.19045-SP0",
+    "arch": "AMD64"
+  },
+  "captured_at": "2026-06-14T18:04:33.108444+03:00",
+  "components": [
+    {
+      "category": "rust",
+      "tool": "rustup",
+      "present": true,
+      "path": "C:\\Users\\PC\\.cargo\\bin\\rustup.EXE",
+      "version": "rustup 1.29.0 (28d1352db 2026-03-05)",
+      "raw": "rustup 1.29.0 (28d1352db 2026-03-05)",
+      "elapsed_ms": 46,
+      "notes": ""
+    },
+    {
+      "category": "rust",
+      "tool": "rustc",
+      "present": true,
+      "path": "C:\\Users\\PC\\.cargo\\bin\\rustc.EXE",
+      "version": "rustc 1.95.0 (59807616e 2026-04-14)",
+      "raw": "rustc 1.95.0 (59807616e 2026-04-14)",
+      "elapsed_ms": 47,
+      "notes": ""
+    },
+    {
+      "category": "rust",
+      "tool": "cargo",
+      "present": true,
+      "path": "C:\\Users\\PC\\.cargo\\bin\\cargo.EXE",
+      "version": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+      "raw": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+      "elapsed_ms": 47,
+      "notes": ""
+    },
+    {
+      "category": "rust",
+      "tool": "cargo-tauri",
+      "present": true,
+      "path": "C:\\Users\\PC\\.cargo\\bin\\cargo.EXE",
+      "version": "tauri-cli 2.11.2",
+      "raw": "tauri-cli 2.11.2",
+      "elapsed_ms": 62,
+      "notes": "Tauri 2.x CLI as cargo subcommand"
+    },
+    {
+      "category": "node",
+      "tool": "node",
+      "present": true,
+      "path": "C:\\Program Files\\nodejs\\node.EXE",
+      "version": "v24.15.0",
+      "raw": "v24.15.0",
+      "elapsed_ms": 15,
+      "notes": ""
+    },
+    {
+      "category": "node",
+      "tool": "npm",
+      "present": true,
+      "path": "C:\\Program Files\\nodejs\\npm.CMD",
+      "version": "11.12.1",
+      "raw": "11.12.1",
+      "elapsed_ms": 327,
+      "notes": ""
+    },
+    {
+      "category": "node",
+      "tool": "pnpm",
+      "present": true,
+      "path": "C:\\Program Files\\nodejs\\pnpm.CMD",
+      "version": "11.6.0",
+      "raw": "11.6.0",
+      "elapsed_ms": 640,
+      "notes": ""
+    },
+    {
+      "category": "build",
+      "tool": "WebView2 runtime",
+      "present": true,
+      "path": "C:\\Program Files (x86)\\Microsoft\\EdgeWebView\\Application\\149.0.4022.69",
+      "version": "149.0.4022.69",
+      "raw": "",
+      "elapsed_ms": 0,
+      "notes": "Tauri 2.x req on Windows"
+    },
+    {
+      "category": "build",
+      "tool": "MSVC C++ Build Tools",
+      "present": true,
+      "path": "C:\\BuildTools",
+      "version": "17.14.37027.9",
+      "raw": "Visual Studio Build Tools 2022",
+      "elapsed_ms": 32,
+      "notes": "Tauri 2.x req on Windows for native linking"
+    },
+    {
+      "category": "misc",
+      "tool": "python",
+      "present": true,
+      "path": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.EXE",
+      "version": "Python 3.12.10",
+      "raw": "Python 3.12.10",
+      "elapsed_ms": 31,
+      "notes": ""
+    },
+    {
+      "category": "misc",
+      "tool": "git",
+      "present": true,
+      "path": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "version": "git version 2.53.0.windows.1",
+      "raw": "git version 2.53.0.windows.1",
+      "elapsed_ms": 30,
+      "notes": ""
+    }
+  ],
+  "required_for_tauri": {
+    "missing": [],
+    "present": [
+      "rustup",
+      "rustc",
+      "cargo",
+      "node",
+      "WebView2 runtime",
+      "MSVC C++ Build Tools"
+    ],
+    "ready": true
+  },
+  "total_elapsed_ms": 1390,
+  "dropped_from_probe": [
+    {
+      "tool": "yarn",
+      "reason": "corepack shim hangs on registry download; not in stack"
+    },
+    {
+      "tool": "tauri (npm)",
+      "reason": "duplicate of cargo-tauri"
+    },
+    {
+      "tool": "code",
+      "reason": "code.CMD can hang via Node spawn; not in readiness gate"
+    }
+  ]
+}

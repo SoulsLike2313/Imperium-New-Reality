@@ -1,0 +1,236 @@
+{
+  "task_id": "FIXTURE-V0_2_MISSING_COMMIT_CHAIN",
+  "verdict": "BUNDLE_SCHEMA_BLOCK",
+  "composition_gate": "BUNDLE_COMPOSITION_BLOCK",
+  "schema_gate": "BUNDLE_SCHEMA_PASS",
+  "authority_boundary": "composition_schema_only",
+  "matrix_version": "0.2",
+  "checked_path": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/FIXTURES/v0_2_missing_commit_chain",
+  "active_root_expected": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "ancient_root_forbidden": "E:/IMPERIUM",
+  "missing_items": [
+    "commit_chain_identifiers",
+    "git_closure_and_remote_closure_proof",
+    "worktree_clean_or_explicit_cap_receipt"
+  ],
+  "invalid_fields": [],
+  "warnings": [],
+  "created_utc": "2026-06-04T16:14:55Z",
+  "required_class_count": 13,
+  "present_required_class_count": 10,
+  "class_results": [
+    {
+      "class_id": "task_identity_and_report_metadata",
+      "required": true,
+      "present": true,
+      "actual_matches": [
+        "TASK_FOCUS_PACKET.json"
+      ],
+      "adjacent_matches": [],
+      "description": "Task identity and task report metadata."
+    },
+    {
+      "class_id": "commit_chain_identifiers",
+      "required": true,
+      "present": false,
+      "actual_matches": [],
+      "adjacent_matches": [],
+      "description": "Commit chain or commit identifiers."
+    },
+    {
+      "class_id": "git_closure_and_remote_closure_proof",
+      "required": true,
+      "present": false,
+      "actual_matches": [],
+      "adjacent_matches": [],
+      "description": "Git closure and remote closure proof."
+    },
+    {
+      "class_id": "worktree_clean_or_explicit_cap_receipt",
+      "required": true,
+      "present": false,
+      "actual_matches": [],
+      "adjacent_matches": [],
+      "description": "Clean worktree proof or explicit cap receipt."
+    },
+    {
+      "class_id": "scope_lock_no_ancient_mutation_receipt",
+      "required": true,
+      "present": true,
+      "actual_matches": [
+        "no_ancient_mutation_receipt.json"
+      ],
+      "adjacent_matches": [],
+      "description": "Scope lock or no Ancient Empire mutation receipt."
+    },
+    {
+      "class_id": "claim_ledger",
+      "required": true,
+      "present": true,
+      "actual_matches": [
+        "CLAIM_LEDGER.json"
+      ],
+      "adjacent_matches": [],
+      "description": "Claim ledger."
+    },
+    {
+      "class_id": "capability_split_receipt",
+      "required": true,
+      "present": true,
+      "actual_matches": [
+        "CAPABILITY_SPLIT_RECEIPT.json"
+      ],
+      "adjacent_matches": [],
+      "description": "Capability split receipt."
+    },
+    {
+      "class_id": "red_team_verdict",
+      "required": true,
+      "present": true,
+      "actual_matches": [
+        "RED_TEAM_VERDICT.json"
+      ],
+      "adjacent_matches": [],
+      "description": "Red team verdict."
+    },
+    {
+      "class_id": "final_owner_summary_boundary",
+      "required": true,
+      "present": true,
+      "actual_matches": [
+        "OFFICIO_LOCALIZATION_REFERENCE.json"
+      ],
+      "adjacent_matches": [],
+      "description": "Final owner summary boundary or Officio localization reference."
+    },
+    {
+      "class_id": "bundle_manifest_and_file_inventory",
+      "required": true,
+      "present": true,
+      "actual_matches": [
+        "bundle_file_inventory.json"
+      ],
+      "adjacent_matches": [
+        "bundle_file_inventory.json"
+      ],
+      "description": "Bundle manifest or file inventory."
+    },
+    {
+      "class_id": "sha256_sums",
+      "required": true,
+      "present": true,
+      "actual_matches": [
+        "sha256sums.txt"
+      ],
+      "adjacent_matches": [
+        "sha256sums.txt"
+      ],
+      "description": "SHA256 sums."
+    },
+    {
+      "class_id": "adjacent_receipts_manifest",
+      "required": true,
+      "present": true,
+      "actual_matches": [
+        "adjacent_receipts_manifest.json"
+      ],
+      "adjacent_matches": [],
+      "description": "Adjacent receipts manifest for self-reference-limited proof files."
+    },
+    {
+      "class_id": "administratum_composition_receipt",
+      "required": true,
+      "present": true,
+      "actual_matches": [
+        "administratum_bundle_gate_v0_2_receipt.json"
+      ],
+      "adjacent_matches": [],
+      "description": "Administratum composition receipt."
+    },
+    {
+      "class_id": "screenshots_assets",
+      "required": false,
+      "present": false,
+      "actual_matches": [],
+      "adjacent_matches": [],
+      "description": "Screenshots or assets."
+    },
+    {
+      "class_id": "web_research_dossier",
+      "required": false,
+      "present": false,
+      "actual_matches": [],
+      "adjacent_matches": [],
+      "description": "Web research dossier."
+    },
+    {
+      "class_id": "inquisition_review",
+      "required": false,
+      "present": false,
+      "actual_matches": [],
+      "adjacent_matches": [],
+      "description": "Inquisition review."
+    },
+    {
+      "class_id": "speculum_review",
+      "required": false,
+      "present": false,
+      "actual_matches": [],
+      "adjacent_matches": [],
+      "description": "Speculum review."
+    },
+    {
+      "class_id": "mechanicus_tool_receipts",
+      "required": false,
+      "present": false,
+      "actual_matches": [],
+      "adjacent_matches": [],
+      "description": "Mechanicus tool or candidate receipts."
+    },
+    {
+      "class_id": "performance_cost_kpd_receipts",
+      "required": false,
+      "present": false,
+      "actual_matches": [],
+      "adjacent_matches": [],
+      "description": "Performance, cost, or KPD receipts."
+    }
+  ],
+  "schemas_checked": [
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/adjacent_receipts_manifest.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/administratum_bundle_gate_receipt.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/bundle_file_inventory.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/capability_split_receipt.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/claim_ledger.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/final_owner_summary_boundary.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/red_team_verdict.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/scope_lock_no_ancient_mutation_receipt.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/task_identity_and_report_metadata.schema.json"
+  ],
+  "files_checked": [
+    "CAPABILITY_SPLIT_RECEIPT.json",
+    "CLAIM_LEDGER.json",
+    "OFFICIO_LOCALIZATION_REFERENCE.json",
+    "RED_TEAM_VERDICT.json",
+    "TASK_FOCUS_PACKET.json",
+    "adjacent_receipts_manifest.json",
+    "bundle_file_inventory.json",
+    "no_ancient_mutation_receipt.json",
+    "sha256sums.txt"
+  ],
+  "claims_allowed": [
+    "BUNDLE_COMPOSITION_BLOCK",
+    "BUNDLE_COMPOSITION_PASS",
+    "BUNDLE_PACKAGING_PASS",
+    "BUNDLE_SCHEMA_BLOCK",
+    "BUNDLE_SCHEMA_PASS"
+  ],
+  "claims_forbidden": [
+    "CUSTODES_ADMISSION_PASS",
+    "INQUISITION_CLEAN_PASS",
+    "NO_FAKE_GREEN_FULL_PASS",
+    "SEMANTIC_TRUTH_PASS"
+  ],
+  "notes": "Administratum V0.2 checks bundle composition and minimal schema/field contracts only; no semantic truth admission is claimed.",
+  "bundle_created": false
+}

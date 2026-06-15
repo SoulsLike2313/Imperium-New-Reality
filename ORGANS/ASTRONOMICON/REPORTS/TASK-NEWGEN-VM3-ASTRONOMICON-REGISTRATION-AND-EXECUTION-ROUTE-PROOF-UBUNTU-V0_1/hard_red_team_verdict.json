@@ -1,0 +1,88 @@
+{
+  "task_id": "TASK-NEWGEN-VM3-ASTRONOMICON-REGISTRATION-AND-EXECUTION-ROUTE-PROOF-UBUNTU-V0_1",
+  "timestamp_utc": "2026-06-01T08:26:33Z",
+  "builder_claims": [
+    {
+      "claim_id": "VM3-C01",
+      "claim": "VM3 route was started from registered TASK_ID path, not raw prompt-only flow."
+    },
+    {
+      "claim_id": "VM3-C02",
+      "claim": "Astronomicon admission, registry update, and current_expected_task update are proven by receipts."
+    },
+    {
+      "claim_id": "VM3-C03",
+      "claim": "TASK_ID resolver proves both explicit task-id and task-id-omitted start-task route."
+    },
+    {
+      "claim_id": "VM3-C04",
+      "claim": "8-organ participation packets are reachable and acknowledged in runtime start ACK."
+    },
+    {
+      "claim_id": "VM3-C05",
+      "claim": "A useful VM3 readiness snapshot and next-pipeline handoff were produced."
+    },
+    {
+      "claim_id": "VM3-C06",
+      "claim": "Forbidden lanes (IDE/WARP/API arsenal/freelance/trading) were not implemented in this task."
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "RT-VM3-01",
+      "target_claim_id": "VM3-C01",
+      "attack": "Bypass TASK_ID route and execute only from unconstrained prompt text.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-VM3-ASTRONOMICON-REGISTRATION-AND-EXECUTION-ROUTE-PROOF-UBUNTU-V0_1/TASK_ID_RESOLVER_RECEIPT.json"
+      ]
+    },
+    {
+      "attack_id": "RT-VM3-02",
+      "target_claim_id": "VM3-C02",
+      "attack": "Claim intake succeeded without admission receipt and registry continuity proof.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-VM3-ASTRONOMICON-REGISTRATION-AND-EXECUTION-ROUTE-PROOF-UBUNTU-V0_1/TASKPACK_ADMISSION_RECEIPT.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json"
+      ]
+    },
+    {
+      "attack_id": "RT-VM3-03",
+      "target_claim_id": "VM3-C06",
+      "attack": "Smuggle block/context or IDE/API/WARP work into route-proof scope.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-VM3-ASTRONOMICON-REGISTRATION-AND-EXECUTION-ROUTE-PROOF-UBUNTU-V0_1/capability_split_receipt.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-VM3-ASTRONOMICON-REGISTRATION-AND-EXECUTION-ROUTE-PROOF-UBUNTU-V0_1/VM3_ROUTE_READINESS_SNAPSHOT.json"
+      ]
+    },
+    {
+      "attack_id": "RT-VM3-04",
+      "target_claim_id": "VM3-C05",
+      "attack": "Overclaim clean PASS despite inherited caps and no independent external closure.",
+      "result": "PARTIAL",
+      "downgrade_needed": true,
+      "applied_downgrade": "FORCE_PASS_WITH_WARNINGS_ONLY"
+    }
+  ],
+  "caps_triggered": [
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME",
+    "CAP_STAGE1_WITH_WARNINGS_ONLY"
+  ],
+  "required_caps_status": {
+    "CAP_VM3_ASTRONOMICON_REGISTRATION_NOT_PROVEN": "CLOSED_BY_ADMISSION_RECEIPT",
+    "CAP_VM3_TASK_ID_RESOLUTION_NOT_PROVEN": "CLOSED_BY_RESOLVER_RECEIPT",
+    "CAP_VM3_EXECUTION_ROUTE_NOT_PROVEN": "CLOSED_BY_ROUTE_PROOF_BUNDLE",
+    "CAP_VM3_OWNER_START_FLOW_NOT_PROVEN": "CLOSED_BY_CURRENT_EXPECTED_RESOLUTION",
+    "CAP_VM3_WORKTREE_NOT_CLEAN_AFTER_TASK": "CLOSED_BY_PUSH_VERIFICATION",
+    "CAP_VM3_COMMIT_PUSH_NOT_PROVEN": "CLOSED_BY_COMMIT_PUSH_RECEIPT",
+    "CAP_BLOCK_CONTEXT_OPTIMIZATION_STARTED_TOO_EARLY": "NOT_TRIGGERED",
+    "CAP_IDE_STARTED_TOO_EARLY": "NOT_TRIGGERED",
+    "CAP_API_TOOL_ARSENAL_STARTED_TOO_EARLY": "NOT_TRIGGERED",
+    "CAP_NO_EFFICIENCY_DELTA": "CLOSED_BY_EFFICIENCY_RECEIPT"
+  },
+  "final_verdict": "VM3_ROUTE_PROOF_PASS_WITH_WARNINGS",
+  "clean_pass_allowed": false
+}

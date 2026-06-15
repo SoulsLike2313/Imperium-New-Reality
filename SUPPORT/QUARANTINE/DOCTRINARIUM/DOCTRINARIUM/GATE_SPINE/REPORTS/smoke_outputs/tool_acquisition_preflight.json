@@ -1,0 +1,147 @@
+{
+  "schema_id": "newgen_doctrinarium_preflight_output_v0_1",
+  "generated_at_utc": "2026-05-23T23:31:02+00:00",
+  "task_type": "tool_acquisition",
+  "status": "PASS",
+  "required_declarations": [
+    {
+      "declaration_id": "DECLARATION_OF_FORM",
+      "display_name": "Declaration of Form",
+      "status": "OWNER_CORRECTED_CANDIDATE",
+      "primary_path": "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DECLARATIONS/DECLARATION_OF_FORM/IMPERIUM_NEWGEN_DECLARATION_OF_FORM_OWNER_CORRECTED_RU_V0_2.pdf",
+      "supporting_paths": [],
+      "source_notes": "Owner-corrected PDF authority candidate; machine registry mirror created by this task."
+    },
+    {
+      "declaration_id": "CORE_SYNTHESIS_DECLARATION_OF_PAIN",
+      "display_name": "Core Synthesis / Declaration of Pain",
+      "status": "OWNER_LOGOS_SYNTHESIS_WITH_DRAFT_PAIN_REGISTRY",
+      "primary_path": "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DECLARATIONS/CORE_SYNTHESIS/IMPERIUM_NEWGEN_DOCTRINARIUM_FORM_AND_PAIN_SYNTHESIS_RU_V0_1.pdf",
+      "supporting_paths": [
+        "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DECLARATIONS/DECLARATION_OF_PAIN/DRAFTS/TASK-20260523-NEWGEN-SPECULUM-DECLARATION-OF-PAIN-PC-V0_1/DECLARATION_OF_PAIN_DRAFT_RU.md",
+        "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DECLARATIONS/DECLARATION_OF_PAIN/DRAFTS/TASK-20260523-NEWGEN-SPECULUM-DECLARATION-OF-PAIN-PC-V0_1/declaration_of_pain_matrix.json",
+        "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DECLARATIONS/DECLARATION_OF_PAIN/DRAFTS/TASK-20260523-NEWGEN-SPECULUM-DECLARATION-OF-PAIN-PC-V0_1/blocked_patterns_and_gates_v0_1.md"
+      ],
+      "source_notes": "Core synthesis is reference candidate; pain draft artifacts are operational inputs and remain draft/not final canon."
+    }
+  ],
+  "active_gates": [
+    {
+      "gate_id": "GATE_DOCTRINARIUM_READ_FIRST",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "DECLARATION_OF_FORM",
+        "CORE_SYNTHESIS_DECLARATION_OF_PAIN"
+      ]
+    },
+    {
+      "gate_id": "GATE_NO_GENERIC_PASS",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "CORE_SYNTHESIS_DECLARATION_OF_PAIN"
+      ]
+    },
+    {
+      "gate_id": "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "DECLARATION_OF_FORM",
+        "CORE_SYNTHESIS_DECLARATION_OF_PAIN",
+        "DECLARATION_OF_VISUAL_POWER"
+      ]
+    },
+    {
+      "gate_id": "GATE_TOOL_ACQUISITION_REQUIRED",
+      "severity": "BLOCK",
+      "source_declarations": [
+        "CORE_SYNTHESIS_DECLARATION_OF_PAIN"
+      ]
+    },
+    {
+      "gate_id": "GATE_RESOURCE_KPD_REQUIRED",
+      "severity": "WARN_TO_BLOCK",
+      "source_declarations": [
+        "CORE_SYNTHESIS_DECLARATION_OF_PAIN"
+      ]
+    }
+  ],
+  "forbidden_patterns": [
+    {
+      "pattern_id": "FP-003",
+      "pattern": "Task starts before Doctrinarium read-first ACK",
+      "block_code": "BLOCK_DOCTRINARIUM_READ_ACK_MISSING"
+    },
+    {
+      "pattern_id": "FP-001",
+      "pattern": "Generic owner-facing PASS verdict",
+      "block_code": "BLOCK_GENERIC_PASS_OWNER_FACING"
+    },
+    {
+      "pattern_id": "FP-002",
+      "pattern": "Green/proved claim without evidence_ref/source path",
+      "block_code": "BLOCK_EVIDENCE_MISSING"
+    },
+    {
+      "pattern_id": "FP-009",
+      "pattern": "Blind tool acquisition without Mechanicus registration",
+      "block_code": "BLOCK_TOOL_ACQUISITION_POLICY_BYPASS"
+    },
+    {
+      "pattern_id": "FP-010",
+      "pattern": "High-cost task without KPD/resource budget statement",
+      "block_code": "BLOCK_KPD_BUDGET_MISSING"
+    }
+  ],
+  "pass_criteria": [
+    "scope_truth: all touched paths stay inside declared allowed scope",
+    "evidence_truth: every critical claim references existing evidence artifacts",
+    "verdict_scope: verdict is scoped (PASS_FOR_<X>_ONLY), never generic PASS",
+    "uncertainty_honesty: NOT_PROVEN/NOT_RUN/FOUNDATION_ONLY boundaries are explicit",
+    "operational_delta: owner-visible control/observability/safety delta is present",
+    "repo_closure: final git status is clean or explicitly bounded by task contract",
+    "Preflight output is generated before edits",
+    "Required declarations are listed and acknowledged",
+    "Final verdict is scoped",
+    "NOT_PROVEN and NOT_RUN sections are explicit",
+    "Every PROVED/GREEN claim has source or evidence references",
+    "Missing tool flow follows identify/justify/source/verify/register/receipt",
+    "Task states resource/KPD value expectations"
+  ],
+  "fail_criteria": [
+    "forbidden path touched",
+    "PASS claim without evidence",
+    "hidden uncertainty presented as success",
+    "production/autonomy claim without proof loops",
+    "declared touched paths do not match real diff",
+    "missing required outputs for task contract",
+    "Task edits begin without preflight",
+    "Required declarations are skipped",
+    "Generic PASS is used",
+    "Scoped boundary is missing",
+    "Status is green/proved with missing evidence references",
+    "Blind install/download without registration",
+    "High-cost task with no KPD/resource disclosure"
+  ],
+  "evidence_required": [
+    "preflight_output_json",
+    "task_start_doctrinarium_block",
+    "final_report",
+    "closure_receipt",
+    "evidence_paths",
+    "smoke_or_validator_report",
+    "tool_source_and_version_receipt",
+    "mechanicus_registration_reference",
+    "final_report_kpd_section"
+  ],
+  "not_proven_boundary": [
+    "full organ intelligence",
+    "automatic enforcement across all taskpacks",
+    "final visual quality",
+    "production autonomy"
+  ],
+  "missing_declaration_paths": [],
+  "source_files": {
+    "declaration_index": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/declaration_index_v0_1.json",
+    "gate_registry": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/gate_registry_v0_1.json"
+  }
+}

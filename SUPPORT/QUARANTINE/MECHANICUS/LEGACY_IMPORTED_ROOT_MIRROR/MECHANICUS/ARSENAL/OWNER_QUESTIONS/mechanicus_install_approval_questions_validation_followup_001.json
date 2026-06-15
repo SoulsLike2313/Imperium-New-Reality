@@ -1,0 +1,259 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1",
+  "generated_at_utc": "2026-05-24T18:54:03Z",
+  "questions": [
+    {
+      "question_id": "FOLLOWUP-OWNER-Q-001",
+      "capability_id": "CAP-TOOL-JSONSCHEMA",
+      "tool_name": "jsonschema",
+      "why_needed": "JSON schema validation for receipts/cards/registries.",
+      "proposed_command": "python -m pip install jsonschema",
+      "expected_side_effects": [
+        "new package/tool install",
+        "new executable availability"
+      ],
+      "network_use": true,
+      "install_target_scope": "local user Python/Node runtime unless otherwise approved",
+      "rollback_or_uninstall_note": "Rollback via pip uninstall / npm uninstall -g / manual removal in same scope.",
+      "risk_level": "MEDIUM",
+      "recommended_decision": "APPROVE_DETECTION_ONLY",
+      "owner_options": [
+        "APPROVE_THIS_TOOL",
+        "DEFER",
+        "QUARANTINE_REVIEW",
+        "REJECT",
+        "APPROVE_DETECTION_ONLY"
+      ]
+    },
+    {
+      "question_id": "FOLLOWUP-OWNER-Q-002",
+      "capability_id": "CODE_QUALITY_JSONSCHEMA",
+      "tool_name": "jsonschema",
+      "why_needed": "Code quality schema-first validation dependency.",
+      "proposed_command": "python -m pip install jsonschema",
+      "expected_side_effects": [
+        "new package/tool install",
+        "new executable availability"
+      ],
+      "network_use": true,
+      "install_target_scope": "local user Python/Node runtime unless otherwise approved",
+      "rollback_or_uninstall_note": "Rollback via pip uninstall / npm uninstall -g / manual removal in same scope.",
+      "risk_level": "MEDIUM",
+      "recommended_decision": "APPROVE_DETECTION_ONLY",
+      "owner_options": [
+        "APPROVE_THIS_TOOL",
+        "DEFER",
+        "QUARANTINE_REVIEW",
+        "REJECT",
+        "APPROVE_DETECTION_ONLY"
+      ]
+    },
+    {
+      "question_id": "FOLLOWUP-OWNER-Q-003",
+      "capability_id": "CAP-CQ-RUFF",
+      "tool_name": "ruff",
+      "why_needed": "Fast linter/formatter candidate.",
+      "proposed_command": "python -m pip install ruff",
+      "expected_side_effects": [
+        "new package/tool install",
+        "new executable availability"
+      ],
+      "network_use": true,
+      "install_target_scope": "local user Python/Node runtime unless otherwise approved",
+      "rollback_or_uninstall_note": "Rollback via pip uninstall / npm uninstall -g / manual removal in same scope.",
+      "risk_level": "MEDIUM",
+      "recommended_decision": "APPROVE_DETECTION_ONLY",
+      "owner_options": [
+        "APPROVE_THIS_TOOL",
+        "DEFER",
+        "QUARANTINE_REVIEW",
+        "REJECT",
+        "APPROVE_DETECTION_ONLY"
+      ]
+    },
+    {
+      "question_id": "FOLLOWUP-OWNER-Q-004",
+      "capability_id": "CODE_QUALITY_RUFF",
+      "tool_name": "ruff",
+      "why_needed": "Code-quality linting lane.",
+      "proposed_command": "python -m pip install ruff",
+      "expected_side_effects": [
+        "new package/tool install",
+        "new executable availability"
+      ],
+      "network_use": true,
+      "install_target_scope": "local user Python/Node runtime unless otherwise approved",
+      "rollback_or_uninstall_note": "Rollback via pip uninstall / npm uninstall -g / manual removal in same scope.",
+      "risk_level": "MEDIUM",
+      "recommended_decision": "APPROVE_DETECTION_ONLY",
+      "owner_options": [
+        "APPROVE_THIS_TOOL",
+        "DEFER",
+        "QUARANTINE_REVIEW",
+        "REJECT",
+        "APPROVE_DETECTION_ONLY"
+      ]
+    },
+    {
+      "question_id": "FOLLOWUP-OWNER-Q-005",
+      "capability_id": "CAP-CQ-PYRIGHT-MYPY",
+      "tool_name": "mypy_or_pyright",
+      "why_needed": "Explicit Owner path decision required for type checker route.",
+      "proposed_command": "Owner decision required: mypy (pip) vs pyright (npm/npx) route",
+      "expected_side_effects": [
+        "new package/tool install",
+        "new executable availability"
+      ],
+      "network_use": true,
+      "install_target_scope": "local user Python/Node runtime unless otherwise approved",
+      "rollback_or_uninstall_note": "Rollback via pip uninstall / npm uninstall -g / manual removal in same scope.",
+      "risk_level": "HIGH",
+      "recommended_decision": "APPROVE_DETECTION_ONLY",
+      "owner_options": [
+        "APPROVE_THIS_TOOL",
+        "DEFER",
+        "QUARANTINE_REVIEW",
+        "REJECT",
+        "APPROVE_DETECTION_ONLY"
+      ]
+    },
+    {
+      "question_id": "FOLLOWUP-OWNER-Q-006",
+      "capability_id": "CODE_QUALITY_MYPY",
+      "tool_name": "mypy",
+      "why_needed": "Python static type checker.",
+      "proposed_command": "python -m pip install mypy",
+      "expected_side_effects": [
+        "new package/tool install",
+        "new executable availability"
+      ],
+      "network_use": true,
+      "install_target_scope": "local user Python/Node runtime unless otherwise approved",
+      "rollback_or_uninstall_note": "Rollback via pip uninstall / npm uninstall -g / manual removal in same scope.",
+      "risk_level": "MEDIUM",
+      "recommended_decision": "APPROVE_DETECTION_ONLY",
+      "owner_options": [
+        "APPROVE_THIS_TOOL",
+        "DEFER",
+        "QUARANTINE_REVIEW",
+        "REJECT",
+        "APPROVE_DETECTION_ONLY"
+      ]
+    },
+    {
+      "question_id": "FOLLOWUP-OWNER-Q-007",
+      "capability_id": "CODE_QUALITY_PYRIGHT",
+      "tool_name": "pyright",
+      "why_needed": "Owner should explicitly choose npm/npx provisioning path.",
+      "proposed_command": "npm install -g pyright OR approved local npm/npx path",
+      "expected_side_effects": [
+        "new package/tool install",
+        "new executable availability"
+      ],
+      "network_use": true,
+      "install_target_scope": "local user Python/Node runtime unless otherwise approved",
+      "rollback_or_uninstall_note": "Rollback via pip uninstall / npm uninstall -g / manual removal in same scope.",
+      "risk_level": "HIGH",
+      "recommended_decision": "APPROVE_DETECTION_ONLY",
+      "owner_options": [
+        "APPROVE_THIS_TOOL",
+        "DEFER",
+        "QUARANTINE_REVIEW",
+        "REJECT",
+        "APPROVE_DETECTION_ONLY"
+      ]
+    },
+    {
+      "question_id": "FOLLOWUP-OWNER-Q-008",
+      "capability_id": "CAP-CQ-PRECOMMIT",
+      "tool_name": "pre-commit",
+      "why_needed": "Hook runner; do not auto-enable hooks.",
+      "proposed_command": "python -m pip install pre-commit",
+      "expected_side_effects": [
+        "new package/tool install",
+        "new executable availability"
+      ],
+      "network_use": true,
+      "install_target_scope": "local user Python/Node runtime unless otherwise approved",
+      "rollback_or_uninstall_note": "Rollback via pip uninstall / npm uninstall -g / manual removal in same scope.",
+      "risk_level": "MEDIUM",
+      "recommended_decision": "APPROVE_DETECTION_ONLY",
+      "owner_options": [
+        "APPROVE_THIS_TOOL",
+        "DEFER",
+        "QUARANTINE_REVIEW",
+        "REJECT",
+        "APPROVE_DETECTION_ONLY"
+      ]
+    },
+    {
+      "question_id": "FOLLOWUP-OWNER-Q-009",
+      "capability_id": "CODE_QUALITY_PRE_COMMIT",
+      "tool_name": "pre-commit",
+      "why_needed": "Code quality hook tool card.",
+      "proposed_command": "python -m pip install pre-commit",
+      "expected_side_effects": [
+        "new package/tool install",
+        "new executable availability"
+      ],
+      "network_use": true,
+      "install_target_scope": "local user Python/Node runtime unless otherwise approved",
+      "rollback_or_uninstall_note": "Rollback via pip uninstall / npm uninstall -g / manual removal in same scope.",
+      "risk_level": "MEDIUM",
+      "recommended_decision": "APPROVE_DETECTION_ONLY",
+      "owner_options": [
+        "APPROVE_THIS_TOOL",
+        "DEFER",
+        "QUARANTINE_REVIEW",
+        "REJECT",
+        "APPROVE_DETECTION_ONLY"
+      ]
+    },
+    {
+      "question_id": "FOLLOWUP-OWNER-Q-013",
+      "capability_id": "UI_FRAMEWORKS_REACT",
+      "tool_name": "react",
+      "why_needed": "No React project/prototype creation in this task.",
+      "proposed_command": "npm install react (in bounded project scope only after Owner approval)",
+      "expected_side_effects": [
+        "new package/tool install",
+        "new executable availability"
+      ],
+      "network_use": true,
+      "install_target_scope": "local user Python/Node runtime unless otherwise approved",
+      "rollback_or_uninstall_note": "Rollback via pip uninstall / npm uninstall -g / manual removal in same scope.",
+      "risk_level": "HIGH",
+      "recommended_decision": "APPROVE_DETECTION_ONLY",
+      "owner_options": [
+        "APPROVE_THIS_TOOL",
+        "DEFER",
+        "QUARANTINE_REVIEW",
+        "REJECT",
+        "APPROVE_DETECTION_ONLY"
+      ]
+    },
+    {
+      "question_id": "FOLLOWUP-OWNER-Q-014",
+      "capability_id": "UI_FRAMEWORKS_VITE",
+      "tool_name": "vite",
+      "why_needed": "No npx vite execution in detection-only phase.",
+      "proposed_command": "npm install -g vite OR project-local vite only after Owner approval",
+      "expected_side_effects": [
+        "new package/tool install",
+        "new executable availability"
+      ],
+      "network_use": true,
+      "install_target_scope": "local user Python/Node runtime unless otherwise approved",
+      "rollback_or_uninstall_note": "Rollback via pip uninstall / npm uninstall -g / manual removal in same scope.",
+      "risk_level": "HIGH",
+      "recommended_decision": "APPROVE_DETECTION_ONLY",
+      "owner_options": [
+        "APPROVE_THIS_TOOL",
+        "DEFER",
+        "QUARANTINE_REVIEW",
+        "REJECT",
+        "APPROVE_DETECTION_ONLY"
+      ]
+    }
+  ]
+}

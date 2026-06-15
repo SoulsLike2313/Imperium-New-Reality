@@ -1,0 +1,120 @@
+{
+  "schema_id": "TRANSFER_ROUTE_PROOF_VALIDATOR_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1",
+  "generated_at_utc": "2026-05-23T02:23:51Z",
+  "verdict": "WARN",
+  "allowed_final_verdict": "PASS_FOR_PC_TO_VM2_WITH_WARN_PARTIAL_PC_TO_VM3_AND_BLOCKED_VM2_TO_VM3_ROUTE_ONLY",
+  "checks": [
+    {
+      "check_id": "summary_exists",
+      "status": "PASS",
+      "details": "route proof recovery summary exists and parses"
+    },
+    {
+      "check_id": "required_routes_present",
+      "status": "PASS",
+      "details": "all required route entries are present"
+    },
+    {
+      "check_id": "pc_to_vm2_proved",
+      "status": "PASS",
+      "details": "PC_TO_VM2 route is PROVED"
+    },
+    {
+      "check_id": "pc_to_vm3_recovered_or_warn",
+      "status": "PASS",
+      "details": "PC_TO_VM3 route is recovered/proved or warn-partial"
+    },
+    {
+      "check_id": "vm2_to_vm3_proved_or_blocked_unavailable",
+      "status": "PASS",
+      "details": "VM2_TO_VM3 route is proved or blocked-unavailable"
+    },
+    {
+      "check_id": "pc_to_vm2_has_existing_evidence_ref",
+      "status": "PASS",
+      "details": "PC_TO_VM2 has at least one existing evidence path"
+    },
+    {
+      "check_id": "pc_to_vm3_has_existing_evidence_ref",
+      "status": "PASS",
+      "details": "PC_TO_VM3 has at least one existing evidence path"
+    },
+    {
+      "check_id": "vm2_to_vm3_has_existing_evidence_ref",
+      "status": "PASS",
+      "details": "VM2_TO_VM3 has at least one existing evidence path"
+    },
+    {
+      "check_id": "request_refs_count",
+      "status": "PASS",
+      "details": "request refs include route recovery entries"
+    },
+    {
+      "check_id": "result_refs_count",
+      "status": "PASS",
+      "details": "result refs include route recovery entries"
+    },
+    {
+      "check_id": "request_payloads_parse",
+      "status": "PASS",
+      "details": "all request refs parse as JSON objects"
+    },
+    {
+      "check_id": "result_payloads_parse",
+      "status": "PASS",
+      "details": "all result refs parse as JSON objects"
+    },
+    {
+      "check_id": "request_no_forbidden_fields",
+      "status": "PASS",
+      "details": "request payloads contain no forbidden shell fields"
+    },
+    {
+      "check_id": "result_no_forbidden_fields",
+      "status": "PASS",
+      "details": "result payloads contain no forbidden shell fields"
+    },
+    {
+      "check_id": "runner_ledger_routes_present",
+      "status": "PASS",
+      "details": "runner ledger contains all three route entries"
+    },
+    {
+      "check_id": "view_state_exists",
+      "status": "PASS",
+      "details": "transfer console view state exists"
+    },
+    {
+      "check_id": "view_state_route_pc_to_vm2",
+      "status": "PASS",
+      "details": "view state route PC_TO_VM2 matches summary status"
+    },
+    {
+      "check_id": "view_state_route_pc_to_vm3",
+      "status": "PASS",
+      "details": "view state route PC_TO_VM3 matches summary status"
+    },
+    {
+      "check_id": "view_state_route_vm2_to_vm3",
+      "status": "PASS",
+      "details": "view state route VM2_TO_VM3 matches summary status"
+    }
+  ],
+  "warnings": [
+    "pc_to_vm3_warn_partial_requires_warn_verdict",
+    "vm2_to_vm3_blocked_unavailable_requires_warn_verdict"
+  ],
+  "blockers": [],
+  "refs": {
+    "summary_ref": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ROUTE-PROOF-RECOVERY-VM2-V0_1/route_proof_recovery_summary.json",
+    "view_state_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+    "runner_ledger_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/ledgers/transfer_action_runner_ledger.jsonl"
+  },
+  "claim_boundary": "FOUNDATION_ONLY",
+  "not_proven": [
+    "production orchestration",
+    "global autonomous remote execution",
+    "all routes live without bounded proof"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "organ": "ADMINISTRATUM",
+  "panel_title": "ADMINISTRATUM Task Participation",
+  "primary_status_field": "status",
+  "fields": [
+    "evidence_level",
+    "worktree_clean",
+    "origin_sync",
+    "finalization_semantics"
+  ],
+  "warnings": [
+    "Legacy receipt producers remain partially unmigrated.",
+    "External finalization semantics are candidate-accepted and still not repo-wide canonical."
+  ],
+  "links": [
+    {
+      "label": "read_first_ghost_packet",
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/READ_FIRST_GHOST_EVOLVE_PACKET.md"
+    },
+    {
+      "label": "task_participation_contract",
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/TASK_PARTICIPATION/TASK_PARTICIPATION_CONTRACT.json"
+    }
+  ],
+  "actions_future_only": [
+    "Promote to canon only with organ owner admission + replay evidence."
+  ],
+  "no_fake_buttons": true
+}

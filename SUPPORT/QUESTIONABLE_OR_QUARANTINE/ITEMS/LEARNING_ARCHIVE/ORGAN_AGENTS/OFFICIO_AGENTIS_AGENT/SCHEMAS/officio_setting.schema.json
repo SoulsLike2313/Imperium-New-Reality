@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Officio Setting",
+  "type": "object",
+  "required": [
+    "setting_id",
+    "title",
+    "version",
+    "state",
+    "scope",
+    "applies_to_roles",
+    "applies_to_modes",
+    "machine_rule",
+    "human_summary",
+    "acceptance_tests",
+    "evidence_required",
+    "dependencies",
+    "conflicts_with",
+    "supersedes",
+    "rollback_plan",
+    "owner_approval_required"
+  ],
+  "properties": {
+    "setting_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^v?[0-9]+(_[0-9]+)?$"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "REVIEW",
+        "ACTIVE",
+        "DEPRECATED",
+        "TOMBSTONE"
+      ]
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 3
+    },
+    "applies_to_roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "applies_to_modes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "machine_rule": {
+      "type": "object"
+    },
+    "human_summary": {
+      "type": "string",
+      "minLength": 3
+    },
+    "acceptance_tests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "evidence_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "conflicts_with": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supersedes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rollback_plan": {
+      "type": "string",
+      "minLength": 3
+    },
+    "owner_approval_required": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}
+

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Important Six Dashboard L2 Control Surface</title>
+    <link rel="stylesheet" href="/important_six_dashboard_l2.css" />
+  </head>
+  <body>
+    <div class="aurora-bg" aria-hidden="true"></div>
+    <header class="topbar">
+      <div class="title-zone">
+        <p class="kicker" data-i18n="kicker">IMPERIUM NEW GENERATION</p>
+        <h1 data-i18n="title">Important Six Dashboard L2 Control Action Surface</h1>
+        <p class="subtitle" data-i18n="subtitle">
+          Безопасные кнопки L2: allowlisted actions, receipts, owner intent, diff gate.
+        </p>
+      </div>
+      <div class="meta-zone">
+        <p><span data-i18n="mode">Режим</span>: <code id="modeLabel">-</code></p>
+        <p><span data-i18n="updated">Обновлено</span>: <time id="updatedAt">-</time></p>
+        <div class="toolbar">
+          <button id="refreshBtn" class="btn btn-main" type="button" data-i18n="refresh">Обновить</button>
+          <button id="langBtn" class="btn btn-alt" type="button">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="safety-strip">
+      <span class="pill pill-read">READ_ONLY</span>
+      <span class="pill pill-dry">DRY_RUN</span>
+      <span class="pill pill-write">WRITES_SCOPED</span>
+      <span class="pill" id="actionCount">0</span>
+      <span class="pill" id="statusHint">-</span>
+    </section>
+
+    <main class="layout">
+      <section class="column column-left">
+        <h2 class="section-title" data-i18n="groups">Группы действий</h2>
+        <div id="groupsRoot" class="groups-root"></div>
+      </section>
+
+      <section class="column column-right">
+        <div class="panel">
+          <h2 data-i18n="diffPanel">Diff / Approval</h2>
+          <div class="form-grid">
+            <label>
+              <span data-i18n="decision">Решение</span>
+              <select id="diffDecisionSelect">
+                <option value="APPROVE">APPROVE</option>
+                <option value="REJECT">REJECT</option>
+                <option value="NEEDS_REWORK">NEEDS_REWORK</option>
+              </select>
+            </label>
+            <label>
+              <span data-i18n="noteRu">Комментарий RU</span>
+              <input id="diffNoteInput" type="text" maxlength="240" />
+            </label>
+          </div>
+          <div id="diffStatusBox" class="json-box"></div>
+        </div>
+
+        <div class="panel">
+          <h2 data-i18n="ownerIntentPanel">Owner Intent / Questions</h2>
+          <div class="form-grid">
+            <label>
+              <span data-i18n="organ">Орган</span>
+              <input id="ownerOrganInput" type="text" value="OFFICIO_AGENTIS" />
+            </label>
+            <label>
+              <span data-i18n="severity">Серьёзность</span>
+              <select id="ownerSeveritySelect">
+                <option value="LOW">LOW</option>
+                <option value="MEDIUM" selected>MEDIUM</option>
+                <option value="HIGH">HIGH</option>
+                <option value="CRITICAL">CRITICAL</option>
+              </select>
+            </label>
+            <label>
+              <span data-i18n="question">Вопрос</span>
+              <input id="ownerQuestionInput" type="text" maxlength="300" />
+            </label>
+            <label>
+              <span data-i18n="requiredDecision">Требуемое решение</span>
+              <input id="ownerRequiredDecisionInput" type="text" value="OWNER_REVIEW" maxlength="120" />
+            </label>
+            <label>
+              <span data-i18n="decisionOptional">Решение (опционально)</span>
+              <input id="ownerDecisionInput" type="text" maxlength="120" />
+            </label>
+            <label class="note-field">
+              <span data-i18n="noteRu">Комментарий RU</span>
+              <textarea id="ownerNoteInput" rows="3"></textarea>
+            </label>
+          </div>
+          <div id="ownerQuestionsBox" class="json-box"></div>
+        </div>
+
+        <div class="panel">
+          <h2 data-i18n="resultPanel">Результат действия</h2>
+          <div id="resultBox" class="json-box"></div>
+        </div>
+
+        <div class="panel">
+          <h2 data-i18n="historyPanel">История действий</h2>
+          <div id="historyBox" class="json-box"></div>
+        </div>
+      </section>
+    </main>
+
+    <template id="groupTemplate">
+      <article class="group-card">
+        <header class="group-head">
+          <h3 class="group-title"></h3>
+        </header>
+        <div class="actions-list"></div>
+      </article>
+    </template>
+
+    <template id="actionTemplate">
+      <article class="action-item">
+        <div class="action-main">
+          <h4 class="action-title"></h4>
+          <p class="action-desc"></p>
+          <div class="meta-row">
+            <span class="safety-tag"></span>
+            <code class="action-id"></code>
+          </div>
+        </div>
+        <div class="action-controls">
+          <button class="btn btn-main run-btn" type="button" data-i18n="run">Запустить</button>
+          <button class="btn btn-alt last-btn" type="button" data-i18n="lastResult">Last</button>
+          <p class="action-last">-</p>
+        </div>
+      </article>
+    </template>
+
+    <script src="/important_six_dashboard_l2.js" defer></script>
+  </body>
+</html>
+

@@ -1,0 +1,150 @@
+{
+  "sample_action_id": "mechanicus_visual_status",
+  "sample_result": {
+    "action_id": "mechanicus_visual_status",
+    "safety": "ALLOWLISTED_LOCAL_READ_ONLY",
+    "started_at_utc": "2026-05-20T05:46:22.470857Z",
+    "finished_at_utc": "2026-05-20T05:46:23.09632Z",
+    "status": "PASS",
+    "exit_code": 0,
+    "stdout_summary": "+------------------------------ TOP STATUS BAR -------------------------------+\n| [COG-SIGIL] MECHANICUS_AGENT // OPERATOR_CONSOLE // shell v0.5              |\n| MECHANICUS_AGENT :: Tools, scripts, validators, registry intelligence, and  |\n| premium Textual operator-console m...                                       |\n| +-------------------------------------------------------------------------+ |\n| | MODE     | HEAD   | VISUAL             | RENDE… | WORKT… | … | ER… | B… | |\n| |----------+--------+--------------------+--------+--------+---+-----+----| |\n| | DASHBOA… | b84d3… | PASS_RICH_OPERATO… | rich   | DIRTY  | 1 | 0   | 0  | |\n| +-------------------------------------------------------------------------+ |\n+-----------------------------------------------------------------------------+\n+-------------------- LEFT WORK ZONE // CURRENT ACTIVITY ---------------------+\n| +-------------------------------------------------------------------------+ |\n| | TIME       | ITEM                   | DETAIL              | STATE       | |\n| |------------+------------------------+---------------------+-------------| |\n| | 05:46:22   | Repository             | .../                | OK          | |\n| | 05:46:22   | Backend Truth          | HEAD b84d32a |      | VERIFIED    | |\n| |            |                        | master              |             | |\n| | 05:46:22   | Worktree               | dirty               | WARN        | |\n| | 05:46:22   | Visual Status          | PASS_RICH_OPERATOR… | IN_SYNC     | |\n| +-------------------------------------------------------------------------+ |\n...[truncated]",
+    "stderr_summary": "",
+    "command_or_path": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --once visual-status",
+    "evidence_path": null
+  },
+  "block_probe": {
+    "action_id": "not_allowlisted_test",
+    "safety": "BLOCKED_NOT_ALLOWLISTED",
+    "started_at_utc": "2026-05-20T05:46:26.30107Z",
+    "finished_at_utc": "2026-05-20T05:46:26.30107Z",
+    "status": "BLOCK",
+    "exit_code": 127,
+    "stdout_summary": "",
+    "stderr_summary": "Action is not allowlisted.",
+    "command_or_path": null,
+    "evidence_path": null
+  },
+  "all_results": [
+    {
+      "action_id": "refresh_state",
+      "safety": "ALLOWLISTED_LOCAL_NO_SIDE_EFFECTS",
+      "started_at_utc": "2026-05-20T05:46:22.288283Z",
+      "finished_at_utc": "2026-05-20T05:46:22.288283Z",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout_summary": "Refresh acknowledged. Re-fetch /api/state.",
+      "stderr_summary": "",
+      "command_or_path": "/api/state",
+      "evidence_path": null
+    },
+    {
+      "action_id": "mechanicus_visual_status",
+      "safety": "ALLOWLISTED_LOCAL_READ_ONLY",
+      "started_at_utc": "2026-05-20T05:46:22.470857Z",
+      "finished_at_utc": "2026-05-20T05:46:23.09632Z",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout_summary": "+------------------------------ TOP STATUS BAR -------------------------------+\n| [COG-SIGIL] MECHANICUS_AGENT // OPERATOR_CONSOLE // shell v0.5              |\n| MECHANICUS_AGENT :: Tools, scripts, validators, registry intelligence, and  |\n| premium Textual operator-console m...                                       |\n| +-------------------------------------------------------------------------+ |\n| | MODE     | HEAD   | VISUAL             | RENDE… | WORKT… | … | ER… | B… | |\n| |----------+--------+--------------------+--------+--------+---+-----+----| |\n| | DASHBOA… | b84d3… | PASS_RICH_OPERATO… | rich   | DIRTY  | 1 | 0   | 0  | |\n| +-------------------------------------------------------------------------+ |\n+-----------------------------------------------------------------------------+\n+-------------------- LEFT WORK ZONE // CURRENT ACTIVITY ---------------------+\n| +-------------------------------------------------------------------------+ |\n| | TIME       | ITEM                   | DETAIL              | STATE       | |\n| |------------+------------------------+---------------------+-------------| |\n| | 05:46:22   | Repository             | .../                | OK          | |\n| | 05:46:22   | Backend Truth          | HEAD b84d32a |      | VERIFIED    | |\n| |            |                        | master              |             | |\n| | 05:46:22   | Worktree               | dirty               | WARN        | |\n| | 05:46:22   | Visual Status          | PASS_RICH_OPERATOR… | IN_SYNC     | |\n| +-------------------------------------------------------------------------+ |\n...[truncated]",
+      "stderr_summary": "",
+      "command_or_path": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --once visual-status",
+      "evidence_path": null
+    },
+    {
+      "action_id": "mechanicus_visual_tools",
+      "safety": "ALLOWLISTED_LOCAL_READ_ONLY",
+      "started_at_utc": "2026-05-20T05:46:23.274013Z",
+      "finished_at_utc": "2026-05-20T05:46:23.732562Z",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout_summary": "+------------------------------ TOP STATUS BAR -------------------------------+\n| [COG-SIGIL] MECHANICUS_AGENT // OPERATOR_CONSOLE // shell v0.5              |\n| MECHANICUS_AGENT :: Tools, scripts, validators, registry intelligence, and  |\n| premium Textual operator-console m...                                       |\n| +-------------------------------------------------------------------------+ |\n| | MODE     | HEAD   | VISUAL             | RENDE… | WORKT… | … | ER… | B… | |\n| |----------+--------+--------------------+--------+--------+---+-----+----| |\n| | TOOLS    | b84d3… | PASS_RICH_OPERATO… | rich   | DIRTY  | 0 | 0   | 0  | |\n| +-------------------------------------------------------------------------+ |\n+-----------------------------------------------------------------------------+\n+-------------------- LEFT WORK ZONE // CURRENT ACTIVITY ---------------------+\n| +-------------------------------------------------------------------------+ |\n| | TIME       | ITEM                   | DETAIL              | STATE       | |\n| |------------+------------------------+---------------------+-------------| |\n| | 05:46:23   | Registry Path          | .../.../TOOL_REGIS… | LOADED      | |\n| | 05:46:23   | Registered             | 20                  | OK          | |\n| | 05:46:23   | Available              | 13                  | OK          | |\n| | 05:46:23   | Missing                | 7                   | WARN        | |\n| +-------------------------------------------------------------------------+ |\n+-----------------------------------------------------------------------------+\n...[truncated]",
+      "stderr_summary": "",
+      "command_or_path": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --once visual-tools",
+      "evidence_path": null
+    },
+    {
+      "action_id": "mechanicus_visual_check",
+      "safety": "ALLOWLISTED_LOCAL_READ_ONLY",
+      "started_at_utc": "2026-05-20T05:46:23.919352Z",
+      "finished_at_utc": "2026-05-20T05:46:24.564035Z",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout_summary": "+------------------------------ TOP STATUS BAR -------------------------------+\n| [COG-SIGIL] MECHANICUS_AGENT // OPERATOR_CONSOLE // shell v0.5              |\n| MECHANICUS_AGENT :: Tools, scripts, validators, registry intelligence, and  |\n| premium Textual operator-console m...                                       |\n| +-------------------------------------------------------------------------+ |\n| | MODE     | HEAD   | VISUAL             | RENDE… | WORKT… | … | ER… | B… | |\n| |----------+--------+--------------------+--------+--------+---+-----+----| |\n| | CHECK    | b84d3… | PASS_RICH_OPERATO… | rich   | DIRTY  | 0 | 0   | 0  | |\n| +-------------------------------------------------------------------------+ |\n+-----------------------------------------------------------------------------+\n+-------------------- LEFT WORK ZONE // CURRENT ACTIVITY ---------------------+\n| +-------------------------------------------------------------------------+ |\n| | TIME       | ITEM                   | DETAIL              | STATE       | |\n| |------------+------------------------+---------------------+-------------| |\n| | 05:46:24   | Check Verdict          | PASS                | OK          | |\n| | 05:46:24   | PASS/WARN              | PASS=1 WARN=0       | OK          | |\n| | 05:46:24   | ERROR/BLOCK            | ERROR=0 BLOCK=0     | OK          | |\n| | 05:46:24   | Report                 | .../.../REPORTS/ba… | WRITTEN     | |\n| +-------------------------------------------------------------------------+ |\n+-----------------------------------------------------------------------------+\n...[truncated]",
+      "stderr_summary": "",
+      "command_or_path": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --once visual-check",
+      "evidence_path": null
+    },
+    {
+      "action_id": "mechanicus_visual_identity",
+      "safety": "ALLOWLISTED_LOCAL_READ_ONLY",
+      "started_at_utc": "2026-05-20T05:46:24.751491Z",
+      "finished_at_utc": "2026-05-20T05:46:25.195042Z",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout_summary": "+------------------------------ TOP STATUS BAR -------------------------------+\n| [COG-SIGIL] MECHANICUS_AGENT // OPERATOR_CONSOLE // shell v0.5              |\n| MECHANICUS_AGENT :: Tools, scripts, validators, registry intelligence, and  |\n| premium Textual operator-console m...                                       |\n| +-------------------------------------------------------------------------+ |\n| | MODE     | HEAD   | VISUAL             | RENDE… | WORKT… | … | ER… | B… | |\n| |----------+--------+--------------------+--------+--------+---+-----+----| |\n| | IDENTITY | b84d3… | PASS_RICH_OPERATO… | rich   | DIRTY  | 0 | 0   | 0  | |\n| +-------------------------------------------------------------------------+ |\n+-----------------------------------------------------------------------------+\n+-------------------- LEFT WORK ZONE // CURRENT ACTIVITY ---------------------+\n| +-------------------------------------------------------------------------+ |\n| | TIME       | ITEM                   | DETAIL              | STATE       | |\n| |------------+------------------------+---------------------+-------------| |\n| | 05:46:25   | Organ                  | MECHANICUS_AGENT    | OK          | |\n| | 05:46:25   | Mission                | Expose reliable     | FOCUS       | |\n| |            |                        | tooling status and  |             | |\n| |            |                        | script/validator    |             | |\n| |            |                        | readiness for       |             | |\n| |            |                        | operator execution. |             | |\n...[truncated]",
+      "stderr_summary": "",
+      "command_or_path": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --once visual-identity",
+      "evidence_path": null
+    },
+    {
+      "action_id": "mechanicus_screenshot_command",
+      "safety": "DISPLAY_ONLY_SAFE_FALLBACK",
+      "started_at_utc": "2026-05-20T05:46:25.381088Z",
+      "finished_at_utc": "2026-05-20T05:46:25.381088Z",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout_summary": "DISPLAY_ONLY_SAFE_FALLBACK",
+      "stderr_summary": "",
+      "command_or_path": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --screenshot all",
+      "evidence_path": null
+    },
+    {
+      "action_id": "open_or_show_latest_report",
+      "safety": "DISPLAY_ONLY_SAFE_FALLBACK",
+      "started_at_utc": "2026-05-20T05:46:25.562431Z",
+      "finished_at_utc": "2026-05-20T05:46:25.562431Z",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout_summary": "DISPLAY_ONLY_SAFE_FALLBACK",
+      "stderr_summary": "",
+      "command_or_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1",
+      "evidence_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1"
+    },
+    {
+      "action_id": "open_or_show_screenshots_folder",
+      "safety": "DISPLAY_ONLY_SAFE_FALLBACK",
+      "started_at_utc": "2026-05-20T05:46:25.744547Z",
+      "finished_at_utc": "2026-05-20T05:46:25.744547Z",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout_summary": "DISPLAY_ONLY_SAFE_FALLBACK",
+      "stderr_summary": "",
+      "command_or_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\SCREENSHOTS",
+      "evidence_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\SCREENSHOTS\\mechanicus_raw_v0_5.svg"
+    },
+    {
+      "action_id": "show_api_state_json",
+      "safety": "ALLOWLISTED_LOCAL_NO_SIDE_EFFECTS",
+      "started_at_utc": "2026-05-20T05:46:25.928098Z",
+      "finished_at_utc": "2026-05-20T05:46:25.928098Z",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout_summary": "Use GET /api/state",
+      "stderr_summary": "",
+      "command_or_path": "/api/state",
+      "evidence_path": null
+    },
+    {
+      "action_id": "show_api_mechanicus_json",
+      "safety": "ALLOWLISTED_LOCAL_NO_SIDE_EFFECTS",
+      "started_at_utc": "2026-05-20T05:46:26.110672Z",
+      "finished_at_utc": "2026-05-20T05:46:26.110672Z",
+      "status": "PASS",
+      "exit_code": 0,
+      "stdout_summary": "Use GET /api/mechanicus",
+      "stderr_summary": "",
+      "command_or_path": "/api/mechanicus",
+      "evidence_path": null
+    }
+  ],
+  "history_count": 11
+}

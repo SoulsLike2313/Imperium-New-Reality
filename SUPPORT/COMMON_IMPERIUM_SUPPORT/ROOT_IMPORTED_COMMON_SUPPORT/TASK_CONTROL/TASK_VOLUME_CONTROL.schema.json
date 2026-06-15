@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/TASK_CONTROL/TASK_VOLUME_CONTROL.schema.json",
+  "title": "Task Volume Control V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "task_size_class",
+    "context_budget_class",
+    "organ_count",
+    "expected_file_touch_class",
+    "expected_command_count_class",
+    "expected_evidence_volume_class",
+    "accuracy_risk",
+    "checkpoint_required",
+    "checkpoint_cadence",
+    "split_required_if",
+    "continuation_protocol_required",
+    "recommended_execution_phases"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 8,
+      "pattern": "^TASK-"
+    },
+    "task_size_class": {
+      "type": "string",
+      "enum": ["SMALL", "MEDIUM", "LARGE", "MEGA"]
+    },
+    "context_budget_class": {
+      "type": "string",
+      "enum": ["LOW", "MEDIUM", "HIGH", "EXTREME"]
+    },
+    "organ_count": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 99
+    },
+    "expected_file_touch_class": {
+      "type": "string",
+      "enum": ["FILES_1_10", "FILES_10_30", "FILES_30_80", "FILES_80_PLUS"]
+    },
+    "expected_command_count_class": {
+      "type": "string",
+      "enum": ["CMDS_1_20", "CMDS_20_60", "CMDS_60_140", "CMDS_140_PLUS"]
+    },
+    "expected_evidence_volume_class": {
+      "type": "string",
+      "enum": ["EVIDENCE_LOW", "EVIDENCE_MEDIUM", "EVIDENCE_HIGH", "EVIDENCE_EXTREME"]
+    },
+    "accuracy_risk": {
+      "type": "string",
+      "enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]
+    },
+    "checkpoint_required": {
+      "type": "boolean"
+    },
+    "checkpoint_cadence": {
+      "type": "string",
+      "enum": ["END_ONLY", "MILESTONE", "PER_STAGE"]
+    },
+    "split_required_if": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "continuation_protocol_required": {
+      "type": "boolean"
+    },
+    "recommended_execution_phases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["phase_id", "phase_name", "goal", "checkpoint_gate"],
+        "properties": {
+          "phase_id": {"type": "string", "minLength": 2},
+          "phase_name": {"type": "string", "minLength": 3},
+          "goal": {"type": "string", "minLength": 3},
+          "checkpoint_gate": {"type": "boolean"}
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  }
+}

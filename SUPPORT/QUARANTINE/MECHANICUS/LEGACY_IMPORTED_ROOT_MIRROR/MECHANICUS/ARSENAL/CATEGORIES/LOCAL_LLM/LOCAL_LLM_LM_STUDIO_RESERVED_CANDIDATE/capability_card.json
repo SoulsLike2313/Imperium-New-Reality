@@ -1,0 +1,45 @@
+{
+  "capability_id": "LOCAL_LLM_LM_STUDIO_RESERVED_CANDIDATE",
+  "name": "LM Studio reserved candidate",
+  "category": "LOCAL_LLM",
+  "status": "CANDIDATE",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Mass intake candidate for LM Studio reserved candidate in LOCAL_LLM.",
+  "what_problem_it_solves": "Mass intake seed for LOCAL_LLM.",
+  "source_type": "adapter",
+  "source_url_or_path": "RESERVED_LOCAL_LLM_CANDIDATE_LM_STUDIO_RESERVED_CANDIDATE",
+  "license_or_trust_note": "RESERVED; CANDIDATE_ONLY; FUTURE_DEDICATED_TASK_REQUIRED; secret/cost/privacy policy gate required.",
+  "install_required": true,
+  "install_gate": "GATE-ARSENAL-EXTERNAL-INSTALL-ADMISSION",
+  "validation_commands": [
+    "validate:local-llm-lm-studio-reserved-candidate"
+  ],
+  "expected_receipts": [
+    "local-llm-lm-studio-reserved-candidate_validation_receipt.json"
+  ],
+  "safety_notes": "Bounded use only; no uncontrolled runtime mutation or hidden side effects.",
+  "security_notes": "No secret handling in this task; obey path, scope, and evidence gates.",
+  "offline_or_network_dependency": "network_optional",
+  "promoted_by_receipt": "NOT_PROMOTED",
+  "last_reviewed_utc": "2026-05-24T16:49:31Z",
+  "next_review_reason": "Reserved candidate only; dedicated LLM/cloud policy task required.",
+  "limitations": "RESERVED/CANDIDATE_ONLY in this task; no deep integration permitted.",
+  "allowed_use_cases": [
+    "Capability cataloging and validation planning",
+    "Scoped candidate execution after explicit admission gate"
+  ],
+  "forbidden_use_cases": [
+    "Claiming CANON without validation receipt evidence",
+    "Using capability outside bounded task scope",
+    "Configuring secrets or API keys in this intake task",
+    "Runtime integration or production claim in reserved phase"
+  ],
+  "reserved": true,
+  "intake_batch_id": "MECHANICUS-INTAKE-BATCH-LOCAL_LLM-001",
+  "desired_future_status": "RESERVED_CANDIDATE_ONLY",
+  "policy_tags": [
+    "RESERVED",
+    "CANDIDATE_ONLY",
+    "FUTURE_DEDICATED_TASK_REQUIRED"
+  ]
+}

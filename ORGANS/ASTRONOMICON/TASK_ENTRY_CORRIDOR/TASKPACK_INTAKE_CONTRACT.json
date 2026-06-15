@@ -1,0 +1,52 @@
+{
+  "contract_id": "TASKPACK_INTAKE_CONTRACT_V0_2",
+  "owner": "ASTRONOMICON",
+  "status": "CANDIDATE_NOT_CANON",
+  "required_inputs": [
+    "taskpack_zip_path"
+  ],
+  "required_outputs": [
+    "taskpack_admission_receipt",
+    "task_route_manifest",
+    "task_start_ack_template",
+    "task_registry_entry",
+    "current_expected_task"
+  ],
+  "required_checks": [
+    "zip_exists",
+    "zip_readable",
+    "zip_sha256",
+    "manifest_found",
+    "task_id_found",
+    "manifest_organs_include_8",
+    "manifest_language_policy_present",
+    "manifest_owner_runtime_routed_through_officio",
+    "task_spec_found",
+    "acceptance_gates_found",
+    "output_requirements_found",
+    "taskpack_root_utf8_no_bom",
+    "taskpack_root_non_english_absent",
+    "taskpack_root_replacement_character_absent",
+    "taskpack_root_mojibake_signature_absent",
+    "duplicate_task_id_blocked",
+    "safe_extraction_path",
+    "route_manifest_8_organs"
+  ],
+  "admission_verdicts": [
+    "ADMISSION_PASS",
+    "ADMISSION_PASS_WITH_WARNINGS",
+    "ADMISSION_BLOCK"
+  ],
+  "blocking_caps": [
+    "CAP_TASKPACK_ADMISSION_MISSING",
+    "CAP_DUPLICATE_TASK_ID_NOT_DETECTED",
+    "CAP_UNSAFE_EXTRACTION_PATH_NOT_BLOCKED",
+    "CAP_ROUTE_DOES_NOT_INCLUDE_8_ORGANS",
+    "CAP_ASTRONOMICON_ADMISSION_LANGUAGE_GATE_MISSING",
+    "CAP_NON_ENGLISH_TASKPACK_INTERNAL_TEXT",
+    "CAP_OWNER_LANGUAGE_NOT_ROUTED_THROUGH_OFFICIO",
+    "CAP_UTF8_BOM_NOT_DETECTED",
+    "CAP_REPLACEMENT_CHARACTER_NOT_DETECTED",
+    "CAP_MOJIBAKE_SIGNATURE_NOT_DETECTED"
+  ]
+}

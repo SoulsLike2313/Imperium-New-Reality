@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/CONTRACTS/SERVITOR_EXECUTION/SERVITOR_EXECUTION_SESSION_V0_1.schema.json",
+  "title": "Servitor Execution Session V0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "session_id",
+    "task_id",
+    "status",
+    "truth_level",
+    "inputs",
+    "organ_scope_summary",
+    "run_plan",
+    "no_fake_green_boundary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "CREATED",
+        "AUTHORITY_ACKED_WITH_WARNINGS",
+        "SCOPED_BY_ORGANS",
+        "READY_FOR_RUN",
+        "RUNNING",
+        "RUN_FAILED_NEEDS_RERUN",
+        "BLOCKED_NEEDS_OWNER",
+        "PASSED_WITH_WARNINGS",
+        "PASSED_STRICT",
+        "CLOSED_FOUNDATION_ONLY"
+      ]
+    },
+    "truth_level": {
+      "type": "string",
+      "enum": [
+        "FOUNDATION_ONLY",
+        "SAMPLE_OR_WARN",
+        "READY_WITH_WARNINGS",
+        "BLOCKED",
+        "PROVED_FOUNDATION"
+      ]
+    },
+    "created_at_utc": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "path",
+          "status"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "READ",
+              "MISSING",
+              "READ_ERROR"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "organ_scope_summary": {
+      "type": "object",
+      "required": [
+        "source_path",
+        "source_status",
+        "organ_count",
+        "readiness"
+      ],
+      "properties": {
+        "source_path": {
+          "type": "string"
+        },
+        "source_status": {
+          "type": "string"
+        },
+        "organ_count": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "readiness": {
+          "type": "string"
+        },
+        "warnings": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "run_plan": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object"
+      }
+    },
+    "required_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "owner_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "organ_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "no_fake_green_boundary": {
+      "type": "object",
+      "required": [
+        "may_claim",
+        "may_not_claim"
+      ],
+      "properties": {
+        "may_claim": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "may_not_claim": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

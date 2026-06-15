@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.administratum.freelance_task_envelope.v0_1",
+  "type": "object",
+  "required": [
+    "task_id",
+    "client_goal",
+    "assigned_organ",
+    "administratum_scope",
+    "input_refs",
+    "privacy_level",
+    "allowed_actions",
+    "forbidden_actions",
+    "deliverables_required",
+    "acceptance_criteria",
+    "evidence_required",
+    "handoff_target",
+    "owner_decision_required"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "client_goal": {
+      "type": "string"
+    },
+    "assigned_organ": {
+      "type": "string",
+      "const": "ADMINISTRATUM_AGENT"
+    },
+    "administratum_scope": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "intake",
+          "context_map",
+          "evidence_pack",
+          "handoff"
+        ]
+      },
+      "minItems": 1
+    },
+    "input_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "privacy_level": {
+      "type": "string",
+      "enum": [
+        "public",
+        "client_confidential",
+        "private"
+      ]
+    },
+    "allowed_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "deliverables_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "acceptance_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "handoff_target": {
+      "type": "string"
+    },
+    "owner_decision_required": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

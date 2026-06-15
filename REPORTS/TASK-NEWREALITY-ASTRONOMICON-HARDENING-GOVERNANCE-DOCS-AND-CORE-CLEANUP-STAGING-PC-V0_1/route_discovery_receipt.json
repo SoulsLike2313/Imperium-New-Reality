@@ -1,0 +1,42 @@
+{
+  "schema_version": "astronomicon.route_discovery_receipt.v0_1",
+  "task_id": "TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1",
+  "phase": "pre_repair_baseline",
+  "repo_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "active_skill_path": "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py",
+  "pre_repair_defects": [
+    {
+      "defect_id": "DEFAULT_ROUTE_CONFIG_OLD_PREFIX",
+      "pre_repair_path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json",
+      "desired_primary_path": "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json",
+      "risk": "ignored old-prefix residue can mask broken current-root discovery"
+    },
+    {
+      "defect_id": "MATRIX_SPINE_ROOT_PATH_DRIFT",
+      "pre_repair_path": "MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md",
+      "desired_current_path": "SUPPORT/COMMON_IMPERIUM_SUPPORT/ROOT_IMPORTED_COMMON_SUPPORT/MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md",
+      "risk": "route manifest read order points to a missing root path"
+    },
+    {
+      "defect_id": "SKILL_DOCS_OLD_PREFIX",
+      "pre_repair_paths": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_intake_v0_1.py"
+      ],
+      "desired_primary_prefix": "ORGANS/ASTRONOMICON"
+    },
+    {
+      "defect_id": "BLOCK_ADMISSION_SEARCHED_PATHS_NOT_EXPLICIT",
+      "risk": "route/template blockers can hide exact searched paths and prior manifest discovery state"
+    }
+  ],
+  "old_prefix_files_detected": [
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ENTRY_CORRIDOR_CONTRACT.json",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ENTRY_CORRIDOR_CONTRACT.md",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json"
+  ],
+  "repair_started": false,
+  "verdict": "BASELINE_RECORDED_READY_FOR_REPAIR"
+}

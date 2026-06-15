@@ -1,0 +1,13 @@
+{
+  "schema_version": "imperium.strategium.true_physical_cleanliness_metric.v0_2",
+  "status": "CANDIDATE_NOT_CANON",
+  "destination": "ORGANS/STRATEGIUM/METRICS/true_physical_cleanliness_metric_v0_2.json",
+  "supersedes": "core_physical_cleanliness_metric_v0_1",
+  "reason_for_change": "v0_1 inspected only root entries and scored 94/100 PASS_WITH_WARNINGS while 79 percent of the repo was committed build artifacts hidden inside an Organ.",
+  "scan_mode": "RECURSIVE_WHOLE_TREE",
+  "inputs_from": "imperium_hygiene_gate_v0_1.py counts",
+  "formula": "score = 100 - 60*has_build_artifacts - 15*has_unadmitted_zip - 15*has_truly_malformed_json - 20*has_real_secret - min(10, bom_files*0.5) - min(10, crlf_files_ratio*10) - min(5, empty_files*0.1)",
+  "clamp": "score in [0,100]",
+  "verdict_bands": { "PASS": ">=90 and no BLOCK condition", "PASS_WITH_WARNINGS": ">=70", "BLOCK": "<70 or any BLOCK condition" },
+  "honesty_clause": "If any BLOCK condition is true, verdict is BLOCK regardless of numeric score."
+}

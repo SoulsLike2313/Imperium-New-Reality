@@ -1,0 +1,55 @@
+{
+  "task_id": "TASK-NEWGEN-LANGUAGE-GATE-INDEPENDENT-REPLAY-STRICT-SCOPE-LEGACY-BACKLOG-RETENTION-POLICY-PC-V0_1",
+  "timestamp_utc": "2026-06-01T06:18:42Z",
+  "items": [
+    {
+      "learning_id": "LGR-001",
+      "source_problem": "Strict-scope clean path can coexist with global legacy warnings.",
+      "evidence_path": "e:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-GATE-INDEPENDENT-REPLAY-STRICT-SCOPE-LEGACY-BACKLOG-RETENTION-POLICY-PC-V0_1/strict_scope_language_scan_receipt.json",
+      "owner_organ": "INQUISITION",
+      "affected_route": "LANGUAGE_GATE_REPLAY",
+      "cap_mapping": [
+        "CAP_LANGUAGE_CLEAN_PASS_OVERCLAIM"
+      ],
+      "future_prevention": "Keep strict-scope verdict and global legacy verdict separate.",
+      "script_first_remediation_path": "Automate dual-verdict renderer in filter post-processor."
+    },
+    {
+      "learning_id": "LGR-002",
+      "source_problem": "Legacy language hits require durable backlog instead of ad-hoc narrative.",
+      "evidence_path": "e:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-GATE-INDEPENDENT-REPLAY-STRICT-SCOPE-LEGACY-BACKLOG-RETENTION-POLICY-PC-V0_1/legacy_language_backlog.json",
+      "owner_organ": "ADMINISTRATUM",
+      "affected_route": "LEGACY_REMEDIATION",
+      "cap_mapping": [
+        "CAP_LEGACY_LANGUAGE_BACKLOG_MISSING"
+      ],
+      "future_prevention": "Always emit categorized backlog JSON/MD/CSV when global WARN remains.",
+      "script_first_remediation_path": "Backlog compiler from strict-scan receipt."
+    },
+    {
+      "learning_id": "LGR-003",
+      "source_problem": "Historical report bundles can carry stale pending finalization markers.",
+      "evidence_path": "e:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-GATE-INDEPENDENT-REPLAY-STRICT-SCOPE-LEGACY-BACKLOG-RETENTION-POLICY-PC-V0_1/stale_repo_truth_classification_receipt.json",
+      "owner_organ": "INQUISITION",
+      "affected_route": "RED_TEAM_FINALIZATION",
+      "cap_mapping": [
+        "CAP_STALE_REPO_TRUTH_NOT_CLASSIFIED"
+      ],
+      "future_prevention": "Classify stale markers explicitly before closure verdict.",
+      "script_first_remediation_path": "Periodic pending-field scanner for recent report bundles."
+    },
+    {
+      "learning_id": "LGR-004",
+      "source_problem": "Registered taskpack payload growth needs explicit retention semantics.",
+      "evidence_path": "e:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-GATE-INDEPENDENT-REPLAY-STRICT-SCOPE-LEGACY-BACKLOG-RETENTION-POLICY-PC-V0_1/taskpack_retention_inventory.json",
+      "owner_organ": "ASTRONOMICON",
+      "affected_route": "TASKPACK_INTAKE",
+      "cap_mapping": [
+        "CAP_TASKPACK_RETENTION_POLICY_MISSING",
+        "CAP_REGISTERED_TASKPACK_FOOTPRINT_UNCLASSIFIED"
+      ],
+      "future_prevention": "Attach retention class in admission and periodic inventory rollups.",
+      "script_first_remediation_path": "Retention inventory emitter with quarantine candidates."
+    }
+  ]
+}

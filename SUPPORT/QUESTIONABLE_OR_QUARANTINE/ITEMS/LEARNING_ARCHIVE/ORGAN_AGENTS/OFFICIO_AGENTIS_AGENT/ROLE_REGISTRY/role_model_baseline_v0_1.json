@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1",
+  "created_utc": "2026-05-19T12:07:13Z",
+  "status": "baseline_candidate_owner_review_required",
+  "internal_role_families": [
+    "LOGOS",
+    "SERVITOR"
+  ],
+  "profiles": [
+    "PRIME",
+    "SPECULUM"
+  ],
+  "canonical_roles": [
+    "LOGOS_PRIME",
+    "LOGOS_SPECULUM",
+    "SERVITOR_PRIME",
+    "SERVITOR_SPECULUM"
+  ],
+  "excluded_from_internal_roles": [
+    {
+      "name": "Kiro",
+      "reason": "external advisory source only; not a canonical Officio role in V0.1"
+    }
+  ],
+  "core_rule": "A role is a behavior contract, not a personality or speech style.",
+  "prime_speculum_pattern": {
+    "LOGOS_PRIME": "builds and reconciles form",
+    "LOGOS_SPECULUM": "attacks form and architecture",
+    "SERVITOR_PRIME": "executes bounded tasks",
+    "SERVITOR_SPECULUM": "audits execution and evidence"
+  },
+  "canonical_language_policy": "English for committed/machine/canonical artifacts; Russian allowed for owner-facing live communication and controlled localization."
+}

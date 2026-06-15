@@ -1,0 +1,154 @@
+{
+  "schema_id": "newgen_external_finalization_semantics_checker_report_v0_1",
+  "fixtures_dir": "IMPERIUM_NEW_GENERATION\\ORGANS\\MECHANICUS\\FIXTURES\\EXTERNAL_FINALIZATION_SEMANTICS_V0_1",
+  "fixture_total": 10,
+  "fixture_checks_passed": 10,
+  "fixture_checks_failed": 0,
+  "verdict_counts": {
+    "PASS": 2,
+    "PASS_WITH_WARNINGS": 4,
+    "BLOCK": 4
+  },
+  "results": [
+    {
+      "fixture_id": "FX01_SELF_HEAD_PARADOX_PRESENT",
+      "expected_verdict": "PASS_WITH_WARNINGS",
+      "actual_verdict": "PASS_WITH_WARNINGS",
+      "missing_expected_caps": [],
+      "unexpected_caps": [],
+      "caps_triggered": [
+        "CAP_SELF_HEAD_PARADOX"
+      ],
+      "checks_passed": true,
+      "notes": [
+        "self_head_paradox_unhandled"
+      ]
+    },
+    {
+      "fixture_id": "FX02_GUESSED_SELF_HASH_USED_AS_FINAL_HEAD",
+      "expected_verdict": "BLOCK",
+      "actual_verdict": "BLOCK",
+      "missing_expected_caps": [],
+      "unexpected_caps": [],
+      "caps_triggered": [
+        "CAP_AMBIGUOUS_FINAL_HEAD",
+        "CAP_FINALIZATION_SEMANTICS_CONTRADICTORY"
+      ],
+      "checks_passed": true,
+      "notes": [
+        "legacy_final_head_present",
+        "clean_pass_allowed_with_active_caps"
+      ]
+    },
+    {
+      "fixture_id": "FX03_EXTERNAL_FINALIZATION_RECEIPT_VALID",
+      "expected_verdict": "PASS",
+      "actual_verdict": "PASS",
+      "missing_expected_caps": [],
+      "unexpected_caps": [],
+      "caps_triggered": [],
+      "checks_passed": true,
+      "notes": []
+    },
+    {
+      "fixture_id": "FX04_MISSING_EXTERNAL_DELIVERY_HEAD",
+      "expected_verdict": "PASS_WITH_WARNINGS",
+      "actual_verdict": "PASS_WITH_WARNINGS",
+      "missing_expected_caps": [],
+      "unexpected_caps": [],
+      "caps_triggered": [
+        "CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING"
+      ],
+      "checks_passed": true,
+      "notes": [
+        "external_delivery_head_missing"
+      ]
+    },
+    {
+      "fixture_id": "FX05_CAP_CLOSED_WITHOUT_CLOSURE_EVIDENCE",
+      "expected_verdict": "BLOCK",
+      "actual_verdict": "BLOCK",
+      "missing_expected_caps": [],
+      "unexpected_caps": [],
+      "caps_triggered": [
+        "CAP_CAP_CLOSED_WITHOUT_EVIDENCE"
+      ],
+      "checks_passed": true,
+      "notes": [
+        "cap_state_0_closed_without_evidence",
+        "cap_state_0_closed_without_closure_head"
+      ]
+    },
+    {
+      "fixture_id": "FX06_REPLAY_STATE_NONE_BUT_REPLAY_EXISTS",
+      "expected_verdict": "PASS_WITH_WARNINGS",
+      "actual_verdict": "PASS_WITH_WARNINGS",
+      "missing_expected_caps": [],
+      "unexpected_caps": [],
+      "caps_triggered": [
+        "CAP_REPLAY_STATE_AMBIGUOUS"
+      ],
+      "checks_passed": true,
+      "notes": [
+        "replay_none_but_evidence_present"
+      ]
+    },
+    {
+      "fixture_id": "FX07_REPLAY_CLAIM_CURRENT_TARGET_MISMATCH",
+      "expected_verdict": "BLOCK",
+      "actual_verdict": "BLOCK",
+      "missing_expected_caps": [],
+      "unexpected_caps": [],
+      "caps_triggered": [
+        "CAP_STALE_REPLAY_USED_AS_CURRENT"
+      ],
+      "checks_passed": true,
+      "notes": [
+        "current_target_state_head_mismatch"
+      ]
+    },
+    {
+      "fixture_id": "FX08_STALE_REPLAY_ONLY_PRECISE_STATE",
+      "expected_verdict": "PASS",
+      "actual_verdict": "PASS",
+      "missing_expected_caps": [],
+      "unexpected_caps": [],
+      "caps_triggered": [],
+      "checks_passed": true,
+      "notes": []
+    },
+    {
+      "fixture_id": "FX09_CLEAN_PASS_WITH_CONTRADICTORY_SEMANTICS",
+      "expected_verdict": "BLOCK",
+      "actual_verdict": "BLOCK",
+      "missing_expected_caps": [],
+      "unexpected_caps": [],
+      "caps_triggered": [
+        "CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING",
+        "CAP_FINALIZATION_SEMANTICS_CONTRADICTORY",
+        "CAP_SELF_HEAD_PARADOX"
+      ],
+      "checks_passed": true,
+      "notes": [
+        "external_delivery_head_missing",
+        "self_head_paradox_unhandled",
+        "clean_pass_allowed_with_active_caps"
+      ]
+    },
+    {
+      "fixture_id": "FX10_VALID_PASS_WITH_WARNINGS_EXTERNAL_PENDING",
+      "expected_verdict": "PASS_WITH_WARNINGS",
+      "actual_verdict": "PASS_WITH_WARNINGS",
+      "missing_expected_caps": [],
+      "unexpected_caps": [],
+      "caps_triggered": [
+        "CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING"
+      ],
+      "checks_passed": true,
+      "notes": [
+        "external_delivery_head_missing"
+      ]
+    }
+  ],
+  "overall_status": "PASS"
+}

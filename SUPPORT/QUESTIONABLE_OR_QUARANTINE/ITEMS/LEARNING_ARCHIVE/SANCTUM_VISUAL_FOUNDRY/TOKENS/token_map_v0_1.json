@@ -1,0 +1,189 @@
+{
+  "token_map_id": "SANCTUM_VISUAL_TOKEN_MAP_V0_1",
+  "task_id": "TASK-20260520-NEWGEN-SANCTUM-VISUAL-TOPOLOGY-ADDRESS-REGISTRY-PC-V0_1",
+  "sources": [
+    {
+      "type": "json",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/TOKENS/design_tokens_mechanicus_console_v0_2.json",
+      "status": "real"
+    },
+    {
+      "type": "css",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/TOKENS/design_tokens_mechanicus_console_v0_2.css",
+      "status": "real"
+    }
+  ],
+  "token_sets": {
+    "sanctum_shell_tokens": {
+      "background": [
+        "--vf2-color-bg-void",
+        "--vf2-color-bg-forge-base",
+        "--vf2-color-bg-cockpit"
+      ],
+      "text": [
+        "--vf2-color-text-primary",
+        "--vf2-color-text-secondary"
+      ],
+      "borders": [
+        "--vf2-border-panel",
+        "--vf2-border-chip"
+      ]
+    },
+    "brain_core_tokens": {
+      "accent": [
+        "--vf2-color-accent-holo-cyan",
+        "--vf2-color-accent-nebula-purple",
+        "--vf2-color-accent-forge-red"
+      ],
+      "motion": [
+        "--vf2-motion-slow",
+        "--vf2-motion-normal"
+      ],
+      "shadow": [
+        "--vf2-shadow-panel"
+      ]
+    },
+    "mechanicus_node_tokens": {
+      "accent": [
+        "--vf2-color-accent-forge-red",
+        "--vf2-color-accent-forge-amber"
+      ],
+      "state": [
+        "ok",
+        "warn",
+        "error"
+      ]
+    },
+    "truth_strip_tokens": {
+      "state_chip": [
+        "truth-chip.ok",
+        "truth-chip.warn",
+        "truth-chip.error"
+      ],
+      "mono": [
+        "--vf2-font-mono"
+      ]
+    },
+    "command_surface_tokens": {
+      "button": [
+        "--vf2-border-chip",
+        "--vf2-shadow-focus",
+        "--vf2-motion-fast"
+      ]
+    },
+    "evidence_layer_tokens": {
+      "status": [
+        "--vf2-color-accent-holo-cyan",
+        "--vf2-color-accent-forge-amber"
+      ]
+    },
+    "organ_ring_tokens": {
+      "node_surface": [
+        "--vf2-radius-md",
+        "--vf2-space-sm",
+        "--vf2-border-chip"
+      ]
+    },
+    "right_dock_tokens": {
+      "panel_surface": [
+        "--vf2-color-bg-holo-glass",
+        "--vf2-shadow-cockpit"
+      ]
+    },
+    "mechanicus_panel_tokens": {
+      "panel_typography": [
+        "--vf2-font-ui",
+        "--vf2-size-sm",
+        "--vf2-size-xs"
+      ]
+    },
+    "activity_pulse_tokens": {
+      "pulse_accent": [
+        "--vf2-color-accent-holo-cyan",
+        "--vf2-color-accent-forge-red"
+      ]
+    },
+    "stub_panel_tokens": {
+      "disabled": [
+        "--vf2-color-text-secondary"
+      ]
+    },
+    "neural_link_tokens": {
+      "line": [
+        "--vf2-color-line-holo",
+        "--vf2-color-line-forge"
+      ]
+    }
+  },
+  "unit_token_bindings": [
+    {
+      "visual_unit_id": "SANCTUM.SHELL.GLOBAL_FRAME",
+      "token_set": "sanctum_shell_tokens"
+    },
+    {
+      "visual_unit_id": "SANCTUM.BRAIN_FIELD.NEURAL_CORE",
+      "token_set": "brain_core_tokens"
+    },
+    {
+      "visual_unit_id": "SANCTUM.BRAIN_FIELD.ORGAN_RING",
+      "token_set": "organ_ring_tokens"
+    },
+    {
+      "visual_unit_id": "SANCTUM.BRAIN_FIELD.ORGAN_RING.MECHANICUS_NODE",
+      "token_set": "mechanicus_node_tokens"
+    },
+    {
+      "visual_unit_id": "SANCTUM.BRAIN_FIELD.NEURAL_LINKS",
+      "token_set": "neural_link_tokens"
+    },
+    {
+      "visual_unit_id": "SANCTUM.BRAIN_FIELD.ACTIVITY_PULSE_LAYER",
+      "token_set": "activity_pulse_tokens"
+    },
+    {
+      "visual_unit_id": "SANCTUM.RIGHT_CONTEXT_DOCK",
+      "token_set": "right_dock_tokens"
+    },
+    {
+      "visual_unit_id": "SANCTUM.RIGHT_CONTEXT_DOCK.MECHANICUS_PANEL",
+      "token_set": "mechanicus_panel_tokens"
+    },
+    {
+      "visual_unit_id": "SANCTUM.RIGHT_CONTEXT_DOCK.ADMINISTRATUM_PANEL_STUB",
+      "token_set": "stub_panel_tokens"
+    },
+    {
+      "visual_unit_id": "SANCTUM.TRUTH_STATUS_STRIP",
+      "token_set": "truth_strip_tokens"
+    },
+    {
+      "visual_unit_id": "SANCTUM.COMMAND_SURFACE",
+      "token_set": "command_surface_tokens"
+    },
+    {
+      "visual_unit_id": "SANCTUM.EVIDENCE_REPORT_LAYER",
+      "token_set": "evidence_layer_tokens"
+    }
+  ],
+  "proof_of_usage": [
+    {
+      "proof_id": "LAB_INDEX_TOKEN_LINK",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LAB/index.html",
+      "claim": "LAB links v0_2 CSS token export."
+    },
+    {
+      "proof_id": "LAB_STYLE_TOKEN_CONSUMPTION",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LAB/styles.css",
+      "claim": "LAB consumes --vf2-* token variables for color, spacing, radius, border, shadow, and motion."
+    },
+    {
+      "proof_id": "TOKEN_USAGE_REPORT",
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/TOKENS/token_usage_report.md",
+      "claim": "Explicit token usage report already exists and is reused as proof baseline."
+    }
+  ],
+  "guard_rules": [
+    "No decorative hardcoded color may replace declared token_set without updating this map.",
+    "Token source paths are declarative proof and must stay valid."
+  ]
+}

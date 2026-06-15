@@ -1,0 +1,19 @@
+{
+  "schema_version": "administratum.post_work_bundle_limitation_receipt.v0_1",
+  "task_id": "TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1",
+  "created_at_utc": "2026-06-05T18:21:00Z",
+  "owner_organ": "ADMINISTRATUM",
+  "attempted_checker": "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_bundle_checker_v0_2.py",
+  "attempted_command": "python3 ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_bundle_checker_v0_2.py --repo-root . --task-id TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1 --report-dir REPORTS/TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1 --out REPORTS/TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1/ADMINISTRATUM_POST_WORK_BUNDLE_CHECKER_REPORT.json --repair-out REPORTS/TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1/POST_WORK_REPAIR_REQUEST.json --allow-block-exit-zero",
+  "attempt_result": {
+    "exit_code": 1,
+    "stderr_or_stdout": "active root mismatch: /home/vboxuser2/IMPERIUM_NEW_GENERATION_NEW_REALITY"
+  },
+  "root_cause": "The V0.2 checker exits before report generation when repo_root does not equal its Windows ACTIVE_ROOT constant E:/IMPERIUM_NEW_GENERATION_NEW_REALITY.",
+  "vm2_repo_root": "/home/vboxuser2/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "windows_active_root_constant": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "limitation_class": "VM2_COMPATIBILITY_WARNING",
+  "fake_green_guard": "No POST_WORK_BUNDLE_SCHEMA_PASS is claimed for the V0.2 checker on VM2.",
+  "next_route": "TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-HARDENING-V0_2",
+  "status": "WARN"
+}

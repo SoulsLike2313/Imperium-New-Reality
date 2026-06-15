@@ -1,0 +1,22 @@
+{
+  "organ": "INQUISITION",
+  "local_script_first": [
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TOOLS/check_task_entry_route_v0_1.py"
+  ],
+  "local_manual_command": [
+    "Review claim_ledger.jsonl against hard_red_team_verdict.json for downgrade consistency.",
+    "Review commit_push_receipt.json and enforce BLOCK_OWNER_INPUT_REQUIRED_TO_CONTINUE exception only."
+  ],
+  "candidate_script_first": [
+    "scripts/foundational_organs_v1/check_foundational_organs_v1_no_fake_green.py"
+  ],
+  "agent_reasoning_only": [
+    "Attack optimistic narrative and force WARN when caps remain."
+  ],
+  "external_research": [],
+  "owner_manual_confirmation": [],
+  "future_capability_gap": [
+    "Need immutable cap-state ledger writer/checker.",
+    "Need dedicated checker for CAP_COMMIT_PUSH_POLICY_VIOLATION auto-downgrade."
+  ]
+}

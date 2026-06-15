@@ -1,0 +1,67 @@
+{
+  "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+  "mode": "important_six_dashboard_l2_control_action_surface",
+  "dashboard_root": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/",
+  "owner_organ_law": "ORGAN_FUNCTION_OWNERSHIP_LAW",
+  "groups": [
+    {
+      "group_id": "administratum",
+      "owner_organ": "ADMINISTRATUM",
+      "actions": [
+        "ADMIN_FULL_NEWGEN_FILE_AUDIT",
+        "ADMIN_BUILD_CONTINUITY_PACK"
+      ]
+    },
+    {
+      "group_id": "transfer_zone",
+      "owner_organ": "TRANSFER_ZONE",
+      "actions": [
+        "TRANSFER_SEND_TASKPACK_VM2_DRY_RUN",
+        "TRANSFER_SEND_TASKPACK_VM3_DRY_RUN",
+        "TRANSFER_FETCH_REPORT_VM2_DRY_RUN",
+        "TRANSFER_FETCH_REPORT_VM3_DRY_RUN"
+      ]
+    },
+    {
+      "group_id": "mechanicus",
+      "owner_organ": "MECHANICUS",
+      "actions": [
+        "MECHANICUS_CHECK_REQUIRED_TOOLS",
+        "MECHANICUS_CHECK_SCRIPTS_VALIDATORS"
+      ]
+    },
+    {
+      "group_id": "inquisition",
+      "owner_organ": "INQUISITION",
+      "actions": [
+        "INQUISITION_REPO_HYGIENE_AUDIT",
+        "INQUISITION_FAKE_GREEN_RISK_SCAN"
+      ]
+    },
+    {
+      "group_id": "astronomicon",
+      "owner_organ": "ASTRONOMICON",
+      "actions": [
+        "ASTRONOMICON_REGISTER_TASK_DRAFT"
+      ]
+    },
+    {
+      "group_id": "diff_approval",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "actions": [
+        "DIFF_COMPARE_HEADS",
+        "OWNER_RECORD_DIFF_DECISION"
+      ]
+    },
+    {
+      "group_id": "owner_intent_questions",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "actions": [
+        "OWNER_QUESTIONS_LIST",
+        "OWNER_RECORD_NOTE_OR_DECISION"
+      ]
+    }
+  ],
+  "owner_verdict_needed": false,
+  "generated_at_utc": "2026-05-24T03:47:48Z"
+}

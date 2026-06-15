@@ -1,0 +1,84 @@
+{
+  "task_id": "TASK-NEWGEN-LANGUAGE-GATE-INDEPENDENT-REPLAY-STRICT-SCOPE-LEGACY-BACKLOG-RETENTION-POLICY-PC-V0_1",
+  "timestamp_utc": "2026-06-01T06:19:48Z",
+  "builder_claims": [
+    {
+      "claim_id": "LGR-C01",
+      "claim": "Independent replay of mojibake filter, taskpack language gate, and fixture runner executed after synced HEAD."
+    },
+    {
+      "claim_id": "LGR-C02",
+      "claim": "Strict-scope scan receipt exists and reports zero strict-scope BLOCK hits."
+    },
+    {
+      "claim_id": "LGR-C03",
+      "claim": "Legacy global hits are classified into durable backlog categories without mass rewrite."
+    },
+    {
+      "claim_id": "LGR-C04",
+      "claim": "Stale repo-truth snapshots and pending-finalization artifacts are explicitly classified."
+    },
+    {
+      "claim_id": "LGR-C05",
+      "claim": "Taskpack retention policy and inventory were established for REGISTERED payloads."
+    },
+    {
+      "claim_id": "LGR-C06",
+      "claim": "Head taxonomy and finalization semantics were made explicit for stale snapshot handling."
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "RT-LGR-01",
+      "target_claim_id": "LGR-C01",
+      "attack": "Replay commands were not independent or failed silently.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "independent_language_replay_receipt.json",
+        "replay_command_logs/replay_exit_summary.json"
+      ]
+    },
+    {
+      "attack_id": "RT-LGR-02",
+      "target_claim_id": "LGR-C02",
+      "attack": "Strict-scope receipt exists but still hides blocking violations.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "strict_scope_language_scan_receipt.json"
+      ]
+    },
+    {
+      "attack_id": "RT-LGR-03",
+      "target_claim_id": "LGR-C03",
+      "attack": "Legacy hits were ignored or overwritten without backlog trace.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "legacy_language_backlog.json",
+        "legacy_language_backlog.md"
+      ]
+    },
+    {
+      "attack_id": "RT-LGR-04",
+      "target_claim_id": "LGR-C04",
+      "attack": "Stale repo-truth from old reports remains unlabeled and can fake clean PASS.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "stale_repo_truth_classification_receipt.json"
+      ]
+    }
+  ],
+  "caps_triggered": [
+    "CAP_CANONICAL_ARTIFACT_CONTAINS_CYRILLIC",
+    "CAP_NON_ENGLISH_TASKPACK_INTERNAL_TEXT",
+    "CAP_REPLACEMENT_CHARACTER_NOT_DETECTED",
+    "CAP_UTF8_BOM_NOT_DETECTED"
+  ],
+  "repo_truth": {
+    "head": "b5bd8a0ca8a91a458f13b9aa5e183151dec91452",
+    "origin_master_head": "b5bd8a0ca8a91a458f13b9aa5e183151dec91452",
+    "origin_sync_now": true,
+    "worktree_dirty_now": true
+  },
+  "final_verdict": "LANGUAGE_GATE_REPLAY_PASS_WITH_WARNINGS",
+  "clean_pass_allowed": false
+}

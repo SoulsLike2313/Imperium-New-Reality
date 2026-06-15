@@ -1,0 +1,60 @@
+{
+  "schema_id": "newgen_organ_route_plan_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-OWNER-ORGAN-DEPENDENCY-MAP-INGEST-VM3-V0_1",
+  "route_order": [
+    {
+      "phase_id": "front_door",
+      "organs": [
+        "DOCTRINARIUM",
+        "OFFICIO_AGENTIS"
+      ],
+      "required": true
+    },
+    {
+      "phase_id": "task_routing_registration",
+      "organs": [
+        "ASTRONOMICON",
+        "ADMINISTRATUM"
+      ],
+      "required": true
+    },
+    {
+      "phase_id": "capability_execution",
+      "organs": [
+        "MECHANICUS"
+      ],
+      "required": true
+    },
+    {
+      "phase_id": "audit_guard",
+      "organs": [
+        "INQUISITION"
+      ],
+      "required": true
+    },
+    {
+      "phase_id": "learning_training",
+      "organs": [
+        "SCHOLA"
+      ],
+      "required": false
+    },
+    {
+      "phase_id": "strategy_development",
+      "organs": [
+        "STRATEGIUM"
+      ],
+      "required": false
+    },
+    {
+      "phase_id": "future_core_guard",
+      "organs": [
+        "CUSTODES",
+        "THRONE"
+      ],
+      "required": false,
+      "implementation_status": "future_only"
+    }
+  ],
+  "route_verdict": "PASS"
+}

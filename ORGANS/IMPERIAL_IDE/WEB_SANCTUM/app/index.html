@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Imperial Sanctum V0.8.4 · Visual Inquisition</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-surface="WEB_SANCTUM_PLAYWRIGHT_VISUAL_INQUISITION_V0_8_4">
+  <div class="bg"><div class="cathedral"></div><div class="fog"></div><div class="embers"></div><div class="vault-lines"></div></div>
+  <div id="web-sanctum-root" data-testid="web-sanctum-root" class="shell">
+    <header class="topbar relic-frame">
+      <div><span class="eyebrow">IMPERIUM NEW REALITY · WEB SANCTUM</span><h1>IMPERIAL SANCTUM</h1><p id="contour" data-testid="contour" class="contour">LOADING</p></div>
+      <div class="pills"><span id="versionPill" data-testid="version-pill">V0.8.4</span><span id="bridgePill" data-testid="bridge-pill">bridge: probing</span><span id="jobPill" data-testid="job-pill">jobs: 0</span></div>
+    </header>
+    <aside class="sidebar relic-frame">
+      <button data-testid="nav-sanctum" data-page="sanctum" class="active">☀ Sanctum</button>
+      <button data-testid="nav-warp" data-page="warp">🌀 WARP</button>
+      <button data-testid="nav-register" data-page="register">✧ Task Register</button>
+      <button data-testid="nav-astronomicon" data-page="astronomicon">↗ Astronomicon</button>
+      <button data-testid="nav-mechanicus" data-page="mechanicus">⚙ Mechanicus</button>
+      <button data-testid="nav-jobs" data-page="jobs">☷ Jobs</button>
+      <button data-testid="nav-stage" data-page="stage">⚖ Stage Control</button>
+      <button data-testid="nav-hygiene" data-page="hygiene">♜ Runtime Hygiene</button>
+      <button data-testid="nav-atlas" data-page="atlas">🜁 Data Atlas</button>
+      <button data-testid="nav-validation" data-page="validation">◆ Inquisition</button>
+      <button data-testid="nav-reports" data-page="reports">▣ Report Bundle</button>
+      <button data-testid="nav-promotion" data-page="promotion">♔ Promotion Preview</button>
+      <button data-testid="nav-playwright" data-page="playwright">▣ Playwright / Visual Inquisition</button>
+      <button data-testid="quality-button" id="qualityButton" class="utility">Quality: Performance</button>
+      <button data-testid="command-palette-button" id="paletteButton" class="utility">Command Palette</button>
+      <button data-testid="copy-snapshot" id="copySnapshot" class="utility">Copy snapshot</button>
+    </aside>
+    <main class="main">
+      <section class="toolbar gothic-frame">
+        <button data-action="refresh_snapshot" data-testid="refresh-snapshot">Refresh snapshot</button>
+        <button data-action="create_warp" data-testid="create-warp">Create WARP</button>
+        <button data-action="start_work" data-testid="start-work">Start Work</button>
+        <button data-action="export_task_template" data-testid="export-task-template">Download Task Form ZIP</button>
+        <button data-action="register_taskpack_pc" data-testid="register-taskpack">Register Taskpack</button>
+        <button data-action="validate_warp" data-testid="validate-warp">WARP Validation</button>
+        <button data-action="build_report_bundle" data-testid="build-report-bundle">Final Report Bundle</button>
+        <button data-action="stage_start_current" data-testid="stage-start-top">Start Stage</button>
+        <button data-action="stage_submit_evidence" data-testid="stage-evidence-top">Mark Evidence</button>
+        <button data-action="stage_run_gate" data-testid="stage-gate-top">Run Stage Gate</button>
+        <button data-action="runtime_hygiene_scan" data-testid="runtime-hygiene-scan-top">Runtime Hygiene</button>
+        <button data-action="data_atlas_scan" data-testid="data-atlas-scan-top">Data Atlas Scan</button>
+        <button data-action="visual_inquisition_audit_balanced" data-testid="visual-inquisition-audit-top">Mega Visual Audit</button>
+        <button data-action="open_visual_audit_outputs" data-testid="open-visual-audit-top">Open Audit Outputs</button>
+        <button data-action="open_tui" data-testid="open-tui">Open TUI</button>
+        <button data-action="open_warp" data-testid="open-warp">Open WARP</button>
+      </section>
+
+      <section id="page-sanctum" data-testid="page-sanctum" class="page active">
+        <div class="cards six">
+          <article class="card"><h3>☀ State</h3><b id="stateText">PASS_WITH_WARNINGS</b><span id="contourText">read-only surface</span></article>
+          <article class="card"><h3>✧ Active Task</h3><b id="taskText">NO_ACTIVE_TASK</b><span>Astronomicon gate required</span></article>
+          <article class="card"><h3>🌀 WARP</h3><b id="warpText">NO_WARP_SELECTED</b><span>temporary work contour</span></article>
+          <article class="card"><h3>⚖ Stage Ledger</h3><b id="stageText">0 / 6</b><span id="currentStageText">task_intake</span></article>
+          <article class="card"><h3>☷ Job Runner</h3><b id="jobText">idle</b><span>allowlisted bridge</span></article>
+          <article class="card"><h3>→ Next</h3><b id="nextText">Register taskpack</b></article>
+        </div>
+        <div class="flow gothic-frame" data-testid="state-flow"><h2>Task / Organ Flow</h2><div id="flowNodes" class="flow-nodes"></div></div>
+        <div class="grid2"><article class="panel"><h2>Operator Surface</h2><pre id="operatorText" data-testid="operator-surface"></pre></article><article class="panel machine"><h2>Core · Organs · Departments</h2><div id="orbit" data-testid="orbit" class="orbit"></div></article></div>
+      </section>
+
+      <section id="page-warp" data-testid="page-warp" class="page">
+        <div class="section-heading"><div><span class="eyebrow">RUNTIME CONTOUR</span><h2>WARP Control Chamber</h2></div><span id="warpModeSeal" class="seal">NO_WARP_SELECTED</span></div>
+        <p class="muted">Runtime task and stage state lives outside source under the WARP_RUNS ledger.</p>
+        <div class="warp-layout">
+          <article class="panel warp-vitals" data-testid="warp-vitals">
+            <h3>WARP Identity</h3>
+            <dl class="facts">
+              <div><dt>WARP ID</dt><dd id="warpId" data-testid="warp-id">none</dd></div>
+              <div><dt>Path</dt><dd id="warpPath" data-testid="warp-path">none</dd></div>
+              <div><dt>Base HEAD</dt><dd id="warpBase" data-testid="warp-base">unknown</dd></div>
+              <div><dt>Branch</dt><dd id="warpBranch" data-testid="warp-branch">unknown</dd></div>
+              <div><dt>Strategy</dt><dd id="warpStrategy" data-testid="warp-strategy">unknown</dd></div>
+              <div><dt>Dirty status</dt><dd id="warpDirty" data-testid="warp-dirty">unknown</dd></div>
+            </dl>
+            <div class="button-row"><button data-action="open_warp" data-testid="open-warp-folder">Open folder</button><button id="copyWarpPath" data-testid="copy-warp-path">Copy path</button></div>
+          </article>
+          <article class="panel stage-console" data-testid="stage-console">
+            <h3>Active Work</h3>
+            <dl class="facts">
+              <div><dt>Active task</dt><dd id="warpActiveTask" data-testid="warp-active-task">NO_ACTIVE_TASK</dd></div>
+              <div><dt>Current stage</dt><dd id="warpStage" data-testid="warp-current-stage">task_intake</dd></div>
+              <div><dt>Runtime ledger</dt><dd id="warpRuntimePath" data-testid="warp-runtime-path">not created</dd></div>
+            </dl>
+            <div class="stage-rail" id="stageRail" data-testid="stage-rail"></div>
+            <button data-action="start_work" data-testid="start-work-page">Start Work</button>
+          </article>
+        </div>
+        <pre id="warpStatus" data-testid="warp-status">waiting…</pre>
+      </section>
+
+      <section id="page-register" data-testid="page-register" class="page">
+        <div class="section-heading"><div><span class="eyebrow">ASTRONOMICON INTAKE</span><h2>Taskpack Registration</h2></div><span class="seal">PC ROUTE</span></div>
+        <div class="register-grid">
+          <article class="panel"><h3>Strict task form</h3><p>Every work unit requires an admitted taskpack before WARP work starts.</p><button data-action="export_task_template" data-testid="download-task-form">Generate taskpack form ZIP</button></article>
+          <article class="panel"><h3>Register existing ZIP</h3><label for="taskZipPath">Taskpack ZIP path</label><input id="taskZipPath" data-testid="task-zip-path" placeholder="C:\Users\PC\Downloads\TASK.zip"/><button data-action="register_taskpack_pc" data-testid="register-taskpack-pc">Register through Astronomicon PC</button></article>
+          <article class="panel"><h3>Admission Contract</h3><ul><li>Required root files</li><li>PC contour and caps</li><li>Warnings retained</li><li>Runtime activation only</li></ul></article>
+        </div>
+        <div class="admission-grid" data-testid="admission-summary">
+          <article><span>Verdict</span><b id="admissionVerdict">NOT_RUN</b></article>
+          <article><span>Task ID</span><b id="admissionTaskId">none</b></article>
+          <article><span>Registered path</span><b id="admissionPath">none</b></article>
+          <article><span>Caps</span><b id="admissionCaps">none</b></article>
+          <article><span>Warnings</span><b id="admissionWarnings">none</b></article>
+          <article><span>Receipt</span><b id="admissionReceipt">none</b></article>
+        </div>
+        <pre id="registrationTrace" data-testid="registration-trace">No registration action yet.</pre>
+      </section>
+
+      <section id="page-astronomicon" data-testid="page-astronomicon" class="page"><h2>Astronomicon · task gates</h2><p>Task existence, route, stage gates, expected task and servitor handoff are coordinated here.</p><div class="cards three"><article class="card"><h3>Taskpack Contract</h3><b>root files only</b><span>machine files stay structured</span></article><article class="card"><h3>Stage Gate</h3><b>Administratum → Astronomicon</b><span>closure requires evidence</span></article><article class="card"><h3>Resolver</h3><b>no active task = no work</b><span>structured BLOCKED result</span></article></div></section>
+
+      <section id="page-mechanicus" data-testid="page-mechanicus" class="page"><h2>Mechanicus · action registry</h2><p>Every operational button declares handler, command, cwd, timeout, write policy, allowed roots, safety and evidence outputs.</p><div class="forge-board"><div class="gear big"></div><button data-action="mechanicus_register_tool" data-testid="register-tool">Ensure Action Registry</button><button data-action="mechanicus_list_tools" data-testid="list-tools">List Tools</button></div><pre id="mechanicusTrace" data-testid="mechanicus-trace">No Mechanicus action yet.</pre></section>
+
+      <section id="page-jobs" data-testid="page-jobs" class="page"><div class="section-heading"><div><span class="eyebrow">ALLOWLISTED EXECUTION</span><h2>Jobs · Machine Chronicle</h2></div><div class="button-row"><select id="jobFilter" data-testid="job-filter"><option value="all">all</option><option value="running">running</option><option value="pass">pass</option><option value="blocked">blocked</option><option value="fail">failed</option></select><button id="refreshJobs" data-testid="refresh-jobs">Refresh Jobs</button></div></div><p>Compact cards show action, state, duration and artifacts. Raw payload is still available, but not the primary view.</p><div class="jobs-layout"><div id="jobList" data-testid="job-list" class="job-list"></div><article class="panel job-detail"><h3>Selected Job</h3><div id="jobSummary" data-testid="job-summary" class="job-summary">No job selected.</div><div class="job-tabs"><button data-job-tab="summary">Summary</button><button data-job-tab="stdout">Stdout</button><button data-job-tab="stderr">Stderr</button><button data-job-tab="artifacts">Artifacts</button><button data-job-tab="raw">Raw JSON</button></div><pre id="jobTrace" data-testid="job-trace">No job selected.</pre></article></div></section>
+
+
+      <section id="page-stage" data-testid="page-stage" class="page">
+        <div class="section-heading"><div><span class="eyebrow">ADMINISTRATUM · ASTRONOMICON</span><h2>Stage Control · Full Gate Loop</h2></div><span id="stageSeal" class="seal">STAGE LOOP</span></div>
+        <p class="muted">Stages advance only through Administratum receipts and Astronomicon gates. This is the first full task execution loop: evidence, gate, close, next stage.</p>
+        <div class="stage-control-grid">
+          <article class="panel"><h3>Current Stage</h3><b id="stageCurrent" data-testid="stage-current">task_intake</b><span id="stageVerdict" class="stage-verdict">waiting for ledger</span></article>
+          <article class="panel"><h3>Required Evidence</h3><ul id="stageRequired" data-testid="stage-required"><li>load stage ledger</li></ul></article>
+          <article class="panel"><h3>Gate Verdict</h3><b id="stageGateVerdict" data-testid="stage-gate-verdict">NOT_RUN</b><span id="stageBlockers">no gate executed</span></article>
+        </div>
+        <div class="button-row stage-buttons">
+          <button data-action="stage_start_current" data-testid="stage-start-current">Start Next Stage</button>
+          <button data-action="stage_submit_evidence" data-testid="stage-submit-evidence">Mark Evidence</button>
+          <button data-action="stage_run_gate" data-testid="stage-run-gate">Run Stage Gate</button>
+          <button data-action="stage_close_stage" data-testid="stage-close-stage">Close Stage</button>
+          <button data-action="promotion_preview" data-testid="promotion-preview-stage">Promotion Preview</button>
+        </div>
+        <div id="stageTimeline" data-testid="stage-timeline" class="stage-timeline"></div>
+        <pre id="stageTrace" data-testid="stage-trace">No stage action yet.</pre>
+      </section>
+
+      <section id="page-atlas" data-testid="page-atlas" class="page">
+        <div class="section-heading">
+          <div><span class="eyebrow">ADMINISTRATUM · CARTOGRAPHIUM</span><h2>Data Atlas / Атлас данных</h2></div>
+          <div class="button-row"><button id="atlasLangToggle" data-testid="atlas-lang-toggle">RU / EN</button><button data-action="data_atlas_scan" data-testid="data-atlas-scan">Scan Atlas</button></div>
+        </div>
+        <p id="atlasDoctrine" class="muted">Read-only map of files, owners, passports, dirt and duplicate clusters.</p>
+        <div class="cards six atlas-kpis" data-testid="atlas-kpis">
+          <article class="card"><h3>Entities / Сущности</h3><b id="atlasTotal">0</b><span id="atlasReturned">waiting</span></article>
+          <article class="card"><h3>Dirt / Грязь</h3><b id="atlasDirty">0</b><span>warning + critical</span></article>
+          <article class="card"><h3>Runtime leaks</h3><b id="atlasLeaks">0</b><span>source contamination</span></article>
+          <article class="card"><h3>Duplicates</h3><b id="atlasDuplicates">0</b><span>hash groups</span></article>
+          <article class="card"><h3>Passports</h3><b id="atlasPassports">0%</b><span id="atlasPassportMissing">missing: 0</span></article>
+          <article class="card"><h3>Archives / ZIP</h3><b id="atlasArchives">0</b><span>review lifecycle</span></article>
+        </div>
+        <div class="atlas-layout">
+          <article class="panel atlas-map-panel">
+            <div class="section-heading"><h3>Organ map / Карта органов</h3><span id="atlasStatusSeal" class="seal">NOT_LOADED</span></div>
+            <div id="atlasOrganMap" data-testid="atlas-organ-map" class="atlas-organ-map"></div>
+          </article>
+          <article class="panel atlas-dirt-panel">
+            <h3>Priority dirt / Приоритетная грязь</h3>
+            <div id="atlasDirtList" data-testid="atlas-dirt-list" class="atlas-dirt-list"></div>
+          </article>
+        </div>
+        <div class="atlas-layout atlas-lanes-layout">
+          <article class="panel atlas-lanes-panel">
+            <div class="section-heading"><h3>Cleanup lanes / Линии очистки</h3><span class="seal">READ_ONLY</span></div>
+            <p class="muted">Группы решений: что переносить, что паспортизировать, что отправлять в архивный контур.</p>
+            <div id="atlasCleanupLanes" data-testid="atlas-cleanup-lanes" class="atlas-cleanup-lanes"></div>
+          </article>
+          <article class="panel atlas-matrix-panel">
+            <h3>Lifecycle matrix / Матрица жизненного цикла</h3>
+            <div id="atlasLifecycleMatrix" data-testid="atlas-lifecycle-matrix" class="atlas-lifecycle-matrix"></div>
+          </article>
+        </div>
+        <div class="atlas-layout explorer-layout">
+          <article class="panel atlas-explorer-panel">
+            <div class="section-heading"><h3>Entity Explorer / Реестр сущностей</h3><span id="atlasExplorerCount" class="seal">0</span></div>
+            <div class="atlas-controls">
+              <input id="atlasSearch" data-testid="atlas-search" placeholder="Search path, organ, type, flag / Поиск по пути, органу, типу, флагу" />
+              <select id="atlasHealthFilter" data-testid="atlas-health-filter">
+                <option value="all">all / всё</option>
+                <option value="CRITICAL">critical</option>
+                <option value="WARNING">warning</option>
+                <option value="SAFE">safe</option>
+                <option value="NO_PASSPORT">no passport</option>
+                <option value="DUPLICATE_HASH">duplicates</option>
+                <option value="SOURCE_RUNTIME_LEAK">runtime leak</option>
+                <option value="ARCHIVE_REVIEW">archive review</option>
+                <option value="QUARANTINE_REVIEW">quarantine review</option>
+                <option value="DUPLICATE_HASH">duplicate hash</option>
+              </select>
+            </div>
+            <div id="atlasExplorer" data-testid="atlas-explorer" class="atlas-explorer"></div>
+          </article>
+          <article class="panel atlas-passport-panel">
+            <div class="section-heading"><h3>Passport / Паспорт</h3><span id="atlasPassportHealth" class="seal">SELECT_ENTITY</span></div>
+            <dl class="facts atlas-passport-facts">
+              <div><dt>Path</dt><dd id="atlasPassportPath">none</dd></div>
+              <div><dt>Organ</dt><dd id="atlasPassportOrgan">none</dd></div>
+              <div><dt>Type</dt><dd id="atlasPassportType">none</dd></div>
+              <div><dt>Purpose</dt><dd id="atlasPassportPurpose">none</dd></div>
+              <div><dt>Lifecycle</dt><dd id="atlasPassportLifecycle">none</dd></div>
+              <div><dt>Flags</dt><dd id="atlasPassportFlags">none</dd></div>
+              <div><dt>Lane</dt><dd id="atlasPassportLane">none</dd></div>
+              <div><dt>Action</dt><dd id="atlasPassportAction">none</dd></div>
+            </dl>
+            <pre id="atlasPassportTrace" data-testid="atlas-passport-trace">Select any entity to see the human-readable passport digest.</pre>
+          </article>
+        </div>
+        <pre id="atlasTrace" data-testid="atlas-trace">No Data Atlas scan yet. Raw JSON is no longer the primary view.</pre>
+      </section>
+
+      <section id="page-validation" data-testid="page-validation" class="page"><h2>Inquisition · WARP Validation</h2><p>Checks dirty scope, forbidden generated files, ZIP/template residue, diff stat and unchanged base HEAD. Commit and push remain unavailable.</p><div class="cards three"><article class="card"><h3>Dirty Scope</h3><b>classified in WARP</b><span>source and evidence are explicit</span></article><article class="card"><h3>Generated Files</h3><b>outside source</b><span>node_modules and reports are forbidden</span></article><article class="card"><h3>Git Boundary</h3><b>base HEAD unchanged</b><span>no commit or push action</span></article></div><button data-action="validate_warp" data-testid="validate-warp-page">Run WARP Validation</button><pre id="validationTrace" data-testid="validation-trace">No validation yet.</pre></section>
+
+
+      <section id="page-hygiene" data-testid="page-hygiene" class="page"><div class="section-heading"><div><span class="eyebrow">ADMINISTRATUM TLS</span><h2>Runtime Hygiene · Paths · TTL</h2></div><span class="seal">DRY-RUN FIRST</span></div><p>Strict runtime addresses keep source clean. Volatile WARP runs, screenshots, task forms and intermediate reports are scanned with a 3 day default TTL. Web action is scan-only; destructive prune stays CLI-gated.</p><div class="cards three"><article class="card"><h3>Canonical Names</h3><b>MAIN · H · WARP · HANDOFF</b><span>paths may vary, names must not</span></article><article class="card"><h3>TTL</h3><b>3 days default</b><span>runtime/evidence only, source protected</span></article><article class="card"><h3>Portable Nodes</h3><b>probe before work</b><span>Ubuntu/laptop/server join resource fleet by manifest</span></article></div><div class="button-row"><button data-action="runtime_hygiene_scan" data-testid="runtime-hygiene-scan">Scan Runtime Hygiene</button><button data-action="node_probe" data-testid="node-probe">Probe This Node</button></div><pre id="hygieneTrace" data-testid="hygiene-trace">No hygiene scan yet.</pre></section>
+      <section id="page-reports" data-testid="page-reports" class="page"><h2>Final Report Bundle</h2><p>Collect runtime registry, stage ledger, jobs, git truth, screenshots, Playwright, Mechanicus and Inquisition receipts.</p><button data-action="build_report_bundle" data-testid="build-report-page">Build Bundle</button><button data-action="open_reports">Open Reports</button><pre id="reportTrace" data-testid="report-trace">No report bundle yet.</pre></section>
+
+
+      <section id="page-promotion" data-testid="page-promotion" class="page">
+        <div class="section-heading"><div><span class="eyebrow">NO COMMIT · NO PUSH</span><h2>Promotion Preview · Reliquary of Changes</h2></div><span class="seal">OWNER GATE</span></div>
+        <p>Preview what would be considered for promotion from WARP/H review. This does not stage, commit, push, or mutate git history.</p>
+        <div class="cards three">
+          <article class="card"><h3>Candidate</h3><b id="promotionCandidate" data-testid="promotion-candidate">not checked</b><span>diff/stat source truth</span></article>
+          <article class="card"><h3>Blocked</h3><b id="promotionBlocked" data-testid="promotion-blocked">unknown</b><span>forbidden/generated scope</span></article>
+          <article class="card"><h3>Route</h3><b id="promotionRoute" data-testid="promotion-route">not checked</b><span>copy-contour requires patch bundle</span></article><article class="card"><h3>Message</h3><b id="promotionMessage" data-testid="promotion-message">not suggested</b><span>copy-only, owner decides</span></article>
+        </div>
+        <div class="button-row"><button data-action="promotion_preview" data-testid="promotion-preview-run">Run Promotion Preview</button><button data-action="validate_warp">Run Inquisition</button></div>
+        <pre id="promotionTrace" data-testid="promotion-trace">No promotion preview yet.</pre>
+      </section>
+
+      <section id="page-playwright" data-testid="page-playwright" data-sanctum-section="playwright-visual-inquisition" class="page">
+        <div class="section-heading"><div><span class="eyebrow">SPECULUM · INQUISITION · PLAYWRIGHT</span><h2>Playwright / Visual Inquisition</h2></div><span class="seal">EVIDENCE_OUTPUT_ONLY</span></div>
+        <p class="muted">Штатный орган зрения Web Sanctum: протыкает UI, собирает API/git truth, CSV-карты боли и лёгкие визуальные evidence bundles вне source repo.</p>
+        <div class="cards three visual-audit-cards">
+          <article class="card"><h3>Light Audit</h3><b>fast · jpeg</b><span>быстрая карта секций, CSV/JSON/MD, минимум скринов</span></article>
+          <article class="card"><h3>Balanced Audit</h3><b>default</b><span>ключевые PNG + массовые JPEG quality 76 + pain map</span></article>
+          <article class="card"><h3>Full Audit</h3><b>deep capture</b><span>больше scroll tiles, DOM/console/network evidence</span></article>
+        </div>
+        <div class="button-row visual-audit-actions">
+          <button data-action="visual_inquisition_audit_light" data-testid="visual-audit-light">Run Light Audit</button>
+          <button data-action="visual_inquisition_audit_balanced" data-testid="visual-audit-balanced">Run Mega Audit</button>
+          <button data-action="visual_inquisition_audit_full" data-testid="visual-audit-full">Run Full Audit</button>
+          <button data-action="visual_inquisition_audit_balanced_headed" data-testid="visual-audit-headed">Run Headed</button>
+          <button data-action="open_visual_audit_outputs" data-testid="open-visual-audit-outputs">Open Last Audit Bundle</button>
+          <button data-action="open_playwright_report" data-testid="open-playwright-report">Open Legacy Report</button>
+        </div>
+        <div class="visual-audit-grid">
+          <article class="panel"><h3>Evidence Policy</h3><ul class="compact-list"><li>key screenshots: PNG</li><li>bulk scroll tiles: JPEG</li><li>maps: CSV</li><li>truth: JSON</li><li>owner report: Markdown</li></ul></article>
+          <article class="panel"><h3>Agent Contract</h3><ul class="compact-list"><li>no arbitrary shell</li><li>no source evidence sprawl</li><li>safe-actions only by default</li><li>outputs under LOCAL_HANDOFF</li></ul></article>
+        </div>
+        <pre id="playwrightTrace" data-testid="playwright-trace">No Visual Inquisition audit yet.</pre>
+      </section>
+    </main>
+  </div>
+  <div id="actionPulse" class="action-pulse" aria-hidden="true"><span></span><b>machine spirit working</b></div>
+  <div id="toast" class="toast" data-testid="toast"></div>
+  <div id="commandPalette" class="palette hidden" data-testid="command-palette"><div class="palette-box"><input id="paletteSearch" placeholder="command…"/><div id="paletteList"></div></div></div>
+  <script src="main.js"></script>
+</body>
+</html>

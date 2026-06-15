@@ -1,0 +1,93 @@
+{
+  "schema_version": "AGENT_GATE_ACK_V0_1",
+  "task_id": "TASK-20260520-MECHANICUS-TEXTUAL-FULLSCREEN-TUI-PC-V0_3",
+  "current_head": "f6a197cfa4028408047a32f0be8f8739df2f880a",
+  "gatepack_path": "E:\\IMPERIUM_CONTEXT\\LOCAL\\ADMINISTRATUM\\INBOX\\TASKPACKS\\TASK-20260520-MECHANICUS-TEXTUAL-FULLSCREEN-TUI-PC-V0_3\\TASK-20260520-MECHANICUS-TEXTUAL-FULLSCREEN-TUI-PC-V0_3.zip",
+  "gatepack_sha256": "d0e561464949f090f971dd3adebdba2645ff263a75961e926f2fa25547600ed3",
+  "read_gates": [
+    "GATE-U00-GIT-TRUTH",
+    "GATE-U01-ROLE-ACK",
+    "GATE-U02-SCOPE-BOUNDARY",
+    "GATE-U04-EVIDENCE-RECEIPT",
+    "GATE-U05-STOP-CONDITIONS",
+    "GATE-U08-REPO-PURITY",
+    "GATE-U09-NO-FAKE-GREEN",
+    "GATE-U12-REPORT-OUTPUT-BUDGET",
+    "GATE-U13-PYTHON-TYPE-SAFETY",
+    "GATE-U15-OPERATIONALITY-IMPACT",
+    "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+    "GATE-U20-AGENT-KPD-SELF-REVIEW",
+    "GATE-U21-COMMAND-CHUNKING"
+  ],
+  "accepted_stop_conditions": [
+    "BLOCKED_DIRTY_START",
+    "BLOCKED_HEAD_MISMATCH",
+    "BLOCKED_SCOPE_VIOLATION",
+    "BLOCKED_REQUIREMENT_AMBIGUOUS",
+    "BLOCKED_REQUIRED_ASSET_MISSING",
+    "BLOCKED_VISUAL_EVIDENCE_MISSING",
+    "BLOCKED_NO_REMOTE_PROOF",
+    "BLOCKED_SCHEMA_INVALID",
+    "BLOCKED_RESPONSE_CONTRACT_FAILED"
+  ],
+  "scope_boundary": {
+    "allowed_write_paths": [
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/",
+      "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/base_half_cli.py",
+      "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/tool_registry_reader.py",
+      "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/operator_shell_renderer.py",
+      "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/operator_shell_skin.py",
+      "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/operator_shell_widgets.py",
+      "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/textual_operator_shell.py",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TEXTUAL-FULLSCREEN-TUI-PC-V0_3/"
+    ],
+    "forbidden_paths": [
+      "THRONE",
+      "CUSTODES",
+      ".git/",
+      "IMPERIUM_TEST_VERSION/",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/*/RUNS/"
+    ]
+  },
+  "touched_paths": [
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/",
+    "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/base_half_cli.py",
+    "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/tool_registry_reader.py",
+    "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/operator_shell_skin.py",
+    "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/operator_shell_widgets.py",
+    "IMPERIUM_NEW_GENERATION/COMMON_AGENT_CLI/textual_operator_shell.py",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260520-MECHANICUS-TEXTUAL-FULLSCREEN-TUI-PC-V0_3/"
+  ],
+  "forbidden_paths": [
+    "THRONE",
+    "CUSTODES",
+    ".git/",
+    "IMPERIUM_TEST_VERSION/",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/*/RUNS/"
+  ],
+  "expected_receipts": [
+    "MECHANICUS_TEXTUAL_TUI_V0_3_REPORT.md",
+    "mechanicus_textual_tui_v0_3_report.json",
+    "TEXTUAL_DEPENDENCY_PROBE_PC.json",
+    "VISUAL_TARGET_MAPPING.md",
+    "SHELL_TRANSCRIPT_TEXTUAL_STATUS.txt",
+    "SHELL_TRANSCRIPT_TEXTUAL_TOOLS.txt",
+    "SHELL_TRANSCRIPT_TEXTUAL_IDENTITY.txt",
+    "SHELL_TRANSCRIPT_TEXTUAL_CHECK.txt",
+    "RAW_JSON_SUPPRESSION_REPORT.md",
+    "FAKE_SHELL_PROOF_REPORT_V0_3.md",
+    "RENDERER_DIAGNOSTIC_V0_3.json",
+    "STAGE_CHECKPOINT_START.json",
+    "STAGE_CHECKPOINT_FINAL.json",
+    "OFFICIO_ROLE_ACK_SERVITOR_PRIME.json",
+    "TASK_RECEIPT.json",
+    "GIT_STATUS_BEFORE.txt",
+    "GIT_STATUS_AFTER.txt"
+  ],
+  "repo_recon_required": false,
+  "script_absorption_required": true,
+  "clarification_needed": [
+    "dirty_start_detected: pre-existing worktree changes recorded; commit/push will be blocked unless owner explicitly classifies/cleans unrelated paths"
+  ],
+  "verdict": "PASS"
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1",
+  "generated_at_utc": "2026-05-24T21:02:08.0456017Z",
+  "mandatory_owner_language": "ru",
+  "allowed_technical_english_fields": [
+    "code",
+    "paths",
+    "json_keys",
+    "schemas",
+    "exact_command_output",
+    "package_names"
+  ],
+  "violation_status_for_live_drift": "OFFICIO_LANGUAGE_VIOLATION_WARN",
+  "severe_repeat_escalation": "violation",
+  "fixture_language_findings": [
+    {
+      "file": "IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\FIXTURES\\FAIL_ENGLISH_LIVE_PROGRESS.md",
+      "status": "FAIL",
+      "language_related_flags": [
+        "MISSING_RUSSIAN_OWNER_SUMMARY",
+        "LONG_ENGLISH_OWNER_COMMENTARY"
+      ]
+    },
+    {
+      "file": "IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\FIXTURES\\WARN_TECHNICAL_ENGLISH_ALLOWED.md",
+      "status": "WARN",
+      "language_related_flags": [
+        "TECHNICAL_ENGLISH_ALLOWED"
+      ]
+    }
+  ],
+  "correction_template": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TEMPLATES/OFFICIO_LANGUAGE_CORRECTION_MESSAGE_RU_V0_1.md",
+  "policy_verdict": "PASS_WITH_WARNINGS",
+  "note": "Warnings are present in intentional fixtures and are part of checker training proof."
+}

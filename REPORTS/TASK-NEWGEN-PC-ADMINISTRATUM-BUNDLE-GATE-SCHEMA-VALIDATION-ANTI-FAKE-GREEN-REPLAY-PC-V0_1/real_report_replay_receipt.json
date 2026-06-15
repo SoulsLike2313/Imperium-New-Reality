@@ -1,0 +1,251 @@
+{
+  "task_id": "TASK-NEWGEN-PC-ADMINISTRATUM-BUNDLE-GATE-SCHEMA-VALIDATION-ANTI-FAKE-GREEN-REPLAY-PC-V0_1",
+  "replay_verdict": "PASS_WITH_MIGRATION_BLOCKS",
+  "reports_replayed": [
+    {
+      "report_folder": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/REPORTS/TASK-NEWGEN-PC-ADMINISTRATUM-TASK-REPORT-BUNDLE-GATE-MATRIX-AND-PACKAGER-PC-V0_1",
+      "task_id": "TASK-NEWGEN-PC-ADMINISTRATUM-TASK-REPORT-BUNDLE-GATE-MATRIX-AND-PACKAGER-PC-V0_1",
+      "verdict": "BLOCK",
+      "gate_verdict": "BUNDLE_SCHEMA_BLOCK",
+      "composition_gate": "BUNDLE_COMPOSITION_PASS",
+      "schema_gate": "BUNDLE_SCHEMA_BLOCK",
+      "missing_items": [],
+      "invalid_fields": [
+        {
+          "class_id": "administratum_composition_receipt",
+          "path": "administratum_bundle_composition_receipt.json",
+          "field": "$",
+          "message": "$.composition_gate: required field missing",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "administratum_composition_receipt",
+          "path": "administratum_bundle_composition_receipt.json",
+          "field": "$",
+          "message": "$.schema_gate: required field missing",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "administratum_composition_receipt",
+          "path": "administratum_bundle_composition_receipt.json",
+          "field": "$",
+          "message": "$.authority_boundary: required field missing",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "administratum_composition_receipt",
+          "path": "administratum_bundle_composition_receipt.json",
+          "field": "$",
+          "message": "$.verdict: expected one of ['BUNDLE_SCHEMA_PASS', 'BUNDLE_SCHEMA_BLOCK']",
+          "severity": "BLOCK"
+        }
+      ],
+      "warnings": [],
+      "migration_required": true
+    },
+    {
+      "report_folder": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/REPORTS/TASK-NEWGEN-PC-NEW-REALITY-SELF-FIX-CLEAN-DEV-ENV-SERVITOR-CONTROL-MECHANICUS-SKILL-ARSENAL-AND-REPO-STERILIZATION-PC-V0_1",
+      "task_id": "TASK-NEWGEN-PC-NEW-REALITY-SELF-FIX-CLEAN-DEV-ENV-SERVITOR-CONTROL-MECHANICUS-SKILL-ARSENAL-AND-REPO-STERILIZATION-PC-V0_1",
+      "verdict": "BLOCK",
+      "gate_verdict": "BUNDLE_SCHEMA_BLOCK",
+      "composition_gate": "BUNDLE_COMPOSITION_BLOCK",
+      "schema_gate": "BUNDLE_SCHEMA_BLOCK",
+      "missing_items": [
+        "adjacent_receipts_manifest"
+      ],
+      "invalid_fields": [
+        {
+          "class_id": "worktree_clean_or_explicit_cap_receipt",
+          "path": "servitor_control_chain_receipt.json",
+          "field": "$",
+          "message": "$: does not satisfy any accepted field set",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "scope_lock_no_ancient_mutation_receipt",
+          "path": "no_ancient_mutation_receipt.json",
+          "field": "$",
+          "message": "$: does not satisfy any accepted field set",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "scope_lock_no_ancient_mutation_receipt",
+          "path": "no_ancient_mutation_receipt.json",
+          "field": "$",
+          "message": "$.active_root: required field missing",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "scope_lock_no_ancient_mutation_receipt",
+          "path": "no_ancient_mutation_receipt.json",
+          "field": "active_root",
+          "message": "no-Ancient receipt must record active_root",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "scope_lock_no_ancient_mutation_receipt",
+          "path": "no_ancient_mutation_receipt.json",
+          "field": "ancient_mutation_core",
+          "message": "no-Ancient receipt must include ancient_empire_mutated, mutation_detected, or write_attempted",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "final_owner_summary_boundary",
+          "path": "mechanicus_candidate_registry_summary.json",
+          "field": "$",
+          "message": "$: does not satisfy any accepted field set",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "final_owner_summary_boundary",
+          "path": "self_fix_builder_summary.json",
+          "field": "$",
+          "message": "$: does not satisfy any accepted field set",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "bundle_manifest_and_file_inventory",
+          "path": "active_reports_manifest.json",
+          "field": "$",
+          "message": "$.included_files: required field missing",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "bundle_manifest_and_file_inventory",
+          "path": "evidence_index.json",
+          "field": "$",
+          "message": "$.included_files: required field missing",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "adjacent_receipts_manifest",
+          "path": "adjacent_receipts_manifest.json",
+          "field": "$",
+          "message": "missing adjacent receipts manifest",
+          "severity": "BLOCK"
+        }
+      ],
+      "warnings": [
+        {
+          "class_id": "task_identity_and_report_metadata",
+          "path": "",
+          "message": "required class is present only through non-JSON evidence or directory name; schema coverage is limited",
+          "severity": "WARN"
+        }
+      ],
+      "migration_required": true
+    },
+    {
+      "report_folder": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/REPORTS/TASK-NEWGEN-PC-NEW-REALITY-FINAL-REMOTE-CLOSURE-RECEIPT-AND-NATIVE-REPLAY-PC-V0_1",
+      "task_id": "TASK-NEWGEN-PC-NEW-REALITY-FINAL-REMOTE-CLOSURE-RECEIPT-AND-NATIVE-REPLAY-PC-V0_1",
+      "verdict": "BLOCK",
+      "gate_verdict": "BUNDLE_SCHEMA_BLOCK",
+      "composition_gate": "BUNDLE_COMPOSITION_BLOCK",
+      "schema_gate": "BUNDLE_SCHEMA_BLOCK",
+      "missing_items": [
+        "worktree_clean_or_explicit_cap_receipt",
+        "scope_lock_no_ancient_mutation_receipt",
+        "final_owner_summary_boundary",
+        "bundle_manifest_and_file_inventory",
+        "adjacent_receipts_manifest"
+      ],
+      "invalid_fields": [
+        {
+          "class_id": "commit_chain_identifiers",
+          "path": "bundle_contract_receipt.json",
+          "field": "$",
+          "message": "$: does not satisfy any accepted field set",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "adjacent_receipts_manifest",
+          "path": "adjacent_receipts_manifest.json",
+          "field": "$",
+          "message": "missing adjacent receipts manifest",
+          "severity": "BLOCK"
+        }
+      ],
+      "warnings": [
+        {
+          "class_id": "task_identity_and_report_metadata",
+          "path": "",
+          "message": "required class is present only through non-JSON evidence or directory name; schema coverage is limited",
+          "severity": "WARN"
+        }
+      ],
+      "migration_required": true
+    },
+    {
+      "report_folder": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/REPORTS/TASK-NEWGEN-PC-NEW-REALITY-REMOTE-TREE-BUNDLE-CLOSURE-VALIDATOR-PC-V0_1",
+      "task_id": "TASK-NEWGEN-PC-NEW-REALITY-REMOTE-TREE-BUNDLE-CLOSURE-VALIDATOR-PC-V0_1",
+      "verdict": "BLOCK",
+      "gate_verdict": "BUNDLE_SCHEMA_BLOCK",
+      "composition_gate": "BUNDLE_COMPOSITION_BLOCK",
+      "schema_gate": "BUNDLE_SCHEMA_BLOCK",
+      "missing_items": [
+        "worktree_clean_or_explicit_cap_receipt",
+        "final_owner_summary_boundary",
+        "bundle_manifest_and_file_inventory",
+        "adjacent_receipts_manifest"
+      ],
+      "invalid_fields": [
+        {
+          "class_id": "commit_chain_identifiers",
+          "path": "bundle_contract_receipt.json",
+          "field": "$",
+          "message": "$: does not satisfy any accepted field set",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "git_closure_and_remote_closure_proof",
+          "path": "final_remote_closure_receipt.json",
+          "field": "$",
+          "message": "$: does not satisfy any accepted field set",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "scope_lock_no_ancient_mutation_receipt",
+          "path": "ancient_readonly_guard_receipt.json",
+          "field": "$",
+          "message": "$.active_root: required field missing",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "scope_lock_no_ancient_mutation_receipt",
+          "path": "ancient_readonly_guard_receipt.json",
+          "field": "active_root",
+          "message": "no-Ancient receipt must record active_root",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "sha256_sums",
+          "path": "sha256sums.txt",
+          "field": "line_15",
+          "message": "sha256 mismatch for validator_run_stdout.txt; actual 4b3d9e1b757df3579341edf0cd28ac78d0172bdca1776a5463ff2b524114f9da",
+          "severity": "BLOCK"
+        },
+        {
+          "class_id": "adjacent_receipts_manifest",
+          "path": "adjacent_receipts_manifest.json",
+          "field": "$",
+          "message": "missing adjacent receipts manifest",
+          "severity": "BLOCK"
+        }
+      ],
+      "warnings": [
+        {
+          "class_id": "task_identity_and_report_metadata",
+          "path": "",
+          "message": "required class is present only through non-JSON evidence or directory name; schema coverage is limited",
+          "severity": "WARN"
+        }
+      ],
+      "migration_required": true
+    }
+  ],
+  "pass_count": 0,
+  "warn_count": 0,
+  "block_count": 4,
+  "selection_note": "Prioritized Administratum V0.1 and New Reality closure reports, then latest REPORTS folders.",
+  "created_utc": "2026-06-04T16:14:55Z"
+}

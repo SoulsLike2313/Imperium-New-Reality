@@ -1,0 +1,77 @@
+{
+  "schema_id": "newgen_verification_spine_convergence_matrix_v0_1",
+  "task_id": "TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1",
+  "generated_at_utc": "2026-05-24T06:47:48.518430+00:00",
+  "verdict": "PASS_WITH_WARNINGS",
+  "items": [
+    {
+      "boundary": "Root-scoped writes for receipts/intents/owner records",
+      "classification": "ADAPTER_ADDED",
+      "previous_state": "Direct writes without root boundary enforcement.",
+      "current_state": "Writes pass through _ensure_write_path + allowed_write_roots gate bound to repo root.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py"
+      ]
+    },
+    {
+      "boundary": "External command execution",
+      "classification": "ADAPTER_ADDED",
+      "previous_state": "Raw subprocess boundary only.",
+      "current_state": "run_cmd now attempts command gateway first (where IDs exist), then classified read-only fallback.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+        "src/imperium/security/command_gateway.py"
+      ]
+    },
+    {
+      "boundary": "Canonical verdict semantics",
+      "classification": "CONVERGED",
+      "previous_state": "Status drift with PASS/WARN/BLOCK/PASS_FOR variants.",
+      "current_state": "normalize_verdict enforces PASS/PASS_WITH_WARNINGS/FAIL/BLOCKED for persisted action results.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.js"
+      ]
+    },
+    {
+      "boundary": "Executable schema gates on write-critical payloads",
+      "classification": "CONVERGED",
+      "previous_state": "Schemas were present but not executed at write boundaries.",
+      "current_state": "Subset schema validator executes before writing action receipts, run results, owner records, and transfer intents.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_action_receipt_schema_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/transfer_intent_schema_v0_1.json"
+      ]
+    },
+    {
+      "boundary": "Default smoke mutation behavior",
+      "classification": "CONVERGED",
+      "previous_state": "Default smoke performed POST action runs and owner-intent writes.",
+      "current_state": "Default smoke is read-only; mutation routes require explicit --allow-mutation-smoke opt-in.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py"
+      ]
+    },
+    {
+      "boundary": "Residual direct read-only command fallbacks",
+      "classification": "LEFT_WITH_JUSTIFICATION",
+      "previous_state": "All commands raw subprocess.",
+      "current_state": "Some commands still fallback to direct execution when allowlist IDs are unavailable; boundary is explicitly tagged in command result metadata.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py"
+      ],
+      "followup_task": "TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-FOLLOWUP-PC-V0_1"
+    },
+    {
+      "boundary": "Legacy WARN/BLOCK tokens in nested diagnostic detail payloads",
+      "classification": "LEFT_WITH_JUSTIFICATION",
+      "previous_state": "Legacy tokens used both internally and for persisted machine truth.",
+      "current_state": "Top-level persisted verdicts are canonical; some nested detail rows still use historical aliases and should be normalized in a follow-up pass.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/important_six_dashboard_actions_v0_1.py"
+      ],
+      "followup_task": "TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-FOLLOWUP-PC-V0_1"
+    }
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "inventory_type": "task_report_bundle_file_inventory",
+  "task_id": "FIXTURE-COMPLETE",
+  "timestamp_utc": "2026-06-04T15:07:16Z",
+  "report_dir": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/FIXTURES/complete_report_fixture",
+  "bundle_path": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/FIXTURES/complete_report_fixture/task_report_bundle.zip",
+  "bundle_sha256": "c6313a2ead68efe1917dd212d586b864e74d7b80e07cdd6be5d43e11921c976d",
+  "included_file_count": 7,
+  "included_files": [
+    {
+      "path": "CAPABILITY_SPLIT_RECEIPT.json",
+      "size_bytes": 101,
+      "sha256": "834717df5fcbbbcf4b835b5ed4936dca5990df8d465a16a097181b2f6bc2fc9c"
+    },
+    {
+      "path": "CLAIM_LEDGER.json",
+      "size_bytes": 175,
+      "sha256": "d39dbfa3f140af73089ceff6815b64cf2343286ed9720fca2a1d3c8c3fe2e7a3"
+    },
+    {
+      "path": "OFFICIO_LOCALIZATION_REFERENCE.json",
+      "size_bytes": 117,
+      "sha256": "1578e6d93e6529c8d5856045b477a22c932c82577bc5673337a8fd8a6629e168"
+    },
+    {
+      "path": "RED_TEAM_VERDICT.json",
+      "size_bytes": 109,
+      "sha256": "91d5868a076c7c608e632ce31b45e6c3a63b227598e10cfe56192c6810d4ddfc"
+    },
+    {
+      "path": "TASK_FOCUS_PACKET.json",
+      "size_bytes": 115,
+      "sha256": "acad11353fff89c1579eb4899627a76d03bc5a36705480d2a21342637cad2ae7"
+    },
+    {
+      "path": "adjacent_receipts_manifest.json",
+      "size_bytes": 1880,
+      "sha256": "e68c281449209c64e36e949da95cd1fe55eab991d36bdef8c981cc14167093c1"
+    },
+    {
+      "path": "no_ancient_mutation_receipt.json",
+      "size_bytes": 93,
+      "sha256": "5ef45d782570d7dc2b9a482472d3ad0b67fee6fd8e67a8f32cd107edea25e517"
+    }
+  ],
+  "adjacent_self_reference_files": [
+    {
+      "path": "task_report_bundle.zip",
+      "class_ids": [],
+      "reason": "The bundle cannot include itself.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": "c6313a2ead68efe1917dd212d586b864e74d7b80e07cdd6be5d43e11921c976d"
+    },
+    {
+      "path": "sha256sums.txt",
+      "class_ids": [
+        "sha256_sums"
+      ],
+      "reason": "Final sums record the final bundle hash and remain adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": ""
+    },
+    {
+      "path": "bundle_file_inventory.json",
+      "class_ids": [
+        "bundle_manifest_and_file_inventory"
+      ],
+      "reason": "Inventory records the final included file set and remains adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": "6fd64d6954695b6670df6cb06a413ac8dc06909410c58b1adbe45174c5526ce1"
+    },
+    {
+      "path": "administratum_bundle_composition_receipt.json",
+      "class_ids": [
+        "administratum_composition_receipt"
+      ],
+      "reason": "Composition receipt records final bundle creation state and remains adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": "a654e79277b2ad3f7e31c362e0090fd2d33c5832d8ba1d451e255027b39d4148"
+    },
+    {
+      "path": "git_closure_receipt.json",
+      "class_ids": [
+        "commit_chain_identifiers",
+        "git_closure_and_remote_closure_proof",
+        "worktree_clean_or_explicit_cap_receipt"
+      ],
+      "reason": "Final git closure may be refreshed after the bundle commit.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": "d84664b174fc669dd5e64b0cfdaf65cbf7053fc49ffbe5ea5b24addfdbd8d178"
+    },
+    {
+      "path": "remote_closure_receipt.json",
+      "class_ids": [
+        "git_closure_and_remote_closure_proof"
+      ],
+      "reason": "Final remote closure may be refreshed after push.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": "f2bafc96fba6ff3d4b83983dd36919507bc345cc5cbdaec45ed9fd5d9fb2e5c0"
+    }
+  ],
+  "excluded_from_bundle_due_self_reference": [
+    "administratum_bundle_composition_receipt.json",
+    "bundle_file_inventory.json",
+    "git_closure_receipt.json",
+    "remote_closure_receipt.json",
+    "sha256sums.txt",
+    "task_report_bundle.zip"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "visual_unit_id": "SANCTUM.RIGHT_CONTEXT_DOCK.MECHANICUS_PANEL",
+  "parent": "SANCTUM.RIGHT_CONTEXT_DOCK",
+  "type": "organ_panel",
+  "visual_owner": "SANCTUM_SHELL",
+  "truth_owner": "MECHANICUS_AGENT",
+  "data_source_owner": "SANCTUM_STATE_BUILDER",
+  "organ_subject": "MECHANICUS_AGENT",
+  "implementation_owner": "VISUAL_FOUNDRY",
+  "purpose": "Mechanicus operator panel with constrained candidate readiness.",
+  "backend_source": {
+    "type": "api_actions_and_state",
+    "paths": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/api/actions.py",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/api/state_builder.py",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOL_INDEX.json"
+    ]
+  },
+  "backend_source_status": "candidate",
+  "allowed_states": [
+    "idle",
+    "active",
+    "blocked",
+    "error",
+    "unknown"
+  ],
+  "truth_rules": [
+    "Panel actions require backend allowlist confirmation.",
+    "Blocked actions must render explicit reason, not synthetic green."
+  ],
+  "visual_tokens": "mechanicus_panel_tokens",
+  "texture": "glass_holograph_panel",
+  "glow": {
+    "enabled": true,
+    "color_token": "accent_forge_red",
+    "default_intensity": 0.3
+  },
+  "motion": {
+    "enabled": true,
+    "animation": "panel_slide_right",
+    "perf_tier": "CHEAP",
+    "disable_in_reduced_motion": true
+  },
+  "perf_tier": "CHEAP",
+  "proof_requirements": [
+    "api/actions allowlist evidence and state binding."
+  ],
+  "integration_status": "candidate",
+  "fake_green_risks": [
+    "UI action lane visible while backend execution blocked."
+  ],
+  "owner_group": "SANCTUM",
+  "owner_organ": "MECHANICUS_AGENT",
+  "accessibility_rules": [
+    "State must not be encoded by color alone.",
+    "RU/EN labels must remain explicit for status tags."
+  ],
+  "change_safety": "Topology hardening scope only; no final UI readiness claims."
+}

@@ -1,0 +1,59 @@
+GATE_ACK:
+- task_id: TASK-NEWGEN-FIVE-ORGAN-ALIGNMENT-CHECK-VM3-V0_1
+- current_head: 02107b75d4daf11cf56a6118c9597d7226ea7a3d
+- gatepack_path: /home/vboxuser3/IMPERIUM_VM3_INBOX/TASKPACK_NEWGEN_FIVE_ORGAN_ALIGNMENT_CHECK_VM3_V0_1.zip
+- gatepack_sha256: 62ba698f730613826c48a3ccb1ef7a15607599d6e00f2fe3e91fcc74849643bf
+- read_gates:
+  - GATE-U00-GIT-TRUTH
+  - GATE-U01-ROLE-ACK
+  - GATE-U02-SCOPE-BOUNDARY
+  - GATE-U04-EVIDENCE-RECEIPT
+  - GATE-U05-STOP-CONDITIONS
+  - GATE-U08-REPO-PURITY
+  - GATE-U09-NO-FAKE-GREEN
+  - GATE-U12-REPORT-OUTPUT-BUDGET
+  - GATE-U13-PYTHON-TYPE-SAFETY
+  - GATE-U14-WHOLE-REPO-SCOPE-RECON
+  - GATE-U15-OPERATIONALITY-IMPACT
+  - GATE-U16-BILINGUAL-UI
+  - GATE-U17-DELIVERABLE-PACKAGE
+  - GATE-U18-AGENT-FACTORY-COMPLIANCE
+  - GATE-U19-SCRIPT-ARTIFACT-PRESERVATION
+  - GATE-U20-AGENT-KPD-SELF-REVIEW
+  - GATE-U21-COMMAND-CHUNKING
+- accepted_stop_conditions:
+  - STOP if local HEAD != 02107b75d4daf11cf56a6118c9597d7226ea7a3d.
+  - STOP if origin/master != 02107b75d4daf11cf56a6118c9597d7226ea7a3d.
+  - STOP if forbidden path is touched in git diff.
+  - STOP if any required JSON artifact is invalid or missing.
+  - STOP if evidence path for status claim is missing.
+  - STOP if task requires IDE/WARP/CLI implementation or organ refactor.
+  - STOP if final clean/sync gate cannot be proven.
+- scope_boundary: Only report bundle creation/update under IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS/TASK-NEWGEN-FIVE-ORGAN-ALIGNMENT-CHECK-VM3-V0_1/** and no runtime/organ refactor edits.
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS/TASK-NEWGEN-FIVE-ORGAN-ALIGNMENT-CHECK-VM3-V0_1/**
+- forbidden_paths:
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/**
+  - IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/**
+  - IMPERIUM_NEW_GENERATION/ADMINISTRATUM/** (except report root of this task)
+  - IMPERIUM_NEW_GENERATION/INQUISITION/**
+  - IMPERIUM_NEW_GENERATION/ASTRONOMICON/**
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/**
+  - IMPERIUM_TEST_VERSION/**
+- expected_receipts:
+  - FINAL_REPORT.md
+  - ACTION_CARD.md
+  - five_organ_alignment_matrix.json
+  - five_organ_readiness_report.md
+  - five_organ_inventory.json
+  - ide_readiness_summary.json
+  - organ_gap_register.json
+  - route_memory_loss_cure_check.json
+  - owner_pain_map.json
+  - next_task_decision.json
+  - closure_receipt.json
+- repo_recon_required: true
+- script_absorption_required: false
+- clarification_needed:
+  - AGENTS.md expected Windows root E:\IMPERIUM; execution environment is Linux mirror /home/vboxuser3/IMPERIUM_WORK/Imperium- with matching HEAD and remote sync.
+- verdict: PASS

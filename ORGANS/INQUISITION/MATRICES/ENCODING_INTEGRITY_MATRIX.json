@@ -1,0 +1,58 @@
+{
+  "matrix_id": "ENCODING_INTEGRITY_MATRIX",
+  "version": "0.1-candidate",
+  "owner_organ": "Inquisition",
+  "support_organs": [
+    "Mechanicus",
+    "Astronomicon",
+    "Administratum"
+  ],
+  "purpose": "Defines UTF-8 integrity constraints for canonical artifacts and taskpack root files.",
+  "criteria": [
+    {
+      "criterion_id": "EI-01_UTF8_NO_BOM_REQUIRED",
+      "owner_organ": "INQUISITION",
+      "evidence_required": [
+        "inquisition_mojibake_filter_report.json",
+        "taskpack_language_gate_receipt.json"
+      ],
+      "pass_logic": "No BOM in canonical text artifacts.",
+      "warn_logic": "Legacy BOM files are classified with remediation.",
+      "block_logic": "New canonical or taskpack-root file contains BOM.",
+      "caps": [
+        "CAP_UTF8_BOM_NOT_DETECTED"
+      ],
+      "remediation_path": "Rewrite file as UTF-8 no BOM and rerun filter."
+    },
+    {
+      "criterion_id": "EI-02_REPLACEMENT_CHARACTER_FORBIDDEN",
+      "owner_organ": "INQUISITION",
+      "evidence_required": [
+        "inquisition_mojibake_filter_report.json"
+      ],
+      "pass_logic": "No replacement character appears in canonical text.",
+      "warn_logic": "Legacy replacement characters are tracked for cleanup.",
+      "block_logic": "Replacement character appears in new canonical artifacts.",
+      "caps": [
+        "CAP_REPLACEMENT_CHARACTER_NOT_DETECTED"
+      ],
+      "remediation_path": "Repair source encoding and regenerate text."
+    },
+    {
+      "criterion_id": "EI-03_UTF8_DECODE_REQUIRED",
+      "owner_organ": "INQUISITION",
+      "evidence_required": [
+        "inquisition_mojibake_filter_report.json"
+      ],
+      "pass_logic": "Canonical text decodes as UTF-8.",
+      "warn_logic": "Legacy decode issues are classified.",
+      "block_logic": "New canonical artifacts fail UTF-8 decode.",
+      "caps": [
+        "CAP_MOJIBAKE_SIGNATURE_NOT_DETECTED"
+      ],
+      "remediation_path": "Normalize encoding to UTF-8 and remove mixed-byte artifacts."
+    }
+  ],
+  "current_status": "CANDIDATE_NOT_CANON",
+  "next_action": "Wire matrix to global filter and Astronomicon taskpack gate receipts."
+}

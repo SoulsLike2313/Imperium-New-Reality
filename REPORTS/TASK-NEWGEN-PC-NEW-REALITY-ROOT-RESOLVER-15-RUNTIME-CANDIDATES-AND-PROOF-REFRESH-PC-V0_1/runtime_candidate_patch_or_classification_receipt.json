@@ -1,0 +1,164 @@
+{
+  "task_id": "TASK-NEWGEN-PC-NEW-REALITY-ROOT-RESOLVER-15-RUNTIME-CANDIDATES-AND-PROOF-REFRESH-PC-V0_1",
+  "receipt_type": "runtime_candidate_patch_or_classification_receipt",
+  "timestamp_utc": "2026-06-03T12:16:10+00:00",
+  "previous_task_id": "TASK-NEWGEN-PC-NEW-REALITY-RUNTIME-PATH-ADAPTER-SMOKE-GATE-PC-V0_1",
+  "candidate_count_expected": 15,
+  "candidate_count_seen": 15,
+  "candidate_count_receipted": 15,
+  "missing_policies": [],
+  "failing_candidates": [],
+  "candidates": [
+    {
+      "file": "ADMINISTRATUM/TOOLS/administratum_card_checker_v0_1.py",
+      "previous_match_count": 1,
+      "resolution": "PATCHED",
+      "reason": "Seed workspace path is now New Reality relative RUNS/WARP/SESSION_001.",
+      "old_active_root_hits": false,
+      "old_context_hits": false,
+      "classification_notes": [],
+      "status": "PASS"
+    },
+    {
+      "file": "AGENT_IDE/TOOLS/agent_ide_block_registry_checker_v0_1.py",
+      "previous_match_count": 1,
+      "resolution": "PATCHED",
+      "reason": "Repo root default now resolves through root_resolution.py and reports inside AGENT_IDE/REPORTS.",
+      "old_active_root_hits": false,
+      "old_context_hits": false,
+      "classification_notes": [],
+      "status": "PASS"
+    },
+    {
+      "file": "AGENT_IDE/TOOLS/agent_ide_data_probe_v0_1.py",
+      "previous_match_count": 1,
+      "resolution": "PATCHED",
+      "reason": "Repo root and receipt path now resolve through New Reality root.",
+      "old_active_root_hits": false,
+      "old_context_hits": false,
+      "classification_notes": [],
+      "status": "PASS"
+    },
+    {
+      "file": "AGENT_IDE/TOOLS/agent_ide_scope_checker_v0_1.py",
+      "previous_match_count": 2,
+      "resolution": "PATCHED",
+      "reason": "Repo root default removed; Agent IDE allowed prefix points to top-level AGENT_IDE.",
+      "old_active_root_hits": false,
+      "old_context_hits": false,
+      "classification_notes": [],
+      "status": "PASS"
+    },
+    {
+      "file": "AGENT_IDE/TOOLS/agent_ide_scope_checker_v0_2.py",
+      "previous_match_count": 2,
+      "resolution": "PATCHED",
+      "reason": "Repo root default removed; allowed prefixes point to top-level New Reality layout.",
+      "old_active_root_hits": false,
+      "old_context_hits": false,
+      "classification_notes": [],
+      "status": "PASS"
+    },
+    {
+      "file": "AGENT_IDE/TOOLS/agent_ide_smoke_test_v0_1.py",
+      "previous_match_count": 1,
+      "resolution": "PATCHED",
+      "reason": "Repo root and receipt path now resolve through New Reality root.",
+      "old_active_root_hits": false,
+      "old_context_hits": false,
+      "classification_notes": [],
+      "status": "PASS"
+    },
+    {
+      "file": "COMMON_AGENT_CLI/base_half_cli.py",
+      "previous_match_count": 1,
+      "resolution": "PATCHED",
+      "reason": "Default runtime path now uses RUNS/COMMON_AGENT_CLI under New Reality.",
+      "old_active_root_hits": false,
+      "old_context_hits": false,
+      "classification_notes": [],
+      "status": "PASS"
+    },
+    {
+      "file": "MECHANICUS/TOOLS/check_mechanicus_evidence_index_v0_1.py",
+      "previous_match_count": 1,
+      "resolution": "CLASSIFIED",
+      "reason": "The remaining E:/IMPERIUM_CONTEXT string is a private-path detector signature, not an active root default.",
+      "old_active_root_hits": false,
+      "old_context_hits": false,
+      "classification_notes": [],
+      "status": "PASS"
+    },
+    {
+      "file": "MECHANICUS/TOOLS/mechanicus_evidence_index_builder_v0_1.py",
+      "previous_match_count": 1,
+      "resolution": "CLASSIFIED",
+      "reason": "The remaining E:/IMPERIUM_CONTEXT string is a private-path detector signature, not an active root default.",
+      "old_active_root_hits": false,
+      "old_context_hits": false,
+      "classification_notes": [],
+      "status": "PASS"
+    },
+    {
+      "file": "MECHANICUS/TOOLS/mechanicus_validation_followup_001_runner_v0_1.py",
+      "previous_match_count": 1,
+      "resolution": "PATCHED",
+      "reason": "Expected repo root and active Mechanicus relative paths now target New Reality layout.",
+      "old_active_root_hits": false,
+      "old_context_hits": false,
+      "classification_notes": [],
+      "status": "PASS"
+    },
+    {
+      "file": "ORGAN_AGENTS/ADMINISTRATUM_AGENT/LAUNCHERS/run_administratum_pc.ps1",
+      "previous_match_count": 1,
+      "resolution": "PATCHED",
+      "reason": "PowerShell launcher now dot-sources root_resolution.ps1 and writes transfer runtime under RUNS.",
+      "old_active_root_hits": false,
+      "old_context_hits": false,
+      "classification_notes": [],
+      "status": "PASS"
+    },
+    {
+      "file": "ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py",
+      "previous_match_count": 25,
+      "resolution": "PATCHED_WITH_CLASSIFIED_VM_REMOTE",
+      "reason": "PC repo/context defaults now use New Reality; VM2 remote IMPERIUM_CONTEXT defaults are classified out of scope by no_vm_sync.",
+      "old_active_root_hits": false,
+      "old_context_hits": false,
+      "classification_notes": [],
+      "status": "PASS"
+    },
+    {
+      "file": "ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_v1_core.py",
+      "previous_match_count": 2,
+      "resolution": "PATCHED_WITH_CLASSIFIED_DETECTORS",
+      "reason": "Repo root and default context roots now resolve to New Reality; IMPERIUM_CONTEXT text remains only as classification vocabulary.",
+      "old_active_root_hits": false,
+      "old_context_hits": false,
+      "classification_notes": [],
+      "status": "PASS"
+    },
+    {
+      "file": "ORGAN_AGENTS/OFFICIO_AGENTIS_AGENT/TOOLS/officio_agent_runner.py",
+      "previous_match_count": 1,
+      "resolution": "PATCHED",
+      "reason": "Runtime root and COMMON_AGENT_CLI path now resolve under New Reality.",
+      "old_active_root_hits": false,
+      "old_context_hits": false,
+      "classification_notes": [],
+      "status": "PASS"
+    },
+    {
+      "file": "SANCTUM_NG/OPERATOR_COCKPIT/TOOLS/launch_operator_cockpit.ps1",
+      "previous_match_count": 1,
+      "resolution": "PATCHED",
+      "reason": "PowerShell launcher now resolves New Reality root and serves top-level SANCTUM_NG app paths.",
+      "old_active_root_hits": false,
+      "old_context_hits": false,
+      "classification_notes": [],
+      "status": "PASS"
+    }
+  ],
+  "verdict": "PASS"
+}

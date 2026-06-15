@@ -1,0 +1,36 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-20260522-NEWGEN-CURRENT-TRUTH-ROOT-REPORT-INDEX-VM3-V0_1",
+    "agent_role": "VM3_Codex_Servitor_BigModel",
+    "useful_outputs": [
+      "Current Truth Root foundation JSON + schemas",
+      "Report Status Index with normalized statuses",
+      "Evidence Source Map foundation",
+      "Sanctum NG truth reference block"
+    ],
+    "waste_points": [
+      "Initial task_id parser regex missed underscore and required one correction pass."
+    ],
+    "missing_tools": [
+      "Reusable report-status normalization library for heterogeneous FINAL_RECEIPT formats."
+    ],
+    "generated_tools_to_preserve": [
+      "IMPERIUM_NEW_GENERATION/TRUTH/TOOLS/build_current_truth_root_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/TRUTH/TOOLS/validate_current_truth_root_v0_1.py"
+    ],
+    "recommended_script_absorption": [
+      "Absorb builder/validator into Administratum or Mechanicus reusable truth-index toolkit after strict type review."
+    ],
+    "recommended_narrow_agent_profiles": [
+      "NEWGEN_TRUTH_SPINE_INDEXER_AGENT",
+      "NEWGEN_REPORT_FRESHNESS_AUDITOR_AGENT"
+    ],
+    "future_prompt_improvements": [
+      "Provide canonical status mapping table for legacy FINAL_RECEIPT variants to reduce normalization ambiguity."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add explicit gate for task_id pattern validation including underscore suffix segments."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

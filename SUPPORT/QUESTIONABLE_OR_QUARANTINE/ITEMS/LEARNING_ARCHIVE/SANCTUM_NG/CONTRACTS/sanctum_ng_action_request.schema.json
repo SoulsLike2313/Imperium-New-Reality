@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SANCTUM_NG_ACTION_REQUEST_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "request_id",
+    "action_id",
+    "requested_at_utc",
+    "requester",
+    "dry_run",
+    "input"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "SANCTUM_NG_ACTION_REQUEST_V0_1"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "request_id": {
+      "type": "string"
+    },
+    "action_id": {
+      "type": "string"
+    },
+    "requested_at_utc": {
+      "type": "string"
+    },
+    "requester": {
+      "type": "string"
+    },
+    "dry_run": {
+      "type": "boolean"
+    },
+    "input": {
+      "type": "object"
+    }
+  },
+  "allOf": [
+    {
+      "not": {
+        "anyOf": [
+          { "required": ["command"] },
+          { "required": ["shell"] },
+          { "required": ["exec"] },
+          { "required": ["powershell"] },
+          { "required": ["bash"] },
+          { "required": ["cmd"] },
+          { "required": ["arbitrary_command"] },
+          { "required": ["remote_command"] }
+        ]
+      }
+    }
+  ],
+  "additionalProperties": true
+}

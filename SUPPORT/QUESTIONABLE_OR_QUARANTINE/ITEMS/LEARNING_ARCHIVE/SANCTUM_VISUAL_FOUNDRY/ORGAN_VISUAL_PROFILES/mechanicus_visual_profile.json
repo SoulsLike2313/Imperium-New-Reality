@@ -1,0 +1,33 @@
+{
+  "organ_id": "MECHANICUS_AGENT",
+  "profile_status": "real",
+  "visual_role": "Primary live operator organ with real command and evidence transport.",
+  "identity_tokens": {
+    "node": "mechanicus_node_tokens",
+    "panel": "mechanicus_panel_tokens",
+    "activity": "activity_pulse_tokens"
+  },
+  "states": [
+    "connected",
+    "warn",
+    "error",
+    "blocked",
+    "unknown"
+  ],
+  "textures": [
+    "red_forge_warning",
+    "glass_holograph_panel",
+    "forge_metal_dark"
+  ],
+  "motions": [
+    "pulse_breath",
+    "panel_slide_right",
+    "warning_flicker_limited"
+  ],
+  "truth_sources": [
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/state/current_status.json",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOL_INDEX.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/api/actions.py",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/api/mechanicus_adapter.py"
+  ]
+}

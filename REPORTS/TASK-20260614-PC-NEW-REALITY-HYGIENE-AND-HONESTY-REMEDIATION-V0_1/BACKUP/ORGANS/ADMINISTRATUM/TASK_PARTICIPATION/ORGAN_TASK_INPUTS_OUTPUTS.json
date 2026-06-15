@@ -1,0 +1,31 @@
+{
+  "organ": "ADMINISTRATUM",
+  "inputs": [
+    {
+      "name": "Git truth",
+      "source": "git status + git rev-parse + git remote truth",
+      "required": true,
+      "missing_behavior": "BLOCK"
+    },
+    {
+      "name": "External finalization contract",
+      "source": "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/CONTRACTS/EXTERNAL_FINALIZATION_RECEIPT_CONTRACT.md",
+      "required": true,
+      "missing_behavior": "BLOCK"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Repo truth probe",
+      "path_or_contract": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/repo_truth_probe.json",
+      "required": true,
+      "consumer": "ALL_ORGANS"
+    },
+    {
+      "name": "Commit push receipt",
+      "path_or_contract": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/commit_push_receipt.json",
+      "required": true,
+      "consumer": "INQUISITION"
+    }
+  ]
+}

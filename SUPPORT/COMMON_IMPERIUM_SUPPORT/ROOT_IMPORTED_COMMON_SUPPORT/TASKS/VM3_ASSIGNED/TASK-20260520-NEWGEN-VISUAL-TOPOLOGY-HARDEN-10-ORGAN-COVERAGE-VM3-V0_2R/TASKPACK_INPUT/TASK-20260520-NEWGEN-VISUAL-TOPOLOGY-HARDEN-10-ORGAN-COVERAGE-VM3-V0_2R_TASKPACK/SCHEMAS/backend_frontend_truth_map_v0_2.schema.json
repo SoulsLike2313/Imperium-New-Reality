@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Backend Frontend Truth Map V0.2",
+  "type": "object",
+  "required": [
+    "map_id",
+    "entries"
+  ],
+  "properties": {
+    "map_id": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "visual_unit_id",
+          "backend_source",
+          "backend_source_status",
+          "status",
+          "visual_owner",
+          "truth_owner",
+          "data_source_owner",
+          "organ_subject",
+          "fake_green_risks",
+          "proof_required"
+        ]
+      }
+    }
+  }
+}

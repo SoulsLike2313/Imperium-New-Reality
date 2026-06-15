@@ -1,0 +1,103 @@
+╭────────────────────────────────── WELCOME ───────────────────────────────────╮
+│ [ADM-ARCHIVE-SEAL] ADMINISTRATUM LOCAL MODEL [IMP-THRONE-SEAL]               │
+│ IMPERIUM NEW GENERATION / ARCHIVE VAULT ONLINE                               │
+│ ADMINISTRATUM AGENT :: LOCAL MODEL                                           │
+│ version: V1_HARDENED_REF_TRAJECTORY | status:                                │
+│ REFERENCE_READY_WITH_PC_TRANSFER_PUSH_SHELL_REPAIR_V0_1                      │
+│ head: 57cf210f2516 | git_dirty: true | live_work: enabled                    │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭─────────────────────────────────── STATUS ───────────────────────────────────╮
+│ runtime isolation: PASS                                                      │
+│ Runtime outputs isolated under RUNS layer.                                   │
+│ last check-all: n/a                                                          │
+│ warning count: 0                                                             │
+│ latest check-all report: n/a                                                 │
+│ latest continuity pack:                                                      │
+│ <RUNS>/RUN-ADMINISTRATUM-20260518-205953-e832d6/continuity_pack              │
+│ latest metrics:                                                              │
+│ <RUNS>/RUN-ADMINISTRATUM-20260518-205953-e832d6/continuity_pack/metrics_summ │
+│ ary.json                                                                     │
+│ latest kpd:                                                                  │
+│ <RUNS>/RUN-ADMINISTRATUM-20260518-205953-e832d6/continuity_pack/kpd_score.js │
+│ on                                                                           │
+│ gpu policy: script-first / gpu_used=false                                    │
+│ truth zones: CANON / SANDBOX / RUNTIME / PRIVATE / LOCAL                     │
+│ layout: left work/output zone; right command hints zone; header reprinted on │
+│ /help                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭────────────────────────────── RECENT ACTIVITY ───────────────────────────────╮
+│ RUN-ADMINISTRATUM-20260519-210621-f92826 | command: status | status: WARN |  │
+│ warnings: 1                                                                  │
+│ RUN-ADMINISTRATUM-20260519-210416-5b3603 | command: status | status: WARN |  │
+│ warnings: 1                                                                  │
+│ RUN-ADMINISTRATUM-20260519-210416-51accc | command: identity | status: PASS  │
+│ | warnings: 0                                                                │
+│ RUN-ADMINISTRATUM-20260519-210415-6a7f82 | command: status | status: WARN |  │
+│ warnings: 1                                                                  │
+│ RUN-ADMINISTRATUM-20260519-205915-5640ab | command: doctor-rich | status:    │
+│ WARN | warnings: 1                                                           │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭────────────────────────────── AVAILABLE RITES ───────────────────────────────╮
+│ /help                                                                        │
+│ /help <command>                                                              │
+│ /status                                                                      │
+│ /inventory                                                                   │
+│ /doctor-rich                                                                 │
+│ /doctor-oss                                                                  │
+│ /build-dossier                                                               │
+│ /verify-dossier                                                              │
+│ /schema-regression                                                           │
+│ /validate-freelance-envelope [path]                                          │
+│ /build-freelance-handoff [path]                                              │
+│ /classify <path>                                                             │
+│ /dirty-runtime                                                               │
+│ /useful-candidates                                                           │
+│ /route <path>                                                                │
+│ /merge-summary                                                               │
+│ /scan-context                                                                │
+│ /continuity-pack                                                             │
+│ /reality-snapshot                                                            │
+│ /metrics                                                                     │
+│ /kpd                                                                         │
+│ /check-all                                                                   │
+│ /transfer-status                                                             │
+│ /transfer-verify-pack <pack_zip>                                             │
+│ /transfer-send-vm2 <pack_zip> <step name>                                    │
+│ /transfer-push-vm2 <pack_zip> <step name>                                    │
+│ /transfer-fetch-vm2 <task_id> <expected_filename>                            │
+│ /recent                                                                      │
+│ /open-runs                                                                   │
+│ /exit                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ADMINISTRATUM://LOCAL >
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ ADMINISTRATUM AGENT :: IDENTITY (BASE HALF)                                                                │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ STATUS: [PASS]                                                                                             │
+│ COMMAND: identity                                                                                          │
+│ RUN_ID: RUN-ADMINISTRATUM-20260519-210622-5469b8                                                           │
+│ VERDICT: PASS                                                                                              │
+│ SUMMARY:                                                                                                   │
+│   - Identity baseline and profile references emitted.                                                      │
+│ PRIMARY_REFS:                                                                                              │
+│   - <ADMIN>/agent_profile.json                                                                             │
+│   - <ADMIN>/IDENTITY_BASELINE.md                                                                           │
+│ ARTIFACTS_WRITTEN:                                                                                         │
+│   - <RUN>/reports/identity_report.json                                                                     │
+│   - <RUN>/reports/identity_access_map.json                                                                 │
+│   - <RUN>/reports/identity_metrics_summary.json                                                            │
+│   - <RUN>/receipts/identity_command_receipt.json                                                           │
+│ WARNINGS:                                                                                                  │
+│   - NONE                                                                                                   │
+│ WHY_TRUST:                                                                                                 │
+│   - Git truth checked before/after command: dirty_before=true, dirty_after=true.                           │
+│   - Command receipt written: <RUN>/receipts/identity_command_receipt.json.                                 │
+│   - Metrics report written: <RUN>/reports/identity_metrics_summary.json.                                   │
+│   - Access map written: <RUN>/reports/identity_access_map.json.                                            │
+│   - Runtime outputs confined to run dir: true; RUNS root confinement: true.                                │
+│ NEXT_ACTIONS:                                                                                              │
+│   - Proceed to next admitted command or handoff review.                                                    │
+│ LIMITATIONS:                                                                                               │
+│   - NONE                                                                                                   │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+

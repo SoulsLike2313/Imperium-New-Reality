@@ -1,0 +1,163 @@
+{
+  "cmd": [
+    "python",
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py",
+    "--plain-json",
+    "recent",
+    "--limit",
+    "5"
+  ],
+  "returncode": 0,
+  "severity": "WARN",
+  "stdout": "{\n  \"header\": \"ADMINISTRATUM AGENT :: RECENT RUNS\",\n  \"status\": \"PASS\",\n  \"command\": \"recent\",\n  \"run_id\": \"RUN-ADMINISTRATUM-20260519-193156-582d38\",\n  \"verdict\": \"PASS\",\n  \"summary\": \"Loaded 5 recent run entries.\",\n  \"primary_refs\": [\n    \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\"\n  ],\n  \"artifacts_written\": [\n    \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193156-582d38\\\\reports\\\\recent_runs_report.json\",\n    \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193156-582d38\\\\reports\\\\recent_access_map.json\",\n    \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193156-582d38\\\\reports\\\\recent_metrics_summary.json\",\n    \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193156-582d38\\\\receipts\\\\recent_command_receipt.json\"\n  ],\n  \"outputs\": {\n    \"run_dir\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193156-582d38\",\n    \"metrics_report\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193156-582d38\\\\reports\\\\recent_metrics_summary.json\",\n    \"command_receipt\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193156-582d38\\\\receipts\\\\recent_command_receipt.json\",\n    \"output_01\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193156-582d38\\\\reports\\\\recent_runs_report.json\",\n    \"output_02\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193156-582d38\\\\reports\\\\recent_access_map.json\",\n    \"output_03\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193156-582d38\\\\reports\\\\recent_metrics_summary.json\",\n    \"output_04\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193156-582d38\\\\receipts\\\\recent_command_receipt.json\"\n  },\n  \"warnings\": [],\n  \"why_trust\": [\n    \"Git truth checked before/after command: dirty_before=true, dirty_after=true.\",\n    \"Command receipt written: E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193156-582d38\\\\receipts\\\\recent_command_receipt.json.\",\n    \"Metrics report written: E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193156-582d38\\\\reports\\\\recent_metrics_summary.json.\",\n    \"Access map written: E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193156-582d38\\\\reports\\\\recent_access_map.json.\",\n    \"Runtime outputs confined to run dir: true; RUNS root confinement: true.\"\n  ],\n  \"next_actions\": [\n    \"Proceed to next admitted command or handoff review.\"\n  ],\n  \"metrics\": {\n    \"command\": \"recent\",\n    \"wall_clock_ms\": 174,\n    \"process_cpu_seconds\": 0.046875,\n    \"peak_memory_kb\": 198,\n    \"peak_memory_unavailable_reason\": \"\",\n    \"memory_metric_source\": \"tracemalloc\",\n    \"files_scanned\": 0,\n    \"files_classified\": 0,\n    \"objects_considered\": 5,\n    \"outputs_written_count\": 4,\n    \"output_bytes_total\": 8146,\n    \"warnings_count\": 0,\n    \"errors_count\": 0,\n    \"rejected_count\": 0,\n    \"routes_made\": 0,\n    \"receipts_written\": 1,\n    \"gpu_used\": false,\n    \"gpu_reason\": \"No GPU API/dependency invoked; Python stdlib/script-first execution.\",\n    \"touched_paths_read_count\": 1,\n    \"touched_paths_written_count\": 4,\n    \"owner_wait_seconds\": 0.174,\n    \"maintenance_cost_note\": \"Low ongoing maintenance in stdlib-first mode.\",\n    \"run_cost_class\": \"LIGHT\",\n    \"output_bytes\": 8146,\n    \"cost_class\": \"LIGHT\",\n    \"dirty_before\": true,\n    \"dirty_after\": true,\n    \"dirty_tree_before\": true,\n    \"dirty_tree_after\": true\n  },\n  \"limitations\": [],\n  \"details\": {\n    \"report_type\": \"RECENT_RUNS_REPORT\",\n    \"agent_id\": \"ADMINISTRATUM_AGENT\",\n    \"run_id\": \"RUN-ADMINISTRATUM-20260519-193156-582d38\",\n    \"generated_at_utc\": \"2026-05-19T19:31:56.502736Z\",\n    \"recent_runs\": [\n      {\n        \"run_id\": \"RUN-ADMINISTRATUM-20260519-193155-5cb018\",\n        \"path\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193155-5cb018\",\n        \"mtime_utc\": \"2026-05-19T19:31:55Z\",\n        \"command\": \"where\",\n        \"status\": \"PASS\",\n        \"verdict\": \"PASS\",\n        \"check_all_verdict\": \"unparsed\",\n        \"warning_count\": 0,\n        \"key_artifact_path\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193155-5cb018\\\\reports\\\\where_report.json\",\n        \"parse_state\": \"parsed\",\n        \"unparsed_reason\": \"\"\n      },\n      {\n        \"run_id\": \"RUN-ADMINISTRATUM-20260519-193155-b89e5d\",\n        \"path\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193155-b89e5d\",\n        \"mtime_utc\": \"2026-05-19T19:31:55Z\",\n        \"command\": \"identity\",\n        \"status\": \"PASS\",\n        \"verdict\": \"PASS\",\n        \"check_all_verdict\": \"unparsed\",\n        \"warning_count\": 0,\n        \"key_artifact_path\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193155-b89e5d\\\\reports\\\\identity_report.json\",\n        \"parse_state\": \"parsed\",\n        \"unparsed_reason\": \"\"\n      },\n      {\n        \"run_id\": \"RUN-ADMINISTRATUM-20260519-193154-8707f8\",\n        \"path\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193154-8707f8\",\n        \"mtime_utc\": \"2026-05-19T19:31:54Z\",\n        \"command\": \"check\",\n        \"status\": \"PASS\",\n        \"verdict\": \"PASS\",\n        \"check_all_verdict\": \"unparsed\",\n        \"warning_count\": 0,\n        \"key_artifact_path\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\ORGAN_AGENTS\\\\ADMINISTRATUM_AGENT\\\\STATE\\\\current_status.json\",\n        \"parse_state\": \"parsed\",\n        \"unparsed_reason\": \"\"\n      },\n      {\n        \"run_id\": \"RUN-ADMINISTRATUM-20260519-193153-b2960c\",\n        \"path\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193153-b2960c\",\n        \"mtime_utc\": \"2026-05-19T19:31:53Z\",\n        \"command\": \"status\",\n        \"status\": \"WARN\",\n        \"verdict\": \"PASS_WITH_WARNINGS\",\n        \"check_all_verdict\": \"unparsed\",\n        \"warning_count\": 1,\n        \"key_artifact_path\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193153-b2960c\\\\reports\\\\status_report.json\",\n        \"parse_state\": \"parsed\",\n        \"unparsed_reason\": \"\"\n      },\n      {\n        \"run_id\": \"RUN-ADMINISTRATUM-20260519-193056-702c3b\",\n        \"path\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193056-702c3b\",\n        \"mtime_utc\": \"2026-05-19T19:30:56Z\",\n        \"command\": \"help\",\n        \"status\": \"PASS\",\n        \"verdict\": \"PASS\",\n        \"check_all_verdict\": \"unparsed\",\n        \"warning_count\": 0,\n        \"key_artifact_path\": \"E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\RUNS\\\\ADMINISTRATUM_AGENT\\\\RUN-ADMINISTRATUM-20260519-193056-702c3b\\\\reports\\\\help_report.json\",\n        \"parse_state\": \"parsed\",\n        \"unparsed_reason\": \"\"\n      }\n    ],\n    \"verdict\": \"PASS\",\n    \"warning_reconciliation\": {\n      \"explicit_warning_count\": 0,\n      \"metrics_warning_count\": 0,\n      \"final_status_rule\": \"PASS_WITH_WARNINGS/WARN when warnings are non-empty\",\n      \"active_warnings\": []\n    }\n  }\n}\n",
+  "stderr": "",
+  "json": {
+    "header": "ADMINISTRATUM AGENT :: RECENT RUNS",
+    "status": "PASS",
+    "command": "recent",
+    "run_id": "RUN-ADMINISTRATUM-20260519-193156-582d38",
+    "verdict": "PASS",
+    "summary": "Loaded 5 recent run entries.",
+    "primary_refs": [
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT"
+    ],
+    "artifacts_written": [
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193156-582d38\\reports\\recent_runs_report.json",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193156-582d38\\reports\\recent_access_map.json",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193156-582d38\\reports\\recent_metrics_summary.json",
+      "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193156-582d38\\receipts\\recent_command_receipt.json"
+    ],
+    "outputs": {
+      "run_dir": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193156-582d38",
+      "metrics_report": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193156-582d38\\reports\\recent_metrics_summary.json",
+      "command_receipt": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193156-582d38\\receipts\\recent_command_receipt.json",
+      "output_01": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193156-582d38\\reports\\recent_runs_report.json",
+      "output_02": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193156-582d38\\reports\\recent_access_map.json",
+      "output_03": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193156-582d38\\reports\\recent_metrics_summary.json",
+      "output_04": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193156-582d38\\receipts\\recent_command_receipt.json"
+    },
+    "warnings": [],
+    "why_trust": [
+      "Git truth checked before/after command: dirty_before=true, dirty_after=true.",
+      "Command receipt written: E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193156-582d38\\receipts\\recent_command_receipt.json.",
+      "Metrics report written: E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193156-582d38\\reports\\recent_metrics_summary.json.",
+      "Access map written: E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193156-582d38\\reports\\recent_access_map.json.",
+      "Runtime outputs confined to run dir: true; RUNS root confinement: true."
+    ],
+    "next_actions": [
+      "Proceed to next admitted command or handoff review."
+    ],
+    "metrics": {
+      "command": "recent",
+      "wall_clock_ms": 174,
+      "process_cpu_seconds": 0.046875,
+      "peak_memory_kb": 198,
+      "peak_memory_unavailable_reason": "",
+      "memory_metric_source": "tracemalloc",
+      "files_scanned": 0,
+      "files_classified": 0,
+      "objects_considered": 5,
+      "outputs_written_count": 4,
+      "output_bytes_total": 8146,
+      "warnings_count": 0,
+      "errors_count": 0,
+      "rejected_count": 0,
+      "routes_made": 0,
+      "receipts_written": 1,
+      "gpu_used": false,
+      "gpu_reason": "No GPU API/dependency invoked; Python stdlib/script-first execution.",
+      "touched_paths_read_count": 1,
+      "touched_paths_written_count": 4,
+      "owner_wait_seconds": 0.174,
+      "maintenance_cost_note": "Low ongoing maintenance in stdlib-first mode.",
+      "run_cost_class": "LIGHT",
+      "output_bytes": 8146,
+      "cost_class": "LIGHT",
+      "dirty_before": true,
+      "dirty_after": true,
+      "dirty_tree_before": true,
+      "dirty_tree_after": true
+    },
+    "limitations": [],
+    "details": {
+      "report_type": "RECENT_RUNS_REPORT",
+      "agent_id": "ADMINISTRATUM_AGENT",
+      "run_id": "RUN-ADMINISTRATUM-20260519-193156-582d38",
+      "generated_at_utc": "2026-05-19T19:31:56.502736Z",
+      "recent_runs": [
+        {
+          "run_id": "RUN-ADMINISTRATUM-20260519-193155-5cb018",
+          "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193155-5cb018",
+          "mtime_utc": "2026-05-19T19:31:55Z",
+          "command": "where",
+          "status": "PASS",
+          "verdict": "PASS",
+          "check_all_verdict": "unparsed",
+          "warning_count": 0,
+          "key_artifact_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193155-5cb018\\reports\\where_report.json",
+          "parse_state": "parsed",
+          "unparsed_reason": ""
+        },
+        {
+          "run_id": "RUN-ADMINISTRATUM-20260519-193155-b89e5d",
+          "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193155-b89e5d",
+          "mtime_utc": "2026-05-19T19:31:55Z",
+          "command": "identity",
+          "status": "PASS",
+          "verdict": "PASS",
+          "check_all_verdict": "unparsed",
+          "warning_count": 0,
+          "key_artifact_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193155-b89e5d\\reports\\identity_report.json",
+          "parse_state": "parsed",
+          "unparsed_reason": ""
+        },
+        {
+          "run_id": "RUN-ADMINISTRATUM-20260519-193154-8707f8",
+          "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193154-8707f8",
+          "mtime_utc": "2026-05-19T19:31:54Z",
+          "command": "check",
+          "status": "PASS",
+          "verdict": "PASS",
+          "check_all_verdict": "unparsed",
+          "warning_count": 0,
+          "key_artifact_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\ADMINISTRATUM_AGENT\\STATE\\current_status.json",
+          "parse_state": "parsed",
+          "unparsed_reason": ""
+        },
+        {
+          "run_id": "RUN-ADMINISTRATUM-20260519-193153-b2960c",
+          "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193153-b2960c",
+          "mtime_utc": "2026-05-19T19:31:53Z",
+          "command": "status",
+          "status": "WARN",
+          "verdict": "PASS_WITH_WARNINGS",
+          "check_all_verdict": "unparsed",
+          "warning_count": 1,
+          "key_artifact_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193153-b2960c\\reports\\status_report.json",
+          "parse_state": "parsed",
+          "unparsed_reason": ""
+        },
+        {
+          "run_id": "RUN-ADMINISTRATUM-20260519-193056-702c3b",
+          "path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193056-702c3b",
+          "mtime_utc": "2026-05-19T19:30:56Z",
+          "command": "help",
+          "status": "PASS",
+          "verdict": "PASS",
+          "check_all_verdict": "unparsed",
+          "warning_count": 0,
+          "key_artifact_path": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\RUNS\\ADMINISTRATUM_AGENT\\RUN-ADMINISTRATUM-20260519-193056-702c3b\\reports\\help_report.json",
+          "parse_state": "parsed",
+          "unparsed_reason": ""
+        }
+      ],
+      "verdict": "PASS",
+      "warning_reconciliation": {
+        "explicit_warning_count": 0,
+        "metrics_warning_count": 0,
+        "final_status_rule": "PASS_WITH_WARNINGS/WARN when warnings are non-empty",
+        "active_warnings": []
+      }
+    }
+  }
+}

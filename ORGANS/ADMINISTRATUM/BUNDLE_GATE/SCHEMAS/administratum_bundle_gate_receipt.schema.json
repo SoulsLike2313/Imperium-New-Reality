@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Administratum Bundle Gate Receipt V0.2",
+  "type": "object",
+  "required": ["task_id", "verdict", "composition_gate", "schema_gate", "authority_boundary"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "verdict": {"enum": ["BUNDLE_SCHEMA_PASS", "BUNDLE_SCHEMA_BLOCK"]},
+    "composition_gate": {"enum": ["BUNDLE_COMPOSITION_PASS", "BUNDLE_COMPOSITION_BLOCK"]},
+    "schema_gate": {"enum": ["BUNDLE_SCHEMA_PASS", "BUNDLE_SCHEMA_WARN", "BUNDLE_SCHEMA_BLOCK"]},
+    "authority_boundary": {"const": "composition_schema_only"},
+    "missing_items": {"type": "array", "items": {"type": "string"}},
+    "invalid_fields": {"type": "array"}
+  },
+  "additionalProperties": true
+}

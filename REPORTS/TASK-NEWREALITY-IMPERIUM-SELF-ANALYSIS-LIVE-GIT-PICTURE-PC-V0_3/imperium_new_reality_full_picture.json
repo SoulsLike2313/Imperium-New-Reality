@@ -1,0 +1,106 @@
+{
+  "schema_version": "imperium.live_git_full_picture.v0_3",
+  "task_id": "TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3",
+  "generated_at": "2026-06-07T09:32:16Z",
+  "hostname": "DESKTOP-1V26009",
+  "repo_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "branch": "master",
+  "head_sha": "bc39e376668a9833a70d20e2687cdcf393929aa1",
+  "origin_master_sha": "bc39e376668a9833a70d20e2687cdcf393929aa1",
+  "head_equals_origin_master": true,
+  "git_status_short": [
+    " M ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json",
+    " M ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json",
+    "?? ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/"
+  ],
+  "dirty_state_classification": "TASK_REGISTRATION_ONLY_AT_ANALYSIS_START",
+  "tracked_file_count": 8218,
+  "untracked_file_count": 11,
+  "ignored_status_entry_count": 14,
+  "physical_file_count": 11642,
+  "top_level_entries": [
+    {"name": ".gitignore", "kind": "file", "file_count": 1, "tracked": true},
+    {"name": "AGENTS.md", "kind": "file", "file_count": 1, "tracked": true},
+    {"name": "ORGANS", "kind": "directory", "file_count": 3922, "tracked": true},
+    {"name": "REPORTS", "kind": "directory", "file_count": 1917, "tracked": true},
+    {"name": "SUPPORT", "kind": "directory", "file_count": 5796, "tracked": true},
+    {"name": "IMPERIUM_NEW_GENERATION", "kind": "directory", "file_count": 5, "tracked": false, "ignored": true}
+  ],
+  "zone_counts": {
+    "active_core": 1434,
+    "reports": 2483,
+    "support": 637,
+    "quarantine": 3390,
+    "quarantine_governance": 3,
+    "learning_archive": 1766,
+    "organ_legacy_mirror": 1905,
+    "generated_or_runtime": 24,
+    "unknown": 0
+  },
+  "organ_count": 12,
+  "required_organ_count": 9,
+  "report_count": 2483,
+  "support_count": 637,
+  "quarantine_count": 3393,
+  "learning_archive_count": 1766,
+  "organ_legacy_mirror_count": 1905,
+  "symlink_inventory": [],
+  "file_type_counts": {
+    ".json": 6928,
+    ".md": 2836,
+    ".txt": 530,
+    ".jsonl": 510,
+    ".py": 284,
+    ".zip": 127,
+    ".png": 126,
+    ".pyc": 55,
+    ".html": 40,
+    ".ps1": 34,
+    ".pdf": 29,
+    ".cmd": 23,
+    ".css": 17,
+    ".svg": 16,
+    ".js": 15
+  },
+  "duplicate_inventory": {
+    "exact_duplicate_group_count": 327,
+    "exact_duplicate_file_count": 1500,
+    "estimated_redundant_bytes": 274977578,
+    "dominant_location": "quarantine, learning archive, report history, and Mechanicus legacy mirror",
+    "cleanup_performed": false
+  },
+  "risks": [
+    {
+      "id": "RISK_ASTRONOMICON_DEFAULT_ROUTE_CONFIG_PATH_DRIFT",
+      "severity": "HIGH",
+      "evidence": "The active skill is under ORGANS/ASTRONOMICON, but default_route_config_path() prepends IMPERIUM_NEW_GENERATION/ORGANS."
+    },
+    {
+      "id": "RISK_IGNORED_LEGACY_PREFIX_MASKS_ROUTE_BUG",
+      "severity": "HIGH",
+      "evidence": "An ignored five-file IMPERIUM_NEW_GENERATION tree currently makes the stale default path appear valid."
+    },
+    {
+      "id": "RISK_REPORT_AND_QUARANTINE_VOLUME",
+      "severity": "MEDIUM",
+      "evidence": "Reports, quarantine, learning archive, and legacy mirrors contain 9547 physical files combined."
+    },
+    {
+      "id": "RISK_DUPLICATE_EVIDENCE_BULK",
+      "severity": "MEDIUM",
+      "evidence": "327 exact duplicate groups contain 1500 files; no deletion decision is authorized by this task."
+    },
+    {
+      "id": "RISK_CANDIDATE_AUTHORITY_SURFACE",
+      "severity": "MEDIUM",
+      "evidence": "Core shape, organ participation, and several tool cards remain candidate-stage rather than canon-admitted."
+    },
+    {
+      "id": "RISK_MISSING_NAMED_CORE_DOCUMENTS",
+      "severity": "MEDIUM",
+      "evidence": "No active Emperor Passport or Constitution artifact was found by path or content search."
+    }
+  ],
+  "next_recommended_task": "TASK-NEWREALITY-ASTRONOMICON-PC-FIRST-ROOT-DISCOVERY-AND-ROUTE-CONFIG-HARDENING-PC-V0_1",
+  "verdict": "PASS_WITH_WARNINGS_READY_FOR_CORE_CLEANUP_PLAN"
+}

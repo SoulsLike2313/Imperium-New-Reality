@@ -1,0 +1,32 @@
+{
+  "schema_version": "SANCTUM_BRAIN_HARDENING_PLAYWRIGHT_SUMMARY_V0_2",
+  "task_id": "TASK-20260520-SANCTUM-BRAIN-HARDENING-VISUAL-POLISH-PC-V0_2",
+  "generated_at_utc": "2026-05-20T14:10:06.6377352Z",
+  "base_url": "http://127.0.0.1:8877",
+  "baseline": {
+    "verdict": "FAIL",
+    "gap_count": 2,
+    "gaps": [
+      "brain_core_zone_detected",
+      "organ_cards_peripheral_distribution"
+    ]
+  },
+  "post": {
+    "verdict": "PASS",
+    "gap_count": 0,
+    "gaps": []
+  },
+  "hard_requirements": {
+    "brain_zone_layout_detected": true,
+    "brain_core_zone_detected": true,
+    "organ_cards_peripheral_distribution": true,
+    "mandatory_actions_pass": true,
+    "ui_api_truth_checks_pass": true
+  },
+  "performance_probe": {
+    "approx_fps": 39.34,
+    "avg_frame_ms": 25.421,
+    "p95_frame_ms": 33.4
+  },
+  "verdict": "PASS"
+}

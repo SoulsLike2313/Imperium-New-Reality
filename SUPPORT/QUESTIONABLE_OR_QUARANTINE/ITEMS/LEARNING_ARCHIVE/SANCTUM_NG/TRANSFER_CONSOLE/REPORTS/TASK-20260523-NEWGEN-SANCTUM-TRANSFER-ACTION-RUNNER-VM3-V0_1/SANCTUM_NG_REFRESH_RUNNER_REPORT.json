@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+  "generated_at_utc": "2026-05-23T00:42:22Z",
+  "verdict": "WARN",
+  "builder_result": {
+    "command": [
+      "python3",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_state_builder.py",
+      "--repo-root",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+      "--output",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+      "--task-id",
+      "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+      "--required-starting-head",
+      "573169b9830ecb0322202e33a3e12ca2fc5e3556"
+    ],
+    "returncode": 0,
+    "stdout": "state_written=IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+    "stderr": ""
+  },
+  "validator_result": {
+    "command": [
+      "python3",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_validator.py",
+      "--repo-root",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+      "--state",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+      "--schema",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/sanctum_ng_state.schema.json",
+      "--report-dir",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+      "--output",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/VALIDATOR_REPORT.json",
+      "--task-id",
+      "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1"
+    ],
+    "returncode": 0,
+    "stdout": "validator_verdict=WARN\nvalidator_report=IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/VALIDATOR_REPORT.json",
+    "stderr": ""
+  },
+  "validator_verdict": "WARN",
+  "communication_gate_status": "WARN_MISSING_AUTHORITY",
+  "state_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+  "validator_report_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/VALIDATOR_REPORT.json",
+  "notes": [
+    "Runner executes bounded build -> validate flow.",
+    "No external dependency install is required.",
+    "PASS means builder succeeded and validator returned PASS."
+  ]
+}

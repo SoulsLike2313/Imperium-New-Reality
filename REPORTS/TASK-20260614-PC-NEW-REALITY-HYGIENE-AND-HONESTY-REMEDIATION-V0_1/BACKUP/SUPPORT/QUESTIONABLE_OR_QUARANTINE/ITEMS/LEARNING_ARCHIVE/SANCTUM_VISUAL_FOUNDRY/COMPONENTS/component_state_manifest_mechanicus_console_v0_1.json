@@ -1,0 +1,52 @@
+{
+  "components": [
+    {
+      "id": "truth_strip",
+      "name": "Top Truth Strip",
+      "states": ["default", "warn", "error", "unknown"],
+      "notes": "Scope/head/visual chips and mission context."
+    },
+    {
+      "id": "brain_field",
+      "name": "Brain Context Field",
+      "states": ["idle_pulse", "active_zone", "warning_zone"],
+      "notes": "Neural ambient shell with clickable organ zones."
+    },
+    {
+      "id": "right_context_panel",
+      "name": "Right Mechanicus Panel",
+      "states": ["mechanicus_active", "other_organ_active", "placeholder"],
+      "notes": "Operational context panel for selected organ."
+    },
+    {
+      "id": "work_report_card",
+      "name": "Work Report Card",
+      "states": ["normal", "warn", "error"],
+      "notes": "Current activity feed and operator-visible progress."
+    },
+    {
+      "id": "tool_registry_card",
+      "name": "Tool Registry Card",
+      "states": ["ok", "partial", "missing", "error"],
+      "notes": "Approved tool status summary."
+    },
+    {
+      "id": "contour_verification_card",
+      "name": "Contour Verification Card",
+      "states": ["ok", "warn", "error"],
+      "notes": "Readiness and contour checks."
+    },
+    {
+      "id": "footer_summary",
+      "name": "Summary Footer",
+      "states": ["default", "warn", "error"],
+      "notes": "Latest report/receipt/event/health summary."
+    },
+    {
+      "id": "secondary_raw_mode",
+      "name": "Secondary Raw Mode",
+      "states": ["hidden", "visible"],
+      "notes": "Technical output drawer, never primary."
+    }
+  ]
+}

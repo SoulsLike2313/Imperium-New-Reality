@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/CONTRACTS/SERVITOR_EXECUTION/RERUN_DECISION_RECORD_V0_1.schema.json",
+  "title": "Rerun Decision Record V0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "decision_id",
+    "session_id",
+    "task_id",
+    "decision",
+    "reason",
+    "next_action"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "decision_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "session_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "decision": {
+      "type": "string",
+      "enum": [
+        "RERUN_ALLOWED",
+        "RERUN_REQUIRED",
+        "ASK_OWNER",
+        "ASK_ORGAN",
+        "BLOCKED",
+        "PASS_WITH_WARNINGS",
+        "PASS_STRICT"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 3
+    },
+    "next_action": {
+      "type": "string",
+      "minLength": 3
+    },
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

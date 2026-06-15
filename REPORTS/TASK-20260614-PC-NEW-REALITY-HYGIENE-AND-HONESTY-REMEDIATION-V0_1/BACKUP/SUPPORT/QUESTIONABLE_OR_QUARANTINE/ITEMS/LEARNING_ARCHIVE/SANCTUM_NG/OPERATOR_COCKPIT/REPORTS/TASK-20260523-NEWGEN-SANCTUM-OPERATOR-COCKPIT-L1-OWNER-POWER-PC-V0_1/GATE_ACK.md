@@ -1,0 +1,63 @@
+GATE_ACK:
+- task_id: TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1
+- current_head: f00053012c5f4110a4a75423be8236fce1a5baa4
+- gatepack_path: C:\Users\PC\Downloads\TASKPACK_TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1.zip
+- gatepack_sha256: 5b7c6c99bccc030a536efe6f1ed5605627b767f7f5c2fdf68392fd3edb7b2cab
+- read_gates:
+  - GATE-U00-GIT-TRUTH
+  - GATE-U01-ROLE-ACK
+  - GATE-U02-SCOPE-BOUNDARY
+  - GATE-U04-EVIDENCE-RECEIPT
+  - GATE-U05-STOP-CONDITIONS
+  - GATE-U08-REPO-PURITY
+  - GATE-U09-NO-FAKE-GREEN
+  - GATE-U12-REPORT-OUTPUT-BUDGET
+  - GATE-U13-PYTHON-TYPE-SAFETY
+  - GATE-U14-WHOLE-REPO-SCOPE-RECON
+  - GATE-U15-OPERATIONALITY-IMPACT
+  - GATE-U16-BILINGUAL-UI
+  - GATE-U17-DELIVERABLE-PACKAGE
+  - GATE-U18-AGENT-FACTORY-COMPLIANCE
+  - GATE-U19-SCRIPT-ARTIFACT-PRESERVATION
+  - GATE-U20-AGENT-KPD-SELF-REVIEW
+  - GATE-U21-COMMAND-CHUNKING
+  - GATE-UI00-TRUTH-BINDING
+  - GATE-VIS00-PERFORMANCE-BUDGET
+  - GATE-VIS01-DECORATIVE-SEMANTIC-SPLIT
+- accepted_stop_conditions:
+  - STOP if touched paths leave IMPERIUM_NEW_GENERATION scope.
+  - STOP if required taskpack acceptance evidence cannot be produced.
+  - STOP if visual output degrades to generic default dashboard risk.
+  - STOP if screenshot capture cannot be produced and no WARN fallback is possible.
+  - STOP if unexpected unrelated repo changes appear during execution.
+- scope_boundary:
+  allowed_paths:
+    - IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/**
+    - IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.*
+    - IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/index.html
+  taskpack_read_path:
+    - C:\Users\PC\AppData\Local\Temp\TASKPACK_TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1/**
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/**
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/operator_cockpit_l1.*
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/index.html
+- forbidden_paths:
+  - ORGANS/**
+  - IMPERIUM_TEST_VERSION/**
+  - SANCTUM/**
+  - .git/**
+  - main/test merge operations
+- expected_receipts:
+  - operator_cockpit_l1_state.generated.json
+  - operator_cockpit_l1_validator_report.json
+  - operator_cockpit_l1_smoke_report.json
+  - operator_cockpit_l1_report.json
+  - screenshot_matrix.json
+  - FINAL_REPORT.md
+  - context_source_mix.json
+  - agent_kpd_self_review.json
+  - closure_receipt.json
+- repo_recon_required: yes (taskpack + existing SANCTUM_NG/TRANSFER_CONSOLE/OWNER_QUESTION/SESSION sources)
+- script_absorption_required: yes (new tools preserved under OPERATOR_COCKPIT/TOOLS + manifest note)
+- clarification_needed: no
+- verdict: PASS

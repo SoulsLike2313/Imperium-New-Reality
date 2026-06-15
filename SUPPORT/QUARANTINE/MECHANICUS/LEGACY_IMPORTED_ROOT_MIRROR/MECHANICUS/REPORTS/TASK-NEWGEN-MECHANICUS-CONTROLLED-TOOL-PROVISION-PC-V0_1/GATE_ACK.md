@@ -1,0 +1,49 @@
+GATE_ACK:
+- task_id: TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1
+- current_head: ec8fb3007590aae88fe672f7917dc8b0b95b3a55
+- gatepack_path: C:/Users/PC/Downloads/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1_DOSSIER.zip
+- gatepack_sha256: B34C0040A9B089D5076551A0AD9CFDCA506B68925858112596AE63BC929C9EC4
+- read_gates: GATE-U00-GIT-TRUTH, GATE-U01-ROLE-ACK, GATE-U02-SCOPE-BOUNDARY, GATE-U04-EVIDENCE-RECEIPT, GATE-U05-STOP-CONDITIONS, GATE-U08-REPO-PURITY, GATE-U09-NO-FAKE-GREEN, GATE-U12-REPORT-OUTPUT-BUDGET, GATE-U13-PYTHON-TYPE-SAFETY, GATE-U14-WHOLE-REPO-SCOPE-RECON, GATE-U15-OPERATIONALITY-IMPACT, GATE-U16-BILINGUAL-UI, GATE-U17-DELIVERABLE-PACKAGE, GATE-U18-AGENT-FACTORY-COMPLIANCE, GATE-U19-SCRIPT-ARTIFACT-PRESERVATION, GATE-U20-AGENT-KPD-SELF-REVIEW, GATE-U21-COMMAND-CHUNKING
+- accepted_stop_conditions: starting HEAD mismatch; unrelated dirty files appear; forbidden path required; non-approved tool installation required; network/package failure blocks all approved tools; evidence receipt generation fails; pre-commit hook auto-enable detected
+- scope_boundary: Controlled provision only for approved tools (jsonschema, ruff, mypy, pre-commit) with receipts, evidence-backed card updates, registry sync, and no forbidden installs/activations.
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_controlled_provision_runner_v0_1.py
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_install_receipt_builder_v0_1.py
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/PLAYBOOKS/MECHANICUS_CONTROLLED_PROVISION_PLAYBOOK_V0_1.md
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-JSONSCHEMA.json
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CAP-CQ-RUFF.json
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CAP-CQ-PYRIGHT-MYPY.json
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CAP-CQ-PRECOMMIT.json
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_JSONSCHEMA/capability_card.json
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_RUFF/capability_card.json
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_MYPY/capability_card.json
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PRE_COMMIT/capability_card.json
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/EXPORTS/capability_scope_code_quality_v0_1.json
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/*
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/*
+- forbidden_paths:
+  - IMPERIUM_TEST_VERSION/**
+  - ORGANS/SANCTUM/**
+  - src/**
+  - LOCAL_LLM/**
+  - CLOUD_LLM_ADAPTERS activation paths
+  - any React/Vite project paths
+  - any Playwright browser install paths
+  - .git/hooks/** modifications
+- expected_receipts:
+  - install receipts for each actually installed approved package
+  - validation receipts for all approved tools present after provision
+  - tool_detection_report.json
+  - controlled_provision_results.json
+  - capability_status_change_report.json
+  - registry_sync_report.json
+  - fake_canon_detector_report.json
+  - inquisition_cleanliness_report.json
+  - administratum_evidence_map.json
+  - ghost_evolve_provision_training_proof.json
+  - closure_receipt.json
+- repo_recon_required: PARTIAL_MECHANICUS_SCOPE_ONLY
+- script_absorption_required: YES
+- clarification_needed: NO
+- verdict: PASS

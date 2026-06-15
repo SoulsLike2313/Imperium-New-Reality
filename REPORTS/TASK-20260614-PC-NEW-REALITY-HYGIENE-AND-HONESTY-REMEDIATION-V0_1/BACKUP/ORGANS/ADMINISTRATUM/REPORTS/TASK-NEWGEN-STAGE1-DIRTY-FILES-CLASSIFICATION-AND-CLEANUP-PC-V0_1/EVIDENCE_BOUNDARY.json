@@ -1,0 +1,19 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE1-DIRTY-FILES-CLASSIFICATION-AND-CLEANUP-PC-V0_1",
+  "timestamp_utc": "2026-05-31T00:26:57Z",
+  "local_sources": [
+    "AGENTS.md",
+    "Matrix Spine + required organ packets",
+    "Taskpack core docs (read-order/spec/gates/output)",
+    "Embedded Inquisitor+Speculum reviews"
+  ],
+  "runtime_commands": [
+    "git rev-parse, git status, git diff",
+    "git restore",
+    "Remove-Item transient staging dir"
+  ],
+  "limitations": [
+    "No VM2/VM3 execution in this task",
+    "No external research required"
+  ]
+}

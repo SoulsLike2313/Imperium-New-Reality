@@ -1,0 +1,76 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "generated_at_utc": "2026-05-24T23:35:59Z",
+  "query_examples": [
+    {
+      "query_id": "fake_canon_count",
+      "mode": "sql_scalar",
+      "sql": "SELECT COALESCE(SUM(match_count), 0) AS result FROM warning_error_index WHERE pattern_id = 'fake_canon_count'"
+    },
+    {
+      "query_id": "PASS_WITH_WARNINGS",
+      "mode": "sql_table",
+      "sql": "SELECT source_path, verdict, status FROM evidence_records WHERE upper(verdict) = 'PASS_WITH_WARNINGS' ORDER BY source_path LIMIT 20"
+    },
+    {
+      "query_id": "hygiene",
+      "mode": "fts",
+      "fts_query": "hygiene",
+      "limit": 20
+    },
+    {
+      "query_id": "ruff",
+      "mode": "fts",
+      "fts_query": "ruff",
+      "limit": 20
+    },
+    {
+      "query_id": "mypy",
+      "mode": "fts",
+      "fts_query": "mypy",
+      "limit": 20
+    },
+    {
+      "query_id": "jsonschema",
+      "mode": "fts",
+      "fts_query": "jsonschema",
+      "limit": 20
+    },
+    {
+      "query_id": "ROLE_ACK",
+      "mode": "fts",
+      "fts_query": "ROLE_ACK",
+      "limit": 20
+    },
+    {
+      "query_id": "LANGUAGE_ACK",
+      "mode": "fts",
+      "fts_query": "LANGUAGE_ACK",
+      "limit": 20
+    },
+    {
+      "query_id": "SANDBOX",
+      "mode": "fts",
+      "fts_query": "SANDBOX",
+      "limit": 20
+    },
+    {
+      "query_id": "quality gate",
+      "mode": "fts",
+      "fts_query": "\"quality gate\" OR quality OR gate",
+      "limit": 20
+    },
+    {
+      "query_id": "evidence index",
+      "mode": "fts",
+      "fts_query": "\"evidence index\" OR evidence OR index",
+      "limit": 20
+    },
+    {
+      "query_id": "NO_SCHEMA_AVAILABLE",
+      "mode": "fts",
+      "fts_query": "NO_SCHEMA_AVAILABLE",
+      "limit": 20
+    }
+  ]
+}

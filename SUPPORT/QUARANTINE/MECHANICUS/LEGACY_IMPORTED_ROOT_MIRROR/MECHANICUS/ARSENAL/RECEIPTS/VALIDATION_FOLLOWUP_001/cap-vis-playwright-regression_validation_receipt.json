@@ -1,0 +1,31 @@
+{
+  "receipt_id": "task-newgen-mechanicus-arsenal-validation-followup-pc-v0_1:cap-vis-playwright-regression:p3_visual_readiness:cap-vis-playwright-regression",
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1",
+  "capability_id": "CAP-VIS-PLAYWRIGHT-REGRESSION",
+  "validator": "mechanicus_validation_followup_001_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T18:54:03Z",
+  "status": "PASS",
+  "summary": "CAP-VIS-PLAYWRIGHT-REGRESSION: PASS via P3_VISUAL_READINESS:CAP-VIS-PLAYWRIGHT-REGRESSION. promotion_recommendation=KEEP_CANDIDATE_READINESS_ONLY",
+  "check_name": "P3_VISUAL_READINESS:CAP-VIS-PLAYWRIGHT-REGRESSION",
+  "command_or_check": "python -c \"import playwright; print('python-playwright-ok')\" && where.exe playwright",
+  "exit_code": 0,
+  "stdout_excerpt": "$ python -c \"import playwright; print('python-playwright-ok')\"\npython-playwright-ok\n\n$ where.exe playwright\nC:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\playwright.exe",
+  "stderr_excerpt": "",
+  "side_effects": [
+    "read-only detection commands",
+    "receipt json created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_FOLLOWUP_001/cap-vis-playwright-regression_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "KEEP_CANDIDATE_READINESS_ONLY",
+  "warnings": [
+    "present_but_policy_defers_status_promotion"
+  ],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_FOLLOWUP_001/cap-vis-playwright-regression_validation_receipt.json"
+  ]
+}

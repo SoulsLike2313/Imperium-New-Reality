@@ -1,0 +1,42 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1",
+  "replay_mode": "LOCAL_GIT_WORKTREE_ISOLATED_REPLAY",
+  "replay_verdict": "PASS",
+  "workspace": "/tmp/imperium_stage2_replay_vm3_v0_1",
+  "head": "f3123e5b089821487d9891b156351ba4006f349c",
+  "comparison": {
+    "previous_receipt_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/BLOCK_SPINE/REPORTS/TASK-NEWGEN-STAGE2-MICROPILOT-VM3-CONTEXT-PACK-EXECUTION-V0_1/context_pack_consumption_receipt.json",
+    "previous_receipt_sha256": "d81297766e669b3cd2aa941d2e07beea301047cb315ab57690f0eef96a0ff7f6",
+    "replay_receipt_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/BLOCK_SPINE/REPORTS/TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1/independent_replay_context_pack_consumption_receipt.json",
+    "replay_receipt_sha256": "194f16b1487d24a46abd65433e822a55601b9dbe8dcdf40ba38877b915a324f9",
+    "summary_previous": {
+  "mandatory_count": 34,
+  "read_count": 34,
+  "missing_count": 0,
+  "total_bytes": 40466,
+  "total_chars": 40448,
+  "broad_read_detected": false,
+  "critical_missing_count": 0,
+  "critical_missing": []
+},
+    "summary_replay": {
+  "mandatory_count": 34,
+  "read_count": 34,
+  "missing_count": 0,
+  "total_bytes": 40466,
+  "total_chars": 40448,
+  "broad_read_detected": false,
+  "critical_missing_count": 0,
+  "critical_missing": []
+},
+    "summary_match": true,
+    "previous_verdict": "PASS",
+    "replay_verdict": "PASS",
+    "difference_notes": []
+  },
+  "cap_status": "CLOSED",
+  "limitations": [
+    "Replay was executed locally in VM3 using an isolated git worktree.",
+    "Replay covers the context-pack consumption harness equivalence, not IDE/WARP/browser/API runtimes."
+  ]
+}

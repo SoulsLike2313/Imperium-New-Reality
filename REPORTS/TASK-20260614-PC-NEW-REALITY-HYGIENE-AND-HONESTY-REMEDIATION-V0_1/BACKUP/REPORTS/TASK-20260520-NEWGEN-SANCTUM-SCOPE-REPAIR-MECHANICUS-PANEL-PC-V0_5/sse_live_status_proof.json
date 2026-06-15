@@ -1,0 +1,22 @@
+{
+  "schema_version": "NEWGEN_SSE_LIVE_STATUS_PROOF_V0_5",
+  "generated_at_utc": "2026-05-20T16:45:32.705Z",
+  "base_url": "http://127.0.0.1:18765",
+  "ui_sse_state_text": "SSE CONNECTED",
+  "ui_state_interpretation": "SSE_CONNECTED",
+  "required_event_types": [
+    "heartbeat",
+    "state_snapshot",
+    "command_started/finished",
+    "terminal_entry_added"
+  ],
+  "event_types_source": "sse_proof_check.py report",
+  "tested_event_flags": {
+    "heartbeat": true,
+    "state_snapshot": true,
+    "command_event": true
+  },
+  "command_response_status": "PASS",
+  "command_response_action_id": "mechanicus_visual_status",
+  "command_response_exit_code": 0
+}

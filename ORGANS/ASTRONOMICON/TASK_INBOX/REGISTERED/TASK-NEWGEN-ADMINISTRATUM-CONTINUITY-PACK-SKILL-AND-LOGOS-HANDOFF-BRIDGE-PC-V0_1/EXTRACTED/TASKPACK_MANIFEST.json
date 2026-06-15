@@ -1,0 +1,189 @@
+{
+  "schema_id": "IMPERIUM_ASTRONOMICON_TASKPACK_MANIFEST_V0_1",
+  "manifest_version": "0.1",
+  "taskpack_id": "TASKPACK_NEWGEN_ADMINISTRATUM_CONTINUITY_PACK_SKILL_AND_LOGOS_HANDOFF_BRIDGE_PC_V0_1",
+  "task_id": "TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-SKILL-AND-LOGOS-HANDOFF-BRIDGE-PC-V0_1",
+  "task_title": "Administratum Continuity Pack Skill and Logos-Prime handoff bridge",
+  "created_at_utc": "2026-06-01T15:10:00Z",
+  "language_policy": "ENGLISH + UTF8_NO_BOM for all taskpack internal files and canonical repo artifacts. RUSSIAN is allowed only as Officio-routed runtime Owner-facing output, never as taskpack internal text.",
+  "target_contour": "PC",
+  "owner_start_message": "start task",
+  "source_previous_task": "TASK-NEWGEN-ASTRONOMICON-TASKPACK-SKILL-TUI-CONTOUR-ROUTER-AND-VM-LAUNCH-CARD-PC-V0_1",
+  "required_start_head": "1f0be633b75a44cc9efbfb8de6e9bae43c5c0e30",
+  "implementation_anchor": "1f0be633b75a44cc9efbfb8de6e9bae43c5c0e30",
+  "task_spec_path": "TASK_SPEC.md",
+  "acceptance_gates_path": "ACCEPTANCE_GATES.md",
+  "output_requirements_path": "OUTPUT_REQUIREMENTS.md",
+  "read_first": [
+    "MANIFEST.json",
+    "000_START_TASK_READ_ORDER.md",
+    "TASK_SPEC.md",
+    "ACCEPTANCE_GATES.md",
+    "OUTPUT_REQUIREMENTS.md",
+    "010_OWNER_DECISION_NOTE.md",
+    "020_SCOPE_LOCKS_AND_CAPS.md",
+    "030_EXECUTION_PLAN.md",
+    "040_ACCEPTANCE_CRITERIA.md",
+    "050_SKILL_TERMINOLOGY_AND_OWNERSHIP.md",
+    "SKILL_REQUIREMENTS/administratum_continuity_pack_skill_contract.md",
+    "HANDOFF_REQUIREMENTS/logos_prime_handoff_contract.md"
+  ],
+  "required_inputs": [
+    "Current repo at or fast-forwarded from 1f0be633b75a44cc9efbfb8de6e9bae43c5c0e30",
+    "Existing Administratum organ folder",
+    "Existing Astronomicon task registry/current expected task if available",
+    "Existing git CLI on PC",
+    "Existing ZIP/hash support through Python standard library or PowerShell",
+    "Existing Officio Agentis role/language authority files if available"
+  ],
+  "required_outputs": [
+    "administratum_continuity_pack_skill_contract.json",
+    "administratum_continuity_pack_skill_v0_1.py",
+    "continuity_pack_manifest.schema.json",
+    "logos_prime_handoff_contract.json",
+    "continuity_pack_skill_smoke_receipt.json",
+    "pc_continuity_pack_build_receipt.json",
+    "current_truth_snapshot.json",
+    "git_truth_receipt.json",
+    "latest_task_chain.json",
+    "active_caps_snapshot.json",
+    "source_index.json",
+    "private_data_exclusion_receipt.json",
+    "stale_context_audit.json",
+    "logos_prime_handoff_ru.md",
+    "logos_prime_handoff_en.md",
+    "continuity_pack_sha256s.txt",
+    "continuity_pack_zip_receipt.json",
+    "skill_owner_pain_cure_receipt.json",
+    "mechanicus_validation_receipt.json",
+    "inquisition_fake_continuity_guard_receipt.json",
+    "astronomicon_task_link_receipt.json",
+    "hard_red_team_verdict.json",
+    "final_owner_summary_ru.md",
+    "commit_push_receipt.json"
+  ],
+  "active_caps_to_carry": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME",
+    "CAP_DIRTY_START_OWNER_APPROVED_CONTINUATION",
+    "CAP_VM3_ROUTE_NOT_LIVE_PROVEN",
+    "CAP_VM2_ROUTE_NOT_LIVE_PROVEN"
+  ],
+  "forbidden_scopes": [
+    "Full IDE visual release",
+    "WARP runtime",
+    "VM2 or VM3 live route proof",
+    "Browser automation runtime",
+    "External product API runtime",
+    "AdsPower API runtime actions",
+    "Freelance readiness",
+    "Trading readiness",
+    "Collection of secrets or private files",
+    "Uploading private data to repo",
+    "Unbounded repository dump as continuity pack",
+    "Unbounded sync automation",
+    "Destructive history rewrite"
+  ],
+  "admission_notes": [
+    "This taskpack is admission-ready for the current Astronomicon intake gate.",
+    "MANIFEST.json is at ZIP root.",
+    "Root TASK_SPEC.md, ACCEPTANCE_GATES.md, and OUTPUT_REQUIREMENTS.md are present.",
+    "MANIFEST.language_and_encoding_policy includes all required fields.",
+    "MANIFEST.organs includes the exact 8 required organ identifiers.",
+    "The task should be registered through the new Astronomicon Taskpack Registration Skill on PC contour to observe the Skill UX, not through raw intake command unless the Skill fails."
+  ],
+  "language_and_encoding_policy": {
+    "policy_id": "IMPERIUM_OFFICIO_LANGUAGE_AND_ENCODING_POLICY_V0_1",
+    "taskpack_internal_files": {
+      "language": "ENGLISH",
+      "encoding": "UTF8_NO_BOM",
+      "required_statement": "ENGLISH + UTF8",
+      "cyrillic_allowed": false,
+      "non_english_text_allowed": false,
+      "policy": "ENGLISH + UTF8"
+    },
+    "canonical_repo_artifacts": {
+      "language": "ENGLISH",
+      "encoding": "UTF8_NO_BOM",
+      "required_statement": "ENGLISH + UTF8",
+      "cyrillic_allowed": false,
+      "non_english_text_allowed": false,
+      "policy": "ENGLISH + UTF8"
+    },
+    "owner_facing_russian_runtime_output": {
+      "allowed": true,
+      "language": "RUSSIAN",
+      "encoding": "UTF8_NO_BOM",
+      "runtime_only": true,
+      "routed_through": "OFFICIO_AGENTIS",
+      "authority": "OFFICIO_AGENTIS",
+      "required_statement": "RUSSIAN OWNER-FACING RUNTIME OUTPUT ROUTED THROUGH OFFICIO",
+      "policy": "RUSSIAN OWNER-FACING RUNTIME OUTPUT ROUTED THROUGH OFFICIO"
+    },
+    "cyrillic_in_taskpack": {
+      "allowed": false,
+      "policy": "FORBIDDEN",
+      "required_statement": "NO CYRILLIC IN TASKPACK INTERNAL FILES"
+    },
+    "localization_exception": {
+      "allowed": true,
+      "scope": "OWNER_FACING_RUNTIME_OUTPUT_ONLY",
+      "runtime_only": true,
+      "authority": "OFFICIO_AGENTIS",
+      "does_not_apply_to_taskpack_internal_files": true,
+      "does_not_apply_to_canonical_repo_artifacts": true,
+      "policy": "OWNER_FACING_RUNTIME_OUTPUT_ONLY THROUGH OFFICIO_AGENTIS"
+    },
+    "officio_authority": "OFFICIO_AGENTIS",
+    "owner_language_route": "OFFICIO_AGENTIS",
+    "bom_allowed": false,
+    "filenames_ascii_only": true,
+    "mojibake_prevention_required": true
+  },
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "organ_route_required": true,
+  "organ_route": [
+    {
+      "organ_id": "DOCTRINARIUM",
+      "role": "law, no-fake-continuity rules and no-fake-green constraints"
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "role": "Logos-Prime role entry contract and Owner-facing runtime language authority"
+    },
+    {
+      "organ_id": "ASTRONOMICON",
+      "role": "task registry/current task links and registration Skill used to admit this task"
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "role": "continuity pack ownership, chronicle, current truth, address cards and handoff bundle"
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "role": "script validation, ZIP/hash checks and compatibility checks"
+    },
+    {
+      "organ_id": "INQUISITION",
+      "role": "stale context, fake continuity and private-data leak audit"
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "role": "roadmap fit and next-action recommendation"
+    },
+    {
+      "organ_id": "SCHOLA_IMPERIALIS",
+      "role": "Skill learning cards and reusable continuity lessons"
+    }
+  ]
+}

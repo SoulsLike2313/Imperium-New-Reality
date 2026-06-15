@@ -1,0 +1,11 @@
+{
+  "schema_version": "imperium.organ_matrix.v0_1",
+  "matrix_id": "quarantine_violation_matrix",
+  "owner_organ": "INQUISITION",
+  "purpose": "Classify active-use quarantine violations.",
+  "rows": [
+    {"violation_id": "ACTIVE_SOURCE_USE_WITHOUT_RECEIPT", "severity": "BLOCK", "trigger": "A workflow cites quarantine path as active evidence without salvage receipt.", "required_action": "Stop and create salvage/admission receipt or remove dependency."},
+    {"violation_id": "QUARANTINE_AS_TRUTH", "severity": "BLOCK", "trigger": "Quarantine item is treated as canon or owner authority.", "required_action": "Downgrade claim and route through Inquisition."},
+    {"violation_id": "SILENT_QUARANTINE_IMPORT", "severity": "BLOCK", "trigger": "Code imports or reads quarantine material without declared receipt.", "required_action": "Remove import or admit artifact explicitly."}
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": "officio.servitor_role_entry_receipt.v0_1",
+  "task_id": "TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1",
+  "created_at_utc": "2026-06-05T15:12:57.8354078Z",
+  "role_id": "OFFICIO_AGENTIS.SERVITOR",
+  "role_ack": "SERVITOR accepted",
+  "language_ack": "owner-facing RU accepted after role entry",
+  "scope_ack": {
+    "allowed_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+    "allowed_write_paths": [
+      "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/",
+      "ADMINISTRATUM/CURRENT_TRUTH/",
+      "REPORTS/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1/"
+    ],
+    "forbidden_paths": [
+      "parent directories",
+      "Ancient Empire",
+      "private paths outside the approved root"
+    ]
+  },
+  "stop_conditions_ack": [
+    "attempted mutation outside the approved root",
+    "need for Ancient Empire or parent path context without a SALVAGE_REQUEST",
+    "remote URL mismatch",
+    "non-fast-forward or force-push requirement",
+    "validation failure that cannot be repaired in scope"
+  ],
+  "forbidden_actions_ack": [
+    "force push",
+    "destructive cleanup",
+    "package installation",
+    "fake PASS claim",
+    "runtime use of Ancient Empire"
+  ],
+  "git_context": {
+    "head": "d61edfd08dbc69919645cec827aaa2c899089ae9",
+    "branch": "master",
+    "remote_origin_url": "https://github.com/SoulsLike2313/Imperium-New-Reality.git",
+    "status_porcelain_before_role_entry": [
+      " M ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+      " M ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+      " M ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json",
+      " M ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json",
+      "?? .taskpack_import_tmp/",
+      "?? EXCHANGE/TASK_PACKS/",
+      "?? ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1/"
+    ]
+  },
+  "inspected_contracts": [
+    "OFFICIO_AGENTIS/CONTRACTS/servitor_contract_v0_1.md",
+    "OFFICIO_AGENTIS/CONTRACTS/OFFICIO_RESPONSE_CONTRACT_V0_1.md",
+    "OFFICIO_AGENTIS/CONTRACTS/OFFICIO_ROLE_ACK_CONTRACT_V0_1.md",
+    "ORGANS/OFFICIO_AGENTIS/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+    "ORGANS/OFFICIO_AGENTIS/TASK_PARTICIPATION/TASK_PARTICIPATION_CONTRACT.json",
+    "ORGANS/ASTRONOMICON/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+    "ORGANS/ASTRONOMICON/TASK_PARTICIPATION/TASK_PARTICIPATION_CONTRACT.json",
+    "ORGANS/ADMINISTRATUM/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md",
+    "ORGANS/ADMINISTRATUM/TASK_PARTICIPATION/TASK_PARTICIPATION_CONTRACT.json",
+    "AGENTS.md",
+    "NEW_REALITY_SCOPE_LOCK.md",
+    "REMOTE_POLICY.md"
+  ],
+  "ack_verdict": "PASS"
+}

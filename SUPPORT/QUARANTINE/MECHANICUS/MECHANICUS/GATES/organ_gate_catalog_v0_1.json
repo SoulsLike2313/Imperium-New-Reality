@@ -1,0 +1,44 @@
+{
+  "schema_id": "newgen_organ_gate_catalog_v0_1",
+  "organ_id": "MECHANICUS",
+  "version": "v0_1",
+  "gates": [
+    {
+      "gate_id": "GATE_RICH_MANDATORY_FOR_WAVE1_TUI",
+      "severity": "BLOCK",
+      "purpose": "Wave 1 core organ TUI requires Rich renderer availability.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json"
+      ]
+    },
+    {
+      "gate_id": "GATE_CONTROLLED_CAPABILITY_ACQUISITION",
+      "severity": "BLOCK",
+      "purpose": "If capability missing, install/verify/register with receipt.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/"
+      ]
+    },
+    {
+      "gate_id": "GATE_SCRIPT_ARTIFACT_PRESERVATION",
+      "severity": "WARN_TO_BLOCK",
+      "purpose": "No useful helper script disappears silently.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "wave1_organ_tui_smoke_report.json",
+        "FINAL_REPORT.md"
+      ]
+    },
+    {
+      "gate_id": "GATE_COMMAND_CHUNKING_DISCIPLINE",
+      "severity": "WARN_TO_BLOCK",
+      "purpose": "Large execution must be phased and validated.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "closure_receipt.json"
+      ]
+    }
+  ]
+}

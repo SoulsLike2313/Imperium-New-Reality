@@ -1,0 +1,146 @@
+{
+  "inventory_type": "task_report_bundle_file_inventory",
+  "task_id": "TASK-NEWGEN-PC-ADMINISTRATUM-TASK-REPORT-BUNDLE-GATE-MATRIX-AND-PACKAGER-PC-V0_1",
+  "timestamp_utc": "2026-06-04T15:08:07Z",
+  "report_dir": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/REPORTS/TASK-NEWGEN-PC-ADMINISTRATUM-TASK-REPORT-BUNDLE-GATE-MATRIX-AND-PACKAGER-PC-V0_1",
+  "bundle_path": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/REPORTS/TASK-NEWGEN-PC-ADMINISTRATUM-TASK-REPORT-BUNDLE-GATE-MATRIX-AND-PACKAGER-PC-V0_1/task_report_bundle.zip",
+  "bundle_sha256": "d92f6f5ad2afaa4de52d1bd2162956ef687f33887c72b56f640ea45979c4daf1",
+  "included_file_count": 13,
+  "included_files": [
+    {
+      "path": "CAPABILITY_SPLIT_RECEIPT.json",
+      "size_bytes": 727,
+      "sha256": "5bc49bda3a1f54429e78979075718a450791a5830c4104f3421b26f0f66d0520"
+    },
+    {
+      "path": "CLAIM_LEDGER.json",
+      "size_bytes": 1363,
+      "sha256": "e99b7611d6567d0ab01175a9eef1c8f12ffb575553a378359f073cdf65d2fc67"
+    },
+    {
+      "path": "OFFICIO_LOCALIZATION_REFERENCE.json",
+      "size_bytes": 439,
+      "sha256": "42a50101a2c390db7679cdcc4d23c9784bc4382e0079e92fba19da7950e57172"
+    },
+    {
+      "path": "RED_TEAM_VERDICT.json",
+      "size_bytes": 708,
+      "sha256": "de06bc22a1ac1956b63ce189c47db41b0dd7f06c809826cb48d5ac5265af7037"
+    },
+    {
+      "path": "TASK_FOCUS_PACKET.json",
+      "size_bytes": 464,
+      "sha256": "c0548dfe6371befddbcb6d229920050e57e706105a32c164ca28c89d3c0a598c"
+    },
+    {
+      "path": "adjacent_receipts_manifest.json",
+      "size_bytes": 1944,
+      "sha256": "ede233967b319ed125d6bb39fcbaf8175211f038e8907b3c917c54c811326d3e"
+    },
+    {
+      "path": "complete_fixture_receipt.json",
+      "size_bytes": 7969,
+      "sha256": "0fd6eba1acfa680e629106037367cf2e3ca92eb7205172fe374d4503d499bbdc"
+    },
+    {
+      "path": "missing_fixture_gate_receipt.json",
+      "size_bytes": 5790,
+      "sha256": "b708a0a6d5e7bd1c6e126da821721292a472ebe022d6cfc523a8b843b7d6a298"
+    },
+    {
+      "path": "missing_fixture_receipt.json",
+      "size_bytes": 6911,
+      "sha256": "c426b900ca38bcacaaf24a15911fa30c73c186a113debde8f01c6ab649279acf"
+    },
+    {
+      "path": "missing_items_request_sample.json",
+      "size_bytes": 650,
+      "sha256": "29bb0289dfe53475b5e31c3cd23cc3a8c2f6e11390945e8abce5880a0526b471"
+    },
+    {
+      "path": "no_ancient_mutation_receipt.json",
+      "size_bytes": 438,
+      "sha256": "cf3f58b1105c9f8d6c7cc5df298364d18eaa3e74c284cb504b0308141492b58b"
+    },
+    {
+      "path": "real_report_folder_gate_receipt.json",
+      "size_bytes": 6330,
+      "sha256": "76c56ad1e3871469f45b02f82b98b31985f36ca6a526bec27f9bc29a407113f9"
+    },
+    {
+      "path": "real_report_folder_missing_items_request.json",
+      "size_bytes": 659,
+      "sha256": "bb437b40fd2a9e408651662d072ff6de81eb4f5facc467916ef2691edc56d286"
+    }
+  ],
+  "adjacent_self_reference_files": [
+    {
+      "path": "task_report_bundle.zip",
+      "class_ids": [],
+      "reason": "The bundle cannot include itself.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": "d92f6f5ad2afaa4de52d1bd2162956ef687f33887c72b56f640ea45979c4daf1"
+    },
+    {
+      "path": "sha256sums.txt",
+      "class_ids": [
+        "sha256_sums"
+      ],
+      "reason": "Final sums record the final bundle hash and remain adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": ""
+    },
+    {
+      "path": "bundle_file_inventory.json",
+      "class_ids": [
+        "bundle_manifest_and_file_inventory"
+      ],
+      "reason": "Inventory records the final included file set and remains adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": "eae30b7d92528b2013c0f0fd4eaf75c2f253c1cd76899b47a870f97f6850effe"
+    },
+    {
+      "path": "administratum_bundle_composition_receipt.json",
+      "class_ids": [
+        "administratum_composition_receipt"
+      ],
+      "reason": "Composition receipt records final bundle creation state and remains adjacent.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": "dff847737bb2d6e6e1fb83308c3039d5f59f77c90bc18f97966eb10f899c013a"
+    },
+    {
+      "path": "git_closure_receipt.json",
+      "class_ids": [
+        "commit_chain_identifiers",
+        "git_closure_and_remote_closure_proof",
+        "worktree_clean_or_explicit_cap_receipt"
+      ],
+      "reason": "Final git closure may be refreshed after the bundle commit.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": "b32de8b68e0f2a167b2356212ad804986e5871d6efb099a28352ed51aa48e442"
+    },
+    {
+      "path": "remote_closure_receipt.json",
+      "class_ids": [
+        "git_closure_and_remote_closure_proof"
+      ],
+      "reason": "Final remote closure may be refreshed after push.",
+      "status": "ADJACENT_SELF_REFERENCE_LIMIT",
+      "exists": true,
+      "sha256": "500edc399f4010837901f40b3b59ac260544b88353c70c452d3b896032fb0e35"
+    }
+  ],
+  "excluded_from_bundle_due_self_reference": [
+    "administratum_bundle_composition_receipt.json",
+    "bundle_file_inventory.json",
+    "git_closure_receipt.json",
+    "remote_closure_receipt.json",
+    "sha256sums.txt",
+    "task_report_bundle.zip"
+  ]
+}

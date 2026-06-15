@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EVIDENCE_FRESHNESS_INDEX_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "generated_at_utc",
+    "allowed_freshness_values",
+    "entries",
+    "summary"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "EVIDENCE_FRESHNESS_INDEX_V0_1"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "allowed_freshness_values": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "CURRENT",
+          "STALE",
+          "UNKNOWN",
+          "MISSING",
+          "FOUNDATION_ONLY",
+          "PARTIAL"
+        ]
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "evidence_id",
+          "source_path",
+          "freshness",
+          "status",
+          "notes"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string"
+          },
+          "source_path": {
+            "type": "string"
+          },
+          "freshness": {
+            "enum": [
+              "CURRENT",
+              "STALE",
+              "UNKNOWN",
+              "MISSING",
+              "FOUNDATION_ONLY",
+              "PARTIAL"
+            ]
+          },
+          "status": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

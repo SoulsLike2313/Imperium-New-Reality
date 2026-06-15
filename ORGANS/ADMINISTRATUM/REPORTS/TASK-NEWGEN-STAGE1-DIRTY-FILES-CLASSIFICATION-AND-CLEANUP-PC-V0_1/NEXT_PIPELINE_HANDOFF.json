@@ -1,0 +1,10 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE1-DIRTY-FILES-CLASSIFICATION-AND-CLEANUP-PC-V0_1",
+  "timestamp_utc": "2026-05-31T00:26:57Z",
+  "next_allowed_task": "TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1",
+  "prereq": "Require clean worktree after commit/push and review handoff ready.",
+  "blocked_if": [
+    "worktree_not_clean_after_push",
+    "commit_push_failed"
+  ]
+}

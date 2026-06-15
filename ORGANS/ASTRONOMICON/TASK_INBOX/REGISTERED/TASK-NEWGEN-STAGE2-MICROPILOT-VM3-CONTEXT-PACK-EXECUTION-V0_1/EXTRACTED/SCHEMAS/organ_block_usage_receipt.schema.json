@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Organ Block Usage Receipt",
+  "type": "object",
+  "required": [
+    "task_id",
+    "generated_at_utc",
+    "organs",
+    "summary",
+    "verdict"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "organs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "organ",
+          "digest_read",
+          "compact_read_first_read",
+          "passport_read",
+          "task_participation_read",
+          "files_read",
+          "used_for",
+          "gaps"
+        ],
+        "properties": {
+          "organ": {
+            "type": "string"
+          },
+          "digest_read": {
+            "type": "boolean"
+          },
+          "compact_read_first_read": {
+            "type": "boolean"
+          },
+          "passport_read": {
+            "type": "boolean"
+          },
+          "task_participation_read": {
+            "type": "boolean"
+          },
+          "files_read": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "used_for": {
+            "type": "string"
+          },
+          "gaps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object"
+    },
+    "verdict": {
+      "type": "string"
+    }
+  }
+}

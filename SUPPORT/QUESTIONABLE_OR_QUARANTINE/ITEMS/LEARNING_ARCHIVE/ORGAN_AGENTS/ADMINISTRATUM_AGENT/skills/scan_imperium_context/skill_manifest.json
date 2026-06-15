@@ -1,0 +1,16 @@
+{
+  "skill_id": "scan_imperium_context",
+  "skill_name": "scan_imperium_context",
+  "status": "IMPLEMENTED_V1_HARDENED",
+  "description": "Routed via shared Administratum runner command: scan_imperium_context.",
+  "entrypoint": "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/TOOLS/administratum_agent_runner.py",
+  "execution_mode": "SHARED_RUNNER_ROUTED",
+  "deterministic": true,
+  "outputs": [
+    "report_json",
+    "receipt_json"
+  ],
+  "mutates_canon": false,
+  "deletes_files": false,
+  "runtime_dependency": "PYTHON_STDLIB_ONLY"
+}

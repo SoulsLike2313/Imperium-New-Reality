@@ -1,0 +1,109 @@
+{
+  "matrix_id": "ASTRONOMICON_TASK_ENTRY_MATURITY_MATRIX",
+  "version": "0.1-candidate",
+  "owner_organ": "Astronomicon",
+  "support_organs": [
+    "Officio Agentis",
+    "Mechanicus",
+    "Inquisition",
+    "Administratum"
+  ],
+  "purpose": "Measures task-entry maturity from intake through resolver and start ACK safety.",
+  "used_by": [
+    "ASTRONOMICON",
+    "SERVITOR",
+    "OWNER",
+    "INQUISITOR"
+  ],
+  "required_questions": [
+    "What is the source of truth for this claim?",
+    "Which organ owns the rule?",
+    "What evidence level proves it?",
+    "What cap applies if evidence is missing?",
+    "What would make this claim fake-green?"
+  ],
+  "pass_criteria": [
+    "All criteria include owner value, evidence, and PASS/WARN/BLOCK logic.",
+    "Current status is explicit per criterion.",
+    "No real-use execution claim is made without required evidence."
+  ],
+  "warn_criteria": [
+    "Some criteria are still UNKNOWN but improvement hooks exist.",
+    "Pilot is preflight-ready only with warnings/caps."
+  ],
+  "block_criteria": [
+    "Required criterion has BLOCK state.",
+    "Matrix claims active production capability without evidence."
+  ],
+  "fake_green_flags": [
+    "CLAIM_WITHOUT_REPLAY",
+    "AGENT_REASONING_AS_SYSTEM_CAPABILITY",
+    "STALE_RECEIPT",
+    "DIRTY_STATE_HIDDEN",
+    "OWNER_DECISION_MISSING"
+  ],
+  "evidence_requirements": [
+    "resolver_positive_proof_receipt.json",
+    "task_id_resolver_fixture_results_stage2_1.json",
+    "taskpack_admission_fixture_results_stage2_1.json"
+  ],
+  "current_status": "CANDIDATE_NOT_CANON",
+  "next_action": "Use this matrix in next preflight/pilot closure loop and update criterion statuses with receipts.",
+  "criteria": [
+    {
+      "criterion_id": "ATM-01",
+      "plain_language_meaning": "Admission blocks malformed or unsafe taskpacks.",
+      "owner_value": "Prevents bad ZIPs and path traversal from entering canon flow.",
+      "owner_organ": "Astronomicon",
+      "support_organs": [
+        "Inquisition",
+        "Mechanicus"
+      ],
+      "evidence_required": [
+        "taskpack_admission_fixture_results_stage2_1.json"
+      ],
+      "pass_logic": "Negative admission fixtures for missing/bad/unsafe/duplicate cases all BLOCK.",
+      "warn_logic": "Some edge cases covered but not all mandatory negatives.",
+      "block_logic": "Unsafe or malformed admissions can pass.",
+      "current_status": "PASS",
+      "next_improvement_hook": "Add manifest schema validation checker."
+    },
+    {
+      "criterion_id": "ATM-02",
+      "plain_language_meaning": "Resolver detects canonical mismatches and provenance risk.",
+      "owner_value": "Avoids false starts on corrupted/mismatched registered tasks.",
+      "owner_organ": "Astronomicon",
+      "support_organs": [
+        "Inquisition",
+        "Administratum"
+      ],
+      "evidence_required": [
+        "task_id_resolver_fixture_results_stage2_1.json"
+      ],
+      "pass_logic": "Resolver blocks missing artifact, route gaps, malformed receipt, unsafe paths, and manifest mismatch.",
+      "warn_logic": "Detection exists but diagnostics are incomplete.",
+      "block_logic": "Resolver returns PASS when mandatory mismatch case exists.",
+      "current_status": "PASS",
+      "next_improvement_hook": "Add compact RU diagnostics map for each blocking cap."
+    },
+    {
+      "criterion_id": "ATM-03",
+      "plain_language_meaning": "Current expected task routing is reliable.",
+      "owner_value": "Owner can say start task without manual file hunting.",
+      "owner_organ": "Astronomicon",
+      "support_organs": [
+        "Officio Agentis",
+        "Mechanicus"
+      ],
+      "evidence_required": [
+        "resolver_positive_proof_receipt.json"
+      ],
+      "pass_logic": "Resolver current expected flow returns PASS_WITH_WARNINGS and includes ACK with all 8 organs.",
+      "warn_logic": "Current expected resolves but with inherited caps.",
+      "block_logic": "Current expected points to missing or non-resolvable task.",
+      "current_status": "PASS",
+      "next_improvement_hook": "Add lifecycle policy for rotating current expected tasks."
+    }
+  ],
+  "candidate_repo_location": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/MATRICES/ASTRONOMICON_TASK_ENTRY_MATURITY_MATRIX.md"
+}

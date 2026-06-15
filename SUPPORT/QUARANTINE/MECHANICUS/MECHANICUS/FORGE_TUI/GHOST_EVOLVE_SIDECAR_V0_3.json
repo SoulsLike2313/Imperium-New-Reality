@@ -1,0 +1,21 @@
+{
+  "task_id": "MECHANICUS_FORGE_CLIENT_V0_3_POLISH_MANUAL_GIFT",
+  "created_utc": "2026-05-25T00:05:55Z",
+  "organ": "MECHANICUS",
+  "mode": "GE_LITE_VISUAL_POLISH",
+  "learning_delta": [
+    "Mechanicus TUI keeps the same module surfaces while gaining stronger forge styling.",
+    "V0.3 proves style can be improved without breaking read-only architecture.",
+    "Future action sockets remain stable."
+  ],
+  "reusable_capability": {
+    "name": "mechanicus_forge_client_v0_3",
+    "entrypoint": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/mechanicus_forge_client_v0_3.py",
+    "launcher": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/LAUNCH_MECHANICUS_FORGE_CLIENT_V0_3.cmd"
+  },
+  "eval_or_smoke": [
+    "py -3 -m py_compile mechanicus_forge_client_v0_3.py",
+    "manual launch via LAUNCH_MECHANICUS_FORGE_CLIENT_V0_3.cmd"
+  ],
+  "read_only": true
+}

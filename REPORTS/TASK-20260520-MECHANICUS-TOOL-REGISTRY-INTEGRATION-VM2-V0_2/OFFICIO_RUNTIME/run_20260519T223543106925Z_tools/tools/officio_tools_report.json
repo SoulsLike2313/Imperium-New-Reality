@@ -1,0 +1,143 @@
+{
+  "schema_version": "ORGAN_TOOL_CAPABILITY_VIEW_V0_1",
+  "generated_at_utc": "2026-05-19T22:35:43.109954Z",
+  "organ_id": "OFFICIO_AGENTIS_AGENT",
+  "registry_source": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOL_INDEX.json",
+  "registry_owner": "MECHANICUS_AGENT",
+  "relevant_tools": [
+    {
+      "tool_id": "jsonschema",
+      "owner_organ": "DOCTRINARIUM_AGENT",
+      "consumer_organs": [
+        "DOCTRINARIUM_AGENT",
+        "OFFICIO_AGENTIS_AGENT",
+        "MECHANICUS_AGENT"
+      ],
+      "availability_status": "AVAILABLE_VM2",
+      "capability_summary": "validate JSON artifacts, contracts, policies",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "jsonschema_report.txt"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/jsonschema.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/jsonschema.json"
+    },
+    {
+      "tool_id": "jq",
+      "owner_organ": "ADMINISTRATUM_AGENT",
+      "consumer_organs": [
+        "ADMINISTRATUM_AGENT",
+        "MECHANICUS_AGENT",
+        "SERVITOR"
+      ],
+      "availability_status": "AVAILABLE_BOTH",
+      "capability_summary": "inspect and transform JSON on CLI",
+      "allowed_use": [
+        "read-only version/status probe",
+        "task-scoped execution with evidence receipt"
+      ],
+      "forbidden_use": [
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "jq_version.txt",
+        "jq_command_log.txt"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/jq.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/jq.json"
+    },
+    {
+      "tool_id": "git",
+      "owner_organ": "ADMINISTRATUM_AGENT",
+      "consumer_organs": [
+        "ALL"
+      ],
+      "availability_status": "AVAILABLE_BOTH",
+      "capability_summary": "repository state, diffs, commits, push/pull, provenance",
+      "allowed_use": [
+        "status",
+        "diff",
+        "commit",
+        "push when task contract allows"
+      ],
+      "forbidden_use": [
+        "destructive history rewrite without Owner gate",
+        "random install without Owner gate",
+        "destructive actions outside task contract scope"
+      ],
+      "evidence_required": [
+        "git_version.txt",
+        "git_status_short.txt",
+        "git_rev_parse_head.txt"
+      ],
+      "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+      "registry_row_source": "TOOLS/git.json",
+      "card_path_resolved": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/git.json"
+    },
+    {
+      "tool_id": "internal_contract_checker",
+      "owner_organ": "MECHANICUS_AGENT",
+      "consumer_organs": [
+        "OFFICIO_AGENTIS_AGENT"
+      ],
+      "availability_status": "UNKNOWN_NEEDS_PROBE",
+      "capability_summary": "internal contract checker capability",
+      "allowed_use": [
+        "task-scoped evidence-first capability use"
+      ],
+      "forbidden_use": [
+        "fake availability claims",
+        "installation without owner gate"
+      ],
+      "evidence_required": [
+        "probe report or explicit owner-approved admission record"
+      ],
+      "failure_policy": "Mark as missing/unknown and continue without install.",
+      "registry_row_source": "virtual_focus_capability",
+      "card_path_resolved": ""
+    }
+  ],
+  "available_tools": [
+    "jsonschema",
+    "jq",
+    "git"
+  ],
+  "missing_tools": [
+    {
+      "tool_id": "internal_contract_checker",
+      "availability_status": "UNKNOWN_NEEDS_PROBE",
+      "reason": "unknown_or_unprobed"
+    }
+  ],
+  "warnings": [
+    "virtual_focus_capability_unprobed:OFFICIO_AGENTIS_AGENT:internal_contract_checker"
+  ],
+  "verdict": "WARN",
+  "evidence_policy": {
+    "install_policy": "NO_INSTALL_WITHOUT_OWNER_GATE",
+    "required": "No fake green. Missing tools are reported as missing with evidence policy.",
+    "field_contract": [
+      "tool_id",
+      "owner_organ",
+      "consumer_organs",
+      "availability_status",
+      "capability_summary",
+      "allowed_use",
+      "forbidden_use",
+      "evidence_required",
+      "failure_policy"
+    ]
+  },
+  "task_id": "TASK-20260519-COMMON-AGENT-CLI-KILO-LIKE-HERALDRY-V0_1",
+  "checked_at_utc": "2026-05-19T22:35:43+00:00"
+}

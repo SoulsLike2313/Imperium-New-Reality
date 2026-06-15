@@ -1,0 +1,78 @@
+{
+  "task_id": "TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1",
+  "status": "PASS",
+  "generated_at_utc": "2026-05-24T20:59:15+00:00",
+  "export_scope": "all_roles",
+  "exports": [
+    {
+      "role_id": "LOCAL_ORGAN_AGENT",
+      "source_role_pack": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\ROLE_PACKS\\OFFICIO_LOCAL_ORGAN_AGENT_ROLE_PACK_V0_1.json",
+      "role_pack_export_path": "IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\REPORTS\\TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1\\exports\\local_organ_agent_role_pack_export_v0_1.json",
+      "taskpack_gate_block_path": "IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\REPORTS\\TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1\\exports\\local_organ_agent_taskpack_gate_block_v0_1.md",
+      "required_acks": [
+        "ROLE_ACK",
+        "ORGAN_BODY_ACK",
+        "LANGUAGE_ACK",
+        "STOP_CONDITIONS_ACK"
+      ],
+      "stop_conditions_count": 8
+    },
+    {
+      "role_id": "LOGOS_PRIME",
+      "source_role_pack": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\ROLE_PACKS\\OFFICIO_LOGOS_PRIME_ROLE_PACK_V0_1.json",
+      "role_pack_export_path": "IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\REPORTS\\TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1\\exports\\logos_prime_role_pack_export_v0_1.json",
+      "taskpack_gate_block_path": "IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\REPORTS\\TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1\\exports\\logos_prime_taskpack_gate_block_v0_1.md",
+      "required_acks": [
+        "ROLE_ACK",
+        "LANGUAGE_ACK",
+        "SCOPE_ACK"
+      ],
+      "stop_conditions_count": 5
+    },
+    {
+      "role_id": "LOGOS_SPECULUM",
+      "source_role_pack": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\ROLE_PACKS\\OFFICIO_LOGOS_SPECULUM_ROLE_PACK_V0_1.json",
+      "role_pack_export_path": "IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\REPORTS\\TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1\\exports\\logos_speculum_role_pack_export_v0_1.json",
+      "taskpack_gate_block_path": "IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\REPORTS\\TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1\\exports\\logos_speculum_taskpack_gate_block_v0_1.md",
+      "required_acks": [
+        "ROLE_ACK",
+        "LANGUAGE_ACK",
+        "SCOPE_ACK",
+        "RED_TEAM_ACK"
+      ],
+      "stop_conditions_count": 6
+    },
+    {
+      "role_id": "PC_SERVITOR",
+      "source_role_pack": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\ROLE_PACKS\\OFFICIO_PC_SERVITOR_ROLE_PACK_V0_1.json",
+      "role_pack_export_path": "IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\REPORTS\\TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1\\exports\\pc_servitor_role_pack_export_v0_1.json",
+      "taskpack_gate_block_path": "IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\REPORTS\\TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1\\exports\\pc_servitor_taskpack_gate_block_v0_1.md",
+      "required_acks": [
+        "ROLE_ACK",
+        "LANGUAGE_ACK",
+        "SCOPE_ACK",
+        "STOP_CONDITIONS_ACK",
+        "FORBIDDEN_ACTIONS_ACK"
+      ],
+      "stop_conditions_count": 8
+    },
+    {
+      "role_id": "VM_SERVITOR",
+      "source_role_pack": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\ROLE_PACKS\\OFFICIO_VM_SERVITOR_ROLE_PACK_V0_1.json",
+      "role_pack_export_path": "IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\REPORTS\\TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1\\exports\\vm_servitor_role_pack_export_v0_1.json",
+      "taskpack_gate_block_path": "IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\REPORTS\\TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1\\exports\\vm_servitor_taskpack_gate_block_v0_1.md",
+      "required_acks": [
+        "ROLE_ACK",
+        "LANGUAGE_ACK",
+        "SCOPE_ACK",
+        "STOP_CONDITIONS_ACK",
+        "FORBIDDEN_ACTIONS_ACK"
+      ],
+      "stop_conditions_count": 8
+    }
+  ],
+  "notes": [
+    "Exporter mirrors role pack content and emits a reusable taskpack gate block per role.",
+    "Gate block is contract-first and does not claim full autonomous enforcement."
+  ]
+}

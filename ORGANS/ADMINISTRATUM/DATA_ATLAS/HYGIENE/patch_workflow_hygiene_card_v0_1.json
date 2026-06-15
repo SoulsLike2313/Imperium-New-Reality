@@ -1,0 +1,33 @@
+{
+  "schema": "imperium.data_atlas.patch_workflow_hygiene_card.v0_1",
+  "card_id": "data_atlas.patch_workflow_hygiene.v0_1",
+  "owner_organ": "ADMINISTRATUM",
+  "watching_organ": "INQUISITION",
+  "status": "ACTIVE",
+  "entity_type": "workflow_hygiene_surface",
+  "tracked_question_ru": "Может ли H/manual patch workflow случайно записать локальные backup/handoff/smoke зоны в source history?",
+  "source_roots": [
+    ".gitignore",
+    "ORGANS/INQUISITION/REPORTING/inquisition_patch_backup_hygiene_gate_v0_1.py",
+    "ORGANS/INQUISITION/HYGIENE_POLICY/patch_backup_hygiene_policy_v0_1.json"
+  ],
+  "forbidden_source_roots": [
+    ".imperium_patch_backups/",
+    "_LOCAL_HANDOFF/",
+    "LOCAL_HANDOFF/",
+    "IMPERIUM_EVIDENCE_VAULT_SMOKE*/",
+    "EVIDENCE_VAULT_SMOKE*/"
+  ],
+  "health_fields": [
+    "forbidden_tracked_files_total",
+    "missing_gitignore_patterns_total",
+    "staged_backup_deletions_total",
+    "blocking_gate"
+  ],
+  "owner_visible_state": [
+    "PASS_PATCH_BACKUP_HYGIENE",
+    "FAIL_PATCH_BACKUP_HYGIENE"
+  ],
+  "migration_lane": "remove_from_index_keep_local",
+  "next_architecture_link": "imperium_intelligence_pack_builder must emit hygiene proof before handoff pack closure"
+}

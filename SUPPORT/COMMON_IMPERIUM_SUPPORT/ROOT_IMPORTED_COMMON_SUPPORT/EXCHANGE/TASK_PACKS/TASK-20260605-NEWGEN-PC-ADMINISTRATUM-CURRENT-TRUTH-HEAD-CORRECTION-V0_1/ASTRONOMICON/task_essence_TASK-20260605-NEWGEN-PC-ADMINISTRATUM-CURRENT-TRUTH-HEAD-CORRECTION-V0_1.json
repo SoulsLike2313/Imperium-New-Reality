@@ -1,0 +1,68 @@
+{
+  "schema_version": "astronomicon.task_essence.v0_1",
+  "task_id": "TASK-20260605-NEWGEN-PC-ADMINISTRATUM-CURRENT-TRUTH-HEAD-CORRECTION-V0_1",
+  "task_summary": "Repair Administratum current truth HEAD drift after New Reality move without unrelated mutation.",
+  "primary_organ": "ADMINISTRATUM",
+  "support_organs": [
+    "ASTRONOMICON",
+    "CUSTODES",
+    "INQUISITION",
+    "DOCTRINARIUM"
+  ],
+  "out_of_scope": [
+    "Do not build the post-work organ admission ring in this task.",
+    "Do not modify Ancient Empire, parent folders, or any path outside E:/IMPERIUM_NEW_GENERATION_NEW_REALITY.",
+    "Do not refactor unrelated organs, tools, IDE, WARP, CLI worker, visual systems, or reports.",
+    "Do not claim global clean pass, semantic truth pass, or production autonomy."
+  ],
+  "success_criteria": [
+    "current_head_card_v0_1.json reflects the actual local git HEAD at task start or explains a justified mismatch with evidence.",
+    "A minimal Administratum report records old_head, actual_head, repaired fields, files touched, and validation commands.",
+    "Astronomicon task essence and route packet for this task validate through the available Astronomicon checkers.",
+    "Administratum card/current-truth validation is run if available; unavailable validators are reported as UNKNOWN_WITH_REASON, not PASS.",
+    "Git status, commit hash, and optional remote head proof are recorded without fake green."
+  ],
+  "risks_and_gates": [
+    {
+      "gate_id": "ROOT_SCOPE_GATE",
+      "risk": "Servitor may accidentally mutate old Imperium or parent paths instead of New Reality root.",
+      "required_evidence": [
+        "pwd/root proof",
+        "changed file list restricted to New Reality"
+      ]
+    },
+    {
+      "gate_id": "TRUTH_DRIFT_GATE",
+      "risk": "current truth card may be updated mechanically while other linked current-truth indexes remain stale.",
+      "required_evidence": [
+        "old_head",
+        "actual_head",
+        "searched linked truth files"
+      ]
+    },
+    {
+      "gate_id": "NO_UNRELATED_MUTATION_GATE",
+      "risk": "A small correction task may expand into unrelated architecture work.",
+      "required_evidence": [
+        "git diff summary",
+        "out-of-scope confirmation"
+      ]
+    },
+    {
+      "gate_id": "NO_FAKE_GREEN_GATE",
+      "risk": "Missing validators or missing remote proof may be incorrectly reported as PASS.",
+      "required_evidence": [
+        "validation output",
+        "UNKNOWN_WITH_REASON for anything not proven"
+      ]
+    }
+  ],
+  "stop_conditions": [
+    "Active root is not E:/IMPERIUM_NEW_GENERATION_NEW_REALITY.",
+    "Git branch is not master or origin is not SoulsLike2313/Imperium-New-Reality.git.",
+    "Working tree is dirty before registration/execution and the dirt is not from this task registration.",
+    "current_head_card_v0_1.json is missing or structurally unreadable.",
+    "A required correction would require Ancient/parent/private path access without explicit salvage admission.",
+    "Validation produces BLOCK/FAIL and cannot be repaired within this task scope."
+  ]
+}

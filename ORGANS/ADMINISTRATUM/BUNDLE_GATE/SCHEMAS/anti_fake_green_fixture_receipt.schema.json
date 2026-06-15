@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Anti Fake Green Fixture Receipt",
+  "type": "object",
+  "required": ["task_id", "fixture_verdict", "positive_fixture_passed", "negative_fixtures", "blocked_fake_green_cases"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "fixture_verdict": {"type": "string"},
+    "positive_fixture_passed": {"type": "boolean"},
+    "negative_fixtures": {"type": "array"},
+    "blocked_fake_green_cases": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

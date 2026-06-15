@@ -1,0 +1,57 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1",
+  "overall_verdict": "PASS_WITH_WARNINGS",
+  "cap_decisions": [
+    {
+      "cap_id": "CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING_OR_NEEDS_FOLLOWUP",
+      "status": "NARROWED",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/BLOCK_SPINE/REPORTS/TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1/external_finalization_receipt.json",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1/EXTRACTED/INPUTS/review_synthesis_from_owner_provided_external_reviews.json",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/BLOCK_SPINE/REPORTS/TASK-NEWGEN-STAGE2-MICROPILOT-VM3-CONTEXT-PACK-EXECUTION-V0_1/hard_red_team_verdict.json"
+      ],
+      "next_required_proof": "Attach raw external review bundles or equivalent signed external references to move from NARROWED to CLOSED."
+    },
+    {
+      "cap_id": "CAP_NO_LOCAL_INDEPENDENT_REPLAY_IN_REVIEW_ENVIRONMENT",
+      "status": "CLOSED",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/BLOCK_SPINE/REPORTS/TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1/independent_replay_receipt.json",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/BLOCK_SPINE/REPORTS/TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1/independent_replay_context_pack_consumption_receipt.json"
+      ],
+      "next_required_proof": "No additional proof required for local replay closure at head f3123e5b."
+    },
+    {
+      "cap_id": "CAP_STAGE1_WITH_WARNINGS_ONLY",
+      "status": "CARRIED",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/BLOCK_SPINE/REPORTS/TASK-NEWGEN-STAGE2-MICROPILOT-VM3-CONTEXT-PACK-EXECUTION-V0_1/hard_red_team_verdict.json"
+      ],
+      "next_required_proof": "Stage-gate authority upgrade from Stage1 to higher maturity lane."
+    },
+    {
+      "cap_id": "CAP_NO_IDE_VISUAL_RELEASE_YET",
+      "status": "CARRIED",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1/EXTRACTED/020_SCOPE_LOCKS_AND_CAPS.md"
+      ],
+      "next_required_proof": "Dedicated IDE visual release task with replay and acceptance receipts."
+    },
+    {
+      "cap_id": "CAP_NO_WARP_RUNTIME",
+      "status": "CARRIED",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1/EXTRACTED/020_SCOPE_LOCKS_AND_CAPS.md"
+      ],
+      "next_required_proof": "Dedicated WARP runtime task with controlled sandbox evidence."
+    },
+    {
+      "cap_id": "CAP_DIRTY_START_OWNER_APPROVED_CONTINUATION",
+      "status": "CARRIED",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/BLOCK_SPINE/REPORTS/TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1/repo_truth_probe.json"
+      ],
+      "next_required_proof": "Start a future task from a fully clean baseline or keep explicit owner-approved continuation trace."
+    }
+  ]
+}

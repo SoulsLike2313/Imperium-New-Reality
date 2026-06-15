@@ -1,0 +1,64 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1",
+  "corridor_type": "synthetic_corridor",
+  "not_real_warp": true,
+  "typed_runtime_claim_allowed": [
+    "synthetic_corridor",
+    "real_runtime_corridor",
+    "warp_corridor"
+  ],
+  "timestamp_utc": "2026-05-30T14:57:56Z",
+  "steps": [
+    {
+      "id": "S1",
+      "name": "entry_ack_fixture",
+      "status": "PASS",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/SYNTHETIC_RUNTIME_CORRIDOR/entry_ack_fixture.json"
+      ],
+      "errors": []
+    },
+    {
+      "id": "S2",
+      "name": "matrix_validation",
+      "status": "PASS",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/matrix_validator_run/matrix_spine_validation_report.md"
+      ],
+      "errors": []
+    },
+    {
+      "id": "S3",
+      "name": "capability_split_fixture",
+      "status": "PASS",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/SYNTHETIC_RUNTIME_CORRIDOR/capability_split_fixture.json"
+      ],
+      "errors": []
+    },
+    {
+      "id": "S4",
+      "name": "red_team_verdict_fixture",
+      "status": "PASS",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/SYNTHETIC_RUNTIME_CORRIDOR/red_team_verdict_fixture.json"
+      ],
+      "errors": []
+    },
+    {
+      "id": "S5",
+      "name": "final_receipt_fixture",
+      "status": "PASS",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/SYNTHETIC_RUNTIME_CORRIDOR/final_receipt_fixture.json"
+      ],
+      "errors": []
+    }
+  ],
+  "overall": "PASS",
+  "replay_command": "bash IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_synthetic_runtime_corridor.sh",
+  "matrix_validation_output_dir": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/matrix_validator_run",
+  "matrix_validator_stdout": "[matrix-spine-validator] output_dir=/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/matrix_validator_run\n[matrix-spine-validator] verdict=PASS fail=0 warn=0 info=0",
+  "matrix_validator_stderr": ""
+}

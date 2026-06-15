@@ -1,0 +1,23 @@
+{
+  "schema": "imperium.data_atlas.card.v0_1",
+  "card_id": "data_atlas.hygiene_batch_preview.v0_1",
+  "title_ru": "Hygiene Batch Preview",
+  "owner_organ": "ADMINISTRATUM",
+  "source_surface": "INQUISITION_HYGIENE_BATCH_PLANNER_V0_1",
+  "target_batch": "BATCH_001_REPORTS_LEGACY_PACK_TO_VAULT_PREVIEW",
+  "default_target_organ": "REPORTS_LEGACY",
+  "default_target_lane": "PACK_TO_VAULT_CANDIDATE",
+  "trinity_plus_required": true,
+  "owner_gate_required": true,
+  "forbidden_actions": ["source_delete", "source_move", "git_rm", "vault_execution_without_owner_gate"],
+  "expected_outputs": [
+    "BATCH_001_PREVIEW.json",
+    "BATCH_001_OWNER_GATE_RU.md",
+    "BATCH_001_OWNER_GATE_EN.md",
+    "BATCH_001_CANDIDATES.jsonl",
+    "BATCH_001_CANDIDATES.csv",
+    "BATCH_001_RISK_SUMMARY.json",
+    "BATCH_001_PREVIEW.sqlite",
+    "BATCH_001_VISUAL_PROOF_DASHBOARD.html"
+  ]
+}

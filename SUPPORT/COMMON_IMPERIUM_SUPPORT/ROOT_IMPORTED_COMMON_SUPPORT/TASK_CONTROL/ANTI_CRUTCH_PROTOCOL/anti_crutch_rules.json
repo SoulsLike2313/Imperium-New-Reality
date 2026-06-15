@@ -1,0 +1,76 @@
+{
+  "schema_version": "ANTI_CRUTCH_RULES_V0_1",
+  "updated_at_utc": "2026-05-20T00:00:00Z",
+  "verdict_codes": [
+    "NO_CRUTCH_FOUND",
+    "WARN_TASKPACK_ONLY_WORKAROUND",
+    "WARN_TEMPORARY_WORKAROUND_ACCEPTED_WITH_DEBT",
+    "BLOCKED_CANONICAL_AUTHORITY_BYPASSED",
+    "BLOCKED_ORGAN_AUTHORITY_MISSING",
+    "DEBT_PROMOTE_TO_OFFICIO",
+    "DEBT_PROMOTE_TO_DOCTRINARIUM",
+    "DEBT_PROMOTE_TO_MECHANICUS",
+    "DEBT_PROMOTE_TO_INQUISITION",
+    "DEBT_PROMOTE_TO_ADMINISTRATUM",
+    "DEBT_PROMOTE_TO_ASTRONOMICON",
+    "DEBT_PROMOTE_TO_STRATEGIUM",
+    "DEBT_PROMOTE_TO_SCHOLA"
+  ],
+  "domain_to_verdict": {
+    "OFFICIO": "DEBT_PROMOTE_TO_OFFICIO",
+    "DOCTRINARIUM": "DEBT_PROMOTE_TO_DOCTRINARIUM",
+    "MECHANICUS": "DEBT_PROMOTE_TO_MECHANICUS",
+    "INQUISITION": "DEBT_PROMOTE_TO_INQUISITION",
+    "ADMINISTRATUM": "DEBT_PROMOTE_TO_ADMINISTRATUM",
+    "ASTRONOMICON": "DEBT_PROMOTE_TO_ASTRONOMICON",
+    "STRATEGIUM": "DEBT_PROMOTE_TO_STRATEGIUM",
+    "SCHOLA": "DEBT_PROMOTE_TO_SCHOLA"
+  },
+  "domain_keywords": {
+    "OFFICIO": ["role", "mode", "communication", "owner comments", "language", "ack", "response contract"],
+    "DOCTRINARIUM": ["law", "doctrine", "compliance", "evidence before pass"],
+    "MECHANICUS": ["tool", "script", "checker", "registry", "validator", "cli"],
+    "INQUISITION": ["audit", "fake green", "scope drift", "dirty state", "attack"],
+    "ADMINISTRATUM": ["continuity", "checkpoint", "ledger", "receipt", "bundle"],
+    "ASTRONOMICON": ["route", "routing", "decomposition", "stage map"],
+    "STRATEGIUM": ["priority", "task volume", "risk", "freeze"],
+    "SCHOLA": ["lesson", "training", "regression", "example corpus"]
+  },
+  "canonical_markers": [
+    "OFFICIO_AGENTIS_AGENT",
+    "DOCTRINARIUM_AGENT",
+    "MECHANICUS_AGENT",
+    "INQUISITION_AGENT",
+    "ADMINISTRATUM_AGENT",
+    "ASTRONOMICON_AGENT",
+    "STRATEGIUM_AGENT",
+    "SCHOLA_IMPERIALIS_AGENT",
+    "TASK_CONTROL",
+    "COMMON_AGENT_CLI",
+    "SETTINGS_REGISTRY",
+    "RESPONSE_CONTRACTS",
+    "ROLE_REGISTRY",
+    "TOOL_REGISTRY"
+  ],
+  "workaround_markers": [
+    "taskpack-only",
+    "prompt-only",
+    "just put in prompt",
+    "just put in taskpack",
+    "just tell servitor",
+    "for this task only"
+  ],
+  "temporary_debt_markers": [
+    "temporary workaround",
+    "accepted with debt",
+    "debt recorded",
+    "promote later"
+  ],
+  "bypass_markers": [
+    "bypass canonical",
+    "ignore checker",
+    "skip checker",
+    "do not update registry",
+    "without promotion"
+  ]
+}

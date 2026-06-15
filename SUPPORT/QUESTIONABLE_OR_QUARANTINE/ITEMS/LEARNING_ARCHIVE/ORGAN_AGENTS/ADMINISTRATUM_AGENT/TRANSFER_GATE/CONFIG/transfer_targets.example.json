@@ -1,0 +1,16 @@
+{
+  "targets": {
+    "VM2": {
+      "user": "vboxuser2",
+      "host": "127.0.0.1",
+      "port": 2223,
+      "key_env": "IMPERIUM_VM2_SSH_KEY",
+      "remote_root": "/home/vboxuser2/IMPERIUM_CONTEXT/LOCAL/ADMINISTRATUM_TRANSFER"
+    }
+  },
+  "notes": [
+    "Do not commit private key material.",
+    "User-specific runtime config may live outside Git and point vm_key to a local private path.",
+    "transfer-push-vm2 must verify remote SHA256 and size before PASS."
+  ]
+}

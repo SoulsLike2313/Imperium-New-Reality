@@ -1,0 +1,57 @@
+{
+  "fixture_id": "FX03_EXTERNAL_FINALIZATION_RECEIPT_VALID",
+  "description": "All finalization fields are coherent.",
+  "external_finalization_receipt": {
+    "task_id": "TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1",
+    "receipt_subject_head": "h_subject",
+    "last_verified_head_before_this_commit": "h_before",
+    "receipt_content_head": "h_content",
+    "external_delivery_head": "h_delivery",
+    "remote_head_after_push": "h_remote",
+    "verification_timestamp_utc": "2026-05-30T18:00:00Z",
+    "verification_actor": "PC_SERVITOR",
+    "worktree_clean_after_push": true,
+    "origin_master_sync_after_push": true,
+    "verification_method": "git rev-parse + git status + git ls-remote",
+    "self_head_paradox_handled": true,
+    "caps_triggered": [],
+    "clean_pass_allowed": false
+  },
+  "cap_closure_states": [
+    {
+      "task_id": "TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1",
+      "cap_id": "CAP_SELF_HEAD_PARADOX",
+      "state": "CLOSED_BY_EXTERNAL_REVIEW",
+      "opened_by": "fixture",
+      "evidence_for_state": [
+        "review.md"
+      ],
+      "closure_head": "h_remote",
+      "applies_to_heads": [
+        "h_remote"
+      ],
+      "clean_pass_impact": "NO_BLOCK",
+      "notes": "fixture"
+    }
+  ],
+  "independent_replay_state": {
+    "task_id": "TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1",
+    "replay_state": "SEPARATE_REPLAY_RUNNER_FOR_TARGET",
+    "target_head": "h_remote",
+    "replay_head": "h_remote",
+    "replay_actor": "SEPARATE_RUNNER",
+    "replay_receipt_path": "receipts/replay.json",
+    "is_current_for_target": true,
+    "caps_triggered": [],
+    "clean_pass_allowed": false
+  },
+  "expected": {
+    "verdict": "PASS",
+    "must_include_caps": [],
+    "must_not_include_caps": [
+      "CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING",
+      "CAP_AMBIGUOUS_FINAL_HEAD",
+      "CAP_FINALIZATION_SEMANTICS_CONTRADICTORY"
+    ]
+  }
+}

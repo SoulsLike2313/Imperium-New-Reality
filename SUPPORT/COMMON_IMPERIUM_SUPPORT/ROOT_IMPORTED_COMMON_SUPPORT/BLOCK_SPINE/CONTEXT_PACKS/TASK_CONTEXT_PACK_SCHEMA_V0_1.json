@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://imperium.local/schemas/task_context_pack.schema.json",
+  "title": "Task Context Pack",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "task_id",
+    "target_contour",
+    "route_manifest_path",
+    "required_organs",
+    "mandatory_context",
+    "optional_context",
+    "protected_zones",
+    "allowed_tools_placeholder",
+    "expected_outputs",
+    "required_receipts",
+    "route_read_order",
+    "estimated_file_count",
+    "estimated_character_count",
+    "generation_receipt"
+  ],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "task_id": { "type": "string" },
+    "target_contour": { "type": "string" },
+    "route_manifest_path": { "type": "string" },
+    "required_organs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "mandatory_context": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "optional_context": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "protected_zones": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "allowed_tools_placeholder": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["tool_name", "status", "notes"],
+        "properties": {
+          "tool_name": { "type": "string" },
+          "status": { "type": "string" },
+          "notes": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "expected_outputs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "required_receipts": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "route_read_order": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "estimated_file_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "estimated_character_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "generation_receipt": {
+      "type": "object",
+      "required": [
+        "generated_at_utc",
+        "generator",
+        "warnings"
+      ],
+      "properties": {
+        "generated_at_utc": { "type": "string" },
+        "generator": { "type": "string" },
+        "warnings": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

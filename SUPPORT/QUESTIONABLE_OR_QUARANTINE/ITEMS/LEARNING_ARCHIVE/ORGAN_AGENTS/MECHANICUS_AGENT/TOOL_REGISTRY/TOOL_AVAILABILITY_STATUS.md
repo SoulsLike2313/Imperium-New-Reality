@@ -1,0 +1,23 @@
+# TOOL AVAILABILITY STATUS
+
+- task_id: TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1
+- generated_at_utc: 2026-05-19T22:06:55.328859Z
+
+| tool_id | pc_status | vm2_status | combined_status | card |
+|---|---|---|---|---|
+| git | AVAILABLE_PC | AVAILABLE_VM2 | AVAILABLE_BOTH | TOOLS/git.json |
+| ripgrep | AVAILABLE_PC | AVAILABLE_VM2 | AVAILABLE_BOTH | TOOLS/ripgrep.json |
+| ruff | NOT_FOUND_ON_PC | AVAILABLE_VM2 | AVAILABLE_VM2 | TOOLS/ruff.json |
+| pytest | AVAILABLE_PC | NOT_FOUND_ON_VM2 | AVAILABLE_PC | TOOLS/pytest.json |
+| jsonschema | NOT_FOUND_ON_PC | AVAILABLE_VM2 | AVAILABLE_VM2 | TOOLS/jsonschema.json |
+| jq | AVAILABLE_PC | AVAILABLE_VM2 | AVAILABLE_BOTH | TOOLS/jq.json |
+| yq | AVAILABLE_PC | AVAILABLE_VM2 | AVAILABLE_BOTH | TOOLS/yq.json |
+| gitleaks | NOT_FOUND_ON_PC | NOT_FOUND_ON_VM2 | KNOWN_NOT_INSTALLED | TOOLS/gitleaks.json |
+| semgrep | NOT_FOUND_ON_PC | NOT_FOUND_ON_VM2 | KNOWN_NOT_INSTALLED | TOOLS/semgrep.json |
+| bandit | NOT_FOUND_ON_PC | NOT_FOUND_ON_VM2 | KNOWN_NOT_INSTALLED | TOOLS/bandit.json |
+| pip-audit | AVAILABLE_PC | NOT_FOUND_ON_VM2 | AVAILABLE_PC | TOOLS/pip-audit.json |
+| uv | AVAILABLE_PC | AVAILABLE_VM2 | AVAILABLE_BOTH | TOOLS/uv.json |
+| duckdb | NOT_FOUND_ON_PC | NOT_FOUND_ON_VM2 | KNOWN_NOT_INSTALLED | TOOLS/duckdb.json |
+| playwright | NOT_FOUND_ON_PC | NOT_FOUND_ON_VM2 | KNOWN_NOT_INSTALLED | TOOLS/playwright.json |
+| node | AVAILABLE_PC | AVAILABLE_VM2 | AVAILABLE_BOTH | TOOLS/node.json |
+| npm | AVAILABLE_PC | AVAILABLE_VM2 | AVAILABLE_BOTH | TOOLS/npm.json |

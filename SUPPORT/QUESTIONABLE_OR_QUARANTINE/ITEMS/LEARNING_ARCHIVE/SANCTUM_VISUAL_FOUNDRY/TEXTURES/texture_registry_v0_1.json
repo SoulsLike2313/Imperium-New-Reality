@@ -1,0 +1,104 @@
+{
+  "texture_registry_id": "SANCTUM_TEXTURE_REGISTRY_V0_1",
+  "task_id": "TASK-20260520-NEWGEN-SANCTUM-VISUAL-TOPOLOGY-ADDRESS-REGISTRY-PC-V0_1",
+  "textures": [
+    {
+      "texture_id": "forge_metal_dark",
+      "description": "Dark forged plate base for shell and cockpit surfaces.",
+      "source": "design_tokens_mechanicus_console_v0_2.json",
+      "css_recipe": [
+        "var(--vf2-color-bg-forge-base)",
+        "var(--vf2-color-bg-forge-plate)"
+      ],
+      "allowed_units": [
+        "SANCTUM.SHELL.GLOBAL_FRAME",
+        "SANCTUM.RIGHT_CONTEXT_DOCK"
+      ],
+      "performance_cost": "CHEAP"
+    },
+    {
+      "texture_id": "purple_nebula_depth",
+      "description": "Background depth atmosphere for brain field layers.",
+      "source": "LAB/styles.css background gradients",
+      "css_recipe": [
+        "var(--vf2-color-accent-nebula-purple)",
+        "rgba(135,58,255,0.14)"
+      ],
+      "allowed_units": [
+        "SANCTUM.BRAIN_FIELD.NEURAL_CORE",
+        "SANCTUM.BRAIN_FIELD.NEURAL_LINKS"
+      ],
+      "performance_cost": "MEDIUM"
+    },
+    {
+      "texture_id": "glass_holograph_panel",
+      "description": "Holograph glass for right operator dock modules.",
+      "source": "design_tokens_mechanicus_console_v0_2.json",
+      "css_recipe": [
+        "var(--vf2-color-bg-holo-glass)",
+        "var(--vf2-border-holo)"
+      ],
+      "allowed_units": [
+        "SANCTUM.RIGHT_CONTEXT_DOCK",
+        "SANCTUM.RIGHT_CONTEXT_DOCK.MECHANICUS_PANEL"
+      ],
+      "performance_cost": "CHEAP"
+    },
+    {
+      "texture_id": "imperial_gold_edge",
+      "description": "High-signal highlight for authority accents and critical chips.",
+      "source": "design_tokens_mechanicus_console_v0_2.json",
+      "css_recipe": [
+        "var(--vf2-color-accent-forge-amber)"
+      ],
+      "allowed_units": [
+        "SANCTUM.TRUTH_STATUS_STRIP",
+        "SANCTUM.COMMAND_SURFACE"
+      ],
+      "performance_cost": "STATIC"
+    },
+    {
+      "texture_id": "red_forge_warning",
+      "description": "Warning and error contour for risk surfaces.",
+      "source": "design_tokens_mechanicus_console_v0_2.json",
+      "css_recipe": [
+        "var(--vf2-color-accent-forge-red)"
+      ],
+      "allowed_units": [
+        "SANCTUM.BRAIN_FIELD.ORGAN_RING.MECHANICUS_NODE",
+        "SANCTUM.TRUTH_STATUS_STRIP",
+        "SANCTUM.COMMAND_SURFACE"
+      ],
+      "performance_cost": "STATIC"
+    },
+    {
+      "texture_id": "archive_blue_cold",
+      "description": "Cool archive tone for evidence/report regions.",
+      "source": "design_tokens_mechanicus_console_v0_2.json",
+      "css_recipe": [
+        "var(--vf2-color-accent-holo-cyan)"
+      ],
+      "allowed_units": [
+        "SANCTUM.EVIDENCE_REPORT_LAYER"
+      ],
+      "performance_cost": "STATIC"
+    },
+    {
+      "texture_id": "law_seal_amber",
+      "description": "Gate and seal accents for audit/chip elements.",
+      "source": "design_tokens_mechanicus_console_v0_2.json",
+      "css_recipe": [
+        "var(--vf2-color-accent-forge-amber)"
+      ],
+      "allowed_units": [
+        "SANCTUM.TRUTH_STATUS_STRIP",
+        "SANCTUM.EVIDENCE_REPORT_LAYER"
+      ],
+      "performance_cost": "STATIC"
+    }
+  ],
+  "rules": [
+    "Texture IDs are reusable references; direct CSS literals are discouraged for shared layers.",
+    "If texture performance_cost exceeds CHEAP, explicit justification is required in passport."
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "imperial_ide.extension_manifest.v0_2",
+  "extension_id": "example_mechanicus_extension",
+  "name": "Example Mechanicus Read-Only Extension",
+  "status": "PROVEN",
+  "owner_organ": "MECHANICUS",
+  "permissions": [
+    "read_tool_registry",
+    "read_capability_registry",
+    "request_dry_run"
+  ],
+  "panels": [
+    "mechanicus_tools",
+    "capabilities"
+  ],
+  "commands": [
+    "tools",
+    "capabilities",
+    "dry-run-tool"
+  ],
+  "tools": [
+    "MECHANICUS_DOCTOR"
+  ],
+  "tool_permissions": [
+    "read_only",
+    "dry_run"
+  ],
+  "risk_class": "LOW_DRY_RUN",
+  "risks": [
+    "does not execute tools"
+  ],
+  "receipts": [
+    "shell_command_receipt"
+  ],
+  "receipts_required": true,
+  "validation": {
+    "required": true,
+    "status": "PROVEN_FOR_CONTROL_SHELL_V0_1"
+  },
+  "validation_required": true,
+  "unrestricted_execution": false
+}

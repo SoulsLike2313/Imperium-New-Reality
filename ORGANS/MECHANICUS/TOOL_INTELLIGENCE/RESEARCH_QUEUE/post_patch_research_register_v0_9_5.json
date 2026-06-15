@@ -1,0 +1,25 @@
+{
+  "schema": "imperium.post_patch_research_register.v0_1",
+  "patch": "v0.9.5",
+  "topic": "Evidence Vault Batch 001 Pack Execution",
+  "mechanicus_registration": [
+    "write-capable Evidence Vault batch pack executor",
+    "owner token execution gate",
+    "Vault pack manifest/index/receipt/proof contract"
+  ],
+  "external_architecture_inspiration": [
+    {
+      "name": "OCI Image Layout",
+      "why": "Inspiration for content-addressed blob/index/manifest layout and portable filesystem/archive storage."
+    },
+    {
+      "name": "SLSA provenance",
+      "why": "Inspiration for produced artifact provenance and integrity claims."
+    },
+    {
+      "name": "in-toto attestations",
+      "why": "Inspiration for verifiable statements about execution steps and artifacts."
+    }
+  ],
+  "decision": "Use lightweight manifest/index/receipt JSON and SQLite proof now; consider stronger attestations after Vault execution proves stable."
+}

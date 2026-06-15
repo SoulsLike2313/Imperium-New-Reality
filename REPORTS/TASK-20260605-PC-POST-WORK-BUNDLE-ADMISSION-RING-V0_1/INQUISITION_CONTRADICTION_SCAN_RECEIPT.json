@@ -1,0 +1,34 @@
+{
+  "schema_version": "inquisition.contradiction_scan_receipt.v0_1",
+  "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+  "created_at_utc": "2026-06-05T16:21:56Z",
+  "owner_organ": "INQUISITION",
+  "fake_green_scan": "PASS",
+  "scan_scope": [
+    "No final PASS is claimed before validation, commit, push, and remote equality proof.",
+    "Remote closure receipt records self-reference boundary instead of pretending post-push evidence exists pre-commit.",
+    "Custodes is limited to narrow organ matrix audit.",
+    "V0.1 checker claims structural admission only.",
+    "Known dirty state from task registration is included in file delta index."
+  ],
+  "contradictions_found": [],
+  "warnings": [
+    {
+      "warning_id": "ROUTE_ORGAN_COUNT_DELTA",
+      "detail": "The registered Astronomicon route manifest lists eight required organs, while the taskpack manifest and post-work ring include Custodes as ninth support organ. This is treated as an admission-stage expansion, not a block."
+    },
+    {
+      "warning_id": "COMMITTED_REMOTE_PROOF_SELF_REFERENCE",
+      "detail": "A committed file cannot contain the final hash produced by the same commit. Final remote proof must be obtained after push without further writes."
+    }
+  ],
+  "dirty_state_review": {
+    "initial_dirty_state": [
+      "M ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json",
+      "M ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json",
+      "?? ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/"
+    ],
+    "classification": "task_admission_input_plus_task_scope_changes"
+  },
+  "status": "PASS_WITH_WARNINGS"
+}

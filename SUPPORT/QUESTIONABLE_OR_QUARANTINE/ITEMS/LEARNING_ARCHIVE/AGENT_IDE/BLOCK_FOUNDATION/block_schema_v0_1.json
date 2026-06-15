@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "imperium.agent_ide.block_schema.v0_1",
+  "title": "Agent IDE Block Schema V0.1",
+  "type": "object",
+  "required": [
+    "block_id",
+    "name",
+    "level",
+    "data_sources",
+    "display_contract",
+    "skin_material_ref",
+    "animation_policy_ref",
+    "safety_level",
+    "projection_visibility"
+  ],
+  "properties": {
+    "block_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string",
+      "enum": [
+        "L0_SYSTEM",
+        "L1_ORGAN",
+        "L2_MACRO",
+        "L3_MICRO",
+        "L4_LEAF_GROUP"
+      ]
+    },
+    "data_sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "display_contract": {
+      "type": "object",
+      "required": [
+        "fields",
+        "stale_policy"
+      ],
+      "properties": {
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stale_policy": {
+          "type": "string"
+        }
+      }
+    },
+    "skin_material_ref": {
+      "type": "string"
+    },
+    "animation_policy_ref": {
+      "type": "string"
+    },
+    "safety_level": {
+      "type": "string",
+      "enum": [
+        "PUBLIC",
+        "SUMMARY_ONLY",
+        "RESTRICTED"
+      ]
+    },
+    "projection_visibility": {
+      "type": "string",
+      "enum": [
+        "FULL",
+        "SUMMARY_ONLY",
+        "HIDDEN"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

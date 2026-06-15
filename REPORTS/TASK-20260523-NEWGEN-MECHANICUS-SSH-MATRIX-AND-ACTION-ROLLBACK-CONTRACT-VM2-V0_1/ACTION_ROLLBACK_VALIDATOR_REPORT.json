@@ -1,0 +1,123 @@
+{
+  "schema_id": "ACTION_ROLLBACK_VALIDATOR_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-MECHANICUS-SSH-MATRIX-AND-ACTION-ROLLBACK-CONTRACT-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T20:26:56Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "rollback_core_files_exist",
+      "status": "PASS",
+      "details": "rollback contract core files exist"
+    },
+    {
+      "check_id": "policy_parse",
+      "status": "PASS",
+      "details": "policy json parses"
+    },
+    {
+      "check_id": "classification_parse",
+      "status": "PASS",
+      "details": "classification json parses"
+    },
+    {
+      "check_id": "rules_parse",
+      "status": "PASS",
+      "details": "decision rules json parses"
+    },
+    {
+      "check_id": "sample_actions_parse",
+      "status": "PASS",
+      "details": "sample actions json parses"
+    },
+    {
+      "check_id": "classification_schema_id",
+      "status": "PASS",
+      "details": "classification schema id matches"
+    },
+    {
+      "check_id": "required_mutation_classes_declared",
+      "status": "PASS",
+      "details": "all required mutation classes are declared"
+    },
+    {
+      "check_id": "mutation_class_rows_present",
+      "status": "PASS",
+      "details": "mutation class rows cover all required classes"
+    },
+    {
+      "check_id": "policy_schema_id",
+      "status": "PASS",
+      "details": "policy schema id matches"
+    },
+    {
+      "check_id": "required_action_fields_declared",
+      "status": "PASS",
+      "details": "all required action fields are declared in policy"
+    },
+    {
+      "check_id": "policy_mutation_classes",
+      "status": "PASS",
+      "details": "policy includes all required mutation classes"
+    },
+    {
+      "check_id": "policy_rollback_verdicts",
+      "status": "PASS",
+      "details": "policy includes all required rollback verdicts"
+    },
+    {
+      "check_id": "rules_schema_id",
+      "status": "PASS",
+      "details": "decision rules schema id matches"
+    },
+    {
+      "check_id": "rules_required_verdicts",
+      "status": "PASS",
+      "details": "decision rules declare all required rollback verdicts"
+    },
+    {
+      "check_id": "rules_cover_all_mutation_classes",
+      "status": "PASS",
+      "details": "decision rules cover all required mutation classes"
+    },
+    {
+      "check_id": "sample_actions_non_empty",
+      "status": "PASS",
+      "details": "sample actions are present"
+    },
+    {
+      "check_id": "sample_actions_have_required_fields",
+      "status": "PASS",
+      "details": "all sample actions include required rollback fields"
+    },
+    {
+      "check_id": "sample_actions_known_classes",
+      "status": "PASS",
+      "details": "all sample actions use known mutation classes"
+    },
+    {
+      "check_id": "sample_actions_no_fake_green_rules",
+      "status": "PASS",
+      "details": "all sample actions define no_fake_green_rule"
+    },
+    {
+      "check_id": "sample_coverage_all_classes",
+      "status": "PASS",
+      "details": "sample actions cover all required mutation classes"
+    },
+    {
+      "check_id": "dangerous_action_block_rule",
+      "status": "PASS",
+      "details": "dangerous actions are blocked unless explicit owner approval contract is present"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "validated_paths": {
+    "rollback_root": "IMPERIUM_NEW_GENERATION/TRUTH/ACTION_ROLLBACK",
+    "policy": "IMPERIUM_NEW_GENERATION/TRUTH/ACTION_ROLLBACK/ACTION_ROLLBACK_POLICY_V0_1.json",
+    "classification": "IMPERIUM_NEW_GENERATION/TRUTH/ACTION_ROLLBACK/ACTION_MUTATION_CLASSIFICATION_V0_1.json",
+    "decision_rules": "IMPERIUM_NEW_GENERATION/TRUTH/ACTION_ROLLBACK/ROLLBACK_DECISION_RULES_V0_1.json",
+    "sample_actions": "IMPERIUM_NEW_GENERATION/TRUTH/ACTION_ROLLBACK/SAMPLES/ACTION_ROLLBACK_SAMPLE_ACTIONS_V0_1.json"
+  },
+  "no_fake_green_note": "PASS means rollback contract definitions are structurally safe; destructive mutation runtime testing is still out of scope."
+}

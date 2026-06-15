@@ -1,0 +1,45 @@
+{
+  "task_id": "TASK-20260521-NEWGEN-VISUAL-BRAIN-TASK-CORRIDOR-PC-V0_1",
+  "artifacts": [
+    {
+      "artifact_id": "build_visual_brain_task_corridor_v0_1.py",
+      "original_path": "IMPERIUM_NEW_GENERATION/TOOLS/VISUAL_BRAIN/build_visual_brain_task_corridor_v0_1.py",
+      "purpose": "Generate visual corridor state from bounded NewGen receipts.",
+      "inputs": [
+        "Task State Transition Proposal",
+        "Evidence Replay Index",
+        "Scope Merge Record",
+        "Servitor Session/Run/Rerun Records"
+      ],
+      "outputs": [
+        "VISUAL_BRAIN/TASK_CORRIDOR_V0_1/data/visual_brain_task_corridor_state.generated.json"
+      ],
+      "dependencies": [
+        "Python stdlib only"
+      ],
+      "result": "committed",
+      "risk": "foundation-only semantics require explicit no-live claims",
+      "recommendation": "ABSORB_NOW"
+    },
+    {
+      "artifact_id": "newgen_visual_brain_task_corridor_validator_v0_1.py",
+      "original_path": "IMPERIUM_NEW_GENERATION/TOOLS/VALIDATORS/newgen_visual_brain_task_corridor_validator_v0_1.py",
+      "purpose": "Validate static lab contracts, no-fake-green rules, local-only constraints, and scope safety.",
+      "inputs": [
+        "state schema/sample",
+        "generated state",
+        "report artifacts",
+        "changed paths + git status"
+      ],
+      "outputs": [
+        "REPORTS/.../VALIDATOR_REPORT.json"
+      ],
+      "dependencies": [
+        "Python stdlib only"
+      ],
+      "result": "committed",
+      "risk": "future schema evolution requires validator updates",
+      "recommendation": "ABSORB_NOW"
+    }
+  ]
+}

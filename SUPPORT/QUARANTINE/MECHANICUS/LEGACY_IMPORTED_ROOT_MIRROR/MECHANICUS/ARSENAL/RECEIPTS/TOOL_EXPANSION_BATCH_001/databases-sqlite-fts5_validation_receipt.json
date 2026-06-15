@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:databases_sqlite_fts5:tool_detection:databases_sqlite_fts5",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "DATABASES_SQLITE_FTS5",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:44Z",
+  "status": "PASS",
+  "summary": "DATABASES_SQLITE_FTS5: PASS via tool_detection:DATABASES_SQLITE_FTS5. promotion_recommendation=KEEP_STATUS",
+  "check_name": "tool_detection:DATABASES_SQLITE_FTS5",
+  "command_or_check": "python -c \"import sqlite3; con=sqlite3.connect(':memory:'); con.execute('CREATE VIRTUAL TABLE t USING fts5(content)'); print('fts5_ok')\"",
+  "exit_code": 0,
+  "stdout_excerpt": "$ python -c \"import sqlite3; con=sqlite3.connect(':memory:'); con.execute('CREATE VIRTUAL TABLE t USING fts5(content)'); print('fts5_ok')\"\nfts5_ok",
+  "stderr_excerpt": "",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/databases-sqlite-fts5_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "KEEP_STATUS",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/databases-sqlite-fts5_validation_receipt.json"
+  ]
+}

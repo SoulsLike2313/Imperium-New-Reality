@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NewGen Sanctum Truth Shell V0.1</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="truth-bar">
+    <div class="truth-bar__main">
+      <p class="kicker" id="app-kicker">IMPERIUM NEW GENERATION</p>
+      <h1 id="app-title">Sanctum Truth Shell V0.1</h1>
+      <p class="subtitle" id="app-subtitle">Foundation truth surface with file-backed action layer.</p>
+      <p class="subtitle">
+        Operator Cockpit tracks:
+        <a href="./operator_cockpit_l1.html">open stable shell</a>
+        |
+        <a href="./operator_cockpit_candidate.html">open candidate WIP shell</a>
+      </p>
+    </div>
+    <div class="truth-bar__meta">
+      <button id="lang-toggle" class="btn" type="button">RU</button>
+      <div class="truth-grid">
+        <div><span class="label" id="label-task">Task</span><strong id="truth-task">-</strong></div>
+        <div><span class="label" id="label-head">HEAD</span><strong id="truth-head">-</strong></div>
+        <div><span class="label" id="label-mode">Mode</span><strong id="truth-mode">-</strong></div>
+        <div><span class="label" id="label-worktree">Worktree</span><strong id="truth-worktree">-</strong></div>
+        <div><span class="label" id="label-generated">Generated</span><strong id="truth-generated">-</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="panel rail">
+      <h2 id="rail-title">Pipeline Zones</h2>
+      <ul id="phase-rail" class="phase-rail"></ul>
+      <section class="warnings">
+        <h3 id="warnings-title">Known Warnings</h3>
+        <ul id="warnings-list"></ul>
+      </section>
+      <section class="warnings">
+        <h3 id="comm-title">Communication Gate</h3>
+        <ul id="comm-gate-list"></ul>
+      </section>
+      <section class="warnings truth-index">
+        <h3 id="truth-index-title">Current Truth Index</h3>
+        <ul id="truth-index-list">
+          <li id="truth-root-status">STATUS: -</li>
+          <li id="truth-root-path">CURRENT_TRUTH_ROOT: -</li>
+          <li id="report-index-path">REPORT_STATUS_INDEX: -</li>
+          <li id="evidence-map-path">EVIDENCE_SOURCE_MAP: -</li>
+          <li id="evidence-map-unified-path">EVIDENCE_MAP_UNIFIED: -</li>
+          <li id="freshness-index-path">EVIDENCE_FRESHNESS_INDEX: -</li>
+          <li id="truth-sync-utc">SYNC: -</li>
+        </ul>
+      </section>
+      <section class="warnings organ-dialogue-demo" id="organ-dialogue-demo">
+        <h3 id="organ-dialogue-title">Organ Dialogue Demo</h3>
+        <ul id="organ-dialogue-list">
+          <li id="organ-dialogue-task">TASK: -</li>
+          <li id="organ-dialogue-requests">REQUESTS: -</li>
+          <li id="organ-dialogue-responses">RESPONSES: -</li>
+          <li id="organ-dialogue-warnings">WARNINGS: -</li>
+          <li id="organ-dialogue-last-event">LAST_EVENT: -</li>
+          <li id="organ-dialogue-foundation">FOUNDATION: -</li>
+          <li id="organ-dialogue-autonomy">AUTONOMY: -</li>
+        </ul>
+      </section>
+    </aside>
+
+    <section class="panel pipeline">
+      <h2 id="pipeline-title">Foundation Pipeline 1-10</h2>
+      <div id="pipeline-list" class="pipeline-list"></div>
+    </section>
+
+    <aside class="panel inspector">
+      <h2 id="inspector-title">Phase Inspector</h2>
+      <div id="inspector-empty" class="placeholder">Select a phase to inspect details.</div>
+      <div id="inspector-body" class="hidden">
+        <h3 id="inspector-phase-name"></h3>
+        <p id="inspector-summary"></p>
+        <h4 id="inspector-paths-label">Paths</h4>
+        <ul id="inspector-paths"></ul>
+        <h4 id="inspector-reports-label">Report paths</h4>
+        <ul id="inspector-reports"></ul>
+        <h4 id="inspector-limits-label">Limitations</h4>
+        <ul id="inspector-limits"></ul>
+        <h4 id="inspector-snapshot-label">JSON snapshot</h4>
+        <pre id="inspector-json"></pre>
+      </div>
+    </aside>
+  </main>
+
+  <section class="panel servitor-session">
+    <div class="servitor-session__head">
+      <h2 id="session-title">Servitor Session View</h2>
+      <span id="session-status-pill" class="status-pill status-foundation">FOUNDATION_ONLY</span>
+    </div>
+
+    <p class="session-note" id="session-note">Read-only timeline from existing NewGen artifacts.</p>
+
+    <div class="session-meta">
+      <div><span class="label" id="label-session-id">Session</span><strong id="session-id">-</strong></div>
+      <div><span class="label" id="label-session-task">Task</span><strong id="session-task">-</strong></div>
+      <div><span class="label" id="label-session-head">HEAD</span><strong id="session-head">-</strong></div>
+      <div><span class="label" id="label-session-branch">Branch</span><strong id="session-branch">-</strong></div>
+      <div><span class="label" id="label-session-timeline">Timeline</span><strong id="session-timeline-summary">-</strong></div>
+      <div><span class="label" id="label-session-next">Next Step</span><strong id="session-next-step">-</strong></div>
+    </div>
+
+    <div class="servitor-session__grids">
+      <section>
+        <h3 id="session-source-title">Source Reports</h3>
+        <ul id="session-source-list"></ul>
+      </section>
+      <section>
+        <h3 id="session-evidence-title">Evidence Summary</h3>
+        <ul id="session-evidence-list"></ul>
+      </section>
+      <section>
+        <h3 id="session-organ-title">Organ Dialogue</h3>
+        <ul id="session-organ-list"></ul>
+      </section>
+      <section>
+        <h3 id="session-action-title">Action Layer</h3>
+        <ul id="session-action-list"></ul>
+      </section>
+    </div>
+
+    <h3 id="session-timeline-title">Run / Rerun Timeline</h3>
+    <div id="session-timeline-list" class="session-timeline"></div>
+
+    <h3 id="session-warnings-title">Session Warnings</h3>
+    <ul id="session-warnings-list"></ul>
+
+    <p class="foundation-note" id="session-boundary-note">
+      Foundation-only view. No live autonomous execution claim.
+    </p>
+  </section>
+
+  <section class="panel owner-question-gate" id="owner-question-gate">
+    <div class="owner-question-gate__head">
+      <h2 id="owner-questions-title">Owner Question Gate</h2>
+      <span id="owner-gate-pill" class="status-pill status-foundation">FOUNDATION_ONLY</span>
+    </div>
+
+    <p class="owner-question-note" id="owner-questions-note">
+      Read-only owner decision queue backed by NewGen files.
+    </p>
+
+    <div class="owner-question-meta">
+      <div><span class="label" id="label-owner-total">Total</span><strong id="owner-total">-</strong></div>
+      <div><span class="label" id="label-owner-open">Open</span><strong id="owner-open">-</strong></div>
+      <div><span class="label" id="label-owner-blocking">Blocking</span><strong id="owner-blocking">-</strong></div>
+      <div><span class="label" id="label-owner-deferred">Deferred</span><strong id="owner-deferred">-</strong></div>
+      <div><span class="label" id="label-owner-warn">Warn-only</span><strong id="owner-warn-only">-</strong></div>
+      <div><span class="label" id="label-owner-required">Owner required</span><strong id="owner-required">-</strong></div>
+    </div>
+
+    <div class="owner-question-state">
+      <div><span class="label" id="label-owner-derived">Derived Gate</span><strong id="owner-derived-status">-</strong></div>
+      <div><span class="label" id="label-owner-next">Next Step</span><strong id="owner-next-step">-</strong></div>
+    </div>
+
+    <h3 id="owner-question-card-title">Question Cards</h3>
+    <div id="owner-question-cards" class="owner-question-cards"></div>
+
+    <h3 id="owner-question-warnings-title">Gate Warnings</h3>
+    <ul id="owner-question-warnings-list"></ul>
+
+    <p class="foundation-note" id="owner-boundary-note">
+      FOUNDATION_ONLY / NOT LIVE OWNER CHANNEL
+    </p>
+  </section>
+
+  <section class="panel transfer-console" id="transfer-console">
+    <div class="transfer-console__head">
+      <h2 id="transfer-title">Transfer Console</h2>
+      <span id="transfer-pill" class="status-pill status-foundation">FOUNDATION_ONLY</span>
+    </div>
+
+    <p class="transfer-note" id="transfer-note">
+      Foundation transfer visibility for PC / VM2 / VM3 contours and allowlisted transfer records.
+    </p>
+
+    <div class="transfer-meta">
+      <div><span class="label" id="label-transfer-generated">Generated</span><strong id="transfer-generated">-</strong></div>
+      <div><span class="label" id="label-transfer-boundary">Claim Boundary</span><strong id="transfer-boundary">-</strong></div>
+      <div><span class="label" id="label-transfer-requests">Requests</span><strong id="transfer-request-count">-</strong></div>
+      <div><span class="label" id="label-transfer-results">Results</span><strong id="transfer-result-count">-</strong></div>
+      <div><span class="label" id="label-transfer-ledger">Ledger Entries</span><strong id="transfer-ledger-count">-</strong></div>
+      <div><span class="label" id="label-transfer-context">Context Mix</span><strong id="transfer-context-mix">-</strong></div>
+      <div><span class="label" id="label-transfer-runner">Runner State</span><strong id="transfer-runner-state">-</strong></div>
+      <div><span class="label" id="label-transfer-shell">No Arbitrary Shell</span><strong id="transfer-shell-safety">-</strong></div>
+    </div>
+
+    <h3 id="transfer-contours-title">Contour Cards</h3>
+    <div id="transfer-contour-cards" class="transfer-contour-cards"></div>
+
+    <div class="transfer-grids">
+      <section>
+        <h3 id="transfer-requests-title">Latest Requests</h3>
+        <ul id="transfer-request-list"></ul>
+      </section>
+      <section>
+        <h3 id="transfer-results-title">Latest Results</h3>
+        <ul id="transfer-result-list"></ul>
+      </section>
+      <section>
+        <h3 id="transfer-ledger-title">Action Ledger</h3>
+        <ul id="transfer-ledger-list"></ul>
+      </section>
+      <section>
+        <h3 id="transfer-sources-title">Source Refs</h3>
+        <ul id="transfer-source-refs"></ul>
+      </section>
+    </div>
+
+    <p class="transfer-note" id="transfer-runner-note">Runner state is not available yet.</p>
+
+    <p class="foundation-note" id="transfer-boundary-note">FOUNDATION_ONLY / NO_PRODUCTION_REMOTE_ORCHESTRATION</p>
+  </section>
+
+  <section class="panel action-layer">
+    <div class="action-layer__head">
+      <h2 id="actions-title">Action Layer</h2>
+      <span id="connection-status-pill" class="status-pill status-unknown">UNKNOWN</span>
+    </div>
+
+    <p class="action-note" id="connection-note">Action server status is unknown.</p>
+
+    <div class="action-meta">
+      <div><span class="label" id="label-registry-status">Registry Status</span><strong id="registry-status">-</strong></div>
+      <div><span class="label" id="label-report-summary-status">Report Summary</span><strong id="report-summary-status">-</strong></div>
+      <div><span class="label" id="label-result-model-state">Result Model</span><strong id="result-model-state">-</strong></div>
+      <div><span class="label" id="label-last-action-status">Last Action Status</span><strong id="last-action-status">-</strong></div>
+      <div><span class="label" id="label-last-action-path">Result Path</span><strong id="last-action-path">-</strong></div>
+      <div><span class="label" id="label-last-action-summary">Result Summary</span><strong id="last-action-summary">-</strong></div>
+    </div>
+
+    <div id="action-cards" class="action-cards"></div>
+
+    <h3 id="last-action-json-title">Last Action Result JSON</h3>
+    <pre id="last-action-json">-</pre>
+
+    <p class="foundation-note" id="foundation-note">Foundation-only layer. No production/autonomous claim.</p>
+  </section>
+
+  <script src="./app.js"></script>
+</body>
+</html>

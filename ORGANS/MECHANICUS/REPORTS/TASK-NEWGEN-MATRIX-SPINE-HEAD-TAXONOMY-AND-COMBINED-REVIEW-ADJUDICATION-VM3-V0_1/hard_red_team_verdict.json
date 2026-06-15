@@ -1,0 +1,72 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1",
+  "timestamp_utc": "2026-05-30T17:23:52Z",
+  "builder_claims": [
+    {
+      "claim_id": "C01",
+      "claim": "HEAD taxonomy is machine-readable and first-class for implementation/proof/artifact/finalization/remote/review-target roles.",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/HEAD_TAXONOMY_MANIFEST.json",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/SCHEMAS/head_taxonomy_manifest_schema.json",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/TEMPLATES/HEAD_TAXONOMY_MANIFEST_TEMPLATE.json"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "claim": "Combined review adjudication is machine-readable and captures Servitor/Mechanicus/Inquisitor/Speculum/Logos slots.",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/COMBINED_REVIEW_ADJUDICATION_RECEIPT.json",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/SCHEMAS/combined_review_adjudication_receipt_schema.json",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/TEMPLATES/COMBINED_REVIEW_ADJUDICATION_RECEIPT_TEMPLATE.json"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "claim": "Checker proves failure and pass fixtures for mandatory caps and keeps WARP locked.",
+      "evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/head_taxonomy_adjudication_receipt.json",
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/taxonomy_fixture_report.md",
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_head_taxonomy_adjudication.py"
+      ]
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "A01",
+      "target_claim_id": "C01",
+      "attack": "Reviewers can still diverge by consuming different taxonomy manifests.",
+      "result": "RESISTED",
+      "downgrade_needed": false,
+      "counter_evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/taxonomy_fixture_report.md"
+      ]
+    },
+    {
+      "attack_id": "A02",
+      "target_claim_id": "C02",
+      "attack": "Combined receipt missing would pass silently.",
+      "result": "RESISTED",
+      "downgrade_needed": false,
+      "counter_evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/taxonomy_fixture_report.md"
+      ]
+    },
+    {
+      "attack_id": "A03",
+      "target_claim_id": "C03",
+      "attack": "Task overclaims final merged verdict while external reviewer slots are not filled.",
+      "result": "PARTIAL",
+      "downgrade_needed": true,
+      "counter_evidence": [
+        "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/COMBINED_REVIEW_ADJUDICATION_RECEIPT.json"
+      ],
+      "applied_downgrade": "FORCE_PASS_WITH_WARNINGS_UNTIL_EXTERNAL_REVIEWS"
+    }
+  ],
+  "downgrade_rules_applied": [
+    "FORCE_PASS_WITH_WARNINGS_UNTIL_EXTERNAL_REVIEWS"
+  ],
+  "caps_triggered": [],
+  "final_verdict": "PASS_WITH_WARNINGS",
+  "notes": "Hard red-team confirms no fake clean PASS claim; external review slots remain pending by contract."
+}

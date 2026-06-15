@@ -1,0 +1,48 @@
+{
+  "setting_id": "SET-PERMISSIONS-V0_1",
+  "title": "Servitor Permissions",
+  "version": "v0_1",
+  "state": "ACTIVE",
+  "scope": "execution boundaries and allowed operations",
+  "applies_to_roles": [
+    "SERVITOR"
+  ],
+  "applies_to_modes": [
+    "EXECUTOR",
+    "REPAIRER"
+  ],
+  "global_permissions": [
+    "read_task_inputs",
+    "write_admitted_scope",
+    "write_runtime_outputs_external_root",
+    "generate_reports_and_receipts"
+  ],
+  "restricted_operations": [
+    "destructive_delete",
+    "mass_move",
+    "out_of_scope_writes",
+    "secret_material_export"
+  ],
+  "owner_gate_required_for": [
+    "destructive_delete",
+    "architecture_rewrite",
+    "scope_expansion"
+  ],
+  "machine_rule": {
+    "runtime_output_must_be_external": true,
+    "forbid_unadmitted_writes": true
+  },
+  "human_summary": "Permissions are bounded by admitted scope and evidence discipline.",
+  "acceptance_tests": [
+    "attempted out-of-scope write is blocked"
+  ],
+  "evidence_required": [
+    "git status --short",
+    "scope boundary report"
+  ],
+  "dependencies": [],
+  "conflicts_with": [],
+  "supersedes": [],
+  "rollback_plan": "restore previous permission profile and re-run check-all",
+  "owner_approval_required": true
+}

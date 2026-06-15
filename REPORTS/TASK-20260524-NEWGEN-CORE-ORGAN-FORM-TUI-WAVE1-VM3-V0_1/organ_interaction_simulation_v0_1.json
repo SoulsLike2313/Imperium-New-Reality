@@ -1,0 +1,123 @@
+{
+  "schema_id": "newgen_organ_interaction_simulation_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+  "servitor_role": "VM3_SERVITOR",
+  "steps": [
+    {
+      "organ_id": "DOCTRINARIUM",
+      "servitor_question_ru": "Какие законы и гейты применяются к этой задаче?",
+      "query_evidence_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/query_doctrinarium_sample.json",
+      "verdict": "PASS",
+      "applied_rules": [
+        "GATE_DOCTRINARIUM_READ_FIRST",
+        "GATE_NO_GENERIC_PASS",
+        "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+        "GATE_NOT_PROVEN_BOUNDARY"
+      ],
+      "required_actions": [
+        "Run and store preflight output before edits",
+        "Bind final verdict to scoped Wave 1 slice only"
+      ],
+      "forbidden_actions": [
+        "Claim complete Important Six",
+        "Claim production autonomy"
+      ],
+      "evidence_required": [
+        "doctrinarium_preflight_output.json",
+        "applicable_doctrinarium_gates.json"
+      ],
+      "owner_verdict_conditions": [
+        "If scope must exceed Wave 1 boundaries"
+      ]
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "servitor_question_ru": "Какие role/language/response правила обязательны?",
+      "query_evidence_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/query_officio_sample.json",
+      "verdict": "PASS",
+      "applied_rules": [
+        "GATE_ROLE_ACK_REQUIRED",
+        "GATE_OWNER_LANGUAGE_RU",
+        "GATE_SCOPED_VERDICT_ONLY",
+        "GATE_STOP_CONDITION_BINDING"
+      ],
+      "required_actions": [
+        "Publish officio role contract ack before edits",
+        "Use scoped verdict format PASS_FOR_<SLICE>_ONLY"
+      ],
+      "forbidden_actions": [
+        "Use generic PASS verdict",
+        "Continue after Owner Verdict Needed signal"
+      ],
+      "evidence_required": [
+        "officio_role_contract_ack.json",
+        "taskpack_scope_ack.json"
+      ],
+      "owner_verdict_conditions": [
+        "If language/scope contract must be overridden"
+      ]
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "servitor_question_ru": "Какие инструменты/возможности нужны и в каком они состоянии?",
+      "query_evidence_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/query_mechanicus_sample.json",
+      "verdict": "PASS",
+      "applied_rules": [
+        "GATE_RICH_MANDATORY_FOR_WAVE1_TUI",
+        "GATE_CONTROLLED_CAPABILITY_ACQUISITION",
+        "GATE_SCRIPT_ARTIFACT_PRESERVATION",
+        "GATE_COMMAND_CHUNKING_DISCIPLINE"
+      ],
+      "required_actions": [
+        "Probe Rich import and version",
+        "Store capability registry evidence under Mechanicus TOOLS_REGISTRY"
+      ],
+      "forbidden_actions": [
+        "Claim TUI visual pass with plain fallback only",
+        "Perform uncontrolled package installs"
+      ],
+      "evidence_required": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json"
+      ],
+      "owner_verdict_conditions": [
+        "If mandatory Rich capability cannot be acquired"
+      ]
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "servitor_question_ru": "Какая регистрация/история/гигиена репозитория обязательна?",
+      "query_evidence_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/query_administratum_sample.json",
+      "verdict": "PASS",
+      "applied_rules": [
+        "GATE_TASK_REGISTRATION_CONTINUITY",
+        "GATE_EVIDENCE_PACKAGE_REQUIRED",
+        "GATE_REPO_HYGIENE_BOUNDARY",
+        "GATE_SEQUENCE_DISCIPLINE"
+      ],
+      "required_actions": [
+        "Publish final report and closure receipt with evidence paths",
+        "Verify clean worktree and remote sync after push"
+      ],
+      "forbidden_actions": [
+        "Hide dirty state or missing receipts",
+        "Claim pass without smoke evidence"
+      ],
+      "evidence_required": [
+        "taskpack_scope_ack.json",
+        "organ_route_plan.json"
+      ],
+      "owner_verdict_conditions": [
+        "If sequence/scope exception is requested"
+      ]
+    }
+  ],
+  "overall_verdict": "PASS",
+  "not_proven": [
+    "complete Important Six",
+    "Astronomicon/Inquisition TUI",
+    "live Owner Verdict Needed UI button",
+    "full organ intelligence",
+    "production autonomy"
+  ],
+  "generated_at_utc": "2026-05-24T01:28:30Z"
+}

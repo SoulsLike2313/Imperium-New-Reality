@@ -1,0 +1,45 @@
+{
+  "version": "0.1.0",
+  "primary_commands": [
+    "/help",
+    "/status",
+    "/modes",
+    "/mode <name>",
+    "/role <agent>",
+    "/settings <agent> <mode>",
+    "/settings-list",
+    "/settings-show <setting_id>",
+    "/validate",
+    "/check",
+    "/pack <agent>",
+    "/prompt-check <zip_path>",
+    "/task-check <task_pack_path>",
+    "/tools",
+    "/recent",
+    "/where",
+    "/exit"
+  ],
+  "aliases": {
+    "/role-get": "/role",
+    "/settings-get": "/settings",
+    "/setting-list": "/settings-list",
+    "/setting-show": "/settings-show",
+    "/setting-validate": "/validate",
+    "/check-all": "/check",
+    "/pack-build-role": "/pack",
+    "/prompt-pack-validate": "/prompt-check",
+    "/task-acceptance-check": "/task-check",
+    "/tool-list": "/tools"
+  },
+  "help_policy": {
+    "show_primary_first": true,
+    "show_aliases_in_secondary_section": true,
+    "max_help_lines": 40,
+    "include_next_actions": true
+  },
+  "grammar_rules": {
+    "command_prefix": "/",
+    "case_insensitive_commands": true,
+    "argument_case": "agent and mode values are case-insensitive; normalized to uppercase"
+  }
+}

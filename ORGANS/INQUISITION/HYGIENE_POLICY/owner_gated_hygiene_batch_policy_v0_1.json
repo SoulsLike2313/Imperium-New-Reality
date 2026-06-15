@@ -1,0 +1,34 @@
+{
+  "schema": "imperium.inquisition.hygiene_policy.v0_1",
+  "policy_id": "inquisition.owner_gated_hygiene_batch_policy.v0_1",
+  "title": "Owner-Gated Hygiene Batch Policy",
+  "mode": "preview_before_execution",
+  "default_batch": {
+    "target_organ": "REPORTS_LEGACY",
+    "target_lane": "PACK_TO_VAULT_CANDIDATE",
+    "execution_mode": "read_only_preview"
+  },
+  "allowed_preview_actions": [
+    "classify",
+    "select_candidates",
+    "count",
+    "size",
+    "summarize_risk",
+    "write_external_reports",
+    "write_external_visual_proof"
+  ],
+  "forbidden_preview_actions": [
+    "delete_source",
+    "move_source",
+    "git_rm",
+    "write_to_evidence_vault",
+    "rewrite_history",
+    "push"
+  ],
+  "owner_gate_required_for": [
+    "pack_to_vault_execution",
+    "fixture_manifest_creation",
+    "source_cleanup",
+    "main_transfer"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "task_id": "TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1",
+  "timestamp_utc": "2026-05-30T23:20:18Z",
+  "builder_claims": [
+    {
+      "claim_id": "C01",
+      "claim": "Intake performs required validation and canonical registration.",
+      "evidence": [
+        "TASKPACK_ADMISSION_RECEIPT.example.json",
+        "taskpack_admission_fixture_results.json"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "claim": "Resolver detects missing task, duplicates, corruption, missing artifacts, and organ ACK gaps.",
+      "evidence": [
+        "task_id_resolver_fixture_results.json"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "claim": "Minimal TUI owner flow is available.",
+      "evidence": [
+        "tui_show_current.txt",
+        "tui_resolve_current.txt",
+        "tui_register_duplicate_attempt.txt"
+      ]
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "A01",
+      "target_claim_id": "C01",
+      "attack": "ZIP traversal can bypass extraction root.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "taskpack_admission_fixture_results.json::unsafe_extraction_path"
+      ]
+    },
+    {
+      "attack_id": "A02",
+      "target_claim_id": "C02",
+      "attack": "Registry corruption could still produce PASS.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "task_id_resolver_fixture_results.json::registry_corruption"
+      ]
+    },
+    {
+      "attack_id": "A03",
+      "target_claim_id": "C03",
+      "attack": "Stage2 might over-claim clean production readiness.",
+      "result": "PARTIAL",
+      "downgrade_needed": true,
+      "applied_downgrade": "FORCE_PASS_WITH_WARNINGS_ONLY"
+    }
+  ],
+  "downgrade_rules_applied": [
+    "FORCE_PASS_WITH_WARNINGS_ONLY"
+  ],
+  "caps_triggered": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME"
+  ],
+  "final_verdict": "PASS_WITH_WARNINGS"
+}

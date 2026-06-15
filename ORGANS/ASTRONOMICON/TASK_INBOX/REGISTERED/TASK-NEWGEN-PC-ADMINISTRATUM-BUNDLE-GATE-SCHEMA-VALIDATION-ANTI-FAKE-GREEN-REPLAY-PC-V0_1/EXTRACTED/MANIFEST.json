@@ -1,0 +1,73 @@
+{
+  "manifest_version": "1.0",
+  "task_id": "TASK-NEWGEN-PC-ADMINISTRATUM-BUNDLE-GATE-SCHEMA-VALIDATION-ANTI-FAKE-GREEN-REPLAY-PC-V0_1",
+  "task_name": "Administratum bundle gate schema validation and anti-fake-green replay",
+  "contour": "PC",
+  "active_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "active_remote": "https://github.com/SoulsLike2313/Imperium-New-Reality.git",
+  "ancient_empire_reference": {
+    "url": "https://github.com/SoulsLike2313/Imperium-",
+    "freeze_commit": "448150be7b4984b755828bc2f89b5bd1156de37d",
+    "access": "read_only_reference_only_when_explicitly_required",
+    "mutation_allowed": false
+  },
+  "route_mode": "PC_NEW_REALITY_NATIVE_ONLY",
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "primary_organ": "ADMINISTRATUM",
+  "supporting_organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH_UTF8_NO_BOM_ONLY",
+    "canonical_repo_artifacts": "ENGLISH_UTF8_NO_BOM_ONLY",
+    "owner_facing_russian_runtime_output": {
+      "allowed": true,
+      "authority": "OFFICIO_AGENTIS",
+      "routing_contract": "OFFICIO_OWNER_LANGUAGE_ROUTING.md",
+      "runtime_only": true,
+      "repo_artifacts_remain_english": true
+    },
+    "owner_language_routed_through_officio": true,
+    "cyrillic_in_taskpack": "FORBIDDEN",
+    "localization_exception": "OFFICIO_RUNTIME_OWNER_CHAT_ONLY_NOT_IN_MACHINE_ARTIFACTS"
+  },
+  "admission_requirements": {
+    "must_register_through": "New Reality native Astronomicon",
+    "taskpack_required_files": [
+      "MANIFEST.json",
+      "TASK_SPEC.md",
+      "ACCEPTANCE_GATES.md",
+      "OUTPUT_REQUIREMENTS.md",
+      "START_HERE.md"
+    ],
+    "no_ancient_bridge": true
+  },
+  "scope_locks": {
+    "allowed_write_roots": [
+      "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY"
+    ],
+    "forbidden_write_roots": [
+      "E:/IMPERIUM"
+    ],
+    "vm_sync_allowed": false,
+    "external_tool_install_allowed": false,
+    "mass_rewrite_allowed": false
+  },
+  "expected_result": "Administratum Bundle Gate V0.2 adds schema validation, negative fixtures, replay on real reports, and anti-fake-green receipts while keeping Administratum scope composition/schema only."
+}

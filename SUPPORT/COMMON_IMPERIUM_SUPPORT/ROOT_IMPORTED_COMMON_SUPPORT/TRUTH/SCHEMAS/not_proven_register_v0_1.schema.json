@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NOT_PROVEN_REGISTER_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "generated_at_utc",
+    "entries",
+    "summary"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "NOT_PROVEN_REGISTER_V0_1"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim_id",
+          "area",
+          "source_ref",
+          "current_status",
+          "reason",
+          "recommended_next_step",
+          "linked_evidence_ids"
+        ],
+        "properties": {
+          "claim_id": {
+            "type": "string"
+          },
+          "area": {
+            "type": "string"
+          },
+          "source_ref": {
+            "type": "string"
+          },
+          "current_status": {
+            "enum": [
+              "WARN",
+              "UNKNOWN",
+              "MISSING",
+              "PARTIAL",
+              "FOUNDATION_ONLY",
+              "STALE",
+              "PENDING_POST_COMMIT"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "recommended_next_step": {
+            "type": "string"
+          },
+          "linked_evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

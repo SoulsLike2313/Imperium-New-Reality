@@ -1,0 +1,53 @@
+{
+  "task_id": "TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1",
+  "timestamp_utc": "2026-05-30T22:42:13Z",
+  "builder_claims": [
+    {
+      "claim_id": "C01",
+      "claim": "All 8 organs are mobilized with task participation packets used by Astronomicon task entry.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/eight_organ_participation_summary.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/*/TASK_PARTICIPATION/TASK_PARTICIPATION_CONTRACT.json"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "claim": "Synthetic task-entry route can resolve task_id + start task and produce all-organ ACK.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ID_RESOLVER_CONTRACT.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/synthetic_task_entry_checker_receipt.json"
+      ]
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "A01",
+      "target_claim_id": "C01",
+      "attack": "Organ packets may exist but be decorative and unused by route.",
+      "result": "RESISTED",
+      "downgrade_needed": false,
+      "counter_evidence": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json"
+      ]
+    },
+    {
+      "attack_id": "A02",
+      "target_claim_id": "C02",
+      "attack": "Proof is synthetic only and cannot justify clean production readiness.",
+      "result": "PARTIAL",
+      "downgrade_needed": true,
+      "applied_downgrade": "FORCE_STAGE1_PASS_WITH_WARNINGS_ONLY"
+    }
+  ],
+  "downgrade_rules_applied": [
+    "FORCE_STAGE1_PASS_WITH_WARNINGS_ONLY"
+  ],
+  "caps_triggered": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_LEGACY_RECEIPT_PRODUCERS_UNCLASSIFIED",
+    "CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING_OR_NEEDS_FOLLOWUP",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME"
+  ],
+  "final_verdict": "PASS_WITH_WARNINGS"
+}

@@ -1,0 +1,36 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1",
+  "generated_at_utc": "2026-05-24T21:39:57Z",
+  "proof_id": "ghost_evolve_batch_002",
+  "manual_to_reusable_conversion": [
+    {
+      "manual_before": "Manual selection of scope packs and checks.",
+      "reusable_now": "mechanicus_scope_pack_consumer_v0_1.py + mechanicus_quality_gate_runner_v0_1.py"
+    },
+    {
+      "manual_before": "Manual JSON parsing and inconsistent schema decisions.",
+      "reusable_now": "mechanicus_schema_validation_runner_v0_1.py"
+    },
+    {
+      "manual_before": "Manual dossier structure check per ZIP.",
+      "reusable_now": "mechanicus_taskpack_validator_v0_1.py"
+    },
+    {
+      "manual_before": "Manual hygiene scanning and evidence grep.",
+      "reusable_now": "newgen_repo_hygiene_check_v0_1.py + evidence_index_smoke_v0_1.py"
+    }
+  ],
+  "rerun_commands": [
+    "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_quality_gate_runner_v0_1.py --task-id TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1 --report-root IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1",
+    "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_taskpack_validator_v0_1.py --taskpack-zip <DOSSIER.zip> --output <report.json>"
+  ],
+  "future_servitor_decisions_removed": [
+    "Which scope packs to consume for this gate family.",
+    "How to classify NO_SCHEMA_AVAILABLE vs FAIL.",
+    "How to run compact hygiene and evidence smoke."
+  ],
+  "limitations": [
+    "Mypy can emit first-pass warnings; treated as WARN per contract.",
+    "Schema coverage remains partial where no explicit schema exists."
+  ]
+}

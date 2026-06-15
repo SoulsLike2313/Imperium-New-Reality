@@ -1,0 +1,59 @@
+{
+  "schema_id": "newgen_sanctum_organ_cockpit_skeleton_manifest_v0_1",
+  "task_id": "TASK-NEWGEN-SANCTUM-ORGAN-CENTERED-COCKPIT-SKELETON-PC-V0_1",
+  "generated_at_utc": "2026-05-24T15:20:27Z",
+  "starting_head": "9653d634446e5ef4b13340012647dc02c317230f",
+  "cockpit_files": {
+    "html": {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_organ_cockpit_v0_1.html",
+      "size_bytes": 4992,
+      "sha256": "B08D750006895B661E1CD4956309D762AB6292A1D4C6D88B80B35DBD4E7D5950"
+    },
+    "css": {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_organ_cockpit_v0_1.css",
+      "size_bytes": 6060,
+      "sha256": "34D0B9D2C4A1693ABDB31D193DEC2FBAA71F64286C61E8881C6CE369FA3F5571"
+    },
+    "js": {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_organ_cockpit_v0_1.js",
+      "size_bytes": 18451,
+      "sha256": "7EA1D401B975359EE0B099A09DD554B226FCE91B75495EE048C68A27CA27BA1B"
+    },
+    "manifest": {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_organ_cockpit_manifest_v0_1.json",
+      "sha256": "7E094C537EB9EE6ECDBED4DB359BFC2BEFDCC5F304D56574AAB788B020EF35C5"
+    },
+    "readme": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/README_ORGAN_COCKPIT_V0_1.md"
+  },
+  "zones": {
+    "top_truth_strip": true,
+    "six_organ_shell_panels": {
+      "present": true,
+      "count": 6,
+      "organs": [
+        "Doctrinarium",
+        "Officio Agentis",
+        "Administratum",
+        "Astronomicon",
+        "Mechanicus",
+        "Inquisition"
+      ]
+    },
+    "owner_decision_queue": true,
+    "evidence_history_zone": true,
+    "secondary_action_drawer": {
+      "present": true,
+      "dominates_first_screen": false
+    }
+  },
+  "safety": {
+    "read_only_default": true,
+    "mutating_endpoints_added": false,
+    "uncontrolled_pty_added": false,
+    "seed_data_labeled": true
+  },
+  "bilingual_ui": {
+    "ru_en_switch_supported": true,
+    "switch_method": "langToggleBtn + ?lang=en|ru query support"
+  }
+}

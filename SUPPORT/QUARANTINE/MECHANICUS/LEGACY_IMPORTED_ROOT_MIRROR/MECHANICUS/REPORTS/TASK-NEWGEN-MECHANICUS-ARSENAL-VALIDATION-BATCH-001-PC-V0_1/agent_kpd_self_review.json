@@ -1,0 +1,36 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+    "agent_role": "Codex big-model execution partner",
+    "useful_outputs": [
+      "Reusable validator + receipt builder + scope exporter + fake-CANON detector",
+      "Per-capability receipts and status-change evidence map",
+      "Inquisition cleanliness and Administratum evidence artifacts"
+    ],
+    "waste_points": [
+      "Duplicate capability lanes (CAP-* and folder cards) increase validation matrix size."
+    ],
+    "missing_tools": [
+      "No pre-existing shared validator orchestrator for this P0/P1/P2-lite/P3 matrix."
+    ],
+    "generated_tools_to_preserve": [
+      "mechanicus_capability_validator_v0_1.py",
+      "mechanicus_validation_receipt_builder_v0_1.py",
+      "mechanicus_capability_scope_exporter_v0_1.py",
+      "mechanicus_fake_canon_detector_v0_2.py"
+    ],
+    "recommended_script_absorption": [
+      "Promote all four mechanicus_* scripts into Scriptorium reusable lane after stricter typing pass."
+    ],
+    "recommended_narrow_agent_profiles": [
+      "Mechanicus Capability Validation Servitor (safe-check + receipt + promotion corridor)."
+    ],
+    "future_prompt_improvements": [
+      "Provide explicit capability-id matrix in dossier to avoid lookup ambiguity."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add dedicated gate for duplicate capability-card lineage reconciliation."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

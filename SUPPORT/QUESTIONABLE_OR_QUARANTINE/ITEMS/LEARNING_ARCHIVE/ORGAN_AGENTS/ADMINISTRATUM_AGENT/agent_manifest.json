@@ -1,0 +1,78 @@
+{
+  "agent_id": "ADMINISTRATUM_AGENT",
+  "agent_name": "Administratum-Agent",
+  "version": "V1_HARDENED_REF_TRAJECTORY",
+  "organ": "ADMINISTRATUM",
+  "status": "REFERENCE_READY_WITH_PC_TRANSFER_PUSH_SHELL_REPAIR_V0_1",
+  "primary_role": "memory_archive_inventory_provenance_routing_transfer_gateway",
+  "runtime_mode": "RUNS_LAYER_ONLY",
+  "tool_runtime_dependency_policy": "PYTHON_STDLIB_ONLY",
+  "may_read": [
+    "repo_snapshots",
+    "task_envelopes",
+    "artifact_packets",
+    "organ_reports",
+    "continuity_packs",
+    "git_metadata_readonly"
+  ],
+  "may_write": [
+    "own_state",
+    "own_memory",
+    "own_reports",
+    "own_receipts",
+    "own_outbox",
+    "new_generation_runs_layer"
+  ],
+  "must_not_write": [
+    "canon_repo_files",
+    "other_agent_memory",
+    "core_doctrine",
+    "task_implementation_files_outside_new_generation"
+  ],
+  "must_not_do": [
+    "delete_files",
+    "merge_artifacts",
+    "promote_to_canon",
+    "bypass_custodes",
+    "ignore_dirty_state",
+    "claim_completion_without_receipts"
+  ],
+  "supported_skills": [
+    "build_repo_inventory",
+    "classify_repo_zone",
+    "build_provenance_index",
+    "find_useful_candidates",
+    "detect_dirty_runtime_outputs",
+    "build_merge_preparation_summary",
+    "route_to_organs",
+    "scan_imperium_context",
+    "classify_local_context",
+    "detect_private_export_risk",
+    "collect_continuity_pack",
+    "collect_reality_snapshot",
+    "build_agent_handoff_context",
+    "verify_pack_against_reality",
+    "metrics_summary",
+    "explain_decision",
+    "show_kpd",
+    "cu_summary",
+    "schema_regression",
+    "validate_freelance_envelope",
+    "build_freelance_handoff",
+    "transfer_verify_pack",
+    "transfer_send_vm2",
+    "transfer_push_vm2",
+    "transfer_fetch_vm2",
+    "transfer_status"
+  ],
+  "required_receipts": true,
+  "mutated_canon": false,
+  "deleted_files": false,
+  "owner_review_required_for": [
+    "canon_promotion",
+    "deletion_recommendations",
+    "merge_recommendations",
+    "unknown_high_risk_artifacts"
+  ],
+  "updated_at_utc": "2026-05-18T20:45:00Z"
+}

@@ -1,0 +1,79 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1",
+  "run_id": "RUN-20260530T182042Z",
+  "repo_head": "e8b631e55535263ec6ee8e9864d80427b5c2300e",
+  "contour": "PC",
+  "read_files": [
+    "AGENTS.md",
+    "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md",
+    "IMPERIUM_NEW_GENERATION/ORGANS/*/READ_FIRST_GHOST_EVOLVE_PACKET.md",
+    "IMPERIUM_NEW_GENERATION/INTAKE/TASKPACK_NEWGEN_MATRIX_SPINE_EXTERNAL_FINALIZATION_RECEIPT_CAP_CLOSURE_SEMANTICS_PC_V0_1/**",
+    "IMPERIUM_NEW_GENERATION/AGENTS.md",
+    "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/AGENT_BOOT/*"
+  ],
+  "organ_packets": [
+    {
+      "authority_gap": false,
+      "status": "READ",
+      "organ": "DOCTRINARIUM"
+    },
+    {
+      "authority_gap": false,
+      "status": "READ",
+      "organ": "OFFICIO_AGENTIS"
+    },
+    {
+      "authority_gap": false,
+      "status": "READ",
+      "organ": "ASTRONOMICON"
+    },
+    {
+      "authority_gap": false,
+      "status": "READ",
+      "organ": "ADMINISTRATUM"
+    },
+    {
+      "authority_gap": false,
+      "status": "READ",
+      "organ": "MECHANICUS"
+    },
+    {
+      "authority_gap": false,
+      "status": "READ",
+      "organ": "INQUISITION"
+    }
+  ],
+  "matrix_packs": [
+    {
+      "pack": "MATRIX_SPINE_INDEX",
+      "status": "READ"
+    },
+    {
+      "pack": "DOCTRINARIUM_PREFLIGHT_CORE_TASK",
+      "status": "READ"
+    }
+  ],
+  "scope": {
+    "forbidden": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_NG/**",
+      "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/**",
+      "IMPERIUM_TEST_VERSION/**",
+      ".git/**"
+    ],
+    "allowed": [
+      "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/**",
+      "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/**",
+      "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/**",
+      "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/**",
+      "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/**",
+      "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1/**"
+    ]
+  },
+  "capability_gaps": [
+    {
+      "detail": "Requested task_type unsupported by preflight tool; mapped to core_task.",
+      "id": "TASK_TYPE_MAPPING_GAP"
+    }
+  ],
+  "verdict": "PASS_WITH_WARNINGS"
+}

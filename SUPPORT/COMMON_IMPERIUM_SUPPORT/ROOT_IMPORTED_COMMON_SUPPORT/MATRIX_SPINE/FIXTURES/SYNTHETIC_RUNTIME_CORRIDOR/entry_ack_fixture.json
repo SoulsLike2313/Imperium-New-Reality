@@ -1,0 +1,45 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1",
+  "run_id": "synthetic-corridor-entry-001",
+  "repo_head": "c10f2b1c46d19e6a7614e25c4eff57b46b8baef5",
+  "contour": "VM3",
+  "read_files": [
+    "AGENTS.md",
+    "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.md"
+  ],
+  "organ_packets": [
+    {
+      "organ": "Mechanicus",
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/READ_FIRST_GHOST_EVOLVE_PACKET.md"
+    },
+    {
+      "organ": "Inquisition",
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/READ_FIRST_GHOST_EVOLVE_PACKET.md"
+    }
+  ],
+  "matrix_packs": [
+    {
+      "path": "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/INDEX/MATRIX_SPINE_INDEX.json",
+      "status": "read"
+    }
+  ],
+  "scope": {
+    "allowed_write_paths": [
+      "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/",
+      "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/"
+    ],
+    "forbidden_paths": [
+      "THRONE/",
+      "CUSTODES/",
+      "WARP/"
+    ]
+  },
+  "capability_gaps": [
+    {
+      "gap": "Synthetic corridor does not activate real_runtime_corridor or warp_corridor.",
+      "owner": "Mechanicus + Inquisition",
+      "next_action": "Use dedicated taskpack and Owner unlock for WARP claims."
+    }
+  ],
+  "verdict": "PASS_WITH_WARNINGS"
+}

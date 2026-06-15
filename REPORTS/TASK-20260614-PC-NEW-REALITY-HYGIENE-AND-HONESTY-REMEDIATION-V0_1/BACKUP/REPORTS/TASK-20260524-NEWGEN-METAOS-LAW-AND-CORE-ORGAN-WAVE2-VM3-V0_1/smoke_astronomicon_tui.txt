@@ -1,0 +1,35 @@
+╭────────────────────────────── WAVE1 ORGAN TUI ───────────────────────────────╮
+│ ASTRONOMICON                                                                 │
+│ responsibility: Task registration, classification, templates, staged route   │
+│ planning, owner comment lanes, pass/fail criteria, active/archive            │
+│ transitions.                                                                 │
+│ verdict: PASS                                                                │
+│ mode: SMOKE                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+                               Servitor Interface                               
+┏━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Block        ┃ Value                                                         ┃
+┡━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ Ask          │ How should this task be registered and classified?            │
+│              │ What stage plan and route order are required?                 │
+│              │ What owner comments and pass/fail criteria must be embedded?  │
+│              │ What active-to-archive transition conditions apply?           │
+│ Warn/Block   │ WARN on partially specified stage plan with explicit boundary │
+│              │ BLOCK on task execution without                               │
+│              │ registration/classification/stage map                         │
+│              │ BLOCK on missing pass/fail criteria and owner comment field   │
+│ Gate Catalog │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ State        │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ Contract     │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ Identity     │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+└──────────────┴───────────────────────────────────────────────────────────────┘
+                           Gate Preview                            
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━┓
+┃ Gate ID                               ┃ Severity      ┃ Verdict ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━┩
+│ GATE_ASTRA_TASK_REGISTRATION_REQUIRED │ BLOCK         │ PASS    │
+│ GATE_ASTRA_STAGE_ROUTE_REQUIRED       │ BLOCK         │ PASS    │
+│ GATE_ASTRA_OWNER_PASS_FAIL_REQUIRED   │ BLOCK         │ PASS    │
+│ GATE_ASTRA_ACTIVE_ARCHIVE_TRANSITION  │ WARN_TO_BLOCK │ PASS    │
+└───────────────────────────────────────┴───────────────┴─────────┘
+SMOKE_OK_ASTRONOMICON_TUI_V0_1

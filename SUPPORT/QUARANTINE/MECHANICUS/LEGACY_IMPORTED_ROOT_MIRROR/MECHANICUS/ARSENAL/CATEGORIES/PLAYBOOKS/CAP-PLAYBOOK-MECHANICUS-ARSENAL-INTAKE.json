@@ -1,0 +1,35 @@
+{
+  "capability_id": "CAP-PLAYBOOK-MECHANICUS-ARSENAL-INTAKE",
+  "name": "Mechanicus Arsenal card intake practice",
+  "category": "PLAYBOOKS",
+  "status": "SANDBOX",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Controlled intake and triage workflow for capabilities.",
+  "what_problem_it_solves": "Prevents unregistered tool adoption and trust drift.",
+  "source_type": "practice",
+  "source_url_or_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/ARSENAL_INTAKE_PROTOCOL_V0_1.md",
+  "license_or_trust_note": "Internal repo evidence controlled by IMPERIUM.",
+  "install_required": false,
+  "install_gate": "GATE-ARSENAL-INTAKE-COMPLIANCE",
+  "validation_commands": [
+    "validate:cap-playbook-mechanicus-arsenal-intake"
+  ],
+  "expected_receipts": [
+    "cap-playbook-mechanicus-arsenal-intake_receipt.json"
+  ],
+  "safety_notes": "Use only in bounded task scope; no blind runtime mutation.",
+  "security_notes": "Do not bypass path, command, and evidence gates.",
+  "offline_or_network_dependency": "offline_preferred",
+  "promoted_by_receipt": "NOT_PROMOTED",
+  "last_reviewed_utc": "2026-05-24T00:00:00Z",
+  "next_review_reason": "Needs follow-up promotion cycle evidence.",
+  "limitations": "Foundation-only until additional receipts accumulate.",
+  "allowed_use_cases": [
+    "Bounded task execution under Mechanicus policy",
+    "Evidence-backed validation and report generation"
+  ],
+  "forbidden_use_cases": [
+    "Production-ready claim without receipts",
+    "Out-of-scope or unbounded execution"
+  ]
+}

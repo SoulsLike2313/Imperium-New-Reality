@@ -1,0 +1,31 @@
+{
+  "organ": "ASTRONOMICON",
+  "inputs": [
+    {
+      "name": "Taskpack pointer",
+      "source": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/SYNTHETIC_STAGE1_TASKPACK_REFERENCE.json",
+      "required": true,
+      "missing_behavior": "BLOCK"
+    },
+    {
+      "name": "Task route template",
+      "source": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+      "required": true,
+      "missing_behavior": "BLOCK"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Task route manifest template",
+      "path_or_contract": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+      "required": true,
+      "consumer": "SERVITOR_TASK_ENTRY"
+    },
+    {
+      "name": "Task start ACK template",
+      "path_or_contract": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+      "required": true,
+      "consumer": "OFFICIO_AND_ADMINISTRATUM"
+    }
+  ]
+}

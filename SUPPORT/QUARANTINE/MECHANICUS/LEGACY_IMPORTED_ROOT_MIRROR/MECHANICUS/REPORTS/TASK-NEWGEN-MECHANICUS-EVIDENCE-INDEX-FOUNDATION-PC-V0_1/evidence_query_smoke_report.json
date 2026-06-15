@@ -1,0 +1,1063 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1",
+  "generated_at_utc": "2026-05-24T23:03:10Z",
+  "checker": "mechanicus_evidence_query_runner_v0_1.py",
+  "db_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/EVIDENCE_INDEX/V0_1/evidence_index.sqlite3",
+  "query_examples_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/EVIDENCE_INDEX/V0_1/example_queries_v0_1.json",
+  "summary": {
+    "query_count": 12,
+    "failed_queries": 0,
+    "warn_queries": 0,
+    "non_zero_results": 12
+  },
+  "query_results": [
+    {
+      "query_id": "fake_canon_count",
+      "mode": "sql_scalar",
+      "result_count": 61,
+      "sample": [
+        {
+          "result": 61
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "query_id": "PASS_WITH_WARNINGS",
+      "mode": "sql_table",
+      "result_count": 20,
+      "sample": [
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-cq-pyright-mypy_validation_receipt.json",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-cq-ruff_validation_receipt.json",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-tool-jsonschema_validation_receipt.json",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/code-quality-jsonschema_validation_receipt.json",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/code-quality-mypy_validation_receipt.json",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/code-quality-pyright_validation_receipt.json",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/code-quality-ruff_validation_receipt.json",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/ui-frameworks-react_validation_receipt.json",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/ui-frameworks-vite_validation_receipt.json",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/arsenal_foundation_baseline_receipt_v0_1.json",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1/FINAL_REPORT.md",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1/closure_receipt.json",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-INTAKE-FOUNDATION-PC-V0_1/closure_receipt.json",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1/FINAL_REPORT.md",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1/arsenal_mass_intake_check_report.json",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1/closure_receipt.json",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1/FINAL_REPORT.md",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1/closure_receipt.json",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1/FINAL_REPORT.md",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1/closure_receipt.json",
+          "verdict": "PASS_WITH_WARNINGS",
+          "status": "PASS_WITH_WARNINGS"
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "query_id": "hygiene",
+      "mode": "fts",
+      "result_count": 57,
+      "sample": [
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/EXAMPLES/EXAMPLES_INQUISITION_HYGIENE_SCAN_EXAMPLE/capability_card.json",
+          "title": "Inquisition hygiene scan example",
+          "summary": "Mass intake candidate for Inquisition hygiene scan example in EXAMPLES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PLAYBOOKS/PLAYBOOKS_INQUISITION_HYGIENE_PLAYBOOK/capability_card.json",
+          "title": "Inquisition hygiene playbook",
+          "summary": "Mass intake candidate for Inquisition hygiene playbook in PLAYBOOKS."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/scope_pack_generation_manifest.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T19:59:05Z\", \"exporter\": \"mechanicus_capability_scope_exporter_v0_2.py\", \"repo_root\": \"E:\\\\IMPERIUM\", \"source_registry...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/SCOPE_PACKS_INDEX_RU.md",
+          "title": "Mechanicus Scope Packs Index RU (V0.1)",
+          "summary": "Назначение: быстрый доступ будущего Servitor/local-agent к разрешенным capability-срезам по типам задач."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCOPE_PACKS/V0_1/scope_repo_hygiene_task_v0_1.json",
+          "title": "repo_hygiene_task",
+          "summary": "NewGen-scoped hygiene checks: dirty-tree/runtime-junk/fake-green under Inquisition oversight."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1/servitor_scope_examples_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T17:18:30Z\", \"examples\": [ { \"task_type\": \"visual_dashboard_task\", \"categories\": [ \"LANGUAGES\", \"TOOLS\", \"UI_FRA...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1/validation_priority_queue_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T17:18:30Z\", \"priorities\": { \"P0_EXISTING_INTERNAL_CAPABILITIES\": [ { \"capability_id\": \"CAP-LANG-PYTHON312-RUNTI...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-INTAKE-FOUNDATION-PC-V0_1/FINAL_REPORT.md",
+          "title": "FINAL REPORT",
+          "summary": "## Task"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1/DOSSIER_SOURCE/INTAKE_BATCHES/candidate_batches_v0_1.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1",
+          "summary": "{ \"schema_id\": \"mechanicus_mass_intake_batches_v0_1\", \"task_id\": \"TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1\", \"created_utc\": \"2026-05-24T16:40:52Z\", \"batches\": [ { \"batch_id\": \"MECHANICUS-INTAKE-BATCH-...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1/next_validation_queue.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T16:49:31Z\", \"queue\": [ { \"capability_id\": \"ALGORITHMS_CAPABILITY_PROMOTION_RULES\", \"current_status\": \"CANDIDATE...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1/scope_boundary_audit.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1\", \"baseline_preexisting_dirty_paths\": [ \"IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-SANCTUM-ORGAN-CENTERED-COCKPIT-SKELETON-PC-V0_1/\", \"IMPERIUM...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1/servitor_capability_scope_seed_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T16:49:31Z\", \"scope_model_version\": \"servitor_capability_scope_seed_v0_1\", \"summary\": { \"total_cards\": 136, \"can...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1/capability_scope_export_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T18:15:17Z\", \"exporter\": \"mechanicus_capability_scope_exporter_v0_1.py\", \"summary\": { \"total_cards\": 136, \"catego...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1/script_artifact_preservation_manifest.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T18:15:17Z\", \"artifacts\": [ { \"artifact_id\": \"TOOL-MECH-VALIDATOR-V0_1\", \"original_path\": \"IMPERIUM_NEW_GENERATIO...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1/administratum_evidence_map.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T20:04:57Z\", \"report_paths\": [ \"IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXP...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1/FINAL_REPORT.md",
+          "title": "Final Report — TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1",
+          "summary": "## Verdict"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1/scope_export_manifest.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T20:00:46Z\", \"verdict\": \"PASS\", \"starting_head\": \"edaf291236e1a88dd1ee9715f8431b1d6c3501af\", \"ending_head\": \"edaf29123...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1/scope_pack_check_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T20:06:03Z\", \"checker\": \"check_mechanicus_scope_packs_v0_1.py\", \"verdict\": \"PASS\", \"notes\": [ \"all checks passed\" ], \"...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1/scope_pack_coverage_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T20:00:46Z\", \"verdict\": \"PASS\", \"required_scope_pack_count\": 7, \"existing_scope_pack_count\": 7, \"missing_scope_packs\":...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1/servitor_consumption_examples_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T20:00:46Z\", \"verdict\": \"PASS\", \"examples\": [ { \"scenario_id\": \"code_quality_request\", \"servitor_request\": \"Mechanicus...<truncated>"
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "query_id": "ruff",
+      "mode": "fts",
+      "result_count": 13,
+      "sample": [
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_RUFF/capability_card.json",
+          "title": "ruff",
+          "summary": "Mass intake candidate for ruff in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-ruff_validation_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "CAP-CQ-RUFF: PASS via controlled_provision:ruff. promotion_recommendation=PROMOTE_SANDBOX"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/code-quality-ruff_validation_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "CODE_QUALITY_RUFF: PASS via controlled_provision:ruff. promotion_recommendation=PROMOTE_SANDBOX"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/install_ruff_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "{ \"receipt_id\": \"task-newgen-mechanicus-controlled-tool-provision-pc-v0_1:ruff:install\", \"task_id\": \"TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1\", \"tool\": \"ruff\", \"package\": \"ruff\", \"install_command\": \"pytho...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-cq-ruff_validation_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+          "summary": "CAP-CQ-RUFF: MISSING via P1_CODE_QUALITY:CAP-CQ-RUFF. promotion_recommendation=KEEP_CANDIDATE_MISSING"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/code-quality-ruff_validation_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+          "summary": "CODE_QUALITY_RUFF: MISSING via P1_CODE_QUALITY:CODE_QUALITY_RUFF. promotion_recommendation=KEEP_CANDIDATE_MISSING"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1/servitor_consumption_examples_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T20:00:46Z\", \"verdict\": \"PASS\", \"examples\": [ { \"scenario_id\": \"code_quality_request\", \"servitor_request\": \"Mechanicus...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/closure_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1\", \"verdict\": \"PASS\", \"repo_root\": \"E:\\\\IMPERIUM\", \"starting_head\": \"ec8fb3007590aae88fe672f7917dc8b0b95b3a55\", \"ending_head\": \"ec8fb3007590aae88fe672...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/install_receipts_index.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T19:35:08Z\", \"receipts_root\": \"IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001\", \"recei...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1/FINAL_REPORT.md",
+          "title": "Final Report — TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1",
+          "summary": "## Verdict"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1/quality_gate_result_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T23:01:50Z\", \"checker\": \"check_mechanicus_evidence_index_v0_1.py\", \"gates\": { \"py_compile\": \"PASS\", \"ruff\": \"PASS\", ...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-QUALITY-GATE-FOLLOWUP-PC-V0_1/quality_gate_followup_run_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-QUALITY-GATE-FOLLOWUP-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-QUALITY-GATE-FOLLOWUP-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T22:19:56Z\", \"gates\": { \"officio_gate\": \"PASS\", \"scope_consumption\": \"PASS\", \"py_compile\": \"PASS\", \"ruff\": \"PASS\", \"mypy...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1/quality_gate_run_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T21:39:57Z\", \"gates\": { \"officio_gate\": \"PASS\", \"scope_consumption\": \"PASS\", \"py_compile\": \"PASS\", \"ruff\": \"PASS\", \"mypy\"...<truncated>"
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "query_id": "mypy",
+      "mode": "fts",
+      "result_count": 14,
+      "sample": [
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_MYPY/capability_card.json",
+          "title": "mypy",
+          "summary": "Mass intake candidate for mypy in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-pyright-mypy_validation_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "CAP-CQ-PYRIGHT-MYPY: PASS via controlled_provision:mypy. promotion_recommendation=PROMOTE_SANDBOX"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/code-quality-mypy_validation_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "CODE_QUALITY_MYPY: PASS via controlled_provision:mypy. promotion_recommendation=PROMOTE_SANDBOX"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/install_mypy_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "{ \"receipt_id\": \"task-newgen-mechanicus-controlled-tool-provision-pc-v0_1:mypy:install\", \"task_id\": \"TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1\", \"tool\": \"mypy\", \"package\": \"mypy\", \"install_command\": \"pytho...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-cq-pyright-mypy_validation_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+          "summary": "CAP-CQ-PYRIGHT-MYPY: MISSING via P1_CODE_QUALITY:CAP-CQ-PYRIGHT-MYPY. promotion_recommendation=KEEP_CANDIDATE_MISSING"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/code-quality-mypy_validation_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+          "summary": "CODE_QUALITY_MYPY: MISSING via P1_CODE_QUALITY:CODE_QUALITY_MYPY. promotion_recommendation=KEEP_CANDIDATE_MISSING"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1/owner_decision_points_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T17:18:30Z\", \"questions\": [ { \"question_id\": \"Q-ARS-001\", \"topic\": \"CODE_QUALITY\", \"question\": \"Choose primary t...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1/owner_questions_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T16:49:31Z\", \"questions\": [ { \"question_id\": \"Q-ARS-001\", \"category\": \"CODE_QUALITY\", \"question\": \"Choose primar...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1/servitor_consumption_examples_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T20:00:46Z\", \"verdict\": \"PASS\", \"examples\": [ { \"scenario_id\": \"code_quality_request\", \"servitor_request\": \"Mechanicus...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/closure_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1\", \"verdict\": \"PASS\", \"repo_root\": \"E:\\\\IMPERIUM\", \"starting_head\": \"ec8fb3007590aae88fe672f7917dc8b0b95b3a55\", \"ending_head\": \"ec8fb3007590aae88fe672...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1/FINAL_REPORT.md",
+          "title": "Final Report — TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1",
+          "summary": "## Verdict"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1/quality_gate_result_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T23:01:50Z\", \"checker\": \"check_mechanicus_evidence_index_v0_1.py\", \"gates\": { \"py_compile\": \"PASS\", \"ruff\": \"PASS\", ...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-QUALITY-GATE-FOLLOWUP-PC-V0_1/quality_gate_followup_run_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-QUALITY-GATE-FOLLOWUP-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-QUALITY-GATE-FOLLOWUP-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T22:19:56Z\", \"gates\": { \"officio_gate\": \"PASS\", \"scope_consumption\": \"PASS\", \"py_compile\": \"PASS\", \"ruff\": \"PASS\", \"mypy...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1/quality_gate_run_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T21:39:57Z\", \"gates\": { \"officio_gate\": \"PASS\", \"scope_consumption\": \"PASS\", \"py_compile\": \"PASS\", \"ruff\": \"PASS\", \"mypy\"...<truncated>"
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "query_id": "jsonschema",
+      "mode": "fts",
+      "result_count": 15,
+      "sample": [
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_JSONSCHEMA/capability_card.json",
+          "title": "jsonschema",
+          "summary": "Mass intake candidate for jsonschema in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-tool-jsonschema_validation_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "CAP-TOOL-JSONSCHEMA: PASS via controlled_provision:jsonschema. promotion_recommendation=PROMOTE_SANDBOX"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/code-quality-jsonschema_validation_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "CODE_QUALITY_JSONSCHEMA: PASS via controlled_provision:jsonschema. promotion_recommendation=PROMOTE_SANDBOX"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/install_jsonschema_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "{ \"receipt_id\": \"task-newgen-mechanicus-controlled-tool-provision-pc-v0_1:jsonschema:install\", \"task_id\": \"TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1\", \"tool\": \"jsonschema\", \"package\": \"jsonschema\", \"instal...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-tool-jsonschema_validation_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+          "summary": "CAP-TOOL-JSONSCHEMA: MISSING via P1_CODE_QUALITY:CAP-TOOL-JSONSCHEMA. promotion_recommendation=KEEP_CANDIDATE_MISSING"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/code-quality-jsonschema_validation_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+          "summary": "CODE_QUALITY_JSONSCHEMA: MISSING via P1_CODE_QUALITY:CODE_QUALITY_JSONSCHEMA. promotion_recommendation=KEEP_CANDIDATE_MISSING"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1/owner_questions_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T18:15:17Z\", \"questions\": [ { \"question_id\": \"Q-VAL-001\", \"capability_id\": \"CAP-TOOL-JSONSCHEMA\", \"topic\": \"MISSI...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1/FINAL_REPORT.md",
+          "title": "FINAL REPORT — TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1",
+          "summary": "## Verdict"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1/validation_followup_results.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T18:54:04Z\", \"results\": [ { \"capability_id\": \"CAP-TOOL-JSONSCHEMA\", \"tool_name\": \"jsonschema\", \"category\": \"TOOLS\"...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/capability_status_change_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T19:35:08Z\", \"status_changes\": [ { \"capability_id\": \"CAP-TOOL-JSONSCHEMA\", \"card_path\": \"E:/IMPERIUM/IMPERIUM_NEW_GE...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/closure_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1\", \"verdict\": \"PASS\", \"repo_root\": \"E:\\\\IMPERIUM\", \"starting_head\": \"ec8fb3007590aae88fe672f7917dc8b0b95b3a55\", \"ending_head\": \"ec8fb3007590aae88fe672...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/controlled_provision_results.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T19:35:08Z\", \"mode\": \"PC_LOCAL_NEWGEN_MECHANICUS_CONTROLLED_PROVISION\", \"tools\": [ { \"tool\": \"jsonschema\", \"detected...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/install_receipts_index.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T19:35:08Z\", \"receipts_root\": \"IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001\", \"recei...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/tool_detection_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T19:35:08Z\", \"approved_tools\": [ { \"tool\": \"jsonschema\", \"detected_before\": \"no\", \"detected_after\": \"yes\", \"install_...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/validation_receipts_index.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T19:35:08Z\", \"receipts_root\": \"IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001\", \"recei...<truncated>"
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "query_id": "ROLE_ACK",
+      "mode": "fts",
+      "result_count": 31,
+      "sample": [
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-FIELD-GUIDE-BATCH-001-PC-V0_1/GATE_ACK.md",
+          "title": "GATE_ACK",
+          "summary": "```text"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1/GATE_ACK.md",
+          "title": "GATE_ACK:",
+          "summary": "- task_id: TASK-NEWGEN-MECHANICUS-ARSENAL-MASS-INTAKE-BATCH-001-PC-V0_1"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1/GATE_ACK.md",
+          "title": "GATE_ACK",
+          "summary": "```text"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1/GATE_ACK.md",
+          "title": "GATE_ACK:",
+          "summary": "- task_id: TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1/GATE_ACK.md",
+          "title": "GATE_ACK:",
+          "summary": "- task_id: TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1/GATE_ACK.md",
+          "title": "GATE_ACK:",
+          "summary": "- task_id: TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1/GATE_ACK.md",
+          "title": "GATE_ACK:",
+          "summary": "- task_id: TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-QUALITY-GATE-FOLLOWUP-PC-V0_1/GATE_ACK.md",
+          "title": "GATE_ACK:",
+          "summary": "- task_id: TASK-NEWGEN-MECHANICUS-QUALITY-GATE-FOLLOWUP-PC-V0_1"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1/GATE_ACK.md",
+          "title": "GATE_ACK:",
+          "summary": "- task_id: TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/CONTRACTS/OFFICIO_LANGUAGE_GATE_CONTRACT_V0_1.md",
+          "title": "OFFICIO LANGUAGE GATE CONTRACT V0.1",
+          "summary": "## Purpose"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/CONTRACTS/OFFICIO_ROLE_ACK_CONTRACT_V0_1.md",
+          "title": "OFFICIO ROLE ACK CONTRACT V0.1",
+          "summary": "## Purpose"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/local_organ_agent_role_pack_export_v0_1.json",
+          "title": "LOCAL_ORGAN_AGENT",
+          "summary": "Script-first local organ worker for bounded automation and receipt generation."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/local_organ_agent_taskpack_gate_block_v0_1.md",
+          "title": "OFFICIO GATE BLOCK (LOCAL_ORGAN_AGENT)",
+          "summary": "GATE_ACK:"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/logos_prime_role_pack_export_v0_1.json",
+          "title": "LOGOS_PRIME",
+          "summary": "Planning and coordination role that structures next steps without breaching task boundaries."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/logos_prime_taskpack_gate_block_v0_1.md",
+          "title": "OFFICIO GATE BLOCK (LOGOS_PRIME)",
+          "summary": "GATE_ACK:"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/logos_speculum_role_pack_export_v0_1.json",
+          "title": "LOGOS_SPECULUM",
+          "summary": "Red-team reviewer role that stresses contracts, risks, and fake-green exposure."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/logos_speculum_taskpack_gate_block_v0_1.md",
+          "title": "OFFICIO GATE BLOCK (LOGOS_SPECULUM)",
+          "summary": "GATE_ACK:"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/pc_servitor_role_pack_export_v0_1.json",
+          "title": "PC_SERVITOR",
+          "summary": "Local Windows execution agent for bounded repository tasks with evidence-first discipline."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/pc_servitor_taskpack_gate_block_v0_1.md",
+          "title": "OFFICIO GATE BLOCK (PC_SERVITOR)",
+          "summary": "GATE_ACK:"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/vm_servitor_role_pack_export_v0_1.json",
+          "title": "VM_SERVITOR",
+          "summary": "VM/Linux execution agent for bounded IMPERIUM tasks under the same role/language gates."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "query_id": "LANGUAGE_ACK",
+      "mode": "fts",
+      "result_count": 20,
+      "sample": [
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/CONTRACTS/OFFICIO_LANGUAGE_GATE_CONTRACT_V0_1.md",
+          "title": "OFFICIO LANGUAGE GATE CONTRACT V0.1",
+          "summary": "## Purpose"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/CONTRACTS/OFFICIO_ROLE_ACK_CONTRACT_V0_1.md",
+          "title": "OFFICIO ROLE ACK CONTRACT V0.1",
+          "summary": "## Purpose"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/local_organ_agent_role_pack_export_v0_1.json",
+          "title": "LOCAL_ORGAN_AGENT",
+          "summary": "Script-first local organ worker for bounded automation and receipt generation."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/local_organ_agent_taskpack_gate_block_v0_1.md",
+          "title": "OFFICIO GATE BLOCK (LOCAL_ORGAN_AGENT)",
+          "summary": "GATE_ACK:"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/logos_prime_role_pack_export_v0_1.json",
+          "title": "LOGOS_PRIME",
+          "summary": "Planning and coordination role that structures next steps without breaching task boundaries."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/logos_prime_taskpack_gate_block_v0_1.md",
+          "title": "OFFICIO GATE BLOCK (LOGOS_PRIME)",
+          "summary": "GATE_ACK:"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/logos_speculum_role_pack_export_v0_1.json",
+          "title": "LOGOS_SPECULUM",
+          "summary": "Red-team reviewer role that stresses contracts, risks, and fake-green exposure."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/logos_speculum_taskpack_gate_block_v0_1.md",
+          "title": "OFFICIO GATE BLOCK (LOGOS_SPECULUM)",
+          "summary": "GATE_ACK:"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/pc_servitor_role_pack_export_v0_1.json",
+          "title": "PC_SERVITOR",
+          "summary": "Local Windows execution agent for bounded repository tasks with evidence-first discipline."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/pc_servitor_taskpack_gate_block_v0_1.md",
+          "title": "OFFICIO GATE BLOCK (PC_SERVITOR)",
+          "summary": "GATE_ACK:"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/vm_servitor_role_pack_export_v0_1.json",
+          "title": "VM_SERVITOR",
+          "summary": "VM/Linux execution agent for bounded IMPERIUM tasks under the same role/language gates."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/exports/vm_servitor_taskpack_gate_block_v0_1.md",
+          "title": "OFFICIO GATE BLOCK (VM_SERVITOR)",
+          "summary": "GATE_ACK:"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/ghost_evolve_officio_training_proof.json",
+          "title": "TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T21:02:23.2304695Z\", \"previous_manual_pain\": [ \"Servitor manually repeated language/ACK/response-shape instructio...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/response_checker_report.json",
+          "title": "response_checker_report.json",
+          "summary": "{ \"status\": \"FAIL\", \"generated_at_utc\": \"2026-05-24T21:00:25+00:00\", \"required_acks\": [ \"ROLE_ACK\", \"LANGUAGE_ACK\", \"SCOPE_ACK\", \"STOP_CONDITIONS_ACK\" ], \"items\": [ { \"file\": \"IMPERIUM_NEW_GENERATION\\\\OFFICIO_AGENTIS\\\\FI...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/OFFICIO_LOCAL_ORGAN_AGENT_ROLE_PACK_V0_1.json",
+          "title": "LOCAL_ORGAN_AGENT",
+          "summary": "Script-first local organ worker for bounded automation and receipt generation."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/OFFICIO_LOGOS_PRIME_ROLE_PACK_V0_1.json",
+          "title": "LOGOS_PRIME",
+          "summary": "Planning and coordination role that structures next steps without breaching task boundaries."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/OFFICIO_LOGOS_SPECULUM_ROLE_PACK_V0_1.json",
+          "title": "LOGOS_SPECULUM",
+          "summary": "Red-team reviewer role that stresses contracts, risks, and fake-green exposure."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/OFFICIO_PC_SERVITOR_ROLE_PACK_V0_1.json",
+          "title": "PC_SERVITOR",
+          "summary": "Local Windows execution agent for bounded repository tasks with evidence-first discipline."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/OFFICIO_VM_SERVITOR_ROLE_PACK_V0_1.json",
+          "title": "VM_SERVITOR",
+          "summary": "VM/Linux execution agent for bounded IMPERIUM tasks under the same role/language gates."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TEMPLATES/TASKPACK_OFFICIO_GATE_TEMPLATE_V0_1.md",
+          "title": "TASKPACK OFFICIO GATE TEMPLATE V0.1",
+          "summary": "Use this block in future taskpacks before execution starts."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "query_id": "SANDBOX",
+      "mode": "fts",
+      "result_count": 63,
+      "sample": [
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_JSONSCHEMA/capability_card.json",
+          "title": "jsonschema",
+          "summary": "Mass intake candidate for jsonschema in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_MYPY/capability_card.json",
+          "title": "mypy",
+          "summary": "Mass intake candidate for mypy in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PRE_COMMIT/capability_card.json",
+          "title": "pre-commit",
+          "summary": "Mass intake candidate for pre-commit in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PY_COMPILE/capability_card.json",
+          "title": "py_compile",
+          "summary": "Mass intake candidate for py_compile in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PYTEST/capability_card.json",
+          "title": "pytest",
+          "summary": "Mass intake candidate for pytest in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_RUFF/capability_card.json",
+          "title": "ruff",
+          "summary": "Mass intake candidate for ruff in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_SQLITE/capability_card.json",
+          "title": "SQLite",
+          "summary": "Mass intake candidate for SQLite in DATABASES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_SQLITE_FTS5/capability_card.json",
+          "title": "SQLite FTS5",
+          "summary": "Mass intake candidate for SQLite FTS5 in DATABASES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/LANGUAGES_POWERSHELL/capability_card.json",
+          "title": "PowerShell",
+          "summary": "Mass intake candidate for PowerShell in LANGUAGES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/LANGUAGES_PYTHON_312_RUNTIME/capability_card.json",
+          "title": "Python 3.12 runtime",
+          "summary": "Mass intake candidate for Python 3.12 runtime in LANGUAGES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/SEARCH_INDEXING/SEARCH_INDEXING_SQLITE_FTS_SEARCH/capability_card.json",
+          "title": "SQLite FTS search",
+          "summary": "Mass intake candidate for SQLite FTS search in SEARCH_INDEXING."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_COMMAND_GATEWAY/capability_card.json",
+          "title": "command gateway",
+          "summary": "Mass intake candidate for command gateway in TOOLS."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_GIT/capability_card.json",
+          "title": "Git",
+          "summary": "Mass intake candidate for Git in TOOLS."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_PATH_POLICY/capability_card.json",
+          "title": "path policy",
+          "summary": "Mass intake candidate for path policy in TOOLS."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_RECEIPT_VALIDATOR/capability_card.json",
+          "title": "receipt validator",
+          "summary": "Mass intake candidate for receipt validator in TOOLS."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/arsenal_foundation_baseline_receipt_v0_1.json",
+          "title": "TASK-NEWGEN-MECHANICUS-ARSENAL-INTAKE-FOUNDATION-PC-V0_1",
+          "summary": "Foundation structure and seed cards initialized; external tools remain candidate/sandbox."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-precommit_validation_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "CAP-CQ-PRECOMMIT: PASS via controlled_provision:pre-commit. promotion_recommendation=PROMOTE_SANDBOX"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-pyright-mypy_validation_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "CAP-CQ-PYRIGHT-MYPY: PASS via controlled_provision:mypy. promotion_recommendation=PROMOTE_SANDBOX"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-ruff_validation_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "CAP-CQ-RUFF: PASS via controlled_provision:ruff. promotion_recommendation=PROMOTE_SANDBOX"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-tool-jsonschema_validation_receipt.json",
+          "title": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+          "summary": "CAP-TOOL-JSONSCHEMA: PASS via controlled_provision:jsonschema. promotion_recommendation=PROMOTE_SANDBOX"
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "query_id": "quality gate",
+      "mode": "fts",
+      "result_count": 146,
+      "sample": [
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CLOUD_LLM_ADAPTERS/CLOUD_LLM_ADAPTERS_COST_POLICY_GATE/capability_card.json",
+          "title": "cost policy gate",
+          "summary": "Mass intake candidate for cost policy gate in CLOUD_LLM_ADAPTERS."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CLOUD_LLM_ADAPTERS/CLOUD_LLM_ADAPTERS_PRIVACY_POLICY_GATE/capability_card.json",
+          "title": "privacy policy gate",
+          "summary": "Mass intake candidate for privacy policy gate in CLOUD_LLM_ADAPTERS."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CLOUD_LLM_ADAPTERS/CLOUD_LLM_ADAPTERS_SECRET_POLICY_GATE/capability_card.json",
+          "title": "secret policy gate",
+          "summary": "Mass intake candidate for secret policy gate in CLOUD_LLM_ADAPTERS."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_JSONSCHEMA/capability_card.json",
+          "title": "jsonschema",
+          "summary": "Mass intake candidate for jsonschema in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_MYPY/capability_card.json",
+          "title": "mypy",
+          "summary": "Mass intake candidate for mypy in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PRE_COMMIT/capability_card.json",
+          "title": "pre-commit",
+          "summary": "Mass intake candidate for pre-commit in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PY_COMPILE/capability_card.json",
+          "title": "py_compile",
+          "summary": "Mass intake candidate for py_compile in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PYRIGHT/capability_card.json",
+          "title": "pyright",
+          "summary": "Mass intake candidate for pyright in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PYTEST/capability_card.json",
+          "title": "pytest",
+          "summary": "Mass intake candidate for pytest in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_RUFF/capability_card.json",
+          "title": "ruff",
+          "summary": "Mass intake candidate for ruff in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_SCHEMA_FIRST_VALIDATION/capability_card.json",
+          "title": "schema-first validation",
+          "summary": "Mass intake candidate for schema-first validation in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_DUCKDB/capability_card.json",
+          "title": "DuckDB",
+          "summary": "Mass intake candidate for DuckDB in DATABASES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_SQLITE/capability_card.json",
+          "title": "SQLite",
+          "summary": "Mass intake candidate for SQLite in DATABASES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/EXAMPLES/EXAMPLES_VISUAL_GATE_EXAMPLE/capability_card.json",
+          "title": "visual gate example",
+          "summary": "Mass intake candidate for visual gate example in EXAMPLES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/LANGUAGES_GO/capability_card.json",
+          "title": "Go",
+          "summary": "Mass intake candidate for Go in LANGUAGES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/LANGUAGES_RUST/capability_card.json",
+          "title": "Rust",
+          "summary": "Mass intake candidate for Rust in LANGUAGES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/LANGUAGES_SQL/capability_card.json",
+          "title": "SQL",
+          "summary": "Mass intake candidate for SQL in LANGUAGES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PLAYBOOKS/PLAYBOOKS_COMMIT_PUSH_GATE_PLAYBOOK/capability_card.json",
+          "title": "commit push gate playbook",
+          "summary": "Mass intake candidate for commit push gate playbook in PLAYBOOKS."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/PROMPTING_PATTERNS/PROMPTING_PATTERNS_READ_FIRST_GATE_PROMPT/capability_card.json",
+          "title": "read-first gate prompt",
+          "summary": "Mass intake candidate for read-first gate prompt in PROMPTING_PATTERNS."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_GIT/capability_card.json",
+          "title": "Git",
+          "summary": "Mass intake candidate for Git in TOOLS."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "query_id": "evidence index",
+      "mode": "fts",
+      "result_count": 128,
+      "sample": [
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/ALGORITHMS/ALGORITHMS_DIFF_CLASSIFIER/capability_card.json",
+          "title": "diff classifier",
+          "summary": "Mass intake candidate for diff classifier in ALGORITHMS."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/ALGORITHMS/ALGORITHMS_EVIDENCE_RANKING/capability_card.json",
+          "title": "evidence ranking",
+          "summary": "Mass intake candidate for evidence ranking in ALGORITHMS."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_JSONSCHEMA/capability_card.json",
+          "title": "jsonschema",
+          "summary": "Mass intake candidate for jsonschema in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_MYPY/capability_card.json",
+          "title": "mypy",
+          "summary": "Mass intake candidate for mypy in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PRE_COMMIT/capability_card.json",
+          "title": "pre-commit",
+          "summary": "Mass intake candidate for pre-commit in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PY_COMPILE/capability_card.json",
+          "title": "py_compile",
+          "summary": "Mass intake candidate for py_compile in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PYRIGHT/capability_card.json",
+          "title": "pyright",
+          "summary": "Mass intake candidate for pyright in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PYTEST/capability_card.json",
+          "title": "pytest",
+          "summary": "Mass intake candidate for pytest in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_RUFF/capability_card.json",
+          "title": "ruff",
+          "summary": "Mass intake candidate for ruff in CODE_QUALITY."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_CSV_AUDIT_TABLE/capability_card.json",
+          "title": "CSV audit table",
+          "summary": "Mass intake candidate for CSV audit table in DATABASES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_DUCKDB/capability_card.json",
+          "title": "DuckDB",
+          "summary": "Mass intake candidate for DuckDB in DATABASES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_GRAPH_EDGE_LIST/capability_card.json",
+          "title": "graph edge list",
+          "summary": "Mass intake candidate for graph edge list in DATABASES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_JSONL_EVIDENCE_STREAM/capability_card.json",
+          "title": "JSONL evidence stream",
+          "summary": "Mass intake candidate for JSONL evidence stream in DATABASES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_SQLITE/capability_card.json",
+          "title": "SQLite",
+          "summary": "Mass intake candidate for SQLite in DATABASES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_SQLITE_FTS5/capability_card.json",
+          "title": "SQLite FTS5",
+          "summary": "Mass intake candidate for SQLite FTS5 in DATABASES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_TASK_EVIDENCE_STORE/capability_card.json",
+          "title": "task evidence store",
+          "summary": "Mass intake candidate for task evidence store in DATABASES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/EXAMPLES/EXAMPLES_EVIDENCE_REPORT_EXAMPLE/capability_card.json",
+          "title": "evidence report example",
+          "summary": "Mass intake candidate for evidence report example in EXAMPLES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/EXAMPLES/EXAMPLES_ORGAN_CONSOLE_EXAMPLE/capability_card.json",
+          "title": "organ console example",
+          "summary": "Mass intake candidate for organ console example in EXAMPLES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/EXAMPLES/EXAMPLES_TASKPACK_EXAMPLE/capability_card.json",
+          "title": "taskpack example",
+          "summary": "Mass intake candidate for taskpack example in EXAMPLES."
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/EXAMPLES/EXAMPLES_VISUAL_GATE_EXAMPLE/capability_card.json",
+          "title": "visual gate example",
+          "summary": "Mass intake candidate for visual gate example in EXAMPLES."
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "query_id": "NO_SCHEMA_AVAILABLE",
+      "mode": "fts",
+      "result_count": 7,
+      "sample": [
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1/evidence_index_build_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T23:01:41Z\", \"checker\": \"mechanicus_evidence_index_builder_v0_1.py\", \"output_root\": \"IMPERIUM_NEW_GENERATION/MECHANI...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1/evidence_query_smoke_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T23:01:45Z\", \"checker\": \"mechanicus_evidence_query_runner_v0_1.py\", \"db_path\": \"IMPERIUM_NEW_GENERATION/MECHANICUS/E...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1/FINAL_REPORT.md",
+          "title": "Final Report — TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1",
+          "summary": "## Verdict"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1/warning_error_pattern_seed_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-EVIDENCE-INDEX-FOUNDATION-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T23:01:41Z\", \"seed_version\": \"v0_1\", \"patterns\": [ { \"pattern_id\": \"fake_canon_count\", \"label\": \"Fake canon referenc...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-QUALITY-GATE-FOLLOWUP-PC-V0_1/json_schema_followup_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-QUALITY-GATE-FOLLOWUP-PC-V0_1",
+          "summary": "{ \"generated_at_utc\": \"2026-05-24T22:22:15Z\", \"checker\": \"mechanicus_schema_validation_runner_v0_1.py\", \"targets_total\": 22, \"summary\": { \"parse_fail_count\": 0, \"schema_fail_count\": 0, \"schema_checked_count\": 7, \"no_sche...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1/ghost_evolve_batch_002_training_proof.json",
+          "title": "TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1",
+          "summary": "{ \"task_id\": \"TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\", \"generated_at_utc\": \"2026-05-24T21:39:57Z\", \"proof_id\": \"ghost_evolve_batch_002\", \"manual_to_reusable_conversion\": [ { \"manual_before\": \"Manual selectio...<truncated>"
+        },
+        {
+          "source_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1/schema_validation_report.json",
+          "title": "TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1",
+          "summary": "{ \"generated_at_utc\": \"2026-05-24T21:39:55Z\", \"checker\": \"mechanicus_schema_validation_runner_v0_1.py\", \"targets_total\": 26, \"summary\": { \"parse_fail_count\": 0, \"schema_fail_count\": 0, \"schema_checked_count\": 7, \"no_sche...<truncated>"
+        }
+      ],
+      "verdict": "PASS"
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "verdict": "PASS",
+  "raw_dump_status": "COMPACT_ONLY"
+}

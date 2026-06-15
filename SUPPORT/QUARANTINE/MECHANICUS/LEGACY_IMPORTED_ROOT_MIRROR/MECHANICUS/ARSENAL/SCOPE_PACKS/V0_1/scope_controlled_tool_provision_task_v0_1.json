@@ -1,0 +1,113 @@
+{
+  "scope_id": "controlled_tool_provision_task",
+  "version": "0.1",
+  "generated_at_utc": "2026-05-24T23:34:05Z",
+  "source_registry": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json",
+  "purpose": "Owner-approved detection/install/validation lane with controlled receipts and no silent install.",
+  "target_task_types": [
+    "controlled_provision",
+    "approved_install_lane",
+    "tool_presence_repair"
+  ],
+  "canon_allowed": [
+    "CAP-TOOL-COMMAND-GATEWAY-INTERNAL",
+    "CAP-TOOL-PATH-POLICY-INTERNAL"
+  ],
+  "sandbox_allowed": [
+    "CAP-CQ-PRECOMMIT",
+    "CAP-CQ-PYRIGHT-MYPY",
+    "CAP-CQ-RUFF",
+    "CAP-LANG-PYTHON312-RUNTIME",
+    "CAP-PLAYBOOK-MECHANICUS-ARSENAL-INTAKE",
+    "CAP-TOOL-JSONSCHEMA",
+    "CAP-UTILITY-GIT",
+    "CAP-UTILITY-POWERSHELL",
+    "LANGUAGES_POWERSHELL",
+    "LANGUAGES_PYTHON_312_RUNTIME",
+    "TOOLS_COMMAND_GATEWAY",
+    "TOOLS_GIT",
+    "TOOLS_PATH_POLICY",
+    "TOOLS_SCOPE_REVIEW_TOOL"
+  ],
+  "candidate_context_only": [
+    "PLAYBOOKS_MECHANICUS_TOOL_INTAKE_PLAYBOOK",
+    "PROMPTING_PATTERNS_OWNER_DECISION_QUEUE_PROMPT",
+    "TOOLS_CANDIDATE_CHECK_WORKFLOW"
+  ],
+  "owner_decision_required": [
+    "CLOUD_LLM_ADAPTERS_CLOUD_MODEL_ROUTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_CLOUD_RECEIPT_MODEL_CANDIDATE",
+    "CLOUD_LLM_ADAPTERS_COST_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_OPENAI_COMPATIBLE_API_ADAPTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_PRIVACY_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_SECRET_POLICY_GATE",
+    "LOCAL_LLM_LLAMACPP_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LM_STUDIO_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LOCAL_MODEL_RUNNER_RESERVED",
+    "LOCAL_LLM_MODEL_CAPABILITY_CARD_PATTERN",
+    "LOCAL_LLM_OLLAMA_RESERVED_CANDIDATE",
+    "LOCAL_LLM_OPENAI_COMPATIBLE_LOCAL_ENDPOINT_PATTERN"
+  ],
+  "forbidden": [],
+  "required_receipts": [
+    "cap-cq-precommit_receipt.json",
+    "cap-cq-pyright-mypy_receipt.json",
+    "cap-cq-ruff_receipt.json",
+    "cap-lang-python312-runtime_receipt.json",
+    "cap-playbook-mechanicus-arsenal-intake_receipt.json",
+    "cap-tool-command-gateway-internal_receipt.json",
+    "cap-tool-jsonschema_receipt.json",
+    "cap-tool-path-policy-internal_receipt.json",
+    "cap-utility-git_receipt.json",
+    "cap-utility-powershell_receipt.json",
+    "controlled_provision_results.json",
+    "install_receipts_index.json",
+    "languages-powershell_validation_receipt.json",
+    "languages-python-312-runtime_validation_receipt.json",
+    "playbooks-mechanicus-tool-intake-playbook_validation_receipt.json",
+    "prompting-patterns-owner-decision-queue-prompt_validation_receipt.json",
+    "src/imperium/security/__init__.py",
+    "src/imperium/security/command_gateway.py",
+    "src/imperium/security/path_policy.py",
+    "tool_detection_report.json",
+    "tools-candidate-check-workflow_validation_receipt.json",
+    "tools-command-gateway_validation_receipt.json",
+    "tools-git_validation_receipt.json",
+    "tools-path-policy_validation_receipt.json",
+    "tools-scope-review-tool_validation_receipt.json",
+    "validation_receipts_index.json"
+  ],
+  "required_gates": [
+    "GATE-U00-GIT-TRUTH",
+    "GATE-U01-ROLE-ACK",
+    "GATE-U02-SCOPE-BOUNDARY",
+    "GATE-U04-EVIDENCE-RECEIPT",
+    "GATE-U05-STOP-CONDITIONS",
+    "GATE-U08-REPO-PURITY",
+    "GATE-U09-NO-FAKE-GREEN",
+    "GATE-U12-REPORT-OUTPUT-BUDGET",
+    "GATE-U13-PYTHON-TYPE-SAFETY",
+    "GATE-U14-WHOLE-REPO-SCOPE-RECON",
+    "GATE-U15-OPERATIONALITY-IMPACT",
+    "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+    "GATE-U20-AGENT-KPD-SELF-REVIEW",
+    "GATE-U21-COMMAND-CHUNKING"
+  ],
+  "warnings": [
+    "Provisioning scope is constrained to explicit Owner-approved list only."
+  ],
+  "examples_of_use": [
+    "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_controlled_provision_runner_v0_1.py",
+    "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_install_receipt_builder_v0_1.py"
+  ],
+  "future_promotion_candidates": [
+    "PLAYBOOKS_MECHANICUS_TOOL_INTAKE_PLAYBOOK"
+  ],
+  "forbidden_actions": [
+    "silent install",
+    "network provisioning without Owner approval",
+    "pre-commit hooks auto-enable",
+    "unapproved package provisioning"
+  ],
+  "last_generated_from_commit": "5d22657b2fe8a319c9a4636549c53bfcc2ffa119"
+}

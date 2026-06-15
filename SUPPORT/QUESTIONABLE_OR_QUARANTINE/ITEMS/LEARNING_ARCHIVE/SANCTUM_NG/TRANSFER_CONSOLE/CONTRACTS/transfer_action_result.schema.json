@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TRANSFER_ACTION_RESULT_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "result_id",
+    "request_id",
+    "task_id",
+    "action_type",
+    "status",
+    "started_at_utc",
+    "finished_at_utc",
+    "evidence_refs",
+    "stdout_log_ref",
+    "stderr_log_ref",
+    "paths_verified",
+    "sha256_before_after",
+    "no_arbitrary_shell_confirmed",
+    "limitations",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema_id": { "const": "TRANSFER_ACTION_RESULT_V0_1" },
+    "result_id": { "type": "string", "minLength": 1 },
+    "request_id": { "type": "string", "minLength": 1 },
+    "task_id": { "type": "string", "minLength": 1 },
+    "action_type": {
+      "type": "string",
+      "enum": [
+        "SEND_TASKPACK_ZIP",
+        "FETCH_REPORT_BUNDLE_ZIP",
+        "REGISTER_TRANSFER_RESULT",
+        "VALIDATE_TRANSFER_REQUEST",
+        "DRY_RUN_TRANSFER"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "DRY_RUN_OK",
+        "SENT",
+        "FETCHED",
+        "CONFIRMED",
+        "REGISTERED",
+        "FAILED",
+        "BLOCKED",
+        "NOT_READY"
+      ]
+    },
+    "started_at_utc": { "type": "string", "minLength": 1 },
+    "finished_at_utc": { "type": "string", "minLength": 1 },
+    "evidence_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "stdout_log_ref": {
+      "anyOf": [
+        { "type": "string" },
+        { "type": "null" }
+      ]
+    },
+    "stderr_log_ref": {
+      "anyOf": [
+        { "type": "string" },
+        { "type": "null" }
+      ]
+    },
+    "paths_verified": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "sha256_before_after": {
+      "type": "object",
+      "required": ["before", "after"],
+      "properties": {
+        "before": {
+          "anyOf": [
+            { "type": "string" },
+            { "type": "null" }
+          ]
+        },
+        "after": {
+          "anyOf": [
+            { "type": "string" },
+            { "type": "null" }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "no_arbitrary_shell_confirmed": { "type": "boolean" },
+    "limitations": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "claim_boundary": { "const": "FOUNDATION_ONLY" },
+    "error": {
+      "anyOf": [
+        { "type": "string" },
+        { "type": "null" }
+      ]
+    },
+    "mode": { "type": "string", "enum": ["DRY_RUN", "EXECUTE"] }
+  },
+  "additionalProperties": false
+}

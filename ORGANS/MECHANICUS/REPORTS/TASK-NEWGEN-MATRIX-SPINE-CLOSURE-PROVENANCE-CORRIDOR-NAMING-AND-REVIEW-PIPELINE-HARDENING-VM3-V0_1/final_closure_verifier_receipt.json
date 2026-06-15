@@ -1,0 +1,41 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1",
+  "base_head": "935dc33b52e8915aae71611fad48c91135c4e800",
+  "implementation_head": "3aa07798217fff0f594214d203e1783307a03a5e",
+  "pre_push_head": "3aa07798217fff0f594214d203e1783307a03a5e",
+  "closure_head": "3aa07798217fff0f594214d203e1783307a03a5e",
+  "final_verifier_head": "3aa07798217fff0f594214d203e1783307a03a5e",
+  "remote_head_after_push": "3aa07798217fff0f594214d203e1783307a03a5e",
+  "worktree_clean_after_push": true,
+  "origin_master_sync_after_push": true,
+  "implementation_commit_url": "https://github.com/SoulsLike2313/Imperium-/commit/3aa07798217fff0f594214d203e1783307a03a5e",
+  "closure_commit_url": "https://github.com/SoulsLike2313/Imperium-/commit/3aa07798217fff0f594214d203e1783307a03a5e",
+  "final_verifier_commit_url": "https://github.com/SoulsLike2313/Imperium-/commit/3aa07798217fff0f594214d203e1783307a03a5e",
+  "red_team_verdict_path": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/hard_red_team_verdict.json",
+  "next_pipeline_handoff_path": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/NEXT_PIPELINE_HANDOFF.json",
+  "runtime_outputs": [
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json",
+      "classification": "CURATED_EVIDENCE",
+      "commit_decision": "COMMIT",
+      "reason": "Final validator summary for review pipeline."
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/synthetic_corridor_receipt.json",
+      "classification": "CURATED_EVIDENCE",
+      "commit_decision": "COMMIT",
+      "reason": "Synthetic corridor replay evidence admitted by taskpack."
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/matrix_validator_run/matrix_spine_validation_failures.jsonl",
+      "classification": "RUNTIME_EPHEMERAL",
+      "commit_decision": "EXCLUDE",
+      "reason": "Large runtime failure stream not required in final canon bundle."
+    }
+  ],
+  "caps_triggered": [
+    "CAP_NO_INDEPENDENT_REPLAY"
+  ],
+  "verdict": "PASS_WITH_WARNINGS",
+  "notes": "Closure provenance is anchored to implementation commit. Metadata/report packaging is committed in follow-up for continuity."
+}

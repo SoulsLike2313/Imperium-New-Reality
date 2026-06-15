@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Head Taxonomy Manifest Schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "accepted_continuity_head",
+    "implementation_head",
+    "proof_head",
+    "artifact_bundle_head",
+    "receipt_finalization_head",
+    "current_remote_head",
+    "review_target_head",
+    "head_roles",
+    "caps_reviewers_must_apply",
+    "warp_runtime_claimed",
+    "warp_unlocked"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "accepted_continuity_head": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "implementation_head": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "proof_head": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "artifact_bundle_head": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "receipt_finalization_head": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "current_remote_head": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "review_target_head": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "fallback_review_head": {
+      "type": "string",
+      "pattern": "^$|^[0-9a-f]{40}$"
+    },
+    "fallback_warning": {
+      "type": "string"
+    },
+    "head_roles": {
+      "type": "object",
+      "required": [
+        "implementation_head",
+        "proof_head",
+        "artifact_bundle_head",
+        "receipt_finalization_head",
+        "current_remote_head",
+        "review_target_head"
+      ],
+      "properties": {
+        "implementation_head": {
+          "type": "string"
+        },
+        "proof_head": {
+          "type": "string"
+        },
+        "artifact_bundle_head": {
+          "type": "string"
+        },
+        "receipt_finalization_head": {
+          "type": "string"
+        },
+        "current_remote_head": {
+          "type": "string"
+        },
+        "review_target_head": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "known_fetchable_heads": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{40}$"
+      }
+    },
+    "caps_reviewers_must_apply": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "caps_triggered": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "clean_pass_allowed": {
+      "type": "boolean"
+    },
+    "warp_runtime_claimed": {
+      "type": "boolean"
+    },
+    "warp_unlocked": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

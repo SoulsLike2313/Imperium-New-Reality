@@ -1,0 +1,58 @@
+{
+  "task_id": "TASK-NEWGEN-LEGACY-RECEIPT-P0-PRODUCER-REMEDIATION-PC-V0_1",
+  "builder_claims": [
+    {
+      "claim_id": "C001",
+      "claim": "All four Stage-0 P0 receipt producers were remediated with explicit external-finalization taxonomy split.",
+      "evidence": "p0_before_after_remediation_matrix.json + legacy_receipt_field_delta_scan.json"
+    },
+    {
+      "claim_id": "C002",
+      "claim": "Legacy checker was run in delta mode only for the four P0 producers.",
+      "evidence": "legacy_receipt_field_delta_scan.json"
+    },
+    {
+      "claim_id": "C003",
+      "claim": "Stage 1 can be considered with warnings once Inquisitor/Speculum reviews this remediation commit.",
+      "evidence": "stage1_readiness_decision_candidate.json"
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "A001",
+      "target_claim": "C001",
+      "result": "PASS",
+      "detail": "Delta matrix shows P0 count 4->0 and all four paths now classify as MIGRATED_TO_EXTERNAL_FINALIZATION (P3)."
+    },
+    {
+      "attack_id": "A002",
+      "target_claim": "C002",
+      "result": "PASS",
+      "detail": "Delta checker inputs were bounded to four producer files only."
+    },
+    {
+      "attack_id": "A003",
+      "target_claim": "C003",
+      "result": "WARN",
+      "detail": "ALLOW_STAGE1 remains candidate-only until independent Inquisitor/Speculum commit review completes."
+    },
+    {
+      "attack_id": "A004",
+      "target_claim": "GLOBAL",
+      "result": "WARN",
+      "detail": "Worktree currently dirty pre-commit; clean-pass cannot be asserted before commit/push receipt is finalized."
+    }
+  ],
+  "downgrade_rules_applied": [
+    "NO_P0_REMAINING->P0_BLOCKER_CLEARED",
+    "P1_UNKNOWN_SURVIVES->PASS_WITH_WARNINGS_ONLY",
+    "EXTERNAL_REVIEW_PENDING->WARN_CAP_RETAINS",
+    "NO_MASS_MIGRATION->SCOPE_PASS"
+  ],
+  "final_verdict": "PASS_WITH_WARNINGS",
+  "blocked_clean_pass_reasons": [
+    "CAP_LEGACY_RECEIPT_PRODUCERS_UNCLASSIFIED",
+    "CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING"
+  ],
+  "generated_at_utc": "2026-05-30T21:31:49Z"
+}

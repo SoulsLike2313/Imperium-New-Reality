@@ -1,0 +1,33 @@
+{
+  "fixture_id": "RA03",
+  "title": "reviewers aligned on one review target",
+  "mode": "inline_manifest",
+  "expect_no_caps": true,
+  "manifest": {
+    "review_target_head": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+    "accepted_continuity_head": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+    "implementation_truth_status": "RESOLVED",
+    "implementation_truth_head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+    "head_chain": {
+      "base_head": "3aa07798217fff0f594214d203e1783307a03a5e",
+      "previous_closure_head": "c10f2b1c46d19e6a7614e25c4eff57b46b8baef5",
+      "accepted_continuity_head": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+      "proof_receipt_head": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+      "closure_bundle_head": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+      "remote_head_after_push": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7"
+    },
+    "reviewer_targets": {
+      "inquisitor": {
+        "target_head": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7"
+      },
+      "speculum": {
+        "target_head": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7"
+      }
+    },
+    "independent_replay": {
+      "commands": [
+        "git rev-parse --verify HEAD"
+      ]
+    }
+  }
+}

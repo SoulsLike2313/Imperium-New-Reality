@@ -1,0 +1,32 @@
+{
+  "schema": "imperium.post_patch_research_register.v0_1",
+  "patch_id": "v0.8.9.3",
+  "topic": "Imperium Intelligence Pack Builder",
+  "mechanicus_registrations": [
+    "mechanicus.imperium_intelligence_pack_builder",
+    "inquisition.intelligence_pack_hygiene_gate"
+  ],
+  "doctrine_updates": [
+    "INTELLIGENCE_PACK_DOCTRINE_V0_1",
+    "default_handoff_is_manifest_indexes_edges_sqlite_slices"
+  ],
+  "architecture_inspirations": [
+    {
+      "name": "SQLite application file format",
+      "takeaway": "Use a portable local SQL index as a machine-readable pack artifact."
+    },
+    {
+      "name": "DuckDB",
+      "takeaway": "Evaluate later for local analytics if SQLite index scans outgrow simple query needs."
+    },
+    {
+      "name": "GraphRAG",
+      "takeaway": "Produce graph-ready dependency edges now; defer LLM-backed graph summarization behind owner gate."
+    },
+    {
+      "name": "DataHub",
+      "takeaway": "Data Atlas should evolve toward ownership, discovery, governance, observability, and lineage."
+    }
+  ],
+  "next_research_gate": "Promote ATLAS_INDEX.sqlite to persistent Data Atlas SQLite spine after pack builder is stable."
+}

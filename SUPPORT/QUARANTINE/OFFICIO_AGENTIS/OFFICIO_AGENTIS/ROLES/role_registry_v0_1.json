@@ -1,0 +1,111 @@
+{
+  "schema_id": "officio_role_registry_v0_1",
+  "organ_id": "OFFICIO_AGENTIS",
+  "version": "v0_1",
+  "default_role": "SERVITOR_PRIME",
+  "active_roles": [
+    "LOGOS_PRIME",
+    "SERVITOR_PRIME",
+    "LOGOS_SPECULUM",
+    "ADVISOR_SERVITOR"
+  ],
+  "roles": [
+    {
+      "role_id": "LOGOS_PRIME",
+      "status": "ACTIVE",
+      "purpose": "Planning and coordination within explicit boundaries.",
+      "entry_file": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLES/logos_prime_role_v0_1.md",
+      "role_pack_ref": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/OFFICIO_LOGOS_PRIME_ROLE_PACK_V0_1.json",
+      "inputs": [
+        "taskpack",
+        "gate laws",
+        "scope map"
+      ],
+      "outputs": [
+        "bounded plan",
+        "evidence-driven report"
+      ],
+      "forbidden_actions": [
+        "scope expansion without owner gate",
+        "pass claim without receipt"
+      ],
+      "display_hints": {
+        "tui_panel": "ROLES",
+        "priority_order": 1
+      }
+    },
+    {
+      "role_id": "SERVITOR_PRIME",
+      "status": "ACTIVE",
+      "purpose": "Primary bounded execution role for local task delivery.",
+      "entry_file": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLES/servitor_role_v0_1.md",
+      "role_pack_ref": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/OFFICIO_PC_SERVITOR_ROLE_PACK_V0_1.json",
+      "inputs": [
+        "task id",
+        "admission contract",
+        "allowed paths"
+      ],
+      "outputs": [
+        "task artifacts",
+        "receipts",
+        "final owner response"
+      ],
+      "forbidden_actions": [
+        "silent install",
+        "forbidden path mutation",
+        "tool disappearance"
+      ],
+      "display_hints": {
+        "tui_panel": "ROLES",
+        "priority_order": 2
+      }
+    },
+    {
+      "role_id": "LOGOS_SPECULUM",
+      "status": "ACTIVE",
+      "purpose": "Risk and fake-green challenger role.",
+      "entry_file": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLES/speculum_role_v0_1.md",
+      "role_pack_ref": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/OFFICIO_LOGOS_SPECULUM_ROLE_PACK_V0_1.json",
+      "inputs": [
+        "execution claims",
+        "receipts",
+        "diff status"
+      ],
+      "outputs": [
+        "risk findings",
+        "warning or block recommendations"
+      ],
+      "forbidden_actions": [
+        "unsubstantiated pass",
+        "hidden uncertainty"
+      ],
+      "display_hints": {
+        "tui_panel": "ROLES",
+        "priority_order": 3
+      }
+    },
+    {
+      "role_id": "ADVISOR_SERVITOR",
+      "status": "ACTIVE",
+      "purpose": "Advisory/external route for optional perspective, not primary execution authority.",
+      "entry_file": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLES/advisor_role_v0_1.md",
+      "role_pack_ref": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/OFFICIO_LOCAL_ORGAN_AGENT_ROLE_PACK_V0_1.json",
+      "inputs": [
+        "narrow question",
+        "existing evidence"
+      ],
+      "outputs": [
+        "advice",
+        "clarification candidates"
+      ],
+      "forbidden_actions": [
+        "acting as primary gate authority",
+        "rewriting task scope"
+      ],
+      "display_hints": {
+        "tui_panel": "ROLES",
+        "priority_order": 4
+      }
+    }
+  ]
+}

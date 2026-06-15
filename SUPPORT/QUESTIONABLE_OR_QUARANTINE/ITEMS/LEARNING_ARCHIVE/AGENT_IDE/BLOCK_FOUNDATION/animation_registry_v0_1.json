@@ -1,0 +1,38 @@
+{
+  "schema_version": "imperium.agent_ide.animation_registry.v0_1",
+  "policies": [
+    {
+      "animation_id": "ANIM_NONE",
+      "kind": "none",
+      "duration_ms": 0,
+      "notes": "For stable data-heavy blocks."
+    },
+    {
+      "animation_id": "ANIM_FADE_IN_SOFT",
+      "kind": "fade",
+      "duration_ms": 420,
+      "easing": "ease-out",
+      "notes": "Used at page load for L0 cards."
+    },
+    {
+      "animation_id": "ANIM_STAGGER_LIST",
+      "kind": "stagger",
+      "duration_ms": 320,
+      "stagger_ms": 80,
+      "notes": "Used for organ tile reveal."
+    },
+    {
+      "animation_id": "ANIM_PULSE_LOW",
+      "kind": "pulse",
+      "duration_ms": 1800,
+      "loop": true,
+      "notes": "Low-intensity pulse for attention blocks."
+    },
+    {
+      "animation_id": "ANIM_BADGE_APPEAR",
+      "kind": "badge_pop",
+      "duration_ms": 260,
+      "notes": "Policy marker for restricted projection zones."
+    }
+  ]
+}

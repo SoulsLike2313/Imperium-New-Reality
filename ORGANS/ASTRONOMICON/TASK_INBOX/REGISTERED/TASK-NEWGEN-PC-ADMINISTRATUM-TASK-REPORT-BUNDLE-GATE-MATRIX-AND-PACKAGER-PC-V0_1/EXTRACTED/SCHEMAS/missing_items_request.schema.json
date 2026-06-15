@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "verdict",
+    "task_id",
+    "missing_required_items",
+    "required_action"
+  ],
+  "properties": {
+    "verdict": {
+      "const": "BUNDLE_COMPOSITION_BLOCK"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "missing_required_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_action": {
+      "type": "string"
+    }
+  }
+}

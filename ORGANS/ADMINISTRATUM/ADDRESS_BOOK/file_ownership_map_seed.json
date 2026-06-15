@@ -1,0 +1,16 @@
+{
+  "schema_version": "imperium.file_ownership_map_seed.v0_1",
+  "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+  "owner_organ": "ADMINISTRATUM",
+  "mode": "DRY_RUN_SEED_ONLY",
+  "rules": [
+    {"match": "ORGANS/<required_organ>/**", "classification": "ORGAN_OWNED", "owner_source": "required organ id"},
+    {"match": "ORGANS/_CORE_GOVERNANCE/**", "classification": "CORE_GOVERNANCE", "owner_organ": "ADMINISTRATUM"},
+    {"match": "SUPPORT/COMMON_IMPERIUM_SUPPORT/**", "classification": "COMMON_SUPPORT", "owner_organ": "ADMINISTRATUM"},
+    {"match": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/**", "classification": "QUESTIONABLE_OR_QUARANTINE", "owner_organ": "INQUISITION"},
+    {"match": "REPORTS/**", "classification": "COMMON_SUPPORT", "owner_organ": "ADMINISTRATUM"},
+    {"match": "unknown top-level", "classification": "UNKNOWN_WITH_REASON", "owner_organ": "ADMINISTRATUM"}
+  ],
+  "no_move_or_delete_authorized": true,
+  "next_action": "Use core_file_classifier_dry_run_v0_1.py output for reviewed V0.2 ownership."
+}

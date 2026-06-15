@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Astronomicon Taskpack Registration Skill Contract",
+  "type": "object",
+  "required": [
+    "skill_id",
+    "owner_organ",
+    "version",
+    "entrypoints",
+    "truth_source",
+    "supported_contours"
+  ],
+  "properties": {
+    "skill_id": {
+      "type": "string"
+    },
+    "owner_organ": {
+      "const": "ASTRONOMICON"
+    },
+    "version": {
+      "type": "string"
+    },
+    "entrypoints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth_source": {
+      "type": "string"
+    },
+    "supported_contours": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "PC",
+          "VM3",
+          "VM2"
+        ]
+      }
+    }
+  }
+}

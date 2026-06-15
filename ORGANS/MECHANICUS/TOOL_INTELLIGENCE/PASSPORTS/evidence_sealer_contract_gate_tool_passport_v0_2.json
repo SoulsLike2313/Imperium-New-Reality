@@ -1,0 +1,48 @@
+{
+  "schema_id": "imperium.tool_passport.v0_2",
+  "tool_id": "evidence_sealer_contract_gate",
+  "name": "Evidence Sealer Contract Gate",
+  "version": "v0_2",
+  "owner_organ": "MECHANICUS",
+  "lang": "python",
+  "validators": [
+    {
+      "id": "syntax",
+      "type": "command",
+      "command": "python -m py_compile {tool_path}",
+      "timeout_seconds": 10
+    }
+  ],
+  "exec_mode": "static",
+  "owner_gated": true,
+  "_draft": true,
+  "_auto_registered_at": "2026-06-14T17:12:46Z",
+  "_auto_registrar_version": "v0_2",
+  "_confidence": {
+    "owner_organ": "from_path",
+    "lang": "fallback_default",
+    "validators": "auto_minimal",
+    "exec_mode": "fallback_default",
+    "owner_gated": "safe_default_true"
+  },
+  "_source_paths": [],
+  "_legacy_passport_path": "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORTS/evidence_sealer_contract_gate_tool_passports_v0_1.json",
+  "_legacy_extras": {
+    "schema_version": "0.1",
+    "tool_passports": [
+      {
+        "tool_id": "inquisition.evidence_sealer_contract_gate",
+        "owner_organ": "INQUISITION",
+        "path": "ORGANS/INQUISITION/REPORTING/inquisition_evidence_sealer_contract_gate_v0_1.py",
+        "language": "python",
+        "purpose": "Read-only contract and health gate for Evidence Vault sealer output roots and sealed pack sidecars.",
+        "write_scope": [
+          "optional LOCAL_HANDOFF/Vault report output only when --out-report-root is provided"
+        ],
+        "destructive_default": false,
+        "destructive_flags": [],
+        "validation_recipe": "py_compile; run contract PASS and BLOCK cases; run health check on sealed pack smoke output."
+      }
+    ]
+  }
+}

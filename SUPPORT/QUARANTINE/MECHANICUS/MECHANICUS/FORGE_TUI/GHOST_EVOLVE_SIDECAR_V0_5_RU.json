@@ -1,0 +1,21 @@
+{
+  "task_id": "MECHANICUS_FORGE_CLIENT_V0_5_RU_INDEX_MANUAL_GIFT",
+  "created_utc": "2026-05-25T00:13:58Z",
+  "organ": "MECHANICUS",
+  "mode": "GE_LITE_LANGUAGE_INDEX",
+  "learning_delta": [
+    "Mechanicus TUI gains Russian index layer while preserving machine IDs.",
+    "Owner readability improves without breaking registry/evidence addressing.",
+    "Status/category/folder/field names receive RU labels."
+  ],
+  "reusable_capability": {
+    "name": "mechanicus_forge_client_v0_5_ru",
+    "entrypoint": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/mechanicus_forge_client_v0_5_ru.py",
+    "launcher": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/LAUNCH_MECHANICUS_FORGE_CLIENT_V0_5_RU.cmd"
+  },
+  "eval_or_smoke": [
+    "py -3 -m py_compile mechanicus_forge_client_v0_5_ru.py",
+    "manual launch via LAUNCH_MECHANICUS_FORGE_CLIENT_V0_5_RU.cmd"
+  ],
+  "read_only": true
+}

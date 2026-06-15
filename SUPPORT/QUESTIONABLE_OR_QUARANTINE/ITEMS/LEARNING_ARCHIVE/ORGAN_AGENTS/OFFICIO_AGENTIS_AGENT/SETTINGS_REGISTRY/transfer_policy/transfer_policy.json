@@ -1,0 +1,38 @@
+{
+  "setting_id": "SET-TRANSFER-POLICY-V0_1",
+  "title": "Transfer Evidence Policy",
+  "version": "v0_1",
+  "state": "ACTIVE",
+  "scope": "artifact transfer and push claims",
+  "applies_to_roles": [
+    "SERVITOR"
+  ],
+  "applies_to_modes": [
+    "EXECUTOR"
+  ],
+  "machine_rule": {
+    "required_fields": [
+      "source_path",
+      "target_path",
+      "sha256",
+      "timestamp_utc",
+      "receipt_path"
+    ],
+    "blocked_code_if_missing": "BLOCKED_NO_REMOTE_PROOF"
+  },
+  "human_summary": "Transfer and push claims require path/hash/time receipts.",
+  "acceptance_tests": [
+    "Transfer claim without sha256 is invalid.",
+    "Push claim without remote proof is blocked."
+  ],
+  "evidence_required": [
+    "EVIDENCE_INDEX.md",
+    "GIT_TRUTH.md"
+  ],
+  "dependencies": [],
+  "conflicts_with": [],
+  "supersedes": [],
+  "rollback_plan": "Restore previous transfer policy and re-check transfer receipts.",
+  "owner_approval_required": true
+}
+

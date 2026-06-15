@@ -1,0 +1,37 @@
+{
+  "schema_version": "astronomicon.task_start_ack_template.v0_1",
+  "template_id": "TASK_START_ACK_TEMPLATE_PC_MECHANICUS_IDE_CONTROL_SHELL_V0_1",
+  "task_id": "TASK-NEWREALITY-MECHANICUS-IMPERIAL-IDE-CONTROL-SHELL-TUI-PC-V0_1",
+  "contour": "PC",
+  "copy_message_to_servitor": "start task",
+  "start_ack_required_fields": [
+    "task_id",
+    "repo_root",
+    "git_status",
+    "head_sha",
+    "origin_master_sha",
+    "governance_status",
+    "mechanicus_status",
+    "imperial_ide_status",
+    "planned_shell_entrypoints",
+    "planned_dashboards",
+    "known_caps",
+    "known_blockers",
+    "allowed_write_scope",
+    "forbidden_actions",
+    "validated_push_policy",
+    "planned_outputs"
+  ],
+  "do_not_claim": [
+    "clean_pass",
+    "remote_route",
+    "vm2_execution",
+    "vm3_execution",
+    "full_gui_ide_complete",
+    "real_tool_execution_enabled",
+    "unsafe_shell_enabled",
+    "all_tools_validated",
+    "background_daemon_started",
+    "push_done_without_receipt"
+  ]
+}

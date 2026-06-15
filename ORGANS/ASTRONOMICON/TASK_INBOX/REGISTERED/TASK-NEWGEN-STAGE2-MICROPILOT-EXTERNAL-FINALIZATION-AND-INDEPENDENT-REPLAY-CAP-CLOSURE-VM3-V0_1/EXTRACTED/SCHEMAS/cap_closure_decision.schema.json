@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "cap_closure_decision",
+  "type": "object",
+  "required": [
+    "task_id",
+    "overall_verdict",
+    "cap_decisions"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "overall_verdict": {
+      "enum": [
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "BLOCK"
+      ]
+    },
+    "cap_decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "cap_id",
+          "status",
+          "evidence",
+          "next_required_proof"
+        ],
+        "properties": {
+          "cap_id": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "CLOSED",
+              "NARROWED",
+              "CARRIED",
+              "BLOCKED"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "next_required_proof": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

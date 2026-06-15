@@ -1,0 +1,73 @@
+{
+  "motion_budget_id": "SANCTUM_MOTION_BUDGET_V0_1",
+  "task_id": "TASK-20260520-NEWGEN-SANCTUM-VISUAL-TOPOLOGY-ADDRESS-REGISTRY-PC-V0_1",
+  "performance_tiers": [
+    "STATIC",
+    "CHEAP",
+    "MEDIUM",
+    "EXPENSIVE",
+    "DISABLED_LOW_POWER"
+  ],
+  "tier_rules": {
+    "STATIC": "No autonomous animation, text-first truth surfaces.",
+    "CHEAP": "Short transform/opacity transitions, no heavy blur loops.",
+    "MEDIUM": "Limited animated accents with low element count.",
+    "EXPENSIVE": "Hero animation only; must be unique in active scene.",
+    "DISABLED_LOW_POWER": "Forced static fallback when reduced-motion or low-power policy is active."
+  },
+  "hero_expensive_rule": {
+    "max_expensive_layers": 1,
+    "approved_expensive_unit": "SANCTUM.BRAIN_FIELD.NEURAL_CORE",
+    "enforcement": "Any second EXPENSIVE unit is BLOCK until explicit owner approval."
+  },
+  "unit_tiers": [
+    {
+      "visual_unit_id": "SANCTUM.SHELL.GLOBAL_FRAME",
+      "perf_tier": "CHEAP"
+    },
+    {
+      "visual_unit_id": "SANCTUM.BRAIN_FIELD.NEURAL_CORE",
+      "perf_tier": "EXPENSIVE"
+    },
+    {
+      "visual_unit_id": "SANCTUM.BRAIN_FIELD.ORGAN_RING",
+      "perf_tier": "CHEAP"
+    },
+    {
+      "visual_unit_id": "SANCTUM.BRAIN_FIELD.ORGAN_RING.MECHANICUS_NODE",
+      "perf_tier": "CHEAP"
+    },
+    {
+      "visual_unit_id": "SANCTUM.BRAIN_FIELD.NEURAL_LINKS",
+      "perf_tier": "CHEAP"
+    },
+    {
+      "visual_unit_id": "SANCTUM.BRAIN_FIELD.ACTIVITY_PULSE_LAYER",
+      "perf_tier": "MEDIUM"
+    },
+    {
+      "visual_unit_id": "SANCTUM.RIGHT_CONTEXT_DOCK",
+      "perf_tier": "CHEAP"
+    },
+    {
+      "visual_unit_id": "SANCTUM.RIGHT_CONTEXT_DOCK.MECHANICUS_PANEL",
+      "perf_tier": "CHEAP"
+    },
+    {
+      "visual_unit_id": "SANCTUM.RIGHT_CONTEXT_DOCK.ADMINISTRATUM_PANEL_STUB",
+      "perf_tier": "STATIC"
+    },
+    {
+      "visual_unit_id": "SANCTUM.TRUTH_STATUS_STRIP",
+      "perf_tier": "STATIC"
+    },
+    {
+      "visual_unit_id": "SANCTUM.COMMAND_SURFACE",
+      "perf_tier": "CHEAP"
+    },
+    {
+      "visual_unit_id": "SANCTUM.EVIDENCE_REPORT_LAYER",
+      "perf_tier": "STATIC"
+    }
+  ]
+}

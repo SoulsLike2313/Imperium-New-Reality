@@ -1,0 +1,69 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE1-DIRTY-FILES-CLASSIFICATION-AND-CLEANUP-PC-V0_1",
+  "timestamp_utc": "2026-05-31T00:26:57Z",
+  "classification_items": [
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/synthetic_task_entry_checker_receipt.json",
+      "git_status": "M",
+      "tracked": true,
+      "owner_organ": "ASTRONOMICON",
+      "first_seen_or_inferred_origin": "Inherited Stage1 pre-existing dirty path carried through Stage2/2.1 as known cap.",
+      "classification": "LEGACY_CONFLICT_RESTORE_TO_HEAD",
+      "diff_summary": "Only timestamp drift in synthetic receipt; no functional/semantic content addition.",
+      "contains_private_or_secret_risk": false,
+      "recommended_action": "RESTORE_TO_HEAD_WITH_RECEIPT",
+      "reason": "Timestamp-only drift is non-admitted noise for this task scope; restore closes fake-green dirty provenance.",
+      "evidence_paths": [
+        "dirty_diff_excerpt.patch",
+        "repo_truth_probe.json"
+      ],
+      "hash_before_action": "d6d9829cab75314b5fa3f58532a415b835122b1a8d9835fffea20c6c8ea9c518",
+      "hash_after_action_or_quarantine": "f66b298db808a554afec5229a9180ee3d854d9ebe5ca04920059b222e53b7ba6",
+      "cap_impact": [
+        "CAP_DIRTY_WORKTREE_UNCLASSIFIED"
+      ]
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/synthetic_task_entry_proof_report.md",
+      "git_status": "M",
+      "tracked": true,
+      "owner_organ": "ASTRONOMICON",
+      "first_seen_or_inferred_origin": "Inherited Stage1 pre-existing dirty path carried through Stage2/2.1 as known cap.",
+      "classification": "LEGACY_CONFLICT_RESTORE_TO_HEAD",
+      "diff_summary": "Only timestamp line drift in markdown proof report; no admitted scope change.",
+      "contains_private_or_secret_risk": false,
+      "recommended_action": "RESTORE_TO_HEAD_WITH_RECEIPT",
+      "reason": "Non-semantic drift should not be committed as new evidence; restore is safest admitted action.",
+      "evidence_paths": [
+        "dirty_diff_excerpt.patch",
+        "repo_truth_probe.json"
+      ],
+      "hash_before_action": "451e0d9846e8a41ac043e36b3d7a3e0d58903f175ae3964664f730602fcbd497",
+      "hash_after_action_or_quarantine": "d7c3e3a4232023a92d42d6fac60009c5fa9bc1df2e62663299d43d4eed7fdb9b",
+      "cap_impact": [
+        "CAP_DIRTY_WORKTREE_UNCLASSIFIED"
+      ]
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/_TASKPACK_INBOX/",
+      "git_status": "??",
+      "tracked": false,
+      "owner_organ": "ASTRONOMICON",
+      "first_seen_or_inferred_origin": "Runtime staging extraction created during local taskpack read-order intake for this task only.",
+      "classification": "RUNTIME_EPHEMERAL_TO_DELETE",
+      "diff_summary": "Transient extracted taskpack tree (26 files) used for read-order evidence only.",
+      "contains_private_or_secret_risk": false,
+      "recommended_action": "DELETE_WITH_RECEIPT",
+      "reason": "Keep repository canon clean; staging inbox is non-canonical and should not remain as runtime drift.",
+      "evidence_paths": [
+        "dirty_diff_excerpt.patch",
+        "dirty_cleanup_before_after_report.md"
+      ],
+      "hash_before_action": "16a42c4639d8e67600cf35d9229406b14506def3fdb421bf5a2348ded2ef4b61",
+      "hash_after_action_or_quarantine": "DELETED",
+      "cap_impact": [
+        "CAP_DIRTY_WORKTREE_UNCLASSIFIED"
+      ]
+    }
+  ]
+}

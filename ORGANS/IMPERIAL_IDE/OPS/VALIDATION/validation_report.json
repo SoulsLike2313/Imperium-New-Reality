@@ -1,0 +1,34 @@
+{
+  "schema_version": "imperium.validation/1",
+  "package": "IMPERIUM_IDE_OPERATIONAL_V0_1",
+  "status": "CANDIDATE_NOT_CANON",
+  "validated_in": "Amazon Linux 2023 sandbox, Python 3.13",
+  "results": {
+    "compile": "COMPILE_OK",
+    "json_parse": "OK (3 json files)",
+    "no_bom": "OK",
+    "smoke": "SMOKE PASS (exit 0)"
+  },
+  "smoke_checks": [
+    "classify -> mechanicus_tool",
+    "task_id formed",
+    "intent valid",
+    "admission precheck clean",
+    "taskpack zip built (7 files, sha256 present)",
+    "launch card admitted + start message",
+    "fake-green fires on bare PASS",
+    "fake-green silent when backed by evidence",
+    "real servitor blocked by default",
+    "scenario 1 HELD on incomplete report",
+    "scenario 2 RELEASED on complete report with proof",
+    "lifecycle ran all 15 stages",
+    "final report written"
+  ],
+  "evidence_level": "E3",
+  "honest_limits": [
+    "Engine logic only; GUI panels (spec 2.x) are wired in a follow-up task.",
+    "Real servitor/LLM execution is blocked; servitor handoff is dry-run.",
+    "git commit/push only run when repo is git AND safety flag is open; otherwise simulated with honest receipt.",
+    "PowerShell launchers checked statically; no pwsh/GUI in Linux sandbox."
+  ]
+}

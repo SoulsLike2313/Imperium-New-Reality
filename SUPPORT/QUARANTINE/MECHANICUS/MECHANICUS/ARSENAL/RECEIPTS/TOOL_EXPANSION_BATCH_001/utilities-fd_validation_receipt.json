@@ -1,0 +1,31 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:utilities_fd:tool_detection:utilities_fd",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "UTILITIES_FD",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:42Z",
+  "status": "PASS_WITH_WARNINGS",
+  "summary": "UTILITIES_FD: PASS_WITH_WARNINGS via tool_detection:UTILITIES_FD. promotion_recommendation=PROMOTE_SANDBOX",
+  "check_name": "tool_detection:UTILITIES_FD",
+  "command_or_check": "fd --version || fdfind --version",
+  "exit_code": 1,
+  "stdout_excerpt": "$ fd --version\nfd 10.4.2",
+  "stderr_excerpt": "$ fdfind --version\n'fdfind' is not recognized as an internal or external command,\noperable program or batch file.",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-fd_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS_WITH_WARNINGS",
+  "promotion_recommendation": "PROMOTE_SANDBOX",
+  "warnings": [
+    "partial_detection_fallback"
+  ],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-fd_validation_receipt.json"
+  ]
+}

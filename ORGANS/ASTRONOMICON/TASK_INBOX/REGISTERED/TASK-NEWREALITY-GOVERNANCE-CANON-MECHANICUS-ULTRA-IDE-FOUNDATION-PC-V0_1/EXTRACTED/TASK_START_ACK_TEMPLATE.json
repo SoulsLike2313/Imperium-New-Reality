@@ -1,0 +1,36 @@
+{
+  "schema_version": "astronomicon.task_start_ack_template.v0_1",
+  "template_id": "TASK_START_ACK_TEMPLATE_PC_GOVERNANCE_MECHANICUS_IDE_V0_1",
+  "task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1",
+  "contour": "PC",
+  "copy_message_to_servitor": "start task",
+  "start_ack_required_fields": [
+    "task_id",
+    "repo_root",
+    "git_status",
+    "head_sha",
+    "origin_master_sha",
+    "governance_status",
+    "mechanicus_current_status",
+    "ide_foundation_status",
+    "read_first_files",
+    "known_caps",
+    "known_blockers",
+    "allowed_write_scope",
+    "forbidden_actions",
+    "validated_push_policy",
+    "planned_outputs"
+  ],
+  "do_not_claim": [
+    "clean_pass",
+    "remote_route",
+    "vm2_execution",
+    "vm3_execution",
+    "full_custom_ide_complete",
+    "unsafe_tool_execution_enabled",
+    "all_tools_validated",
+    "mass_cleanup_done",
+    "delete_approved",
+    "push_done_without_receipt"
+  ]
+}

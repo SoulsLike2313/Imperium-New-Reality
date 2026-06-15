@@ -1,0 +1,70 @@
+{
+  "schema_id": "SSH_MATRIX_VALIDATOR_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-MECHANICUS-SSH-MATRIX-AND-ACTION-ROLLBACK-CONTRACT-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T20:26:56Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "matrix_files_exist",
+      "status": "PASS",
+      "details": "matrix foundation files exist"
+    },
+    {
+      "check_id": "matrix_json_parse",
+      "status": "PASS",
+      "details": "matrix json parses"
+    },
+    {
+      "check_id": "schema_id_ok",
+      "status": "PASS",
+      "details": "schema id is SSH_CONNECTION_MATRIX_V0_1"
+    },
+    {
+      "check_id": "private_key_material_disallowed",
+      "status": "PASS",
+      "details": "private key material is explicitly disallowed"
+    },
+    {
+      "check_id": "required_connection_ids",
+      "status": "PASS",
+      "details": "all required connection ids are present"
+    },
+    {
+      "check_id": "vm2_required_route_fields",
+      "status": "PASS",
+      "details": "vm2 alias, route, user, repo path match required values"
+    },
+    {
+      "check_id": "vm2_key_reference_path",
+      "status": "PASS",
+      "details": "vm2 key reference path is the expected local reference"
+    },
+    {
+      "check_id": "vm3_offline_registration",
+      "status": "PASS",
+      "details": "vm3 is registered as offline/not verified"
+    },
+    {
+      "check_id": "throne_placeholder_registration",
+      "status": "PASS",
+      "details": "throne/core placeholder is registered as offline or not configured"
+    },
+    {
+      "check_id": "offline_not_marked_live",
+      "status": "PASS",
+      "details": "offline contours are not marked live"
+    },
+    {
+      "check_id": "no_private_key_markers",
+      "status": "PASS",
+      "details": "no private key markers detected under connections folder"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "validated_paths": {
+    "matrix_json": "IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/SSH_CONNECTION_MATRIX_V0_1.json",
+    "matrix_dir": "IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS"
+  },
+  "no_fake_green_note": "PASS means documentation matrix safety checks passed; live connectivity is not claimed."
+}

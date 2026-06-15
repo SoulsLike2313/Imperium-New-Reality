@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    OPTIONAL NATIVE SHELL (C# / WPF).
+    WHY C#/WPF:
+      - For a fully compiled, native-looking Windows binary with GPU-accelerated
+        rendering (blur, glow, vector sigils) beyond what Tkinter offers.
+      - Ships as a single .exe via `dotnet publish` for operators who want a
+        "double-click" Imperial IDE without a Python runtime visible.
+      - It is OPTIONAL: the Python GUI is the zero-install primary surface.
+        Build this only if you want the native skin.
+
+    BUILD:
+      dotnet build  -c Release
+      dotnet publish -c Release -r win-x64 --self-contained false -p:PublishSingleFile=true
+  -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>ImperialWorkbench</AssemblyName>
+    <RootNamespace>ImperialWorkbench</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- The theme JSON is the shared source of truth, copied next to the exe. -->
+    <Content Include="..\THEME\imperium_theme.json">
+      <Link>imperium_theme.json</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\THEME\nebula_background.png">
+      <Link>nebula_background.png</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

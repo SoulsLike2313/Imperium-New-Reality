@@ -1,0 +1,155 @@
+{
+  "schema_id": "OWNER_QUESTION_SAMPLE_SET_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-OWNER-QUESTION-GATE-VM2-V0_1",
+  "mode": "FOUNDATION_ONLY",
+  "generated_for": "READ_ONLY_SANCTUM_NG_OWNER_QUESTION_GATE",
+  "questions": [
+    {
+      "question_id": "OWNER_Q-FOUNDATION-001",
+      "task_id": "TASK-20260523-NEWGEN-SANCTUM-OWNER-QUESTION-GATE-VM2-V0_1",
+      "source": "TRUTH_GATE",
+      "source_ref": "IMPERIUM_NEW_GENERATION/TRUTH/PARTIAL_ACCEPTANCE_MAP_V0_1.json",
+      "question_text_ru": "Разрешено ли продолжать выполнение при состоянии PARTIAL_ACCEPTED в текущем контуре?",
+      "question_text_en_optional": "May execution continue when the state is PARTIAL_ACCEPTED in the current contour?",
+      "why_needed_ru": "Нужно исключить fake-green продвижение без явного owner-решения по риску.",
+      "decision_type": "RISK_ACCEPTANCE",
+      "blocking_level": "BLOCKING",
+      "status": "FOUNDATION_SAMPLE",
+      "owner_answer_required": true,
+      "allowed_answers": [
+        "APPROVE_CONTINUE",
+        "REQUEST_RERUN",
+        "BLOCK_UNTIL_PROVED"
+      ],
+      "evidence_refs": [
+        "IMPERIUM_NEW_GENERATION/TRUTH/PARTIAL_ACCEPTANCE_MAP_V0_1.json",
+        "IMPERIUM_NEW_GENERATION/TRUTH/CURRENT_TRUTH_ROOT_V0_1.json"
+      ],
+      "created_at_utc": "2026-05-22T22:44:00Z",
+      "updated_at_utc": "2026-05-22T22:44:00Z"
+    },
+    {
+      "question_id": "OWNER_Q-FOUNDATION-002",
+      "task_id": "TASK-20260523-NEWGEN-SANCTUM-OWNER-QUESTION-GATE-VM2-V0_1",
+      "source": "SANCTUM",
+      "source_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_ACTION_REGISTRY_V0_1.json",
+      "question_text_ru": "Нужно ли Owner-одобрение до любых write/action операций с rollback-риском?",
+      "question_text_en_optional": "Is Owner approval required before any write/action operation with rollback risk?",
+      "why_needed_ru": "Требуется явное подтверждение границы безопасности до действий с потенциальной мутацией.",
+      "decision_type": "APPROVAL",
+      "blocking_level": "BLOCKING",
+      "status": "FOUNDATION_SAMPLE",
+      "owner_answer_required": true,
+      "allowed_answers": [
+        "APPROVE_WITH_ROLLBACK_CONTRACT",
+        "REJECT_UNTIL_ROLLBACK_DEFINED"
+      ],
+      "evidence_refs": [
+        "IMPERIUM_NEW_GENERATION/TRUTH/ACTION_ROLLBACK/ACTION_ROLLBACK_POLICY_V0_1.json",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_ACTION_REGISTRY_V0_1.json"
+      ],
+      "created_at_utc": "2026-05-22T22:44:10Z",
+      "updated_at_utc": "2026-05-22T22:44:10Z"
+    },
+    {
+      "question_id": "OWNER_Q-FOUNDATION-003",
+      "task_id": "TASK-20260523-NEWGEN-SANCTUM-OWNER-QUESTION-GATE-VM2-V0_1",
+      "source": "ORGAN",
+      "source_ref": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-SANCTUM-ORGAN-DIALOGUE-DEMO-VM2-V0_1",
+      "question_text_ru": "Как трактовать scope ambiguity в ответе органа: сужать scope или возвращать задачу на уточнение?",
+      "question_text_en_optional": "How should scope ambiguity in organ response be handled: narrow scope or return for clarification?",
+      "why_needed_ru": "Без Owner-решения scope ambiguity может привести к дрейфу фич и ложному прогрессу.",
+      "decision_type": "CLARIFICATION",
+      "blocking_level": "BLOCKING",
+      "status": "FOUNDATION_SAMPLE",
+      "owner_answer_required": true,
+      "allowed_answers": [
+        "NARROW_SCOPE_AND_CONTINUE",
+        "RETURN_FOR_CLARIFICATION"
+      ],
+      "evidence_refs": [
+        "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-SANCTUM-ORGAN-DIALOGUE-DEMO-VM2-V0_1/FINAL_RECEIPT.json"
+      ],
+      "created_at_utc": "2026-05-22T22:44:20Z",
+      "updated_at_utc": "2026-05-22T22:44:20Z"
+    },
+    {
+      "question_id": "OWNER_Q-FOUNDATION-004",
+      "task_id": "TASK-20260523-NEWGEN-SANCTUM-OWNER-QUESTION-GATE-VM2-V0_1",
+      "source": "TRUTH_GATE",
+      "source_ref": "IMPERIUM_NEW_GENERATION/TRUTH/EVIDENCE_FRESHNESS_INDEX_V0_1.json",
+      "question_text_ru": "Нужно ли Owner-review при STALE/PARTIAL свежести evidence до следующих шагов?",
+      "question_text_en_optional": "Should Owner review be requested when evidence freshness is STALE/PARTIAL before next steps?",
+      "why_needed_ru": "STALE/PARTIAL evidence повышает риск неверных решений и скрытого fake-green.",
+      "decision_type": "CLARIFICATION",
+      "blocking_level": "WARN_ONLY",
+      "status": "FOUNDATION_SAMPLE",
+      "owner_answer_required": true,
+      "allowed_answers": [
+        "REVIEW_RECOMMENDED_NOTE_ONLY",
+        "REQUIRE_EVIDENCE_REFRESH"
+      ],
+      "evidence_refs": [
+        "IMPERIUM_NEW_GENERATION/TRUTH/EVIDENCE_FRESHNESS_INDEX_V0_1.json",
+        "IMPERIUM_NEW_GENERATION/TRUTH/REPORT_STATUS_INDEX_V0_1.json"
+      ],
+      "created_at_utc": "2026-05-22T22:44:30Z",
+      "updated_at_utc": "2026-05-22T22:44:30Z"
+    },
+    {
+      "question_id": "OWNER_Q-FOUNDATION-005",
+      "task_id": "TASK-20260523-NEWGEN-SANCTUM-OWNER-QUESTION-GATE-VM2-V0_1",
+      "source": "SANCTUM",
+      "source_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_ACTION_REGISTRY_V0_1.json",
+      "question_text_ru": "Разрешать ли real send/fetch в transfer/action console до выделенного безопасного контура?",
+      "question_text_en_optional": "Should real send/fetch be allowed in transfer/action console before a dedicated safe contour is approved?",
+      "why_needed_ru": "До безопасного write path любые реальные send/fetch операции должны быть явно одобрены Owner.",
+      "decision_type": "TOOL_DECISION",
+      "blocking_level": "BLOCKING",
+      "status": "FOUNDATION_SAMPLE",
+      "owner_answer_required": true,
+      "allowed_answers": [
+        "KEEP_NOT_WIRED",
+        "ALLOW_AFTER_SAFE_PATH_REVIEW"
+      ],
+      "evidence_refs": [
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_ACTION_REGISTRY_V0_1.json",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_action_server.py"
+      ],
+      "created_at_utc": "2026-05-22T22:44:40Z",
+      "updated_at_utc": "2026-05-22T22:44:40Z"
+    },
+    {
+      "question_id": "OWNER_Q-FOUNDATION-006",
+      "task_id": "TASK-20260523-NEWGEN-SANCTUM-OWNER-QUESTION-GATE-VM2-V0_1",
+      "source": "SERVITOR",
+      "source_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/app.js",
+      "question_text_ru": "Можно ли визуально повышать состояние до green, если доказательства не закрывают критерий строго?",
+      "question_text_en_optional": "May UI visually promote a state to green when strict criterion evidence is not complete?",
+      "why_needed_ru": "UI не должен интерпретировать частичную правду как строгий PASS без evidence-цепочки.",
+      "decision_type": "MERGE_DECISION",
+      "blocking_level": "BLOCKING",
+      "status": "FOUNDATION_SAMPLE",
+      "owner_answer_required": true,
+      "allowed_answers": [
+        "KEEP_NO_FAKE_GREEN_POLICY",
+        "ALLOW_ONLY_WITH_EXPLICIT_EVIDENCE_CHAIN"
+      ],
+      "evidence_refs": [
+        "IMPERIUM_NEW_GENERATION/TRUTH/NEGATIVE_TESTS/FAKE_GREEN_REJECTION_RULES_V0_1.json",
+        "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/app.js"
+      ],
+      "created_at_utc": "2026-05-22T22:44:50Z",
+      "updated_at_utc": "2026-05-22T22:44:50Z"
+    }
+  ],
+  "forbidden_claims": [
+    "LIVE_OWNER_ANSWER_CHANNEL_ACTIVE",
+    "AUTONOMOUS_OWNER_DECISION_INFERENCE",
+    "PRODUCTION_READY_OWNER_GATE"
+  ],
+  "notes": [
+    "All records in this set are foundation samples.",
+    "No live owner answer write path is provided in V0.1."
+  ]
+}

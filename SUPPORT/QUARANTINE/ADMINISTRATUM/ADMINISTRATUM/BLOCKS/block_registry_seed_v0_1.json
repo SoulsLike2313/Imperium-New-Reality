@@ -1,0 +1,39 @@
+{
+  "schema_id": "administratum_block_registry_seed_v0_1",
+  "seed_status": "FUTURE_COMPATIBLE_SEED",
+  "owner_organ": "ADMINISTRATUM",
+  "blocks": [
+    {
+      "schema_id": "block_card_v0_1",
+      "block_id": "ADMINISTRATUM_CAPABILITY_BLOCK",
+      "layer": "L2_MACRO_BLOCK",
+      "macro_block_type": "CAPABILITY",
+      "owner_organ": "ADMINISTRATUM",
+      "purpose": "Registration cards and current-truth continuity operations.",
+      "status": "SEED_ACTIVE",
+      "source_paths": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REGISTRATION_CARDS/",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/CURRENT_TRUTH/"
+      ],
+      "notes": [
+        "Seed only. No runtime orchestration is activated."
+      ]
+    },
+    {
+      "schema_id": "block_card_v0_1",
+      "block_id": "ADMINISTRATUM_FOUNDATION_BLOCK",
+      "layer": "L2_MACRO_BLOCK",
+      "macro_block_type": "FOUNDATION",
+      "owner_organ": "ADMINISTRATUM",
+      "purpose": "Contract, taxonomy, and truth update rules behind registration operations.",
+      "status": "SEED_ACTIVE",
+      "source_paths": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/BODY/administratum_registration_contract_v0_1.md",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/BLOCKS/block_layer_taxonomy_v0_1.md"
+      ],
+      "notes": [
+        "Foundation block does not claim global Block Spine implementation."
+      ]
+    }
+  ]
+}

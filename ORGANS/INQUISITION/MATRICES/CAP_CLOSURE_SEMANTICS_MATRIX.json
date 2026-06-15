@@ -1,0 +1,47 @@
+{
+  "matrix_id": "CAP_CLOSURE_SEMANTICS_MATRIX",
+  "version": "0.1-candidate",
+  "owner_organ": "Inquisition",
+  "support_organs": [
+    "Administratum",
+    "Mechanicus"
+  ],
+  "purpose": "Defines cap lifecycle states and blocks unsupported clean PASS when cap closure evidence is missing.",
+  "used_by": [
+    "INQUISITOR",
+    "SERVITOR",
+    "GPT_LOGOS"
+  ],
+  "required_questions": [
+    "Which cap is active now?",
+    "What evidence justifies this state?",
+    "Does this state allow clean PASS?",
+    "Is replay/review closure explicit?"
+  ],
+  "pass_criteria": [
+    "Every cap transition has evidence",
+    "Closing states include closure proof",
+    "Surviving caps remain explicit"
+  ],
+  "warn_criteria": [
+    "Mitigated cap still blocks clean PASS",
+    "Accepted-with-warning state is explicit"
+  ],
+  "block_criteria": [
+    "Cap closed without evidence",
+    "Contradictory cap semantics with clean PASS",
+    "Cap history erased"
+  ],
+  "fake_green_flags": [
+    "CAP_CLOSED_WITHOUT_EVIDENCE",
+    "CAP_HISTORY_ERASED",
+    "CAP_IGNORED_FOR_CLEAN_PASS"
+  ],
+  "evidence_requirements": [
+    "cap_closure_state.json",
+    "CLAIM_LEDGER.jsonl",
+    "RED_TEAM_VERDICT.json"
+  ],
+  "current_status": "CANDIDATE_NOT_CANON",
+  "next_action": "Use matrix in checker-based closure flow and migrate legacy cap receipts."
+}

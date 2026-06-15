@@ -1,0 +1,693 @@
+{
+  "schema_version": "imperium.quarantine_active_use_check_report.v0_1",
+  "task_id": "TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1",
+  "timestamp_utc": "2026-06-06T18:57:57Z",
+  "verdict": "PASS",
+  "repo_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "quarantine_index_path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+  "pruned_dir_count": 6,
+  "pruned_dir_prefixes": [
+    ".git/",
+    "REPORTS/",
+    "ORGANS/ASTRONOMICON/TASK_INBOX/",
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/",
+    "ORGANS/ADMINISTRATUM/BUNDLE_GATE/FIXTURES/",
+    "ORGANS/INQUISITION/REPORTS/"
+  ],
+  "scanned_text_file_count": 8375,
+  "reference_count": 74,
+  "policy_reference_count": 74,
+  "admitted_exception_reference_count": 0,
+  "active_use_violation_count": 0,
+  "findings": [
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/core_address_book_seed.json",
+      "line": 19,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "{\"path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE\", \"classification\": \"QUESTIONABLE_OR_QUARANTINE\", \"owner_organ\": \"INQUISITION\"}"
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/file_ownership_map_seed.json",
+      "line": 10,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "{\"match\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/**\", \"classification\": \"QUESTIONABLE_OR_QUARANTINE\", \"owner_organ\": \"INQUISITION\"},"
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 81,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/ROOT_QUARANTINE/.taskpack_import_tmp\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 123,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/AGENT_IDE\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 137,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/ROOT_QUARANTINE/ANCIENT_EMPIRE_REFERENCE.md\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 165,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/ARCHIVE\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 179,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/ARTIFACTS\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 347,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/ROOT_QUARANTINE/IMPERIUM_NEW_GENERATION\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 487,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/ORGAN_AGENTS\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 501,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/ORGAN_AGENT_COMMON\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 515,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/ORGAN_DIALOGUE\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 543,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/ROOT_QUARANTINE/QUARANTINE\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 599,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/RESEARCH\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 627,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/RUNS\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 655,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/SANCTUM_MINI\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 669,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/SANCTUM_NG\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 683,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/SANCTUM_VISUAL_FOUNDRY\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 725,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/STRESS_TESTS\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/physical_root_migration_address_book_v0_1.json",
+      "line": 795,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/VISUAL_BRAIN\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/ADDRESS_BOOK/support_zone_map_seed.json",
+      "line": 13,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE\","
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/MIGRATION_QUEUE/core_migration_queue_summary.md",
+      "line": 24,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "- SUPPORT/QUESTIONABLE_OR_QUARANTINE: QUARANTINE_CANDIDATE / KEEP"
+    },
+    {
+      "path": "ORGANS/ADMINISTRATUM/MIGRATION_QUEUE/core_migration_queue_v0_1.json",
+      "line": 819,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE\","
+    },
+    {
+      "path": "ORGANS/INQUISITION/QUARANTINE_POLICY/ACTIVE_USE_OF_QUARANTINE_BAN_V0_1.md",
+      "line": 8,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "Files under SUPPORT/QUESTIONABLE_OR_QUARANTINE/ are not active source of truth. They may be inventoried, ignored, or routed for salvage, but an active workflow may not depend on them without explicit salvage or admission receipt."
+    },
+    {
+      "path": "ORGANS/INQUISITION/QUARANTINE_POLICY/quarantine_active_use_violation_matrix.json",
+      "line": 5,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"purpose\": \"Classify references to SUPPORT/QUESTIONABLE_OR_QUARANTINE and block active use without an explicit exception.\","
+    },
+    {
+      "path": "ORGANS/INQUISITION/QUARANTINE_POLICY/quarantine_active_use_violation_matrix.json",
+      "line": 10,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"trigger\": \"A non-policy active repository file references SUPPORT/QUESTIONABLE_OR_QUARANTINE without an allowed_active_use_exception.\","
+    },
+    {
+      "path": "ORGANS/SCHOLA_IMPERIALIS/LEARNING/known_alert_to_preventive_rule_matrix.json",
+      "line": 23,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"future_checker_hook\": \"Quarantine policy checker scans declared active evidence paths for SUPPORT/QUESTIONABLE_OR_QUARANTINE.\""
+    },
+    {
+      "path": "ORGANS/SCHOLA_IMPERIALIS/LEARNING/legacy_pain_learning_archive_contract_v0_1.md",
+      "line": 8,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "Legacy UI, visual, training, demo, failed backend, and abandoned prototype material should not stay in active root. It is preserved as learning material under SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE."
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/CORE_SHAPE_CONTRACT_V0_1.md",
+      "line": 34,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "- SUPPORT/QUESTIONABLE_OR_QUARANTINE/"
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/QUARANTINE_USE_BAN_CONTRACT_V0_1.md",
+      "line": 8,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "No active workflow may depend on files inside SUPPORT/QUESTIONABLE_OR_QUARANTINE/ unless an explicit salvage or admission receipt exists and is referenced by the workflow."
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/SUPPORT_ZONE_CONTRACT_V0_1.md",
+      "line": 13,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "- SUPPORT/QUESTIONABLE_OR_QUARANTINE/ contains material banned from active use until explicit salvage or admission."
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/MATRICES/core_root_migration_matrix_v0_1.json",
+      "line": 26,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"destination_rule\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/<SOURCE>\","
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/MATRICES/core_root_migration_matrix_v0_1.json",
+      "line": 32,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"destination_rule\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/ROOT_QUARANTINE/<SOURCE>\","
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/TOOLS/core_active_root_allowlist_checker_v0_1.py",
+      "line": 96,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "{\"path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE\", \"exists\": (repo_root / \"SUPPORT\" / \"QUESTIONABLE_OR_QUARANTINE\").is_dir()},"
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/TOOLS/core_migration_executor_v0_1.py",
+      "line": 116,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"destination\": f\"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/{name}\","
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/TOOLS/core_migration_executor_v0_1.py",
+      "line": 126,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"destination\": f\"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/ROOT_QUARANTINE/{name}\","
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/TOOLS/core_shape_self_checker_v0_1.py",
+      "line": 29,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"SUPPORT/QUESTIONABLE_OR_QUARANTINE\","
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/TOOLS/core_shape_self_checker_v0_1.py",
+      "line": 91,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "quarantine_zone = path_status(repo_root, \"SUPPORT/QUESTIONABLE_OR_QUARANTINE\")"
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/TOOLS/core_shape_self_checker_v0_2.py",
+      "line": 34,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json\","
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/TOOLS/core_shape_self_checker_v0_2.py",
+      "line": 38,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"SUPPORT/QUESTIONABLE_OR_QUARANTINE\","
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/TOOLS/quarantine_active_use_checker_v0_1.py",
+      "line": 2,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"\"\"Detect active-use references to SUPPORT/QUESTIONABLE_OR_QUARANTINE.\"\"\""
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/TOOLS/quarantine_active_use_checker_v0_1.py",
+      "line": 16,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "QUARANTINE_INDEX = Path(\"SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json\")"
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/TOOLS/quarantine_active_use_checker_v0_1.py",
+      "line": 17,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "NEEDLES = (\"SUPPORT/QUESTIONABLE_OR_QUARANTINE\", \"SUPPORT\\\\QUESTIONABLE_OR_QUARANTINE\")"
+    },
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE/TOOLS/quarantine_active_use_checker_v0_1.py",
+      "line": 39,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"SUPPORT/QUESTIONABLE_OR_QUARANTINE/\","
+    },
+    {
+      "path": "SUPPORT/COMMON_IMPERIUM_SUPPORT/SUPPORT_ADDRESS_POLICY.md",
+      "line": 5,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "Unknown or questionable material must go to SUPPORT/QUESTIONABLE_OR_QUARANTINE/ or remain unmapped until reviewed."
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 18,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/ROOT_QUARANTINE/.taskpack_import_tmp\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 34,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/AGENT_IDE\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 50,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/ROOT_QUARANTINE/ANCIENT_EMPIRE_REFERENCE.md\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 66,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/ARCHIVE\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 82,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/ARTIFACTS\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 98,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/ROOT_QUARANTINE/IMPERIUM_NEW_GENERATION\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 114,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/ORGAN_AGENTS\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 130,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/ORGAN_AGENT_COMMON\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 146,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/ORGAN_DIALOGUE\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 162,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/ROOT_QUARANTINE/QUARANTINE\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 178,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/RESEARCH\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 194,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/RUNS\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 210,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/SANCTUM_MINI\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 226,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/SANCTUM_NG\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 242,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/SANCTUM_VISUAL_FOUNDRY\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 258,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/STRESS_TESTS\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "line": 274,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "\"new_path\": \"SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/VISUAL_BRAIN\","
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/README.md",
+      "line": 16,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "- AGENT_IDE -> SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/AGENT_IDE"
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/README.md",
+      "line": 17,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "- ARCHIVE -> SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/ARCHIVE"
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/README.md",
+      "line": 18,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "- ARTIFACTS -> SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/ARTIFACTS"
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/README.md",
+      "line": 19,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "- ORGAN_AGENTS -> SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/ORGAN_AGENTS"
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/README.md",
+      "line": 20,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "- ORGAN_AGENT_COMMON -> SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/ORGAN_AGENT_COMMON"
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/README.md",
+      "line": 21,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "- ORGAN_DIALOGUE -> SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/ORGAN_DIALOGUE"
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/README.md",
+      "line": 22,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "- RESEARCH -> SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/RESEARCH"
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/README.md",
+      "line": 23,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "- RUNS -> SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/RUNS"
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/README.md",
+      "line": 24,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "- SANCTUM_MINI -> SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/SANCTUM_MINI"
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/README.md",
+      "line": 25,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "- SANCTUM_NG -> SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/SANCTUM_NG"
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/README.md",
+      "line": 26,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "- SANCTUM_VISUAL_FOUNDRY -> SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/SANCTUM_VISUAL_FOUNDRY"
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/README.md",
+      "line": 27,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "- STRESS_TESTS -> SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/STRESS_TESTS"
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/README.md",
+      "line": 28,
+      "reference_class": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "active_use_violation": false,
+      "reason": "Reference is in governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning context.",
+      "snippet": "- VISUAL_BRAIN -> SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE/VISUAL_BRAIN"
+    }
+  ],
+  "exceptions_loaded": [],
+  "blockers": [],
+  "warnings": []
+}

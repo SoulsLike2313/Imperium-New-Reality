@@ -1,0 +1,38 @@
+{
+  "schema_id": "imperium.tool_passport.v0_2",
+  "tool_id": "passport_v0_2_auto_registrar",
+  "name": "Passport v0_2 Auto-Registrar",
+  "version": "v0_2",
+  "owner_organ": "MECHANICUS",
+  "lang": "python",
+  "exec_mode": "live",
+  "owner_gated": true,
+  "description": "Scans legacy v0_1 tool-passports, infers v0_2 fields from paired source files, writes v0_2 drafts beside originals. Additive (never deletes v0_1).",
+  "validators": [
+    {
+      "id": "syntax",
+      "type": "command",
+      "command": "python -m py_compile {tool_path}",
+      "timeout_seconds": 10
+    },
+    {
+      "id": "self_test",
+      "type": "command",
+      "command": "python {tool_path} --self-test",
+      "timeout_seconds": 30
+    },
+    {
+      "id": "help",
+      "type": "command",
+      "command": "python {tool_path} --help",
+      "timeout_seconds": 5
+    }
+  ],
+  "related_passports": [
+    "passport_migrator_v0_1",
+    "passport_migrator_v0_2"
+  ],
+  "doctrine_refs": [
+    "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORT_MIGRATOR/PASSPORT_MIGRATION_DOCTRINE_V0_1.md"
+  ]
+}

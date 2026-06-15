@@ -1,0 +1,55 @@
+{
+  "schema_id": "newgen_organ_route_plan_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+  "route_order": [
+    {
+      "phase_id": "front_door",
+      "organs": [
+        "DOCTRINARIUM",
+        "OFFICIO_AGENTIS"
+      ],
+      "required": true,
+      "goal": "law+role admission before edits"
+    },
+    {
+      "phase_id": "wave1_capability_reference",
+      "organs": [
+        "MECHANICUS"
+      ],
+      "required": true,
+      "goal": "inspect prototype TUI pattern and confirm Rich capability"
+    },
+    {
+      "phase_id": "wave1_core_form_application",
+      "organs": [
+        "DOCTRINARIUM",
+        "OFFICIO_AGENTIS",
+        "MECHANICUS",
+        "ADMINISTRATUM"
+      ],
+      "required": true,
+      "goal": "apply common organ-agent form, query tool, state, and launchable TUI"
+    },
+    {
+      "phase_id": "wave1_evidence_and_simulation",
+      "organs": [
+        "DOCTRINARIUM",
+        "OFFICIO_AGENTIS",
+        "MECHANICUS",
+        "ADMINISTRATUM"
+      ],
+      "required": true,
+      "goal": "smoke, JSON validation, and Servitor-to-organ simulation"
+    },
+    {
+      "phase_id": "wave2_boundary",
+      "organs": [
+        "ASTRONOMICON",
+        "INQUISITION"
+      ],
+      "required": false,
+      "implementation_status": "future_only"
+    }
+  ],
+  "route_verdict": "PASS"
+}

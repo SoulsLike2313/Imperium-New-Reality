@@ -1,0 +1,50 @@
+{
+  "schema_id": "ACTION_ROLLBACK_POLICY_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-MECHANICUS-SSH-MATRIX-AND-ACTION-ROLLBACK-CONTRACT-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T21:00:00Z",
+  "required_fields_per_action_contract": [
+    "action_id",
+    "mutation_class",
+    "allowed_paths",
+    "backup_required",
+    "rollback_method",
+    "rollback_evidence_required",
+    "owner_approval_required",
+    "failure_policy",
+    "no_fake_green_rule",
+    "preconditions",
+    "postconditions"
+  ],
+  "required_mutation_classes": [
+    "READ_ONLY_ACTION",
+    "GENERATED_STATE_REFRESH",
+    "REPORT_WRITE_ACTION",
+    "REGISTRY_UPDATE_ACTION",
+    "TASK_STATE_MUTATION",
+    "ORGAN_DIALOGUE_PACKET_WRITE",
+    "SCOPE_MERGE_MUTATION",
+    "DANGEROUS_ACTION"
+  ],
+  "required_rollback_verdicts": [
+    "ROLLBACK_NOT_REQUIRED",
+    "ROLLBACK_BY_REBUILD",
+    "ROLLBACK_BY_BACKUP_RESTORE",
+    "ROLLBACK_BY_GIT_RESTORE",
+    "ROLLBACK_REQUIRES_OWNER",
+    "ROLLBACK_NOT_DEFINED_BLOCK",
+    "DANGEROUS_ACTION_BLOCKED"
+  ],
+  "dangerous_action_rule": {
+    "blocked_without_owner_approval_contract": true,
+    "owner_approval_contract_field": "owner_approval_contract_ref"
+  },
+  "no_fake_green_policy": {
+    "pass_without_rollback_contract_evidence": "BLOCK",
+    "assumption_to_fact_upgrade": "BLOCK"
+  },
+  "status": "FOUNDATION_ONLY",
+  "known_limitations": [
+    "Policy is defined for future mutation flows; not yet destructive-tested.",
+    "No autonomous mutation execution is introduced by this artifact."
+  ]
+}

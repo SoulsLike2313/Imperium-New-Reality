@@ -1,0 +1,27 @@
+{
+  "task_id": "TASK-NEWGEN-LANGUAGE-BACKLOG-PHASED-REMEDIATION-AND-RETENTION-CHECKER-PC-V0_1",
+  "timestamp_utc": "2026-06-01T07:16:41Z",
+  "LOCAL_SCRIPT_FIRST": [
+    "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/TOOLS/inquisition_mojibake_filter_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_retention_checker_v0_1.py"
+  ],
+  "LOCAL_MANUAL_COMMAND": [
+    "python IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/TOOLS/inquisition_mojibake_filter_v0_1.py ...",
+    "python IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_retention_checker_v0_1.py ...",
+    "git status --porcelain=v1",
+    "git commit",
+    "git push origin master"
+  ],
+  "CANDIDATE_SCRIPT_FIRST": [
+    "Backlog phased remediation auto-rewriter for deterministic UTF8_BOM slice reuse in future tasks."
+  ],
+  "AGENT_REASONING_ONLY": [
+    "Safe slice selection rationale and risk acceptance synthesis.",
+    "Red-team downgrade and final verdict composition."
+  ],
+  "EXTERNAL_RESEARCH": [],
+  "OWNER_MANUAL_CONFIRMATION": [],
+  "FUTURE_CAPABILITY_GAP": [
+    "Global legacy language backlog still needs phased follow-up tasks beyond this slice."
+  ]
+}

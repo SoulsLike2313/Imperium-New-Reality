@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "schema_version": "imperium.agent_ide.layout_manifest_schema.v0_1",
+  "type": "object",
+  "required": [
+    "layout_id",
+    "surface",
+    "blocks"
+  ],
+  "properties": {
+    "layout_id": {
+      "type": "string"
+    },
+    "surface": {
+      "type": "string",
+      "enum": [
+        "DESKTOP_IDE",
+        "WEB_PROJECTION"
+      ]
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "block_id",
+          "x",
+          "y",
+          "w",
+          "h"
+        ],
+        "properties": {
+          "block_id": {
+            "type": "string"
+          },
+          "x": {
+            "type": "integer"
+          },
+          "y": {
+            "type": "integer"
+          },
+          "w": {
+            "type": "integer"
+          },
+          "h": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
+}

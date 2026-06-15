@@ -1,0 +1,39 @@
+{
+  "schema_id": "TRANSFER_ACTION_RUNNER_POLICY_V0_1",
+  "claim_boundary": "FOUNDATION_ONLY",
+  "allowed_action_types": [
+    "DRY_RUN_TRANSFER",
+    "FETCH_REPORT_BUNDLE_ZIP",
+    "REGISTER_TRANSFER_RESULT",
+    "SEND_TASKPACK_ZIP",
+    "VALIDATE_TRANSFER_REQUEST"
+  ],
+  "allowed_contours": [
+    "PC",
+    "VM2",
+    "VM3"
+  ],
+  "allowed_modes": [
+    "DRY_RUN",
+    "EXECUTE"
+  ],
+  "safe_target_roots": {
+    "VM2_TASKPACK_INBOX": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/INBOX/VM2_TASKPACKS/",
+    "VM3_TASKPACK_INBOX": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/INBOX/VM3_TASKPACKS/",
+    "VM2_REPORT_OUTBOX_CANDIDATE": "/home/vboxuser2/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/",
+    "VM3_REPORT_OUTBOX_CANDIDATE": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/"
+  },
+  "forbidden_request_fields": [
+    "arbitrary_command",
+    "bash",
+    "cmd",
+    "command",
+    "exec",
+    "powershell",
+    "remote_command",
+    "shell"
+  ],
+  "no_shell_true": true,
+  "no_arbitrary_shell": true,
+  "generated_at_utc": "2026-05-23T01:48:38Z"
+}

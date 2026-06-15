@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "administratum/task_session_card_schema_v0_1",
+  "title": "Administratum Task Session Card Seed V0.1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "session_id",
+    "task_id",
+    "starting_head",
+    "task_status",
+    "registration_owner_organ"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "task_session_card_v0_1"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "starting_head": {
+      "type": "string"
+    },
+    "ending_head": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "task_status": {
+      "type": "string",
+      "enum": [
+        "PLANNED",
+        "RUNNING",
+        "PASS",
+        "WARN_ACCEPTED",
+        "STOP",
+        "FAILED"
+      ]
+    },
+    "registration_owner_organ": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

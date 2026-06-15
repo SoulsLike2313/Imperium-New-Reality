@@ -1,0 +1,275 @@
+{
+  "task_id": "TASK-NEWGEN-FIVE-ORGAN-ALIGNMENT-CHECK-VM3-V0_1",
+  "generated_at_utc": "2026-05-27T12:40:00Z",
+  "organs": [
+    {
+      "organ_id": "MECHANICUS",
+      "root_path": "IMPERIUM_NEW_GENERATION/MECHANICUS",
+      "exists": true,
+      "current_status": "REFERENCE",
+      "body_manifest_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/IDENTITY/organ_identity_v0_1.md",
+      "readme_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/README.md",
+      "capability_block_evidence": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_scope_exporter_v0_2.py",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1/code_quality_report.json"
+      ],
+      "foundation_block_evidence": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/CONTRACTS/servitor_contract_v0_1.md",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/GATES/organ_gate_catalog_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/STATE/current_state_v0_1.json"
+      ],
+      "tui_path": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TUI/mechanicus_tui_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TUI/mechanicus_shell_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/mechanicus_forge_tui_v0_1.py"
+      ],
+      "checker_paths": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_arsenal_foundation_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_scope_packs_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/newgen_repo_hygiene_check_v0_1.py"
+      ],
+      "schema_paths": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCHEMAS/arsenal_registry_schema_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/SCHEMAS/capability_card_schema_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/SCHEMAS/ssh_connection_matrix_v0_1.schema.json"
+      ],
+      "registry_paths": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/category_registry_v0_1.json"
+      ],
+      "report_paths": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1"
+      ],
+      "latest_report": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1/FINAL_REPORT.md",
+      "ghost_evolve_paths": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1/ghost_evolve_batch_002_training_proof.json",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/GHOST_EVOLVE_SIDECAR_V1_0_NO_FAKE_HERALDRY.json"
+      ],
+      "owner_pain_map_entries": [
+        "ROUTE_MEMORY_LOSS_PC_TO_VM3"
+      ],
+      "known_gaps": [
+        "Нет выделенного BODY-манифеста в отдельной папке BODY; роль тела реализована через IDENTITY/STATE/CONTRACTS."
+      ],
+      "ide_visible_items": [
+        "TOOL capability registry",
+        "Validation batch receipts",
+        "TUI + Forge TUI entry points"
+      ],
+      "next_hardening_needed": "Сформировать явный BODY manifest для унификации с другими органами и будущим File Atlas."
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "root_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS",
+      "exists": true,
+      "current_status": "ACCEPTED_FIRST_BODY",
+      "body_manifest_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/BODY/officio_agentis_body_manifest_v0_1.json",
+      "readme_path": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/README.md",
+      "capability_block_evidence": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLES/role_registry_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_response_contract_checker_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/response_checker_report.json"
+      ],
+      "foundation_block_evidence": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/BODY/officio_agentis_body_manifest_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/GATES/organ_gate_catalog_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/STATE/current_state_v0_1.json"
+      ],
+      "tui_path": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/officio_agentis_tui_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TUI/officio_shell_v0_1.py"
+      ],
+      "checker_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_role_registry_checker_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_taskpack_acceptance_checker_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_response_contract_checker_v0_1.py"
+      ],
+      "schema_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/SCHEMAS/officio_role_pack_schema_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/SCHEMAS/officio_response_checker_report_schema_v0_1.json"
+      ],
+      "registry_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLES/role_registry_v0_1.json"
+      ],
+      "report_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-AGENTIS-BODY-ENTRY-CONTRACT-PC-V0_1",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1"
+      ],
+      "latest_report": "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/FINAL_REPORT.md",
+      "ghost_evolve_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/GHOST_EVOLVE/accepted_local_upgrades_index_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/ghost_evolve_officio_training_proof.json"
+      ],
+      "owner_pain_map_entries": [
+        "PENDING_COMMIT_PUSH_RECURRENCE"
+      ],
+      "known_gaps": [
+        "Ранее фиксировался warning по закрытию PASS_WITH_WARNINGS; требуется постоянная дисциплина чистого closure-receipt в том же таске."
+      ],
+      "ide_visible_items": [
+        "Role registry",
+        "Body manifest blocks",
+        "Response/language gate reports"
+      ],
+      "next_hardening_needed": "Добавить стабильный индекс role-pack артефактов для быстрой привязки в File Atlas."
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "root_path": "IMPERIUM_NEW_GENERATION/ADMINISTRATUM",
+      "exists": true,
+      "current_status": "CURRENT_TRUTH_BASE_ACCEPTED",
+      "body_manifest_path": "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/BODY/administratum_body_manifest_v0_1.json",
+      "readme_path": "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/README.md",
+      "capability_block_evidence": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/CURRENT_TRUTH/accepted_points_index_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REGISTRATION_CARDS/organs/mechanicus_organ_card_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS/administratum_current_truth_checker_v0_1.py"
+      ],
+      "foundation_block_evidence": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/BODY/administratum_body_manifest_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/GATES/organ_gate_catalog_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/STATE/current_state_v0_1.json"
+      ],
+      "tui_path": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/administratum_tui_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TUI/administratum_shell_v0_1.py"
+      ],
+      "checker_paths": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS/administratum_current_truth_checker_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/TOOLS/administratum_card_checker_v0_1.py"
+      ],
+      "schema_paths": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REGISTRATION_CARDS/schemas/organ_card_schema_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REGISTRATION_CARDS/schemas/artifact_card_schema_v0_1.json"
+      ],
+      "registry_paths": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/CURRENT_TRUTH/active_organs_index_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/CURRENT_TRUTH/pending_next_tasks_index_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REGISTRATION_CARDS/organs/mechanicus_organ_card_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REGISTRATION_CARDS/organs/officio_agentis_organ_card_v0_1.json"
+      ],
+      "report_paths": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-REGISTRATION-CARDS-CURRENT-TRUTH-PC-V0_1",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS/TASK-NEWGEN-VM3-CONTOUR-INITIATION-VALIDATION-UBUNTU-V0_1"
+      ],
+      "latest_report": "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS/TASK-NEWGEN-VM3-CONTOUR-INITIATION-VALIDATION-UBUNTU-V0_1/FINAL_REPORT.md",
+      "ghost_evolve_paths": [
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/GHOST_EVOLVE/accepted_local_upgrades_index_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ADMINISTRATUM/REPORTS/TASK-NEWGEN-VM3-CONTOUR-INITIATION-VALIDATION-UBUNTU-V0_1/ghost_evolve_sidecar.json"
+      ],
+      "owner_pain_map_entries": [
+        "PENDING_COMMIT_PUSH_RECURRENCE",
+        "ROUTE_MEMORY_LOSS_PC_TO_VM3"
+      ],
+      "known_gaps": [
+        "Карточки органов пока заведены не для всех 5 органов (нет карточек Inquisition/Astronomicon в текущем индексе органов)."
+      ],
+      "ide_visible_items": [
+        "Current truth indexes",
+        "Registration cards",
+        "Task continuity reports"
+      ],
+      "next_hardening_needed": "Запустить File Atlas/Passport index, чтобы унифицировать адресацию артефактов по всем 5 органам."
+    },
+    {
+      "organ_id": "INQUISITION",
+      "root_path": "IMPERIUM_NEW_GENERATION/INQUISITION",
+      "exists": true,
+      "current_status": "WARN_NEEDS_ALIGNMENT",
+      "body_manifest_path": null,
+      "readme_path": null,
+      "capability_block_evidence": [
+        "IMPERIUM_NEW_GENERATION/INQUISITION/STATE/current_state_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/INQUISITION/GATES/organ_gate_catalog_v0_1.json"
+      ],
+      "foundation_block_evidence": [
+        "IMPERIUM_NEW_GENERATION/INQUISITION/CONTRACTS/servitor_contract_v0_1.md",
+        "IMPERIUM_NEW_GENERATION/INQUISITION/IDENTITY/organ_identity_v0_1.md",
+        "IMPERIUM_NEW_GENERATION/INQUISITION/TEMPLATES/organ_verdict_template_v0_1.json"
+      ],
+      "tui_path": [
+        "IMPERIUM_NEW_GENERATION/INQUISITION/TUI/inquisition_tui_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/INQUISITION/TUI/inquisition_shell_v0_1.py"
+      ],
+      "checker_paths": [],
+      "schema_paths": [],
+      "registry_paths": [],
+      "report_paths": [
+        "IMPERIUM_NEW_GENERATION/INQUISITION/REPORTS/README.md"
+      ],
+      "latest_report": "IMPERIUM_NEW_GENERATION/INQUISITION/REPORTS/README.md",
+      "ghost_evolve_paths": [],
+      "owner_pain_map_entries": [
+        "PENDING_COMMIT_PUSH_RECURRENCE"
+      ],
+      "known_gaps": [
+        "Отсутствуют BODY-манифест, schema/registry слой и полноценные checkers.",
+        "Папка REPORTS не содержит task-level closure receipts, только буферный README."
+      ],
+      "ide_visible_items": [
+        "Identity contract",
+        "Gate catalog",
+        "Basic TUI entry"
+      ],
+      "next_hardening_needed": "Выполнить TASK-NEWGEN-INQUISITION-PURITY-QUARANTINE-BODY-VM3-V0_2 с полноценным body/checker/report контуром."
+    },
+    {
+      "organ_id": "ASTRONOMICON",
+      "root_path": "IMPERIUM_NEW_GENERATION/ASTRONOMICON",
+      "exists": true,
+      "current_status": "BODY_SEED_ACCEPTED",
+      "body_manifest_path": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/BODY/astronomicon_body_manifest_v0_1.json",
+      "readme_path": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/README.md",
+      "capability_block_evidence": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/ROUTING/route_decision_registry_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_route_packet_checker_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/REPORTS/TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1/pc_to_vm3_direct_route_card.json"
+      ],
+      "foundation_block_evidence": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/BODY/astronomicon_body_manifest_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/GATES/organ_gate_catalog_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/STATE/current_state_v0_1.json"
+      ],
+      "tui_path": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/astronomicon_tui_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TUI/astronomicon_shell_v0_1.py"
+      ],
+      "checker_paths": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_task_essence_checker_v0_1.py",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TOOLS/astronomicon_route_packet_checker_v0_1.py"
+      ],
+      "schema_paths": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TASK_ESSENCE/task_essence_schema_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/TASK_ESSENCE/task_route_packet_schema_v0_1.json"
+      ],
+      "registry_paths": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/ROUTING/route_decision_registry_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/ROUTING/organ_route_map_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/DRAFT_TASK_REGISTRY/draft_registry_index.json"
+      ],
+      "report_paths": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/REPORTS/TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1"
+      ],
+      "latest_report": "IMPERIUM_NEW_GENERATION/ASTRONOMICON/REPORTS/TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1/FINAL_REPORT.md",
+      "ghost_evolve_paths": [
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/GHOST_EVOLVE/accepted_local_upgrades_index_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/ASTRONOMICON/REPORTS/TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1/ghost_evolve_sidecar.json"
+      ],
+      "owner_pain_map_entries": [
+        "ROUTE_MEMORY_LOSS_PC_TO_VM3"
+      ],
+      "known_gaps": [
+        "Body контур свежий и пока однозадачный; требуется расширение task-essence coverage и связь с File Atlas индексами."
+      ],
+      "ide_visible_items": [
+        "Route card and canonical commands",
+        "Task essence schemas",
+        "Routing decision registry"
+      ],
+      "next_hardening_needed": "Расширить route/task registry связкой с паспортами файлов после запуска Administratum File Atlas."
+    }
+  ]
+}

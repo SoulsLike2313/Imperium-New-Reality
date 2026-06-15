@@ -1,0 +1,35 @@
+{
+  "task_id": "TASK-NEWGEN-PC-ADMINISTRATUM-TASK-REPORT-BUNDLE-GATE-MATRIX-AND-PACKAGER-PC-V0_1",
+  "claims": [
+    {
+      "claim": "Administratum bundle gate contract, matrix, checker, packager, schemas, and fixtures exist under ORGANS/ADMINISTRATUM/BUNDLE_GATE.",
+      "evidence": "ORGANS/ADMINISTRATUM/BUNDLE_GATE/",
+      "verdict": "PASS"
+    },
+    {
+      "claim": "Complete fixture passes and produces task_report_bundle.zip.",
+      "evidence": "complete_fixture_receipt.json",
+      "verdict": "PASS"
+    },
+    {
+      "claim": "Missing fixture blocks and writes missing-items request.",
+      "evidence": "missing_fixture_receipt.json and missing_items_request_sample.json",
+      "verdict": "PASS"
+    },
+    {
+      "claim": "The packager refuses to create a final bundle after BUNDLE_COMPOSITION_BLOCK.",
+      "evidence": "missing_fixture_receipt.json",
+      "verdict": "PASS"
+    },
+    {
+      "claim": "Preferred real recent report folder was checked; it blocked only on new Administratum-specific v0.1 artifacts.",
+      "evidence": "real_report_folder_gate_receipt.json",
+      "verdict": "PASS_WITH_EXPECTED_BLOCK"
+    },
+    {
+      "claim": "Final report bundle SHA256 is recorded adjacent in sha256sums.txt due self-reference limits.",
+      "evidence": "sha256sums.txt",
+      "verdict": "PASS_WITH_SELF_REFERENCE_LIMIT"
+    }
+  ]
+}

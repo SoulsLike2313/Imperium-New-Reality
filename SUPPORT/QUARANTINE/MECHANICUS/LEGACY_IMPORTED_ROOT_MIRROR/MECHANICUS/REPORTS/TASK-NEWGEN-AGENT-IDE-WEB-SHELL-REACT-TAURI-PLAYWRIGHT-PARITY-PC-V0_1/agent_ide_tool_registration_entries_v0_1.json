@@ -1,0 +1,134 @@
+{
+  "schema_version": "imperium.mechanicus.agent_ide.tool_registration_entries.v0_1",
+  "task_id": "TASK-NEWGEN-AGENT-IDE-WEB-SHELL-REACT-TAURI-PLAYWRIGHT-PARITY-PC-V0_1",
+  "owner_organ": "MECHANICUS",
+  "tools": [
+    {
+      "tool_id": "AGENT_IDE_VIEW_MODEL_BUILDER_V0_2",
+      "owner_organ": "AGENT_IDE+MECHANICUS",
+      "path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/VIEW_MODEL/agent_ide_view_model_builder_v0_2.py",
+      "command": "python IMPERIUM_NEW_GENERATION/AGENT_IDE/VIEW_MODEL/agent_ide_view_model_builder_v0_2.py",
+      "inputs": [
+        "Administratum File Atlas sources",
+        "Block Foundation seed files",
+        "self_validation_summary.json (optional)"
+      ],
+      "outputs": [
+        "IMPERIUM_NEW_GENERATION/AGENT_IDE/VIEW_MODEL/ide_view_model_v0_2.json",
+        "IMPERIUM_NEW_GENERATION/AGENT_IDE/VIEW_MODEL/dashboard_view_model_v0_1.json",
+        "IMPERIUM_NEW_GENERATION/AGENT_IDE/VIEW_MODEL/block_view_model_v0_1.json"
+      ],
+      "status": "ACTIVE",
+      "risk_level": "LOW",
+      "validation_route": "SELF_VALIDATOR/view_model_receipt.json",
+      "last_receipt_or_report_path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/REPORTS/TASK-NEWGEN-AGENT-IDE-WEB-SHELL-REACT-TAURI-PLAYWRIGHT-PARITY-PC-V0_1/view_model_receipt.json"
+    },
+    {
+      "tool_id": "AGENT_IDE_WEB_PROJECTION_SERVER_V0_1",
+      "owner_organ": "AGENT_IDE+MECHANICUS",
+      "path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/WEB_PROJECTION/agent_ide_web_projection_server_v0_1.py",
+      "command": "python IMPERIUM_NEW_GENERATION/AGENT_IDE/WEB_PROJECTION/agent_ide_web_projection_server_v0_1.py --host 127.0.0.1 --port 4173",
+      "inputs": [
+        "Shared dashboard_view_model_v0_1.json",
+        "Shared block_view_model_v0_1.json",
+        "React dist build artifacts if available"
+      ],
+      "outputs": [
+        "http://127.0.0.1:4173/",
+        "/api/view-model",
+        "/api/block-view-model",
+        "/api/file-preview",
+        "/api/health"
+      ],
+      "status": "ACTIVE",
+      "risk_level": "MEDIUM",
+      "validation_route": "SELF_VALIDATOR/web_projection_receipt.json",
+      "last_receipt_or_report_path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/REPORTS/TASK-NEWGEN-AGENT-IDE-WEB-SHELL-REACT-TAURI-PLAYWRIGHT-PARITY-PC-V0_1/web_projection_receipt.json"
+    },
+    {
+      "tool_id": "AGENT_IDE_REACT_BUILD_CHECK_V0_1",
+      "owner_organ": "AGENT_IDE+MECHANICUS",
+      "path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/TOOLS/agent_ide_react_build_check_v0_1.py",
+      "command": "python IMPERIUM_NEW_GENERATION/AGENT_IDE/TOOLS/agent_ide_react_build_check_v0_1.py",
+      "inputs": [
+        "REACT_IDE/package.json",
+        "npm toolchain availability"
+      ],
+      "outputs": [
+        "REACT_IDE/dist/index.html",
+        "react_build_check_receipt.json"
+      ],
+      "status": "ACTIVE",
+      "risk_level": "MEDIUM",
+      "validation_route": "SELF_VALIDATOR/react_surface_receipt.json",
+      "last_receipt_or_report_path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/REPORTS/TASK-NEWGEN-AGENT-IDE-WEB-SHELL-REACT-TAURI-PLAYWRIGHT-PARITY-PC-V0_1/react_build_check_receipt.json"
+    },
+    {
+      "tool_id": "AGENT_IDE_DESKTOP_SHELL_PROBE_V0_1",
+      "owner_organ": "AGENT_IDE+MECHANICUS",
+      "path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/TOOLS/agent_ide_desktop_shell_probe_v0_1.py",
+      "command": "python IMPERIUM_NEW_GENERATION/AGENT_IDE/TOOLS/agent_ide_desktop_shell_probe_v0_1.py",
+      "inputs": [
+        "node/npm/playwright/rust/cargo/tauri/electron command probes"
+      ],
+      "outputs": [
+        "IMPERIUM_NEW_GENERATION/AGENT_IDE/DESKTOP_SHELL/tauri_probe_receipt.json",
+        "IMPERIUM_NEW_GENERATION/AGENT_IDE/DESKTOP_SHELL/tauri_or_electron_decision_v0_1.json"
+      ],
+      "status": "ACTIVE",
+      "risk_level": "LOW",
+      "validation_route": "SELF_VALIDATOR/desktop_shell_receipt.json",
+      "last_receipt_or_report_path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/DESKTOP_SHELL/tauri_or_electron_decision_v0_1.json"
+    },
+    {
+      "tool_id": "AGENT_IDE_PLAYWRIGHT_PARITY_CAPTURE_V0_2",
+      "owner_organ": "AGENT_IDE+MECHANICUS",
+      "path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/PLAYWRIGHT/agent_ide_playwright_capture_v0_2.py",
+      "command": "python IMPERIUM_NEW_GENERATION/AGENT_IDE/PLAYWRIGHT/agent_ide_playwright_capture_v0_2.py --port 4173",
+      "inputs": [
+        "Running local projection server",
+        "Playwright CLI availability",
+        "parity spec: agent_ide_playwright_parity_v0_2.spec.js"
+      ],
+      "outputs": [
+        "playwright_screenshot_manifest.json",
+        "dom_truth_marker_snapshot.json",
+        "screenshots/*.png"
+      ],
+      "status": "ACTIVE",
+      "risk_level": "LOW",
+      "validation_route": "SELF_VALIDATOR/playwright_capture_receipt.json",
+      "last_receipt_or_report_path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/REPORTS/TASK-NEWGEN-AGENT-IDE-WEB-SHELL-REACT-TAURI-PLAYWRIGHT-PARITY-PC-V0_1/playwright_capture_receipt.json"
+    },
+    {
+      "tool_id": "AGENT_IDE_SELF_VALIDATOR_V0_2",
+      "owner_organ": "AGENT_IDE+MECHANICUS",
+      "path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/SELF_VALIDATOR/agent_ide_self_validator_v0_2.py",
+      "command": "python IMPERIUM_NEW_GENERATION/AGENT_IDE/SELF_VALIDATOR/agent_ide_self_validator_v0_2.py",
+      "inputs": [
+        "source truth files",
+        "shared view model",
+        "desktop shell probe receipts",
+        "react build receipts",
+        "playwright parity outputs",
+        "mechanicus registration entries"
+      ],
+      "outputs": [
+        "source_truth_receipt.json",
+        "view_model_receipt.json",
+        "desktop_shell_receipt.json",
+        "react_surface_receipt.json",
+        "web_projection_receipt.json",
+        "private_content_policy_receipt.json",
+        "truth_parity_receipt.json",
+        "playwright_capture_receipt.json",
+        "mechanicus_registration_receipt.json",
+        "self_validation_summary.json"
+      ],
+      "status": "ACTIVE",
+      "risk_level": "MEDIUM",
+      "validation_route": "SELF_VALIDATOR/self_validation_summary.json",
+      "last_receipt_or_report_path": "IMPERIUM_NEW_GENERATION/AGENT_IDE/REPORTS/TASK-NEWGEN-AGENT-IDE-WEB-SHELL-REACT-TAURI-PLAYWRIGHT-PARITY-PC-V0_1/self_validation_summary.json"
+    }
+  ]
+}

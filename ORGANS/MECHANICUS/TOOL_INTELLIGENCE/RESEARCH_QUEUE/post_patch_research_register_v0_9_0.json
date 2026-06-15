@@ -1,0 +1,26 @@
+{
+  "schema": "imperium.post_patch_research_register.v0_1",
+  "patch_id": "v0.9.0",
+  "topic": "Repo Hygiene Classification Batch 001",
+  "mechanicus_registration_candidates": [
+    "inquisition.repo_hygiene_classifier",
+    "mechanicus.evidence_vault_migration_batch_runner",
+    "mechanicus.fixture_manifest_writer",
+    "mechanicus.tool_passport_backfill_assistant"
+  ],
+  "architecture_inspirations": [
+    {
+      "name": "OpenLineage",
+      "takeaway": "Model metadata as extensible facets over run/job/dataset-like entities."
+    },
+    {
+      "name": "DataHub/OpenMetadata",
+      "takeaway": "Treat Data Atlas as catalog/governance/ownership/lineage layer."
+    },
+    {
+      "name": "Great Expectations",
+      "takeaway": "Turn hygiene rules into explicit expectations/gates."
+    }
+  ],
+  "decision": "Classify first. Migrate/passport/delete only through explicit lanes and owner gate."
+}

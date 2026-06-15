@@ -1,0 +1,407 @@
+{
+  "schema_id": "newgen_organ_dependency_map_v0_1",
+  "version": "0.1",
+  "status": "DRAFT",
+  "task_id": "TASK-20260524-NEWGEN-OWNER-ORGAN-DEPENDENCY-MAP-INGEST-VM3-V0_1",
+  "source": {
+    "owner_map": "OWNER_SERVITOR_ROUTE_MAP_V0_1.drawio.svg",
+    "owner_map_kind": "drawio_svg",
+    "interpretation_doc": "ORGAN_DEPENDENCY_MAP_OWNER_RU_V0_1.md"
+  },
+  "organs": [
+    {
+      "organ_id": "DOCTRINARIUM",
+      "ru_name": "Доктринариум",
+      "phase": "front_door",
+      "responsibility_summary": "laws/doctrine/form/pain gates and admissible scope framing",
+      "servitor_must_ask_when": [
+        "task admission before edits",
+        "verdict scope and NOT_PROVEN boundary required",
+        "evidence policy or gate applicability is unclear"
+      ],
+      "answers_with": [
+        "required declarations",
+        "active gates",
+        "forbidden patterns",
+        "pass/fail criteria",
+        "not_proven boundary"
+      ],
+      "can_warn_if": [
+        "over-claim without evidence",
+        "missing preflight references",
+        "route order violation"
+      ],
+      "can_block_if": [
+        "no preflight before edits",
+        "generic PASS attempt",
+        "critical declaration missing"
+      ],
+      "can_request_owner_verdict_if": [
+        "declared route conflicts with owner map",
+        "scope requires doctrine exception"
+      ],
+      "depends_on": [],
+      "feeds": [
+        "OFFICIO_AGENTIS",
+        "ASTRONOMICON",
+        "ADMINISTRATUM",
+        "MECHANICUS",
+        "INQUISITION",
+        "SCHOLA",
+        "STRATEGIUM"
+      ],
+      "current_maturity": "REFERENCE_CANDIDATE",
+      "next_form_task_hint": "Create a compact Doctrinarium intake panel that renders gates/declarations from machine files."
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "ru_name": "Официо Агентис",
+      "phase": "front_door",
+      "responsibility_summary": "role/language/execution/final response discipline for Servitor",
+      "servitor_must_ask_when": [
+        "role boundary or allowed language is unclear",
+        "response contract format is required",
+        "stop conditions must be bound"
+      ],
+      "answers_with": [
+        "role contract",
+        "owner-facing language contract",
+        "execution contract",
+        "final response contract"
+      ],
+      "can_warn_if": [
+        "owner-facing live commentary drifts to English",
+        "missing scoped verdict pattern",
+        "task tries to run without ACK"
+      ],
+      "can_block_if": [
+        "boot route is skipped",
+        "scope is outside IMPERIUM_NEW_GENERATION",
+        "required acknowledgments are absent"
+      ],
+      "can_request_owner_verdict_if": [
+        "task requires role escalation",
+        "language contract conflicts with requested output"
+      ],
+      "depends_on": [
+        "DOCTRINARIUM"
+      ],
+      "feeds": [
+        "ASTRONOMICON",
+        "ADMINISTRATUM",
+        "MECHANICUS",
+        "INQUISITION"
+      ],
+      "current_maturity": "FOUNDATION",
+      "next_form_task_hint": "Build role ACK and response-shape checker widget bound to Officio contracts."
+    },
+    {
+      "organ_id": "ASTRONOMICON",
+      "ru_name": "Астрономикон",
+      "phase": "task_routing_registration",
+      "responsibility_summary": "route/stage direction, task corridor framing, planning vector",
+      "servitor_must_ask_when": [
+        "task route between organs is ambiguous",
+        "stage decomposition is missing",
+        "taskpack intent conflicts with roadmap"
+      ],
+      "answers_with": [
+        "route plan",
+        "stage map",
+        "task routing constraints",
+        "next eligible organ hops"
+      ],
+      "can_warn_if": [
+        "organ order breaks required front-door route",
+        "stage boundaries are vague"
+      ],
+      "can_block_if": [
+        "route violates mandatory gates",
+        "task requests forbidden organ bypass"
+      ],
+      "can_request_owner_verdict_if": [
+        "multiple strategic routes have non-trivial tradeoffs"
+      ],
+      "depends_on": [
+        "DOCTRINARIUM",
+        "OFFICIO_AGENTIS"
+      ],
+      "feeds": [
+        "ADMINISTRATUM",
+        "MECHANICUS",
+        "STRATEGIUM"
+      ],
+      "current_maturity": "FOUNDATION",
+      "next_form_task_hint": "Implement route-phase planner that emits normalized stage declarations."
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "ru_name": "Администратум",
+      "phase": "task_routing_registration",
+      "responsibility_summary": "registration/history/continuity/artifact discipline and packaging",
+      "servitor_must_ask_when": [
+        "task registration envelope is absent",
+        "receipt/report path policy is unclear",
+        "artifact packaging continuity is required"
+      ],
+      "answers_with": [
+        "task registration record",
+        "artifact/report path contract",
+        "history and continuity pointers",
+        "packaging/checklist baseline"
+      ],
+      "can_warn_if": [
+        "report avalanche risk",
+        "missing artifact naming discipline",
+        "history update omitted"
+      ],
+      "can_block_if": [
+        "required receipts missing",
+        "output paths violate task contract"
+      ],
+      "can_request_owner_verdict_if": [
+        "retention policy vs cleanup policy conflicts"
+      ],
+      "depends_on": [
+        "ASTRONOMICON",
+        "OFFICIO_AGENTIS"
+      ],
+      "feeds": [
+        "MECHANICUS",
+        "INQUISITION",
+        "SCHOLA",
+        "STRATEGIUM"
+      ],
+      "current_maturity": "FOUNDATION",
+      "next_form_task_hint": "Build receipt index and continuity binder generator for NewGen task slices."
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "ru_name": "Механикус",
+      "phase": "capability_execution",
+      "responsibility_summary": "tools/scripts/capabilities/tool acquisition and execution support",
+      "servitor_must_ask_when": [
+        "required toolchain is unknown",
+        "automation candidate appears",
+        "validation scripts are needed"
+      ],
+      "answers_with": [
+        "available tools",
+        "missing tools",
+        "acquisition actions",
+        "script maturity and reuse guidance"
+      ],
+      "can_warn_if": [
+        "manual repetition instead of reusable script",
+        "unsafe script promotion",
+        "missing tool preservation note"
+      ],
+      "can_block_if": [
+        "required tool unavailable and no fallback",
+        "tool use violates execution policy"
+      ],
+      "can_request_owner_verdict_if": [
+        "new external tool is needed with non-trivial trust/risk"
+      ],
+      "depends_on": [
+        "ADMINISTRATUM",
+        "DOCTRINARIUM"
+      ],
+      "feeds": [
+        "INQUISITION",
+        "SCHOLA",
+        "STRATEGIUM"
+      ],
+      "current_maturity": "PROTOTYPE",
+      "next_form_task_hint": "Create capability panel that resolves required tools per task slice and phase."
+    },
+    {
+      "organ_id": "INQUISITION",
+      "ru_name": "Инквизиция",
+      "phase": "audit_guard",
+      "responsibility_summary": "dirt/duplicates/fake-green/scope-violation and closure sanity checks",
+      "servitor_must_ask_when": [
+        "before PASS claim",
+        "dirty tree or unexpected diff appears",
+        "scope compliance must be proven"
+      ],
+      "answers_with": [
+        "gate audit verdict",
+        "scope violation findings",
+        "fake-green risks",
+        "repo purity status"
+      ],
+      "can_warn_if": [
+        "weak evidence linking",
+        "report output budget drift",
+        "incomplete gate acknowledgement"
+      ],
+      "can_block_if": [
+        "forbidden paths touched",
+        "PASS without receipts",
+        "unexpected unrelated changes"
+      ],
+      "can_request_owner_verdict_if": [
+        "task completion requires violating a blocker gate"
+      ],
+      "depends_on": [
+        "ADMINISTRATUM",
+        "DOCTRINARIUM",
+        "OFFICIO_AGENTIS"
+      ],
+      "feeds": [
+        "SCHOLA",
+        "STRATEGIUM",
+        "DOCTRINARIUM"
+      ],
+      "current_maturity": "FOUNDATION",
+      "next_form_task_hint": "Expose compact gate-audit panel with blocker/warn mapping and evidence paths."
+    },
+    {
+      "organ_id": "SCHOLA",
+      "ru_name": "Школа Импералис",
+      "phase": "learning_training",
+      "responsibility_summary": "lessons/training/communication learning loops for owner and agents",
+      "servitor_must_ask_when": [
+        "task closure requires lessons learned",
+        "communication mistakes repeat",
+        "training plan is needed from outcomes"
+      ],
+      "answers_with": [
+        "positive/negative patterns",
+        "training actions",
+        "semantic coaching updates",
+        "handoff notes for other organs"
+      ],
+      "can_warn_if": [
+        "same mistakes repeated without remediation",
+        "no learning artifact after complex task"
+      ],
+      "can_block_if": [
+        "none in current draft (advisory-first role)"
+      ],
+      "can_request_owner_verdict_if": [
+        "training priorities conflict with delivery urgency"
+      ],
+      "depends_on": [
+        "ADMINISTRATUM",
+        "INQUISITION"
+      ],
+      "feeds": [
+        "STRATEGIUM",
+        "DOCTRINARIUM",
+        "OFFICIO_AGENTIS"
+      ],
+      "current_maturity": "DRAFT",
+      "next_form_task_hint": "Implement lesson capture template linked to closure receipts and gate outcomes."
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "ru_name": "Стратегиум",
+      "phase": "strategy_development",
+      "responsibility_summary": "higher strategy/development path/resource and boost thinking",
+      "servitor_must_ask_when": [
+        "task is large or cross-organ",
+        "resource/boost decision needed",
+        "long-range technical path is uncertain"
+      ],
+      "answers_with": [
+        "strategy options",
+        "resource leverage plan",
+        "risk-aware development route",
+        "priority corrections"
+      ],
+      "can_warn_if": [
+        "local optimization harms long-term path",
+        "missing strategic coordination"
+      ],
+      "can_block_if": [
+        "none in current draft (escalation-first role)"
+      ],
+      "can_request_owner_verdict_if": [
+        "high-impact route tradeoff requires explicit owner decision"
+      ],
+      "depends_on": [
+        "ADMINISTRATUM",
+        "SCHOLA",
+        "INQUISITION"
+      ],
+      "feeds": [
+        "ASTRONOMICON",
+        "DOCTRINARIUM",
+        "MECHANICUS"
+      ],
+      "current_maturity": "DRAFT",
+      "next_form_task_hint": "Create strategy escalation card format with bounded recommendations and owner decision hooks."
+    },
+    {
+      "organ_id": "CUSTODES",
+      "ru_name": "Кустодес",
+      "phase": "future_core_guard",
+      "responsibility_summary": "future protection layer for core invariants and sovereignty boundaries",
+      "servitor_must_ask_when": [
+        "future protected-core policy is activated"
+      ],
+      "answers_with": [
+        "future core protection constraints"
+      ],
+      "can_warn_if": [
+        "future core protection assumptions are violated"
+      ],
+      "can_block_if": [
+        "future protected-core action attempts in unauthorized mode"
+      ],
+      "can_request_owner_verdict_if": [
+        "core sovereignty policy requires explicit owner lock"
+      ],
+      "depends_on": [
+        "STRATEGIUM",
+        "INQUISITION"
+      ],
+      "feeds": [
+        "THRONE",
+        "DOCTRINARIUM"
+      ],
+      "current_maturity": "DRAFT",
+      "next_form_task_hint": "No implementation in this task; reserve as future protection contract layer."
+    },
+    {
+      "organ_id": "THRONE",
+      "ru_name": "Трон",
+      "phase": "future_core_guard",
+      "responsibility_summary": "future core absorption and highest-order authority consolidation layer",
+      "servitor_must_ask_when": [
+        "future core absorption policy is introduced"
+      ],
+      "answers_with": [
+        "future final authority and absorption rules"
+      ],
+      "can_warn_if": [
+        "claims of final authority are made without canonical policy"
+      ],
+      "can_block_if": [
+        "unauthorized final-canon claim is attempted"
+      ],
+      "can_request_owner_verdict_if": [
+        "core absorption boundary must be ratified"
+      ],
+      "depends_on": [
+        "CUSTODES",
+        "STRATEGIUM"
+      ],
+      "feeds": [
+        "DOCTRINARIUM",
+        "OFFICIO_AGENTIS"
+      ],
+      "current_maturity": "DRAFT",
+      "next_form_task_hint": "No implementation in this task; reserve as future core authority layer."
+    }
+  ],
+  "not_proven": [
+    "full organ intelligence",
+    "all organ TUI implementation",
+    "live Owner Verdict Needed button",
+    "production autonomy",
+    "final organ dependency canon"
+  ]
+}

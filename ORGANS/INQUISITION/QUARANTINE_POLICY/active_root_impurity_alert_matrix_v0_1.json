@@ -1,0 +1,26 @@
+{
+  "schema_version": "imperium.active_root_impurity_alert_matrix.v0_1",
+  "matrix_id": "active_root_impurity_alert_matrix_v0_1",
+  "owner_organ": "INQUISITION",
+  "purpose": "Block root entries outside the allowed shape unless a hold reason exists.",
+  "rows": [
+    {
+      "alert_id": "ROOT_IMPURITY_WITHOUT_HOLD",
+      "severity": "BLOCK",
+      "trigger": "A root entry is not ORGANS, SUPPORT, or an explicit HOLD_WITH_REASON item.",
+      "required_action": "Move the item or record a hold reason in the migration address book."
+    },
+    {
+      "alert_id": "QUARANTINE_ACTIVE_USE_AFTER_MOVE",
+      "severity": "BLOCK",
+      "trigger": "A moved quarantine or learning archive item is used as an active source.",
+      "required_action": "Remove active dependency or create an explicit salvage request."
+    },
+    {
+      "alert_id": "FULL_CLEAN_CLAIM_WITH_HOLDS",
+      "severity": "BLOCK",
+      "trigger": "Final response claims full clean while allowlist checker has holds or warnings.",
+      "required_action": "Downgrade to PASS_WITH_WARNINGS and list holds."
+    }
+  ]
+}

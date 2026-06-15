@@ -1,0 +1,50 @@
+{
+  "task_id": "TASK-20260520-NEWGEN-MECHANICUS-PANEL-VISUAL-SLICE-VM3-V0_1",
+  "timestamp_utc": "2026-05-20T21:33:04Z",
+  "verdict": "MECHANICUS_PANEL_SLICE_V0_1_ACCEPTED_FOR_OWNER_REVIEW",
+  "officio_intake": {
+    "status": "ACK_PRESENT",
+    "file": "IMPERIUM_NEW_GENERATION/TASKS/VM3_ASSIGNED/TASK-20260520-NEWGEN-MECHANICUS-PANEL-VISUAL-SLICE-VM3-V0_1/OFFICIO_ROLE_ACK_VM3_SERVITOR.json"
+  },
+  "scope": {
+    "allowed_write_roots_only": true,
+    "notes": "Inherited dirty state outside scope was preserved and not rewritten"
+  },
+  "required_zones": {
+    "header_identity": true,
+    "current_activity_work_zone": true,
+    "command_operator_palette": true,
+    "tool_registry_capability_overview": true,
+    "footer_evidence_mission_focus": true
+  },
+  "truth_discipline": {
+    "unknown_visible": true,
+    "stub_visible": true,
+    "locked_visible": true,
+    "fake_connected_claims": false
+  },
+  "evidence": {
+    "before_after_present": true,
+    "full_screenshot": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/SCREENSHOTS/01_full.png",
+    "detail_screenshots": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/SCREENSHOTS/02_detail_header.png",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/SCREENSHOTS/03_detail_workzone.png",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/SCREENSHOTS/04_detail_command_registry.png",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/SCREENSHOTS/05_detail_footer.png"
+    ],
+    "before_reference": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/SCREENSHOTS/00_before_reference.png",
+    "owner_report_ru": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/REPORTS/OWNER_REPORT_RU.md",
+    "implementation_report_en": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1/REPORTS/IMPLEMENTATION_REPORT_EN.md"
+  },
+  "tooling_actions": [
+    {
+      "tool": "curl",
+      "action": "installed",
+      "reason": "required for geckodriver webdriver screenshot capture"
+    }
+  ],
+  "commit": {
+    "required_if_gates_pass": true,
+    "status": "PENDING"
+  }
+}

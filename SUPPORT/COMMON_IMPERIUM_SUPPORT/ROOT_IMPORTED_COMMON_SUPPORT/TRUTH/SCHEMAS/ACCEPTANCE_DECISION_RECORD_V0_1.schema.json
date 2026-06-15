@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ACCEPTANCE_DECISION_RECORD_V0_1",
+  "type": "object",
+  "required": [
+    "sample_id",
+    "input",
+    "expected_outcome",
+    "reason"
+  ],
+  "properties": {
+    "sample_id": {
+      "type": "string"
+    },
+    "input": {
+      "type": "object",
+      "required": [
+        "normalized_status",
+        "evidence_present",
+        "freshness",
+        "reason_present",
+        "owner_decision_confirmed",
+        "contract_basis_present",
+        "production_claim_requested"
+      ],
+      "properties": {
+        "normalized_status": {
+          "type": "string"
+        },
+        "evidence_present": {
+          "type": "boolean"
+        },
+        "freshness": {
+          "type": "string"
+        },
+        "reason_present": {
+          "type": "boolean"
+        },
+        "owner_decision_confirmed": {
+          "type": "boolean"
+        },
+        "contract_basis_present": {
+          "type": "boolean"
+        },
+        "production_claim_requested": {
+          "type": "boolean"
+        }
+      }
+    },
+    "expected_outcome": {
+      "enum": [
+        "PASS_STRICT",
+        "PASS_WITH_WARN",
+        "PARTIAL_ACCEPTED",
+        "PARTIAL_BLOCKED",
+        "FOUNDATION_ONLY",
+        "UNKNOWN",
+        "MISSING",
+        "STALE",
+        "NOT_READY",
+        "BLOCKED",
+        "FAKE_GREEN_RISK"
+      ]
+    },
+    "reason": {
+      "type": "string"
+    },
+    "claim_boundary": {
+      "type": "string"
+    }
+  }
+}

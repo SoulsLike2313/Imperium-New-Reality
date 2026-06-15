@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sanctum Mini V0.2</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="background-grid"></div>
+    <div class="app-shell">
+      <header class="zone top-zone">
+        <div class="brand">
+          <span class="brand-mark">SANCTUM MINI</span>
+          <span class="brand-sub" id="brandSub">Mechanicus Holder V0.2</span>
+        </div>
+        <div class="header-metrics" id="headerMetrics"></div>
+        <button class="lang-switch" id="langSwitch" type="button">RU</button>
+      </header>
+
+      <aside class="zone left-zone">
+        <h2 id="actionsTitle">Owner Actions</h2>
+        <div class="action-list" id="actionList"></div>
+        <div class="action-output" id="actionOutput"></div>
+        <div class="action-history" id="actionHistory"></div>
+      </aside>
+
+      <main class="zone center-zone">
+        <h2 id="organTitle">Organs</h2>
+        <div class="organ-grid" id="organGrid"></div>
+        <section class="viewport-zone" id="viewportZone">
+          <div class="viewport-header" id="viewportHeader"></div>
+          <div class="viewport-frame">
+            <img id="viewportImage" alt="mechanicus viewport" />
+            <div class="viewport-empty" id="viewportEmpty"></div>
+          </div>
+        </section>
+        <section class="secondary-zone">
+          <div class="secondary-tabs">
+            <button class="secondary-tab is-active" data-tab-id="overview" id="tabOverview">Overview</button>
+            <button class="secondary-tab" data-tab-id="paths" id="tabPaths">Paths</button>
+            <button class="secondary-tab" data-tab-id="receipts" id="tabReceipts">Receipts</button>
+            <button class="secondary-tab" data-tab-id="raw" id="tabRaw">Raw JSON</button>
+          </div>
+          <div class="secondary-content organ-details" id="organDetails"></div>
+        </section>
+      </main>
+
+      <aside class="zone right-zone">
+        <h2 id="truthTitle">Global Truth</h2>
+        <div id="truthBlock" class="truth-block"></div>
+      </aside>
+
+      <footer class="zone bottom-zone">
+        <h2 id="logTitle">Micro Log</h2>
+        <div id="microLog" class="micro-log"></div>
+      </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
+

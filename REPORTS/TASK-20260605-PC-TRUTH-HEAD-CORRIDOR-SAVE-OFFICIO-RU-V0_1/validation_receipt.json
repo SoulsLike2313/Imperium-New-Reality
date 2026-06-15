@@ -1,0 +1,123 @@
+{
+  "schema_version": "task.validation_receipt.v0_1",
+  "task_id": "TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1",
+  "created_at_utc": "2026-06-05T15:21:17.8477422Z",
+  "scope": {
+    "active_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+    "branch": "master",
+    "ancient_empire_accessed": false,
+    "parent_or_private_paths_accessed": false
+  },
+  "pre_validation_status_porcelain": [
+    " M .gitignore",
+    " M ADMINISTRATUM/CURRENT_TRUTH/current_head_card_v0_1.json",
+    " M ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+    " M ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+    " M ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json",
+    " M ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json",
+    "?? EXCHANGE/TASK_PACKS/",
+    "?? ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASKPACK_FORM_CONTRACT_V0_1.md",
+    "?? ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1/",
+    "?? REPORTS/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1/"
+  ],
+  "checks": [
+    {
+      "check_id": "changed_json_parse_bom_route_truth",
+      "command": "local structured Python validation over git diff --name-only plus git ls-files --others --exclude-standard",
+      "status": "PASS",
+      "evidence": {
+        "json_file_count": 25,
+        "json_parse_failures": [],
+        "bom_failures": [],
+        "route_template_missing_organs": [],
+        "form_contract_has_cyrillic": false,
+        "measured_head": "d61edfd08dbc69919645cec827aaa2c899089ae9",
+        "current_head_card_head": "d61edfd08dbc69919645cec827aaa2c899089ae9",
+        "current_head_matches_measured_head": true
+      }
+    },
+    {
+      "check_id": "corridor_templates_tracked",
+      "command": "git ls-files ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+      "status": "PASS",
+      "evidence": [
+        "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ROUTE_MANIFEST_TEMPLATE.json",
+        "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json"
+      ]
+    },
+    {
+      "check_id": "git_diff_check",
+      "command": "git diff --check",
+      "status": "PASS",
+      "evidence": "No whitespace errors reported after registry JSON LF normalization."
+    },
+    {
+      "check_id": "astronomicon_task_id_resolver",
+      "command": "python ORGANS/ASTRONOMICON/TOOLS/astronomicon_task_id_resolver_v0_1.py --repo-root . --task-id TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1 --actor TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1 --receipt-out REPORTS/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1/astronomicon_task_id_resolver_receipt.json",
+      "status": "PASS_WITH_WARNINGS",
+      "evidence_path": "REPORTS/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1/astronomicon_task_id_resolver_receipt.json",
+      "warnings": [
+        "Resolver carries expected Stage1 caps: CAP_STAGE1_WITH_WARNINGS_ONLY, CAP_NO_IDE_VISUAL_RELEASE_YET, CAP_NO_WARP_RUNTIME."
+      ]
+    },
+    {
+      "check_id": "astronomicon_taskpack_language_gate",
+      "command": "python ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_language_gate_v0_1.py --repo-root . --task-id TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1 --receipt-path REPORTS/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1/astronomicon_taskpack_language_gate_receipt.json",
+      "status": "PASS",
+      "evidence_path": "REPORTS/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1/astronomicon_taskpack_language_gate_receipt.json"
+    },
+    {
+      "check_id": "astronomicon_taskpack_retention_current_entry",
+      "command": "python ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_retention_checker_v0_1.py --repo-root . --task-id TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1 --registered-root ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED --report-json REPORTS/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1/astronomicon_taskpack_retention_report_full.json --report-md REPORTS/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1/astronomicon_taskpack_retention_report_full.md",
+      "status": "PASS_FOR_CURRENT_TASK_ENTRY",
+      "evidence_path": "REPORTS/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1/astronomicon_taskpack_retention_report_full.json",
+      "current_task_entry": {
+        "retention_class": "KEEP_CANONICAL_SMALL",
+        "blocks_vm3_route_proof": false,
+        "blocks_context_optimization": false
+      },
+      "full_registry_warning": "Full registered-root report contains six pre-existing REVIEW_ARTIFACT_PAYLOAD_REVIEW_REQUIRED entries; they are outside this task's mutation scope."
+    },
+    {
+      "check_id": "astronomicon_taskpack_retention_superseded_wrong_scope",
+      "command": "python ORGANS/ASTRONOMICON/TOOLS/astronomicon_taskpack_retention_checker_v0_1.py --registered-root ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1 ...",
+      "status": "SUPERSEDED_BAD_ARGUMENT",
+      "evidence_path": "REPORTS/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1/astronomicon_taskpack_retention_report.json",
+      "reason": "The checker expects the parent REGISTERED root and treated EXTRACTED as a registered entry when given the task directory."
+    },
+    {
+      "check_id": "administratum_current_truth_checker",
+      "command": "python ADMINISTRATUM/TOOLS/administratum_current_truth_checker_v0_1.py --expected-head d61edfd08dbc69919645cec827aaa2c899089ae9 --expected-next-task TASK-NEWGEN-INQUISITION-PURITY-QUARANTINE-BODY-PC-V0_1 --output REPORTS/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1/administratum_current_truth_checker_receipt.json --allow-external-output",
+      "status": "PASS",
+      "evidence_path": "REPORTS/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1/administratum_current_truth_checker_receipt.json"
+    },
+    {
+      "check_id": "administratum_card_checker",
+      "command": "python ADMINISTRATUM/TOOLS/administratum_card_checker_v0_1.py --output REPORTS/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1/administratum_card_checker_receipt.json --allow-external-output",
+      "status": "PASS",
+      "evidence_path": "REPORTS/TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1/administratum_card_checker_receipt.json"
+    },
+    {
+      "check_id": "remote_tree_bundle_closure_validator",
+      "status": "UNKNOWN_WITH_REASON",
+      "reason": "TOOLS/NEW_REALITY_VALIDATORS/validate_remote_tree_bundle_closure_v0_1.py contains Ancient Empire snapshot/probe logic. This task explicitly forbids Ancient Empire or parent path access."
+    },
+    {
+      "check_id": "remote_head_policy_first_push_runner",
+      "status": "UNKNOWN_WITH_REASON",
+      "reason": "TOOLS/REMOTE_POLICY/remote_head_policy_first_push_v0_1.py contains Ancient Empire status probe logic. This task explicitly forbids Ancient Empire or parent path access."
+    },
+    {
+      "check_id": "exchange_taskpack_specialized_astronomicon_fixture_checkers",
+      "status": "UNKNOWN_WITH_REASON",
+      "reason": "ASTRONOMICON task essence and route packet checkers accept fixture bundles, not single Exchange artifacts. Exchange JSON files were covered by changed-json parse and no-BOM validation."
+    }
+  ],
+  "ignored_untracked_artifacts": [
+    {
+      "path": ".taskpack_import_tmp/",
+      "reason": "Temporary staging directory generated by taskpack import; ignored through .gitignore and not deleted."
+    }
+  ],
+  "verdict": "PASS_WITH_WARNINGS"
+}

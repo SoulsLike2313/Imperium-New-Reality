@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OWNER_QUESTION_V0_1",
+  "type": "object",
+  "required": [
+    "question_id",
+    "task_id",
+    "source",
+    "source_ref",
+    "question_text_ru",
+    "why_needed_ru",
+    "decision_type",
+    "blocking_level",
+    "status",
+    "owner_answer_required",
+    "allowed_answers",
+    "evidence_refs",
+    "created_at_utc",
+    "updated_at_utc"
+  ],
+  "properties": {
+    "question_id": { "type": "string" },
+    "task_id": { "type": "string" },
+    "source": {
+      "enum": ["SERVITOR", "ORGAN", "SANCTUM", "TRUTH_GATE", "OWNER"]
+    },
+    "source_ref": { "type": "string" },
+    "question_text_ru": { "type": "string" },
+    "question_text_en_optional": { "type": "string" },
+    "why_needed_ru": { "type": "string" },
+    "decision_type": {
+      "enum": [
+        "CLARIFICATION",
+        "APPROVAL",
+        "REJECTION",
+        "SCOPE_DECISION",
+        "RISK_ACCEPTANCE",
+        "TOOL_DECISION",
+        "MERGE_DECISION"
+      ]
+    },
+    "blocking_level": {
+      "enum": ["BLOCKING", "NON_BLOCKING", "WARN_ONLY"]
+    },
+    "status": {
+      "enum": ["OPEN", "ANSWERED", "DEFERRED", "CANCELLED", "STALE", "FOUNDATION_SAMPLE"]
+    },
+    "owner_answer_required": { "type": "boolean" },
+    "allowed_answers": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "created_at_utc": { "type": "string" },
+    "updated_at_utc": { "type": "string" }
+  }
+}

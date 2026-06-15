@@ -1,0 +1,181 @@
+{
+  "generated_at_utc": "2026-05-20T05:46:21.893845Z",
+  "actions": [
+    {
+      "action_id": "refresh_state",
+      "title_en": "Refresh state",
+      "title_ru": "Обновить состояние",
+      "safety": "ALLOWLISTED_LOCAL_NO_SIDE_EFFECTS",
+      "mode": "internal",
+      "command_preview": null,
+      "display_value": "/api/state",
+      "run_endpoint": "/api/actions/run"
+    },
+    {
+      "action_id": "mechanicus_visual_status",
+      "title_en": "Mechanicus visual-status",
+      "title_ru": "Механикус visual-status",
+      "safety": "ALLOWLISTED_LOCAL_READ_ONLY",
+      "mode": "command",
+      "command_preview": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --once visual-status",
+      "display_value": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --once visual-status",
+      "run_endpoint": "/api/actions/run"
+    },
+    {
+      "action_id": "mechanicus_visual_tools",
+      "title_en": "Mechanicus visual-tools",
+      "title_ru": "Механикус visual-tools",
+      "safety": "ALLOWLISTED_LOCAL_READ_ONLY",
+      "mode": "command",
+      "command_preview": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --once visual-tools",
+      "display_value": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --once visual-tools",
+      "run_endpoint": "/api/actions/run"
+    },
+    {
+      "action_id": "mechanicus_visual_check",
+      "title_en": "Mechanicus visual-check",
+      "title_ru": "Механикус visual-check",
+      "safety": "ALLOWLISTED_LOCAL_READ_ONLY",
+      "mode": "command",
+      "command_preview": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --once visual-check",
+      "display_value": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --once visual-check",
+      "run_endpoint": "/api/actions/run"
+    },
+    {
+      "action_id": "mechanicus_visual_identity",
+      "title_en": "Mechanicus visual-identity",
+      "title_ru": "Механикус visual-identity",
+      "safety": "ALLOWLISTED_LOCAL_READ_ONLY",
+      "mode": "command",
+      "command_preview": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --once visual-identity",
+      "display_value": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --once visual-identity",
+      "run_endpoint": "/api/actions/run"
+    },
+    {
+      "action_id": "mechanicus_screenshot_all",
+      "title_en": "Mechanicus screenshot all",
+      "title_ru": "Механикус screenshot all",
+      "safety": "ALLOWLISTED_LOCAL_VISUAL_CAPTURE",
+      "mode": "command",
+      "command_preview": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --screenshot all",
+      "display_value": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --screenshot all",
+      "run_endpoint": "/api/actions/run"
+    },
+    {
+      "action_id": "mechanicus_screenshot_command",
+      "title_en": "Mechanicus screenshot command",
+      "title_ru": "Команда screenshot",
+      "safety": "DISPLAY_ONLY_SAFE_FALLBACK",
+      "mode": "display",
+      "command_preview": null,
+      "display_value": "python E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\ORGAN_AGENTS\\MECHANICUS_AGENT\\TOOLS\\mechanicus_agent_runner.py shell --screenshot all",
+      "run_endpoint": "/api/actions/run"
+    },
+    {
+      "action_id": "open_or_show_latest_report",
+      "title_en": "Open/show latest report path",
+      "title_ru": "Открыть/показать путь отчёта",
+      "safety": "DISPLAY_ONLY_SAFE_FALLBACK",
+      "mode": "display",
+      "command_preview": null,
+      "display_value": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1",
+      "run_endpoint": "/api/actions/run"
+    },
+    {
+      "action_id": "open_or_show_screenshots_folder",
+      "title_en": "Open/show screenshots path",
+      "title_ru": "Открыть/показать путь скриншотов",
+      "safety": "DISPLAY_ONLY_SAFE_FALLBACK",
+      "mode": "display",
+      "command_preview": null,
+      "display_value": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\SCREENSHOTS\\mechanicus_raw_v0_5.svg",
+      "run_endpoint": "/api/actions/run"
+    },
+    {
+      "action_id": "show_api_state_json",
+      "title_en": "Show API state JSON",
+      "title_ru": "Показать API state JSON",
+      "safety": "ALLOWLISTED_LOCAL_NO_SIDE_EFFECTS",
+      "mode": "display",
+      "command_preview": null,
+      "display_value": "/api/state",
+      "run_endpoint": "/api/actions/run"
+    },
+    {
+      "action_id": "show_api_mechanicus_json",
+      "title_en": "Show API mechanicus JSON",
+      "title_ru": "Показать API mechanicus JSON",
+      "safety": "ALLOWLISTED_LOCAL_NO_SIDE_EFFECTS",
+      "mode": "display",
+      "command_preview": null,
+      "display_value": "/api/mechanicus",
+      "run_endpoint": "/api/actions/run"
+    }
+  ],
+  "commands": [
+    {
+      "id": "tui_dashboard",
+      "title_en": "Open Mechanicus TUI command",
+      "title_ru": "Команда запуска Mechanicus TUI",
+      "type": "command",
+      "value": "python E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py shell --once dashboard"
+    },
+    {
+      "id": "visual_status",
+      "title_en": "Run visual-status",
+      "title_ru": "Запуск visual-status",
+      "type": "command",
+      "value": "python E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py shell --once visual-status"
+    },
+    {
+      "id": "visual_tools",
+      "title_en": "Run visual-tools",
+      "title_ru": "Запуск visual-tools",
+      "type": "command",
+      "value": "python E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py shell --once visual-tools"
+    },
+    {
+      "id": "visual_check",
+      "title_en": "Run visual-check",
+      "title_ru": "Запуск visual-check",
+      "type": "command",
+      "value": "python E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py shell --once visual-check"
+    },
+    {
+      "id": "visual_identity",
+      "title_en": "Run visual-identity",
+      "title_ru": "Запуск visual-identity",
+      "type": "command",
+      "value": "python E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py shell --once visual-identity"
+    },
+    {
+      "id": "screenshot_all",
+      "title_en": "Run screenshot all",
+      "title_ru": "Запуск screenshot all",
+      "type": "command",
+      "value": "python E:/IMPERIUM/IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOLS/mechanicus_agent_runner.py shell --screenshot all"
+    },
+    {
+      "id": "open_latest_report",
+      "title_en": "Open latest report path",
+      "title_ru": "Открыть путь к последнему отчёту",
+      "type": "path",
+      "value": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-SANCTUM-MINI-MECHANICUS-HOLDER-PC-V0_1"
+    },
+    {
+      "id": "open_screenshots",
+      "title_en": "Open screenshots folder/path",
+      "title_ru": "Открыть путь к скриншотам",
+      "type": "path",
+      "value": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-MECHANICUS-TUI-UX-POLISH-OWNER-REVIEW-PC-V0_5\\SCREENSHOTS\\mechanicus_raw_v0_5.svg"
+    },
+    {
+      "id": "show_api_json",
+      "title_en": "Show API JSON",
+      "title_ru": "Показать API JSON",
+      "type": "url",
+      "value": "/api/state"
+    }
+  ],
+  "execution_mode": "ALLOWLISTED_ACTIONS_ONLY"
+}

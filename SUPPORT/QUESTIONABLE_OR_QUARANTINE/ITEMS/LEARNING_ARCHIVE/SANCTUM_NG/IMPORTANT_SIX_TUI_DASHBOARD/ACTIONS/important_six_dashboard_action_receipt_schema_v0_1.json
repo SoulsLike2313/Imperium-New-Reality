@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "important_six.dashboard_action_receipt.v0_1",
+  "title": "Important Six Dashboard Action Receipt",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "action_id",
+    "started_at_utc",
+    "finished_at_utc",
+    "duration_ms",
+    "status",
+    "summary",
+    "payload",
+    "details",
+    "receipt_path"
+  ],
+  "properties": {
+    "schema_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "action_id": {
+      "type": "string",
+      "minLength": 4
+    },
+    "owner_organ": {
+      "type": "string"
+    },
+    "dashboard_button_group": {
+      "type": "string"
+    },
+    "safety_class": {
+      "type": "string"
+    },
+    "started_at_utc": {
+      "type": "string",
+      "minLength": 20
+    },
+    "finished_at_utc": {
+      "type": "string",
+      "minLength": 20
+    },
+    "duration_ms": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "FAIL",
+        "BLOCKED"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "payload": {
+      "type": "object"
+    },
+    "details": {
+      "type": "object"
+    },
+    "receipt_path": {
+      "type": "string",
+      "minLength": 4
+    }
+  },
+  "additionalProperties": true
+}

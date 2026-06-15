@@ -1,0 +1,26 @@
+{
+  "schema_version": "imperium.quarantine_active_use_violation_matrix.v0_1",
+  "matrix_id": "quarantine_active_use_violation_matrix",
+  "owner_organ": "INQUISITION",
+  "purpose": "Classify references to SUPPORT/QUESTIONABLE_OR_QUARANTINE and block active use without an explicit exception.",
+  "rows": [
+    {
+      "violation_id": "ACTIVE_USE_REFERENCE_WITHOUT_EXCEPTION",
+      "severity": "BLOCK",
+      "trigger": "A non-policy active repository file references SUPPORT/QUESTIONABLE_OR_QUARANTINE without an allowed_active_use_exception.",
+      "required_action": "Remove the active dependency or create a salvage/admission exception in the quarantine index."
+    },
+    {
+      "violation_id": "POLICY_REFERENCE",
+      "severity": "INFO",
+      "trigger": "A governance, policy, report, taskpack, migration queue, quarantine index, or Schola learning file mentions the quarantine path as a rule subject.",
+      "required_action": "Allow as evidence/reference only; do not treat as active source use."
+    },
+    {
+      "violation_id": "ADMITTED_EXCEPTION",
+      "severity": "INFO",
+      "trigger": "A file path matches an explicit allowed_active_use_exception in the quarantine index.",
+      "required_action": "Keep the exception narrow and tied to a salvage/admission receipt."
+    }
+  ]
+}

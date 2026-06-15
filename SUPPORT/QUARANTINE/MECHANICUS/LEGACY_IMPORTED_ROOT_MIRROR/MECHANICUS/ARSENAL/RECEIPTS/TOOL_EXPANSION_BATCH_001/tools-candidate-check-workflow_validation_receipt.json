@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:tools_candidate_check_workflow:tool_detection:tools_candidate_check_workflow",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "TOOLS_CANDIDATE_CHECK_WORKFLOW",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:45Z",
+  "status": "PASS",
+  "summary": "TOOLS_CANDIDATE_CHECK_WORKFLOW: PASS via tool_detection:TOOLS_CANDIDATE_CHECK_WORKFLOW. promotion_recommendation=PROMOTE_SANDBOX",
+  "check_name": "tool_detection:TOOLS_CANDIDATE_CHECK_WORKFLOW",
+  "command_or_check": "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_validator_v0_1.py --help",
+  "exit_code": 0,
+  "stdout_excerpt": "$ python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_validator_v0_1.py --help\nusage: mechanicus_capability_validator_v0_1.py [-h] [--task-id TASK_ID]\n\nRun Mechanicus Arsenal Validation Batch 001.\n\noptions:\n  -h, --help         show this help message and exit\n  --task-id TASK_ID",
+  "stderr_excerpt": "",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/tools-candidate-check-workflow_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "PROMOTE_SANDBOX",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/tools-candidate-check-workflow_validation_receipt.json"
+  ]
+}

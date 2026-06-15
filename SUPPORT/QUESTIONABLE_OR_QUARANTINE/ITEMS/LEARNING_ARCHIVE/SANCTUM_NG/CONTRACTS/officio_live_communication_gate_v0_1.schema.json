@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OFFICIO_LIVE_COMMUNICATION_GATE_V0_1",
+  "type": "object",
+  "required": [
+    "LIVE_LANGUAGE_COMPLIANCE",
+    "FINAL_REPORT_LANGUAGE",
+    "TECHNICAL_ARTIFACT_LANGUAGE",
+    "AUTHORITY_SOURCE",
+    "STATUS",
+    "KNOWN_LIMITATION"
+  ],
+  "properties": {
+    "LIVE_LANGUAGE_COMPLIANCE": {
+      "type": "string"
+    },
+    "FINAL_REPORT_LANGUAGE": {
+      "type": "string"
+    },
+    "TECHNICAL_ARTIFACT_LANGUAGE": {
+      "type": "string"
+    },
+    "AUTHORITY_SOURCE": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "STATUS": {
+      "enum": [
+        "PASS",
+        "WARN_FOUNDATION_ONLY",
+        "WARN_MISSING_AUTHORITY",
+        "BLOCK"
+      ]
+    },
+    "KNOWN_LIMITATION": {
+      "type": "string"
+    },
+    "VIOLATIONS": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "SELF_CORRECTIONS": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "schema_id": "newgen_owner_decision_queue_contract_report_v0_1",
+  "task_id": "TASK-NEWGEN-SANCTUM-ORGAN-CENTERED-COCKPIT-SKELETON-PC-V0_1",
+  "generated_at_utc": "2026-05-24T15:20:27Z",
+  "verdict": "PASS_WITH_WARNINGS",
+  "contract_flow_expected": [
+    "uncertainty_detected_by_organ_or_gate",
+    "owner_verdict_needed_record_created",
+    "record_visible_in_cockpit_queue",
+    "owner_decision_produces_receipt",
+    "servitor_continues_under_controlled_protocol"
+  ],
+  "contract_flow_implemented_in_skeleton": [
+    "Queue panel exists on first screen and is organ/jurisdiction-oriented.",
+    "Queue entries use OWNER_VERDICT_NEEDED and EVIDENCE_LINKED states.",
+    "Receipt path field is explicit for every queue entry.",
+    "No generic manual 'ask organ' button is used as primary workflow."
+  ],
+  "queue_entries_sample": [
+    {
+      "queue_id": "ODQ-20260524-001",
+      "organ": "Administratum",
+      "jurisdiction": "Commit/Push Admission",
+      "required_decision": "APPROVE | HOLD",
+      "receipt_path": "NOT_PROVEN",
+      "status": "OWNER_VERDICT_NEEDED"
+    },
+    {
+      "queue_id": "ODQ-20260524-002",
+      "organ": "Inquisition",
+      "jurisdiction": "Visual truth claim",
+      "required_decision": "ACCEPT | REQUIRE_LIVE_BINDING",
+      "receipt_path": "NOT_PROVEN",
+      "status": "OWNER_VERDICT_NEEDED"
+    },
+    {
+      "queue_id": "ODQ-20260524-003",
+      "organ": "Doctrinarium",
+      "jurisdiction": "Cockpit architecture",
+      "required_decision": "CONFIRM_CANON_DIRECTION",
+      "receipt_path": "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/DOCTRINES/SANCTUM_COCKPIT_RETHINK_SYNTHESIS_V0_1_EN.pdf",
+      "status": "EVIDENCE_LINKED"
+    }
+  ],
+  "warnings": [
+    "Skeleton is static seed and does not persist owner decisions yet.",
+    "Receipt writing is represented contractually, not via live endpoint in this step."
+  ]
+}

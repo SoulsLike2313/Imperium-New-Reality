@@ -1,0 +1,22 @@
+{
+  "receipt_id": "task-newgen-mechanicus-controlled-tool-provision-pc-v0_1:mypy:install",
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+  "tool": "mypy",
+  "package": "mypy",
+  "install_command": "python -m pip install --user mypy",
+  "started_at_utc": "2026-05-24T19:34:31Z",
+  "finished_at_utc": "2026-05-24T19:34:55Z",
+  "exit_code": 0,
+  "stdout_excerpt": "Collecting mypy\n  Downloading mypy-2.1.0-cp312-cp312-win_amd64.whl.metadata (2.4 kB)\nRequirement already satisfied: typing_extensions>=4.6.0 in c:\\users\\pc\\appdata\\local\\programs\\python\\python312\\lib\\site-packages (from mypy) (4.15.0)\nCollecting mypy_extensions>=1.0.0 (from mypy)\n  Downloading mypy_extensions-1.1.0-py3-none-any.whl.metadata (1.1 kB)\nCollecting pathspec>=1.0.0 (from mypy)\n  Downloading pathspec-1.1.1-py3-none-any.whl.metadata (14 kB)\nCollecting librt>=0.11.0 (from mypy)\n  Downloading librt-0.11.0-cp312-cp312-win_amd64.whl.metadata (1.3 kB)\nCollecting ast-serialize<1.0.0,>=0.3.0 (from mypy)\n  Downloading ast_serialize-0.5.0-cp39-abi3-win_amd64.whl.metadata (1.3 kB)\nDownloading mypy-2.1.0-cp312-cp312-win_amd64.whl (11.1 MB)\n   ---------------------------------------- 11.1/11.1 MB 1.4 MB/s eta 0:00:00\nDownloading ast_serialize-0.5.0-cp39-abi3-win_amd64.whl (1.1 MB)\n   ---------------------------------------- 1.1/1.1 MB 1.1 MB/s eta 0:00:00\nDownloading librt-0.11.0-cp312-cp312-win_amd64.whl (119 kB)\nDownloading mypy_extensions-1.1.0-py3-none-any.whl (5.0 kB)\nDownloading pathspec-1.1.1-py3-none-any.whl (57 kB)\nInstalling collected packages: pathspec, mypy_extensions, lib...<truncated>",
+  "stderr_excerpt": "WARNING: The scripts dmypy.exe, mypy.exe, mypyc.exe, stubgen.exe and stubtest.exe are installed in 'C:\\Users\\PC\\AppData\\Roaming\\Python\\Python312\\Scripts' which is not on PATH.\n  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.\n\n[notice] A new release of pip is available: 25.0.1 -> 26.1.1\n[notice] To update, run: python.exe -m pip install --upgrade pip",
+  "network_used": true,
+  "install_scope": "user",
+  "install_performed": true,
+  "side_effects": [
+    "user-site pip installation attempted",
+    "no global installer used"
+  ],
+  "post_install_validation_command": "python -m mypy --version",
+  "post_install_validation_result": "PASS",
+  "verdict": "PASS"
+}

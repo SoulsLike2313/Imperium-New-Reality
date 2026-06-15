@@ -1,0 +1,43 @@
+[
+  {
+    "step_id": "SGS-S1",
+    "claim": "Authority intake was acknowledged before implementation.",
+    "self_verdict": "PROVED",
+    "evidence_paths": [
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SKILL-GROWTH-SYSTEM-VM3-V0_1/OFFICIO_DOCTRINARIUM_AUTHORITY_ACK.json"
+    ]
+  },
+  {
+    "step_id": "SGS-S2",
+    "claim": "Skill Growth contracts were created for gaps, lessons, proposals, recommendations, and cycle envelope.",
+    "self_verdict": "PROVED",
+    "evidence_paths": [
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/SKILL_GROWTH/SKILL_GAP_RECORD.schema.json",
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/SKILL_GROWTH/SKILL_LESSON_RECORD.schema.json",
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/SKILL_GROWTH/SKILL_UPDATE_PROPOSAL.schema.json",
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/SKILL_GROWTH/VALIDATOR_RECOMMENDATION_RECORD.schema.json",
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/SKILL_GROWTH/SKILL_GROWTH_CYCLE.schema.json"
+    ]
+  },
+  {
+    "step_id": "SGS-S3",
+    "claim": "Builder generated deterministic foundation sample records and growth indexes.",
+    "self_verdict": "PROVED",
+    "evidence_paths": [
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/SKILL_GROWTH/samples/SKILL_GROWTH_CYCLE.sample.json",
+      "IMPERIUM_NEW_GENERATION/SKILLS/GROWTH/SKILL_GROWTH_INDEX_V0_1.json",
+      "IMPERIUM_NEW_GENERATION/SKILLS/GROWTH/LESSON_CATALOG_V0_1.generated.json",
+      "IMPERIUM_NEW_GENERATION/SKILLS/GROWTH/SKILL_UPDATE_PROPOSALS_V0_1.generated.json",
+      "IMPERIUM_NEW_GENERATION/SKILLS/GROWTH/VALIDATOR_RECOMMENDATIONS_V0_1.generated.json"
+    ]
+  },
+  {
+    "step_id": "SGS-S4",
+    "claim": "Foundation-only and no-fake-learning boundaries are explicitly embedded in cycle and index artifacts.",
+    "self_verdict": "PROVED",
+    "evidence_paths": [
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/SKILL_GROWTH/samples/SKILL_GROWTH_CYCLE.sample.json",
+      "IMPERIUM_NEW_GENERATION/SKILLS/GROWTH/SKILL_GROWTH_INDEX_V0_1.json"
+    ]
+  }
+]

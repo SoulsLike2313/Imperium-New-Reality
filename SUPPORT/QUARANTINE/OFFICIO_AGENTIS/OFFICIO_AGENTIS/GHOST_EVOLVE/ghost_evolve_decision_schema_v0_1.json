@@ -1,0 +1,29 @@
+{
+  "schema_id": "officio_ghost_evolve_decision_schema_v0_1",
+  "version": "v0_1",
+  "record_type": "ghost_evolve_decision",
+  "required_fields": [
+    "decision_id",
+    "task_id",
+    "candidate_name",
+    "decision",
+    "reason",
+    "owner_organ",
+    "evidence_paths",
+    "status",
+    "created_at_utc"
+  ],
+  "decision_enum": [
+    "ACCEPTED_LOCAL_UPGRADE",
+    "REJECTED_NOISE",
+    "DEFERRED"
+  ],
+  "status_enum": [
+    "DRAFT",
+    "ACTIVE",
+    "PASS",
+    "WARN",
+    "BLOCKED",
+    "LEGACY"
+  ]
+}

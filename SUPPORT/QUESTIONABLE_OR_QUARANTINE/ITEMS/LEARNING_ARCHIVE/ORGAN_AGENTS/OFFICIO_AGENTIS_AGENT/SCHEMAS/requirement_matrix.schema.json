@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Officio Requirement Matrix",
+  "type": "object",
+  "required": [
+    "task_id",
+    "requirements"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "additionalProperties": true
+}
+

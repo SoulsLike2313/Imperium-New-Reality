@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "agent_status.schema.json",
+  "title": "Imperial IDE Agent Runtime State",
+  "type": "object",
+  "required": ["task_id", "generated_at", "real_execution_enabled", "agents"],
+  "properties": {
+    "task_id": {"type": "string"},
+    "generated_at": {"type": "string"},
+    "real_execution_enabled": {"const": false},
+    "agents": {
+      "type": "array",
+      "minItems": 12,
+      "items": {
+        "type": "object",
+        "required": ["agent_id", "status", "current_task_id", "last_receipt_path"],
+        "properties": {
+          "agent_id": {"type": "string"},
+          "status": {"enum": ["ACTIVE", "DRY_RUN", "CANDIDATE", "BLOCKED", "STALE", "UNAVAILABLE"]},
+          "current_task_id": {"type": ["string", "null"]},
+          "last_receipt_path": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

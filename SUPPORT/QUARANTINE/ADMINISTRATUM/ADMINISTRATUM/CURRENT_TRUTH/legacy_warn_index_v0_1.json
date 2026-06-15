@@ -1,0 +1,25 @@
+{
+  "schema_id": "administratum_legacy_warn_index_v0_1",
+  "warn_entries": [
+    {
+      "warn_id": "warn.gate_registry.missing_u19_u21",
+      "status": "WARN",
+      "summary": "GATE-U19/U20/U21 are policy-required by AGENTS.md but currently absent from gate registry json.",
+      "evidence_paths": [
+        "AGENTS.md",
+        "ORGANS/DOCTRINARIUM/GATES/GATE_REGISTRY_V0_1.json",
+        "ORGANS/INQUISITION/GATE_AUDITS/AGENT_EXECUTION_INQUISITION_AUDIT_RULES_V0_1.md"
+      ]
+    },
+    {
+      "warn_id": "warn.officio.current_truth.source_split",
+      "status": "WARN",
+      "summary": "Officio lineage start head differs from current accepted point declared for this taskpack start.",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/BODY/officio_agentis_body_manifest_v0_1.json",
+        "c:/Users/PC/Downloads/TASKPACK_NEWGEN_ADMINISTRATUM_REGISTRATION_CARDS_CURRENT_TRUTH_PC_V0_1.zip::task_manifest.json"
+      ]
+    }
+  ],
+  "legacy_entries": []
+}

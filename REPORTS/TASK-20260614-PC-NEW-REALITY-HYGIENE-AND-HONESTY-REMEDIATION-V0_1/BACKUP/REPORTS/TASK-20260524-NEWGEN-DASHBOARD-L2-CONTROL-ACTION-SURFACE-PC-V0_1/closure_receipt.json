@@ -1,0 +1,90 @@
+{
+  "schema_id": "important_six_dashboard_l2_closure_receipt_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1",
+  "generated_at_utc": "2026-05-24T04:09:27Z",
+  "verdict": "PASS_FOR_DASHBOARD_L2_CONTROL_ACTION_SURFACE_PC_V0_1_ONLY",
+  "git": {
+    "branch": "master",
+    "local_head": "3864b075b1ee8e242c4f14a9d8f01a0455d28245",
+    "remote_master_head": "3864b075b1ee8e242c4f14a9d8f01a0455d28245",
+    "remote_sync_before_commit_push": true,
+    "status_short_before_commit_push": [
+      "?? IMPERIUM_NEW_GENERATION/ASTRONOMICON/DRAFT_TASK_REGISTRY/",
+      "?? IMPERIUM_NEW_GENERATION/OUTBOX/",
+      "?? IMPERIUM_NEW_GENERATION/OWNER_INTENT/",
+      "?? IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/OWNER_INTENT/",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/README_L2.md",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TESTS/playwright_dashboard_l2_actions_v0_1.py",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/important_six_dashboard_l2_smoke_v0_1.py",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.css",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.js",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_server_v0_2.py",
+      "?? IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_v0_2.html"
+    ]
+  },
+  "required_outputs": [
+    {
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/FINAL_REPORT.md",
+      "exists": false
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/closure_receipt.json",
+      "exists": false
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/context_source_mix.json",
+      "exists": true
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/dashboard_l2_action_api_smoke_report.json",
+      "exists": true
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/dashboard_l2_playwright_report.json",
+      "exists": true
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/dashboard_l2_screenshot.png",
+      "exists": true
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/action_registry_validation_report.json",
+      "exists": true
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/sample_action_receipts_index.json",
+      "exists": true
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DASHBOARD-L2-CONTROL-ACTION-SURFACE-PC-V0_1/json_parse_validation_report.json",
+      "exists": true
+    }
+  ],
+  "validation": {
+    "api_smoke_verdict": "WARN",
+    "api_smoke_blockers": [],
+    "api_smoke_warnings": [
+      "run_ADMIN_FULL_NEWGEN_FILE_AUDIT",
+      "run_MECHANICUS_CHECK_REQUIRED_TOOLS",
+      "run_INQUISITION_REPO_HYGIENE_AUDIT",
+      "run_INQUISITION_FAKE_GREEN_RISK_SCAN",
+      "run_DIFF_COMPARE_HEADS"
+    ],
+    "playwright_verdict": "PASS",
+    "playwright_blockers": [],
+    "playwright_warnings": [],
+    "action_registry_validation_verdict": "PASS",
+    "json_parse_validation_verdict": "PASS"
+  },
+  "not_proven": [
+    "destructive controls",
+    "arbitrary transfer paths",
+    "full task registration",
+    "auto push/merge",
+    "live browser PTY",
+    "production orchestration"
+  ]
+}

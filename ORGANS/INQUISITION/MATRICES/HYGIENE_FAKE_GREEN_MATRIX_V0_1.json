@@ -1,0 +1,17 @@
+{
+  "schema_version": "imperium.inquisition.hygiene_fake_green_matrix.v0_1",
+  "status": "CANDIDATE_NOT_CANON",
+  "destination": "ORGANS/INQUISITION/MATRICES/HYGIENE_FAKE_GREEN_MATRIX_V0_1.json",
+  "principle": "A PASS that ignores physical dirt or lacks a replayable receipt is a fake green and must be downgraded.",
+  "downgrade_rules": [
+    { "id": "FG-ARTIFACT", "if": "committed build artifacts present", "verdict": "BLOCK" },
+    { "id": "FG-ZIP", "if": "unadmitted zip outside FIXTURES", "verdict": "BLOCK" },
+    { "id": "FG-MALFORMED", "if": "truly malformed JSON outside FIXTURES", "verdict": "BLOCK" },
+    { "id": "FG-SECRET", "if": "real secret material outside detector allowlist", "verdict": "BLOCK" },
+    { "id": "FG-BOM", "if": "BOM in canonical receipt JSON", "verdict": "WARN_THEN_FIX" },
+    { "id": "FG-CRLF", "if": "CRLF in tracked text files", "verdict": "WARN_THEN_FIX" },
+    { "id": "FG-NOGIT", "if": "clean claimed without git truth receipt", "verdict": "BLOCK_OR_AUTHORITY_GAP" },
+    { "id": "FG-BLINDMETRIC", "if": "cleanliness metric is root-only", "verdict": "DOWNGRADE_METRIC_TRUST" }
+  ],
+  "summary_rule": "PASS_WITH_WARNINGS must never be reported to the owner as a clean PASS."
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Owner Audit Card",
+  "type": "object",
+  "required": [
+    "trigger",
+    "quick_verdict",
+    "accepted_evidence",
+    "concerns",
+    "logos_conclusion",
+    "next_task_value"
+  ],
+  "properties": {
+    "trigger": {
+      "type": "object"
+    },
+    "quick_verdict": {
+      "type": "object"
+    },
+    "accepted_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "concerns": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "logos_conclusion": {
+      "type": "string"
+    },
+    "next_task_value": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

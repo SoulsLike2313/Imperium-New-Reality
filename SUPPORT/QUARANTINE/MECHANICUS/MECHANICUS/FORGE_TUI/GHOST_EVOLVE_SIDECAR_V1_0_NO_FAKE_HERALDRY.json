@@ -1,0 +1,26 @@
+{
+  "task_id": "MECHANICUS_FORGE_CLIENT_V1_0_NO_FAKE_HERALDRY",
+  "created_utc": "2026-05-25T00:41:48Z",
+  "organ": "MECHANICUS",
+  "mode": "GE_LITE_VISUAL_TRUTH_REPAIR",
+  "learning_delta": [
+    "Mechanicus learns to reject weak pseudo-heraldry instead of accepting bad visuals.",
+    "TUI keeps honest sigil badges and delegates real heraldry to future enhanced visual mode.",
+    "Main dashboard stays compact, readable, and read-only."
+  ],
+  "reusable_capability": {
+    "name": "mechanicus_forge_client_v1_0_no_fake_heraldry",
+    "entrypoint": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/mechanicus_forge_client_v1_0_no_fake_heraldry.py",
+    "launcher": "IMPERIUM_NEW_GENERATION/MECHANICUS/FORGE_TUI/LAUNCH_MECHANICUS_FORGE_CLIENT_V1_0.cmd"
+  },
+  "pain_pattern": {
+    "id": "PAIN-TUI-PSEUDO-HERALDRY-QUALITY-001",
+    "symptom": "ASCII/block-art heraldry looked like random circuit diagrams, not true Mechanicus/Imperium emblems.",
+    "decision": "Remove fake heraldry from pure TUI. Preserve only small badges. Move true heraldry to enhanced visual mode."
+  },
+  "eval_or_smoke": [
+    "py -3 -m py_compile mechanicus_forge_client_v1_0_no_fake_heraldry.py",
+    "manual launch via LAUNCH_MECHANICUS_FORGE_CLIENT_V1_0.cmd"
+  ],
+  "read_only": true
+}

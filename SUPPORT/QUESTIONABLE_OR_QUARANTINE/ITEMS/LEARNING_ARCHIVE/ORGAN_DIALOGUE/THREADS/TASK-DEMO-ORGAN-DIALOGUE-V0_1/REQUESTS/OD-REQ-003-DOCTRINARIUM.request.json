@@ -1,0 +1,21 @@
+{
+  "schema_id": "ORGAN_DIALOGUE_REQUEST_V0_1",
+  "request_id": "OD-REQ-003-DOCTRINARIUM",
+  "task_id": "TASK-DEMO-ORGAN-DIALOGUE-V0_1",
+  "source_actor": "SANCTUM_NG",
+  "target_organ": "DOCTRINARIUM",
+  "purpose": "Foundation dialogue intake for DOCTRINARIUM without live autonomy.",
+  "question_set": [
+    "Check no-fake-green wording and evidence rule.",
+    "Verify no live autonomy claim appears."
+  ],
+  "context_refs": [
+    "IMPERIUM_NEW_GENERATION/TRUTH/CURRENT_TRUTH_ROOT_V0_1.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-PQG-NEGATIVE-TEST-MUTATION-CHECK-VM2-V0_1/FINAL_RECEIPT.json"
+  ],
+  "allowed_response_mode": "FOUNDATION_DETERMINISTIC_FILE_BACKED_ONLY",
+  "claim_boundary": "foundation-only deterministic packet response; no live autonomous organ execution",
+  "created_at_utc": "2026-05-22T21:10:35Z",
+  "owner_task_id": "TASK-20260523-NEWGEN-SANCTUM-ORGAN-DIALOGUE-DEMO-VM2-V0_1"
+}

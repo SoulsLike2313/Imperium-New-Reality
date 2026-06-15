@@ -1,0 +1,32 @@
+{
+  "schema": "imperium.tool_passport_bundle.v0_1",
+  "tools": [
+    {
+      "tool_id": "mechanicus.patch_visual_proof",
+      "name": "Imperium Patch Visual Proof",
+      "owner_organ": "MECHANICUS",
+      "path": "ORGANS/MECHANICUS/VISUAL_PROOF/imperium_patch_visual_proof_v0_1.py",
+      "language": "python",
+      "purpose_ru": "Создаёт owner-facing смотровую для Trinity Plus patch: terminal board, markdown summary, HTML dashboard и machine proof.",
+      "purpose_en": "Builds owner-facing visual proof for Trinity Plus patches: terminal board, markdown summary, HTML dashboard and machine proof.",
+      "inputs": [
+        "classification_report",
+        "out_root",
+        "patch_id"
+      ],
+      "outputs": [
+        "TRINITY_PLUS_VISUAL_PROOF_TERMINAL.txt",
+        "TRINITY_PLUS_VISUAL_PROOF_RU.md",
+        "TRINITY_PLUS_VISUAL_PROOF_DASHBOARD.html",
+        "TRINITY_PLUS_VISUAL_PROOF_MACHINE.json"
+      ],
+      "write_scope": [
+        "operator-selected out-root",
+        "LOCAL_HANDOFF/visual_proof"
+      ],
+      "destructive_default": false,
+      "safety": "READ_ONLY_SOURCE_OUTPUT_ONLY",
+      "validation_recipe": "Run py_compile, build visual proof from repo hygiene report, verify terminal/md/html/json outputs exist."
+    }
+  ]
+}

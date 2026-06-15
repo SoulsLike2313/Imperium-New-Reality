@@ -1,0 +1,72 @@
+# GATE_ACK
+
+```text
+GATE_ACK:
+- task_id: TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1
+- current_head: f5820d2b9248152e114732106e4ae01fcc2b3b47
+- gatepack_path: C:\Users\PC\Downloads\TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1_DOSSIER.zip
+- gatepack_sha256: 5B63D1C07D43690D4585025E8A1589CC7836F2551B4C30C94A9AAB87CD45A7BB
+- read_gates:
+  - GATE-U00-GIT-TRUTH
+  - GATE-U01-ROLE-ACK
+  - GATE-U02-SCOPE-BOUNDARY
+  - GATE-U04-EVIDENCE-RECEIPT
+  - GATE-U05-STOP-CONDITIONS
+  - GATE-U08-REPO-PURITY
+  - GATE-U09-NO-FAKE-GREEN
+  - GATE-U12-REPORT-OUTPUT-BUDGET
+  - GATE-U13-PYTHON-TYPE-SAFETY
+  - GATE-U14-WHOLE-REPO-SCOPE-RECON
+  - GATE-U15-OPERATIONALITY-IMPACT
+  - GATE-U16-BILINGUAL-UI
+  - GATE-U17-DELIVERABLE-PACKAGE
+  - GATE-U18-AGENT-FACTORY-COMPLIANCE
+  - GATE-U19-SCRIPT-ARTIFACT-PRESERVATION
+  - GATE-U20-AGENT-KPD-SELF-REVIEW
+  - GATE-U21-COMMAND-CHUNKING
+  - GATE-AI00-NO-DIRECT-MODEL-COMMAND
+- accepted_stop_conditions:
+  - STOP если repo_root/branch/HEAD перестают соответствовать truth-контракту задачи.
+  - STOP если появляются правки вне разрешенного Mechanicus scope.
+  - STOP если потребуется установка инструментов без явного Owner approval.
+  - STOP если для PASS-утверждения нельзя предоставить проверяемый receipt/evidence path.
+  - STOP если будет обнаружен fake-CANON или CANON без доказательств.
+  - STOP если будет превышен report output budget без Owner gate.
+  - STOP если потребуется активация LOCAL_LLM/CLOUD_LLM или запуск visual prototype comparison.
+- scope_boundary: Валидация фундаментальных capability-карт Mechanicus Arsenal, создание reusable validator machinery, receipts и отчетов только в коридоре IMPERIUM_NEW_GENERATION/MECHANICUS.
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_validator_v0_1.py
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_validation_receipt_builder_v0_1.py
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_scope_exporter_v0_1.py
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_fake_canon_detector_v0_2.py
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/PLAYBOOKS/MECHANICUS_TOOL_VALIDATION_PLAYBOOK_V0_1.md
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/LESSONS/MECHANICUS_MEMORY_LESSON_001.md
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/**
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/** (только карточки, затронутые evidence-backed статусными переходами)
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json
+  - IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1/**
+- forbidden_paths:
+  - IMPERIUM_TEST_VERSION/**
+  - IMPERIUM_NEW_GENERATION/SANCTUM/**
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/**
+  - ORGANS/** (кроме read-only чтения)
+  - Любые пути активации LOCAL_LLM/CLOUD_LLM и secret/API-key конфигураций
+- expected_receipts:
+  - FINAL_REPORT.md
+  - validation_batch_manifest.json
+  - validation_results.json
+  - capability_status_change_report.json
+  - validation_receipts_index.json
+  - mechanicus_reusable_capabilities_report.json
+  - capability_scope_export_report.json
+  - fake_canon_detector_report.json
+  - inquisition_cleanliness_report.json
+  - administratum_evidence_map.json
+  - ghost_evolve_training_proof.json
+  - owner_questions_report.json
+  - closure_receipt.json
+- repo_recon_required: false
+- script_absorption_required: true
+- clarification_needed: none
+- verdict: PASS
+```

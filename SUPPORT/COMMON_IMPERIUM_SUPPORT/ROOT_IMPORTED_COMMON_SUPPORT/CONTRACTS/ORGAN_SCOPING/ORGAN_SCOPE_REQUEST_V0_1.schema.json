@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "IMPERIUM_NEW_GENERATION/CONTRACTS/ORGAN_SCOPING/ORGAN_SCOPE_REQUEST_V0_1.schema.json",
+  "title": "ORGAN_SCOPE_REQUEST_V0_1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "request_id",
+    "task_id",
+    "source",
+    "required_organs",
+    "scope_prompt",
+    "input_artifacts",
+    "truth_policy"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1"
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contour",
+        "formation_record_path",
+        "task_kernel_path"
+      ],
+      "properties": {
+        "contour": {
+          "type": "string",
+          "enum": [
+            "PC",
+            "VM2",
+            "VM3",
+            "UNKNOWN"
+          ]
+        },
+        "formation_record_path": {
+          "type": "string"
+        },
+        "task_kernel_path": {
+          "type": "string"
+        },
+        "collector_mode": {
+          "type": "string",
+          "enum": [
+            "FOUNDATION_V0_1"
+          ]
+        }
+      }
+    },
+    "required_organs": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "ASTRONOMICON",
+          "OFFICIO_AGENTIS",
+          "DOCTRINARIUM",
+          "ADMINISTRATUM",
+          "MECHANICUS",
+          "INQUISITION",
+          "STRATEGIUM",
+          "SCHOLA_IMPERIALIS"
+        ]
+      }
+    },
+    "scope_prompt": {
+      "type": "string",
+      "minLength": 5
+    },
+    "input_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "no_fake_live_agent_claims",
+        "stub_label_required",
+        "allowed_source_types"
+      ],
+      "properties": {
+        "no_fake_live_agent_claims": {
+          "type": "boolean"
+        },
+        "stub_label_required": {
+          "type": "boolean"
+        },
+        "allowed_source_types": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "string",
+            "enum": [
+              "LIVE_AGENT_RESPONSE",
+              "STATIC_FILE",
+              "SAMPLE_PACKET",
+              "FOUNDATION_STUB",
+              "MISSING_IMPLEMENTATION_WARN"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

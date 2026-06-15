@@ -1,0 +1,25 @@
+{
+  "schema_version": "IMPERIUM_SCOPE_LOCK_V0_5",
+  "task_id": "TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5",
+  "mode": "NEW_GENERATION_ONLY",
+  "allowed_write_roots": [
+    "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\"
+  ],
+  "required_report_root": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5\\",
+  "forbidden_write_roots": [
+    "E:\\IMPERIUM\\ORGANS\\",
+    "E:\\IMPERIUM\\SANCTUM\\",
+    "E:\\IMPERIUM\\IMPERIUM_TEST_VERSION\\",
+    "/home/vboxuser2/",
+    "laptop operational core paths"
+  ],
+  "forbidden_report_roots": [
+    "E:\\IMPERIUM\\ORGANS\\MECHANICUS\\REPORTS\\"
+  ],
+  "pre_commit_required_checks": [
+    "git diff --name-only must show only IMPERIUM_NEW_GENERATION/** unless explicit Owner-approved exception",
+    "git status --short must not include ORGANS/** task artifacts",
+    "FINAL_RECEIPT.report_root must start with E:\\\\IMPERIUM\\\\IMPERIUM_NEW_GENERATION\\\\REPORTS\\\\"
+  ],
+  "if_violation": "BLOCK_OR_REPAIR_BEFORE_COMMIT"
+}

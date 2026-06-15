@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "candidate_id",
+    "name",
+    "type",
+    "category",
+    "owner_organ",
+    "purpose",
+    "first_safe_use_case",
+    "risk",
+    "admission_mode",
+    "install_status",
+    "receipt_requirements",
+    "canon_after_successful_cycles"
+  ],
+  "properties": {
+    "candidate_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "skill",
+        "api",
+        "tool",
+        "pattern",
+        "sandbox",
+        "database",
+        "search",
+        "crawler",
+        "graph"
+      ]
+    },
+    "category": {
+      "enum": [
+        "skill",
+        "api",
+        "tool",
+        "pattern",
+        "sandbox",
+        "database",
+        "search",
+        "crawler",
+        "graph"
+      ]
+    },
+    "owner_organ": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "first_safe_use_case": {
+      "type": "string"
+    },
+    "risk": {
+      "type": "string"
+    },
+    "admission_mode": {
+      "type": "string"
+    },
+    "install_status": {
+      "type": "string"
+    },
+    "receipt_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "canon_after_successful_cycles": {
+      "type": "integer",
+      "minimum": 10
+    }
+  }
+}
+

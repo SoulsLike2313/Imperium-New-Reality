@@ -1,0 +1,80 @@
+{
+  "components": [
+    {
+      "id": "top_truth_strip",
+      "name": "Top Truth Strip",
+      "states": [
+        "default",
+        "warn",
+        "error",
+        "unknown"
+      ],
+      "notes": "Shows scope/head/status chips and mission strip."
+    },
+    {
+      "id": "work_zone",
+      "name": "Work Zone",
+      "states": [
+        "idle",
+        "active",
+        "warn",
+        "error",
+        "success"
+      ],
+      "notes": "Timeline of current operational items."
+    },
+    {
+      "id": "command_tile",
+      "name": "Command Tile",
+      "states": [
+        "idle",
+        "hover",
+        "focus",
+        "disabled",
+        "executed"
+      ],
+      "notes": "Operator command palette actions."
+    },
+    {
+      "id": "tool_registry_row",
+      "name": "Tool Registry Row",
+      "states": [
+        "normal",
+        "partial",
+        "missing",
+        "error"
+      ],
+      "notes": "Summarized tool capability rows."
+    },
+    {
+      "id": "event_item",
+      "name": "Event Item",
+      "states": [
+        "normal",
+        "warn",
+        "error"
+      ],
+      "notes": "Latest events and changes in the activity feed."
+    },
+    {
+      "id": "summary_footer",
+      "name": "Summary Footer",
+      "states": [
+        "default",
+        "warn",
+        "error"
+      ],
+      "notes": "Latest report/receipt/event indicators."
+    },
+    {
+      "id": "raw_mode",
+      "name": "Raw Technical Mode",
+      "states": [
+        "hidden",
+        "visible"
+      ],
+      "notes": "Secondary technical drawer; never primary."
+    }
+  ]
+}
+

@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Astronomicon Task Essence V0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task_id",
+    "task_summary",
+    "primary_organ",
+    "support_organs",
+    "out_of_scope",
+    "success_criteria",
+    "risks_and_gates",
+    "stop_conditions"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "astronomicon.task_essence.v0_1"
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^TASK-"
+    },
+    "task_summary": {
+      "type": "string",
+      "minLength": 8
+    },
+    "primary_organ": {
+      "type": "string",
+      "enum": [
+        "ASTRONOMICON",
+        "ADMINISTRATUM",
+        "MECHANICUS",
+        "INQUISITION",
+        "OFFICIO_AGENTIS",
+        "DOCTRINARIUM"
+      ]
+    },
+    "support_organs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "out_of_scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "success_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "risks_and_gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["gate_id", "risk"],
+        "properties": {
+          "gate_id": {
+            "type": "string"
+          },
+          "risk": {
+            "type": "string"
+          },
+          "mitigation": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "stop_conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "owner_pain_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}

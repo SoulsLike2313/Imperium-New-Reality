@@ -1,0 +1,77 @@
+[
+  {
+    "STEP_ID": "MTA-S1",
+    "CLAIM": "Admission authority and gate law intake completed before implementation.",
+    "BASIS": [
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1/GATE_ACK_TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1.md",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1/OFFICIO_DOCTRINARIUM_AUTHORITY_ACK.json"
+    ],
+    "RISK": "If authority intake is skipped, scope or no-install violations can occur.",
+    "PROOF_PLAN": "Require both ACK artifacts before accepting implementation as admitted.",
+    "ACTION": "ACK artifacts created before builder/validator outputs.",
+    "SELF_VERDICT": "PROVED",
+    "OWNER_RELEVANCE": "Confirms lawful admission before file-generation work."
+  },
+  {
+    "STEP_ID": "MTA-S2",
+    "CLAIM": "Tool admission schemas and sample contract are present for candidate/risk/decision/receipt/index.",
+    "BASIS": [
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/TOOL_ADMISSION/TOOL_CANDIDATE_RECORD.schema.json",
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/TOOL_ADMISSION/TOOL_RISK_RECORD.schema.json",
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/TOOL_ADMISSION/TOOL_ADMISSION_DECISION.schema.json",
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/TOOL_ADMISSION/TOOL_CAPABILITY_RECEIPT.schema.json",
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/TOOL_ADMISSION/TOOL_REGISTRY_INDEX.schema.json",
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/TOOL_ADMISSION/samples/TOOL_ADMISSION_FOUNDATION.sample.json"
+    ],
+    "RISK": "Schema gaps could allow fake-green claims or inconsistent record fields.",
+    "PROOF_PLAN": "Validator checks parseability and required fields for all schema-linked outputs.",
+    "ACTION": "Contracts created and included in scope-tracked diff set.",
+    "SELF_VERDICT": "PROVED",
+    "OWNER_RELEVANCE": "Provides deterministic contract law for future admission tasks."
+  },
+  {
+    "STEP_ID": "MTA-S3",
+    "CLAIM": "Builder generates candidate/risk/decision/capability/index records for required tools.",
+    "BASIS": [
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_CANDIDATE_CATALOG_V0_1.generated.json",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_RISK_CATALOG_V0_1.generated.json",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_ADMISSION_DECISIONS_V0_1.generated.json",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_CAPABILITY_REGISTRY_V0_1.generated.json",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_ADMISSION_INDEX_V0_1.json"
+    ],
+    "RISK": "Missing tool entries would undercut phase-10 admission readiness.",
+    "PROOF_PLAN": "Validate required tool names and state vocabulary in generated catalogs.",
+    "ACTION": "Builder emits deterministic catalogs for the seven required candidate tools.",
+    "SELF_VERDICT": "PROVED",
+    "OWNER_RELEVANCE": "Establishes operational admission registry baseline."
+  },
+  {
+    "STEP_ID": "MTA-S4",
+    "CLAIM": "No-install and no-fake-green boundaries are explicitly embedded in records and decisions.",
+    "BASIS": [
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_ADMISSION_DECISIONS_V0_1.generated.json",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_CAPABILITY_REGISTRY_V0_1.generated.json",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOL_ADMISSION/TOOL_ADMISSION_INDEX_V0_1.json"
+    ],
+    "RISK": "Overstated readiness could create fake PASS and unsafe install behavior.",
+    "PROOF_PLAN": "Validator blocks install-positive claims and production-ready language.",
+    "ACTION": "All decisions keep install_allowed_now=false and no_install_performed=true.",
+    "SELF_VERDICT": "PROVED",
+    "OWNER_RELEVANCE": "Protects repo from premature or unsafe toolchain claims."
+  },
+  {
+    "STEP_ID": "MTA-S5",
+    "CLAIM": "Report bundle contains required receipts for audit and closure preparation.",
+    "BASIS": [
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1/STEP_PROOF_RECORDS.json",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1/CHANGED_FILES_STATUS.md",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1/FINAL_RECEIPT.json",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1/GIT_CLOSURE_REPORT.json"
+    ],
+    "RISK": "Missing receipts would violate evidence-gate law.",
+    "PROOF_PLAN": "Validator requires report-bundle file presence and parseability.",
+    "ACTION": "Builder writes report scaffolds before validator execution.",
+    "SELF_VERDICT": "PROVED",
+    "OWNER_RELEVANCE": "Ensures closure readiness before commit/push phase."
+  }
+]

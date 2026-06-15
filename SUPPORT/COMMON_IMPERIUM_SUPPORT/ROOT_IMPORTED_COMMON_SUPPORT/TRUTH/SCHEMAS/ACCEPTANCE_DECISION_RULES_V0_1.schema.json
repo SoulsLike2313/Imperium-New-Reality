@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ACCEPTANCE_DECISION_RULES_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "generated_at_utc",
+    "input_contract",
+    "rules",
+    "priority_order"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "ACCEPTANCE_DECISION_RULES_V0_1"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "input_contract": {
+      "type": "object",
+      "required": [
+        "normalized_status_values",
+        "freshness_values"
+      ],
+      "properties": {
+        "normalized_status_values": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "freshness_values": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "rule_id",
+          "priority",
+          "when",
+          "then_outcome",
+          "rationale"
+        ],
+        "properties": {
+          "rule_id": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "integer"
+          },
+          "when": {
+            "type": "object"
+          },
+          "then_outcome": {
+            "enum": [
+              "PASS_STRICT",
+              "PASS_WITH_WARN",
+              "PARTIAL_ACCEPTED",
+              "PARTIAL_BLOCKED",
+              "FOUNDATION_ONLY",
+              "UNKNOWN",
+              "MISSING",
+              "STALE",
+              "NOT_READY",
+              "BLOCKED",
+              "FAKE_GREEN_RISK"
+            ]
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "no_fake_green": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "priority_order": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "no_fake_green_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

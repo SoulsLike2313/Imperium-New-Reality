@@ -1,0 +1,46 @@
+{
+  "schema": "DATA_ATLAS_HYGIENE_CLASSIFICATION_V0_1",
+  "version": "0.1.0",
+  "classifications": [
+    {
+      "id": "SYSTEM_ZONE",
+      "label_ru": "системная зона",
+      "source_action": "register_not_delete"
+    },
+    {
+      "id": "PROTECTED_LOCAL_REGISTRY",
+      "label_ru": "защищённый runtime registry",
+      "source_action": "do_not_ttl_root"
+    },
+    {
+      "id": "ENCODING_MARKER_LITERAL_ALLOWED",
+      "label_ru": "детекторные mojibake-маркеры внутри кода Инквизиции",
+      "source_action": "allow_detector_literals"
+    },
+    {
+      "id": "TRUE_ENCODING_MOJIBAKE",
+      "label_ru": "реальный encoding/mojibake дефект",
+      "source_action": "repair"
+    },
+    {
+      "id": "SOURCE_CACHE",
+      "label_ru": "generated cache в source",
+      "source_action": "safe_clean"
+    },
+    {
+      "id": "OWNER_REVIEW_ARCHIVE",
+      "label_ru": "архив в source требует owner lifecycle review",
+      "source_action": "classify_or_move"
+    },
+    {
+      "id": "OWNER_REVIEW_EVIDENCE",
+      "label_ru": "скрин/evidence в source требует owner lifecycle review",
+      "source_action": "classify_or_move"
+    },
+    {
+      "id": "MECHANICUS_PASSPORT_BACKLOG",
+      "label_ru": "tool-like файл без паспорта",
+      "source_action": "passport_or_classify"
+    }
+  ]
+}

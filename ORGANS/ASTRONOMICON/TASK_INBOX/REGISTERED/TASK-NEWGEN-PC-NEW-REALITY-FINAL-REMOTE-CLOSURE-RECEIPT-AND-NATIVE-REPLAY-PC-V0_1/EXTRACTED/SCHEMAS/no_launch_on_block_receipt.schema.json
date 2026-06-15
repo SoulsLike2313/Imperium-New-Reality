@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "No Launch On Block Receipt",
+  "type": "object",
+  "required": [
+    "invalid_fixture_path",
+    "admission_verdict",
+    "launch_card_emitted",
+    "start_task_emitted",
+    "verdict"
+  ],
+  "properties": {
+    "invalid_fixture_path": {
+      "type": "string"
+    },
+    "admission_verdict": {
+      "const": "ADMISSION_BLOCK"
+    },
+    "launch_card_emitted": {
+      "const": false
+    },
+    "start_task_emitted": {
+      "const": false
+    },
+    "verdict": {
+      "type": "string"
+    }
+  }
+}

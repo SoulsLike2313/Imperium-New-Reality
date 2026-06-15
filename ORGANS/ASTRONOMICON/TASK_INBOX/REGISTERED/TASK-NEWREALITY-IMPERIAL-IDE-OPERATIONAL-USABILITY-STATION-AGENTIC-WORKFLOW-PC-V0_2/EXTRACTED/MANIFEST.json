@@ -1,0 +1,235 @@
+{
+  "schema_version": "astronomicon.taskpack.v0_1",
+  "taskpack_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-USABILITY-STATION-AGENTIC-WORKFLOW-PC-V0_2",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-USABILITY-STATION-AGENTIC-WORKFLOW-PC-V0_2",
+  "title": "Imperial IDE operational usability station, agent roster, live task registration, and workflow control on PC",
+  "created_from_contour": "PC",
+  "target_contour": "PC",
+  "registration_mode": "ASTRONOMICON_STAGE2_LOCAL_PC_TASKPACK",
+  "execution_mode": "CONTROLLED_WRITE_WITH_VALIDATED_PUSH",
+  "mission_summary": "Transform the current Imperial IDE foundation into an operational UI/UX-friendly station. The Owner must be able to write tasks inside IDE, build taskpacks, register tasks through a gated local Astronomicon path, view launch cards, view all agents and organ servitors, track lifecycle state, inspect reports and receipts, and keep dangerous execution gated.",
+  "active_truth_scope": "IMPERIUM_NEW_REALITY_PC_CURRENT_ROOT_ONLY",
+  "remote_contours": {
+    "VM2": "OUT_OF_SCOPE",
+    "VM3": "OUT_OF_SCOPE"
+  },
+  "strategic_intent": {
+    "kernel": "Imperium New Reality remains the script-first AI MetaOS kernel.",
+    "station": "Imperial IDE becomes the Owner's operational usability station, not just a dashboard.",
+    "ui_ux": "Workbench GUI and the existing Workbench TUI become the primary user surfaces.",
+    "tasks": "The Owner can create, build, register, inspect, and hand off tasks from inside the station.",
+    "agents": "All organ agents are visible as servitor roles; Servitor Prime is the LLM servitor, organ servitors represent organ-owned operational workers.",
+    "truth": "The station always shows honest state: live, dry-run, blocked, candidate, warning, failed, or unknown."
+  },
+  "source_context_to_consider": [
+    "AGENTS.md",
+    "ORGANS/_CORE_GOVERNANCE/",
+    "ORGANS/IMPERIAL_IDE/SHELL/",
+    "ORGANS/IMPERIAL_IDE/WORKBENCH/",
+    "ORGANS/IMPERIAL_IDE/OPS/",
+    "ORGANS/IMPERIAL_IDE/WARP/",
+    "ORGANS/IMPERIAL_IDE/METAOS/",
+    "ORGANS/MECHANICUS/",
+    "ORGANS/ASTRONOMICON/",
+    "ORGANS/ADMINISTRATUM/",
+    "REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2/",
+    "REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPS-INTEGRATION-TASK-CONSOLE-ACTIVATION-PC-V0_1/"
+  ],
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "required_organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "baseline_servitor_roles": [
+    "SERVITOR_PRIME",
+    "SERVITOR_ASTRONOMICON",
+    "SERVITOR_MECHANICUS",
+    "SERVITOR_ADMINISTRATUM",
+    "SERVITOR_INQUISITION",
+    "SERVITOR_STRATEGIUM",
+    "SERVITOR_DOCTRINARIUM",
+    "SERVITOR_OFFICIO_AGENTIS",
+    "SERVITOR_SCHOLA_IMPERIALIS",
+    "SERVITOR_WARP",
+    "SERVITOR_METAOS",
+    "SERVITOR_IMPERIAL_IDE"
+  ],
+  "organ_route": {
+    "DOCTRINARIUM": "station doctrine, agent taxonomy, no-overclaim boundaries",
+    "OFFICIO_AGENTIS": "owner-facing Russian guide, UI wording, launch cards",
+    "ASTRONOMICON": "live local task registration gate, launch cards, task registry, current task state",
+    "ADMINISTRATUM": "receipts, task lifecycle ledger, report browser, bundle gates, continuity, push closure",
+    "MECHANICUS": "tool validation, taskpack validation, command policy, dry-run and future real-exec gates",
+    "INQUISITION": "safety center, fake-green block, unsafe execution block, warning downgrade",
+    "STRATEGIUM": "workflow prioritization, station menu design, next execution ladder",
+    "SCHOLA_IMPERIALIS": "runbooks, templates, operator training, reusable task workflows"
+  },
+  "route_manifest_template": "TASK_ROUTE_MANIFEST_TEMPLATE.json",
+  "task_start_ack_template": "TASK_START_ACK_TEMPLATE.json",
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH_UTF8_NO_BOM_NO_CYRILLIC",
+    "canonical_repo_artifacts": "ENGLISH_UTF8_NO_BOM",
+    "owner_facing_russian_runtime_output": {
+      "allowed": true,
+      "language": "RUSSIAN",
+      "encoding": "UTF8_NO_BOM",
+      "authority": "OFFICIO_AGENTIS",
+      "required_route": "OFFICIO_AGENTIS_OWNER_FACING_FINAL_RESPONSE",
+      "allowed_files": [
+        "REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-USABILITY-STATION-AGENTIC-WORKFLOW-PC-V0_2/FINAL_OWNER_SUMMARY_RU.md",
+        "ORGANS/IMPERIAL_IDE/DOCS/OPERATIONAL_STATION_USER_GUIDE_RU.md",
+        "ORGANS/IMPERIAL_IDE/STATION/RUN_FIRST_RU.md"
+      ],
+      "not_allowed_in_taskpack_root_files": true
+    },
+    "cyrillic_in_taskpack": {
+      "allowed": false,
+      "scope": "MANIFEST.json, TASK_SPEC.md, ACCEPTANCE_GATES.md, OUTPUT_REQUIREMENTS.md, TASK_ROUTE_MANIFEST_TEMPLATE.json, TASK_START_ACK_TEMPLATE.json, BLUEPRINTS/*.md",
+      "owner_facing_russian_runtime_exception": {
+        "allowed": true,
+        "authority": "OFFICIO_AGENTIS",
+        "scope": "runtime owner-facing files only"
+      }
+    },
+    "localization_exception": {
+      "allowed": true,
+      "authority": "OFFICIO_AGENTIS",
+      "scope": "owner-facing runtime files only after Officio role entry",
+      "allowed_language": "RUSSIAN",
+      "allowed_encoding": "UTF8_NO_BOM",
+      "forbidden_scope": "taskpack internal root files and BLUEPRINTS"
+    }
+  },
+  "git_push_policy": {
+    "push_allowed": true,
+    "push_required_for_success": true,
+    "allowed_when": [
+      "git diff is inside allowed_write_scope",
+      "all required outputs exist",
+      "JSON files parse successfully",
+      "created or modified Python files compile",
+      "Workbench TUI operational station smoke passes or exact blocker is recorded",
+      "Workbench GUI structural smoke passes or exact blocker is recorded",
+      "OPS taskpack builder smoke passes",
+      "safe local Astronomicon registration gate smoke uses a station-generated smoke task only",
+      "no secret files or local operator configs are staged",
+      "runtime directories are ignored",
+      "real servitor execution remains gated",
+      "live LLM backend remains disabled",
+      "unsafe shell remains blocked",
+      "commit message includes task_id",
+      "post-push HEAD equals origin/master"
+    ],
+    "forbidden_push_cases": [
+      "changes outside allowed_write_scope",
+      "failed validation without explicit BLOCK verdict",
+      "secrets or local configs staged",
+      "destructive cleanup or delete without owner batch approval",
+      "unrestricted real execution enabled",
+      "unsafe shell execution enabled",
+      "live LLM backend enabled with secrets",
+      "fake-green closure",
+      "VM2 or VM3 changes"
+    ],
+    "required_after_push_receipts": [
+      "commit_sha",
+      "origin_master_sha",
+      "head_equals_origin_master_after_push",
+      "git_status_after_push",
+      "pushed_files_summary"
+    ]
+  },
+  "owner_decisions_preapproved_for_this_task": {
+    "OD_PC_ONLY": "approved",
+    "OD_OPERATIONAL_STATION_UI_UX": "approved",
+    "OD_UNIFY_WORKBENCH_TUI_WITH_OPS": "approved",
+    "OD_AGENT_ROSTER_AND_ORGAN_SERVITORS": "approved",
+    "OD_TASK_CONSOLE_USABLE_INSIDE_IDE": "approved",
+    "OD_TASKPACK_BUILDER_USABLE_INSIDE_IDE": "approved",
+    "OD_LIVE_ASTRONOMICON_REGISTRATION_GATE_FOR_SAFE_TASKPACKS": "approved",
+    "OD_LAUNCH_CARD_AND_SERVITOR_HANDOFF_UI": "approved",
+    "OD_REPORT_RECEIPT_AND_GIT_CLOSURE_UI": "approved",
+    "OD_VALIDATED_PUSH": "approved"
+  },
+  "owner_decisions_not_approved_for_this_task": {
+    "OD_DELETE": "not approved",
+    "OD_MASS_MOVE": "not approved",
+    "OD_REMOTE_CONTOURS": "not approved",
+    "OD_REAL_SERVITOR_EXECUTION": "not approved except safe handoff cards",
+    "OD_LIVE_LLM_BACKEND_WITH_SECRETS": "not approved",
+    "OD_UNRESTRICTED_SHELL_EXECUTION": "not approved",
+    "OD_BACKGROUND_AUTOSTART_DAEMON": "not approved",
+    "OD_PRODUCTION_AUTONOMOUS_AGENT_LOOP": "not approved"
+  },
+  "allowed_write_scope": [
+    ".gitignore",
+    "AGENTS.md",
+    "ORGANS/IMPERIAL_IDE/**",
+    "ORGANS/MECHANICUS/**",
+    "ORGANS/ASTRONOMICON/**",
+    "ORGANS/ADMINISTRATUM/**",
+    "REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-USABILITY-STATION-AGENTIC-WORKFLOW-PC-V0_2/**"
+  ],
+  "runtime_paths_to_ignore": [
+    "ORGANS/IMPERIAL_IDE/STATION/RUNTIME/",
+    "ORGANS/IMPERIAL_IDE/STATION/runtime/",
+    "ORGANS/IMPERIAL_IDE/STATION/generated_taskpacks/",
+    "ORGANS/IMPERIAL_IDE/STATION/receipts/runtime/",
+    "ORGANS/IMPERIAL_IDE/OPS/STAGING/",
+    "ORGANS/IMPERIAL_IDE/OPS/RUNTIME/",
+    "ORGANS/IMPERIAL_IDE/WORKBENCH/SERVITORS/runtime/",
+    "ORGANS/IMPERIAL_IDE/WARP/runtime/",
+    "ORGANS/IMPERIAL_IDE/METAOS/runtime/"
+  ],
+  "forbidden_actions": [
+    "delete_files_without_owner_batch_approval",
+    "mass_move_core_files_without_owner_batch_approval",
+    "reset_hard",
+    "git_clean_fd",
+    "replace_workbench_tui_with_weaker_disconnected_tui",
+    "hide_dry_run_as_live_execution",
+    "enable_real_servitor_execution",
+    "enable_unrestricted_shell_execution",
+    "enable_live_llm_backend_with_secrets",
+    "start_background_daemon",
+    "remote_route_to_vm2",
+    "remote_route_to_vm3",
+    "push_outside_allowed_write_scope",
+    "push_failed_validation_outputs",
+    "push_dirty_runtime_or_secret_files",
+    "push_destructive_changes_without_owner_approval",
+    "claim_full_ide_complete",
+    "claim_autonomous_agent_loop_ready",
+    "fake_green_clean_pass_claim",
+    "rewrite_report_history"
+  ],
+  "primary_outputs": [
+    "Unified operational station layer under ORGANS/IMPERIAL_IDE/STATION",
+    "Workbench TUI upgraded into primary operational TUI with OPS and agent views",
+    "Workbench GUI upgraded with operational task and agent panels",
+    "Agent and organ-servitor registry",
+    "Task Console usable from GUI/TUI/CLI",
+    "Astronomicon-compatible taskpack builder usable from GUI/TUI/CLI",
+    "Safe live local Astronomicon registration gate for generated taskpacks",
+    "Launch Card and Servitor Prime handoff UI",
+    "Task lifecycle tracker and honest state model",
+    "Reports, receipts, safety, and git closure UI",
+    "Operator runbook and Russian user guide",
+    "Validation, smoke, commit, and push receipts"
+  ]
+}

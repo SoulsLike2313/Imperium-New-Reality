@@ -1,0 +1,48 @@
+{
+  "task_id": "FIXTURE-V0_2_MISSING_ADJACENT_MANIFEST",
+  "schema_validation_verdict": "BUNDLE_SCHEMA_BLOCK",
+  "schemas_checked": [
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/administratum_bundle_gate_receipt.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/bundle_file_inventory.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/capability_split_receipt.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/claim_ledger.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/commit_chain_identifiers.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/final_owner_summary_boundary.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/git_closure_and_remote_closure_proof.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/red_team_verdict.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/scope_lock_no_ancient_mutation_receipt.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/task_identity_and_report_metadata.schema.json",
+    "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/worktree_clean_or_explicit_cap_receipt.schema.json"
+  ],
+  "files_checked": [
+    "CAPABILITY_SPLIT_RECEIPT.json",
+    "CLAIM_LEDGER.json",
+    "OFFICIO_LOCALIZATION_REFERENCE.json",
+    "RED_TEAM_VERDICT.json",
+    "TASK_FOCUS_PACKET.json",
+    "bundle_file_inventory.json",
+    "commit_chain_receipt.json",
+    "git_closure_receipt.json",
+    "no_ancient_mutation_receipt.json",
+    "remote_closure_receipt.json",
+    "sha256sums.txt"
+  ],
+  "errors": [
+    {
+      "class_id": "adjacent_receipts_manifest",
+      "path": "adjacent_receipts_manifest.json",
+      "field": "$",
+      "message": "missing adjacent receipts manifest",
+      "severity": "BLOCK"
+    },
+    {
+      "class_id": "adjacent_receipts_manifest",
+      "path": "adjacent_receipts_manifest.json",
+      "field": "$",
+      "message": "bundle inventory exists but adjacent receipts manifest is missing",
+      "severity": "BLOCK"
+    }
+  ],
+  "warnings": [],
+  "created_utc": "2026-06-04T16:14:55Z"
+}

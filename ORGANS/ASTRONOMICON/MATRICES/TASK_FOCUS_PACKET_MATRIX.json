@@ -1,0 +1,52 @@
+{
+  "matrix_id": "TASK_FOCUS_PACKET_MATRIX",
+  "version": "0.1-candidate",
+  "owner_organ": "Astronomicon",
+  "support_organs": [
+    "Officio Agentis",
+    "Mechanicus",
+    "Inquisition",
+    "Administratum"
+  ],
+  "purpose": "Defines the compact packet an agent receives before work: task intent, route, owner organs, outputs, gates, settings, evidence and red-team checks.",
+  "used_by": [
+    "GPT_LOGOS",
+    "SERVITOR",
+    "INQUISITOR"
+  ],
+  "required_questions": [
+    "What is the task intent?",
+    "What are allowed and forbidden scopes?",
+    "Which organ packets are relevant?",
+    "Which output files are required?",
+    "Which gates determine PASS/WARN/BLOCK?"
+  ],
+  "pass_criteria": [
+    "Packet created before work",
+    "Organ owners declared",
+    "Outputs and gates declared",
+    "Evidence boundary declared"
+  ],
+  "warn_criteria": [
+    "Some organ packet missing but gap declared",
+    "Owner question open with cap"
+  ],
+  "block_criteria": [
+    "No focus packet",
+    "No task route",
+    "No stop conditions",
+    "No final output contract"
+  ],
+  "fake_green_flags": [
+    "BROAD_TASK_NO_ROUTE",
+    "NO_OUTPUT_CONTRACT",
+    "NO_STOP_CONDITIONS"
+  ],
+  "evidence_requirements": [
+    "TASK_FOCUS_PACKET.json",
+    "ROLE_ENTRY_ACK.json",
+    "OWNER_QUESTION_LEDGER.json"
+  ],
+  "current_status": "CANDIDATE_NOT_CANON",
+  "next_action": "Implement schema validation and runtime receipt generation in a later Servitor task."
+}

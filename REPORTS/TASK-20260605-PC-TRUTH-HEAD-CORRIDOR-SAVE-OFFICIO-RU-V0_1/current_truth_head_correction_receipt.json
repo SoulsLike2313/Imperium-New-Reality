@@ -1,0 +1,24 @@
+{
+  "schema_version": "administratum.current_truth_head_correction_receipt.v0_1",
+  "task_id": "TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1",
+  "created_at_utc": "2026-06-05T15:15:45.7648700Z",
+  "card_path": "ADMINISTRATUM/CURRENT_TRUTH/current_head_card_v0_1.json",
+  "measured_command": "git rev-parse HEAD",
+  "measured_branch_command": "git branch --show-current",
+  "before": {
+    "current_head": "892ae8a6f5452c55211da4748bed3b1d9d3f9326",
+    "current_branch": "master",
+    "task_id": "TASK-NEWGEN-ADMINISTRATUM-REGISTRATION-CARDS-CURRENT-TRUTH-PC-V0_1",
+    "head_role": "TASK_START_ACCEPTED_POINT"
+  },
+  "after": {
+    "current_head": "d61edfd08dbc69919645cec827aaa2c899089ae9",
+    "current_branch": "master",
+    "task_id": "TASK-20260605-PC-TRUTH-HEAD-CORRIDOR-SAVE-OFFICIO-RU-V0_1",
+    "head_role": "LOCAL_HEAD_AT_TASK_ENTRY_CORRECTED"
+  },
+  "drift_detected": true,
+  "correction_basis": "Measured local HEAD before task content commit.",
+  "self_reference_boundary": "The final task commit changes git HEAD after this correction. This card records the stale HEAD drift correction measured at task execution entry, while final commit and remote equality are recorded in git closure receipts.",
+  "verdict": "PASS"
+}

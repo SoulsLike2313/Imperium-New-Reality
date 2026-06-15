@@ -1,0 +1,40 @@
+{
+  "organ": "MECHANICUS",
+  "status": "ACTIVE_FOR_STAGE1",
+  "task_entry_role": "Provides script-first checker, capability split trace, and replay taxonomy discipline for Stage1 entry proof.",
+  "required_inputs": [
+    "Checker script",
+    "Replay taxonomy contract"
+  ],
+  "required_outputs": [
+    "Synthetic checker receipt",
+    "Capability split receipt"
+  ],
+  "matrix_responsibilities": [
+    "CAPABILITY_SPLIT_HARNESSABILITY_MATRIX",
+    "SCRIPT_FIRST_ADOPTION_MATRIX",
+    "LLM_HARNESS_INTERFACE_MATRIX",
+    "TOOL_SCORECARD_BOM_LITE_MATRIX",
+    "INDEPENDENT_REPLAY_STATE_TAXONOMY_MATRIX"
+  ],
+  "tools_or_receipts_used": [
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TOOLS/check_task_entry_route_v0_1.py",
+    "python IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TOOLS/check_task_entry_route_v0_1.py --repo-root . --report-root IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1",
+    "scripts/foundational_organs_v1/check_foundational_organs_v1_all.py"
+  ],
+  "ide_display_fields": [
+    "checker_status",
+    "script_first_coverage",
+    "replay_state",
+    "tool_inventory"
+  ],
+  "failure_caps": [
+    "CAP_SYNTHETIC_TASK_ENTRY_PROOF_MISSING",
+    "CAP_NO_EFFICIENCY_DELTA"
+  ],
+  "known_gaps": [
+    "Astronomicon checker is Stage1 candidate and not canon-admitted yet.",
+    "Replay is synthetic-only for this task and not external runtime replay."
+  ],
+  "used_by_astronomicon_task_entry": true
+}

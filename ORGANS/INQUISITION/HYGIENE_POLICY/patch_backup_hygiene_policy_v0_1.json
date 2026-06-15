@@ -1,0 +1,38 @@
+{
+  "schema": "imperium.inquisition.patch_backup_hygiene_policy.v0_1",
+  "policy_id": "inquisition.patch_backup_hygiene_policy.v0_1",
+  "owner_organ": "INQUISITION",
+  "status": "ACTIVE",
+  "intent_ru": "Не допускать попадания H patch backup, handoff и smoke/runtime зон в source history.",
+  "forbidden_tracked_prefixes": [
+    ".imperium_patch_backups/",
+    "_LOCAL_HANDOFF/",
+    "LOCAL_HANDOFF/",
+    "IMPERIUM_EVIDENCE_VAULT_SMOKE*/",
+    "EVIDENCE_VAULT_SMOKE*/"
+  ],
+  "required_gitignore_patterns": [
+    ".imperium_patch_backups/",
+    "_LOCAL_HANDOFF/",
+    "LOCAL_HANDOFF/",
+    "IMPERIUM_EVIDENCE_VAULT_SMOKE*/",
+    "EVIDENCE_VAULT_SMOKE*/",
+    "*_SMOKE*/"
+  ],
+  "allowed_actions": [
+    "git rm -r --cached --ignore-unmatch .imperium_patch_backups",
+    "commit .gitignore local-only guard",
+    "run read-only inquisition gate before H commit acceptance"
+  ],
+  "forbidden_actions": [
+    "commit .imperium_patch_backups as source",
+    "commit _LOCAL_HANDOFF as source",
+    "commit smoke Evidence Vault directories as source",
+    "hide backup zones by manual deletion without git-index verification"
+  ],
+  "gate_states": [
+    "PASS_PATCH_BACKUP_HYGIENE",
+    "FAIL_PATCH_BACKUP_HYGIENE",
+    "FAIL_NOT_A_GIT_REPO"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "fixture_id": "FX05_CAP_CLOSED_WITHOUT_CLOSURE_EVIDENCE",
+  "description": "Cap is marked closed but has no closure proof.",
+  "external_finalization_receipt": {
+    "task_id": "TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1",
+    "receipt_subject_head": "h_subject",
+    "last_verified_head_before_this_commit": "h_before",
+    "receipt_content_head": "h_content",
+    "external_delivery_head": "h_delivery",
+    "remote_head_after_push": "h_remote",
+    "verification_timestamp_utc": "2026-05-30T18:00:00Z",
+    "verification_actor": "PC_SERVITOR",
+    "worktree_clean_after_push": true,
+    "origin_master_sync_after_push": true,
+    "verification_method": "git rev-parse + git status + git ls-remote",
+    "self_head_paradox_handled": true,
+    "caps_triggered": [],
+    "clean_pass_allowed": false
+  },
+  "cap_closure_states": [
+    {
+      "task_id": "TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1",
+      "cap_id": "CAP_EXTERNAL_FINALIZATION_RECEIPT_MISSING",
+      "state": "CLOSED_BY_REPLAY",
+      "opened_by": "fixture",
+      "evidence_for_state": [],
+      "closure_head": "",
+      "applies_to_heads": [
+        "h_remote"
+      ],
+      "clean_pass_impact": "ALLOWS_PASS_WITH_WARNINGS",
+      "notes": "fixture"
+    }
+  ],
+  "independent_replay_state": {
+    "task_id": "TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1",
+    "replay_state": "SEPARATE_REPLAY_RUNNER_FOR_TARGET",
+    "target_head": "h_remote",
+    "replay_head": "h_remote",
+    "replay_actor": "SEPARATE_RUNNER",
+    "replay_receipt_path": "receipts/replay.json",
+    "is_current_for_target": true,
+    "caps_triggered": [],
+    "clean_pass_allowed": false
+  },
+  "expected": {
+    "verdict": "BLOCK",
+    "must_include_caps": [
+      "CAP_CAP_CLOSED_WITHOUT_EVIDENCE"
+    ],
+    "must_not_include_caps": []
+  }
+}

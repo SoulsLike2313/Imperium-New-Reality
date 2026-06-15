@@ -1,0 +1,26 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1",
+  "timestamp_utc": "2026-06-01T04:52:52Z",
+  "LOCAL_SCRIPT_FIRST": [
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_bootstrap_preflight_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_bootstrap_repair_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_owner_launcher_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/run_astronomicon_bootstrap_preflight_fixtures_v0_1.py"
+  ],
+  "LOCAL_MANUAL_COMMAND": [
+    "python IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_bootstrap_preflight_v0_1.py --repo-root . --task-id TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1 --receipt-path <report_root>/astronomicon_bootstrap_preflight_receipt.json",
+    "python IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_bootstrap_repair_v0_1.py --repo-root . --task-id TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1 --receipt-path <report_root>/astronomicon_bootstrap_repair_receipt.json",
+    "python IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/run_astronomicon_bootstrap_preflight_fixtures_v0_1.py --repo-root . --task-id TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1"
+  ],
+  "CANDIDATE_SCRIPT_FIRST": [
+    "Integrate bootstrap preflight gate directly into all legacy Astronomicon wrappers (future hardening)."
+  ],
+  "AGENT_REASONING_ONLY": [
+    "Red-team narrative synthesis and PASS_WITH_WARNINGS downgrade framing for Owner summary."
+  ],
+  "EXTERNAL_RESEARCH": [],
+  "OWNER_MANUAL_CONFIRMATION": [],
+  "FUTURE_CAPABILITY_GAP": [
+    "Clean PASS remains blocked until independent external review and full finalization semantics closure."
+  ]
+}

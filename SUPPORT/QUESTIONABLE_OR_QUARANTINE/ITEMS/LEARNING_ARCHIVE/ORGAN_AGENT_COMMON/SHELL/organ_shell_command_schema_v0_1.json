@@ -1,0 +1,32 @@
+{
+  "schema_id": "newgen_organ_shell_command_schema_v0_1",
+  "type": "object",
+  "required": [
+    "name",
+    "description",
+    "safe_mode",
+    "action_type"
+  ],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]+$"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 3
+    },
+    "safe_mode": {
+      "type": "boolean",
+      "const": true
+    },
+    "action_type": {
+      "type": "string",
+      "enum": [
+        "read_only",
+        "shell_control"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,37 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1",
+    "agent_role": "Codex big-model Servitor",
+    "useful_outputs": [
+      "Reusable quality gate runner and five helper tools",
+      "Repeatable report bundle for Officio+Mechanicus combined gate"
+    ],
+    "waste_points": [
+      "Initial context loading is heavy due mandatory multi-organ read route."
+    ],
+    "missing_tools": [
+      "Dedicated schema registry for Officio role pack and task reports."
+    ],
+    "generated_tools_to_preserve": [
+      "mechanicus_scope_pack_consumer_v0_1.py",
+      "mechanicus_schema_validation_runner_v0_1.py",
+      "mechanicus_taskpack_validator_v0_1.py",
+      "newgen_repo_hygiene_check_v0_1.py",
+      "evidence_index_smoke_v0_1.py",
+      "mechanicus_quality_gate_runner_v0_1.py"
+    ],
+    "recommended_script_absorption": [
+      "Absorb all six tools into Mechanicus reusable gate lane."
+    ],
+    "recommended_narrow_agent_profiles": [
+      "MECHANICUS_QUALITY_GATE_EXECUTOR_PC_V0_1"
+    ],
+    "future_prompt_improvements": [
+      "Add explicit schema map artifact in every taskpack."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add mandatory `schema_map.json` for report artifacts."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

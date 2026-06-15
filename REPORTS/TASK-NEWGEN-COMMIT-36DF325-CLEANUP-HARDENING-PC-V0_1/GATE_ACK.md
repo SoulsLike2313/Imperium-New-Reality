@@ -1,0 +1,15 @@
+GATE_ACK:
+- task_id: TASK-NEWGEN-COMMIT-36DF325-CLEANUP-HARDENING-PC-V0_1
+- current_head: 09215e78899dd735cc67905b3f55991915edac8d
+- gatepack_path: C:\Users\PC\Downloads\TASK-NEWGEN-COMMIT-36DF325-CLEANUP-HARDENING-PC-V0_1_DOSSIER.zip
+- gatepack_sha256: A9ACF0998A79DEF17DB91A4FC7109DC508F424683C8AAEAE843EBBBE64978A0E
+- read_gates: GATE-U00-GIT-TRUTH, GATE-U01-ROLE-ACK, GATE-U02-SCOPE-BOUNDARY, GATE-U04-EVIDENCE-RECEIPT, GATE-U05-STOP-CONDITIONS, GATE-U08-REPO-PURITY, GATE-U09-NO-FAKE-GREEN, GATE-U12-REPORT-OUTPUT-BUDGET, GATE-U13-PYTHON-TYPE-SAFETY, GATE-U14-WHOLE-REPO-SCOPE-RECON, GATE-U15-OPERATIONALITY-IMPACT, GATE-U16-BILINGUAL-UI, GATE-U17-DELIVERABLE-PACKAGE, GATE-U18-AGENT-FACTORY-COMPLIANCE, GATE_DOCTRINARIUM_READ_FIRST, GATE_NO_GENERIC_PASS, GATE_NO_GREEN_WITHOUT_EVIDENCE, GATE_PAIN_PREFLIGHT_REQUIRED, GATE_REPO_HYGIENE_REQUIRED, GATE_INTERNAL_FUNCTION_MUST_HAVE_ORGAN_OWNER
+- accepted_stop_conditions: repo_root_mismatch; branch_or_head_truth_mismatch; unrelated_dirty_before_cleanup; source_seed_deletion_risk; unresolved_classification_ambiguity; report_or_receipt_write_failure; push_failure
+- scope_boundary: IMPERIUM_NEW_GENERATION cleanup surface for 36df325 artifacts + task report root only
+- touched_paths: IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-COMMIT-36DF325-CLEANUP-HARDENING-PC-V0_1/**; IMPERIUM_NEW_GENERATION/ARTIFACTS/QUARANTINE/COMMIT_36DF325_L2_EVIDENCE_BURST/**; targeted cleanup paths under ASTRONOMICON/OUTBOX/OWNER_INTENT/REPORTS/SANCTUM_NG
+- forbidden_paths: ORGANS/**; IMPERIUM_TEST_VERSION/**; .git/**; external filesystem paths
+- expected_receipts: FINAL_REPORT.md; cleanup_classification_manifest.json; tracked_artifact_hygiene_report.json; closure_receipt.json
+- repo_recon_required: true
+- script_absorption_required: yes_if_new_reusable_tool_created
+- clarification_needed: none
+- verdict: PASS

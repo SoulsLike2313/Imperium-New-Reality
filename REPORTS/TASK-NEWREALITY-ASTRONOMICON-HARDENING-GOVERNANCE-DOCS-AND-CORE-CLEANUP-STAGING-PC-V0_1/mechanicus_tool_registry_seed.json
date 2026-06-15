@@ -1,0 +1,89 @@
+{
+  "receipt_type": "mechanicus_tool_registry_seed",
+  "task_id": "TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1",
+  "status": "SEED_CANDIDATE",
+  "tools": [
+    {
+      "tool_id": "ASTRONOMICON_TASKPACK_REGISTRATION_SKILL_V0_1",
+      "owner_organ": "ASTRONOMICON",
+      "path": "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py",
+      "command_interfaces": [
+        "python ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py --discovery-smoke",
+        "python ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/astronomicon_taskpack_registration_skill_v0_1.py --task-id <TASK_ID>"
+      ],
+      "dependencies": [
+        "Python standard library",
+        "git executable"
+      ],
+      "dependency_class": "STANDARD_LIBRARY_AND_GIT",
+      "risk_class": "LOW_LOCAL",
+      "default_mode": "PC_LOCAL",
+      "last_replay_timestamp_utc": "2026-06-07T10:35:51Z",
+      "last_replay_receipt_path": "REPORTS/TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1/astronomicon_smoke_receipt.json",
+      "status": "PROVEN_FOR_PC_DISCOVERY",
+      "allowlisted_for_reuse": true
+    },
+    {
+      "tool_id": "ASTRONOMICON_TASK_ENTRY_LIB_V0_1",
+      "owner_organ": "ASTRONOMICON",
+      "path": "ORGANS/ASTRONOMICON/TOOLS/astronomicon_task_entry_lib_v0_1.py",
+      "command_interfaces": [
+        "library_import"
+      ],
+      "dependencies": [
+        "Python standard library",
+        "git executable"
+      ],
+      "dependency_class": "STANDARD_LIBRARY_AND_GIT",
+      "risk_class": "LOW_LOCAL",
+      "status": "CANDIDATE_REPAIRED_PATH_DISCOVERY",
+      "allowlisted_for_reuse": true
+    },
+    {
+      "tool_id": "CORE_SHAPE_MASTER_CHECK_V0_1",
+      "owner_organ": "_CORE_GOVERNANCE",
+      "path": "ORGANS/_CORE_GOVERNANCE/TOOLS/core_shape_master_check_v0_1.py",
+      "command_interfaces": [
+        "python ORGANS/_CORE_GOVERNANCE/TOOLS/core_shape_master_check_v0_1.py"
+      ],
+      "dependencies": [
+        "Python standard library"
+      ],
+      "dependency_class": "STANDARD_LIBRARY",
+      "risk_class": "LOW_LOCAL",
+      "status": "CANDIDATE_PREVIOUSLY_PROVEN",
+      "allowlisted_for_reuse": true
+    },
+    {
+      "tool_id": "STRATEGIUM_TASK_COST_CHECKER_V0_1",
+      "owner_organ": "STRATEGIUM",
+      "path": "ORGANS/STRATEGIUM/COST_GATE/strategium_task_cost_checker_v0_1.py",
+      "command_interfaces": [
+        "python ORGANS/STRATEGIUM/COST_GATE/strategium_task_cost_checker_v0_1.py"
+      ],
+      "dependencies": [
+        "Python standard library"
+      ],
+      "dependency_class": "STANDARD_LIBRARY",
+      "risk_class": "LOW_LOCAL",
+      "status": "CANDIDATE",
+      "allowlisted_for_reuse": false
+    },
+    {
+      "tool_id": "MATRIX_SPINE_VALIDATOR_V0_1",
+      "owner_organ": "SUPPORT",
+      "path": "SUPPORT/COMMON_IMPERIUM_SUPPORT/ROOT_IMPORTED_COMMON_SUPPORT/MATRIX_SPINE/VALIDATORS/validate_matrix_spine.py",
+      "command_interfaces": [
+        "python SUPPORT/COMMON_IMPERIUM_SUPPORT/ROOT_IMPORTED_COMMON_SUPPORT/MATRIX_SPINE/VALIDATORS/validate_matrix_spine.py"
+      ],
+      "dependencies": [
+        "Python standard library"
+      ],
+      "dependency_class": "STANDARD_LIBRARY",
+      "risk_class": "LOW_LOCAL",
+      "status": "CANDIDATE_PATH_REPAIRED_REQUIRED",
+      "allowlisted_for_reuse": false
+    }
+  ],
+  "admission_rule": "No tool is reusable without a tool card, registry seed entry, or explicit candidate status plus validation evidence."
+}

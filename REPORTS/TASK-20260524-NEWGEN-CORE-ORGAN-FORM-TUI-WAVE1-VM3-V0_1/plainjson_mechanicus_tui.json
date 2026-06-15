@@ -1,0 +1,137 @@
+{
+  "organ_id": "MECHANICUS",
+  "rich_available": true,
+  "smoke_mode": false,
+  "responsibility": "Tool capability governance and TUI runtime readiness.",
+  "bundle": {
+    "identity_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MECHANICUS/IDENTITY/organ_identity_v0_1.md",
+    "contract_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MECHANICUS/CONTRACTS/servitor_contract_v0_1.md",
+    "gate_catalog_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MECHANICUS/GATES/organ_gate_catalog_v0_1.json",
+    "state_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MECHANICUS/STATE/current_state_v0_1.json",
+    "template_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/MECHANICUS/TEMPLATES/organ_verdict_template_v0_1.json",
+    "gate_catalog": {
+      "schema_id": "newgen_organ_gate_catalog_v0_1",
+      "organ_id": "MECHANICUS",
+      "version": "v0_1",
+      "gates": [
+        {
+          "gate_id": "GATE_RICH_MANDATORY_FOR_WAVE1_TUI",
+          "severity": "BLOCK",
+          "purpose": "Wave 1 core organ TUI requires Rich renderer availability.",
+          "expected_verdict": "PASS",
+          "evidence_required": [
+            "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json"
+          ]
+        },
+        {
+          "gate_id": "GATE_CONTROLLED_CAPABILITY_ACQUISITION",
+          "severity": "BLOCK",
+          "purpose": "If capability missing, install/verify/register with receipt.",
+          "expected_verdict": "PASS",
+          "evidence_required": [
+            "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/"
+          ]
+        },
+        {
+          "gate_id": "GATE_SCRIPT_ARTIFACT_PRESERVATION",
+          "severity": "WARN_TO_BLOCK",
+          "purpose": "No useful helper script disappears silently.",
+          "expected_verdict": "PASS",
+          "evidence_required": [
+            "wave1_organ_tui_smoke_report.json",
+            "FINAL_REPORT.md"
+          ]
+        },
+        {
+          "gate_id": "GATE_COMMAND_CHUNKING_DISCIPLINE",
+          "severity": "WARN_TO_BLOCK",
+          "purpose": "Large execution must be phased and validated.",
+          "expected_verdict": "PASS",
+          "evidence_required": [
+            "closure_receipt.json"
+          ]
+        }
+      ]
+    },
+    "state": {
+      "schema_id": "newgen_organ_state_v0_1",
+      "organ_id": "MECHANICUS",
+      "version": "v0_1",
+      "default_verdict": "PASS",
+      "responsibility": "Tool capability governance and TUI runtime readiness.",
+      "servitor_ask": [
+        "Is Rich available for Wave 1 TUI mandatory renderer?",
+        "What tool registry entry proves this capability?",
+        "What controlled install path is required if missing?"
+      ],
+      "warn_block_profile": [
+        "WARN on partial registry metadata",
+        "BLOCK when mandatory renderer capability is missing"
+      ],
+      "required_actions": [
+        "Probe Rich import and version",
+        "Store capability registry evidence under Mechanicus TOOLS_REGISTRY"
+      ],
+      "forbidden_actions": [
+        "Claim TUI visual pass with plain fallback only",
+        "Perform uncontrolled package installs"
+      ],
+      "evidence_refs": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json",
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/"
+      ],
+      "last_updated_utc": "2026-05-24T01:20:00Z"
+    },
+    "template": {
+      "schema_id": "newgen_organ_verdict_v0_1",
+      "organ_id": "MECHANICUS",
+      "task_id": "<TASK_ID>",
+      "mode": "SERVITOR_QUERY",
+      "verdict": "PASS|WARN|BLOCK|OWNER_VERDICT_NEEDED",
+      "applied_rules": [],
+      "required_actions": [],
+      "forbidden_actions": [],
+      "evidence_required": [],
+      "owner_question": null,
+      "not_proven": [],
+      "evidence_refs": []
+    }
+  },
+  "verdict": {
+    "schema_id": "newgen_organ_verdict_v0_1",
+    "organ_id": "MECHANICUS",
+    "task_id": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+    "mode": "SMOKE",
+    "verdict": "PASS",
+    "applied_rules": [
+      "GATE_RICH_MANDATORY_FOR_WAVE1_TUI",
+      "GATE_CONTROLLED_CAPABILITY_ACQUISITION",
+      "GATE_SCRIPT_ARTIFACT_PRESERVATION",
+      "GATE_COMMAND_CHUNKING_DISCIPLINE"
+    ],
+    "required_actions": [
+      "Probe Rich import and version",
+      "Store capability registry evidence under Mechanicus TOOLS_REGISTRY"
+    ],
+    "forbidden_actions": [
+      "Claim TUI visual pass with plain fallback only",
+      "Perform uncontrolled package installs"
+    ],
+    "evidence_required": [],
+    "owner_question": null,
+    "not_proven": [
+      "full production-grade tool admission framework",
+      "autonomic remediation loops"
+    ],
+    "evidence_refs": [
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/tool_capability_registry.json",
+      "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS_REGISTRY/install_receipts/"
+    ],
+    "rich_probe": {
+      "available": true,
+      "version": "13.7.1",
+      "module_path": "/usr/lib/python3/dist-packages/rich/__init__.py"
+    },
+    "generated_at_utc": "2026-05-24T01:27:12.899403+00:00"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "imperium.next_task_route.v0_1",
+  "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+  "timestamp_utc": "2026-06-06T17:18:17Z",
+  "owner_organ": "ASTRONOMICON",
+  "verdict": "READY_WITH_WARNINGS",
+  "recommended_next_tasks": [
+    {
+      "route_id": "CORE_ADDRESS_BOOK_V0_2_REVIEW",
+      "owner_organ": "ADMINISTRATUM",
+      "purpose": "Review UNKNOWN_WITH_REASON classifier rows and promote accepted ownership entries."
+    },
+    {
+      "route_id": "CUSTODES_TASK_PARTICIPATION_PACKET",
+      "owner_organ": "CUSTODES",
+      "purpose": "Create missing CUSTODES task participation or identity metadata."
+    },
+    {
+      "route_id": "QUARANTINE_ACTIVE_USE_SCANNER",
+      "owner_organ": "INQUISITION",
+      "purpose": "Implement scanner for active evidence paths referencing quarantine."
+    }
+  ],
+  "warnings": [
+    "V0.1 does not physically migrate legacy top-level paths.",
+    "Core self-checker reports PASS_WITH_WARNINGS because legacy top-level paths remain unmapped.",
+    "CUSTODES life zone exists but has a metadata gap: no task participation packet.",
+    "Pre-existing Astronomicon registry modifications and POST-WORK-BUNDLE-ADMISSION-RING-V0_3 are not part of the scoped commit."
+  ],
+  "blockers": [],
+  "next_action": "Choose a focused V0.2 hardening task; do not mass-migrate."
+}

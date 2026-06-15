@@ -1,0 +1,44 @@
+{
+  "receipt_type": "route_config_discovery_receipt",
+  "task_id": "TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1",
+  "timestamp_utc": "2026-06-07T10:35:51Z",
+  "repo_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "contour": "PC",
+  "route_config_discovery": {
+    "route_config_path": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json",
+    "route_config_source": "current_root_operator_config",
+    "route_config_exists": true,
+    "route_config_sha256": "4ba1e09821e3f0ec4eccc48d0147475360d32b7fdf62465bd77abeba2eb9833b",
+    "searched_paths": [
+      "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json"
+    ],
+    "warnings": [],
+    "repo_root_discovery": {
+      "repo_root_source": "git_rev_parse",
+      "searched_paths": [
+        "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY"
+      ],
+      "warnings": []
+    }
+  },
+  "pc_behavior": {
+    "route_config_loaded_for_pc": false,
+    "remote_route_attempted": false,
+    "reason": "PC-local registration and discovery smoke do not need remote contour routing."
+  },
+  "staging_policy": {
+    "local_route_config_staged": false,
+    "local_route_config_commit_allowed": false,
+    "repository_gitignore_entry_added": "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json",
+    "legacy_prefix_gitignore_entry_added": "IMPERIUM_NEW_GENERATION/",
+    "existing_git_info_exclude_entries_observed": [
+      "IMPERIUM_NEW_GENERATION/",
+      "ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json"
+    ]
+  },
+  "verdict": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "Route config is discovered and hashed for receipt purposes only.",
+    "Local operator config remains untracked and must not be staged."
+  ]
+}

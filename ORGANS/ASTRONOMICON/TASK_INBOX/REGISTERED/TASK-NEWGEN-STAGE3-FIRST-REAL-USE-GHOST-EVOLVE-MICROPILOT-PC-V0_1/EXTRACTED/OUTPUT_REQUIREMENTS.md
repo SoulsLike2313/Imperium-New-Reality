@@ -1,0 +1,27 @@
+# Required Output Paths
+
+Recommended report root:
+
+`IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/`
+
+Required:
+- `ghost_evolve_entry_ack.json`
+- `repo_truth_probe.json`
+- `ASTRONOMICON_TASK_ID_EXECUTION_PROOF.json`
+- `ASTRONOMICON_TASK_ID_EXECUTION_PROOF.md`
+- `EIGHT_ORGAN_PARTICIPATION_RUNTIME_RECEIPT.json`
+- `EIGHT_ORGAN_PARTICIPATION_RUNTIME_RECEIPT.md`
+- `REAL_USE_MICROPILOT_READINESS_SNAPSHOT.json`
+- `REAL_USE_MICROPILOT_READINESS_SNAPSHOT.md`
+- `MATURITY_MATRIX_EXERCISE_REPORT.json`
+- `MATURITY_MATRIX_EXERCISE_REPORT.md`
+- `RUNTIME_OUTPUT_CLASSIFICATION.json`
+- `GHOST_EVOLVE_STAGE3_MICROPILOT_LEARNING_BACKLOG.json`
+- `GHOST_EVOLVE_STAGE3_MICROPILOT_LEARNING_BACKLOG.md`
+- `NEXT_PIPELINE_HANDOFF.json`
+- `efficiency_delta_receipt.json`
+- `hard_red_team_verdict.json`
+- `claim_ledger.jsonl`
+- `capability_split_receipt.json`
+- `final_owner_summary_ru.md`
+- `commit_push_receipt.json`

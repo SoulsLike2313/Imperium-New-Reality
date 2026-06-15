@@ -1,0 +1,186 @@
+{
+  "schema_version": "imperium.mechanicus.language_registry.v0_1",
+  "purpose": "Describe when languages are appropriate for Imperium New Reality local IDE/tooling work.",
+  "default_rule": "Pick the simplest language that satisfies safety, performance, integration and validation requirements.",
+  "languages": [
+    {
+      "id": "python",
+      "status": "primary_glue",
+      "best_for": [
+        "orchestration",
+        "repo scanners",
+        "JSON/CSV/Markdown reports",
+        "local automation",
+        "rapid prototypes",
+        "data wrangling"
+      ],
+      "avoid_for": [
+        "long-running high-performance daemons",
+        "memory-critical native code",
+        "large browser UI"
+      ],
+      "validation": [
+        "python -m py_compile",
+        "unit smoke",
+        "sample run with local handoff output"
+      ],
+      "owner_summary_ru": "Питон — основная обвязка, сканеры, отчеты, быстрые прототипы.",
+      "owner_summary_en": "Python is the primary glue layer: scanners, reports, quick prototypes."
+    },
+    {
+      "id": "javascript_node",
+      "status": "web_sanctum_runtime",
+      "best_for": [
+        "Web Sanctum UI",
+        "local bridge utilities",
+        "Playwright harness",
+        "JSON-heavy UI tooling"
+      ],
+      "avoid_for": [
+        "native performance core",
+        "large typed domain without TypeScript"
+      ],
+      "validation": [
+        "node --check",
+        "npm script smoke",
+        "Playwright audit"
+      ],
+      "owner_summary_ru": "Node/JS — UI, bridge, Playwright и быстрое локальное web-tooling.",
+      "owner_summary_en": "Node/JS is for UI, bridge, Playwright and local web tooling."
+    },
+    {
+      "id": "typescript",
+      "status": "recommended_ui_safety_upgrade",
+      "best_for": [
+        "larger frontend modules",
+        "typed Playwright tests",
+        "contracts around UI state",
+        "safer refactors"
+      ],
+      "avoid_for": [
+        "tiny one-off scripts",
+        "runtime environments without build step"
+      ],
+      "validation": [
+        "tsc --noEmit",
+        "Playwright",
+        "lint"
+      ],
+      "owner_summary_ru": "TypeScript нужен там, где JS уже становится опасно менять вслепую.",
+      "owner_summary_en": "TypeScript is used when JavaScript grows too risky to refactor blindly."
+    },
+    {
+      "id": "rust",
+      "status": "candidate_fast_native_tooling",
+      "best_for": [
+        "fast repo indexing",
+        "content hashing",
+        "native CLI",
+        "safe parsers",
+        "single binary scanners"
+      ],
+      "avoid_for": [
+        "first prototype",
+        "highly dynamic orchestration",
+        "small throwaway reports"
+      ],
+      "validation": [
+        "cargo check",
+        "cargo test",
+        "sample scan"
+      ],
+      "owner_summary_ru": "Rust — кандидат для быстрых безопасных индексаторов/сканеров и нативных CLI.",
+      "owner_summary_en": "Rust is a candidate for fast safe indexers/scanners and native CLI tools."
+    },
+    {
+      "id": "go",
+      "status": "candidate_local_daemons",
+      "best_for": [
+        "local daemons",
+        "watchers",
+        "simple concurrent services",
+        "single binary bridge tools"
+      ],
+      "avoid_for": [
+        "UI-heavy work",
+        "complex generic parsing",
+        "Python-level quick reports"
+      ],
+      "validation": [
+        "go test ./...",
+        "go vet",
+        "sample run"
+      ],
+      "owner_summary_ru": "Go — кандидат для локальных сервисов, watcher-ов и простых concurrent daemon-ов.",
+      "owner_summary_en": "Go is a candidate for local services, watchers and simple concurrent daemons."
+    },
+    {
+      "id": "cpp",
+      "status": "rare_native_core",
+      "best_for": [
+        "native integration",
+        "legacy/native libraries",
+        "performance-critical core",
+        "low-level system access"
+      ],
+      "avoid_for": [
+        "ordinary repo automation",
+        "fast iteration UI",
+        "tasks without strict performance need"
+      ],
+      "validation": [
+        "compiler build",
+        "unit tests",
+        "sanitizers where applicable"
+      ],
+      "owner_summary_ru": "C++ — только для настоящего native/performance ядра, не для обычной обвязки.",
+      "owner_summary_en": "C++ is reserved for true native/performance core work, not ordinary glue."
+    },
+    {
+      "id": "sqlite_sql",
+      "status": "candidate_local_query_index",
+      "best_for": [
+        "local searchable index",
+        "Data Atlas query cache",
+        "audit history",
+        "entity relationship tables"
+      ],
+      "avoid_for": [
+        "large distributed state",
+        "source of truth without migration plan"
+      ],
+      "validation": [
+        "schema migration test",
+        "sample queries",
+        "export/import check"
+      ],
+      "owner_summary_ru": "SQLite/SQL нужен для локального индексируемого знания и быстрых запросов к Атласу.",
+      "owner_summary_en": "SQLite/SQL is for local queryable knowledge and fast Atlas queries."
+    },
+    {
+      "id": "powershell_pwsh",
+      "status": "operator_wrapper_only",
+      "best_for": [
+        "Windows operator wrappers",
+        "apply/smoke scripts",
+        "calling existing tools"
+      ],
+      "avoid_for": [
+        "rewriting UTF-8 source content",
+        "complex source transformations",
+        "logic-heavy tools"
+      ],
+      "validation": [
+        "pwsh 7+ only",
+        "UTF-8 session setup",
+        "no source rewrite except copy payload"
+      ],
+      "owner_summary_ru": "PowerShell — тонкая операторская оболочка. Не переписывать им UTF-8 source.",
+      "owner_summary_en": "PowerShell is a thin operator wrapper. Do not rewrite UTF-8 source with it."
+    }
+  ],
+  "admission_gate": {
+    "ru": "Новый язык допускается только если Python/Node не подходят, есть понятная задача, build/run recipe, validation path, паспорт и owner-visible выгода.",
+    "en": "A new language is admitted only if Python/Node are insufficient and there is a clear task, build/run recipe, validation path, passport and owner-visible benefit."
+  }
+}

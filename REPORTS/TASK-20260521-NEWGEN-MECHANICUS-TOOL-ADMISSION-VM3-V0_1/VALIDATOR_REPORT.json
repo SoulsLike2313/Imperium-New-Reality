@@ -1,0 +1,58 @@
+{
+  "schema_version": "0.1",
+  "task_id": "TASK-20260521-NEWGEN-MECHANICUS-TOOL-ADMISSION-VM3-V0_1",
+  "validator": "newgen_tool_admission_validator_v0_1.py",
+  "generated_at_utc": "2026-05-22T11:10:57Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "builder_runs",
+      "status": "PASS",
+      "details": "builder run succeeded"
+    },
+    {
+      "check_id": "required_files_exist",
+      "status": "PASS",
+      "details": "all required files exist"
+    },
+    {
+      "check_id": "json_parseability",
+      "status": "PASS",
+      "details": "json artifacts parse correctly"
+    },
+    {
+      "check_id": "deterministic_builder_outputs",
+      "status": "PASS",
+      "details": "deterministic outputs confirmed"
+    },
+    {
+      "check_id": "record_integrity_rules",
+      "status": "PASS",
+      "details": "record integrity checks passed"
+    },
+    {
+      "check_id": "forbidden_claim_guard",
+      "status": "PASS",
+      "details": "no forbidden claims found"
+    },
+    {
+      "check_id": "scope_boundary_report",
+      "status": "PASS",
+      "details": "changed files remain in allowed scope"
+    },
+    {
+      "check_id": "owner_report_ru_present",
+      "status": "PASS",
+      "details": "owner report contains Russian text"
+    },
+    {
+      "check_id": "super_skepticism_step_records",
+      "status": "PASS",
+      "details": "step proof records contain required skepticism keys"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "builder_command": "/usr/bin/python3 IMPERIUM_NEW_GENERATION/TOOLS/TOOL_ADMISSION/newgen_tool_admission_builder_v0_1.py",
+  "no_install_note": "PASS/PASS_WITH_WARNINGS validates foundation-only admission artifacts. It is not proof of installed external toolchain readiness."
+}

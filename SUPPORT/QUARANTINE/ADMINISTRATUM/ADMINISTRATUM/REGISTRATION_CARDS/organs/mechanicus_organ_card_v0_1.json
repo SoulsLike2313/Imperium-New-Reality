@@ -1,0 +1,62 @@
+{
+  "schema_id": "organ_card_v0_1",
+  "organ_id": "MECHANICUS",
+  "organ_name": "Mechanicus",
+  "status": "ACTIVE",
+  "real_owner_organ": "MECHANICUS",
+  "registration_owner_organ": "ADMINISTRATUM",
+  "validation_owner_organ": "MECHANICUS",
+  "body_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/IDENTITY/organ_identity_v0_1.md",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/STATE/current_state_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/GATES/organ_gate_catalog_v0_1.json"
+  ],
+  "tui_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TUI/mechanicus_tui_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TUI/mechanicus_shell_v0_1.py"
+  ],
+  "checker_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_arsenal_foundation_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_owner_approval_matrix_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_owner_approved_tool_normalization_v0_1.py"
+  ],
+  "report_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/FINAL_REPORT.md",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-RUNNER-READONLY-INTROSPECTION-HARDENING-PC-V0_1/FINAL_REPORT.md"
+  ],
+  "current_accepted_points": [
+    {
+      "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1",
+      "accepted_head": "cf6192a07fc8347f1948a5ba57dfcbd8b4aa7557",
+      "status": "PASS",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/closure_receipt.json"
+      ],
+      "note": "Wave 001 controlled install line."
+    },
+    {
+      "task_id": "TASK-NEWGEN-MECHANICUS-RUNNER-READONLY-INTROSPECTION-HARDENING-PC-V0_1",
+      "accepted_head": "fdd98a7916b0c242102f1c5f5ffb11f9aff09a16",
+      "status": "PASS",
+      "evidence_paths": [
+        "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-RUNNER-READONLY-INTROSPECTION-HARDENING-PC-V0_1/commit_receipt.json"
+      ],
+      "note": "Read-only introspection hardening line."
+    }
+  ],
+  "capability_summary": [
+    "Tool capability governance and controlled acquisition",
+    "Read-only runner hardening and smoke discipline",
+    "TUI capability support for Wave 1"
+  ],
+  "foundation_summary": [
+    "Gate catalog and current state contracts exist under Mechanicus",
+    "Wave 001 receipts provide install/validation continuity"
+  ],
+  "known_warnings": [
+    "Wave 001 report records historical mutation incident now contained and hardened."
+  ],
+  "next_recommended_work": [
+    "Preserve read-only introspection discipline across new Mechanicus runners."
+  ]
+}

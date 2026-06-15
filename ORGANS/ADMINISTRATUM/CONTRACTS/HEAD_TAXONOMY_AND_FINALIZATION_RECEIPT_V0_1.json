@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1",
+  "contract_id": "HEAD_TAXONOMY_AND_FINALIZATION_RECEIPT_V0_1",
+  "owner_organ": "ADMINISTRATUM",
+  "head_classes": [
+    "subject_implementation_head",
+    "artifact_bundle_head",
+    "receipt_finalization_head",
+    "closure_finalization_head",
+    "current_remote_head"
+  ],
+  "red_team_snapshot_allowed_when": [
+    "snapshot metadata explicit",
+    "historical classification explicit",
+    "clean pass not derived from snapshot"
+  ],
+  "blocking_when": [
+    "pending finalization fields remain in closure artifacts",
+    "stale snapshot claimed as current truth",
+    "head taxonomy ambiguous"
+  ]
+}

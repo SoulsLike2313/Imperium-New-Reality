@@ -1,0 +1,29 @@
+{
+  "task_id": "TASK-NEWGEN-COMMIT-36DF325-CLEANUP-HARDENING-PC-V0_1",
+  "created_utc": "2026-05-24T05:29:09Z",
+  "mode": "PC_LOCAL",
+  "repo_root": "E:\\IMPERIUM",
+  "starting_context": {
+    "doctrine_commit": "09215e78899dd735cc67905b3f55991915edac8d",
+    "dirty_prototype_commit": "36df325e6cdfbf5cfe10a22ec969b97faa0853a8",
+    "last_known_doctrine_commit_message": "TASK-20260524: register Sanctum cockpit rethink doctrine"
+  },
+  "goal": "Clean and harden the NewGen Dashboard L2 footprint from commit 36df325 without blind revert: preserve backend seed, quarantine or remove runtime/generated dirt, install hygiene evidence/gates, and prepare the repo for organ-centered cockpit and Mechanicus Arsenal tasks.",
+  "non_goals": [
+    "Do not rewrite cockpit visuals in this task.",
+    "Do not build Mechanicus Arsenal in this task.",
+    "Do not install OSS tools in this task.",
+    "Do not touch unrelated old IMPERIUM areas outside NewGen unless required for repo hygiene and explicitly reported.",
+    "Do not claim visual progress."
+  ],
+  "mandatory_outputs": [
+    "Final report markdown",
+    "Cleanup classification manifest JSON",
+    "Tracked artifact hygiene check report JSON",
+    "Optional cleanup gate script or checker if useful",
+    "Closure receipt JSON",
+    "Git commit and push"
+  ],
+  "expected_report_root": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-COMMIT-36DF325-CLEANUP-HARDENING-PC-V0_1/",
+  "recommended_commit_message": "TASK-20260524: clean and harden NewGen dashboard L2 footprint"
+}

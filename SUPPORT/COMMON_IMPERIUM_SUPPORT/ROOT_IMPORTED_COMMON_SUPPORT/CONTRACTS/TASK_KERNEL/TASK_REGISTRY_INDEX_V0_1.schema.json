@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NewGen Task Registry Index V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "generated_at_utc",
+    "registry_id",
+    "entries"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "registry_id": {
+      "type": "string",
+      "minLength": 3
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "task_id",
+          "task_title",
+          "status",
+          "created_at_utc",
+          "updated_at_utc",
+          "required_organs",
+          "kernel_object_ref",
+          "truth_status"
+        ],
+        "properties": {
+          "task_id": {
+            "type": "string"
+          },
+          "task_title": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "DRAFT",
+              "REGISTERED",
+              "SCOPING_WITH_ORGANS",
+              "READY_FOR_SERVITOR",
+              "RUNNING",
+              "FAILED_NEEDS_RERUN",
+              "BLOCKED_NEEDS_OWNER",
+              "PASSED_WITH_WARNINGS",
+              "PASSED_STRICT",
+              "QUARANTINED",
+              "CLOSED"
+            ]
+          },
+          "created_at_utc": {
+            "type": "string"
+          },
+          "updated_at_utc": {
+            "type": "string"
+          },
+          "required_organs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "kernel_object_ref": {
+            "type": "string"
+          },
+          "truth_status": {
+            "type": "string",
+            "enum": [
+              "NON_LIVE_FOUNDATION",
+              "LIVE_UNVERIFIED",
+              "LIVE_VERIFIED"
+            ]
+          }
+        }
+      }
+    }
+  }
+}
+

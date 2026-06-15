@@ -1,0 +1,80 @@
+{
+  "schema_id": "TRANSFER_ALLOWED_ROUTES_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-BIDIRECTIONAL-ROUTE-PROOF-VM2-V0_1",
+  "claim_boundary": "FOUNDATION_ONLY",
+  "routes": [
+    {
+      "route_id": "PC_TO_VM2",
+      "source_contour": "PC",
+      "target_contour": "VM2",
+      "artifact_kind": "taskpack_zip",
+      "route_status": "CONFIGURED",
+      "route_ref": "IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/SSH_CONNECTION_MATRIX_V0_1.json",
+      "allowlisted_actions": [
+        "SEND_TASKPACK_ZIP",
+        "VALIDATE_TRANSFER_REQUEST",
+        "DRY_RUN_TRANSFER"
+      ],
+      "notes": [
+        "proof_status:PROVED",
+        "Recovery route-proof entry."
+      ],
+      "claim_boundary": "FOUNDATION_ONLY"
+    },
+    {
+      "route_id": "PC_TO_VM3",
+      "source_contour": "PC",
+      "target_contour": "VM3",
+      "artifact_kind": "taskpack_zip",
+      "route_status": "CONFIGURED",
+      "route_ref": "IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/SSH_CONNECTION_MATRIX_V0_1.json",
+      "allowlisted_actions": [
+        "SEND_TASKPACK_ZIP",
+        "VALIDATE_TRANSFER_REQUEST",
+        "DRY_RUN_TRANSFER"
+      ],
+      "notes": [
+        "proof_status:WARN_PARTIAL",
+        "Recovery route-proof entry."
+      ],
+      "claim_boundary": "FOUNDATION_ONLY"
+    },
+    {
+      "route_id": "VM2_TO_VM3",
+      "source_contour": "VM2",
+      "target_contour": "VM3",
+      "artifact_kind": "taskpack_zip",
+      "route_status": "CONFIGURED",
+      "route_ref": "IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/SSH_CONNECTION_MATRIX_V0_1.json",
+      "allowlisted_actions": [
+        "SEND_TASKPACK_ZIP",
+        "VALIDATE_TRANSFER_REQUEST",
+        "DRY_RUN_TRANSFER"
+      ],
+      "notes": [
+        "proof_status:PROVED",
+        "Bidirectional bounded route-proof entry."
+      ],
+      "claim_boundary": "FOUNDATION_ONLY"
+    },
+    {
+      "route_id": "VM3_TO_VM2",
+      "source_contour": "VM3",
+      "target_contour": "VM2",
+      "artifact_kind": "taskpack_zip",
+      "route_status": "CONFIGURED",
+      "route_ref": "IMPERIUM_NEW_GENERATION/MECHANICUS/CONNECTIONS/SSH_CONNECTION_MATRIX_V0_1.json",
+      "allowlisted_actions": [
+        "SEND_TASKPACK_ZIP",
+        "VALIDATE_TRANSFER_REQUEST",
+        "DRY_RUN_TRANSFER"
+      ],
+      "notes": [
+        "proof_status:PROVED",
+        "Bidirectional bounded route-proof entry."
+      ],
+      "claim_boundary": "FOUNDATION_ONLY"
+    }
+  ],
+  "generated_at_utc": "2026-05-23T03:27:56Z"
+}

@@ -1,0 +1,55 @@
+{
+  "task_id": "TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-ROLE-PACK-AND-LOGOS-OWNER-AUDIT-CARD-CONTRACT-PC-V0_1",
+  "task_name": "Administratum continuity role-pack bridge and Logos Owner Audit Card contract",
+  "taskpack_version": "0.1",
+  "contour": "PC",
+  "created_utc": "2026-06-01T16:59:18Z",
+  "owner_intent": "Formalize the Logos Owner Audit Card review format and connect continuity packs to role-specific handoff packs for Prime, Inquisitor, and Speculum.",
+  "scope": "PC contour, repo-only, no IDE, no WARP, no VM live route proof.",
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH_UTF8_NO_BOM_ONLY",
+    "canonical_repo_artifacts": "ENGLISH_UTF8_NO_BOM_BY_DEFAULT",
+    "owner_facing_russian_runtime_output": "ALLOWED_ONLY_THROUGH_OFFICIO_AGENTIS",
+    "cyrillic_in_taskpack": "FORBIDDEN",
+    "localization_exception": {
+      "allowed": false,
+      "reason": "Taskpack admission safety. Runtime Owner-facing summaries may be Russian through Officio Agentis only."
+    }
+  },
+  "required_root_files": [
+    "MANIFEST.json",
+    "TASK_SPEC.md",
+    "ACCEPTANCE_GATES.md",
+    "OUTPUT_REQUIREMENTS.md"
+  ],
+  "expected_outputs": [
+    "owner_audit_card_contract.md",
+    "owner_audit_card_template.md",
+    "continuity_recipient_selector_schema.json",
+    "role_pack_bridge_contract.md",
+    "role_pack_matrix.json",
+    "continuity_pack_role_handoff_receipt.json",
+    "officio_response_contract_link_receipt.json",
+    "inquisition_clean_context_guard_receipt.json",
+    "mechanicus_validation_receipt.json",
+    "final_owner_summary_ru.md",
+    "commit_push_receipt.json"
+  ],
+  "forbidden_scope": [
+    "No IDE implementation.",
+    "No WARP runtime.",
+    "No VM2 or VM3 live route proof.",
+    "No broad full-repo rewrite.",
+    "No private data collection beyond explicit exclusion receipts."
+  ]
+}

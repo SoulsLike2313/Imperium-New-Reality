@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Important Six TUI API Dashboard L1</title>
+    <link rel="stylesheet" href="/important_six_dashboard.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <header class="topbar">
+      <div class="title-block">
+        <p class="kicker" data-i18n="kicker">IMPERIUM NEW GENERATION</p>
+        <h1 class="title" data-i18n="title">Important Six TUI API Dashboard L1</h1>
+        <p class="subtitle" data-i18n="subtitle">
+          Read-only bridge: TUI --smoke + query --sample
+        </p>
+      </div>
+      <div class="meta-block">
+        <p>
+          <span data-i18n="mode">Mode</span>:
+          <code id="modeLabel">-</code>
+        </p>
+        <p>
+          <span data-i18n="updated">Updated</span>:
+          <time id="updatedAt">-</time>
+        </p>
+        <div class="controls">
+          <button id="refreshBtn" type="button" class="btn" data-i18n="refresh">Refresh</button>
+          <button id="langBtn" type="button" class="btn btn-alt">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="status-strip" aria-label="Dashboard status">
+        <span class="pill pill-safe" data-i18n="safe">SAFE: smoke/sample only</span>
+        <span class="pill" id="organsCount">0 / 6</span>
+        <span class="pill" id="boundary">-</span>
+      </section>
+
+      <section id="panels" class="panels" aria-live="polite"></section>
+    </main>
+
+    <template id="panelTemplate">
+      <article class="panel" data-organ-panel="">
+        <div class="panel-head">
+          <div>
+            <h2 class="panel-title"></h2>
+            <p class="panel-role"></p>
+          </div>
+          <span class="status-pill">UNKNOWN</span>
+        </div>
+
+        <dl class="kv">
+          <div>
+            <dt data-i18n="organ">Organ</dt>
+            <dd class="organ-label"></dd>
+          </div>
+          <div>
+            <dt data-i18n="verdict">Verdict</dt>
+            <dd class="organ-verdict"></dd>
+          </div>
+          <div>
+            <dt data-i18n="tuiCommand">TUI smoke command</dt>
+            <dd><code class="cmd-tui command-block"></code></dd>
+          </div>
+          <div>
+            <dt data-i18n="queryCommand">Query sample command</dt>
+            <dd><code class="cmd-query command-block"></code></dd>
+          </div>
+        </dl>
+
+        <div class="outputs">
+          <section>
+            <h3 data-i18n="tuiOutput">TUI output</h3>
+            <pre class="output-pre output-tui"></pre>
+          </section>
+          <section>
+            <h3 data-i18n="queryOutput">Query output</h3>
+            <pre class="output-pre output-query"></pre>
+          </section>
+        </div>
+      </article>
+    </template>
+
+    <script src="/important_six_dashboard.js" defer></script>
+  </body>
+</html>

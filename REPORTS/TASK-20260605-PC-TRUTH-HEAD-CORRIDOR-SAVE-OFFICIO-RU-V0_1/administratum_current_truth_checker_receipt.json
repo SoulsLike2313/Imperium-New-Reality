@@ -1,0 +1,73 @@
+{
+  "task_id": "TASK-NEWGEN-ADMINISTRATUM-REGISTRATION-CARDS-CURRENT-TRUTH-PC-V0_1",
+  "checker": "administratum_current_truth_checker_v0_1.py",
+  "status": "PASS",
+  "fail_count": 0,
+  "results": [
+    {
+      "check_id": "file.current_head",
+      "status": "PASS",
+      "detail": "loaded: E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ADMINISTRATUM/CURRENT_TRUTH/current_head_card_v0_1.json"
+    },
+    {
+      "check_id": "file.accepted_points",
+      "status": "PASS",
+      "detail": "loaded: E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ADMINISTRATUM/CURRENT_TRUTH/accepted_points_index_v0_1.json"
+    },
+    {
+      "check_id": "file.active_organs",
+      "status": "PASS",
+      "detail": "loaded: E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ADMINISTRATUM/CURRENT_TRUTH/active_organs_index_v0_1.json"
+    },
+    {
+      "check_id": "file.pending_tasks",
+      "status": "PASS",
+      "detail": "loaded: E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ADMINISTRATUM/CURRENT_TRUTH/pending_next_tasks_index_v0_1.json"
+    },
+    {
+      "check_id": "file.legacy_warn",
+      "status": "PASS",
+      "detail": "loaded: E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ADMINISTRATUM/CURRENT_TRUTH/legacy_warn_index_v0_1.json"
+    },
+    {
+      "check_id": "file.mechanicus_card",
+      "status": "PASS",
+      "detail": "loaded: E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ADMINISTRATUM/REGISTRATION_CARDS/organs/mechanicus_organ_card_v0_1.json"
+    },
+    {
+      "check_id": "file.officio_card",
+      "status": "PASS",
+      "detail": "loaded: E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ADMINISTRATUM/REGISTRATION_CARDS/organs/officio_agentis_organ_card_v0_1.json"
+    },
+    {
+      "check_id": "file.tui_source",
+      "status": "PASS",
+      "detail": "loaded: E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ADMINISTRATUM/TUI/administratum_tui_v0_1.py"
+    },
+    {
+      "check_id": "truth.current_head_match",
+      "status": "PASS",
+      "detail": "current_head == d61edfd08dbc69919645cec827aaa2c899089ae9"
+    },
+    {
+      "check_id": "truth.officio_point_present",
+      "status": "PASS",
+      "detail": "892ae8a6f5452c55211da4748bed3b1d9d3f9326"
+    },
+    {
+      "check_id": "truth.organ_cards_present",
+      "status": "PASS",
+      "detail": "MECHANICUS + OFFICIO_AGENTIS cards present"
+    },
+    {
+      "check_id": "truth.next_task_expected",
+      "status": "PASS",
+      "detail": "TASK-NEWGEN-INQUISITION-PURITY-QUARANTINE-BODY-PC-V0_1"
+    },
+    {
+      "check_id": "truth.tui_reads_real_paths",
+      "status": "PASS",
+      "detail": "TUI references card/current-truth paths"
+    }
+  ]
+}

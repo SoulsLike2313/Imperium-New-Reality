@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Important Six Organ Cockpit V0.1</title>
+    <link rel="stylesheet" href="important_six_organ_cockpit_v0_1.css" />
+  </head>
+  <body>
+    <div class="cockpit-bg" aria-hidden="true"></div>
+
+    <header class="truth-strip">
+      <div class="truth-main">
+        <p class="kicker" data-i18n="kicker">IMPERIUM NEW GENERATION</p>
+        <h1 data-i18n="title">Sanctum Organ-Centered Cockpit Skeleton</h1>
+        <p class="subtitle" data-i18n="subtitle">
+          Organs are the product. Actions are secondary.
+        </p>
+      </div>
+
+      <div class="truth-meta">
+        <div class="truth-row">
+          <span data-i18n="taskLabel">Task</span>
+          <code>TASK-NEWGEN-SANCTUM-ORGAN-CENTERED-COCKPIT-SKELETON-PC-V0_1</code>
+        </div>
+        <div class="truth-row">
+          <span data-i18n="truthStatusLabel">System Truth</span>
+          <strong class="status-pass">READ_ONLY_STATIC_SEED</strong>
+        </div>
+        <div class="truth-row">
+          <span data-i18n="blockersLabel">Blockers</span>
+          <strong class="status-warn" data-i18n="blockersValue">No live backend binding in V0.1</strong>
+        </div>
+        <div class="truth-row">
+          <span data-i18n="routeLabel">Route Status</span>
+          <strong data-i18n="routeValue">Organ-centered skeleton admitted</strong>
+        </div>
+      </div>
+
+      <div class="truth-controls">
+        <span class="pill pill-seed" data-i18n="seedBadge">SEED_DATA_NOT_PROVEN</span>
+        <span class="pill pill-readonly">READ_ONLY</span>
+        <button id="langToggleBtn" type="button" class="lang-btn">RU</button>
+      </div>
+    </header>
+
+    <main class="center-layout">
+      <section class="organs-zone">
+        <h2 data-i18n="organsZoneTitle">Important Six Organ Shell Panels</h2>
+        <div id="organGrid" class="organ-grid"></div>
+      </section>
+
+      <aside class="owner-zone">
+        <h2 data-i18n="ownerQueueTitle">Owner Decision Queue</h2>
+        <p class="zone-note" data-i18n="ownerQueueFlow">
+          Detected uncertainty -> Owner Verdict Needed -> receipt -> controlled continuation.
+        </p>
+        <ul id="ownerQueueList" class="owner-queue-list"></ul>
+      </aside>
+    </main>
+
+    <section class="evidence-zone">
+      <div class="evidence-head">
+        <h2 data-i18n="evidenceTitle">Evidence / Receipts / Action History</h2>
+        <p class="zone-note" data-i18n="evidenceNote">
+          Every status claim must map to a concrete path or NOT_PROVEN marker.
+        </p>
+      </div>
+
+      <div class="evidence-grid">
+        <article class="evidence-card">
+          <h3 data-i18n="receiptTimelineTitle">Receipt Timeline</h3>
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="thTime">Time</th>
+                <th data-i18n="thOrgan">Organ</th>
+                <th data-i18n="thType">Type</th>
+                <th data-i18n="thPath">Path / Marker</th>
+              </tr>
+            </thead>
+            <tbody id="evidenceTableBody"></tbody>
+          </table>
+        </article>
+
+        <article class="evidence-card">
+          <h3 data-i18n="historyTitle">Recent Controlled Events</h3>
+          <ul id="historyList" class="history-list"></ul>
+        </article>
+      </div>
+    </section>
+
+    <aside id="actionDrawer" class="action-drawer" aria-hidden="true">
+      <div class="drawer-head">
+        <h2 id="drawerTitle">Organ Action Drawer</h2>
+        <button id="drawerCloseBtn" class="drawer-close-btn" type="button" data-i18n="closeDrawer">Close</button>
+      </div>
+      <p class="zone-note" data-i18n="drawerNote">
+        Secondary layer only. Actions stay read-only in this skeleton.
+      </p>
+      <ul id="drawerActionsList" class="drawer-actions-list"></ul>
+    </aside>
+
+    <template id="organCardTemplate">
+      <article class="organ-card">
+        <header class="organ-card-head">
+          <h3 class="organ-name"></h3>
+          <span class="organ-status"></span>
+        </header>
+        <dl class="organ-fields">
+          <div>
+            <dt data-i18n="roleSummary">Role / Ownership</dt>
+            <dd class="organ-role"></dd>
+          </div>
+          <div>
+            <dt data-i18n="lastEvidence">Last Evidence</dt>
+            <dd class="organ-evidence"></dd>
+          </div>
+          <div>
+            <dt data-i18n="warnings">Warnings / Blockers</dt>
+            <dd class="organ-warnings"></dd>
+          </div>
+          <div>
+            <dt data-i18n="pendingCount">Pending Count</dt>
+            <dd class="organ-pending"></dd>
+          </div>
+        </dl>
+        <button class="open-drawer-btn" type="button" data-i18n="openDrawer">
+          Open Secondary Action Drawer
+        </button>
+      </article>
+    </template>
+
+    <script src="important_six_organ_cockpit_v0_1.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "schema": "imperium.intelligence_pack.schema.v0_1",
+  "artifacts": {
+    "MANIFEST.json": "pack identity, source git truth, counts, rules",
+    "GIT_TRUTH.json": "head, branch, status, recent commits",
+    "TREE_INDEX.jsonl": "one row per repo file with organ/kind/zone/hash metadata",
+    "FILE_KIND_COUNTS.json": "code/document/data/binary counts",
+    "ORGAN_MAP.json": "organ-level file ownership summary",
+    "TOOL_PASSPORT_INDEX.json": "tool passport paths and extracted tool ids",
+    "DEPENDENCY_EDGES.jsonl": "graph-ready relation edges",
+    "SOURCE_SLICE_MANIFEST.json": "selected source slices copied into PATCH_TARGET_SLICES",
+    "ATLAS_INDEX.sqlite": "SQL-ready local index for files, edges, passports, manifest",
+    "OWNER_SUMMARY_RU.md": "human-readable summary"
+  },
+  "sql_ready_tables": ["manifest", "files", "edges", "tool_passports"]
+}

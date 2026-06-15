@@ -1,0 +1,224 @@
+{
+  "schema_id": "playwright_important_six_dashboard_l1_report_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1",
+  "generated_at_utc": "2026-05-24T02:29:29Z",
+  "base_url": "http://127.0.0.1:8766",
+  "verdict": "PASS",
+  "blockers": [],
+  "warnings": [],
+  "steps": [
+    {
+      "step": "npx_playwright_version",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "npx",
+          "playwright",
+          "--version"
+        ],
+        "returncode": 0,
+        "stdout": "Version 1.60.0",
+        "stderr": "",
+        "timed_out": false
+      }
+    },
+    {
+      "step": "npx_playwright_install_chromium",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "npx",
+          "playwright",
+          "install",
+          "chromium"
+        ],
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "╔═══════════════════════════════════════════════════════════════════════════════╗\n║ WARNING: It looks like you are running 'npx playwright install' without first ║\n║ installing your project's dependencies.                                       ║\n║                                                                               ║\n║ To avoid unexpected behavior, please install your dependencies first, and     ║\n║ then run Playwright's install command:                                        ║\n║                                                                               ║\n║     npm install                                                               ║\n║     npx playwright install                                                    ║\n║                                                                               ║\n║ If your project does not yet depend on Playwright, first install the          ║\n║ applicable npm package (most commonly @playwright/test), and                  ║\n║ then run Playwright's install command to download the browsers:               ║\n║                                                                               ║\n║     npm install @playwright/test                                              ║\n║     npx playwright install                                                    ║\n║                                                                               ║\n╚═══════════════════════════════════════════════════════════════════════════════╝",
+        "timed_out": false
+      }
+    },
+    {
+      "step": "resolve_playwright_module_path",
+      "status": "PASS",
+      "details": "/home/vboxuser3/.npm/_npx/420ff84f11983ee5/node_modules/playwright"
+    },
+    {
+      "step": "api_json_/api/status",
+      "status": "PASS",
+      "details": {
+        "url": "http://127.0.0.1:8766/api/status",
+        "json_type": "dict"
+      }
+    },
+    {
+      "step": "api_json_/api/organs",
+      "status": "PASS",
+      "details": {
+        "url": "http://127.0.0.1:8766/api/organs",
+        "json_type": "dict"
+      }
+    },
+    {
+      "step": "api_json_/api/dashboard-state",
+      "status": "PASS",
+      "details": {
+        "url": "http://127.0.0.1:8766/api/dashboard-state",
+        "json_type": "dict"
+      }
+    },
+    {
+      "step": "playwright_ui_checks",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "node",
+          "/tmp/important_six_pw_nutdh4s7/runner.js",
+          "/home/vboxuser3/.npm/_npx/420ff84f11983ee5/node_modules/playwright",
+          "http://127.0.0.1:8766",
+          "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1/important_six_dashboard_l1_screenshot.png",
+          "60000",
+          "[\"doctrinarium\", \"officio\", \"administratum\", \"astronomicon\", \"mechanicus\", \"inquisition\"]"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout_json": {
+          "verdict": "PASS",
+          "detail": {
+            "generated_at_utc": "2026-05-24T02:29:26.422Z",
+            "panel_count": 6,
+            "panel_checks": [
+              {
+                "organ_key": "doctrinarium",
+                "present": true,
+                "has_status": true,
+                "has_command": true,
+                "has_output": true,
+                "status": "PASS"
+              },
+              {
+                "organ_key": "officio",
+                "present": true,
+                "has_status": true,
+                "has_command": true,
+                "has_output": true,
+                "status": "PASS"
+              },
+              {
+                "organ_key": "administratum",
+                "present": true,
+                "has_status": true,
+                "has_command": true,
+                "has_output": true,
+                "status": "PASS"
+              },
+              {
+                "organ_key": "astronomicon",
+                "present": true,
+                "has_status": true,
+                "has_command": true,
+                "has_output": true,
+                "status": "PASS"
+              },
+              {
+                "organ_key": "mechanicus",
+                "present": true,
+                "has_status": true,
+                "has_command": true,
+                "has_output": true,
+                "status": "PASS"
+              },
+              {
+                "organ_key": "inquisition",
+                "present": true,
+                "has_status": true,
+                "has_command": true,
+                "has_output": true,
+                "status": "PASS"
+              }
+            ],
+            "screenshot_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1/important_six_dashboard_l1_screenshot.png",
+            "screenshot_saved": true,
+            "errors": [],
+            "http_status": 200
+          }
+        }
+      }
+    }
+  ],
+  "screenshot_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1/important_six_dashboard_l1_screenshot.png",
+  "node_result": {
+    "command": [
+      "node",
+      "/tmp/important_six_pw_nutdh4s7/runner.js",
+      "/home/vboxuser3/.npm/_npx/420ff84f11983ee5/node_modules/playwright",
+      "http://127.0.0.1:8766",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1/important_six_dashboard_l1_screenshot.png",
+      "60000",
+      "[\"doctrinarium\", \"officio\", \"administratum\", \"astronomicon\", \"mechanicus\", \"inquisition\"]"
+    ],
+    "returncode": 0,
+    "stderr": "",
+    "stdout_json": {
+      "verdict": "PASS",
+      "detail": {
+        "generated_at_utc": "2026-05-24T02:29:26.422Z",
+        "panel_count": 6,
+        "panel_checks": [
+          {
+            "organ_key": "doctrinarium",
+            "present": true,
+            "has_status": true,
+            "has_command": true,
+            "has_output": true,
+            "status": "PASS"
+          },
+          {
+            "organ_key": "officio",
+            "present": true,
+            "has_status": true,
+            "has_command": true,
+            "has_output": true,
+            "status": "PASS"
+          },
+          {
+            "organ_key": "administratum",
+            "present": true,
+            "has_status": true,
+            "has_command": true,
+            "has_output": true,
+            "status": "PASS"
+          },
+          {
+            "organ_key": "astronomicon",
+            "present": true,
+            "has_status": true,
+            "has_command": true,
+            "has_output": true,
+            "status": "PASS"
+          },
+          {
+            "organ_key": "mechanicus",
+            "present": true,
+            "has_status": true,
+            "has_command": true,
+            "has_output": true,
+            "status": "PASS"
+          },
+          {
+            "organ_key": "inquisition",
+            "present": true,
+            "has_status": true,
+            "has_command": true,
+            "has_output": true,
+            "status": "PASS"
+          }
+        ],
+        "screenshot_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-IMPORTANT-SIX-TUI-API-DASHBOARD-L1-VM3-V0_1/important_six_dashboard_l1_screenshot.png",
+        "screenshot_saved": true,
+        "errors": [],
+        "http_status": 200
+      }
+    }
+  }
+}

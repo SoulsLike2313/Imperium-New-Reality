@@ -1,0 +1,22 @@
+{
+  "schema": "imperium.mechanicus.tool_passport.v0_1",
+  "tool": "inquisition_evidence_vault_batch_receipt_verifier_v0_1.py",
+  "owner_organ": "INQUISITION",
+  "supporting_organs": [
+    "ADMINISTRATUM",
+    "MECHANICUS"
+  ],
+  "capability": "Verify Evidence Vault Batch 001 receipt and emit Data Atlas registration artifact.",
+  "write_scope": "external out-root only",
+  "read_scope": [
+    "Evidence Vault pack folder",
+    "source repo git metadata"
+  ],
+  "forbidden_actions": [
+    "source delete",
+    "source move",
+    "source rewrite",
+    "Vault pack mutation"
+  ],
+  "validation_recipe": "Run SMOKE_COMMANDS.ps1 for synthetic pack, then VERIFY_COMMANDS.ps1 against real Vault pack. PASS requires sidecars/hash/zip/sqlite/counts."
+}

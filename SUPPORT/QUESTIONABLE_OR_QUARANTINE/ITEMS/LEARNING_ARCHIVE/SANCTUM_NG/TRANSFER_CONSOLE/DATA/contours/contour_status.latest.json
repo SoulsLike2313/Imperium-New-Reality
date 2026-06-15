@@ -1,0 +1,41 @@
+{
+  "schema_id": "TRANSFER_CONTOUR_STATUS_SET_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-CONSOLE-VM3-V0_1",
+  "generated_at_utc": "2026-05-22T23:55:00Z",
+  "claim_boundary": "FOUNDATION_ONLY",
+  "contours": [
+    {
+      "contour_id": "PC",
+      "display_name": "PC",
+      "role": "control_contour",
+      "status": "NOT_CONFIGURED",
+      "status_reason": "No bounded VM3-side probe route configured for PC contour.",
+      "route_config_status": "NOT_CONFIGURED",
+      "last_probe_receipt_ref": null,
+      "last_updated_utc": "2026-05-22T23:55:00Z",
+      "claim_boundary": "FOUNDATION_ONLY"
+    },
+    {
+      "contour_id": "VM2",
+      "display_name": "VM2",
+      "role": "executor_contour",
+      "status": "OFFLINE",
+      "status_reason": "Bounded tcp probe failed: tcp_connect_error:127.0.0.1:2223:[Errno 111] Connection refused",
+      "route_config_status": "CONFIGURED_NOT_VERIFIED",
+      "last_probe_receipt_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/contours/probes/PROBE-20260522T235500Z-2D69489B.json",
+      "last_updated_utc": "2026-05-22T23:55:00Z",
+      "claim_boundary": "FOUNDATION_ONLY"
+    },
+    {
+      "contour_id": "VM3",
+      "display_name": "VM3",
+      "role": "executor_contour",
+      "status": "ONLINE",
+      "status_reason": "Bounded local probe succeeded.",
+      "route_config_status": "CONFIGURED",
+      "last_probe_receipt_ref": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/contours/probes/PROBE-20260522T235500Z-66904F7E.json",
+      "last_updated_utc": "2026-05-22T23:55:00Z",
+      "claim_boundary": "FOUNDATION_ONLY"
+    }
+  ]
+}

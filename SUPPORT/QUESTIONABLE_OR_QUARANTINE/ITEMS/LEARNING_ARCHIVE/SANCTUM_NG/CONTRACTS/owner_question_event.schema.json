@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OWNER_QUESTION_EVENT_V0_1",
+  "type": "object",
+  "required": [
+    "event_id",
+    "timestamp_utc",
+    "event_type",
+    "question_id",
+    "status_after",
+    "blocking_level",
+    "owner_answer_required",
+    "source",
+    "summary",
+    "evidence_refs"
+  ],
+  "properties": {
+    "event_id": { "type": "string" },
+    "timestamp_utc": { "type": "string" },
+    "event_type": {
+      "enum": [
+        "QUESTION_REGISTERED",
+        "QUESTION_STATUS_CHANGED",
+        "QUESTION_SYNCED"
+      ]
+    },
+    "question_id": { "type": "string" },
+    "status_before": {
+      "enum": ["OPEN", "ANSWERED", "DEFERRED", "CANCELLED", "STALE", "FOUNDATION_SAMPLE"]
+    },
+    "status_after": {
+      "enum": ["OPEN", "ANSWERED", "DEFERRED", "CANCELLED", "STALE", "FOUNDATION_SAMPLE"]
+    },
+    "blocking_level": {
+      "enum": ["BLOCKING", "NON_BLOCKING", "WARN_ONLY"]
+    },
+    "owner_answer_required": { "type": "boolean" },
+    "source": {
+      "enum": ["SERVITOR", "ORGAN", "SANCTUM", "TRUTH_GATE", "OWNER"]
+    },
+    "summary": { "type": "string" },
+    "evidence_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "notes": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

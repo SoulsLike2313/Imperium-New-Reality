@@ -1,0 +1,95 @@
+{
+  "schema_version": "imperium.pre_existing_dirt_classification_receipt.v0_1",
+  "task_id": "TASK-20260605-PC-CORE-SHAPE-DRIFT-CLEANUP-MIGRATION-QUEUE-QUARANTINE-GATE-V0_1",
+  "created_at_utc": "2026-06-06T18:25:18Z",
+  "entry_head": "34fd900fe6364beff08e09069934ece51f685595",
+  "starting_status_captured": [
+    "## master...origin/master",
+    " M ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json",
+    " M ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json",
+    "?? ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-CORE-SHAPE-DRIFT-CLEANUP-MIGRATION-QUEUE-QUARANTINE-GATE-V0_1/",
+    "?? ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_3/"
+  ],
+  "current_status_when_receipt_written": [
+    "## master...origin/master",
+    " M ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json",
+    " M ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json",
+    " M ORGANS/SCHOLA_IMPERIALIS/LEARNING/known_alert_to_preventive_rule_matrix.json",
+    " M ORGANS/STRATEGIUM/METRICS/IMPERIUM_METRICS_REGISTRY_V0_1.md",
+    " M SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+    "?? ORGANS/ADMINISTRATUM/MIGRATION_QUEUE/",
+    "?? ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-CORE-SHAPE-DRIFT-CLEANUP-MIGRATION-QUEUE-QUARANTINE-GATE-V0_1/",
+    "?? ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_3/",
+    "?? ORGANS/CUSTODES/ORGAN_CARD.json",
+    "?? ORGANS/CUSTODES/ORGAN_CONTRACT.md",
+    "?? ORGANS/CUSTODES/READ_FIRST.md",
+    "?? ORGANS/INQUISITION/QUARANTINE_POLICY/quarantine_active_use_violation_matrix.json",
+    "?? ORGANS/MECHANICUS/TOOLS/CORE_SHAPE_DRIFT_TOOLCHAIN_CARD.json",
+    "?? ORGANS/STRATEGIUM/METRICS/core_shape_compliance_score_metric.json",
+    "?? ORGANS/STRATEGIUM/METRICS/operator_bootstrap_intervention_count_metric.json",
+    "?? ORGANS/STRATEGIUM/METRICS/organ_life_completeness_score_metric.json",
+    "?? ORGANS/STRATEGIUM/METRICS/unclassified_file_count_metric.json",
+    "?? ORGANS/_CORE_GOVERNANCE/MATRICES/",
+    "?? ORGANS/_CORE_GOVERNANCE/TOOLS/core_file_classifier_dry_run_v0_2.py",
+    "?? ORGANS/_CORE_GOVERNANCE/TOOLS/core_migration_queue_builder_v0_1.py",
+    "?? ORGANS/_CORE_GOVERNANCE/TOOLS/core_shape_master_check_v0_1.py",
+    "?? ORGANS/_CORE_GOVERNANCE/TOOLS/core_shape_self_checker_v0_2.py",
+    "?? ORGANS/_CORE_GOVERNANCE/TOOLS/quarantine_active_use_checker_v0_1.py",
+    "?? REPORTS/TASK-20260605-PC-CORE-SHAPE-DRIFT-CLEANUP-MIGRATION-QUEUE-QUARANTINE-GATE-V0_1/"
+  ],
+  "classifications": [
+    {
+      "path": "ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json",
+      "dirt_type": "ASTRONOMICON_ADMISSION_REGISTRY_DRIFT",
+      "owner_organ": "ASTRONOMICON",
+      "classification": "ORGAN_HOME",
+      "resolution": "Keep and include in current closure commit; current_expected_task points to this taskpack.",
+      "evidence": [
+        "TASK-20260605-PC-CORE-SHAPE-DRIFT-CLEANUP-MIGRATION-QUEUE-QUARANTINE-GATE-V0_1",
+        "astronomicon_taskpack_registration_skill_v0_1.py"
+      ]
+    },
+    {
+      "path": "ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json",
+      "dirt_type": "ASTRONOMICON_ADMISSION_REGISTRY_DRIFT",
+      "owner_organ": "ASTRONOMICON",
+      "classification": "ORGAN_HOME",
+      "resolution": "Keep and include in current closure commit; registry contains V0_3, previous core task, and current task records.",
+      "evidence": [
+        "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_2",
+        "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_3",
+        "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+        "TASK-20260605-PC-CORE-SHAPE-DRIFT-CLEANUP-MIGRATION-QUEUE-QUARANTINE-GATE-V0_1"
+      ]
+    },
+    {
+      "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_3",
+      "dirt_type": "POST_WORK_RESIDUE",
+      "owner_organ": "ASTRONOMICON",
+      "classification": "COMMON_SUPPORT",
+      "resolution": "Preserve as registered admission evidence and include in current closure commit; no delete or move performed.",
+      "evidence": [
+        "ADMISSION_PASS",
+        "fbe4290ed06a8ede86e30c2355427654936683a13476dece14970c5724dcadf2",
+        "9"
+      ]
+    },
+    {
+      "path": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-CORE-SHAPE-DRIFT-CLEANUP-MIGRATION-QUEUE-QUARANTINE-GATE-V0_1",
+      "dirt_type": "TASK_INBOX_ACTIVE_ADMISSION",
+      "owner_organ": "ASTRONOMICON",
+      "classification": "COMMON_SUPPORT",
+      "resolution": "Preserve as active registered taskpack evidence and include in current closure commit.",
+      "evidence": [
+        "9",
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-CORE-SHAPE-DRIFT-CLEANUP-MIGRATION-QUEUE-QUARANTINE-GATE-V0_1/TASKPACK.zip"
+      ]
+    }
+  ],
+  "verdict": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "Pre-existing admission dirt is not reverted; it is classified and committed as closure evidence.",
+    "V0_3 residue is preserved because its admission receipt is PASS."
+  ],
+  "blockers": []
+}

@@ -1,0 +1,60 @@
+{
+  "core_law": [
+    "No evidence = no DONE.",
+    "No screenshot = no visual DONE.",
+    "No remote hash = no transfer DONE.",
+    "No git status = no clean claim.",
+    "No requirement matrix row = missing requirement."
+  ],
+  "evidence_classes": [
+    {
+      "claim_type": "ui_visual_change",
+      "required_evidence": [
+        "before_after_screenshot_or_blocked_code"
+      ]
+    },
+    {
+      "claim_type": "color_or_rich",
+      "required_evidence": [
+        "screenshot_or_ansi_diagnostic"
+      ]
+    },
+    {
+      "claim_type": "git_clean",
+      "required_evidence": [
+        "git_status_short_output"
+      ]
+    },
+    {
+      "claim_type": "push",
+      "required_evidence": [
+        "remote_head_hash_or_github_commit_url"
+      ]
+    },
+    {
+      "claim_type": "transfer",
+      "required_evidence": [
+        "path_sha256_timestamp_receipt"
+      ]
+    },
+    {
+      "claim_type": "schema",
+      "required_evidence": [
+        "validator_output"
+      ]
+    },
+    {
+      "claim_type": "response_contract",
+      "required_evidence": [
+        "compliance_check_output"
+      ]
+    },
+    {
+      "claim_type": "done_claim",
+      "required_evidence": [
+        "requirement_matrix_evidence"
+      ]
+    }
+  ]
+}
+

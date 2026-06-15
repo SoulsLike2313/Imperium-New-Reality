@@ -1,0 +1,39 @@
+{
+  "schema_id": "ORGAN_DIALOGUE_RESPONSE_V0_1",
+  "response_id": "OD-RES-007-STRATEGIUM",
+  "request_id": "OD-REQ-007-STRATEGIUM",
+  "organ_id": "STRATEGIUM",
+  "verdict": "BLOCKED_NEEDS_OWNER",
+  "scope_advice": [
+    "Stay inside ORGAN_DIALOGUE and SANCTUM_NG read-only display scope.",
+    "Keep claim boundary explicit: foundation-only deterministic dialogue."
+  ],
+  "required_checks": [
+    "GATE-U02-SCOPE-BOUNDARY",
+    "GATE-U04-EVIDENCE-RECEIPT",
+    "GATE-U09-NO-FAKE-GREEN"
+  ],
+  "forbidden_actions": [
+    "Claim live autonomous organ intelligence.",
+    "Write outside allowlisted NewGen paths.",
+    "Mark production-ready without evidence receipts."
+  ],
+  "evidence_required": [
+    "request packet exists",
+    "response packet exists",
+    "thread and event log updated",
+    "sanctum state reference updated"
+  ],
+  "owner_questions": [
+    "Should this organ receive richer decision tables in the next bounded task?",
+    "Is deterministic stub depth acceptable for current foundation checkpoint?"
+  ],
+  "confidence": 0.66,
+  "foundation_only": true,
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/REGISTRY/ORGAN_DIALOGUE_THREAD_INDEX_V0_1.json",
+    "IMPERIUM_NEW_GENERATION/ORGAN_DIALOGUE/THREADS/TASK-DEMO-ORGAN-DIALOGUE-V0_1/ORGAN_DIALOGUE_THREAD_V0_1.generated.json",
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json"
+  ],
+  "generated_at_utc": "2026-05-22T21:12:19Z"
+}

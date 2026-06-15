@@ -1,0 +1,44 @@
+{
+  "setting_id": "SET-RESPONSE-FORMATS-V0_1",
+  "title": "Response Format Policy",
+  "version": "v0_1",
+  "state": "ACTIVE",
+  "scope": "final and intermediate response structures",
+  "applies_to_roles": [
+    "SERVITOR",
+    "LOGOS_PRIME",
+    "LOGOS_SPECULUM"
+  ],
+  "applies_to_modes": [
+    "EXECUTOR",
+    "AUDITOR",
+    "ARCHITECT",
+    "REPAIRER"
+  ],
+  "servitor_owner_response": [
+    "STEP",
+    "BUNDLE",
+    "VERDICT",
+    "OWNER COMMENTS"
+  ],
+  "notes": [
+    "owner notes are russian",
+    "full logs and reports must be bundled, not pasted in chat"
+  ],
+  "machine_rule": {
+    "verdict_requires_per_requirement_status": true
+  },
+  "human_summary": "Owner-facing response is compact while full evidence stays in bundles.",
+  "acceptance_tests": [
+    "response contains required sections only"
+  ],
+  "evidence_required": [
+    "valid final response examples",
+    "response contract files"
+  ],
+  "dependencies": [],
+  "conflicts_with": [],
+  "supersedes": [],
+  "rollback_plan": "restore previous response format and rerun compliance checks",
+  "owner_approval_required": true
+}

@@ -1,0 +1,35 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-CAPABILITY-SCOPE-EXPORT-PC-V0_1",
+  "generated_at_utc": "2026-05-24T20:00:46Z",
+  "verdict": "PASS",
+  "examples": [
+    {
+      "scenario_id": "code_quality_request",
+      "servitor_request": "Mechanicus, дай scope для проверки качества Python-кода без установок и без hook-автовключения.",
+      "expected_scope_pack": "scope_code_quality_task_v0_1.json",
+      "expected_usage": "Использовать canon_allowed/sandbox_allowed для py_compile, ruff, mypy, pytest; pre-commit только как sandbox framework.",
+      "mandatory_guard": "forbidden_actions содержит запрет pre-commit hook auto-enable и pyright install."
+    },
+    {
+      "scenario_id": "repo_hygiene_request",
+      "servitor_request": "Mechanicus, дай bounded scope для repo hygiene и Inquisition cleanliness.",
+      "expected_scope_pack": "scope_repo_hygiene_task_v0_1.json",
+      "expected_usage": "Проверить dirty tree/diff/runtime junk/fake green в рамках declared touched paths.",
+      "mandatory_guard": "forbidden_actions запрещает broad full repo cleanup и unreviewed deletion."
+    },
+    {
+      "scenario_id": "controlled_provision_request",
+      "servitor_request": "Mechanicus, дай scope для controlled provision только по Owner-approved списку.",
+      "expected_scope_pack": "scope_controlled_tool_provision_task_v0_1.json",
+      "expected_usage": "Разрешены только capability lanes для detect/install/validate/report с обязательными receipts.",
+      "mandatory_guard": "forbidden_actions содержит silent install/network provisioning без Owner approval и auto-enable hooks запрет."
+    },
+    {
+      "scenario_id": "visual_readiness_request",
+      "servitor_request": "Mechanicus, дай scope для visual readiness без запуска прототипов.",
+      "expected_scope_pack": "scope_visual_readiness_task_v0_1.json",
+      "expected_usage": "Разрешено только readiness-аудит контрактов/инструментов; Playwright и UI frameworks — deferred/forbidden для prototype lane.",
+      "mandatory_guard": "forbidden_actions включает React/Vite project creation, Playwright browser install, visual prototype comparison, LLM/cloud activation."
+    }
+  ]
+}

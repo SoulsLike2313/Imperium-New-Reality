@@ -1,0 +1,35 @@
+{
+  "capability_id": "CAP-VIS-PLAYWRIGHT-REGRESSION",
+  "name": "Playwright visual regression candidate",
+  "category": "VISUAL_TESTING",
+  "status": "CANDIDATE",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Candidate visual capture/regression lane.",
+  "what_problem_it_solves": "Would standardize screenshot evidence automation.",
+  "source_type": "external_tool",
+  "source_url_or_path": "npx playwright --version",
+  "license_or_trust_note": "Host/external trust requires explicit admission receipts.",
+  "install_required": true,
+  "install_gate": "GATE-ARSENAL-VISUAL-TOOL-ADMISSION",
+  "validation_commands": [
+    "validate:cap-vis-playwright-regression"
+  ],
+  "expected_receipts": [
+    "cap-vis-playwright-regression_receipt.json"
+  ],
+  "safety_notes": "Use only in bounded task scope; no blind runtime mutation.",
+  "security_notes": "Do not bypass path, command, and evidence gates.",
+  "offline_or_network_dependency": "network_optional",
+  "promoted_by_receipt": "NOT_PROMOTED",
+  "last_reviewed_utc": "2026-05-24T00:00:00Z",
+  "next_review_reason": "Requires explicit admission and install receipts.",
+  "limitations": "No local validation in foundation scope.",
+  "allowed_use_cases": [
+    "Bounded task execution under Mechanicus policy",
+    "Evidence-backed validation and report generation"
+  ],
+  "forbidden_use_cases": [
+    "Production-ready claim without receipts",
+    "Out-of-scope or unbounded execution"
+  ]
+}

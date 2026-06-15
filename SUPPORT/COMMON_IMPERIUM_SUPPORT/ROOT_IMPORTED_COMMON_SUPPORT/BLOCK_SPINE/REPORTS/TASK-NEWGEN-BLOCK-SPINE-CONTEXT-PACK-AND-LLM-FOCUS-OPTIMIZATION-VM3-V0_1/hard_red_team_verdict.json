@@ -1,0 +1,26 @@
+{
+  "task_id": "TASK-NEWGEN-BLOCK-SPINE-CONTEXT-PACK-AND-LLM-FOCUS-OPTIMIZATION-VM3-V0_1",
+  "generated_at_utc": "2026-06-01T09:27:36Z",
+  "checks": {
+    "role_and_authority_read": true,
+    "head_and_branch_known": true,
+    "dirty_state_disclosed": true,
+    "manual_reasoning_not_claimed_as_system_capability": true,
+    "replayable_script_artifacts_present": true,
+    "context_pack_builder_executed": true,
+    "context_bloat_detector_executed": true,
+    "forbidden_scope_violations_detected": false,
+    "commit_push_receipt_present": true,
+    "worktree_clean_after_push": true,
+    "origin_master_equals_final_head": true
+  },
+  "caps_triggered": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME"
+  ],
+  "downgrades": [
+    "Clean PASS remains forbidden by taskpack policy until external review accepts block spine candidate set."
+  ],
+  "verdict": "BLOCK_SPINE_CONTEXT_OPTIMIZATION_PASS_WITH_WARNINGS"
+}

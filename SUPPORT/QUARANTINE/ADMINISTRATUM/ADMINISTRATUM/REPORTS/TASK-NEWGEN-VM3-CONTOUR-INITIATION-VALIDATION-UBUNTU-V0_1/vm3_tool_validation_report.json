@@ -1,0 +1,92 @@
+{
+  "task_id": "TASK-NEWGEN-VM3-CONTOUR-INITIATION-VALIDATION-UBUNTU-V0_1",
+  "report_type": "VM3_MECHANICUS_TOOL_CAPABILITY_VALIDATION",
+  "generated_at_utc": "2026-05-27T11:37:11Z",
+  "policy": "NO_UNCONTROLLED_INSTALLS",
+  "no_install_performed": true,
+  "core_runtime": {
+    "python3": {
+      "available": true,
+      "path": "/usr/bin/python3",
+      "version": "Python 3.12.3"
+    },
+    "git": {
+      "available": true,
+      "path": "/usr/bin/git",
+      "version": "git version 2.43.0"
+    },
+    "node": {
+      "available": true,
+      "path": "/usr/bin/node",
+      "version": "v18.19.1"
+    },
+    "npm": {
+      "available": true,
+      "path": "/usr/bin/npm",
+      "version": "9.2.0"
+    },
+    "python_pip_module": {
+      "available": false,
+      "version": "missing"
+    },
+    "pip3_bin": {
+      "available": false,
+      "path": ""
+    }
+  },
+  "wave001_linux_equivalents": {
+    "seven_zip": {
+      "available": false,
+      "candidates": [
+        {
+          "name": "7z",
+          "available": false,
+          "path": ""
+        },
+        {
+          "name": "7zz",
+          "available": false,
+          "path": ""
+        },
+        {
+          "name": "p7zip",
+          "available": false,
+          "path": ""
+        }
+      ]
+    },
+    "markdownlint": {
+      "available": false,
+      "candidates": [
+        {
+          "name": "markdownlint",
+          "available": false,
+          "path": ""
+        },
+        {
+          "name": "markdownlint-cli2",
+          "available": false,
+          "path": ""
+        }
+      ]
+    },
+    "check_jsonschema": {
+      "available": false,
+      "path": ""
+    },
+    "yamllint": {
+      "available": false,
+      "path": ""
+    }
+  },
+  "mechanicus_signal": {
+    "rich_import_version": "missing",
+    "rich_available": false
+  },
+  "verdict": "WARN_MISSING_OPTIONAL_TOOLS_RECORDED",
+  "recommendations": [
+    "Keep no-install posture in this task; register missing optional tools as controlled-install backlog.",
+    "If markdown/json/yaml linting is required in next task, request controlled Mechanicus install gate first.",
+    "For TUI-heavy tasks, validate Rich capability under controlled policy before claiming visual readiness."
+  ]
+}

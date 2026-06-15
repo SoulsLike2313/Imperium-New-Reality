@@ -1,0 +1,59 @@
+{
+  "visual_unit_id": "SANCTUM.BRAIN_FIELD.ORGAN_RING.MECHANICUS_NODE",
+  "parent": "SANCTUM.BRAIN_FIELD.ORGAN_RING",
+  "type": "organ_node",
+  "visual_owner": "SANCTUM_SHELL",
+  "truth_owner": "MECHANICUS_AGENT",
+  "data_source_owner": "SANCTUM_STATE_BUILDER",
+  "organ_subject": "MECHANICUS_AGENT",
+  "implementation_owner": "VISUAL_FOUNDRY",
+  "purpose": "Live Mechanicus organ node with backend-bound state mapping.",
+  "backend_source": {
+    "type": "api_state_and_agent_status",
+    "paths": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/api/state_builder.py",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/api/mechanicus_adapter.py",
+      "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/state/current_status.json"
+    ]
+  },
+  "backend_source_status": "real",
+  "allowed_states": [
+    "connected",
+    "warn",
+    "error",
+    "blocked",
+    "unknown"
+  ],
+  "truth_rules": [
+    "Connected is allowed only when declared backend source resolves.",
+    "Unreadable source forces UNKNOWN."
+  ],
+  "visual_tokens": "mechanicus_node_tokens",
+  "texture": "red_forge_warning",
+  "glow": {
+    "enabled": true,
+    "color_token": "mechanicus_red_glow",
+    "default_intensity": 0.45
+  },
+  "motion": {
+    "enabled": true,
+    "animation": "pulse_breath",
+    "perf_tier": "CHEAP",
+    "disable_in_reduced_motion": true
+  },
+  "perf_tier": "CHEAP",
+  "proof_requirements": [
+    "Mechanicus state source path must exist in truth map."
+  ],
+  "integration_status": "real",
+  "fake_green_risks": [
+    "Connected style while state source missing."
+  ],
+  "owner_group": "SANCTUM",
+  "owner_organ": "MECHANICUS_AGENT",
+  "accessibility_rules": [
+    "State must not be encoded by color alone.",
+    "RU/EN labels must remain explicit for status tags."
+  ],
+  "change_safety": "Topology hardening scope only; no final UI readiness claims."
+}

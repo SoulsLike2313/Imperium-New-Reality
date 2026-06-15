@@ -1,0 +1,970 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "generated_at_utc": "2026-05-24T23:33:55Z",
+  "decisions": [
+    {
+      "tool_id": "UTILITIES_RIPGREP",
+      "name": "ripgrep",
+      "category": "UTILITIES",
+      "candidate_group": "SEARCH_CODE_NAVIGATION",
+      "detection_commands": [
+        "rg --version"
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/UTILITIES_RIPGREP/capability_card.json",
+      "current_status": "CANDIDATE",
+      "value_level": "CRITICAL",
+      "risk_level": "LOW",
+      "plus": [
+        "Fast repo-wide search.",
+        "Already used in Mechanicus workflows."
+      ],
+      "minus": [
+        "External binary dependency."
+      ],
+      "recommended_action": "INSTALL_OR_VALIDATE_NOW",
+      "owner_approval_required": false,
+      "proposed_install_command": "winget install BurntSushi.ripgrep",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-ripgrep_validation_receipt.json",
+      "status_recommendation": "PROMOTE_SANDBOX",
+      "notes": "Primary search accelerator for reports/receipts/card lookup.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "rg --version",
+          "exit_code": 0,
+          "stdout_excerpt": "ripgrep 15.1.0 (rev af60c2de9d)\n\nfeatures:+pcre2\nsimd(compile):+SSE2,-SSSE3,-AVX2\nsimd(runtime):+SSE2,+SSSE3,+AVX2\n\nPCRE2 10.45 is available (JIT is available)",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "SEARCH_INDEXING_RIPGREP_SEARCH",
+      "name": "ripgrep search workflow",
+      "category": "SEARCH_INDEXING",
+      "candidate_group": "SEARCH_CODE_NAVIGATION",
+      "detection_commands": [
+        "rg --files IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS | head -n 3",
+        "rg --files IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS"
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/SEARCH_INDEXING/SEARCH_INDEXING_RIPGREP_SEARCH/capability_card.json",
+      "current_status": "CANDIDATE",
+      "value_level": "HIGH",
+      "risk_level": "LOW",
+      "plus": [
+        "Gives high-density evidence discovery."
+      ],
+      "minus": [
+        "Depends on ripgrep binary availability."
+      ],
+      "recommended_action": "INSTALL_OR_VALIDATE_NOW",
+      "owner_approval_required": false,
+      "proposed_install_command": "winget install BurntSushi.ripgrep",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/search-indexing-ripgrep-search_validation_receipt.json",
+      "status_recommendation": "PROMOTE_SANDBOX",
+      "notes": "Search-indexing lane backed by real report folders.",
+      "detection_verdict": "PASS_WITH_WARNINGS",
+      "command_outcomes": [
+        {
+          "command": "rg --files IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS | head -n 3",
+          "exit_code": 255,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'head' is not recognized as an internal or external command,\noperable program or batch file."
+        },
+        {
+          "command": "rg --files IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS",
+          "exit_code": 0,
+          "stdout_excerpt": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS\\README.md\nIMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS\\TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\\fake_canon_detector_report.json\nIMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS\\TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\\evidence_index_smoke_report.json\nIMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS\\TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\\evidence_index_smoke.sqlite3\nIMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS\\TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\\code_quality_report.json\nIMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS\\TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\\closure_receipt.json\nIMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS\\TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1\\agent_kpd_self_review.json\nIMPERIUM_N...<truncated>",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "UTILITIES_FD",
+      "name": "fd",
+      "category": "UTILITIES",
+      "candidate_group": "SEARCH_CODE_NAVIGATION",
+      "detection_commands": [
+        "fd --version",
+        "fdfind --version"
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/UTILITIES_FD/capability_card.json",
+      "current_status": "CANDIDATE",
+      "value_level": "HIGH",
+      "risk_level": "LOW",
+      "plus": [
+        "Very fast file traversal."
+      ],
+      "minus": [
+        "Alternative command names on Windows/Linux."
+      ],
+      "recommended_action": "INSTALL_OR_VALIDATE_NOW",
+      "owner_approval_required": false,
+      "proposed_install_command": "winget install sharkdp.fd",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-fd_validation_receipt.json",
+      "status_recommendation": "PROMOTE_SANDBOX",
+      "notes": "Complements ripgrep for path-first exploration.",
+      "detection_verdict": "PASS_WITH_WARNINGS",
+      "command_outcomes": [
+        {
+          "command": "fd --version",
+          "exit_code": 0,
+          "stdout_excerpt": "fd 10.4.2",
+          "stderr_excerpt": ""
+        },
+        {
+          "command": "fdfind --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'fdfind' is not recognized as an internal or external command,\noperable program or batch file."
+        }
+      ]
+    },
+    {
+      "tool_id": "LANGUAGES_POWERSHELL",
+      "name": "PowerShell Select-String fallback",
+      "category": "LANGUAGES",
+      "candidate_group": "SEARCH_CODE_NAVIGATION",
+      "detection_commands": [
+        "powershell -NoProfile -Command \"'alpha' | Select-String -Pattern 'alp' | ForEach-Object { $_.Matches.Count }\""
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/LANGUAGES/LANGUAGES_POWERSHELL/capability_card.json",
+      "current_status": "SANDBOX",
+      "value_level": "HIGH",
+      "risk_level": "LOW",
+      "plus": [
+        "Built-in fallback without installs."
+      ],
+      "minus": [
+        "Slower than ripgrep for large trees."
+      ],
+      "recommended_action": "VALIDATE_IF_PRESENT",
+      "owner_approval_required": false,
+      "proposed_install_command": "",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/languages-powershell_validation_receipt.json",
+      "status_recommendation": "KEEP_STATUS",
+      "notes": "Mandatory fallback when external grep utilities are unavailable.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "powershell -NoProfile -Command \"'alpha' | Select-String -Pattern 'alp' | ForEach-Object { $_.Matches.Count }\"",
+          "exit_code": 0,
+          "stdout_excerpt": "1",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "PYTHON_PATHLIB_GLOB_FALLBACK",
+      "name": "Python pathlib/glob fallback",
+      "category": "REFERENCE_CODE",
+      "candidate_group": "SEARCH_CODE_NAVIGATION",
+      "detection_commands": [
+        "python -c \"from pathlib import Path; print(len(list(Path('IMPERIUM_NEW_GENERATION').glob('**/*.md'))) > 0)\""
+      ],
+      "present": true,
+      "current_capability_card": "",
+      "current_status": "NO_CARD",
+      "value_level": "MEDIUM",
+      "risk_level": "LOW",
+      "plus": [
+        "No extra install; deterministic fallback."
+      ],
+      "minus": [
+        "Slow on deep trees."
+      ],
+      "recommended_action": "KEEP_CANDIDATE",
+      "owner_approval_required": false,
+      "proposed_install_command": "",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/python-pathlib-glob-fallback_validation_receipt.json",
+      "status_recommendation": "KEEP_STATUS",
+      "notes": "Used only as bounded fallback when rg/fd are missing.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "python -c \"from pathlib import Path; print(len(list(Path('IMPERIUM_NEW_GENERATION').glob('**/*.md'))) > 0)\"",
+          "exit_code": 0,
+          "stdout_excerpt": "True",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "UTILITIES_JQ",
+      "name": "jq",
+      "category": "UTILITIES",
+      "candidate_group": "JSON_YAML_DATA",
+      "detection_commands": [
+        "jq --version"
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/UTILITIES_JQ/capability_card.json",
+      "current_status": "CANDIDATE",
+      "value_level": "HIGH",
+      "risk_level": "LOW",
+      "plus": [
+        "Compact JSON filtering in shell lanes."
+      ],
+      "minus": [
+        "Extra binary if not preinstalled."
+      ],
+      "recommended_action": "INSTALL_OR_VALIDATE_NOW",
+      "owner_approval_required": false,
+      "proposed_install_command": "winget install jqlang.jq",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-jq_validation_receipt.json",
+      "status_recommendation": "PROMOTE_SANDBOX",
+      "notes": "Speeds up report/receipt shaping and quick data checks.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "jq --version",
+          "exit_code": 0,
+          "stdout_excerpt": "jq-1.8.1",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "UTILITIES_YQ",
+      "name": "yq",
+      "category": "UTILITIES",
+      "candidate_group": "JSON_YAML_DATA",
+      "detection_commands": [
+        "yq --version"
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/UTILITIES_YQ/capability_card.json",
+      "current_status": "CANDIDATE",
+      "value_level": "MEDIUM",
+      "risk_level": "LOW",
+      "plus": [
+        "YAML+JSON transformations in one CLI."
+      ],
+      "minus": [
+        "Not required for minimal tasks."
+      ],
+      "recommended_action": "INSTALL_OR_VALIDATE_NOW",
+      "owner_approval_required": false,
+      "proposed_install_command": "winget install MikeFarah.yq",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-yq_validation_receipt.json",
+      "status_recommendation": "PROMOTE_SANDBOX",
+      "notes": "Useful for taskpacks with YAML meta contracts.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "yq --version",
+          "exit_code": 0,
+          "stdout_excerpt": "yq (https://github.com/mikefarah/yq/) version v4.52.5",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "CAP-TOOL-JSONSCHEMA",
+      "name": "jsonschema (tool lane)",
+      "category": "TOOLS",
+      "candidate_group": "JSON_YAML_DATA",
+      "detection_commands": [
+        "python -m jsonschema --version"
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/CAP-TOOL-JSONSCHEMA.json",
+      "current_status": "SANDBOX",
+      "value_level": "HIGH",
+      "risk_level": "LOW",
+      "plus": [
+        "Schema-first guard for machine artifacts."
+      ],
+      "minus": [
+        "CLI is deprecated; future migration to check-jsonschema likely."
+      ],
+      "recommended_action": "VALIDATE_IF_PRESENT",
+      "owner_approval_required": false,
+      "proposed_install_command": "python -m pip install --user jsonschema",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/cap-tool-jsonschema_validation_receipt.json",
+      "status_recommendation": "KEEP_STATUS",
+      "notes": "Already in SANDBOX; revalidated to support expansion batch receipts.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "python -m jsonschema --version",
+          "exit_code": 0,
+          "stdout_excerpt": "4.26.0",
+          "stderr_excerpt": "C:\\Users\\PC\\AppData\\Roaming\\Python\\Python312\\site-packages\\jsonschema\\__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main"
+        }
+      ]
+    },
+    {
+      "tool_id": "CODE_QUALITY_JSONSCHEMA",
+      "name": "jsonschema (code-quality lane)",
+      "category": "CODE_QUALITY",
+      "candidate_group": "JSON_YAML_DATA",
+      "detection_commands": [
+        "python -m jsonschema --version"
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_JSONSCHEMA/capability_card.json",
+      "current_status": "SANDBOX",
+      "value_level": "HIGH",
+      "risk_level": "LOW",
+      "plus": [
+        "Shared validator across reports/contracts."
+      ],
+      "minus": [
+        "Long-term CLI replacement should be planned."
+      ],
+      "recommended_action": "VALIDATE_IF_PRESENT",
+      "owner_approval_required": false,
+      "proposed_install_command": "python -m pip install --user jsonschema",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/code-quality-jsonschema_validation_receipt.json",
+      "status_recommendation": "KEEP_STATUS",
+      "notes": "Companion lane for code-quality scope packs.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "python -m jsonschema --version",
+          "exit_code": 0,
+          "stdout_excerpt": "4.26.0",
+          "stderr_excerpt": "C:\\Users\\PC\\AppData\\Roaming\\Python\\Python312\\site-packages\\jsonschema\\__main__.py:4: DeprecationWarning: The jsonschema CLI is deprecated and will be removed in a future version. Please use check-jsonschema instead, which can be installed from https://pypi.org/project/check-jsonschema/\n  from jsonschema.cli import main"
+        }
+      ]
+    },
+    {
+      "tool_id": "REFERENCE_CODE_SAFE_JSON_WRITE_HELPER",
+      "name": "safe JSON write helper reference",
+      "category": "REFERENCE_CODE",
+      "candidate_group": "JSON_YAML_DATA",
+      "detection_commands": [
+        "python -c \"from pathlib import Path; p=Path('IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/REFERENCE_CODE/REFERENCE_CODE_SAFE_JSON_WRITE_HELPER/capability_card.json'); print(p.exists()); raise SystemExit(0 if p.exists() else 2)\""
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/REFERENCE_CODE/REFERENCE_CODE_SAFE_JSON_WRITE_HELPER/capability_card.json",
+      "current_status": "CANDIDATE",
+      "value_level": "MEDIUM",
+      "risk_level": "LOW",
+      "plus": [
+        "Reduces malformed JSON artifact risk."
+      ],
+      "minus": [
+        "Reference pattern, not standalone executable."
+      ],
+      "recommended_action": "KEEP_CANDIDATE",
+      "owner_approval_required": false,
+      "proposed_install_command": "",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/reference-code-safe-json-write-helper_validation_receipt.json",
+      "status_recommendation": "KEEP_STATUS",
+      "notes": "Validated as reference availability; promotion remains conservative.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "python -c \"from pathlib import Path; p=Path('IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/REFERENCE_CODE/REFERENCE_CODE_SAFE_JSON_WRITE_HELPER/capability_card.json'); print(p.exists()); raise SystemExit(0 if p.exists() else 2)\"",
+          "exit_code": 0,
+          "stdout_excerpt": "True",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "UTILITIES_7_ZIP",
+      "name": "7-Zip CLI",
+      "category": "UTILITIES",
+      "candidate_group": "ARCHIVE_HASH_EVIDENCE",
+      "detection_commands": [
+        "7z i",
+        "7za i"
+      ],
+      "present": false,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/UTILITIES_7_ZIP/capability_card.json",
+      "current_status": "CANDIDATE",
+      "value_level": "HIGH",
+      "risk_level": "MEDIUM",
+      "plus": [
+        "Strong archive tooling for taskpack checks."
+      ],
+      "minus": [
+        "Not installed on many hosts; install required."
+      ],
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "owner_approval_required": true,
+      "proposed_install_command": "winget install 7zip.7zip",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-7-zip_validation_receipt.json",
+      "status_recommendation": "KEEP_CANDIDATE",
+      "notes": "No silent install allowed; queue for owner gate when missing.",
+      "detection_verdict": "MISSING",
+      "command_outcomes": [
+        {
+          "command": "7z i",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'7z' is not recognized as an internal or external command,\noperable program or batch file."
+        },
+        {
+          "command": "7za i",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'7za' is not recognized as an internal or external command,\noperable program or batch file."
+        }
+      ]
+    },
+    {
+      "tool_id": "TAR_ZIP_RUNTIME_AVAILABILITY",
+      "name": "tar/zip runtime availability",
+      "category": "UTILITIES",
+      "candidate_group": "ARCHIVE_HASH_EVIDENCE",
+      "detection_commands": [
+        "tar --version",
+        "python -c \"import zipfile, tarfile; print('zip_tar_ok')\""
+      ],
+      "present": true,
+      "current_capability_card": "",
+      "current_status": "NO_CARD",
+      "value_level": "MEDIUM",
+      "risk_level": "LOW",
+      "plus": [
+        "Built-in archive fallback without extra install."
+      ],
+      "minus": [
+        "tar CLI behavior differs across shells."
+      ],
+      "recommended_action": "KEEP_CANDIDATE",
+      "owner_approval_required": false,
+      "proposed_install_command": "",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/tar-zip-runtime-availability_validation_receipt.json",
+      "status_recommendation": "KEEP_STATUS",
+      "notes": "Core fallback for controlled packaging lanes.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "tar --version",
+          "exit_code": 0,
+          "stdout_excerpt": "bsdtar 3.5.2 - libarchive 3.5.2 zlib/1.2.5.f-ipp",
+          "stderr_excerpt": ""
+        },
+        {
+          "command": "python -c \"import zipfile, tarfile; print('zip_tar_ok')\"",
+          "exit_code": 0,
+          "stdout_excerpt": "zip_tar_ok",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "UTILITIES_ARCHIVE_MANIFEST_GENERATOR",
+      "name": "archive manifest generator",
+      "category": "UTILITIES",
+      "candidate_group": "ARCHIVE_HASH_EVIDENCE",
+      "detection_commands": [
+        "python -c \"import json,hashlib,zipfile,tarfile; print('archive_manifest_stack_ok')\""
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/UTILITIES_ARCHIVE_MANIFEST_GENERATOR/capability_card.json",
+      "current_status": "CANDIDATE",
+      "value_level": "HIGH",
+      "risk_level": "LOW",
+      "plus": [
+        "Supports deterministic hash manifest creation."
+      ],
+      "minus": [
+        "Current implementation is fallback, not dedicated CLI."
+      ],
+      "recommended_action": "INSTALL_OR_VALIDATE_NOW",
+      "owner_approval_required": false,
+      "proposed_install_command": "",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-archive-manifest-generator_validation_receipt.json",
+      "status_recommendation": "PROMOTE_SANDBOX",
+      "notes": "Promotable to SANDBOX if fallback checks pass.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "python -c \"import json,hashlib,zipfile,tarfile; print('archive_manifest_stack_ok')\"",
+          "exit_code": 0,
+          "stdout_excerpt": "archive_manifest_stack_ok",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "UTILITIES_SHA256_HASHING",
+      "name": "SHA256 hashing lane",
+      "category": "UTILITIES",
+      "candidate_group": "ARCHIVE_HASH_EVIDENCE",
+      "detection_commands": [
+        "certutil -hashfile AGENTS.md SHA256",
+        "python -c \"import hashlib, pathlib; print(hashlib.sha256(pathlib.Path('AGENTS.md').read_bytes()).hexdigest()[:8])\""
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/UTILITIES/UTILITIES_SHA256_HASHING/capability_card.json",
+      "current_status": "CANDIDATE",
+      "value_level": "HIGH",
+      "risk_level": "LOW",
+      "plus": [
+        "Critical for evidence integrity."
+      ],
+      "minus": [
+        "Some environments lack Get-FileHash cmdlet."
+      ],
+      "recommended_action": "INSTALL_OR_VALIDATE_NOW",
+      "owner_approval_required": false,
+      "proposed_install_command": "",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-sha256-hashing_validation_receipt.json",
+      "status_recommendation": "PROMOTE_SANDBOX",
+      "notes": "Validation accepts certutil/Python fallback combo.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "certutil -hashfile AGENTS.md SHA256",
+          "exit_code": 0,
+          "stdout_excerpt": "Хэш SHA256 AGENTS.md:\n11a74cbf1bba6e5930a69e715f9261bcdd2a8fdfd89efa5bdcf6c28fdf37036a\nCertUtil: -hashfile — команда успешно выполнена.",
+          "stderr_excerpt": ""
+        },
+        {
+          "command": "python -c \"import hashlib, pathlib; print(hashlib.sha256(pathlib.Path('AGENTS.md').read_bytes()).hexdigest()[:8])\"",
+          "exit_code": 0,
+          "stdout_excerpt": "11a74cbf",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "DATABASES_SQLITE",
+      "name": "sqlite3 runtime",
+      "category": "DATABASES",
+      "candidate_group": "ARCHIVE_HASH_EVIDENCE",
+      "detection_commands": [
+        "python -c \"import sqlite3; print(sqlite3.sqlite_version)\""
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_SQLITE/capability_card.json",
+      "current_status": "SANDBOX",
+      "value_level": "HIGH",
+      "risk_level": "LOW",
+      "plus": [
+        "Core storage for Evidence Index."
+      ],
+      "minus": [
+        "Limited by stdlib compile options."
+      ],
+      "recommended_action": "VALIDATE_IF_PRESENT",
+      "owner_approval_required": false,
+      "proposed_install_command": "",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/databases-sqlite_validation_receipt.json",
+      "status_recommendation": "KEEP_STATUS",
+      "notes": "Already SANDBOX; kept in matrix for dependency truth.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "python -c \"import sqlite3; print(sqlite3.sqlite_version)\"",
+          "exit_code": 0,
+          "stdout_excerpt": "3.49.1",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "DATABASES_SQLITE_FTS5",
+      "name": "sqlite3 FTS5 support",
+      "category": "DATABASES",
+      "candidate_group": "ARCHIVE_HASH_EVIDENCE",
+      "detection_commands": [
+        "python -c \"import sqlite3; con=sqlite3.connect(':memory:'); con.execute('CREATE VIRTUAL TABLE t USING fts5(content)'); print('fts5_ok')\""
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/DATABASES_SQLITE_FTS5/capability_card.json",
+      "current_status": "SANDBOX",
+      "value_level": "HIGH",
+      "risk_level": "LOW",
+      "plus": [
+        "Enables fast evidence full-text search."
+      ],
+      "minus": [
+        "Fails if Python sqlite build lacks fts5."
+      ],
+      "recommended_action": "VALIDATE_IF_PRESENT",
+      "owner_approval_required": false,
+      "proposed_install_command": "",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/databases-sqlite-fts5_validation_receipt.json",
+      "status_recommendation": "KEEP_STATUS",
+      "notes": "Key dependency for evidence query smoke.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "python -c \"import sqlite3; con=sqlite3.connect(':memory:'); con.execute('CREATE VIRTUAL TABLE t USING fts5(content)'); print('fts5_ok')\"",
+          "exit_code": 0,
+          "stdout_excerpt": "fts5_ok",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "SEARCH_INDEXING_SQLITE_FTS_SEARCH",
+      "name": "SQLite FTS search lane",
+      "category": "SEARCH_INDEXING",
+      "candidate_group": "ARCHIVE_HASH_EVIDENCE",
+      "detection_commands": [
+        "python -c \"import sqlite3; con=sqlite3.connect('IMPERIUM_NEW_GENERATION/MECHANICUS/EVIDENCE_INDEX/V0_1/evidence_index.sqlite3'); c=con.execute('SELECT COUNT(1) FROM evidence_fts').fetchone()[0]; print(c)\""
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/SEARCH_INDEXING/SEARCH_INDEXING_SQLITE_FTS_SEARCH/capability_card.json",
+      "current_status": "SANDBOX",
+      "value_level": "HIGH",
+      "risk_level": "LOW",
+      "plus": [
+        "Direct query lane for evidence retrieval."
+      ],
+      "minus": [
+        "Depends on current index refresh state."
+      ],
+      "recommended_action": "VALIDATE_IF_PRESENT",
+      "owner_approval_required": false,
+      "proposed_install_command": "",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/search-indexing-sqlite-fts-search_validation_receipt.json",
+      "status_recommendation": "KEEP_STATUS",
+      "notes": "Included to verify index utility after expansion artifacts.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "python -c \"import sqlite3; con=sqlite3.connect('IMPERIUM_NEW_GENERATION/MECHANICUS/EVIDENCE_INDEX/V0_1/evidence_index.sqlite3'); c=con.execute('SELECT COUNT(1) FROM evidence_fts').fetchone()[0]; print(c)\"",
+          "exit_code": 0,
+          "stdout_excerpt": "386",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "CODE_QUALITY_RUFF",
+      "name": "ruff",
+      "category": "CODE_QUALITY",
+      "candidate_group": "REPO_HYGIENE_SAFETY",
+      "detection_commands": [
+        "python -m ruff --version"
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_RUFF/capability_card.json",
+      "current_status": "SANDBOX",
+      "value_level": "HIGH",
+      "risk_level": "LOW",
+      "plus": [
+        "Fast lint guard for script quality."
+      ],
+      "minus": [
+        "Can block on style drift if run too broad."
+      ],
+      "recommended_action": "VALIDATE_IF_PRESENT",
+      "owner_approval_required": false,
+      "proposed_install_command": "python -m pip install --user ruff",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/code-quality-ruff_validation_receipt.json",
+      "status_recommendation": "KEEP_STATUS",
+      "notes": "Quality gate requirement for new scripts in this task.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "python -m ruff --version",
+          "exit_code": 0,
+          "stdout_excerpt": "ruff 0.15.14",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "CODE_QUALITY_MYPY",
+      "name": "mypy",
+      "category": "CODE_QUALITY",
+      "candidate_group": "REPO_HYGIENE_SAFETY",
+      "detection_commands": [
+        "python -m mypy --version"
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_MYPY/capability_card.json",
+      "current_status": "SANDBOX",
+      "value_level": "MEDIUM",
+      "risk_level": "LOW",
+      "plus": [
+        "Type-safety evidence for reusable scripts."
+      ],
+      "minus": [
+        "First-pass warnings acceptable in this step."
+      ],
+      "recommended_action": "VALIDATE_IF_PRESENT",
+      "owner_approval_required": false,
+      "proposed_install_command": "python -m pip install --user mypy",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/code-quality-mypy_validation_receipt.json",
+      "status_recommendation": "KEEP_STATUS",
+      "notes": "Supports GATE-U13 evidence lane.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "python -m mypy --version",
+          "exit_code": 0,
+          "stdout_excerpt": "mypy 2.1.0 (compiled: yes)",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "ALGORITHMS_RUNTIME_JUNK_CLASSIFIER",
+      "name": "runtime junk classifier",
+      "category": "ALGORITHMS",
+      "candidate_group": "REPO_HYGIENE_SAFETY",
+      "detection_commands": [
+        "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/newgen_repo_hygiene_check_v0_1.py --help"
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/ALGORITHMS/ALGORITHMS_RUNTIME_JUNK_CLASSIFIER/capability_card.json",
+      "current_status": "CANDIDATE",
+      "value_level": "HIGH",
+      "risk_level": "LOW",
+      "plus": [
+        "Prevents noisy dirty-state from generated artifacts."
+      ],
+      "minus": [
+        "Classifier quality depends on maintained ignore rules."
+      ],
+      "recommended_action": "KEEP_CANDIDATE",
+      "owner_approval_required": false,
+      "proposed_install_command": "",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/algorithms-runtime-junk-classifier_validation_receipt.json",
+      "status_recommendation": "KEEP_STATUS",
+      "notes": "Can be promoted once deterministic help/run evidence exists.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/newgen_repo_hygiene_check_v0_1.py --help",
+          "exit_code": 0,
+          "stdout_excerpt": "usage: newgen_repo_hygiene_check_v0_1.py [-h] [--task-id TASK_ID]\n                                         [--repo-root REPO_ROOT] --output\n                                         OUTPUT\n\nReport-only NewGen hygiene scan (no deletion).\n\noptions:\n  -h, --help            show this help message and exit\n  --task-id TASK_ID\n  --repo-root REPO_ROOT\n  --output OUTPUT",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "TOOLS_SCOPE_REVIEW_TOOL",
+      "name": "scope pack review tool",
+      "category": "TOOLS",
+      "candidate_group": "REPO_HYGIENE_SAFETY",
+      "detection_commands": [
+        "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_scope_packs_v0_1.py --help"
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_SCOPE_REVIEW_TOOL/capability_card.json",
+      "current_status": "CANDIDATE",
+      "value_level": "HIGH",
+      "risk_level": "LOW",
+      "plus": [
+        "Guards fake-CANON and scope mismatch drift."
+      ],
+      "minus": [
+        "Needs jsonschema package for full checks."
+      ],
+      "recommended_action": "INSTALL_OR_VALIDATE_NOW",
+      "owner_approval_required": false,
+      "proposed_install_command": "",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/tools-scope-review-tool_validation_receipt.json",
+      "status_recommendation": "PROMOTE_SANDBOX",
+      "notes": "Useful as reusable preflight for scope updates.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_scope_packs_v0_1.py --help",
+          "exit_code": 0,
+          "stdout_excerpt": "usage: check_mechanicus_scope_packs_v0_1.py [-h] [--task-id TASK_ID]\n                                            [--repo-root REPO_ROOT]\n                                            [--registry REGISTRY]\n                                            [--scope-root SCOPE_ROOT]\n                                            [--schema-path SCHEMA_PATH]\n                                            --report-output REPORT_OUTPUT\n\nCheck Mechanicus scope packs for structure, policy guards, and fake-CANON\ndrift.\n\noptions:\n  -h, --help            show this help message and exit\n  --task-id TASK_ID\n  --repo-root REPO_ROOT\n  --registry REGISTRY\n  --scope-root SCOPE_ROOT\n  --schema-path SCHEMA_PATH\n                        File name in scope-root or absolute path.\n  --report-output REPORT_OUTPUT\n               ...<truncated>",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "TOOLS_CANDIDATE_CHECK_WORKFLOW",
+      "name": "candidate check workflow",
+      "category": "TOOLS",
+      "candidate_group": "REPO_HYGIENE_SAFETY",
+      "detection_commands": [
+        "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_validator_v0_1.py --help"
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_CANDIDATE_CHECK_WORKFLOW/capability_card.json",
+      "current_status": "CANDIDATE",
+      "value_level": "MEDIUM",
+      "risk_level": "LOW",
+      "plus": [
+        "Structured validation-to-receipt flow exists."
+      ],
+      "minus": [
+        "Current workflow tuned for earlier batches."
+      ],
+      "recommended_action": "KEEP_CANDIDATE",
+      "owner_approval_required": false,
+      "proposed_install_command": "",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/tools-candidate-check-workflow_validation_receipt.json",
+      "status_recommendation": "KEEP_STATUS",
+      "notes": "Kept candidate; this task ships dedicated expansion workflow instead.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_capability_validator_v0_1.py --help",
+          "exit_code": 0,
+          "stdout_excerpt": "usage: mechanicus_capability_validator_v0_1.py [-h] [--task-id TASK_ID]\n\nRun Mechanicus Arsenal Validation Batch 001.\n\noptions:\n  -h, --help         show this help message and exit\n  --task-id TASK_ID",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "TOOLS_TASKPACK_DOSSIER_BUILDER",
+      "name": "taskpack dossier builder lane",
+      "category": "TOOLS",
+      "candidate_group": "REPORTING_TASKPACK",
+      "detection_commands": [
+        "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_taskpack_validator_v0_1.py --help"
+      ],
+      "present": true,
+      "current_capability_card": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/TOOLS/TOOLS_TASKPACK_DOSSIER_BUILDER/capability_card.json",
+      "current_status": "CANDIDATE",
+      "value_level": "MEDIUM",
+      "risk_level": "LOW",
+      "plus": [
+        "Existing validator supports dossier quality checks."
+      ],
+      "minus": [
+        "Dedicated builder tool still candidate-level concept."
+      ],
+      "recommended_action": "KEEP_CANDIDATE",
+      "owner_approval_required": false,
+      "proposed_install_command": "",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/tools-taskpack-dossier-builder_validation_receipt.json",
+      "status_recommendation": "KEEP_STATUS",
+      "notes": "Validation confirms taskpack lane exists; install not needed.",
+      "detection_verdict": "PASS",
+      "command_outcomes": [
+        {
+          "command": "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_taskpack_validator_v0_1.py --help",
+          "exit_code": 0,
+          "stdout_excerpt": "usage: mechanicus_taskpack_validator_v0_1.py [-h] [--task-id TASK_ID]\n                                             [--taskpack-zip TASKPACK_ZIP]\n                                             [--taskpack-dir TASKPACK_DIR]\n                                             --output OUTPUT\n\nValidate taskpack dossier structure for repeatable NewGen admission.\n\noptions:\n  -h, --help            show this help message and exit\n  --task-id TASK_ID\n  --taskpack-zip TASKPACK_ZIP\n                        Path to dossier ZIP.\n  --taskpack-dir TASKPACK_DIR\n                        Path to unpacked dossier directory.\n  --output OUTPUT",
+          "stderr_excerpt": ""
+        }
+      ]
+    },
+    {
+      "tool_id": "MARKDOWNLINT_CLI",
+      "name": "markdownlint CLI",
+      "category": "TOOLS",
+      "candidate_group": "REPORTING_TASKPACK",
+      "detection_commands": [
+        "markdownlint --version",
+        "markdownlint-cli2 --version"
+      ],
+      "present": false,
+      "current_capability_card": "",
+      "current_status": "NO_CARD",
+      "value_level": "MEDIUM",
+      "risk_level": "MEDIUM",
+      "plus": [
+        "Automated markdown contract hygiene."
+      ],
+      "minus": [
+        "Node-based install; not currently present."
+      ],
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "owner_approval_required": true,
+      "proposed_install_command": "npm install -g markdownlint-cli2",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/markdownlint-cli_validation_receipt.json",
+      "status_recommendation": "KEEP_CANDIDATE",
+      "notes": "Queue for owner approval if reporting quality tightening is desired.",
+      "detection_verdict": "MISSING",
+      "command_outcomes": [
+        {
+          "command": "markdownlint --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'markdownlint' is not recognized as an internal or external command,\noperable program or batch file."
+        },
+        {
+          "command": "markdownlint-cli2 --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'markdownlint-cli2' is not recognized as an internal or external command,\noperable program or batch file."
+        }
+      ]
+    },
+    {
+      "tool_id": "CHECK_JSONSCHEMA_CLI",
+      "name": "check-jsonschema CLI",
+      "category": "TOOLS",
+      "candidate_group": "REPORTING_TASKPACK",
+      "detection_commands": [
+        "check-jsonschema --version"
+      ],
+      "present": false,
+      "current_capability_card": "",
+      "current_status": "NO_CARD",
+      "value_level": "MEDIUM",
+      "risk_level": "MEDIUM",
+      "plus": [
+        "Modern replacement for deprecated jsonschema CLI."
+      ],
+      "minus": [
+        "Not installed by default."
+      ],
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "owner_approval_required": true,
+      "proposed_install_command": "python -m pip install --user check-jsonschema",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/check-jsonschema-cli_validation_receipt.json",
+      "status_recommendation": "KEEP_CANDIDATE",
+      "notes": "Deferred install lane with explicit owner gate.",
+      "detection_verdict": "MISSING",
+      "command_outcomes": [
+        {
+          "command": "check-jsonschema --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'check-jsonschema' is not recognized as an internal or external command,\noperable program or batch file."
+        }
+      ]
+    },
+    {
+      "tool_id": "YAMLLINT_CLI",
+      "name": "yamllint",
+      "category": "TOOLS",
+      "candidate_group": "REPORTING_TASKPACK",
+      "detection_commands": [
+        "yamllint --version"
+      ],
+      "present": false,
+      "current_capability_card": "",
+      "current_status": "NO_CARD",
+      "value_level": "LOW",
+      "risk_level": "MEDIUM",
+      "plus": [
+        "Strict YAML lint for future taskpack variants."
+      ],
+      "minus": [
+        "Not needed for current JSON-first core flows."
+      ],
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "owner_approval_required": true,
+      "proposed_install_command": "python -m pip install --user yamllint",
+      "validation_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/yamllint-cli_validation_receipt.json",
+      "status_recommendation": "KEEP_CANDIDATE",
+      "notes": "Can remain deferred until YAML-heavy contracts are introduced.",
+      "detection_verdict": "MISSING",
+      "command_outcomes": [
+        {
+          "command": "yamllint --version",
+          "exit_code": 1,
+          "stdout_excerpt": "",
+          "stderr_excerpt": "'yamllint' is not recognized as an internal or external command,\noperable program or batch file."
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "decision_count": 26,
+    "action_counts": {
+      "INSTALL_OR_VALIDATE_NOW": 8,
+      "VALIDATE_IF_PRESENT": 8,
+      "KEEP_CANDIDATE": 6,
+      "OWNER_APPROVAL_REQUIRED": 4
+    },
+    "status_changes": 8,
+    "owner_approval_required": 4
+  }
+}

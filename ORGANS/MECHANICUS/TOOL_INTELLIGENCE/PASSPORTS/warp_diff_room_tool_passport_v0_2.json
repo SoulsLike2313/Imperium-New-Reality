@@ -1,0 +1,72 @@
+{
+  "schema_id": "imperium.tool_passport.v0_2",
+  "tool_id": "warp_diff_room",
+  "name": "Warp Diff Room",
+  "version": "v0_2",
+  "owner_organ": "MECHANICUS",
+  "lang": "python",
+  "validators": [
+    {
+      "id": "syntax",
+      "type": "command",
+      "command": "python -m py_compile {tool_path}",
+      "timeout_seconds": 10
+    },
+    {
+      "id": "help",
+      "type": "command",
+      "command": "python {tool_path} --help",
+      "timeout_seconds": 5
+    }
+  ],
+  "exec_mode": "static",
+  "owner_gated": false,
+  "_draft": false,
+  "_auto_registered_at": "2026-06-14T17:12:54Z",
+  "_auto_registrar_version": "v0_2",
+  "_confidence": {
+    "owner_organ": "from_path",
+    "lang": "from_source_ext",
+    "validators": "auto_built",
+    "exec_mode": "from_source_scan",
+    "owner_gated": "from_source_scan"
+  },
+  "_source_paths": [
+    "ORGANS/IMPERIAL_IDE/WEB_SANCTUM/DIFF_ROOM/warp_diff_room_v0_1.py"
+  ],
+  "_legacy_passport_path": "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORTS/warp_diff_room_tool_passport_v0_1.json",
+  "_legacy_extras": {
+    "organ": "IMPERIAL_IDE / WEB_SANCTUM",
+    "kind": "observability_renderer",
+    "entrypoint": "ORGANS/IMPERIAL_IDE/WEB_SANCTUM/DIFF_ROOM/warp_diff_room_v0_1.py",
+    "cli": "python warp_diff_room_v0_1.py <repo> [--rev HEAD~1..HEAD] [--out file.html] [--title ...] [--shell-css ...]",
+    "reads_only": [
+      "git rev-parse",
+      "git log -1",
+      "git diff --shortstat",
+      "git diff --name-status",
+      "git diff --no-color"
+    ],
+    "writes": [
+      "WARP_DIFF_ROOM.html (self-contained, outside source under _LOCAL_HANDOFF)",
+      "WARP_DIFF_ROOM.summary.json"
+    ],
+    "form": "Web Sanctum shell (diff_room_shell.css mirrors WEB_SANCTUM/app/styles.css tokens)",
+    "deps": [
+      "python3 stdlib only",
+      "git"
+    ],
+    "safety": [
+      "read-only git",
+      "never commits/pushes/mutates repo",
+      "output only under _LOCAL_HANDOFF"
+    ],
+    "future": "mountable as a WARP 'viewing room' tab inside Web Sanctum",
+    "authority_refs": [
+      "Constitution §6",
+      "Constitution §13",
+      "Passport §3"
+    ],
+    "reusable": true
+  }
+}

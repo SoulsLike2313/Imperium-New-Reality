@@ -1,0 +1,61 @@
+# GATE_ACK — TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1
+
+GATE_ACK:
+- task_id: TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1
+- current_head: 4adfe3938f2da597955f7ee4d666d93d6d9f744a
+- gatepack_path: C:\Users\PC\Downloads\TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1_DOSSIER.zip
+- gatepack_sha256: E88A56984D452B99695CD9DA5CC50C22F078079A3B535212765D9D8F49C64205
+- read_gates:
+  - GATE-U00-GIT-TRUTH
+  - GATE-U01-ROLE-ACK
+  - GATE-U02-SCOPE-BOUNDARY
+  - GATE-U04-EVIDENCE-RECEIPT
+  - GATE-U05-STOP-CONDITIONS
+  - GATE-U08-REPO-PURITY
+  - GATE-U09-NO-FAKE-GREEN
+  - GATE-U12-REPORT-OUTPUT-BUDGET
+  - GATE-U13-PYTHON-TYPE-SAFETY
+  - GATE-U14-WHOLE-REPO-SCOPE-RECON
+  - GATE-U15-OPERATIONALITY-IMPACT
+  - GATE-U16-BILINGUAL-UI
+  - GATE-U17-DELIVERABLE-PACKAGE
+  - GATE-U18-AGENT-FACTORY-COMPLIANCE
+  - GATE-U19-SCRIPT-ARTIFACT-PRESERVATION
+  - GATE-U20-AGENT-KPD-SELF-REVIEW
+  - GATE-U21-COMMAND-CHUNKING
+- accepted_stop_conditions:
+  - unclear task scope
+  - unrelated dirty tree
+  - missing required input
+  - forbidden scope expansion
+  - destructive action risk
+  - fake green risk
+- scope_boundary: IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/**
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/CONTRACTS/**
+  - IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/ROLE_PACKS/**
+  - IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TEMPLATES/**
+  - IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/**
+  - IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/FIXTURES/**
+  - IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/SCHEMAS/**
+  - IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/REPORTS/TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1/**
+- forbidden_paths:
+  - SANCTUM/**
+  - src/**
+  - IMPERIUM_TEST_VERSION/**
+- expected_receipts:
+  - FINAL_REPORT.md
+  - officio_contract_manifest.json
+  - role_pack_export_report.json
+  - response_checker_report.json
+  - fixture_test_report.json
+  - taskpack_template_report.json
+  - language_gate_violation_policy_report.json
+  - ghost_evolve_officio_training_proof.json
+  - inquisition_behavior_violation_handoff.json
+  - administratum_evidence_map.json
+  - closure_receipt.json
+- repo_recon_required: true
+- script_absorption_required: true
+- clarification_needed: false
+- verdict: PASS

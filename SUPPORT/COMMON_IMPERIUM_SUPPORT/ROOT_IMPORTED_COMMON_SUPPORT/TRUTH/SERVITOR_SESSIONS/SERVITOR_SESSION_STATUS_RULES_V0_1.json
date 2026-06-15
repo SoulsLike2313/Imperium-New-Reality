@@ -1,0 +1,74 @@
+{
+  "schema_id": "SERVITOR_SESSION_STATUS_RULES_V0_1",
+  "version": "0.1",
+  "allowed_statuses": [
+    "PASS_STRICT",
+    "PASS_WITH_WARN",
+    "PARTIAL_ACCEPTED",
+    "PARTIAL_BLOCKED",
+    "FOUNDATION_ONLY",
+    "UNKNOWN",
+    "MISSING",
+    "STALE",
+    "NOT_READY",
+    "BLOCKED"
+  ],
+  "semantics": {
+    "PASS_STRICT": {
+      "meaning": "Criterion has explicit evidence and no unresolved blocker in scope.",
+      "no_fake_green_rule": "NO_EVIDENCE_NO_STRICT_PASS",
+      "can_continue": true
+    },
+    "PASS_WITH_WARN": {
+      "meaning": "Core acceptance passed with explicit bounded warnings.",
+      "no_fake_green_rule": "WARNINGS_MUST_BE_VISIBLE",
+      "can_continue": true
+    },
+    "PARTIAL_ACCEPTED": {
+      "meaning": "Partial continuation is allowed only with explicit boundary and owner-facing notes.",
+      "no_fake_green_rule": "PARTIAL_CANNOT_BE_REPORTED_AS_STRICT_PASS",
+      "can_continue": true
+    },
+    "PARTIAL_BLOCKED": {
+      "meaning": "Partial state does not satisfy minimum basis for continuation.",
+      "no_fake_green_rule": "NO_PARTIAL_PROMOTION_WITHOUT_BASIS",
+      "can_continue": false
+    },
+    "FOUNDATION_ONLY": {
+      "meaning": "Artifact is foundational and not production proof.",
+      "no_fake_green_rule": "FOUNDATION_IS_NOT_PRODUCTION",
+      "can_continue": true
+    },
+    "UNKNOWN": {
+      "meaning": "Truth is unknown and must not be promoted to green.",
+      "no_fake_green_rule": "UNKNOWN_CANNOT_CONTINUE_AS_GREEN",
+      "can_continue": false
+    },
+    "MISSING": {
+      "meaning": "Required artifact or evidence is absent.",
+      "no_fake_green_rule": "MISSING_CANNOT_BE_MARKED_PASS",
+      "can_continue": false
+    },
+    "STALE": {
+      "meaning": "Evidence exists but is stale for current claim.",
+      "no_fake_green_rule": "STALE_CANNOT_BE_CURRENT_GREEN",
+      "can_continue": false
+    },
+    "NOT_READY": {
+      "meaning": "Prerequisite work is incomplete.",
+      "no_fake_green_rule": "NOT_READY_CANNOT_BE_PASS",
+      "can_continue": false
+    },
+    "BLOCKED": {
+      "meaning": "Hard blocker prevents progression.",
+      "no_fake_green_rule": "BLOCKED_CANNOT_BE_PROMOTED",
+      "can_continue": false
+    }
+  },
+  "global_invariants": [
+    "NO_EVIDENCE_NO_STRICT_PASS",
+    "UNKNOWN_CANNOT_CONTINUE_AS_GREEN",
+    "FOUNDATION_IS_NOT_PRODUCTION",
+    "NO_LIVE_AUTONOMY_CLAIM_IN_FOUNDATION_VIEW"
+  ]
+}

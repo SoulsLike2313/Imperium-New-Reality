@@ -1,0 +1,137 @@
+{
+  "schema_id": "newgen_servitor_organ_query_catalog_v0_1",
+  "version": "0.1",
+  "status": "DRAFT",
+  "task_id": "TASK-20260524-NEWGEN-OWNER-ORGAN-DEPENDENCY-MAP-INGEST-VM3-V0_1",
+  "queries": [
+    {
+      "query_id": "ASK_DOCTRINARIUM_ADMISSION",
+      "organ_id": "DOCTRINARIUM",
+      "servitor_question": "What declarations, active gates, and evidence rules are mandatory before edits?",
+      "expected_response_fields": [
+        "verdict",
+        "required_declarations",
+        "active_gates",
+        "forbidden_patterns",
+        "pass_criteria",
+        "fail_criteria",
+        "not_proven_boundary"
+      ]
+    },
+    {
+      "query_id": "ASK_OFFICIO_ROLE_LANGUAGE",
+      "organ_id": "OFFICIO_AGENTIS",
+      "servitor_question": "What role boundary, owner-facing language, and final response contract apply to this task?",
+      "expected_response_fields": [
+        "verdict",
+        "role_id",
+        "scope",
+        "owner_facing_language",
+        "required_verdict_pattern",
+        "stop_conditions"
+      ]
+    },
+    {
+      "query_id": "ASK_ASTRONOMICON_ROUTE_STAGE",
+      "organ_id": "ASTRONOMICON",
+      "servitor_question": "What is the organ route and stage decomposition for this task slice?",
+      "expected_response_fields": [
+        "verdict",
+        "route_phases",
+        "stage_map",
+        "dependencies",
+        "risk_flags"
+      ]
+    },
+    {
+      "query_id": "ASK_ADMINISTRATUM_REGISTRATION",
+      "organ_id": "ADMINISTRATUM",
+      "servitor_question": "What registration/history/report paths and continuity artifacts are mandatory?",
+      "expected_response_fields": [
+        "verdict",
+        "task_registration",
+        "required_output_paths",
+        "receipt_requirements",
+        "continuity_links"
+      ]
+    },
+    {
+      "query_id": "ASK_MECHANICUS_TOOL_CAPABILITY",
+      "organ_id": "MECHANICUS",
+      "servitor_question": "What tools/capabilities are required and available for this task?",
+      "expected_response_fields": [
+        "verdict",
+        "available_tools",
+        "missing_tools",
+        "required_actions",
+        "evidence_required"
+      ]
+    },
+    {
+      "query_id": "ASK_INQUISITION_AUDIT_GUARD",
+      "organ_id": "INQUISITION",
+      "servitor_question": "What blockers/warnings remain before scoped PASS can be claimed?",
+      "expected_response_fields": [
+        "verdict",
+        "blockers",
+        "warnings",
+        "scope_violations",
+        "fake_green_risks",
+        "repo_purity_status"
+      ]
+    },
+    {
+      "query_id": "ASK_SCHOLA_LEARNING_CAPTURE",
+      "organ_id": "SCHOLA",
+      "servitor_question": "What lessons and training actions should be extracted from this task outcome?",
+      "expected_response_fields": [
+        "verdict",
+        "good_patterns",
+        "bad_patterns",
+        "training_actions",
+        "cross_organ_handoffs"
+      ]
+    },
+    {
+      "query_id": "ASK_STRATEGIUM_DEVELOPMENT_ROUTE",
+      "organ_id": "STRATEGIUM",
+      "servitor_question": "What strategy/resource route should be applied for larger follow-up work?",
+      "expected_response_fields": [
+        "verdict",
+        "strategy_options",
+        "resource_boosts",
+        "priority_corrections",
+        "owner_verdict_needed"
+      ]
+    },
+    {
+      "query_id": "ASK_CUSTODES_FUTURE_CORE_GUARD",
+      "organ_id": "CUSTODES",
+      "servitor_question": "What future core-protection constraints would apply once Custodes is activated?",
+      "expected_response_fields": [
+        "verdict",
+        "implementation_status",
+        "future_constraints",
+        "owner_gate_requirements"
+      ]
+    },
+    {
+      "query_id": "ASK_THRONE_FUTURE_CORE_AUTHORITY",
+      "organ_id": "THRONE",
+      "servitor_question": "What future core-authority boundaries would apply once Throne is activated?",
+      "expected_response_fields": [
+        "verdict",
+        "implementation_status",
+        "future_authority_rules",
+        "owner_ratification_requirements"
+      ]
+    }
+  ],
+  "not_proven": [
+    "full organ intelligence",
+    "all organ TUI implementation",
+    "live Owner Verdict Needed button",
+    "production autonomy",
+    "final organ dependency canon"
+  ]
+}

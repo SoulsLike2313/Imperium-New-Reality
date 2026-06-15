@@ -1,0 +1,40 @@
+{
+  "version": "0.1.0",
+  "modes": [
+    "ASK",
+    "ARCHITECT",
+    "IMPLEMENT",
+    "DEBUG",
+    "AUDIT",
+    "ORCHESTRATE"
+  ],
+  "default_mode": "ASK",
+  "transition_rules": {
+    "allowed": "all_modes_to_all_modes",
+    "requires_confirmation": [
+      {
+        "from": "ASK",
+        "to": "IMPLEMENT",
+        "reason": "implementation mode may mutate files"
+      },
+      {
+        "from": "AUDIT",
+        "to": "IMPLEMENT",
+        "reason": "switch from passive review to mutation-capable mode"
+      }
+    ]
+  },
+  "global_forbidden": [
+    "claim pass without evidence",
+    "mask renderer fallback as rich",
+    "execute destructive OS commands without owner approval"
+  ],
+  "mode_files": {
+    "ASK": "MODES/ask_mode.json",
+    "ARCHITECT": "MODES/architect_mode.json",
+    "IMPLEMENT": "MODES/implement_mode.json",
+    "DEBUG": "MODES/debug_mode.json",
+    "AUDIT": "MODES/audit_mode.json",
+    "ORCHESTRATE": "MODES/orchestrate_mode.json"
+  }
+}

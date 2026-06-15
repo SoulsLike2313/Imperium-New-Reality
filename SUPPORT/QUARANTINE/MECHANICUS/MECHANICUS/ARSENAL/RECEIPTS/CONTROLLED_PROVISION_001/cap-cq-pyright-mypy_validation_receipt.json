@@ -1,0 +1,32 @@
+{
+  "receipt_id": "task-newgen-mechanicus-controlled-tool-provision-pc-v0_1:cap-cq-pyright-mypy:controlled_provision:mypy",
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+  "capability_id": "CAP-CQ-PYRIGHT-MYPY",
+  "validator": "mechanicus_controlled_provision_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T19:34:55Z",
+  "status": "PASS",
+  "summary": "CAP-CQ-PYRIGHT-MYPY: PASS via controlled_provision:mypy. promotion_recommendation=PROMOTE_SANDBOX",
+  "check_name": "controlled_provision:mypy",
+  "command_or_check": "mypy --version || python -m mypy --version",
+  "exit_code": 0,
+  "stdout_excerpt": "$ mypy --version\n\n$ python -m mypy --version\nmypy 2.1.0 (compiled: yes)",
+  "stderr_excerpt": "$ mypy --version\n'mypy' is not recognized as an internal or external command,\noperable program or batch file.\n\n$ python -m mypy --version",
+  "side_effects": [
+    "validation check executed",
+    "receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-pyright-mypy_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "PROMOTE_SANDBOX",
+  "warnings": [
+    "path_warning_or_alternate_invocation_used"
+  ],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-pyright-mypy_validation_receipt.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/install_mypy_receipt.json"
+  ]
+}

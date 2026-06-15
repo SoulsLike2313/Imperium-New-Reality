@@ -1,0 +1,58 @@
+{
+  "schema_version": "vm2.contour_readiness_receipt.v0_1",
+  "task_id": "TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1",
+  "created_at_utc": "2026-06-05T18:13:32Z",
+  "contour": "VM2_UBUNTU_OVER_SSH_FROM_PC",
+  "operating_system": {
+    "family": "Ubuntu",
+    "version": "24.04.4 LTS (Noble Numbat)",
+    "kernel": "Linux GPT2 6.17.0-29-generic #29~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon May 11 10:30:58 UTC 2 x86_64 x86_64 x86_64 GNU/Linux"
+  },
+  "hostname": "GPT2",
+  "shell": "/bin/bash",
+  "repo_root": "/home/vboxuser2/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "python_version": "Python 3.12.3",
+  "git_version": "git version 2.43.0",
+  "local_head_at_start": "64840a6b159e32e432b6b6f0d00059c624e1b0ac",
+  "origin_master_head_at_start": "64840a6b159e32e432b6b6f0d00059c624e1b0ac",
+  "origin_master_head_after_fetch": "64840a6b159e32e432b6b6f0d00059c624e1b0ac",
+  "local_head_equals_origin_master_at_start": true,
+  "git_fetch_origin_master_result": {
+    "command": "git fetch origin master",
+    "status": "PASS",
+    "note": "FETCH_HEAD updated without worktree mutation."
+  },
+  "worktree_status_before_work": {
+    "clean": false,
+    "porcelain": [
+      " M ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json",
+      " M ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json",
+      "?? ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1/"
+    ],
+    "explanation": "Dirty state is the Astronomicon task registration for this exact task before Servitor implementation."
+  },
+  "new_reality_markers": {
+    "AGENTS.md": true,
+    "EPOCH_MANIFEST.json": true,
+    "NEW_REALITY_SCOPE_LOCK.md": true
+  },
+  "task_entry_corridor_present": true,
+  "task_entry_corridor_evidence": [
+    "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_ENTRY_CORRIDOR_CONTRACT.md",
+    "ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TOOLS/check_task_entry_route_v0_1.py"
+  ],
+  "post_work_bundle_v0_2_assets_exist": true,
+  "post_work_bundle_v0_2_evidence": [
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/POST_WORK_BUNDLE_CONTRACT_V0_2.md",
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_bundle_checker_v0_2.py"
+  ],
+  "nine_organ_ring_assets_exist": true,
+  "nine_organ_ring_evidence": [
+    "ORGANS/_POST_WORK_RING/REQUIRED_9_ORGANS_V0_1.json"
+  ],
+  "ancient_empire_used": false,
+  "verdict": "PASS_WITH_WARNINGS",
+  "warnings": [
+    "Worktree was not clean at start, but all dirty entries were task registration evidence for this task."
+  ]
+}

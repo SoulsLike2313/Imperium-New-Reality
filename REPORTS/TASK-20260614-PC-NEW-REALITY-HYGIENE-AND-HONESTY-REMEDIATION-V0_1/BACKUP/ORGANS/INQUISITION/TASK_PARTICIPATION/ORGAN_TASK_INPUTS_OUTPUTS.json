@@ -1,0 +1,25 @@
+{
+  "organ": "INQUISITION",
+  "inputs": [
+    {
+      "name": "Claim ledger",
+      "source": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/claim_ledger.jsonl",
+      "required": true,
+      "missing_behavior": "BLOCK"
+    },
+    {
+      "name": "Hard red-team gate",
+      "source": "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/CONTRACTS/HARD_RED_TEAM_CLOSURE_GATE.md",
+      "required": true,
+      "missing_behavior": "BLOCK"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Hard red-team verdict",
+      "path_or_contract": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/hard_red_team_verdict.json",
+      "required": true,
+      "consumer": "FINAL_OWNER_SUMMARY"
+    }
+  ]
+}

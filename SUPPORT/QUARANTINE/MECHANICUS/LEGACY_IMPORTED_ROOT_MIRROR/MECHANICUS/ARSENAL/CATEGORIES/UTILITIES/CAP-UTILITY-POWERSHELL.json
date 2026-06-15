@@ -1,0 +1,35 @@
+{
+  "capability_id": "CAP-UTILITY-POWERSHELL",
+  "name": "PowerShell",
+  "category": "UTILITIES",
+  "status": "SANDBOX",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Primary PC executor for bounded automation.",
+  "what_problem_it_solves": "Provides deterministic command orchestration.",
+  "source_type": "built_in",
+  "source_url_or_path": "$PSVersionTable.PSVersion",
+  "license_or_trust_note": "Host/external trust requires explicit admission receipts.",
+  "install_required": false,
+  "install_gate": "GATE-U21-COMMAND-CHUNKING",
+  "validation_commands": [
+    "validate:cap-utility-powershell"
+  ],
+  "expected_receipts": [
+    "cap-utility-powershell_receipt.json"
+  ],
+  "safety_notes": "Use only in bounded task scope; no blind runtime mutation.",
+  "security_notes": "Do not bypass path, command, and evidence gates.",
+  "offline_or_network_dependency": "offline_preferred",
+  "promoted_by_receipt": "NOT_PROMOTED",
+  "last_reviewed_utc": "2026-05-24T00:00:00Z",
+  "next_review_reason": "Needs command deny-list maturity for CANON.",
+  "limitations": "Host permissions can expose risky operations.",
+  "allowed_use_cases": [
+    "Bounded task execution under Mechanicus policy",
+    "Evidence-backed validation and report generation"
+  ],
+  "forbidden_use_cases": [
+    "Production-ready claim without receipts",
+    "Out-of-scope or unbounded execution"
+  ]
+}

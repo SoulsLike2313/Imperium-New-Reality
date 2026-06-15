@@ -1,0 +1,32 @@
+{
+  "task_id": "TASK-20260520-NEWGEN-MECHANICUS-PANEL-LUXURY-NEURO-TEXTURE-PRESSURE-VM3-V0_3",
+  "task_type": "VISUAL_LUXURY_TEXTURE_NEURO_PRESSURE_PASS",
+  "baseline_commit": "de732c2c13beac251c79c798fcd7e7f80999e109",
+  "role_authority": "OFFICIO_REQUIRED_NOT_TASKPACK",
+  "mode": "VM3_SSH_EXECUTION",
+  "repo_root_vm3": "/home/vboxuser3/IMPERIUM_WORK/Imperium-",
+  "target_visual_unit": "SANCTUM.RIGHT_CONTEXT_DOCK.MECHANICUS_PANEL",
+  "implementation_root": "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1",
+  "allowed_write_roots": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/LABS/MECHANICUS_PANEL_SLICE_V0_1",
+    "IMPERIUM_NEW_GENERATION/TASKS/VM3_ASSIGNED/TASK-20260520-NEWGEN-MECHANICUS-PANEL-LUXURY-NEURO-TEXTURE-PRESSURE-VM3-V0_3"
+  ],
+  "forbidden_write_roots": [
+    "ORGANS",
+    "SANCTUM",
+    "IMPERIUM_TEST_VERSION"
+  ],
+  "required_enhancements": [
+    "maximum_reference_proximity",
+    "higher_quality_textures_and_materials",
+    "visible_neuro_motion"
+  ],
+  "non_goals": [
+    "full_ux_rewrite",
+    "playwright_interaction_hardening",
+    "full_sanctum_rewrite",
+    "fake_backend_activity"
+  ],
+  "commit_required_if_gates_pass": true,
+  "push_required_if_gates_pass": true
+}

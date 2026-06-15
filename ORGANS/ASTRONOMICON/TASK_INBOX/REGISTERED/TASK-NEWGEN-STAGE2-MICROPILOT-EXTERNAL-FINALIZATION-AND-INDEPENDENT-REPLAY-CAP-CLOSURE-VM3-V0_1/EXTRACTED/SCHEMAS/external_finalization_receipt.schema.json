@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "external_finalization_receipt",
+  "type": "object",
+  "required": [
+    "task_id",
+    "previous_task_id",
+    "receipt_verdict",
+    "evidence_sources",
+    "cap_status",
+    "limitations"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "previous_task_id": {
+      "type": "string"
+    },
+    "receipt_verdict": {
+      "enum": [
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "BLOCK"
+      ]
+    },
+    "evidence_sources": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "cap_status": {
+      "enum": [
+        "CLOSED",
+        "NARROWED",
+        "CARRIED",
+        "BLOCKED"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

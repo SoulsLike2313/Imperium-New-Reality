@@ -1,0 +1,71 @@
+{
+  "task_id": "TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1",
+  "merged_verdict": "PASS_WITH_WARNINGS",
+  "merged_delta_range": "+10 to +12",
+  "confidence": "MEDIUM_HIGH",
+  "recommended_next_task": {
+    "task_id": "TASK-LOGOS-PRIME-ADJUDICATE-COMBINED-REVIEW-AND-SELECT-NEXT-IMPLEMENTATION-SCOPE-VM3-V0_1",
+    "why_next": "Inquisitor and Speculum inputs are now merged; Logos can select the next implementation scope without re-parsing scattered review bundles.",
+    "expected_delta": "+4 to +7 decision-efficiency",
+    "risk": "If Owner rejects fallback policy or replay boundary, next scope can be delayed.",
+    "owner_value": "One compact decision point instead of multiple pending reviewer threads."
+  },
+  "alternative_paths": [
+    {
+      "name": "Independent replay first",
+      "description": "Run separate independent replay before any new implementation task.",
+      "pros": [
+        "Reduces fake-green risk",
+        "Improves strict confidence"
+      ],
+      "cons": [
+        "Slower time to next implementation"
+      ],
+      "expected_delta": "+2 to +4 confidence, 0 feature delta",
+      "when_to_choose": "Choose when strict audit confidence is more important than speed."
+    },
+    {
+      "name": "Owner fallback-policy lock first",
+      "description": "Resolve fallback policy question before selecting any next build task.",
+      "pros": [
+        "Removes policy ambiguity",
+        "Prevents future review contradiction"
+      ],
+      "cons": [
+        "Can block momentum if decision is delayed"
+      ],
+      "expected_delta": "+3 governance clarity",
+      "when_to_choose": "Choose when policy mismatch repeatedly causes review rework."
+    },
+    {
+      "name": "Small implementation pilot",
+      "description": "Start a narrowly scoped implementation pilot while preserving WARN caps.",
+      "pros": [
+        "Keeps delivery velocity",
+        "Generates fresh evidence for next adjudication"
+      ],
+      "cons": [
+        "Carries residual replay/policy caps"
+      ],
+      "expected_delta": "+5 to +9 if scope stays strict",
+      "when_to_choose": "Choose when Owner prioritizes forward momentum with explicit warnings."
+    }
+  ],
+  "owner_questions": [
+    {
+      "question_simple_ru": "Считаем текущий итог достаточным, чтобы Logos выбрал следующий implementation scope?",
+      "default_answer": "Да, с режимом PASS_WITH_WARNINGS.",
+      "if_owner_disagrees": "Сначала запускаем независимый replay-пакет, потом возвращаемся к выбору scope."
+    },
+    {
+      "question_simple_ru": "Подтверждаем диапазон эффекта +10..+12 как рабочий ориентир?",
+      "default_answer": "Да, до нового replay/production evidence.",
+      "if_owner_disagrees": "Фиксируем консервативный диапазон +8..+10 и повышаем только при новой проверке."
+    },
+    {
+      "question_simple_ru": "Нужно ли блокировать новый build-шаг до отдельного replay?",
+      "default_answer": "Нет, не блокировать, но держать cap CAP_NO_INDEPENDENT_REPLAY.",
+      "if_owner_disagrees": "Полный блок build до закрытия replay-cap."
+    }
+  ]
+}

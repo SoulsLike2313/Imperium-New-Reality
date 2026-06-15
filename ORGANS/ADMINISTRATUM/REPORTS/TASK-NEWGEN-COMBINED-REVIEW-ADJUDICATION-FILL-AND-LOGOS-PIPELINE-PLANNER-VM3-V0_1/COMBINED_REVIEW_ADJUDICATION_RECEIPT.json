@@ -1,0 +1,117 @@
+{
+  "task_id": "TASK-NEWGEN-COMBINED-REVIEW-ADJUDICATION-FILL-AND-LOGOS-PIPELINE-PLANNER-VM3-V0_1",
+  "head_taxonomy_manifest_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/HEAD_TAXONOMY_MANIFEST.json",
+  "review_target_head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+  "head_taxonomy": {
+    "review_target_head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+    "proof_head": "6cc51091ad89238f97f5211ff6d59f0ae9ae53de",
+    "artifact_bundle_head": "e4b2c19e6c8aab875e53f086376e875b3a4afd2b",
+    "receipt_finalization_head": "93405933f603d48510c5f7b344dcc8312ff2e562",
+    "accepted_continuity_head": "740d152ca9e235a6550b1818e7381627b1f32d03"
+  },
+  "servitor": {
+    "claimed_verdict": "PASS_WITH_WARNINGS",
+    "claimed_delta": {
+      "mechanicus": 14,
+      "inquisition": 16,
+      "officio": 9,
+      "administratum": 15,
+      "overall": 14
+    },
+    "report_paths": [
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/head_taxonomy_adjudication_receipt.json",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/taxonomy_fixture_report.md",
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/NEXT_PIPELINE_HANDOFF.json"
+    ]
+  },
+  "mechanicus_replay": {
+    "status": "PASS_WITH_WARNINGS",
+    "receipt_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/head_taxonomy_adjudication_receipt.json",
+    "receipt_paths": [
+      "/home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/head_taxonomy_adjudication_receipt.json"
+    ],
+    "caps": []
+  },
+  "inquisitor_semantic_review": {
+    "input_found": true,
+    "status": "PASS_WITH_WARNINGS",
+    "zip_or_report_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/INBOX/VM3_TASKPACKS/TASKPACK_NEWGEN_COMBINED_REVIEW_ADJUDICATION_FILL_LOGOS_PIPELINE_PLANNER_VM3_V0_1/INPUT_REVIEW_ZIPS/INQUISITOR_COMMIT_MATRIX_REVIEW_740D152_20260530_1738(1).zip",
+    "adjusted_delta": 12,
+    "key_findings": [
+      "Combined review loop must be merged and not left pending.",
+      "Accepted semantic value after cap adjustment from +14 to +12.",
+      "No local replay by Inquisitor in that environment."
+    ],
+    "caps": [
+      "CAP_NO_INQUISITOR_LOCAL_REPLAY",
+      "CAP_WARP_CLAIMED_WITHOUT_UNLOCK"
+    ]
+  },
+  "speculum_technical_review": {
+    "input_found": true,
+    "status": "PASS_WITH_WARNINGS",
+    "zip_or_report_path": "/home/vboxuser3/IMPERIUM_WORK/Imperium-/INBOX/VM3_TASKPACKS/TASKPACK_NEWGEN_COMBINED_REVIEW_ADJUDICATION_FILL_LOGOS_PIPELINE_PLANNER_VM3_V0_1/INPUT_REVIEW_ZIPS/SPECULUM_TECHNICAL_REDTEAM_REVIEW_740d152_20260530_1728 (1).zip",
+    "adjusted_delta": 10,
+    "key_findings": [
+      "Technical value accepted with strict block on clean PASS until merged slots are complete.",
+      "Commit 740d152 is meta finalization, not implementation value.",
+      "Owner fallback-policy question remains open."
+    ],
+    "caps": [
+      "CAP_LOGOS_ADJUDICATION_NOT_OWNER_ACCEPTED",
+      "CAP_WARP_CLAIMED_WITHOUT_UNLOCK"
+    ]
+  },
+  "logos_prime_adjudication": {
+    "status": "PENDING_OWNER_ADJUDICATION",
+    "merged_verdict": "PASS_WITH_WARNINGS",
+    "merged_delta": 11,
+    "next_pipeline": [
+      "TASK-LOGOS-PRIME-ADJUDICATE-COMBINED-REVIEW-AND-SELECT-NEXT-IMPLEMENTATION-SCOPE-VM3-V0_1",
+      "TASK-INQUISITION-SPECULUM-INDEPENDENT-REPLAY-CONFIRMATION-VM3-V0_1"
+    ],
+    "owner_questions": [
+      "Считаем +10..+12 итоговым диапазоном до отдельного независимого локального replay?",
+      "Разрешаем ли запуск следующей implementation-задачи после Logos adjudication без strict PASS?"
+    ]
+  },
+  "logos_prime_adjudication_candidate": {
+    "status": "CANDIDATE_PENDING_OWNER",
+    "merged_verdict": "PASS_WITH_WARNINGS",
+    "merged_delta_range": "+10 to +12",
+    "confidence": "MEDIUM_HIGH",
+    "surviving_caps": [
+      "CAP_LOGOS_ADJUDICATION_NOT_OWNER_ACCEPTED",
+      "CAP_WARP_CLAIMED_WITHOUT_UNLOCK",
+      "CAP_NO_INDEPENDENT_REPLAY"
+    ],
+    "recommended_next_task": "TASK-LOGOS-PRIME-ADJUDICATE-COMBINED-REVIEW-AND-SELECT-NEXT-IMPLEMENTATION-SCOPE-VM3-V0_1",
+    "alternative_paths": [
+      "TASK-INQUISITION-SPECULUM-INDEPENDENT-REPLAY-CONFIRMATION-VM3-V0_1",
+      "TASK-FALLBACK-POLICY-OWNER-DECISION-LOCK-VM3-V0_1",
+      "TASK-MICRO-IMPLEMENTATION-PILOT-AFTER-OWNER-CHOICE-VM3-V0_1"
+    ],
+    "owner_questions": [
+      {
+        "question": "Можно считать текущий пакет полезным прогрессом без clean PASS?",
+        "default_answer": "Да, как PASS_WITH_WARNINGS.",
+        "if_owner_disagrees": "Блокируем следующий implementation-шаг и запускаем только replay/verification пакет."
+      },
+      {
+        "question": "Нужен ли отдельный replay на другом окружении перед следующим шагом?",
+        "default_answer": "Да, желательно.",
+        "if_owner_disagrees": "Идём в следующий шаг с явной пометкой CAP_NO_INDEPENDENT_REPLAY."
+      }
+    ]
+  },
+  "surviving_caps": [
+    "CAP_LOGOS_ADJUDICATION_NOT_OWNER_ACCEPTED",
+    "CAP_WARP_CLAIMED_WITHOUT_UNLOCK",
+    "CAP_NO_INDEPENDENT_REPLAY"
+  ],
+  "review_loop_status": "REVIEW_LOOP_CLOSED_WITH_WARNINGS",
+  "clean_pass_allowed": false,
+  "final_merged_verdict": "PASS_WITH_WARNINGS",
+  "final_merged_delta_range": "+10 to +12",
+  "notes": "External Inquisitor and Speculum slots are now filled from embedded review ZIPs; final Logos adjudication remains Owner-dependent by contract."
+}

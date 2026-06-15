@@ -1,0 +1,63 @@
+{
+  "schema_version": "imperium.astronomicon.taskpack_manifest.v0_1",
+  "task_id": "TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1",
+  "task_title": "Post Work Bundle Admission Ring V0.1",
+  "target_contour": "PC",
+  "primary_organ": "ADMINISTRATUM",
+  "support_organs": [
+    "ASTRONOMICON",
+    "OFFICIO_AGENTIS",
+    "MECHANICUS",
+    "DOCTRINARIUM",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS",
+    "CUSTODES"
+  ],
+  "organs": [
+    "DOCTRINARIUM",
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS",
+    "CUSTODES"
+  ],
+  "execution_mode": "SERVITOR",
+  "mission_class": "POST_WORK_BUNDLE_ADMISSION_RING",
+  "enhanced_ghost_evolve": {
+    "required": true,
+    "mode": "ULTIMATE_ORGAN_TEACHING",
+    "intent": "Servitor must teach internal organs strongly, deeply, repeatedly, and with evidence. Move context, rules, skills, tools, and validation logic into organ contracts, schemas, templates, checkers, receipts, and bundle indexes.",
+    "minimum_evidence": [
+      "schola_enhanced_ghost_evolve_receipt.json",
+      "organ_teaching_delta_receipt.json",
+      "mechanicus_tool_delta_receipt.json",
+      "administratum_bundle_contract_receipt.json"
+    ]
+  },
+  "language_and_encoding_policy": {
+    "taskpack_internal_files": "ENGLISH UTF8 NO_BOM ONLY. No Cyrillic in root taskpack files.",
+    "canonical_repo_artifacts": "ENGLISH UTF8 NO_BOM for JSON, schemas, validators, machine receipts, and canonical repo artifacts.",
+    "owner_facing_russian_runtime_output": "Russian owner-facing live and final output is REQUIRED only after OFFICIO_AGENTIS role entry and must be routed through OFFICIO authority.",
+    "cyrillic_in_taskpack": "Forbidden in root taskpack files. Russian owner wording must be expressed as English policy inside the taskpack.",
+    "localization_exception": "OFFICIO_AGENTIS may require Russian owner-facing summaries after role entry; this exception does not apply to root taskpack files."
+  },
+  "hard_gates": [
+    "No fake green.",
+    "No final PASS without bundle admission evidence.",
+    "No final PASS without remote proof.",
+    "No final PASS if required post-work organ receipts are missing without explicit NOT_YET_IMPLEMENTED boundary.",
+    "No heavy local artifact dump into GitHub; GitHub receives indexes and receipts only unless small canonical artifacts are required.",
+    "Owner-facing final summary must be Russian after Officio role entry.",
+    "Commit and normal non-force push are required if task modifies repo files."
+  ],
+  "expected_root_files": [
+    "MANIFEST.json",
+    "TASK_SPEC.md",
+    "ACCEPTANCE_GATES.md",
+    "OUTPUT_REQUIREMENTS.md"
+  ]
+}

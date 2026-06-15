@@ -1,0 +1,88 @@
+{
+  "schema_version": "imperium.data_atlas.mechanicus_coupling.v0_1",
+  "atlas_fields_to_add": [
+    "language",
+    "tool_id",
+    "mechanicus_passport",
+    "validation_recipe",
+    "registered_action",
+    "operational_power_lane"
+  ],
+  "classification_rules": [
+    {
+      "match": {
+        "extension": ".py"
+      },
+      "language": "python",
+      "tool_like_if": [
+        "has_shebang",
+        "under_tools",
+        "under_REPORTING",
+        "filename_contains_scan_or_build_or_audit"
+      ]
+    },
+    {
+      "match": {
+        "extension": ".js"
+      },
+      "language": "javascript_node"
+    },
+    {
+      "match": {
+        "extension": ".cjs"
+      },
+      "language": "javascript_node"
+    },
+    {
+      "match": {
+        "extension": ".ts"
+      },
+      "language": "typescript"
+    },
+    {
+      "match": {
+        "extension": ".rs"
+      },
+      "language": "rust"
+    },
+    {
+      "match": {
+        "extension": ".go"
+      },
+      "language": "go"
+    },
+    {
+      "match": {
+        "extension": [
+          ".cpp",
+          ".cc",
+          ".hpp",
+          ".h"
+        ]
+      },
+      "language": "cpp"
+    },
+    {
+      "match": {
+        "extension": [
+          ".sql",
+          ".sqlite"
+        ]
+      },
+      "language": "sqlite_sql"
+    },
+    {
+      "match": {
+        "extension": ".ps1"
+      },
+      "language": "powershell_pwsh"
+    }
+  ],
+  "lanes": {
+    "registered_tool": "Mechanicus passport exists and validation route is known.",
+    "passport_needed": "Script/tool-like entity without Mechanicus passport.",
+    "language_reason_needed": "Non-default language appears without registry justification.",
+    "validation_needed": "Tool exists but no validation recipe is known.",
+    "research_candidate": "Potential future tool/language candidate, not yet admitted."
+  }
+}

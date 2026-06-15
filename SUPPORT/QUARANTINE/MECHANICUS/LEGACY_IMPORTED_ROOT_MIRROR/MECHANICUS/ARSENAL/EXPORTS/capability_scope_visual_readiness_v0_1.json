@@ -1,0 +1,61 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-FOLLOWUP-PC-V0_1",
+  "scope_name": "visual_readiness",
+  "generated_at_utc": "2026-05-24T18:54:03Z",
+  "summary": {
+    "capability_count": 5,
+    "present_count": 3,
+    "missing_count": 2,
+    "status_counts": {
+      "SANDBOX": 1,
+      "CANDIDATE": 4
+    }
+  },
+  "capabilities": [
+    {
+      "capability_id": "CAP-TOOL-NODE-NPM-NPX",
+      "tool_name": "node_npm",
+      "status": "SANDBOX",
+      "present": true,
+      "validation_verdict": "PASS",
+      "recommended_action": "VALIDATE_RECEIPT",
+      "install_requires_owner_approval": true
+    },
+    {
+      "capability_id": "CAP-VIS-PLAYWRIGHT-REGRESSION",
+      "tool_name": "playwright",
+      "status": "CANDIDATE",
+      "present": true,
+      "validation_verdict": "PASS",
+      "recommended_action": "DEFER",
+      "install_requires_owner_approval": true
+    },
+    {
+      "capability_id": "VISUAL_TESTING_PLAYWRIGHT",
+      "tool_name": "playwright",
+      "status": "CANDIDATE",
+      "present": true,
+      "validation_verdict": "PASS",
+      "recommended_action": "DEFER",
+      "install_requires_owner_approval": true
+    },
+    {
+      "capability_id": "UI_FRAMEWORKS_REACT",
+      "tool_name": "react",
+      "status": "CANDIDATE",
+      "present": false,
+      "validation_verdict": "MISSING",
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "install_requires_owner_approval": true
+    },
+    {
+      "capability_id": "UI_FRAMEWORKS_VITE",
+      "tool_name": "vite",
+      "status": "CANDIDATE",
+      "present": false,
+      "validation_verdict": "MISSING",
+      "recommended_action": "OWNER_APPROVAL_REQUIRED",
+      "install_requires_owner_approval": true
+    }
+  ]
+}

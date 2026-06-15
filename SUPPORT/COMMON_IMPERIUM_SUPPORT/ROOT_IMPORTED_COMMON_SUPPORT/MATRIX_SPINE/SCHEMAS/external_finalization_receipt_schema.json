@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "External Finalization Receipt Schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "receipt_subject_head",
+    "last_verified_head_before_this_commit",
+    "receipt_content_head",
+    "external_delivery_head",
+    "remote_head_after_push",
+    "verification_timestamp_utc",
+    "verification_actor",
+    "worktree_clean_after_push",
+    "origin_master_sync_after_push",
+    "verification_method",
+    "self_head_paradox_handled",
+    "caps_triggered",
+    "clean_pass_allowed"
+  ],
+  "properties": {
+    "task_id": { "type": "string" },
+    "receipt_subject_head": { "type": "string" },
+    "last_verified_head_before_this_commit": { "type": "string" },
+    "receipt_content_head": { "type": "string" },
+    "external_delivery_head": { "type": "string" },
+    "remote_head_after_push": { "type": "string" },
+    "followup_finalization_receipt_head": { "type": "string" },
+    "verification_timestamp_utc": { "type": "string" },
+    "verification_actor": { "type": "string" },
+    "worktree_clean_after_push": { "type": "boolean" },
+    "origin_master_sync_after_push": { "type": "boolean" },
+    "verification_method": { "type": "string" },
+    "self_head_paradox_handled": { "type": "boolean" },
+    "caps_triggered": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "clean_pass_allowed": { "type": "boolean" },
+    "notes": { "type": "string" }
+  }
+}

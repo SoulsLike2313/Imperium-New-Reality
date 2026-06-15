@@ -1,0 +1,153 @@
+{
+  "schema_version": "imperium.core_active_root_allowlist_check_report.v0_1",
+  "task_id": "TASK-20260606-PC-CORE-PHYSICAL-ROOT-CLEAN-MIGRATION-LEARNING-ARCHIVE-V0_1",
+  "created_at_utc": "2026-06-06T18:58:22Z",
+  "repo_root": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "allowed_root_dirs": [
+    "ORGANS",
+    "SUPPORT"
+  ],
+  "active_root_entries": [
+    {
+      "name": ".gitignore",
+      "kind": "file",
+      "classification": "HOLD_WITH_REASON",
+      "status": "PASS_WITH_WARNINGS",
+      "hold_reason": "Git ignore policy file must remain at repository root."
+    },
+    {
+      "name": "AGENTS.md",
+      "kind": "file",
+      "classification": "HOLD_WITH_REASON",
+      "status": "PASS_WITH_WARNINGS",
+      "hold_reason": "Root agent contract must remain at repository root."
+    },
+    {
+      "name": "ORGANS",
+      "kind": "directory",
+      "classification": "ALLOWED_ACTIVE_ROOT",
+      "status": "PASS"
+    },
+    {
+      "name": "REPORTS",
+      "kind": "directory",
+      "classification": "HOLD_WITH_REASON",
+      "status": "PASS_WITH_WARNINGS",
+      "hold_reason": "Root report evidence path is required by current and historical task contracts."
+    },
+    {
+      "name": "SUPPORT",
+      "kind": "directory",
+      "classification": "ALLOWED_ACTIVE_ROOT",
+      "status": "PASS"
+    }
+  ],
+  "active_root_entry_count": 5,
+  "active_root_impurity_count": 0,
+  "hold_count": 3,
+  "remaining_top_level_entries": [
+    ".gitignore",
+    "AGENTS.md",
+    "ORGANS",
+    "REPORTS",
+    "SUPPORT"
+  ],
+  "hold_items": [
+    {
+      "name": ".gitignore",
+      "kind": "file",
+      "classification": "HOLD_WITH_REASON",
+      "status": "PASS_WITH_WARNINGS",
+      "hold_reason": "Git ignore policy file must remain at repository root."
+    },
+    {
+      "name": "AGENTS.md",
+      "kind": "file",
+      "classification": "HOLD_WITH_REASON",
+      "status": "PASS_WITH_WARNINGS",
+      "hold_reason": "Root agent contract must remain at repository root."
+    },
+    {
+      "name": "REPORTS",
+      "kind": "directory",
+      "classification": "HOLD_WITH_REASON",
+      "status": "PASS_WITH_WARNINGS",
+      "hold_reason": "Root report evidence path is required by current and historical task contracts."
+    }
+  ],
+  "impurity_items": [],
+  "organ_checks": [
+    {
+      "organ_id": "ADMINISTRATUM",
+      "path": "ORGANS/ADMINISTRATUM",
+      "exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "ASTRONOMICON",
+      "path": "ORGANS/ASTRONOMICON",
+      "exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "CUSTODES",
+      "path": "ORGANS/CUSTODES",
+      "exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "DOCTRINARIUM",
+      "path": "ORGANS/DOCTRINARIUM",
+      "exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "INQUISITION",
+      "path": "ORGANS/INQUISITION",
+      "exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "path": "ORGANS/MECHANICUS",
+      "exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "path": "ORGANS/OFFICIO_AGENTIS",
+      "exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "SCHOLA_IMPERIALIS",
+      "path": "ORGANS/SCHOLA_IMPERIALIS",
+      "exists": true,
+      "status": "PASS"
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "path": "ORGANS/STRATEGIUM",
+      "exists": true,
+      "status": "PASS"
+    }
+  ],
+  "support_checks": [
+    {
+      "path": "SUPPORT/COMMON_IMPERIUM_SUPPORT",
+      "exists": true
+    },
+    {
+      "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE",
+      "exists": true
+    }
+  ],
+  "verdict": "PASS_WITH_WARNINGS",
+  "warnings": [
+    {
+      "id": "TECHNICAL_OR_SAFETY_HOLDS_REMAIN",
+      "count": 3
+    }
+  ],
+  "blockers": []
+}

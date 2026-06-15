@@ -1,0 +1,34 @@
+{
+  "package": "IMPERIUM_METAOS_ORCHESTRATION_V0_1",
+  "status": "CANDIDATE_NOT_CANON",
+  "checks": {
+    "py_compile": {
+      "files": [
+        "ENGINE/metaos_orchestrator.py",
+        "ENGINE/servitor_runtime.py",
+        "ENGINE/administratum_bundle_gate.py",
+        "metaos_smoke.py"
+      ],
+      "result": "PASS"
+    },
+    "integrated_smoke": {
+      "command": "python3 metaos_smoke.py",
+      "result": "PASS",
+      "exit_code": 0,
+      "observed": {
+        "easy_task_tiers": ["servitor-nano"],
+        "hard_task_tiers": ["servitor-frontier"],
+        "easy_cheaper_than_hard": true,
+        "organ_chronicle_written": true,
+        "scenario_1_gate": "HELD",
+        "scenario_1_missing_lines": 4,
+        "scenario_2_gate": "RELEASED"
+      }
+    }
+  },
+  "honest_limitations": [
+    "реальные LLM заменены детерминированными заглушками (runner)",
+    "токен-оценка len//4 — грубая, нужен реальный tokenizer",
+    "цифры экономии из внешних кейсов, на своём трафике надо замерить"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "task_id": "TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1",
+  "timestamp_utc": "2026-06-01T05:41:57Z",
+  "builder_claims": [
+    {
+      "claim_id": "LANG-C01",
+      "claim": "Officio language authority policy implemented."
+    },
+    {
+      "claim_id": "LANG-C02",
+      "claim": "Inquisition mojibake filter implemented and executable."
+    },
+    {
+      "claim_id": "LANG-C03",
+      "claim": "Astronomicon language gate blocks malformed taskpacks."
+    },
+    {
+      "claim_id": "LANG-C04",
+      "claim": "Language fixtures provide mandatory 10-case coverage."
+    },
+    {
+      "claim_id": "LANG-C05",
+      "claim": "Canonical scan classifies legacy violations and keeps strict scope non-blocking."
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "RT-LANG-01",
+      "target_claim_id": "LANG-C02",
+      "attack": "Filter misses BOM, replacement character, or mojibake signature.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "language_encoding_fixture_results.json"
+      ]
+    },
+    {
+      "attack_id": "RT-LANG-02",
+      "target_claim_id": "LANG-C03",
+      "attack": "Taskpack with invalid language policy bypasses admission gate.",
+      "result": "RESISTED",
+      "counter_evidence": [
+        "taskpack_language_gate_receipt.json",
+        "astronomicon_task_entry_lib_v0_1.py"
+      ]
+    },
+    {
+      "attack_id": "RT-LANG-03",
+      "target_claim_id": "LANG-C05",
+      "attack": "Existing legacy violations are ignored in closure narrative.",
+      "result": "PARTIAL",
+      "downgrade_needed": true,
+      "applied_downgrade": "FORCE_PASS_WITH_WARNINGS_ONLY"
+    }
+  ],
+  "caps_triggered": [
+    "CAP_CANONICAL_ARTIFACT_CONTAINS_CYRILLIC",
+    "CAP_NON_ENGLISH_TASKPACK_INTERNAL_TEXT",
+    "CAP_REPLACEMENT_CHARACTER_NOT_DETECTED",
+    "CAP_UTF8_BOM_NOT_DETECTED"
+  ],
+  "repo_truth": {
+    "head": "91956647d56eec266183bc4bb4b853cb349c94c7",
+    "origin_master_head": "91956647d56eec266183bc4bb4b853cb349c94c7",
+    "origin_sync_now": true,
+    "worktree_dirty_now": true
+  },
+  "final_verdict": "LANGUAGE_AUTHORITY_FILTER_PASS_WITH_WARNINGS",
+  "clean_pass_allowed": false
+}

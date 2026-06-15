@@ -1,0 +1,36 @@
+{
+  "capability_id": "CAP-TOOL-JSONSCHEMA",
+  "name": "jsonschema",
+  "category": "TOOLS",
+  "status": "SANDBOX",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Schema-based JSON contract validator.",
+  "what_problem_it_solves": "Prevents malformed contract/receipt artifacts.",
+  "source_type": "external_tool",
+  "source_url_or_path": "https://python-jsonschema.readthedocs.io/",
+  "license_or_trust_note": "Host/external trust requires explicit admission receipts.",
+  "install_required": true,
+  "install_gate": "GATE-ARSENAL-EXTERNAL-INSTALL-ADMISSION",
+  "validation_commands": [
+    "validate:cap-tool-jsonschema"
+  ],
+  "expected_receipts": [
+    "cap-tool-jsonschema_receipt.json",
+    "cap-tool-jsonschema_validation_receipt.json"
+  ],
+  "safety_notes": "Use only in bounded task scope; no blind runtime mutation.",
+  "security_notes": "Do not bypass path, command, and evidence gates.",
+  "offline_or_network_dependency": "offline_preferred",
+  "promoted_by_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-tool-jsonschema_validation_receipt.json",
+  "last_reviewed_utc": "2026-05-24T19:34:23Z",
+  "next_review_reason": "Validated in controlled provision task; keep SANDBOX until multi-run evidence allows any further decision.",
+  "limitations": "Cannot be treated as admitted without evidence.",
+  "allowed_use_cases": [
+    "Bounded task execution under Mechanicus policy",
+    "Evidence-backed validation and report generation"
+  ],
+  "forbidden_use_cases": [
+    "Production-ready claim without receipts",
+    "Out-of-scope or unbounded execution"
+  ]
+}

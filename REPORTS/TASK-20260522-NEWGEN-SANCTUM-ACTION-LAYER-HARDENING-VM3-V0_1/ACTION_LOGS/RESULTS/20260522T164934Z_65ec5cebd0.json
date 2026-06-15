@@ -1,0 +1,120 @@
+{
+  "schema_id": "SANCTUM_NG_ACTION_RESULT_V0_1",
+  "task_id": "TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+  "request_id": "20260522T164934Z_65ec5cebd0",
+  "action_id": "READ_LATEST_REPORT_SUMMARY",
+  "action_status": "WIRED",
+  "started_at_utc": "2026-05-22T16:49:34Z",
+  "request_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/REQUESTS/20260522T164934Z_65ec5cebd0.json",
+  "executed_command": [],
+  "status": "PARTIAL",
+  "finished_at_utc": "2026-05-22T16:49:34Z",
+  "result_record_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/ACTION_LOGS/RESULTS/20260522T164934Z_65ec5cebd0.json",
+  "output_summary": "PARTIAL: found=2 missing=3 partial=0 stale=0 error=0",
+  "payload": {
+    "summary_state": "PARTIAL",
+    "reason": "report_bundle_incomplete_or_legacy",
+    "owner_summary": "PARTIAL: found=2 missing=3 partial=0 stale=0 error=0",
+    "report_folder_inspected": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+    "expected_files": [
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json"
+    ],
+    "found_files": [
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json"
+    ],
+    "missing_files": [
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json"
+    ],
+    "partial_files": [],
+    "stale_files": [],
+    "error_files": [],
+    "reports": [
+      {
+        "logical_id": "refresh_runner",
+        "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+        "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+        "summary_state": "FOUND",
+        "reason": "ok",
+        "exists": true,
+        "verdict": "WARN"
+      },
+      {
+        "logical_id": "validator",
+        "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+        "resolved_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json",
+        "summary_state": "FOUND",
+        "reason": "ok",
+        "exists": true,
+        "verdict": "WARN"
+      },
+      {
+        "logical_id": "smoke",
+        "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SMOKE_REPORT.json",
+        "resolved_path": "N/A",
+        "summary_state": "MISSING",
+        "reason": "file_not_found",
+        "exists": false,
+        "verdict": "UNKNOWN"
+      },
+      {
+        "logical_id": "final_receipt",
+        "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/FINAL_RECEIPT.json",
+        "resolved_path": "N/A",
+        "summary_state": "MISSING",
+        "reason": "file_not_found",
+        "exists": false,
+        "verdict": "UNKNOWN"
+      },
+      {
+        "logical_id": "post_commit_closure",
+        "expected_path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/POST_COMMIT_CLOSURE_RECEIPT.json",
+        "resolved_path": "N/A",
+        "summary_state": "MISSING",
+        "reason": "file_not_found",
+        "exists": false,
+        "verdict": "UNKNOWN"
+      }
+    ]
+  },
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/SANCTUM_NG_REFRESH_RUNNER_REPORT.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260522-NEWGEN-SANCTUM-ACTION-LAYER-HARDENING-VM3-V0_1/VALIDATOR_REPORT.json"
+  ],
+  "known_limitations": [
+    "Only fixed known report files are readable.",
+    "Alias support is limited to historical smoke filename compatibility.",
+    "Summary is read-only and does not auto-repair missing files."
+  ],
+  "state_model": {
+    "connection_state": "CONNECTED",
+    "action_availability": "ACTION_ALLOWED",
+    "result_state": "ACTION_RESULT_PARTIAL",
+    "known_states": {
+      "connection_state": "CONNECTED",
+      "connection_states": [
+        "CONNECTED",
+        "NOT_CONNECTED",
+        "UNKNOWN",
+        "ACTION_SERVER_NOT_CONNECTED"
+      ],
+      "action_states": [
+        "ACTION_ALLOWED",
+        "ACTION_DISABLED"
+      ],
+      "result_states": [
+        "ACTION_RESULT_PASS",
+        "ACTION_RESULT_WARN",
+        "ACTION_RESULT_BLOCK",
+        "ACTION_RESULT_PARTIAL"
+      ]
+    }
+  }
+}

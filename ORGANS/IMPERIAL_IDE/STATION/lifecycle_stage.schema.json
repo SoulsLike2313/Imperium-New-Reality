@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperial_ide.lifecycle_stage.schema.v0_2",
+  "type": "object",
+  "required": ["stage", "state", "detail", "updated_at_utc"],
+  "properties": {
+    "stage": {"type": "string"},
+    "state": {"enum": ["LIVE", "DRY_RUN", "BLOCKED", "CANDIDATE", "ACTIVE", "WARNING", "FAILED", "UNKNOWN", "EXECUTION_PENDING"]},
+    "detail": {"type": "string"},
+    "updated_at_utc": {"type": "string"}
+  },
+  "additionalProperties": false
+}

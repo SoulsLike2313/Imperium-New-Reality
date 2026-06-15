@@ -1,0 +1,36 @@
+{
+  "schema_version": "MECHANICUS_TOOL_CARD_V0_1",
+  "task_id": "TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1",
+  "tool_id": "semgrep",
+  "display_name": "semgrep",
+  "owner_organ": "INQUISITION_AGENT",
+  "consumer_organs": [
+    "INQUISITION_AGENT",
+    "MECHANICUS_AGENT",
+    "SERVITOR"
+  ],
+  "capability_summary": "static analysis and policy pattern scanning",
+  "allowed_use_cases": [
+    "read-only version/status probe",
+    "task-scoped execution with evidence receipt"
+  ],
+  "forbidden_use_cases": [
+    "random install without Owner gate",
+    "destructive actions outside task contract scope"
+  ],
+  "install_policy": "NO_INSTALL_WITHOUT_OWNER_GATE",
+  "pc_status": "NOT_FOUND_ON_PC",
+  "vm2_status": "NOT_FOUND_ON_VM2",
+  "combined_status": "KNOWN_NOT_INSTALLED",
+  "version_pc": null,
+  "version_vm2": null,
+  "command_examples": [
+    "semgrep --version"
+  ],
+  "evidence_required": [
+    "semgrep_report.json"
+  ],
+  "failure_policy": "Record WARN/ERROR evidence and continue without install; escalate install proposal to Owner gate.",
+  "admission_status": "KNOWN_ADMITTED_AS_CANDIDATE",
+  "updated_at_utc": "2026-05-19T22:06:55.326675Z"
+}

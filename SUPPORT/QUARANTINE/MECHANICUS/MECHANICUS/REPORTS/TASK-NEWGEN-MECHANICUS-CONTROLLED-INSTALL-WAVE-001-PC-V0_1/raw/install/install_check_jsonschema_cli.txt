@@ -1,0 +1,37 @@
+id: install_check_jsonschema_cli
+command: python -m pip install --user check-jsonschema
+started_at_utc: 2026-05-25T22:52:49Z
+finished_at_utc: 2026-05-25T22:53:00Z
+exit_code: 0
+--- stdout ---
+Collecting check-jsonschema
+  Downloading check_jsonschema-0.37.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting ruamel.yaml<0.20.0,>=0.18.10 (from check-jsonschema)
+  Using cached ruamel_yaml-0.19.1-py3-none-any.whl.metadata (16 kB)
+Requirement already satisfied: jsonschema<5.0,>=4.18.0 in c:\users\pc\appdata\roaming\python\python312\site-packages (from check-jsonschema) (4.26.0)
+Collecting regress>=2024.11.1 (from check-jsonschema)
+  Downloading regress-2025.10.1-cp312-cp312-win_amd64.whl.metadata (2.1 kB)
+Requirement already satisfied: requests<3.0 in c:\users\pc\appdata\local\programs\python\python312\lib\site-packages (from check-jsonschema) (2.32.5)
+Requirement already satisfied: click<9,>=8 in c:\users\pc\appdata\local\programs\python\python312\lib\site-packages (from check-jsonschema) (8.3.1)
+Requirement already satisfied: colorama in c:\users\pc\appdata\local\programs\python\python312\lib\site-packages (from click<9,>=8->check-jsonschema) (0.4.6)
+Requirement already satisfied: attrs>=22.2.0 in c:\users\pc\appdata\local\programs\python\python312\lib\site-packages (from jsonschema<5.0,>=4.18.0->check-jsonschema) (25.4.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in c:\users\pc\appdata\roaming\python\python312\site-packages (from jsonschema<5.0,>=4.18.0->check-jsonschema) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in c:\users\pc\appdata\roaming\python\python312\site-packages (from jsonschema<5.0,>=4.18.0->check-jsonschema) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in c:\users\pc\appdata\roaming\python\python312\site-packages (from jsonschema<5.0,>=4.18.0->check-jsonschema) (0.30.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in c:\users\pc\appdata\local\programs\python\python312\lib\site-packages (from requests<3.0->check-jsonschema) (3.4.5)
+Requirement already satisfied: idna<4,>=2.5 in c:\users\pc\appdata\local\programs\python\python312\lib\site-packages (from requests<3.0->check-jsonschema) (3.11)
+Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\pc\appdata\local\programs\python\python312\lib\site-packages (from requests<3.0->check-jsonschema) (2.6.3)
+Requirement already satisfied: certifi>=2017.4.17 in c:\users\pc\appdata\local\programs\python\python312\lib\site-packages (from requests<3.0->check-jsonschema) (2026.2.25)
+Requirement already satisfied: typing-extensions>=4.4.0 in c:\users\pc\appdata\local\programs\python\python312\lib\site-packages (from referencing>=0.28.4->jsonschema<5.0,>=4.18.0->check-jsonschema) (4.15.0)
+Downloading check_jsonschema-0.37.2-py3-none-any.whl (399 kB)
+Downloading regress-2025.10.1-cp312-cp312-win_amd64.whl (301 kB)
+Using cached ruamel_yaml-0.19.1-py3-none-any.whl (118 kB)
+Installing collected packages: ruamel.yaml, regress, check-jsonschema
+Successfully installed check-jsonschema-0.37.2 regress-2025.10.1 ruamel.yaml-0.19.1
+
+--- stderr ---
+  WARNING: The script check-jsonschema.exe is installed in 'C:\Users\PC\AppData\Roaming\Python\Python312\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+
+[notice] A new release of pip is available: 25.0.1 -> 26.1.1
+[notice] To update, run: python.exe -m pip install --upgrade pip

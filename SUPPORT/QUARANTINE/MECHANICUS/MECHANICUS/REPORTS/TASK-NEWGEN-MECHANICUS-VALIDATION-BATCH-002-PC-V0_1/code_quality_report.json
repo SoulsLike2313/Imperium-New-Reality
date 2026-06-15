@@ -1,0 +1,48 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1",
+  "generated_at_utc": "2026-05-24T21:39:54Z",
+  "checker": "mechanicus_quality_gate_runner_v0_1.py:code_quality",
+  "target_scripts": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_scope_pack_consumer_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_schema_validation_runner_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_taskpack_validator_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/newgen_repo_hygiene_check_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/evidence_index_smoke_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_quality_gate_runner_v0_1.py"
+  ],
+  "checks": [
+    {
+      "check": "py_compile",
+      "status": "PASS",
+      "exit_code": 0,
+      "command": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m py_compile E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\mechanicus_scope_pack_consumer_v0_1.py E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\mechanicus_schema_validation_runner_v0_1.py E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\mechanicus_taskpack_validator_v0_1.py E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\newgen_repo_hygiene_check_v0_1.py E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\evidence_index_smoke_v0_1.py E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\mechanicus_quality_gate_runner_v0_1.py",
+      "stdout_excerpt": "",
+      "stderr_excerpt": ""
+    },
+    {
+      "check": "ruff",
+      "status": "PASS",
+      "exit_code": 0,
+      "command": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m ruff check E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\mechanicus_scope_pack_consumer_v0_1.py E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\mechanicus_schema_validation_runner_v0_1.py E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\mechanicus_taskpack_validator_v0_1.py E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\newgen_repo_hygiene_check_v0_1.py E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\evidence_index_smoke_v0_1.py E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\mechanicus_quality_gate_runner_v0_1.py",
+      "stdout_excerpt": "All checks passed!",
+      "stderr_excerpt": ""
+    },
+    {
+      "check": "mypy",
+      "status": "PASS",
+      "exit_code": 0,
+      "command": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe -m mypy E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\mechanicus_scope_pack_consumer_v0_1.py E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\mechanicus_schema_validation_runner_v0_1.py E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\mechanicus_taskpack_validator_v0_1.py E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\newgen_repo_hygiene_check_v0_1.py E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\evidence_index_smoke_v0_1.py E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\TOOLS\\mechanicus_quality_gate_runner_v0_1.py",
+      "stdout_excerpt": "Success: no issues found in 6 source files",
+      "stderr_excerpt": ""
+    }
+  ],
+  "summary": {
+    "py_compile": "PASS",
+    "ruff": "PASS",
+    "mypy": "PASS"
+  },
+  "warnings": [],
+  "errors": [],
+  "verdict": "PASS",
+  "raw_dump_status": "COMPACT_ONLY"
+}

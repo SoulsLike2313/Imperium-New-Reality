@@ -1,0 +1,41 @@
+{
+  "task_id": "TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5",
+  "role": "PC Servitor",
+  "repo_root": "E:\\IMPERIUM",
+  "machine_scope": "PC_ONLY",
+  "vm2_policy": "FORBIDDEN_UNLESS_OWNER_EXPLICITLY_SAYS_VM2",
+  "strategic_scope": "IMPERIUM_NEW_GENERATION_ONLY",
+  "report_root": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\REPORTS\\TASK-20260520-NEWGEN-SANCTUM-SCOPE-REPAIR-MECHANICUS-PANEL-PC-V0_5",
+  "allowed_write_scopes": [
+    "IMPERIUM_NEW_GENERATION/**"
+  ],
+  "forbidden_write_scopes": [
+    "ORGANS/**",
+    "SANCTUM/**",
+    "IMPERIUM_TEST_VERSION/**",
+    "VM2 paths",
+    "laptop paths"
+  ],
+  "owner_complaints": [
+    "V0_3 reported bundle under old/main ORGANS/MECHANICUS/REPORTS, but Owner did not authorize merge/main scope.",
+    "Mechanicus click currently does not open the expected operator panel.",
+    "LIVE became raw/terminal-like and visually wrong.",
+    "Resolution/responsiveness is unacceptable."
+  ],
+  "primary_goal": "Repair scope contamination and implement New Generation Mechanicus click-to-open operator panel with responsive layout and honest SSE/live status.",
+  "must_not_do": [
+    "Do not merge main ORGANS into New Generation.",
+    "Do not write task reports under ORGANS/MECHANICUS.",
+    "Do not activate Throne or Custodes.",
+    "Do not mark placeholder organs as real.",
+    "Do not call SSE PASS if UI shows fallback."
+  ],
+  "acceptance_summary": {
+    "mechanicus_click_opens_panel": "BLOCK if false",
+    "report_root_new_generation": "BLOCK if false",
+    "forbidden_scope_clean": "BLOCK unless documented Owner-approved exception",
+    "raw_terminal_secondary": "BLOCK if raw terminal remains primary live view",
+    "responsive_1366x768": "WARN/BLOCK based on severity",
+    "sse_truth_honest": "BLOCK if fake PASS"
+  }
+}

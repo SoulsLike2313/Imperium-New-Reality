@@ -1,0 +1,25 @@
+{
+  "schema_version": "imperium.core_address_book_seed.v0_1",
+  "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+  "owner_organ": "ADMINISTRATUM",
+  "status": "CANDIDATE_V0_1",
+  "required_organs_source": "ORGANS/_CORE_GOVERNANCE/REQUIRED_9_ORGANS_V0_1.json",
+  "entries": [
+    {"path": "ORGANS/ADMINISTRATUM", "classification": "ORGAN_OWNED", "owner_organ": "ADMINISTRATUM"},
+    {"path": "ORGANS/ASTRONOMICON", "classification": "ORGAN_OWNED", "owner_organ": "ASTRONOMICON"},
+    {"path": "ORGANS/CUSTODES", "classification": "ORGAN_OWNED", "owner_organ": "CUSTODES"},
+    {"path": "ORGANS/DOCTRINARIUM", "classification": "ORGAN_OWNED", "owner_organ": "DOCTRINARIUM"},
+    {"path": "ORGANS/INQUISITION", "classification": "ORGAN_OWNED", "owner_organ": "INQUISITION"},
+    {"path": "ORGANS/MECHANICUS", "classification": "ORGAN_OWNED", "owner_organ": "MECHANICUS"},
+    {"path": "ORGANS/OFFICIO_AGENTIS", "classification": "ORGAN_OWNED", "owner_organ": "OFFICIO_AGENTIS"},
+    {"path": "ORGANS/SCHOLA_IMPERIALIS", "classification": "ORGAN_OWNED", "owner_organ": "SCHOLA_IMPERIALIS"},
+    {"path": "ORGANS/STRATEGIUM", "classification": "ORGAN_OWNED", "owner_organ": "STRATEGIUM"},
+    {"path": "ORGANS/_CORE_GOVERNANCE", "classification": "CORE_GOVERNANCE", "owner_organ": "ADMINISTRATUM"},
+    {"path": "SUPPORT/COMMON_IMPERIUM_SUPPORT", "classification": "COMMON_SUPPORT", "owner_organ": "ADMINISTRATUM"},
+    {"path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE", "classification": "QUESTIONABLE_OR_QUARANTINE", "owner_organ": "INQUISITION"}
+  ],
+  "warnings": [
+    "Legacy top-level paths remain unmigrated and require dry-run classification before movement."
+  ],
+  "next_action": "Promote dry-run classifier results into a reviewed V0.2 address book."
+}

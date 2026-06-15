@@ -1,0 +1,39 @@
+{
+  "task_id": "FIXTURE-V0_2_FORGED_NO_ANCIENT_MISSING_CORE",
+  "digest_verdict": "BUNDLE_SCHEMA_BLOCK",
+  "checked_path": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/FIXTURES/v0_2_forged_no_ancient_missing_core",
+  "missing_required_files": [],
+  "invalid_required_fields": [
+    {
+      "class_id": "scope_lock_no_ancient_mutation_receipt",
+      "path": "no_ancient_mutation_receipt.json",
+      "field": "$",
+      "message": "$: does not satisfy any accepted field set",
+      "severity": "BLOCK"
+    },
+    {
+      "class_id": "scope_lock_no_ancient_mutation_receipt",
+      "path": "no_ancient_mutation_receipt.json",
+      "field": "$",
+      "message": "$.active_root: required field missing",
+      "severity": "BLOCK"
+    },
+    {
+      "class_id": "scope_lock_no_ancient_mutation_receipt",
+      "path": "no_ancient_mutation_receipt.json",
+      "field": "active_root",
+      "message": "no-Ancient receipt must record active_root",
+      "severity": "BLOCK"
+    },
+    {
+      "class_id": "scope_lock_no_ancient_mutation_receipt",
+      "path": "no_ancient_mutation_receipt.json",
+      "field": "ancient_mutation_core",
+      "message": "no-Ancient receipt must include ancient_empire_mutated, mutation_detected, or write_attempted",
+      "severity": "BLOCK"
+    }
+  ],
+  "warning_fields": [],
+  "owner_action_required": true,
+  "created_utc": "2026-06-04T16:14:55Z"
+}

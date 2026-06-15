@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visual Foundry Mechanicus Brain Forge Iteration V0.1</title>
+    <link rel="stylesheet" href="../TOKENS/design_tokens_mechanicus_console_v0_2.css" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="bg-layer-nebula" aria-hidden="true"></div>
+    <div class="bg-layer-forge" aria-hidden="true"></div>
+    <div class="bg-layer-grid" aria-hidden="true"></div>
+
+    <div class="shell">
+      <header class="truth-strip">
+        <div class="truth-title-group">
+          <div class="truth-eyebrow" id="truthEyebrow"></div>
+          <h1 id="mainTitle"></h1>
+          <p id="missionLine"></p>
+        </div>
+        <div class="truth-chip-row" id="truthChipRow"></div>
+        <div class="truth-actions">
+          <button id="langSwitch" class="pill-btn" type="button">EN</button>
+          <button id="rawToggle" class="pill-btn pill-btn-warn" type="button">RAW OFF</button>
+        </div>
+      </header>
+
+      <main class="main-layout">
+        <section class="brain-sector panel-frame">
+          <div class="sector-head">
+            <h2 id="brainSectorTitle"></h2>
+            <div class="head-tag" id="brainPulseState"></div>
+          </div>
+          <p class="sector-note" id="brainSectorNote"></p>
+
+          <div class="brain-dominion" id="brainDominion">
+            <div class="brain-halo halo-outer"></div>
+            <div class="brain-halo halo-mid"></div>
+            <div class="brain-halo halo-inner"></div>
+            <div class="brain-core" id="brainCore"></div>
+            <svg class="neural-links" id="neuralLinks" viewBox="0 0 1400 880" preserveAspectRatio="none"></svg>
+            <div class="organ-nodes" id="organNodes"></div>
+          </div>
+
+          <div class="work-report panel-subframe">
+            <div class="sub-head">
+              <h3 id="workReportTitle"></h3>
+            </div>
+            <div class="work-feed" id="workFeed"></div>
+          </div>
+        </section>
+
+        <aside class="cockpit-sector panel-frame" id="cockpitSector">
+          <div class="cockpit-rails" aria-hidden="true">
+            <div class="rail rail-left"></div>
+            <div class="rail rail-right"></div>
+          </div>
+
+          <div class="sector-head">
+            <h2 id="cockpitTitle"></h2>
+            <div class="head-tag" id="activeOrganTag"></div>
+          </div>
+          <p class="sector-note" id="cockpitNote"></p>
+
+          <div class="cockpit-subgrid">
+            <section class="panel-subframe cockpit-module">
+              <h3 id="toolsTitle"></h3>
+              <div class="module-list" id="toolsList"></div>
+            </section>
+
+            <section class="panel-subframe cockpit-module">
+              <h3 id="contourTitle"></h3>
+              <div class="module-list" id="contourList"></div>
+            </section>
+
+            <section class="panel-subframe cockpit-module">
+              <h3 id="actionTitle"></h3>
+              <div class="action-grid" id="actionGrid"></div>
+            </section>
+          </div>
+
+          <section class="raw-mode panel-subframe is-hidden" id="rawMode">
+            <h3 id="rawModeTitle"></h3>
+            <pre id="rawPayload"></pre>
+          </section>
+        </aside>
+      </main>
+
+      <footer class="footer-strip" id="footerStrip"></footer>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

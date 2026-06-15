@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-arsenal-validation-batch-001-pc-v0_1:cap-utility-git:p0_mechanicus_spine:cap-utility-git",
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+  "capability_id": "CAP-UTILITY-GIT",
+  "validator": "mechanicus_capability_validator_v0_1.py",
+  "checked_at_utc": "2026-05-24T18:15:13Z",
+  "status": "PASS",
+  "summary": "CAP-UTILITY-GIT: PASS via P0_MECHANICUS_SPINE:CAP-UTILITY-GIT. promotion_recommendation=KEEP_SANDBOX",
+  "check_name": "P0_MECHANICUS_SPINE:CAP-UTILITY-GIT",
+  "command_or_check": "git --version && git status --short && git rev-parse HEAD",
+  "exit_code": 0,
+  "stdout_excerpt": "$ git --version\ngit version 2.53.0.windows.1\n\n$ git status --short\n M IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PYTEST/capability_card.json\n M IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/CODE_QUALITY/CODE_QUALITY_PY_COMPILE/capability_card.json\n M IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/DATABASES/CAP-DB-SQLITE-FTS5-EVIDENCE.json\n M IMPE...<truncated>",
+  "stderr_excerpt": "$ git --version\n\n$ git status --short\n\n$ git rev-parse HEAD",
+  "side_effects": [
+    "read-only command execution",
+    "receipt json created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-utility-git_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "KEEP_SANDBOX",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-utility-git_validation_receipt.json"
+  ]
+}

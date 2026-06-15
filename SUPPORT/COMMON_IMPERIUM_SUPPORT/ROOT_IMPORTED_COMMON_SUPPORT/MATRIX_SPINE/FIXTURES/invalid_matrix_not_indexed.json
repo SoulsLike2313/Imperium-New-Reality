@@ -1,0 +1,32 @@
+{
+  "matrix_id": "UNREGISTERED_MATRIX_SHOULD_FAIL_INDEX_CHECK",
+  "version": "0.1-test",
+  "owner_organ": "Mechanicus",
+  "support_organs": [
+    "Inquisition"
+  ],
+  "purpose": "Negative fixture: matrix_id intentionally not present in MATRIX_SPINE_INDEX.json.",
+  "used_by": [
+    "SERVITOR"
+  ],
+  "required_questions": [
+    "Can validator detect matrix not indexed in Matrix Spine?"
+  ],
+  "pass_criteria": [
+    "Should never pass"
+  ],
+  "warn_criteria": [
+    "N/A"
+  ],
+  "block_criteria": [
+    "Matrix not indexed must fail"
+  ],
+  "fake_green_flags": [
+    "MATRIX_NOT_INDEXED"
+  ],
+  "evidence_requirements": [
+    "Fixture should fail index coverage checks"
+  ],
+  "current_status": "CANDIDATE",
+  "next_action": "Expect validator failure"
+}

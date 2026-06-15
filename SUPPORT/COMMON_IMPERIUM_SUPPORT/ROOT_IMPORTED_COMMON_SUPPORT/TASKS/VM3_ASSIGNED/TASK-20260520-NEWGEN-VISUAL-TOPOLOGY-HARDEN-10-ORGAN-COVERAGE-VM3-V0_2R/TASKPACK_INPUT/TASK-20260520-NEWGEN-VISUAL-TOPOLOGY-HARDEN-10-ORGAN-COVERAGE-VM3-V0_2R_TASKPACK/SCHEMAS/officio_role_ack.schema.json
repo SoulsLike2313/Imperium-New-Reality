@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Officio Role ACK",
+  "type": "object",
+  "required": [
+    "ack_id",
+    "task_id",
+    "authority_status",
+    "canonical_files_read",
+    "taskpack_rules_are_task_specific_not_role_authority"
+  ],
+  "properties": {
+    "ack_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "authority_status": {
+      "type": "string"
+    },
+    "canonical_files_read": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "role_family": {
+      "type": "string"
+    },
+    "role_profile": {
+      "type": "string"
+    },
+    "execution_contour": {
+      "type": "string"
+    },
+    "language_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "response_format_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "scope_rules_from_officio": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "commit_push_rules_from_officio": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stop_conditions_from_officio": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_rules_from_officio": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "taskpack_rules_are_task_specific_not_role_authority": {
+      "type": "boolean"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

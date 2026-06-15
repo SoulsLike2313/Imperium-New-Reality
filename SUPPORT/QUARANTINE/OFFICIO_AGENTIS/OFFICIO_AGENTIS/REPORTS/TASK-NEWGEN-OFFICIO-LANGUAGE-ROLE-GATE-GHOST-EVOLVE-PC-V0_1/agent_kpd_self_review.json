@@ -1,0 +1,41 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-NEWGEN-OFFICIO-LANGUAGE-ROLE-GATE-GHOST-EVOLVE-PC-V0_1",
+    "agent_role": "CODEX_BIG_MODEL",
+    "useful_outputs": [
+      "6 Officio contracts",
+      "5 role packs",
+      "4 templates",
+      "2 reusable tools",
+      "4 fixtures",
+      "11 required reports + gate ack"
+    ],
+    "waste_points": [
+      "One failed manifest-generation command due PowerShell array syntax; recovered with scoped rerun."
+    ],
+    "missing_tools": [
+      "No dedicated Officio schema validator yet for role packs/checker reports in CI."
+    ],
+    "generated_tools_to_preserve": [
+      "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_role_pack_exporter_v0_1.py",
+      "IMPERIUM_NEW_GENERATION/OFFICIO_AGENTIS/TOOLS/officio_response_contract_checker_v0_1.py"
+    ],
+    "recommended_script_absorption": [
+      "ABSORB_NOW: officio_role_pack_exporter_v0_1.py",
+      "ABSORB_NOW: officio_response_contract_checker_v0_1.py"
+    ],
+    "recommended_narrow_agent_profiles": [
+      "OFFICIO_LANGUAGE_GATE_AUDITOR_AGENT",
+      "OFFICIO_ROLE_PACK_CURATOR_AGENT"
+    ],
+    "future_prompt_improvements": [
+      "Provide explicit allowed write paths/forbidden paths in TASK.json to reduce admission ambiguity.",
+      "Provide fixture expected statuses in dossier for deterministic checker tuning."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add deterministic preflight checklist artifact file generation before edits.",
+      "Add schema check gate for Officio role packs and checker outputs."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "receipt_type": "move_batches_plan",
+  "task_id": "TASK-NEWREALITY-ASTRONOMICON-HARDENING-GOVERNANCE-DOCS-AND-CORE-CLEANUP-STAGING-PC-V0_1",
+  "status": "PROPOSED_ONLY",
+  "moves_executed": false,
+  "batches": [
+    {
+      "id": "BATCH-01-OLD-PREFIX-RESIDUE",
+      "paths": [
+        "IMPERIUM_NEW_GENERATION/**"
+      ],
+      "proposed_action": "classify, compare hashes, then quarantine or delete after approval",
+      "required_approval": "OWNER",
+      "rollback_required": true,
+      "current_task_status": "NOT_EXECUTED"
+    },
+    {
+      "id": "BATCH-02-RUNTIME-CACHE",
+      "paths": [
+        "**/__pycache__/**",
+        "**/*.pyc"
+      ],
+      "proposed_action": "delete generated cache after clean scope validation",
+      "required_approval": "TASK_OR_OWNER_DEPENDING_ON_SCOPE",
+      "rollback_required": false,
+      "current_task_status": "NOT_EXECUTED"
+    },
+    {
+      "id": "BATCH-03-REPORT-DUPLICATE-COMPACTION",
+      "paths": [
+        "REPORTS/**"
+      ],
+      "proposed_action": "manifest duplicate groups and archive redundant copies",
+      "required_approval": "OWNER",
+      "rollback_required": true,
+      "current_task_status": "NOT_EXECUTED"
+    },
+    {
+      "id": "BATCH-04-LEGACY-MIRROR-INDEX",
+      "paths": [
+        "SUPPORT/**",
+        "ORGANS/**"
+      ],
+      "proposed_action": "index legacy mirrors before any move",
+      "required_approval": "OWNER",
+      "rollback_required": true,
+      "current_task_status": "NOT_EXECUTED"
+    },
+    {
+      "id": "BATCH-05-QUARANTINE-RETENTION",
+      "paths": [
+        "SUPPORT/QUESTIONABLE_OR_QUARANTINE/**"
+      ],
+      "proposed_action": "retain or dispose only after quarantine law",
+      "required_approval": "OWNER",
+      "rollback_required": true,
+      "current_task_status": "NOT_EXECUTED"
+    },
+    {
+      "id": "BATCH-06-SPECULUM-CLASSIFICATION",
+      "paths": [
+        "ORGANS/SPECULUM/**"
+      ],
+      "proposed_action": "classify candidate organ after owner admission decision",
+      "required_approval": "OWNER",
+      "rollback_required": true,
+      "current_task_status": "NOT_EXECUTED"
+    }
+  ]
+}

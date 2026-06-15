@@ -1,0 +1,31 @@
+{
+  "receipt_id": "task-newgen-mechanicus-arsenal-validation-batch-001-pc-v0_1:code_quality_jsonschema:p1_code_quality:code_quality_jsonschema",
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+  "capability_id": "CODE_QUALITY_JSONSCHEMA",
+  "validator": "mechanicus_capability_validator_v0_1.py",
+  "checked_at_utc": "2026-05-24T18:15:14Z",
+  "status": "PASS_WITH_WARNINGS",
+  "summary": "CODE_QUALITY_JSONSCHEMA: MISSING via P1_CODE_QUALITY:CODE_QUALITY_JSONSCHEMA. promotion_recommendation=KEEP_CANDIDATE_MISSING",
+  "check_name": "P1_CODE_QUALITY:CODE_QUALITY_JSONSCHEMA",
+  "command_or_check": "python -c \"import importlib.metadata as m; print(m.version('jsonschema'))\"",
+  "exit_code": 1,
+  "stdout_excerpt": "$ python -c \"import importlib.metadata as m; print(m.version('jsonschema'))\"",
+  "stderr_excerpt": "$ python -c \"import importlib.metadata as m; print(m.version('jsonschema'))\"\nTraceback (most recent call last):\n  File \"C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\importlib\\metadata\\__init__.py\", line 397, in from_name\n    return next(cls.discover(name=name))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nStopIteration\n\nDuring handling of the above exception, another exception occurred:\n\nTr...<truncated>",
+  "side_effects": [
+    "read-only command execution",
+    "receipt json created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/code-quality-jsonschema_validation_receipt.json"
+  ],
+  "validation_verdict": "MISSING",
+  "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+  "warnings": [
+    "partial_or_missing_dependency"
+  ],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/code-quality-jsonschema_validation_receipt.json"
+  ]
+}

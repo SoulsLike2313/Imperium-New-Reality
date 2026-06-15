@@ -1,0 +1,30 @@
+{
+  "schema_id": "administratum.trinity_patch_manifest.v0_1",
+  "status": "ACTIVE_DRAFT",
+  "required_fields": [
+    "patch_id",
+    "atlas_surface",
+    "inner_system",
+    "architecture_spine",
+    "evidence_pack"
+  ],
+  "fields": {
+    "patch_id": "string",
+    "version": "string",
+    "atlas_surface": {
+      "description": "What became visible/classified in Data Atlas"
+    },
+    "inner_system": {
+      "description": "What organ logic/tool/passport changed"
+    },
+    "architecture_spine": {
+      "description": "Storage/process/governance changes"
+    },
+    "evidence_pack": {
+      "description": "Evidence Vault pack metadata"
+    },
+    "validation": {
+      "description": "Smoke/audit commands and results"
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SANCTUM_NG_ACTION_REGISTRY_V0_1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "task_id",
+    "mode",
+    "actions"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "SANCTUM_NG_ACTION_REGISTRY_V0_1"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "server": {
+      "type": "object",
+      "properties": {
+        "host": { "type": "string" },
+        "default_port": { "type": "integer" },
+        "localhost_only": { "type": "boolean" }
+      },
+      "additionalProperties": true
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "action_id",
+          "title",
+          "description",
+          "status",
+          "safety_level",
+          "allowed_commands",
+          "allowed_paths",
+          "forbidden_paths",
+          "writes_files",
+          "evidence_refs",
+          "known_limitations"
+        ],
+        "properties": {
+          "action_id": { "type": "string" },
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "status": {
+            "enum": [
+              "WIRED",
+              "PREVIEW_ONLY",
+              "NOT_WIRED",
+              "BLOCKED"
+            ]
+          },
+          "safety_level": { "type": "string" },
+          "allowed_commands": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "allowed_paths": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "forbidden_paths": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "writes_files": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "known_limitations": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "forbidden_claims": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "known_limitations": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": true
+}

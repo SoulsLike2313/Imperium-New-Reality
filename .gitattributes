@@ -1,0 +1,20 @@
+# IMPERIUM line-ending policy (FIX-4)
+# Default: normalize everything to LF in the repository.
+* text=auto eol=lf
+
+# Windows scripts keep CRLF.
+*.ps1 text eol=crlf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Treat known binaries as binary (never normalized, never diffed).
+*.png binary
+*.jpg binary
+*.zip binary
+*.pdf binary
+*.rlib binary
+*.rmeta binary
+*.pdb binary
+*.dll binary
+*.exe binary
+*.lib binary

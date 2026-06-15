@@ -1,0 +1,58 @@
+# GATE_ACK — TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1
+
+GATE_ACK:
+- task_id: TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1
+- current_head: 830a627bb73939d5d37f7c22c6127ba4cf5a40c4
+- gatepack_path: C:/Users/PC/Downloads/TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1_DOSSIER.zip
+- gatepack_sha256: DB756251B4829B86092A2D9D7F3289CA3406D5D8B9AF42FC10FC034A05AB1BF0
+- read_gates:
+  - GATE-U00-GIT-TRUTH
+  - GATE-U01-ROLE-ACK
+  - GATE-U02-SCOPE-BOUNDARY
+  - GATE-U04-EVIDENCE-RECEIPT
+  - GATE-U05-STOP-CONDITIONS
+  - GATE-U08-REPO-PURITY
+  - GATE-U09-NO-FAKE-GREEN
+  - GATE-U12-REPORT-OUTPUT-BUDGET
+  - GATE-U13-PYTHON-TYPE-SAFETY
+  - GATE-U14-WHOLE-REPO-SCOPE-RECON
+  - GATE-U15-OPERATIONALITY-IMPACT
+  - GATE-U16-BILINGUAL-UI
+  - GATE-U17-DELIVERABLE-PACKAGE
+  - GATE-U18-AGENT-FACTORY-COMPLIANCE
+  - GATE-U19-SCRIPT-ARTIFACT-PRESERVATION
+  - GATE-U20-AGENT-KPD-SELF-REVIEW
+  - GATE-U21-COMMAND-CHUNKING
+- accepted_stop_conditions:
+  - dirty_start
+  - missing_doctrine
+  - missing_spine
+  - unsafe_core_rewrite_needed
+  - required_reports_unwritable
+  - push_failure
+  - unexpected_unrelated_changes
+- scope_boundary: converge NewGen L2 action execution to verification spine, no cockpit visual rewrite, no install/provisioning
+- touched_paths:
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/ACTIONS/
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TOOLS/
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/OWNER_INTENT/
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/TRANSFER_ZONE/
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_l2.js
+  - IMPERIUM_NEW_GENERATION/SANCTUM_NG/IMPORTANT_SIX_TUI_DASHBOARD/important_six_dashboard_server_v0_2.py
+  - IMPERIUM_NEW_GENERATION/REPORTS/TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1/
+- forbidden_paths:
+  - cockpit visual redesign surfaces
+  - broad src/imperium rewrites
+  - Mechanicus Arsenal expansion beyond minimal evidence links
+  - tool/network provisioning routes
+- expected_receipts:
+  - FINAL_REPORT.md
+  - verification_spine_convergence_matrix.json
+  - raw_boundary_inventory.json
+  - schema_enforcement_report.json
+  - read_only_smoke_report.json
+  - closure_receipt.json
+- repo_recon_required: yes
+- script_absorption_required: no new reusable script created outside task files
+- clarification_needed: no
+- verdict: PASS

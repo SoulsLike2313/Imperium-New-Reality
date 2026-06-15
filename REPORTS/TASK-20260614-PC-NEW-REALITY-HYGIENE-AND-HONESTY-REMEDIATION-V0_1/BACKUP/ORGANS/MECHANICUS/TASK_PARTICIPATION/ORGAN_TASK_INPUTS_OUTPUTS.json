@@ -1,0 +1,31 @@
+{
+  "organ": "MECHANICUS",
+  "inputs": [
+    {
+      "name": "Checker script",
+      "source": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TOOLS/check_task_entry_route_v0_1.py",
+      "required": true,
+      "missing_behavior": "BLOCK"
+    },
+    {
+      "name": "Replay taxonomy contract",
+      "source": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/CONTRACTS/INDEPENDENT_REPLAY_STATE_TAXONOMY_CONTRACT.md",
+      "required": true,
+      "missing_behavior": "WARN"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Synthetic checker receipt",
+      "path_or_contract": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/synthetic_task_entry_checker_receipt.json",
+      "required": true,
+      "consumer": "INQUISITION"
+    },
+    {
+      "name": "Capability split receipt",
+      "path_or_contract": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1/capability_split_receipt.json",
+      "required": true,
+      "consumer": "ADMINISTRATUM"
+    }
+  ]
+}

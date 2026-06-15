@@ -1,0 +1,20 @@
+{
+  "candidate_id": "antares_database_visibility_candidate_v0_1",
+  "name": "Antares / database visibility candidate",
+  "type": "database",
+  "category": "database",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Evaluate database visibility for SQLite and evidence-index inspection workflows.",
+  "first_safe_use_case": "Readonly inspection of a task-local SQLite evidence fixture.",
+  "risk": "Database UI tools can mutate data or expose credentials if admitted without readonly controls.",
+  "admission_mode": "CANDIDATE_ONLY_NO_INSTALL",
+  "install_status": "NOT_INSTALLED",
+  "receipt_requirements": [
+    "readonly connection receipt",
+    "fixture database hash",
+    "no credential storage proof",
+    "query transcript"
+  ],
+  "canon_after_successful_cycles": 10
+}
+

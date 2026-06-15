@@ -1,0 +1,44 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-20260523-NEWGEN-SANCTUM-OPERATOR-COCKPIT-L1-OWNER-POWER-PC-V0_1",
+    "agent_role": "PC-Servitor / Codex big-model",
+    "useful_outputs": [
+      "PC-openable operator cockpit L1 page",
+      "state builder, validator, smoke runner",
+      "screenshot matrix with required panel coverage",
+      "stateful small continuity pack artifacts"
+    ],
+    "waste_points": [
+      "First smoke run timed out on headless screenshot capture",
+      "One intermediate screenshot profile artifact had to be cleaned"
+    ],
+    "missing_tools": [
+      "Dedicated lightweight screenshot tool without browser profile side-effects",
+      "Built-in action-server endpoint for continuity pack build"
+    ],
+    "generated_tools_to_preserve": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/TOOLS/operator_cockpit_l1_builder.py",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/TOOLS/operator_cockpit_l1_validator.py",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_NG/OPERATOR_COCKPIT/TOOLS/operator_cockpit_l1_smoke.py"
+    ],
+    "recommended_script_absorption": [
+      "ABSORB_NOW: operator_cockpit_l1_builder.py",
+      "ABSORB_NOW: operator_cockpit_l1_validator.py",
+      "ABSORB_NOW: operator_cockpit_l1_smoke.py"
+    ],
+    "recommended_narrow_agent_profiles": [
+      "SANCTUM_OPERATOR_COCKPIT_UI_INTEGRATOR_L1",
+      "SANCTUM_SCREENSHOT_REGRESSION_GUARDIAN",
+      "SANCTUM_OWNER_ANSWER_GATE_WRITER"
+    ],
+    "future_prompt_improvements": [
+      "Always isolate headless browser profile outside repo before screenshot automation",
+      "Require explicit action-to-receipt matrix in acceptance template"
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add gate check: no hidden browser-profile artifacts under REPORTS",
+      "Add gate check: focused screenshot URLs must produce non-identical hashes for different panels"
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

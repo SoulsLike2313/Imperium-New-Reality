@@ -1,0 +1,38 @@
+{
+  "schema_version": "astronomicon.validation_receipt.v0_1",
+  "task_id": "TASK-NEWGEN-VM3-ROUTE-REGISTRY-ASTRONOMICON-BODY-UBUNTU-V0_1",
+  "checks": [
+    {
+      "check": "json_parse_new_artifacts",
+      "verdict": "PASS"
+    },
+    {
+      "check": "python_compile_new_tools_and_tui",
+      "verdict": "PASS"
+    },
+    {
+      "check": "task_essence_fixture_checker",
+      "verdict": "PASS",
+      "receipt": "receipts/task_essence_checker_report.json"
+    },
+    {
+      "check": "route_packet_fixture_checker",
+      "verdict": "PASS",
+      "receipt": "receipts/route_packet_checker_report.json"
+    },
+    {
+      "check": "tui_smoke_checker",
+      "verdict": "PASS",
+      "receipt": "receipts/tui_smoke_report.json"
+    },
+    {
+      "check": "route_card_integrity_alias_and_inbox",
+      "verdict": "PASS"
+    }
+  ],
+  "known_warnings": [
+    "Route proof is registered from prior accepted evidence and taskpack truth; live retest was not executed in this task."
+  ],
+  "overall_verdict": "WARN_ACCEPTED",
+  "generated_at_utc": "2026-05-27T12:06:50Z"
+}

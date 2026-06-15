@@ -1,0 +1,40 @@
+{
+  "skill_id": "example.skill.id.v0_1",
+  "version": "0.1",
+  "owner_domain": "example-domain",
+  "purpose": "Explain what this skill helps the agent do.",
+  "when_to_use": [
+    "Condition 1",
+    "Condition 2"
+  ],
+  "inputs_required": [
+    "Files/reports/context to read first"
+  ],
+  "forbidden_moves": [
+    "What the agent must not do while using this skill"
+  ],
+  "step_protocol": [
+    "Step 1",
+    "Step 2",
+    "Step 3"
+  ],
+  "proof_required": [
+    "Command output",
+    "Report path",
+    "Screenshot",
+    "Receipt"
+  ],
+  "common_failures": [
+    "Generic LLM pattern",
+    "Fake green risk"
+  ],
+  "self_verdict_rules": {
+    "PROVED": "Direct evidence exists.",
+    "STRONG": "Strong evidence with limitations.",
+    "PLAUSIBLE": "Hypothesis only, not PASS."
+  },
+  "kpd_signals": [
+    "How Owner/agent can tell this skill improved work"
+  ],
+  "related_contracts": []
+}

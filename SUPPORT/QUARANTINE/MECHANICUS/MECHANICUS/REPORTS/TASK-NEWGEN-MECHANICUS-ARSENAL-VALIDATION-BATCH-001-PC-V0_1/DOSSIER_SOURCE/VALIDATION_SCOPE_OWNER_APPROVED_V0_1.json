@@ -1,0 +1,215 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+  "mode": "PC_LOCAL_NEWGEN_MECHANICUS_GHOST_EVOLVE",
+  "principle": "Validate foundations first; no uncontrolled install; Mechanicus must leave reusable capability.",
+  "target_groups": {
+    "P0_MECHANICUS_SPINE": [
+      {
+        "lookup": [
+          "Git",
+          "TOOL_GIT"
+        ],
+        "why": "source control, diff, commit/push evidence",
+        "validation": [
+          "git --version",
+          "git status --short",
+          "git rev-parse HEAD"
+        ],
+        "promotion_rule": "CANON only if already used and receipt/evidence exists; otherwise SANDBOX"
+      },
+      {
+        "lookup": [
+          "PowerShell",
+          "LANGUAGE_POWERSHELL"
+        ],
+        "why": "PC orchestration shell",
+        "validation": [
+          "$PSVersionTable.PSVersion"
+        ],
+        "promotion_rule": "CANON/SANDBOX depending receipt and usage contract"
+      },
+      {
+        "lookup": [
+          "Python",
+          "LANGUAGE_PYTHON_312"
+        ],
+        "why": "core scripting/checker runtime",
+        "validation": [
+          "python --version",
+          "python -c \"import sys; print(sys.executable)\""
+        ],
+        "promotion_rule": "CANON/SANDBOX depending receipt"
+      },
+      {
+        "lookup": [
+          "path policy",
+          "UTILITY_PATH_POLICY"
+        ],
+        "why": "root-scoped safe writes",
+        "validation": [
+          "locate existing path policy files",
+          "run existing tests/checks if present"
+        ],
+        "promotion_rule": "CANON only with repo evidence path and checker result"
+      },
+      {
+        "lookup": [
+          "command gateway",
+          "UTILITY_COMMAND_GATEWAY"
+        ],
+        "why": "allowlisted command boundary",
+        "validation": [
+          "locate existing command gateway files",
+          "run safe read-only check if present"
+        ],
+        "promotion_rule": "CANON only with repo evidence path and checker result"
+      },
+      {
+        "lookup": [
+          "receipt validator",
+          "UTILITY_RECEIPT_VALIDATOR"
+        ],
+        "why": "machine-readable proof validation",
+        "validation": [
+          "locate existing receipt models/validators",
+          "parse known receipts"
+        ],
+        "promotion_rule": "CANON only with receipt/evidence"
+      }
+    ],
+    "P1_CODE_QUALITY": [
+      {
+        "lookup": [
+          "py_compile"
+        ],
+        "why": "stdlib Python syntax check",
+        "validation": [
+          "python -m py_compile selected Mechanicus scripts"
+        ],
+        "promotion_rule": "CANON if stdlib and receipt exists"
+      },
+      {
+        "lookup": [
+          "jsonschema",
+          "TOOL_JSONSCHEMA"
+        ],
+        "why": "schema validation for cards/receipts",
+        "validation": [
+          "python -c \"import jsonschema; print(jsonschema.__version__)\""
+        ],
+        "promotion_rule": "SANDBOX/CANON only if installed and receipt exists; otherwise CANDIDATE missing"
+      },
+      {
+        "lookup": [
+          "pytest",
+          "TOOL_PYTEST"
+        ],
+        "why": "test runner for reusable Mechanicus tools",
+        "validation": [
+          "python -m pytest --version"
+        ],
+        "promotion_rule": "SANDBOX/CANON only if installed and receipt exists"
+      },
+      {
+        "lookup": [
+          "ruff",
+          "TOOL_RUFF"
+        ],
+        "why": "Python lint/format candidate",
+        "validation": [
+          "ruff --version"
+        ],
+        "promotion_rule": "SANDBOX only if installed; do not install in this task without explicit Owner approval"
+      },
+      {
+        "lookup": [
+          "mypy",
+          "TOOL_MYPY"
+        ],
+        "why": "Python type checking candidate",
+        "validation": [
+          "mypy --version"
+        ],
+        "promotion_rule": "SANDBOX only if installed; otherwise keep candidate"
+      },
+      {
+        "lookup": [
+          "pyright",
+          "TOOL_PYRIGHT"
+        ],
+        "why": "type checking candidate",
+        "validation": [
+          "pyright --version"
+        ],
+        "promotion_rule": "SANDBOX only if installed; otherwise keep candidate"
+      }
+    ],
+    "P2_EVIDENCE_SEARCH_LITE": [
+      {
+        "lookup": [
+          "SQLite",
+          "DB_SQLITE"
+        ],
+        "why": "future local evidence database",
+        "validation": [
+          "python -c \"import sqlite3; print(sqlite3.sqlite_version)\""
+        ],
+        "promotion_rule": "SANDBOX if sqlite3 exists and receipt created"
+      },
+      {
+        "lookup": [
+          "SQLite FTS5",
+          "DB_SQLITE_FTS5"
+        ],
+        "why": "future full-text report/receipt search",
+        "validation": [
+          "python sqlite3 FTS5 capability check"
+        ],
+        "promotion_rule": "SANDBOX if FTS5 table can be created in temp memory/db"
+      }
+    ],
+    "P3_VISUAL_DEFERRED_READINESS_ONLY": [
+      {
+        "lookup": [
+          "Playwright",
+          "VISUAL_PLAYWRIGHT"
+        ],
+        "why": "future screenshot/visual gate",
+        "validation": [
+          "detect only if already installed: python -c import playwright OR npx playwright --version"
+        ],
+        "promotion_rule": "do not install; if missing keep CANDIDATE and Owner question"
+      },
+      {
+        "lookup": [
+          "Node",
+          "npm",
+          "Vite",
+          "React"
+        ],
+        "why": "future visual prototype branch",
+        "validation": [
+          "node --version",
+          "npm --version"
+        ],
+        "promotion_rule": "readiness detection only; no install"
+      }
+    ],
+    "P5_RESERVED_NOT_VALIDATED": [
+      "LOCAL_LLM",
+      "CLOUD_LLM_ADAPTERS",
+      "secrets/API keys",
+      "paid/cloud routes"
+    ]
+  },
+  "required_mechanicus_outputs": [
+    "mechanicus_capability_validator_v0_1.py",
+    "mechanicus_validation_receipt_builder_v0_1.py",
+    "mechanicus_capability_scope_exporter_v0_1.py",
+    "mechanicus_fake_canon_detector_v0_2.py or improvement of existing detector",
+    "MECHANICUS_TOOL_VALIDATION_PLAYBOOK_V0_1.md",
+    "VALIDATION_BATCH_001_RESULTS.json",
+    "CAPABILITY_PROMOTION_REPORT.md",
+    "MECHANICUS_MEMORY_LESSON_001.md"
+  ]
+}

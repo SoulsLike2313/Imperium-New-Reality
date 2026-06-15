@@ -1,0 +1,114 @@
+{
+  "matrix_id": "REAL_USE_PILOT_READINESS_MATRIX",
+  "version": "0.1-candidate",
+  "owner_organ": "Astronomicon",
+  "support_organs": [
+    "Strategium",
+    "Inquisition",
+    "Administratum",
+    "Mechanicus"
+  ],
+  "purpose": "Defines preflight-only readiness gate for first real-use pilot without executing pilot runtime yet.",
+  "used_by": [
+    "OWNER",
+    "ASTRONOMICON",
+    "SERVITOR",
+    "INQUISITOR",
+    "STRATEGIUM"
+  ],
+  "required_questions": [
+    "What is the source of truth for this claim?",
+    "Which organ owns the rule?",
+    "What evidence level proves it?",
+    "What cap applies if evidence is missing?",
+    "What would make this claim fake-green?"
+  ],
+  "pass_criteria": [
+    "All criteria include owner value, evidence, and PASS/WARN/BLOCK logic.",
+    "Current status is explicit per criterion.",
+    "No real-use execution claim is made without required evidence."
+  ],
+  "warn_criteria": [
+    "Some criteria are still UNKNOWN but improvement hooks exist.",
+    "Pilot is preflight-ready only with warnings/caps."
+  ],
+  "block_criteria": [
+    "Required criterion has BLOCK state.",
+    "Matrix claims active production capability without evidence."
+  ],
+  "fake_green_flags": [
+    "CLAIM_WITHOUT_REPLAY",
+    "AGENT_REASONING_AS_SYSTEM_CAPABILITY",
+    "STALE_RECEIPT",
+    "DIRTY_STATE_HIDDEN",
+    "OWNER_DECISION_MISSING"
+  ],
+  "evidence_requirements": [
+    "final_owner_summary_ru.md",
+    "hard_red_team_verdict.json",
+    "real_use_pilot_preflight_report.md",
+    "resolver_hardening_report.md",
+    "resolver_negative_fixture_report.md"
+  ],
+  "current_status": "CANDIDATE_NOT_CANON",
+  "next_action": "Use this matrix in next preflight/pilot closure loop and update criterion statuses with receipts.",
+  "criteria": [
+    {
+      "criterion_id": "RUP-01",
+      "plain_language_meaning": "Pilot definition is explicit and distinct from synthetic fixtures.",
+      "owner_value": "Prevents confusion between fixture success and real-use proof.",
+      "owner_organ": "Strategium",
+      "support_organs": [
+        "Astronomicon",
+        "Inquisition"
+      ],
+      "evidence_required": [
+        "real_use_pilot_preflight_report.md"
+      ],
+      "pass_logic": "Real-use pilot scope, exclusions, and review roles are documented.",
+      "warn_logic": "Definition exists but still broad.",
+      "block_logic": "No explicit pilot definition.",
+      "current_status": "PASS",
+      "next_improvement_hook": "Select one safe pilot candidate and freeze acceptance thresholds."
+    },
+    {
+      "criterion_id": "RUP-02",
+      "plain_language_meaning": "Resolver and entry safety gates are satisfied before pilot start.",
+      "owner_value": "Pilot is not launched on unstable intake/resolver foundation.",
+      "owner_organ": "Astronomicon",
+      "support_organs": [
+        "Mechanicus",
+        "Inquisition"
+      ],
+      "evidence_required": [
+        "resolver_hardening_report.md",
+        "resolver_negative_fixture_report.md"
+      ],
+      "pass_logic": "All mandatory resolver hardening negatives are reproducibly blocked.",
+      "warn_logic": "Most cases pass but residual caps remain.",
+      "block_logic": "Mandatory resolver negatives are missing or non-blocking.",
+      "current_status": "PASS",
+      "next_improvement_hook": "Add local checker that fails on regression in mandatory negatives."
+    },
+    {
+      "criterion_id": "RUP-03",
+      "plain_language_meaning": "Pilot remains preflight-only until Owner explicitly unlocks execution.",
+      "owner_value": "Control over risk and timing of first real-use action.",
+      "owner_organ": "Officio Agentis",
+      "support_organs": [
+        "Inquisition",
+        "Administratum"
+      ],
+      "evidence_required": [
+        "hard_red_team_verdict.json",
+        "final_owner_summary_ru.md"
+      ],
+      "pass_logic": "Reports explicitly state no real-use runtime executed.",
+      "warn_logic": "Some wording risks overclaim but capped.",
+      "block_logic": "Any claim suggests pilot execution already happened.",
+      "current_status": "PASS",
+      "next_improvement_hook": "Introduce explicit pilot unlock receipt template."
+    }
+  ],
+  "candidate_repo_location": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/MATRICES/REAL_USE_PILOT_READINESS_MATRIX.md"
+}

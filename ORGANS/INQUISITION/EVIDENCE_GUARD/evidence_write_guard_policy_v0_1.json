@@ -1,0 +1,43 @@
+{
+  "policy_id": "inquisition.evidence_write_guard.v0_1",
+  "status": "ACTIVE_DRAFT",
+  "default_ttl_hours": 48,
+  "source_repo_forbidden_patterns": [
+    "**/playwright-report/**",
+    "**/test-results/**",
+    "**/*.trace.zip",
+    "**/*.har",
+    "**/screenshots/**",
+    "**/__pycache__/**",
+    "**/*.pyc",
+    "**/.pytest_cache/**"
+  ],
+  "source_review_patterns": [
+    "**/*.zip",
+    "**/*.7z",
+    "**/*.tar",
+    "**/*.tar.gz",
+    "**/*.png",
+    "**/*.jpg",
+    "**/*.jpeg",
+    "**/*.webp",
+    "**/*.mp4"
+  ],
+  "allowed_external_roots": [
+    "E:/IMPERIUM_EVIDENCE_VAULT",
+    "E:/_LOCAL_HANDOFF",
+    "E:/_LOCAL_HANDOFF/SERVITOR_OUTPUTS"
+  ],
+  "protected_local_roots": [
+    "WARP_RUNS/_registry",
+    "E:/IMPERIUM_EVIDENCE_VAULT/indexes"
+  ],
+  "lanes": {
+    "SOURCE_EVIDENCE_LEAK": "OWNER_REVIEW_MOVE",
+    "SOURCE_RUNTIME_CACHE": "SOURCE_CACHE_CLEAN",
+    "SOURCE_ARCHIVE_REVIEW": "OWNER_REVIEW_CLASSIFY",
+    "UNSEALED_BUFFER_EXPIRED": "TTL_48_QUARANTINE",
+    "UNKNOWN_WRITE_ROOT": "BLOCK_AND_CLASSIFY",
+    "PROTECTED_REGISTRY": "PROTECTED_NO_TTL"
+  }
+}

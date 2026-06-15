@@ -1,0 +1,39 @@
+{
+  "schema_id": "OWNER_QUESTION_REGISTRY_V0_1",
+  "version": "0.1",
+  "mode": "FOUNDATION_READ_ONLY",
+  "owner_question_gate_doc": "IMPERIUM_NEW_GENERATION/TRUTH/OWNER_QUESTIONS/OWNER_QUESTION_GATE_V0_1.md",
+  "status_rules_path": "IMPERIUM_NEW_GENERATION/TRUTH/OWNER_QUESTIONS/OWNER_QUESTION_STATUS_RULES_V0_1.json",
+  "priority_rules_path": "IMPERIUM_NEW_GENERATION/TRUTH/OWNER_QUESTIONS/OWNER_QUESTION_PRIORITY_RULES_V0_1.json",
+  "sample_set_path": "IMPERIUM_NEW_GENERATION/TRUTH/OWNER_QUESTIONS/OWNER_QUESTION_SAMPLE_SET_V0_1.json",
+  "sanctum_state_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/owner_question_gate_state.generated.json",
+  "sanctum_state_schema_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/owner_question_gate_state.schema.json",
+  "owner_question_schema_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/owner_question.schema.json",
+  "owner_question_event_schema_path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/CONTRACTS/owner_question_event.schema.json",
+  "required_question_fields": [
+    "question_id",
+    "task_id",
+    "source",
+    "source_ref",
+    "question_text_ru",
+    "why_needed_ru",
+    "decision_type",
+    "blocking_level",
+    "status",
+    "owner_answer_required",
+    "allowed_answers",
+    "evidence_refs",
+    "created_at_utc",
+    "updated_at_utc"
+  ],
+  "forbidden_claims": [
+    "LIVE_OWNER_ANSWER_CHANNEL_ACTIVE",
+    "AUTONOMOUS_OWNER_DECISION_INFERENCE",
+    "PRODUCTION_READY_OWNER_ESCALATION"
+  ],
+  "known_limitations": [
+    "Question records are foundation samples unless tied to current task artifacts.",
+    "Sanctum NG displays Owner questions in read-only mode.",
+    "No live write path for Owner answers in V0.1."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "capability_id": "CAP-TOOL-RECEIPT-MODELS-VALIDATORS",
+  "name": "receipt models / validators internal capability",
+  "category": "TOOLS",
+  "status": "CANON",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Structured receipt model and validator helpers.",
+  "what_problem_it_solves": "Normalizes PASS/WARN/FAIL/BLOCKED evidence semantics.",
+  "source_type": "repo_existing",
+  "source_url_or_path": "src/imperium/receipts/model.py",
+  "license_or_trust_note": "Host/external trust requires explicit admission receipts.",
+  "install_required": false,
+  "install_gate": "GATE-U04-EVIDENCE-RECEIPT",
+  "validation_commands": [
+    "validate:cap-tool-receipt-models-validators"
+  ],
+  "expected_receipts": [
+    "cap-tool-receipt-models-validators_receipt.json"
+  ],
+  "safety_notes": "Use only in bounded task scope; no blind runtime mutation.",
+  "security_notes": "Do not bypass path, command, and evidence gates.",
+  "offline_or_network_dependency": "offline_preferred",
+  "promoted_by_receipt": "REPO_EVIDENCE_PATHS",
+  "last_reviewed_utc": "2026-05-24T00:00:00Z",
+  "next_review_reason": "Review on schema and verdict model evolution.",
+  "limitations": "Validator quality depends on contract coverage.",
+  "allowed_use_cases": [
+    "Bounded task execution under Mechanicus policy",
+    "Evidence-backed validation and report generation"
+  ],
+  "forbidden_use_cases": [
+    "Production-ready claim without receipts",
+    "Out-of-scope or unbounded execution"
+  ],
+  "canon_evidence_paths": [
+    "src/imperium/receipts/model.py",
+    "src/imperium/receipts/validator.py",
+    "src/imperium/receipts/__init__.py"
+  ]
+}

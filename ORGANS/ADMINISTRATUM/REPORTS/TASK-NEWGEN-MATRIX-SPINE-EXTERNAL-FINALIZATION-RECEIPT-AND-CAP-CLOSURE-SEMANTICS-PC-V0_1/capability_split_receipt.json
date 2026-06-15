@@ -1,0 +1,32 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1",
+  "items": [
+    {
+      "classification": "LOCAL_SCRIPT_FIRST",
+      "output_or_action": "Matrix/contract/schema updates",
+      "evidence": "git diff + schema files",
+      "gap_or_replay": "N/A",
+      "owner_organ": "Mechanicus/Administratum/Inquisition"
+    },
+    {
+      "classification": "LOCAL_SCRIPT_FIRST",
+      "output_or_action": "Fixture checker execution",
+      "evidence": "external_finalization_checker_report.json",
+      "gap_or_replay": "Replay simulated via fixtures",
+      "owner_organ": "Mechanicus"
+    },
+    {
+      "classification": "AGENT_REASONING_ONLY",
+      "output_or_action": "Owner summary and verdict",
+      "evidence": "final_owner_summary_ru.md",
+      "gap_or_replay": "Narrative synthesis only",
+      "owner_organ": "Officio Agentis"
+    }
+  ],
+  "summary": {
+    "agent_reasoning_only": 1,
+    "risk": "managed_with_red_team",
+    "local_script_first": 2
+  },
+  "verdict": "PASS_WITH_WARNINGS"
+}

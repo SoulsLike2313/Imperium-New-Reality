@@ -1,0 +1,49 @@
+{
+  "matrix_id": "CLAIM_LEDGER_MATRIX",
+  "version": "0.1-candidate",
+  "owner_organ": "Inquisition",
+  "support_organs": [
+    "Administratum",
+    "Mechanicus",
+    "Officio Agentis"
+  ],
+  "purpose": "Requires every important claim to be traceable: claim -> owner organ -> capability class -> evidence level -> cap -> red-team verdict -> final score.",
+  "used_by": [
+    "GPT_LOGOS",
+    "SERVITOR",
+    "INQUISITOR"
+  ],
+  "required_questions": [
+    "What exact claim is made?",
+    "Which organ owns it?",
+    "What evidence level proves it?",
+    "What cap applies?",
+    "Did red-team attack it?"
+  ],
+  "pass_criteria": [
+    "All major claims have ledger entries",
+    "Evidence level and cap are explicit",
+    "Red-team verdict present"
+  ],
+  "warn_criteria": [
+    "Minor claim missing but not used for PASS",
+    "Owner unknown but declared UNKNOWN"
+  ],
+  "block_criteria": [
+    "PASS claim without ledger",
+    "Runtime claim without replay",
+    "Final score ignores cap"
+  ],
+  "fake_green_flags": [
+    "PASS_WITHOUT_CLAIM_LEDGER",
+    "CAP_IGNORED",
+    "RUNTIME_CLAIM_NO_REPLAY"
+  ],
+  "evidence_requirements": [
+    "CLAIM_LEDGER.jsonl",
+    "RED_TEAM_VERDICT.json",
+    "EVIDENCE_LEDGER.jsonl"
+  ],
+  "current_status": "CANDIDATE_NOT_CANON",
+  "next_action": "Implement schema validation and runtime receipt generation in a later Servitor task."
+}

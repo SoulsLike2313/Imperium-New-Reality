@@ -1,0 +1,258 @@
+{
+    "task_id":  "TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1",
+    "generated_at_utc":  "2026-05-25T22:44:27Z",
+    "raw_dir":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight",
+    "fallback_checks":  {
+                            "programfiles_7z_path":  "C:\\Program Files\\7-Zip\\7z.exe",
+                            "programfiles_7z_exists":  true,
+                            "programfiles_x86_7z_path":  "C:\\Program Files (x86)\\7-Zip\\7z.exe",
+                            "programfiles_x86_7z_exists":  false
+                        },
+    "checks":  [
+                   {
+                       "id":  "winget_where",
+                       "command":  "where winget",
+                       "started_at_utc":  "2026-05-25T22:44:22.9280399Z",
+                       "finished_at_utc":  "2026-05-25T22:44:23.0913100Z",
+                       "exit_code":  0,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\winget_where.txt",
+                       "output_preview":  "C:\\Users\\PC\\AppData\\Local\\Microsoft\\WindowsApps\\winget.exe"
+                   },
+                   {
+                       "id":  "winget_version",
+                       "command":  "winget --version",
+                       "started_at_utc":  "2026-05-25T22:44:23.1043025Z",
+                       "finished_at_utc":  "2026-05-25T22:44:23.3902227Z",
+                       "exit_code":  0,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\winget_version.txt",
+                       "output_preview":  "v1.28.240"
+                   },
+                   {
+                       "id":  "winget_source_list",
+                       "command":  "winget source list",
+                       "started_at_utc":  "2026-05-25T22:44:23.3922218Z",
+                       "finished_at_utc":  "2026-05-25T22:44:23.5731199Z",
+                       "exit_code":  0,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\winget_source_list.txt",
+                       "output_preview":  "Имя         Аргумент                                      Возрастные ограничения -------------------------------------------------------------------------------- msstore     https://storeedgefd.dsx.mp.microsoft.com/v9.0 false winget      https://cdn.winget.microsoft.com/cache        false winget-font https://cdn.winget.microsoft.com/fonts        true"
+                   },
+                   {
+                       "id":  "node_where",
+                       "command":  "where node",
+                       "started_at_utc":  "2026-05-25T22:44:23.5751178Z",
+                       "finished_at_utc":  "2026-05-25T22:44:23.7231607Z",
+                       "exit_code":  0,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\node_where.txt",
+                       "output_preview":  "C:\\Program Files\\nodejs\\node.exe"
+                   },
+                   {
+                       "id":  "node_version",
+                       "command":  "node --version",
+                       "started_at_utc":  "2026-05-25T22:44:23.7252184Z",
+                       "finished_at_utc":  "2026-05-25T22:44:23.7643207Z",
+                       "exit_code":  0,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\node_version.txt",
+                       "output_preview":  "v24.15.0"
+                   },
+                   {
+                       "id":  "npm_where",
+                       "command":  "where npm",
+                       "started_at_utc":  "2026-05-25T22:44:23.7663189Z",
+                       "finished_at_utc":  "2026-05-25T22:44:23.9133311Z",
+                       "exit_code":  0,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\npm_where.txt",
+                       "output_preview":  "C:\\Program Files\\nodejs\\npm C:\\Program Files\\nodejs\\npm.cmd"
+                   },
+                   {
+                       "id":  "npm_version",
+                       "command":  "npm --version",
+                       "started_at_utc":  "2026-05-25T22:44:23.9153289Z",
+                       "finished_at_utc":  "2026-05-25T22:44:24.3424081Z",
+                       "exit_code":  0,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\npm_version.txt",
+                       "output_preview":  "11.12.1"
+                   },
+                   {
+                       "id":  "npm_prefix",
+                       "command":  "npm config get prefix",
+                       "started_at_utc":  "2026-05-25T22:44:24.3449512Z",
+                       "finished_at_utc":  "2026-05-25T22:44:24.7353668Z",
+                       "exit_code":  0,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\npm_prefix.txt",
+                       "output_preview":  "C:\\Users\\PC\\AppData\\Roaming\\npm"
+                   },
+                   {
+                       "id":  "py_where",
+                       "command":  "where py",
+                       "started_at_utc":  "2026-05-25T22:44:24.7363654Z",
+                       "finished_at_utc":  "2026-05-25T22:44:24.8825927Z",
+                       "exit_code":  0,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\py_where.txt",
+                       "output_preview":  "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Launcher\\py.exe C:\\Users\\PC\\AppData\\Local\\Microsoft\\WindowsApps\\py.exe"
+                   },
+                   {
+                       "id":  "py_version",
+                       "command":  "py -V",
+                       "started_at_utc":  "2026-05-25T22:44:24.8845908Z",
+                       "finished_at_utc":  "2026-05-25T22:44:24.9345623Z",
+                       "exit_code":  0,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\py_version.txt",
+                       "output_preview":  "Python 3.14.3"
+                   },
+                   {
+                       "id":  "py_pip_version",
+                       "command":  "py -m pip --version",
+                       "started_at_utc":  "2026-05-25T22:44:24.9365608Z",
+                       "finished_at_utc":  "2026-05-25T22:44:25.6108948Z",
+                       "exit_code":  0,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\py_pip_version.txt",
+                       "output_preview":  "pip 26.0.1 from C:\\Users\\PC\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\pip (python 3.14)"
+                   },
+                   {
+                       "id":  "python_where",
+                       "command":  "where python",
+                       "started_at_utc":  "2026-05-25T22:44:25.6138934Z",
+                       "finished_at_utc":  "2026-05-25T22:44:25.7638081Z",
+                       "exit_code":  0,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\python_where.txt",
+                       "output_preview":  "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe C:\\Users\\PC\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe C:\\Users\\PC\\AppData\\Local\\Python\\bin\\python.exe"
+                   },
+                   {
+                       "id":  "python_version",
+                       "command":  "python --version",
+                       "started_at_utc":  "2026-05-25T22:44:25.7658061Z",
+                       "finished_at_utc":  "2026-05-25T22:44:25.7967885Z",
+                       "exit_code":  0,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\python_version.txt",
+                       "output_preview":  "Python 3.12.10"
+                   },
+                   {
+                       "id":  "python_pip_version",
+                       "command":  "python -m pip --version",
+                       "started_at_utc":  "2026-05-25T22:44:25.7987871Z",
+                       "finished_at_utc":  "2026-05-25T22:44:26.3283402Z",
+                       "exit_code":  0,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\python_pip_version.txt",
+                       "output_preview":  "pip 25.0.1 from C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\pip (python 3.12)"
+                   },
+                   {
+                       "id":  "python_user_base",
+                       "command":  "python -m site --user-base",
+                       "started_at_utc":  "2026-05-25T22:44:26.3303386Z",
+                       "finished_at_utc":  "2026-05-25T22:44:26.3910481Z",
+                       "exit_code":  0,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\python_user_base.txt",
+                       "output_preview":  "C:\\Users\\PC\\AppData\\Roaming\\Python"
+                   },
+                   {
+                       "id":  "python_user_site",
+                       "command":  "python -m site --user-site",
+                       "started_at_utc":  "2026-05-25T22:44:26.3910481Z",
+                       "finished_at_utc":  "2026-05-25T22:44:26.4656979Z",
+                       "exit_code":  0,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\python_user_site.txt",
+                       "output_preview":  "C:\\Users\\PC\\AppData\\Roaming\\Python\\Python312\\site-packages"
+                   },
+                   {
+                       "id":  "tool_7z_where",
+                       "command":  "where 7z",
+                       "started_at_utc":  "2026-05-25T22:44:26.4676965Z",
+                       "finished_at_utc":  "2026-05-25T22:44:26.6751732Z",
+                       "exit_code":  1,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\tool_7z_where.txt",
+                       "output_preview":  "cmd.exe : INFO: Could not find files for the given pattern(s). At E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\sc ripts\\collect_preinstall_inventory_wave001.ps1:19 char:12 +     $all = \u0026 cmd /c $Command 2\u003e\u00261 +            ~~~~~~~~~~~~~~~~~~~~~~     + CategoryInfo          : NotSpecified: (INFO: Could not...ven pattern(s).:String) [], RemoteException     + FullyQualifiedErrorId : NativeCommandError"
+                   },
+                   {
+                       "id":  "tool_7z_info",
+                       "command":  "7z i",
+                       "started_at_utc":  "2026-05-25T22:44:26.6771724Z",
+                       "finished_at_utc":  "2026-05-25T22:44:26.7038686Z",
+                       "exit_code":  1,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\tool_7z_info.txt",
+                       "output_preview":  "cmd.exe : \u00277z\u0027 is not recognized as an internal or external command, At E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\sc ripts\\collect_preinstall_inventory_wave001.ps1:19 char:12 +     $all = \u0026 cmd /c $Command 2\u003e\u00261 +            ~~~~~~~~~~~~~~~~~~~~~~     + CategoryInfo          : NotSpecified: (\u00277z\u0027 is not rec...ternal command,:String) [], RemoteException     + FullyQualifiedErrorId : NativeCommandError   operable program or batch file."
+                   },
+                   {
+                       "id":  "tool_markdownlint_where",
+                       "command":  "where markdownlint",
+                       "started_at_utc":  "2026-05-25T22:44:26.7058668Z",
+                       "finished_at_utc":  "2026-05-25T22:44:26.8399867Z",
+                       "exit_code":  1,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\tool_markdownlint_where.txt",
+                       "output_preview":  "cmd.exe : INFO: Could not find files for the given pattern(s). At E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\sc ripts\\collect_preinstall_inventory_wave001.ps1:19 char:12 +     $all = \u0026 cmd /c $Command 2\u003e\u00261 +            ~~~~~~~~~~~~~~~~~~~~~~     + CategoryInfo          : NotSpecified: (INFO: Could not...ven pattern(s).:String) [], RemoteException     + FullyQualifiedErrorId : NativeCommandError"
+                   },
+                   {
+                       "id":  "tool_markdownlint_version",
+                       "command":  "markdownlint --version",
+                       "started_at_utc":  "2026-05-25T22:44:26.8430240Z",
+                       "finished_at_utc":  "2026-05-25T22:44:26.8690091Z",
+                       "exit_code":  1,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\tool_markdownlint_version.txt",
+                       "output_preview":  "cmd.exe : \u0027markdownlint\u0027 is not recognized as an internal or external command, At E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\sc ripts\\collect_preinstall_inventory_wave001.ps1:19 char:12 +     $all = \u0026 cmd /c $Command 2\u003e\u00261 +            ~~~~~~~~~~~~~~~~~~~~~~     + CategoryInfo          : NotSpecified: (\u0027markdownlint\u0027 ...ternal command,:String) [], RemoteException     + FullyQualifiedErrorId : NativeCommandError   operable program or batch file."
+                   },
+                   {
+                       "id":  "tool_check_jsonschema_where",
+                       "command":  "where check-jsonschema",
+                       "started_at_utc":  "2026-05-25T22:44:26.8710079Z",
+                       "finished_at_utc":  "2026-05-25T22:44:27.0257645Z",
+                       "exit_code":  1,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\tool_check_jsonschema_where.txt",
+                       "output_preview":  "cmd.exe : INFO: Could not find files for the given pattern(s). At E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\sc ripts\\collect_preinstall_inventory_wave001.ps1:19 char:12 +     $all = \u0026 cmd /c $Command 2\u003e\u00261 +            ~~~~~~~~~~~~~~~~~~~~~~     + CategoryInfo          : NotSpecified: (INFO: Could not...ven pattern(s).:String) [], RemoteException     + FullyQualifiedErrorId : NativeCommandError"
+                   },
+                   {
+                       "id":  "tool_check_jsonschema_version",
+                       "command":  "check-jsonschema --version",
+                       "started_at_utc":  "2026-05-25T22:44:27.0267657Z",
+                       "finished_at_utc":  "2026-05-25T22:44:27.0540604Z",
+                       "exit_code":  1,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\tool_check_jsonschema_version.txt",
+                       "output_preview":  "cmd.exe : \u0027check-jsonschema\u0027 is not recognized as an internal or external command, At E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\sc ripts\\collect_preinstall_inventory_wave001.ps1:19 char:12 +     $all = \u0026 cmd /c $Command 2\u003e\u00261 +            ~~~~~~~~~~~~~~~~~~~~~~     + CategoryInfo          : NotSpecified: (\u0027check-jsonsche...ternal command,:String) [], RemoteException     + FullyQualifiedErrorId : NativeCommandError   operable program or batch file."
+                   },
+                   {
+                       "id":  "tool_python_module_check_jsonschema_version",
+                       "command":  "python -m check_jsonschema --version",
+                       "started_at_utc":  "2026-05-25T22:44:27.0560596Z",
+                       "finished_at_utc":  "2026-05-25T22:44:27.1254666Z",
+                       "exit_code":  1,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\tool_python_module_check_jsonschema_version.txt",
+                       "output_preview":  "cmd.exe : C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe: No module named check_jsonschema At E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\sc ripts\\collect_preinstall_inventory_wave001.ps1:19 char:12 +     $all = \u0026 cmd /c $Command 2\u003e\u00261 +            ~~~~~~~~~~~~~~~~~~~~~~     + CategoryInfo          : NotSpecified: (C:\\Users\\PC\\App...heck_jsonschema:String) [], RemoteException     + FullyQualifiedErrorId : NativeCommandError"
+                   },
+                   {
+                       "id":  "tool_yamllint_where",
+                       "command":  "where yamllint",
+                       "started_at_utc":  "2026-05-25T22:44:27.1270118Z",
+                       "finished_at_utc":  "2026-05-25T22:44:27.2499480Z",
+                       "exit_code":  1,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\tool_yamllint_where.txt",
+                       "output_preview":  "cmd.exe : INFO: Could not find files for the given pattern(s). At E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\sc ripts\\collect_preinstall_inventory_wave001.ps1:19 char:12 +     $all = \u0026 cmd /c $Command 2\u003e\u00261 +            ~~~~~~~~~~~~~~~~~~~~~~     + CategoryInfo          : NotSpecified: (INFO: Could not...ven pattern(s).:String) [], RemoteException     + FullyQualifiedErrorId : NativeCommandError"
+                   },
+                   {
+                       "id":  "tool_yamllint_version",
+                       "command":  "yamllint --version",
+                       "started_at_utc":  "2026-05-25T22:44:27.2499480Z",
+                       "finished_at_utc":  "2026-05-25T22:44:27.2811967Z",
+                       "exit_code":  1,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\tool_yamllint_version.txt",
+                       "output_preview":  "cmd.exe : \u0027yamllint\u0027 is not recognized as an internal or external command, At E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\sc ripts\\collect_preinstall_inventory_wave001.ps1:19 char:12 +     $all = \u0026 cmd /c $Command 2\u003e\u00261 +            ~~~~~~~~~~~~~~~~~~~~~~     + CategoryInfo          : NotSpecified: (\u0027yamllint\u0027 is n...ternal command,:String) [], RemoteException     + FullyQualifiedErrorId : NativeCommandError   operable program or batch file."
+                   },
+                   {
+                       "id":  "tool_python_module_yamllint_version",
+                       "command":  "python -m yamllint --version",
+                       "started_at_utc":  "2026-05-25T22:44:27.2811967Z",
+                       "finished_at_utc":  "2026-05-25T22:44:27.3603344Z",
+                       "exit_code":  1,
+                       "output_file":  "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\raw\\preflight\\tool_python_module_yamllint_version.txt",
+                       "output_preview":  "cmd.exe : C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe: No module named yamllint At E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\MECHANICUS\\REPORTS\\TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1\\sc ripts\\collect_preinstall_inventory_wave001.ps1:19 char:12 +     $all = \u0026 cmd /c $Command 2\u003e\u00261 +            ~~~~~~~~~~~~~~~~~~~~~~     + CategoryInfo          : NotSpecified: (C:\\Users\\PC\\App... named yamllint:String) [], RemoteException     + FullyQualifiedErrorId : NativeCommandError"
+                   }
+               ],
+    "state_summary":  {
+                          "winget":  true,
+                          "node":  true,
+                          "npm":  true,
+                          "python":  true,
+                          "pip":  true,
+                          "tool_7zip_cli":  true,
+                          "tool_markdownlint":  false,
+                          "tool_check_jsonschema":  false,
+                          "tool_yamllint":  false
+                      }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Core Self Validation Report V0.1",
+  "type": "object",
+  "required": ["schema_version", "task_id", "timestamp_utc", "verdict", "required_organs", "support_zones", "quarantine_zone", "alerts", "warnings", "blockers", "next_action"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "task_id": {"type": "string"},
+    "timestamp_utc": {"type": "string"},
+    "verdict": {"type": "string", "enum": ["PASS", "PASS_WITH_WARNINGS", "BLOCK"]},
+    "required_organs": {"type": "array"},
+    "support_zones": {"type": "object"},
+    "quarantine_zone": {"type": "object"},
+    "unexpected_top_level": {"type": "array"},
+    "organ_life_minimum_checks": {"type": "array"},
+    "alerts": {"type": "array"},
+    "warnings": {"type": "array"},
+    "blockers": {"type": "array"},
+    "next_action": {"type": "string"}
+  },
+  "additionalProperties": true
+}

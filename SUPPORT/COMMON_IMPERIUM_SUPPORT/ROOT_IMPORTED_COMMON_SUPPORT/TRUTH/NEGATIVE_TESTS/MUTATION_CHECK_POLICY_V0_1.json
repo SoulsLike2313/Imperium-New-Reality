@@ -1,0 +1,24 @@
+{
+  "schema_id": "MUTATION_CHECK_POLICY_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-PQG-NEGATIVE-TEST-MUTATION-CHECK-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T20:48:00Z",
+  "status": "FOUNDATION_ONLY",
+  "allowed_classifications_for_known_bad": [
+    "BLOCK",
+    "WARN",
+    "REJECTED"
+  ],
+  "forbidden_classifications_for_known_bad": [
+    "PASS_STRICT"
+  ],
+  "mandatory_assertions": [
+    "all_known_bad_samples_rejected_or_classified_block_warn_rejected",
+    "no_known_bad_sample_classified_pass_strict",
+    "fake_green_samples_not_accepted",
+    "private_key_marker_is_synthetic_only"
+  ],
+  "known_limitations": [
+    "Policy verifies classification discipline only.",
+    "No destructive runtime mutation execution is included in this foundation."
+  ]
+}

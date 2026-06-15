@@ -1,0 +1,31 @@
+╭────────────────────────────── WAVE1 ORGAN TUI ───────────────────────────────╮
+│ OFFICIO_AGENTIS                                                              │
+│ responsibility: Role, language, response contract, and stop-condition        │
+│ admission.                                                                   │
+│ verdict: PASS                                                                │
+│ mode: SMOKE                                                                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+                               Servitor Interface                               
+┏━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Block        ┃ Value                                                         ┃
+┡━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ Ask          │ What role contract applies to me for this task?               │
+│              │ What owner-facing language and response format are mandatory? │
+│              │ What stop conditions block continuation?                      │
+│ Warn/Block   │ WARN on recoverable format mismatch with explicit correction  │
+│              │ BLOCK on missing role ack or owner-facing language violation  │
+│ Gate Catalog │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ State        │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ Contract     │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+│ Identity     │ /home/vboxuser3/IMPERIUM_WORK/Imperium-/IMPERIUM_NEW_GENERAT… │
+└──────────────┴───────────────────────────────────────────────────────────────┘
+                      Gate Preview                       
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━┓
+┃ Gate ID                     ┃ Severity      ┃ Verdict ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━┩
+│ GATE_ROLE_ACK_REQUIRED      │ BLOCK         │ PASS    │
+│ GATE_OWNER_LANGUAGE_RU      │ BLOCK         │ PASS    │
+│ GATE_SCOPED_VERDICT_ONLY    │ BLOCK         │ PASS    │
+│ GATE_STOP_CONDITION_BINDING │ WARN_TO_BLOCK │ PASS    │
+└─────────────────────────────┴───────────────┴─────────┘
+SMOKE_OK_OFFICIO_TUI_V0_1

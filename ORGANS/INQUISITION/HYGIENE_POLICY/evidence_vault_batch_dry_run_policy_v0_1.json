@@ -1,0 +1,29 @@
+{
+  "schema": "imperium.policy.evidence_vault_batch_dry_run.v0_1",
+  "policy_id": "inquisition.evidence_vault_batch_dry_run.policy.v0_1",
+  "status": "active",
+  "owner_organ": "INQUISITION",
+  "purpose": "Permit read-only rehearsal of Evidence Vault batch execution before owner-approved copy/pack operations.",
+  "allowed_write_roots": [
+    "explicit --out-root only"
+  ],
+  "forbidden_actions": [
+    "source_delete",
+    "source_move",
+    "source_rewrite",
+    "vault_pack_creation",
+    "vault_buffer_write_by_default",
+    "git_commit",
+    "git_push"
+  ],
+  "required_outputs": [
+    "EVIDENCE_VAULT_BATCH_001_DRY_RUN_REPORT.json",
+    "EVIDENCE_VAULT_BATCH_001_DRY_RUN_FILE_CHECKS.jsonl",
+    "EVIDENCE_VAULT_BATCH_001_DRY_RUN_FILE_CHECKS.csv",
+    "EVIDENCE_VAULT_BATCH_001_DRY_RUN_SHA256SUMS.txt",
+    "EVIDENCE_VAULT_BATCH_001_DRY_RUN_STAGING_LAYOUT_PREVIEW.json",
+    "EVIDENCE_VAULT_BATCH_001_DRY_RUN.sqlite",
+    "EVIDENCE_VAULT_BATCH_001_DRY_RUN_VISUAL_PROOF_DASHBOARD.html"
+  ],
+  "owner_gate": "PASS authorizes execution-patch preparation only; it does not authorize packing, moving, or deleting source."
+}

@@ -1,0 +1,155 @@
+{
+  "schema_id": "EVIDENCE_MAP_UNIFIED_VALIDATOR_REPORT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-PQG-EVIDENCE-MAP-UNIFIED-VM3-V0_1",
+  "generated_at_utc": "2026-05-22T19:04:13Z",
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "core_unified_artifacts_exist",
+      "status": "PASS",
+      "details": "all unified core artifacts exist"
+    },
+    {
+      "check_id": "schema_files_exist",
+      "status": "PASS",
+      "details": "all required schema files exist"
+    },
+    {
+      "check_id": "py_compile_evidence_map_unified_builder.py",
+      "status": "PASS",
+      "details": "evidence_map_unified_builder.py compiles"
+    },
+    {
+      "check_id": "py_compile_evidence_map_unified_validator.py",
+      "status": "PASS",
+      "details": "evidence_map_unified_validator.py compiles"
+    },
+    {
+      "check_id": "unified_map_parse",
+      "status": "PASS",
+      "details": "unified evidence map parses"
+    },
+    {
+      "check_id": "freshness_index_parse",
+      "status": "PASS",
+      "details": "evidence freshness index parses"
+    },
+    {
+      "check_id": "normalization_table_parse",
+      "status": "PASS",
+      "details": "status normalization table parses"
+    },
+    {
+      "check_id": "not_proven_parse",
+      "status": "PASS",
+      "details": "not-proven register parses"
+    },
+    {
+      "check_id": "current_truth_parse",
+      "status": "PASS",
+      "details": "current truth root parses"
+    },
+    {
+      "check_id": "sanctum_state_parse",
+      "status": "PASS",
+      "details": "sanctum state parses"
+    },
+    {
+      "check_id": "unified_map_schema_id",
+      "status": "PASS",
+      "details": "unified map schema_id is correct"
+    },
+    {
+      "check_id": "unified_records_non_empty",
+      "status": "PASS",
+      "details": "unified map contains records"
+    },
+    {
+      "check_id": "unified_status_values",
+      "status": "PASS",
+      "details": "all unified statuses are canonical"
+    },
+    {
+      "check_id": "unified_freshness_values",
+      "status": "PASS",
+      "details": "all unified freshness values are allowed"
+    },
+    {
+      "check_id": "unified_proof_levels",
+      "status": "PASS",
+      "details": "all unified proof levels are allowed"
+    },
+    {
+      "check_id": "missing_status_implies_missing_freshness",
+      "status": "PASS",
+      "details": "missing status consistently maps to missing freshness"
+    },
+    {
+      "check_id": "pass_records_have_linked_reports",
+      "status": "PASS",
+      "details": "PASS/PASS_STRICT records include linked reports"
+    },
+    {
+      "check_id": "freshness_index_schema_id",
+      "status": "PASS",
+      "details": "freshness index schema_id is correct"
+    },
+    {
+      "check_id": "freshness_index_covers_unified_records",
+      "status": "PASS",
+      "details": "freshness index covers all unified records"
+    },
+    {
+      "check_id": "normalization_schema_id",
+      "status": "PASS",
+      "details": "normalization table schema_id is correct"
+    },
+    {
+      "check_id": "normalization_required_raw_statuses",
+      "status": "PASS",
+      "details": "normalization table covers required status variants"
+    },
+    {
+      "check_id": "not_proven_schema_id",
+      "status": "PASS",
+      "details": "not-proven register schema_id is correct"
+    },
+    {
+      "check_id": "not_proven_status_values",
+      "status": "PASS",
+      "details": "not-proven statuses are allowed"
+    },
+    {
+      "check_id": "current_truth_references_unified_artifacts",
+      "status": "PASS",
+      "details": "current truth root references unified artifacts"
+    },
+    {
+      "check_id": "sanctum_has_current_truth_index",
+      "status": "PASS",
+      "details": "sanctum state includes current truth index"
+    },
+    {
+      "check_id": "sanctum_truth_index_unified_keys",
+      "status": "PASS",
+      "details": "sanctum truth index includes unified evidence/freshness keys"
+    },
+    {
+      "check_id": "report_bundle_files_exist",
+      "status": "PASS",
+      "details": "all required report bundle files exist"
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "validated_paths": {
+    "unified_map": "IMPERIUM_NEW_GENERATION/TRUTH/EVIDENCE_MAP_UNIFIED_V0_1.json",
+    "freshness_index": "IMPERIUM_NEW_GENERATION/TRUTH/EVIDENCE_FRESHNESS_INDEX_V0_1.json",
+    "normalization_table": "IMPERIUM_NEW_GENERATION/TRUTH/REPORT_STATUS_NORMALIZATION_TABLE_V0_1.json",
+    "not_proven_register": "IMPERIUM_NEW_GENERATION/TRUTH/NOT_PROVEN_REGISTER_V0_1.json",
+    "current_truth_root": "IMPERIUM_NEW_GENERATION/TRUTH/CURRENT_TRUTH_ROOT_V0_1.json",
+    "sanctum_state": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+    "report_dir": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-PQG-EVIDENCE-MAP-UNIFIED-VM3-V0_1"
+  },
+  "no_fake_green_note": "Validation keeps unresolved evidence explicitly non-green and rejects hidden missing paths."
+}

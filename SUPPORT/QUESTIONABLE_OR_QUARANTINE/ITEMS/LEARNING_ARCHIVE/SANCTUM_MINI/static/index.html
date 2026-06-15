@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sanctum Mini Operator Console V0.4</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="atmo-grid"></div>
+    <div class="shell">
+      <header class="panel top-bar">
+        <div class="title-stack">
+          <div class="main-title" id="mainTitle">IMPERIUM SHELL / OPERATOR CONSOLE</div>
+          <div class="sub-title" id="mainSub">MECHANICUS_AGENT</div>
+          <div class="mission-line" id="missionLine"></div>
+        </div>
+        <div class="top-metrics" id="topMetrics"></div>
+        <div class="top-tools">
+          <div class="sse-pill sse-fallback" id="sseStatusPill">SSE FALLBACK</div>
+          <button class="lang-switch" id="langSwitch" type="button">EN</button>
+        </div>
+      </header>
+
+      <main class="main-grid">
+        <aside class="panel work-zone">
+          <h2 id="workZoneTitle">WORK ZONE // CURRENT ACTIVITY</h2>
+          <p class="panel-note" id="workZoneNote"></p>
+          <div class="activity-feed" id="activityFeed"></div>
+        </aside>
+
+        <section class="panel center-zone">
+          <div class="tabs">
+            <button class="tab is-active" data-tab="overview" id="tabOverview">OVERVIEW</button>
+            <button class="tab" data-tab="live" id="tabLive">LIVE</button>
+            <button class="tab" data-tab="evidence" id="tabEvidence">EVIDENCE</button>
+            <button class="tab" data-tab="reports" id="tabReports">REPORTS</button>
+            <button class="tab" data-tab="raw" id="tabRaw">RAW JSON</button>
+            <button class="tab" data-tab="action-history" id="tabActionHistory">ACTION HISTORY</button>
+          </div>
+
+          <div class="panel-stack">
+            <section class="tab-panel is-active" data-panel="overview">
+              <h3 id="overviewOrganTitle">SANCTUM OVERVIEW // BRAIN SHELL</h3>
+              <div class="brain-shell">
+                <svg class="brain-links-svg" id="brainLinksSvg" viewBox="0 0 1000 560" preserveAspectRatio="none"></svg>
+                <div class="brain-core-zone" id="brainCoreZone"></div>
+                <div class="organ-grid" id="organGrid"></div>
+              </div>
+              <div class="brain-legend" id="brainLegend"></div>
+              <div class="truth-grid" id="truthBlock"></div>
+            </section>
+
+            <section class="tab-panel" data-panel="live">
+              <div class="live-header">
+                <div class="live-title" id="liveHeaderTitle">LIVE OPERATOR CONSOLE</div>
+                <div class="live-meta" id="liveHeaderMeta"></div>
+                <div class="live-panel-open-state" id="livePanelOpenState"></div>
+                <div class="live-raw-toggle-row">
+                  <button class="raw-toggle-btn" id="rawModeToggleBtn" type="button">RAW MODE OFF</button>
+                </div>
+              </div>
+              <div class="live-status-chips" id="liveStatusChips"></div>
+              <div class="live-columns raw-hidden" id="liveColumns">
+                <div class="operator-stream" id="liveOperatorStream"></div>
+                <div class="raw-stream-wrap is-hidden" id="rawStreamWrap">
+                  <div class="raw-stream-title" id="rawStreamTitle">RAW / TECHNICAL MODE</div>
+                  <pre class="raw-stream" id="rawTerminalStream"></pre>
+                </div>
+              </div>
+            </section>
+
+            <section class="tab-panel" data-panel="evidence">
+              <div class="viewport-zone">
+                <div class="viewport-header" id="evidenceViewportHeader"></div>
+                <div class="viewport-frame">
+                  <img id="evidenceViewportImage" alt="mechanicus evidence viewport" />
+                  <div class="viewport-empty" id="evidenceViewportEmpty"></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="tab-panel" data-panel="reports">
+              <div class="report-panel" id="reportsPanel"></div>
+            </section>
+
+            <section class="tab-panel" data-panel="raw">
+              <div class="raw-panel" id="rawPanel"></div>
+            </section>
+
+            <section class="tab-panel" data-panel="action-history">
+              <div class="history-panel" id="actionHistoryPanel"></div>
+            </section>
+          </div>
+        </section>
+
+        <div class="right-stack">
+          <aside class="panel command-zone">
+            <h2 id="commandZoneTitle">COMMAND ZONE // OPERATOR PALETTE</h2>
+            <p class="panel-note" id="commandZoneNote"></p>
+            <div class="command-grid" id="commandGrid"></div>
+            <form class="terminal-form" id="terminalForm">
+              <label for="terminalInput" id="terminalPromptLabel">Command</label>
+              <input id="terminalInput" type="text" autocomplete="off" spellcheck="false" />
+              <div class="terminal-actions">
+                <button class="terminal-btn" id="terminalRunBtn" type="submit">Run</button>
+                <button class="terminal-btn secondary" id="terminalClearBtn" type="button">Clear</button>
+              </div>
+            </form>
+          </aside>
+
+          <aside class="panel tool-zone">
+            <h2 id="toolRegistryTitle">TOOL REGISTRY // CAPABILITY OVERVIEW</h2>
+            <div class="tool-counters" id="toolCounters"></div>
+            <div class="tool-rows" id="toolRows"></div>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="panel bottom-strip">
+        <div class="bottom-card" id="bottomReport"></div>
+        <div class="bottom-card" id="bottomReceipt"></div>
+        <div class="bottom-card" id="bottomEventSummary"></div>
+        <div class="bottom-card" id="bottomCommandHealth"></div>
+      </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

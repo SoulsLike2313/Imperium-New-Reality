@@ -1,0 +1,31 @@
+{
+  "receipt_id": "task-newgen-mechanicus-arsenal-validation-batch-001-pc-v0_1:cap-cq-ruff:p1_code_quality:cap-cq-ruff",
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-VALIDATION-BATCH-001-PC-V0_1",
+  "capability_id": "CAP-CQ-RUFF",
+  "validator": "mechanicus_capability_validator_v0_1.py",
+  "checked_at_utc": "2026-05-24T18:15:16Z",
+  "status": "PASS_WITH_WARNINGS",
+  "summary": "CAP-CQ-RUFF: MISSING via P1_CODE_QUALITY:CAP-CQ-RUFF. promotion_recommendation=KEEP_CANDIDATE_MISSING",
+  "check_name": "P1_CODE_QUALITY:CAP-CQ-RUFF",
+  "command_or_check": "ruff --version",
+  "exit_code": 1,
+  "stdout_excerpt": "$ ruff --version",
+  "stderr_excerpt": "$ ruff --version\n'ruff' is not recognized as an internal or external command,\noperable program or batch file.",
+  "side_effects": [
+    "read-only command execution",
+    "receipt json created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-cq-ruff_validation_receipt.json"
+  ],
+  "validation_verdict": "MISSING",
+  "promotion_recommendation": "KEEP_CANDIDATE_MISSING",
+  "warnings": [
+    "partial_or_missing_dependency"
+  ],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/VALIDATION_BATCH_001/cap-cq-ruff_validation_receipt.json"
+  ]
+}

@@ -1,0 +1,51 @@
+[
+  {
+    "rejected_pattern_id": "REJECT-EXTERNAL-FRAMEWORK-AS-HOST",
+    "source_systems": [
+      "MCP",
+      "LangGraph",
+      "CrewAI",
+      "AutoGen",
+      "OpenHands"
+    ],
+    "reason": "IMPERIUM sovereignty: external frameworks can inspire protocols but must not become the master architecture.",
+    "imperium_rule": "No external framework is introduced by this harvest. Implementation must remain IMPERIUM-native until Owner explicitly approves a tool."
+  },
+  {
+    "rejected_pattern_id": "REJECT-FREE-AGENT-CHATTER",
+    "source_systems": [
+      "CrewAI",
+      "AutoGen",
+      "MetaGPT"
+    ],
+    "reason": "Free multi-agent conversation can cascade hallucinations, duplicate work, or hide ownership.",
+    "imperium_rule": "Use route cards, typed envelopes, organ ownership, and checkpoints instead of unconstrained chatter."
+  },
+  {
+    "rejected_pattern_id": "REJECT-RUNTIME-AS-CANON",
+    "source_systems": [
+      "All execution frameworks"
+    ],
+    "reason": "Runtime outputs prove activity but are not architecture or law.",
+    "imperium_rule": "Runtime goes to RUNS/RUNTIME layer, stays ignored or receipt-backed, and requires promotion gates."
+  },
+  {
+    "rejected_pattern_id": "REJECT-PARALLEL-STATEFUL-AGENT-CALLS-BY-DEFAULT",
+    "source_systems": [
+      "AutoGen"
+    ],
+    "reason": "Stateful agents and teams can conflict when called concurrently.",
+    "imperium_rule": "Stateful Organ-Agents are single-writer by default; parallelism requires concurrency admission."
+  },
+  {
+    "rejected_pattern_id": "REJECT-UNVERIFIED-TOOL-EXECUTION",
+    "source_systems": [
+      "MCP",
+      "Claude Code tools",
+      "OpenHands",
+      "SWE-agent"
+    ],
+    "reason": "Tool execution without manifest, side-effect declaration, receipts, and permission gates creates hidden risk.",
+    "imperium_rule": "Every tool/skill needs manifest, input/output schema, side-effect policy, receipts, and verification."
+  }
+]

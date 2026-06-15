@@ -1,0 +1,26 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-INDEPENDENT-REPLAY-AND-HEAD-CHAIN-RECONCILIATION-VM3-V0_1",
+  "accepted_continuity_head": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+  "prior_closure_head": "c10f2b1c46d19e6a7614e25c4eff57b46b8baef5",
+  "candidate_implementation_anchors": [
+    {
+      "source": "servitor_or_speculum",
+      "head": "3aa07798217fff0f594214d203e1783307a03a5e",
+      "evidence": "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/final_closure_verifier_receipt.json"
+    },
+    {
+      "source": "inquisitor",
+      "head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+      "evidence": "git commit subject: TASK-NEWGEN Matrix Spine head consistency + independent replay gate"
+    }
+  ],
+  "resolved_implementation_truth_head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+  "proof_head": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+  "closure_bundle_head": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+  "remote_head_after_push": "10d4649e64bb9b3565e579c00af88d7bd8f93ba7",
+  "review_target_head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+  "conflict_status": "RESOLVED",
+  "conflict_rationale": "d6768e5 is the direct implementation commit for the contested task boundary; 3aa0779 is a valid upstream predecessor but not the final direct implementation anchor for that review step.",
+  "caps_triggered": [],
+  "clean_pass_allowed": true
+}

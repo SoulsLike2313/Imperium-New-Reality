@@ -1,0 +1,193 @@
+{
+  "manifest_schema": "imperium.trinity_patch_manifest.v0_2",
+  "patch_id": "SAMPLE-ETALON-14",
+  "patch_type": "TRINITY_MULTI",
+  "version": "0.0.0-sample",
+  "authority_refs": [
+    "Constitution §13",
+    "Passport §2"
+  ],
+  "scope": {
+    "in_paths": [
+      "ORGANS/**"
+    ],
+    "out_paths": [
+      "_LOCAL_HANDOFF/**",
+      ".git/**"
+    ]
+  },
+  "dirty_scope_expectation": "additive_only",
+  "forbidden_actions_checked": [
+    "live_trading_execution",
+    "real_servitor_execution",
+    "live_llm",
+    "push",
+    "delete"
+  ],
+  "owner_decision_required": "none (sample/reference manifest)",
+  "rollback": {
+    "backup_root": "E:/_LOCAL_HANDOFF/PATCH_BACKUPS",
+    "strategy": "copy-before-overwrite"
+  },
+  "git_truth": {
+    "expected_before": "<sample>",
+    "expected_after": "<sample>",
+    "contour": "H"
+  },
+  "ghost_evolve": {
+    "self_describe": true,
+    "self_prove": true,
+    "self_heal": true,
+    "self_direct": true,
+    "learning_receipt": "SCHOLA/LEARNING_ARCHIVE/..."
+  },
+  "function_directions": {
+    "target_form": 14,
+    "declared_count": 14,
+    "active_count": 12,
+    "dormant_count": 2,
+    "etalon": true,
+    "directions": [
+      {
+        "direction_id": "GOVERNANCE",
+        "function": "law/doctrine enforcement",
+        "organ": "DOCTRINARIUM",
+        "capability": "defines patch form",
+        "status": "active",
+        "execution_mode": "static",
+        "owner_gated": false,
+        "proof_receipt": "SMOKE: TRINITY_MANIFEST_SMOKE_RECEIPT.json"
+      },
+      {
+        "direction_id": "CLEANUP_HYGIENE",
+        "function": "classify+stage clutter",
+        "organ": "ADMINISTRATUM",
+        "capability": "quarantine ledger",
+        "status": "active",
+        "execution_mode": "static",
+        "owner_gated": false,
+        "proof_receipt": "SMOKE: TRINITY_MANIFEST_SMOKE_RECEIPT.json"
+      },
+      {
+        "direction_id": "PASSPORTING",
+        "function": "organ self-passport",
+        "organ": "ADMINISTRATUM",
+        "capability": "passport emit",
+        "status": "active",
+        "execution_mode": "static",
+        "owner_gated": false,
+        "proof_receipt": "SMOKE: TRINITY_MANIFEST_SMOKE_RECEIPT.json"
+      },
+      {
+        "direction_id": "VALIDATION_PROOF",
+        "function": "manifest validation",
+        "organ": "INQUISITION",
+        "capability": "validator v0_2",
+        "status": "active",
+        "execution_mode": "static",
+        "owner_gated": false,
+        "proof_receipt": "SMOKE: TRINITY_MANIFEST_SMOKE_RECEIPT.json"
+      },
+      {
+        "direction_id": "CONTINUITY",
+        "function": "continuity pack",
+        "organ": "ADMINISTRATUM",
+        "capability": "resumable state",
+        "status": "active",
+        "execution_mode": "static",
+        "owner_gated": false,
+        "proof_receipt": "SMOKE: TRINITY_MANIFEST_SMOKE_RECEIPT.json"
+      },
+      {
+        "direction_id": "TOOLING_MECHANICUS",
+        "function": "reusable tool passport",
+        "organ": "MECHANICUS",
+        "capability": "tool registry",
+        "status": "active",
+        "execution_mode": "static",
+        "owner_gated": false,
+        "proof_receipt": "SMOKE: TRINITY_MANIFEST_SMOKE_RECEIPT.json"
+      },
+      {
+        "direction_id": "UX_OBSERVABILITY",
+        "function": "rich/visual proof",
+        "organ": "IMPERIAL_IDE",
+        "capability": "operator window",
+        "status": "active",
+        "execution_mode": "static",
+        "owner_gated": false,
+        "proof_receipt": "SMOKE: TRINITY_MANIFEST_SMOKE_RECEIPT.json"
+      },
+      {
+        "direction_id": "ROUTING_TASKING",
+        "function": "taskpack routing",
+        "organ": "ASTRONOMICON",
+        "capability": "task lifecycle",
+        "status": "active",
+        "execution_mode": "static",
+        "owner_gated": false,
+        "proof_receipt": "SMOKE: TRINITY_MANIFEST_SMOKE_RECEIPT.json"
+      },
+      {
+        "direction_id": "SECURITY",
+        "function": "forbidden-action guard",
+        "organ": "CUSTODES",
+        "capability": "policy gate",
+        "status": "active",
+        "execution_mode": "static",
+        "owner_gated": false,
+        "proof_receipt": "SMOKE: TRINITY_MANIFEST_SMOKE_RECEIPT.json"
+      },
+      {
+        "direction_id": "GHOST_EVOLVE_LEARNING",
+        "function": "self-describe/prove/heal/direct",
+        "organ": "OFFICIO_AGENTIS",
+        "capability": "organ learning",
+        "status": "active",
+        "execution_mode": "shadow",
+        "owner_gated": true,
+        "proof_receipt": "SMOKE: TRINITY_MANIFEST_SMOKE_RECEIPT.json"
+      },
+      {
+        "direction_id": "KNOWLEDGE_SCHOLA",
+        "function": "learning archive",
+        "organ": "SCHOLA_IMPERIALIS",
+        "capability": "knowledge capture",
+        "status": "active",
+        "execution_mode": "static",
+        "owner_gated": false,
+        "proof_receipt": "SMOKE: TRINITY_MANIFEST_SMOKE_RECEIPT.json"
+      },
+      {
+        "direction_id": "STRATEGY_STRATEGIUM",
+        "function": "strategy planning",
+        "organ": "STRATEGIUM",
+        "capability": "roadmap synthesis",
+        "status": "active",
+        "execution_mode": "static",
+        "owner_gated": false,
+        "proof_receipt": "SMOKE: TRINITY_MANIFEST_SMOKE_RECEIPT.json"
+      },
+      {
+        "direction_id": "EXTERNAL_TRADING",
+        "function": "declared; untouched",
+        "organ": "STRATEGIUM",
+        "capability": "reserved",
+        "status": "dormant",
+        "execution_mode": "static",
+        "owner_gated": true,
+        "dormant_declaration": "known; untouched; live forbidden; awaiting owner canon-amendment"
+      },
+      {
+        "direction_id": "EXTERNAL_FREELANCE_DELIVERY",
+        "function": "declared; untouched",
+        "organ": "OFFICIO_AGENTIS",
+        "capability": "reserved",
+        "status": "dormant",
+        "execution_mode": "static",
+        "owner_gated": true,
+        "dormant_declaration": "known; untouched; live forbidden; awaiting owner canon-amendment"
+      }
+    ]
+  }
+}

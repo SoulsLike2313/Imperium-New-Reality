@@ -1,0 +1,29 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:search_indexing_sqlite_fts_search:tool_detection:search_indexing_sqlite_fts_search",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "SEARCH_INDEXING_SQLITE_FTS_SEARCH",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:44Z",
+  "status": "PASS",
+  "summary": "SEARCH_INDEXING_SQLITE_FTS_SEARCH: PASS via tool_detection:SEARCH_INDEXING_SQLITE_FTS_SEARCH. promotion_recommendation=KEEP_STATUS",
+  "check_name": "tool_detection:SEARCH_INDEXING_SQLITE_FTS_SEARCH",
+  "command_or_check": "python -c \"import sqlite3; con=sqlite3.connect('IMPERIUM_NEW_GENERATION/MECHANICUS/EVIDENCE_INDEX/V0_1/evidence_index.sqlite3'); c=con.execute('SELECT COUNT(1) FROM evidence_fts').fetchone()[0]; print(c)\"",
+  "exit_code": 0,
+  "stdout_excerpt": "$ python -c \"import sqlite3; con=sqlite3.connect('IMPERIUM_NEW_GENERATION/MECHANICUS/EVIDENCE_INDEX/V0_1/evidence_index.sqlite3'); c=con.execute('SELECT COUNT(1) FROM evidence_fts').fetchone()[0]; print(c)\"\n386",
+  "stderr_excerpt": "",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/search-indexing-sqlite-fts-search_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "KEEP_STATUS",
+  "warnings": [],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/search-indexing-sqlite-fts-search_validation_receipt.json"
+  ]
+}

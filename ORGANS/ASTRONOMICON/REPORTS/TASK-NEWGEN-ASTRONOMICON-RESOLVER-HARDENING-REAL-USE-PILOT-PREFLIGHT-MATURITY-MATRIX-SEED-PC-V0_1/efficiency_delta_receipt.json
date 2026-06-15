@@ -1,0 +1,17 @@
+{
+  "task_id": "TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1",
+  "timestamp_utc": "2026-05-30T23:59:08Z",
+  "baseline_reference": "Stage2 adjusted delta +18%",
+  "delta_percent": 22,
+  "delta_direction": "POSITIVE",
+  "drivers": [
+    "Expanded mandatory negative fixture coverage to 12 required edge-cases.",
+    "Added resolver consistency checks (receipt + manifest mismatch + path safety).",
+    "Seeded maturity matrices to preserve future-domain intent without overclaim."
+  ],
+  "caps_applied": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_SYNTHETIC_ONLY_UNTIL_REAL_USE_PILOT"
+  ],
+  "clean_pass_allowed": false
+}

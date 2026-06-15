@@ -1,0 +1,261 @@
+{
+  "status": "PASS",
+  "commands_tested": [
+    [
+      "help"
+    ],
+    [
+      "station"
+    ],
+    [
+      "agents"
+    ],
+    [
+      "agent-status",
+      "PRIME"
+    ],
+    [
+      "taskpack-manager"
+    ],
+    [
+      "taskpack-inspect"
+    ],
+    [
+      "taskpack-open"
+    ],
+    [
+      "taskpack-copy-path"
+    ],
+    [
+      "dirty-classifier"
+    ],
+    [
+      "safety"
+    ],
+    [
+      "git-closure"
+    ],
+    [
+      "reports-latest"
+    ],
+    [
+      "receipts-latest"
+    ],
+    [
+      "show-summary"
+    ],
+    [
+      "full-json"
+    ],
+    [
+      "launch-card"
+    ],
+    [
+      "handoff-card"
+    ],
+    [
+      "daily-ops"
+    ],
+    [
+      "next-action"
+    ],
+    [
+      "operator-board"
+    ],
+    [
+      "task-flow"
+    ],
+    [
+      "lifecycle"
+    ]
+  ],
+  "command_results": [
+    {
+      "command": [
+        "help"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"schema_version\": \"imperial_ide.command_palette.v0_3\", \"task_id\": \"TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-TRUTH-FIX-DAILY-OPS-SHELL-PC-V0_1\", \"commands\": [{\"command\": \"doctor\", \"description\": \"Run shell and bridge diagno",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "station"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"surface\": \"OPERATIONAL_STATION\", \"snapshot\": {\"schema_version\": \"imperial_ide.operational_state.v0_2\", \"state\": \"ACTIVE\", \"repo\": {\"state\": \"LIVE\", \"root\": \"E:/IMPERIUM_NEW_GENERATION_NEW_REALITY\"}",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "agents"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS\", \"state\": \"ACTIVE\", \"registry_path\": \"ORGANS/IMPERIAL_IDE/AGENTS/agent_registry.json\", \"agent_count\": 12, \"current_expected_task_id\": \"TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-TRUTH-FIX-DAILY-OPS-SHELL-PC-",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "agent-status",
+        "PRIME"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS\", \"agent\": {\"agent_id\": \"PRIME\", \"display_name\": \"Prime\", \"servitor_name\": \"Prime Handoff Servitor\", \"owner_organ\": \"OWNER\", \"role\": \"Owner intent and external execution authority\", \"capabilities\": [\"intent_approva",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "taskpack-manager"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"generated_taskpacks_found\": 3, \"generated_taskpacks_root\": \"ORGANS/IMPERIAL_IDE/STATION/generated_taskpacks\", \"latest_taskpack_path\": \"ORGANS/IMPERIAL_IDE/STATION/generated_taskpacks/TASK-NEWREALIT",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "taskpack-inspect"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"taskpack_id\": \"TASK-NEWREALITY-INTEGRATION-STATION-SMOKE-FIRST-OWNER-FLOW-PC-V0_1\", \"title\": \"STATION-SMOKE-FIRST-OWNER-FLOW\", \"status_label\": \"PASS\", \"taskpack_path\": \"ORGANS/IMPERIAL_IDE/STATION/",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "taskpack-open"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"taskpack_id\": \"TASK-NEWREALITY-INTEGRATION-STATION-SMOKE-FIRST-OWNER-FLOW-PC-V0_1\", \"action\": \"taskpack-open\", \"target_path\": \"E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/IMPERIAL_IDE/STATION/gen",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "taskpack-copy-path"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"taskpack_id\": \"TASK-NEWREALITY-INTEGRATION-STATION-SMOKE-FIRST-OWNER-FLOW-PC-V0_1\", \"action\": \"taskpack-copy-path\", \"target_path\": \"E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/IMPERIAL_IDE/STATIO",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "dirty-classifier"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"task_id\": \"TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-TRUTH-FIX-DAILY-OPS-SHELL-PC-V0_1\", \"dirty_count\": 88, \"classified_count\": 88, \"unclassified_count\": 0, \"classified_items\": [{\"raw\": \" M ",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "safety"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"real_servitor_execution\": {\"allowed_now\": false, \"reason\": \"No owner-approved real execution gate is open.\", \"future_gate\": \"Dedicated real servitor execution task with receipts.\"}, \"live_llm_backe",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "git-closure"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"branch\": \"master\", \"head\": \"816f992343e7c35fb3e1872d07f83b4bee2a4141\", \"origin_master\": \"816f992343e7c35fb3e1872d07f83b4bee2a4141\", \"head_equals_origin_master\": true, \"dirty_count\": 88, \"classified",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "reports-latest"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"filters\": [\"safety\", \"validation\", \"git\", \"admission\", \"resolver\", \"launch\", \"lifecycle\"], \"latest\": [{\"name\": \"TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-TRUTH-FIX-DAILY-OPS-SHELL-PC-V0_1\", ",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "receipts-latest"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"filters\": [\"safety\", \"validation\", \"git\", \"admission\", \"resolver\", \"launch\", \"lifecycle\"], \"count\": 451, \"latest\": [{\"name\": \"git_commit_push_receipt.json\", \"path\": \"REPORTS/TASK-NEWREALITY-IMPERIA",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "show-summary"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"summary\": {\"status\": \"ACTIVE\", \"title\": \"Operational Station\", \"human_meaning\": \"Available for the scoped station workflow.\", \"key_paths\": [\"E:/IMPERIUM_NEW_GENERATION_NEW_REALITY\", \"ORGANS/ASTRONO",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "full-json"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS\", \"title\": \"Operational Station snapshot\", \"raw_json_available\": true, \"data\": {\"schema_version\": \"imperial_ide.operational_state.v0_2\", \"state\": \"ACTIVE\", \"repo\": {\"state\": \"LIVE\", \"root\": \"E:/IMPERIUM_NEW_GENERAT",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "launch-card"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"viewer\": \"LAUNCH_CARD\", \"task_id\": \"TASK-NEWREALITY-INTEGRATION-STATION-SMOKE-FIRST-OWNER-FLOW-PC-V0_1\", \"title\": \"STATION-SMOKE-FIRST-OWNER-FLOW\", \"admission_state\": \"DRY_RUN_CANDIDATE\", \"canon_st",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "handoff-card"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"viewer\": \"HANDOFF_CARD\", \"task_id\": \"TASK-NEWREALITY-INTEGRATION-STATION-SMOKE-FIRST-OWNER-FLOW-PC-V0_1\", \"handoff_target\": \"SERVITOR_PRIME\", \"handoff_mode\": \"COPY_READY_EXTERNAL_HANDOFF\", \"dry_run",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "daily-ops"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"surface\": \"DAILY_OPERATIONS\", \"board\": {\"status\": \"PASS_WITH_WARNINGS\", \"system_truth\": {\"repo_root\": \"E:/IMPERIUM_NEW_GENERATION_NEW_REALITY\", \"branch\": \"master\", \"head\": \"816f992343e7c35fb3e1872d",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "next-action"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"next_action\": \"Review live registration promotion; do not run live registration unless Owner explicitly types LIVE.\", \"reason\": \"taskpack_ready_for_review\", \"real_execution_required\": false, \"live_",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "operator-board"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"surface\": \"DAILY_OPERATIONS\", \"board\": {\"status\": \"PASS_WITH_WARNINGS\", \"system_truth\": {\"repo_root\": \"E:/IMPERIUM_NEW_GENERATION_NEW_REALITY\", \"branch\": \"master\", \"head\": \"816f992343e7c35fb3e1872d",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "task-flow"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"workflow\": [{\"index\": 1, \"step\": \"start day\", \"mode\": \"READ_OR_DRY_RUN\"}, {\"index\": 2, \"step\": \"inspect system\", \"mode\": \"READ_OR_DRY_RUN\"}, {\"index\": 3, \"step\": \"create task\", \"mode\": \"READ_OR_DRY",
+      "stderr_prefix": ""
+    },
+    {
+      "command": [
+        "lifecycle"
+      ],
+      "exit_code": 0,
+      "stdout_prefix": "{\"data\": {\"status\": \"PASS_WITH_WARNINGS\", \"task_id\": \"TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-TRUTH-FIX-DAILY-OPS-SHELL-PC-V0_1\", \"overall_state\": \"DRY_RUN\", \"stages\": [{\"stage\": \"INTENT_CAPTURED\", \"state\": \"VISIBLE\"}, {\"stage\": \"T",
+      "stderr_prefix": ""
+    }
+  ],
+  "git_status_before": " M ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json\n M ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json\n M ORGANS/IMPERIAL_IDE/SHELL/command_palette.json\n M ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py\n M ORGANS/IMPERIAL_IDE/SHELL/panel_registry.json\n M ORGANS/IMPERIAL_IDE/SHELL/shell_command_receipt.schema.json\n M ORGANS/IMPERIAL_IDE/SHELL/shell_receipts.py\n M ORGANS/IMPERIAL_IDE/SHELL/shell_router.py\n M ORGANS/IMPERIAL_IDE/STATION/dirty_classifier.py\n M ORGANS/IMPERIAL_IDE/STATION/dirty_classifier.schema.json\n M ORGANS/IMPERIAL_IDE/STATION/live_registration_promoter.py\n M ORGANS/IMPERIAL_IDE/STATION/live_registration_promotion.schema.json\n M ORGANS/IMPERIAL_IDE/STATION/station_router.py\n M ORGANS/IMPERIAL_IDE/STATION/station_state.py\n M ORGANS/IMPERIAL_IDE/STATION/taskpack_manager.py\n M ORGANS/IMPERIAL_IDE/WORKBENCH/GUI/imperial_gui_workbench.py\n M ORGANS/IMPERIAL_IDE/WORKBENCH/TUI/imperial_tui.py\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/FINAL_OWNER_SUMMARY_RU.md\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/agent_roster_primary_view_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/cli_aliases_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/continuity_pack.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/dirty_classifier_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/git_closure_dirty_classification_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/git_commit_push_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/git_diff_scope_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/gui_ux_hardening_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/launch_handoff_card_viewer_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/legacy_capsule_deprecation_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/lifecycle_ui_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/live_registration_promotion_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/preflight_current_state_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/receipts_browser_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/reports_browser_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/safety_center_2_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/station_ux_smoke_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/taskpack_manager_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/tui_ux_hardening_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/ux_summary_json_viewer_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/validation_receipt.json",
+  "git_status_after": " M ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json\n M ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json\n M ORGANS/IMPERIAL_IDE/SHELL/command_palette.json\n M ORGANS/IMPERIAL_IDE/SHELL/imperial_ide_cli.py\n M ORGANS/IMPERIAL_IDE/SHELL/panel_registry.json\n M ORGANS/IMPERIAL_IDE/SHELL/shell_command_receipt.schema.json\n M ORGANS/IMPERIAL_IDE/SHELL/shell_receipts.py\n M ORGANS/IMPERIAL_IDE/SHELL/shell_router.py\n M ORGANS/IMPERIAL_IDE/STATION/dirty_classifier.py\n M ORGANS/IMPERIAL_IDE/STATION/dirty_classifier.schema.json\n M ORGANS/IMPERIAL_IDE/STATION/live_registration_promoter.py\n M ORGANS/IMPERIAL_IDE/STATION/live_registration_promotion.schema.json\n M ORGANS/IMPERIAL_IDE/STATION/station_router.py\n M ORGANS/IMPERIAL_IDE/STATION/station_state.py\n M ORGANS/IMPERIAL_IDE/STATION/taskpack_manager.py\n M ORGANS/IMPERIAL_IDE/WORKBENCH/GUI/imperial_gui_workbench.py\n M ORGANS/IMPERIAL_IDE/WORKBENCH/TUI/imperial_tui.py\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/FINAL_OWNER_SUMMARY_RU.md\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/agent_roster_primary_view_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/cli_aliases_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/continuity_pack.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/dirty_classifier_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/git_closure_dirty_classification_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/git_commit_push_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/git_diff_scope_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/gui_ux_hardening_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/launch_handoff_card_viewer_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/legacy_capsule_deprecation_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/lifecycle_ui_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/live_registration_promotion_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/preflight_current_state_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/receipts_browser_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/reports_browser_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/safety_center_2_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/station_ux_smoke_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/taskpack_manager_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/tui_ux_hardening_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/ux_summary_json_viewer_receipt.json\n M REPORTS/TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-UX-HARDENING-AGENT-ROSTER-DIRTY-CLASSIFIER-PC-V0_1/validation_receipt.json",
+  "tracked_files_modified_by_readonly_commands": false,
+  "tracked_diff_before_after_equal": true,
+  "runtime_receipts_written": [],
+  "report_receipts_written": [],
+  "pass": true,
+  "blockers": [],
+  "timestamp": "2026-06-07T21:21:11Z",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-TRUTH-FIX-DAILY-OPS-SHELL-PC-V0_1"
+}

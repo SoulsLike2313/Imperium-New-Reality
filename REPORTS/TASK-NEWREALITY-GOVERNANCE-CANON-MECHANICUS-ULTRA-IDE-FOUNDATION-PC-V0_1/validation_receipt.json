@@ -1,0 +1,99 @@
+{
+  "receipt_type": "validation_receipt",
+  "task_id": "TASK-NEWREALITY-GOVERNANCE-CANON-MECHANICUS-ULTRA-IDE-FOUNDATION-PC-V0_1",
+  "timestamp_utc": "2026-06-07T11:11:46Z",
+  "phase": "PRE_STAGE_VALIDATION_COMPLETE",
+  "checks": [
+    {
+      "id": "required_outputs_exist",
+      "evidence": "required_count=50",
+      "exit_code": 0,
+      "verdict": "PASS"
+    },
+    {
+      "id": "changed_json_parse",
+      "evidence": "json_count=35",
+      "exit_code": 0,
+      "verdict": "PASS"
+    },
+    {
+      "id": "mechanicus_python_py_compile",
+      "evidence": "5 files",
+      "exit_code": 0,
+      "verdict": "PASS"
+    },
+    {
+      "id": "mechanicus_validate_json",
+      "evidence": "2026-06-07T11:11:13Z",
+      "exit_code": 0,
+      "verdict": "PASS"
+    },
+    {
+      "id": "mechanicus_doctor",
+      "evidence": "2026-06-07T11:11:13Z",
+      "exit_code": 0,
+      "verdict": "PASS_WITH_WARNINGS"
+    },
+    {
+      "id": "mechanicus_gateway_dry_run",
+      "evidence": "2026-06-07T11:11:14Z",
+      "exit_code": 0,
+      "verdict": "PASS_WITH_WARNINGS"
+    },
+    {
+      "id": "astronomicon_pc_launcher_smoke",
+      "evidence": "2026-06-07T11:11:15Z",
+      "exit_code": 0,
+      "verdict": "PASS_WITH_WARNINGS"
+    },
+    {
+      "id": "governance_canon_active",
+      "evidence": "governance_active=true",
+      "exit_code": 0,
+      "verdict": "PASS"
+    },
+    {
+      "id": "agents_concise",
+      "evidence": "AGENTS.md lines=23",
+      "exit_code": 0,
+      "verdict": "PASS"
+    },
+    {
+      "id": "secret_scan",
+      "evidence": "secret_hits=0",
+      "exit_code": 0,
+      "verdict": "PASS"
+    },
+    {
+      "id": "staged_scope_gate",
+      "evidence": "staged_scope_count=66",
+      "exit_code": 0,
+      "verdict": "PASS_WITH_WARNINGS"
+    },
+    {
+      "id": "staged_secret_scan",
+      "evidence": "staged_secret_hits=0",
+      "exit_code": 0,
+      "verdict": "PASS"
+    }
+  ],
+  "pre_existing_dirty_out_of_scope": {
+    "path": "REPORTS/TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3/astronomicon_local_pc_registration_and_route_drift_report.zip",
+    "status": "DELETED_IN_WORKTREE_BEFORE_TASK_EDITS",
+    "allowed_write_scope": false,
+    "owner_instruction": "ignore and continue; owner will clean manually",
+    "staged": false,
+    "pushed": false
+  },
+  "forbidden_actions": {
+    "vm2_action": false,
+    "vm3_action": false,
+    "remote_route_attempted": false,
+    "unsafe_arbitrary_shell_gateway_enabled": false,
+    "destructive_cleanup_performed": false,
+    "mass_move_performed": false,
+    "local_route_config_staged": false,
+    "secrets_detected": false
+  },
+  "overall_verdict": "PASS_WITH_WARNINGS"
+}

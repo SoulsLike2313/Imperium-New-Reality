@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://mechanicus/schemas/command_receipt.v0_1",
+  "title": "Mechanicus Command Receipt",
+  "type": "object",
+  "required": [
+    "receipt_type",
+    "timestamp_utc",
+    "tool_id",
+    "mode",
+    "verdict"
+  ],
+  "properties": {
+    "receipt_type": {
+      "const": "mechanicus_command_receipt"
+    },
+    "timestamp_utc": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "tool_id": {
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "doctor",
+        "inventory",
+        "validate-json",
+        "dry-run-tool",
+        "policy",
+        "emit-receipt"
+      ]
+    },
+    "dry_run": {
+      "type": "boolean"
+    },
+    "arbitrary_shell_execution": {
+      "type": "boolean"
+    },
+    "verdict": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

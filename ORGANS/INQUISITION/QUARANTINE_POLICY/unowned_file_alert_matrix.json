@@ -1,0 +1,11 @@
+{
+  "schema_version": "imperium.organ_matrix.v0_1",
+  "matrix_id": "unowned_file_alert_matrix",
+  "owner_organ": "INQUISITION",
+  "purpose": "Classify unowned or unmapped file alerts.",
+  "rows": [
+    {"alert_id": "UNKNOWN_WITH_REASON", "severity": "WARN", "trigger": "Path cannot be assigned to one organ or support class in V0.1.", "required_action": "Keep dry-run only and route to Administratum V0.2 address book."},
+    {"alert_id": "LEGACY_TOP_LEVEL", "severity": "WARN", "trigger": "Useful path exists outside target ORGANS/SUPPORT shape.", "required_action": "Map before migration; no delete."},
+    {"alert_id": "MULTI_OWNER_AMBIGUITY", "severity": "BLOCK", "trigger": "One active artifact claims multiple owner organs without common-support classification.", "required_action": "Pick one owner or convert to common support."}
+  ]
+}

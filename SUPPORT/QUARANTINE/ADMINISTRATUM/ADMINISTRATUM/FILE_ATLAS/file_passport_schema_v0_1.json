@@ -1,0 +1,75 @@
+{
+  "schema_id": "administratum_file_passport_schema_v0_1",
+  "task_id": "TASK-NEWGEN-ADMINISTRATUM-FILE-ATLAS-PASSPORT-INDEX-VM3-V0_1",
+  "required_fields": [
+    "path",
+    "owner_organ",
+    "related_block",
+    "file_kind",
+    "purpose_short",
+    "status",
+    "ide_visible",
+    "drilldown_priority",
+    "related_owner_pains",
+    "edit_surface",
+    "evidence_source",
+    "warnings"
+  ],
+  "enum": {
+    "file_kind": [
+      "BODY",
+      "CONTRACT",
+      "ROLE",
+      "RULE",
+      "POLICY",
+      "SCHEMA",
+      "REGISTRY",
+      "CARD",
+      "TOOL",
+      "TUI",
+      "REPORT",
+      "RECEIPT",
+      "FIXTURE",
+      "TEMPLATE",
+      "README",
+      "GHOST_EVOLVE",
+      "UNKNOWN"
+    ],
+    "status": [
+      "ACTIVE",
+      "DRAFT",
+      "LEGACY",
+      "WARN",
+      "BLOCKED",
+      "UNKNOWN"
+    ],
+    "related_block": [
+      "CAPABILITY",
+      "FOUNDATION",
+      "REPORTING",
+      "ROUTING",
+      "VALIDATION",
+      "TUI",
+      "GHOST_EVOLVE",
+      "CONNECTION",
+      "UNKNOWN"
+    ],
+    "drilldown_priority": [
+      "HIGH",
+      "MEDIUM",
+      "LOW"
+    ],
+    "edit_surface": [
+      "YES",
+      "NO",
+      "CAUTION"
+    ],
+    "related_owner_pains": [
+      "OFFICIO_LANGUAGE_GATE_WEAKNESS",
+      "ROUTE_MEMORY_LOSS_PC_TO_VM3",
+      "PENDING_COMMIT_PUSH_RECURRENCE",
+      "INQUISITION_WEAKEST_ORGAN_BLOCKER",
+      "HIDDEN_PATHS_AND_REPORT_LINKS"
+    ]
+  }
+}

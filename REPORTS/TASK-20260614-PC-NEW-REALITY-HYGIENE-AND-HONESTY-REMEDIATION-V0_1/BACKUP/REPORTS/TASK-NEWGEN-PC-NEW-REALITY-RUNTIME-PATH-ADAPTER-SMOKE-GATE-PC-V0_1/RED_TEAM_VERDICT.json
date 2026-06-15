@@ -1,0 +1,22 @@
+{
+    "task_id":  "TASK-NEWGEN-PC-NEW-REALITY-RUNTIME-PATH-ADAPTER-SMOKE-GATE-PC-V0_1",
+    "timestamp_utc":  "2026-06-03T10:56:57Z",
+    "verdict":  "PASS_WITH_WARNINGS",
+    "clean_pass_allowed":  false,
+    "hard_checks":  {
+                        "head_status_evidence_boundary_match":  "PASS_LOCAL_HEADS_RECORDED",
+                        "dirty_provenance_contradiction":  "PASS_ANCIENT_DIRTY_PREEXISTING_DECLARED",
+                        "stale_receipt":  "PASS_RECEIPTS_CURRENT_TASK",
+                        "role_authority_read":  "PASS",
+                        "manual_reasoning_claimed_as_capability":  "PASS_CAPABILITY_SPLIT_PRESENT",
+                        "missing_replay_command":  "PASS_TASKPACK_TOOL_AND_REFINED_SCAN_COMMAND_RECORDED",
+                        "commit_push_policy":  "WARN_LOCAL_COMMIT_REQUIRED_PUSH_FORBIDDEN_WITHOUT_OWNER_REMOTE",
+                        "runtime_path_candidates_remaining":  "WARN_FOLLOWUP_REQUIRED"
+                    },
+    "caps":  [
+                 "CAP_OLD_REPO_DIRTY_PREEXISTING",
+                 "CAP_RUNTIME_PATH_CANDIDATES_REMAIN",
+                 "CAP_REMOTE_PUSH_FORBIDDEN_BY_TASKPACK"
+             ],
+    "runtime_candidate_count":  15
+}

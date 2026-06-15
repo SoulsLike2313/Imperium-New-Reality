@@ -1,0 +1,102 @@
+{
+  "schema_id": "NEWGEN_DECLARATION_OF_FORM_CLOSURE_RECEIPT_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-SERVITOR-PRIME-DECLARATION-OF-FORM-PC-V0_1",
+  "generated_at_utc": "2026-05-24T00:00:00Z",
+  "step_name": "draft_newgen_declaration_of_form",
+  "verdict": "PASS_FOR_NEWGEN_DECLARATION_OF_FORM_DRAFT_ONLY",
+  "claim_boundary": [
+    "DRAFT_ONLY_NOT_CANON",
+    "NO_PRODUCTION_READINESS_CLAIM",
+    "NO_VISUAL_IMPLEMENTATION_CONTINUATION",
+    "NO_SPECULUM_RED_TEAM_EXECUTION"
+  ],
+  "scope_boundary": {
+    "allowed_write_paths": [
+      "IMPERIUM_NEW_GENERATION/DECLARATION_OF_FORM/DRAFTS/TASK-20260523-NEWGEN-SERVITOR-PRIME-DECLARATION-OF-FORM-PC-V0_1/**",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-SERVITOR-PRIME-DECLARATION-OF-FORM-PC-V0_1/**"
+    ],
+    "forbidden_write_paths": [
+      "ORGANS/**",
+      "IMPERIUM_TEST_VERSION/**",
+      "SANCTUM/**",
+      "non-NewGen production runtime paths"
+    ]
+  },
+  "outputs": [
+    {
+      "path": "IMPERIUM_NEW_GENERATION/DECLARATION_OF_FORM/DRAFTS/TASK-20260523-NEWGEN-SERVITOR-PRIME-DECLARATION-OF-FORM-PC-V0_1/DECLARATION_OF_FORM_DRAFT_RU.md",
+      "status": "CREATED"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/DECLARATION_OF_FORM/DRAFTS/TASK-20260523-NEWGEN-SERVITOR-PRIME-DECLARATION-OF-FORM-PC-V0_1/semantic_inventory_v0_1.json",
+      "status": "CREATED"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/DECLARATION_OF_FORM/DRAFTS/TASK-20260523-NEWGEN-SERVITOR-PRIME-DECLARATION-OF-FORM-PC-V0_1/pass_fail_criteria_v0_1.md",
+      "status": "CREATED"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/DECLARATION_OF_FORM/DRAFTS/TASK-20260523-NEWGEN-SERVITOR-PRIME-DECLARATION-OF-FORM-PC-V0_1/next_focused_strikes_v0_1.md",
+      "status": "CREATED"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-SERVITOR-PRIME-DECLARATION-OF-FORM-PC-V0_1/FINAL_REPORT.md",
+      "status": "CREATED"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260523-NEWGEN-SERVITOR-PRIME-DECLARATION-OF-FORM-PC-V0_1/closure_receipt.json",
+      "status": "CREATED"
+    }
+  ],
+  "self_checks": {
+    "read_order_followed": true,
+    "task_constraints_respected": true,
+    "required_outputs_present": true,
+    "json_parseable": true,
+    "owner_language_ru_for_prose": true,
+    "technical_keys_paths_english": true
+  },
+  "gate_ack_summary": {
+    "status": "PASS",
+    "git_truth_checked": true,
+    "scope_declared": true,
+    "stop_conditions_accepted": true,
+    "evidence_receipt_present": true,
+    "notes": [
+      "GATE-U19/U20/U21 are declared in law/audit docs but absent in current gate registry snapshot."
+    ]
+  },
+  "kpd_self_review": {
+    "kpd_verdict": "PARTIAL",
+    "useful_outputs": [
+      "Draft declaration with explicit uncertainty boundaries",
+      "Machine-readable semantic inventory",
+      "Pass/fail/fake-green criteria draft",
+      "Prioritized focused strikes"
+    ],
+    "waste_points": [
+      "Large historical runtime/report payload increases recon cost.",
+      "Distributed gate declarations increase orientation overhead."
+    ],
+    "missing_tools": [
+      "current_truth_vs_live_head_reconciler",
+      "repo_hygiene_classifier",
+      "cockpit_readiness_integrity_checker"
+    ],
+    "generated_tools_to_preserve": [],
+    "recommended_narrow_agent_profiles": [
+      "NEWGEN_TRUTH_RECON_AGENT"
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Mandatory stale/current split in all generated truth states",
+      "Hard blocker for UI green without evidence ref + freshness"
+    ]
+  },
+  "git_closure": {
+    "start_head": "a354393b4bbc26d8ef5a35046309aa8384e95587",
+    "final_head": null,
+    "remote_master_head": null,
+    "worktree_clean": null,
+    "push_status": "PENDING"
+  }
+}

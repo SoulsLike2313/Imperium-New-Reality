@@ -1,0 +1,51 @@
+{
+  "task_id": "TASK-20260520-NEWGEN-VISUAL-CONTRACT-TO-TOKENS-AND-MECHANICUS-SLICE-PC-V0_1",
+  "current_head": "f74e73c7c07d7010769e576a04e19cef17a0ef1a",
+  "gatepack_path": "C:\\Users\\PC\\Downloads\\TASK-20260520-NEWGEN-VISUAL-CONTRACT-TO-TOKENS-AND-MECHANICUS-SLICE-PC-V0_1_TASKPACK.zip",
+  "gatepack_sha256": "CA98F495D776F2E14724A1485201DBBE50AD3C9698A7CA37B6C22F7FFC58C588",
+  "read_gates": [
+    "GATE-U00-GIT-TRUTH",
+    "GATE-U01-ROLE-ACK",
+    "GATE-U02-SCOPE-BOUNDARY",
+    "GATE-U04-EVIDENCE-RECEIPT",
+    "GATE-U05-STOP-CONDITIONS",
+    "GATE-U08-REPO-PURITY",
+    "GATE-U09-NO-FAKE-GREEN",
+    "GATE-U12-REPORT-OUTPUT-BUDGET",
+    "GATE-U13-PYTHON-TYPE-SAFETY",
+    "GATE-U16-BILINGUAL-UI",
+    "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+    "GATE-U20-AGENT-KPD-SELF-REVIEW",
+    "GATE-U21-COMMAND-CHUNKING"
+  ],
+  "accepted_stop_conditions": [
+    "Forbidden-scope path appears in git diff.",
+    "Required output files cannot be produced or validated safely.",
+    "Unexpected unrelated changes appear during execution.",
+    "Raw mode becomes primary and cannot be corrected in bounded scope.",
+    "Evidence screenshots cannot be captured for required viewports."
+  ],
+  "scope_boundary": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\**",
+  "touched_paths": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/**"
+  ],
+  "forbidden_paths": [
+    "ORGANS/**",
+    "SANCTUM/**",
+    "IMPERIUM_TEST_VERSION/**",
+    "VM2 paths"
+  ],
+  "expected_receipts": [
+    "REPORTS/validation_report.json",
+    "REPORTS/visual_evidence_index.md",
+    "REPORTS/manual_open_instructions.md",
+    "REPORTS/OWNER_REPORT_RU.md",
+    "RECEIPTS/FINAL_RECEIPT.json"
+  ],
+  "repo_recon_required": false,
+  "script_absorption_required": true,
+  "clarification_needed": "Worktree started dirty due to pre-existing current_status.json outside task scope.",
+  "verdict": "PASS",
+  "timestamp_utc": "2026-05-20T18:36:39Z"
+}
+

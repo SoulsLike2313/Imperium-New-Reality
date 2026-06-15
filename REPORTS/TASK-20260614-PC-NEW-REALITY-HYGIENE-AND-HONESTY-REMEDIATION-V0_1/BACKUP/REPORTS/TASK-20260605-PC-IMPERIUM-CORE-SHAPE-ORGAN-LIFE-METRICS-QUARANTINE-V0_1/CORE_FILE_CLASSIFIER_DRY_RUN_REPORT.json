@@ -1,0 +1,832 @@
+{
+  "schema_version": "imperium.core_file_classifier_dry_run_report.v0_1",
+  "task_id": "TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1",
+  "timestamp_utc": "2026-06-06T17:10:34Z",
+  "verdict": "PASS_WITH_WARNINGS",
+  "mode": "DRY_RUN_ONLY",
+  "move_or_delete_performed": false,
+  "import_rewrite_performed": false,
+  "scanned_top_level_count": 57,
+  "reported_entry_limit": 200,
+  "classification_counts": {
+    "UNKNOWN_WITH_REASON": 45,
+    "LEGACY_ORGAN_MIRROR": 6,
+    "QUESTIONABLE_OR_QUARANTINE": 3,
+    "CORE_CONTAINER": 1,
+    "COMMON_SUPPORT": 1,
+    "SUPPORT_CONTAINER": 1
+  },
+  "entries": [
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": ".gitignore",
+      "kind": "file",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": ".taskpack_import_tmp",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "ADMINISTRATUM",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "LEGACY_ORGAN_MIRROR",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "MEDIUM",
+      "next_action": "dry-run migration candidate only",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "AGENTS.md",
+      "kind": "file",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "AGENT_DIRECTIVES",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "AGENT_IDE",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "ANCIENT_EMPIRE_REFERENCE.md",
+      "kind": "file",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "QUESTIONABLE_OR_QUARANTINE",
+      "owner_organ": "INQUISITION",
+      "confidence": "MEDIUM",
+      "next_action": "do not use as active source without admission receipt",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "ARCHITECTURE",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "ARCHIVE",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "ARTIFACTS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "ASTRONOMICON",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "LEGACY_ORGAN_MIRROR",
+      "owner_organ": "ASTRONOMICON",
+      "confidence": "MEDIUM",
+      "next_action": "dry-run migration candidate only",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "AUTHORITY_DRAFTS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "BLOCK_SPINE",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "COMMON_AGENT_CLI",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "CONTRACTS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "CORE",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "DECLARATION_OF_FORM",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "DOCS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "DOCTRINARIUM",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "LEGACY_ORGAN_MIRROR",
+      "owner_organ": "DOCTRINARIUM",
+      "confidence": "MEDIUM",
+      "next_action": "dry-run migration candidate only",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "EPOCH_MANIFEST.json",
+      "kind": "file",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "EXCHANGE",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "IMPERIUM_NEW_GENERATION",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "QUESTIONABLE_OR_QUARANTINE",
+      "owner_organ": "INQUISITION",
+      "confidence": "MEDIUM",
+      "next_action": "do not use as active source without admission receipt",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "INQUISITION",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "LEGACY_ORGAN_MIRROR",
+      "owner_organ": "INQUISITION",
+      "confidence": "MEDIUM",
+      "next_action": "dry-run migration candidate only",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "INTAKE",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "LEDGER",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "MATRIX_SPINE",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "MECHANICUS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "LEGACY_ORGAN_MIRROR",
+      "owner_organ": "MECHANICUS",
+      "confidence": "MEDIUM",
+      "next_action": "dry-run migration candidate only",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "NEW_GENERATION_MANIFEST.json",
+      "kind": "file",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "NEW_REALITY_REMOTE_HEAD_CONTRACT.md",
+      "kind": "file",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "NEW_REALITY_SCOPE_LOCK.md",
+      "kind": "file",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "OFFICIO_AGENTIS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "LEGACY_ORGAN_MIRROR",
+      "owner_organ": "OFFICIO_AGENTIS",
+      "confidence": "MEDIUM",
+      "next_action": "dry-run migration candidate only",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "ORGANS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "CORE_CONTAINER",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "HIGH",
+      "next_action": "container for required organs and core governance",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "ORGAN_AGENTS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "ORGAN_AGENT_COMMON",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "ORGAN_DIALOGUE",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "PROTOCOLS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "QUARANTINE",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "QUESTIONABLE_OR_QUARANTINE",
+      "owner_organ": "INQUISITION",
+      "confidence": "MEDIUM",
+      "next_action": "do not use as active source without admission receipt",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "README.md",
+      "kind": "file",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "RECEIPTS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "REMOTE_POLICY.md",
+      "kind": "file",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "REPORTS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "COMMON_SUPPORT",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "MEDIUM",
+      "next_action": "report bundle history; do not treat as organ authority",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "RESEARCH",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "ROOT_RESOLUTION_CONTRACT.md",
+      "kind": "file",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "RUNS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "SALVAGE_REQUEST_TEMPLATE.json",
+      "kind": "file",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "SANCTUM_MINI",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "SANCTUM_NG",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "SANCTUM_VISUAL_FOUNDRY",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "SCHEMAS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "SKILLS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "STRESS_TESTS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "SUPPORT",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "SUPPORT_CONTAINER",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "HIGH",
+      "next_action": "container for common support and quarantine",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "TASKS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "TASK_CONTROL",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "TOOLS",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "TRUTH",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    },
+    {
+      "schema_version": "imperium.core_file_ownership_entry.v0_1",
+      "path": "VISUAL_BRAIN",
+      "kind": "directory",
+      "dry_run_only": true,
+      "move_or_delete_performed": false,
+      "classification": "UNKNOWN_WITH_REASON",
+      "owner_organ": "ADMINISTRATUM",
+      "confidence": "UNKNOWN_WITH_REASON",
+      "next_action": "requires future address-book classification",
+      "evidence": [
+        "top-level dry-run classification rule"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "id": "UNKNOWN_CLASSIFICATION_PRESENT",
+      "count": 45
+    },
+    {
+      "id": "LEGACY_ORGAN_MIRROR_PRESENT",
+      "count": 6,
+      "meaning": "Dry-run only; no physical migration performed."
+    }
+  ],
+  "blockers": [],
+  "next_action": "Feed UNKNOWN_WITH_REASON rows into Administratum address book classification V0.2."
+}

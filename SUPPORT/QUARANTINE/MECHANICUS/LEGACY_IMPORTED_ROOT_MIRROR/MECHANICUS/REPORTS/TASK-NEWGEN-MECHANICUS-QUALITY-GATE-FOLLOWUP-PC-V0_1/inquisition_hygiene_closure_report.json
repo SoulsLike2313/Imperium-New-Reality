@@ -1,0 +1,38 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-QUALITY-GATE-FOLLOWUP-PC-V0_1",
+  "generated_at_utc": "2026-05-24T22:19:56Z",
+  "handoff_to": "INQUISITION",
+  "previous_warning": {
+    "batch": "TASK-NEWGEN-MECHANICUS-VALIDATION-BATCH-002-PC-V0_1",
+    "total_hits": 18,
+    "log_hits": 3,
+    "py_cache_hits": 2,
+    "pyc_hits": 13
+  },
+  "followup_observation": {
+    "after_quality_before_cleanup_hits": 7,
+    "after_quality_before_cleanup_findings": {
+      "PY_CACHE_DIR": {
+        "count": 1,
+        "samples": [
+          "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__"
+        ]
+      },
+      "PYC_FILE": {
+        "count": 6,
+        "samples": [
+          "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__/evidence_index_smoke_v0_1.cpython-312.pyc",
+          "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__/mechanicus_quality_gate_runner_v0_1.cpython-312.pyc",
+          "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__/mechanicus_schema_validation_runner_v0_1.cpython-312.pyc",
+          "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__/mechanicus_scope_pack_consumer_v0_1.cpython-312.pyc",
+          "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__/mechanicus_taskpack_validator_v0_1.cpython-312.pyc",
+          "IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/__pycache__/newgen_repo_hygiene_check_v0_1.cpython-312.pyc"
+        ]
+      }
+    },
+    "final_hits": 0
+  },
+  "closure_verdict": "PASS",
+  "risks": [],
+  "notes": "WARN from Batch 002 is closed for legacy runtime logs; final hygiene is clean."
+}

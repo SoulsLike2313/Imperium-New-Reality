@@ -1,0 +1,32 @@
+{
+  "receipt_id": "task-newgen-mechanicus-controlled-tool-provision-pc-v0_1:cap-cq-precommit:controlled_provision:pre-commit",
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+  "capability_id": "CAP-CQ-PRECOMMIT",
+  "validator": "mechanicus_controlled_provision_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T19:35:07Z",
+  "status": "PASS",
+  "summary": "CAP-CQ-PRECOMMIT: PASS via controlled_provision:pre-commit. promotion_recommendation=PROMOTE_SANDBOX",
+  "check_name": "controlled_provision:pre-commit",
+  "command_or_check": "pre-commit --version || python -m pre_commit --version",
+  "exit_code": 0,
+  "stdout_excerpt": "$ pre-commit --version\n\n$ python -m pre_commit --version\npre-commit 4.6.0",
+  "stderr_excerpt": "$ pre-commit --version\n'pre-commit' is not recognized as an internal or external command,\noperable program or batch file.\n\n$ python -m pre_commit --version",
+  "side_effects": [
+    "validation check executed",
+    "receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-precommit_validation_receipt.json"
+  ],
+  "validation_verdict": "PASS",
+  "promotion_recommendation": "PROMOTE_SANDBOX",
+  "warnings": [
+    "path_warning_or_alternate_invocation_used"
+  ],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-precommit_validation_receipt.json",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/install_pre-commit_receipt.json"
+  ]
+}

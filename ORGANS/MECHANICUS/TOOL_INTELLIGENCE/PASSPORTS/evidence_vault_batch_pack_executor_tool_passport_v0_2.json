@@ -1,0 +1,65 @@
+{
+  "schema_id": "imperium.tool_passport.v0_2",
+  "tool_id": "evidence_vault_batch_pack_executor",
+  "name": "Evidence Vault Batch Pack Executor",
+  "version": "v0_2",
+  "owner_organ": "MECHANICUS",
+  "lang": "python",
+  "validators": [
+    {
+      "id": "syntax",
+      "type": "command",
+      "command": "python -m py_compile {tool_path}",
+      "timeout_seconds": 10
+    },
+    {
+      "id": "help",
+      "type": "command",
+      "command": "python {tool_path} --help",
+      "timeout_seconds": 5
+    }
+  ],
+  "exec_mode": "static",
+  "owner_gated": true,
+  "_draft": false,
+  "_auto_registered_at": "2026-06-14T17:12:46Z",
+  "_auto_registrar_version": "v0_2",
+  "_confidence": {
+    "owner_organ": "from_path",
+    "lang": "from_source_ext",
+    "validators": "auto_built",
+    "exec_mode": "from_source_scan",
+    "owner_gated": "from_source_scan"
+  },
+  "_source_paths": [
+    "ORGANS/MECHANICUS/EVIDENCE_VAULT/evidence_vault_batch_pack_executor_v0_1.py"
+  ],
+  "_legacy_passport_path": "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/PASSPORTS/evidence_vault_batch_pack_executor_tool_passports_v0_1.json",
+  "_legacy_extras": {
+    "schema": "imperium.tool_passport.v0_1",
+    "surface": "MECHANICUS_TOOL_PASSPORT_EVIDENCE_VAULT_BATCH_PACK_EXECUTOR_V0_1",
+    "tool": {
+      "path": "ORGANS/MECHANICUS/EVIDENCE_VAULT/evidence_vault_batch_pack_executor_v0_1.py",
+      "name": "Evidence Vault Batch Pack Executor",
+      "owner_organ": "MECHANICUS",
+      "supporting_organs": [
+        "INQUISITION",
+        "ADMINISTRATUM",
+        "DOCTRINARIUM"
+      ],
+      "capability": "Owner-approved copy/pack/seal of hygiene batch candidates into Evidence Vault without source deletion.",
+      "writes": [
+        "Evidence Vault pack folder",
+        "external handoff proof out-root"
+      ],
+      "does_not_write": [
+        "source repo files",
+        "git history",
+        "origin/main"
+      ],
+      "requires_owner_gate": true,
+      "owner_token": "APPROVE_EVIDENCE_VAULT_BATCH_001_COPY_PACK_NO_SOURCE_DELETE",
+      "validation_recipe": "Run synthetic smoke, then owner-approved execution; verify manifest, receipt, zip SHA256 and source-untouched contract."
+    }
+  }
+}

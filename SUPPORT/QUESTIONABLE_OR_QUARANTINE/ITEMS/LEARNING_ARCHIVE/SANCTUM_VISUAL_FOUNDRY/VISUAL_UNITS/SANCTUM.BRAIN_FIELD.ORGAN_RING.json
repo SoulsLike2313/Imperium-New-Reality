@@ -1,0 +1,59 @@
+{
+  "visual_unit_id": "SANCTUM.BRAIN_FIELD.ORGAN_RING",
+  "parent": "SANCTUM.BRAIN_FIELD",
+  "type": "organ_ring",
+  "visual_owner": "SANCTUM_SHELL",
+  "truth_owner": "OFFICIO_AGENTIS_AGENT",
+  "data_source_owner": "SANCTUM_STATE_BUILDER",
+  "organ_subject": "SYSTEM",
+  "implementation_owner": "VISUAL_FOUNDRY",
+  "purpose": "Container for 10 organ nodes with explicit real/stub/locked semantics.",
+  "backend_source": {
+    "type": "frontend_logic",
+    "paths": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/static/app.js"
+    ],
+    "key_bindings": [
+      "BRAIN_LAYOUT",
+      "renderOrganGrid"
+    ]
+  },
+  "backend_source_status": "candidate",
+  "allowed_states": [
+    "real",
+    "candidate",
+    "stub",
+    "locked",
+    "unknown"
+  ],
+  "truth_rules": [
+    "All organ nodes must expose explicit integration status.",
+    "No implicit readiness from node color or glow."
+  ],
+  "visual_tokens": "organ_ring_tokens",
+  "texture": "forge_metal_dark",
+  "glow": {
+    "enabled": false
+  },
+  "motion": {
+    "enabled": true,
+    "animation": "neural_flow_line",
+    "perf_tier": "CHEAP",
+    "disable_in_reduced_motion": true
+  },
+  "perf_tier": "CHEAP",
+  "proof_requirements": [
+    "Registry and inventory must list 10 organ nodes."
+  ],
+  "integration_status": "candidate",
+  "fake_green_risks": [
+    "Unimplemented organs can look active without explicit stub labels."
+  ],
+  "owner_group": "SANCTUM",
+  "owner_organ": "OFFICIO_AGENTIS_AGENT",
+  "accessibility_rules": [
+    "State must not be encoded by color alone.",
+    "RU/EN labels must remain explicit for status tags."
+  ],
+  "change_safety": "Topology hardening scope only; no final UI readiness claims."
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Red Team Verdict Schema",
+  "type": "object",
+  "required": [
+    "task_id",
+    "builder_claims",
+    "attacks",
+    "downgrade_rules_applied",
+    "final_verdict"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string"
+    },
+    "builder_claims": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "attacks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "downgrade_rules_applied": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "final_verdict": {
+      "enum": [
+        "PASS",
+        "PASS_WITH_WARNINGS",
+        "WARN",
+        "BLOCK",
+        "FAIL_STOP"
+      ]
+    }
+  }
+}

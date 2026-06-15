@@ -1,0 +1,96 @@
+# Generated dependency/cache folders are not part of the New Reality source commit.
+node_modules/
+__pycache__/
+.pytest_cache/
+.taskpack_import_tmp/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Local operator route configs and old-prefix residue stay outside source commits.
+ORGANS/ASTRONOMICON/SKILLS/TASKPACK_REGISTRATION_SKILL/contour_route_config.json
+IMPERIUM_NEW_GENERATION/
+
+# Post-work archive payloads stay local; commit their index cards and hashes instead.
+REPORTS/**/ADMINISTRATUM_BUNDLE_CONTRACT_RECEIPT.zip
+
+# Imperial IDE candidate runtimes are local-only and never enter validated pushes.
+ORGANS/IMPERIAL_IDE/WARP/runtime/
+ORGANS/IMPERIAL_IDE/WARP/RUNTIME/
+ORGANS/IMPERIAL_IDE/WORKBENCH/SERVITORS/runtime/
+ORGANS/IMPERIAL_IDE/WORKBENCH/SERVITORS/queues/
+ORGANS/IMPERIAL_IDE/WORKBENCH/SERVITORS/results/
+ORGANS/IMPERIAL_IDE/WORKBENCH/SERVITORS/_queue/
+ORGANS/IMPERIAL_IDE/WORKBENCH/runtime/
+ORGANS/IMPERIAL_IDE/METAOS/runtime/
+ORGANS/IMPERIAL_IDE/METAOS/chronicles/runtime/
+ORGANS/IMPERIAL_IDE/OPS/STAGING/
+ORGANS/IMPERIAL_IDE/OPS/RUNTIME/
+ORGANS/IMPERIAL_IDE/OPS/runtime/
+ORGANS/IMPERIAL_IDE/OPS/tmp/
+ORGANS/IMPERIAL_IDE/OPS/generated_taskpacks/
+ORGANS/IMPERIAL_IDE/OPS/receipts/runtime/
+ORGANS/IMPERIAL_IDE/STATION/RUNTIME/
+ORGANS/IMPERIAL_IDE/STATION/runtime/
+ORGANS/IMPERIAL_IDE/STATION/generated_taskpacks/
+ORGANS/IMPERIAL_IDE/STATION/receipts/runtime/
+# Inquisition generated source cache guard
+*.py[cod]
+
+# IMPERIUM Evidence/Runtime hygiene guard
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+**/playwright-report/
+**/test-results/
+**/*.trace.zip
+**/*.har
+
+# IMPERIUM_H_LOCAL_ONLY_BLOCK_V0_8_9_2_H1
+# Local H/manual patch workflow artefacts are not source.
+.imperium_patch_backups/
+_LOCAL_HANDOFF/
+LOCAL_HANDOFF/
+IMPERIUM_EVIDENCE_VAULT_SMOKE*/
+EVIDENCE_VAULT_SMOKE*/
+*_SMOKE*/
+*.tmp
+*.bak
+# IMPERIUM_H V0.8.9.3 INTELLIGENCE PACK HYGIENE BEGIN
+INTELLIGENCE_PACK_OUTPUTS/
+IMPERIUM_INTELLIGENCE_PACK*/
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+# IMPERIUM_H V0.8.9.3 INTELLIGENCE PACK HYGIENE END
+
+# === IMPERIUM hygiene additions (FIX-1) ===
+# Build artifacts must never be committed to source.
+target/
+**/target/
+node_modules/
+**/node_modules/
+__pycache__/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+
+# Compiled / binary artifacts
+*.rlib
+*.rmeta
+*.pdb
+*.dll
+*.exe
+*.lib
+*.so
+*.dylib
+
+# Local patch / backup workflow residue
+.imperium_patch_backups/
+
+# Zip payload must be admitted, not silently committed.
+# Block all zip by default; allow only declared small fixtures.
+*.zip
+!**/FIXTURES/**/*.zip
+!**/fixtures/**/*.zip

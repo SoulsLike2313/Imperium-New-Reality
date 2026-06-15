@@ -1,0 +1,154 @@
+{
+  "setting_id": "SET-STOP-CONDITIONS-V0_1",
+  "title": "Stop Conditions",
+  "version": "v0_1",
+  "state": "ACTIVE",
+  "scope": "execution blockers and safe exits",
+  "applies_to_roles": [
+    "SERVITOR",
+    "LOGOS_PRIME",
+    "LOGOS_SPECULUM"
+  ],
+  "applies_to_modes": [
+    "EXECUTOR",
+    "AUDITOR",
+    "ARCHITECT",
+    "REPAIRER"
+  ],
+  "stop_conditions": [
+    {
+      "code": "BLOCKED_DIRTY_START",
+      "trigger": "Worktree dirty before admitted task start.",
+      "agent_action": "Stop immediately and report dirty paths.",
+      "required_evidence": [
+        "git status --short"
+      ],
+      "owner_options": [
+        "allow dirty-state classification task",
+        "request cleanup",
+        "defer task"
+      ]
+    },
+    {
+      "code": "BLOCKED_HEAD_MISMATCH",
+      "trigger": "Current HEAD differs from required starting HEAD.",
+      "agent_action": "Stop and report actual/expected hashes.",
+      "required_evidence": [
+        "git rev-parse HEAD",
+        "required head from task-pack"
+      ],
+      "owner_options": [
+        "authorize sync",
+        "retarget task to current head",
+        "abort"
+      ]
+    },
+    {
+      "code": "BLOCKED_SCOPE_VIOLATION",
+      "trigger": "Required change falls outside allowed write paths.",
+      "agent_action": "Stop and list conflicting paths.",
+      "required_evidence": [
+        "planned touched paths",
+        "allowed scope declaration"
+      ],
+      "owner_options": [
+        "expand scope explicitly",
+        "split task",
+        "abort"
+      ]
+    },
+    {
+      "code": "BLOCKED_REQUIREMENT_AMBIGUOUS",
+      "trigger": "Requirement cannot be interpreted safely.",
+      "agent_action": "Stop and provide bounded clarification request.",
+      "required_evidence": [
+        "ambiguous requirement id",
+        "conflicting interpretations"
+      ],
+      "owner_options": [
+        "choose interpretation",
+        "revise requirement",
+        "mark NOT_DONE"
+      ]
+    },
+    {
+      "code": "BLOCKED_REQUIRED_ASSET_MISSING",
+      "trigger": "Required input file or artifact is missing.",
+      "agent_action": "Stop and identify missing asset path.",
+      "required_evidence": [
+        "missing path checks"
+      ],
+      "owner_options": [
+        "provide asset",
+        "replace asset",
+        "defer"
+      ]
+    },
+    {
+      "code": "BLOCKED_VISUAL_EVIDENCE_MISSING",
+      "trigger": "Visual claim requested without screenshot evidence.",
+      "agent_action": "Mark visual requirement BLOCKED.",
+      "required_evidence": [
+        "requested claim",
+        "missing screenshot reference"
+      ],
+      "owner_options": [
+        "provide screenshots",
+        "remove visual claim"
+      ]
+    },
+    {
+      "code": "BLOCKED_NO_REMOTE_PROOF",
+      "trigger": "Push/transfer claim lacks remote hash or URL proof.",
+      "agent_action": "Mark push/transfer requirement BLOCKED.",
+      "required_evidence": [
+        "push output",
+        "remote hash lookup"
+      ],
+      "owner_options": [
+        "retry push",
+        "accept local-only warning"
+      ]
+    },
+    {
+      "code": "BLOCKED_SCHEMA_INVALID",
+      "trigger": "JSON schema check fails for required artifacts.",
+      "agent_action": "Stop and list invalid files.",
+      "required_evidence": [
+        "validator output"
+      ],
+      "owner_options": [
+        "fix schema errors",
+        "downgrade verdict"
+      ]
+    },
+    {
+      "code": "BLOCKED_RESPONSE_CONTRACT_FAILED",
+      "trigger": "Output contract cannot be satisfied.",
+      "agent_action": "Stop and provide contract mismatch details.",
+      "required_evidence": [
+        "contract file",
+        "actual output mismatch"
+      ],
+      "owner_options": [
+        "adjust contract",
+        "accept BLOCKED"
+      ]
+    }
+  ],
+  "machine_rule": {
+    "on_trigger": "return BLOCKED and emit receipt"
+  },
+  "human_summary": "Stop conditions force explicit blocked output with evidence.",
+  "acceptance_tests": [
+    "triggered stop condition yields BLOCKED verdict"
+  ],
+  "evidence_required": [
+    "stop condition receipts"
+  ],
+  "dependencies": [],
+  "conflicts_with": [],
+  "supersedes": [],
+  "rollback_plan": "restore prior stop list and rerun status checks",
+  "owner_approval_required": true
+}

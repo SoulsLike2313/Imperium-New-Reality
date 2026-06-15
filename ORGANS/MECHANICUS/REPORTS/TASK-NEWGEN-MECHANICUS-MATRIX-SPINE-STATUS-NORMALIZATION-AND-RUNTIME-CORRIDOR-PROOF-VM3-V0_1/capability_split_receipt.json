@@ -1,0 +1,47 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1",
+  "timestamp_utc": "2026-05-29T23:56:00Z",
+  "items": [
+    {
+      "output_or_action": "Status normalization policy + validator extension",
+      "classification": "LOCAL_SCRIPT_FIRST",
+      "evidence": "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/validate_matrix_spine.py",
+      "owner_organ": "Mechanicus",
+      "gap_or_replay": "replay: python3 IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/validate_matrix_spine.py --repo-root /home/vboxuser3/IMPERIUM_WORK/Imperium- --output-dir <dir>"
+    },
+    {
+      "output_or_action": "Manifest-driven negative fixture corridor (13 fixtures)",
+      "classification": "LOCAL_SCRIPT_FIRST",
+      "evidence": "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/FIXTURES/negative_fixture_manifest.json",
+      "owner_organ": "Inquisition",
+      "gap_or_replay": "replay: bash IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_matrix_spine_validation.sh"
+    },
+    {
+      "output_or_action": "Synthetic runtime corridor proof",
+      "classification": "LOCAL_SCRIPT_FIRST",
+      "evidence": "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_synthetic_runtime_corridor.py",
+      "owner_organ": "Mechanicus",
+      "gap_or_replay": "replay: bash IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_synthetic_runtime_corridor.sh"
+    },
+    {
+      "output_or_action": "Commit/push and remote synchronization",
+      "classification": "LOCAL_MANUAL_COMMAND",
+      "evidence": "git commit + git push",
+      "owner_organ": "Administratum",
+      "gap_or_replay": "manual git operation required"
+    },
+    {
+      "output_or_action": "Real WARP runtime activation",
+      "classification": "FUTURE_CAPABILITY_GAP",
+      "evidence": "Synthetic corridor explicitly marked not_real_warp",
+      "owner_organ": "Inquisition",
+      "gap_or_replay": "future dedicated WARP-admission taskpack"
+    }
+  ],
+  "summary": {
+    "local_script_first_count": 3,
+    "local_manual_command_count": 1,
+    "future_capability_gap_count": 1
+  },
+  "verdict": "PASS_WITH_WARNINGS"
+}

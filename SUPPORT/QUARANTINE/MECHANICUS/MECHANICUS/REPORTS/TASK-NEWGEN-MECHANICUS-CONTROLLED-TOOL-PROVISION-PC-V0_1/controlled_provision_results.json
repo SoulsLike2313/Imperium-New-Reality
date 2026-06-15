@@ -1,0 +1,136 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+  "generated_at_utc": "2026-05-24T19:35:08Z",
+  "mode": "PC_LOCAL_NEWGEN_MECHANICUS_CONTROLLED_PROVISION",
+  "tools": [
+    {
+      "tool": "jsonschema",
+      "detected_before": "no",
+      "detected_after": "yes",
+      "install_performed": "yes",
+      "install_exit_code": 0,
+      "install_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/install_jsonschema_receipt.json",
+      "primary_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-tool-jsonschema_validation_receipt.json",
+      "status_change": "+2",
+      "before_detection_command": "python -c \"import importlib.metadata as m; print(m.version('jsonschema'))\"",
+      "after_detection_command": "python -c \"import importlib.metadata as m; print(m.version('jsonschema'))\""
+    },
+    {
+      "tool": "ruff",
+      "detected_before": "no",
+      "detected_after": "yes",
+      "install_performed": "yes",
+      "install_exit_code": 0,
+      "install_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/install_ruff_receipt.json",
+      "primary_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-ruff_validation_receipt.json",
+      "status_change": "+2",
+      "before_detection_command": "ruff --version",
+      "after_detection_command": "python -m ruff --version"
+    },
+    {
+      "tool": "mypy",
+      "detected_before": "no",
+      "detected_after": "yes",
+      "install_performed": "yes",
+      "install_exit_code": 0,
+      "install_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/install_mypy_receipt.json",
+      "primary_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-pyright-mypy_validation_receipt.json",
+      "status_change": "+2",
+      "before_detection_command": "mypy --version",
+      "after_detection_command": "python -m mypy --version"
+    },
+    {
+      "tool": "pre-commit",
+      "detected_before": "no",
+      "detected_after": "yes",
+      "install_performed": "yes",
+      "install_exit_code": 0,
+      "install_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/install_pre-commit_receipt.json",
+      "primary_receipt": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-precommit_validation_receipt.json",
+      "status_change": "+2",
+      "before_detection_command": "pre-commit --version",
+      "after_detection_command": "python -m pre_commit --version"
+    }
+  ],
+  "results": [
+    {
+      "capability_id": "CAP-TOOL-JSONSCHEMA",
+      "tool": "jsonschema",
+      "detected_before": false,
+      "detected_after": true,
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "PROMOTE_SANDBOX",
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-tool-jsonschema_validation_receipt.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_JSONSCHEMA",
+      "tool": "jsonschema",
+      "detected_before": false,
+      "detected_after": true,
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "PROMOTE_SANDBOX",
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/code-quality-jsonschema_validation_receipt.json"
+    },
+    {
+      "capability_id": "CAP-CQ-RUFF",
+      "tool": "ruff",
+      "detected_before": false,
+      "detected_after": true,
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "PROMOTE_SANDBOX",
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-ruff_validation_receipt.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_RUFF",
+      "tool": "ruff",
+      "detected_before": false,
+      "detected_after": true,
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "PROMOTE_SANDBOX",
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/code-quality-ruff_validation_receipt.json"
+    },
+    {
+      "capability_id": "CAP-CQ-PYRIGHT-MYPY",
+      "tool": "mypy",
+      "detected_before": false,
+      "detected_after": true,
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "PROMOTE_SANDBOX",
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-pyright-mypy_validation_receipt.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_MYPY",
+      "tool": "mypy",
+      "detected_before": false,
+      "detected_after": true,
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "PROMOTE_SANDBOX",
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/code-quality-mypy_validation_receipt.json"
+    },
+    {
+      "capability_id": "CAP-CQ-PRECOMMIT",
+      "tool": "pre-commit",
+      "detected_before": false,
+      "detected_after": true,
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "PROMOTE_SANDBOX",
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/cap-cq-precommit_validation_receipt.json"
+    },
+    {
+      "capability_id": "CODE_QUALITY_PRE_COMMIT",
+      "tool": "pre-commit",
+      "detected_before": false,
+      "detected_after": true,
+      "validation_verdict": "PASS",
+      "promotion_recommendation": "PROMOTE_SANDBOX",
+      "receipt_path": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/CONTROLLED_PROVISION_001/code-quality-pre-commit_validation_receipt.json"
+    }
+  ],
+  "summary": {
+    "approved_tools_total": 4,
+    "install_attempted_total": 4,
+    "install_succeeded_total": 4,
+    "present_after_total": 4,
+    "status_changes_total": 8
+  }
+}

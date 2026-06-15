@@ -1,0 +1,27 @@
+{
+  "schema_version": "vm2.windows_pc_compatibility_receipt.v0_1",
+  "task_id": "TASK-20260605-VM2-UBUNTU-CONTOUR-COST-GATE-READINESS-V0_1",
+  "created_at_utc": "2026-06-05T18:13:32Z",
+  "pc_operator_route": {
+    "transport": "SSH from Windows PC to VM2 Ubuntu",
+    "example": "ssh <vm2-user>@<vm2-host>",
+    "then_cd": "cd /home/vboxuser2/IMPERIUM_NEW_GENERATION_NEW_REALITY"
+  },
+  "vm2_repo_root": "/home/vboxuser2/IMPERIUM_NEW_GENERATION_NEW_REALITY",
+  "path_separator_rules": {
+    "windows": "Backslash paths may appear in PC notes, but VM2 commands must use POSIX slash paths.",
+    "ubuntu": "Use /home/vboxuser2/IMPERIUM_NEW_GENERATION_NEW_REALITY and forward slashes."
+  },
+  "line_ending_risk": "Use LF for scripts, JSON, schemas, and Markdown unless an existing Windows launcher explicitly requires CRLF.",
+  "utf8_no_bom_rule": "Machine artifacts must be UTF-8 without BOM and English-safe.",
+  "script_risk": {
+    "executable_bit": "VM2 shell execution may require chmod +x, but canonical replay uses python3 path/to/script.py.",
+    "shebang": "Scripts should keep a POSIX shebang for direct execution compatibility."
+  },
+  "shell_difference": {
+    "powershell": "PowerShell uses different quoting and path conventions.",
+    "bash": "VM2 validation commands in this task use bash-compatible POSIX paths."
+  },
+  "ancient_empire_access_rule": "Do not access Ancient Empire or parent folders. If needed, stop and create a SALVAGE_REQUEST.",
+  "verdict": "PASS"
+}

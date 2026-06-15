@@ -1,0 +1,50 @@
+{
+  "standard_id": "BLOCK_STANDARD_V0_1",
+  "status": "CANDIDATE_NOT_CANON",
+  "owner_organ": "DOCTRINARIUM",
+  "support_organs": [
+    "OFFICIO_AGENTIS",
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "required_fields": [
+    "block_id",
+    "block_type",
+    "owner_organ",
+    "purpose",
+    "read_first_files",
+    "protected_zones",
+    "editable_zones",
+    "runtime_zones",
+    "input_contracts",
+    "output_contracts",
+    "scripts_or_tools",
+    "receipts",
+    "matrices",
+    "memory_refs",
+    "pain_memory_refs",
+    "success_memory_refs",
+    "improvement_request_refs",
+    "validation_gates",
+    "context_budget",
+    "forbidden_claims"
+  ],
+  "lifecycle_steps": [
+    "DEFINE_MANIFEST",
+    "PUBLISH_COMPACT_DIGEST",
+    "BUILD_CONTEXT_PACK",
+    "RUN_BLOAT_DETECTOR",
+    "EMIT_RECEIPTS",
+    "RUN_HARD_RED_TEAM"
+  ],
+  "pass_rules": [
+    "COMPACT_DIGEST_PRESENT",
+    "ZONE_BOUNDARY_EXPLICIT",
+    "CONTEXT_BUDGET_MEASURABLE",
+    "IMPROVEMENT_REQUEST_STRUCTURED"
+  ]
+}

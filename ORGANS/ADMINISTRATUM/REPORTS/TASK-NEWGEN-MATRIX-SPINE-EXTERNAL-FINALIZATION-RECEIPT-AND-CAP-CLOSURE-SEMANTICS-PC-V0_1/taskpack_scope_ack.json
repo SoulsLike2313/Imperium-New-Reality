@@ -1,0 +1,34 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1",
+  "current_head": "e8b631e55535263ec6ee8e9864d80427b5c2300e",
+  "scope": "IMPERIUM_NEW_GENERATION matrix/organ hardening only",
+  "allowed_write_paths": [
+    "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/**",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/**",
+    "IMPERIUM_NEW_GENERATION/ORGANS/INQUISITION/**",
+    "IMPERIUM_NEW_GENERATION/ORGANS/MECHANICUS/**",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/**",
+    "IMPERIUM_NEW_GENERATION/ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1/**"
+  ],
+  "forbidden_write_paths": [
+    "IMPERIUM_NEW_GENERATION/SANCTUM_NG/**",
+    "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/**",
+    "IMPERIUM_TEST_VERSION/**",
+    ".git/**"
+  ],
+  "stop_conditions": [
+    "git_truth_mismatch_requires_owner_decision",
+    "dirty_worktree_before_admission_with_unknown_provenance",
+    "missing_preflight_or_contract_inputs",
+    "owner_verdict_needed_from_organ_route",
+    "forbidden_path_required_to_complete_task"
+  ],
+  "verdict_target": "PASS_FOR_MATRIX_SPINE_EXTERNAL_FINALIZATION_RECEIPT_CAP_CLOSURE_SEMANTICS_PC_V0_1_ONLY",
+  "not_proven": [
+    "production_runtime_readiness",
+    "warp_unlock",
+    "retroactive cleanup of all historical receipts",
+    "global migration across every legacy task"
+  ],
+  "generated_at_utc": "2026-05-30T18:20:42Z"
+}

@@ -1,0 +1,33 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE1-DIRTY-FILES-CLASSIFICATION-AND-CLEANUP-PC-V0_1",
+  "timestamp_utc": "2026-05-31T00:29:54Z",
+  "mode": "HARD_RED_TEAM",
+  "verdict": "PASS_WITH_WARNINGS",
+  "critical_checks": {
+    "head_status_evidence_match": true,
+    "dirty_provenance_contradiction": false,
+    "stale_receipt_detected": false,
+    "role_authority_read": true,
+    "agent_reasoning_claimed_as_system_capability": false,
+    "screenshot_as_truth_used": false,
+    "missing_replay_command_for_runtime_claim": false,
+    "output_format_mismatch": false,
+    "private_local_leak_risk": false
+  },
+  "surviving_caps": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_SYNTHETIC_ONLY_UNTIL_REAL_USE_PILOT",
+    "CAP_NO_IDE_VISUAL_RELEASE_YET",
+    "CAP_NO_WARP_RUNTIME"
+  ],
+  "downgraded_from_clean_pass": true,
+  "downgrade_reason": "Global stage caps remain active; real-use pilot runtime proof is intentionally out of scope for this task.",
+  "evidence_paths": [
+    "repo_truth_probe.json",
+    "dirty_worktree_enumeration.json",
+    "dirty_worktree_classification_matrix.json",
+    "dirty_path_action_receipts.json",
+    "cap_dirty_worktree_closure_receipt.json",
+    "commit_push_receipt.json"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "MECHANICUS_TOOL_CARD_V0_1",
+  "task_id": "TASK-20260520-MECHANICUS-VISUAL-SHELL-V0_2",
+  "tool_id": "rich",
+  "display_name": "rich",
+  "owner_organ": "MECHANICUS_AGENT",
+  "consumer_organs": [
+    "MECHANICUS_AGENT",
+    "SERVITOR"
+  ],
+  "capability_summary": "Terminal rich rendering for panels, tables, and styled operator shell output",
+  "allowed_use_cases": [
+    "read-only version/status probe",
+    "task-scoped execution with evidence receipt"
+  ],
+  "forbidden_use_cases": [
+    "random install without Owner gate",
+    "destructive actions outside task contract scope"
+  ],
+  "install_policy": "OWNER_CONTROLLED_ALLOWLIST_INSTALL_V0_2",
+  "pc_status": "UNKNOWN_NEEDS_PROBE",
+  "vm2_status": "AVAILABLE_VM2",
+  "combined_status": "AVAILABLE_VM2",
+  "version_pc": null,
+  "version_vm2": "15.0.0",
+  "command_examples": [
+    "python3 -c \"import rich, importlib.metadata as m; print(m.version('rich'))\""
+  ],
+  "evidence_required": [
+    "DEPENDENCY_INSTALL_RECEIPT_VM2.json",
+    "DEPENDENCY_PC_PROBE_REPORT_IMPORTED.json"
+  ],
+  "failure_policy": "Record WARN/ERROR evidence and continue without out-of-allowlist installs.",
+  "admission_status": "KNOWN_ADMITTED_AS_CANDIDATE",
+  "updated_at_utc": "2026-05-20T02:05:36.489924Z"
+}

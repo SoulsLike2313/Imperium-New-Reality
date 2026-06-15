@@ -1,0 +1,25 @@
+{
+  "task_id": "FIXTURE-V0_2_STALE_BUNDLE_SHA",
+  "digest_verdict": "BUNDLE_SCHEMA_BLOCK",
+  "checked_path": "E:/IMPERIUM_NEW_GENERATION_NEW_REALITY/ORGANS/ADMINISTRATUM/BUNDLE_GATE/FIXTURES/v0_2_stale_bundle_sha",
+  "missing_required_files": [],
+  "invalid_required_fields": [
+    {
+      "class_id": "bundle_manifest_and_file_inventory",
+      "path": "bundle_file_inventory.json",
+      "field": "bundle_sha256",
+      "message": "bundle_sha256 is stale or mismatched; actual 43eb211d5759b417494402902b4d2d14f7887715a784759a4b8741deec50ae93",
+      "severity": "BLOCK"
+    },
+    {
+      "class_id": "sha256_sums",
+      "path": "sha256sums.txt",
+      "field": "line_1",
+      "message": "sha256 mismatch for task_report_bundle.zip; actual 43eb211d5759b417494402902b4d2d14f7887715a784759a4b8741deec50ae93",
+      "severity": "BLOCK"
+    }
+  ],
+  "warning_fields": [],
+  "owner_action_required": true,
+  "created_utc": "2026-06-04T16:14:55Z"
+}

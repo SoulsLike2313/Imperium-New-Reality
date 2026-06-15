@@ -1,0 +1,22 @@
+{
+  "receipt_id": "task-newgen-mechanicus-controlled-tool-provision-pc-v0_1:pre-commit:install",
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+  "tool": "pre-commit",
+  "package": "pre-commit",
+  "install_command": "python -m pip install --user pre-commit",
+  "started_at_utc": "2026-05-24T19:34:56Z",
+  "finished_at_utc": "2026-05-24T19:35:07Z",
+  "exit_code": 0,
+  "stdout_excerpt": "Collecting pre-commit\n  Downloading pre_commit-4.6.0-py2.py3-none-any.whl.metadata (1.2 kB)\nCollecting cfgv>=2.0.0 (from pre-commit)\n  Downloading cfgv-3.5.0-py2.py3-none-any.whl.metadata (8.9 kB)\nCollecting identify>=1.0.0 (from pre-commit)\n  Downloading identify-2.6.19-py2.py3-none-any.whl.metadata (4.4 kB)\nCollecting nodeenv>=0.11.1 (from pre-commit)\n  Downloading nodeenv-1.10.0-py2.py3-none-any.whl.metadata (24 kB)\nRequirement already satisfied: pyyaml>=5.1 in c:\\users\\pc\\appdata\\local\\programs\\python\\python312\\lib\\site-packages (from pre-commit) (6.0.3)\nCollecting virtualenv>=20.10.0 (from pre-commit)\n  Downloading virtualenv-21.3.3-py3-none-any.whl.metadata (3.5 kB)\nCollecting distlib<1,>=0.3.7 (from virtualenv>=20.10.0->pre-commit)\n  Downloading distlib-0.4.0-py2.py3-none-any.whl.metadata (5.2 kB)\nRequirement already satisfied: filelock<4,>=3.24.2 in c:\\users\\pc\\appdata\\local\\programs\\python\\python312\\lib\\site-packages (from virtualenv>=20.10.0->pre-commit) (3.25.1)\nRequirement already satisfied: platformdirs<5,>=3.9.1 in c:\\users\\pc\\appdata\\local\\programs\\python\\python312\\lib\\site-packages (from virtualenv>=20.10.0->pre-commit) (4.9.4)\nCollecting python-discovery>=1.3.1 (fr...<truncated>",
+  "stderr_excerpt": "WARNING: The script nodeenv.exe is installed in 'C:\\Users\\PC\\AppData\\Roaming\\Python\\Python312\\Scripts' which is not on PATH.\n  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.\n  WARNING: The script identify-cli.exe is installed in 'C:\\Users\\PC\\AppData\\Roaming\\Python\\Python312\\Scripts' which is not on PATH.\n  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.\n  WARNING: The script virtualenv.exe is installed in 'C:\\Users\\PC\\AppData\\Roaming\\Python\\Python312\\Scripts' which is not on PATH.\n  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.\n  WARNING: The script pre-commit.exe is installed in 'C:\\Users\\PC\\AppData\\Roaming\\Python\\Python312\\Scripts' which is not on PATH.\n  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.\n\n[notice] A new release of pip is available: 25.0.1 -> 26.1.1\n[notice] To update, run: python.exe -m pip install --upgrade pip",
+  "network_used": true,
+  "install_scope": "user",
+  "install_performed": true,
+  "side_effects": [
+    "user-site pip installation attempted",
+    "no global installer used"
+  ],
+  "post_install_validation_command": "python -m pre_commit --version",
+  "post_install_validation_result": "PASS",
+  "verdict": "PASS"
+}

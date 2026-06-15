@@ -1,0 +1,60 @@
+{
+  "schema_id": "newgen_officio_boot_ack_v0_1",
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1",
+  "task_type": "core_task",
+  "role_id": "PC_SERVITOR",
+  "scope": "IMPERIUM_NEW_GENERATION only",
+  "boot_route_ack": {
+    "read_newgen_agents_md": true,
+    "run_doctrinarium_preflight": true,
+    "read_officio_boot_contracts": true,
+    "read_taskpack": true,
+    "publish_boot_ack": true
+  },
+  "input_paths": {
+    "agents_md": "IMPERIUM_NEW_GENERATION\\AGENTS.md",
+    "doctrinarium_preflight_json": "IMPERIUM_NEW_GENERATION\\ORGANS\\ADMINISTRATUM\\REPORTS\\TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1\\doctrinarium_preflight_core_task.json",
+    "officio_role_contract": "IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\AGENT_BOOT\\officio_role_contract_v0_1.json",
+    "taskpack_path": "c:\\Users\\PC\\Downloads\\TASKPACK_NEWGEN_MATRIX_SPINE_EXTERNAL_FINALIZATION_RECEIPT_CAP_CLOSURE_SEMANTICS_PC_V0_1.zip"
+  },
+  "owner_facing_language": {
+    "live_commentary": "Russian",
+    "final_summary": "Russian"
+  },
+  "machine_artifact_language": "English",
+  "active_gates": [
+    "GATE_DOCTRINARIUM_READ_FIRST",
+    "GATE_NO_GENERIC_PASS",
+    "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+    "GATE_OWNER_POWER_DELTA_REQUIRED",
+    "GATE_PAIN_PREFLIGHT_REQUIRED",
+    "GATE_REPO_HYGIENE_REQUIRED",
+    "GATE_RESOURCE_KPD_REQUIRED",
+    "GATE_INTERNAL_FUNCTION_MUST_HAVE_ORGAN_OWNER"
+  ],
+  "required_declarations": [
+    "DECLARATION_OF_FORM",
+    "CORE_SYNTHESIS_DECLARATION_OF_PAIN",
+    "METAOS_FOCUSING_DOCTRINE"
+  ],
+  "stop_conditions": [
+    "git_truth_mismatch",
+    "dirty_worktree_before_admission",
+    "owner_verdict_needed_from_organ_route"
+  ],
+  "ack_verdict": "PASS",
+  "not_proven_boundary": [
+    "full organ intelligence",
+    "automatic enforcement across all agents",
+    "live organ dialogue",
+    "Owner Verdict Needed live button",
+    "production autonomy"
+  ],
+  "generated_at_utc": "2026-05-30T18:20:42+00:00",
+  "checks": {
+    "preflight_status": "PASS",
+    "taskpack_exists": true,
+    "officio_contracts_complete": true,
+    "role_contract_schema": "newgen_officio_role_contract_v0_1"
+  }
+}

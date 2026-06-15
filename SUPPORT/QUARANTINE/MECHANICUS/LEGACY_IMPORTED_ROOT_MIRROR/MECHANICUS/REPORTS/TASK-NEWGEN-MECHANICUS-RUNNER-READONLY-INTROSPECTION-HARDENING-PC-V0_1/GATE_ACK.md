@@ -1,0 +1,15 @@
+GATE_ACK:
+- task_id: TASK-NEWGEN-MECHANICUS-RUNNER-READONLY-INTROSPECTION-HARDENING-PC-V0_1
+- current_head: bee2d984fa673f596de344350082e15f5f9429c0
+- gatepack_path: c:\Users\PC\Downloads\TASKPACK_NEWGEN_MECHANICUS_RUNNER_READONLY_INTROSPECTION_HARDENING_PC_V0_1.zip
+- gatepack_sha256: 49d5a91bf261e6e80ae4cf1b6ba190df65547e3bf56d5f424d7d8af814b5f9e5
+- read_gates: [GATE-U00-GIT-TRUTH, GATE-U01-ROLE-ACK, GATE-U02-SCOPE-BOUNDARY, GATE-U04-EVIDENCE-RECEIPT, GATE-U05-STOP-CONDITIONS, GATE-U08-REPO-PURITY, GATE-U09-NO-FAKE-GREEN, GATE-U12-REPORT-OUTPUT-BUDGET, GATE-U13-PYTHON-TYPE-SAFETY, GATE-U19-SCRIPT-ARTIFACT-PRESERVATION, GATE-U20-AGENT-KPD-SELF-REVIEW, GATE-U21-COMMAND-CHUNKING]
+- accepted_stop_conditions: [repo_root_mismatch, baseline_head_mismatch, forbidden_path_in_diff, read_only_command_mutates_repo, import_smoke_mutates_repo, unexpected_unexplained_dirty_state]
+- scope_boundary: Narrow Mechanicus runner/checker read-only introspection hardening only.
+- touched_paths: [IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_controlled_provision_runner_v0_1.py, IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_owner_approved_tool_normalization_v0_1.py, IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_owner_approval_matrix_v0_1.py, IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_arsenal_foundation_v0_1.py, IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-RUNNER-READONLY-INTROSPECTION-HARDENING-PC-V0_1/**]
+- forbidden_paths: [ORGANS/OFFICIO_AGENTIS/**, ORGANS/ADMINISTRATUM/**, IMPERIUM_NEW_GENERATION/BLOCK_SPINE/**, IMPERIUM_NEW_GENERATION/SANCTUM/**, broad_mechanicus_refactor_outside_target_files]
+- expected_receipts: [FINAL_REPORT.md, readonly_introspection_hardening_report.json, tested_commands.json, read_only_smoke_results.json, incident_followup_summary.md, ghost_evolve_sidecar.json]
+- repo_recon_required: false
+- script_absorption_required: false
+- clarification_needed: false
+- verdict: PASS

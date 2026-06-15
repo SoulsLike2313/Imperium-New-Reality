@@ -1,0 +1,77 @@
+{
+  "schema_id": "ROLLBACK_DECISION_RULES_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-MECHANICUS-SSH-MATRIX-AND-ACTION-ROLLBACK-CONTRACT-VM2-V0_1",
+  "generated_at_utc": "2026-05-22T21:00:00Z",
+  "required_rollback_verdicts": [
+    "ROLLBACK_NOT_REQUIRED",
+    "ROLLBACK_BY_REBUILD",
+    "ROLLBACK_BY_BACKUP_RESTORE",
+    "ROLLBACK_BY_GIT_RESTORE",
+    "ROLLBACK_REQUIRES_OWNER",
+    "ROLLBACK_NOT_DEFINED_BLOCK",
+    "DANGEROUS_ACTION_BLOCKED"
+  ],
+  "rules": [
+    {
+      "mutation_class": "READ_ONLY_ACTION",
+      "default_rollback_method": "ROLLBACK_NOT_REQUIRED",
+      "backup_required": false,
+      "owner_approval_required": false,
+      "failure_policy": "ROLLBACK_NOT_DEFINED_BLOCK"
+    },
+    {
+      "mutation_class": "GENERATED_STATE_REFRESH",
+      "default_rollback_method": "ROLLBACK_BY_REBUILD",
+      "backup_required": false,
+      "owner_approval_required": false,
+      "failure_policy": "ROLLBACK_NOT_DEFINED_BLOCK"
+    },
+    {
+      "mutation_class": "REPORT_WRITE_ACTION",
+      "default_rollback_method": "ROLLBACK_BY_GIT_RESTORE",
+      "backup_required": false,
+      "owner_approval_required": false,
+      "failure_policy": "ROLLBACK_NOT_DEFINED_BLOCK"
+    },
+    {
+      "mutation_class": "REGISTRY_UPDATE_ACTION",
+      "default_rollback_method": "ROLLBACK_BY_GIT_RESTORE",
+      "backup_required": false,
+      "owner_approval_required": false,
+      "failure_policy": "ROLLBACK_NOT_DEFINED_BLOCK"
+    },
+    {
+      "mutation_class": "TASK_STATE_MUTATION",
+      "default_rollback_method": "ROLLBACK_BY_BACKUP_RESTORE",
+      "backup_required": true,
+      "owner_approval_required": false,
+      "failure_policy": "ROLLBACK_NOT_DEFINED_BLOCK"
+    },
+    {
+      "mutation_class": "ORGAN_DIALOGUE_PACKET_WRITE",
+      "default_rollback_method": "ROLLBACK_REQUIRES_OWNER",
+      "backup_required": true,
+      "owner_approval_required": true,
+      "failure_policy": "ROLLBACK_REQUIRES_OWNER"
+    },
+    {
+      "mutation_class": "SCOPE_MERGE_MUTATION",
+      "default_rollback_method": "ROLLBACK_REQUIRES_OWNER",
+      "backup_required": true,
+      "owner_approval_required": true,
+      "failure_policy": "ROLLBACK_REQUIRES_OWNER"
+    },
+    {
+      "mutation_class": "DANGEROUS_ACTION",
+      "default_rollback_method": "DANGEROUS_ACTION_BLOCKED",
+      "backup_required": true,
+      "owner_approval_required": true,
+      "failure_policy": "DANGEROUS_ACTION_BLOCKED",
+      "override_condition": "owner_approval_contract_ref must be present"
+    }
+  ],
+  "known_limitations": [
+    "Rules are foundation policy and do not imply approval to run dangerous mutations.",
+    "Owner gate remains mandatory for high-risk mutation categories."
+  ]
+}

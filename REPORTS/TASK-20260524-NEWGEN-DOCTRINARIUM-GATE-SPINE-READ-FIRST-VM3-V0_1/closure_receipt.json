@@ -1,0 +1,71 @@
+{
+  "schema_id": "newgen_doctrinarium_gate_spine_closure_receipt_v0_1",
+  "task_id": "TASK-20260524-NEWGEN-DOCTRINARIUM-GATE-SPINE-READ-FIRST-VM3-V0_1",
+  "step_name": "Doctrinarium Read-First Gate Spine V0.1",
+  "verdict": "PASS_FOR_DOCTRINARIUM_READ_FIRST_GATE_SPINE_V0_1_ONLY",
+  "status": "COMPLETE",
+  "scope": "IMPERIUM_NEW_GENERATION only",
+  "git_truth": {
+    "branch": "master",
+    "start_head": "76b44cd1d6e5d1aa55b6398af529cee4f52fced3",
+    "remote_head_at_start": "76b44cd1d6e5d1aa55b6398af529cee4f52fced3",
+    "start_worktree_clean": true,
+    "post_push_local_head": null,
+    "post_push_remote_head": null,
+    "post_push_heads_match": null,
+    "post_push_worktree_clean": null
+  },
+  "required_outputs": [
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/declaration_index_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/gate_registry_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/read_first_protocol_v0_1.md",
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/TEMPLATES/task_start_doctrinarium_block_v0_1.md",
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/TOOLS/doctrinarium_preflight_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/REPORTS/preflight_smoke_report_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DOCTRINARIUM-GATE-SPINE-READ-FIRST-VM3-V0_1/FINAL_REPORT.md",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DOCTRINARIUM-GATE-SPINE-READ-FIRST-VM3-V0_1/closure_receipt.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DOCTRINARIUM-GATE-SPINE-READ-FIRST-VM3-V0_1/context_source_mix.json"
+  ],
+  "smoke": {
+    "mandatory_task_types": [
+      "core_task",
+      "visual_cockpit",
+      "tool_acquisition",
+      "continuity"
+    ],
+    "report_path": "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/REPORTS/preflight_smoke_report_v0_1.json",
+    "all_pass": true
+  },
+  "json_parse_validation": {
+    "targets": [
+      "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/declaration_index_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/gate_registry_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/REPORTS/preflight_smoke_report_v0_1.json",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DOCTRINARIUM-GATE-SPINE-READ-FIRST-VM3-V0_1/closure_receipt.json",
+      "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-DOCTRINARIUM-GATE-SPINE-READ-FIRST-VM3-V0_1/context_source_mix.json"
+    ],
+    "all_parse": true
+  },
+  "gate_ack": {
+    "task_id": "TASK-20260524-NEWGEN-DOCTRINARIUM-GATE-SPINE-READ-FIRST-VM3-V0_1",
+    "current_head": "76b44cd1d6e5d1aa55b6398af529cee4f52fced3",
+    "gatepack_path": "INBOX/VM3_TASKPACKS/TASK-20260524-NEWGEN-DOCTRINARIUM-GATE-SPINE-READ-FIRST-VM3-V0_1/TASKPACK_TASK-20260524-NEWGEN-DOCTRINARIUM-GATE-SPINE-READ-FIRST-VM3-V0_1.zip",
+    "gatepack_sha256": "4222df4ef0f22618a5dab3296d8c4fb69e15d43768e709981d619c7cd120e1ca",
+    "verdict": "PASS"
+  },
+  "script_artifact_preservation": [
+    {
+      "artifact_id": "doctrinarium_preflight_v0_1",
+      "path": "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/TOOLS/doctrinarium_preflight_v0_1.py",
+      "classification": "ABSORB_NOW",
+      "type_safety_level": "TASK_LOCAL",
+      "result": "py_compile_pass"
+    }
+  ],
+  "not_proven": [
+    "full organ intelligence",
+    "automatic enforcement across all taskpacks",
+    "final visual quality",
+    "production autonomy"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema_id": "newgen_mechanicus_tool_capability_registry_v0_1",
+  "version": "v0_1",
+  "generated_for_task": "TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1",
+  "tools": [
+    {
+      "tool_slug": "rich",
+      "capability_name": "Wave1 terminal TUI rendering",
+      "required_for": [
+        "DOCTRINARIUM/TUI",
+        "OFFICIO_AGENTIS/TUI",
+        "MECHANICUS/TUI",
+        "ADMINISTRATUM/TUI"
+      ],
+      "status": "AVAILABLE",
+      "verification": {
+        "method": "python import + importlib.metadata version probe",
+        "version": "13.7.1",
+        "module_path": "/usr/lib/python3/dist-packages/rich/__init__.py"
+      },
+      "acquisition_policy": "Controlled install required only if missing.",
+      "source_refs": [
+        "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/MECHANICUS_AGENT/TOOL_REGISTRY/TOOLS/rich.json"
+      ]
+    }
+  ],
+  "updated_at_utc": "2026-05-24T01:20:00Z"
+}

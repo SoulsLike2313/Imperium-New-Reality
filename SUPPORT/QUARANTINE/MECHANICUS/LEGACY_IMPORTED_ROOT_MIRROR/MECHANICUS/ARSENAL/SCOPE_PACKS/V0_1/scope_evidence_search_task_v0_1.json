@@ -1,0 +1,86 @@
+{
+  "scope_id": "evidence_search_task",
+  "version": "0.1",
+  "generated_at_utc": "2026-05-24T23:34:05Z",
+  "source_registry": "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/arsenal_registry_v0_1.json",
+  "purpose": "Evidence index search/retrieval lane for reports, receipts, and status traces after expansion tasks.",
+  "target_task_types": [
+    "evidence_search",
+    "evidence_index_refresh",
+    "report_receipt_query_smoke"
+  ],
+  "canon_allowed": [],
+  "sandbox_allowed": [
+    "CAP-DB-SQLITE-FTS5-EVIDENCE",
+    "DATABASES_SQLITE",
+    "DATABASES_SQLITE_FTS5",
+    "SEARCH_INDEXING_RIPGREP_SEARCH",
+    "SEARCH_INDEXING_SQLITE_FTS_SEARCH",
+    "TOOLS_RECEIPT_VALIDATOR",
+    "UTILITIES_JQ",
+    "UTILITIES_RIPGREP"
+  ],
+  "candidate_context_only": [
+    "SEARCH_INDEXING_RECEIPT_PATH_INDEX",
+    "SEARCH_INDEXING_REPORT_PATH_INDEX",
+    "SEARCH_INDEXING_SIMPLE_INVERTED_INDEX",
+    "SEARCH_INDEXING_TAG_INDEX_MODEL"
+  ],
+  "owner_decision_required": [
+    "CLOUD_LLM_ADAPTERS_CLOUD_MODEL_ROUTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_CLOUD_RECEIPT_MODEL_CANDIDATE",
+    "CLOUD_LLM_ADAPTERS_COST_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_OPENAI_COMPATIBLE_API_ADAPTER_RESERVED",
+    "CLOUD_LLM_ADAPTERS_PRIVACY_POLICY_GATE",
+    "CLOUD_LLM_ADAPTERS_SECRET_POLICY_GATE",
+    "LOCAL_LLM_LLAMACPP_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LM_STUDIO_RESERVED_CANDIDATE",
+    "LOCAL_LLM_LOCAL_MODEL_RUNNER_RESERVED",
+    "LOCAL_LLM_MODEL_CAPABILITY_CARD_PATTERN",
+    "LOCAL_LLM_OLLAMA_RESERVED_CANDIDATE",
+    "LOCAL_LLM_OPENAI_COMPATIBLE_LOCAL_ENDPOINT_PATTERN"
+  ],
+  "forbidden": [],
+  "required_receipts": [
+    "evidence_index_refresh_report.json",
+    "evidence_query_smoke_after_expansion.json",
+    "quality_gate_result_report.json",
+    "scope_pack_check_report.json"
+  ],
+  "required_gates": [
+    "GATE-U00-GIT-TRUTH",
+    "GATE-U01-ROLE-ACK",
+    "GATE-U02-SCOPE-BOUNDARY",
+    "GATE-U04-EVIDENCE-RECEIPT",
+    "GATE-U05-STOP-CONDITIONS",
+    "GATE-U08-REPO-PURITY",
+    "GATE-U09-NO-FAKE-GREEN",
+    "GATE-U12-REPORT-OUTPUT-BUDGET",
+    "GATE-U13-PYTHON-TYPE-SAFETY",
+    "GATE-U14-WHOLE-REPO-SCOPE-RECON",
+    "GATE-U15-OPERATIONALITY-IMPACT",
+    "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+    "GATE-U20-AGENT-KPD-SELF-REVIEW",
+    "GATE-U21-COMMAND-CHUNKING"
+  ],
+  "warnings": [
+    "Evidence search scope does not authorize private external context indexing.",
+    "LLM/cloud and visual lanes remain outside this scope."
+  ],
+  "examples_of_use": [
+    "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_evidence_index_builder_v0_1.py --repo-root E:\\IMPERIUM",
+    "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/mechanicus_evidence_query_runner_v0_1.py --repo-root E:\\IMPERIUM",
+    "python IMPERIUM_NEW_GENERATION/MECHANICUS/TOOLS/check_mechanicus_evidence_index_v0_1.py --repo-root E:\\IMPERIUM"
+  ],
+  "future_promotion_candidates": [
+    "SEARCH_INDEXING_RECEIPT_PATH_INDEX",
+    "SEARCH_INDEXING_REPORT_PATH_INDEX",
+    "SEARCH_INDEXING_TAG_INDEX_MODEL"
+  ],
+  "forbidden_actions": [
+    "index private/local external context",
+    "claim evidence completeness without refresh receipts",
+    "LLM/cloud adapter activation inside evidence search scope"
+  ],
+  "last_generated_from_commit": "5d22657b2fe8a319c9a4636549c53bfcc2ffa119"
+}

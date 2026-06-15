@@ -1,0 +1,45 @@
+{
+  "schema_id": "newgen_organ_gate_catalog_v0_1",
+  "organ_id": "OFFICIO_AGENTIS",
+  "version": "v0_1",
+  "gates": [
+    {
+      "gate_id": "GATE_ROLE_ACK_REQUIRED",
+      "severity": "BLOCK",
+      "purpose": "No execution without role contract acknowledgment.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "officio_role_contract_ack.json",
+        "taskpack_scope_ack.json"
+      ]
+    },
+    {
+      "gate_id": "GATE_OWNER_LANGUAGE_RU",
+      "severity": "BLOCK",
+      "purpose": "Owner-facing live commentary must stay in Russian.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "FINAL_REPORT.md"
+      ]
+    },
+    {
+      "gate_id": "GATE_SCOPED_VERDICT_ONLY",
+      "severity": "BLOCK",
+      "purpose": "No generic PASS claims.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "closure_receipt.json"
+      ]
+    },
+    {
+      "gate_id": "GATE_STOP_CONDITION_BINDING",
+      "severity": "WARN_TO_BLOCK",
+      "purpose": "Stop conditions must be explicit and accepted.",
+      "expected_verdict": "PASS",
+      "evidence_required": [
+        "taskpack_scope_ack.json",
+        "organ_route_plan.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Imperium Evidence Vault Batch Registration",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "batch_id",
+    "pack_folder",
+    "pack_zip_sha256",
+    "packed_total",
+    "source_cleanup_state",
+    "owner_gate"
+  ],
+  "properties": {
+    "schema": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "batch_id": {
+      "type": "string"
+    },
+    "hygiene_lane": {
+      "type": "string"
+    },
+    "pack_folder": {
+      "type": "string"
+    },
+    "pack_zip": {
+      "type": "string"
+    },
+    "pack_zip_sha256": {
+      "type": "string"
+    },
+    "packed_total": {
+      "type": "integer"
+    },
+    "total_bytes": {
+      "type": "integer"
+    },
+    "source_cleanup_state": {
+      "type": "string"
+    },
+    "owner_gate": {
+      "type": "string"
+    }
+  }
+}

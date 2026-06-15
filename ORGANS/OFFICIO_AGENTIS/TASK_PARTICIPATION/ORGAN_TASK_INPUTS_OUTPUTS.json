@@ -1,0 +1,25 @@
+{
+  "organ": "OFFICIO_AGENTIS",
+  "inputs": [
+    {
+      "name": "Role Route Matrix",
+      "source": "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/MATRICES/ROLE_ROUTE_MATRIX.md",
+      "required": true,
+      "missing_behavior": "BLOCK"
+    },
+    {
+      "name": "Owner RU Contract",
+      "source": "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/CONTRACTS/OWNER_FACING_RU_RESPONSE_CONTRACT.md",
+      "required": true,
+      "missing_behavior": "BLOCK"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Role Entry ACK lane",
+      "path_or_contract": "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/TASK_PARTICIPATION/TASK_PARTICIPATION_CONTRACT.json",
+      "required": true,
+      "consumer": "TASK_START_ACK"
+    }
+  ]
+}

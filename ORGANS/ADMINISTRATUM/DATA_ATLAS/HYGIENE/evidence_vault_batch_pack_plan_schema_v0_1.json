@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Imperium Evidence Vault Batch Pack Plan",
+  "type": "object",
+  "required": [
+    "schema",
+    "status",
+    "batch_id",
+    "planned_candidates_total",
+    "owner_gate_required_before_execution",
+    "source_delete_allowed"
+  ],
+  "properties": {
+    "schema": {
+      "const": "imperium.evidence_vault_batch_pack_plan.v0_1"
+    },
+    "status": {
+      "type": "string"
+    },
+    "batch_id": {
+      "type": "string"
+    },
+    "planned_candidates_total": {
+      "type": "integer"
+    },
+    "planned_bytes_total": {
+      "type": "integer"
+    },
+    "owner_gate_required_before_execution": {
+      "type": "boolean"
+    },
+    "source_delete_allowed": {
+      "const": false
+    },
+    "outputs": {
+      "type": "object"
+    }
+  }
+}

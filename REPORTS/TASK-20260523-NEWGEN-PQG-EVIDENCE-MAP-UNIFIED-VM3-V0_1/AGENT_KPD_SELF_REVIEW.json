@@ -1,0 +1,35 @@
+{
+  "agent_kpd_self_review": {
+    "task_id": "TASK-20260523-NEWGEN-PQG-EVIDENCE-MAP-UNIFIED-VM3-V0_1",
+    "agent_role": "VM3_SERVITOR_BIG_MODEL",
+    "useful_outputs": [
+      "Unified evidence foundation artifacts + schemas",
+      "Reusable builder/validator tools",
+      "Sanctum read-only truth index extension"
+    ],
+    "waste_points": [
+      "Legacy validator compatibility overhead"
+    ],
+    "missing_tools": [
+      "Contract-bridged validator wrapper for mixed old/new report bundles"
+    ],
+    "generated_tools_to_preserve": [
+      "IMPERIUM_NEW_GENERATION/TRUTH/TOOLS/evidence_map_unified_builder.py",
+      "IMPERIUM_NEW_GENERATION/TRUTH/TOOLS/evidence_map_unified_validator.py"
+    ],
+    "recommended_script_absorption": [
+      "ABSORB evidence_map_unified_builder.py",
+      "ABSORB evidence_map_unified_validator.py"
+    ],
+    "recommended_narrow_agent_profiles": [
+      "NEWGEN_TRUTH_EVIDENCE_INDEX_SERVITOR"
+    ],
+    "future_prompt_improvements": [
+      "Include explicit legacy-validator compatibility rule in taskpack when required."
+    ],
+    "future_gate_or_checklist_recommendations": [
+      "Add gate check for validator-contract version mismatch before execution."
+    ],
+    "kpd_verdict": "GOOD"
+  }
+}

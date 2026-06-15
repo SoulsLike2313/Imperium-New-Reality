@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "administratum/artifact_card_schema_v0_1",
+  "title": "Administratum Artifact Card V0.1",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "artifact_id",
+    "artifact_type",
+    "path",
+    "status",
+    "real_owner_organ",
+    "registration_owner_organ",
+    "validation_owner_organ"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "artifact_card_v0_1"
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "artifact_type": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "LEGACY",
+        "WARN",
+        "UNKNOWN"
+      ]
+    },
+    "real_owner_organ": {
+      "type": "string"
+    },
+    "registration_owner_organ": {
+      "type": "string"
+    },
+    "validation_owner_organ": {
+      "type": "string"
+    },
+    "evidence_paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

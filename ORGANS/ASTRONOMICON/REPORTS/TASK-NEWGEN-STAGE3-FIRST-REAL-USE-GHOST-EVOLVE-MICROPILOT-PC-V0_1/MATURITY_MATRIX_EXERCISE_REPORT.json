@@ -1,0 +1,213 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1",
+  "timestamp_utc": "2026-05-31T01:15:47Z",
+  "core_matrix_exercises": [
+    {
+      "matrix_id": "IMPERIUM_MATURITY_TARGET_MATRIX",
+      "criterion_id": "IMT-01",
+      "status_before": "WARN",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/ASTRONOMICON_TASK_ID_EXECUTION_PROOF.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/task_id_resolver_receipt.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/TASKPACK_ADMISSION_RECEIPT.json"
+      ],
+      "status_after": "EXERCISED_WITH_WARNINGS",
+      "reason": "Deterministic TASK_ID route worked on real registered task; bootstrap BOM repair shows intake preflight still fragile.",
+      "next_improvement_hook": "Add UTF-8 BOM hard check fixture and auto-remediation helper in Astronomicon intake."
+    },
+    {
+      "matrix_id": "IMPERIUM_MATURITY_TARGET_MATRIX",
+      "criterion_id": "IMT-02",
+      "status_before": "WARN",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/REAL_USE_MICROPILOT_READINESS_SNAPSHOT.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/hard_red_team_verdict.json"
+      ],
+      "status_after": "EXERCISED_WITH_WARNINGS",
+      "reason": "Micro-pilot remained controlled and preflight-disciplined; independent external review still pending.",
+      "next_improvement_hook": "Run first larger pilot preflight with independent Inquisitor + Speculum closure receipts."
+    },
+    {
+      "matrix_id": "IMPERIUM_MATURITY_TARGET_MATRIX",
+      "criterion_id": "IMT-03",
+      "status_before": "PASS",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/MATURITY_MATRIX_EXERCISE_REPORT.json"
+      ],
+      "status_after": "PASS",
+      "reason": "Future-domain matrices stayed CANDIDATE_SEED and were not overclaimed.",
+      "next_improvement_hook": "Attach one safe synthetic backlog item to each seed criterion."
+    },
+    {
+      "matrix_id": "ASTRONOMICON_TASK_ENTRY_MATURITY_MATRIX",
+      "criterion_id": "ATM-01",
+      "status_before": "PASS",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/TASKPACK_ADMISSION_RECEIPT.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/stage3_bootstrap_repair_finding.json"
+      ],
+      "status_after": "EXERCISED_WITH_WARNINGS",
+      "reason": "Admission succeeded, but bootstrap repair revealed missing encoding-focused diagnostics in intake preflight.",
+      "next_improvement_hook": "Introduce CAP-specific diagnostics for missing/invalid template encoding conditions."
+    },
+    {
+      "matrix_id": "ASTRONOMICON_TASK_ENTRY_MATURITY_MATRIX",
+      "criterion_id": "ATM-02",
+      "status_before": "PASS",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/task_id_resolver_receipt.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/ASTRONOMICON_TASK_ID_EXECUTION_PROOF.json"
+      ],
+      "status_after": "PASS",
+      "reason": "Resolver produced valid route and full 8-organ start ACK for this registered task.",
+      "next_improvement_hook": "Add RU diagnostics bundle for each resolver BLOCK cap."
+    },
+    {
+      "matrix_id": "ASTRONOMICON_TASK_ENTRY_MATURITY_MATRIX",
+      "criterion_id": "ATM-03",
+      "status_before": "PASS",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_REGISTRY/current_expected_task.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_REGISTRY/task_registry.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/task_id_resolver_receipt.json"
+      ],
+      "status_after": "PASS",
+      "reason": "current_expected_task pointed to resolvable Stage3 task and start flow did not require manual file hunting.",
+      "next_improvement_hook": "Formalize current_expected rotation policy with automated stale pointer guard."
+    },
+    {
+      "matrix_id": "REAL_USE_PILOT_READINESS_MATRIX",
+      "criterion_id": "RUP-01",
+      "status_before": "PASS",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/REAL_USE_MICROPILOT_READINESS_SNAPSHOT.md",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/hard_red_team_verdict.json"
+      ],
+      "status_after": "PASS",
+      "reason": "Micro-pilot scope remained explicit and separated from production runtime claims.",
+      "next_improvement_hook": "Freeze first larger pilot acceptance thresholds and reviewer roster."
+    },
+    {
+      "matrix_id": "REAL_USE_PILOT_READINESS_MATRIX",
+      "criterion_id": "RUP-02",
+      "status_before": "PASS",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/ASTRONOMICON_TASK_ID_EXECUTION_PROOF.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/stage3_bootstrap_repair_finding.json"
+      ],
+      "status_after": "EXERCISED_WITH_WARNINGS",
+      "reason": "Entry safety gates passed post-repair, but BOM failure path still required owner-led bootstrap intervention.",
+      "next_improvement_hook": "Codify bootstrap-repair path into script-first recovery flow."
+    },
+    {
+      "matrix_id": "REAL_USE_PILOT_READINESS_MATRIX",
+      "criterion_id": "RUP-03",
+      "status_before": "PASS",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/final_owner_summary_ru.md",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/hard_red_team_verdict.json"
+      ],
+      "status_after": "PASS",
+      "reason": "No real-use runtime execution was claimed; task remained micro-pilot control loop only.",
+      "next_improvement_hook": "Add explicit unlock receipt template for first larger real-use pilot."
+    },
+    {
+      "matrix_id": "MANUAL_LOGOS_PIPELINE_REGISTRATION_MATRIX",
+      "criterion_id": "MLP-01",
+      "status_before": "PASS",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/NEXT_PIPELINE_HANDOFF.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/claim_ledger.jsonl"
+      ],
+      "status_after": "EXERCISED_WITH_WARNINGS",
+      "reason": "Manual pipeline route remained traceable, but schema-level checker for registration remains pending.",
+      "next_improvement_hook": "Create machine schema validator for manual Logos pipeline records."
+    },
+    {
+      "matrix_id": "MANUAL_LOGOS_PIPELINE_REGISTRATION_MATRIX",
+      "criterion_id": "MLP-02",
+      "status_before": "PASS",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/hard_red_team_verdict.json",
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/REAL_USE_MICROPILOT_READINESS_SNAPSHOT.json"
+      ],
+      "status_after": "PASS",
+      "reason": "Outputs keep manual steps explicit and avoid automation overclaim.",
+      "next_improvement_hook": "Add anti-overclaim checklist to task start ACK contract extensions."
+    }
+  ],
+  "future_domain_seed_preservation": [
+    {
+      "matrix_id": "FREELANCE_CORRIDOR_MATURITY_MATRIX",
+      "criterion_id": "FCM-01",
+      "status_before": "CANDIDATE_SEED",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/REAL_USE_MICROPILOT_READINESS_SNAPSHOT.json"
+      ],
+      "status_after": "CANDIDATE_SEED",
+      "reason": "Future-domain seed preserved; no runtime claim executed in this micro-pilot.",
+      "next_improvement_hook": "Keep as candidate seed until dedicated bounded pilot taskpack is admitted."
+    },
+    {
+      "matrix_id": "MARKET_LEARNING_DEMO_MATRIX",
+      "criterion_id": "MLD-01",
+      "status_before": "CANDIDATE_SEED",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/REAL_USE_MICROPILOT_READINESS_SNAPSHOT.json"
+      ],
+      "status_after": "CANDIDATE_SEED",
+      "reason": "Future-domain seed preserved; no runtime claim executed in this micro-pilot.",
+      "next_improvement_hook": "Keep as candidate seed until dedicated bounded pilot taskpack is admitted."
+    },
+    {
+      "matrix_id": "IDE_ACTION_BOUNDARY_MATRIX",
+      "criterion_id": "IAB-01",
+      "status_before": "CANDIDATE_SEED",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/REAL_USE_MICROPILOT_READINESS_SNAPSHOT.json"
+      ],
+      "status_after": "CANDIDATE_SEED",
+      "reason": "Future-domain seed preserved; no runtime claim executed in this micro-pilot.",
+      "next_improvement_hook": "Keep as candidate seed until dedicated bounded pilot taskpack is admitted."
+    },
+    {
+      "matrix_id": "API_AND_TOOL_INTEGRATION_MATRIX",
+      "criterion_id": "ATI-01",
+      "status_before": "CANDIDATE_SEED",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/REAL_USE_MICROPILOT_READINESS_SNAPSHOT.json"
+      ],
+      "status_after": "CANDIDATE_SEED",
+      "reason": "Future-domain seed preserved; no runtime claim executed in this micro-pilot.",
+      "next_improvement_hook": "Keep as candidate seed until dedicated bounded pilot taskpack is admitted."
+    },
+    {
+      "matrix_id": "LLM_HARNESS_AND_RESOURCE_CONTROL_MATRIX",
+      "criterion_id": "LHR-01",
+      "status_before": "CANDIDATE_SEED",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/REAL_USE_MICROPILOT_READINESS_SNAPSHOT.json"
+      ],
+      "status_after": "CANDIDATE_SEED",
+      "reason": "Future-domain seed preserved; no runtime claim executed in this micro-pilot.",
+      "next_improvement_hook": "Keep as candidate seed until dedicated bounded pilot taskpack is admitted."
+    },
+    {
+      "matrix_id": "PIPELINE_30_TASK_ORCHESTRATION_MATRIX",
+      "criterion_id": "P30-01",
+      "status_before": "CANDIDATE_SEED",
+      "evidence_from_this_task": [
+        "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/REAL_USE_MICROPILOT_READINESS_SNAPSHOT.json"
+      ],
+      "status_after": "CANDIDATE_SEED",
+      "reason": "Future-domain seed preserved; no runtime claim executed in this micro-pilot.",
+      "next_improvement_hook": "Keep as candidate seed until dedicated bounded pilot taskpack is admitted."
+    }
+  ],
+  "summary": {
+    "core_items_count": 11,
+    "seed_items_count": 6,
+    "exercised_with_warnings_count": 5,
+    "seed_overclaim_detected": false
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "task_id": "TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1",
+  "generated_at_utc": "2026-05-23T00:42:30Z",
+  "scope_classification": "IN_SCOPE_IMPERIUM_NEW_GENERATION_ONLY",
+  "modified_files": [
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/index.html",
+      "reason": "Added Transfer Console runner-state fields and labels for no-arbitrary-shell visibility.",
+      "scope": "UI_INTEGRATION"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/APP/app.js",
+      "reason": "Integrated new action IDs, runner-state normalization, and transfer runner detail rendering.",
+      "scope": "UI_INTEGRATION"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_action_server.py",
+      "reason": "Added transfer action runner dispatch and bounded runner execution routine.",
+      "scope": "ACTION_SERVER_INTEGRATION"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/REGISTRY/SANCTUM_NG_ACTION_REGISTRY_V0_1.json",
+      "reason": "Registered new allowlisted transfer action runner actions.",
+      "scope": "ACTION_REGISTRY"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_action_layer_validator.py",
+      "reason": "Extended validator required action IDs/files and dispatch assertions for new runner actions.",
+      "scope": "VALIDATION"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_action_layer_smoke.py",
+      "reason": "Extended smoke action matrix to include new transfer runner actions.",
+      "scope": "SMOKE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TOOLS/sanctum_ng_state_builder.py",
+      "reason": "Added new transfer runner action keys to state action map.",
+      "scope": "STATE_INTEGRATION"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/DATA/sanctum_ng_state.generated.json",
+      "reason": "Regenerated state snapshot after action map updates.",
+      "scope": "GENERATED_STATE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_console_view_state_v0_1.schema.json",
+      "reason": "Extended view schema to allow action_runner_state block.",
+      "scope": "TRANSFER_CONTRACT_UPDATE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/TRANSFER_CONSOLE_VIEW_STATE.generated.json",
+      "reason": "Updated transfer view with action runner state and latest request/result/ledger snapshots.",
+      "scope": "TRANSFER_DATA_GENERATED"
+    }
+  ],
+  "created_files": [
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_action_request.schema.json",
+      "reason": "Machine-readable request contract for bounded transfer action runner.",
+      "scope": "TRANSFER_CONTRACT"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_action_result.schema.json",
+      "reason": "Result receipt contract with no-fake-green and evidence requirements.",
+      "scope": "TRANSFER_CONTRACT"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/CONTRACTS/transfer_action_runner_policy.schema.json",
+      "reason": "Policy contract for action allowlist, contour allowlist, safe roots, and shell restrictions.",
+      "scope": "TRANSFER_CONTRACT"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/transfer_action_runner_v0_1.py",
+      "reason": "Bounded allowlisted transfer action runner implementation.",
+      "scope": "TRANSFER_TOOL"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/build_transfer_action_samples_v0_1.py",
+      "reason": "Sample request builder and runner bootstrap tool.",
+      "scope": "TRANSFER_TOOL"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/validate_transfer_action_runner_v0_1.py",
+      "reason": "Action-runner validator for allowlist/path/shell/evidence gates.",
+      "scope": "TRANSFER_TOOL"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/TOOLS/smoke_transfer_action_runner_v0_1.py",
+      "reason": "Action-runner smoke script covering pass and expected-block execution paths.",
+      "scope": "TRANSFER_TOOL"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/start_state.json",
+      "reason": "Start truth receipt with read-order and clean-worktree evidence.",
+      "scope": "TASK_EVIDENCE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/GATE_ACK.md",
+      "reason": "Admission gate acknowledgment before code edits.",
+      "scope": "TASK_EVIDENCE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/transfer_action_samples_build_report.json",
+      "reason": "Samples build receipt.",
+      "scope": "TASK_EVIDENCE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/transfer_action_runner_validator_report.json",
+      "reason": "Validator receipt.",
+      "scope": "TASK_EVIDENCE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/transfer_action_runner_smoke_report.json",
+      "reason": "Smoke receipt.",
+      "scope": "TASK_EVIDENCE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/context_source_mix.json",
+      "reason": "Context source mix block required by task contract.",
+      "scope": "TASK_EVIDENCE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/implementation_manifest.json",
+      "reason": "Implemented-file trace and scope classification.",
+      "scope": "TASK_EVIDENCE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/FINAL_REPORT.md",
+      "reason": "Final owner+technical report with boundaries and KPD slice.",
+      "scope": "TASK_EVIDENCE"
+    },
+    {
+      "path": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/closure_receipt.json",
+      "reason": "Closure metadata for commit/push/remote/worktree verification.",
+      "scope": "TASK_EVIDENCE"
+    }
+  ],
+  "generated_artifact_sets": [
+    {
+      "path_glob": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_requests/*.json",
+      "count": 34,
+      "scope": "TRANSFER_DATA_GENERATED",
+      "reason": "File-backed bounded action requests emitted by runner/build/validator/smoke loops."
+    },
+    {
+      "path_glob": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/action_results/*.json",
+      "count": 62,
+      "scope": "TRANSFER_DATA_GENERATED",
+      "reason": "Result receipts with DRY_RUN_OK/BLOCKED/NOT_READY and evidence refs."
+    },
+    {
+      "path_glob": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/DATA/ledgers/transfer_action_runner_ledger.jsonl",
+      "count": 62,
+      "scope": "TRANSFER_DATA_GENERATED",
+      "reason": "Append-only ledger events for bounded runner actions."
+    },
+    {
+      "path_glob": "IMPERIUM_NEW_GENERATION/SANCTUM_NG/TRANSFER_CONSOLE/REPORTS/TASK-20260523-NEWGEN-SANCTUM-TRANSFER-ACTION-RUNNER-VM3-V0_1/ACTION_LOGS/TRANSFER_ACTION_RUNNER_REPORTS/*.json",
+      "count": 23,
+      "scope": "TASK_EVIDENCE_GENERATED",
+      "reason": "Per-action runner reports used for bounded traceability."
+    }
+  ],
+  "forbidden_paths_touched": false,
+  "notes": [
+    "No arbitrary shell acceptance path introduced.",
+    "No production remote orchestration claim introduced.",
+    "All touched paths remain under IMPERIUM_NEW_GENERATION."
+  ]
+}

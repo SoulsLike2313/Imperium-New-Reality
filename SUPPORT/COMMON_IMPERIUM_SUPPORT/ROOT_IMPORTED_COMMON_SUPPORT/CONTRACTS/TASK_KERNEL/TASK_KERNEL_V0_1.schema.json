@@ -1,0 +1,283 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "NewGen Task Kernel V0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "schema_version",
+    "owner_intent",
+    "task_title",
+    "status",
+    "created_at_utc",
+    "scope",
+    "allowed_paths",
+    "forbidden_paths",
+    "required_organs",
+    "organ_packet_set_ref",
+    "required_skills",
+    "stage_map",
+    "run_policy",
+    "evidence_policy",
+    "owner_questions",
+    "final_bundle_policy",
+    "truth_status",
+    "limitations",
+    "live_orchestration"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "owner_intent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "raw_text",
+        "summary",
+        "language"
+      ],
+      "properties": {
+        "raw_text": {
+          "type": "string",
+          "minLength": 2
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 2
+        },
+        "language": {
+          "type": "string",
+          "enum": [
+            "RU",
+            "EN"
+          ]
+        }
+      }
+    },
+    "task_title": {
+      "type": "string",
+      "minLength": 3
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "DRAFT",
+        "REGISTERED",
+        "SCOPING_WITH_ORGANS",
+        "READY_FOR_SERVITOR",
+        "RUNNING",
+        "FAILED_NEEDS_RERUN",
+        "BLOCKED_NEEDS_OWNER",
+        "PASSED_WITH_WARNINGS",
+        "PASSED_STRICT",
+        "QUARANTINED",
+        "CLOSED"
+      ]
+    },
+    "created_at_utc": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "purpose",
+        "non_goals"
+      ],
+      "properties": {
+        "mode": {
+          "type": "string"
+        },
+        "purpose": {
+          "type": "string"
+        },
+        "non_goals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "allowed_paths": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_paths": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_organs": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "ASTRONOMICON",
+          "OFFICIO_AGENTIS",
+          "DOCTRINARIUM",
+          "ADMINISTRATUM",
+          "MECHANICUS",
+          "INQUISITION",
+          "STRATEGIUM",
+          "SCHOLA_IMPERIALIS"
+        ]
+      }
+    },
+    "organ_packet_set_ref": {
+      "type": "string",
+      "minLength": 5
+    },
+    "required_skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stage_map": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stage_id",
+          "owner_organ",
+          "entry_state",
+          "exit_state",
+          "exit_criteria"
+        ],
+        "properties": {
+          "stage_id": {
+            "type": "string"
+          },
+          "owner_organ": {
+            "type": "string"
+          },
+          "entry_state": {
+            "type": "string"
+          },
+          "exit_state": {
+            "type": "string"
+          },
+          "exit_criteria": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "run_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_reruns",
+        "stop_on_forbidden_path_touch",
+        "stop_on_missing_evidence",
+        "owner_escalation_on_blocked"
+      ],
+      "properties": {
+        "max_reruns": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "stop_on_forbidden_path_touch": {
+          "type": "boolean"
+        },
+        "stop_on_missing_evidence": {
+          "type": "boolean"
+        },
+        "owner_escalation_on_blocked": {
+          "type": "boolean"
+        }
+      }
+    },
+    "evidence_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "required_receipts",
+        "proof_record_required",
+        "validator_required"
+      ],
+      "properties": {
+        "required_receipts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "proof_record_required": {
+          "type": "boolean"
+        },
+        "validator_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "owner_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "final_bundle_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner_report_language",
+        "auto_commit_push_clean_required",
+        "bundle_report_path_required"
+      ],
+      "properties": {
+        "owner_report_language": {
+          "type": "string",
+          "enum": [
+            "RU"
+          ]
+        },
+        "auto_commit_push_clean_required": {
+          "type": "boolean"
+        },
+        "bundle_report_path_required": {
+          "type": "boolean"
+        }
+      }
+    },
+    "truth_status": {
+      "type": "string",
+      "enum": [
+        "NON_LIVE_FOUNDATION",
+        "LIVE_UNVERIFIED",
+        "LIVE_VERIFIED"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "live_orchestration": {
+      "type": "boolean"
+    }
+  }
+}
+

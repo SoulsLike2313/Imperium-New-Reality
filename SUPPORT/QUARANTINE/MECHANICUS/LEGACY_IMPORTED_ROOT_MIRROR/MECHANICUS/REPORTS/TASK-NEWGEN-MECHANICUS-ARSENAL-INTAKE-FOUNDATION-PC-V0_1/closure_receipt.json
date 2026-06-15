@@ -1,0 +1,41 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-ARSENAL-INTAKE-FOUNDATION-PC-V0_1",
+  "created_at_utc": "2026-05-24T06:10:00Z",
+  "schema_version": "imperium.newgen.mechanicus.arsenal.closure_receipt.v0_1",
+  "repo_root": "E:/IMPERIUM",
+  "starting_head": "c818551ca53a24a9fb658d45246456442eb8bd0c",
+  "ending_head": "TO_BE_RECORDED_BY_POST_COMMIT_GIT_HEAD",
+  "verdict": "PASS_WITH_WARNINGS",
+  "status_distribution": {
+    "CANDIDATE": 9,
+    "SANDBOX": 7,
+    "CANON": 4,
+    "QUARANTINE": 0,
+    "REJECTED": 0
+  },
+  "reports": {
+    "final_report": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-INTAKE-FOUNDATION-PC-V0_1/FINAL_REPORT.md",
+    "manifest": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-INTAKE-FOUNDATION-PC-V0_1/arsenal_foundation_manifest.json",
+    "checker_report": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-INTAKE-FOUNDATION-PC-V0_1/arsenal_foundation_check_report.json",
+    "seed_cards_index": "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-ARSENAL-INTAKE-FOUNDATION-PC-V0_1/seed_cards_index.json"
+  },
+  "acceptance": {
+    "arsenal_root_exists": true,
+    "policy_exists": true,
+    "intake_protocol_exists": true,
+    "status_model_exists": true,
+    "schemas_parse": true,
+    "registry_parse": true,
+    "category_registry_parse": true,
+    "seed_cards_at_least_12": true,
+    "canon_without_evidence": false,
+    "checker_present": true,
+    "no_install_or_network_provisioning": true,
+    "no_visual_cockpit_changes": true
+  },
+  "warnings": [
+    "External tools remain CANDIDATE/SANDBOX pending dedicated admission tasks.",
+    "Some schemas are minimal and can be hardened in next gate task."
+  ],
+  "next_allowed_task": "TASK-NEWGEN-VERIFICATION-SPINE-CONVERGENCE-PC-V0_1"
+}

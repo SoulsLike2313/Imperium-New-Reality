@@ -1,0 +1,46 @@
+{
+  "task_id": "TASK-20260518-BUILD-ADMINISTRATUM-AGENT-V1-FROM-TARGET-FORM",
+  "current_head": "c1f9cbf76dd591a13116a840b058f05826ee0551",
+  "gatepack_path": "AGENTS.md + Doctrinarium universal gates + local task contract",
+  "gatepack_sha256": "N/A_FILE_SET",
+  "read_gates": [
+    "GATE-U00-GIT-TRUTH",
+    "GATE-U01-ROLE-ACK",
+    "GATE-U02-SCOPE-BOUNDARY",
+    "GATE-U04-EVIDENCE-RECEIPT",
+    "GATE-U05-STOP-CONDITIONS",
+    "GATE-U08-REPO-PURITY",
+    "GATE-U09-NO-FAKE-GREEN",
+    "GATE-U12-REPORT-OUTPUT-BUDGET",
+    "GATE-U13-PYTHON-TYPE-SAFETY",
+    "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+    "GATE-U21-COMMAND-CHUNKING"
+  ],
+  "accepted_stop_conditions": [
+    "HEAD mismatch",
+    "required files missing",
+    "forbidden path mutation needed",
+    "receipt evidence cannot be generated"
+  ],
+  "scope_boundary": "IMPERIUM_NEW_GENERATION/**",
+  "touched_paths": [
+    "IMPERIUM_NEW_GENERATION/ORGAN_AGENTS/ADMINISTRATUM_AGENT/**",
+    "IMPERIUM_NEW_GENERATION/RUNS/ADMINISTRATUM_AGENT/.gitignore",
+    ".gitkeep"
+  ],
+  "forbidden_paths": [
+    "ORGANS/**",
+    "SANCTUM/**",
+    "IMPERIUM_TEST_VERSION/**",
+    "backend/server/runtime outside New Generation"
+  ],
+  "expected_receipts": [
+    "STAGE_0_READING_RECEIPT_V0_1.json",
+    "NEW_GENERATION_ADMINISTRATUM_AGENT_V1_IMPLEMENTATION_RECEIPT_V0_1.json",
+    "check_all_report.json in RUNS"
+  ],
+  "repo_recon_required": true,
+  "script_absorption_required": true,
+  "clarification_needed": false,
+  "verdict": "PASS"
+}

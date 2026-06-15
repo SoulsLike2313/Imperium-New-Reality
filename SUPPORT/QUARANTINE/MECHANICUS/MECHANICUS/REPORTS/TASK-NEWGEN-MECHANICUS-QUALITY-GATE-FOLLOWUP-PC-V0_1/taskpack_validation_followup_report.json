@@ -1,0 +1,61 @@
+{
+  "source_kind": "zip",
+  "source_path": "C:\\Users\\PC\\Downloads\\TASK-NEWGEN-MECHANICUS-QUALITY-GATE-FOLLOWUP-PC-V0_1_DOSSIER.zip",
+  "entries_count": 11,
+  "required_files": [
+    "TASK.md",
+    "TASK.json",
+    "ACCEPTANCE_GATES.md",
+    "00_START_HERE_SERVITOR.md"
+  ],
+  "required_templates": [
+    "TEMPLATES/closure_receipt.template.json",
+    "TEMPLATES/quality_gate_report.template.json"
+  ],
+  "recommended_files": [
+    "QUALITY_GATE_SCOPE.md",
+    "QUALITY_GATE_SCOPE.json",
+    "OFFICIO_MECHANICUS_COMBINED_GATE.md",
+    "GHOST_EVOLVE_BATCH_002_CONTRACT.md",
+    "FINAL_REPORT_TEMPLATE.md",
+    "_MANIFEST.json"
+  ],
+  "missing_required_files": [],
+  "missing_required_templates": [
+    "TEMPLATES/quality_gate_report.template.json"
+  ],
+  "missing_recommended_files": [
+    "QUALITY_GATE_SCOPE.md",
+    "QUALITY_GATE_SCOPE.json",
+    "OFFICIO_MECHANICUS_COMBINED_GATE.md",
+    "GHOST_EVOLVE_BATCH_002_CONTRACT.md"
+  ],
+  "json_checks": [
+    {
+      "path": "TASK.json",
+      "parse_status": "PASS",
+      "payload_type": "dict"
+    },
+    {
+      "path": "_MANIFEST.json",
+      "parse_status": "PASS",
+      "payload_type": "dict"
+    },
+    {
+      "path": "TEMPLATES/closure_receipt.template.json",
+      "parse_status": "PASS",
+      "payload_type": "dict"
+    }
+  ],
+  "warnings": [
+    "missing_recommended:QUALITY_GATE_SCOPE.md,QUALITY_GATE_SCOPE.json,OFFICIO_MECHANICUS_COMBINED_GATE.md,GHOST_EVOLVE_BATCH_002_CONTRACT.md"
+  ],
+  "errors": [
+    "missing_templates:TEMPLATES/quality_gate_report.template.json"
+  ],
+  "verdict": "FAIL",
+  "raw_dump_status": "COMPACT_ONLY",
+  "task_id": "TASK-NEWGEN-MECHANICUS-QUALITY-GATE-FOLLOWUP-PC-V0_1",
+  "generated_at_utc": "2026-05-24T22:14:11Z",
+  "checker": "mechanicus_taskpack_validator_v0_1.py"
+}

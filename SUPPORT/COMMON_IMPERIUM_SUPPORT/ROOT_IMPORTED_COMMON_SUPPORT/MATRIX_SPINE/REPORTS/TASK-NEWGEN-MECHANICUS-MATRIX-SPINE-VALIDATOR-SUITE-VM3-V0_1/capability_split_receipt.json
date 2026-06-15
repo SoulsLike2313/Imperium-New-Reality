@@ -1,0 +1,65 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1",
+  "timestamp_utc": "2026-05-29T22:45:13Z",
+  "items": [
+    {
+      "output_or_action": "Matrix Spine validator suite implementation",
+      "classification": "LOCAL_SCRIPT_FIRST",
+      "evidence": "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/validate_matrix_spine.py",
+      "owner_organ": "Mechanicus",
+      "gap_or_replay": "replay: bash IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_matrix_spine_validation.sh"
+    },
+    {
+      "output_or_action": "Git sync, commit, push corridor",
+      "classification": "LOCAL_MANUAL_COMMAND",
+      "evidence": "git pull --ff-only, git commit, git push receipts",
+      "owner_organ": "Administratum",
+      "gap_or_replay": "manual git operations required per task policy"
+    },
+    {
+      "output_or_action": "Matrix schema alignment policy",
+      "classification": "CANDIDATE_SCRIPT_FIRST",
+      "evidence": "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/SCHEMAS/matrix_definition_schema.json",
+      "owner_organ": "Doctrinarium",
+      "gap_or_replay": "candidate until canon admission"
+    },
+    {
+      "output_or_action": "Interpretive scoring rationale for readiness percentages",
+      "classification": "AGENT_REASONING_ONLY",
+      "evidence": "efficiency_delta_report.md narrative interpretation",
+      "owner_organ": "Strategium",
+      "gap_or_replay": "needs future automated scorer to become script-first"
+    },
+    {
+      "output_or_action": "External lookup requirement",
+      "classification": "EXTERNAL_RESEARCH",
+      "evidence": "not used in this task; repository-local authority only",
+      "owner_organ": "Astronomicon",
+      "gap_or_replay": "none"
+    },
+    {
+      "output_or_action": "Owner acceptance of final verdict and follow-up task",
+      "classification": "OWNER_MANUAL_CONFIRMATION",
+      "evidence": "final RU owner response",
+      "owner_organ": "Officio Agentis",
+      "gap_or_replay": "owner decision required"
+    },
+    {
+      "output_or_action": "Full start-task runtime corridor proof",
+      "classification": "FUTURE_CAPABILITY_GAP",
+      "evidence": "red_team_verdict.json downgrade rules",
+      "owner_organ": "Inquisition",
+      "gap_or_replay": "future task must provide end-to-end runtime evidence"
+    }
+  ],
+  "summary": {
+    "local_script_first_count": 1,
+    "agent_reasoning_only_count": 1,
+    "future_capability_gap_count": 1,
+    "notes": [
+      "System capability claims are constrained to replayable artifacts.",
+      "Reasoning-only conclusions are explicitly separated from runtime capability."
+    ]
+  },
+  "verdict": "PASS_WITH_WARNINGS"
+}

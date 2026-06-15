@@ -1,0 +1,59 @@
+{
+  "matrix_id": "MOJIBAKE_DETECTION_MATRIX",
+  "version": "0.1-candidate",
+  "owner_organ": "Inquisition",
+  "support_organs": [
+    "Mechanicus",
+    "Officio Agentis",
+    "Astronomicon"
+  ],
+  "purpose": "Defines repository-wide mojibake signature detection and report contract requirements.",
+  "criteria": [
+    {
+      "criterion_id": "MD-01_NAMED_SIGNATURE_DETECTION",
+      "owner_organ": "INQUISITION",
+      "evidence_required": [
+        "inquisition_mojibake_filter_report.json",
+        "language_encoding_fixture_results.json"
+      ],
+      "pass_logic": "Configured mojibake signatures are detected by tool and fixtures.",
+      "warn_logic": "Detection works but signature coverage requires expansion.",
+      "block_logic": "Required signature families are not detected.",
+      "caps": [
+        "CAP_MOJIBAKE_SIGNATURE_NOT_DETECTED"
+      ],
+      "remediation_path": "Extend signature list and validate with fixture cases."
+    },
+    {
+      "criterion_id": "MD-02_MIXED_ENCODING_PATTERN_DETECTION",
+      "owner_organ": "INQUISITION",
+      "evidence_required": [
+        "inquisition_mojibake_filter_report.json"
+      ],
+      "pass_logic": "Mixed-encoding patterns are flagged.",
+      "warn_logic": "Only legacy files trigger the heuristic.",
+      "block_logic": "New canonical mixed-encoding patterns pass undetected.",
+      "caps": [
+        "CAP_MOJIBAKE_SIGNATURE_NOT_DETECTED"
+      ],
+      "remediation_path": "Tune mixed-pattern heuristic and add targeted tests."
+    },
+    {
+      "criterion_id": "MD-03_FILTER_OUTPUT_CONTRACT",
+      "owner_organ": "INQUISITION",
+      "evidence_required": [
+        "inquisition_mojibake_filter_report.json",
+        "inquisition_mojibake_filter_report.md"
+      ],
+      "pass_logic": "Report contains path, line, hit_type, severity, owner_organ, and verdict.",
+      "warn_logic": "Report exists but optional metadata is incomplete.",
+      "block_logic": "Report contract fields are missing or malformed.",
+      "caps": [
+        "CAP_MOJIBAKE_FILTER_MISSING"
+      ],
+      "remediation_path": "Restore report schema fields and rerun filter."
+    }
+  ],
+  "current_status": "CANDIDATE_NOT_CANON",
+  "next_action": "Keep signature table under script-first governance with fixture coverage."
+}

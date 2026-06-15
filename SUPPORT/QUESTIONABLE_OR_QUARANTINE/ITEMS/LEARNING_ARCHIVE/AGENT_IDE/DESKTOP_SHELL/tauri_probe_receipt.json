@@ -1,0 +1,71 @@
+{
+  "task_id": "TASK-NEWGEN-AGENT-IDE-WEB-SHELL-REACT-TAURI-PLAYWRIGHT-PARITY-PC-V0_1",
+  "timestamp_utc": "2026-05-28T15:16:16.125940+00:00",
+  "status": "PASS",
+  "probes": [
+    {
+      "name": "node",
+      "command": "node --version",
+      "available": true,
+      "exit_code": 0,
+      "stdout": "v24.15.0",
+      "stderr": ""
+    },
+    {
+      "name": "npm",
+      "command": "npm.cmd --version",
+      "available": true,
+      "exit_code": 0,
+      "stdout": "11.12.1",
+      "stderr": ""
+    },
+    {
+      "name": "npx_playwright",
+      "command": "npx.cmd playwright --version",
+      "available": true,
+      "exit_code": 0,
+      "stdout": "Version 1.60.0",
+      "stderr": ""
+    },
+    {
+      "name": "rustc",
+      "command": "rustc --version",
+      "available": true,
+      "exit_code": 0,
+      "stdout": "rustc 1.95.0 (59807616e 2026-04-14)",
+      "stderr": ""
+    },
+    {
+      "name": "cargo",
+      "command": "cargo --version",
+      "available": true,
+      "exit_code": 0,
+      "stdout": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)",
+      "stderr": ""
+    },
+    {
+      "name": "cargo_tauri",
+      "command": "cargo tauri --version",
+      "available": true,
+      "exit_code": 101,
+      "stdout": "",
+      "stderr": "error: no such command: `tauri`\n\nhelp: a command with a similar name exists: `miri`\n\nhelp: view all installed commands with `cargo --list`\nhelp: find a package to install `tauri` with `cargo search cargo-tauri`"
+    },
+    {
+      "name": "tauri_cmd",
+      "command": "tauri --version",
+      "available": false,
+      "exit_code": null,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "electron",
+      "command": "electron --version",
+      "available": false,
+      "exit_code": null,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

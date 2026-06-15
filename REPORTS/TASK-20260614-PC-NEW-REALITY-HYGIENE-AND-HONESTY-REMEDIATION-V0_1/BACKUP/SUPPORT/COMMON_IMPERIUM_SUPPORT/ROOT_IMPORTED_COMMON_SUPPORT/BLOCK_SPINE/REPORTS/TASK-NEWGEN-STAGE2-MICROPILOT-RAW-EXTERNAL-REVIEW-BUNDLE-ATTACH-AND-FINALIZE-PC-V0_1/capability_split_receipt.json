@@ -1,0 +1,31 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE2-MICROPILOT-RAW-EXTERNAL-REVIEW-BUNDLE-ATTACH-AND-FINALIZE-PC-V0_1",
+  "timestamp_utc": "2026-06-01T13:27:59Z",
+  "LOCAL_SCRIPT_FIRST": [
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TOOLS/astronomicon_task_id_resolver_v0_1.py"
+  ],
+  "LOCAL_MANUAL_COMMAND": [
+    "git rev-parse --abbrev-ref HEAD",
+    "git rev-parse HEAD",
+    "git rev-parse origin/master",
+    "git status --short",
+    "git stash push -u -m task-start-sync-<timestamp>",
+    "git pull --ff-only origin master",
+    "git stash pop"
+  ],
+  "CANDIDATE_SCRIPT_FIRST": [
+    "hash-and-zip-readability verifier for raw external review bundles (task-local receipt generation)"
+  ],
+  "AGENT_REASONING_ONLY": [
+    "Cap adjudication narrative based on verified evidence and taskpack gates",
+    "Red-team downgrade decision for residual global caps"
+  ],
+  "EXTERNAL_RESEARCH": [],
+  "OWNER_MANUAL_CONFIRMATION": [
+    "Owner confirmed conflict-resolution policy after sync"
+  ],
+  "FUTURE_CAPABILITY_GAP": [
+    "No launcher implementation in this task; only candidate registration artifacts produced",
+    "Global clean PASS remains disallowed by carried caps"
+  ]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "risk_id": "RISK-DEPENDENCY-CREEP",
+    "severity": "HIGH",
+    "description": "External agent frameworks could become hidden host architecture.",
+    "mitigation": "OSS introduced now NONE; every future dependency needs Owner approval, tracker, receipt, and rollback."
+  },
+  {
+    "risk_id": "RISK-RUNTIME-DIRTY-TREE",
+    "severity": "HIGH",
+    "description": "Agent runs can modify tracked runtime outputs and dirty Git.",
+    "mitigation": "Use RUNS/RUNTIME ignored layer; architecture files separate from generated outputs."
+  },
+  {
+    "risk_id": "RISK-FREE-AGENT-CHATTER",
+    "severity": "MEDIUM",
+    "description": "Uncontrolled multi-agent discussion can create noise and cascading hallucination.",
+    "mitigation": "Use typed route cards, checkpoints, organ contracts, and output schemas."
+  },
+  {
+    "risk_id": "RISK-PRETTY-FAKE-GREEN",
+    "severity": "HIGH",
+    "description": "A beautiful CLI can hide missing evidence or failed checks.",
+    "mitigation": "No green status without receipt/check; visual output is presentation only."
+  },
+  {
+    "risk_id": "RISK-CONCURRENCY-CONFLICT",
+    "severity": "MEDIUM",
+    "description": "Parallel stateful agents can write conflicting state.",
+    "mitigation": "Single-writer by default; concurrency admission required."
+  },
+  {
+    "risk_id": "RISK-TRACE-BLOAT",
+    "severity": "MEDIUM",
+    "description": "Route trajectories and logs can become huge.",
+    "mitigation": "Output budget, JSONL traces, compact summaries, retention policy."
+  }
+]

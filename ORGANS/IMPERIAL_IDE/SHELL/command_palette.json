@@ -1,0 +1,573 @@
+{
+  "schema_version": "imperial_ide.command_palette.v0_3",
+  "task_id": "TASK-NEWREALITY-IMPERIAL-IDE-OPERATIONAL-STATION-TRUTH-FIX-DAILY-OPS-SHELL-PC-V0_1",
+  "commands": [
+    {
+      "command": "doctor",
+      "description": "Run shell and bridge diagnostics",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "status",
+      "description": "Show governance, git, and current task status",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "dashboard",
+      "description": "Show all panel summaries",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "tasks",
+      "description": "List registered Astronomicon tasks",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "current-task",
+      "description": "Show current expected task",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "reports",
+      "description": "List latest report directories",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "latest-report",
+      "description": "Show latest report directory",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "receipts",
+      "description": "List receipt files",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "tools",
+      "description": "List Mechanicus tools",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "capabilities",
+      "description": "List Mechanicus capabilities",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "policy",
+      "description": "Show Mechanicus command policy",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "extensions",
+      "description": "Show extension registry validation",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "workspace",
+      "description": "Show workspace state",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "validate",
+      "description": "Validate shell JSON and model files",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "dry-run-tool",
+      "description": "Create a Mechanicus dry-run invocation receipt",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": true,
+      "real_execution": false
+    },
+    {
+      "command": "help",
+      "description": "Show command palette",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "workbench",
+      "description": "Show Workbench integration status",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "workbench-tui",
+      "description": "Return the Workbench TUI operator launch plan",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "workbench-gui",
+      "description": "Return the candidate GUI operator launch plan",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "workbench-smoke",
+      "description": "Run fixed Workbench TUI and structural GUI smokes",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "workbench-status",
+      "description": "Show normalized Workbench candidate status",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "warp",
+      "description": "Show WARP integration status",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "warp-open",
+      "description": "Return an isolated WARP session launch plan",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "warp-list",
+      "description": "List local ignored WARP sessions",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "warp-status",
+      "description": "Show WARP hot-zone candidate status",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "warp-gate",
+      "description": "Return the release-manifest gate launch plan",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "warp-smoke",
+      "description": "Run fixed WARP isolation and fake-green smoke",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "metaos",
+      "description": "Show MetaOS orchestration candidate status",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "metaos-smoke",
+      "description": "Run fixed MetaOS deterministic-stub smoke",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "metaos-route",
+      "description": "Return a deterministic stub route plan",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "metaos-servitor",
+      "description": "Return a one-shot thin-servitor dry-run plan",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "metaos-bundle-gate",
+      "description": "Run Administratum HELD and RELEASED gate smoke",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "metaos-chronicle",
+      "description": "Return the ignored-runtime chronicle plan",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "ops",
+      "description": "Show OPS task console integration status",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "ops-smoke",
+      "description": "Run OPS task console smoke",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "task-console",
+      "description": "Show Task Console launch plan and status",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "classify-task",
+      "description": "Classify a sample TaskIntent without crashing",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "build-taskpack",
+      "description": "Build an Astronomicon-compatible sample taskpack under OPS/STAGING",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "register-taskpack",
+      "description": "Dry-run register a sample taskpack under OPS/STAGING",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "launch-card",
+      "description": "Render a launch card for a dry-run built taskpack",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "lifecycle",
+      "description": "Show read-only lifecycle state for the current task",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "lifecycle-smoke",
+      "description": "Run OPS lifecycle smoke and fake-green trap",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "git-closure",
+      "description": "Show OPS git closure status without pushing",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "task-templates",
+      "description": "Show reusable OPS task template library",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "station",
+      "description": "Show the unified operational truth dashboard",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "launcher",
+      "description": "Show Imperial Launcher Home launch command and owner-facing personal cockpit state",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "launcher-smoke",
+      "description": "Validate Imperial Launcher Home headless smoke surface",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "station-tui",
+      "description": "Show the primary Workbench TUI launch command",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "station-gui",
+      "description": "Show the Workbench GUI launch command",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "station-smoke",
+      "description": "Run station workflow and lifecycle smokes",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "station-ux-smoke",
+      "description": "Run explicit Station UX report-writing smoke",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "agents",
+      "description": "Show the twelve-role agent and servitor registry",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "agent-status",
+      "description": "Show one agent card by agent id",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": true,
+      "real_execution": false
+    },
+    {
+      "command": "new-task",
+      "description": "Create and classify a local task intent",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "validate-taskpack",
+      "description": "Validate a generated taskpack or build and validate a sample",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "taskpacks",
+      "description": "List generated Station taskpacks",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "taskpack-manager",
+      "description": "Show the Taskpack Manager board",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "taskpack-list",
+      "description": "List generated Station taskpacks with index and status",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "taskpack-inspect",
+      "description": "Inspect the latest or selected generated Station taskpack",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "taskpack-validate",
+      "description": "Validate the latest or selected generated Station taskpack",
+      "risk_class": "LOW_DRY_RUN",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "taskpack-open",
+      "description": "Print a copy-ready command for opening a generated taskpack folder",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "taskpack-copy-path",
+      "description": "Print a copy-ready command for copying a generated TASKPACK.zip path",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "handoff-card",
+      "description": "Render a Servitor Prime external handoff card",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "show-json",
+      "description": "Show full JSON for the Station snapshot or a repo JSON path",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "full-json",
+      "description": "Alias for full JSON Station view",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "show-summary",
+      "description": "Show a human summary before raw JSON",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "path-actions",
+      "description": "Show copy-ready open/copy commands for a repo path",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "dirty-classifier",
+      "description": "Classify current dirty paths without staging or deletion",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "live-registration-promote",
+      "description": "Review live registration promotion; default is no live run",
+      "risk_class": "HIGH_LOCAL_GATED",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "daily-ops",
+      "description": "Show the Daily Operations board",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "next-action",
+      "description": "Show the next recommended operator action",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "operator-board",
+      "description": "Alias for the Daily Operations board",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "task-flow",
+      "description": "Show the Daily Operations task workflow",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "task-flow-smoke",
+      "description": "Run Daily Operations structural smoke",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "reports-latest",
+      "description": "Show latest station-visible reports",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "receipts-latest",
+      "description": "Show latest station-visible receipts",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "safety",
+      "description": "Show explicit safety center state",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "continuity-preview",
+      "description": "Preview Administratum Continuity Pack contents without writing outputs",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "continuity-build",
+      "description": "Build scoped Administratum Continuity Pack ZIP with manifest, receipt, owner summary, and Logos Prime handoff",
+      "risk_class": "LOW_SCOPED_WRITE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "continuity-smoke",
+      "description": "Validate Continuity Pack builder and current repo context without creating a pack",
+      "risk_class": "LOW_LOCAL_SMOKE",
+      "argument_required": false,
+      "real_execution": false
+    },
+    {
+      "command": "continuity-open",
+      "description": "Return safe local open/copy actions for the Continuity Pack folder",
+      "risk_class": "LOW_READ_ONLY",
+      "argument_required": false,
+      "real_execution": false
+    }
+  ]
+}

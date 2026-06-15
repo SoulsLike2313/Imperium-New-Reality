@@ -1,0 +1,379 @@
+:root {
+  --bg-0: #04070d;
+  --bg-1: #0b1220;
+  --bg-2: #121a2b;
+  --ink-main: #ebf2ff;
+  --ink-soft: #a9b6cc;
+  --line: #2a3a57;
+  --panel: #0f1624;
+  --panel-alt: #151f33;
+  --pass: #52d7a3;
+  --warn: #f7bf68;
+  --block: #ff7f7f;
+  --mono: "JetBrains Mono", "Consolas", "Lucida Console", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--ink-main);
+  font-family: var(--mono);
+  background:
+    radial-gradient(980px 420px at 8% -12%, #2b4f8f59 0%, transparent 70%),
+    radial-gradient(880px 360px at 102% -20%, #7b5a2d5c 0%, transparent 72%),
+    linear-gradient(150deg, var(--bg-0), var(--bg-1) 45%, var(--bg-2));
+  padding: 1rem;
+}
+
+.cockpit-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to right, #ffffff0a 1px, transparent 1px),
+    linear-gradient(to bottom, #ffffff09 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(circle at center, #000 45%, transparent 100%);
+  opacity: 0.55;
+}
+
+.truth-strip,
+.organ-card,
+.owner-zone,
+.evidence-card,
+.action-drawer {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: linear-gradient(180deg, var(--panel-alt), var(--panel));
+  box-shadow:
+    inset 0 0 0 1px #ffffff05,
+    0 12px 34px #0000003f;
+}
+
+.truth-strip {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr auto;
+  gap: 0.85rem;
+  padding: 0.95rem;
+}
+
+.kicker {
+  margin: 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: #9bc4ff;
+}
+
+.truth-main h1 {
+  margin: 0.18rem 0 0.25rem;
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
+
+.truth-meta {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid #334766;
+  border-radius: 10px;
+  background: #0b1322;
+}
+
+.truth-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+  font-size: 0.72rem;
+}
+
+.truth-row span {
+  color: var(--ink-soft);
+}
+
+.truth-row code {
+  font-size: 0.66rem;
+  color: #d8e7ff;
+}
+
+.truth-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.45rem;
+}
+
+.pill {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid #39527a;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.68rem;
+  white-space: nowrap;
+}
+
+.pill-seed {
+  border-color: #8d6b39;
+  background: #382711;
+  color: #ffdfaa;
+}
+
+.pill-readonly {
+  border-color: #3f8268;
+  background: #0f322a;
+  color: #bdf1de;
+}
+
+.lang-btn,
+.open-drawer-btn,
+.drawer-close-btn {
+  border: 1px solid #486896;
+  border-radius: 9px;
+  background: #1c355c;
+  color: var(--ink-main);
+  font-family: inherit;
+  font-size: 0.72rem;
+  padding: 0.36rem 0.62rem;
+  cursor: pointer;
+}
+
+.lang-btn:hover,
+.open-drawer-btn:hover,
+.drawer-close-btn:hover {
+  transform: translateY(-1px);
+}
+
+.status-pass {
+  color: var(--pass);
+}
+
+.status-warn {
+  color: var(--warn);
+}
+
+.status-blocked {
+  color: var(--block);
+}
+
+.center-layout {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.9rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(300px, 0.9fr);
+  gap: 0.8rem;
+}
+
+.organs-zone h2,
+.owner-zone h2,
+.evidence-head h2,
+.evidence-card h3 {
+  margin: 0;
+}
+
+.organs-zone h2,
+.owner-zone h2,
+.evidence-head h2 {
+  font-size: 0.92rem;
+  margin-bottom: 0.5rem;
+}
+
+.owner-zone {
+  padding: 0.8rem;
+}
+
+.zone-note {
+  margin: 0.42rem 0 0.66rem;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.organ-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.72rem;
+}
+
+.organ-card {
+  padding: 0.72rem;
+}
+
+.organ-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.organ-name {
+  margin: 0;
+  font-size: 0.83rem;
+}
+
+.organ-status {
+  font-size: 0.68rem;
+  border: 1px solid #385072;
+  border-radius: 999px;
+  padding: 0.16rem 0.46rem;
+  color: #d8e8ff;
+  background: #0a1220;
+}
+
+.organ-fields {
+  margin: 0.58rem 0;
+  display: grid;
+  gap: 0.44rem;
+}
+
+.organ-fields div {
+  display: grid;
+  gap: 0.14rem;
+}
+
+.organ-fields dt {
+  color: var(--ink-soft);
+  font-size: 0.67rem;
+}
+
+.organ-fields dd {
+  margin: 0;
+  font-size: 0.71rem;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.organ-warnings {
+  white-space: pre-line;
+}
+
+.owner-queue-list,
+.history-list,
+.drawer-actions-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.52rem;
+}
+
+.owner-queue-list li,
+.history-list li,
+.drawer-actions-list li {
+  border: 1px solid #324868;
+  border-radius: 9px;
+  background: #0a1220;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.owner-queue-list strong {
+  color: #cfe4ff;
+}
+
+.evidence-zone {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.85rem;
+}
+
+.evidence-grid {
+  display: grid;
+  gap: 0.72rem;
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.evidence-card {
+  padding: 0.72rem;
+}
+
+.evidence-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 0.82rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border-bottom: 1px solid #2e4364;
+  text-align: left;
+  vertical-align: top;
+  padding: 0.34rem 0.2rem;
+  font-size: 0.67rem;
+  line-height: 1.3;
+}
+
+th {
+  color: #b8cae7;
+  font-size: 0.66rem;
+}
+
+.action-drawer {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: min(430px, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem);
+  padding: 0.82rem;
+  overflow: auto;
+  transform: translateX(110%);
+  transition: transform 220ms ease;
+  z-index: 4;
+}
+
+.action-drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.drawer-head h2 {
+  margin: 0;
+  font-size: 0.84rem;
+}
+
+@media (max-width: 1180px) {
+  .truth-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .center-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .organ-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .evidence-grid {
+    grid-template-columns: 1fr;
+  }
+}

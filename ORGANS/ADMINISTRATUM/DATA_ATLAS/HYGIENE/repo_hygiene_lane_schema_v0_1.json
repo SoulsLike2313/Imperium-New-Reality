@@ -1,0 +1,58 @@
+{
+  "schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Imperium Repo Hygiene Lane Row v0.1",
+  "type": "object",
+  "required": [
+    "path",
+    "organ",
+    "file_kind",
+    "lane",
+    "severity",
+    "recommended_action"
+  ],
+  "properties": {
+    "path": {
+      "type": "string"
+    },
+    "organ": {
+      "type": "string"
+    },
+    "file_kind": {
+      "type": "string"
+    },
+    "lane": {
+      "enum": [
+        "KEEP_SOURCE",
+        "PASSPORT_REQUIRED",
+        "PACK_TO_VAULT_CANDIDATE",
+        "FIXTURE_MANIFEST_REQUIRED",
+        "OWNER_REVIEW_MOVE",
+        "SAFE_RUNTIME_DELETE"
+      ]
+    },
+    "severity": {
+      "enum": [
+        "INFO",
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL"
+      ]
+    },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommended_action": {
+      "type": "string"
+    }
+  }
+}

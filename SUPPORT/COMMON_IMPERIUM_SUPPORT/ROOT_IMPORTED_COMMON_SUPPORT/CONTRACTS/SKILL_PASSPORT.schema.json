@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IMPERIUM Skill Passport",
+  "type": "object",
+  "required": [
+    "skill_id",
+    "version",
+    "owner_domain",
+    "purpose",
+    "when_to_use",
+    "inputs_required",
+    "forbidden_moves",
+    "step_protocol",
+    "proof_required",
+    "common_failures",
+    "self_verdict_rules",
+    "kpd_signals"
+  ],
+  "properties": {
+    "skill_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "owner_domain": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "when_to_use": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "inputs_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_moves": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "step_protocol": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "proof_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "common_failures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "self_verdict_rules": {
+      "type": "object"
+    },
+    "kpd_signals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_contracts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

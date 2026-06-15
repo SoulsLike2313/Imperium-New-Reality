@@ -1,0 +1,57 @@
+[
+  {
+    "id": "L001",
+    "source_problem": "Astronomicon resolver currently synthetic and not production transport-backed.",
+    "affected_organ": "ASTRONOMICON",
+    "problem_type": "ROUTE_GAP",
+    "why_it_matters": "Task-entry reliability for real intake is not yet guaranteed.",
+    "proposed_future_improvement": "Build signed task inbox + resolver with provenance check.",
+    "blocks": "REAL_USE_PILOT",
+    "can_be_script_first": true,
+    "recommended_next_task": "TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-V0_1"
+  },
+  {
+    "id": "L002",
+    "source_problem": "Hard red-team output still depends on manual claim attack quality.",
+    "affected_organ": "INQUISITION",
+    "problem_type": "CAP_GAP",
+    "why_it_matters": "Manual-only red-team can miss optimistic overclaims.",
+    "proposed_future_improvement": "Add structured red-team checker enforcing mandatory attack list.",
+    "blocks": "STAGE2",
+    "can_be_script_first": true,
+    "recommended_next_task": "TASK-NEWGEN-INQUISITION-REDTEAM-CHECKER-V0_1"
+  },
+  {
+    "id": "L003",
+    "source_problem": "Legacy receipt producers remain partially unmigrated.",
+    "affected_organ": "ADMINISTRATUM",
+    "problem_type": "RECEIPT_GAP",
+    "why_it_matters": "External finalization semantics can be inconsistent across old paths.",
+    "proposed_future_improvement": "Run repo-wide producer migration with schema enforcement.",
+    "blocks": "STAGE2",
+    "can_be_script_first": true,
+    "recommended_next_task": "TASK-NEWGEN-LEGACY-RECEIPT-MIGRATION-STAGE2-V0_1"
+  },
+  {
+    "id": "L004",
+    "source_problem": "Task-entry checker is candidate and not canon-admitted.",
+    "affected_organ": "MECHANICUS",
+    "problem_type": "TOOL_GAP",
+    "why_it_matters": "Stage1 proof exists but tool lifecycle is incomplete.",
+    "proposed_future_improvement": "Promote checker via tool card + negative fixtures + Inquisition review.",
+    "blocks": "NONE",
+    "can_be_script_first": true,
+    "recommended_next_task": "TASK-NEWGEN-MECHANICUS-TASK-ENTRY-CHECKER-ADMISSION-V0_1"
+  },
+  {
+    "id": "L005",
+    "source_problem": "Owner-facing RU/EN lane is policy-backed but not globally auto-checked.",
+    "affected_organ": "OFFICIO_AGENTIS",
+    "problem_type": "MATRIX_GAP",
+    "why_it_matters": "Language drift can degrade owner trust and contract compliance.",
+    "proposed_future_improvement": "Introduce final bundle language lane guard.",
+    "blocks": "NONE",
+    "can_be_script_first": true,
+    "recommended_next_task": "TASK-NEWGEN-OFFICIO-LANGUAGE-LANE-GUARD-V0_1"
+  }
+]

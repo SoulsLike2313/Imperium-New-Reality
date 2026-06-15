@@ -1,0 +1,23 @@
+{
+  "law_id": "DOCTRINARIUM_NON_BLOCK_GIT_CLOSURE_LAW_V0_1",
+  "owner_organ": "DOCTRINARIUM",
+  "status": "CANDIDATE_V0_1",
+  "rule": "Every completed non-BLOCK task must commit and push accepted results unless an allowed exception applies.",
+  "required_closure_sequence": [
+    "run_required_checks",
+    "stage_allowed_files_only",
+    "commit_created",
+    "push_completed",
+    "verify_origin_master_equals_head",
+    "write_fresh_commit_push_receipt",
+    "include_commit_links_in_final_response"
+  ],
+  "allowed_exceptions": [
+    "BLOCK",
+    "unsafe_gate",
+    "dirty_conflict_owner_decision_required",
+    "failed_required_checks",
+    "explicit_owner_no_commit_or_no_push_instruction"
+  ],
+  "fake_closure_forbidden": true
+}

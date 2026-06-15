@@ -1,0 +1,116 @@
+{
+  "schema_version": "imperium.zone_inventory.v0_1",
+  "task_id": "TASK-NEWREALITY-IMPERIUM-SELF-ANALYSIS-LIVE-GIT-PICTURE-PC-V0_3",
+  "classification_method": "Exclusive physical-file classification with generated/runtime residue recorded before general active-core classification; no symlink traversal was requested or observed.",
+  "active_core": {
+    "file_count": 1434,
+    "paths": [
+      "AGENTS.md",
+      ".gitignore",
+      "ORGANS/_CORE_GOVERNANCE",
+      "ORGANS/_POST_WORK_RING",
+      "ORGANS/ADMINISTRATUM",
+      "ORGANS/ASTRONOMICON",
+      "ORGANS/CUSTODES",
+      "ORGANS/DOCTRINARIUM",
+      "ORGANS/INQUISITION",
+      "ORGANS/MECHANICUS",
+      "ORGANS/OFFICIO_AGENTIS",
+      "ORGANS/SCHOLA_IMPERIALIS",
+      "ORGANS/STRATEGIUM"
+    ],
+    "boundary": "Excludes organ REPORTS trees and LEGACY_IMPORTED_ROOT_MIRROR trees."
+  },
+  "support": {
+    "file_count": 637,
+    "paths": ["SUPPORT/COMMON_IMPERIUM_SUPPORT"],
+    "allowed_use": "Read/use only where owner and support policy are explicit; historical imported root support is not automatically canon."
+  },
+  "reports": {
+    "file_count": 2483,
+    "paths": ["REPORTS", "ORGANS/*/REPORTS"],
+    "classification": "Evidence and execution history, not current authority by location alone."
+  },
+  "quarantine": {
+    "file_count": 3393,
+    "paths": [
+      "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/ROOT_QUARANTINE",
+      "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_INDEX.json",
+      "SUPPORT/QUESTIONABLE_OR_QUARANTINE/QUARANTINE_POLICY.md",
+      "SUPPORT/QUESTIONABLE_OR_QUARANTINE/README.md"
+    ],
+    "active_use_allowed": false
+  },
+  "learning_archive": {
+    "file_count": 1766,
+    "indexed_item_count": 13,
+    "path": "SUPPORT/QUESTIONABLE_OR_QUARANTINE/ITEMS/LEARNING_ARCHIVE",
+    "active_use_allowed": false,
+    "items": [
+      "AGENT_IDE",
+      "ARCHIVE",
+      "ARTIFACTS",
+      "ORGAN_AGENT_COMMON",
+      "ORGAN_AGENTS",
+      "ORGAN_DIALOGUE",
+      "RESEARCH",
+      "RUNS",
+      "SANCTUM_MINI",
+      "SANCTUM_NG",
+      "SANCTUM_VISUAL_FOUNDRY",
+      "STRESS_TESTS",
+      "VISUAL_BRAIN"
+    ]
+  },
+  "generated_or_runtime": {
+    "file_count": 24,
+    "paths": [
+      "IMPERIUM_NEW_GENERATION",
+      "**/__pycache__",
+      "**/*.pyc",
+      "**/.taskpack_import_tmp"
+    ],
+    "key_risk": "The ignored IMPERIUM_NEW_GENERATION tree contains stale Astronomicon path material and masks default-path drift."
+  },
+  "unknown": {
+    "file_count": 0,
+    "note": "No physical file remained unclassified by the report's explicit path rules. This does not imply semantic canon status."
+  },
+  "candidate_to_canon": [
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE",
+      "status": "CANDIDATE_V0_1",
+      "required_action": "Doctrinarium/Custodes review before canon claim."
+    },
+    {
+      "path": "ORGANS/*/TASK_PARTICIPATION",
+      "status": "ACTIVE_FOR_STAGE1_WITH_CANDIDATE_CONTRACTS",
+      "required_action": "Normalize current-root paths and enforce participation gates with replay."
+    },
+    {
+      "path": "ORGANS/MECHANICUS/TOOLS/MATRIX_SPINE_VALIDATOR_TOOL_CARD.json",
+      "status": "CANDIDATE_RUNTIME_READY_WITH_STALE_ENTRYPOINTS",
+      "required_action": "Repair entrypoints to current SUPPORT/ORGANS layout and replay on PC."
+    },
+    {
+      "path": "ORGANS/MECHANICUS/ARSENAL",
+      "status": "CANDIDATE_ONLY",
+      "required_action": "Keep candidate cards separate from installed/proven capability registry."
+    }
+  ],
+  "safe_to_read_not_safe_to_treat_as_canon": [
+    "REPORTS/**",
+    "ORGANS/*/REPORTS/**",
+    "ORGANS/*/LEGACY_IMPORTED_ROOT_MIRROR/**",
+    "SUPPORT/COMMON_IMPERIUM_SUPPORT/ROOT_IMPORTED_COMMON_SUPPORT/** unless explicitly admitted",
+    "SUPPORT/QUESTIONABLE_OR_QUARANTINE/**",
+    "ORGANS/MECHANICUS/ARSENAL/**/*candidate*",
+    "ignored runtime/cache paths"
+  ],
+  "organ_legacy_mirror": {
+    "file_count": 1905,
+    "path_pattern": "ORGANS/*/LEGACY_IMPORTED_ROOT_MIRROR/**",
+    "active_use_allowed": false,
+    "note": "Readable historical context co-located under organ homes, but excluded from active core in this report."
+  }
+}

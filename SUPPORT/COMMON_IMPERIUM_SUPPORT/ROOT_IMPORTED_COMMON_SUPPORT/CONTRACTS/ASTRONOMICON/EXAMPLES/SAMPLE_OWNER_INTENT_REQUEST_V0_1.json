@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1",
+  "request_id": "REQ-20260521-ASTRONOMICON-TASK-FORMATION-SAMPLE",
+  "owner_intent": {
+    "raw_text": "PC only. Build Astronomicon Task Formation V0.1 so a short owner intent becomes a task kernel draft and stage map preview. Keep it foundation-only with evidence records and validator output.",
+    "language": "EN",
+    "summary": "Astronomicon task formation foundation from short owner intent."
+  },
+  "contour": "PC",
+  "constraints": {
+    "allowed_paths": [
+      "IMPERIUM_NEW_GENERATION/ARCHITECTURE/",
+      "IMPERIUM_NEW_GENERATION/CONTRACTS/",
+      "IMPERIUM_NEW_GENERATION/TASKS/",
+      "IMPERIUM_NEW_GENERATION/TOOLS/",
+      "IMPERIUM_NEW_GENERATION/REPORTS/"
+    ],
+    "forbidden_paths": [
+      "ORGANS/**",
+      "SANCTUM/**",
+      "IMPERIUM_TEST_VERSION/**",
+      ".git/**"
+    ],
+    "auto_commit_push": true,
+    "no_live_runtime_claim": true
+  },
+  "requested_outputs": [
+    "task_kernel_draft",
+    "stage_map_preview",
+    "servitor_start_block",
+    "owner_questions"
+  ],
+  "owner_questions_policy": "Ask only for missing scope boundaries or acceptance-critical ambiguity.",
+  "task_hints": {
+    "suggested_task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+    "priority_tier": "P1",
+    "stage_depth": 5
+  }
+}

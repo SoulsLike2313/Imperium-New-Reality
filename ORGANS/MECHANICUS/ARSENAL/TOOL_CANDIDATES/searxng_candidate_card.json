@@ -1,0 +1,20 @@
+{
+  "candidate_id": "searxng_metasearch_candidate_v0_1",
+  "name": "SearXNG",
+  "type": "search",
+  "category": "search",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Evaluate metasearch as a controlled research ingress for dossier tasks.",
+  "first_safe_use_case": "Sandboxed query replay against a preconfigured local or approved endpoint with captured query and result receipts.",
+  "risk": "Search results can leak private queries or introduce unstable external claims.",
+  "admission_mode": "CANDIDATE_ONLY_NO_INSTALL",
+  "install_status": "NOT_INSTALLED",
+  "receipt_requirements": [
+    "query ledger",
+    "source attribution ledger",
+    "network admission receipt",
+    "privacy review"
+  ],
+  "canon_after_successful_cycles": 10
+}
+

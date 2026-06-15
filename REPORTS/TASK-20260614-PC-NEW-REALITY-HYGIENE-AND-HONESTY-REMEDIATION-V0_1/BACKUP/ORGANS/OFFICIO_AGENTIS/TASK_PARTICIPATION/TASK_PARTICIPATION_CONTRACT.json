@@ -1,0 +1,37 @@
+{
+  "organ": "OFFICIO_AGENTIS",
+  "status": "ACTIVE_FOR_STAGE1",
+  "task_entry_role": "Forces role route, RU owner-facing language policy, and response format discipline for task entry.",
+  "required_inputs": [
+    "Role Route Matrix",
+    "Owner RU Contract"
+  ],
+  "required_outputs": [
+    "Role Entry ACK lane"
+  ],
+  "matrix_responsibilities": [
+    "ROLE_ROUTE_MATRIX",
+    "LLM_FORCE_FOCUS_MATRIX",
+    "LANGUAGE_AUTHORITY_MATRIX"
+  ],
+  "tools_or_receipts_used": [
+    "scripts/officio_agentis_check_all_v0_1.py",
+    "Get-Content IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/ROLE_PACKS/SERVITOR_GHOST_EVOLVE_ROLE.md",
+    "scripts/check_servitor_response_contract_v0_1.py"
+  ],
+  "ide_display_fields": [
+    "status",
+    "language_lane",
+    "role_mode",
+    "focus_packet_state"
+  ],
+  "failure_caps": [
+    "CAP_ORGAN_SKIPPED",
+    "CAP_ORGAN_FILE_DECORATIVE_NOT_USED"
+  ],
+  "known_gaps": [
+    "Language drift checks are present but not yet hard-gated everywhere.",
+    "Role route remains candidate and can diverge without route-manifest enforcement."
+  ],
+  "used_by_astronomicon_task_entry": true
+}

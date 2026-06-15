@@ -1,0 +1,22 @@
+{
+  "schema_version": "imperium.core_shape_drift_classification_matrix.v0_1",
+  "matrix_id": "core_shape_drift_classification_matrix",
+  "owner_organ": "ADMINISTRATUM",
+  "guard_organs": [
+    "INQUISITION",
+    "CUSTODES"
+  ],
+  "purpose": "Define the drift classes emitted by the V0.2 core shape classifier and self-checker.",
+  "rows": [
+    {"drift_type": "ACTIVE_ORGAN", "classification": "ORGAN_HOME", "active_use_allowed": true, "default_action": "KEEP"},
+    {"drift_type": "CORE_GOVERNANCE_SUPPORT", "classification": "COMMON_SUPPORT", "active_use_allowed": true, "default_action": "KEEP"},
+    {"drift_type": "COMMON_SUPPORT", "classification": "COMMON_SUPPORT", "active_use_allowed": true, "default_action": "KEEP"},
+    {"drift_type": "QUARANTINE_ZONE", "classification": "QUARANTINE_CANDIDATE", "active_use_allowed": false, "default_action": "KEEP"},
+    {"drift_type": "REGISTRY_DRIFT", "classification": "ORGAN_HOME", "active_use_allowed": true, "default_action": "KEEP"},
+    {"drift_type": "TASK_INBOX_RESIDUE", "classification": "COMMON_SUPPORT", "active_use_allowed": false, "default_action": "KEEP"},
+    {"drift_type": "POST_WORK_RESIDUE", "classification": "COMMON_SUPPORT", "active_use_allowed": false, "default_action": "KEEP"},
+    {"drift_type": "ACCEPTED_LEGACY", "classification": "LEGACY_ACCEPTED", "active_use_allowed": false, "default_action": "FUTURE_SCOPE_HOLD"},
+    {"drift_type": "FUTURE_SCOPE", "classification": "FUTURE_SCOPE", "active_use_allowed": false, "default_action": "FUTURE_SCOPE_HOLD"},
+    {"drift_type": "UNKNOWN_OWNER", "classification": "UNKNOWN_OWNER", "active_use_allowed": false, "default_action": "INVESTIGATE"}
+  ]
+}

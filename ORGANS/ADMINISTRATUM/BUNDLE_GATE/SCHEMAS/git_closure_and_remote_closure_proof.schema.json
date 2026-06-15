@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Git Closure And Remote Closure Proof",
+  "type": "object",
+  "required": ["task_id"],
+  "anyOf": [
+    {"required": ["worktree_clean"]},
+    {"required": ["origin_master_equals_head"]},
+    {"required": ["remote"]},
+    {"required": ["self_reference_limit"]}
+  ],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "worktree_clean": {"type": "boolean"},
+    "origin_master_equals_head": {"type": ["boolean", "string"]},
+    "remote": {"type": "string"},
+    "self_reference_limit": {"type": "string"}
+  },
+  "additionalProperties": true
+}

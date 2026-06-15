@@ -1,0 +1,26 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1",
+  "builder_claims": [
+    {
+      "claim_id": "C01",
+      "claim": "Synthetic corridor steps are replayable.",
+      "evidence": [
+        "IMPERIUM_NEW_GENERATION/MATRIX_SPINE/VALIDATORS/run_synthetic_runtime_corridor.sh"
+      ]
+    }
+  ],
+  "attacks": [
+    {
+      "attack_id": "A01",
+      "target_claim_id": "C01",
+      "attack": "Could be fake if replay command missing.",
+      "result": "RESISTED",
+      "downgrade_needed": false
+    }
+  ],
+  "downgrade_rules_applied": [
+    "CAP_UNTYPED_RUNTIME_CLAIM"
+  ],
+  "caps_triggered": [],
+  "final_verdict": "PASS_WITH_WARNINGS"
+}

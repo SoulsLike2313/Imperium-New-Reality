@@ -1,0 +1,41 @@
+{
+  "schema_id": "newgen_organ_verdict_v0_1",
+  "organ_id": "DOCTRINARIUM",
+  "task_id": "TASK-20260524-NEWGEN-METAOS-LAW-AND-CORE-ORGAN-WAVE2-VM3-V0_1",
+  "mode": "IMPORTANT_SIX_SIM",
+  "verdict": "PASS",
+  "applied_rules": [
+    "GATE_DOCTRINARIUM_READ_FIRST",
+    "GATE_NO_GENERIC_PASS",
+    "GATE_NO_GREEN_WITHOUT_EVIDENCE",
+    "GATE_NOT_PROVEN_BOUNDARY"
+  ],
+  "required_actions": [
+    "Run and store preflight output before edits",
+    "Bind final verdict to scoped Wave 1 slice only"
+  ],
+  "forbidden_actions": [
+    "Claim complete Important Six",
+    "Claim production autonomy"
+  ],
+  "evidence_required": [
+    "doctrinarium_preflight_output.json",
+    "applicable_doctrinarium_gates.json",
+    "FINAL_REPORT.md",
+    "closure_receipt.json",
+    "wave1_organ_tui_smoke_report.json",
+    "organ_interaction_simulation_v0_1.json"
+  ],
+  "owner_question": null,
+  "not_proven": [
+    "complete Important Six",
+    "Astronomicon/Inquisition TUI in this task",
+    "production autonomy"
+  ],
+  "evidence_refs": [
+    "IMPERIUM_NEW_GENERATION/DOCTRINARIUM/GATE_SPINE/gate_registry_v0_1.json",
+    "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260524-NEWGEN-CORE-ORGAN-FORM-TUI-WAVE1-VM3-V0_1/doctrinarium_preflight_output.json"
+  ],
+  "question": "What laws and gates apply to this task now?",
+  "generated_at_utc": "2026-05-24T01:59:59.766029+00:00"
+}

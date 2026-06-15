@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "generated_at_utc": "2026-05-26T22:00:57+00:00",
+  "required_acks": [
+    "ROLE_ACK",
+    "LANGUAGE_ACK",
+    "SCOPE_ACK",
+    "STOP_CONDITIONS_ACK"
+  ],
+  "items": [
+    {
+      "file": "E:\\IMPERIUM\\IMPERIUM_NEW_GENERATION\\OFFICIO_AGENTIS\\FIXTURES\\PASS_RU_4_PART_RESPONSE.md",
+      "status": "PASS",
+      "violations": [],
+      "detected_violations": {
+        "fail": [],
+        "warn": []
+      },
+      "recommended_correction": "Контракт соблюден.",
+      "limitations": [
+        "Heuristic checker: language ratio and technical block detection are approximate.",
+        "Does not perform deep semantic understanding of intent."
+      ],
+      "metrics": {
+        "owner_ru_lines": 6,
+        "owner_en_lines": 0,
+        "technical_en_lines": 6,
+        "technical_signal_en_lines": 1,
+        "mixed_lines": 3
+      },
+      "forbidden_matches": []
+    }
+  ],
+  "summary": {
+    "pass": 1,
+    "warn": 0,
+    "fail": 0,
+    "total": 1
+  }
+}

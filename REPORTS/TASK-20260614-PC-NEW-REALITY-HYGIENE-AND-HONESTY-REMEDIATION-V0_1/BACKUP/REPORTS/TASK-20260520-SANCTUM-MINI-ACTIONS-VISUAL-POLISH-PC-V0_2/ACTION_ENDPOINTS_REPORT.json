@@ -1,0 +1,128 @@
+{
+  "allowlist_block_probe": {
+    "action_id": "not_allowlisted_test",
+    "safety": "BLOCKED_NOT_ALLOWLISTED",
+    "started_at_utc": "2026-05-20T05:46:26.30107Z",
+    "finished_at_utc": "2026-05-20T05:46:26.30107Z",
+    "status": "BLOCK",
+    "exit_code": 127,
+    "stdout_summary": "",
+    "stderr_summary": "Action is not allowlisted.",
+    "command_or_path": null,
+    "evidence_path": null
+  },
+  "actions_count": 11,
+  "generated_at_utc": "2026-05-20T05:46:26.6946274Z",
+  "state_after_generated_at_utc": "2026-05-20T05:46:26.489521Z",
+  "health_status": "WARN",
+  "post_run_statuses": [
+    {
+      "safety": "ALLOWLISTED_LOCAL_NO_SIDE_EFFECTS",
+      "action_id": "refresh_state",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "safety": "ALLOWLISTED_LOCAL_READ_ONLY",
+      "action_id": "mechanicus_visual_status",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "safety": "ALLOWLISTED_LOCAL_READ_ONLY",
+      "action_id": "mechanicus_visual_tools",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "safety": "ALLOWLISTED_LOCAL_READ_ONLY",
+      "action_id": "mechanicus_visual_check",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "safety": "ALLOWLISTED_LOCAL_READ_ONLY",
+      "action_id": "mechanicus_visual_identity",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "safety": "DISPLAY_ONLY_SAFE_FALLBACK",
+      "action_id": "mechanicus_screenshot_command",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "safety": "DISPLAY_ONLY_SAFE_FALLBACK",
+      "action_id": "open_or_show_latest_report",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "safety": "DISPLAY_ONLY_SAFE_FALLBACK",
+      "action_id": "open_or_show_screenshots_folder",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "safety": "ALLOWLISTED_LOCAL_NO_SIDE_EFFECTS",
+      "action_id": "show_api_state_json",
+      "status": "PASS",
+      "exit_code": 0
+    },
+    {
+      "safety": "ALLOWLISTED_LOCAL_NO_SIDE_EFFECTS",
+      "action_id": "show_api_mechanicus_json",
+      "status": "PASS",
+      "exit_code": 0
+    }
+  ],
+  "state_schema": "SANCTUM_MINI_STATE_V0_2",
+  "screenshot_latest_url": "/api/mechanicus/screenshot/latest",
+  "required_actions_present": [
+    {
+      "present": true,
+      "action_id": "refresh_state"
+    },
+    {
+      "present": true,
+      "action_id": "mechanicus_visual_status"
+    },
+    {
+      "present": true,
+      "action_id": "mechanicus_visual_tools"
+    },
+    {
+      "present": true,
+      "action_id": "mechanicus_visual_check"
+    },
+    {
+      "present": true,
+      "action_id": "mechanicus_visual_identity"
+    },
+    {
+      "present": true,
+      "action_id": "mechanicus_screenshot_all"
+    },
+    {
+      "present": true,
+      "action_id": "mechanicus_screenshot_command"
+    },
+    {
+      "present": true,
+      "action_id": "open_or_show_latest_report"
+    },
+    {
+      "present": true,
+      "action_id": "open_or_show_screenshots_folder"
+    },
+    {
+      "present": true,
+      "action_id": "show_api_state_json"
+    },
+    {
+      "present": true,
+      "action_id": "show_api_mechanicus_json"
+    }
+  ]
+}

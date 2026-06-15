@@ -1,0 +1,16 @@
+{
+  "schema_version": "strategium.task_budget_card.v0_1",
+  "task_id": "FIXTURE-STRATEGIUM-COST-POSITIVE",
+  "budget_class_planned": "SMALL_TO_MEDIUM",
+  "max_files_changed_target": 20,
+  "stop_if_scope_expands": true,
+  "planned_scope": [
+    "Validate minimal budget and receipt fields"
+  ],
+  "required_receipts": [
+    "TASK_COST_RECEIPT.json",
+    "KPD_DELTA_RECEIPT.json"
+  ],
+  "unknown_measurement_policy": "Use UNKNOWN_WITH_REASON for unavailable metrics. Do not invent numbers.",
+  "next_task_budget_recommendation": "SMALL"
+}

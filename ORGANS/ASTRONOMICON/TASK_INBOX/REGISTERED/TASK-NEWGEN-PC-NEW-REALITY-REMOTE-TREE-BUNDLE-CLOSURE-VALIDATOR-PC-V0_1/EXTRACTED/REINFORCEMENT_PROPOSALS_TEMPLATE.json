@@ -1,0 +1,32 @@
+{
+  "task_id": "TASK-NEWGEN-PC-NEW-REALITY-REMOTE-TREE-BUNDLE-CLOSURE-VALIDATOR-PC-V0_1",
+  "proposals": [
+    {
+      "proposal_id": "MECH-VALIDATOR-REMOTE-CLOSURE-001",
+      "type": "skill/tool",
+      "why_now": "Future tasks need reusable remote and bundle proof.",
+      "first_use_case": "Run after every New Reality closure.",
+      "risk": "False PASS if self-reference limit is not modeled.",
+      "admission_mode": "SANDBOX_TO_REQUIRED_GATE",
+      "canon_after_successful_cycles": 10
+    },
+    {
+      "proposal_id": "INQ-GATE-NO-LAUNCH-ON-BLOCK-001",
+      "type": "matrix/gate",
+      "why_now": "Previous Astronomicon printed launch cards after admission block.",
+      "first_use_case": "Invalid taskpack fixture.",
+      "risk": "Fake start task if not enforced.",
+      "admission_mode": "REQUIRED_GATE",
+      "canon_after_successful_cycles": 3
+    },
+    {
+      "proposal_id": "ADMIN-BUNDLE-CLOSURE-CARD-001",
+      "type": "cost/context/output",
+      "why_now": "Owner and reviewers need exact bundle path/SHA without searching.",
+      "first_use_case": "Final Owner card.",
+      "risk": "Bundle claims without file proof.",
+      "admission_mode": "REQUIRED_OUTPUT_CONTRACT",
+      "canon_after_successful_cycles": 5
+    }
+  ]
+}

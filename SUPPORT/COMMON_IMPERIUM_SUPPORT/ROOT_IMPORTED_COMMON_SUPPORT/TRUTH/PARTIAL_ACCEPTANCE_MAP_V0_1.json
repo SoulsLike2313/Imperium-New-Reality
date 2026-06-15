@@ -1,0 +1,217 @@
+{
+  "schema_id": "PARTIAL_ACCEPTANCE_MAP_V0_1",
+  "task_id": "TASK-20260523-NEWGEN-PQG-PARTIAL-ACCEPTANCE-MAP-VM3-V0_1",
+  "generated_at_utc": "2026-05-22T18:54:31Z",
+  "source_truth_refs": [
+    "IMPERIUM_NEW_GENERATION/TRUTH/CURRENT_TRUTH_ROOT_V0_1.json",
+    "IMPERIUM_NEW_GENERATION/TRUTH/REPORT_STATUS_INDEX_V0_1.json",
+    "IMPERIUM_NEW_GENERATION/TRUTH/EVIDENCE_MAP_UNIFIED_V0_1.json",
+    "IMPERIUM_NEW_GENERATION/TRUTH/EVIDENCE_FRESHNESS_INDEX_V0_1.json",
+    "IMPERIUM_NEW_GENERATION/TRUTH/REPORT_STATUS_NORMALIZATION_TABLE_V0_1.json",
+    "IMPERIUM_NEW_GENERATION/TRUTH/NOT_PROVEN_REGISTER_V0_1.json"
+  ],
+  "source_snapshot": {
+    "report_index_entries": 14,
+    "evidence_map_records": 106,
+    "freshness_entries": 106,
+    "not_proven_entries": 67
+  },
+  "statuses": [
+    {
+      "status": "PASS_STRICT",
+      "meaning": "All required evidence and freshness checks passed with no unresolved boundaries.",
+      "can_continue": true,
+      "owner_decision_required": false,
+      "rerun_required": false,
+      "evidence_required": true,
+      "freshness_required": true,
+      "production_claim_allowed": true,
+      "ui_truth_color_hint": "green",
+      "sanctum_display_label": "Strict Pass",
+      "next_action": "Proceed with scoped next step and preserve receipt chain.",
+      "forbidden_claims": []
+    },
+    {
+      "status": "PASS_WITH_WARN",
+      "meaning": "Core acceptance passed but warnings remain explicit and bounded.",
+      "can_continue": true,
+      "owner_decision_required": true,
+      "rerun_required": false,
+      "evidence_required": true,
+      "freshness_required": true,
+      "production_claim_allowed": false,
+      "ui_truth_color_hint": "amber",
+      "sanctum_display_label": "Pass With Warn",
+      "next_action": "Continue only with visible warnings and a bounded follow-up plan.",
+      "forbidden_claims": [
+        "STRICT_GREEN",
+        "ZERO_RISK"
+      ]
+    },
+    {
+      "status": "PARTIAL_ACCEPTED",
+      "meaning": "Partial outcome is accepted only with explicit reason and owner or contract basis.",
+      "can_continue": true,
+      "owner_decision_required": true,
+      "rerun_required": true,
+      "evidence_required": true,
+      "freshness_required": true,
+      "production_claim_allowed": false,
+      "ui_truth_color_hint": "amber",
+      "sanctum_display_label": "Partial Accepted",
+      "next_action": "Execute bounded next action and schedule rerun/closure evidence.",
+      "forbidden_claims": [
+        "STRICT_PASS",
+        "PRODUCTION_READY"
+      ]
+    },
+    {
+      "status": "PARTIAL_BLOCKED",
+      "meaning": "Partial status lacks minimum basis and is blocked from continuation as green.",
+      "can_continue": false,
+      "owner_decision_required": true,
+      "rerun_required": true,
+      "evidence_required": true,
+      "freshness_required": true,
+      "production_claim_allowed": false,
+      "ui_truth_color_hint": "red",
+      "sanctum_display_label": "Partial Blocked",
+      "next_action": "Add missing reason/basis or convert to explicit BLOCKED path.",
+      "forbidden_claims": [
+        "GREEN_BY_ASSUMPTION",
+        "PRODUCTION_READY"
+      ]
+    },
+    {
+      "status": "FOUNDATION_ONLY",
+      "meaning": "Artifact is a foundation layer and not production acceptance proof.",
+      "can_continue": true,
+      "owner_decision_required": true,
+      "rerun_required": false,
+      "evidence_required": true,
+      "freshness_required": false,
+      "production_claim_allowed": false,
+      "ui_truth_color_hint": "blue",
+      "sanctum_display_label": "Foundation Only",
+      "next_action": "Use as backend baseline and plan promotion checks before strict claims.",
+      "forbidden_claims": [
+        "PRODUCTION_READY",
+        "LIVE_AUTONOMY_READY"
+      ]
+    },
+    {
+      "status": "UNKNOWN",
+      "meaning": "Truth is unknown; no acceptance upgrade is allowed.",
+      "can_continue": false,
+      "owner_decision_required": true,
+      "rerun_required": true,
+      "evidence_required": true,
+      "freshness_required": false,
+      "production_claim_allowed": false,
+      "ui_truth_color_hint": "gray",
+      "sanctum_display_label": "Unknown",
+      "next_action": "Create diagnostics or measurement contract before execution.",
+      "forbidden_claims": [
+        "STRICT_PASS",
+        "GREEN_CONTINUE"
+      ]
+    },
+    {
+      "status": "MISSING",
+      "meaning": "Required artifacts/evidence are missing.",
+      "can_continue": false,
+      "owner_decision_required": true,
+      "rerun_required": true,
+      "evidence_required": true,
+      "freshness_required": false,
+      "production_claim_allowed": false,
+      "ui_truth_color_hint": "red",
+      "sanctum_display_label": "Missing",
+      "next_action": "Restore missing artifact and rerun validator before acceptance.",
+      "forbidden_claims": [
+        "PASS",
+        "COMPLETED"
+      ]
+    },
+    {
+      "status": "STALE",
+      "meaning": "Evidence exists but is stale for current acceptance claim.",
+      "can_continue": false,
+      "owner_decision_required": true,
+      "rerun_required": true,
+      "evidence_required": true,
+      "freshness_required": true,
+      "production_claim_allowed": false,
+      "ui_truth_color_hint": "orange",
+      "sanctum_display_label": "Stale",
+      "next_action": "Refresh evidence and re-evaluate acceptance with current receipts.",
+      "forbidden_claims": [
+        "CURRENT_GREEN",
+        "STRICT_PASS"
+      ]
+    },
+    {
+      "status": "NOT_READY",
+      "meaning": "Task slice is not ready for acceptance decision.",
+      "can_continue": false,
+      "owner_decision_required": true,
+      "rerun_required": false,
+      "evidence_required": false,
+      "freshness_required": false,
+      "production_claim_allowed": false,
+      "ui_truth_color_hint": "slate",
+      "sanctum_display_label": "Not Ready",
+      "next_action": "Complete prerequisite contracts or receipts first.",
+      "forbidden_claims": [
+        "PASS",
+        "READY_FOR_PRODUCTION"
+      ]
+    },
+    {
+      "status": "BLOCKED",
+      "meaning": "Hard blocker prevents valid acceptance progression.",
+      "can_continue": false,
+      "owner_decision_required": true,
+      "rerun_required": false,
+      "evidence_required": true,
+      "freshness_required": false,
+      "production_claim_allowed": false,
+      "ui_truth_color_hint": "crimson",
+      "sanctum_display_label": "Blocked",
+      "next_action": "Resolve blocker or terminate with explicit BLOCK receipt.",
+      "forbidden_claims": [
+        "PASS",
+        "AUTO_CONTINUE"
+      ]
+    },
+    {
+      "status": "FAKE_GREEN_RISK",
+      "meaning": "Detected mismatch where a green claim is attempted without required basis.",
+      "can_continue": false,
+      "owner_decision_required": true,
+      "rerun_required": true,
+      "evidence_required": true,
+      "freshness_required": true,
+      "production_claim_allowed": false,
+      "ui_truth_color_hint": "red",
+      "sanctum_display_label": "Fake Green Risk",
+      "next_action": "Downgrade claim and attach missing evidence/freshness proof before retry.",
+      "forbidden_claims": [
+        "STRICT_PASS",
+        "PRODUCTION_READY",
+        "DONE_WITHOUT_RECEIPT"
+      ]
+    }
+  ],
+  "no_fake_green_invariants": [
+    "NO_EVIDENCE_NO_STRICT_PASS",
+    "UNKNOWN_CANNOT_CONTINUE_AS_GREEN",
+    "MISSING_CANNOT_CONTINUE_AS_GREEN",
+    "STALE_CANNOT_CONTINUE_AS_CURRENT_GREEN",
+    "PARTIAL_REQUIRES_REASON_AND_OWNER_OR_CONTRACT_BASIS"
+  ],
+  "limitations": [
+    "This is a foundation interpretation map and does not claim production acceptance automation.",
+    "Outcomes are bounded by existing report/evidence/freshness artifacts."
+  ]
+}

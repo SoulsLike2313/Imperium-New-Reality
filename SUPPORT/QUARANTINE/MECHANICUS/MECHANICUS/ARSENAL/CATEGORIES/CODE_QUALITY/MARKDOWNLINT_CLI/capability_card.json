@@ -1,0 +1,39 @@
+{
+  "capability_id": "MARKDOWNLINT_CLI",
+  "name": "markdownlint CLI",
+  "category": "CODE_QUALITY",
+  "status": "SANDBOX",
+  "owner_organ": "MECHANICUS",
+  "purpose": "Owner-approved normalization card for markdownlint CLI in CODE_QUALITY.",
+  "what_problem_it_solves": "Provides deterministic Markdown linting before report/taskpack delivery.",
+  "source_type": "external_tool",
+  "source_url_or_path": "https://github.com/DavidAnson/markdownlint-cli",
+  "license_or_trust_note": "TO_VERIFY; no promotion beyond CANDIDATE without receipt evidence.",
+  "install_required": true,
+  "install_gate": "GATE-ARSENAL-EXTERNAL-INSTALL-ADMISSION",
+  "validation_commands": [
+    "validate:markdownlint-cli"
+  ],
+  "expected_receipts": [
+    "markdownlint-cli_validation_receipt.json",
+    "markdownlint_cli_validation_receipt.json"
+  ],
+  "safety_notes": "Bounded use only; no uncontrolled runtime mutation or hidden side effects.",
+  "security_notes": "No secret handling in this task; obey path, scope, and evidence gates.",
+  "offline_or_network_dependency": "offline_preferred",
+  "promoted_by_receipt": "markdownlint_cli_validation_receipt.json",
+  "last_reviewed_utc": "2026-05-25T22:54:51Z",
+  "next_review_reason": "Wave 001 controlled install validated in task receipts; remains SANDBOX and not CANON.",
+  "limitations": "Candidate-only until validation receipts and trust checks exist.",
+  "allowed_use_cases": [
+    "Capability cataloging and validation planning",
+    "Scoped candidate execution after explicit admission gate"
+  ],
+  "forbidden_use_cases": [
+    "Claiming CANON without validation receipt evidence",
+    "Using capability outside bounded task scope"
+  ],
+  "reserved": false,
+  "intake_batch_id": "MECHANICUS-INTAKE-BATCH-CODE_QUALITY-001",
+  "desired_future_status": "CANDIDATE_OR_SANDBOX_AFTER_VALIDATION"
+}

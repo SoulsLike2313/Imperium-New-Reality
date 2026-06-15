@@ -1,0 +1,31 @@
+{
+  "receipt_id": "task-newgen-mechanicus-tools-expansion-batch-pc-v0_1:utilities_7_zip:tool_detection:utilities_7_zip",
+  "task_id": "TASK-NEWGEN-MECHANICUS-TOOLS-EXPANSION-BATCH-PC-V0_1",
+  "capability_id": "UTILITIES_7_ZIP",
+  "validator": "mechanicus_tool_detection_runner_v0_1.py",
+  "checked_at_utc": "2026-05-24T23:33:44Z",
+  "status": "PASS_WITH_WARNINGS",
+  "summary": "UTILITIES_7_ZIP: MISSING via tool_detection:UTILITIES_7_ZIP. promotion_recommendation=KEEP_CANDIDATE",
+  "check_name": "tool_detection:UTILITIES_7_ZIP",
+  "command_or_check": "7z i || 7za i",
+  "exit_code": 1,
+  "stdout_excerpt": "",
+  "stderr_excerpt": "$ 7z i\n'7z' is not recognized as an internal or external command,\noperable program or batch file.\n\n$ 7za i\n'7za' is not recognized as an internal or external command,\noperable program or batch file.",
+  "side_effects": [
+    "read-only detection commands",
+    "validation receipt created"
+  ],
+  "network_used": false,
+  "files_created_or_modified": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-7-zip_validation_receipt.json"
+  ],
+  "validation_verdict": "MISSING",
+  "promotion_recommendation": "KEEP_CANDIDATE",
+  "warnings": [
+    "tool_missing_or_not_in_path"
+  ],
+  "violations": [],
+  "evidence_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/TOOL_EXPANSION_BATCH_001/utilities-7-zip_validation_receipt.json"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "imperium.tool_passports.v0_1",
+  "tools": [
+    {
+      "tool_id": "inquisition.intelligence_pack_receipt_gate",
+      "name": "Intelligence Pack Receipt Gate",
+      "owner_organ": "INQUISITION",
+      "path": "ORGANS/INQUISITION/REPORTING/inquisition_intelligence_pack_receipt_gate_v0_1.py",
+      "language": "python",
+      "version": "0.1.0",
+      "purpose_ru": "Проверяет sidecar receipt Intelligence Pack: FINAL_SHA256SUMS, MACHINE_RECEIPT, sidecar manifest и отсутствие self-referential hash в ZIP manifest.",
+      "purpose_en": "Validates Intelligence Pack sidecar receipt: FINAL_SHA256SUMS, MACHINE_RECEIPT, sidecar manifest, and no self-referential hash in ZIP manifest.",
+      "safety": "READ_ONLY",
+      "writes": [
+        "optional report root only"
+      ],
+      "validation_recipe": "Run on a generated Intelligence Pack ZIP; expect PASS_INTELLIGENCE_PACK_RECEIPT."
+    }
+  ]
+}

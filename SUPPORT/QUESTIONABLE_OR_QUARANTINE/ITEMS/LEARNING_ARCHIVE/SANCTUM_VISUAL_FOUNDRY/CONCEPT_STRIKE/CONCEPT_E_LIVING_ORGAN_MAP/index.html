@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concept E - Living Organ Map</title>
+  <style>
+    body{margin:0;font-family:Sora,Segoe UI,sans-serif;color:#eef8ff;background:linear-gradient(155deg,#06090f,#0f1223 55%,#15132a)}
+    .wrap{min-height:100vh;padding:16px;display:grid;grid-template-rows:auto 1fr auto;gap:12px}
+    .bar,.foot{border:1px solid rgba(109,220,255,.42);border-radius:14px;padding:10px 12px;background:rgba(10,16,30,.78)}
+    .grid{display:grid;grid-template-columns:1.6fr .78fr;gap:12px}
+    .map{position:relative;border:1px solid rgba(109,220,255,.42);border-radius:20px;overflow:hidden;background:radial-gradient(900px 560px at 32% 46%,rgba(109,220,255,.18),transparent 62%),radial-gradient(900px 560px at 72% 64%,rgba(255,89,132,.17),transparent 65%),rgba(9,15,29,.9)}
+    .path{position:absolute;height:2px;background:linear-gradient(90deg,rgba(109,220,255,.2),rgba(109,220,255,.9));transform-origin:left center}
+    .p1{left:12%;top:26%;width:52%;transform:rotate(16deg)}.p2{left:22%;top:58%;width:49%;transform:rotate(-10deg)}.p3{left:44%;top:34%;width:34%;transform:rotate(30deg)}.p4{left:15%;top:73%;width:58%;transform:rotate(-26deg)}
+    .island{position:absolute;width:138px;padding:9px;border:1px solid rgba(255,89,132,.42);border-radius:14px;background:rgba(18,23,40,.78);font-size:12px}
+    .i1{left:8%;top:18%}.i2{left:38%;top:44%}.i3{right:12%;top:22%}.i4{right:14%;bottom:18%}.i5{left:14%;bottom:14%}
+    .dock{border:1px solid rgba(255,89,132,.40);border-radius:18px;padding:10px;background:linear-gradient(175deg,rgba(14,19,34,.95),rgba(10,14,27,.95));display:grid;gap:8px}
+    .dockmod{border:1px solid rgba(109,220,255,.36);border-radius:10px;padding:8px;background:rgba(15,20,36,.78)}
+    .dockmod h3{margin:0 0 4px;font-size:13px;color:#bad6f1}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header class="bar"><h1>CONCEPT E // LIVING ORGAN MAP</h1></header>
+  <main class="grid">
+    <section class="map">
+      <div class="path p1"></div><div class="path p2"></div><div class="path p3"></div><div class="path p4"></div>
+      <div class="island i1">ADMINISTRATUM CLUSTER</div><div class="island i2">MECHANICUS ISLAND</div><div class="island i3">INQUISITION NODE</div><div class="island i4">CUSTODES LOCK</div><div class="island i5">STRATEGIUM FLOW</div>
+    </section>
+    <aside class="dock">
+      <section class="dockmod"><h3>Adaptive Dock</h3><div>Context panel follows selected organ island.</div></section>
+      <section class="dockmod"><h3>Signal Conditions</h3><div>truth aware • raw secondary • map-driven context</div></section>
+      <section class="dockmod"><h3>Risks</h3><div>Can become visually noisy without strict constraints.</div></section>
+      <section class="dockmod"><h3>Strength</h3><div>Bold living-system metaphor and strong originality.</div></section>
+    </aside>
+  </main>
+  <footer class="foot">Distributed organism map composition with docked contextual cockpit.</footer>
+</div>
+</body>
+</html>

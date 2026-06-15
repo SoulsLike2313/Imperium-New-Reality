@@ -1,0 +1,38 @@
+{
+  "schema_version": "0.1",
+  "run_id": "RUN-001-FOUNDATION",
+  "session_id": "SERVITOR-SESSION-NEWGEN-ASTRONOMICON-FORMATION-SAMPLE-V0_1-V0_1",
+  "task_id": "TASK-NEWGEN-ASTRONOMICON-TASK-FORMATION-SAMPLE-V0_1",
+  "run_index": 1,
+  "status": "PASSED_WITH_EVIDENCE",
+  "started_at_utc": "2026-05-21T20:07:00Z",
+  "checks": [
+    {
+      "check_id": "scope_record_available",
+      "status": "PASS",
+      "detail": "READ"
+    },
+    {
+      "check_id": "no_fake_green_boundary_present",
+      "status": "PASS",
+      "detail": "Foundation no-fake-green policy present in session record."
+    },
+    {
+      "check_id": "rerun_policy_present",
+      "status": "PASS",
+      "detail": "Rerun decision record is generated deterministically."
+    }
+  ],
+  "failure_classification": "FOUNDATION_LIMITATION",
+  "explanation_ru": "Создан foundation run record. Это не live-исполнение, а проверка контура run/rerun с ограничениями.",
+  "evidence": [
+    {
+      "kind": "json",
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/SERVITOR_EXECUTION_SESSION.generated.json"
+    },
+    {
+      "kind": "json",
+      "path": "IMPERIUM_NEW_GENERATION/REPORTS/TASK-20260521-NEWGEN-SERVITOR-RUN-RERUN-LOOP-PC-V0_1/RERUN_DECISION_RECORD.generated.json"
+    }
+  ]
+}

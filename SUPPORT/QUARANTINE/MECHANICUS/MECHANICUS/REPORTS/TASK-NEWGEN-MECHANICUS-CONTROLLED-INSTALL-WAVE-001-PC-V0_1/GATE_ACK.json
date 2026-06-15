@@ -1,0 +1,72 @@
+{
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1",
+  "current_head": "8f3737d5a2feb90345ceb59de530f651c439be73",
+  "gatepack_path": "C:\\Users\\PC\\Downloads\\TASKPACK_NEWGEN_MECHANICUS_CONTROLLED_INSTALL_WAVE_001_PC_V0_1.zip",
+  "gatepack_sha256": "59113E9A1EC4628373BA86B40854901D61730570D9758944A9B2FD19AFDC5749",
+  "read_gates": [
+    "GATE-U00-GIT-TRUTH",
+    "GATE-U01-ROLE-ACK",
+    "GATE-U02-SCOPE-BOUNDARY",
+    "GATE-U04-EVIDENCE-RECEIPT",
+    "GATE-U05-STOP-CONDITIONS",
+    "GATE-U08-REPO-PURITY",
+    "GATE-U09-NO-FAKE-GREEN",
+    "GATE-U12-REPORT-OUTPUT-BUDGET",
+    "GATE-U13-PYTHON-TYPE-SAFETY",
+    "GATE-U14-WHOLE-REPO-SCOPE-RECON",
+    "GATE-U15-OPERATIONALITY-IMPACT",
+    "GATE-U16-BILINGUAL-UI",
+    "GATE-U17-DELIVERABLE-PACKAGE",
+    "GATE-U18-AGENT-FACTORY-COMPLIANCE",
+    "GATE-U19-SCRIPT-ARTIFACT-PRESERVATION",
+    "GATE-U20-AGENT-KPD-SELF-REVIEW",
+    "GATE-U21-COMMAND-CHUNKING"
+  ],
+  "accepted_stop_conditions": [
+    "Missing required read-first files or mandatory checker scripts.",
+    "Branch/HEAD/origin truth mismatch after preflight.",
+    "Forbidden path mutation required to proceed.",
+    "Unapproved package manager or random installer required.",
+    "winget/npm/pip/Python prerequisite route unsafe or unavailable.",
+    "Any approved Wave001 tool cannot be validated by fixtures.",
+    "Read-only command mutates repo again and cannot be contained safely."
+  ],
+  "scope_boundary": "Controlled install/repair for Wave001 approved tools (UTILITIES_7_ZIP, MARKDOWNLINT_CLI, CHECK_JSONSCHEMA_CLI, YAMLLINT_CLI) + prerequisites (winget, Node/npm, Python/pip) only when missing/broken; evidence and reports under current REPORT_DIR; no unrelated systems.",
+  "touched_paths": [
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-CONTROLLED-INSTALL-WAVE-001-PC-V0_1/**",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/REGISTRY/** (only if existing structure supports truthful status update)",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/CATEGORIES/**/capability_card.json (only if existing pattern requires receipt links/status fields)",
+    "IMPERIUM_NEW_GENERATION/MECHANICUS/ARSENAL/RECEIPTS/** (only Wave001 evidence additions if needed)"
+  ],
+  "forbidden_paths": [
+    "THRONE/**",
+    "CUSTODES/**",
+    "ORGANS/SANCTUM/**",
+    "IMPERIUM_TEST_VERSION/**",
+    "ARCHIVE/**",
+    "OBSERVED/**",
+    "root canon unrelated files",
+    "any path outside IMPERIUM_NEW_GENERATION/MECHANICUS unless explicit checker dependency"
+  ],
+  "expected_receipts": [
+    "GATE_ACK.json",
+    "preflight_git_state.json",
+    "preinstall_inventory.json",
+    "prerequisite_install_receipts.json",
+    "tool_install_receipts.json",
+    "validation_receipts.json",
+    "stability_matrix.json",
+    "registry_update_report.json",
+    "checker_run_report.json",
+    "external_tool_introduction_matrix.json",
+    "ghost_evolve_sidecar.json",
+    "closure_receipt.json",
+    "FINAL_REPORT.md",
+    "incident containment artifacts"
+  ],
+  "repo_recon_required": "MECHANICUS_SCOPE_PLUS_REQUIRED_GATES_ONLY",
+  "script_absorption_required": "YES",
+  "clarification_needed": "NO",
+  "incident_ack": "INCIDENT-MECH-RUNNER-HELP-MUTATION-20260526 contained before Wave001 execution",
+  "verdict": "PASS"
+}

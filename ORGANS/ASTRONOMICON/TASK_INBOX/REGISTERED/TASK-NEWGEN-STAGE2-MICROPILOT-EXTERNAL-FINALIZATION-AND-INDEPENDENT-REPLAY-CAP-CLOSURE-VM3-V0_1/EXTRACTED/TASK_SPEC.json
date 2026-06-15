@@ -1,0 +1,21 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE2-MICROPILOT-EXTERNAL-FINALIZATION-AND-INDEPENDENT-REPLAY-CAP-CLOSURE-VM3-V0_1",
+  "title": "Stage2 micro-pilot cap closure for external finalization and independent replay",
+  "target_contour": "VM3",
+  "required_start_head": "f3123e5b089821487d9891b156351ba4006f349c",
+  "source_previous_task": "TASK-NEWGEN-STAGE2-MICROPILOT-VM3-CONTEXT-PACK-EXECUTION-V0_1",
+  "primary_objectives": [
+    "Close or explicitly narrow the external-finalization cap from the Stage2 micro-pilot.",
+    "Perform a local independent replay from a clean isolated workspace and produce an independent replay receipt.",
+    "Turn the discovered Astronomicon admission and resolver blocks into reusable positive-control regression fixtures.",
+    "Produce a cap closure decision matrix with honest CLOSED, NARROWED, CARRIED, or BLOCKED status per cap.",
+    "Commit and push only scoped artifacts; leave the worktree clean."
+  ],
+  "forbidden_claims": [
+    "Do not claim IDE runtime readiness.",
+    "Do not claim WARP runtime readiness.",
+    "Do not claim external reviewer environment replay if only VM3 local replay was performed.",
+    "Do not claim clean PASS if any cap remains active.",
+    "Do not erase the previous admission/resolver blocks as errors; preserve them as successful protection cases."
+  ]
+}

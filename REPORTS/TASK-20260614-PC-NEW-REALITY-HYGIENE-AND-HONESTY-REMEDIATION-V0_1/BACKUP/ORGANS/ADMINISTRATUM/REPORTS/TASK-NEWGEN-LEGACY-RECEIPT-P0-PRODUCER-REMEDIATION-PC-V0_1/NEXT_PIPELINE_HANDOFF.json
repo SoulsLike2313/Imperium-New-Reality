@@ -1,0 +1,27 @@
+{
+  "task_id": "TASK-NEWGEN-LEGACY-RECEIPT-P0-PRODUCER-REMEDIATION-PC-V0_1",
+  "generated_at_utc": "2026-05-30T21:31:49Z",
+  "verdict": "PASS_WITH_WARNINGS",
+  "next_actions": [
+    {
+      "step": 1,
+      "target": "Inquisitor",
+      "taskpack": "TASKPACK_INQUISITOR_COMMIT_MATRIX_SEMANTIC_REVIEW_V0_1.zip",
+      "launch_phrase": "start task",
+      "required_input": "Final commit URL from this remediation task"
+    },
+    {
+      "step": 2,
+      "target": "Speculum",
+      "taskpack": "TASKPACK_SPECULUM_COMMIT_TECHNICAL_REDTEAM_MATRIX_REVIEW_V0_1.zip",
+      "launch_phrase": "start task",
+      "required_input": "Same final commit URL"
+    },
+    {
+      "step": 3,
+      "target": "Logos-Prime",
+      "task": "TASK-NEWGEN-EIGHT-ORGAN-MOBILIZATION-AND-ASTRONOMICON-TASK-ENTRY-FORM-PC-V0_1",
+      "condition": "Only after Inquisitor+Speculum acceptance."
+    }
+  ]
+}

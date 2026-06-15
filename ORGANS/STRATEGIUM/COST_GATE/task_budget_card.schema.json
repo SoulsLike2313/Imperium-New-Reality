@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Strategium Task Budget Card V0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task_id",
+    "budget_class_planned",
+    "max_files_changed_target",
+    "stop_if_scope_expands",
+    "planned_scope",
+    "required_receipts",
+    "unknown_measurement_policy",
+    "next_task_budget_recommendation"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "strategium.task_budget_card.v0_1"
+    },
+    "task_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "budget_class_planned": {
+      "type": "string",
+      "enum": [
+        "TINY",
+        "SMALL",
+        "SMALL_TO_MEDIUM",
+        "MEDIUM",
+        "LARGE"
+      ]
+    },
+    "max_files_changed_target": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "stop_if_scope_expands": {
+      "type": "boolean"
+    },
+    "planned_scope": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required_receipts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "unknown_measurement_policy": {
+      "type": "string",
+      "minLength": 1
+    },
+    "next_task_budget_recommendation": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}

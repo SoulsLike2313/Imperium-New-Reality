@@ -1,0 +1,55 @@
+{
+  "visual_unit_id": "SANCTUM.EVIDENCE_REPORT_LAYER",
+  "parent": "SANCTUM.CONTROL_SURFACES",
+  "type": "evidence_layer",
+  "visual_owner": "SANCTUM_SHELL",
+  "truth_owner": "ADMINISTRATUM_AGENT",
+  "data_source_owner": "SANCTUM_STATE_BUILDER",
+  "organ_subject": "SYSTEM",
+  "implementation_owner": "VISUAL_FOUNDRY",
+  "purpose": "Evidence/report link lane for explicit proof surfacing.",
+  "backend_source": {
+    "type": "artifact_paths",
+    "paths": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/api/state_builder.py",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/api/mechanicus_adapter.py",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_VISUAL_FOUNDRY/SCREENSHOTS/screenshot_index.json"
+    ]
+  },
+  "backend_source_status": "candidate",
+  "allowed_states": [
+    "available",
+    "missing",
+    "stale",
+    "unknown"
+  ],
+  "truth_rules": [
+    "Missing evidence paths must render MISSING, never healthy default."
+  ],
+  "visual_tokens": "evidence_layer_tokens",
+  "texture": "archive_blue_cold",
+  "glow": {
+    "enabled": false
+  },
+  "motion": {
+    "enabled": false,
+    "animation": "ambient_disabled",
+    "perf_tier": "STATIC",
+    "disable_in_reduced_motion": true
+  },
+  "perf_tier": "STATIC",
+  "proof_requirements": [
+    "Artifact paths resolve to existing files or explicit missing state."
+  ],
+  "integration_status": "candidate",
+  "fake_green_risks": [
+    "Null evidence path displayed as valid report."
+  ],
+  "owner_group": "SANCTUM",
+  "owner_organ": "ADMINISTRATUM_AGENT",
+  "accessibility_rules": [
+    "State must not be encoded by color alone.",
+    "RU/EN labels must remain explicit for status tags."
+  ],
+  "change_safety": "Topology hardening scope only; no final UI readiness claims."
+}

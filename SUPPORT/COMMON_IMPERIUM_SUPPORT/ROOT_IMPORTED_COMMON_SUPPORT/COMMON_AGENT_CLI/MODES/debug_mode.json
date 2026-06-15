@@ -1,0 +1,19 @@
+{
+  "mode": "DEBUG",
+  "purpose": "Reproduce and isolate defects in shell behavior, contracts, or runtime paths.",
+  "allowed_actions": [
+    "run diagnostics",
+    "collect failing transcripts",
+    "add narrow logging",
+    "fix scoped defects"
+  ],
+  "forbidden_actions": [
+    "broad refactors outside defect scope",
+    "conceal flaky behavior"
+  ],
+  "expected_output_style": "reproduction-first, hypothesis, fix, verification",
+  "can_modify_files": true,
+  "can_run_commands": true,
+  "can_create_bundles": true,
+  "owner_approval_required": false
+}

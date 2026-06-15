@@ -1,0 +1,13 @@
+{
+  "schema_version": "imperium.organ_metric.v0_1",
+  "metric_id": "organ_life_completeness_score",
+  "owner_organ": "STRATEGIUM",
+  "purpose": "Measure required organ home and minimum metadata completeness.",
+  "unit": "score_0_to_100",
+  "inputs": [
+    "ORGAN_LIFE_VALIDATION_REPORT.json",
+    "CUSTODES_ORGAN_LIFE_AUDIT_RECEIPT.json"
+  ],
+  "formula": "Required organ homes and task-required organ zones present divided by expected count, with metadata gaps counted as warnings.",
+  "current_measurement_policy": "Measured from local filesystem evidence."
+}

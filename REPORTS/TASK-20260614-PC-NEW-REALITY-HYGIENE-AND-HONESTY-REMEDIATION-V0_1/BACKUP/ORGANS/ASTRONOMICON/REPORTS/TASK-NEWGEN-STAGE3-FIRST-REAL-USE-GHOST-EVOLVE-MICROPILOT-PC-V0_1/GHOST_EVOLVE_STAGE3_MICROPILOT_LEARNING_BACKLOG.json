@@ -1,0 +1,69 @@
+{
+  "task_id": "TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1",
+  "timestamp_utc": "2026-05-31T01:15:47Z",
+  "items": [
+    {
+      "id": "ST3-L01",
+      "source_problem": "Astronomicon intake initially failed before task start due to missing/invalid route template and UTF-8 BOM.",
+      "affected_organ": "ASTRONOMICON",
+      "problem_type": "INTAKE_GAP",
+      "evidence": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/stage3_bootstrap_repair_finding.json",
+      "why_it_matters": "Owner should not need manual encoding repair to start a registered task.",
+      "future_fix": "Add preflight encoding checker + auto-remediation command in intake toolchain.",
+      "blocks": "NEXT_MICROPILOT",
+      "can_be_script_first": true,
+      "recommended_next_task": "TASK-NEWGEN-STAGE3-ASTRONOMICON-BOOTSTRAP-HARDENING-UTF8-PREFLIGHT-PC-V0_1"
+    },
+    {
+      "id": "ST3-L02",
+      "source_problem": "Task start ACK template drift risk between corridor template and task-specific generated ACK shape.",
+      "affected_organ": "ASTRONOMICON",
+      "problem_type": "RESOLVER_GAP",
+      "evidence": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TASK_START_ACK_TEMPLATE.json",
+      "why_it_matters": "Shape drift can break downstream report parsers and cap reasoning.",
+      "future_fix": "Add schema lock + regression fixture for start ACK template.",
+      "blocks": "NEXT_MICROPILOT",
+      "can_be_script_first": true,
+      "recommended_next_task": "TASK-NEWGEN-STAGE3-ASTRONOMICON-STARTACK-SCHEMA-LOCK-PC-V0_1"
+    },
+    {
+      "id": "ST3-L03",
+      "source_problem": "Hard red-team and cap closure remain partially manual/report-local.",
+      "affected_organ": "INQUISITION",
+      "problem_type": "CAP_GAP",
+      "evidence": "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-STAGE3-FIRST-REAL-USE-GHOST-EVOLVE-MICROPILOT-PC-V0_1/hard_red_team_verdict.json",
+      "why_it_matters": "Manual cap-state handling can hide contradictions across tasks.",
+      "future_fix": "Introduce immutable cap-state ledger writer/checker with cross-task index.",
+      "blocks": "REAL_USE_PILOT",
+      "can_be_script_first": true,
+      "recommended_next_task": "TASK-NEWGEN-STAGE3-INQUISITION-CAP-LEDGER-INDEX-PC-V0_1"
+    },
+    {
+      "id": "ST3-L04",
+      "source_problem": "Owner-facing RU/EN lane validation still depends on manual discipline.",
+      "affected_organ": "OFFICIO_AGENTIS",
+      "problem_type": "ORGAN_GAP",
+      "evidence": "IMPERIUM_NEW_GENERATION/ORGANS/OFFICIO_AGENTIS/TASK_PARTICIPATION/KNOWN_GAPS_AND_NEXT_HOOKS.md",
+      "why_it_matters": "Language drift can invalidate Owner contract and cause ambiguity.",
+      "future_fix": "Ship bundle-level RU/EN lane checker for report roots.",
+      "blocks": "NEXT_MICROPILOT",
+      "can_be_script_first": true,
+      "recommended_next_task": "TASK-NEWGEN-STAGE3-OFFICIO-RU-LANE-CHECKER-PC-V0_1"
+    },
+    {
+      "id": "ST3-L05",
+      "source_problem": "Manual Logos pipeline registration is candidate and lacks machine schema enforcement.",
+      "affected_organ": "STRATEGIUM",
+      "problem_type": "MATRIX_GAP",
+      "evidence": "IMPERIUM_NEW_GENERATION/ORGANS/STRATEGIUM/MATRICES/MANUAL_LOGOS_PIPELINE_REGISTRATION_MATRIX.md",
+      "why_it_matters": "Without schema checks, corridor reuse quality will drift between tasks.",
+      "future_fix": "Create schema + checker for manual pipeline registration record.",
+      "blocks": "REAL_USE_PILOT",
+      "can_be_script_first": true,
+      "recommended_next_task": "TASK-NEWGEN-STAGE3-STRATEGIUM-MANUAL-PIPELINE-SCHEMA-CHECKER-PC-V0_1"
+    }
+  ],
+  "stage3_findings_mandatory": [
+    "ST3-L01"
+  ]
+}

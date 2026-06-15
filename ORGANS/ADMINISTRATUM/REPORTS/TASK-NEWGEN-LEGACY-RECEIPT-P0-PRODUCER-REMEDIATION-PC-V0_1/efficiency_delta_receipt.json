@@ -1,0 +1,25 @@
+{
+  "task_id": "TASK-NEWGEN-LEGACY-RECEIPT-P0-PRODUCER-REMEDIATION-PC-V0_1",
+  "generated_at_utc": "2026-05-30T21:31:49Z",
+  "focus": "Targeted P0 remediation (4 producers) without full inventory churn",
+  "before": {
+    "p0": 4,
+    "p1": 0,
+    "scope_paths": 4
+  },
+  "after": {
+    "p0": 0,
+    "p3": 4,
+    "scope_paths": 4
+  },
+  "delta": {
+    "p0_reduction": 4,
+    "full_inventory_regenerated": false,
+    "mass_migration_attempted": false
+  },
+  "verdict": "PASS_WITH_WARNINGS",
+  "notes": [
+    "Efficiency gain comes from bounded delta remediation lane and before/after proof for exactly four files.",
+    "System-wide legacy migration remains future staged work."
+  ]
+}

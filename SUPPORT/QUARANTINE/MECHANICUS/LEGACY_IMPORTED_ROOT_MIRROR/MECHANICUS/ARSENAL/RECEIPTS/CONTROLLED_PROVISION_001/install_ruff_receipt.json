@@ -1,0 +1,22 @@
+{
+  "receipt_id": "task-newgen-mechanicus-controlled-tool-provision-pc-v0_1:ruff:install",
+  "task_id": "TASK-NEWGEN-MECHANICUS-CONTROLLED-TOOL-PROVISION-PC-V0_1",
+  "tool": "ruff",
+  "package": "ruff",
+  "install_command": "python -m pip install --user ruff",
+  "started_at_utc": "2026-05-24T19:34:23Z",
+  "finished_at_utc": "2026-05-24T19:34:30Z",
+  "exit_code": 0,
+  "stdout_excerpt": "Collecting ruff\n  Downloading ruff-0.15.14-py3-none-win_amd64.whl.metadata (27 kB)\nDownloading ruff-0.15.14-py3-none-win_amd64.whl (11.9 MB)\n   ---------------------------------------- 11.9/11.9 MB 17.4 MB/s eta 0:00:00\nInstalling collected packages: ruff\nSuccessfully installed ruff-0.15.14",
+  "stderr_excerpt": "[notice] A new release of pip is available: 25.0.1 -> 26.1.1\n[notice] To update, run: python.exe -m pip install --upgrade pip",
+  "network_used": true,
+  "install_scope": "user",
+  "install_performed": true,
+  "side_effects": [
+    "user-site pip installation attempted",
+    "no global installer used"
+  ],
+  "post_install_validation_command": "python -m ruff --version",
+  "post_install_validation_result": "PASS",
+  "verdict": "PASS"
+}

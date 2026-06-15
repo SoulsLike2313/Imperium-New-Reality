@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Visual Unit Passport V0.2",
+  "type": "object",
+  "required": [
+    "visual_unit_id",
+    "parent",
+    "type",
+    "visual_owner",
+    "truth_owner",
+    "data_source_owner",
+    "organ_subject",
+    "implementation_owner",
+    "purpose",
+    "backend_source",
+    "backend_source_status",
+    "allowed_states",
+    "truth_rules",
+    "visual_tokens",
+    "texture",
+    "glow",
+    "motion",
+    "perf_tier",
+    "proof_requirements",
+    "integration_status",
+    "fake_green_risks"
+  ],
+  "properties": {
+    "visual_unit_id": {
+      "type": "string"
+    },
+    "parent": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "visual_owner": {
+      "type": "string"
+    },
+    "truth_owner": {
+      "type": "string"
+    },
+    "data_source_owner": {
+      "type": "string"
+    },
+    "organ_subject": {
+      "type": "string"
+    },
+    "implementation_owner": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "backend_source": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "backend_source_status": {
+      "type": "string"
+    },
+    "backend_source_unknown_reason": {
+      "type": "string"
+    },
+    "allowed_states": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "truth_rules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "visual_tokens": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "texture": {
+      "type": [
+        "string",
+        "object"
+      ]
+    },
+    "glow": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "motion": {
+      "type": [
+        "object",
+        "string"
+      ]
+    },
+    "perf_tier": {
+      "type": "string"
+    },
+    "proof_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "integration_status": {
+      "type": "string"
+    },
+    "fake_green_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

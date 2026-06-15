@@ -1,0 +1,42 @@
+{
+  "organ": "INQUISITION",
+  "status": "ACTIVE_FOR_STAGE1",
+  "task_entry_role": "Runs hard red-team attacks, cap lifecycle checks, and downgrades unsupported optimistic claims.",
+  "required_inputs": [
+    "Claim ledger",
+    "Hard red-team gate"
+  ],
+  "required_outputs": [
+    "Hard red-team verdict"
+  ],
+  "matrix_responsibilities": [
+    "FAKE_GREEN_CAP_MATRIX",
+    "DIRTY_PROVENANCE_CONTRADICTION_MATRIX",
+    "BUILD_VS_RED_TEAM_MODE_MATRIX",
+    "CLAIM_LEDGER_MATRIX",
+    "CAP_CLOSURE_SEMANTICS_MATRIX",
+    "ENCODING_INTEGRITY_MATRIX",
+    "MOJIBAKE_DETECTION_MATRIX"
+  ],
+  "tools_or_receipts_used": [
+    "IMPERIUM_NEW_GENERATION/ORGANS/ASTRONOMICON/TASK_ENTRY_CORRIDOR/TOOLS/check_task_entry_route_v0_1.py",
+    "Review claim_ledger.jsonl against hard_red_team_verdict.json for downgrade consistency.",
+    "scripts/foundational_organs_v1/check_foundational_organs_v1_no_fake_green.py"
+  ],
+  "ide_display_fields": [
+    "final_verdict",
+    "caps_triggered",
+    "downgrade_rules",
+    "red_team_status"
+  ],
+  "failure_caps": [
+    "CAP_STAGE1_WITH_WARNINGS_ONLY",
+    "CAP_ORGAN_SKIPPED",
+    "CAP_SYNTHETIC_TASK_ENTRY_PROOF_MISSING"
+  ],
+  "known_gaps": [
+    "Hard red-team remains partially manual and depends on disciplined ledger updates.",
+    "Cap state trail is report-local, not centrally indexed across tasks."
+  ],
+  "used_by_astronomicon_task_entry": true
+}

@@ -1,0 +1,56 @@
+{
+  "visual_unit_id": "SANCTUM.SHELL.GLOBAL_FRAME",
+  "parent": "SANCTUM.SHELL",
+  "type": "shell_frame",
+  "visual_owner": "SANCTUM_SHELL",
+  "truth_owner": "OFFICIO_AGENTIS_AGENT",
+  "data_source_owner": "SANCTUM_STATE_BUILDER",
+  "organ_subject": "SYSTEM",
+  "implementation_owner": "VISUAL_FOUNDRY",
+  "purpose": "Global Sanctum shell frame for stable operator layout lanes.",
+  "backend_source": {
+    "type": "static_ui_shell",
+    "paths": [
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/static/index.html",
+      "IMPERIUM_NEW_GENERATION/SANCTUM_MINI/static/styles.css"
+    ]
+  },
+  "backend_source_status": "real",
+  "allowed_states": [
+    "idle",
+    "active",
+    "warn",
+    "error",
+    "unknown"
+  ],
+  "truth_rules": [
+    "Frame styling must not imply system PASS by itself.",
+    "Operator state chips must come from explicit truth surfaces."
+  ],
+  "visual_tokens": "sanctum_shell_tokens",
+  "texture": "forge_metal_dark",
+  "glow": {
+    "enabled": false
+  },
+  "motion": {
+    "enabled": true,
+    "animation": "panel_slide_right",
+    "perf_tier": "CHEAP",
+    "disable_in_reduced_motion": true
+  },
+  "perf_tier": "CHEAP",
+  "proof_requirements": [
+    "Shell zones map to static layout files."
+  ],
+  "integration_status": "real",
+  "fake_green_risks": [
+    "Decorative frame can look healthy while backend is disconnected."
+  ],
+  "owner_group": "SANCTUM",
+  "owner_organ": "OFFICIO_AGENTIS_AGENT",
+  "accessibility_rules": [
+    "State must not be encoded by color alone.",
+    "RU/EN labels must remain explicit for status tags."
+  ],
+  "change_safety": "Topology hardening scope only; no final UI readiness claims."
+}

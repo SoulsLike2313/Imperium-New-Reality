@@ -1,0 +1,56 @@
+{
+  "schema": "INQUISITION_HYGIENE_EXCEPTION_POLICY_V0_1",
+  "version": "0.1.0",
+  "purpose_ru": "Политика классификационных исключений: не скрывает грязь, а переводит ложные/системные срабатывания в правильные lifecycle-lanes.",
+  "approved_system_organ_folders": [
+    {
+      "path": "ORGANS/_CORE_GOVERNANCE",
+      "classification": "SYSTEM_ZONE",
+      "organ": "_CORE_GOVERNANCE",
+      "reason_ru": "Системная зона governance; не удалять, зарегистрировать в Data Atlas как system zone."
+    },
+    {
+      "path": "ORGANS/_POST_WORK_RING",
+      "classification": "SYSTEM_ZONE",
+      "organ": "_POST_WORK_RING",
+      "reason_ru": "Системная зона post-work ring; не удалять, зарегистрировать в Data Atlas как system zone."
+    }
+  ],
+  "protected_local_ttl_paths": [
+    {
+      "path_suffix": "IMPERIUM_LOCAL_HANDOFF/WARP_RUNS/_registry",
+      "classification": "PROTECTED_LOCAL_REGISTRY",
+      "reason_ru": "Runtime registry is state, not TTL trash. Old children may be reviewed separately, but registry root must not be quarantined by TTL."
+    }
+  ],
+  "marker_literal_allowed_files": [
+    {
+      "path": "ORGANS/INQUISITION/REPORTING/inquisition_hygiene_auditor_v0_1.py",
+      "reason_ru": "The file contains mojibake markers as detector literals."
+    },
+    {
+      "path": "ORGANS/INQUISITION/REPORTING/inquisition_hygiene_janitor_v0_1.py",
+      "reason_ru": "The file contains mojibake markers as detector literals."
+    }
+  ],
+  "source_cache_patterns": [
+    "__pycache__",
+    ".pyc",
+    ".pyo",
+    ".pytest_cache"
+  ],
+  "never_auto_delete_source_lanes": [
+    "OWNER_REVIEW_CLASSIFY",
+    "OWNER_REVIEW_MOVE",
+    "MECHANICUS_PASSPORT_QUEUE",
+    "BLOCK_AND_REPAIR",
+    "BLOCK_AND_REVIEW",
+    "BLOCK_AND_CLASSIFY"
+  ],
+  "auto_clean_source_lanes_allowed_with_explicit_flag": [
+    "SOURCE_CACHE_CLEAN"
+  ],
+  "ttl_quarantine_lanes_allowed_with_explicit_flag": [
+    "TTL_48_QUARANTINE"
+  ]
+}

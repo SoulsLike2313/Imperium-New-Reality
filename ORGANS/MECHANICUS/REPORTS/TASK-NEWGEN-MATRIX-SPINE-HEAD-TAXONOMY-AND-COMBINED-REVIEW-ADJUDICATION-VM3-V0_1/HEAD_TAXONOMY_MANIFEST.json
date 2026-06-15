@@ -1,0 +1,42 @@
+{
+  "task_id": "TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1",
+  "accepted_continuity_head": "6cc51091ad89238f97f5211ff6d59f0ae9ae53de",
+  "implementation_head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+  "proof_head": "6cc51091ad89238f97f5211ff6d59f0ae9ae53de",
+  "artifact_bundle_head": "e4b2c19e6c8aab875e53f086376e875b3a4afd2b",
+  "receipt_finalization_head": "93405933f603d48510c5f7b344dcc8312ff2e562",
+  "current_remote_head": "93405933f603d48510c5f7b344dcc8312ff2e562",
+  "review_target_head": "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+  "fallback_review_head": "",
+  "fallback_warning": "",
+  "head_roles": {
+    "implementation_head": "where system logic/files changed",
+    "proof_head": "where replay/evidence was generated or updated",
+    "artifact_bundle_head": "where report/evidence bundle lives",
+    "receipt_finalization_head": "where closure/final receipt is finalized",
+    "current_remote_head": "origin/master after push",
+    "review_target_head": "single primary head reviewers should inspect first"
+  },
+  "known_fetchable_heads": [
+    "6cc51091ad89238f97f5211ff6d59f0ae9ae53de",
+    "d6768e53a8041acfbf23d6c44b80f8088d32bd92",
+    "e4b2c19e6c8aab875e53f086376e875b3a4afd2b",
+    "10d4649e64bb9b3565e579c00af88d7bd8f93ba7"
+  ],
+  "caps_reviewers_must_apply": [
+    "CAP_ARTIFACT_BUNDLE_HEAD_MISSING",
+    "CAP_DECLARED_TARGET_UNFETCHABLE",
+    "CAP_REVIEW_TARGET_TYPO_OR_HASH_MISMATCH",
+    "CAP_REVIEWERS_USED_DIFFERENT_HEAD_TAXONOMY",
+    "CAP_HEAD_TAXONOMY_MANIFEST_MISSING",
+    "CAP_COMBINED_REVIEW_ADJUDICATION_MISSING",
+    "CAP_REVIEW_TARGET_NOT_SINGLE",
+    "CAP_WARP_CLAIMED_WITHOUT_UNLOCK",
+    "CAP_NO_EFFICIENCY_DELTA"
+  ],
+  "caps_triggered": [],
+  "clean_pass_allowed": false,
+  "warp_runtime_claimed": false,
+  "warp_unlocked": false,
+  "notes": "This manifest formalizes head taxonomy for machine-readable review handoff."
+}
