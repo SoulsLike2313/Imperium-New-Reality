@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://schemas/astronomicon/astra_task_pack",
+  "$comment": "ASTRONOMICON task-pack manifest v0_1; provenance ASTRONOMICON inbound gate; E3_EXECUTED",
+  "title": "Astra Task Pack Manifest v0_1",
+  "type": "object",
+  "required": [
+    "schema_version", "task_id", "title", "submitted_by", "target_organ",
+    "intent", "change_kind", "payload", "declared_evidence_level"
+  ],
+  "properties": {
+    "schema_version": { "const": "imperium.astra_task_pack.v0_1" },
+    "task_id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "submitted_by": { "enum": ["OWNER_MANUAL", "SERVITOR"] },
+    "target_organ": {
+      "enum": [
+        "ADMINISTRATUM", "ASTRONOMICON", "CUSTODES", "DOCTRINARIUM",
+        "INQUISITION", "MECHANICUS", "OFFICIO_AGENTIS",
+        "SCHOLA_IMPERIALIS", "STRATEGIUM"
+      ]
+    },
+    "intent": { "type": "string", "minLength": 8 },
+    "change_kind": { "enum": ["PATCH", "NEW_FILE", "DELETE", "REFACTOR", "DOC"] },
+    "payload": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "declared_evidence_level": { "enum": ["E1", "E2", "E3", "E4", "E5", "E6"] },
+    "execution_log": { "type": "string" },
+    "replay": { "type": "string" },
+    "provenance": { "type": "string" }
+  },
+  "additionalProperties": true
+}

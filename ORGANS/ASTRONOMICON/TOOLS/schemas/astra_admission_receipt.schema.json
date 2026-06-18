@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://schemas/astronomicon/astra_admission_receipt",
+  "$comment": "ASTRONOMICON inbound admission receipt v0_1; E3_EXECUTED; permit deferred to THRONE",
+  "title": "Astra Admission Receipt v0_1",
+  "type": "object",
+  "required": [
+    "schema_version", "gateway", "stage", "timestamp_utc",
+    "verdict", "reasons", "next_action", "evidence_level"
+  ],
+  "properties": {
+    "schema_version": { "const": "imperium.astra_admission_receipt.v0_1" },
+    "gateway": { "const": "ASTRONOMICON" },
+    "stage": { "enum": ["INBOUND", "OUTBOUND"] },
+    "task_id": { "type": ["string", "null"] },
+    "title": { "type": ["string", "null"] },
+    "target_organ": { "type": ["string", "null"] },
+    "submitted_by": { "type": ["string", "null"] },
+    "timestamp_utc": { "type": "string" },
+    "verdict": { "enum": ["ADMIT", "REJECT"] },
+    "reasons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["gate", "code", "message"],
+        "properties": {
+          "gate": { "enum": ["FORM", "COMPLETENESS", "CORRECTNESS"] },
+          "code": { "type": "string" },
+          "message": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "payload_digest": { "type": "string" },
+    "next_action": { "enum": ["FORWARD_TO_THRONE_PERMIT", "RETURN_TO_SUBMITTER"] },
+    "evidence_level": { "type": "string" },
+    "provenance": { "type": "string" }
+  },
+  "additionalProperties": true
+}
