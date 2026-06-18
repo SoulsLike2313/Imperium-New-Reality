@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://schemas/administratum/continuity_pack",
+  "$comment": "ADMINISTRATUM continuity pack manifest v0_1; E3_EXECUTED; future THRONE validation matrices target",
+  "title": "Imperium Continuity Pack Manifest v0_1",
+  "type": "object",
+  "required": [
+    "schema_version", "assembled_by", "role", "assembled_utc",
+    "git", "organs", "throne", "governance_files", "completeness",
+    "pointers", "evidence_level", "pack_digest"
+  ],
+  "properties": {
+    "schema_version": { "const": "imperium.continuity_pack.v0_1" },
+    "assembled_by": { "const": "ADMINISTRATUM" },
+    "role": { "type": "string", "minLength": 1 },
+    "assembled_utc": { "type": "string" },
+    "git": {
+      "type": "object",
+      "required": ["head", "branch", "remote"],
+      "properties": {
+        "head": { "type": ["string", "null"] },
+        "branch": { "type": ["string", "null"] },
+        "remote": { "type": ["string", "null"] },
+        "head_subject": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "organs": {
+      "type": "array",
+      "minItems": 9,
+      "items": {
+        "type": "object",
+        "required": ["organ", "present", "organ_card", "organ_contract"],
+        "properties": {
+          "organ": { "type": "string" },
+          "present": { "type": "boolean" },
+          "organ_card": { "type": "boolean" },
+          "organ_contract": { "type": "boolean" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "throne": {
+      "type": "object",
+      "required": ["present"],
+      "properties": { "present": { "type": "boolean" } },
+      "additionalProperties": true
+    },
+    "governance_files": { "type": "object" },
+    "completeness": {
+      "type": "object",
+      "required": ["verdict", "reasons"],
+      "properties": {
+        "verdict": { "enum": ["CONTINUITY_OK", "CONTINUITY_INCOMPLETE"] },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["gate", "code", "message"],
+            "properties": {
+              "gate": { "type": "string" },
+              "code": { "type": "string" },
+              "message": { "type": "string" }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "pointers": { "type": "object" },
+    "evidence_level": { "type": "string" },
+    "pack_digest": { "type": "string" },
+    "provenance": { "type": "string" }
+  },
+  "additionalProperties": true
+}
