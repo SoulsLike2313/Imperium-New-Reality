@@ -1,0 +1,41 @@
+{
+  "schema_version": "imperium.organ_card.v0_1",
+  "organ_id": "STRATEGIUM",
+  "root_path": "ORGANS/STRATEGIUM",
+  "life_zone_path": "ORGANS/STRATEGIUM",
+  "primary_duty": "Metrics, priority, cost class, KPD, and next-route weighting.",
+  "status": "ACTIVE_CORE_ORGAN_V0_1",
+  "owned_metrics": [
+    "ORGANS/STRATEGIUM/METRICS/context_locality_metric.json",
+    "ORGANS/STRATEGIUM/METRICS/core_shape_compliance_score_metric.json",
+    "ORGANS/STRATEGIUM/METRICS/known_alert_prevention_metric.json",
+    "ORGANS/STRATEGIUM/METRICS/learning_capture_rate_metric.json",
+    "ORGANS/STRATEGIUM/METRICS/operator_bootstrap_intervention_count_metric.json",
+    "ORGANS/STRATEGIUM/METRICS/organ_life_completeness_score_metric.json",
+    "ORGANS/STRATEGIUM/METRICS/organ_self_sufficiency_metric.json",
+    "ORGANS/STRATEGIUM/METRICS/physical_migration_cost_metric_v0_1.json",
+    "ORGANS/STRATEGIUM/METRICS/quarantine_pressure_metric.json",
+    "ORGANS/STRATEGIUM/METRICS/script_first_ratio_metric.json",
+    "ORGANS/STRATEGIUM/METRICS/servitor_load_reduction_metric.json",
+    "ORGANS/STRATEGIUM/METRICS/true_physical_cleanliness_metric_v0_2.json",
+    "ORGANS/STRATEGIUM/METRICS/unclassified_file_count_metric.json"
+  ],
+  "owned_matrices": [
+    "ORGANS/STRATEGIUM/MATRICES/FREELANCE_CORRIDOR_MATURITY_MATRIX.json",
+    "ORGANS/STRATEGIUM/MATRICES/FREELANCE_SYNTHETIC_E2E_MATRIX.json",
+    "ORGANS/STRATEGIUM/MATRICES/IMPERIUM_MATURITY_TARGET_MATRIX.json",
+    "ORGANS/STRATEGIUM/MATRICES/MANUAL_LOGOS_PIPELINE_REGISTRATION_MATRIX.json",
+    "ORGANS/STRATEGIUM/MATRICES/MARKET_LEARNING_DEMO_MATRIX.json",
+    "ORGANS/STRATEGIUM/MATRICES/OWNER_PAIN_KPD_DELTA_MATRIX.json",
+    "ORGANS/STRATEGIUM/MATRICES/PIPELINE_30_TASK_ORCHESTRATION_MATRIX.json",
+    "ORGANS/STRATEGIUM/MATRICES/SCORE_WEIGHTING_MATRIX.json",
+    "ORGANS/STRATEGIUM/TASK_PARTICIPATION/ORGAN_MATRIX_RESPONSIBILITIES.json"
+  ],
+  "validators": [
+    "ORGANS/STRATEGIUM/COST_GATE/strategium_task_cost_checker_v0_1.py",
+    "ORGANS/STRATEGIUM/RESOURCE_FLEET/imperium_node_probe_v0_1.py"
+  ],
+  "warnings": [
+    "Auto-stamped Phase O step 1; evidence_level=E1_FILE_EXISTS; runtime authority requires E3+ replay."
+  ]
+}

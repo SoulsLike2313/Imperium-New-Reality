@@ -1,0 +1,51 @@
+{
+  "schema_version": "imperium.organ_card.v0_1",
+  "organ_id": "ADMINISTRATUM",
+  "root_path": "ORGANS/ADMINISTRATUM",
+  "life_zone_path": "ORGANS/ADMINISTRATUM",
+  "primary_duty": "Evidence boundary, address book, continuity, archive, and closure truth.",
+  "status": "ACTIVE_CORE_ORGAN_V0_1",
+  "owned_metrics": [],
+  "owned_matrices": [
+    "ORGANS/ADMINISTRATUM/BUNDLE_GATE/SCHEMAS/task_report_bundle_matrix.schema.json",
+    "ORGANS/ADMINISTRATUM/MATRICES/CONTINUITY_HANDOFF_MATRIX.json",
+    "ORGANS/ADMINISTRATUM/MATRICES/EVIDENCE_STRENGTH_MATRIX.json",
+    "ORGANS/ADMINISTRATUM/MATRICES/EXTERNAL_FINALIZATION_RECEIPT_MATRIX.json",
+    "ORGANS/ADMINISTRATUM/MATRICES/FILE_KIND_CLASSIFICATION_MATRIX.json",
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/v0_2/heavy_artifact_without_index/CUSTODES_ORGAN_MATRIX_AUDIT_RECEIPT.json",
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/v0_2/malformed_receipt/CUSTODES_ORGAN_MATRIX_AUDIT_RECEIPT.json",
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/v0_2/missing_organ_receipt/CUSTODES_ORGAN_MATRIX_AUDIT_RECEIPT.json",
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/v0_2/remote_closure_missing/CUSTODES_ORGAN_MATRIX_AUDIT_RECEIPT.json",
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/v0_2/required_organ_block_repaired/CUSTODES_ORGAN_MATRIX_AUDIT_RECEIPT.json",
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/v0_2/required_organ_block/CUSTODES_ORGAN_MATRIX_AUDIT_RECEIPT.json",
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/v0_2/valid_bundle/CUSTODES_ORGAN_MATRIX_AUDIT_RECEIPT.json",
+    "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-ROLE-PACK-AND-LOGOS-OWNER-AUDIT-CARD-CONTRACT-PC-V0_1/role_pack_matrix.json",
+    "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-LEGACY-RECEIPT-P0-PRODUCER-REMEDIATION-PC-V0_1/p0_before_after_remediation_matrix.json",
+    "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-LEGACY-RECEIPT-PRODUCER-INVENTORY-AND-MIGRATION-PREFLIGHT-PC-V0_1/receipt_producer_migration_priority_matrix.json",
+    "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-STAGE1-DIRTY-FILES-CLASSIFICATION-AND-CLEANUP-PC-V0_1/dirty_worktree_classification_matrix.json",
+    "ORGANS/ADMINISTRATUM/SKILLS/CONTINUITY_PACK_SKILL/role_pack_matrix_v0_1.json",
+    "ORGANS/ADMINISTRATUM/TASK_PARTICIPATION/ORGAN_MATRIX_RESPONSIBILITIES.json"
+  ],
+  "validators": [
+    "ORGANS/ADMINISTRATUM/BUNDLE_GATE/administratum_bundle_gate_v0_1.py",
+    "ORGANS/ADMINISTRATUM/BUNDLE_GATE/administratum_bundle_gate_v0_2.py",
+    "ORGANS/ADMINISTRATUM/BUNDLE_GATE/administratum_bundle_packager_v0_1.py",
+    "ORGANS/ADMINISTRATUM/BUNDLE_GATE/administratum_bundle_packager_v0_2.py",
+    "ORGANS/ADMINISTRATUM/BUNDLE_GATES/administratum_bundle_gate_adapter.py",
+    "ORGANS/ADMINISTRATUM/CONTINUITY/__init__.py",
+    "ORGANS/ADMINISTRATUM/CONTINUITY/continuity_pack_builder.py",
+    "ORGANS/ADMINISTRATUM/DATA_ATLAS/data_atlas_scanner_v0_1.py",
+    "ORGANS/ADMINISTRATUM/HYGIENE/trinity_hygiene_scanner_v0_1.py",
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_bundle_checker_v0_1.py",
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_bundle_checker_v0_2.py",
+    "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/administratum_post_work_closure_updater_v0_2.py",
+    "ORGANS/ADMINISTRATUM/REPORTS/final_report_bundle_builder_v0_1.py",
+    "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/administratum_continuity_pack_skill_v0_1.py",
+    "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-SKILL-AND-LOGOS-HANDOFF-BRIDGE-PC-V0_1/administratum_continuity_pack_skill_v0_1.py",
+    "ORGANS/ADMINISTRATUM/RUNTIME_HYGIENE/imperium_runtime_hygiene_v0_1.py",
+    "ORGANS/ADMINISTRATUM/SKILLS/CONTINUITY_PACK_SKILL/administratum_continuity_pack_skill_v0_1.py"
+  ],
+  "warnings": [
+    "Auto-stamped Phase O step 1; evidence_level=E1_FILE_EXISTS; runtime authority requires E3+ replay."
+  ]
+}
