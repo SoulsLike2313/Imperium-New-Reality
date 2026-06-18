@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://schemas/throne/throne_permit_receipt",
+  "$comment": "Provenance: Phase O step 3 — Throne gateway base. Records each Throne admission decision.",
+  "title": "Throne Permit Receipt V0.1",
+  "type": "object",
+  "required": ["schema_version", "throne_id", "task_id", "timestamp_utc", "verdict", "admission", "checked_evidence", "deny_reasons", "conditions", "next_action"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "throne_id": {"type": "string", "minLength": 1},
+    "task_id": {"type": "string", "minLength": 1},
+    "timestamp_utc": {"type": "string", "minLength": 1},
+    "verdict": {"type": "string", "enum": ["PERMIT", "PERMIT_WITH_CONDITIONS", "DENY"]},
+    "admission": {
+      "type": "object",
+      "properties": {
+        "form_ok": {"type": "boolean"},
+        "complete_ok": {"type": "boolean"},
+        "correct_ok": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "checked_evidence": {"type": "array"},
+    "deny_reasons": {"type": "array", "items": {"type": "string", "enum": ["FORM_INVALID", "TASKPACK_INCOMPLETE", "CORRECTNESS_UNPROVEN", "CANON_VIOLATION", "DIRTY_STATE", "FAKE_GREEN_DETECTED", "OWNER_DECISION_MISSING"]}},
+    "conditions": {"type": "array"},
+    "next_action": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": true
+}

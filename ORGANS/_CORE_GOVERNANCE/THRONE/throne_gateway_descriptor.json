@@ -1,0 +1,43 @@
+{
+  "schema_version": "imperium.throne_gateway_descriptor.v0_1",
+  "throne_id": "THRONE",
+  "status": "ACTIVE_GATEWAY_V0_1",
+  "position": "ABOVE_THE_NINE",
+  "role": "GATEWAY_AND_CORE_CONTROL_STORAGE_ROOT",
+  "root_path": "ORGANS/_CORE_GOVERNANCE/THRONE",
+  "control_storage_root": {
+    "is_core_control_point": true,
+    "is_core_storage_root": true,
+    "core_root_path": "ORGANS"
+  },
+  "gateway_law": {
+    "every_request_must_pass": true,
+    "organ_self_permit_allowed": false,
+    "execution_on_deny_allowed": false,
+    "decision_requires_receipt": true
+  },
+  "admission_gate": {
+    "rejects": ["WRONG_FORM", "INCORRECT", "INCOMPLETE"],
+    "form_checks": ["valid_taskpack_manifest", "declared_task_identity", "declared_target_organs", "declared_evidence_plan"],
+    "completeness_checks": ["manifest_present", "receipts_plan_present", "owner_decision_present_when_required"],
+    "correctness_checks": ["internally_consistent", "no_canon_violation", "clean_state_no_dirty", "no_fake_green", "no_stale_receipt"]
+  },
+  "permit_verdicts": ["PERMIT", "PERMIT_WITH_CONDITIONS", "DENY"],
+  "deny_reasons": ["FORM_INVALID", "TASKPACK_INCOMPLETE", "CORRECTNESS_UNPROVEN", "CANON_VIOLATION", "DIRTY_STATE", "FAKE_GREEN_DETECTED", "OWNER_DECISION_MISSING"],
+  "permit_receipt_schema": "ORGANS/_CORE_GOVERNANCE/SCHEMAS/throne_permit_receipt.schema.json",
+  "intake_organ": "ASTRONOMICON",
+  "executor": "SERVITOR",
+  "nine_under_throne": [
+    {"organ_id": "ADMINISTRATUM", "root_path": "ORGANS/ADMINISTRATUM", "primary_duty": "Evidence boundary, address book, continuity, archive, and closure truth."},
+    {"organ_id": "ASTRONOMICON", "root_path": "ORGANS/ASTRONOMICON", "primary_duty": "Task intake, task identity, route manifests, and entry admission."},
+    {"organ_id": "CUSTODES", "root_path": "ORGANS/CUSTODES", "primary_duty": "Narrow organ/matrix and life-zone audit authority."},
+    {"organ_id": "DOCTRINARIUM", "root_path": "ORGANS/DOCTRINARIUM", "primary_duty": "Execution law, doctrine, canon boundaries, and forbidden claims."},
+    {"organ_id": "INQUISITION", "root_path": "ORGANS/INQUISITION", "primary_duty": "Contradiction scans, fake-green rejection, quarantine policy, and risk gates."},
+    {"organ_id": "MECHANICUS", "root_path": "ORGANS/MECHANICUS", "primary_duty": "Tools, validators, replay discipline, and capability registration."},
+    {"organ_id": "OFFICIO_AGENTIS", "root_path": "ORGANS/OFFICIO_AGENTIS", "primary_duty": "Role routing, owner-facing language authority, and response discipline."},
+    {"organ_id": "SCHOLA_IMPERIALIS", "root_path": "ORGANS/SCHOLA_IMPERIALIS", "primary_duty": "Reusable lessons, preventive rules, and learning capture."},
+    {"organ_id": "STRATEGIUM", "root_path": "ORGANS/STRATEGIUM", "primary_duty": "Metrics, priority, cost class, KPD, and next-route weighting."}
+  ],
+  "evidence_level": "E1_FILE_EXISTS",
+  "warnings": ["Base V0.1: defines permit law and routing only. Per-organ deep review pending. Runtime enforcement not claimed (requires E3+ replay)."]
+}
