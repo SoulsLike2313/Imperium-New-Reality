@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://schemas/t4/task_route_manifest",
+  "title": "task_route_manifest",
+  "$comment": "Authored by WARP/T4-SCHEMA-AUTHORING on 20260618-144546 from 71 population instances. required = keys present in ALL instances.",
+  "type": "object",
+  "required": [
+    "task_id"
+  ],
+  "properties": {
+    "allowed_write_scope": {
+      "type": "array"
+    },
+    "base_repo_expected": {
+      "type": "string"
+    },
+    "caps_to_carry": {
+      "type": "array"
+    },
+    "confidence_threshold": {
+      "type": "number"
+    },
+    "contour": {
+      "type": "string"
+    },
+    "entry_ack_required": {
+      "type": "boolean"
+    },
+    "entrypoints": {
+      "type": "object"
+    },
+    "expanded_organ_circle_candidate": {
+      "type": "array"
+    },
+    "expected_registered_outputs": {
+      "type": "object"
+    },
+    "expected_start_head": {
+      "type": "string"
+    },
+    "extracted_taskpack_path": {
+      "type": "string"
+    },
+    "files_to_patch": {
+      "type": "array"
+    },
+    "files_to_read": {
+      "type": "array"
+    },
+    "forbidden_actions": {
+      "type": "array"
+    },
+    "language_and_encoding_policy": {
+      "type": "object"
+    },
+    "merge_policy": {
+      "type": "string"
+    },
+    "organ_route": {
+      "type": "object"
+    },
+    "organs": {
+      "type": "array"
+    },
+    "owner_message": {
+      "type": "string"
+    },
+    "read_first_order": {
+      "type": "array"
+    },
+    "read_order": {
+      "type": "array"
+    },
+    "required_organs": {
+      "type": "array"
+    },
+    "resolver_receipt_required": {
+      "type": "boolean"
+    },
+    "route": {
+      "type": "array"
+    },
+    "route_manifest_version": {
+      "type": "string"
+    },
+    "route_mode": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "source_zip_path": {
+      "type": "string"
+    },
+    "target_contour": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "taskpack_id": {
+      "type": "string"
+    },
+    "taskpack_zip_path": {
+      "type": "string"
+    },
+    "template_id": {
+      "type": "string"
+    },
+    "tier_hint": {
+      "type": "string"
+    },
+    "token_budget": {
+      "type": "number"
+    },
+    "validated_push_policy": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://schemas/t4/task_id_resolver_receipt",
+  "title": "task_id_resolver_receipt",
+  "$comment": "Authored by WARP/T4-SCHEMA-AUTHORING on 20260618-144546 from 29 population instances. required = keys present in ALL instances.",
+  "type": "object",
+  "required": [
+    "admission_receipt_path",
+    "caps_triggered",
+    "current_expected_task_found",
+    "current_expected_task_path",
+    "extracted_path",
+    "registered_task_path",
+    "resolved_by",
+    "resolved_from_current_expected",
+    "resolver_source",
+    "resolver_verdict",
+    "route_manifest_path",
+    "start_task_request_without_task_id",
+    "task_id",
+    "task_start_ack",
+    "taskpack_zip_path",
+    "timestamp_utc",
+    "warnings"
+  ],
+  "properties": {
+    "admission_receipt_path": {
+      "type": "string"
+    },
+    "caps_triggered": {
+      "type": "array"
+    },
+    "current_expected_task_found": {
+      "type": "boolean"
+    },
+    "current_expected_task_path": {
+      "type": "string"
+    },
+    "extracted_path": {
+      "type": "string"
+    },
+    "registered_task_path": {
+      "type": "string"
+    },
+    "resolved_by": {
+      "type": "string"
+    },
+    "resolved_from_current_expected": {
+      "type": "boolean"
+    },
+    "resolver_source": {
+      "type": "string"
+    },
+    "resolver_verdict": {
+      "type": "string"
+    },
+    "route_manifest_path": {
+      "type": "string"
+    },
+    "start_task_request_without_task_id": {
+      "type": "boolean"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "task_start_ack": {
+      "type": "object"
+    },
+    "taskpack_zip_path": {
+      "type": "string"
+    },
+    "timestamp_utc": {
+      "type": "string"
+    },
+    "warnings": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

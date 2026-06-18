@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://schemas/t4/taskpack_admission_receipt",
+  "title": "taskpack_admission_receipt",
+  "$comment": "Authored by WARP/T4-SCHEMA-AUTHORING on 20260618-144546 from 41 population instances. required = keys present in ALL instances.",
+  "type": "object",
+  "required": [
+    "acceptance_gates_found",
+    "admission_verdict",
+    "caps_triggered",
+    "current_expected_task_updated",
+    "duplicate_task_id",
+    "extracted_path",
+    "manifest_found",
+    "output_requirements_found",
+    "registered_task_path",
+    "route_manifest_path",
+    "safe_extraction_path",
+    "source_zip_path",
+    "task_id",
+    "task_id_found",
+    "task_spec_found",
+    "timestamp_utc",
+    "warnings",
+    "zip_sha256"
+  ],
+  "properties": {
+    "acceptance_gates_found": {
+      "type": "boolean"
+    },
+    "admission_verdict": {
+      "type": "string"
+    },
+    "caps_triggered": {
+      "type": "array"
+    },
+    "current_expected_task_updated": {
+      "type": "boolean"
+    },
+    "duplicate_task_id": {
+      "type": "boolean"
+    },
+    "extracted_path": {
+      "type": "string"
+    },
+    "global_legacy_warning_present": {
+      "type": "boolean"
+    },
+    "language_gate_passed": {
+      "type": "boolean"
+    },
+    "manifest_found": {
+      "type": "boolean"
+    },
+    "output_requirements_found": {
+      "type": "boolean"
+    },
+    "registered_task_path": {
+      "type": "string"
+    },
+    "retention_payload_class": {
+      "type": "string"
+    },
+    "route_manifest_path": {
+      "type": "string"
+    },
+    "safe_extraction_path": {
+      "type": "boolean"
+    },
+    "source_zip_path": {
+      "type": "string"
+    },
+    "strict_scope_scan_status": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "task_id_found": {
+      "type": "boolean"
+    },
+    "task_spec_found": {
+      "type": "boolean"
+    },
+    "timestamp_utc": {
+      "type": "string"
+    },
+    "warnings": {
+      "type": "array"
+    },
+    "zip_sha256": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://schemas/t4/task_receipt",
+  "title": "task_receipt",
+  "$comment": "Authored by WARP/T4-SCHEMA-AUTHORING on 20260618-144546 from 16 population instances. required = keys present in ALL instances.",
+  "type": "object",
+  "required": [
+    "generated_at_utc",
+    "schema_version",
+    "task_id"
+  ],
+  "properties": {
+    "artifacts": {
+      "type": "array"
+    },
+    "branch": {
+      "type": "string"
+    },
+    "checks": {
+      "type": "object"
+    },
+    "commit_push": {
+      "type": "object"
+    },
+    "evidence": {
+      "type": "object"
+    },
+    "final_commit_hash": {
+      "type": "string"
+    },
+    "final_commit_push_receipt": {
+      "type": "string"
+    },
+    "final_commit_url": {
+      "type": "string"
+    },
+    "final_verdict": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "head": {
+      "type": "string"
+    },
+    "missing_required_artifacts": {
+      "type": "array"
+    },
+    "no_commit": {
+      "type": "boolean"
+    },
+    "no_push": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "array"
+    },
+    "outputs": {
+      "type": "array"
+    },
+    "owner_clarification": {
+      "type": "object"
+    },
+    "owner_language": {
+      "type": "string"
+    },
+    "remote_sync": {
+      "type": "boolean"
+    },
+    "repo": {
+      "type": "object"
+    },
+    "repo_root": {
+      "type": "string"
+    },
+    "required_artifacts_present": {
+      "type": "array"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "status_snapshot": {
+      "type": "object"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "updated_at_utc": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string"
+    },
+    "verdict_pre_commit": {
+      "type": "string"
+    },
+    "worktree_clean": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

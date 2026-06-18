@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://schemas/t4/bundle_file_inventory",
+  "title": "bundle_file_inventory",
+  "$comment": "Authored by WARP/T4-SCHEMA-AUTHORING on 20260618-144546 from 15 population instances. required = keys present in ALL instances.",
+  "type": "object",
+  "required": [
+    "adjacent_self_reference_files",
+    "included_file_count",
+    "included_files",
+    "inventory_type",
+    "task_id"
+  ],
+  "properties": {
+    "adjacent_self_reference_files": {
+      "type": "array"
+    },
+    "authority_boundary": {
+      "type": "string"
+    },
+    "bundle_path": {
+      "type": "string"
+    },
+    "bundle_sha256": {
+      "type": "string"
+    },
+    "excluded_from_bundle_due_self_reference": {
+      "type": "array"
+    },
+    "included_file_count": {
+      "type": "number"
+    },
+    "included_files": {
+      "type": "array"
+    },
+    "inventory_type": {
+      "type": "string"
+    },
+    "report_dir": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "timestamp_utc": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
