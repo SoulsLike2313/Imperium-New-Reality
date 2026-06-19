@@ -1,11 +1,28 @@
 [CmdletBinding()]
 param(
-  [string]$RealityRoot = 'E:\IMPERIUM_REALITY',
-  [string]$HarnessRoot = 'E:\IMPERIUM_HARNESS',
-  [string]$OutDir      = 'E:\IMPERIUM_HARNESS\CONTINUITY_OUT\CONTEXT',
+  [string]$RealityRoot = '',
+  [string]$HarnessRoot = '',
+  [string]$OutDir      = '',
   [int]$LogN           = 200,
   [switch]$Apply
 )
+
+# --- IMPERIUM ROOTS HEADER: адаптивный резолв путей (без хардкода, любая машина) ---
+$ImpCands = New-Object System.Collections.Generic.List[string]
+$ImpCands.Add((Join-Path $PSScriptRoot 'Imperium.Roots.psm1'))
+$ImpCands.Add((Join-Path $PSScriptRoot '..\..\ROOTS\Imperium.Roots.psm1'))
+if ($env:IMPERIUM_HARNESS) { $ImpCands.Add((Join-Path $env:IMPERIUM_HARNESS 'TOOLS\ROOTS\Imperium.Roots.psm1')) }
+if ($env:IMPERIUM_HOME)    { $ImpCands.Add((Join-Path $env:IMPERIUM_HOME 'IMPERIUM_HARNESS\TOOLS\ROOTS\Imperium.Roots.psm1')) }
+$ImpMod = $null
+foreach ($c in $ImpCands) { if (Test-Path $c) { $ImpMod = $c; break } }
+if ($ImpMod) { Import-Module $ImpMod -Force -ErrorAction SilentlyContinue }
+function Get-ImpRoot([string]$a,[string]$d){ if (Get-Command Get-ImperiumRoot -ErrorAction SilentlyContinue){ try { return (Get-ImperiumRoot $a) } catch {} }; if ($env:IMPERIUM_HOME){ return (Join-Path $env:IMPERIUM_HOME ("IMPERIUM_" + $a)) }; return $d }
+# --- /IMPERIUM ROOTS HEADER ---
+
+if (-not $RealityRoot) { $RealityRoot = Get-ImpRoot 'REALITY' 'E:\IMPERIUM_REALITY' }
+if (-not $HarnessRoot) { $HarnessRoot = Get-ImpRoot 'HARNESS' 'E:\IMPERIUM_HARNESS' }
+if (-not $OutDir) { $OutDir = Join-Path $HarnessRoot 'CONTINUITY_OUT\CONTEXT' }
+
 $ErrorActionPreference = 'Continue'
 try { $PSNativeCommandUseErrorActionPreference = $false } catch {}
 
