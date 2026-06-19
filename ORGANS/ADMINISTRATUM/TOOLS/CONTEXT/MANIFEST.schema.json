@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://schemas/administratum/context_pack_manifest",
+  "title": "Imperium Context Pack Manifest",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "generated_utc",
+    "git_head",
+    "file_count",
+    "total_bytes",
+    "required_dirs",
+    "required_files",
+    "files"
+  ],
+  "properties": {
+    "schema_version": { "const": "imperium.context_pack.v0_1" },
+    "generated_utc": { "type": "string" },
+    "git_head": { "type": "string" },
+    "note": { "type": "string" },
+    "file_count": { "type": "integer", "minimum": 0 },
+    "total_bytes": { "type": "integer", "minimum": 0 },
+    "required_dirs": { "type": "array", "items": { "type": "string" } },
+    "required_files": { "type": "array", "items": { "type": "string" } },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["path", "bytes", "sha256"],
+        "properties": {
+          "path": { "type": "string" },
+          "bytes": { "type": "integer", "minimum": 0 },
+          "sha256": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" }
+        }
+      }
+    }
+  }
+}

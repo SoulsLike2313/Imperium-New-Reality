@@ -1,0 +1,18 @@
+{
+  "schema_version": "imperium.astra_task_pack.v0_1",
+  "task_id": "ASTRA-<SERVITOR>-NNNN",
+  "title": "<короткий заголовок задачи>",
+  "submitted_by": "SERVITOR",
+  "servitor": "GROK",
+  "target_organ": "MECHANICUS",
+  "intent": "<осмысленное описание, не короче 8 символов: что и зачем меняем>",
+  "change_kind": "PATCH",
+  "payload": [
+    "payload/<файл-1>",
+    "payload/<файл-2>"
+  ],
+  "declared_evidence_level": "E1",
+  "execution_log": "<обязателен при declared_evidence_level E3+>",
+  "replay": "<команда воспроизведения; обязателен при E3+>",
+  "provenance": "<кто/чем собрал пак>"
+}
