@@ -5,7 +5,8 @@
 Собирает верный КОНТИНЬЮИТИ-ПАК: живые факты репо (git HEAD/branch/remote,
 наличие 9 органов + Трон + governance) + курируемая доктрина
 (IMPERIUM_CONTINUITY_SOURCE.md) => CONTINUITY_PACK/ { CONTINUITY_MANIFEST.json, IMPERIUM_HANDOFF.md }.
-Цель: в новом чате любой LLM/CLI-агент продолжает без обрывов и грязи.
+Цель: пак + последняя git-ссылка = вход в полный контекст + в роль-пак.
+Активные роли: LOGOS_PRIME (чат в браузере), SERVITOR_PRIME (агент в CLI на ПК).
 Чистый stdlib. Evidence: E3_EXECUTED.
 """
 import argparse
@@ -18,6 +19,7 @@ import sys
 
 SCHEMA_VERSION = "imperium.continuity_pack.v0_1"
 PROVENANCE = "ADMINISTRATUM continuity assembler v0_1; E3_EXECUTED"
+KNOWN_ROLES = {"LOGOS_PRIME", "SERVITOR_PRIME"}
 CANON_ORGANS = [
     "ADMINISTRATUM", "ASTRONOMICON", "CUSTODES", "DOCTRINARIUM",
     "INQUISITION", "MECHANICUS", "OFFICIO_AGENTIS", "SCHOLA_IMPERIALIS",
@@ -103,6 +105,11 @@ def assemble(reality_root, role, source_path, out_dir, git_url=None):
         with open(source_path, encoding="utf-8") as f:
             source_text = f.read()
 
+    role_known = role in KNOWN_ROLES
+    if not role_known:
+        reasons.append({"gate": "ROLE", "code": "ROLE_UNKNOWN",
+                        "message": "role %r не из активных %s" % (role, sorted(KNOWN_ROLES))})
+
     verdict = "CONTINUITY_OK" if not reasons else "CONTINUITY_INCOMPLETE"
     assembled = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -111,8 +118,11 @@ def assemble(reality_root, role, source_path, out_dir, git_url=None):
         "# IMPERIUM — LLM CONTINUITY HANDOFF",
         "",
         "> Auto-stamped by ADMINISTRATUM continuity assembler v0_1. Do not edit by hand.",
+        "> Continuity Pack + this git_head = full context + role pack.",
         "",
         "- role: %s" % role,
+        "- role_known: %s" % ("yes" if role_known else "NO"),
+        "- active_roles: LOGOS_PRIME (browser chat) | SERVITOR_PRIME (CLI agent)",
         "- git_head: %s" % (head or "UNAVAILABLE"),
         "- git_branch: %s" % (branch or "UNAVAILABLE"),
         "- git_remote: %s" % (remote or "UNAVAILABLE"),
@@ -132,6 +142,8 @@ def assemble(reality_root, role, source_path, out_dir, git_url=None):
         "schema_version": SCHEMA_VERSION,
         "assembled_by": "ADMINISTRATUM",
         "role": role,
+        "role_known": role_known,
+        "active_roles": ["LOGOS_PRIME", "SERVITOR_PRIME"],
         "assembled_utc": assembled,
         "git": {"head": head, "branch": branch, "remote": remote, "head_subject": subject},
         "organs": organs,
@@ -162,7 +174,8 @@ def main(argv=None):
     here = os.path.dirname(os.path.abspath(__file__))
     ap = argparse.ArgumentParser(description="ADMINISTRATUM continuity-pack assembler v0_1")
     ap.add_argument("--reality-root", required=True, help="корень IMPERIUM_REALITY")
-    ap.add_argument("--role", default="LOGOS_PRIME", help="роль LLM (по умолчанию LOGOS_PRIME)")
+    ap.add_argument("--role", default="LOGOS_PRIME",
+                    help="роль: LOGOS_PRIME (чат) или SERVITOR_PRIME (CLI)")
     ap.add_argument("--source", default=os.path.join(here, "IMPERIUM_CONTINUITY_SOURCE.md"),
                     help="курируемая доктрина-источник")
     ap.add_argument("--out", default=os.path.join(os.getcwd(), "CONTINUITY_PACK"),
@@ -180,7 +193,7 @@ def main(argv=None):
     print("=" * 60)
     print("  ADMINISTRATUM CONTINUITY ASSEMBLER v0_1")
     print("  reality : %s" % args.reality_root)
-    print("  role    : %s" % args.role)
+    print("  role    : %s (known=%s)" % (args.role, manifest["role_known"]))
     print("  git_head: %s" % (manifest["git"]["head"] or "UNAVAILABLE"))
     print("  out     : %s" % args.out)
     print("  digest  : %s" % manifest.get("pack_digest"))
@@ -189,7 +202,7 @@ def main(argv=None):
         for r in reasons:
             print("  [%-11s] %-22s %s" % (r["gate"], r["code"], r["message"]))
     else:
-        print("  все ворота чистые: 9 органов + Трон + governance + источник")
+        print("  все ворота чистые: 9 органов + Трон + governance + источник + роль")
     print("-" * 60)
     print("  VERDICT : %s" % verdict)
     print("  manifest: %s" % manifest_path)
