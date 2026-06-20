@@ -1,0 +1,90 @@
+=== E3 RUNNER v3 ===
+timestamp_utc : 2026-06-20T20:03:19Z
+pack_root     : E:\_warp_INQ-TOOLS-0001
+platform      : win32
+python        : 3.12.10
+is_ci         : False (None)
+cwd           : E:\_warp_INQ-TOOLS-0001
+
+--- 3 test file(s) ---
+  [           PASS]   0.09s  ORGANS\INQUISITION\TESTS\test_inq_charter_e3.py
+    | [runner] __file__ resolved to: E:\_warp_INQ-TOOLS-0001\ORGANS\INQUISITION\TESTS\test_inq_charter_e3.py
+    | [runner] repo root: E:\_warp_INQ-TOOLS-0001
+    | ============================================================
+    | INQ-CHARTER-0001 E3 runner v2 (Win-safe, hardened walk-up)
+    | ============================================================
+    | [PASS] T1.1_FILES_PRESENT  RU=INQUISITION.md EN=INQUISITION.en.md
+    | [PASS] T1.2_VERSION_1_0_0  v1.0.0 present in both
+    | [PASS] T1.3_NO_LLM_IN_PIPELINE  clause present in both
+    | [PASS] T1.4_FIVE_HOOKS  H1..H5 in RU and EN
+    | [PASS] T1.5_INVARIANTS_AND_VERDICTS  invariants=12 verdicts=12
+    | [SKIP] T2_INQ_SECRETS_SMOKE  requires INQ-TOOLS-0001 (planned next pack)
+    | [SKIP] T3_INQ_PI_SCAN_SMOKE  requires INQ-TOOLS-0001
+    | [SKIP] T4_INQ_TRUST_SMOKE  requires INQ-TOOLS-0001
+    | [SKIP] T5_INQ_AUDIT_SMOKE  requires INQ-TOOLS-0001
+    | [SKIP] T6_E2E_SECRETS_FIXTURE  PLANNED v0_3: synthetic sk-/AKIA fixture
+    | [SKIP] T7_E2E_PI_FIXTURE  PLANNED v0_3: 'ignore previous'/'system:' fixture
+    | [SKIP] T8_E2E_TRUST_RECOMPUTE  PLANNED v0_3: 3 packs per author
+    | [SKIP] T9_E2E_PURGE_DORMANT  PLANNED v0_3: scan only, CORE_READY=false
+    | [SKIP] T10_E2E_FORENSIC_TRACE  PLANNED v0_3: synthetic task_id with 3 verdicts
+    | ------------------------------------------------------------
+    | PASS=5 FAIL=0 SKIP=9
+    | ============================================================
+  [           PASS]   2.72s  ORGANS\INQUISITION\TESTS\test_inq_tools_e2e.py
+    | PACK_ROOT=E:\_warp_INQ-TOOLS-0001
+    | FRONT=E:\_warp_INQ-TOOLS-0001\ORGANS\INQUISITION\TOOLS\inquisition.py
+    | 
+    | --- E1_clean_full_cycle ---
+    | [ ok ] E1.H1_POST_ADMIT.verdict
+    | [ ok ] E1.H1_POST_ADMIT.rc
+    | [ ok ] E1.H2_PRE_PERMIT.verdict
+    | [ ok ] E1.H2_PRE_PERMIT.rc
+    | [ ok ] E1.H4_PRE_APPLY.verdict
+    | [ ok ] E1.H4_PRE_APPLY.rc
+    | [ ok ] E1.H5_POST_LAND.verdict
+    | [ ok ] E1.H5_POST_LAND.rc
+    | 
+    | --- E2_dirty_h1_blocks ---
+    | [ ok ] E2.H1.blocks
+    | [ ok ] E2.H1.rc
+    | 
+    | --- E3_force_inq_owner_override ---
+    | [ ok ] E3.H1.overridden
+    | [ ok ] E3.H1.override_logged
+    | 
+    | === E2E SUMMARY ===
+    | ALL PASSED
+    | {"schema_version": "inq.test_summary.v0_1", "suite": "test_inq_tools_e2e", "passed": true, "tests": 3}
+  [           PASS]   2.05s  ORGANS\INQUISITION\TESTS\test_inq_tools_e3.py
+    | [ ok ] T5.verdict
+    | [ ok ] T5.kind
+    | 
+    | --- T6 ---
+    | [ ok ] T6.verdict
+    | 
+    | --- T7 ---
+    | [ ok ] T7.verdict
+    | 
+    | --- T8 ---
+    | [ ok ] T8.verdict
+    | [ ok ] T8.findings
+    | 
+    | --- T9 ---
+    | [ ok ] T9.append1.rc
+    | [ ok ] T9.append2.rc
+    | [ ok ] T9.audit_log_present
+    | [ ok ] T9.verify_clean
+    | [ ok ] T9.tamper_detected
+    | 
+    | --- T9b ---
+    | [ ok ] T9b.crlf_chain_intact
+    | 
+    | --- T10 ---
+    | [ ok ] T10.overridden
+    | [ ok ] T10.reason_mentions_override
+    | 
+    | === SUMMARY ===
+    | ALL PASSED
+    | {"schema_version": "inq.test_summary.v0_1", "suite": "test_inq_tools_e3", "passed": true, "tests": 12}
+
+=== SUMMARY: PASS (3/3 passed, 0 failed) ===

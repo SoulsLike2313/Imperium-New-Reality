@@ -1,0 +1,42 @@
+{
+  "schema_version": "inq.redaction.v0_1",
+  "updated_utc": "2026-06-20T16:00:00Z",
+  "description": "Inquisition redaction rules. Q10 decision: all 6 targets + recursive deep scan.",
+  "mode": "recursive_deep_scan",
+  "mask_token": "<<INQ_REDACTED>>",
+  "preserve_length": false,
+  "targets": {
+    "provenance_note": {
+      "path_match": "PROVENANCE.json",
+      "key_match": "note",
+      "redact_if_token_like": true,
+      "description": "PROVENANCE.json note field if contains token-like substrings"
+    },
+    "task_intent": {
+      "path_match": "TASK_MANIFEST.json",
+      "key_match": "intent",
+      "redact_if_token_like": true,
+      "description": "TASK_MANIFEST.json intent field if contains token-like substrings"
+    },
+    "transcript_fields": {
+      "key_match_regex": "(?i)(?:transcript|dialog|chat|conversation)",
+      "redact_always": true,
+      "description": "Any field whose key contains transcript/dialog/chat/conversation"
+    },
+    "sensitive_key_names": {
+      "key_match_regex": "(?i)(?:secret|password|passwd|pwd|token|api[_-]?key|access[_-]?key|private[_-]?key|credential|bearer)",
+      "redact_always": true,
+      "description": "Any field whose key name suggests credential"
+    },
+    "negative_experience_re_redact": {
+      "path_match": "_NEGATIVE_EXPERIENCE/",
+      "redact_recursive": true,
+      "description": "Re-scan all incident files at write time to prevent leak through retention"
+    },
+    "recursive_nested": {
+      "recursive": true,
+      "max_depth": 32,
+      "description": "Walk all nested JSON objects/arrays; apply all rules above at every depth"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "_inq_fixture": {
+    "id": "FX-011",
+    "name": "redact_token_like",
+    "category": "per_tool",
+    "tool": "inq_redact",
+    "expected_verdict": "HINT_REDACT_TARGETS",
+    "expected_findings_min": 1,
+    "tags": ["per_tool", "redact", "key_match_regex", "token_like"],
+    "notes": "Redact only-if-token-like (regex key match on .*token.*, .*key.*, value matches secret-prefix). Clean values must NOT be flagged."
+  },
+  "api_clients": {
+    "client_token": "sk-proj-abcDEF1234567890abcDEF1234567890abcDEF12345xx",
+    "public_token_label": "this is just a label, no secret",
+    "github_token": "ghp_abcdefghijklmnopqrstuvwxyz0123456789AB"
+  }
+}

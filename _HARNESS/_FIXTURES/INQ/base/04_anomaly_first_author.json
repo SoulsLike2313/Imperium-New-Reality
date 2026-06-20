@@ -1,0 +1,24 @@
+{
+  "_inq_fixture": {
+    "id": "FX-004",
+    "name": "anomaly_first_author_baseline",
+    "category": "base",
+    "tools": ["inq_anomaly"],
+    "expected_verdict": "HINT_FIRST_AUTHOR",
+    "expected_findings_min": 1,
+    "expected_finding_kinds": ["FIRST_AUTHOR"],
+    "tags": ["base", "anomaly", "first_author", "non_overridable", "hint"],
+    "notes": "Author with cycles_total=0 in authors.json. Detector must emit HINT_FIRST_AUTHOR (non-overridable per anomaly_first_author=HINT charter).",
+    "test_author": "NEW_LLM_CANDIDATE"
+  },
+  "pack_meta": {
+    "schema_version": "imperium.astra_task_pack.v0_1",
+    "task_id": "FX-ANOM-0001",
+    "submitted_by": "NEW_LLM_CANDIDATE",
+    "target_organ": "INQUISITION",
+    "intent": "first-ever submission from this author"
+  },
+  "placeholder_payload": {
+    "reason": "This fixture has no secrets and no PI; only metadata anomaly via test_author."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_inq_fixture": {
+    "id": "FX-001",
+    "name": "clean_baseline",
+    "category": "base",
+    "tools": ["inq_secrets", "inq_pi_scan", "inq_redact", "inq_anomaly"],
+    "expected_verdict": "OK",
+    "expected_findings_min": 0,
+    "expected_findings_max": 0,
+    "tags": ["base", "clean", "baseline", "positive"],
+    "notes": "Pure baseline: a normal pack-shaped JSON with no secrets, no PI, no anomalies. Every detector must return OK on this content."
+  },
+  "pack_meta": {
+    "schema_version": "imperium.astra_task_pack.v0_1",
+    "task_id": "FX-CLEAN-0001",
+    "title": "Clean baseline fixture",
+    "submitted_by": "NOTION_OPUS",
+    "target_organ": "INQUISITION",
+    "intent": "baseline test fixture; do not commit",
+    "change_kind": "none",
+    "declared_evidence_level": "E1"
+  },
+  "sample_content": {
+    "description": "A small pack with ordinary configuration values",
+    "settings": {
+      "max_retries": 3,
+      "timeout_sec": 30,
+      "feature_flags": ["warpzone", "strict_gate"]
+    },
+    "contacts": {
+      "contact_label": "team@example.org",
+      "page_link": "https://example.org/pages/clean"
+    }
+  }
+}

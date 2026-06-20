@@ -1,0 +1,19 @@
+{
+  "_inq_fixture": {
+    "id": "FX-020",
+    "name": "anomaly_unknown_submitter",
+    "category": "edge",
+    "tool": "inq_anomaly",
+    "expected_verdict": "HINT_ANOMALY",
+    "expected_findings_min": 1,
+    "expected_finding_kinds": ["ANOMALY_SUBMITTER"],
+    "tags": ["edge", "anomaly", "submitter", "hint"],
+    "notes": "submitted_by is not in known signer set (OWNER_MANUAL, NOTION_OPUS, CODEX, GROK, SERVITOR)."
+  },
+  "pack_meta": {
+    "schema_version": "imperium.astra_task_pack.v0_1",
+    "task_id": "FX-SUBM-0001",
+    "submitted_by": "ROGUE_AGENT",
+    "target_organ": "INQUISITION"
+  }
+}

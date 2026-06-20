@@ -1,0 +1,120 @@
+{
+  "schema_version": "inq.thresholds.v0_1",
+  "updated_utc": "2026-06-20T16:00:00Z",
+  "description": "Inquisition canonical thresholds. Non-overridable items per charter invariants I7, I8, I9.",
+  "thresholds": {
+    "secrets_entropy_code": {
+      "value": 4.5,
+      "applies_to_extensions": [".py", ".js", ".ts", ".tsx", ".jsx", ".json", ".yaml", ".yml", ".toml", ".sh", ".ps1", ".env"],
+      "description": "Entropy floor (bits/char) for generic detector in code/JSON/config files",
+      "overridable": true
+    },
+    "secrets_entropy_text": {
+      "value": 5.0,
+      "applies_to_extensions": [".md", ".txt", ".rst", ".tex", ".log"],
+      "description": "Entropy floor (bits/char) for generic detector in text/markdown files",
+      "overridable": true
+    },
+    "pi_score_block_llm": {
+      "value": 3,
+      "applies_to_authors": ["NOTION_OPUS", "CODEX", "GROK"],
+      "description": "PI cumulative weight to trigger BLOCK for LLM authors (Q4 adaptive)",
+      "overridable": true
+    },
+    "pi_score_block_owner": {
+      "value": 5,
+      "applies_to_authors": ["OWNER_MANUAL"],
+      "description": "PI cumulative weight to trigger BLOCK for OWNER_MANUAL (Q4 adaptive)",
+      "overridable": true
+    },
+    "trust_baseline_llm": {
+      "value": 0.5,
+      "description": "Starting trust score for new LLM authors (Q5 neutral)",
+      "overridable": false
+    },
+    "trust_baseline_owner": {
+      "value": 1.0,
+      "description": "Starting trust score for OWNER_MANUAL (Q5)",
+      "overridable": false
+    },
+    "trust_delta_ok": {
+      "value": 0.05,
+      "streak_multiplier_threshold": 5,
+      "streak_multiplier": 1.5,
+      "description": "Trust gain per CYCLE_OK; x1.5 multiplier applies after 5 consecutive OKs (Q6 streak bonus)",
+      "overridable": true
+    },
+    "trust_delta_block": {
+      "value": -0.10,
+      "description": "Trust loss per BLOCK verdict (Q6)",
+      "overridable": true
+    },
+    "trust_min_permit": {
+      "value": 0.5,
+      "description": "Minimum trust to PERMIT; below = BLOCK_TRUST (Q7 strict)",
+      "overridable": false
+    },
+    "probation_cycles": {
+      "value": 3,
+      "verdict_replacement": "HINT_PROBATION",
+      "description": "First N cycles of new LLM author: BLOCK_TRUST replaced by HINT_PROBATION (Q13 deliquentry mode)",
+      "overridable": false
+    },
+    "ban_burst_consec": {
+      "value": 3,
+      "description": "Consecutive BLOCKs (no OK in between) to trigger autoban (Q8 default)",
+      "overridable": false
+    },
+    "ban_burst_weekly": {
+      "value": 5,
+      "window_days": 7,
+      "description": "BLOCKs within 7-day rolling window to trigger autoban (Q8 safety net)",
+      "overridable": false
+    },
+    "ban_duration": {
+      "value": "permanent_until_owner_manual",
+      "description": "Ban remains in effect until OWNER_MANUAL submits explicit unban pack (Q9)",
+      "overridable": false
+    },
+    "purge_requires_core_ready": {
+      "value": true,
+      "description": "PURGE_PROTOCOL DORMANT until core_ready=true is landed in Administratum registry (charter I9)",
+      "overridable": false
+    },
+    "fail_closed_default": {
+      "value": true,
+      "description": "Any subprocess error/timeout = FAIL_CLOSED; never silent-pass (charter I4)",
+      "overridable": false
+    },
+    "anomaly_first_author": {
+      "value": "HINT",
+      "description": "First pack from any author always triggers HINT_FIRST_AUTHOR (non-overridable)",
+      "overridable": false
+    },
+    "performance_budget_small_pack_sec": {
+      "value": 2.0,
+      "applies_to_payload_count_lte": 10,
+      "description": "Total PRE-ADMIT Inq budget for packs with \u226410 payload files (Q33 adaptive)"
+    },
+    "performance_budget_large_pack_sec": {
+      "value": 10.0,
+      "applies_to_payload_count_gt": 10,
+      "description": "Total PRE-ADMIT Inq budget for packs with >10 payload files (Q33 adaptive)"
+    },
+    "timeout_lint_like_sec": {
+      "value": 10,
+      "applies_to_tools": ["inq_patterns", "inq_report", "inq_audit"],
+      "description": "Per-tool timeout for fast lint-like tools (Q17)"
+    },
+    "timeout_scan_like_sec": {
+      "value": 30,
+      "applies_to_tools": ["inq_secrets", "inq_pi_scan", "inq_redact", "inq_anomaly", "inq_trust", "inq_ban"],
+      "description": "Per-tool timeout for scan-like tools (Q17)"
+    },
+    "timeout_audit_sec": {
+      "value": 60,
+      "applies_to_tools": ["inq_trace"],
+      "description": "Per-tool timeout for trace/audit tools that may walk full history (Q17)"
+    }
+  }
+}

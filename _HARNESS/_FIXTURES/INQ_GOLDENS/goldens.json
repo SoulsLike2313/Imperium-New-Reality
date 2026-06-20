@@ -1,0 +1,123 @@
+{
+  "schema_version": "inq.goldens.v0_1",
+  "description": "Snapshot goldens for 20 INQ fixtures. Each entry maps fixture id to expected verdict subset that the test harness compares against actual tool output (volatile fields like issued_utc are excluded from comparison).",
+  "comparison_keys": ["verdict", "stage", "exit_code", "finding_kinds_min_subset", "findings_count_min", "findings_count_max"],
+  "category_name_note": "finding_kinds_min_subset values use SIGNATURES.json category keys for PI (ignore_directives, role_injection, jailbreak_vocabulary, prompt_leak, code_comment_injection, multilingual_ru, multilingual_cn_es_ar) and secrets pattern names (openai_anthropic, aws_access_keys, github_tokens, slack_tokens, google_api, private_key_blocks, notion_gitlab_linear, generic_high_entropy). Anomaly kinds use detector-emitted names (FIRST_AUTHOR, ANOMALY_ORGAN, ANOMALY_SCHEMA, ANOMALY_SUBMITTER).",
+  "goldens": {
+    "FX-001": {
+      "tools": {
+        "inq_secrets":  {"verdict": "OK",                "exit_code": 0, "findings_count_max": 0},
+        "inq_pi_scan":  {"verdict": "OK",                "exit_code": 0, "findings_count_max": 0},
+        "inq_redact":   {"verdict": "OK",                "exit_code": 0, "findings_count_max": 0},
+        "inq_anomaly":  {"verdict": "OK",                "exit_code": 0, "findings_count_max": 0}
+      }
+    },
+    "FX-002": {
+      "tools": {
+        "inq_secrets":  {"verdict": "BLOCK_SECRETS",     "exit_code": 1, "findings_count_min": 1, "finding_kinds_min_subset": ["aws_access_keys"]}
+      }
+    },
+    "FX-003": {
+      "tools": {
+        "inq_pi_scan_llm":    {"verdict": "BLOCK_PI",    "exit_code": 1, "findings_count_min": 1, "finding_kinds_min_subset": ["ignore_directives"]},
+        "inq_pi_scan_owner":  {"verdict": "BLOCK_PI",    "exit_code": 1, "findings_count_min": 1, "finding_kinds_min_subset": ["ignore_directives"]}
+      },
+      "notes": "3 strong vectors (ignore_directives weight=3 fires multiple times + role injection signal) push score >= OWNER threshold 5. Both audiences BLOCK."
+    },
+    "FX-004": {
+      "author_override": "NEW_LLM_CANDIDATE",
+      "tools": {
+        "inq_anomaly":  {"verdict": "HINT_FIRST_AUTHOR", "exit_code": 0, "findings_count_min": 1, "finding_kinds_min_subset": ["FIRST_AUTHOR"]}
+      }
+    },
+    "FX-005": {
+      "tools": {
+        "inq_secrets":  {"verdict": "BLOCK_SECRETS",     "exit_code": 1, "findings_count_min": 1, "finding_kinds_min_subset": ["openai_anthropic"]}
+      }
+    },
+    "FX-006": {
+      "tools": {
+        "inq_secrets":  {"verdict": "BLOCK_SECRETS",     "exit_code": 1, "findings_count_min": 1, "finding_kinds_min_subset": ["aws_access_keys"]}
+      },
+      "notes": "AWS secret_access_key is 40-char b64 and is detected via generic_high_entropy at HINT level; the BLOCK comes from aws_access_keys. Combined verdict remains BLOCK_SECRETS (worst-of)."
+    },
+    "FX-007": {
+      "tools": {
+        "inq_secrets":  {"verdict": "BLOCK_SECRETS", "exit_code": 1, "findings_count_min": 1, "finding_kinds_min_subset": ["generic_high_entropy"]}
+      },
+      "notes": "v0_1 entropy gate is currently BLOCK at first high-entropy hit (no HINT tier). Documented behaviour; HINT_SECRETS_ENTROPY ladder scheduled for v0_2 once tiered thresholds (secrets_entropy_text=5.0 vs secrets_entropy_code=4.5) wire through."
+    },
+    "FX-008": {
+      "tools": {
+        "inq_pi_scan_llm":   {"verdict": "BLOCK_PI",     "exit_code": 1, "findings_count_min": 1, "finding_kinds_min_subset": ["multilingual_ru"]},
+        "inq_pi_scan_owner": {"verdict": "HINT_PI",      "exit_code": 0, "findings_count_min": 1, "findings_count_max": 2}
+      },
+      "notes": "Russian variants matched only via multilingual_ru category (weight=3). 1 finding -> score=3 -> LLM BLOCK (thr=3), OWNER HINT (thr=5). File must be saved as UTF-8 with real Cyrillic glyphs."
+    },
+    "FX-009": {
+      "tools": {
+        "inq_pi_scan_llm":   {"verdict": "BLOCK_PI",     "exit_code": 1, "findings_count_min": 3},
+        "inq_pi_scan_owner": {"verdict": "BLOCK_PI",     "exit_code": 1, "findings_count_min": 3}
+      }
+    },
+    "FX-010": {
+      "tools": {
+        "inq_redact":   {"verdict": "HINT_REDACT_TARGETS", "exit_code": 0, "findings_count_min": 2}
+      }
+    },
+    "FX-011": {
+      "tools": {
+        "inq_redact":   {"verdict": "HINT_REDACT_TARGETS", "exit_code": 0, "findings_count_min": 1}
+      }
+    },
+    "FX-012": {
+      "tools": {
+        "inq_anomaly":  {"verdict": "HINT_ANOMALY",      "exit_code": 0, "findings_count_min": 1, "finding_kinds_min_subset": ["ANOMALY_ORGAN"]}
+      }
+    },
+    "FX-013": {
+      "tools": {
+        "inq_anomaly":  {"verdict": "HINT_ANOMALY",      "exit_code": 0, "findings_count_min": 1, "finding_kinds_min_subset": ["ANOMALY_SCHEMA"]}
+      }
+    },
+    "FX-014": {
+      "tools": {
+        "inq_audit_append": {"verdict": "OK",            "exit_code": 0, "findings_count_min": 1},
+        "inq_audit_verify": {"verdict": "OK",            "exit_code": 0}
+      }
+    },
+    "FX-015": {
+      "tools": {
+        "inq_secrets_with_combo":    {"verdict": "OK",            "exit_code": 0, "findings_count_max": 0},
+        "inq_secrets_without_combo": {"verdict": "BLOCK_SECRETS", "exit_code": 1, "findings_count_min": 1}
+      }
+    },
+    "FX-016": {
+      "tools": {
+        "inq_pi_scan_llm":   {"verdict": "HINT_PI", "exit_code": 0, "findings_count_min": 1, "findings_count_max": 2, "finding_kinds_min_subset": ["prompt_leak"]},
+        "inq_pi_scan_owner": {"verdict": "HINT_PI", "exit_code": 0, "findings_count_min": 1, "findings_count_max": 2, "finding_kinds_min_subset": ["prompt_leak"]}
+      }
+    },
+    "FX-017": {
+      "tools": {
+        "inq_pi_scan_llm":   {"verdict": "BLOCK_PI", "exit_code": 1, "findings_count_min": 1, "finding_kinds_min_subset": ["ignore_directives"]}
+      },
+      "notes": "Detection relies on the latin-script copy in normal_followup. Pure homograph evasion is only partial in v0_1 (documented limitation)."
+    },
+    "FX-018": {
+      "tools": {
+        "inq_secrets":  {"verdict": "BLOCK_SECRETS",     "exit_code": 1, "findings_count_min": 2}
+      }
+    },
+    "FX-019": {
+      "tools": {
+        "inq_redact":   {"verdict": "HINT_REDACT_TARGETS", "exit_code": 0, "findings_count_min": 3}
+      }
+    },
+    "FX-020": {
+      "tools": {
+        "inq_anomaly":  {"verdict": "HINT_ANOMALY",      "exit_code": 0, "findings_count_min": 1, "finding_kinds_min_subset": ["ANOMALY_SUBMITTER"]}
+      }
+    }
+  }
+}

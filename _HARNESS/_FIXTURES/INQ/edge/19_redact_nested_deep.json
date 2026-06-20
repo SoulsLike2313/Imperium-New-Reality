@@ -1,0 +1,19 @@
+{
+  "_inq_fixture": {
+    "id": "FX-019",
+    "name": "redact_nested_deep",
+    "category": "edge",
+    "tool": "inq_redact",
+    "expected_verdict": "HINT_REDACT_TARGETS",
+    "expected_findings_min": 3,
+    "tags": ["edge", "redact", "recursive", "deep_nesting"],
+    "notes": "Q10 recursive=true. Redact targets buried 5+ levels deep in nested arrays/objects."
+  },
+  "l1": {
+    "l2": [
+      {"l3": {"l4": {"l5": {"password": "deep-pass-1"}}}},
+      {"l3": {"l4": {"api_token": "sk-proj-abcDEF1234567890abcDEF1234567890abcDEF12"}}},
+      {"l3": [{"l4": [{"secret": "deep-secret-2"}]}]}
+    ]
+  }
+}

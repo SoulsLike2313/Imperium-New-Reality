@@ -1,0 +1,16 @@
+{
+  "schema_version": "inq.regress_golden.v0_1",
+  "id": "RUNNER-PATH-INV-001",
+  "name": "runner_path_invariance",
+  "origin": "INQ-CHARTER-0001 attempt 1 (lineage 60b4 attempt) failed with IndexError on `ROOT.parents[i] for i in range(1, 6)` when invoked from a shallow path inside warp zone.",
+  "contract": "e3_runner.find_pack_root() MUST: (1) iterate parents lazily via `for cand in chain` (NEVER `parents[i]`); (2) cap walk depth at MAX_DEPTH=10; (3) include Path.cwd() as a fallback candidate; (4) raise RuntimeError with a descriptive message instead of IndexError when no marker is found; (5) treat presence of TASK_MANIFEST.json OR PROVENANCE.json OR (_HARNESS/ AND ORGANS/) as a pack-root marker.",
+  "invariants": [
+    {"id": "INV-1", "check": "running from a freshly created tmp dir 1 level deep yields RuntimeError, not IndexError"},
+    {"id": "INV-2", "check": "running from PACK_ROOT itself succeeds and returns PACK_ROOT"},
+    {"id": "INV-3", "check": "running from PACK_ROOT/_HARNESS/RUNNER/ succeeds and returns PACK_ROOT (3 parents up)"},
+    {"id": "INV-4", "check": "--pack-root override skips discovery entirely"},
+    {"id": "INV-5", "check": "NO_TESTS condition still writes RESULTS.json and EXECUTION_LOG.txt and exits with code 2"}
+  ],
+  "test_strategy": "Covered by test_inq_tools_e3.py::T0_runner_path_invariance which exercises INV-1..INV-5 via subprocess calls to e3_runner.py and direct in-process import.",
+  "do_not_regress": true
+}

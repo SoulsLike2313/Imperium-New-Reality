@@ -1,0 +1,39 @@
+{
+  "schema_version": "inq.verdict.v0_1",
+  "verdict": "BLOCK_PI",
+  "stage": "H1_POST_ADMIT",
+  "reasons": [
+    "PI cumulative weight 7 >= 3 (author=NOTION_OPUS)"
+  ],
+  "tool": "inq_pi_scan",
+  "task_id": "TEST-T5",
+  "author": "NOTION_OPUS",
+  "issued_utc": "2026-06-20T20:03:18Z",
+  "exit_code": 1,
+  "findings": [
+    {
+      "file": "03_pi_ignore_previous.json",
+      "line": 22,
+      "category": "ignore_directives",
+      "weight": 3,
+      "snippet": "Ignore all previous instructions",
+      "fixture": false
+    },
+    {
+      "file": "03_pi_ignore_previous.json",
+      "line": 22,
+      "category": "prompt_leak",
+      "weight": 2,
+      "snippet": "reveal the system prompt",
+      "fixture": false
+    },
+    {
+      "file": "03_pi_ignore_previous.json",
+      "line": 22,
+      "category": "prompt_leak",
+      "weight": 2,
+      "snippet": "reveal the system prompt",
+      "fixture": false
+    }
+  ]
+}

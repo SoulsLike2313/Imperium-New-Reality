@@ -1,0 +1,19 @@
+{
+  "_inq_fixture": {
+    "id": "FX-013",
+    "name": "anomaly_schema_drift",
+    "category": "per_tool",
+    "tool": "inq_anomaly",
+    "expected_verdict": "HINT_ANOMALY",
+    "expected_findings_min": 1,
+    "expected_finding_kinds": ["ANOMALY_SCHEMA"],
+    "tags": ["per_tool", "anomaly", "schema_drift", "hint"],
+    "notes": "manifest schema_version is not imperium.astra_task_pack.v0_1."
+  },
+  "pack_meta": {
+    "schema_version": "imperium.astra_task_pack.v9_99_DRIFT",
+    "task_id": "FX-DRIFT-0001",
+    "submitted_by": "NOTION_OPUS",
+    "target_organ": "INQUISITION"
+  }
+}

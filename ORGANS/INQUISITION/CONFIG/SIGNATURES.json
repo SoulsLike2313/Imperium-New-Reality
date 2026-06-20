@@ -1,0 +1,113 @@
+{
+  "schema_version": "inq.signatures.v0_1",
+  "updated_utc": "2026-06-20T16:00:00Z",
+  "description": "Canonical Inquisition signatures: 8 secrets pattern classes + 7 PI categories. Edit only via signed pack through Astra gate.",
+  "secrets": {
+    "openai_anthropic": {
+      "regex": "(?<![A-Za-z0-9])(sk-(?:proj-|ant-)?[A-Za-z0-9_-]{24,})(?![A-Za-z0-9])",
+      "min_length": 24,
+      "description": "OpenAI / Anthropic / generic sk- API keys"
+    },
+    "aws_access_keys": {
+      "regex": "(?<![A-Za-z0-9])(A(?:KIA|SIA)[A-Z0-9]{16})(?![A-Za-z0-9])",
+      "min_length": 20,
+      "description": "AWS access key IDs (AKIA/ASIA prefix)"
+    },
+    "github_tokens": {
+      "regex": "(?<![A-Za-z0-9])((?:ghp_|gho_|ghs_|ghu_|github_pat_)[A-Za-z0-9_]{30,})(?![A-Za-z0-9])",
+      "min_length": 36,
+      "description": "GitHub PAT / OAuth / server / user / fine-grained tokens"
+    },
+    "slack_tokens": {
+      "regex": "(?<![A-Za-z0-9])(xox[bpoaers]-[A-Za-z0-9-]{10,})(?![A-Za-z0-9])",
+      "min_length": 16,
+      "description": "Slack bot/user/admin/app tokens (xoxb-/xoxp-/xoxa-/xapp-/xoxr-/xoxs-)"
+    },
+    "google_api": {
+      "regex": "(?<![A-Za-z0-9])(AIza[A-Za-z0-9_-]{35})(?![A-Za-z0-9])",
+      "min_length": 39,
+      "description": "Google API key (AIza prefix, 39 chars total)"
+    },
+    "private_key_blocks": {
+      "regex": "-----BEGIN (?:RSA |EC |OPENSSH |DSA |PGP |ENCRYPTED )?PRIVATE KEY-----",
+      "min_length": 24,
+      "description": "PEM private key block headers (RSA/EC/OPENSSH/DSA/PGP/ENCRYPTED/generic)"
+    },
+    "notion_gitlab_linear": {
+      "regex": "(?<![A-Za-z0-9])((?:ntn_|secret_)[A-Za-z0-9]{40,}|glpat-[A-Za-z0-9_-]{20,}|lin_api_[A-Za-z0-9]{32,})(?![A-Za-z0-9])",
+      "min_length": 24,
+      "description": "Notion (ntn_/secret_), GitLab PAT (glpat-), Linear API (lin_api_)"
+    },
+    "generic_high_entropy": {
+      "regex": "(?<![A-Za-z0-9_\\-])([A-Za-z0-9_\\-]{24,})(?![A-Za-z0-9_\\-])",
+      "min_length": 24,
+      "entropy_check": true,
+      "description": "Generic high-entropy string catch-all; entropy gate (THRESHOLDS.secrets_entropy_*) decides BLOCK"
+    }
+  },
+  "pi_categories": {
+    "ignore_directives": {
+      "patterns": [
+        "(?i)ignore\\s+(?:all\\s+)?(?:previous|prior|above)\\s+(?:instructions?|directives?|rules?)",
+        "(?i)disregard\\s+(?:the\\s+)?(?:above|previous|prior|earlier)\\s+(?:instructions?|directives?|context)",
+        "(?i)forget\\s+(?:everything|all|previous|prior)\\s+(?:instructions?|directives?|context)"
+      ],
+      "weight": 3,
+      "description": "PI: explicit instruction-override directives"
+    },
+    "role_injection": {
+      "patterns": [
+        "(?im)^\\s*(?:system|assistant|user)\\s*:\\s*\\S",
+        "<\\|(?:system|assistant|user|im_start|im_end|endoftext|begin_of_text|end_of_text)\\|>",
+        "\\[/?INST\\]",
+        "^<s>\\s"
+      ],
+      "weight": 2,
+      "description": "PI: role-marker injection (system:/assistant:/etc) and chat-template markers"
+    },
+    "jailbreak_vocabulary": {
+      "patterns": [
+        "(?i)\\bDAN\\b\\s*(?:mode|prompt|protocol)?",
+        "(?i)developer\\s+mode\\s+(?:enabled|on|activated)",
+        "(?i)(?:unfiltered|no\\s+restrictions|no\\s+filter|jailbreak)",
+        "(?i)you\\s+are\\s+now\\s+(?:DAN|unfiltered|jailbroken|free|unleashed)"
+      ],
+      "weight": 3,
+      "description": "PI: jailbreak vocabulary (DAN, developer mode, unfiltered, jailbreak)"
+    },
+    "prompt_leak": {
+      "patterns": [
+        "(?i)(?:repeat|print|show|output|display|reveal)\\s+(?:your|the)\\s+(?:system\\s+)?(?:prompt|instructions?|directives?)",
+        "(?i)what\\s+(?:are|is)\\s+your\\s+(?:initial\\s+)?(?:instructions?|directives?|system\\s+prompt)",
+        "(?i)reveal\\s+(?:your|the)\\s+(?:hidden\\s+)?(?:system|initial)\\s+(?:prompt|message|instructions?)"
+      ],
+      "weight": 2,
+      "description": "PI: attempts to leak system prompt"
+    },
+    "code_comment_injection": {
+      "patterns": [
+        "(?im)^\\s*(?:#|//|--|/\\*)\\s*(?:ignore\\s+previous|disregard\\s+above|forget\\s+instructions)",
+        "(?im)^\\s*(?:#|//)\\s*(?:system|assistant)\\s*:"
+      ],
+      "weight": 2,
+      "description": "PI: injection hidden in code comments"
+    },
+    "multilingual_ru": {
+      "patterns": [
+        "(?i)(?:\u0438\u0433\u043d\u043e\u0440\u0438\u0440\u0443\u0439|\u0437\u0430\u0431\u0443\u0434\u044c|\u043e\u0442\u0431\u0440\u043e\u0441\u044c)\\s+(?:\u0432\u0441\u0435\\s+)?(?:\u043f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0438\u0435|\u043f\u0440\u0435\u0436\u043d\u0438\u0435|\u043f\u0440\u043e\u0448\u043b\u044b\u0435)\\s+(?:\u0438\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u0438|\u0443\u043a\u0430\u0437\u0430\u043d\u0438\u044f|\u043f\u0440\u0430\u0432\u0438\u043b\u0430)",
+        "(?i)(?:\u0442\u044b\\s+\u0442\u0435\u043f\u0435\u0440\u044c|\u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u044c\\s+\u0447\u0442\u043e\\s+\u0442\u044b)\\s+(?:DAN|\u0431\u0435\u0437\\s+\u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u0438\u0439)"
+      ],
+      "weight": 3,
+      "description": "PI: Russian variants of ignore/jailbreak directives"
+    },
+    "multilingual_cn_es_ar": {
+      "patterns": [
+        "\u5ffd\u7565(?:\u4e4b\u524d|\u4ee5\u524d|\u4e0a\u9762)\u7684?(?:\u6307\u4ee4|\u6307\u793a)",
+        "(?i)ignora\\s+(?:todas\\s+)?(?:las\\s+)?instrucciones\\s+(?:anteriores|previas|previas?)",
+        "\u062a\u062c\u0627\u0647\u0644\\s+(?:\u062c\u0645\u064a\u0639\\s+)?\u0627\u0644\u062a\u0639\u0644\u064a\u0645\u0627\u062a\\s+\u0627\u0644\u0633\u0627\u0628\u0642\u0629"
+      ],
+      "weight": 3,
+      "description": "PI: Chinese / Spanish / Arabic variants"
+    }
+  }
+}

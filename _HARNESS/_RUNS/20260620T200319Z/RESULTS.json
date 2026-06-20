@@ -1,0 +1,48 @@
+{
+  "schema_version": "inq.e3_results.v0_1",
+  "timestamp_utc": "2026-06-20T20:03:19Z",
+  "pack_root": "E:\\_warp_INQ-TOOLS-0001",
+  "env": {
+    "is_ci": false,
+    "ci_provider": null,
+    "platform": "win32",
+    "python": "3.12.10",
+    "cwd": "E:\\_warp_INQ-TOOLS-0001",
+    "pythonioencoding": "utf-8"
+  },
+  "summary": {
+    "total": 3,
+    "passed": 3,
+    "failed": 0,
+    "overall": "PASS"
+  },
+  "tests": [
+    {
+      "test_path": "ORGANS\\INQUISITION\\TESTS\\test_inq_charter_e3.py",
+      "return_code": 0,
+      "timed_out": false,
+      "elapsed_sec": 0.094,
+      "stdout_tail": "[runner] __file__ resolved to: E:\\_warp_INQ-TOOLS-0001\\ORGANS\\INQUISITION\\TESTS\\test_inq_charter_e3.py\n[runner] repo root: E:\\_warp_INQ-TOOLS-0001\n============================================================\nINQ-CHARTER-0001 E3 runner v2 (Win-safe, hardened walk-up)\n============================================================\n[PASS] T1.1_FILES_PRESENT  RU=INQUISITION.md EN=INQUISITION.en.md\n[PASS] T1.2_VERSION_1_0_0  v1.0.0 present in both\n[PASS] T1.3_NO_LLM_IN_PIPELINE  clause present in both\n[PASS] T1.4_FIVE_HOOKS  H1..H5 in RU and EN\n[PASS] T1.5_INVARIANTS_AND_VERDICTS  invariants=12 verdicts=12\n[SKIP] T2_INQ_SECRETS_SMOKE  requires INQ-TOOLS-0001 (planned next pack)\n[SKIP] T3_INQ_PI_SCAN_SMOKE  requires INQ-TOOLS-0001\n[SKIP] T4_INQ_TRUST_SMOKE  requires INQ-TOOLS-0001\n[SKIP] T5_INQ_AUDIT_SMOKE  requires INQ-TOOLS-0001\n[SKIP] T6_E2E_SECRETS_FIXTURE  PLANNED v0_3: synthetic sk-/AKIA fixture\n[SKIP] T7_E2E_PI_FIXTURE  PLANNED v0_3: 'ignore previous'/'system:' fixture\n[SKIP] T8_E2E_TRUST_RECOMPUTE  PLANNED v0_3: 3 packs per author\n[SKIP] T9_E2E_PURGE_DORMANT  PLANNED v0_3: scan only, CORE_READY=false\n[SKIP] T10_E2E_FORENSIC_TRACE  PLANNED v0_3: synthetic task_id with 3 verdicts\n------------------------------------------------------------\nPASS=5 FAIL=0 SKIP=9\n============================================================\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "test_path": "ORGANS\\INQUISITION\\TESTS\\test_inq_tools_e2e.py",
+      "return_code": 0,
+      "timed_out": false,
+      "elapsed_sec": 2.718,
+      "stdout_tail": "PACK_ROOT=E:\\_warp_INQ-TOOLS-0001\nFRONT=E:\\_warp_INQ-TOOLS-0001\\ORGANS\\INQUISITION\\TOOLS\\inquisition.py\n\n--- E1_clean_full_cycle ---\n[ ok ] E1.H1_POST_ADMIT.verdict\n[ ok ] E1.H1_POST_ADMIT.rc\n[ ok ] E1.H2_PRE_PERMIT.verdict\n[ ok ] E1.H2_PRE_PERMIT.rc\n[ ok ] E1.H4_PRE_APPLY.verdict\n[ ok ] E1.H4_PRE_APPLY.rc\n[ ok ] E1.H5_POST_LAND.verdict\n[ ok ] E1.H5_POST_LAND.rc\n\n--- E2_dirty_h1_blocks ---\n[ ok ] E2.H1.blocks\n[ ok ] E2.H1.rc\n\n--- E3_force_inq_owner_override ---\n[ ok ] E3.H1.overridden\n[ ok ] E3.H1.override_logged\n\n=== E2E SUMMARY ===\nALL PASSED\n{\"schema_version\": \"inq.test_summary.v0_1\", \"suite\": \"test_inq_tools_e2e\", \"passed\": true, \"tests\": 3}\n",
+      "stderr_tail": "",
+      "passed": true
+    },
+    {
+      "test_path": "ORGANS\\INQUISITION\\TESTS\\test_inq_tools_e3.py",
+      "return_code": 0,
+      "timed_out": false,
+      "elapsed_sec": 2.047,
+      "stdout_tail": "PACK_ROOT=E:\\_warp_INQ-TOOLS-0001\nPY=C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\nTOOLS=E:\\_warp_INQ-TOOLS-0001\\ORGANS\\INQUISITION\\TOOLS\n\n--- T0 ---\n[ ok ] T0.INV-1\n[ ok ] T0.INV-2_root\n[ ok ] T0.INV-3_runner_dir\n\n--- T1 ---\n[ ok ] T1.rc\n[ ok ] T1.tools_count\n[ ok ] T1.syntax_ok_all\n[ ok ] T1.overall_ok\n\n--- T2 ---\n[ ok ] T2.rc\n[ ok ] T2.verdict\n[ ok ] T2.kind\n\n--- T3 ---\n[ ok ] T3.rc\n[ ok ] T3.verdict\n[ ok ] T3.kind\n\n--- T4 ---\n[ ok ] T4.rc\n[ ok ] T4.verdict\n[ ok ] T4.kind\n\n--- T5 ---\n[ ok ] T5.rc\n[ ok ] T5.verdict\n[ ok ] T5.kind\n\n--- T6 ---\n[ ok ] T6.verdict\n\n--- T7 ---\n[ ok ] T7.verdict\n\n--- T8 ---\n[ ok ] T8.verdict\n[ ok ] T8.findings\n\n--- T9 ---\n[ ok ] T9.append1.rc\n[ ok ] T9.append2.rc\n[ ok ] T9.audit_log_present\n[ ok ] T9.verify_clean\n[ ok ] T9.tamper_detected\n\n--- T9b ---\n[ ok ] T9b.crlf_chain_intact\n\n--- T10 ---\n[ ok ] T10.overridden\n[ ok ] T10.reason_mentions_override\n\n=== SUMMARY ===\nALL PASSED\n{\"schema_version\": \"inq.test_summary.v0_1\", \"suite\": \"test_inq_tools_e3\", \"passed\": true, \"tests\": 12}\n",
+      "stderr_tail": "",
+      "passed": true
+    }
+  ]
+}
