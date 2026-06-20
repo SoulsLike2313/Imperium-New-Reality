@@ -1,0 +1,34 @@
+{
+  "_form": "PATCH_PACK_FORM",
+  "_charter": "imperium.astronomicon.v0_1",
+  "_mode": "HAND_PACK",
+  "schema_version": "imperium.gate.v0_1",
+  "task_id": "<ORGAN-TOPIC-NNNN>",
+  "title": "<одной строкой: суть патча>",
+  "submitted_by": "OWNER_MANUAL",
+  "target_organ": "ASTRONOMICON",
+  "intent": "<зачем меняем, 1-3 предложения>",
+  "change_kind": "PATCH",
+  "payload": [
+    "files/<относительный путь в паке>"
+  ],
+  "declared_evidence_level": "E3",
+  "execution_log": "EXECUTION_LOG.txt",
+  "integration": {
+    "mode": "copy",
+    "map": {
+      "files/<в паке>": "<куда в repo>"
+    }
+  },
+  "verify": {
+    "cmd": ["python3", "-c", "print('OK')"],
+    "cwd": null
+  },
+  "_form_extras": {
+    "author": "NOTION_OPUS",
+    "form": "CHAT",
+    "model": "Opus 4.8",
+    "contour": "WINDOWS_PC",
+    "rollback_plan": "git revert <land_sha>; ручные шаги при необходимости"
+  }
+}
