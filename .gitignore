@@ -94,3 +94,8 @@ __pycache__/
 *.zip
 !**/FIXTURES/**/*.zip
 !**/fixtures/**/*.zip
+# === IMPERIUM hygiene additions (DOCTR-TOOLS-0001) ===
+# Harness runtime artifacts (e3_runner, kernel_guard, doctrinarium_integrity receipts).
+# Receipts live in this tree at runtime; pack snapshots persist them elsewhere.
+_HARNESS/_RUNS/
+**/_HARNESS/_RUNS/

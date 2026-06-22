@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "imperium.canon_admission.v0_1",
+  "title": "Canon Admission Receipt v0_1",
+  "description": "Receipt emitted by DOCTRINARIUM stage 2 (CHARTER) of CANONICAL_PIPELINE. Records whether a pack is admitted to canon, and the boundary checks performed.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "task_id",
+    "target_organ",
+    "base_sha",
+    "checks",
+    "verdict",
+    "verified_at",
+    "verifier",
+    "prior_receipt_sha256",
+    "law_sha256"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "imperium.canon_admission.v0_1" },
+    "task_id":        { "type": "string", "pattern": "^[A-Z]+-[A-Z]+-[0-9]{4}$" },
+    "target_organ":   { "type": "string", "enum": [ "_CORE_GOVERNANCE", "INQUISITION", "MECHANICUS", "ADMINISTRATUM", "ASTRONOMICON", "DOCTRINARIUM", "OFFICIO_AGENTIS", "SPECULUM", "STRATEGIUM", "ASTRA_MILITARUM" ] },
+    "base_sha":       { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "checks": {
+      "type": "object",
+      "required": [
+        "check_1_task_id_shape",
+        "check_2_target_organ_known",
+        "check_3_base_sha_reachable",
+        "check_4_kernel_touch_handled",
+        "check_5_e3_results_attached",
+        "check_6_no_forbidden_claims"
+      ],
+      "properties": {
+        "check_1_task_id_shape":       { "$ref": "#/definitions/checkResult" },
+        "check_2_target_organ_known":  { "$ref": "#/definitions/checkResult" },
+        "check_3_base_sha_reachable":  { "$ref": "#/definitions/checkResult" },
+        "check_4_kernel_touch_handled":{ "$ref": "#/definitions/checkResult" },
+        "check_5_e3_results_attached": { "$ref": "#/definitions/checkResult" },
+        "check_6_no_forbidden_claims": { "$ref": "#/definitions/checkResult" }
+      }
+    },
+    "verdict":             { "type": "string", "enum": [ "ADMIT", "REFUSE", "ADMIT_WITH_BYPASS" ] },
+    "refusal_reasons":     { "type": "array", "items": { "type": "string" } },
+    "bypass_declared":     { "type": "boolean" },
+    "bypass_authority":    { "type": "string", "enum": [ "OWNER_MANUAL", "EMPEROR_SEAL_v0_1", "NONE" ] },
+    "verified_at":         { "type": "string", "format": "date-time" },
+    "verifier":            { "type": "string" },
+    "prior_receipt_sha256":{ "type": [ "string", "null" ], "pattern": "^([0-9a-f]{64})?$" },
+    "law_sha256":          { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "mode":                { "type": "string", "enum": [ "OBSERVER", "ENFORCED" ] }
+  },
+  "definitions": {
+    "checkResult": {
+      "type": "object",
+      "required": [ "status" ],
+      "properties": {
+        "status":  { "type": "string", "enum": [ "PASS", "FAIL", "WARN", "SKIP" ] },
+        "detail":  { "type": "string" },
+        "evidence":{ "type": "string" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,20 +1,45 @@
 {
   "organ": "DOCTRINARIUM",
+  "schema_version": "imperium.organ_tool_inventory.v0_2",
+  "version": "1.0.0",
+  "lineage": "master 59159278802dc37da1386ca7451eadd8b96f6f06",
   "local_script_first": [
-    "scripts/doctrinarium_task_start_gate_v0_1.py"
+    "ORGANS/DOCTRINARIUM/TOOLS/doctrinarium_integrity_validator_v0_1.py",
+    "ORGANS/_CORE_GOVERNANCE/TOOLS/kernel_write_guard_v0_1.py",
+    "ORGANS/_CORE_GOVERNANCE/TOOLS/imperium_first_boot_v0_1.py"
   ],
   "local_manual_command": [
-    "Get-Content IMPERIUM_NEW_GENERATION/ORGANS/DOCTRINARIUM/READ_FIRST_GHOST_EVOLVE_PACKET.md"
+    "Get-Content ORGANS/DOCTRINARIUM/LAWS/KERNEL_BOUNDARY_CONTRACT.md",
+    "Get-Content ORGANS/DOCTRINARIUM/LAWS/CANONICAL_PIPELINE.md",
+    "Get-Content DOCTRINARIUM/CHARTERS/DOCTRINARIUM.md"
   ],
   "candidate_script_first": [
-    "scripts/doctrinarium_check_all_v0_1.py"
+    "scripts/doctrinarium_task_start_gate_v0_2.py",
+    "scripts/doctrinarium_check_all_v0_2.py"
   ],
   "agent_reasoning_only": [
-    "Interpret owner intent for WARN downgrade notes."
+    "Interpret owner intent for WARN downgrade notes.",
+    "Recommend whether a forbidden-claim candidate is in scope of §9 of the charter."
   ],
   "external_research": [],
-  "owner_manual_confirmation": [],
+  "owner_manual_confirmation": [
+    "OWNER_MANUAL bypass declaration for any kernel-touching pack before EMPEROR_SEAL activation."
+  ],
   "future_capability_gap": [
-    "Need canon preflight runner integrated into task-entry route."
+    "Canon preflight runner integrated into task-entry route (planned: DOCTR-PREFLIGHT-0001).",
+    "Operational EMPEROR_SEAL with ed25519 + argon2id + hwid factors (planned: DOCTR-EMPEROR-SEAL-0001).",
+    "Append-only receipt archive at ADMINISTRATUM (planned: ADMIN-EYES-0001 / ADMIN-MEMORY-0001).",
+    "Operational role-authority matrix (planned: OFFICIO-ROLES-0001)."
+  ],
+  "required_receipts": [
+    "imperium.canon_admission.v0_1",
+    "imperium.kernel_write_guard.v0_1",
+    "imperium.doctrinarium_integrity.v0_1",
+    "imperium.entry_attestation.v0_1"
+  ],
+  "superseded_pre_charter_paths": [
+    "scripts/doctrinarium_task_start_gate_v0_1.py",
+    "scripts/doctrinarium_check_all_v0_1.py",
+    "IMPERIUM_NEW_GENERATION/ORGANS/DOCTRINARIUM/READ_FIRST_GHOST_EVOLVE_PACKET.md"
   ]
 }

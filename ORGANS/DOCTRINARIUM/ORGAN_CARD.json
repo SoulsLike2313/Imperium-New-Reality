@@ -11,10 +11,43 @@
     "ORGANS/DOCTRINARIUM/MATRICES/GATE_DEDUPLICATION_MATRIX.json",
     "ORGANS/DOCTRINARIUM/MATRICES/GHOST_EVOLVE_V2_EXECUTION_LAW_MATRIX.json",
     "ORGANS/DOCTRINARIUM/MATRICES/ORGAN_RESPONSIBILITY_MATRIX.json",
+    "ORGANS/DOCTRINARIUM/MATRICES/KPD_METRIC_SPEC.md",
     "ORGANS/DOCTRINARIUM/TASK_PARTICIPATION/ORGAN_MATRIX_RESPONSIBILITIES.json"
   ],
-  "validators": [],
+  "owned_laws": [
+    "ORGANS/DOCTRINARIUM/LAWS/KERNEL_BOUNDARY_CONTRACT.md",
+    "ORGANS/DOCTRINARIUM/LAWS/CANONICAL_PIPELINE.md",
+    "ORGANS/DOCTRINARIUM/LAWS/ENTRY_PROTOCOL_FOR_LLM.md",
+    "ORGANS/DOCTRINARIUM/LAWS/EMPEROR_SEAL_PLACEHOLDER.md",
+    "ORGANS/DOCTRINARIUM/LAWS/ROLE_REGISTRY.md"
+  ],
+  "owned_schemas": [
+    "ORGANS/DOCTRINARIUM/SCHEMAS/imperium.doctrinarium_integrity.v0_1.schema.json"
+  ],
+  "owned_tools": [
+    "ORGANS/DOCTRINARIUM/TOOLS/doctrinarium_integrity_validator_v0_1.py"
+  ],
+  "owned_charters": [
+    "DOCTRINARIUM/CHARTERS/DOCTRINARIUM.md",
+    "DOCTRINARIUM/CHARTERS/DOCTRINARIUM.en.md"
+  ],
+  "validators": [
+    "ORGANS/DOCTRINARIUM/TOOLS/doctrinarium_integrity_validator_v0_1.py",
+    "ORGANS/_CORE_GOVERNANCE/TOOLS/kernel_write_guard_v0_1.py",
+    "ORGANS/_CORE_GOVERNANCE/TOOLS/imperium_first_boot_v0_1.py"
+  ],
+  "governance_relations": {
+    "informs_charter_admission": true,
+    "owns_kernel_boundary":      true,
+    "owns_canonical_pipeline_stages": [2, 3],
+    "co_owns_emperor_seal_placeholder": true
+  },
+  "pack_history": [
+    "DOCTR-CHARTER-0001 (master 59159278802dc37da1386ca7451eadd8b96f6f06)",
+    "DOCTR-TOOLS-0001 (this pack)"
+  ],
   "warnings": [
-    "Auto-stamped Phase O step 1; evidence_level=E1_FILE_EXISTS; runtime authority requires E3+ replay."
+    "Several owned_matrices entries (CANON_ADMISSION_MATRIX.json, GATE_DEDUPLICATION_MATRIX.json, GHOST_EVOLVE_V2_EXECUTION_LAW_MATRIX.json, ORGAN_RESPONSIBILITY_MATRIX.json) are pre-charter references; physical files will be authored in follow-up packs.",
+    "EMPEROR_SEAL is placeholder v0_1; kernel_write_guard runs in OBSERVER mode until DOCTR-EMPEROR-SEAL-0001 lands."
   ]
 }

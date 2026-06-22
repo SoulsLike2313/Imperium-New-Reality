@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "imperium.doctrinarium_integrity.v0_1",
+  "title": "Doctrinarium Integrity Receipt v0_1",
+  "description": "Receipt emitted by doctrinarium_integrity_validator_v0_1.py. Records hash-locked state of all DOCTRINARIUM charters, laws, and matrices, plus cross-reference checks.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "validated_at",
+    "validator",
+    "organ",
+    "hashes",
+    "cross_refs",
+    "checks",
+    "overall"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "imperium.doctrinarium_integrity.v0_1" },
+    "validated_at":   { "type": "string", "format": "date-time" },
+    "validator":      { "type": "string" },
+    "organ":          { "type": "string", "const": "DOCTRINARIUM" },
+    "hashes": {
+      "type": "object",
+      "description": "Map of repo-relative path to sha256.",
+      "additionalProperties": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+    },
+    "cross_refs": {
+      "type": "object",
+      "required": [
+        "organ_card_validators_exist",
+        "organ_card_owned_matrices_exist",
+        "laws_have_forbidden_claims_section",
+        "laws_have_yaml_frontmatter",
+        "entry_protocol_read_list_resolves",
+        "kernel_boundary_patterns_parseable"
+      ],
+      "properties": {
+        "organ_card_validators_exist":      { "$ref": "#/definitions/checkResult" },
+        "organ_card_owned_matrices_exist":  { "$ref": "#/definitions/checkResult" },
+        "laws_have_forbidden_claims_section":{ "$ref": "#/definitions/checkResult" },
+        "laws_have_yaml_frontmatter":       { "$ref": "#/definitions/checkResult" },
+        "entry_protocol_read_list_resolves":{ "$ref": "#/definitions/checkResult" },
+        "kernel_boundary_patterns_parseable":{ "$ref": "#/definitions/checkResult" }
+      }
+    },
+    "checks": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/definitions/checkResult" }
+    },
+    "overall": { "type": "string", "enum": [ "PASS", "WARN", "FAIL" ] },
+    "failures":{ "type": "array", "items": { "type": "string" } }
+  },
+  "definitions": {
+    "checkResult": {
+      "type": "object",
+      "required": [ "status" ],
+      "properties": {
+        "status":   { "type": "string", "enum": [ "PASS", "FAIL", "WARN", "SKIP" ] },
+        "detail":   { "type": "string" },
+        "evidence": { "type": "string" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

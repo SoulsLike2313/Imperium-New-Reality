@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "imperium.kernel_write_guard.v0_1",
+  "title": "Kernel Write Guard Receipt v0_1",
+  "description": "Receipt emitted by kernel_write_guard_v0_1.py at CANONICAL_PIPELINE stage 3 (BOUNDARY). Records whether a set of changed paths touches the kernel and what authority justifies the change.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "mode",
+    "changed_paths",
+    "kernel_paths_touched",
+    "verdict",
+    "authority",
+    "verified_at",
+    "verifier",
+    "law_sha256",
+    "prior_receipt_sha256"
+  ],
+  "properties": {
+    "schema_version":      { "type": "string", "const": "imperium.kernel_write_guard.v0_1" },
+    "mode":                { "type": "string", "enum": [ "OBSERVER", "ENFORCED" ] },
+    "task_id":             { "type": [ "string", "null" ], "pattern": "^([A-Z]+-[A-Z]+-[0-9]{4})?$" },
+    "commit_sha":          { "type": [ "string", "null" ], "pattern": "^([0-9a-f]{40})?$" },
+    "changed_paths":       { "type": "array", "items": { "type": "string" } },
+    "kernel_paths_touched":{ "type": "array", "items": { "type": "string" } },
+    "kernel_patterns_used":{ "type": "array", "items": { "type": "string" } },
+    "verdict":             { "type": "string", "enum": [ "ALLOW", "ALLOW_WITH_BYPASS", "DENY", "INVALID" ] },
+    "authority": {
+      "type": "object",
+      "required": [ "actor_role", "factors_present", "bypass_declared" ],
+      "properties": {
+        "actor_role":      { "type": "string" },
+        "factors_present": { "type": "array", "items": { "type": "string", "enum": [ "factor_a_ed25519", "factor_b_passphrase", "factor_c_hwid_lock" ] } },
+        "threshold":       { "type": [ "string", "null" ], "enum": [ "2_of_3", "3_of_3", null ] },
+        "bypass_declared": { "type": "boolean" },
+        "bypass_authority":{ "type": "string", "enum": [ "OWNER_MANUAL", "NONE" ] },
+        "seal_ttl_seconds":{ "type": [ "integer", "null" ], "minimum": 0 },
+        "seal_issued_at":  { "type": [ "string", "null" ], "format": "date-time" },
+        "seal_expires_at": { "type": [ "string", "null" ], "format": "date-time" }
+      }
+    },
+    "deny_reasons":        { "type": "array", "items": { "type": "string" } },
+    "verified_at":         { "type": "string", "format": "date-time" },
+    "verifier":            { "type": "string" },
+    "law_sha256":          { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "prior_receipt_sha256":{ "type": [ "string", "null" ], "pattern": "^([0-9a-f]{64})?$" },
+    "ledger_seq":          { "type": [ "integer", "null" ], "minimum": 0 }
+  },
+  "additionalProperties": false
+}
