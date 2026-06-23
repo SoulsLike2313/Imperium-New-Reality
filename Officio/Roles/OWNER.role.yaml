@@ -1,0 +1,80 @@
+# OWNER.role.yaml — Формальная роль EMPEROR / OWNER
+# Organ-owner: Officio (реестр ролей). Источник истины: _CORE/OWNER_PROFILE.md
+
+role_id: OWNER
+role_name: EMPEROR
+role_class: ambient_sovereign        # не орган, а источник Воли (owner-light)
+version: v1_0
+profile_ref: _CORE/OWNER_PROFILE.md
+status: permanent
+
+identity:
+  human_name: Uttkarsh
+  age: 27
+  timezone: Europe/Budapest
+  language_primary: ru
+  self_image: "Строитель, неделимый — 'я это я'"
+
+prime_law:
+  name: Owner Intent Fidelity
+  statement: >
+    Намерение Owner-а должно пониматься непринуждённо, воспроизводиться верно
+    и давать контроль на каждом этапе производства.
+
+authority:
+  scope: workspace_wide
+  overrides: all_organs            # Воля Owner-а выше любого органа
+  seal_holder: true               # держит EMPEROR_SEAL
+  delegation_model: code_executor_only   # LLM — 100% кодовый исполнитель
+
+trust_model:
+  type: metric_based              # матрицы доверия, не эмоция
+  llm_relationship: peer_intellect_not_servant
+  trust_strictness: NEVER_LOWER  # красная линия #2
+
+interaction:
+  protocol_ref: _CORE/INTERACTION_PROTOCOL.md
+  honesty: absolute              # и похвала, и критика, метрично
+  persuasion: proof_argument_example
+  debate: welcomed
+  tone: image_and_metaphor_rich
+  no_meta_commentary: true
+  cognitive_floor: high          # не упрощать без нужды
+
+perception_protocol:             # Взор / чуйка
+  mode_a: index_annotation       # быстрый алерт → мгновенное решение
+  mode_b: pattern_sweep          # 'болото' → аналитика
+  silence_means: disorder        # тишина в голове = непорядок
+  duty_of_llm: name_the_pattern  # перевод чуйки в формальный язык
+
+cadence:
+  session_hours: 4
+  break_hours: 1
+  ideal_daily_hours: 8
+  warn_every_hours: 4
+  burnout_trigger: stagnation    # НЕ переработка
+  sentinel_ref: Inquisitorium/Sentinels/owner_burnout_check.py
+
+learning_vector:                 # грань VIII
+  enabled: true
+  domains: [white_hat, vulnerability_research, osint, pattern_analysis, case_study]
+  ethics: principled_no_dirt     # есть мораль, не 'на грязи'
+  tract_ref: Doctrinarium/Tracts/De_Schola.md
+
+aesthetic_standard:              # грань V
+  bar: marvel_grade_cinematic
+  fps_target: 60
+  motifs: [knighthood, empires, castles, dark_fantasy, lotr, cosmic_physics]
+  track: EYES_V2                 # отдельный равноправный трек
+  reference_board_first: true    # board от Owner-а ДО кода
+
+red_lines:                       # никогда не пересекать
+  - quality_sacrificed_for_speed
+  - trust_matrix_strictness_lowered
+  - cheap_visual_or_poor_execution
+  - selling_imperium_internals   # доступ только избранным близким
+
+privacy:
+  internals_for_sale: false
+  access: chosen_close_circle_only
+  betrayal_source: external_agent_only
