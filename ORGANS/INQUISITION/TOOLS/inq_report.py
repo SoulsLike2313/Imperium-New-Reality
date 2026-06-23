@@ -87,6 +87,64 @@ def _ensure_utf8_streams() -> None:
         pass
 
 
+def _discover_repo_root_from_reports_dir(reports_dir: str) -> Optional[Path]:
+    """Best-effort repo root discovery used only for runtime-evidence routing.
+
+    The Inquisition tools may be executed from different working directories.
+    reports_dir is the most reliable anchor because callers already pass it
+    intentionally. If reports_dir sits under ORGANS/INQUISITION/REPORTS, walk
+    up until a repository-shaped directory is found. This function is deliberately
+    conservative: if it cannot prove the root, it returns None and legacy
+    relative behaviour is preserved.
+    """
+    try:
+        p = Path(reports_dir).resolve()
+    except Exception:
+        return None
+
+    for cand in [p, *p.parents]:
+        try:
+            if (cand / "ORGANS" / "INQUISITION").exists() and (
+                (cand / ".git").exists()
+                or (cand / "DOCTRINARIUM").exists()
+                or (cand / "AGENTS.md").exists()
+            ):
+                return cand
+        except Exception:
+            continue
+    return None
+
+
+def _default_negative_experience_dir(reports_dir: str) -> str:
+    """Return the default directory for BLOCK/FAIL negative-experience receipts.
+
+    Priority:
+      1. IMPERIUM_NEGATIVE_EXPERIENCE_DIR explicit override.
+      2. IMPERIUM_HARNESS_ROOT/_NEGATIVE_EXPERIENCE if set.
+      3. Sibling IMPERIUM_HARNESS next to IMPERIUM_REALITY, when discoverable.
+      4. Legacy repo-local _HARNESS/_NEGATIVE_EXPERIENCE fallback.
+
+    This keeps historical local/test behaviour intact while preventing the live
+    REALITY checkout from being dirtied when the canonical HARNESS sibling exists.
+    """
+    explicit = os.environ.get("IMPERIUM_NEGATIVE_EXPERIENCE_DIR")
+    if explicit:
+        return str(Path(explicit).resolve())
+
+    harness_root = os.environ.get("IMPERIUM_HARNESS_ROOT")
+    if harness_root:
+        return str((Path(harness_root).resolve() / "_NEGATIVE_EXPERIENCE"))
+
+    repo = _discover_repo_root_from_reports_dir(reports_dir)
+    if repo is not None:
+        sibling = repo.parent / "IMPERIUM_HARNESS"
+        if repo.name.upper() == "IMPERIUM_REALITY" and sibling.exists():
+            return str((sibling / "_NEGATIVE_EXPERIENCE").resolve())
+        return str((repo / "_HARNESS" / "_NEGATIVE_EXPERIENCE").resolve())
+
+    return "_HARNESS/_NEGATIVE_EXPERIENCE"
+
+
 class VerdictBuilder:
     """Fluent builder for inq.verdict.v0_1 records."""
 
@@ -172,7 +230,7 @@ class VerdictBuilder:
         reports_dir: str = "ORGANS/INQUISITION/REPORTS",
         also_stdout: bool = True,
         also_neg_experience: bool = True,
-        neg_dir: str = "_HARNESS/_NEGATIVE_EXPERIENCE",
+        neg_dir: Optional[str] = None,
     ) -> Tuple[Dict[str, Any], str, int]:
         """Write verdict under reports_dir; duplicate FAIL/BLOCK into neg_dir (Q20).
 
@@ -190,7 +248,7 @@ class VerdictBuilder:
             target.write_text(json.dumps(d, ensure_ascii=False, indent=2), encoding="utf-8")
             file_path = str(target)
             if also_neg_experience and (d["verdict"].startswith("BLOCK_") or d["verdict"] == "FAIL_CLOSED"):
-                neg_target_dir = Path(neg_dir) / d["task_id"]
+                neg_target_dir = Path(neg_dir or _default_negative_experience_dir(reports_dir)) / d["task_id"]
                 neg_target_dir.mkdir(parents=True, exist_ok=True)
                 neg_fname = f"inq_{self.tool}_{utc_safe}.json"
                 (neg_target_dir / neg_fname).write_text(
