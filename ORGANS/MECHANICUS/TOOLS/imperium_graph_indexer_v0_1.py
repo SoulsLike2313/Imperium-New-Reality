@@ -1,8 +1,15 @@
 #!/usr/bin/env python3
-"""MECHANICUS Imperium Graph Indexer v0_1.
+"""MECHANICUS Imperium Graph Indexer v0_1 (hotfix1).
 
 Walks the Imperium repo and emits a graph snapshot conforming to schema
 `imperium.graph.v0_1` (see ORGANS/DOCTRINARIUM/IMPERIUM_GRAPH.md).
+
+Hotfix1 (MECH-GRAPH-INDEXER-HOTFIX-0001):
+  All `subprocess.run` calls now pin `encoding="utf-8", errors="replace"`.
+  Without this, on European Windows locales (cp1251/cp1252) git stdout
+  containing UTF-8 multibyte (Cyrillic, emoji, etc.) crashes the reader
+  thread mid-stream, silently truncating output without raising in the
+  main thread. See Self-rule 57.
 
 Node types (9): organ, sub_organ, doctrine, agent, task, land, receipt,
 sentinel, thread.
@@ -74,7 +81,8 @@ def git_available(repo_root: Path) -> bool:
     try:
         r = subprocess.run(
             ["git", "-C", str(repo_root), "rev-parse", "--git-dir"],
-            capture_output=True, text=True, timeout=10,
+            capture_output=True, text=True,
+            encoding="utf-8", errors="replace", timeout=10,
         )
         return r.returncode == 0
     except Exception:
@@ -89,7 +97,8 @@ def git_log_lands(repo_root: Path) -> list:
         fmt = "%H%x09%P%x09%aI%x09%s%x1e"
         r = subprocess.run(
             ["git", "-C", str(repo_root), "log", "--format=" + fmt, "HEAD"],
-            capture_output=True, text=True, timeout=60,
+            capture_output=True, text=True,
+            encoding="utf-8", errors="replace", timeout=60,
         )
         if r.returncode != 0:
             return []
@@ -117,7 +126,8 @@ def git_files_changed(repo_root: Path, sha: str) -> list:
     try:
         r = subprocess.run(
             ["git", "-C", str(repo_root), "show", "--no-patch", "--name-only", "--format=", sha],
-            capture_output=True, text=True, timeout=30,
+            capture_output=True, text=True,
+            encoding="utf-8", errors="replace", timeout=30,
         )
         if r.returncode != 0:
             return []

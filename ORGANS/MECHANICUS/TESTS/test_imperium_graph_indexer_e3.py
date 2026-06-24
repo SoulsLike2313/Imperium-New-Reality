@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""E3 self-test for MECHANICUS Imperium Graph Indexer v0_1.
+"""E3 self-test for MECHANICUS Imperium Graph Indexer v0_1 (post-hotfix1).
 
-10 tests:
+11 tests:
   T1  schema_present              snapshot carries imperium.graph.v0_1
   T2  node_types_in_vocabulary    every node.type is in the 9-vocab
   T3  edge_types_in_vocabulary    every edge.type is in the 10-vocab
@@ -12,6 +12,8 @@
   T8  lands_and_tasks_detected    git log produces land + task nodes via subject regex
   T9  edges_resolve               every edge endpoint is a real node id
   T10 empty_repo_graceful         empty dir yields valid empty snapshot, no crash
+  T11 utf8_commit_message_safe    git output with non-ASCII (Cyrillic+emoji)
+                                  does not crash the reader thread (Self-rule 57)
 """
 from __future__ import annotations
 
@@ -96,6 +98,14 @@ def _make_repo(tmp: Path) -> Path:
     receipt_path.write_text(json.dumps(receipt), encoding="utf-8")
     _git(repo, "add", "-A")
     _git(repo, "commit", "-q", "-m", "TEST-LAND-0002: second land")
+    # Third commit with non-ASCII subject (Cyrillic + emoji) to exercise
+    # the encoding=utf-8 fix. Without it, on cp1251/cp1252 locales the
+    # reader thread crashes mid-stream on bytes >0x7f.
+    (repo / "ORGANS" / "DOCTRINARIUM" / "\u041a\u0410\u041d\u041e\u041d.md").write_text(
+        "# \u041a\u0430\u043d\u043e\u043d\n", encoding="utf-8",
+    )
+    _git(repo, "add", "-A")
+    _git(repo, "commit", "-q", "-m", "TEST-LAND-0003: \u043f\u0430\u0442\u0447 \U0001f525 \u043a\u0430\u043d\u043e\u043d\u0430")
     return repo
 
 
@@ -173,10 +183,11 @@ def run_tests() -> int:
             print(FAIL, "T7_references_resolved", refs)
             failures.append("T7")
 
-        # T8 lands + tasks
+        # T8 lands + tasks (now expects 3 lands: 0001, 0002, 0003)
         tasks = set(n["task_id"] for n in g1["nodes"] if n["type"] == "task")
         lands = [n for n in g1["nodes"] if n["type"] == "land"]
-        if "TEST-LAND-0001" in tasks and "TEST-LAND-0002" in tasks and len(lands) == 2:
+        expected_tasks = {"TEST-LAND-0001", "TEST-LAND-0002", "TEST-LAND-0003"}
+        if expected_tasks.issubset(tasks) and len(lands) == 3:
             print(PASS, "T8_lands_and_tasks_detected")
         else:
             print(FAIL, "T8_lands_and_tasks_detected", tasks, len(lands))
@@ -203,12 +214,26 @@ def run_tests() -> int:
             print(FAIL, "T10_empty_repo_graceful", g_empty["counts"])
             failures.append("T10")
 
+        # T11 utf8_commit_message_safe (Self-rule 57)
+        # The third commit has a Cyrillic+emoji subject. Verify the
+        # indexer parsed it without losing the land node and without
+        # crashing the reader thread (which would silently truncate output).
+        land3 = [n for n in g1["nodes"]
+                 if n["type"] == "land" and n.get("task_id") == "TEST-LAND-0003"]
+        if (len(land3) == 1
+                and "\u043f\u0430\u0442\u0447" in land3[0]["subject"]
+                and "\U0001f525" in land3[0]["subject"]):
+            print(PASS, "T11_utf8_commit_message_safe")
+        else:
+            print(FAIL, "T11_utf8_commit_message_safe", land3)
+            failures.append("T11")
+
     print()
     if failures:
         print("FAILED:", ",".join(failures))
         print("E3 RESULT: FAILED")
         return 1
-    print("10/10 PASSED")
+    print("11/11 PASSED")
     print("E3 RESULT: ALL PASSED")
     return 0
 
