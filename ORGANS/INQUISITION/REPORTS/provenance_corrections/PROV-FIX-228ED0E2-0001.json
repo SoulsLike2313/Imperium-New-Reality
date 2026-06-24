@@ -1,0 +1,42 @@
+{
+  "schema_version": "imperium.provenance_correction.v0_1",
+  "correction_id": "PROV-FIX-228ED0E2-0001",
+  "issued_at": "2026-06-24T10:00:00Z",
+  "issued_by": "NOTION_OPUS",
+  "discovered_in_session": "thread:384ec8a8-2409-80fc-b98b-00a9ffec9701",
+  "target": {
+    "commit_sha": "228ed0e2a6b62e5a933bf64ec5cfd887f37b7044",
+    "commit_subject": "REALITY-HYGIENE-GUARD-0001: route Inquisition negative evidence outside REALITY",
+    "authored_by_external_assistant": "GPT_5_5",
+    "landed_via": "OWNER_MANUAL (pre-gate; before INQUISITION land gate v0_1 was canon)"
+  },
+  "finding": {
+    "declared_base_in_task_manifest": "8bd511d6ef53",
+    "actual_git_parent": "461e23ceebdc",
+    "verdict": "PROVENANCE_LIE",
+    "gate_rule_that_would_have_caught_it": "G3_PROVENANCE_LIE",
+    "why_it_landed_anyway": "commit pre-dates ORGANS/INQUISITION/TOOLS/inq_land_gate_v0_1.py (landed at 0cfb1c8b on 2026-06-24)"
+  },
+  "evidence": {
+    "method": "git rev-parse + git log inspection of commit 228ed0e2 against the declared TASK_MANIFEST.json in the same commit",
+    "manifest_path_in_commit": "TASK_MANIFEST.json at repo root within REALITY-HYGIENE-GUARD-0001 pack",
+    "corroborating_session_findings": [
+      "OWNER-PROFILE-0001 (461e23ce) is the true parent of 228ed0e2",
+      "8bd511d6 is the DOCTR-ANATOMY commit, not an ancestor of 228ed0e2 by 1 hop"
+    ]
+  },
+  "effect": {
+    "history_rewritten": false,
+    "reason": "public master is immutable per WARP_OPERATION_SPINE_V0_5; corrective receipt is the canonical remedy",
+    "future_audits_must_treat_declared_base_field_in_commit_228ed0e2_as": "FORGED",
+    "current_master_tip_at_issuance": "8c8db6c (INQ-GATE-BOM-TOLERANT-0001)"
+  },
+  "closes_debt": [
+    "provenance integrity for 228ed0e2 (open since session turn ~115)"
+  ],
+  "signature": {
+    "signer": "NOTION_OPUS",
+    "factor": "session_attestation",
+    "note": "This correction is not cryptographically signed; INQUISITION may upgrade signing once kernel_write_guard ed25519 factor is provisioned."
+  }
+}
