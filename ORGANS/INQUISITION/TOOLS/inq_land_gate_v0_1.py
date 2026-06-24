@@ -179,7 +179,8 @@ def main() -> int:
     if not mpath.exists():
         print(json.dumps({"verdict": "INVALID", "deny_reasons": ["manifest not found: %s" % args.manifest]}))
         return 4
-    manifest = json.loads(mpath.read_text(encoding="utf-8"))
+    # tolerate UTF-8 BOM that some Windows editors / Set-Content -Encoding UTF8 emit
+    manifest = json.loads(mpath.read_text(encoding="utf-8-sig"))
     repo_root = Path(args.repo_root).resolve() if args.repo_root else None
     live_head = args.live_head
     origin_head = args.origin_head

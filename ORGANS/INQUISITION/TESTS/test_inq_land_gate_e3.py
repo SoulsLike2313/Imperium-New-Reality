@@ -75,6 +75,28 @@ def main():
             "files/owner_burnout_check.py": "Inquisitorium/Sentinels/owner_burnout_check.py",
         }),
         HEAD, HEAD, HEAD, "DENY", "G2_ROGUE_ROOT"))
+    # T7: manifest written with UTF-8 BOM must still parse and be ALLOWed when otherwise clean.
+    import json as _json
+    import tempfile as _tf
+    with _tf.TemporaryDirectory() as _td:
+        _m = mkmanifest("BOM-PROBE-0001", HEAD, {
+            "files/ORGANS/INQUISITION/REPORTS/probe.md": "ORGANS/INQUISITION/REPORTS/probe.md"
+        })
+        _mp = Path(_td) / "m.json"
+        # write WITH explicit UTF-8 BOM (\ufeff)
+        _mp.write_text("\ufeff" + _json.dumps(_m), encoding="utf-8")
+        import subprocess as _sp, sys as _sys
+        _r = _sp.run([_sys.executable, str(TOOLS / "inq_land_gate_v0_1.py"),
+                      "--manifest", str(_mp), "--live-head", HEAD,
+                      "--origin-head", HEAD, "--parent-sha", HEAD],
+                     capture_output=True, text=True)
+        _ok = (_r.returncode == 0) and ("\"verdict\": \"ALLOW\"" in _r.stdout)
+        if not _ok:
+            print("  T7 gate output:\n" + _r.stdout + _r.stderr)
+        results.append(_ok)
+        print("[%s] T7_bom_tolerant_manifest -> %s" % ("PASS" if _ok else "FAIL",
+              "ALLOW (rc=0)" if _ok else "rc=%d" % _r.returncode))
+
     total = len(results)
     passed = sum(1 for r in results if r)
     print("\n%d/%d PASSED" % (passed, total))
