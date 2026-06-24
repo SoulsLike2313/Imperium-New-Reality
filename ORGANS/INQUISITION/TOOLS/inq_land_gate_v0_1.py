@@ -18,6 +18,17 @@ Gates:
 
 Emits an imperium.kernel_write_guard.v0_1-style verdict receipt.
 Exit 0 = ALLOW, 1 = DENY, 4 = INPUT_INVALID.
+
+PATCHED via INQ-GATE-TAXONOMY-FIX-0001 (2026-06-24):
+  * gate_root_taxonomy + evaluate now accept integration.map in EITHER shape:
+      - canonical list of {src, dst} objects (current pack template), and
+      - legacy dict {src: dst} (older packs).
+    Previously crashed with AttributeError when fed the canonical list shape.
+  * declared_base() now recognizes canonical key 'declared_base' in addition
+    to legacy 'expected_reality_head' / 'base'. Previously DENY'd all canonical
+    packs with G1_NO_DECLARED_BASE.
+  * changed_paths in the verdict receipt uses the same normalized extraction.
+  * Behavior on validated inputs is unchanged.
 """
 from __future__ import annotations
 
@@ -37,7 +48,6 @@ REQUIRED_ORGANS = {
     "ADMINISTRATUM", "ASTRONOMICON", "CUSTODES", "DOCTRINARIUM", "INQUISITION",
     "MECHANICUS", "OFFICIO_AGENTIS", "SCHOLA_IMPERIALIS", "STRATEGIUM",
 }
-# Extra organ homes that legitimately live under ORGANS/ in the canon snapshot.
 KNOWN_EXTRA_ORGANS = {"_CORE_GOVERNANCE", "_POST_WORK_RING", "IMPERIAL_IDE", "SPECULUM"}
 
 
@@ -47,6 +57,32 @@ def utc_now() -> str:
 
 def norm(p: str) -> str:
     return p.replace(chr(92), "/").strip().lstrip("./")
+
+
+def _normalize_targets(integ: Any) -> list:
+    """Return list of normalized destination paths from integration.map.
+    Tolerates both canonical list-of-{src,dst} and legacy dict {src:dst} shapes.
+    Returns an empty list for any malformed shape (never raises).
+    """
+    if not isinstance(integ, dict):
+        return []
+    mp = integ.get("map", None)
+    if mp is None:
+        return []
+    raw = []
+    if isinstance(mp, dict):
+        for v in mp.values():
+            if isinstance(v, str):
+                raw.append(v)
+    elif isinstance(mp, list):
+        for entry in mp:
+            if isinstance(entry, dict):
+                dst = entry.get("dst")
+                if isinstance(dst, str):
+                    raw.append(dst)
+            elif isinstance(entry, str):
+                raw.append(entry)
+    return [norm(t) for t in raw if isinstance(t, str)]
 
 
 def known_organs(repo_root: Optional[Path]) -> set:
@@ -72,14 +108,21 @@ def git_head(repo_root: Path, ref: str) -> Optional[str]:
 
 
 def declared_base(manifest: dict) -> str:
-    return str(manifest.get("expected_reality_head") or manifest.get("base") or "").strip()
+    """Return the declared base SHA from manifest.
+    Recognizes canonical 'declared_base' and legacy 'expected_reality_head'/'base'.
+    """
+    for key in ("declared_base", "expected_reality_head", "base"):
+        v = manifest.get(key)
+        if v:
+            return str(v).strip()
+    return ""
 
 
 def gate_base_freshness(manifest: dict, live_head: Optional[str], origin_head: Optional[str]) -> list:
     reasons = []
     declared = declared_base(manifest)
     if not declared:
-        reasons.append("G1_NO_DECLARED_BASE: manifest declares no base/expected_reality_head")
+        reasons.append("G1_NO_DECLARED_BASE: manifest declares no declared_base/expected_reality_head/base")
     if live_head and origin_head and live_head != origin_head:
         reasons.append(
             "G1_BASE_STALE: local HEAD %s != origin/master %s (fetch+rebase before land)"
@@ -95,8 +138,7 @@ def gate_root_taxonomy(manifest: dict, repo_root: Optional[Path]) -> list:
     reasons = []
     organs = known_organs(repo_root)
     integ = manifest.get("integration", {})
-    mp = integ.get("map", {}) if isinstance(integ, dict) else {}
-    targets = [norm(v) for v in mp.values()]
+    targets = _normalize_targets(integ)
     if not targets:
         reasons.append("G2_NO_TARGETS: integration.map is empty; nothing to validate")
     allowed_roots = sorted(ALLOWED_ROOT_DIRS | TECHNICAL_ROOT_HOLDS)
@@ -143,14 +185,13 @@ def evaluate(manifest: dict, repo_root: Optional[Path], live_head: Optional[str]
     deny += gate_provenance_base(manifest, parent_sha)
     verdict = "ALLOW" if not deny else ("DENY" if mode == "ENFORCED" else "ALLOW_WITH_BYPASS")
     integ = manifest.get("integration", {})
-    mp = integ.get("map", {}) if isinstance(integ, dict) else {}
     return {
         "schema_version": SCHEMA_VERSION,
         "gate_version": GATE_VERSION,
         "mode": mode,
         "task_id": manifest.get("task_id"),
         "verdict": verdict,
-        "changed_paths": sorted(norm(v) for v in mp.values()),
+        "changed_paths": sorted(_normalize_targets(integ)),
         "deny_reasons": deny,
         "declared_base": declared_base(manifest),
         "live_head": live_head,
@@ -179,7 +220,6 @@ def main() -> int:
     if not mpath.exists():
         print(json.dumps({"verdict": "INVALID", "deny_reasons": ["manifest not found: %s" % args.manifest]}))
         return 4
-    # tolerate UTF-8 BOM that some Windows editors / Set-Content -Encoding UTF8 emit
     manifest = json.loads(mpath.read_text(encoding="utf-8-sig"))
     repo_root = Path(args.repo_root).resolve() if args.repo_root else None
     live_head = args.live_head
