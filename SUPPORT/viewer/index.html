@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imperium Graph Viewer v0_1</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-eyes-v2="true">
+<div id="cosmic-volume" aria-hidden="true"></div>
+
+<header id="topbar">
+  <div class="title-block">
+    <span class="sigil">❁</span>
+    <span class="title">IMPERIUM GRAPH</span>
+    <span class="version">v0_1</span>
+    <span id="snapshot-stamp" class="stamp">loading…</span>
+  </div>
+  <nav class="views" id="view-picker">
+    <button data-view="V1" class="view-btn active">V1 · Overview</button>
+    <button data-view="V2" class="view-btn">V2 · Organ Drilldown</button>
+    <button data-view="V3" class="view-btn">V3 · Provenance</button>
+    <button data-view="V4" class="view-btn">V4 · Time Slice</button>
+    <button data-view="V5" class="view-btn">V5 · Sentinel Pulse</button>
+    <button data-view="V6" class="view-btn">V6 · Doctrine Map</button>
+  </nav>
+</header>
+
+<aside id="controls">
+  <div class="control-group">
+    <label>Organ</label>
+    <select id="f-organ"><option value="">(all)</option></select>
+  </div>
+  <div class="control-group">
+    <label>Since</label>
+    <input id="f-since" type="date" placeholder="YYYY-MM-DD">
+  </div>
+  <div class="control-group">
+    <label>Focus node</label>
+    <input id="f-focus" type="text" placeholder="node id">
+  </div>
+  <div class="control-group">
+    <label>Depth</label>
+    <input id="f-depth" type="number" min="1" max="6" value="2">
+  </div>
+  <div class="control-group search">
+    <label>Search</label>
+    <input id="f-search" type="text" placeholder="id, label, task…">
+  </div>
+  <div class="control-group actions">
+    <button id="btn-apply" class="primary">Apply</button>
+    <button id="btn-reset">Reset</button>
+    <button id="btn-fit">Fit</button>
+  </div>
+  <div class="control-group export-group">
+    <label>Export</label>
+    <button id="btn-export-png">PNG</button>
+    <button id="btn-export-svg">SVG</button>
+    <button id="btn-export-json">JSON</button>
+  </div>
+  <div class="control-group legend">
+    <label>Legend</label>
+    <ul id="legend"></ul>
+  </div>
+  <div class="control-group stats">
+    <label>Counts</label>
+    <div id="counts" class="counts">—</div>
+  </div>
+</aside>
+
+<main id="cy"></main>
+
+<aside id="sidebar" class="hidden">
+  <header class="sidebar-header">
+    <span id="sb-type" class="node-type"></span>
+    <span id="sb-id" class="node-id"></span>
+    <button id="sb-close" class="close" aria-label="close">×</button>
+  </header>
+  <h2 id="sb-label"></h2>
+  <dl id="sb-props"></dl>
+  <section class="annotations">
+    <h3>Annotations <span class="hint">(local only)</span></h3>
+    <textarea id="sb-anno" rows="5" placeholder="Your notes about this node…"></textarea>
+    <div class="anno-actions">
+      <button id="sb-anno-save" class="primary">Save</button>
+      <button id="sb-anno-clear">Clear</button>
+      <span id="sb-anno-status" class="status"></span>
+    </div>
+  </section>
+  <section class="neighborhood">
+    <h3>Neighborhood</h3>
+    <ul id="sb-neighbors"></ul>
+  </section>
+</aside>
+
+<footer id="botbar">
+  <span class="motto">videre est esse — the Imperial Eye sees only what is</span>
+  <span class="build">imperium.graph.v0_1 · viewer v0_1</span>
+</footer>
+
+<script src="cytoscape.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

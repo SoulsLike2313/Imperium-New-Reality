@@ -1,0 +1,349 @@
+/* IMPERIUM GRAPH VIEWER — styles.css
+   Dressed per EYES_V2 v0.2 (ORGANS/DOCTRINARIUM/EYES_V2.md):
+     TONAL    : hue 240..290, value <= 60, sat 100..180
+     ACCENT   : yellow MARK, hue 50..70, area 5..10%, role=MARK
+     COMPOSE  : FIGURE_IN_FIELD, gaze A_INWARD default
+     VOLUME   : COSMIC_VOLUME required (B_THROUGH reserved for emperor-seal)
+     POSTURE  : Trash Polka POSTURE only
+   Forbidden: 7.1 daylight, 7.4 two-accents, 7.5 frontal #17, 7.6 decorative typo,
+              7.7 emoji/stock illustration. */
+
+:root {
+  /* Tonal violet field (hue 240..290) */
+  --c-void:        #0a0814;   /* hue 250, v ~ 8 */
+  --c-deep:        #11102a;   /* hue 248, v ~ 16 */
+  --c-mid:         #1c1a3c;   /* hue 248, v ~ 23 */
+  --c-rise:        #2a2755;   /* hue 247, v ~ 33 */
+  --c-edge:        #3d3878;   /* hue 248, v ~ 47 */
+  --c-pale:        #6b65c4;   /* hue 245, v ~ 75 (text low) */
+  --c-text:        #d7d3f0;   /* hue 250, v ~ 92 */
+  --c-text-dim:    #a39db8;
+
+  /* Sole accent: yellow MARK (hue 50..70) */
+  --c-mark:        #e8c93a;   /* hue 50, used <= 10% area */
+  --c-mark-soft:   rgba(232, 201, 58, 0.18);
+
+  /* Node type palette — nine canonical types, all within violet hue 240..290 */
+  --n-organ:       #8b7fd9;
+  --n-sub_organ:   #6b62b8;
+  --n-doctrine:    #b5a5f0;   /* slightly lighter; doctrine = light of the field */
+  --n-agent:       #5e4f9e;
+  --n-task:        #4a3e7e;
+  --n-land:        #3a3270;
+  --n-receipt:     #2c2658;
+  --n-sentinel:    #c4a6e8;   /* sentinel slightly desat to read against field */
+  --n-thread:      #7167c8;
+
+  /* Edge palette */
+  --e-default:     #4a4380;
+  --e-strong:      #6f63c4;
+  --e-mark:        var(--c-mark);  /* lands_after = chain spine, MARK colored */
+
+  --shadow-cosmic: 0 0 60px rgba(40, 32, 90, 0.5),
+                   0 0 120px rgba(60, 48, 130, 0.25);
+  --border:        1px solid var(--c-edge);
+  --font-mono:     'JetBrains Mono', 'Cascadia Mono', 'SF Mono', Consolas, monospace;
+  --font-display:  'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  background: var(--c-void);
+  color: var(--c-text);
+  font-family: var(--font-display);
+  font-size: 13px;
+  overflow: hidden;
+}
+
+/* COSMIC_VOLUME: radial depth gradient behind canvas. Subject 5–25% area
+   is the graph itself rendered by cytoscape over this field. */
+#cosmic-volume {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 25%, var(--c-rise) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 70%, var(--c-mid) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 50%, var(--c-deep) 0%, var(--c-void) 80%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+body {
+  display: grid;
+  grid-template-areas:
+    "top    top    top"
+    "side   cy     panel"
+    "bot    bot    bot";
+  grid-template-columns: 260px 1fr 320px;
+  grid-template-rows: 56px 1fr 24px;
+  position: relative;
+}
+
+/* Topbar */
+#topbar {
+  grid-area: top;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 18px;
+  background: linear-gradient(180deg, var(--c-deep), var(--c-void));
+  border-bottom: var(--border);
+  z-index: 10;
+}
+.title-block { display: flex; align-items: baseline; gap: 14px; }
+.sigil {
+  color: var(--c-mark);
+  font-size: 22px;
+  line-height: 1;
+  filter: drop-shadow(0 0 8px var(--c-mark-soft));
+}
+.title {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 16px;
+  color: var(--c-text);
+}
+.version { color: var(--c-text-dim); font-family: var(--font-mono); font-size: 11px; }
+.stamp {
+  color: var(--c-text-dim);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  padding-left: 12px;
+  border-left: 1px solid var(--c-edge);
+  margin-left: 6px;
+}
+
+.views { display: flex; gap: 4px; }
+.view-btn {
+  background: transparent;
+  color: var(--c-text-dim);
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.15s ease;
+}
+.view-btn:hover { color: var(--c-text); border-color: var(--c-edge); }
+.view-btn.active {
+  color: var(--c-mark);
+  border-color: var(--c-mark);
+  background: var(--c-mark-soft);
+}
+
+/* Side controls */
+#controls {
+  grid-area: side;
+  background: var(--c-deep);
+  border-right: var(--border);
+  padding: 18px 14px;
+  overflow-y: auto;
+  z-index: 5;
+}
+.control-group { margin-bottom: 16px; }
+.control-group label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--c-text-dim);
+  margin-bottom: 5px;
+}
+.control-group input,
+.control-group select {
+  width: 100%;
+  background: var(--c-mid);
+  color: var(--c-text);
+  border: 1px solid var(--c-edge);
+  padding: 6px 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  border-radius: 2px;
+  outline: none;
+}
+.control-group input:focus,
+.control-group select:focus { border-color: var(--c-pale); }
+.control-group.actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.control-group button {
+  background: var(--c-rise);
+  color: var(--c-text);
+  border: 1px solid var(--c-edge);
+  padding: 6px 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+  border-radius: 2px;
+  letter-spacing: 0.5px;
+  flex: 1;
+  transition: all 0.15s ease;
+}
+.control-group button:hover { background: var(--c-edge); }
+.control-group button.primary {
+  background: var(--c-mark);
+  color: var(--c-void);
+  border-color: var(--c-mark);
+  font-weight: 700;
+}
+.control-group button.primary:hover { filter: brightness(1.1); }
+.control-group.export-group { display: flex; gap: 6px; flex-wrap: wrap; }
+.control-group.legend ul { list-style: none; }
+.control-group.legend li {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 3px 0;
+  display: flex; align-items: center; gap: 8px;
+}
+.legend-swatch {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.counts {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--c-text-dim);
+  line-height: 1.7;
+}
+.counts strong { color: var(--c-mark); }
+
+/* Cytoscape canvas */
+#cy {
+  grid-area: cy;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--shadow-cosmic);
+}
+
+/* Sidebar (node details) */
+#sidebar {
+  grid-area: panel;
+  background: var(--c-deep);
+  border-left: var(--border);
+  padding: 18px 14px;
+  overflow-y: auto;
+  z-index: 5;
+}
+#sidebar.hidden { display: none; }
+.sidebar-header {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 10px;
+}
+.node-type {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--c-mark);
+  color: var(--c-void);
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-weight: 700;
+}
+.node-id {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--c-text-dim);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.close {
+  background: transparent;
+  color: var(--c-text-dim);
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+}
+.close:hover { color: var(--c-mark); }
+#sb-label {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: var(--c-text);
+  word-break: break-word;
+}
+#sb-props {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  margin-bottom: 18px;
+}
+#sb-props dt { color: var(--c-text-dim); margin-top: 6px; }
+#sb-props dd { color: var(--c-text); word-break: break-word; }
+
+.annotations h3, .neighborhood h3 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--c-text-dim);
+  margin-bottom: 8px;
+  display: flex; justify-content: space-between; align-items: baseline;
+}
+.hint { color: var(--c-pale); font-size: 9px; text-transform: none; letter-spacing: 0; }
+.annotations textarea {
+  width: 100%;
+  background: var(--c-mid);
+  color: var(--c-text);
+  border: 1px solid var(--c-edge);
+  padding: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  border-radius: 2px;
+  resize: vertical;
+  outline: none;
+}
+.annotations textarea:focus { border-color: var(--c-pale); }
+.anno-actions { display: flex; gap: 6px; margin-top: 6px; align-items: center; }
+.anno-actions button {
+  background: var(--c-rise);
+  color: var(--c-text);
+  border: 1px solid var(--c-edge);
+  padding: 5px 10px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.anno-actions button.primary {
+  background: var(--c-mark);
+  color: var(--c-void);
+  border-color: var(--c-mark);
+  font-weight: 700;
+}
+.status { font-family: var(--font-mono); font-size: 10px; color: var(--c-pale); }
+
+.neighborhood { margin-top: 18px; }
+.neighborhood ul { list-style: none; }
+.neighborhood li {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 3px 0;
+  color: var(--c-text-dim);
+  cursor: pointer;
+}
+.neighborhood li:hover { color: var(--c-mark); }
+.neighborhood li .edge-label { color: var(--c-pale); padding: 0 6px; }
+
+/* Botbar */
+#botbar {
+  grid-area: bot;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 18px;
+  background: var(--c-deep);
+  border-top: var(--border);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--c-text-dim);
+  letter-spacing: 1px;
+  z-index: 5;
+}
+.motto { font-style: italic; color: var(--c-pale); }

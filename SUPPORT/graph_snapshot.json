@@ -1,22 +1,28 @@
 {
   "schema": "imperium.graph.v0_1",
   "generator": "mechanicus.imperium_graph_indexer.v0_1",
-  "generated_at": "2026-06-24T14:03:31Z",
+  "generated_at": "2026-06-24T14:11:09Z",
   "repo_name": "clone",
   "counts": {
-    "nodes": 188,
-    "edges": 307,
+    "nodes": 245,
+    "edges": 365,
     "by_node_type": {
       "doctrine": 41,
+      "land": 37,
       "organ": 13,
       "receipt": 1,
       "sentinel": 1,
-      "sub_organ": 132
+      "sub_organ": 132,
+      "task": 20
     },
     "by_edge_type": {
+      "declares_base": 1,
+      "gates": 1,
+      "lands_after": 36,
       "monitors": 1,
       "owns": 133,
-      "parent_of": 173
+      "parent_of": 173,
+      "produces": 20
     }
   },
   "nodes": [
@@ -308,6 +314,448 @@
       "path": "ORGANS/DOCTRINARIUM/TASK_PARTICIPATION/READ_FIRST_TASK_PARTICIPATION.md"
     },
     {
+      "id": "land:06c8db6cf9e033b09ef5ff65e0f29264e34c3088",
+      "type": "land",
+      "sha": "06c8db6cf9e033b09ef5ff65e0f29264e34c3088",
+      "short_sha": "06c8db6cf9e0",
+      "subject": "INQ-GATE-BOM-TOLERANT-0001: gate reads manifest as utf-8-sig; +T7",
+      "task_id": "INQ-GATE-BOM-TOLERANT-0001",
+      "date": "2026-06-24T12:51:53+03:00",
+      "parents": [
+        "308d04d4a4cd2a74ef5b28afee5c324db4c569e0"
+      ]
+    },
+    {
+      "id": "land:095792768fcdb3a0180cfdb6fe1d5e993a27b139",
+      "type": "land",
+      "sha": "095792768fcdb3a0180cfdb6fe1d5e993a27b139",
+      "short_sha": "095792768fcd",
+      "subject": "S4: \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u0435 \u043b\u0435\u0433\u0430\u0441\u0438 (CAT-A+B) (20260615-214306)",
+      "task_id": null,
+      "date": "2026-06-15T21:43:15+03:00",
+      "parents": [
+        "c3286120c748259b6a111bae503a97564714bb0a"
+      ]
+    },
+    {
+      "id": "land:0cfb1c8b3218aa49eb3b6634706db607b971ec7a",
+      "type": "land",
+      "sha": "0cfb1c8b3218aa49eb3b6634706db607b971ec7a",
+      "short_sha": "0cfb1c8b3218",
+      "subject": "KERNEL-GATE-HARDENING-0001: INQUISITION land gate v0_1 (E3=6/6)",
+      "task_id": "KERNEL-GATE-HARDENING-0001",
+      "date": "2026-06-24T12:16:46+03:00",
+      "parents": [
+        "228ed0e2a6b62e5a933bf64ec5cfd887f37b7044"
+      ]
+    },
+    {
+      "id": "land:10490902e845a0287275ebc77988adb42f447e29",
+      "type": "land",
+      "sha": "10490902e845a0287275ebc77988adb42f447e29",
+      "short_sha": "10490902e845",
+      "subject": "warp/land: PHASE-A-INTAKE-CTX",
+      "task_id": null,
+      "date": "2026-06-19T18:37:59+03:00",
+      "parents": [
+        "7362377bf93d3ee5e7a693d4beb857668fd587d9"
+      ]
+    },
+    {
+      "id": "land:158f4397f40396079921b4515f172a7818115587",
+      "type": "land",
+      "sha": "158f4397f40396079921b4515f172a7818115587",
+      "short_sha": "158f4397f403",
+      "subject": "EYES-V2-CODEBOOK-0001: ratified visual doctrine v0.2 + E3 self-test",
+      "task_id": "EYES-V2-CODEBOOK-0001",
+      "date": "2026-06-24T15:17:19+03:00",
+      "parents": [
+        "f6574f5fea7c5de3c961030ecacfae623b88a491"
+      ]
+    },
+    {
+      "id": "land:2152aa9c9cef43fe04fc08c5dc8a3bad56b8bf61",
+      "type": "land",
+      "sha": "2152aa9c9cef43fe04fc08c5dc8a3bad56b8bf61",
+      "short_sha": "2152aa9c9cef",
+      "subject": "warp/land: T4-TAURI-FIX-EVAC",
+      "task_id": null,
+      "date": "2026-06-16T19:30:06+03:00",
+      "parents": [
+        "f31d0a87a7992ebed36ff4c8cf6343e76ad43f96"
+      ]
+    },
+    {
+      "id": "land:228ed0e2a6b62e5a933bf64ec5cfd887f37b7044",
+      "type": "land",
+      "sha": "228ed0e2a6b62e5a933bf64ec5cfd887f37b7044",
+      "short_sha": "228ed0e2a6b6",
+      "subject": "REALITY-HYGIENE-GUARD-0001: route Inquisition negative evidence outside REALITY",
+      "task_id": "REALITY-HYGIENE-GUARD-0001",
+      "date": "2026-06-23T23:10:47+03:00",
+      "parents": [
+        "461e23ceebdc0a3b174ceda65409fcfee8a35447"
+      ]
+    },
+    {
+      "id": "land:308d04d4a4cd2a74ef5b28afee5c324db4c569e0",
+      "type": "land",
+      "sha": "308d04d4a4cd2a74ef5b28afee5c324db4c569e0",
+      "short_sha": "308d04d4a4cd",
+      "subject": "CANON-REPAIR-OWNER-PROFILE-0001: relocate OWNER-PROFILE-0001 files to canon homes; remove rogue roots",
+      "task_id": "CANON-REPAIR-OWNER-PROFILE-0001",
+      "date": "2026-06-24T12:17:15+03:00",
+      "parents": [
+        "0cfb1c8b3218aa49eb3b6634706db607b971ec7a"
+      ]
+    },
+    {
+      "id": "land:325ac5bb4952f4c0e4b2a909e1c9ddf3ae57243e",
+      "type": "land",
+      "sha": "325ac5bb4952f4c0e4b2a909e1c9ddf3ae57243e",
+      "short_sha": "325ac5bb4952",
+      "subject": "WARP/CONTINUITY-PACK: administratum continuity assembler (Phase A, E3)",
+      "task_id": null,
+      "date": "2026-06-19T00:19:54+03:00",
+      "parents": [
+        "54e8843fa581d2388ed4fb960e0dbc7983286741"
+      ]
+    },
+    {
+      "id": "land:33b269c6dd5c4a6c101b02aae7a6a694b098a240",
+      "type": "land",
+      "sha": "33b269c6dd5c4a6c101b02aae7a6a694b098a240",
+      "short_sha": "33b269c6dd5c",
+      "subject": "WARP/THRONE-GATEWAY: throne gateway base (Phase O step 3)",
+      "task_id": null,
+      "date": "2026-06-18T21:47:39+03:00",
+      "parents": [
+        "d126271eafd077cf82505725b0763d50c0b04a55"
+      ]
+    },
+    {
+      "id": "land:38fa4fc6fb555529c108bbc70942f8dc7bb727b9",
+      "type": "land",
+      "sha": "38fa4fc6fb555529c108bbc70942f8dc7bb727b9",
+      "short_sha": "38fa4fc6fb55",
+      "subject": "ADMIN-CHARTER-0001: \u0423\u0441\u0442\u0430\u0432 \u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u0443\u043c\u0430 v1.0.0 (RU+EN, E3 runner Windows-safe) -- script-first AI, NO_LLM_IN_PIPELINE",
+      "task_id": "ADMIN-CHARTER-0001",
+      "date": "2026-06-20T16:10:56+03:00",
+      "parents": [
+        "bc195b213b8ec7779b6f0776998705aa7847905b"
+      ]
+    },
+    {
+      "id": "land:3d766326b10e9be26bfa56179cc17940c861e7f6",
+      "type": "land",
+      "sha": "3d766326b10e9be26bfa56179cc17940c861e7f6",
+      "short_sha": "3d766326b10e",
+      "subject": "portability: roots v0_2 + de-hardcoded installers",
+      "task_id": null,
+      "date": "2026-06-19T19:38:16+03:00",
+      "parents": [
+        "49d3ba6c56a509b52666c6687cffc52d471ed2fd"
+      ]
+    },
+    {
+      "id": "land:3ea36a86a3e5a77c7ae1c025770fde74b250c7da",
+      "type": "land",
+      "sha": "3ea36a86a3e5a77c7ae1c025770fde74b250c7da",
+      "short_sha": "3ea36a86a3e5",
+      "subject": "MECH-GRAPH-INDEXER-0001: imperium graph indexer v0_1 + E3 self-test",
+      "task_id": "MECH-GRAPH-INDEXER-0001",
+      "date": "2026-06-24T17:03:16+03:00",
+      "parents": [
+        "dc8b491f04e64ad5c4b4e56acf38e0672a669c2e"
+      ]
+    },
+    {
+      "id": "land:461e23ceebdc0a3b174ceda65409fcfee8a35447",
+      "type": "land",
+      "sha": "461e23ceebdc0a3b174ceda65409fcfee8a35447",
+      "short_sha": "461e23ceebdc",
+      "subject": "OWNER-PROFILE-0001 fix: land missing De_Schola tract",
+      "task_id": null,
+      "date": "2026-06-23T22:59:57+03:00",
+      "parents": [
+        "a2f6eee6a14988a83b4ac41a8506514d11fffde3"
+      ]
+    },
+    {
+      "id": "land:49d3ba6c56a509b52666c6687cffc52d471ed2fd",
+      "type": "land",
+      "sha": "49d3ba6c56a509b52666c6687cffc52d471ed2fd",
+      "short_sha": "49d3ba6c56a5",
+      "subject": "warp/land: ADM-ROOTS-ALIAS",
+      "task_id": null,
+      "date": "2026-06-19T18:46:33+03:00",
+      "parents": [
+        "10490902e845a0287275ebc77988adb42f447e29"
+      ]
+    },
+    {
+      "id": "land:4f746291fbf2321a5163ba260e5cdbf3b380499b",
+      "type": "land",
+      "sha": "4f746291fbf2321a5163ba260e5cdbf3b380499b",
+      "short_sha": "4f746291fbf2",
+      "subject": "GRAPH-SPEC-0001: Imperium Graph doctrine v0.1 + E3 self-test",
+      "task_id": "GRAPH-SPEC-0001",
+      "date": "2026-06-24T16:06:05+03:00",
+      "parents": [
+        "158f4397f40396079921b4515f172a7818115587"
+      ]
+    },
+    {
+      "id": "land:54e8843fa581d2388ed4fb960e0dbc7983286741",
+      "type": "land",
+      "sha": "54e8843fa581d2388ed4fb960e0dbc7983286741",
+      "short_sha": "54e8843fa581",
+      "subject": "WARP/ASTRA-GATE: astronomicon inbound gate (Phase A step A1, E3)",
+      "task_id": null,
+      "date": "2026-06-18T23:27:40+03:00",
+      "parents": [
+        "33b269c6dd5c4a6c101b02aae7a6a694b098a240"
+      ]
+    },
+    {
+      "id": "land:59159278802dc37da1386ca7451eadd8b96f6f06",
+      "type": "land",
+      "sha": "59159278802dc37da1386ca7451eadd8b96f6f06",
+      "short_sha": "59159278802d",
+      "subject": "DOCTR-CHARTER-0001: Doctrinarium charter v1.0.0 + E3 self-test",
+      "task_id": "DOCTR-CHARTER-0001",
+      "date": "2026-06-22T19:59:35+03:00",
+      "parents": [
+        "d8027a81598f007a46cc85dcdf3cbc73b76b05b3"
+      ]
+    },
+    {
+      "id": "land:60b426f6ae482f3fa43947f08f4ec7a30420b45c",
+      "type": "land",
+      "sha": "60b426f6ae482f3fa43947f08f4ec7a30420b45c",
+      "short_sha": "60b426f6ae48",
+      "subject": "MECH-CHARTER-0001: Mechanicus charter v1.0.0 (RU+EN, E3 runner Windows-safe)",
+      "task_id": "MECH-CHARTER-0001",
+      "date": "2026-06-20T16:33:44+03:00",
+      "parents": [
+        "38fa4fc6fb555529c108bbc70942f8dc7bb727b9"
+      ]
+    },
+    {
+      "id": "land:7362377bf93d3ee5e7a693d4beb857668fd587d9",
+      "type": "land",
+      "sha": "7362377bf93d3ee5e7a693d4beb857668fd587d9",
+      "short_sha": "7362377bf93d",
+      "subject": "WARP/CONTINUITY-PATCH: entry-protocol + 2 roles + section 8",
+      "task_id": null,
+      "date": "2026-06-19T16:28:00+03:00",
+      "parents": [
+        "325ac5bb4952f4c0e4b2a909e1c9ddf3ae57243e"
+      ]
+    },
+    {
+      "id": "land:85a819ec7ac6ea55243429ca56894753cc87ea30",
+      "type": "land",
+      "sha": "85a819ec7ac6ea55243429ca56894753cc87ea30",
+      "short_sha": "85a819ec7ac6",
+      "subject": "[DOCTR-TOOLS-0001] LAND -- DOCTRINARIUM tools/schemas/validators v0_1",
+      "task_id": null,
+      "date": "2026-06-22T21:27:58+03:00",
+      "parents": [
+        "59159278802dc37da1386ca7451eadd8b96f6f06"
+      ]
+    },
+    {
+      "id": "land:88300d6b1215793b450ad980fe2e627626d6735a",
+      "type": "land",
+      "sha": "88300d6b1215793b450ad980fe2e627626d6735a",
+      "short_sha": "88300d6b1215",
+      "subject": "ASTRON-TUI-SKILLS-0001: TUI \u041b\u0430\u0443\u043d\u0447\u0435\u0440 \u0418\u043c\u043f\u0435\u0440\u0438\u0443\u043c\u0430 + \u0434\u0432\u0438\u0436\u043e\u043a \u0441\u043a\u0438\u043b\u043b\u043e\u0432 (canonical home \u0432 REALITY)",
+      "task_id": "ASTRON-TUI-SKILLS-0001",
+      "date": "2026-06-20T12:37:48+03:00",
+      "parents": [
+        "3d766326b10e9be26bfa56179cc17940c861e7f6"
+      ]
+    },
+    {
+      "id": "land:8bd511d6ef53ab4be2b2d157092a2ed2c13296bb",
+      "type": "land",
+      "sha": "8bd511d6ef53ab4be2b2d157092a2ed2c13296bb",
+      "short_sha": "8bd511d6ef53",
+      "subject": "DOCTR-ANATOMY-0001: anatomy v0_2 canon (9 cortex + 3 governance + 1 ambient + 5 flows)",
+      "task_id": "DOCTR-ANATOMY-0001",
+      "date": "2026-06-23T16:42:26+03:00",
+      "parents": [
+        "85a819ec7ac6ea55243429ca56894753cc87ea30"
+      ]
+    },
+    {
+      "id": "land:9d7a295caf51a55d932fdee0b78ec1a6088d0b02",
+      "type": "land",
+      "sha": "9d7a295caf51a55d932fdee0b78ec1a6088d0b02",
+      "short_sha": "9d7a295caf51",
+      "subject": "ASTRON-CYCLE-WARPMODEL-0001: Warp-Zone Work: cycle UTF-8/cp1251 fix + WARP_TEST + provenance \u043f\u043e\u0434\u043f\u0438\u0441\u044c",
+      "task_id": "ASTRON-CYCLE-WARPMODEL-0001",
+      "date": "2026-06-20T12:42:47+03:00",
+      "parents": [
+        "88300d6b1215793b450ad980fe2e627626d6735a"
+      ]
+    },
+    {
+      "id": "land:a2f6eee6a14988a83b4ac41a8506514d11fffde3",
+      "type": "land",
+      "sha": "a2f6eee6a14988a83b4ac41a8506514d11fffde3",
+      "short_sha": "a2f6eee6a149",
+      "subject": "OWNER-PROFILE-0001: psychic core",
+      "task_id": "OWNER-PROFILE-0001",
+      "date": "2026-06-23T22:54:36+03:00",
+      "parents": [
+        "8bd511d6ef53ab4be2b2d157092a2ed2c13296bb"
+      ]
+    },
+    {
+      "id": "land:a6083c7b35a6efa5fff912d944e98b8fc0a45ca3",
+      "type": "land",
+      "sha": "a6083c7b35a6efa5fff912d944e98b8fc0a45ca3",
+      "short_sha": "a6083c7b35a6",
+      "subject": "chore(hygiene): tame long paths \u2014 move 11 bloated TASK-* taskpacks to HARNESS BAD_EXAMPLES, leave _ANTIPATTERN stubs; lock pre-push longpath guard to BLOCK",
+      "task_id": null,
+      "date": "2026-06-16T16:52:46+03:00",
+      "parents": [
+        "efe45421281a5c6b5f87259e2bfbecdd33d1540a"
+      ]
+    },
+    {
+      "id": "land:b60ce1ac8d6217433b85d49f23149840e1f517a9",
+      "type": "land",
+      "sha": "b60ce1ac8d6217433b85d49f23149840e1f517a9",
+      "short_sha": "b60ce1ac8d62",
+      "subject": "MECH-GRAPH-INDEXER-HOTFIX-0001: utf-8 subprocess encoding (Self-rule 57)",
+      "task_id": "MECH-GRAPH-INDEXER-HOTFIX-0001",
+      "date": "2026-06-24T17:10:55+03:00",
+      "parents": [
+        "3ea36a86a3e5a77c7ae1c025770fde74b250c7da"
+      ]
+    },
+    {
+      "id": "land:bc195b213b8ec7779b6f0776998705aa7847905b",
+      "type": "land",
+      "sha": "bc195b213b8ec7779b6f0776998705aa7847905b",
+      "short_sha": "bc195b213b8e",
+      "subject": "ASTRON-CHARTER-0001: \u0423\u0441\u0442\u0430\u0432 \u0410\u0441\u0442\u0440\u043e\u043d\u043e\u043c\u0438\u043a\u043e\u043d\u0430 v1.0.0 (RU+EN, \u0444\u043e\u0440\u043c\u044b PATCH/TASK, \u043a\u043e\u043d\u0442\u0440\u043e\u043b\u044c\u043d\u044b\u0435 \u0442\u0435\u0441\u0442\u044b E3) -- v2 utf8-safe",
+      "task_id": "ASTRON-CHARTER-0001",
+      "date": "2026-06-20T14:20:34+03:00",
+      "parents": [
+        "9d7a295caf51a55d932fdee0b78ec1a6088d0b02"
+      ]
+    },
+    {
+      "id": "land:c3286120c748259b6a111bae503a97564714bb0a",
+      "type": "land",
+      "sha": "c3286120c748259b6a111bae503a97564714bb0a",
+      "short_sha": "c3286120c748",
+      "subject": "clean-base: \u0447\u0438\u0441\u0442\u044b\u0439 \u0441\u0442\u0430\u0440\u0442 \u0438\u0441\u0442\u043e\u0440\u0438\u0438 \u043f\u043e\u0441\u043b\u0435 S1-S2 (20260615-213222)",
+      "task_id": null,
+      "date": "2026-06-15T21:32:47+03:00",
+      "parents": []
+    },
+    {
+      "id": "land:d126271eafd077cf82505725b0763d50c0b04a55",
+      "type": "land",
+      "sha": "d126271eafd077cf82505725b0763d50c0b04a55",
+      "short_sha": "d126271eafd0",
+      "subject": "WARP/ORGAN-STAMP: stamp 9 organ cards+contracts (Phase O step 1)",
+      "task_id": null,
+      "date": "2026-06-18T21:19:15+03:00",
+      "parents": [
+        "e40ca83603f39a2c030d98862c93b812859a62e1"
+      ]
+    },
+    {
+      "id": "land:d8027a81598f007a46cc85dcdf3cbc73b76b05b3",
+      "type": "land",
+      "sha": "d8027a81598f007a46cc85dcdf3cbc73b76b05b3",
+      "short_sha": "d8027a81598f",
+      "subject": "INQ-TOOLS-0001: Inquisition organ -- canonical 10+1 tools harden, fixture pyramid (4+10+6), goldens, E3 runner v3 bulletproof, T0-T10 + e2e suites, audit-chain immutability proof",
+      "task_id": "INQ-TOOLS-0001",
+      "date": "2026-06-20T23:03:19+03:00",
+      "parents": [
+        "da9671544715e9952dbf750b56bc40048032adb0"
+      ]
+    },
+    {
+      "id": "land:da9671544715e9952dbf750b56bc40048032adb0",
+      "type": "land",
+      "sha": "da9671544715e9952dbf750b56bc40048032adb0",
+      "short_sha": "da9671544715",
+      "subject": "INQ-CHARTER-0001: Inquisition charter v1.0.0 (RU+EN, E3 runner v2 Windows-safe) -- script-first AI, NO_LLM_IN_PIPELINE",
+      "task_id": "INQ-CHARTER-0001",
+      "date": "2026-06-20T17:50:52+03:00",
+      "parents": [
+        "60b426f6ae482f3fa43947f08f4ec7a30420b45c"
+      ]
+    },
+    {
+      "id": "land:dc8b491f04e64ad5c4b4e56acf38e0672a669c2e",
+      "type": "land",
+      "sha": "dc8b491f04e64ad5c4b4e56acf38e0672a669c2e",
+      "short_sha": "dc8b491f04e6",
+      "subject": "INQ-GATE-TAXONOMY-FIX-0001: gate taxonomy + declared_base patch (+ E3)",
+      "task_id": "INQ-GATE-TAXONOMY-FIX-0001",
+      "date": "2026-06-24T16:39:03+03:00",
+      "parents": [
+        "4f746291fbf2321a5163ba260e5cdbf3b380499b"
+      ]
+    },
+    {
+      "id": "land:e40ca83603f39a2c030d98862c93b812859a62e1",
+      "type": "land",
+      "sha": "e40ca83603f39a2c030d98862c93b812859a62e1",
+      "short_sha": "e40ca83603f3",
+      "subject": "T4 schema authoring: 5 population-hardened schemas",
+      "task_id": null,
+      "date": "2026-06-18T14:46:15+03:00",
+      "parents": [
+        "2152aa9c9cef43fe04fc08c5dc8a3bad56b8bf61"
+      ]
+    },
+    {
+      "id": "land:efe45421281a5c6b5f87259e2bfbecdd33d1540a",
+      "type": "land",
+      "sha": "efe45421281a5c6b5f87259e2bfbecdd33d1540a",
+      "short_sha": "efe45421281a",
+      "subject": "S5 FIX-15: BACKUP \u0432\u044b\u043d\u0435\u0441\u0451\u043d \u0438\u0437 \u0440\u0435\u043f\u043e (20260616-092641)",
+      "task_id": null,
+      "date": "2026-06-16T09:26:47+03:00",
+      "parents": [
+        "095792768fcdb3a0180cfdb6fe1d5e993a27b139"
+      ]
+    },
+    {
+      "id": "land:f31d0a87a7992ebed36ff4c8cf6343e76ad43f96",
+      "type": "land",
+      "sha": "f31d0a87a7992ebed36ff4c8cf6343e76ad43f96",
+      "short_sha": "f31d0a87a799",
+      "subject": "warp/land: T4-QUARANTINE-EVAC",
+      "task_id": null,
+      "date": "2026-06-16T19:05:02+03:00",
+      "parents": [
+        "a6083c7b35a6efa5fff912d944e98b8fc0a45ca3"
+      ]
+    },
+    {
+      "id": "land:f6574f5fea7c5de3c961030ecacfae623b88a491",
+      "type": "land",
+      "sha": "f6574f5fea7c5de3c961030ecacfae623b88a491",
+      "short_sha": "f6574f5fea7c",
+      "subject": "PROV-FIX-228ED0E2-0001: provenance correction receipt for 228ed0e2 (declared 8bd511d6, actual 461e23ce)",
+      "task_id": "PROV-FIX-228ED0E2-0001",
+      "date": "2026-06-24T13:10:24+03:00",
+      "parents": [
+        "06c8db6cf9e033b09ef5ff65e0f29264e34c3088"
+      ]
+    },
+    {
       "id": "organ:ADMINISTRATUM",
       "type": "organ",
       "name": "ADMINISTRATUM",
@@ -415,10 +863,10 @@
       "id": "receipt:ORGANS/INQUISITION/REPORTS/last_land_gate_receipt.json",
       "type": "receipt",
       "path": "ORGANS/INQUISITION/REPORTS/last_land_gate_receipt.json",
-      "task_id": "MECH-GRAPH-INDEXER-0001",
+      "task_id": "MECH-GRAPH-INDEXER-HOTFIX-0001",
       "verdict": "ALLOW",
-      "declared_base": "dc8b491f04e64ad5c4b4e56acf38e0672a669c2e",
-      "verified_at": "2026-06-24T14:03:16Z"
+      "declared_base": "3ea36a86a3e5a77c7ae1c025770fde74b250c7da",
+      "verified_at": "2026-06-24T14:10:55Z"
     },
     {
       "id": "sentinel:ORGANS/INQUISITION/TOOLS/owner_burnout_check.py",
@@ -1349,9 +1797,337 @@
       "name": "SCHEMAS",
       "parent": "_POST_WORK_RING",
       "path": "ORGANS/_POST_WORK_RING/SCHEMAS"
+    },
+    {
+      "id": "task:ADMIN-CHARTER-0001",
+      "type": "task",
+      "task_id": "ADMIN-CHARTER-0001"
+    },
+    {
+      "id": "task:ASTRON-CHARTER-0001",
+      "type": "task",
+      "task_id": "ASTRON-CHARTER-0001"
+    },
+    {
+      "id": "task:ASTRON-CYCLE-WARPMODEL-0001",
+      "type": "task",
+      "task_id": "ASTRON-CYCLE-WARPMODEL-0001"
+    },
+    {
+      "id": "task:ASTRON-TUI-SKILLS-0001",
+      "type": "task",
+      "task_id": "ASTRON-TUI-SKILLS-0001"
+    },
+    {
+      "id": "task:CANON-REPAIR-OWNER-PROFILE-0001",
+      "type": "task",
+      "task_id": "CANON-REPAIR-OWNER-PROFILE-0001"
+    },
+    {
+      "id": "task:DOCTR-ANATOMY-0001",
+      "type": "task",
+      "task_id": "DOCTR-ANATOMY-0001"
+    },
+    {
+      "id": "task:DOCTR-CHARTER-0001",
+      "type": "task",
+      "task_id": "DOCTR-CHARTER-0001"
+    },
+    {
+      "id": "task:EYES-V2-CODEBOOK-0001",
+      "type": "task",
+      "task_id": "EYES-V2-CODEBOOK-0001"
+    },
+    {
+      "id": "task:GRAPH-SPEC-0001",
+      "type": "task",
+      "task_id": "GRAPH-SPEC-0001"
+    },
+    {
+      "id": "task:INQ-CHARTER-0001",
+      "type": "task",
+      "task_id": "INQ-CHARTER-0001"
+    },
+    {
+      "id": "task:INQ-GATE-BOM-TOLERANT-0001",
+      "type": "task",
+      "task_id": "INQ-GATE-BOM-TOLERANT-0001"
+    },
+    {
+      "id": "task:INQ-GATE-TAXONOMY-FIX-0001",
+      "type": "task",
+      "task_id": "INQ-GATE-TAXONOMY-FIX-0001"
+    },
+    {
+      "id": "task:INQ-TOOLS-0001",
+      "type": "task",
+      "task_id": "INQ-TOOLS-0001"
+    },
+    {
+      "id": "task:KERNEL-GATE-HARDENING-0001",
+      "type": "task",
+      "task_id": "KERNEL-GATE-HARDENING-0001"
+    },
+    {
+      "id": "task:MECH-CHARTER-0001",
+      "type": "task",
+      "task_id": "MECH-CHARTER-0001"
+    },
+    {
+      "id": "task:MECH-GRAPH-INDEXER-0001",
+      "type": "task",
+      "task_id": "MECH-GRAPH-INDEXER-0001"
+    },
+    {
+      "id": "task:MECH-GRAPH-INDEXER-HOTFIX-0001",
+      "type": "task",
+      "task_id": "MECH-GRAPH-INDEXER-HOTFIX-0001"
+    },
+    {
+      "id": "task:OWNER-PROFILE-0001",
+      "type": "task",
+      "task_id": "OWNER-PROFILE-0001"
+    },
+    {
+      "id": "task:PROV-FIX-228ED0E2-0001",
+      "type": "task",
+      "task_id": "PROV-FIX-228ED0E2-0001"
+    },
+    {
+      "id": "task:REALITY-HYGIENE-GUARD-0001",
+      "type": "task",
+      "task_id": "REALITY-HYGIENE-GUARD-0001"
     }
   ],
   "edges": [
+    {
+      "id": "declares_base:receipt:ORGANS/INQUISITION/REPORTS/last_land_gate_receipt.json->land:3ea36a86a3e5a77c7ae1c025770fde74b250c7da",
+      "type": "declares_base",
+      "src": "receipt:ORGANS/INQUISITION/REPORTS/last_land_gate_receipt.json",
+      "dst": "land:3ea36a86a3e5a77c7ae1c025770fde74b250c7da"
+    },
+    {
+      "id": "gates:receipt:ORGANS/INQUISITION/REPORTS/last_land_gate_receipt.json->land:b60ce1ac8d6217433b85d49f23149840e1f517a9",
+      "type": "gates",
+      "src": "receipt:ORGANS/INQUISITION/REPORTS/last_land_gate_receipt.json",
+      "dst": "land:b60ce1ac8d6217433b85d49f23149840e1f517a9"
+    },
+    {
+      "id": "lands_after:land:06c8db6cf9e033b09ef5ff65e0f29264e34c3088->land:308d04d4a4cd2a74ef5b28afee5c324db4c569e0",
+      "type": "lands_after",
+      "src": "land:06c8db6cf9e033b09ef5ff65e0f29264e34c3088",
+      "dst": "land:308d04d4a4cd2a74ef5b28afee5c324db4c569e0"
+    },
+    {
+      "id": "lands_after:land:095792768fcdb3a0180cfdb6fe1d5e993a27b139->land:c3286120c748259b6a111bae503a97564714bb0a",
+      "type": "lands_after",
+      "src": "land:095792768fcdb3a0180cfdb6fe1d5e993a27b139",
+      "dst": "land:c3286120c748259b6a111bae503a97564714bb0a"
+    },
+    {
+      "id": "lands_after:land:0cfb1c8b3218aa49eb3b6634706db607b971ec7a->land:228ed0e2a6b62e5a933bf64ec5cfd887f37b7044",
+      "type": "lands_after",
+      "src": "land:0cfb1c8b3218aa49eb3b6634706db607b971ec7a",
+      "dst": "land:228ed0e2a6b62e5a933bf64ec5cfd887f37b7044"
+    },
+    {
+      "id": "lands_after:land:10490902e845a0287275ebc77988adb42f447e29->land:7362377bf93d3ee5e7a693d4beb857668fd587d9",
+      "type": "lands_after",
+      "src": "land:10490902e845a0287275ebc77988adb42f447e29",
+      "dst": "land:7362377bf93d3ee5e7a693d4beb857668fd587d9"
+    },
+    {
+      "id": "lands_after:land:158f4397f40396079921b4515f172a7818115587->land:f6574f5fea7c5de3c961030ecacfae623b88a491",
+      "type": "lands_after",
+      "src": "land:158f4397f40396079921b4515f172a7818115587",
+      "dst": "land:f6574f5fea7c5de3c961030ecacfae623b88a491"
+    },
+    {
+      "id": "lands_after:land:2152aa9c9cef43fe04fc08c5dc8a3bad56b8bf61->land:f31d0a87a7992ebed36ff4c8cf6343e76ad43f96",
+      "type": "lands_after",
+      "src": "land:2152aa9c9cef43fe04fc08c5dc8a3bad56b8bf61",
+      "dst": "land:f31d0a87a7992ebed36ff4c8cf6343e76ad43f96"
+    },
+    {
+      "id": "lands_after:land:228ed0e2a6b62e5a933bf64ec5cfd887f37b7044->land:461e23ceebdc0a3b174ceda65409fcfee8a35447",
+      "type": "lands_after",
+      "src": "land:228ed0e2a6b62e5a933bf64ec5cfd887f37b7044",
+      "dst": "land:461e23ceebdc0a3b174ceda65409fcfee8a35447"
+    },
+    {
+      "id": "lands_after:land:308d04d4a4cd2a74ef5b28afee5c324db4c569e0->land:0cfb1c8b3218aa49eb3b6634706db607b971ec7a",
+      "type": "lands_after",
+      "src": "land:308d04d4a4cd2a74ef5b28afee5c324db4c569e0",
+      "dst": "land:0cfb1c8b3218aa49eb3b6634706db607b971ec7a"
+    },
+    {
+      "id": "lands_after:land:325ac5bb4952f4c0e4b2a909e1c9ddf3ae57243e->land:54e8843fa581d2388ed4fb960e0dbc7983286741",
+      "type": "lands_after",
+      "src": "land:325ac5bb4952f4c0e4b2a909e1c9ddf3ae57243e",
+      "dst": "land:54e8843fa581d2388ed4fb960e0dbc7983286741"
+    },
+    {
+      "id": "lands_after:land:33b269c6dd5c4a6c101b02aae7a6a694b098a240->land:d126271eafd077cf82505725b0763d50c0b04a55",
+      "type": "lands_after",
+      "src": "land:33b269c6dd5c4a6c101b02aae7a6a694b098a240",
+      "dst": "land:d126271eafd077cf82505725b0763d50c0b04a55"
+    },
+    {
+      "id": "lands_after:land:38fa4fc6fb555529c108bbc70942f8dc7bb727b9->land:bc195b213b8ec7779b6f0776998705aa7847905b",
+      "type": "lands_after",
+      "src": "land:38fa4fc6fb555529c108bbc70942f8dc7bb727b9",
+      "dst": "land:bc195b213b8ec7779b6f0776998705aa7847905b"
+    },
+    {
+      "id": "lands_after:land:3d766326b10e9be26bfa56179cc17940c861e7f6->land:49d3ba6c56a509b52666c6687cffc52d471ed2fd",
+      "type": "lands_after",
+      "src": "land:3d766326b10e9be26bfa56179cc17940c861e7f6",
+      "dst": "land:49d3ba6c56a509b52666c6687cffc52d471ed2fd"
+    },
+    {
+      "id": "lands_after:land:3ea36a86a3e5a77c7ae1c025770fde74b250c7da->land:dc8b491f04e64ad5c4b4e56acf38e0672a669c2e",
+      "type": "lands_after",
+      "src": "land:3ea36a86a3e5a77c7ae1c025770fde74b250c7da",
+      "dst": "land:dc8b491f04e64ad5c4b4e56acf38e0672a669c2e"
+    },
+    {
+      "id": "lands_after:land:461e23ceebdc0a3b174ceda65409fcfee8a35447->land:a2f6eee6a14988a83b4ac41a8506514d11fffde3",
+      "type": "lands_after",
+      "src": "land:461e23ceebdc0a3b174ceda65409fcfee8a35447",
+      "dst": "land:a2f6eee6a14988a83b4ac41a8506514d11fffde3"
+    },
+    {
+      "id": "lands_after:land:49d3ba6c56a509b52666c6687cffc52d471ed2fd->land:10490902e845a0287275ebc77988adb42f447e29",
+      "type": "lands_after",
+      "src": "land:49d3ba6c56a509b52666c6687cffc52d471ed2fd",
+      "dst": "land:10490902e845a0287275ebc77988adb42f447e29"
+    },
+    {
+      "id": "lands_after:land:4f746291fbf2321a5163ba260e5cdbf3b380499b->land:158f4397f40396079921b4515f172a7818115587",
+      "type": "lands_after",
+      "src": "land:4f746291fbf2321a5163ba260e5cdbf3b380499b",
+      "dst": "land:158f4397f40396079921b4515f172a7818115587"
+    },
+    {
+      "id": "lands_after:land:54e8843fa581d2388ed4fb960e0dbc7983286741->land:33b269c6dd5c4a6c101b02aae7a6a694b098a240",
+      "type": "lands_after",
+      "src": "land:54e8843fa581d2388ed4fb960e0dbc7983286741",
+      "dst": "land:33b269c6dd5c4a6c101b02aae7a6a694b098a240"
+    },
+    {
+      "id": "lands_after:land:59159278802dc37da1386ca7451eadd8b96f6f06->land:d8027a81598f007a46cc85dcdf3cbc73b76b05b3",
+      "type": "lands_after",
+      "src": "land:59159278802dc37da1386ca7451eadd8b96f6f06",
+      "dst": "land:d8027a81598f007a46cc85dcdf3cbc73b76b05b3"
+    },
+    {
+      "id": "lands_after:land:60b426f6ae482f3fa43947f08f4ec7a30420b45c->land:38fa4fc6fb555529c108bbc70942f8dc7bb727b9",
+      "type": "lands_after",
+      "src": "land:60b426f6ae482f3fa43947f08f4ec7a30420b45c",
+      "dst": "land:38fa4fc6fb555529c108bbc70942f8dc7bb727b9"
+    },
+    {
+      "id": "lands_after:land:7362377bf93d3ee5e7a693d4beb857668fd587d9->land:325ac5bb4952f4c0e4b2a909e1c9ddf3ae57243e",
+      "type": "lands_after",
+      "src": "land:7362377bf93d3ee5e7a693d4beb857668fd587d9",
+      "dst": "land:325ac5bb4952f4c0e4b2a909e1c9ddf3ae57243e"
+    },
+    {
+      "id": "lands_after:land:85a819ec7ac6ea55243429ca56894753cc87ea30->land:59159278802dc37da1386ca7451eadd8b96f6f06",
+      "type": "lands_after",
+      "src": "land:85a819ec7ac6ea55243429ca56894753cc87ea30",
+      "dst": "land:59159278802dc37da1386ca7451eadd8b96f6f06"
+    },
+    {
+      "id": "lands_after:land:88300d6b1215793b450ad980fe2e627626d6735a->land:3d766326b10e9be26bfa56179cc17940c861e7f6",
+      "type": "lands_after",
+      "src": "land:88300d6b1215793b450ad980fe2e627626d6735a",
+      "dst": "land:3d766326b10e9be26bfa56179cc17940c861e7f6"
+    },
+    {
+      "id": "lands_after:land:8bd511d6ef53ab4be2b2d157092a2ed2c13296bb->land:85a819ec7ac6ea55243429ca56894753cc87ea30",
+      "type": "lands_after",
+      "src": "land:8bd511d6ef53ab4be2b2d157092a2ed2c13296bb",
+      "dst": "land:85a819ec7ac6ea55243429ca56894753cc87ea30"
+    },
+    {
+      "id": "lands_after:land:9d7a295caf51a55d932fdee0b78ec1a6088d0b02->land:88300d6b1215793b450ad980fe2e627626d6735a",
+      "type": "lands_after",
+      "src": "land:9d7a295caf51a55d932fdee0b78ec1a6088d0b02",
+      "dst": "land:88300d6b1215793b450ad980fe2e627626d6735a"
+    },
+    {
+      "id": "lands_after:land:a2f6eee6a14988a83b4ac41a8506514d11fffde3->land:8bd511d6ef53ab4be2b2d157092a2ed2c13296bb",
+      "type": "lands_after",
+      "src": "land:a2f6eee6a14988a83b4ac41a8506514d11fffde3",
+      "dst": "land:8bd511d6ef53ab4be2b2d157092a2ed2c13296bb"
+    },
+    {
+      "id": "lands_after:land:a6083c7b35a6efa5fff912d944e98b8fc0a45ca3->land:efe45421281a5c6b5f87259e2bfbecdd33d1540a",
+      "type": "lands_after",
+      "src": "land:a6083c7b35a6efa5fff912d944e98b8fc0a45ca3",
+      "dst": "land:efe45421281a5c6b5f87259e2bfbecdd33d1540a"
+    },
+    {
+      "id": "lands_after:land:b60ce1ac8d6217433b85d49f23149840e1f517a9->land:3ea36a86a3e5a77c7ae1c025770fde74b250c7da",
+      "type": "lands_after",
+      "src": "land:b60ce1ac8d6217433b85d49f23149840e1f517a9",
+      "dst": "land:3ea36a86a3e5a77c7ae1c025770fde74b250c7da"
+    },
+    {
+      "id": "lands_after:land:bc195b213b8ec7779b6f0776998705aa7847905b->land:9d7a295caf51a55d932fdee0b78ec1a6088d0b02",
+      "type": "lands_after",
+      "src": "land:bc195b213b8ec7779b6f0776998705aa7847905b",
+      "dst": "land:9d7a295caf51a55d932fdee0b78ec1a6088d0b02"
+    },
+    {
+      "id": "lands_after:land:d126271eafd077cf82505725b0763d50c0b04a55->land:e40ca83603f39a2c030d98862c93b812859a62e1",
+      "type": "lands_after",
+      "src": "land:d126271eafd077cf82505725b0763d50c0b04a55",
+      "dst": "land:e40ca83603f39a2c030d98862c93b812859a62e1"
+    },
+    {
+      "id": "lands_after:land:d8027a81598f007a46cc85dcdf3cbc73b76b05b3->land:da9671544715e9952dbf750b56bc40048032adb0",
+      "type": "lands_after",
+      "src": "land:d8027a81598f007a46cc85dcdf3cbc73b76b05b3",
+      "dst": "land:da9671544715e9952dbf750b56bc40048032adb0"
+    },
+    {
+      "id": "lands_after:land:da9671544715e9952dbf750b56bc40048032adb0->land:60b426f6ae482f3fa43947f08f4ec7a30420b45c",
+      "type": "lands_after",
+      "src": "land:da9671544715e9952dbf750b56bc40048032adb0",
+      "dst": "land:60b426f6ae482f3fa43947f08f4ec7a30420b45c"
+    },
+    {
+      "id": "lands_after:land:dc8b491f04e64ad5c4b4e56acf38e0672a669c2e->land:4f746291fbf2321a5163ba260e5cdbf3b380499b",
+      "type": "lands_after",
+      "src": "land:dc8b491f04e64ad5c4b4e56acf38e0672a669c2e",
+      "dst": "land:4f746291fbf2321a5163ba260e5cdbf3b380499b"
+    },
+    {
+      "id": "lands_after:land:e40ca83603f39a2c030d98862c93b812859a62e1->land:2152aa9c9cef43fe04fc08c5dc8a3bad56b8bf61",
+      "type": "lands_after",
+      "src": "land:e40ca83603f39a2c030d98862c93b812859a62e1",
+      "dst": "land:2152aa9c9cef43fe04fc08c5dc8a3bad56b8bf61"
+    },
+    {
+      "id": "lands_after:land:efe45421281a5c6b5f87259e2bfbecdd33d1540a->land:095792768fcdb3a0180cfdb6fe1d5e993a27b139",
+      "type": "lands_after",
+      "src": "land:efe45421281a5c6b5f87259e2bfbecdd33d1540a",
+      "dst": "land:095792768fcdb3a0180cfdb6fe1d5e993a27b139"
+    },
+    {
+      "id": "lands_after:land:f31d0a87a7992ebed36ff4c8cf6343e76ad43f96->land:a6083c7b35a6efa5fff912d944e98b8fc0a45ca3",
+      "type": "lands_after",
+      "src": "land:f31d0a87a7992ebed36ff4c8cf6343e76ad43f96",
+      "dst": "land:a6083c7b35a6efa5fff912d944e98b8fc0a45ca3"
+    },
+    {
+      "id": "lands_after:land:f6574f5fea7c5de3c961030ecacfae623b88a491->land:06c8db6cf9e033b09ef5ff65e0f29264e34c3088",
+      "type": "lands_after",
+      "src": "land:f6574f5fea7c5de3c961030ecacfae623b88a491",
+      "dst": "land:06c8db6cf9e033b09ef5ff65e0f29264e34c3088"
+    },
     {
       "id": "monitors:sentinel:ORGANS/INQUISITION/TOOLS/owner_burnout_check.py->organ:INQUISITION",
       "type": "monitors",
@@ -3193,6 +3969,126 @@
       "type": "parent_of",
       "src": "organ:_POST_WORK_RING",
       "dst": "sub_organ:_POST_WORK_RING/SCHEMAS"
+    },
+    {
+      "id": "produces:task:ADMIN-CHARTER-0001->land:38fa4fc6fb555529c108bbc70942f8dc7bb727b9",
+      "type": "produces",
+      "src": "task:ADMIN-CHARTER-0001",
+      "dst": "land:38fa4fc6fb555529c108bbc70942f8dc7bb727b9"
+    },
+    {
+      "id": "produces:task:ASTRON-CHARTER-0001->land:bc195b213b8ec7779b6f0776998705aa7847905b",
+      "type": "produces",
+      "src": "task:ASTRON-CHARTER-0001",
+      "dst": "land:bc195b213b8ec7779b6f0776998705aa7847905b"
+    },
+    {
+      "id": "produces:task:ASTRON-CYCLE-WARPMODEL-0001->land:9d7a295caf51a55d932fdee0b78ec1a6088d0b02",
+      "type": "produces",
+      "src": "task:ASTRON-CYCLE-WARPMODEL-0001",
+      "dst": "land:9d7a295caf51a55d932fdee0b78ec1a6088d0b02"
+    },
+    {
+      "id": "produces:task:ASTRON-TUI-SKILLS-0001->land:88300d6b1215793b450ad980fe2e627626d6735a",
+      "type": "produces",
+      "src": "task:ASTRON-TUI-SKILLS-0001",
+      "dst": "land:88300d6b1215793b450ad980fe2e627626d6735a"
+    },
+    {
+      "id": "produces:task:CANON-REPAIR-OWNER-PROFILE-0001->land:308d04d4a4cd2a74ef5b28afee5c324db4c569e0",
+      "type": "produces",
+      "src": "task:CANON-REPAIR-OWNER-PROFILE-0001",
+      "dst": "land:308d04d4a4cd2a74ef5b28afee5c324db4c569e0"
+    },
+    {
+      "id": "produces:task:DOCTR-ANATOMY-0001->land:8bd511d6ef53ab4be2b2d157092a2ed2c13296bb",
+      "type": "produces",
+      "src": "task:DOCTR-ANATOMY-0001",
+      "dst": "land:8bd511d6ef53ab4be2b2d157092a2ed2c13296bb"
+    },
+    {
+      "id": "produces:task:DOCTR-CHARTER-0001->land:59159278802dc37da1386ca7451eadd8b96f6f06",
+      "type": "produces",
+      "src": "task:DOCTR-CHARTER-0001",
+      "dst": "land:59159278802dc37da1386ca7451eadd8b96f6f06"
+    },
+    {
+      "id": "produces:task:EYES-V2-CODEBOOK-0001->land:158f4397f40396079921b4515f172a7818115587",
+      "type": "produces",
+      "src": "task:EYES-V2-CODEBOOK-0001",
+      "dst": "land:158f4397f40396079921b4515f172a7818115587"
+    },
+    {
+      "id": "produces:task:GRAPH-SPEC-0001->land:4f746291fbf2321a5163ba260e5cdbf3b380499b",
+      "type": "produces",
+      "src": "task:GRAPH-SPEC-0001",
+      "dst": "land:4f746291fbf2321a5163ba260e5cdbf3b380499b"
+    },
+    {
+      "id": "produces:task:INQ-CHARTER-0001->land:da9671544715e9952dbf750b56bc40048032adb0",
+      "type": "produces",
+      "src": "task:INQ-CHARTER-0001",
+      "dst": "land:da9671544715e9952dbf750b56bc40048032adb0"
+    },
+    {
+      "id": "produces:task:INQ-GATE-BOM-TOLERANT-0001->land:06c8db6cf9e033b09ef5ff65e0f29264e34c3088",
+      "type": "produces",
+      "src": "task:INQ-GATE-BOM-TOLERANT-0001",
+      "dst": "land:06c8db6cf9e033b09ef5ff65e0f29264e34c3088"
+    },
+    {
+      "id": "produces:task:INQ-GATE-TAXONOMY-FIX-0001->land:dc8b491f04e64ad5c4b4e56acf38e0672a669c2e",
+      "type": "produces",
+      "src": "task:INQ-GATE-TAXONOMY-FIX-0001",
+      "dst": "land:dc8b491f04e64ad5c4b4e56acf38e0672a669c2e"
+    },
+    {
+      "id": "produces:task:INQ-TOOLS-0001->land:d8027a81598f007a46cc85dcdf3cbc73b76b05b3",
+      "type": "produces",
+      "src": "task:INQ-TOOLS-0001",
+      "dst": "land:d8027a81598f007a46cc85dcdf3cbc73b76b05b3"
+    },
+    {
+      "id": "produces:task:KERNEL-GATE-HARDENING-0001->land:0cfb1c8b3218aa49eb3b6634706db607b971ec7a",
+      "type": "produces",
+      "src": "task:KERNEL-GATE-HARDENING-0001",
+      "dst": "land:0cfb1c8b3218aa49eb3b6634706db607b971ec7a"
+    },
+    {
+      "id": "produces:task:MECH-CHARTER-0001->land:60b426f6ae482f3fa43947f08f4ec7a30420b45c",
+      "type": "produces",
+      "src": "task:MECH-CHARTER-0001",
+      "dst": "land:60b426f6ae482f3fa43947f08f4ec7a30420b45c"
+    },
+    {
+      "id": "produces:task:MECH-GRAPH-INDEXER-0001->land:3ea36a86a3e5a77c7ae1c025770fde74b250c7da",
+      "type": "produces",
+      "src": "task:MECH-GRAPH-INDEXER-0001",
+      "dst": "land:3ea36a86a3e5a77c7ae1c025770fde74b250c7da"
+    },
+    {
+      "id": "produces:task:MECH-GRAPH-INDEXER-HOTFIX-0001->land:b60ce1ac8d6217433b85d49f23149840e1f517a9",
+      "type": "produces",
+      "src": "task:MECH-GRAPH-INDEXER-HOTFIX-0001",
+      "dst": "land:b60ce1ac8d6217433b85d49f23149840e1f517a9"
+    },
+    {
+      "id": "produces:task:OWNER-PROFILE-0001->land:a2f6eee6a14988a83b4ac41a8506514d11fffde3",
+      "type": "produces",
+      "src": "task:OWNER-PROFILE-0001",
+      "dst": "land:a2f6eee6a14988a83b4ac41a8506514d11fffde3"
+    },
+    {
+      "id": "produces:task:PROV-FIX-228ED0E2-0001->land:f6574f5fea7c5de3c961030ecacfae623b88a491",
+      "type": "produces",
+      "src": "task:PROV-FIX-228ED0E2-0001",
+      "dst": "land:f6574f5fea7c5de3c961030ecacfae623b88a491"
+    },
+    {
+      "id": "produces:task:REALITY-HYGIENE-GUARD-0001->land:228ed0e2a6b62e5a933bf64ec5cfd887f37b7044",
+      "type": "produces",
+      "src": "task:REALITY-HYGIENE-GUARD-0001",
+      "dst": "land:228ed0e2a6b62e5a933bf64ec5cfd887f37b7044"
     }
   ]
 }
