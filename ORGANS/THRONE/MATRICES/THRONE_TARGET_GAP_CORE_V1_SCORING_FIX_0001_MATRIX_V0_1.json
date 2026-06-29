@@ -1,0 +1,49 @@
+{
+  "matrix_id": "THRONE_TARGET_GAP_CORE_V1_SCORING_FIX_0001_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_FIX_CANDIDATE",
+  "owner": "THRONE",
+  "mode": "MEASURE_ONLY",
+  "purpose": "Separate Core v1 target-definition completeness from operational readiness evidence.",
+  "core_readiness_composition": {
+    "target_definition_weight": 20,
+    "operational_evidence_weight": 25,
+    "workflow_readiness_weight": 20,
+    "trust_readiness_weight": 15,
+    "human_visibility_weight": 10,
+    "great_nine_readiness_weight": 10
+  },
+  "near_v1_guard": {
+    "enabled": true,
+    "max_core_score_without_operational_evidence_50": 70,
+    "max_core_score_without_workflow_50": 72,
+    "max_core_score_without_trust_50": 75,
+    "message": "Target described does not imply operational Core v1 readiness."
+  },
+  "operational_evidence_signals": {
+    "task_lifecycle": [
+      "registered TASK_PACK evidence",
+      "Astronomicon intake evidence",
+      "Administratum registration/context evidence",
+      "WARP execution evidence",
+      "fix-loop evidence",
+      "Throne verdict evidence"
+    ],
+    "trust_chain": [
+      "Inquisition check evidence",
+      "Custodes trust receipt evidence",
+      "organ self-verdict evidence"
+    ],
+    "human_visibility": [
+      "TUI slot",
+      "dashboard/report state",
+      "task lifecycle report",
+      "warning/block panel target or implementation"
+    ],
+    "no_core_mutation": [
+      "before/after census",
+      "external product boundary evidence",
+      "allowed return receipt"
+    ]
+  }
+}

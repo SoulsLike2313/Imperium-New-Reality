@@ -1,0 +1,32 @@
+{
+  "matrix_id": "THRONE_TARGET_GAP_CORE_V1_SCORING_FIX_0002_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_FIX_CANDIDATE",
+  "owner": "THRONE",
+  "mode": "MEASURE_ONLY",
+  "purpose": "Strictly separate target documents from operational proof artifacts.",
+  "core_readiness_composition": {
+    "target_definition_weight": 15,
+    "operational_evidence_weight": 25,
+    "workflow_readiness_weight": 20,
+    "trust_readiness_weight": 15,
+    "human_visibility_weight": 10,
+    "no_core_mutation_evidence_weight": 10,
+    "great_nine_readiness_weight": 5
+  },
+  "near_v1_guard": {
+    "enabled": true,
+    "max_core_score_without_operational_evidence_50": 60,
+    "max_core_score_without_workflow_50": 62,
+    "max_core_score_without_trust_50": 65,
+    "max_core_score_without_no_core_mutation_50": 65,
+    "max_core_score_without_human_visibility_50": 70,
+    "message": "Target described and generic path signals are not operational Core v1 readiness."
+  },
+  "strict_evidence_policy": {
+    "ignore_target_docs_as_operational_proof": true,
+    "ignore_directory_slot_as_proof": true,
+    "require_specific_artifact_names": true,
+    "require_receipt_or_registry_for_core_capability": true
+  }
+}

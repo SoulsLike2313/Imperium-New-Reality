@@ -1,18 +1,35 @@
-# THRONE TARGET GAP REPORT V0.1
+# THRONE TARGET GAP REPORT V0.4 — STRICT OPERATIONAL PROOF
 
 task_id: `THRONE-TARGET-GAP-VALIDATOR-0001`  
-validator_id: `throne_target_gap_validator.v0_1`  
+upgrade_id: `THRONE-TARGET-GAP-CORE-V1-SCORING-INTEGRATION-0001-FIX-0002`  
+validator_id: `throne_target_gap_validator.v0_4_strict_operational_proof`  
 verdict: `PASS_MEASURED`  
 mode: `MEASURE_ONLY`  
-validation_model: `TARGET_V1_VS_CURRENT_REALITY`  
-generated_at_utc: `2026-06-29T18:03:18Z`
+validation_model: `TARGET_V1_VS_CURRENT_REALITY_WITH_STRICT_OPERATIONAL_PROOF`  
+generated_at_utc: `2026-06-29T19:03:10Z`
 
 ## Global scores
 
-- core_readiness_score: `67.55`
+- core_readiness_score: `53.02`
 - throne_readiness_score: `97.0`
 - great_nine_readiness_score: `51.69`
 - lowest_organ_readiness_score: `38.65`
+
+## Core v1 strict split
+
+- core_v1_target_definition_score: `100.0`
+- core_v1_operational_evidence_score: `44.75`
+- core_v1_workflow_readiness_score: `75.0`
+- core_v1_trust_readiness_score: `35.0`
+- core_v1_human_visibility_score: `40.0`
+- core_v1_no_core_mutation_evidence_score: `0.0`
+
+## Interpretation
+
+Target definition can be complete while operational proof remains weak.
+
+This validator does not count target documents, generic directory names, or organ names as operational proof.
+Operational proof requires specific task, registry, receipt, execution, fix-loop, trust, visibility, and no-core-mutation artifacts.
 
 ## Organ readiness, lowest first
 
@@ -29,10 +46,13 @@ generated_at_utc: `2026-06-29T18:03:18Z`
 
 ## Next attention areas
 
+5. **Core v1 operational evidence** — Core v1 target is described, but actual task/servitor/fix-loop/trust proof is still weak. → `THRONE-CORE-V1-OPERATIONAL-EVIDENCE-0001`
+7. **Custodes/Inquisition trust proof** — Trust readiness requires actual Inquisition/Custodes receipts, not only organ names. → `CUSTODES-INQUISITION-TRUST-CHAIN-0001`
+8. **Human visibility implementation** — TUI/dashboard target exists, but implementation artifacts are not enough. → `THRONE-HUMAN-VISIBILITY-PROOF-0001`
+9. **No-core-mutation proof** — Need before/after census and allowed-return receipts. → `THRONE-NO-CORE-MUTATION-PROOF-0001`
 10. **Great Nine README passports** — Missing README: ASTRONOMICON, ADMINISTRATUM, DOCTRINARIUM, INQUISITION, CUSTODES, STRATEGIUM, SCHOLA_IMPERIALIS, OFFICIO_AGENTIS → `ORGAN-README-PASSPORT-STAMP-0001`
 20. **Great Nine manifests** — Missing MANIFEST: ASTRONOMICON, ADMINISTRATUM, DOCTRINARIUM, MECHANICUS, INQUISITION, CUSTODES, STRATEGIUM, SCHOLA_IMPERIALIS, OFFICIO_AGENTIS → `ORGAN-MANIFEST-STAMP-0001`
-40. **Custodes trust layer** — Custodes readiness is low; organ validator trust cannot be audited deeply yet. → `CUSTODES-TRUST-LAYER-0001`
-50. **Schema-validator coverage** — Schema count exceeds validator count; declaration/evidence gap is visible. → `SCHEMA-VALIDATOR-COVERAGE-0001`
+30. **Astronomicon relationship validation** — Astronomicon is entry gate; intake/fix-loop/pass criteria must be measurable. → `THRONE-ASTRONOMICON-RELATIONSHIP-VALIDATION-0001`
 60. **Lowest organ readiness: OFFICIO_AGENTIS** — OFFICIO_AGENTIS readiness is 38.65%. → `OFFICIO_AGENTIS-GAP-CLOSURE-0001`
 
 ## Checks
@@ -40,13 +60,16 @@ generated_at_utc: `2026-06-29T18:03:18Z`
 - `PASS` — required_inputs_exist
 - `PASS` — input_json_parse
 - `PASS` — census_has_residents
-- `PASS` — scoring_matrix_has_weights
-- `PASS` — target_matrix_exists_and_mentions_target
-- `PASS` — fake_green_guard_not_all_100
+- `PASS` — target_definition_measured
+- `PASS` — fix_0002_scoring_composition_present
+- `PASS` — strict_evidence_policy_present
+- `PASS` — target_vs_strict_operational_split_present
+- `PASS` — near_v1_guard_active
+- `PASS` — generic_path_inflation_guard
 
 ## Warnings
 
-- Core readiness below target v1; this is expected and measured.
+- none
 
 ## Errors
 
@@ -55,11 +78,9 @@ generated_at_utc: `2026-06-29T18:03:18Z`
 ## Outputs
 
 - `ORGANS/THRONE/RECEIPTS/throne_target_gap_receipt.json`
+- `ORGANS/THRONE/REPORTS/THRONE_CORE_V1_OPERATIONAL_BREAKDOWN_V0_1.json`
+- `ORGANS/THRONE/REPORTS/THRONE_CORE_V1_OPERATIONAL_BREAKDOWN_V0_1.csv`
+- `ORGANS/THRONE/REPORTS/THRONE_CORE_V1_READINESS_BREAKDOWN_V0_1.json`
+- `ORGANS/THRONE/REPORTS/THRONE_CORE_V1_READINESS_BREAKDOWN_V0_1.csv`
 - `ORGANS/THRONE/REPORTS/THRONE_ORGAN_READINESS_TABLE_V0_1.csv`
 - `ORGANS/THRONE/REPORTS/THRONE_NEXT_ATTENTION_AREAS_V0_1.json`
-
-## Meaning
-
-This report does not claim Imperium v1 is achieved.
-
-It proves the Throne can compare a target v1 form against current Reality and produce a measured gap map.

@@ -1,0 +1,56 @@
+{
+  "matrix_id": "THRONE_TARGET_GAP_CORE_V1_SCORING_INTEGRATION_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "THRONE",
+  "mode": "MEASURE_ONLY",
+  "purpose": "Integrate Core v1 meta-kernel anatomy into Throne target-gap readiness scoring.",
+  "core_readiness_composition": {
+    "throne_structural_readiness_weight": 20,
+    "great_nine_readiness_weight": 30,
+    "core_v1_anatomy_readiness_weight": 50
+  },
+  "core_v1_anatomy_weights": {
+    "kernel_anatomy_score": 8,
+    "core_v1_definition_score": 10,
+    "kernel_boundary_score": 10,
+    "request_packet_score": 10,
+    "object_registry_score": 8,
+    "organ_service_stack_score": 10,
+    "servitor_boundary_score": 8,
+    "evidence_chain_score": 10,
+    "trust_boundary_score": 10,
+    "integration_kernel_score": 6,
+    "human_readability_score": 6,
+    "no_core_mutation_score": 4
+  },
+  "matrix_to_score_zone": {
+    "THRONE_KERNEL_ANATOMY_MATRIX_V0_1.json": "kernel_anatomy_score",
+    "THRONE_CORE_V1_DEFINITION_MATRIX_V0_1.json": "core_v1_definition_score",
+    "THRONE_KERNEL_BOUNDARY_MATRIX_V0_1.json": "kernel_boundary_score",
+    "THRONE_REQUEST_PACKET_MATRIX_V0_1.json": "request_packet_score",
+    "THRONE_OBJECT_REGISTRY_MATRIX_V0_1.json": "object_registry_score",
+    "THRONE_ORGAN_SERVICE_STACK_MATRIX_V0_1.json": "organ_service_stack_score",
+    "THRONE_SERVITOR_EXECUTION_BOUNDARY_MATRIX_V0_1.json": "servitor_boundary_score",
+    "THRONE_EVIDENCE_CHAIN_MATRIX_V0_1.json": "evidence_chain_score",
+    "THRONE_TRUST_BOUNDARY_MATRIX_V0_1.json": "trust_boundary_score",
+    "THRONE_INTEGRATION_KERNEL_MATRIX_V0_1.json": "integration_kernel_score",
+    "THRONE_HUMAN_READABILITY_MATRIX_V0_1.json": "human_readability_score",
+    "THRONE_CORE_V1_READINESS_SCORING_MATRIX_V0_1.json": "core_v1_definition_score"
+  },
+  "required_score_zones": [
+    "kernel_anatomy_score",
+    "core_v1_definition_score",
+    "kernel_boundary_score",
+    "request_packet_score",
+    "object_registry_score",
+    "organ_service_stack_score",
+    "servitor_boundary_score",
+    "evidence_chain_score",
+    "trust_boundary_score",
+    "integration_kernel_score",
+    "human_readability_score",
+    "no_core_mutation_score"
+  ],
+  "meaning": "Core v1 anatomy readiness measures target definition completeness and early evidence, not implementation completion."
+}
