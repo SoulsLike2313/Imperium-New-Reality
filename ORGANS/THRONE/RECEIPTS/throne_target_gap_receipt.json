@@ -1,17 +1,21 @@
 {
-  "receipt_id": "receipt.throne_target_gap.v0_4_strict_operational_proof",
+  "receipt_id": "receipt.throne_target_gap.v0_5_organ_implementation_split",
   "task_id": "THRONE-TARGET-GAP-VALIDATOR-0001",
-  "upgrade_id": "THRONE-TARGET-GAP-CORE-V1-SCORING-INTEGRATION-0001-FIX-0002",
-  "validator_id": "throne_target_gap_validator.v0_4_strict_operational_proof",
+  "upgrade_id": "THRONE-TARGET-GAP-ORGAN-IMPLEMENTATION-SPLIT-0001",
+  "validator_id": "throne_target_gap_validator.v0_5_organ_implementation_split",
   "verdict": "PASS_MEASURED",
-  "generated_at_utc": "2026-06-29T20:04:05Z",
+  "generated_at_utc": "2026-06-29T20:32:40Z",
   "mode": "MEASURE_ONLY",
-  "validation_model": "TARGET_V1_VS_CURRENT_REALITY_WITH_STRICT_OPERATIONAL_PROOF",
+  "validation_model": "TARGET_V1_VS_CURRENT_REALITY_WITH_ORGAN_IMPLEMENTATION_SPLIT",
   "scores": {
-    "core_readiness_score": 55.23,
+    "core_readiness_score": 53.2,
     "throne_readiness_score": 97.0,
-    "great_nine_readiness_score": 95.89,
-    "lowest_organ_readiness_score": 93.67,
+    "great_nine_readiness_score": 55.22,
+    "lowest_organ_readiness_score": 47.75,
+    "great_nine_profile_baseline_score": 100.0,
+    "great_nine_structural_score": 100.0,
+    "great_nine_operational_score": 32.67,
+    "great_nine_trust_score": 15.56,
     "core_v1_target_definition_score": 100.0,
     "core_v1_operational_evidence_score": 44.75,
     "core_v1_workflow_readiness_score": 75.0,
@@ -186,7 +190,7 @@
     "missing": [],
     "malformed": []
   },
-  "strict_operational_breakdown": {
+  "core_operational_breakdown": {
     "core_v1_operational_evidence_score": 44.75,
     "core_v1_workflow_readiness_score": 75.0,
     "core_v1_trust_readiness_score": 35.0,
@@ -268,8 +272,6 @@
         "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/COMMUNICATION_CONTRACT.md",
         "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/EVIDENCE_POLICY.md",
         "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/EXECUTION_SETTINGS.md",
-        "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/family_profile.json",
-        "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/FAMILY_PROFILE_SOURCE.md",
         "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/officio_bootstrap_execution_directive.json",
         "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/OFFICIO_BOOTSTRAP_EXECUTION_DIRECTIVE.md",
         "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/READ_ORDER.json",
@@ -277,8 +279,10 @@
         "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/RESPONSE_CONTRACT_REF.json",
         "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/role_pack.json",
         "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/ROLE_PACK.md",
-        "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/ROLE_PROFILE_SOURCE.md",
-        "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/SHA256SUMS.txt"
+        "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/SHA256SUMS.txt",
+        "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/START_MESSAGE.txt",
+        "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/STOP_CONDITIONS.json",
+        "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053896932Z_role_get/receipts/role_get_SERVITOR_PRIME_receipt.json"
       ],
       "warp_task_execution": [
         "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2/EXTRACTED/ACCEPTANCE_GATES.md",
@@ -320,11 +324,11 @@
         "ORGANS/INQUISITION/FINDINGS/inquisition_finding_schema_v0_1.json",
         "ORGANS/INQUISITION/HYGIENE_POLICY/evidence_vault_batch_receipt_verification_policy_v0_1.json",
         "ORGANS/INQUISITION/RECEIPTS/.gitkeep",
-        "ORGANS/INQUISITION/RECEIPTS/inquisition_profile_receipt.json",
         "ORGANS/INQUISITION/REPORTING/inquisition_evidence_vault_batch_receipt_verifier_v0_1.py",
         "ORGANS/INQUISITION/REPORTING/inquisition_intelligence_pack_receipt_gate_v0_1.py",
         "ORGANS/INQUISITION/REPORTS/last_land_gate_receipt.json",
-        "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/canonical_artifact_language_scan_report.md"
+        "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/canonical_artifact_language_scan_report.md",
+        "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/capability_split_receipt.json"
       ],
       "custodes_trust_receipt": [],
       "tui_implementation": [],
@@ -355,670 +359,1158 @@
       "before_after_census": [],
       "external_product_boundary_receipt": [],
       "allowed_return_receipt": []
-    },
-    "workflow_hits": {
-      "task_pack": [
-        "DOCTRINARIUM/CHARTERS/ASTRONOMICON_FORMS/TASK_PACK_FORM.md",
-        "DOCTRINARIUM/CHARTERS/ASTRONOMICON_FORMS/TASK_PACK_FORM.template.json",
-        "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-MATRIX-SPINE-EXTERNAL-FINALIZATION-RECEIPT-AND-CAP-CLOSURE-SEMANTICS-PC-V0_1/taskpack_scope_ack.json",
-        "ORGANS/ASTRONOMICON/CONTRACTS/TASKPACK_ADMISSION_CONTRACT_V0_1.md",
-        "ORGANS/ASTRONOMICON/CONTRACTS/TASKPACK_SELF_START_READ_ORDER_CONTRACT.md",
-        "ORGANS/ASTRONOMICON/POLICIES/TASKPACK_RETENTION_POLICY_V0_1.json",
-        "ORGANS/ASTRONOMICON/POLICIES/TASKPACK_RETENTION_POLICY_V0_1.md",
-        "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/taskpack_admission_fixture_results_stage2_1.json",
-        "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/capability_split_receipt.json",
-        "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/claim_ledger.jsonl"
-      ],
-      "task_registry": [
-        "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/skill_next_candidates_registry_receipt.json",
-        "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-ROLE-PACK-AND-LOGOS-OWNER-AUDIT-CARD-CONTRACT-PC-V0_1/next_task_candidates_registry_receipt.json",
-        "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/manual_logos_pipeline_registration_report.md",
-        "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/capability_split_receipt.json",
-        "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/claim_ledger.jsonl",
-        "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/commit_push_receipt.json",
-        "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/current_expected_task_registration_receipt.json",
-        "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/efficiency_delta_receipt.json",
-        "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/EVIDENCE_BOUNDARY.json",
-        "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/final_owner_summary_ru.md"
-      ],
-      "intake_receipt": [
-        "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/capability_split_receipt.json",
-        "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/commit_push_receipt.json",
-        "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/current_expected_task_registration_receipt.json",
-        "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/efficiency_delta_receipt.json",
-        "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/TASKPACK_ADMISSION_RECEIPT.example.json",
-        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-PC-NEW-REALITY-FINAL-REMOTE-CLOSURE-RECEIPT-AND-NATIVE-REPLAY-PC-V0_1/EXTRACTED/RECEIPT_TEMPLATES/native_intake_replay_receipt.json",
-        "REPORTS/TASK-NEWGEN-PC-NEW-REALITY-NATIVE-TASKPACK-REGISTRY-NO-ANCIENT-BRIDGE-AND-CLOSURE-PROOF-PC-V0_1/native_astronomicon_intake_receipt.json"
-      ],
-      "context_pack": [
-        "ORGANS/ADMINISTRATUM/BLOCK/CONTEXT_DIGEST_V0_1.md",
-        "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/fresh_stale_context_audit.json",
-        "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/stale_context_audit.json",
-        "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-SKILL-AND-LOGOS-HANDOFF-BRIDGE-PC-V0_1/stale_context_audit.json",
-        "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-ROLE-PACK-AND-LOGOS-OWNER-AUDIT-CARD-CONTRACT-PC-V0_1/inquisition_clean_context_guard_receipt.json",
-        "ORGANS/ADMINISTRATUM/TOOLS/CONTEXT/build_context_pack.ps1",
-        "ORGANS/ADMINISTRATUM/TOOLS/CONTEXT/context_pack_lib.py",
-        "ORGANS/ADMINISTRATUM/TOOLS/CONTEXT/CONTEXT_PACK_SPEC.md",
-        "ORGANS/ADMINISTRATUM/TOOLS/CONTEXT/MANIFEST.schema.json",
-        "ORGANS/ADMINISTRATUM/TOOLS/CONTEXT/verify_context_pack.py"
-      ],
-      "servitor_execution": [
-        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-PC-ADMINISTRATUM-BUNDLE-GATE-SCHEMA-VALIDATION-ANTI-FAKE-GREEN-REPLAY-PC-V0_1/EXTRACTED/RECEIPT_TEMPLATES/servitor_control_chain_receipt.json",
-        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWGEN-PC-ADMINISTRATUM-BUNDLE-GATE-SCHEMA-VALIDATION-ANTI-FAKE-GREEN-REPLAY-PC-V0_1/EXTRACTED/SCHEMA_SEEDS/servitor_control_chain_receipt.schema.json",
-        "ORGANS/IMPERIAL_IDE/METAOS/ENGINE/servitor_runtime.py",
-        "ORGANS/OFFICIO_AGENTIS/CONTRACTS/servitor_runtime_control_contract_v0_1.md",
-        "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/receipts/pack_build_role_SERVITOR_PRIME_receipt.json",
-        "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/communication_contract.json",
-        "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/COMMUNICATION_CONTRACT.md",
-        "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/EVIDENCE_POLICY.md",
-        "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/EXECUTION_SETTINGS.md",
-        "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/OFFICIO_RUNTIME/run_20260519T220053699139Z_pack_build_role/role_pack_work/SERVITOR_PRIME/family_profile.json"
-      ],
-      "warp_task_execution": [
-        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2/EXTRACTED/ACCEPTANCE_GATES.md",
-        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2/EXTRACTED/MANIFEST.json",
-        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2/EXTRACTED/OUTPUT_REQUIREMENTS.md",
-        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2/EXTRACTED/SOURCE_BUNDLES/README.md",
-        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2/EXTRACTED/TASK_ROUTE_MANIFEST_TEMPLATE.json",
-        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2/EXTRACTED/TASK_SPEC.md",
-        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2/EXTRACTED/TASK_START_ACK_TEMPLATE.json",
-        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2/TASK_ID_RESOLVER_RECEIPT.json",
-        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2/TASK_ROUTE_MANIFEST.json",
-        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-NEWREALITY-IMPERIAL-IDE-WORKBENCH-WARP-METAOS-INTEGRATION-PC-V0_2/TASK_ROUTE_MANIFEST_TEMPLATE.json"
-      ],
-      "fix_loop": [],
-      "throne_verdict": []
-    },
-    "trust_hits": {
-      "inquisition_check": [
-        "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/v0_2/heavy_artifact_without_index/INQUISITION_CONTRADICTION_SCAN_RECEIPT.json",
-        "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/v0_2/malformed_receipt/INQUISITION_CONTRADICTION_SCAN_RECEIPT.json",
-        "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/v0_2/missing_organ_receipt/INQUISITION_CONTRADICTION_SCAN_RECEIPT.json",
-        "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/v0_2/remote_closure_missing/INQUISITION_CONTRADICTION_SCAN_RECEIPT.json",
-        "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/v0_2/required_organ_block/INQUISITION_CONTRADICTION_SCAN_RECEIPT.json",
-        "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/v0_2/required_organ_block_repaired/INQUISITION_CONTRADICTION_SCAN_RECEIPT.json",
-        "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/v0_2/valid_bundle/INQUISITION_CONTRADICTION_SCAN_RECEIPT.json",
-        "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/inquisition_fake_continuity_guard_receipt.json",
-        "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/inquisition_final_response_and_git_closure_guard_receipt.json",
-        "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-SKILL-AND-LOGOS-HANDOFF-BRIDGE-PC-V0_1/inquisition_fake_continuity_guard_receipt.json"
-      ],
-      "custodes_trust": [],
-      "throne_verdict": []
-    },
-    "human_hits": {
-      "tui_implementation": [],
-      "dashboard_implementation": [],
-      "warning_block_panel": [
-        "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/v0_2/required_organ_block/ADMINISTRATUM_POST_WORK_BUNDLE_CHECKER_REPORT.json",
-        "ORGANS/ADMINISTRATUM/POST_WORK_BUNDLE/FIXTURES/v0_2/required_organ_block_repaired/ADMINISTRATUM_POST_WORK_BUNDLE_CHECKER_REPORT.json",
-        "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/warn_error_blocker_report.json",
-        "REPORTS/TASK-20260519-MECHANICUS-OSS-ARSENAL-ADMISSION-VM2-V0_1/WARN_ERROR_BLOCKER_REPORT.md",
-        "REPORTS/TASK-20260519-RICH-SHELL-OPERATOR-REPAIR-8-ORGANS-VM2-V0_1/WARN_ERROR_BLOCKER_REGISTER.json",
-        "REPORTS/TASK-20260519-RICH-SHELL-OPERATOR-REPAIR-8-ORGANS-VM2-V0_1/WARN_ERROR_BLOCKER_REGISTER.md",
-        "REPORTS/TASK-20260520-MECHANICUS-TOOL-REGISTRY-INTEGRATION-VM2-V0_2/WARN_ERROR_BLOCKER_REPORT.md",
-        "REPORTS/TASK-20260520-SANCTUM-MINI-LIVE-TERMINAL-API-REPAIR-PC-V0_3R/API_TERMINAL_BLOCKED_GIT_STATUS_SAMPLE.json",
-        "REPORTS/TASK-20260520-SANCTUM-MINI-LIVE-TERMINAL-API-REPAIR-PC-V0_3R/BLOCKED_COMMAND_PROBE_REPORT.md",
-        "REPORTS/TASK-20260520-SANCTUM-MINI-LIVE-TERMINAL-API-REPAIR-PC-V0_3R/BLOCKED_COMMAND_PROBE_SAMPLE.json"
-      ],
-      "receipts_available": [
-        "ORGANS/THRONE/RECEIPTS/great_nine_profile_baseline_receipt.json",
-        "ORGANS/THRONE/RECEIPTS/throne_kernel_anatomy_receipt.json",
-        "ORGANS/THRONE/RECEIPTS/throne_self_form_receipt.json",
-        "ORGANS/THRONE/RECEIPTS/throne_target_gap_receipt.json"
-      ],
-      "reports_available": [
-        "ORGANS/THRONE/REPORTS/GREAT_NINE_PROFILE_BASELINE_REPORT_V0_1.md",
-        "ORGANS/THRONE/REPORTS/THRONE_CORE_V1_OPERATIONAL_BREAKDOWN_V0_1.csv",
-        "ORGANS/THRONE/REPORTS/THRONE_CORE_V1_OPERATIONAL_BREAKDOWN_V0_1.json",
-        "ORGANS/THRONE/REPORTS/THRONE_CORE_V1_READINESS_BREAKDOWN_V0_1.csv",
-        "ORGANS/THRONE/REPORTS/THRONE_CORE_V1_READINESS_BREAKDOWN_V0_1.json",
-        "ORGANS/THRONE/REPORTS/THRONE_KERNEL_ANATOMY_REPORT_V0_1.md",
-        "ORGANS/THRONE/REPORTS/THRONE_NEXT_ATTENTION_AREAS_V0_1.json",
-        "ORGANS/THRONE/REPORTS/THRONE_ORGAN_READINESS_TABLE_V0_1.csv",
-        "ORGANS/THRONE/REPORTS/THRONE_SELF_FORM_REPORT_V0_1.md",
-        "ORGANS/THRONE/REPORTS/THRONE_TARGET_GAP_REPORT_V0_1.md"
-      ]
-    },
-    "no_core_hits": {
-      "no_core_mutation_receipt": [],
-      "before_after_census": [],
-      "external_product_boundary_receipt": [],
-      "allowed_return_receipt": []
-    },
-    "strict_evidence_policy": {
-      "target_docs_do_not_count_as_operational_proof": true,
-      "directory_names_alone_do_not_count_as_proof": true,
-      "receipt_or_registry_required_for_core_capability": true
     }
   },
-  "organs": {
-    "THRONE": {
-      "organ_id": "THRONE",
-      "path": "ORGANS/THRONE",
-      "exists": true,
-      "scores": {
-        "physical_presence_score": 100,
-        "required_slot_score": 100.0,
-        "identity_score": 100,
-        "manifest_score": 100,
-        "schema_coverage_score": 100.0,
-        "validator_coverage_score": 100.0,
-        "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 70,
-        "observability_score": 100.0,
-        "trust_action_readiness_score": 100.0,
-        "organ_readiness_score": 97.0
+  "organ_implementation_breakdown": {
+    "great_nine_profile_baseline_score": 100.0,
+    "great_nine_structural_score": 100.0,
+    "great_nine_operational_score": 32.67,
+    "great_nine_trust_score": 15.56,
+    "great_nine_readiness_score": 55.22,
+    "lowest_organ_readiness_score": 47.75,
+    "organs": {
+      "ASTRONOMICON": {
+        "organ_id": "ASTRONOMICON",
+        "organ_profile_baseline_score": 100.0,
+        "organ_structural_score": 100.0,
+        "organ_operational_score": 63.0,
+        "organ_trust_score": 10.0,
+        "organ_readiness_score": 64.55,
+        "capped_by": [],
+        "profile": {
+          "score": 100.0,
+          "checks": {
+            "readme": true,
+            "card": true,
+            "manifest": true,
+            "functions": true,
+            "profile_validator": true,
+            "profile_receipt_pass": true,
+            "profile_report": true,
+            "declared_forbidden_actions": true,
+            "declared_functions": true
+          },
+          "receipt": "E:/IMPERIUM_REALITY/ORGANS/ASTRONOMICON/RECEIPTS/astronomicon_profile_receipt.json",
+          "meaning": "Profile baseline proves passport shape only, not full implementation."
+        },
+        "structural": {
+          "score": 100.0,
+          "slot_checks": {
+            "README.md": true,
+            "ORGAN_CARD.json": true,
+            "MANIFEST.json": true,
+            "FUNCTIONS.md": true,
+            "MATRICES": true,
+            "SCHEMAS": true,
+            "VALIDATORS": true,
+            "RECEIPTS": true,
+            "REPORTS": true,
+            "TESTS": true,
+            "TUI": true,
+            "DASHBOARDS": true,
+            "EYES": true,
+            "BLOCK": true,
+            "LESSONS": true,
+            "NEGATIVE_LESSONS": true
+          },
+          "class_counts": {
+            "UNKNOWN": 11,
+            "PASSPORT": 2,
+            "CONTRACT": 27,
+            "DASHBOARD": 1,
+            "EYES_EXPORT": 1,
+            "TOOL_CODE": 20,
+            "NEGATIVE_LESSON": 2,
+            "MANIFEST": 132,
+            "MATRIX": 18,
+            "ORGAN_CARD": 2,
+            "TASK_PACK": 346,
+            "ORGAN_README": 8,
+            "RECEIPT": 172,
+            "REPORT": 135,
+            "SCHEMA": 41,
+            "TEMPLATE": 95,
+            "CHARTER": 1,
+            "TUI": 10,
+            "VALIDATOR": 3,
+            "CONSTITUTION": 1,
+            "PATCH_PACK": 23
+          },
+          "components": {
+            "required_slots": 100.0,
+            "schema_evidence": 100.0,
+            "validator_evidence": 100.0,
+            "receipt_evidence": 100.0,
+            "report_evidence": 100.0,
+            "matrix_evidence": 100.0
+          }
+        },
+        "operational": {
+          "score": 63.0,
+          "pattern_hits": {
+            "intake": [
+              "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/capability_split_receipt.json",
+              "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/claim_ledger.jsonl",
+              "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/commit_push_receipt.json",
+              "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/current_expected_task_registration_receipt.json",
+              "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/efficiency_delta_receipt.json",
+              "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/EVIDENCE_BOUNDARY.json",
+              "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/final_owner_summary_ru.md",
+              "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/ghost_evolve_entry_ack.json",
+              "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/GHOST_EVOLVE_STAGE2_LEARNING_BACKLOG.json",
+              "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/GHOST_EVOLVE_STAGE2_LEARNING_BACKLOG.md"
+            ],
+            "task_pack": [
+              "ORGANS/ASTRONOMICON/TOOLS/schemas/astra_task_pack.schema.json"
+            ],
+            "admission": [
+              "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/taskpack_admission_fixture_results_stage2_1.json",
+              "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/taskpack_admission_fixture_report.md",
+              "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/taskpack_admission_fixture_results.json",
+              "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-INTAKE-REGISTRY-RESOLVER-TUI-FORM-PC-V0_1/TASKPACK_ADMISSION_RECEIPT.example.json",
+              "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-SKILL-TUI-CONTOUR-ROUTER-AND-VM-LAUNCH-CARD-PC-V0_1/admission_regression_fixture_receipt.json",
+              "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/H-TASK-NEWREALITY-H-TUI-DAILY-OPS-VISUAL-POLISH-AND-HANDY-WORKFLOW-V0-2-PC-V0_1/TASKPACK_ADMISSION_RECEIPT.json",
+              "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-CORE-SHAPE-DRIFT-CLEANUP-MIGRATION-QUEUE-QUARANTINE-GATE-V0_1/TASKPACK_ADMISSION_RECEIPT.json",
+              "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-IMPERIUM-CORE-SHAPE-ORGAN-LIFE-METRICS-QUARANTINE-V0_1/TASKPACK_ADMISSION_RECEIPT.json",
+              "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/EXTRACTED/OUTPUT_REQUIREMENTS.md",
+              "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/TASK-20260605-PC-POST-WORK-BUNDLE-ADMISSION-RING-V0_1/TASK_ID_RESOLVER_RECEIPT.json"
+            ],
+            "rejection": [],
+            "pass_criteria": []
+          },
+          "action_receipts": [
+            "ORGANS/ASTRONOMICON/RECEIPTS/.gitkeep"
+          ],
+          "action_reports": [
+            "ORGANS/ASTRONOMICON/REPORTS/.gitkeep",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/capability_split_receipt.json",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/claim_ledger.jsonl",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/commit_push_receipt.json",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/dirty_worktree_preflight_report.md",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/efficiency_delta_receipt.json",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/EVIDENCE_BOUNDARY.json",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/final_owner_summary_ru.md",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/ghost_evolve_entry_ack.json",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/GHOST_EVOLVE_STAGE2_1_LEARNING_BACKLOG.json",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/GHOST_EVOLVE_STAGE2_1_LEARNING_BACKLOG.md",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/hard_red_team_verdict.json",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/IMPERIUM_QUESTION_PASS.json",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/manual_logos_pipeline_record_candidate.json",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/manual_logos_pipeline_registration_report.md",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/matrix_spine_validation_stage2_1/matrix_spine_validation_receipt.json",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/matrix_spine_validation_stage2_1/matrix_spine_validation_report.md",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/matrix_spine_validation_stage2_1/matrix_spine_validation_summary.json",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/maturity_matrix_seed_report.md",
+            "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-RESOLVER-HARDENING-REAL-USE-PILOT-PREFLIGHT-MATURITY-MATRIX-SEED-PC-V0_1/NEXT_PIPELINE_HANDOFF.json"
+          ],
+          "meaning": "Profile receipts/validators are excluded from operational proof."
+        },
+        "trust": {
+          "score": 10.0,
+          "custodes_trust": [],
+          "throne_audit": [],
+          "inquisition_scan": [],
+          "non_profile_self_receipt": [
+            "ORGANS/ASTRONOMICON/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/RECEIPTS/.gitkeep"
+          ],
+          "meaning": "Profile receipts are excluded from trust proof."
+        }
       },
-      "present_slots": [
-        "README.md",
-        "ORGAN_CARD.json",
-        "MANIFEST.json",
-        "FUNCTIONS.md",
-        "MATRICES",
-        "SCHEMAS",
-        "VALIDATORS",
-        "RECEIPTS",
-        "REPORTS",
-        "TESTS",
-        "TUI",
-        "DASHBOARDS",
-        "EYES",
-        "BLOCK",
-        "LESSONS",
-        "NEGATIVE_LESSONS"
-      ],
-      "missing_slots": [],
-      "evidence_counts": {
-        "residents": 155,
-        "schemas": 17,
-        "validators": 11,
-        "receipts": 12,
-        "reports": 18,
-        "matrices": 40
+      "ADMINISTRATUM": {
+        "organ_id": "ADMINISTRATUM",
+        "organ_profile_baseline_score": 100.0,
+        "organ_structural_score": 100.0,
+        "organ_operational_score": 49.0,
+        "organ_trust_score": 10.0,
+        "organ_readiness_score": 59.65,
+        "capped_by": [],
+        "profile": {
+          "score": 100.0,
+          "checks": {
+            "readme": true,
+            "card": true,
+            "manifest": true,
+            "functions": true,
+            "profile_validator": true,
+            "profile_receipt_pass": true,
+            "profile_report": true,
+            "declared_forbidden_actions": true,
+            "declared_functions": true
+          },
+          "receipt": "E:/IMPERIUM_REALITY/ORGANS/ADMINISTRATUM/RECEIPTS/administratum_profile_receipt.json",
+          "meaning": "Profile baseline proves passport shape only, not full implementation."
+        },
+        "structural": {
+          "score": 100.0,
+          "slot_checks": {
+            "README.md": true,
+            "ORGAN_CARD.json": true,
+            "MANIFEST.json": true,
+            "FUNCTIONS.md": true,
+            "MATRICES": true,
+            "SCHEMAS": true,
+            "VALIDATORS": true,
+            "RECEIPTS": true,
+            "REPORTS": true,
+            "TESTS": true,
+            "TUI": true,
+            "DASHBOARDS": true,
+            "EYES": true,
+            "BLOCK": true,
+            "LESSONS": true,
+            "NEGATIVE_LESSONS": true
+          },
+          "class_counts": {
+            "BACKUP": 2,
+            "ROOT_MANIFEST": 12,
+            "RECEIPT": 262,
+            "CONTRACT": 18,
+            "UNKNOWN": 274,
+            "SCHEMA": 32,
+            "REPORT": 139,
+            "PASSPORT": 3,
+            "TOOL_CODE": 20,
+            "MANIFEST": 42,
+            "TASK_PACK": 60,
+            "ORGAN_README": 4,
+            "DASHBOARD": 1,
+            "EYES_EXPORT": 2,
+            "NEGATIVE_LESSON": 2,
+            "MATRIX": 10,
+            "ORGAN_CARD": 2,
+            "TEMPLATE": 1,
+            "CHARTER": 1,
+            "TUI": 1,
+            "VALIDATOR": 2,
+            "PATCH_PACK": 23
+          },
+          "components": {
+            "required_slots": 100.0,
+            "schema_evidence": 100.0,
+            "validator_evidence": 100.0,
+            "receipt_evidence": 100.0,
+            "report_evidence": 100.0,
+            "matrix_evidence": 100.0
+          }
+        },
+        "operational": {
+          "score": 49.0,
+          "pattern_hits": {
+            "registry": [
+              "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/skill_next_candidates_registry_receipt.json",
+              "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-ROLE-PACK-AND-LOGOS-OWNER-AUDIT-CARD-CONTRACT-PC-V0_1/next_task_candidates_registry_receipt.json"
+            ],
+            "registered_task": [],
+            "context_pack": [
+              "ORGANS/ADMINISTRATUM/TOOLS/CONTEXT/build_context_pack.ps1",
+              "ORGANS/ADMINISTRATUM/TOOLS/CONTEXT/context_pack_lib.py",
+              "ORGANS/ADMINISTRATUM/TOOLS/CONTEXT/CONTEXT_PACK_SPEC.md",
+              "ORGANS/ADMINISTRATUM/TOOLS/CONTEXT/verify_context_pack.py"
+            ],
+            "archive": [],
+            "provenance": []
+          },
+          "action_receipts": [
+            "ORGANS/ADMINISTRATUM/RECEIPTS/.gitkeep"
+          ],
+          "action_reports": [
+            "ORGANS/ADMINISTRATUM/REPORTS/.gitkeep",
+            "ORGANS/ADMINISTRATUM/REPORTS/final_report_bundle_builder_v0_1.py",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/active_caps_snapshot.json",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/administratum_continuity_pack_finalization_receipt.json",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/administratum_continuity_pack_skill_contract.json",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/administratum_continuity_pack_skill_v0_1.py",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/astronomicon_task_link_receipt.json",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/capability_split_receipt.json",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/CLAIM_LEDGER.jsonl",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/commit_push_receipt.json",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/continuity_pack_manifest.schema.json",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/continuity_pack_sha256s.txt",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/continuity_pack_skill_smoke_receipt.json",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/continuity_pack_zip_receipt.json",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/current_truth_snapshot.json",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/EVIDENCE_BOUNDARY.json",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/final_owner_summary_ru.md",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/FINAL_REPORT.md",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/fresh_continuity_pack_replay_receipt.json",
+            "ORGANS/ADMINISTRATUM/REPORTS/TASK-NEWGEN-ADMINISTRATUM-CONTINUITY-PACK-FINALIZATION-AND-OFFICIO-RESPONSE-CONTRACT-PC-V0_1/fresh_continuity_source_index.json"
+          ],
+          "meaning": "Profile receipts/validators are excluded from operational proof."
+        },
+        "trust": {
+          "score": 10.0,
+          "custodes_trust": [],
+          "throne_audit": [],
+          "inquisition_scan": [],
+          "non_profile_self_receipt": [
+            "ORGANS/ADMINISTRATUM/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/ADMINISTRATUM/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/ORGANS/ADMINISTRATUM/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/ADMINISTRATUM/RECEIPTS/.gitkeep"
+          ],
+          "meaning": "Profile receipts are excluded from trust proof."
+        }
       },
-      "major_gaps": [
-        "has WARP-status residents",
-        "has negative-example residents"
-      ]
+      "DOCTRINARIUM": {
+        "organ_id": "DOCTRINARIUM",
+        "organ_profile_baseline_score": 100.0,
+        "organ_structural_score": 100.0,
+        "organ_operational_score": 15.0,
+        "organ_trust_score": 10.0,
+        "organ_readiness_score": 47.75,
+        "capped_by": [],
+        "profile": {
+          "score": 100.0,
+          "checks": {
+            "readme": true,
+            "card": true,
+            "manifest": true,
+            "functions": true,
+            "profile_validator": true,
+            "profile_receipt_pass": true,
+            "profile_report": true,
+            "declared_forbidden_actions": true,
+            "declared_functions": true
+          },
+          "receipt": "E:/IMPERIUM_REALITY/ORGANS/DOCTRINARIUM/RECEIPTS/doctrinarium_profile_receipt.json",
+          "meaning": "Profile baseline proves passport shape only, not full implementation."
+        },
+        "structural": {
+          "score": 100.0,
+          "slot_checks": {
+            "README.md": true,
+            "ORGAN_CARD.json": true,
+            "MANIFEST.json": true,
+            "FUNCTIONS.md": true,
+            "MATRICES": true,
+            "SCHEMAS": true,
+            "VALIDATORS": true,
+            "RECEIPTS": true,
+            "REPORTS": true,
+            "TESTS": true,
+            "TUI": true,
+            "DASHBOARDS": true,
+            "EYES": true,
+            "BLOCK": true,
+            "LESSONS": true,
+            "NEGATIVE_LESSONS": true
+          },
+          "class_counts": {
+            "DOCTRINE": 25,
+            "CHARTER": 15,
+            "UNKNOWN": 8,
+            "PASSPORT": 4,
+            "DASHBOARD": 1,
+            "EYES_EXPORT": 3,
+            "RECEIPT": 9,
+            "CONTRACT": 3,
+            "NEGATIVE_LESSON": 2,
+            "MANIFEST": 2,
+            "MATRIX": 12,
+            "ORGAN_CARD": 2,
+            "ORGAN_README": 1,
+            "REPORT": 7,
+            "SCHEMA": 3,
+            "TASK_PACK": 64,
+            "TOOL_CODE": 2,
+            "TUI": 1,
+            "VALIDATOR": 2,
+            "PATCH_PACK": 23
+          },
+          "components": {
+            "required_slots": 100.0,
+            "schema_evidence": 100.0,
+            "validator_evidence": 100.0,
+            "receipt_evidence": 100.0,
+            "report_evidence": 100.0,
+            "matrix_evidence": 100.0
+          }
+        },
+        "operational": {
+          "score": 15.0,
+          "pattern_hits": {
+            "canon": [],
+            "doctrine_check": [],
+            "schema_law": [],
+            "rule_matrix": [],
+            "contradiction": []
+          },
+          "action_receipts": [
+            "ORGANS/DOCTRINARIUM/RECEIPTS/.gitkeep"
+          ],
+          "action_reports": [
+            "ORGANS/DOCTRINARIUM/REPORTS/.gitkeep"
+          ],
+          "meaning": "Profile receipts/validators are excluded from operational proof."
+        },
+        "trust": {
+          "score": 10.0,
+          "custodes_trust": [],
+          "throne_audit": [],
+          "inquisition_scan": [],
+          "non_profile_self_receipt": [
+            "ORGANS/DOCTRINARIUM/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/RECEIPTS/.gitkeep"
+          ],
+          "meaning": "Profile receipts are excluded from trust proof."
+        }
+      },
+      "MECHANICUS": {
+        "organ_id": "MECHANICUS",
+        "organ_profile_baseline_score": 100.0,
+        "organ_structural_score": 100.0,
+        "organ_operational_score": 30.0,
+        "organ_trust_score": 35.0,
+        "organ_readiness_score": 59.25,
+        "capped_by": [],
+        "profile": {
+          "score": 100.0,
+          "checks": {
+            "readme": true,
+            "card": true,
+            "manifest": true,
+            "functions": true,
+            "profile_validator": true,
+            "profile_receipt_pass": true,
+            "profile_report": true,
+            "declared_forbidden_actions": true,
+            "declared_functions": true
+          },
+          "receipt": "E:/IMPERIUM_REALITY/ORGANS/MECHANICUS/RECEIPTS/mechanicus_profile_receipt.json",
+          "meaning": "Profile baseline proves passport shape only, not full implementation."
+        },
+        "structural": {
+          "score": 100.0,
+          "slot_checks": {
+            "README.md": true,
+            "ORGAN_CARD.json": true,
+            "MANIFEST.json": true,
+            "FUNCTIONS.md": true,
+            "MATRICES": true,
+            "SCHEMAS": true,
+            "VALIDATORS": true,
+            "RECEIPTS": true,
+            "REPORTS": true,
+            "TESTS": true,
+            "TUI": true,
+            "DASHBOARDS": true,
+            "EYES": true,
+            "BLOCK": true,
+            "LESSONS": true,
+            "NEGATIVE_LESSONS": true
+          },
+          "class_counts": {
+            "ROOT_CONFIG": 3,
+            "BACKUP": 4,
+            "PASSPORT": 50,
+            "RUN_OUTPUT": 4,
+            "TOOL_CODE": 116,
+            "UNKNOWN": 175,
+            "ROOT_SCRIPT": 12,
+            "SCHEMA": 25,
+            "ORGAN_README": 10,
+            "CONTRACT": 46,
+            "IDE_SOURCE": 29,
+            "TASK_PACK": 379,
+            "MANIFEST": 25,
+            "DASHBOARD": 2,
+            "REPORT": 165,
+            "RECEIPT": 136,
+            "TEMPLATE": 4,
+            "TUI": 3,
+            "METRIC": 1,
+            "DOCTRINE": 1,
+            "EYES_EXPORT": 4,
+            "MATRIX": 25,
+            "NEGATIVE_LESSON": 2,
+            "ORGAN_CARD": 2,
+            "CHARTER": 1,
+            "VALIDATOR": 2,
+            "PATCH_PACK": 23
+          },
+          "components": {
+            "required_slots": 100.0,
+            "schema_evidence": 100.0,
+            "validator_evidence": 100.0,
+            "receipt_evidence": 100.0,
+            "report_evidence": 100.0,
+            "matrix_evidence": 100.0
+          }
+        },
+        "operational": {
+          "score": 30.0,
+          "pattern_hits": {
+            "tool_harness": [],
+            "validator_harness": [],
+            "self_test": [],
+            "build_receipt": [],
+            "encoding_check": []
+          },
+          "action_receipts": [
+            "ORGANS/MECHANICUS/RECEIPTS/.gitkeep",
+            "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/RECEIPTS/TOOLCHAIN/.gitkeep",
+            "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/RECEIPTS/TOOLCHAIN/toolchain_state_20260614_173408.json",
+            "ORGANS/MECHANICUS/TOOL_INTELLIGENCE/RECEIPTS/TOOLCHAIN/toolchain_state_20260614_180431.json"
+          ],
+          "action_reports": [
+            "ORGANS/MECHANICUS/REPORTS/.gitkeep",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/claim_ledger_status_refinement_report.md",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/closure_provenance_hardening_report.md",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/commit_push_receipt.json",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/corridor_naming_policy_report.md",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/efficiency_delta_receipt.json",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/final_closure_verifier_receipt.json",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/final_owner_summary_ru.md",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/ghost_evolve_entry_ack.json",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/hard_red_team_verdict.json",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/matrix_validator_run/matrix_spine_validation_receipt.json",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/matrix_validator_run/matrix_spine_validation_report.md",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/matrix_validator_run/matrix_spine_validation_summary.json",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/NEXT_PIPELINE_HANDOFF.json",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/next_pipeline_handoff_contract_report.md",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/repo_truth_probe.json",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/runtime_output_classification_report.md",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/synthetic_corridor_receipt.json",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-CLOSURE-PROVENANCE-CORRIDOR-NAMING-AND-REVIEW-PIPELINE-HARDENING-VM3-V0_1/synthetic_runtime_corridor_report.md",
+            "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-HEAD-TAXONOMY-AND-COMBINED-REVIEW-ADJUDICATION-VM3-V0_1/claim_ledger.jsonl"
+          ],
+          "meaning": "Profile receipts/validators are excluded from operational proof."
+        },
+        "trust": {
+          "score": 35.0,
+          "custodes_trust": [],
+          "throne_audit": [],
+          "inquisition_scan": [
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1/red_team_report.md",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-VALIDATOR-SUITE-VM3-V0_1/red_team_verdict.json"
+          ],
+          "non_profile_self_receipt": [
+            "ORGANS/MECHANICUS/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/MECHANICUS/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/ORGANS/MECHANICUS/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/MECHANICUS/RECEIPTS/.gitkeep"
+          ],
+          "meaning": "Profile receipts are excluded from trust proof."
+        }
+      },
+      "INQUISITION": {
+        "organ_id": "INQUISITION",
+        "organ_profile_baseline_score": 100.0,
+        "organ_structural_score": 100.0,
+        "organ_operational_score": 49.0,
+        "organ_trust_score": 35.0,
+        "organ_readiness_score": 65.0,
+        "capped_by": [
+          {
+            "reason": "operational<50",
+            "cap": 65.0
+          }
+        ],
+        "profile": {
+          "score": 100.0,
+          "checks": {
+            "readme": true,
+            "card": true,
+            "manifest": true,
+            "functions": true,
+            "profile_validator": true,
+            "profile_receipt_pass": true,
+            "profile_report": true,
+            "declared_forbidden_actions": true,
+            "declared_functions": true
+          },
+          "receipt": "E:/IMPERIUM_REALITY/ORGANS/INQUISITION/RECEIPTS/inquisition_profile_receipt.json",
+          "meaning": "Profile baseline proves passport shape only, not full implementation."
+        },
+        "structural": {
+          "score": 100.0,
+          "slot_checks": {
+            "README.md": true,
+            "ORGAN_CARD.json": true,
+            "MANIFEST.json": true,
+            "FUNCTIONS.md": true,
+            "MATRICES": true,
+            "SCHEMAS": true,
+            "VALIDATORS": true,
+            "RECEIPTS": true,
+            "REPORTS": true,
+            "TESTS": true,
+            "TUI": true,
+            "DASHBOARDS": true,
+            "EYES": true,
+            "BLOCK": true,
+            "LESSONS": true,
+            "NEGATIVE_LESSONS": true
+          },
+          "class_counts": {
+            "CONTRACT": 9,
+            "BACKUP": 4,
+            "FIXTURE": 22,
+            "NEGATIVE_LESSON": 8,
+            "UNKNOWN": 34,
+            "PASSPORT": 2,
+            "DASHBOARD": 1,
+            "EYES_EXPORT": 5,
+            "RECEIPT": 40,
+            "MANIFEST": 3,
+            "MATRIX": 30,
+            "ORGAN_CARD": 2,
+            "SCHEMA": 3,
+            "ORGAN_README": 1,
+            "TOOL_CODE": 31,
+            "REPORT": 73,
+            "DOCTRINE": 1,
+            "TASK_PACK": 29,
+            "CHARTER": 1,
+            "TUI": 1,
+            "VALIDATOR": 2,
+            "PATCH_PACK": 23
+          },
+          "components": {
+            "required_slots": 100.0,
+            "schema_evidence": 100.0,
+            "validator_evidence": 100.0,
+            "receipt_evidence": 100.0,
+            "report_evidence": 100.0,
+            "matrix_evidence": 100.0
+          }
+        },
+        "operational": {
+          "score": 49.0,
+          "pattern_hits": {
+            "scan": [
+              "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/canonical_artifact_language_scan_report.md",
+              "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-BACKLOG-PHASED-REMEDIATION-AND-RETENTION-CHECKER-PC-V0_1/global_language_scan_receipt.json",
+              "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-BACKLOG-PHASED-REMEDIATION-AND-RETENTION-CHECKER-PC-V0_1/global_language_scan_report.md",
+              "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-BACKLOG-PHASED-REMEDIATION-AND-RETENTION-CHECKER-PC-V0_1/strict_scope_language_scan_receipt.json",
+              "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-BACKLOG-PHASED-REMEDIATION-AND-RETENTION-CHECKER-PC-V0_1/strict_scope_language_scan_report.md",
+              "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-GATE-INDEPENDENT-REPLAY-STRICT-SCOPE-LEGACY-BACKLOG-RETENTION-POLICY-PC-V0_1/strict_scope_language_scan_receipt.json",
+              "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-GATE-INDEPENDENT-REPLAY-STRICT-SCOPE-LEGACY-BACKLOG-RETENTION-POLICY-PC-V0_1/strict_scope_language_scan_report.md",
+              "ORGANS/INQUISITION/TOOLS/inq_pi_scan.py"
+            ],
+            "finding": [
+              "ORGANS/INQUISITION/FINDINGS/inquisition_finding_schema_v0_1.json"
+            ],
+            "fake_green": [],
+            "hardcoded": [],
+            "mutation": []
+          },
+          "action_receipts": [
+            "ORGANS/INQUISITION/RECEIPTS/.gitkeep"
+          ],
+          "action_reports": [
+            "ORGANS/INQUISITION/REPORTS/.gitkeep",
+            "ORGANS/INQUISITION/REPORTS/last_land_gate_receipt.json",
+            "ORGANS/INQUISITION/REPORTS/provenance_corrections/PROV-FIX-228ED0E2-0001.json",
+            "ORGANS/INQUISITION/REPORTS/provenance_corrections/PROV-FIX-228ED0E2-0001.md",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/canonical_artifact_language_scan_report.md",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/capability_split_receipt.json",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/claim_ledger.jsonl",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/commit_push_receipt.json",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/efficiency_delta_receipt.json",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/final_owner_summary_ru.md",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/ghost_evolve_entry_ack.json",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/GHOST_EVOLVE_LANGUAGE_ENCODING_LEARNING_BACKLOG.json",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/GHOST_EVOLVE_LANGUAGE_ENCODING_LEARNING_BACKLOG.md",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/hard_red_team_verdict.json",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/inquisition_mojibake_filter_report.json",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/inquisition_mojibake_filter_report.md",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/language_encoding_fixture_report.md",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/language_encoding_fixture_results.json",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/matrix_language_encoding_update_report.md",
+            "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/NEXT_PIPELINE_HANDOFF.json"
+          ],
+          "meaning": "Profile receipts/validators are excluded from operational proof."
+        },
+        "trust": {
+          "score": 35.0,
+          "custodes_trust": [],
+          "throne_audit": [],
+          "inquisition_scan": [
+            ".imperium_patch_backups/IMPERIUM_H_PATCH_V0_8_9_2_SEALER_OUTPUT_CONTRACT/ORGANS/INQUISITION/REPORTING/inquisition_evidence_sealer_contract_gate_v0_1.py.newfile",
+            "ORGANS/INQUISITION/FINDINGS/inquisition_finding_schema_v0_1.json",
+            "ORGANS/INQUISITION/HYGIENE_POLICY/evidence_vault_batch_receipt_verification_policy_v0_1.json",
+            "ORGANS/INQUISITION/RECEIPTS/.gitkeep",
+            "ORGANS/INQUISITION/RECEIPTS/inquisition_profile_receipt.json",
+            "ORGANS/INQUISITION/REPORTING/inquisition_evidence_migration_planner_v0_1.py",
+            "ORGANS/INQUISITION/REPORTING/inquisition_evidence_sealer_contract_gate_v0_1.py",
+            "ORGANS/INQUISITION/REPORTING/inquisition_evidence_vault_batch_dry_run_executor_v0_1.py",
+            "ORGANS/INQUISITION/REPORTING/inquisition_evidence_vault_batch_pack_plan_v0_1.py",
+            "ORGANS/INQUISITION/REPORTING/inquisition_evidence_vault_batch_receipt_verifier_v0_1.py"
+          ],
+          "non_profile_self_receipt": [
+            "ORGANS/INQUISITION/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/INQUISITION/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/ORGANS/INQUISITION/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/INQUISITION/RECEIPTS/.gitkeep"
+          ],
+          "meaning": "Profile receipts are excluded from trust proof."
+        }
+      },
+      "CUSTODES": {
+        "organ_id": "CUSTODES",
+        "organ_profile_baseline_score": 100.0,
+        "organ_structural_score": 100.0,
+        "organ_operational_score": 15.0,
+        "organ_trust_score": 10.0,
+        "organ_readiness_score": 47.75,
+        "capped_by": [],
+        "profile": {
+          "score": 100.0,
+          "checks": {
+            "readme": true,
+            "card": true,
+            "manifest": true,
+            "functions": true,
+            "profile_validator": true,
+            "profile_receipt_pass": true,
+            "profile_report": true,
+            "declared_forbidden_actions": true,
+            "declared_functions": true
+          },
+          "receipt": "E:/IMPERIUM_REALITY/ORGANS/CUSTODES/RECEIPTS/custodes_profile_receipt.json",
+          "meaning": "Profile baseline proves passport shape only, not full implementation."
+        },
+        "structural": {
+          "score": 100.0,
+          "slot_checks": {
+            "README.md": true,
+            "ORGAN_CARD.json": true,
+            "MANIFEST.json": true,
+            "FUNCTIONS.md": true,
+            "MATRICES": true,
+            "SCHEMAS": true,
+            "VALIDATORS": true,
+            "RECEIPTS": true,
+            "REPORTS": true,
+            "TESTS": true,
+            "TUI": true,
+            "DASHBOARDS": true,
+            "EYES": true,
+            "BLOCK": true,
+            "LESSONS": true,
+            "NEGATIVE_LESSONS": true
+          },
+          "class_counts": {
+            "UNKNOWN": 7,
+            "DASHBOARD": 1,
+            "EYES_EXPORT": 1,
+            "NEGATIVE_LESSON": 2,
+            "MANIFEST": 2,
+            "MATRIX": 4,
+            "ORGAN_CARD": 2,
+            "CONTRACT": 2,
+            "ORGAN_README": 1,
+            "RECEIPT": 14,
+            "REPORT": 5,
+            "SCHEMA": 2,
+            "TUI": 1,
+            "VALIDATOR": 2,
+            "PATCH_PACK": 23
+          },
+          "components": {
+            "required_slots": 100.0,
+            "schema_evidence": 100.0,
+            "validator_evidence": 100.0,
+            "receipt_evidence": 100.0,
+            "report_evidence": 100.0,
+            "matrix_evidence": 100.0
+          }
+        },
+        "operational": {
+          "score": 15.0,
+          "pattern_hits": {
+            "trust": [],
+            "organ_audit": [],
+            "validator_audit": [],
+            "trust_matrix": [],
+            "trust_receipt": []
+          },
+          "action_receipts": [
+            "ORGANS/CUSTODES/RECEIPTS/.gitkeep"
+          ],
+          "action_reports": [
+            "ORGANS/CUSTODES/REPORTS/.gitkeep"
+          ],
+          "meaning": "Profile receipts/validators are excluded from operational proof."
+        },
+        "trust": {
+          "score": 10.0,
+          "custodes_trust": [],
+          "throne_audit": [],
+          "inquisition_scan": [],
+          "non_profile_self_receipt": [
+            "ORGANS/CUSTODES/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/CUSTODES/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/ORGANS/CUSTODES/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/CUSTODES/RECEIPTS/.gitkeep"
+          ],
+          "meaning": "Profile receipts are excluded from trust proof."
+        }
+      },
+      "STRATEGIUM": {
+        "organ_id": "STRATEGIUM",
+        "organ_profile_baseline_score": 100.0,
+        "organ_structural_score": 100.0,
+        "organ_operational_score": 15.0,
+        "organ_trust_score": 10.0,
+        "organ_readiness_score": 47.75,
+        "capped_by": [],
+        "profile": {
+          "score": 100.0,
+          "checks": {
+            "readme": true,
+            "card": true,
+            "manifest": true,
+            "functions": true,
+            "profile_validator": true,
+            "profile_receipt_pass": true,
+            "profile_report": true,
+            "declared_forbidden_actions": true,
+            "declared_functions": true
+          },
+          "receipt": "E:/IMPERIUM_REALITY/ORGANS/STRATEGIUM/RECEIPTS/strategium_profile_receipt.json",
+          "meaning": "Profile baseline proves passport shape only, not full implementation."
+        },
+        "structural": {
+          "score": 100.0,
+          "slot_checks": {
+            "README.md": true,
+            "ORGAN_CARD.json": true,
+            "MANIFEST.json": true,
+            "FUNCTIONS.md": true,
+            "MATRICES": true,
+            "SCHEMAS": true,
+            "VALIDATORS": true,
+            "RECEIPTS": true,
+            "REPORTS": true,
+            "TESTS": true,
+            "TUI": true,
+            "DASHBOARDS": true,
+            "EYES": true,
+            "BLOCK": true,
+            "LESSONS": true,
+            "NEGATIVE_LESSONS": true
+          },
+          "class_counts": {
+            "UNKNOWN": 7,
+            "PASSPORT": 2,
+            "RECEIPT": 17,
+            "TASK_PACK": 25,
+            "SCHEMA": 5,
+            "TOOL_CODE": 2,
+            "CONTRACT": 3,
+            "TEMPLATE": 1,
+            "DASHBOARD": 1,
+            "EYES_EXPORT": 1,
+            "NEGATIVE_LESSON": 2,
+            "MANIFEST": 2,
+            "MATRIX": 20,
+            "METRIC": 14,
+            "ORGAN_CARD": 2,
+            "ORGAN_README": 1,
+            "REPORT": 7,
+            "TUI": 1,
+            "VALIDATOR": 2,
+            "PATCH_PACK": 23
+          },
+          "components": {
+            "required_slots": 100.0,
+            "schema_evidence": 100.0,
+            "validator_evidence": 100.0,
+            "receipt_evidence": 100.0,
+            "report_evidence": 100.0,
+            "matrix_evidence": 100.0
+          }
+        },
+        "operational": {
+          "score": 15.0,
+          "pattern_hits": {
+            "priority": [],
+            "next_attention": [],
+            "impact": [],
+            "roadmap": [],
+            "recommendation": []
+          },
+          "action_receipts": [
+            "ORGANS/STRATEGIUM/RECEIPTS/.gitkeep"
+          ],
+          "action_reports": [
+            "ORGANS/STRATEGIUM/REPORTS/.gitkeep"
+          ],
+          "meaning": "Profile receipts/validators are excluded from operational proof."
+        },
+        "trust": {
+          "score": 10.0,
+          "custodes_trust": [],
+          "throne_audit": [],
+          "inquisition_scan": [],
+          "non_profile_self_receipt": [
+            "ORGANS/STRATEGIUM/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/STRATEGIUM/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/ORGANS/STRATEGIUM/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/STRATEGIUM/RECEIPTS/.gitkeep"
+          ],
+          "meaning": "Profile receipts are excluded from trust proof."
+        }
+      },
+      "SCHOLA_IMPERIALIS": {
+        "organ_id": "SCHOLA_IMPERIALIS",
+        "organ_profile_baseline_score": 100.0,
+        "organ_structural_score": 100.0,
+        "organ_operational_score": 15.0,
+        "organ_trust_score": 10.0,
+        "organ_readiness_score": 47.75,
+        "capped_by": [],
+        "profile": {
+          "score": 100.0,
+          "checks": {
+            "readme": true,
+            "card": true,
+            "manifest": true,
+            "functions": true,
+            "profile_validator": true,
+            "profile_receipt_pass": true,
+            "profile_report": true,
+            "declared_forbidden_actions": true,
+            "declared_functions": true
+          },
+          "receipt": "E:/IMPERIUM_REALITY/ORGANS/SCHOLA_IMPERIALIS/RECEIPTS/schola_imperialis_profile_receipt.json",
+          "meaning": "Profile baseline proves passport shape only, not full implementation."
+        },
+        "structural": {
+          "score": 100.0,
+          "slot_checks": {
+            "README.md": true,
+            "ORGAN_CARD.json": true,
+            "MANIFEST.json": true,
+            "FUNCTIONS.md": true,
+            "MATRICES": true,
+            "SCHEMAS": true,
+            "VALIDATORS": true,
+            "RECEIPTS": true,
+            "REPORTS": true,
+            "TESTS": true,
+            "TUI": true,
+            "DASHBOARDS": true,
+            "EYES": true,
+            "BLOCK": true,
+            "LESSONS": true,
+            "NEGATIVE_LESSONS": true
+          },
+          "class_counts": {
+            "UNKNOWN": 6,
+            "PASSPORT": 2,
+            "CONTRACT": 5,
+            "DASHBOARD": 1,
+            "EYES_EXPORT": 1,
+            "MATRIX": 7,
+            "TOOL_CODE": 1,
+            "ARCHIVE": 1,
+            "NEGATIVE_LESSON": 3,
+            "MANIFEST": 2,
+            "ORGAN_CARD": 2,
+            "ORGAN_README": 1,
+            "RECEIPT": 6,
+            "REPORT": 5,
+            "SCHEMA": 2,
+            "TASK_PACK": 23,
+            "TUI": 1,
+            "VALIDATOR": 2,
+            "PATCH_PACK": 23
+          },
+          "components": {
+            "required_slots": 100.0,
+            "schema_evidence": 100.0,
+            "validator_evidence": 100.0,
+            "receipt_evidence": 100.0,
+            "report_evidence": 100.0,
+            "matrix_evidence": 100.0
+          }
+        },
+        "operational": {
+          "score": 15.0,
+          "pattern_hits": {
+            "lesson": [],
+            "negative_example": [],
+            "learning": [],
+            "failure_memory": [],
+            "training": []
+          },
+          "action_receipts": [
+            "ORGANS/SCHOLA_IMPERIALIS/RECEIPTS/.gitkeep"
+          ],
+          "action_reports": [
+            "ORGANS/SCHOLA_IMPERIALIS/REPORTS/.gitkeep"
+          ],
+          "meaning": "Profile receipts/validators are excluded from operational proof."
+        },
+        "trust": {
+          "score": 10.0,
+          "custodes_trust": [],
+          "throne_audit": [],
+          "inquisition_scan": [],
+          "non_profile_self_receipt": [
+            "ORGANS/SCHOLA_IMPERIALIS/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/SCHOLA_IMPERIALIS/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/ORGANS/SCHOLA_IMPERIALIS/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/SCHOLA_IMPERIALIS/RECEIPTS/.gitkeep"
+          ],
+          "meaning": "Profile receipts are excluded from trust proof."
+        }
+      },
+      "OFFICIO_AGENTIS": {
+        "organ_id": "OFFICIO_AGENTIS",
+        "organ_profile_baseline_score": 100.0,
+        "organ_structural_score": 100.0,
+        "organ_operational_score": 43.0,
+        "organ_trust_score": 10.0,
+        "organ_readiness_score": 57.55,
+        "capped_by": [],
+        "profile": {
+          "score": 100.0,
+          "checks": {
+            "readme": true,
+            "card": true,
+            "manifest": true,
+            "functions": true,
+            "profile_validator": true,
+            "profile_receipt_pass": true,
+            "profile_report": true,
+            "declared_forbidden_actions": true,
+            "declared_functions": true
+          },
+          "receipt": "E:/IMPERIUM_REALITY/ORGANS/OFFICIO_AGENTIS/RECEIPTS/officio_agentis_profile_receipt.json",
+          "meaning": "Profile baseline proves passport shape only, not full implementation."
+        },
+        "structural": {
+          "score": 100.0,
+          "slot_checks": {
+            "README.md": true,
+            "ORGAN_CARD.json": true,
+            "MANIFEST.json": true,
+            "FUNCTIONS.md": true,
+            "MATRICES": true,
+            "SCHEMAS": true,
+            "VALIDATORS": true,
+            "RECEIPTS": true,
+            "REPORTS": true,
+            "TESTS": true,
+            "TUI": true,
+            "DASHBOARDS": true,
+            "EYES": true,
+            "BLOCK": true,
+            "LESSONS": true,
+            "NEGATIVE_LESSONS": true
+          },
+          "class_counts": {
+            "ROOT_DOC": 1,
+            "UNKNOWN": 13,
+            "PASSPORT": 2,
+            "CONTRACT": 11,
+            "DASHBOARD": 1,
+            "EYES_EXPORT": 1,
+            "NEGATIVE_LESSON": 2,
+            "MANIFEST": 2,
+            "MATRIX": 9,
+            "ORGAN_CARD": 2,
+            "ORGAN_README": 1,
+            "RECEIPT": 6,
+            "REPORT": 5,
+            "SCHEMA": 2,
+            "TASK_PACK": 22,
+            "TUI": 1,
+            "VALIDATOR": 2,
+            "PATCH_PACK": 23
+          },
+          "components": {
+            "required_slots": 100.0,
+            "schema_evidence": 100.0,
+            "validator_evidence": 100.0,
+            "receipt_evidence": 100.0,
+            "report_evidence": 100.0,
+            "matrix_evidence": 100.0
+          }
+        },
+        "operational": {
+          "score": 43.0,
+          "pattern_hits": {
+            "servitor": [
+              "ORGANS/OFFICIO_AGENTIS/CONTRACTS/servitor_runtime_control_contract_v0_1.md"
+            ],
+            "authority": [],
+            "role": [
+              "ORGANS/OFFICIO_AGENTIS/ROLE_PACKS/INQUISITOR_CONTINUITY_AUDIT_ROLE_PACK_V0_1.md"
+            ],
+            "execution_boundary": [],
+            "agent_prompt": []
+          },
+          "action_receipts": [
+            "ORGANS/OFFICIO_AGENTIS/RECEIPTS/.gitkeep"
+          ],
+          "action_reports": [
+            "ORGANS/OFFICIO_AGENTIS/REPORTS/.gitkeep"
+          ],
+          "meaning": "Profile receipts/validators are excluded from operational proof."
+        },
+        "trust": {
+          "score": 10.0,
+          "custodes_trust": [],
+          "throne_audit": [],
+          "inquisition_scan": [],
+          "non_profile_self_receipt": [
+            "ORGANS/OFFICIO_AGENTIS/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/OFFICIO_AGENTIS/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/ORGANS/OFFICIO_AGENTIS/RECEIPTS/.gitkeep",
+            "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/FILES_TO_LAND/WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/FILES_TO_LAND/ORGANS/OFFICIO_AGENTIS/RECEIPTS/.gitkeep"
+          ],
+          "meaning": "Profile receipts are excluded from trust proof."
+        }
+      }
     },
-    "ASTRONOMICON": {
-      "organ_id": "ASTRONOMICON",
-      "path": "ORGANS/ASTRONOMICON",
-      "exists": true,
-      "scores": {
-        "physical_presence_score": 100,
-        "required_slot_score": 100.0,
-        "identity_score": 100,
-        "manifest_score": 100,
-        "schema_coverage_score": 100.0,
-        "validator_coverage_score": 100.0,
-        "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 70,
-        "observability_score": 100.0,
-        "trust_action_readiness_score": 100.0,
-        "organ_readiness_score": 97.0
-      },
-      "present_slots": [
-        "README.md",
-        "ORGAN_CARD.json",
-        "MANIFEST.json",
-        "FUNCTIONS.md",
-        "MATRICES",
-        "SCHEMAS",
-        "VALIDATORS",
-        "RECEIPTS",
-        "REPORTS",
-        "TESTS",
-        "TUI",
-        "DASHBOARDS",
-        "EYES",
-        "BLOCK",
-        "LESSONS",
-        "NEGATIVE_LESSONS"
-      ],
-      "missing_slots": [],
-      "evidence_counts": {
-        "residents": 1051,
-        "schemas": 41,
-        "validators": 3,
-        "receipts": 172,
-        "reports": 135,
-        "matrices": 18
-      },
-      "major_gaps": [
-        "has WARP-status residents",
-        "has quarantine residents",
-        "has negative-example residents"
-      ]
-    },
-    "ADMINISTRATUM": {
-      "organ_id": "ADMINISTRATUM",
-      "path": "ORGANS/ADMINISTRATUM",
-      "exists": true,
-      "scores": {
-        "physical_presence_score": 100,
-        "required_slot_score": 100.0,
-        "identity_score": 100,
-        "manifest_score": 100,
-        "schema_coverage_score": 100.0,
-        "validator_coverage_score": 100.0,
-        "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 70,
-        "observability_score": 100.0,
-        "trust_action_readiness_score": 100.0,
-        "organ_readiness_score": 97.0
-      },
-      "present_slots": [
-        "README.md",
-        "ORGAN_CARD.json",
-        "MANIFEST.json",
-        "FUNCTIONS.md",
-        "MATRICES",
-        "SCHEMAS",
-        "VALIDATORS",
-        "RECEIPTS",
-        "REPORTS",
-        "TESTS",
-        "TUI",
-        "DASHBOARDS",
-        "EYES",
-        "BLOCK",
-        "LESSONS",
-        "NEGATIVE_LESSONS"
-      ],
-      "missing_slots": [],
-      "evidence_counts": {
-        "residents": 913,
-        "schemas": 32,
-        "validators": 2,
-        "receipts": 262,
-        "reports": 139,
-        "matrices": 10
-      },
-      "major_gaps": [
-        "has WARP-status residents",
-        "has quarantine residents",
-        "has negative-example residents"
-      ]
-    },
-    "DOCTRINARIUM": {
-      "organ_id": "DOCTRINARIUM",
-      "path": "ORGANS/DOCTRINARIUM",
-      "exists": true,
-      "scores": {
-        "physical_presence_score": 100,
-        "required_slot_score": 100.0,
-        "identity_score": 100,
-        "manifest_score": 100,
-        "schema_coverage_score": 100.0,
-        "validator_coverage_score": 100.0,
-        "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 70,
-        "observability_score": 100.0,
-        "trust_action_readiness_score": 100.0,
-        "organ_readiness_score": 97.0
-      },
-      "present_slots": [
-        "README.md",
-        "ORGAN_CARD.json",
-        "MANIFEST.json",
-        "FUNCTIONS.md",
-        "MATRICES",
-        "SCHEMAS",
-        "VALIDATORS",
-        "RECEIPTS",
-        "REPORTS",
-        "TESTS",
-        "TUI",
-        "DASHBOARDS",
-        "EYES",
-        "BLOCK",
-        "LESSONS",
-        "NEGATIVE_LESSONS"
-      ],
-      "missing_slots": [],
-      "evidence_counts": {
-        "residents": 189,
-        "schemas": 3,
-        "validators": 2,
-        "receipts": 9,
-        "reports": 7,
-        "matrices": 12
-      },
-      "major_gaps": [
-        "has WARP-status residents",
-        "has negative-example residents"
-      ]
-    },
-    "MECHANICUS": {
-      "organ_id": "MECHANICUS",
-      "path": "ORGANS/MECHANICUS",
-      "exists": true,
-      "scores": {
-        "physical_presence_score": 100,
-        "required_slot_score": 100.0,
-        "identity_score": 100,
-        "manifest_score": 100,
-        "schema_coverage_score": 100.0,
-        "validator_coverage_score": 100.0,
-        "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 70,
-        "observability_score": 100.0,
-        "trust_action_readiness_score": 100.0,
-        "organ_readiness_score": 97.0
-      },
-      "present_slots": [
-        "README.md",
-        "ORGAN_CARD.json",
-        "MANIFEST.json",
-        "FUNCTIONS.md",
-        "MATRICES",
-        "SCHEMAS",
-        "VALIDATORS",
-        "RECEIPTS",
-        "REPORTS",
-        "TESTS",
-        "TUI",
-        "DASHBOARDS",
-        "EYES",
-        "BLOCK",
-        "LESSONS",
-        "NEGATIVE_LESSONS"
-      ],
-      "missing_slots": [],
-      "evidence_counts": {
-        "residents": 1249,
-        "schemas": 25,
-        "validators": 2,
-        "receipts": 136,
-        "reports": 165,
-        "matrices": 25
-      },
-      "major_gaps": [
-        "has WARP-status residents",
-        "has quarantine residents",
-        "has negative-example residents"
-      ]
-    },
-    "INQUISITION": {
-      "organ_id": "INQUISITION",
-      "path": "ORGANS/INQUISITION",
-      "exists": true,
-      "scores": {
-        "physical_presence_score": 100,
-        "required_slot_score": 100.0,
-        "identity_score": 100,
-        "manifest_score": 100,
-        "schema_coverage_score": 100.0,
-        "validator_coverage_score": 100.0,
-        "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 70,
-        "observability_score": 100.0,
-        "trust_action_readiness_score": 100.0,
-        "organ_readiness_score": 97.0
-      },
-      "present_slots": [
-        "README.md",
-        "ORGAN_CARD.json",
-        "MANIFEST.json",
-        "FUNCTIONS.md",
-        "MATRICES",
-        "SCHEMAS",
-        "VALIDATORS",
-        "RECEIPTS",
-        "REPORTS",
-        "TESTS",
-        "TUI",
-        "DASHBOARDS",
-        "EYES",
-        "BLOCK",
-        "LESSONS",
-        "NEGATIVE_LESSONS"
-      ],
-      "missing_slots": [],
-      "evidence_counts": {
-        "residents": 325,
-        "schemas": 3,
-        "validators": 2,
-        "receipts": 40,
-        "reports": 73,
-        "matrices": 30
-      },
-      "major_gaps": [
-        "has WARP-status residents",
-        "has quarantine residents",
-        "has negative-example residents"
-      ]
-    },
-    "CUSTODES": {
-      "organ_id": "CUSTODES",
-      "path": "ORGANS/CUSTODES",
-      "exists": true,
-      "scores": {
-        "physical_presence_score": 100,
-        "required_slot_score": 100.0,
-        "identity_score": 100,
-        "manifest_score": 100,
-        "schema_coverage_score": 66.67,
-        "validator_coverage_score": 100.0,
-        "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 70,
-        "observability_score": 100.0,
-        "trust_action_readiness_score": 100.0,
-        "organ_readiness_score": 93.67
-      },
-      "present_slots": [
-        "README.md",
-        "ORGAN_CARD.json",
-        "MANIFEST.json",
-        "FUNCTIONS.md",
-        "MATRICES",
-        "SCHEMAS",
-        "VALIDATORS",
-        "RECEIPTS",
-        "REPORTS",
-        "TESTS",
-        "TUI",
-        "DASHBOARDS",
-        "EYES",
-        "BLOCK",
-        "LESSONS",
-        "NEGATIVE_LESSONS"
-      ],
-      "missing_slots": [],
-      "evidence_counts": {
-        "residents": 69,
-        "schemas": 2,
-        "validators": 2,
-        "receipts": 14,
-        "reports": 5,
-        "matrices": 4
-      },
-      "major_gaps": [
-        "has WARP-status residents",
-        "has quarantine residents",
-        "has negative-example residents"
-      ]
-    },
-    "STRATEGIUM": {
-      "organ_id": "STRATEGIUM",
-      "path": "ORGANS/STRATEGIUM",
-      "exists": true,
-      "scores": {
-        "physical_presence_score": 100,
-        "required_slot_score": 100.0,
-        "identity_score": 100,
-        "manifest_score": 100,
-        "schema_coverage_score": 100.0,
-        "validator_coverage_score": 100.0,
-        "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 70,
-        "observability_score": 100.0,
-        "trust_action_readiness_score": 100.0,
-        "organ_readiness_score": 97.0
-      },
-      "present_slots": [
-        "README.md",
-        "ORGAN_CARD.json",
-        "MANIFEST.json",
-        "FUNCTIONS.md",
-        "MATRICES",
-        "SCHEMAS",
-        "VALIDATORS",
-        "RECEIPTS",
-        "REPORTS",
-        "TESTS",
-        "TUI",
-        "DASHBOARDS",
-        "EYES",
-        "BLOCK",
-        "LESSONS",
-        "NEGATIVE_LESSONS"
-      ],
-      "missing_slots": [],
-      "evidence_counts": {
-        "residents": 138,
-        "schemas": 5,
-        "validators": 2,
-        "receipts": 17,
-        "reports": 7,
-        "matrices": 20
-      },
-      "major_gaps": [
-        "has WARP-status residents",
-        "has quarantine residents",
-        "has negative-example residents"
-      ]
-    },
-    "SCHOLA_IMPERIALIS": {
-      "organ_id": "SCHOLA_IMPERIALIS",
-      "path": "ORGANS/SCHOLA_IMPERIALIS",
-      "exists": true,
-      "scores": {
-        "physical_presence_score": 100,
-        "required_slot_score": 100.0,
-        "identity_score": 100,
-        "manifest_score": 100,
-        "schema_coverage_score": 66.67,
-        "validator_coverage_score": 100.0,
-        "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 70,
-        "observability_score": 100.0,
-        "trust_action_readiness_score": 100.0,
-        "organ_readiness_score": 93.67
-      },
-      "present_slots": [
-        "README.md",
-        "ORGAN_CARD.json",
-        "MANIFEST.json",
-        "FUNCTIONS.md",
-        "MATRICES",
-        "SCHEMAS",
-        "VALIDATORS",
-        "RECEIPTS",
-        "REPORTS",
-        "TESTS",
-        "TUI",
-        "DASHBOARDS",
-        "EYES",
-        "BLOCK",
-        "LESSONS",
-        "NEGATIVE_LESSONS"
-      ],
-      "missing_slots": [],
-      "evidence_counts": {
-        "residents": 94,
-        "schemas": 2,
-        "validators": 2,
-        "receipts": 6,
-        "reports": 5,
-        "matrices": 7
-      },
-      "major_gaps": [
-        "has WARP-status residents",
-        "has negative-example residents"
-      ]
-    },
-    "OFFICIO_AGENTIS": {
-      "organ_id": "OFFICIO_AGENTIS",
-      "path": "ORGANS/OFFICIO_AGENTIS",
-      "exists": true,
-      "scores": {
-        "physical_presence_score": 100,
-        "required_slot_score": 100.0,
-        "identity_score": 100,
-        "manifest_score": 100,
-        "schema_coverage_score": 66.67,
-        "validator_coverage_score": 100.0,
-        "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 70,
-        "observability_score": 100.0,
-        "trust_action_readiness_score": 100.0,
-        "organ_readiness_score": 93.67
-      },
-      "present_slots": [
-        "README.md",
-        "ORGAN_CARD.json",
-        "MANIFEST.json",
-        "FUNCTIONS.md",
-        "MATRICES",
-        "SCHEMAS",
-        "VALIDATORS",
-        "RECEIPTS",
-        "REPORTS",
-        "TESTS",
-        "TUI",
-        "DASHBOARDS",
-        "EYES",
-        "BLOCK",
-        "LESSONS",
-        "NEGATIVE_LESSONS"
-      ],
-      "missing_slots": [],
-      "evidence_counts": {
-        "residents": 106,
-        "schemas": 2,
-        "validators": 2,
-        "receipts": 6,
-        "reports": 5,
-        "matrices": 9
-      },
-      "major_gaps": [
-        "has WARP-status residents",
-        "has negative-example residents"
-      ]
-    }
+    "meaning": "Great Nine readiness now separates profile baseline from implementation and trust proof."
   },
   "next_attention": [
     {
+      "priority": 4,
+      "area": "Great Nine operational proofs",
+      "reason": "Great Nine profiles exist, but organ-specific operational receipts are weak.",
+      "recommended_patch_family": "GREAT-NINE-OPERATIONAL-PROOF-0001"
+    },
+    {
       "priority": 5,
-      "area": "Core v1 operational evidence",
-      "reason": "Core v1 target is described, but actual task/servitor/fix-loop/trust proof is still weak.",
-      "recommended_patch_family": "THRONE-CORE-V1-OPERATIONAL-EVIDENCE-0001"
+      "area": "Great Nine trust proofs",
+      "reason": "Organs need Custodes/Inquisition/Throne trust receipts beyond self-profile receipts.",
+      "recommended_patch_family": "GREAT-NINE-TRUST-PROOF-0001"
     },
     {
-      "priority": 7,
-      "area": "Custodes/Inquisition trust proof",
-      "reason": "Trust readiness requires actual Inquisition/Custodes receipts, not only organ names.",
-      "recommended_patch_family": "CUSTODES-INQUISITION-TRUST-CHAIN-0001"
-    },
-    {
-      "priority": 8,
-      "area": "Human visibility implementation",
-      "reason": "TUI/dashboard target exists, but implementation artifacts are not enough.",
-      "recommended_patch_family": "THRONE-HUMAN-VISIBILITY-PROOF-0001"
-    },
-    {
-      "priority": 9,
+      "priority": 6,
       "area": "No-core-mutation proof",
       "reason": "Need before/after census and allowed-return receipts.",
       "recommended_patch_family": "THRONE-NO-CORE-MUTATION-PROOF-0001"
     },
     {
-      "priority": 60,
-      "area": "Lowest organ readiness: CUSTODES",
-      "reason": "CUSTODES readiness is 93.67%.",
-      "recommended_patch_family": "CUSTODES-GAP-CLOSURE-0001"
+      "priority": 7,
+      "area": "Human visibility implementation",
+      "reason": "TUI/dashboard target exists, but implementation artifacts are not enough.",
+      "recommended_patch_family": "THRONE-HUMAN-VISIBILITY-PROOF-0001"
+    },
+    {
+      "priority": 20,
+      "area": "CUSTODES operational implementation",
+      "reason": "CUSTODES operational score is 15.0%.",
+      "recommended_patch_family": "CUSTODES-OPERATIONAL-PROOF-0001"
+    },
+    {
+      "priority": 21,
+      "area": "CUSTODES trust proof",
+      "reason": "CUSTODES trust score is 10.0%.",
+      "recommended_patch_family": "CUSTODES-TRUST-PROOF-0001"
     }
   ],
   "input_hashes_sha256": {
@@ -1026,8 +1518,8 @@
     "ORGANS/THRONE/MATRICES/THRONE_TARGET_GAP_SCORING_MATRIX_V0_1.json": "0fed805a2fc888e51eedd0f27e9026e7a6f2e962f50ac41d9bb30b740ace8670",
     "ORGANS/THRONE/MATRICES/THRONE_TARGET_GAP_CORE_V1_SCORING_INTEGRATION_MATRIX_V0_1.json": "5119ccdd54a67a1ff9bf22121596b18488568a6c144ff09e1ab20b941d2e06f6",
     "ORGANS/THRONE/MATRICES/THRONE_TARGET_GAP_CORE_V1_SCORING_FIX_0002_MATRIX_V0_1.json": "af0235f2966a206d92e0b1e207b1c945f00ed231c0f2baa6309fad085e01b2f5",
+    "ORGANS/THRONE/MATRICES/THRONE_ORGAN_IMPLEMENTATION_SPLIT_MATRIX_V0_1.json": "999aae7fa4c5fb888aab7f6dda1f4b574b36d1ce57e717327f571659cdac14c8",
     "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_CENSUS_V0_1.json": "787178792f9eaacec15a2153eaa97e28055e62cc6865c8b36cf46580d6c21987",
-    "ORGANS/THRONE/MATRICES/THRONE_TARGET_GAP_CORE_V1_SCORING_FIX_0001_MATRIX_V0_1.json": "d068646160eebcac1f48d6035ec2f14ae26abdec50e83ec3c4c050ad2d489609",
     "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_SUMMARY_V0_1.json": "1c1354eed092e8aa5055c0b32e74059b144ae431a152a6a67ebee5337ec6a2e4"
   },
   "checks": [
@@ -1060,62 +1552,38 @@
       }
     },
     {
-      "name": "fix_0002_scoring_composition_present",
+      "name": "organ_implementation_split_matrix_present",
       "status": "PASS",
       "details": {
-        "composition": {
-          "target_definition_weight": 15,
-          "operational_evidence_weight": 25,
-          "workflow_readiness_weight": 20,
-          "trust_readiness_weight": 15,
-          "human_visibility_weight": 10,
-          "no_core_mutation_evidence_weight": 10,
-          "great_nine_readiness_weight": 5
-        }
+        "matrix_id": "THRONE_ORGAN_IMPLEMENTATION_SPLIT_MATRIX_V0_1"
       }
     },
     {
-      "name": "strict_evidence_policy_present",
+      "name": "profile_baseline_separate_from_operational",
       "status": "PASS",
       "details": {
-        "policy": {
-          "ignore_target_docs_as_operational_proof": true,
-          "ignore_directory_slot_as_proof": true,
-          "require_specific_artifact_names": true,
-          "require_receipt_or_registry_for_core_capability": true
-        }
+        "profile": 100.0,
+        "operational": 32.67
       }
     },
     {
-      "name": "target_vs_strict_operational_split_present",
+      "name": "great_nine_no_false_near_complete",
       "status": "PASS",
       "details": {
-        "target_definition": 100.0,
-        "operational": 44.75,
-        "workflow": 75.0,
-        "trust": 35.0,
-        "human": 40.0,
-        "no_core": 0.0
+        "great_nine_readiness": 55.22,
+        "operational": 32.67,
+        "trust": 15.56
       }
     },
     {
-      "name": "near_v1_guard_active",
+      "name": "near_v1_core_guard_active",
       "status": "PASS",
       "details": {
         "capped_by": []
-      }
-    },
-    {
-      "name": "generic_path_inflation_guard",
-      "status": "PASS",
-      "details": {
-        "trust": 35.0,
-        "workflow": 75.0,
-        "human": 40.0
       }
     }
   ],
   "warnings": [],
   "errors": [],
-  "meaning": "PASS_MEASURED means strict target and operational readiness were separated and measured; it does not mean Core v1 is achieved."
+  "meaning": "PASS_MEASURED means organ profile baseline and operational implementation were separated and measured; it does not mean Great Nine or Core v1 are fully implemented."
 }

@@ -1,0 +1,100 @@
+{
+  "matrix_id": "THRONE_ORGAN_IMPLEMENTATION_SPLIT_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "THRONE",
+  "mode": "MEASURE_ONLY",
+  "purpose": "Separate organ profile baseline from organ operational implementation and trust proof.",
+  "score_components": {
+    "organ_profile_baseline_score": {
+      "meaning": "Passport, ORGAN_CARD, MANIFEST, FUNCTIONS, profile validator, profile receipt.",
+      "weight_in_organ_readiness": 20
+    },
+    "organ_structural_score": {
+      "meaning": "Slots, schemas, validators, receipts, reports, declared files.",
+      "weight_in_organ_readiness": 20
+    },
+    "organ_operational_score": {
+      "meaning": "Organ-specific proof artifacts showing the organ performs its actual role.",
+      "weight_in_organ_readiness": 35
+    },
+    "organ_trust_score": {
+      "meaning": "Evidence that organ outputs/verdicts can be trusted by Custodes/Throne.",
+      "weight_in_organ_readiness": 25
+    }
+  },
+  "guards": {
+    "enabled": true,
+    "max_organ_readiness_without_operational_50": 65,
+    "max_organ_readiness_without_trust_50": 70,
+    "max_organ_readiness_with_profile_only": 45,
+    "profile_receipt_is_not_operational_proof": true,
+    "profile_validator_is_not_full_implementation": true
+  },
+  "organ_specific_operational_evidence_patterns": {
+    "ASTRONOMICON": [
+      "intake",
+      "task_pack",
+      "admission",
+      "rejection",
+      "pass_criteria"
+    ],
+    "ADMINISTRATUM": [
+      "registry",
+      "registered_task",
+      "context_pack",
+      "archive",
+      "provenance"
+    ],
+    "DOCTRINARIUM": [
+      "canon",
+      "doctrine_check",
+      "schema_law",
+      "rule_matrix",
+      "contradiction"
+    ],
+    "MECHANICUS": [
+      "tool_harness",
+      "validator_harness",
+      "self_test",
+      "build_receipt",
+      "encoding_check"
+    ],
+    "INQUISITION": [
+      "scan",
+      "finding",
+      "fake_green",
+      "hardcoded",
+      "mutation"
+    ],
+    "CUSTODES": [
+      "trust",
+      "organ_audit",
+      "validator_audit",
+      "trust_matrix",
+      "trust_receipt"
+    ],
+    "STRATEGIUM": [
+      "priority",
+      "next_attention",
+      "impact",
+      "roadmap",
+      "recommendation"
+    ],
+    "SCHOLA_IMPERIALIS": [
+      "lesson",
+      "negative_example",
+      "learning",
+      "failure_memory",
+      "training"
+    ],
+    "OFFICIO_AGENTIS": [
+      "servitor",
+      "authority",
+      "role",
+      "execution_boundary",
+      "agent_prompt"
+    ]
+  },
+  "meaning": "This split measures organ credibility more strictly. It does not claim full implementation."
+}
