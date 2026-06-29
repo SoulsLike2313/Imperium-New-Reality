@@ -1,0 +1,127 @@
+{
+  "receipt_id": "receipt.administratum.profile.v0_1",
+  "task_id": "GREAT-NINE-PROFILE-VALIDATORS-0001",
+  "organ_id": "ADMINISTRATUM",
+  "validator_id": "administratum_profile_validator.v0_1",
+  "verdict": "PASS_PROFILE_BASELINE",
+  "generated_at_utc": "2026-06-29T19:57:31Z",
+  "profile_baseline": {
+    "required_files": [
+      "README.md",
+      "ORGAN_CARD.json",
+      "MANIFEST.json",
+      "FUNCTIONS.md"
+    ],
+    "required_dirs": [
+      "MATRICES",
+      "SCHEMAS",
+      "VALIDATORS",
+      "RECEIPTS",
+      "REPORTS",
+      "TESTS",
+      "TUI",
+      "DASHBOARDS",
+      "EYES",
+      "BLOCK",
+      "LESSONS",
+      "NEGATIVE_LESSONS"
+    ],
+    "declared_functions_count": 5,
+    "declared_validators_count": 1,
+    "forbidden_actions_count": 4
+  },
+  "file_hashes_sha256": {
+    "ORGANS/ADMINISTRATUM/README.md": "21975741a6dea6ce989108fa44f30022dca8ab22abb4f8cb18f5ce2ab7c8a106",
+    "ORGANS/ADMINISTRATUM/ORGAN_CARD.json": "fc11b8c01e2b3da6c22c1076a6716b68cdb74fb902f2de976bdd9dfa34e58dea",
+    "ORGANS/ADMINISTRATUM/MANIFEST.json": "15a4830f849c4c849e7988600b571daa6115ef5d5da9aad905b7ec94cbbaaebd",
+    "ORGANS/ADMINISTRATUM/FUNCTIONS.md": "6ed36be8eac05c1550461b671e2b00168ce53a3a0417973a7dba0834134bfc56",
+    "ORGANS/ADMINISTRATUM/VALIDATORS/validate_administratum_profile.py": "7b728cf3071d823edd1ac1aff03c5a71feb554297b9706bc0478e23a38c52c07"
+  },
+  "checks": [
+    {
+      "name": "organ_directory_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ADMINISTRATUM"
+      }
+    },
+    {
+      "name": "required_files_exist",
+      "status": "PASS",
+      "details": {
+        "missing_files": []
+      }
+    },
+    {
+      "name": "required_dirs_exist",
+      "status": "PASS",
+      "details": {
+        "missing_dirs": []
+      }
+    },
+    {
+      "name": "organ_card_json_parse",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "organ_card_required_fields",
+      "status": "PASS",
+      "details": {
+        "missing_fields": []
+      }
+    },
+    {
+      "name": "organ_identity_matches",
+      "status": "PASS",
+      "details": {
+        "organ_id": "ADMINISTRATUM",
+        "great_nine_member": true
+      }
+    },
+    {
+      "name": "declared_functions_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 5
+      }
+    },
+    {
+      "name": "declared_validators_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 1
+      }
+    },
+    {
+      "name": "forbidden_actions_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 4
+      }
+    },
+    {
+      "name": "declared_receipts_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 1
+      }
+    },
+    {
+      "name": "profile_validator_file_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS\\ADMINISTRATUM\\VALIDATORS\\validate_administratum_profile.py"
+      }
+    },
+    {
+      "name": "manifest_lists_core_profile_files",
+      "status": "PASS",
+      "details": {
+        "missing_from_manifest": []
+      }
+    }
+  ],
+  "warnings": [],
+  "errors": []
+}

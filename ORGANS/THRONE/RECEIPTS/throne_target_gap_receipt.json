@@ -4,14 +4,14 @@
   "upgrade_id": "THRONE-TARGET-GAP-CORE-V1-SCORING-INTEGRATION-0001-FIX-0002",
   "validator_id": "throne_target_gap_validator.v0_4_strict_operational_proof",
   "verdict": "PASS_MEASURED",
-  "generated_at_utc": "2026-06-29T19:03:10Z",
+  "generated_at_utc": "2026-06-29T20:04:05Z",
   "mode": "MEASURE_ONLY",
   "validation_model": "TARGET_V1_VS_CURRENT_REALITY_WITH_STRICT_OPERATIONAL_PROOF",
   "scores": {
-    "core_readiness_score": 53.02,
+    "core_readiness_score": 55.23,
     "throne_readiness_score": 97.0,
-    "great_nine_readiness_score": 51.69,
-    "lowest_organ_readiness_score": 38.65,
+    "great_nine_readiness_score": 95.89,
+    "lowest_organ_readiness_score": 93.67,
     "core_v1_target_definition_score": 100.0,
     "core_v1_operational_evidence_score": 44.75,
     "core_v1_workflow_readiness_score": 75.0,
@@ -319,12 +319,12 @@
         "ORGANS/ASTRONOMICON/REPORTS/TASK-NEWGEN-ASTRONOMICON-TASKPACK-SKILL-TUI-CONTOUR-ROUTER-AND-VM-LAUNCH-CARD-PC-V0_1/inquisition_fake_green_guard_receipt.json",
         "ORGANS/INQUISITION/FINDINGS/inquisition_finding_schema_v0_1.json",
         "ORGANS/INQUISITION/HYGIENE_POLICY/evidence_vault_batch_receipt_verification_policy_v0_1.json",
+        "ORGANS/INQUISITION/RECEIPTS/.gitkeep",
+        "ORGANS/INQUISITION/RECEIPTS/inquisition_profile_receipt.json",
         "ORGANS/INQUISITION/REPORTING/inquisition_evidence_vault_batch_receipt_verifier_v0_1.py",
         "ORGANS/INQUISITION/REPORTING/inquisition_intelligence_pack_receipt_gate_v0_1.py",
         "ORGANS/INQUISITION/REPORTS/last_land_gate_receipt.json",
-        "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/canonical_artifact_language_scan_report.md",
-        "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/capability_split_receipt.json",
-        "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/commit_push_receipt.json"
+        "ORGANS/INQUISITION/REPORTS/TASK-NEWGEN-LANGUAGE-AUTHORITY-AND-MOJIBAKE-FILTER-SPINOFF-PC-V0_1/canonical_artifact_language_scan_report.md"
       ],
       "custodes_trust_receipt": [],
       "tui_implementation": [],
@@ -461,11 +461,17 @@
         "REPORTS/TASK-20260520-SANCTUM-MINI-LIVE-TERMINAL-API-REPAIR-PC-V0_3R/BLOCKED_COMMAND_PROBE_SAMPLE.json"
       ],
       "receipts_available": [
+        "ORGANS/THRONE/RECEIPTS/great_nine_profile_baseline_receipt.json",
         "ORGANS/THRONE/RECEIPTS/throne_kernel_anatomy_receipt.json",
         "ORGANS/THRONE/RECEIPTS/throne_self_form_receipt.json",
         "ORGANS/THRONE/RECEIPTS/throne_target_gap_receipt.json"
       ],
       "reports_available": [
+        "ORGANS/THRONE/REPORTS/GREAT_NINE_PROFILE_BASELINE_REPORT_V0_1.md",
+        "ORGANS/THRONE/REPORTS/THRONE_CORE_V1_OPERATIONAL_BREAKDOWN_V0_1.csv",
+        "ORGANS/THRONE/REPORTS/THRONE_CORE_V1_OPERATIONAL_BREAKDOWN_V0_1.json",
+        "ORGANS/THRONE/REPORTS/THRONE_CORE_V1_READINESS_BREAKDOWN_V0_1.csv",
+        "ORGANS/THRONE/REPORTS/THRONE_CORE_V1_READINESS_BREAKDOWN_V0_1.json",
         "ORGANS/THRONE/REPORTS/THRONE_KERNEL_ANATOMY_REPORT_V0_1.md",
         "ORGANS/THRONE/REPORTS/THRONE_NEXT_ATTENTION_AREAS_V0_1.json",
         "ORGANS/THRONE/REPORTS/THRONE_ORGAN_READINESS_TABLE_V0_1.csv",
@@ -523,12 +529,12 @@
       ],
       "missing_slots": [],
       "evidence_counts": {
-        "residents": 113,
-        "schemas": 9,
-        "validators": 6,
-        "receipts": 8,
-        "reports": 10,
-        "matrices": 32
+        "residents": 155,
+        "schemas": 17,
+        "validators": 11,
+        "receipts": 12,
+        "reports": 18,
+        "matrices": 40
       },
       "major_gaps": [
         "has WARP-status residents",
@@ -541,49 +547,46 @@
       "exists": true,
       "scores": {
         "physical_presence_score": 100,
-        "required_slot_score": 31.25,
+        "required_slot_score": 100.0,
         "identity_score": 100,
-        "manifest_score": 0,
+        "manifest_score": 100,
         "schema_coverage_score": 100.0,
-        "validator_coverage_score": 50.0,
+        "validator_coverage_score": 100.0,
         "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 100,
-        "observability_score": 25,
-        "trust_action_readiness_score": 75,
-        "organ_readiness_score": 67.19
+        "boundary_lifecycle_score": 70,
+        "observability_score": 100.0,
+        "trust_action_readiness_score": 100.0,
+        "organ_readiness_score": 97.0
       },
       "present_slots": [
-        "ORGAN_CARD.json",
-        "MATRICES",
-        "REPORTS",
-        "TESTS",
-        "BLOCK"
-      ],
-      "missing_slots": [
         "README.md",
+        "ORGAN_CARD.json",
         "MANIFEST.json",
         "FUNCTIONS.md",
+        "MATRICES",
         "SCHEMAS",
         "VALIDATORS",
         "RECEIPTS",
+        "REPORTS",
+        "TESTS",
         "TUI",
         "DASHBOARDS",
         "EYES",
+        "BLOCK",
         "LESSONS",
         "NEGATIVE_LESSONS"
       ],
+      "missing_slots": [],
       "evidence_counts": {
-        "residents": 1000,
-        "schemas": 39,
-        "validators": 1,
-        "receipts": 167,
-        "reports": 130,
-        "matrices": 16
+        "residents": 1051,
+        "schemas": 41,
+        "validators": 3,
+        "receipts": 172,
+        "reports": 135,
+        "matrices": 18
       },
       "major_gaps": [
-        "missing README.md",
-        "missing MANIFEST.json",
-        "missing FUNCTIONS.md",
+        "has WARP-status residents",
         "has quarantine residents",
         "has negative-example residents"
       ]
@@ -594,50 +597,46 @@
       "exists": true,
       "scores": {
         "physical_presence_score": 100,
-        "required_slot_score": 31.25,
+        "required_slot_score": 100.0,
         "identity_score": 100,
-        "manifest_score": 0,
+        "manifest_score": 100,
         "schema_coverage_score": 100.0,
-        "validator_coverage_score": 0.0,
+        "validator_coverage_score": 100.0,
         "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 100,
-        "observability_score": 25,
-        "trust_action_readiness_score": 50,
-        "organ_readiness_score": 58.44
+        "boundary_lifecycle_score": 70,
+        "observability_score": 100.0,
+        "trust_action_readiness_score": 100.0,
+        "organ_readiness_score": 97.0
       },
       "present_slots": [
-        "ORGAN_CARD.json",
-        "MATRICES",
-        "REPORTS",
-        "TESTS",
-        "BLOCK"
-      ],
-      "missing_slots": [
         "README.md",
+        "ORGAN_CARD.json",
         "MANIFEST.json",
         "FUNCTIONS.md",
+        "MATRICES",
         "SCHEMAS",
         "VALIDATORS",
         "RECEIPTS",
+        "REPORTS",
+        "TESTS",
         "TUI",
         "DASHBOARDS",
         "EYES",
+        "BLOCK",
         "LESSONS",
         "NEGATIVE_LESSONS"
       ],
+      "missing_slots": [],
       "evidence_counts": {
-        "residents": 857,
-        "schemas": 30,
-        "validators": 0,
-        "receipts": 257,
-        "reports": 134,
-        "matrices": 8
+        "residents": 913,
+        "schemas": 32,
+        "validators": 2,
+        "receipts": 262,
+        "reports": 139,
+        "matrices": 10
       },
       "major_gaps": [
-        "missing README.md",
-        "missing MANIFEST.json",
-        "missing FUNCTIONS.md",
-        "no validator evidence",
+        "has WARP-status residents",
         "has quarantine residents",
         "has negative-example residents"
       ]
@@ -648,50 +647,46 @@
       "exists": true,
       "scores": {
         "physical_presence_score": 100,
-        "required_slot_score": 31.25,
+        "required_slot_score": 100.0,
         "identity_score": 100,
-        "manifest_score": 0,
-        "schema_coverage_score": 33.33,
-        "validator_coverage_score": 0.0,
+        "manifest_score": 100,
+        "schema_coverage_score": 100.0,
+        "validator_coverage_score": 100.0,
         "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 100,
-        "observability_score": 0.0,
-        "trust_action_readiness_score": 50,
-        "organ_readiness_score": 50.52
+        "boundary_lifecycle_score": 70,
+        "observability_score": 100.0,
+        "trust_action_readiness_score": 100.0,
+        "organ_readiness_score": 97.0
       },
       "present_slots": [
-        "ORGAN_CARD.json",
-        "MATRICES",
-        "SCHEMAS",
-        "TESTS",
-        "BLOCK"
-      ],
-      "missing_slots": [
         "README.md",
+        "ORGAN_CARD.json",
         "MANIFEST.json",
         "FUNCTIONS.md",
+        "MATRICES",
+        "SCHEMAS",
         "VALIDATORS",
         "RECEIPTS",
         "REPORTS",
+        "TESTS",
         "TUI",
         "DASHBOARDS",
         "EYES",
+        "BLOCK",
         "LESSONS",
         "NEGATIVE_LESSONS"
       ],
+      "missing_slots": [],
       "evidence_counts": {
-        "residents": 138,
-        "schemas": 1,
-        "validators": 0,
-        "receipts": 4,
-        "reports": 2,
-        "matrices": 10
+        "residents": 189,
+        "schemas": 3,
+        "validators": 2,
+        "receipts": 9,
+        "reports": 7,
+        "matrices": 12
       },
       "major_gaps": [
-        "missing README.md",
-        "missing MANIFEST.json",
-        "missing FUNCTIONS.md",
-        "no validator evidence",
+        "has WARP-status residents",
         "has negative-example residents"
       ]
     },
@@ -701,49 +696,46 @@
       "exists": true,
       "scores": {
         "physical_presence_score": 100,
-        "required_slot_score": 43.75,
+        "required_slot_score": 100.0,
         "identity_score": 100,
-        "manifest_score": 0,
+        "manifest_score": 100,
         "schema_coverage_score": 100.0,
-        "validator_coverage_score": 0.0,
+        "validator_coverage_score": 100.0,
         "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 100,
-        "observability_score": 25,
-        "trust_action_readiness_score": 50,
-        "organ_readiness_score": 60.31
+        "boundary_lifecycle_score": 70,
+        "observability_score": 100.0,
+        "trust_action_readiness_score": 100.0,
+        "organ_readiness_score": 97.0
       },
       "present_slots": [
         "README.md",
         "ORGAN_CARD.json",
-        "MATRICES",
-        "SCHEMAS",
-        "REPORTS",
-        "TESTS",
-        "BLOCK"
-      ],
-      "missing_slots": [
         "MANIFEST.json",
         "FUNCTIONS.md",
+        "MATRICES",
+        "SCHEMAS",
         "VALIDATORS",
         "RECEIPTS",
+        "REPORTS",
+        "TESTS",
         "TUI",
         "DASHBOARDS",
         "EYES",
+        "BLOCK",
         "LESSONS",
         "NEGATIVE_LESSONS"
       ],
+      "missing_slots": [],
       "evidence_counts": {
-        "residents": 1194,
-        "schemas": 23,
-        "validators": 0,
-        "receipts": 131,
-        "reports": 160,
-        "matrices": 23
+        "residents": 1249,
+        "schemas": 25,
+        "validators": 2,
+        "receipts": 136,
+        "reports": 165,
+        "matrices": 25
       },
       "major_gaps": [
-        "missing MANIFEST.json",
-        "missing FUNCTIONS.md",
-        "no validator evidence",
+        "has WARP-status residents",
         "has quarantine residents",
         "has negative-example residents"
       ]
@@ -754,50 +746,46 @@
       "exists": true,
       "scores": {
         "physical_presence_score": 100,
-        "required_slot_score": 31.25,
+        "required_slot_score": 100.0,
         "identity_score": 100,
-        "manifest_score": 0,
-        "schema_coverage_score": 33.33,
-        "validator_coverage_score": 0.0,
+        "manifest_score": 100,
+        "schema_coverage_score": 100.0,
+        "validator_coverage_score": 100.0,
         "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 100,
-        "observability_score": 25,
-        "trust_action_readiness_score": 50,
-        "organ_readiness_score": 51.77
+        "boundary_lifecycle_score": 70,
+        "observability_score": 100.0,
+        "trust_action_readiness_score": 100.0,
+        "organ_readiness_score": 97.0
       },
       "present_slots": [
-        "ORGAN_CARD.json",
-        "MATRICES",
-        "REPORTS",
-        "TESTS",
-        "BLOCK"
-      ],
-      "missing_slots": [
         "README.md",
+        "ORGAN_CARD.json",
         "MANIFEST.json",
         "FUNCTIONS.md",
+        "MATRICES",
         "SCHEMAS",
         "VALIDATORS",
         "RECEIPTS",
+        "REPORTS",
+        "TESTS",
         "TUI",
         "DASHBOARDS",
         "EYES",
+        "BLOCK",
         "LESSONS",
         "NEGATIVE_LESSONS"
       ],
+      "missing_slots": [],
       "evidence_counts": {
-        "residents": 274,
-        "schemas": 1,
-        "validators": 0,
-        "receipts": 35,
-        "reports": 68,
-        "matrices": 28
+        "residents": 325,
+        "schemas": 3,
+        "validators": 2,
+        "receipts": 40,
+        "reports": 73,
+        "matrices": 30
       },
       "major_gaps": [
-        "missing README.md",
-        "missing MANIFEST.json",
-        "missing FUNCTIONS.md",
-        "no validator evidence",
+        "has WARP-status residents",
         "has quarantine residents",
         "has negative-example residents"
       ]
@@ -808,22 +796,20 @@
       "exists": true,
       "scores": {
         "physical_presence_score": 100,
-        "required_slot_score": 6.25,
+        "required_slot_score": 100.0,
         "identity_score": 100,
-        "manifest_score": 0,
-        "schema_coverage_score": 0.0,
-        "validator_coverage_score": 0.0,
+        "manifest_score": 100,
+        "schema_coverage_score": 66.67,
+        "validator_coverage_score": 100.0,
         "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 100,
-        "observability_score": 0.0,
-        "trust_action_readiness_score": 50,
-        "organ_readiness_score": 43.44
+        "boundary_lifecycle_score": 70,
+        "observability_score": 100.0,
+        "trust_action_readiness_score": 100.0,
+        "organ_readiness_score": 93.67
       },
       "present_slots": [
-        "ORGAN_CARD.json"
-      ],
-      "missing_slots": [
         "README.md",
+        "ORGAN_CARD.json",
         "MANIFEST.json",
         "FUNCTIONS.md",
         "MATRICES",
@@ -839,21 +825,19 @@
         "LESSONS",
         "NEGATIVE_LESSONS"
       ],
+      "missing_slots": [],
       "evidence_counts": {
-        "residents": 18,
-        "schemas": 0,
-        "validators": 0,
-        "receipts": 9,
-        "reports": 0,
-        "matrices": 2
+        "residents": 69,
+        "schemas": 2,
+        "validators": 2,
+        "receipts": 14,
+        "reports": 5,
+        "matrices": 4
       },
       "major_gaps": [
-        "missing README.md",
-        "missing MANIFEST.json",
-        "missing FUNCTIONS.md",
-        "no schema evidence",
-        "no validator evidence",
-        "has quarantine residents"
+        "has WARP-status residents",
+        "has quarantine residents",
+        "has negative-example residents"
       ]
     },
     "STRATEGIUM": {
@@ -862,26 +846,23 @@
       "exists": true,
       "scores": {
         "physical_presence_score": 100,
-        "required_slot_score": 18.75,
+        "required_slot_score": 100.0,
         "identity_score": 100,
-        "manifest_score": 0,
+        "manifest_score": 100,
         "schema_coverage_score": 100.0,
-        "validator_coverage_score": 0.0,
+        "validator_coverage_score": 100.0,
         "receipt_coverage_score": 100.0,
-        "boundary_lifecycle_score": 100,
-        "observability_score": 0.0,
-        "trust_action_readiness_score": 50,
-        "organ_readiness_score": 55.31
+        "boundary_lifecycle_score": 70,
+        "observability_score": 100.0,
+        "trust_action_readiness_score": 100.0,
+        "organ_readiness_score": 97.0
       },
       "present_slots": [
-        "ORGAN_CARD.json",
-        "MATRICES",
-        "BLOCK"
-      ],
-      "missing_slots": [
         "README.md",
+        "ORGAN_CARD.json",
         "MANIFEST.json",
         "FUNCTIONS.md",
+        "MATRICES",
         "SCHEMAS",
         "VALIDATORS",
         "RECEIPTS",
@@ -890,22 +871,21 @@
         "TUI",
         "DASHBOARDS",
         "EYES",
+        "BLOCK",
         "LESSONS",
         "NEGATIVE_LESSONS"
       ],
+      "missing_slots": [],
       "evidence_counts": {
-        "residents": 87,
-        "schemas": 3,
-        "validators": 0,
-        "receipts": 12,
-        "reports": 2,
-        "matrices": 18
+        "residents": 138,
+        "schemas": 5,
+        "validators": 2,
+        "receipts": 17,
+        "reports": 7,
+        "matrices": 20
       },
       "major_gaps": [
-        "missing README.md",
-        "missing MANIFEST.json",
-        "missing FUNCTIONS.md",
-        "no validator evidence",
+        "has WARP-status residents",
         "has quarantine residents",
         "has negative-example residents"
       ]
@@ -916,27 +896,23 @@
       "exists": true,
       "scores": {
         "physical_presence_score": 100,
-        "required_slot_score": 25.0,
+        "required_slot_score": 100.0,
         "identity_score": 100,
-        "manifest_score": 0,
-        "schema_coverage_score": 0.0,
-        "validator_coverage_score": 0.0,
-        "receipt_coverage_score": 33.33,
-        "boundary_lifecycle_score": 100,
-        "observability_score": 0.0,
-        "trust_action_readiness_score": 50,
-        "organ_readiness_score": 39.58
+        "manifest_score": 100,
+        "schema_coverage_score": 66.67,
+        "validator_coverage_score": 100.0,
+        "receipt_coverage_score": 100.0,
+        "boundary_lifecycle_score": 70,
+        "observability_score": 100.0,
+        "trust_action_readiness_score": 100.0,
+        "organ_readiness_score": 93.67
       },
       "present_slots": [
-        "ORGAN_CARD.json",
-        "MATRICES",
-        "BLOCK",
-        "LESSONS"
-      ],
-      "missing_slots": [
         "README.md",
+        "ORGAN_CARD.json",
         "MANIFEST.json",
         "FUNCTIONS.md",
+        "MATRICES",
         "SCHEMAS",
         "VALIDATORS",
         "RECEIPTS",
@@ -945,22 +921,22 @@
         "TUI",
         "DASHBOARDS",
         "EYES",
+        "BLOCK",
+        "LESSONS",
         "NEGATIVE_LESSONS"
       ],
+      "missing_slots": [],
       "evidence_counts": {
-        "residents": 43,
-        "schemas": 0,
-        "validators": 0,
-        "receipts": 1,
-        "reports": 0,
-        "matrices": 5
+        "residents": 94,
+        "schemas": 2,
+        "validators": 2,
+        "receipts": 6,
+        "reports": 5,
+        "matrices": 7
       },
       "major_gaps": [
-        "missing README.md",
-        "missing MANIFEST.json",
-        "missing FUNCTIONS.md",
-        "no schema evidence",
-        "no validator evidence"
+        "has WARP-status residents",
+        "has negative-example residents"
       ]
     },
     "OFFICIO_AGENTIS": {
@@ -969,26 +945,23 @@
       "exists": true,
       "scores": {
         "physical_presence_score": 100,
-        "required_slot_score": 18.75,
+        "required_slot_score": 100.0,
         "identity_score": 100,
-        "manifest_score": 0,
-        "schema_coverage_score": 0.0,
-        "validator_coverage_score": 0.0,
-        "receipt_coverage_score": 33.33,
-        "boundary_lifecycle_score": 100,
-        "observability_score": 0.0,
-        "trust_action_readiness_score": 50,
-        "organ_readiness_score": 38.65
+        "manifest_score": 100,
+        "schema_coverage_score": 66.67,
+        "validator_coverage_score": 100.0,
+        "receipt_coverage_score": 100.0,
+        "boundary_lifecycle_score": 70,
+        "observability_score": 100.0,
+        "trust_action_readiness_score": 100.0,
+        "organ_readiness_score": 93.67
       },
       "present_slots": [
-        "ORGAN_CARD.json",
-        "MATRICES",
-        "BLOCK"
-      ],
-      "missing_slots": [
         "README.md",
+        "ORGAN_CARD.json",
         "MANIFEST.json",
         "FUNCTIONS.md",
+        "MATRICES",
         "SCHEMAS",
         "VALIDATORS",
         "RECEIPTS",
@@ -997,23 +970,22 @@
         "TUI",
         "DASHBOARDS",
         "EYES",
+        "BLOCK",
         "LESSONS",
         "NEGATIVE_LESSONS"
       ],
+      "missing_slots": [],
       "evidence_counts": {
-        "residents": 55,
-        "schemas": 0,
-        "validators": 0,
-        "receipts": 1,
-        "reports": 0,
-        "matrices": 7
+        "residents": 106,
+        "schemas": 2,
+        "validators": 2,
+        "receipts": 6,
+        "reports": 5,
+        "matrices": 9
       },
       "major_gaps": [
-        "missing README.md",
-        "missing MANIFEST.json",
-        "missing FUNCTIONS.md",
-        "no schema evidence",
-        "no validator evidence"
+        "has WARP-status residents",
+        "has negative-example residents"
       ]
     }
   },
@@ -1043,28 +1015,10 @@
       "recommended_patch_family": "THRONE-NO-CORE-MUTATION-PROOF-0001"
     },
     {
-      "priority": 10,
-      "area": "Great Nine README passports",
-      "reason": "Missing README: ASTRONOMICON, ADMINISTRATUM, DOCTRINARIUM, INQUISITION, CUSTODES, STRATEGIUM, SCHOLA_IMPERIALIS, OFFICIO_AGENTIS",
-      "recommended_patch_family": "ORGAN-README-PASSPORT-STAMP-0001"
-    },
-    {
-      "priority": 20,
-      "area": "Great Nine manifests",
-      "reason": "Missing MANIFEST: ASTRONOMICON, ADMINISTRATUM, DOCTRINARIUM, MECHANICUS, INQUISITION, CUSTODES, STRATEGIUM, SCHOLA_IMPERIALIS, OFFICIO_AGENTIS",
-      "recommended_patch_family": "ORGAN-MANIFEST-STAMP-0001"
-    },
-    {
-      "priority": 30,
-      "area": "Astronomicon relationship validation",
-      "reason": "Astronomicon is entry gate; intake/fix-loop/pass criteria must be measurable.",
-      "recommended_patch_family": "THRONE-ASTRONOMICON-RELATIONSHIP-VALIDATION-0001"
-    },
-    {
       "priority": 60,
-      "area": "Lowest organ readiness: OFFICIO_AGENTIS",
-      "reason": "OFFICIO_AGENTIS readiness is 38.65%.",
-      "recommended_patch_family": "OFFICIO_AGENTIS-GAP-CLOSURE-0001"
+      "area": "Lowest organ readiness: CUSTODES",
+      "reason": "CUSTODES readiness is 93.67%.",
+      "recommended_patch_family": "CUSTODES-GAP-CLOSURE-0001"
     }
   ],
   "input_hashes_sha256": {
@@ -1072,9 +1026,9 @@
     "ORGANS/THRONE/MATRICES/THRONE_TARGET_GAP_SCORING_MATRIX_V0_1.json": "0fed805a2fc888e51eedd0f27e9026e7a6f2e962f50ac41d9bb30b740ace8670",
     "ORGANS/THRONE/MATRICES/THRONE_TARGET_GAP_CORE_V1_SCORING_INTEGRATION_MATRIX_V0_1.json": "5119ccdd54a67a1ff9bf22121596b18488568a6c144ff09e1ab20b941d2e06f6",
     "ORGANS/THRONE/MATRICES/THRONE_TARGET_GAP_CORE_V1_SCORING_FIX_0002_MATRIX_V0_1.json": "af0235f2966a206d92e0b1e207b1c945f00ed231c0f2baa6309fad085e01b2f5",
-    "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_CENSUS_V0_1.json": "3726555f5ee27f844de6f60087625793dd650c8df080ab5c9def196f85ecadf9",
+    "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_CENSUS_V0_1.json": "787178792f9eaacec15a2153eaa97e28055e62cc6865c8b36cf46580d6c21987",
     "ORGANS/THRONE/MATRICES/THRONE_TARGET_GAP_CORE_V1_SCORING_FIX_0001_MATRIX_V0_1.json": "d068646160eebcac1f48d6035ec2f14ae26abdec50e83ec3c4c050ad2d489609",
-    "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_SUMMARY_V0_1.json": "902e5b1fb9d8f6e7a938ef081cebf475221a1e29e42935498ebd41731de04592"
+    "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_SUMMARY_V0_1.json": "1c1354eed092e8aa5055c0b32e74059b144ae431a152a6a67ebee5337ec6a2e4"
   },
   "checks": [
     {
@@ -1093,7 +1047,7 @@
       "name": "census_has_residents",
       "status": "PASS",
       "details": {
-        "resident_count": 5481
+        "resident_count": 6001
       }
     },
     {

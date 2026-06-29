@@ -1,0 +1,24 @@
+{
+  "matrix_id": "STRATEGIUM_PROFILE_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "BASELINE_DECLARED",
+  "owner": "STRATEGIUM",
+  "purpose": "Baseline profile and declared role for STRATEGIUM.",
+  "primary_role": "priority, planning and optimization planner",
+  "declared_functions": [
+    "rank next attention areas",
+    "compare readiness gaps",
+    "recommend patch order",
+    "estimate impact of toggles and settings",
+    "turn metrics into strategy"
+  ],
+  "forbidden_actions": [
+    "does not execute changes",
+    "does not hide low scores",
+    "does not claim optimality without metrics",
+    "does not overrule Throne blocks"
+  ],
+  "profile_validator": "ORGANS/STRATEGIUM/VALIDATORS/validate_strategium_profile.py",
+  "profile_receipt": "ORGANS/STRATEGIUM/RECEIPTS/strategium_profile_receipt.json",
+  "full_implementation_claim": false
+}

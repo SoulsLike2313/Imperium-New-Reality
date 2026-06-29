@@ -1,0 +1,127 @@
+{
+  "receipt_id": "receipt.officio_agentis.profile.v0_1",
+  "task_id": "GREAT-NINE-PROFILE-VALIDATORS-0001",
+  "organ_id": "OFFICIO_AGENTIS",
+  "validator_id": "officio_agentis_profile_validator.v0_1",
+  "verdict": "PASS_PROFILE_BASELINE",
+  "generated_at_utc": "2026-06-29T19:57:32Z",
+  "profile_baseline": {
+    "required_files": [
+      "README.md",
+      "ORGAN_CARD.json",
+      "MANIFEST.json",
+      "FUNCTIONS.md"
+    ],
+    "required_dirs": [
+      "MATRICES",
+      "SCHEMAS",
+      "VALIDATORS",
+      "RECEIPTS",
+      "REPORTS",
+      "TESTS",
+      "TUI",
+      "DASHBOARDS",
+      "EYES",
+      "BLOCK",
+      "LESSONS",
+      "NEGATIVE_LESSONS"
+    ],
+    "declared_functions_count": 5,
+    "declared_validators_count": 1,
+    "forbidden_actions_count": 4
+  },
+  "file_hashes_sha256": {
+    "ORGANS/OFFICIO_AGENTIS/README.md": "ff9bb9aa1896d3e5cd8185abacb2b35856306374b852e456c8815c9b0f31b7f8",
+    "ORGANS/OFFICIO_AGENTIS/ORGAN_CARD.json": "28e14e5635c5ad4e71dea1ca8203acc49a284f94f6cbef4d18888a8652bcef13",
+    "ORGANS/OFFICIO_AGENTIS/MANIFEST.json": "74ad46f89348487adc103a1fc882acc4c2a957d11f4105d3c277ce13c9925f96",
+    "ORGANS/OFFICIO_AGENTIS/FUNCTIONS.md": "3be70cf7ffc18c1b920b8ad948007b62b36e449fbd0145536e11e96a6a0b95c5",
+    "ORGANS/OFFICIO_AGENTIS/VALIDATORS/validate_officio_agentis_profile.py": "dad54c12c57777c30ab5389c76dd41243d6117968106722e28b85d969a09cde1"
+  },
+  "checks": [
+    {
+      "name": "organ_directory_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/OFFICIO_AGENTIS"
+      }
+    },
+    {
+      "name": "required_files_exist",
+      "status": "PASS",
+      "details": {
+        "missing_files": []
+      }
+    },
+    {
+      "name": "required_dirs_exist",
+      "status": "PASS",
+      "details": {
+        "missing_dirs": []
+      }
+    },
+    {
+      "name": "organ_card_json_parse",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "organ_card_required_fields",
+      "status": "PASS",
+      "details": {
+        "missing_fields": []
+      }
+    },
+    {
+      "name": "organ_identity_matches",
+      "status": "PASS",
+      "details": {
+        "organ_id": "OFFICIO_AGENTIS",
+        "great_nine_member": true
+      }
+    },
+    {
+      "name": "declared_functions_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 5
+      }
+    },
+    {
+      "name": "declared_validators_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 1
+      }
+    },
+    {
+      "name": "forbidden_actions_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 4
+      }
+    },
+    {
+      "name": "declared_receipts_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 1
+      }
+    },
+    {
+      "name": "profile_validator_file_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS\\OFFICIO_AGENTIS\\VALIDATORS\\validate_officio_agentis_profile.py"
+      }
+    },
+    {
+      "name": "manifest_lists_core_profile_files",
+      "status": "PASS",
+      "details": {
+        "missing_from_manifest": []
+      }
+    }
+  ],
+  "warnings": [],
+  "errors": []
+}

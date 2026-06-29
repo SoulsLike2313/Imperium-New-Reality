@@ -7,65 +7,65 @@ fix: `0001`
 
 ## Summary
 
-- population_total: `5481`
-- owner_coverage_score: `71.88`
-- classification_coverage_score: `87.39`
-- schema_count: `190`
-- validator_count: `39`
-- receipt_count: `953`
-- report_count: `753`
-- warp_debt_count: `90`
+- population_total: `6001`
+- owner_coverage_score: `74.15`
+- classification_coverage_score: `88.04`
+- schema_count: `216`
+- validator_count: `62`
+- receipt_count: `1004`
+- report_count: `808`
+- warp_debt_count: `433`
 - rogue_candidate_count: `0`
-- root_level_resident_count: `18`
+- root_level_resident_count: `28`
 
 ## Top classes
 
 - `TASK_PACK`: 1579
-- `RECEIPT`: 953
-- `REPORT`: 753
-- `UNKNOWN`: 691
+- `RECEIPT`: 1004
+- `REPORT`: 808
+- `UNKNOWN`: 718
+- `PATCH_PACK`: 259
+- `MANIFEST`: 249
 - `TOOL_CODE`: 241
-- `MANIFEST`: 231
-- `SCHEMA`: 190
+- `SCHEMA`: 216
+- `MATRIX`: 199
 - `CONTRACT`: 175
-- `MATRIX`: 173
 - `TEMPLATE`: 110
 - `PASSPORT`: 70
-- `VALIDATOR`: 39
-- `PATCH_PACK`: 37
+- `VALIDATOR`: 62
+- `NEGATIVE_LESSON`: 34
+- `ORGAN_README`: 32
 - `IDE_SOURCE`: 29
 - `DOCTRINE`: 27
-- `ORGAN_README`: 24
+- `EYES_EXPORT`: 26
+- `ORGAN_CARD`: 24
 - `FIXTURE`: 22
+- `TUI`: 21
 - `CHARTER`: 19
 - `METRIC`: 18
-- `EYES_EXPORT`: 17
-- `NEGATIVE_LESSON`: 16
-- `ORGAN_CARD`: 15
-- `TUI`: 12
+- `ROOT_MANIFEST`: 12
+- `ROOT_SCRIPT`: 12
 - `BACKUP`: 11
-- `ROOT_MANIFEST`: 7
-- `ROOT_SCRIPT`: 7
+- `DASHBOARD`: 11
 - `CONSTITUTION`: 4
 - `RUN_OUTPUT`: 4
 - `ROOT_CONFIG`: 3
-- `DASHBOARD`: 2
 - `ARCHIVE`: 1
 - `ROOT_DOC`: 1
 
 ## Owners
 
-- `UNKNOWN`: 1541
-- `MECHANICUS`: 1194
-- `ASTRONOMICON`: 1000
-- `ADMINISTRATUM`: 857
-- `INQUISITION`: 274
+- `UNKNOWN`: 1551
+- `MECHANICUS`: 1249
+- `ASTRONOMICON`: 1051
+- `ADMINISTRATUM`: 913
+- `INQUISITION`: 325
+- `DOCTRINARIUM`: 189
 - `OWNER`: 161
-- `DOCTRINARIUM`: 138
-- `THRONE`: 113
-- `STRATEGIUM`: 87
-- `OFFICIO_AGENTIS`: 55
-- `SCHOLA_IMPERIALIS`: 43
-- `CUSTODES`: 18
+- `THRONE`: 155
+- `STRATEGIUM`: 138
+- `OFFICIO_AGENTIS`: 106
+- `SCHOLA_IMPERIALIS`: 94
+- `CUSTODES`: 69
 
 PASS means measurement baseline, not health certificate.

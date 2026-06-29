@@ -1,0 +1,127 @@
+{
+  "receipt_id": "receipt.schola_imperialis.profile.v0_1",
+  "task_id": "GREAT-NINE-PROFILE-VALIDATORS-0001",
+  "organ_id": "SCHOLA_IMPERIALIS",
+  "validator_id": "schola_imperialis_profile_validator.v0_1",
+  "verdict": "PASS_PROFILE_BASELINE",
+  "generated_at_utc": "2026-06-29T19:57:32Z",
+  "profile_baseline": {
+    "required_files": [
+      "README.md",
+      "ORGAN_CARD.json",
+      "MANIFEST.json",
+      "FUNCTIONS.md"
+    ],
+    "required_dirs": [
+      "MATRICES",
+      "SCHEMAS",
+      "VALIDATORS",
+      "RECEIPTS",
+      "REPORTS",
+      "TESTS",
+      "TUI",
+      "DASHBOARDS",
+      "EYES",
+      "BLOCK",
+      "LESSONS",
+      "NEGATIVE_LESSONS"
+    ],
+    "declared_functions_count": 5,
+    "declared_validators_count": 1,
+    "forbidden_actions_count": 4
+  },
+  "file_hashes_sha256": {
+    "ORGANS/SCHOLA_IMPERIALIS/README.md": "dfe8a284079cc14c292f349a47af7cbf132bebc57b8034498e5765750363bc6f",
+    "ORGANS/SCHOLA_IMPERIALIS/ORGAN_CARD.json": "04b4277adeb4d8e66b9d710b0744959caf05b028b37d121f02ac60317b48a371",
+    "ORGANS/SCHOLA_IMPERIALIS/MANIFEST.json": "4854e1d4af83ba75ad3c4492d823a1368b76a5333ff4ded3ab94b418f62b0c4c",
+    "ORGANS/SCHOLA_IMPERIALIS/FUNCTIONS.md": "1d7defdbb404e31fa8522d45d944352556f2ae79eae08ea019ea8de189b56510",
+    "ORGANS/SCHOLA_IMPERIALIS/VALIDATORS/validate_schola_imperialis_profile.py": "505177cc20e26d1eebafe05ddeed45999db8ff3fd4129ab591c3fdf59da82dea"
+  },
+  "checks": [
+    {
+      "name": "organ_directory_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/SCHOLA_IMPERIALIS"
+      }
+    },
+    {
+      "name": "required_files_exist",
+      "status": "PASS",
+      "details": {
+        "missing_files": []
+      }
+    },
+    {
+      "name": "required_dirs_exist",
+      "status": "PASS",
+      "details": {
+        "missing_dirs": []
+      }
+    },
+    {
+      "name": "organ_card_json_parse",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "organ_card_required_fields",
+      "status": "PASS",
+      "details": {
+        "missing_fields": []
+      }
+    },
+    {
+      "name": "organ_identity_matches",
+      "status": "PASS",
+      "details": {
+        "organ_id": "SCHOLA_IMPERIALIS",
+        "great_nine_member": true
+      }
+    },
+    {
+      "name": "declared_functions_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 5
+      }
+    },
+    {
+      "name": "declared_validators_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 1
+      }
+    },
+    {
+      "name": "forbidden_actions_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 4
+      }
+    },
+    {
+      "name": "declared_receipts_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 1
+      }
+    },
+    {
+      "name": "profile_validator_file_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS\\SCHOLA_IMPERIALIS\\VALIDATORS\\validate_schola_imperialis_profile.py"
+      }
+    },
+    {
+      "name": "manifest_lists_core_profile_files",
+      "status": "PASS",
+      "details": {
+        "missing_from_manifest": []
+      }
+    }
+  ],
+  "warnings": [],
+  "errors": []
+}

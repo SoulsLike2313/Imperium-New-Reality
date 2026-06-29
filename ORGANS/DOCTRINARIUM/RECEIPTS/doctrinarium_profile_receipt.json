@@ -1,0 +1,127 @@
+{
+  "receipt_id": "receipt.doctrinarium.profile.v0_1",
+  "task_id": "GREAT-NINE-PROFILE-VALIDATORS-0001",
+  "organ_id": "DOCTRINARIUM",
+  "validator_id": "doctrinarium_profile_validator.v0_1",
+  "verdict": "PASS_PROFILE_BASELINE",
+  "generated_at_utc": "2026-06-29T19:57:31Z",
+  "profile_baseline": {
+    "required_files": [
+      "README.md",
+      "ORGAN_CARD.json",
+      "MANIFEST.json",
+      "FUNCTIONS.md"
+    ],
+    "required_dirs": [
+      "MATRICES",
+      "SCHEMAS",
+      "VALIDATORS",
+      "RECEIPTS",
+      "REPORTS",
+      "TESTS",
+      "TUI",
+      "DASHBOARDS",
+      "EYES",
+      "BLOCK",
+      "LESSONS",
+      "NEGATIVE_LESSONS"
+    ],
+    "declared_functions_count": 5,
+    "declared_validators_count": 1,
+    "forbidden_actions_count": 4
+  },
+  "file_hashes_sha256": {
+    "ORGANS/DOCTRINARIUM/README.md": "83ae79cfadc63a2f347eaa153b9237ff9d7a1438e81df73bf0c56ae59644c9be",
+    "ORGANS/DOCTRINARIUM/ORGAN_CARD.json": "eb2daafc8486a7c27801d8e104c24ffc2a257bffe442b11f45cce7dc3f67dc76",
+    "ORGANS/DOCTRINARIUM/MANIFEST.json": "cb36981c726ccd236ae665e8c3619cb43f1306a33e942d8b8ab8dc2b6bdeff02",
+    "ORGANS/DOCTRINARIUM/FUNCTIONS.md": "e44ae66e6ea106a33f3a4e49dbac9d306881738fc42055bd0322eb896092aa0a",
+    "ORGANS/DOCTRINARIUM/VALIDATORS/validate_doctrinarium_profile.py": "d4afd8d096447cb1dab34f057ef608b75a6236d441c1c52cb98eaacb84372d21"
+  },
+  "checks": [
+    {
+      "name": "organ_directory_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/DOCTRINARIUM"
+      }
+    },
+    {
+      "name": "required_files_exist",
+      "status": "PASS",
+      "details": {
+        "missing_files": []
+      }
+    },
+    {
+      "name": "required_dirs_exist",
+      "status": "PASS",
+      "details": {
+        "missing_dirs": []
+      }
+    },
+    {
+      "name": "organ_card_json_parse",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "organ_card_required_fields",
+      "status": "PASS",
+      "details": {
+        "missing_fields": []
+      }
+    },
+    {
+      "name": "organ_identity_matches",
+      "status": "PASS",
+      "details": {
+        "organ_id": "DOCTRINARIUM",
+        "great_nine_member": true
+      }
+    },
+    {
+      "name": "declared_functions_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 5
+      }
+    },
+    {
+      "name": "declared_validators_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 1
+      }
+    },
+    {
+      "name": "forbidden_actions_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 4
+      }
+    },
+    {
+      "name": "declared_receipts_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 1
+      }
+    },
+    {
+      "name": "profile_validator_file_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS\\DOCTRINARIUM\\VALIDATORS\\validate_doctrinarium_profile.py"
+      }
+    },
+    {
+      "name": "manifest_lists_core_profile_files",
+      "status": "PASS",
+      "details": {
+        "missing_from_manifest": []
+      }
+    }
+  ],
+  "warnings": [],
+  "errors": []
+}

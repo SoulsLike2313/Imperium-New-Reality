@@ -1,0 +1,127 @@
+{
+  "receipt_id": "receipt.inquisition.profile.v0_1",
+  "task_id": "GREAT-NINE-PROFILE-VALIDATORS-0001",
+  "organ_id": "INQUISITION",
+  "validator_id": "inquisition_profile_validator.v0_1",
+  "verdict": "PASS_PROFILE_BASELINE",
+  "generated_at_utc": "2026-06-29T19:57:31Z",
+  "profile_baseline": {
+    "required_files": [
+      "README.md",
+      "ORGAN_CARD.json",
+      "MANIFEST.json",
+      "FUNCTIONS.md"
+    ],
+    "required_dirs": [
+      "MATRICES",
+      "SCHEMAS",
+      "VALIDATORS",
+      "RECEIPTS",
+      "REPORTS",
+      "TESTS",
+      "TUI",
+      "DASHBOARDS",
+      "EYES",
+      "BLOCK",
+      "LESSONS",
+      "NEGATIVE_LESSONS"
+    ],
+    "declared_functions_count": 5,
+    "declared_validators_count": 1,
+    "forbidden_actions_count": 4
+  },
+  "file_hashes_sha256": {
+    "ORGANS/INQUISITION/README.md": "26f56c80e13f05588133060e5e19a5a432690e7773d22205ea89932ea1304150",
+    "ORGANS/INQUISITION/ORGAN_CARD.json": "3cf24f78059424a328e32a2ada1f3bb6b0ab78e7f2171704b0077fe97e5415b5",
+    "ORGANS/INQUISITION/MANIFEST.json": "b2deafc62ad24ed577f68a83db4f745403d2e93e0ad64fd938383ef4073d1126",
+    "ORGANS/INQUISITION/FUNCTIONS.md": "96fc69354dd5cc9c4eefe052824eb3c7942282e096ecb698070b91df822901f7",
+    "ORGANS/INQUISITION/VALIDATORS/validate_inquisition_profile.py": "fb8afdd512927934564cdaeef6f68efcece03ed28a5b4faa8b595e9e0b78fca1"
+  },
+  "checks": [
+    {
+      "name": "organ_directory_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/INQUISITION"
+      }
+    },
+    {
+      "name": "required_files_exist",
+      "status": "PASS",
+      "details": {
+        "missing_files": []
+      }
+    },
+    {
+      "name": "required_dirs_exist",
+      "status": "PASS",
+      "details": {
+        "missing_dirs": []
+      }
+    },
+    {
+      "name": "organ_card_json_parse",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "organ_card_required_fields",
+      "status": "PASS",
+      "details": {
+        "missing_fields": []
+      }
+    },
+    {
+      "name": "organ_identity_matches",
+      "status": "PASS",
+      "details": {
+        "organ_id": "INQUISITION",
+        "great_nine_member": true
+      }
+    },
+    {
+      "name": "declared_functions_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 5
+      }
+    },
+    {
+      "name": "declared_validators_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 1
+      }
+    },
+    {
+      "name": "forbidden_actions_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 4
+      }
+    },
+    {
+      "name": "declared_receipts_nonempty",
+      "status": "PASS",
+      "details": {
+        "count": 1
+      }
+    },
+    {
+      "name": "profile_validator_file_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS\\INQUISITION\\VALIDATORS\\validate_inquisition_profile.py"
+      }
+    },
+    {
+      "name": "manifest_lists_core_profile_files",
+      "status": "PASS",
+      "details": {
+        "missing_from_manifest": []
+      }
+    }
+  ],
+  "warnings": [],
+  "errors": []
+}

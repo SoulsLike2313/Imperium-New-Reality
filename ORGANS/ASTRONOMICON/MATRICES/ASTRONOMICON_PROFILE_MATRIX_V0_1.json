@@ -1,0 +1,24 @@
+{
+  "matrix_id": "ASTRONOMICON_PROFILE_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "BASELINE_DECLARED",
+  "owner": "ASTRONOMICON",
+  "purpose": "Baseline profile and declared role for ASTRONOMICON.",
+  "primary_role": "request intake gate",
+  "declared_functions": [
+    "validate incoming task packs",
+    "check owner intent clarity",
+    "verify pass/fail criteria presence",
+    "admit or reject work before execution",
+    "return tasks to fix when intake is incomplete"
+  ],
+  "forbidden_actions": [
+    "does not issue final Throne verdict",
+    "does not mutate Core directly",
+    "does not bypass Administratum registration",
+    "does not claim implementation success without receipts"
+  ],
+  "profile_validator": "ORGANS/ASTRONOMICON/VALIDATORS/validate_astronomicon_profile.py",
+  "profile_receipt": "ORGANS/ASTRONOMICON/RECEIPTS/astronomicon_profile_receipt.json",
+  "full_implementation_claim": false
+}

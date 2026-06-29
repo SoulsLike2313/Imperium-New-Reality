@@ -1,0 +1,24 @@
+{
+  "matrix_id": "OFFICIO_AGENTIS_PROFILE_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "BASELINE_DECLARED",
+  "owner": "OFFICIO_AGENTIS",
+  "purpose": "Baseline profile and declared role for OFFICIO_AGENTIS.",
+  "primary_role": "roles, servitors and authority language",
+  "declared_functions": [
+    "define roles and servitor classes",
+    "describe allowed authority boundaries",
+    "maintain servitor prompt/task language",
+    "control who may execute what kind of task",
+    "stop execution when owner intent is missing"
+  ],
+  "forbidden_actions": [
+    "does not let servitors execute patch packs by default",
+    "does not grant unlimited authority",
+    "does not allow servitors to mutate core without explicit approval",
+    "does not invent owner intent"
+  ],
+  "profile_validator": "ORGANS/OFFICIO_AGENTIS/VALIDATORS/validate_officio_agentis_profile.py",
+  "profile_receipt": "ORGANS/OFFICIO_AGENTIS/RECEIPTS/officio_agentis_profile_receipt.json",
+  "full_implementation_claim": false
+}

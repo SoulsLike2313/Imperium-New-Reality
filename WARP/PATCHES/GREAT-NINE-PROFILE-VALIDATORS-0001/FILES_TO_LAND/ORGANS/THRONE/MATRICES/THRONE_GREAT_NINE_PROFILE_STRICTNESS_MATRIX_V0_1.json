@@ -1,0 +1,39 @@
+{
+  "matrix_id": "THRONE_GREAT_NINE_PROFILE_STRICTNESS_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "THRONE",
+  "mode": "MEASURE_ONLY",
+  "purpose": "Require every Great Nine organ to have baseline passport, manifest, functions, profile validator, and profile receipt before Great Nine readiness can be considered structurally credible.",
+  "great_nine": [
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "DOCTRINARIUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "CUSTODES",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS",
+    "OFFICIO_AGENTIS"
+  ],
+  "required_per_organ": [
+    "README.md",
+    "ORGAN_CARD.json",
+    "MANIFEST.json",
+    "FUNCTIONS.md",
+    "MATRICES/profile matrix",
+    "SCHEMAS/profile schema",
+    "VALIDATORS/profile validator",
+    "RECEIPTS/profile receipt",
+    "REPORTS/profile report"
+  ],
+  "strictness_rules": {
+    "no_profile_validator": "major_gap",
+    "no_profile_receipt": "major_gap",
+    "no_forbidden_actions": "major_gap",
+    "declared_vs_actual_not_checked": "major_gap",
+    "readme_without_machine_card": "weak",
+    "manifest_without_core_profile_files": "weak"
+  },
+  "score_meaning": "This is baseline profile credibility only, not full organ implementation."
+}

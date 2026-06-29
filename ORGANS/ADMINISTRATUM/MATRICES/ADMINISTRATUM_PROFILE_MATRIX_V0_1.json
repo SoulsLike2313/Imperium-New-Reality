@@ -1,0 +1,24 @@
+{
+  "matrix_id": "ADMINISTRATUM_PROFILE_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "BASELINE_DECLARED",
+  "owner": "ADMINISTRATUM",
+  "purpose": "Baseline profile and declared role for ADMINISTRATUM.",
+  "primary_role": "object, task, receipt and archive registry",
+  "declared_functions": [
+    "register tasks, patches, objects and receipts",
+    "maintain canonical ids and provenance",
+    "assemble context packs",
+    "store archives and historical evidence",
+    "serve retrieval paths for audit"
+  ],
+  "forbidden_actions": [
+    "does not validate trust by itself",
+    "does not replace Throne verdict",
+    "does not invent owner intent",
+    "does not accept unregistered core mutation"
+  ],
+  "profile_validator": "ORGANS/ADMINISTRATUM/VALIDATORS/validate_administratum_profile.py",
+  "profile_receipt": "ORGANS/ADMINISTRATUM/RECEIPTS/administratum_profile_receipt.json",
+  "full_implementation_claim": false
+}

@@ -6,14 +6,14 @@ validator_id: `throne_target_gap_validator.v0_4_strict_operational_proof`
 verdict: `PASS_MEASURED`  
 mode: `MEASURE_ONLY`  
 validation_model: `TARGET_V1_VS_CURRENT_REALITY_WITH_STRICT_OPERATIONAL_PROOF`  
-generated_at_utc: `2026-06-29T19:03:10Z`
+generated_at_utc: `2026-06-29T20:04:05Z`
 
 ## Global scores
 
-- core_readiness_score: `53.02`
+- core_readiness_score: `55.23`
 - throne_readiness_score: `97.0`
-- great_nine_readiness_score: `51.69`
-- lowest_organ_readiness_score: `38.65`
+- great_nine_readiness_score: `95.89`
+- lowest_organ_readiness_score: `93.67`
 
 ## Core v1 strict split
 
@@ -33,16 +33,16 @@ Operational proof requires specific task, registry, receipt, execution, fix-loop
 
 ## Organ readiness, lowest first
 
-- `OFFICIO_AGENTIS`: `38.65` — gaps: missing README.md, missing MANIFEST.json, missing FUNCTIONS.md, no schema evidence, no validator evidence
-- `SCHOLA_IMPERIALIS`: `39.58` — gaps: missing README.md, missing MANIFEST.json, missing FUNCTIONS.md, no schema evidence, no validator evidence
-- `CUSTODES`: `43.44` — gaps: missing README.md, missing MANIFEST.json, missing FUNCTIONS.md, no schema evidence, no validator evidence, has quarantine residents
-- `DOCTRINARIUM`: `50.52` — gaps: missing README.md, missing MANIFEST.json, missing FUNCTIONS.md, no validator evidence, has negative-example residents
-- `INQUISITION`: `51.77` — gaps: missing README.md, missing MANIFEST.json, missing FUNCTIONS.md, no validator evidence, has quarantine residents, has negative-example residents
-- `STRATEGIUM`: `55.31` — gaps: missing README.md, missing MANIFEST.json, missing FUNCTIONS.md, no validator evidence, has quarantine residents, has negative-example residents
-- `ADMINISTRATUM`: `58.44` — gaps: missing README.md, missing MANIFEST.json, missing FUNCTIONS.md, no validator evidence, has quarantine residents, has negative-example residents
-- `MECHANICUS`: `60.31` — gaps: missing MANIFEST.json, missing FUNCTIONS.md, no validator evidence, has quarantine residents, has negative-example residents
-- `ASTRONOMICON`: `67.19` — gaps: missing README.md, missing MANIFEST.json, missing FUNCTIONS.md, has quarantine residents, has negative-example residents
+- `CUSTODES`: `93.67` — gaps: has WARP-status residents, has quarantine residents, has negative-example residents
+- `SCHOLA_IMPERIALIS`: `93.67` — gaps: has WARP-status residents, has negative-example residents
+- `OFFICIO_AGENTIS`: `93.67` — gaps: has WARP-status residents, has negative-example residents
 - `THRONE`: `97.0` — gaps: has WARP-status residents, has negative-example residents
+- `ASTRONOMICON`: `97.0` — gaps: has WARP-status residents, has quarantine residents, has negative-example residents
+- `ADMINISTRATUM`: `97.0` — gaps: has WARP-status residents, has quarantine residents, has negative-example residents
+- `DOCTRINARIUM`: `97.0` — gaps: has WARP-status residents, has negative-example residents
+- `MECHANICUS`: `97.0` — gaps: has WARP-status residents, has quarantine residents, has negative-example residents
+- `INQUISITION`: `97.0` — gaps: has WARP-status residents, has quarantine residents, has negative-example residents
+- `STRATEGIUM`: `97.0` — gaps: has WARP-status residents, has quarantine residents, has negative-example residents
 
 ## Next attention areas
 
@@ -50,10 +50,7 @@ Operational proof requires specific task, registry, receipt, execution, fix-loop
 7. **Custodes/Inquisition trust proof** — Trust readiness requires actual Inquisition/Custodes receipts, not only organ names. → `CUSTODES-INQUISITION-TRUST-CHAIN-0001`
 8. **Human visibility implementation** — TUI/dashboard target exists, but implementation artifacts are not enough. → `THRONE-HUMAN-VISIBILITY-PROOF-0001`
 9. **No-core-mutation proof** — Need before/after census and allowed-return receipts. → `THRONE-NO-CORE-MUTATION-PROOF-0001`
-10. **Great Nine README passports** — Missing README: ASTRONOMICON, ADMINISTRATUM, DOCTRINARIUM, INQUISITION, CUSTODES, STRATEGIUM, SCHOLA_IMPERIALIS, OFFICIO_AGENTIS → `ORGAN-README-PASSPORT-STAMP-0001`
-20. **Great Nine manifests** — Missing MANIFEST: ASTRONOMICON, ADMINISTRATUM, DOCTRINARIUM, MECHANICUS, INQUISITION, CUSTODES, STRATEGIUM, SCHOLA_IMPERIALIS, OFFICIO_AGENTIS → `ORGAN-MANIFEST-STAMP-0001`
-30. **Astronomicon relationship validation** — Astronomicon is entry gate; intake/fix-loop/pass criteria must be measurable. → `THRONE-ASTRONOMICON-RELATIONSHIP-VALIDATION-0001`
-60. **Lowest organ readiness: OFFICIO_AGENTIS** — OFFICIO_AGENTIS readiness is 38.65%. → `OFFICIO_AGENTIS-GAP-CLOSURE-0001`
+60. **Lowest organ readiness: CUSTODES** — CUSTODES readiness is 93.67%. → `CUSTODES-GAP-CLOSURE-0001`
 
 ## Checks
 
