@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Throne Self Form Receipt v0.1",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "task_id",
+    "validator_id",
+    "verdict",
+    "generated_at_utc",
+    "checks",
+    "errors"
+  ],
+  "properties": {
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL"
+      ]
+    },
+    "checks": {
+      "type": "array"
+    },
+    "errors": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

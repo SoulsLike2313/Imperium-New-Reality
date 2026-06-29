@@ -1,0 +1,58 @@
+{
+  "organ_id": "THRONE",
+  "version": "0.1.0",
+  "status": "FOUNDATION_V0_1",
+  "organ_type": "CROWN_ORGAN",
+  "canonical_path": "ORGANS/THRONE",
+  "mode": "MEASURE_ONLY",
+  "validation_model": "TARGET_V1_VS_CURRENT_REALITY",
+  "override_policy": "OWNER_ONLY",
+  "visual_policy": {
+    "visual_refit": "FROZEN",
+    "eyes_presence": "DATA_EXPORT_ALLOWED",
+    "graph_viewer_baseline": "Eyes / Graph Viewer v0.5.3.1"
+  },
+  "great_nine": [
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "DOCTRINARIUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "CUSTODES",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS",
+    "OFFICIO_AGENTIS"
+  ],
+  "mission": "Hold, measure, regulate, and protect the form of the Imperium by comparing target-v1 form against current reality.",
+  "primary_functions": [
+    "validate_self_form",
+    "hold_target_v1_matrix",
+    "measure_gap_to_target_v1",
+    "regulate_organ_actions",
+    "emit_throne_receipts",
+    "feed_tui_dashboard_eyes_data"
+  ],
+  "required_slots": [
+    "README.md",
+    "ORGAN_CARD.json",
+    "MANIFEST.json",
+    "FUNCTIONS.md",
+    "SELF_KNOWLEDGE",
+    "MATRICES",
+    "SCHEMAS",
+    "VALIDATORS",
+    "RECEIPTS",
+    "REPORTS",
+    "TESTS",
+    "TUI",
+    "DASHBOARDS",
+    "EYES",
+    "BLOCK",
+    "LESSONS",
+    "NEGATIVE_LESSONS"
+  ],
+  "current_validator": "ORGANS/THRONE/VALIDATORS/validate_throne_self_form.py",
+  "current_receipt": "ORGANS/THRONE/RECEIPTS/throne_self_form_receipt.json",
+  "current_report": "ORGANS/THRONE/REPORTS/THRONE_SELF_FORM_REPORT_V0_1.md",
+  "next_expected_patch": "THRONE-TARGET-GAP-VALIDATOR-0001"
+}

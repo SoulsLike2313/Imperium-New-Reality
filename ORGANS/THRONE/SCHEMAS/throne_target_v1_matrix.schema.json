@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Throne Target V1 Matrix v0.1",
+  "type": "object",
+  "required": [
+    "matrix_id",
+    "mode",
+    "validation_model",
+    "target_score",
+    "throne",
+    "great_nine"
+  ],
+  "properties": {
+    "mode": {
+      "const": "TARGET_FORM"
+    },
+    "validation_model": {
+      "const": "TARGET_V1_VS_CURRENT_REALITY"
+    },
+    "target_score": {
+      "const": 100
+    }
+  },
+  "additionalProperties": true
+}

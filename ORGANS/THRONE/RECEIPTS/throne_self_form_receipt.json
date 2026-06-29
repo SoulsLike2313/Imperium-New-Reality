@@ -1,0 +1,155 @@
+{
+  "receipt_id": "receipt.throne_self_form.v0_1",
+  "task_id": "THRONE-CROWN-ORGAN-FOUNDATION-0001",
+  "validator_id": "throne_self_form_validator.v0_1",
+  "verdict": "PASS",
+  "generated_at_utc": "2026-06-29T16:06:58Z",
+  "mode": "WARP_VALIDATION",
+  "organ_id": "THRONE",
+  "organ_type": "CROWN_ORGAN",
+  "validation_model": "TARGET_V1_VS_CURRENT_REALITY",
+  "throne_mode": "MEASURE_ONLY",
+  "great_nine": [
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "DOCTRINARIUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "CUSTODES",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS",
+    "OFFICIO_AGENTIS"
+  ],
+  "checks": [
+    {
+      "name": "throne_dir_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS\\THRONE"
+      }
+    },
+    {
+      "name": "required_slots_exist",
+      "status": "PASS",
+      "details": {
+        "missing": [],
+        "expected": [
+          "README.md",
+          "ORGAN_CARD.json",
+          "MANIFEST.json",
+          "FUNCTIONS.md",
+          "SELF_KNOWLEDGE",
+          "MATRICES",
+          "SCHEMAS",
+          "VALIDATORS",
+          "RECEIPTS",
+          "REPORTS",
+          "TESTS",
+          "TUI",
+          "DASHBOARDS",
+          "EYES",
+          "BLOCK",
+          "LESSONS",
+          "NEGATIVE_LESSONS"
+        ]
+      }
+    },
+    {
+      "name": "required_files_exist",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "json_files_parse",
+      "status": "PASS",
+      "details": {
+        "errors": []
+      }
+    },
+    {
+      "name": "organ_card_required_decisions",
+      "status": "PASS",
+      "details": {
+        "organ_id_THRONE": true,
+        "organ_type_CROWN_ORGAN": true,
+        "mode_MEASURE_ONLY": true,
+        "validation_model_TARGET_V1_VS_CURRENT_REALITY": true,
+        "override_OWNER_ONLY": true,
+        "great_nine_exact": true,
+        "visual_refit_FROZEN": true
+      }
+    },
+    {
+      "name": "manifest_lists_required_files",
+      "status": "PASS",
+      "details": {
+        "missing_in_manifest": []
+      }
+    },
+    {
+      "name": "target_v1_matrix_foundation",
+      "status": "PASS",
+      "details": {
+        "target_mode_TARGET_FORM": true,
+        "target_score_100": true,
+        "target_validation_model": true,
+        "target_has_throne": true,
+        "target_has_great_nine": true
+      }
+    },
+    {
+      "name": "organ_relationship_matrix_has_great_nine",
+      "status": "PASS",
+      "details": {
+        "great_nine": [
+          "ASTRONOMICON",
+          "ADMINISTRATUM",
+          "DOCTRINARIUM",
+          "MECHANICUS",
+          "INQUISITION",
+          "CUSTODES",
+          "STRATEGIUM",
+          "SCHOLA_IMPERIALIS",
+          "OFFICIO_AGENTIS"
+        ]
+      }
+    },
+    {
+      "name": "validation_mode_matrix_foundation",
+      "status": "PASS",
+      "details": {
+        "current_mode": "MEASURE_ONLY",
+        "owner_override": "OWNER_ONLY"
+      }
+    },
+    {
+      "name": "fake_green_guard_actual_hashes_collected",
+      "status": "PASS",
+      "details": {
+        "hash_count": 16
+      }
+    }
+  ],
+  "errors": [],
+  "file_hashes_sha256": {
+    "ORGANS/THRONE/README.md": "6514f2ce1ab9b2da2738f53e2851491ddc7912babcdd32256d994faa2432ce8e",
+    "ORGANS/THRONE/ORGAN_CARD.json": "ea1b4d0d5116ea4e8cb5809771ac2efdc4d77b889325c9e25567ffd3fe098132",
+    "ORGANS/THRONE/MANIFEST.json": "5a4f59b1ec1cf1b1d82df2a22061781872287eb5198a15203645507f1721e558",
+    "ORGANS/THRONE/FUNCTIONS.md": "4c938e6c72b7edd9ff0be711c4e74f3c0ab253d53012ebceb4207facda6b134e",
+    "ORGANS/THRONE/SELF_KNOWLEDGE/IDENTITY.md": "070ca98cd75bbb04905d14a94119ab80374d1e17d31aaaa03fd0f87a15b121a2",
+    "ORGANS/THRONE/SELF_KNOWLEDGE/CALLING.md": "bf14e0ee4e5f77647006ac26051383997ecebe7e85387fe1c80f1df929fbd01a",
+    "ORGANS/THRONE/SELF_KNOWLEDGE/OBLIGATIONS.md": "45ea3309ebb474e28c0b844897c9684e4ce3aea3cd20e95df367e330f88f2b3f",
+    "ORGANS/THRONE/SELF_KNOWLEDGE/BOUNDARIES.md": "ae7d71b62c0b123658d571c2a0dd0490df06bec859ebc97b6a33efce9ddda567",
+    "ORGANS/THRONE/MATRICES/THRONE_TARGET_V1_MATRIX_V0_1.json": "92bbe341f6bbd7a33f67e9d5a371d846f3f27151ad02f98d480227865bff5540",
+    "ORGANS/THRONE/MATRICES/THRONE_ORGAN_RELATIONSHIP_MATRIX_V0_1.json": "d5e0cb276ccf8a83d92a5d83411c4c7871bf980a73de0b0b3f432ead9940b927",
+    "ORGANS/THRONE/MATRICES/THRONE_VALIDATION_MODE_MATRIX_V0_1.json": "dbf12d5cb10b8fe67e249c094d16e67aac26dd38eafde9ebaab100c02066c3e4",
+    "ORGANS/THRONE/SCHEMAS/throne_organ_card.schema.json": "e8e4d21154c38cb4ca55c9555a484f4d9b5cdd637c036e8b0c99263b4e316546",
+    "ORGANS/THRONE/SCHEMAS/throne_target_v1_matrix.schema.json": "d34b9d6676cb0bf10489eb0f1d9cb6335d62d6f2258f00c347b680457e80f56d",
+    "ORGANS/THRONE/SCHEMAS/throne_self_form_receipt.schema.json": "3163eeb856b7eca8c12eefcbb67fefbc804985aaedfb223f6e02a77a0e9b432f",
+    "ORGANS/THRONE/VALIDATORS/validate_throne_self_form.py": "176a5d435ceea23228dc5be7eeaae8b18fa4f86d7d6929746c124e4b37750d73",
+    "ORGANS/THRONE/TESTS/README.md": "0ea1d62c312ffb9fccd31395f486453248b2a7296814b02a8c47f306759f0deb"
+  },
+  "meaning": "PASS means the first Throne foundation is alive and measurable, not complete v1 readiness."
+}

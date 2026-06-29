@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Throne Organ Card v0.1",
+  "type": "object",
+  "required": [
+    "organ_id",
+    "organ_type",
+    "canonical_path",
+    "mode",
+    "validation_model",
+    "override_policy",
+    "great_nine",
+    "required_slots"
+  ],
+  "properties": {
+    "organ_id": {
+      "const": "THRONE"
+    },
+    "organ_type": {
+      "const": "CROWN_ORGAN"
+    },
+    "canonical_path": {
+      "const": "ORGANS/THRONE"
+    },
+    "mode": {
+      "const": "MEASURE_ONLY"
+    },
+    "validation_model": {
+      "const": "TARGET_V1_VS_CURRENT_REALITY"
+    },
+    "override_policy": {
+      "const": "OWNER_ONLY"
+    },
+    "great_nine": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_slots": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}
