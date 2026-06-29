@@ -1,0 +1,24 @@
+{
+  "matrix_id": "ROOT_ZONE_POLICY_V0_1",
+  "fix": "0001",
+  "known_root_zones": [
+    "ROOT",
+    "ORGANS",
+    "_CORE",
+    "_HARNESS",
+    "WARP",
+    "REPORTS",
+    "SUPPORT",
+    "SCHEMAS",
+    "DOCTRINARIUM",
+    "_CORE_GOVERNANCE",
+    ".imperium_patch_backups"
+  ],
+  "root_level_file_policy": "if path has no slash, root_zone MUST be ROOT",
+  "excluded_runtime_dirs": [
+    "__pycache__",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache"
+  ]
+}
