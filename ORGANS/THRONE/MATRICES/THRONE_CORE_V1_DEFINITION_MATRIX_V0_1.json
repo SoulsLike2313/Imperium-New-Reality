@@ -1,0 +1,53 @@
+{
+  "matrix_id": "THRONE_CORE_V1_DEFINITION_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "THRONE",
+  "mode": "MEASURE_ONLY",
+  "purpose": "Define what must be true before Core may be called v1.",
+  "required_sections": [
+    "oath",
+    "must_capabilities",
+    "v1_gate",
+    "benchmark_policy"
+  ],
+  "oath": {
+    "priority_order": [
+      "verifiability_of_result",
+      "quality_of_result",
+      "core_safety",
+      "learnability"
+    ]
+  },
+  "must_capabilities": [
+    "accept_owner_intent",
+    "create_registered_task_pack",
+    "route_through_astronomicon",
+    "register_through_administratum",
+    "assemble_context_pack",
+    "route_to_servitor_execution_boundary",
+    "execute_in_warp",
+    "validate_result",
+    "perform_fix_loop",
+    "collect_receipts",
+    "run_inquisition_dirt_and_fake_green_check",
+    "run_custodes_trust_check",
+    "issue_throne_verdict",
+    "external_product_or_land_or_abort",
+    "return_only_allowed_memory_to_core",
+    "show_human_readable_tui_dashboard_state"
+  ],
+  "v1_gate": {
+    "external_product_required": true,
+    "validation_required": true,
+    "fix_loop_required": true,
+    "throne_verdict_required": true,
+    "tui_visibility_required": true,
+    "no_core_mutation_required": true,
+    "benchmark_required_later": true,
+    "benchmark_not_now": true
+  },
+  "benchmark_policy": {
+    "status": "DEFERRED_UNTIL_GREAT_NINE_AND_WORKFLOW_READY"
+  }
+}

@@ -1,0 +1,649 @@
+{
+  "receipt_id": "receipt.throne_target_gap.v0_1",
+  "task_id": "THRONE-TARGET-GAP-VALIDATOR-0001",
+  "validator_id": "throne_target_gap_validator.v0_1",
+  "verdict": "PASS_MEASURED",
+  "generated_at_utc": "2026-06-29T18:03:18Z",
+  "mode": "MEASURE_ONLY",
+  "validation_model": "TARGET_V1_VS_CURRENT_REALITY",
+  "scores": {
+    "core_readiness_score": 67.55,
+    "throne_readiness_score": 97.0,
+    "great_nine_readiness_score": 51.69,
+    "lowest_organ_readiness_score": 38.65
+  },
+  "organs": {
+    "THRONE": {
+      "organ_id": "THRONE",
+      "path": "ORGANS/THRONE",
+      "exists": true,
+      "scores": {
+        "physical_presence_score": 100.0,
+        "required_slot_score": 100.0,
+        "identity_score": 100.0,
+        "manifest_score": 100.0,
+        "schema_coverage_score": 100.0,
+        "validator_coverage_score": 100.0,
+        "receipt_coverage_score": 100.0,
+        "boundary_lifecycle_score": 70.0,
+        "observability_score": 100.0,
+        "trust_action_readiness_score": 100.0,
+        "organ_readiness_score": 97.0
+      },
+      "present_slots": [
+        "README.md",
+        "ORGAN_CARD.json",
+        "MANIFEST.json",
+        "FUNCTIONS.md",
+        "MATRICES",
+        "SCHEMAS",
+        "VALIDATORS",
+        "RECEIPTS",
+        "REPORTS",
+        "TESTS",
+        "TUI",
+        "DASHBOARDS",
+        "EYES",
+        "BLOCK",
+        "LESSONS",
+        "NEGATIVE_LESSONS"
+      ],
+      "missing_slots": [],
+      "evidence_counts": {
+        "residents": 113,
+        "schemas": 9,
+        "validators": 6,
+        "receipts": 8,
+        "reports": 10,
+        "matrices": 32
+      },
+      "major_gaps": [
+        "has WARP-status residents",
+        "has negative-example residents"
+      ]
+    },
+    "ASTRONOMICON": {
+      "organ_id": "ASTRONOMICON",
+      "path": "ORGANS/ASTRONOMICON",
+      "exists": true,
+      "scores": {
+        "physical_presence_score": 100.0,
+        "required_slot_score": 31.25,
+        "identity_score": 100.0,
+        "manifest_score": 0.0,
+        "schema_coverage_score": 100.0,
+        "validator_coverage_score": 50.0,
+        "receipt_coverage_score": 100.0,
+        "boundary_lifecycle_score": 100.0,
+        "observability_score": 25.0,
+        "trust_action_readiness_score": 75.0,
+        "organ_readiness_score": 67.19
+      },
+      "present_slots": [
+        "ORGAN_CARD.json",
+        "MATRICES",
+        "REPORTS",
+        "TESTS",
+        "BLOCK"
+      ],
+      "missing_slots": [
+        "README.md",
+        "MANIFEST.json",
+        "FUNCTIONS.md",
+        "SCHEMAS",
+        "VALIDATORS",
+        "RECEIPTS",
+        "TUI",
+        "DASHBOARDS",
+        "EYES",
+        "LESSONS",
+        "NEGATIVE_LESSONS"
+      ],
+      "evidence_counts": {
+        "residents": 1000,
+        "schemas": 39,
+        "validators": 1,
+        "receipts": 167,
+        "reports": 130,
+        "matrices": 16
+      },
+      "major_gaps": [
+        "missing README.md",
+        "missing MANIFEST.json",
+        "missing FUNCTIONS.md",
+        "has quarantine residents",
+        "has negative-example residents"
+      ]
+    },
+    "ADMINISTRATUM": {
+      "organ_id": "ADMINISTRATUM",
+      "path": "ORGANS/ADMINISTRATUM",
+      "exists": true,
+      "scores": {
+        "physical_presence_score": 100.0,
+        "required_slot_score": 31.25,
+        "identity_score": 100.0,
+        "manifest_score": 0.0,
+        "schema_coverage_score": 100.0,
+        "validator_coverage_score": 0.0,
+        "receipt_coverage_score": 100.0,
+        "boundary_lifecycle_score": 100.0,
+        "observability_score": 25.0,
+        "trust_action_readiness_score": 50.0,
+        "organ_readiness_score": 58.44
+      },
+      "present_slots": [
+        "ORGAN_CARD.json",
+        "MATRICES",
+        "REPORTS",
+        "TESTS",
+        "BLOCK"
+      ],
+      "missing_slots": [
+        "README.md",
+        "MANIFEST.json",
+        "FUNCTIONS.md",
+        "SCHEMAS",
+        "VALIDATORS",
+        "RECEIPTS",
+        "TUI",
+        "DASHBOARDS",
+        "EYES",
+        "LESSONS",
+        "NEGATIVE_LESSONS"
+      ],
+      "evidence_counts": {
+        "residents": 857,
+        "schemas": 30,
+        "validators": 0,
+        "receipts": 257,
+        "reports": 134,
+        "matrices": 8
+      },
+      "major_gaps": [
+        "missing README.md",
+        "missing MANIFEST.json",
+        "missing FUNCTIONS.md",
+        "no validator evidence",
+        "has quarantine residents",
+        "has negative-example residents"
+      ]
+    },
+    "DOCTRINARIUM": {
+      "organ_id": "DOCTRINARIUM",
+      "path": "ORGANS/DOCTRINARIUM",
+      "exists": true,
+      "scores": {
+        "physical_presence_score": 100.0,
+        "required_slot_score": 31.25,
+        "identity_score": 100.0,
+        "manifest_score": 0.0,
+        "schema_coverage_score": 33.33,
+        "validator_coverage_score": 0.0,
+        "receipt_coverage_score": 100.0,
+        "boundary_lifecycle_score": 100.0,
+        "observability_score": 0.0,
+        "trust_action_readiness_score": 50.0,
+        "organ_readiness_score": 50.52
+      },
+      "present_slots": [
+        "ORGAN_CARD.json",
+        "MATRICES",
+        "SCHEMAS",
+        "TESTS",
+        "BLOCK"
+      ],
+      "missing_slots": [
+        "README.md",
+        "MANIFEST.json",
+        "FUNCTIONS.md",
+        "VALIDATORS",
+        "RECEIPTS",
+        "REPORTS",
+        "TUI",
+        "DASHBOARDS",
+        "EYES",
+        "LESSONS",
+        "NEGATIVE_LESSONS"
+      ],
+      "evidence_counts": {
+        "residents": 138,
+        "schemas": 1,
+        "validators": 0,
+        "receipts": 4,
+        "reports": 2,
+        "matrices": 10
+      },
+      "major_gaps": [
+        "missing README.md",
+        "missing MANIFEST.json",
+        "missing FUNCTIONS.md",
+        "no validator evidence",
+        "has negative-example residents"
+      ]
+    },
+    "MECHANICUS": {
+      "organ_id": "MECHANICUS",
+      "path": "ORGANS/MECHANICUS",
+      "exists": true,
+      "scores": {
+        "physical_presence_score": 100.0,
+        "required_slot_score": 43.75,
+        "identity_score": 100.0,
+        "manifest_score": 0.0,
+        "schema_coverage_score": 100.0,
+        "validator_coverage_score": 0.0,
+        "receipt_coverage_score": 100.0,
+        "boundary_lifecycle_score": 100.0,
+        "observability_score": 25.0,
+        "trust_action_readiness_score": 50.0,
+        "organ_readiness_score": 60.31
+      },
+      "present_slots": [
+        "README.md",
+        "ORGAN_CARD.json",
+        "MATRICES",
+        "SCHEMAS",
+        "REPORTS",
+        "TESTS",
+        "BLOCK"
+      ],
+      "missing_slots": [
+        "MANIFEST.json",
+        "FUNCTIONS.md",
+        "VALIDATORS",
+        "RECEIPTS",
+        "TUI",
+        "DASHBOARDS",
+        "EYES",
+        "LESSONS",
+        "NEGATIVE_LESSONS"
+      ],
+      "evidence_counts": {
+        "residents": 1194,
+        "schemas": 23,
+        "validators": 0,
+        "receipts": 131,
+        "reports": 160,
+        "matrices": 23
+      },
+      "major_gaps": [
+        "missing MANIFEST.json",
+        "missing FUNCTIONS.md",
+        "no validator evidence",
+        "has quarantine residents",
+        "has negative-example residents"
+      ]
+    },
+    "INQUISITION": {
+      "organ_id": "INQUISITION",
+      "path": "ORGANS/INQUISITION",
+      "exists": true,
+      "scores": {
+        "physical_presence_score": 100.0,
+        "required_slot_score": 31.25,
+        "identity_score": 100.0,
+        "manifest_score": 0.0,
+        "schema_coverage_score": 33.33,
+        "validator_coverage_score": 0.0,
+        "receipt_coverage_score": 100.0,
+        "boundary_lifecycle_score": 100.0,
+        "observability_score": 25.0,
+        "trust_action_readiness_score": 50.0,
+        "organ_readiness_score": 51.77
+      },
+      "present_slots": [
+        "ORGAN_CARD.json",
+        "MATRICES",
+        "REPORTS",
+        "TESTS",
+        "BLOCK"
+      ],
+      "missing_slots": [
+        "README.md",
+        "MANIFEST.json",
+        "FUNCTIONS.md",
+        "SCHEMAS",
+        "VALIDATORS",
+        "RECEIPTS",
+        "TUI",
+        "DASHBOARDS",
+        "EYES",
+        "LESSONS",
+        "NEGATIVE_LESSONS"
+      ],
+      "evidence_counts": {
+        "residents": 274,
+        "schemas": 1,
+        "validators": 0,
+        "receipts": 35,
+        "reports": 68,
+        "matrices": 28
+      },
+      "major_gaps": [
+        "missing README.md",
+        "missing MANIFEST.json",
+        "missing FUNCTIONS.md",
+        "no validator evidence",
+        "has quarantine residents",
+        "has negative-example residents"
+      ]
+    },
+    "CUSTODES": {
+      "organ_id": "CUSTODES",
+      "path": "ORGANS/CUSTODES",
+      "exists": true,
+      "scores": {
+        "physical_presence_score": 100.0,
+        "required_slot_score": 6.25,
+        "identity_score": 100.0,
+        "manifest_score": 0.0,
+        "schema_coverage_score": 0.0,
+        "validator_coverage_score": 0.0,
+        "receipt_coverage_score": 100.0,
+        "boundary_lifecycle_score": 100.0,
+        "observability_score": 0.0,
+        "trust_action_readiness_score": 50.0,
+        "organ_readiness_score": 43.44
+      },
+      "present_slots": [
+        "ORGAN_CARD.json"
+      ],
+      "missing_slots": [
+        "README.md",
+        "MANIFEST.json",
+        "FUNCTIONS.md",
+        "MATRICES",
+        "SCHEMAS",
+        "VALIDATORS",
+        "RECEIPTS",
+        "REPORTS",
+        "TESTS",
+        "TUI",
+        "DASHBOARDS",
+        "EYES",
+        "BLOCK",
+        "LESSONS",
+        "NEGATIVE_LESSONS"
+      ],
+      "evidence_counts": {
+        "residents": 18,
+        "schemas": 0,
+        "validators": 0,
+        "receipts": 9,
+        "reports": 0,
+        "matrices": 2
+      },
+      "major_gaps": [
+        "missing README.md",
+        "missing MANIFEST.json",
+        "missing FUNCTIONS.md",
+        "no schema evidence",
+        "no validator evidence",
+        "has quarantine residents"
+      ]
+    },
+    "STRATEGIUM": {
+      "organ_id": "STRATEGIUM",
+      "path": "ORGANS/STRATEGIUM",
+      "exists": true,
+      "scores": {
+        "physical_presence_score": 100.0,
+        "required_slot_score": 18.75,
+        "identity_score": 100.0,
+        "manifest_score": 0.0,
+        "schema_coverage_score": 100.0,
+        "validator_coverage_score": 0.0,
+        "receipt_coverage_score": 100.0,
+        "boundary_lifecycle_score": 100.0,
+        "observability_score": 0.0,
+        "trust_action_readiness_score": 50.0,
+        "organ_readiness_score": 55.31
+      },
+      "present_slots": [
+        "ORGAN_CARD.json",
+        "MATRICES",
+        "BLOCK"
+      ],
+      "missing_slots": [
+        "README.md",
+        "MANIFEST.json",
+        "FUNCTIONS.md",
+        "SCHEMAS",
+        "VALIDATORS",
+        "RECEIPTS",
+        "REPORTS",
+        "TESTS",
+        "TUI",
+        "DASHBOARDS",
+        "EYES",
+        "LESSONS",
+        "NEGATIVE_LESSONS"
+      ],
+      "evidence_counts": {
+        "residents": 87,
+        "schemas": 3,
+        "validators": 0,
+        "receipts": 12,
+        "reports": 2,
+        "matrices": 18
+      },
+      "major_gaps": [
+        "missing README.md",
+        "missing MANIFEST.json",
+        "missing FUNCTIONS.md",
+        "no validator evidence",
+        "has quarantine residents",
+        "has negative-example residents"
+      ]
+    },
+    "SCHOLA_IMPERIALIS": {
+      "organ_id": "SCHOLA_IMPERIALIS",
+      "path": "ORGANS/SCHOLA_IMPERIALIS",
+      "exists": true,
+      "scores": {
+        "physical_presence_score": 100.0,
+        "required_slot_score": 25.0,
+        "identity_score": 100.0,
+        "manifest_score": 0.0,
+        "schema_coverage_score": 0.0,
+        "validator_coverage_score": 0.0,
+        "receipt_coverage_score": 33.33,
+        "boundary_lifecycle_score": 100.0,
+        "observability_score": 0.0,
+        "trust_action_readiness_score": 50.0,
+        "organ_readiness_score": 39.58
+      },
+      "present_slots": [
+        "ORGAN_CARD.json",
+        "MATRICES",
+        "BLOCK",
+        "LESSONS"
+      ],
+      "missing_slots": [
+        "README.md",
+        "MANIFEST.json",
+        "FUNCTIONS.md",
+        "SCHEMAS",
+        "VALIDATORS",
+        "RECEIPTS",
+        "REPORTS",
+        "TESTS",
+        "TUI",
+        "DASHBOARDS",
+        "EYES",
+        "NEGATIVE_LESSONS"
+      ],
+      "evidence_counts": {
+        "residents": 43,
+        "schemas": 0,
+        "validators": 0,
+        "receipts": 1,
+        "reports": 0,
+        "matrices": 5
+      },
+      "major_gaps": [
+        "missing README.md",
+        "missing MANIFEST.json",
+        "missing FUNCTIONS.md",
+        "no schema evidence",
+        "no validator evidence"
+      ]
+    },
+    "OFFICIO_AGENTIS": {
+      "organ_id": "OFFICIO_AGENTIS",
+      "path": "ORGANS/OFFICIO_AGENTIS",
+      "exists": true,
+      "scores": {
+        "physical_presence_score": 100.0,
+        "required_slot_score": 18.75,
+        "identity_score": 100.0,
+        "manifest_score": 0.0,
+        "schema_coverage_score": 0.0,
+        "validator_coverage_score": 0.0,
+        "receipt_coverage_score": 33.33,
+        "boundary_lifecycle_score": 100.0,
+        "observability_score": 0.0,
+        "trust_action_readiness_score": 50.0,
+        "organ_readiness_score": 38.65
+      },
+      "present_slots": [
+        "ORGAN_CARD.json",
+        "MATRICES",
+        "BLOCK"
+      ],
+      "missing_slots": [
+        "README.md",
+        "MANIFEST.json",
+        "FUNCTIONS.md",
+        "SCHEMAS",
+        "VALIDATORS",
+        "RECEIPTS",
+        "REPORTS",
+        "TESTS",
+        "TUI",
+        "DASHBOARDS",
+        "EYES",
+        "LESSONS",
+        "NEGATIVE_LESSONS"
+      ],
+      "evidence_counts": {
+        "residents": 55,
+        "schemas": 0,
+        "validators": 0,
+        "receipts": 1,
+        "reports": 0,
+        "matrices": 7
+      },
+      "major_gaps": [
+        "missing README.md",
+        "missing MANIFEST.json",
+        "missing FUNCTIONS.md",
+        "no schema evidence",
+        "no validator evidence"
+      ]
+    }
+  },
+  "next_attention": [
+    {
+      "priority": 10,
+      "area": "Great Nine README passports",
+      "reason": "Missing README: ASTRONOMICON, ADMINISTRATUM, DOCTRINARIUM, INQUISITION, CUSTODES, STRATEGIUM, SCHOLA_IMPERIALIS, OFFICIO_AGENTIS",
+      "recommended_patch_family": "ORGAN-README-PASSPORT-STAMP-0001"
+    },
+    {
+      "priority": 20,
+      "area": "Great Nine manifests",
+      "reason": "Missing MANIFEST: ASTRONOMICON, ADMINISTRATUM, DOCTRINARIUM, MECHANICUS, INQUISITION, CUSTODES, STRATEGIUM, SCHOLA_IMPERIALIS, OFFICIO_AGENTIS",
+      "recommended_patch_family": "ORGAN-MANIFEST-STAMP-0001"
+    },
+    {
+      "priority": 40,
+      "area": "Custodes trust layer",
+      "reason": "Custodes readiness is low; organ validator trust cannot be audited deeply yet.",
+      "recommended_patch_family": "CUSTODES-TRUST-LAYER-0001"
+    },
+    {
+      "priority": 50,
+      "area": "Schema-validator coverage",
+      "reason": "Schema count exceeds validator count; declaration/evidence gap is visible.",
+      "recommended_patch_family": "SCHEMA-VALIDATOR-COVERAGE-0001"
+    },
+    {
+      "priority": 60,
+      "area": "Lowest organ readiness: OFFICIO_AGENTIS",
+      "reason": "OFFICIO_AGENTIS readiness is 38.65%.",
+      "recommended_patch_family": "OFFICIO_AGENTIS-GAP-CLOSURE-0001"
+    }
+  ],
+  "input_hashes_sha256": {
+    "ORGANS/THRONE/MATRICES/THRONE_TARGET_V1_MATRIX_V0_1.json": "92bbe341f6bbd7a33f67e9d5a371d846f3f27151ad02f98d480227865bff5540",
+    "ORGANS/THRONE/MATRICES/THRONE_TARGET_GAP_SCORING_MATRIX_V0_1.json": "0fed805a2fc888e51eedd0f27e9026e7a6f2e962f50ac41d9bb30b740ace8670",
+    "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_CENSUS_V0_1.json": "3726555f5ee27f844de6f60087625793dd650c8df080ab5c9def196f85ecadf9",
+    "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_SUMMARY_V0_1.json": "902e5b1fb9d8f6e7a938ef081cebf475221a1e29e42935498ebd41731de04592",
+    "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_GAP_MAP_V0_1.json": "6b9d945d073c968806c4ea748703194f6ced1565b72f14a86fffdfc8b0529bfb"
+  },
+  "checks": [
+    {
+      "name": "required_inputs_exist",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "input_json_parse",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "census_has_residents",
+      "status": "PASS",
+      "details": {
+        "resident_count": 5481
+      }
+    },
+    {
+      "name": "scoring_matrix_has_weights",
+      "status": "PASS",
+      "details": {
+        "weights": {
+          "physical_presence_score": 10,
+          "required_slot_score": 15,
+          "identity_score": 10,
+          "manifest_score": 10,
+          "schema_coverage_score": 10,
+          "validator_coverage_score": 15,
+          "receipt_coverage_score": 10,
+          "boundary_lifecycle_score": 10,
+          "observability_score": 5,
+          "trust_action_readiness_score": 5
+        }
+      }
+    },
+    {
+      "name": "target_matrix_exists_and_mentions_target",
+      "status": "PASS",
+      "details": {
+        "target_keys": [
+          "matrix_id",
+          "mode",
+          "validation_model",
+          "target_score",
+          "throne",
+          "great_nine"
+        ]
+      }
+    },
+    {
+      "name": "fake_green_guard_not_all_100",
+      "status": "PASS",
+      "details": {}
+    }
+  ],
+  "warnings": [
+    "Core readiness below target v1; this is expected and measured."
+  ],
+  "errors": [],
+  "meaning": "PASS_MEASURED means the target gap was measured, not that Imperium v1 is achieved."
+}

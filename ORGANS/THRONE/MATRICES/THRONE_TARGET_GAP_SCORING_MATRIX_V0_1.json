@@ -1,0 +1,55 @@
+{
+  "matrix_id": "THRONE_TARGET_GAP_SCORING_MATRIX_V0_1",
+  "status": "WARP_CANDIDATE",
+  "mode": "MEASURE_ONLY",
+  "validation_model": "TARGET_V1_VS_CURRENT_REALITY",
+  "score_scale": {
+    "min": 0,
+    "max": 100
+  },
+  "weights": {
+    "physical_presence_score": 10,
+    "required_slot_score": 15,
+    "identity_score": 10,
+    "manifest_score": 10,
+    "schema_coverage_score": 10,
+    "validator_coverage_score": 15,
+    "receipt_coverage_score": 10,
+    "boundary_lifecycle_score": 10,
+    "observability_score": 5,
+    "trust_action_readiness_score": 5
+  },
+  "required_slots": [
+    "README.md",
+    "ORGAN_CARD.json",
+    "MANIFEST.json",
+    "FUNCTIONS.md",
+    "MATRICES",
+    "SCHEMAS",
+    "VALIDATORS",
+    "RECEIPTS",
+    "REPORTS",
+    "TESTS",
+    "TUI",
+    "DASHBOARDS",
+    "EYES",
+    "BLOCK",
+    "LESSONS",
+    "NEGATIVE_LESSONS"
+  ],
+  "great_nine": [
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "DOCTRINARIUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "CUSTODES",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS",
+    "OFFICIO_AGENTIS"
+  ],
+  "core_subjects": [
+    "THRONE"
+  ],
+  "meaning": "Scores measure distance to target v1. Low score is a measured gap, not a validator failure."
+}

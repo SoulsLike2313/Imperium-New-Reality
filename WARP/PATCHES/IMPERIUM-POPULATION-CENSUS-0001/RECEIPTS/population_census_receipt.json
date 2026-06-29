@@ -3,7 +3,7 @@
   "task_id": "IMPERIUM-POPULATION-CENSUS-0001",
   "validator_id": "population_census_validator.v0_1.fix_0001",
   "verdict": "PASS",
-  "generated_at_utc": "2026-06-29T15:51:40Z",
+  "generated_at_utc": "2026-06-29T18:03:17Z",
   "mode": "WARP_VALIDATION",
   "fix_0001_applied": true,
   "organ_responsibility": {
@@ -21,99 +21,100 @@
     "summary_json": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_SUMMARY_V0_1.json",
     "gap_json": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_GAP_MAP_V0_1.json"
   },
-  "population_total": 5367,
+  "population_total": 5481,
   "summary": {
-    "population_total": 5367,
+    "population_total": 5481,
     "class_counts": {
       "ARCHIVE": 1,
       "BACKUP": 11,
       "CHARTER": 19,
       "CONSTITUTION": 4,
       "CONTRACT": 175,
-      "DASHBOARD": 1,
+      "DASHBOARD": 2,
       "DOCTRINE": 27,
-      "EYES_EXPORT": 16,
+      "EYES_EXPORT": 17,
       "FIXTURE": 22,
       "IDE_SOURCE": 29,
-      "MANIFEST": 229,
-      "MATRIX": 141,
+      "MANIFEST": 231,
+      "MATRIX": 173,
       "METRIC": 18,
-      "NEGATIVE_LESSON": 14,
-      "ORGAN_CARD": 11,
-      "ORGAN_README": 22,
+      "NEGATIVE_LESSON": 16,
+      "ORGAN_CARD": 15,
+      "ORGAN_README": 24,
       "PASSPORT": 70,
-      "PATCH_PACK": 13,
-      "RECEIPT": 945,
-      "REPORT": 743,
+      "PATCH_PACK": 37,
+      "RECEIPT": 953,
+      "REPORT": 753,
       "ROOT_CONFIG": 3,
       "ROOT_DOC": 1,
-      "ROOT_MANIFEST": 4,
-      "ROOT_SCRIPT": 4,
+      "ROOT_MANIFEST": 7,
+      "ROOT_SCRIPT": 7,
       "RUN_OUTPUT": 4,
-      "SCHEMA": 182,
+      "SCHEMA": 190,
       "TASK_PACK": 1579,
       "TEMPLATE": 110,
       "TOOL_CODE": 241,
-      "TUI": 11,
-      "UNKNOWN": 684,
-      "VALIDATOR": 33
+      "TUI": 12,
+      "UNKNOWN": 691,
+      "VALIDATOR": 39
     },
     "owner_counts": {
-      "ADMINISTRATUM": 854,
+      "ADMINISTRATUM": 857,
       "ASTRONOMICON": 1000,
       "CUSTODES": 18,
       "DOCTRINARIUM": 138,
       "INQUISITION": 274,
-      "MECHANICUS": 1191,
+      "MECHANICUS": 1194,
       "OFFICIO_AGENTIS": 55,
       "OWNER": 161,
       "SCHOLA_IMPERIALIS": 43,
       "STRATEGIUM": 87,
-      "THRONE": 5,
+      "THRONE": 113,
       "UNKNOWN": 1541
     },
     "status_counts": {
-      "ACTIVE": 5128,
+      "ACTIVE": 5183,
       "ARCHIVE": 46,
-      "NEGATIVE_EXAMPLE": 54,
+      "NEGATIVE_EXAMPLE": 55,
       "QUARANTINE": 107,
-      "WARP": 32
+      "WARP": 90
     },
     "root_zone_counts": {
       ".imperium_patch_backups": 14,
       "DOCTRINARIUM": 15,
-      "ORGANS": 2699,
+      "ORGANS": 2749,
       "REPORTS": 2062,
-      "ROOT": 12,
+      "ROOT": 18,
       "SCHEMAS": 6,
       "SUPPORT": 493,
-      "WARP": 32,
+      "WARP": 90,
       "_HARNESS": 34
     },
     "organ_group_counts": {
+      "CROWN_ORGAN": 50,
       "GOVERNANCE_ZONE": 64,
       "GREAT_NINE_ORGAN": 2357,
-      "NONE": 2668,
+      "NONE": 2732,
       "PLATFORM_TOOL_ORGAN": 272,
       "SPECIAL_RING": 6
     },
-    "known_owner_count": 3826,
+    "known_owner_count": 3940,
     "unknown_owner_count": 1541,
-    "known_class_count": 4683,
-    "unknown_class_count": 684,
-    "schema_count": 182,
-    "validator_count": 33,
-    "receipt_count": 945,
-    "report_count": 743,
-    "owner_coverage_score": 71.29,
-    "classification_coverage_score": 87.26,
-    "schema_to_validator_ratio": 0.181,
-    "validator_to_receipt_ratio": 28.636,
-    "receipt_to_report_ratio": 0.786,
-    "warp_debt_count": 32,
+    "known_class_count": 4790,
+    "unknown_class_count": 691,
+    "schema_count": 190,
+    "validator_count": 39,
+    "receipt_count": 953,
+    "report_count": 753,
+    "owner_coverage_score": 71.88,
+    "classification_coverage_score": 87.39,
+    "schema_to_validator_ratio": 0.205,
+    "validator_to_receipt_ratio": 24.436,
+    "receipt_to_report_ratio": 0.79,
+    "warp_debt_count": 90,
     "garbage_candidate_count": 0,
     "rogue_candidate_count": 0,
-    "root_level_resident_count": 12,
+    "root_level_resident_count": 18,
     "organ_passport_readiness": {
       "great_nine_organs_detected": 9,
       "organs_without_readme": 8,
@@ -147,7 +148,7 @@
       "name": "residents_is_non_empty_list",
       "status": "PASS",
       "details": {
-        "count": 5367
+        "count": 5481
       }
     },
     {
@@ -207,25 +208,25 @@
       "name": "scan_scope_count_matches_residents",
       "status": "PASS",
       "details": {
-        "scan_scope_total_files_scanned": 5367,
-        "resident_count": 5367
+        "scan_scope_total_files_scanned": 5481,
+        "resident_count": 5481
       }
     },
     {
       "name": "summary_counts_match_residents",
       "status": "PASS",
       "details": {
-        "summary_json_population_total": 5367,
-        "census_summary_population_total": 5367,
-        "resident_count": 5367
+        "summary_json_population_total": 5481,
+        "census_summary_population_total": 5481,
+        "resident_count": 5481
       }
     },
     {
       "name": "csv_row_count_matches_residents",
       "status": "PASS",
       "details": {
-        "csv_rows": 5367,
-        "resident_count": 5367
+        "csv_rows": 5481,
+        "resident_count": 5481
       }
     },
     {

@@ -1,0 +1,38 @@
+{
+  "matrix_id": "THRONE_KERNEL_BOUNDARY_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "THRONE",
+  "mode": "MEASURE_ONLY",
+  "purpose": "Define kernel, WARP, Reality, external product, and allowed returns.",
+  "required_sections": [
+    "zones",
+    "allowed_returns",
+    "forbidden_mutations",
+    "proof_requirements"
+  ],
+  "zones": {
+    "CORE": "trusted form",
+    "REALITY": "landed controlled state",
+    "WARP": "mutable staging",
+    "EXTERNAL_PRODUCT": "output outside core"
+  },
+  "allowed_returns": [
+    "receipt",
+    "report",
+    "lesson",
+    "metric",
+    "validated_reusable_template",
+    "validated_reusable_tool"
+  ],
+  "forbidden_mutations": [
+    "external product writes into core without WARP",
+    "tool becomes kernel without Throne verdict",
+    "servitor mutates core outside authority"
+  ],
+  "proof_requirements": [
+    "before_after_census_for_core_touching_work",
+    "receipt_for_allowed_return",
+    "throne_verdict_for_land"
+  ]
+}

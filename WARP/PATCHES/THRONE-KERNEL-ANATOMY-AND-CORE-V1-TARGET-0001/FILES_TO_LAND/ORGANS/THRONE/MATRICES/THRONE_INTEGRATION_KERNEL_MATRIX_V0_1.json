@@ -1,0 +1,42 @@
+{
+  "matrix_id": "THRONE_INTEGRATION_KERNEL_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "THRONE",
+  "mode": "MEASURE_ONLY",
+  "purpose": "Define how future tools/APIs/CLI/adapters attach without becoming kernel by accident.",
+  "required_sections": [
+    "integration_states",
+    "admission_path",
+    "kernel_rights_rule"
+  ],
+  "integration_states": [
+    "PROPOSED",
+    "WARP_TESTING",
+    "VALIDATED_TOOL",
+    "TRUSTED_SERVICE",
+    "KERNEL_ADJACENT",
+    "KERNEL_COMPONENT"
+  ],
+  "admission_path": [
+    "integration_proposal",
+    "adapter_spec",
+    "warp_harness",
+    "schema",
+    "validator",
+    "inquisition_check",
+    "custodes_trust_check",
+    "throne_verdict",
+    "administratum_registry"
+  ],
+  "kernel_rights_rule": [
+    "tool_exists_does_not_mean_tool_is_kernel",
+    "tool_useful_does_not_mean_tool_is_trusted",
+    "tool_trusted_does_not_mean_tool_may_mutate_core",
+    "kernel_rights_require_explicit_throne_verdict"
+  ],
+  "future_linux_execution_environment": {
+    "target": "Linux-only clean/private development environment later",
+    "v1_requirement": "document boundary, no implementation requirement now"
+  }
+}

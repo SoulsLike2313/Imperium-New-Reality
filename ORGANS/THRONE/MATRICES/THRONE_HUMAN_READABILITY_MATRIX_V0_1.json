@@ -1,0 +1,42 @@
+{
+  "matrix_id": "THRONE_HUMAN_READABILITY_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "THRONE",
+  "mode": "MEASURE_ONLY",
+  "purpose": "Define how machine state becomes human-readable TUI/dashboard state.",
+  "required_sections": [
+    "tui_v1_must",
+    "human_translation_fields",
+    "non_goals"
+  ],
+  "tui_v1_must": [
+    "task_list",
+    "task_lifecycle_status",
+    "current_organ_or_stage",
+    "pass_fail_criteria",
+    "fix_loop_state",
+    "receipts",
+    "export_zip",
+    "context_compression",
+    "throne_warning_block_panel"
+  ],
+  "human_translation_fields": [
+    "what_task_was_accepted",
+    "where_it_is_in_lifecycle",
+    "which_organ_is_responsible",
+    "what_passed",
+    "what_failed",
+    "what_receipts_exist",
+    "what_throne_verdict_is",
+    "what_external_product_was_created",
+    "what_returned_to_core",
+    "whether_no_core_mutation_holds",
+    "next_attention_area"
+  ],
+  "non_goals": [
+    "no_Eyes_visual_refit",
+    "no_graph_viewer_geometry_change",
+    "no_IDE_requirement_yet"
+  ]
+}

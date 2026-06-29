@@ -1,0 +1,34 @@
+{
+  "matrix_id": "THRONE_CORE_V1_READINESS_SCORING_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "THRONE",
+  "mode": "MEASURE_ONLY",
+  "purpose": "Define dimensions by which Throne later measures Core v1 readiness.",
+  "required_sections": [
+    "dimensions",
+    "v1_gate_logic"
+  ],
+  "dimensions": {
+    "self_description": 10,
+    "kernel_boundary": 10,
+    "request_packet": 10,
+    "object_registry": 10,
+    "organ_service_stack": 10,
+    "servitor_boundary": 10,
+    "evidence_chain": 10,
+    "trust_boundary": 10,
+    "integration_kernel": 5,
+    "human_readability": 10,
+    "no_core_mutation": 5
+  },
+  "v1_gate_logic": {
+    "benchmark_deferred": true,
+    "benchmark_required_near_v1": true,
+    "great_nine_required_before_benchmark": true,
+    "workflow_demonstration_required": true,
+    "external_product_required": true,
+    "throne_verdict_required": true,
+    "no_core_mutation_required": true
+  }
+}

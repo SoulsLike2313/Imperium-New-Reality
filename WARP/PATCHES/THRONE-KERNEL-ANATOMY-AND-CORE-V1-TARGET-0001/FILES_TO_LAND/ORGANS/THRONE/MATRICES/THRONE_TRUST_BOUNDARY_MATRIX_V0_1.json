@@ -1,0 +1,33 @@
+{
+  "matrix_id": "THRONE_TRUST_BOUNDARY_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "THRONE",
+  "mode": "MEASURE_ONLY",
+  "purpose": "Define trust chain between organ verdicts, Inquisition, Custodes, and Throne.",
+  "required_sections": [
+    "trust_layers",
+    "required_questions",
+    "verdict_rules"
+  ],
+  "trust_layers": [
+    "organ_self_verdict",
+    "inquisition_adversarial_check",
+    "custodes_trust_audit",
+    "throne_final_verdict"
+  ],
+  "required_questions": [
+    "did_organ_act_within_authority",
+    "was_validator_real",
+    "was_receipt_generated_from_actual_check",
+    "was_dirty_or_hardcoded_path_found",
+    "does_evidence_support_verdict",
+    "does_task_respect_core_boundary"
+  ],
+  "verdict_rules": {
+    "organ_pass_without_receipt": "untrusted",
+    "validator_without_test_or_real_check": "weak",
+    "receipt_without_hashes": "weak",
+    "throne_may_measure_gap_without_blocking_in_MEASURE_ONLY": true
+  }
+}

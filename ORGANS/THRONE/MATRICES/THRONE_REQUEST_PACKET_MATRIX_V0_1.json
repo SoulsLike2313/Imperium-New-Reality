@@ -1,0 +1,46 @@
+{
+  "matrix_id": "THRONE_REQUEST_PACKET_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "THRONE",
+  "mode": "MEASURE_ONLY",
+  "purpose": "Define task pack and patch pack as request packets.",
+  "required_sections": [
+    "packet_types",
+    "task_pack_required_fields",
+    "patch_pack_required_fields",
+    "routing_rules"
+  ],
+  "packet_types": {
+    "TASK_PACK": "registered request for servitor/code-agent execution",
+    "PATCH_PACK": "manual/chat-agent assembled delta"
+  },
+  "task_pack_required_fields": [
+    "task_id",
+    "owner_intent",
+    "micro_prompt",
+    "product_type",
+    "context_request",
+    "pass_criteria",
+    "servitor_boundary",
+    "warp_workspace",
+    "expected_receipts",
+    "fix_loop_policy",
+    "no_core_mutation_policy"
+  ],
+  "patch_pack_required_fields": [
+    "patch_id",
+    "owner_intent",
+    "files_to_land",
+    "validation_plan",
+    "receipts",
+    "land_policy",
+    "abort_policy"
+  ],
+  "routing_rules": [
+    "task_pack_enters_astronomicon",
+    "task_registration_belongs_to_administratum",
+    "servitor_must_not_execute_unregistered_task",
+    "patch_pack_is_not_servitor_work_by_default"
+  ]
+}

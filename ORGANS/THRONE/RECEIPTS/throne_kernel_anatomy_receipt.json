@@ -1,0 +1,126 @@
+{
+  "receipt_id": "receipt.throne_kernel_anatomy.v0_1",
+  "task_id": "THRONE-KERNEL-ANATOMY-AND-CORE-V1-TARGET-0001",
+  "validator_id": "throne_kernel_anatomy_validator.v0_1",
+  "verdict": "PASS_TARGET_DEFINED",
+  "generated_at_utc": "2026-06-29T18:03:05Z",
+  "mode": "MEASURE_ONLY",
+  "matrices_checked": [
+    "THRONE_KERNEL_ANATOMY_MATRIX_V0_1.json",
+    "THRONE_CORE_V1_DEFINITION_MATRIX_V0_1.json",
+    "THRONE_KERNEL_BOUNDARY_MATRIX_V0_1.json",
+    "THRONE_REQUEST_PACKET_MATRIX_V0_1.json",
+    "THRONE_OBJECT_REGISTRY_MATRIX_V0_1.json",
+    "THRONE_ORGAN_SERVICE_STACK_MATRIX_V0_1.json",
+    "THRONE_SERVITOR_EXECUTION_BOUNDARY_MATRIX_V0_1.json",
+    "THRONE_EVIDENCE_CHAIN_MATRIX_V0_1.json",
+    "THRONE_TRUST_BOUNDARY_MATRIX_V0_1.json",
+    "THRONE_INTEGRATION_KERNEL_MATRIX_V0_1.json",
+    "THRONE_HUMAN_READABILITY_MATRIX_V0_1.json",
+    "THRONE_CORE_V1_READINESS_SCORING_MATRIX_V0_1.json"
+  ],
+  "matrix_hashes_sha256": {
+    "ORGANS\\THRONE\\MATRICES\\THRONE_KERNEL_ANATOMY_MATRIX_V0_1.json": "4190f87715fd57f3794c5bce5fd5f8d222dcd2aa19447ade09b2fd57ab998b1b",
+    "ORGANS\\THRONE\\MATRICES\\THRONE_CORE_V1_DEFINITION_MATRIX_V0_1.json": "12852116610d41ed88806f6d4e6510a83969b75d4d0b9f68e2c6c5fc00981774",
+    "ORGANS\\THRONE\\MATRICES\\THRONE_KERNEL_BOUNDARY_MATRIX_V0_1.json": "7d6566e0b7639928cc20e8e827c4de9e8aa2a3f2a2c0f3c6509e124234e1e1b3",
+    "ORGANS\\THRONE\\MATRICES\\THRONE_REQUEST_PACKET_MATRIX_V0_1.json": "c490c1dc4def8de81c97d78e4e91e6900234a65a30e1fb6a6f012afd68e911d9",
+    "ORGANS\\THRONE\\MATRICES\\THRONE_OBJECT_REGISTRY_MATRIX_V0_1.json": "736324417efa583150f92bba6b4ad28b33049b3fcbd0857e4bb9fa87d0502ef9",
+    "ORGANS\\THRONE\\MATRICES\\THRONE_ORGAN_SERVICE_STACK_MATRIX_V0_1.json": "5d1039a084ab1992caa1ef3a60d7fa7a3b9f4081c4fa81ae911ec72f47f0ed68",
+    "ORGANS\\THRONE\\MATRICES\\THRONE_SERVITOR_EXECUTION_BOUNDARY_MATRIX_V0_1.json": "def81aa109fac5b3c85ee34e04252036341a04c03a48bbb8a1f4beb54e64ee88",
+    "ORGANS\\THRONE\\MATRICES\\THRONE_EVIDENCE_CHAIN_MATRIX_V0_1.json": "29a1c5b2e44e2cb28bb7aa30e86f94b7752f0b8e6a6dd8832ef00b60216e888a",
+    "ORGANS\\THRONE\\MATRICES\\THRONE_TRUST_BOUNDARY_MATRIX_V0_1.json": "153fd66965e22d68aece5e4f2f6d94ea646eae0351dda24b22312227a806673d",
+    "ORGANS\\THRONE\\MATRICES\\THRONE_INTEGRATION_KERNEL_MATRIX_V0_1.json": "1ece32510a23af29f01a8ff6bd2189502196a6a5b7066d95d3cc9606e94d2e6b",
+    "ORGANS\\THRONE\\MATRICES\\THRONE_HUMAN_READABILITY_MATRIX_V0_1.json": "f4650e23495e7668dc16366aea69f92529c6f26e8bfa284dab3708d85218bc6d",
+    "ORGANS\\THRONE\\MATRICES\\THRONE_CORE_V1_READINESS_SCORING_MATRIX_V0_1.json": "645b44a4a0e0b66164ae8b24c3f76d54b39dc75c4b2148200b5eede0ef5168c3"
+  },
+  "checks": [
+    {
+      "name": "required_matrices_exist",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "required_matrices_parse_json",
+      "status": "PASS",
+      "details": {
+        "malformed": []
+      }
+    },
+    {
+      "name": "required_matrix_sections_present",
+      "status": "PASS",
+      "details": {
+        "section_errors": []
+      }
+    },
+    {
+      "name": "core_v1_self_knowledge_doc_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS\\THRONE\\SELF_KNOWLEDGE\\CORE_V1_TARGET.md"
+      }
+    },
+    {
+      "name": "required_concepts_present",
+      "status": "PASS",
+      "details": {
+        "validated_hybrid_meta_kernel": true,
+        "TASK_PACK": true,
+        "PATCH_PACK": true,
+        "no_core_mutation": true,
+        "servitor": true,
+        "evidence": true,
+        "trust": true,
+        "throne_verdict": true,
+        "human_readability": true,
+        "benchmark_deferred": true,
+        "great_nine_required_before_benchmark": true
+      }
+    },
+    {
+      "name": "benchmark_explicitly_deferred_until_ready",
+      "status": "PASS",
+      "details": {
+        "v1_gate": {
+          "external_product_required": true,
+          "validation_required": true,
+          "fix_loop_required": true,
+          "throne_verdict_required": true,
+          "tui_visibility_required": true,
+          "no_core_mutation_required": true,
+          "benchmark_required_later": true,
+          "benchmark_not_now": true
+        },
+        "benchmark_policy": {
+          "status": "DEFERRED_UNTIL_GREAT_NINE_AND_WORKFLOW_READY"
+        }
+      }
+    },
+    {
+      "name": "no_core_mutation_boundary_defined",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "tui_v1_minimum_present",
+      "status": "PASS",
+      "details": {
+        "missing_tui": []
+      }
+    },
+    {
+      "name": "servitor_bound_to_task_pack",
+      "status": "PASS",
+      "details": {
+        "servitor_identity": {
+          "v1_form": "CLI/code-agent class such as Codex/Grok/Claude Code",
+          "works_only_from": "TASK_PACK"
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "meaning": "PASS_TARGET_DEFINED means Core v1 target anatomy is defined enough for later deeper validators; it does not mean Core v1 is achieved."
+}

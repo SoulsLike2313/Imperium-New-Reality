@@ -3,12 +3,12 @@
 task_id: `IMPERIUM-POPULATION-CENSUS-0001`  
 validator_id: `population_census_validator.v0_1.fix_0001`  
 verdict: `PASS`  
-generated_at_utc: `2026-06-29T15:51:40Z`  
+generated_at_utc: `2026-06-29T18:03:17Z`  
 fix: `0001`
 
 ## Population
 
-population_total: `5367`
+population_total: `5481`
 
 ## Checks
 

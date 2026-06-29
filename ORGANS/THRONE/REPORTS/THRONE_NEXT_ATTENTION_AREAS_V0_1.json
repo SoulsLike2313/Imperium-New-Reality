@@ -1,0 +1,32 @@
+[
+  {
+    "priority": 10,
+    "area": "Great Nine README passports",
+    "reason": "Missing README: ASTRONOMICON, ADMINISTRATUM, DOCTRINARIUM, INQUISITION, CUSTODES, STRATEGIUM, SCHOLA_IMPERIALIS, OFFICIO_AGENTIS",
+    "recommended_patch_family": "ORGAN-README-PASSPORT-STAMP-0001"
+  },
+  {
+    "priority": 20,
+    "area": "Great Nine manifests",
+    "reason": "Missing MANIFEST: ASTRONOMICON, ADMINISTRATUM, DOCTRINARIUM, MECHANICUS, INQUISITION, CUSTODES, STRATEGIUM, SCHOLA_IMPERIALIS, OFFICIO_AGENTIS",
+    "recommended_patch_family": "ORGAN-MANIFEST-STAMP-0001"
+  },
+  {
+    "priority": 40,
+    "area": "Custodes trust layer",
+    "reason": "Custodes readiness is low; organ validator trust cannot be audited deeply yet.",
+    "recommended_patch_family": "CUSTODES-TRUST-LAYER-0001"
+  },
+  {
+    "priority": 50,
+    "area": "Schema-validator coverage",
+    "reason": "Schema count exceeds validator count; declaration/evidence gap is visible.",
+    "recommended_patch_family": "SCHEMA-VALIDATOR-COVERAGE-0001"
+  },
+  {
+    "priority": 60,
+    "area": "Lowest organ readiness: OFFICIO_AGENTIS",
+    "reason": "OFFICIO_AGENTIS readiness is 38.65%.",
+    "recommended_patch_family": "OFFICIO_AGENTIS-GAP-CLOSURE-0001"
+  }
+]

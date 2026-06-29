@@ -1,0 +1,47 @@
+{
+  "matrix_id": "THRONE_ORGAN_SERVICE_STACK_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "THRONE",
+  "mode": "MEASURE_ONLY",
+  "purpose": "Define broad organ pipeline as service stack.",
+  "required_sections": [
+    "default_task_stack",
+    "default_patch_stack",
+    "stack_law"
+  ],
+  "default_task_stack": [
+    "OWNER_INTENT",
+    "LOGOS_PRIME_FORMULATION",
+    "ASTRONOMICON_INTAKE",
+    "ADMINISTRATUM_REGISTRATION",
+    "ADMINISTRATUM_CONTEXT_PACK",
+    "OFFICIO_AGENTIS_SERVITOR_AUTHORITY",
+    "MECHANICUS_EXECUTION_HARNESS",
+    "WARP_EXECUTION",
+    "ORGAN_VALIDATION",
+    "INQUISITION_DIRT_CHECK",
+    "CUSTODES_TRUST_CHECK",
+    "THRONE_VERDICT",
+    "EXTERNAL_PRODUCT_EXPORT_OR_LAND_OR_ABORT",
+    "ADMINISTRATUM_RECEIPT_REGISTRY",
+    "SCHOLA_LESSONS",
+    "STRATEGIUM_NEXT_ATTENTION"
+  ],
+  "default_patch_stack": [
+    "OWNER_INTENT",
+    "LOGOS_PRIME_PATCH_FORMULATION",
+    "WARP_PATCH",
+    "VALIDATION",
+    "RECEIPT",
+    "THRONE_OR_OWNER_REVIEW",
+    "LAND_OR_ABORT"
+  ],
+  "stack_law": [
+    "organs_do_not_replace_throne",
+    "throne_does_not_replace_organs",
+    "custodes_validates_trust",
+    "inquisition_attacks_false_green",
+    "administratum_registers_evidence"
+  ]
+}

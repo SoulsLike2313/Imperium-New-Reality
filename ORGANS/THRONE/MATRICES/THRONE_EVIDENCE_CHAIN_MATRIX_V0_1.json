@@ -1,0 +1,41 @@
+{
+  "matrix_id": "THRONE_EVIDENCE_CHAIN_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "THRONE",
+  "mode": "MEASURE_ONLY",
+  "purpose": "Define evidence chain from declaration to verdict.",
+  "required_sections": [
+    "chain",
+    "minimum_evidence",
+    "fake_green_guards"
+  ],
+  "chain": [
+    "doctrine_or_matrix",
+    "schema",
+    "validator",
+    "test_or_real_check",
+    "receipt",
+    "report",
+    "administratum_registry",
+    "inquisition_check",
+    "custodes_trust_check",
+    "throne_verdict"
+  ],
+  "minimum_evidence": [
+    "actual_file_hashes",
+    "parsed_json_or_text_check",
+    "exit_code_or_verdict",
+    "error_list",
+    "input_hashes",
+    "output_paths",
+    "generated_at_utc"
+  ],
+  "fake_green_guards": [
+    "no_hardcoded_pass",
+    "fail_on_missing_required_inputs",
+    "fail_on_malformed_json",
+    "fail_on_duplicate_identity",
+    "fail_on_output_without_evidence"
+  ]
+}

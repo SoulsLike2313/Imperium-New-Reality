@@ -1,0 +1,43 @@
+{
+  "matrix_id": "THRONE_SERVITOR_EXECUTION_BOUNDARY_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "THRONE",
+  "mode": "MEASURE_ONLY",
+  "purpose": "Define v1 servitor as strict CLI/code-agent class bounded by task pack.",
+  "required_sections": [
+    "servitor_identity",
+    "allowed",
+    "forbidden",
+    "stop_conditions"
+  ],
+  "servitor_identity": {
+    "v1_form": "CLI/code-agent class such as Codex/Grok/Claude Code",
+    "works_only_from": "TASK_PACK"
+  },
+  "allowed": [
+    "read_task_pack",
+    "use_context_pack",
+    "work_in_warp",
+    "produce_external_product_artifacts",
+    "produce_execution_log",
+    "request_organ_guidance_when_blocked"
+  ],
+  "forbidden": [
+    "execute_patch_pack_as_task",
+    "mutate_core_without_authority",
+    "invent_owner_intent",
+    "bypass_administratum_registration",
+    "bypass_astronomicon_intake",
+    "silently_ignore_failed_pass_criteria",
+    "ask_unbounded_extra_questions"
+  ],
+  "stop_conditions": [
+    "missing_owner_intent",
+    "missing_task_id",
+    "missing_pass_criteria",
+    "core_mutation_required_but_not_authorized",
+    "organ_guidance_needed",
+    "contradictory_task_pack"
+  ]
+}
