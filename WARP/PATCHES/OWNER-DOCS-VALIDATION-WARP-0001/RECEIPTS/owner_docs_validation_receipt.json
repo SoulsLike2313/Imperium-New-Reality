@@ -1,0 +1,205 @@
+{
+  "receipt_id": "receipt.owner_docs_validation.v0_1",
+  "task_id": "OWNER-DOCS-VALIDATION-WARP-0001",
+  "verdict": "PASS",
+  "generated_at_utc": "2026-06-29T14:27:46Z",
+  "validator": {
+    "validator_id": "owner_foundation_docs_validator.v0_1",
+    "version": "0.1.0",
+    "sovereign_owner": "THRONE",
+    "validated_domain": "ORGANS/_CORE_GOVERNANCE/OWNER_DECISIONS",
+    "implementation_custodian": "MECHANICUS",
+    "trust_auditor": "CUSTODES",
+    "adversarial_checker": "INQUISITION",
+    "receipt_registry": "ADMINISTRATUM",
+    "canon_reference": "DOCTRINARIUM",
+    "current_host": "WARP/PATCHES/OWNER-DOCS-VALIDATION-WARP-0001/VALIDATORS",
+    "future_home": "ORGANS/THRONE/VALIDATORS"
+  },
+  "mode": "WARP_VALIDATION",
+  "required_documents": {
+    "expected_count": 11,
+    "present_count": 11,
+    "missing": [],
+    "documents": [
+      "README.md",
+      "OWNER_ANSWER_LOCK_V0_1.md",
+      "OWNER_ANSWER_LOCK_V0_1.json",
+      "OWNER_DECISION_INDEX_V0_1.json",
+      "TERMS_AND_AXIOMS_V0_1.md",
+      "IMPERIUM_REFORM_ROADMAP_V0_1.md",
+      "IMPLEMENTATION_ZONES_V0_1.json",
+      "THRONE_CROWN_ORGAN_DECISION_V0_1.md",
+      "OWNER_LAND_POLICY_V0_1.md",
+      "VALIDATION_BACKLOG_V0_1.md",
+      "STAGE_0_DIRECT_REALITY_ADMISSION_NOTE_V0_1.md"
+    ]
+  },
+  "required_root_files": {
+    "expected": [
+      "OWNER_DOCS_FILE_MANIFEST_SHA256.json"
+    ],
+    "missing": []
+  },
+  "required_decisions": {
+    "throne_crown_organ": true,
+    "throne_measure_only": true,
+    "override_owner_only": true,
+    "visual_refit_frozen": true,
+    "great_nine_present": true,
+    "great_nine": [
+      "ASTRONOMICON",
+      "ADMINISTRATUM",
+      "DOCTRINARIUM",
+      "MECHANICUS",
+      "INQUISITION",
+      "CUSTODES",
+      "STRATEGIUM",
+      "SCHOLA_IMPERIALIS",
+      "OFFICIO_AGENTIS"
+    ]
+  },
+  "implementation_zones": {
+    "expected": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "found": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "missing": []
+  },
+  "document_hashes_sha256": {
+    "ORGANS/_CORE_GOVERNANCE/OWNER_DECISIONS/README.md": "8ce0b915b31d8806eb21ec12f1af0325b0fb68d2cb2e6c74bad5faf0c8c62c07",
+    "ORGANS/_CORE_GOVERNANCE/OWNER_DECISIONS/OWNER_ANSWER_LOCK_V0_1.md": "9a6732f4957d2e601fa6965d21e9bdd33bcdfb84678a33aabafdd3a724d1765e",
+    "ORGANS/_CORE_GOVERNANCE/OWNER_DECISIONS/OWNER_ANSWER_LOCK_V0_1.json": "1ea51f6afbc26b24f25548648fe132635450e63aa1cb8d5479826c3dd8774e15",
+    "ORGANS/_CORE_GOVERNANCE/OWNER_DECISIONS/OWNER_DECISION_INDEX_V0_1.json": "c96cf18c84c279837ff721989685ad90f69b5b717c83e24b28b875ff828f4c88",
+    "ORGANS/_CORE_GOVERNANCE/OWNER_DECISIONS/TERMS_AND_AXIOMS_V0_1.md": "15fcba62cbfbd4999493f1338081540d16a758dc54c8c5661cd970dcbb795de6",
+    "ORGANS/_CORE_GOVERNANCE/OWNER_DECISIONS/IMPERIUM_REFORM_ROADMAP_V0_1.md": "defe25e2ccb77a4c023f20ff76956d2ec9c29cbde99147ccda33937973efe6f8",
+    "ORGANS/_CORE_GOVERNANCE/OWNER_DECISIONS/IMPLEMENTATION_ZONES_V0_1.json": "873f40c47790b03ae3a6c43638747618d4211ef26748d6a1ed7b520112b21804",
+    "ORGANS/_CORE_GOVERNANCE/OWNER_DECISIONS/THRONE_CROWN_ORGAN_DECISION_V0_1.md": "f48d12a178bd19d0c5567404b33dedd21511ec551bfb3ec91844e0fbacd6abfb",
+    "ORGANS/_CORE_GOVERNANCE/OWNER_DECISIONS/OWNER_LAND_POLICY_V0_1.md": "3b4d866bca92640d9fbf15da0dacfe6bccb1dd92b62c56b63ba3441ff021e149",
+    "ORGANS/_CORE_GOVERNANCE/OWNER_DECISIONS/VALIDATION_BACKLOG_V0_1.md": "ced3d656427a8e5496452df9eafdb2f01faf0bd36fae371b5e0e17f69b538212",
+    "ORGANS/_CORE_GOVERNANCE/OWNER_DECISIONS/STAGE_0_DIRECT_REALITY_ADMISSION_NOTE_V0_1.md": "e36b88ad0788d1223aa38e825067055be79adf47339a20e3e116dc6b1a6366e5"
+  },
+  "checks": [
+    {
+      "name": "owner_docs_dir_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/_CORE_GOVERNANCE/OWNER_DECISIONS"
+      }
+    },
+    {
+      "name": "required_owner_documents_present",
+      "status": "PASS",
+      "details": {
+        "expected_count": 11,
+        "present_count": 11,
+        "missing": []
+      }
+    },
+    {
+      "name": "required_root_files_present",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "markdown_and_text_are_utf8",
+      "status": "PASS",
+      "details": {
+        "failures": []
+      }
+    },
+    {
+      "name": "json_files_parse_as_utf8_json",
+      "status": "PASS",
+      "details": {
+        "failures": []
+      }
+    },
+    {
+      "name": "required_owner_decisions_present",
+      "status": "PASS",
+      "details": {
+        "throne_crown_organ": true,
+        "throne_measure_only": true,
+        "override_owner_only": true,
+        "visual_refit_frozen": true,
+        "great_nine_present": true,
+        "great_nine": [
+          "ASTRONOMICON",
+          "ADMINISTRATUM",
+          "DOCTRINARIUM",
+          "MECHANICUS",
+          "INQUISITION",
+          "CUSTODES",
+          "STRATEGIUM",
+          "SCHOLA_IMPERIALIS",
+          "OFFICIO_AGENTIS"
+        ]
+      }
+    },
+    {
+      "name": "implementation_zones_0_to_9_present",
+      "status": "PASS",
+      "details": {
+        "found": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "missing": []
+      }
+    },
+    {
+      "name": "validation_backlog_non_empty",
+      "status": "PASS",
+      "details": {
+        "chars": 1950
+      }
+    },
+    {
+      "name": "owner_decisions_readme_references_core_docs",
+      "status": "PASS",
+      "details": {
+        "missing_refs": []
+      }
+    },
+    {
+      "name": "fake_green_guard_actual_file_hashes_collected",
+      "status": "PASS",
+      "details": {
+        "hash_count": 11
+      }
+    }
+  ],
+  "errors": [],
+  "fake_green_guard": "PASS"
+}

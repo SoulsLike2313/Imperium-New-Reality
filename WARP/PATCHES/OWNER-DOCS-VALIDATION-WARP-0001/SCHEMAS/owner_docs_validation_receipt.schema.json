@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Owner Docs Validation Receipt v0.1",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "task_id",
+    "verdict",
+    "generated_at_utc",
+    "validator",
+    "checks",
+    "errors"
+  ],
+  "properties": {
+    "verdict": {
+      "enum": [
+        "PASS",
+        "FAIL"
+      ]
+    },
+    "checks": {
+      "type": "array"
+    },
+    "errors": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}
