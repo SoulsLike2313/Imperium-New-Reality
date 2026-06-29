@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Throne Target Gap Receipt v0.1",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "task_id",
+    "validator_id",
+    "verdict",
+    "generated_at_utc",
+    "mode",
+    "validation_model",
+    "scores",
+    "organs",
+    "checks",
+    "errors"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "validator_id": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "validation_model": {
+      "type": "string"
+    },
+    "scores": {
+      "type": "object"
+    },
+    "organs": {
+      "type": "object"
+    },
+    "checks": {
+      "type": "array"
+    },
+    "errors": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}
