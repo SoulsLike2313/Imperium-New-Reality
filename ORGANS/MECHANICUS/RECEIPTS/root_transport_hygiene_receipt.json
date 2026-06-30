@@ -1,0 +1,107 @@
+{
+  "receipt_id": "receipt.mechanicus.root_transport_hygiene.v0_1",
+  "task_id": "ROOT-TRANSPORT-CLUTTER-RELOCATION-0001",
+  "validator_id": "root_transport_hygiene_validator.v0_1",
+  "verdict": "PASS_ROOT_TRANSPORT_HYGIENE",
+  "generated_at_utc": "2026-06-30T09:23:05Z",
+  "summary": {
+    "total_relocated_entries": 32,
+    "apply_scripts": 16,
+    "file_manifests": 16,
+    "sha256_all_match": true,
+    "apply_mode": true
+  },
+  "index": "SUPPORT/TRANSPORT/ROOT_TRANSPORT_INDEX_V0_1.json",
+  "registry": "ORGANS/ADMINISTRATUM/REGISTRY/ROOT_TRANSPORT_RELOCATION_REGISTRY_V0_1.json",
+  "report": "ORGANS/MECHANICUS/REPORTS/ROOT_TRANSPORT_HYGIENE_REPORT_V0_1.md",
+  "checks": [
+    {
+      "name": "root_transport_candidates_collected",
+      "status": "PASS",
+      "details": {
+        "count": 32,
+        "files": [
+          "APPLY_EXTERNAL_AUDIT_CONTROL_AND_CONSOLIDATION_0001.ps1",
+          "APPLY_GREAT_NINE_PROFILE_VALIDATORS_0001.ps1",
+          "APPLY_GREAT_NINE_PROFILE_VALIDATORS_0001_FIX_0001.ps1",
+          "APPLY_IMPERIUM_POPULATION_CENSUS_0001.ps1",
+          "APPLY_IMPERIUM_POPULATION_CENSUS_FIX_0001.ps1",
+          "APPLY_OWNER_DOCS_VALIDATION_WARP_0001.ps1",
+          "APPLY_OWNER_FOUNDATION_DOCS_TO_REALITY.ps1",
+          "APPLY_ROOT_TRANSPORT_CLUTTER_RELOCATION_0001.ps1",
+          "APPLY_THRONE_CROWN_ORGAN_FOUNDATION_0001.ps1",
+          "APPLY_THRONE_KERNEL_ANATOMY_CORE_V1_TARGET_0001.ps1",
+          "APPLY_THRONE_TARGET_GAP_CORE_V1_SCORING_INTEGRATION_0001.ps1",
+          "APPLY_THRONE_TARGET_GAP_CORE_V1_SCORING_INTEGRATION_0001_FIX_0001.ps1",
+          "APPLY_THRONE_TARGET_GAP_CORE_V1_SCORING_INTEGRATION_0001_FIX_0002.ps1",
+          "APPLY_THRONE_TARGET_GAP_ORGAN_IMPLEMENTATION_SPLIT_0001.ps1",
+          "APPLY_THRONE_TARGET_GAP_VALIDATOR_0001.ps1",
+          "APPLY_VALIDATOR_READONLY_EXTERNAL_AUDIT_MODE_0001.ps1",
+          "EXTERNAL_AUDIT_CONTROL_AND_CONSOLIDATION_0001_FILE_MANIFEST_SHA256.json",
+          "GREAT_NINE_PROFILE_VALIDATORS_0001_FILE_MANIFEST_SHA256.json",
+          "GREAT_NINE_PROFILE_VALIDATORS_0001_FIX_0001_FILE_MANIFEST_SHA256.json",
+          "IMPERIUM_POPULATION_CENSUS_0001_FILE_MANIFEST_SHA256.json",
+          "IMPERIUM_POPULATION_CENSUS_0001_FIX_0001_FILE_MANIFEST_SHA256.json",
+          "OWNER_DOCS_FILE_MANIFEST_SHA256.json",
+          "OWNER_DOCS_VALIDATION_WARP_0001_FILE_MANIFEST_SHA256.json",
+          "ROOT_TRANSPORT_CLUTTER_RELOCATION_0001_FILE_MANIFEST_SHA256.json",
+          "THRONE_CROWN_ORGAN_FOUNDATION_0001_FILE_MANIFEST_SHA256.json",
+          "THRONE_KERNEL_ANATOMY_CORE_V1_TARGET_0001_FILE_MANIFEST_SHA256.json",
+          "THRONE_TARGET_GAP_CORE_V1_SCORING_INTEGRATION_0001_FILE_MANIFEST_SHA256.json",
+          "THRONE_TARGET_GAP_CORE_V1_SCORING_INTEGRATION_0001_FIX_0001_FILE_MANIFEST_SHA256.json",
+          "THRONE_TARGET_GAP_CORE_V1_SCORING_INTEGRATION_0001_FIX_0002_FILE_MANIFEST_SHA256.json",
+          "THRONE_TARGET_GAP_ORGAN_IMPLEMENTATION_SPLIT_0001_FILE_MANIFEST_SHA256.json",
+          "THRONE_TARGET_GAP_VALIDATOR_0001_FILE_MANIFEST_SHA256.json",
+          "VALIDATOR_READONLY_EXTERNAL_AUDIT_MODE_0001_FILE_MANIFEST_SHA256.json"
+        ]
+      }
+    },
+    {
+      "name": "root_has_no_apply_scripts",
+      "status": "PASS",
+      "details": {
+        "remaining": []
+      }
+    },
+    {
+      "name": "root_has_no_file_manifests",
+      "status": "PASS",
+      "details": {
+        "remaining": []
+      }
+    },
+    {
+      "name": "all_relocated_destinations_exist",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "all_relocated_sha256_match",
+      "status": "PASS",
+      "details": {
+        "bad": []
+      }
+    },
+    {
+      "name": "support_transport_dirs_exist",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "warp_patches_still_exists",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "matrix_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/ROOT_TRANSPORT_HYGIENE_MATRIX_V0_1.json"
+      }
+    }
+  ],
+  "warnings": [],
+  "errors": []
+}

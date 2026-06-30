@@ -1,0 +1,38 @@
+{
+  "matrix_id": "ROOT_TRANSPORT_HYGIENE_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "ACTIVE_BASELINE",
+  "owner": "MECHANICUS",
+  "patch_id": "ROOT-TRANSPORT-CLUTTER-RELOCATION-0001",
+  "purpose": "Keep repo root readable by relocating transport-only APPLY scripts and file manifests into SUPPORT/TRANSPORT.",
+  "root_allowed_transport_patterns": [],
+  "root_relocated_patterns": [
+    "APPLY_*.ps1",
+    "*_FILE_MANIFEST_SHA256.json"
+  ],
+  "canonical_destinations": {
+    "APPLY_*.ps1": "SUPPORT/TRANSPORT/APPLY_SCRIPTS/",
+    "*_FILE_MANIFEST_SHA256.json": "SUPPORT/TRANSPORT/FILE_MANIFESTS/"
+  },
+  "required_outputs": [
+    "SUPPORT/TRANSPORT/ROOT_TRANSPORT_INDEX_V0_1.json",
+    "SUPPORT/TRANSPORT/ROOT_TRANSPORT_INDEX_V0_1.md",
+    "ORGANS/ADMINISTRATUM/REGISTRY/ROOT_TRANSPORT_RELOCATION_REGISTRY_V0_1.json",
+    "ORGANS/MECHANICUS/RECEIPTS/root_transport_hygiene_receipt.json",
+    "ORGANS/MECHANICUS/REPORTS/ROOT_TRANSPORT_HYGIENE_REPORT_V0_1.md"
+  ],
+  "proof_requirements": [
+    "root contains no APPLY_*.ps1 after relocation",
+    "root contains no *_FILE_MANIFEST_SHA256.json after relocation",
+    "each relocated file exists in canonical destination",
+    "sha256 before relocation equals sha256 after relocation",
+    "each relocated file appears in transport index",
+    "each relocated file appears in Administratum registry",
+    "WARP/PATCHES remains present",
+    "no files are deleted"
+  ],
+  "notes": [
+    "This patch may relocate its own root APPLY script and file manifest after extraction.",
+    "That is intended; patch provenance remains inside WARP/PATCHES and SUPPORT/TRANSPORT."
+  ]
+}

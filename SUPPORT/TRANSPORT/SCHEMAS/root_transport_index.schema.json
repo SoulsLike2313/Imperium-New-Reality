@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Root Transport Index v0.1",
+  "type": "object",
+  "required": [
+    "index_id",
+    "patch_id",
+    "generated_at_utc",
+    "entries",
+    "summary"
+  ],
+  "properties": {
+    "index_id": {
+      "type": "string"
+    },
+    "patch_id": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array"
+    },
+    "summary": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}
