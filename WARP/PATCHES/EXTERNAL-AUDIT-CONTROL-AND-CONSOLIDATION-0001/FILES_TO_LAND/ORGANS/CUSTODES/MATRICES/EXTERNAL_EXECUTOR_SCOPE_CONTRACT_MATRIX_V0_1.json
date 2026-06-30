@@ -1,0 +1,47 @@
+{
+  "matrix_id": "EXTERNAL_EXECUTOR_SCOPE_CONTRACT_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "CUSTODES",
+  "purpose": "Define hard scope boundaries for external auditors and non-Imperium executors.",
+  "executor_classes": {
+    "external_auditor": {
+      "may": [
+        "read original repository",
+        "run read-only git commands",
+        "write outputs outside repository",
+        "make temporary copy outside repository",
+        "run mutating validators only in copy"
+      ],
+      "must_not": [
+        "write to original repository",
+        "commit",
+        "push",
+        "delete original files",
+        "run mutating runners in original repository",
+        "treat in-repo receipts as trusted without replay/audit"
+      ]
+    },
+    "imperium_worker": {
+      "may": [
+        "operate through registered task/patch packs",
+        "mutate WARP under explicit task",
+        "land only after validator and Throne/Custodes policy"
+      ],
+      "must_not": [
+        "skip WARP",
+        "mutate Core without allowed path",
+        "hide receipts or failures"
+      ]
+    }
+  },
+  "required_controls": [
+    "pre_git_status",
+    "post_git_status",
+    "output_directory_outside_repo",
+    "no_write_original_repo",
+    "copy_only_validator_execution",
+    "scope_violation_report_if_changed"
+  ],
+  "violation_verdict": "AUDITOR_SCOPE_VIOLATION"
+}

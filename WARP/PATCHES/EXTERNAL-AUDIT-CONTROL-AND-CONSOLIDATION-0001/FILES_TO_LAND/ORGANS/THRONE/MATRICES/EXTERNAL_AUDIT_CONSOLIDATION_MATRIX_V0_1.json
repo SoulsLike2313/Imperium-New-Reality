@@ -1,0 +1,90 @@
+{
+  "matrix_id": "EXTERNAL_AUDIT_CONSOLIDATION_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "THRONE",
+  "mode": "MEASURE_ONLY",
+  "purpose": "Consolidate independent external audits without blindly trusting any one auditor or score.",
+  "required_audit_kinds": [
+    "SERVITOR_OR_CODEX_STYLE_CAUTIOUS_AUDIT",
+    "GROK_STYLE_RED_TEAM_AUDIT"
+  ],
+  "finding_classes": [
+    "confirmed_by_multiple_auditors",
+    "only_codex_or_servitor",
+    "only_grok",
+    "conflict",
+    "unverified",
+    "scope_violation",
+    "recommended_patch"
+  ],
+  "consolidation_rules": {
+    "two_sources_same_theme": "CONFIRMED",
+    "one_source_only": "NEEDS_RECHECK",
+    "score_difference": "NORMALIZE_BY_SCORE_CONTRACT",
+    "mutated_original_repo": "AUDITOR_SCOPE_VIOLATION",
+    "in_repo_receipt": "SELF_CLAIM_UNTIL_REPLAYED_OR_AUDITED",
+    "external_audit_output": "EVIDENCE_BUT_NOT_CANON_UNTIL_THRONE_CONSOLIDATION"
+  },
+  "known_theme_keywords": {
+    "root_transport_clutter": [
+      "root clutter",
+      "APPLY_",
+      "FILE_MANIFEST",
+      "transport",
+      "root-level"
+    ],
+    "validator_readonly_mode": [
+      "mutating validator",
+      "dry-run",
+      "read-only",
+      "external audit mode",
+      "copy"
+    ],
+    "population_census_refresh": [
+      "stale census",
+      "census refresh",
+      "population census"
+    ],
+    "governance_reconciliation": [
+      "governance drift",
+      "GOVERNANCE_INDEX",
+      "root drift",
+      "Great Nine naming",
+      "Architectum",
+      "Officio"
+    ],
+    "great_nine_operational_proof": [
+      "operational proof",
+      "profile baseline",
+      "implementation proof",
+      "Great Nine operational"
+    ],
+    "great_nine_trust_proof": [
+      "trust proof",
+      "Custodes",
+      "Inquisition",
+      "validator trust"
+    ],
+    "no_core_mutation_proof": [
+      "no-core-mutation",
+      "core mutation",
+      "before/after census",
+      "allowed return"
+    ],
+    "score_contract": [
+      "different scores",
+      "score normalization",
+      "metric_id",
+      "formula"
+    ],
+    "scope_control": [
+      "scope violation",
+      "mutated original",
+      "git checkout",
+      "changed receipt",
+      "perезапис",
+      "перезапис"
+    ]
+  }
+}

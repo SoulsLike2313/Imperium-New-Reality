@@ -1,0 +1,34 @@
+{
+  "matrix_id": "SCORE_CONTRACT_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "THRONE",
+  "purpose": "Every score must identify what it measures, formula/source, evidence level, confidence, and reproducibility.",
+  "required_score_fields": [
+    "metric_id",
+    "value",
+    "scale",
+    "source",
+    "formula_or_method",
+    "input_paths",
+    "evidence_level",
+    "confidence",
+    "generated_at_or_observed_at",
+    "repo_head_if_applicable",
+    "reproducible"
+  ],
+  "score_classes": {
+    "hygiene_score": "Measures cleanliness and organization, not product readiness.",
+    "target_gap_score": "Measures target-vs-current declared form, not necessarily runtime execution.",
+    "operational_proof_score": "Measures proof artifacts for actual work.",
+    "trust_score": "Measures independent validation and adversarial trust.",
+    "readiness_score": "Composite score, must list components and guards."
+  },
+  "forbidden_score_claims": [
+    "A score without metric_id is not canonical.",
+    "A score without inputs is opinion.",
+    "A score from one auditor is not consensus.",
+    "Profile baseline score must not be described as implementation readiness.",
+    "Receipt existence must not be described as receipt trust."
+  ]
+}

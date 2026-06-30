@@ -1,0 +1,45 @@
+{
+  "matrix_id": "AUDITOR_SCOPE_VIOLATION_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "WARP_CANDIDATE",
+  "owner": "INQUISITION",
+  "purpose": "Detect and classify when an external auditor or agent leaves its allowed scope.",
+  "violations": {
+    "original_repo_modified": {
+      "severity": "BLOCKER",
+      "evidence_patterns": [
+        "git status changed",
+        "modified receipt",
+        "git checkout needed",
+        "reverted original"
+      ]
+    },
+    "mutating_validator_in_original": {
+      "severity": "HIGH",
+      "evidence_patterns": [
+        "validator rewrote receipts",
+        "reports regenerated in original",
+        "outputs changed"
+      ]
+    },
+    "used_other_auditor_output_without_permission": {
+      "severity": "MEDIUM",
+      "evidence_patterns": [
+        "referenced other audit output",
+        "copied findings from other auditor"
+      ]
+    },
+    "scope_unclear": {
+      "severity": "MEDIUM",
+      "evidence_patterns": [
+        "did not log command path",
+        "missing pre/post status"
+      ]
+    }
+  },
+  "handling": {
+    "usefulness": "Finding may still be useful as red-team signal.",
+    "trust": "Auditor trust is reduced until rerun in contained mode.",
+    "land_policy": "Do not canonize direct findings without Throne consolidation and Custodes review."
+  }
+}

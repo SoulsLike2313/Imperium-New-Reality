@@ -1,0 +1,41 @@
+{
+  "campaign_id": "IMPERIUM-HYGIENE-AND-CONTROL-SERIES-0001",
+  "status": "PLANNED",
+  "owner": "THRONE",
+  "sequence": [
+    {
+      "order": 1,
+      "patch_id": "EXTERNAL-AUDIT-CONTROL-AND-CONSOLIDATION-0001",
+      "purpose": "Consolidate Codex/Grok external audit findings, normalize scores, define external executor scope law, and mark scope violations."
+    },
+    {
+      "order": 2,
+      "patch_id": "VALIDATOR-READONLY-EXTERNAL-AUDIT-MODE-0001",
+      "purpose": "Require validators to support dry-run/read-only/external-copy execution before external auditors can run them safely."
+    },
+    {
+      "order": 3,
+      "patch_id": "ROOT-TRANSPORT-CLUTTER-RELOCATION-0001",
+      "purpose": "Move root transport clutter into canonical support/provenance zones with manifest and backward-readable index."
+    },
+    {
+      "order": 4,
+      "patch_id": "IMPERIUM-POPULATION-CENSUS-REFRESH-0001",
+      "purpose": "Refresh population census as a first-class Reality artifact after cleanup/control changes and add staleness guards."
+    },
+    {
+      "order": 5,
+      "patch_id": "GOVERNANCE-ROOT-AND-GREAT-NINE-RECONCILIATION-0001",
+      "purpose": "Reconcile old root/governance references and Great Nine naming drift."
+    },
+    {
+      "order": 6,
+      "patch_id": "THRONE-NO-CORE-MUTATION-PROOF-0001",
+      "purpose": "Prove with before/after evidence that external work does not mutate Core except through allowed returns."
+    }
+  ],
+  "post_series_gate": {
+    "patch_id": "INDEPENDENT-AUDIT-ROUND-2-0001",
+    "purpose": "Run a new independent Codex/Grok/third-auditor audit after all six patches land."
+  }
+}
