@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.organ_duty_contract.schema.v0_1",
+  "title": "Imperium Organ Duty Contract V0.1",
+  "type": "object",
+  "required": [
+    "contract_id",
+    "contract_version",
+    "status",
+    "organ_id",
+    "organ_class",
+    "core_v1_mission",
+    "primary_duties",
+    "forbidden_actions",
+    "accepted_inputs",
+    "required_outputs",
+    "required_receipts",
+    "rule_validators_required",
+    "action_validators_required",
+    "trust_validators_required",
+    "handoff_in",
+    "handoff_out",
+    "audited_by",
+    "throne_must_confirm",
+    "not_allowed_to_claim",
+    "minimal_v1_pass_conditions",
+    "proof_stage_flags",
+    "score_policy"
+  ],
+  "properties": {
+    "contract_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "contract_version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "const": "DUTY_DEFINED_ONLY"
+    },
+    "organ_id": {
+      "type": "string",
+      "enum": [
+        "ASTRONOMICON",
+        "ADMINISTRATUM",
+        "DOCTRINARIUM",
+        "MECHANICUS",
+        "INQUISITION",
+        "CUSTODES",
+        "STRATEGIUM",
+        "SCHOLA_IMPERIALIS",
+        "OFFICIO_AGENTIS",
+        "THRONE"
+      ]
+    },
+    "organ_class": {
+      "type": "string",
+      "enum": [
+        "GREAT_NINE",
+        "CROWN_ORGAN"
+      ]
+    },
+    "core_v1_mission": {
+      "type": "string",
+      "minLength": 20
+    },
+    "primary_duties": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string",
+        "minLength": 5
+      }
+    },
+    "forbidden_actions": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string",
+        "minLength": 5
+      }
+    },
+    "accepted_inputs": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "required_outputs": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string",
+        "minLength": 3
+      }
+    },
+    "required_receipts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": ".*receipt.*\\.json$"
+      }
+    },
+    "rule_validators_required": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "action_validators_required": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "trust_validators_required": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "handoff_in": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "handoff_out": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "audited_by": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "throne_must_confirm": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string"
+      }
+    },
+    "not_allowed_to_claim": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "string"
+      }
+    },
+    "minimal_v1_pass_conditions": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "string"
+      }
+    },
+    "proof_stage_flags": {
+      "type": "object"
+    },
+    "score_policy": {
+      "type": "object"
+    }
+  }
+}

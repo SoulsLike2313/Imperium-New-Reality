@@ -1,0 +1,104 @@
+{
+  "contract_id": "strategium.organ_duty_contract.v0_1",
+  "contract_version": "0.1",
+  "status": "DUTY_DEFINED_ONLY",
+  "organ_id": "STRATEGIUM",
+  "organ_class": "GREAT_NINE",
+  "core_v1_mission": "Plan, decompose, order, and route work into safe task steps with pass/fail criteria, risk notes, and fix-loop strategy.",
+  "primary_duties": [
+    "convert admitted intent into task plan",
+    "define sequence, dependencies, risk, and stop conditions",
+    "select required organs and validators",
+    "produce backlog and next attention areas",
+    "prepare fix-loop strategy after failed validation"
+  ],
+  "forbidden_actions": [
+    "execute code or patches",
+    "grant trust",
+    "declare technical pass",
+    "change owner intent without Astronomicon/Owner receipt",
+    "treat plan as completed work",
+    "claim final verdict or crown verdict"
+  ],
+  "accepted_inputs": [
+    "task_intake_packet",
+    "target_gap_report",
+    "audit_findings",
+    "failure_report",
+    "owner_priority"
+  ],
+  "required_outputs": [
+    "task_plan",
+    "patch_backlog",
+    "dependency_map",
+    "risk_matrix",
+    "fix_loop_plan"
+  ],
+  "required_receipts": [
+    "strategium_plan_receipt.json",
+    "backlog_prioritization_receipt.json",
+    "fix_loop_strategy_receipt.json"
+  ],
+  "rule_validators_required": [
+    "strategium_duty_contract_rule_validator.v0_1",
+    "strategium_forbidden_action_boundary_validator.v0_1"
+  ],
+  "action_validators_required": [
+    "strategium_profile_action_validator.v0_1",
+    "strategium_receipt_output_validator.v0_1"
+  ],
+  "trust_validators_required": [
+    "strategium_cross_organ_trust_validator.v0_1",
+    "throne_strategium_truth_confirmation_validator.v0_1"
+  ],
+  "handoff_in": [
+    "ASTRONOMICON",
+    "THRONE",
+    "ADMINISTRATUM"
+  ],
+  "handoff_out": [
+    "MECHANICUS",
+    "OFFICIO_AGENTIS",
+    "THRONE"
+  ],
+  "audited_by": [
+    "INQUISITION",
+    "THRONE"
+  ],
+  "throne_must_confirm": [
+    "plan has criteria and stop conditions",
+    "plan does not claim execution",
+    "dependencies are explicit",
+    "risks are not hidden"
+  ],
+  "not_allowed_to_claim": [
+    "self-claim as operational proof",
+    "self-validator as trust proof",
+    "profile baseline as implementation proof",
+    "README/MANIFEST/FUNCTIONS existence as action proof",
+    "target definition as achieved reality",
+    "score without source/formula/evidence level"
+  ],
+  "minimal_v1_pass_conditions": [
+    "can produce a replayable plan from intake",
+    "can order patch candidates with rationale",
+    "can convert failure into fix-loop backlog"
+  ],
+  "proof_stage_flags": {
+    "profile_baseline_detected": true,
+    "duty_defined": true,
+    "rule_validated": false,
+    "action_proven": false,
+    "trust_proven": false,
+    "throne_confirmed": false
+  },
+  "score_policy": {
+    "duty_defined_can_raise": "duty_defined_score only",
+    "must_not_raise": [
+      "operational_score",
+      "trust_score",
+      "core_v1_no_core_mutation_evidence_score"
+    ],
+    "stage_law": "profile_baseline != duty_defined != rule_validated != action_proven != trust_proven != throne_confirmed"
+  }
+}

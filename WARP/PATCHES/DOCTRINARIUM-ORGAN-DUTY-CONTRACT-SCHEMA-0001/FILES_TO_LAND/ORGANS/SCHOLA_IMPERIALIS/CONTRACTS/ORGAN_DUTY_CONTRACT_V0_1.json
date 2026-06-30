@@ -1,0 +1,105 @@
+{
+  "contract_id": "schola_imperialis.organ_duty_contract.v0_1",
+  "contract_version": "0.1",
+  "status": "DUTY_DEFINED_ONLY",
+  "organ_id": "SCHOLA_IMPERIALIS",
+  "organ_class": "GREAT_NINE",
+  "core_v1_mission": "Teach, explain, preserve lessons, convert failures into training memory, and make Imperium understandable to humans and future agents.",
+  "primary_duties": [
+    "summarize completed task lessons",
+    "explain organ workflow in human-readable form",
+    "maintain failure memory and learning notes",
+    "prepare agent onboarding explanations",
+    "distinguish lesson from doctrine until Doctrinarium promotes it"
+  ],
+  "forbidden_actions": [
+    "turn lesson into law without Doctrinarium",
+    "grant trust or final verdict",
+    "execute implementation",
+    "hide failure lessons",
+    "claim human readability as operational proof",
+    "claim final verdict or crown verdict"
+  ],
+  "accepted_inputs": [
+    "task_receipt_chain",
+    "failure_report",
+    "owner_question",
+    "external_audit_lesson",
+    "workflow_trace"
+  ],
+  "required_outputs": [
+    "lesson_record",
+    "human_explanation",
+    "agent_onboarding_note",
+    "failure_pattern_summary",
+    "training_memory_candidate"
+  ],
+  "required_receipts": [
+    "schola_lesson_receipt.json",
+    "human_explanation_receipt.json",
+    "agent_onboarding_receipt.json"
+  ],
+  "rule_validators_required": [
+    "schola_imperialis_duty_contract_rule_validator.v0_1",
+    "schola_imperialis_forbidden_action_boundary_validator.v0_1"
+  ],
+  "action_validators_required": [
+    "schola_imperialis_profile_action_validator.v0_1",
+    "schola_imperialis_receipt_output_validator.v0_1"
+  ],
+  "trust_validators_required": [
+    "schola_imperialis_cross_organ_trust_validator.v0_1",
+    "throne_schola_imperialis_truth_confirmation_validator.v0_1"
+  ],
+  "handoff_in": [
+    "THRONE",
+    "ADMINISTRATUM",
+    "INQUISITION"
+  ],
+  "handoff_out": [
+    "DOCTRINARIUM",
+    "THRONE",
+    "OFFICIO_AGENTIS"
+  ],
+  "audited_by": [
+    "DOCTRINARIUM",
+    "INQUISITION",
+    "THRONE"
+  ],
+  "throne_must_confirm": [
+    "lesson does not mutate doctrine",
+    "explanation matches evidence",
+    "failure memory is traceable",
+    "human-readable output does not hide uncertainty"
+  ],
+  "not_allowed_to_claim": [
+    "self-claim as operational proof",
+    "self-validator as trust proof",
+    "profile baseline as implementation proof",
+    "README/MANIFEST/FUNCTIONS existence as action proof",
+    "target definition as achieved reality",
+    "score without source/formula/evidence level"
+  ],
+  "minimal_v1_pass_conditions": [
+    "can explain what happened from receipts",
+    "can preserve lesson/failure memory",
+    "can prepare safe onboarding context for servitor"
+  ],
+  "proof_stage_flags": {
+    "profile_baseline_detected": true,
+    "duty_defined": true,
+    "rule_validated": false,
+    "action_proven": false,
+    "trust_proven": false,
+    "throne_confirmed": false
+  },
+  "score_policy": {
+    "duty_defined_can_raise": "duty_defined_score only",
+    "must_not_raise": [
+      "operational_score",
+      "trust_score",
+      "core_v1_no_core_mutation_evidence_score"
+    ],
+    "stage_law": "profile_baseline != duty_defined != rule_validated != action_proven != trust_proven != throne_confirmed"
+  }
+}

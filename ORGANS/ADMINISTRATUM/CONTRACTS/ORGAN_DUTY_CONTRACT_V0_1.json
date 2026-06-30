@@ -1,0 +1,105 @@
+{
+  "contract_id": "administratum.organ_duty_contract.v0_1",
+  "contract_version": "0.1",
+  "status": "DUTY_DEFINED_ONLY",
+  "organ_id": "ADMINISTRATUM",
+  "organ_class": "GREAT_NINE",
+  "core_v1_mission": "Maintain registries, census, receipts, indexes, and order records so Imperium knows what exists, where it lives, and which state is current.",
+  "primary_duties": [
+    "register tasks, patches, receipts, reports, and context packs",
+    "maintain population census and owner/classification coverage",
+    "preserve indexes for evidence and replay",
+    "track current lifecycle state of tasks",
+    "detect stale generated maps after repository changes"
+  ],
+  "forbidden_actions": [
+    "declare implementation quality",
+    "grant trust verdict",
+    "replace Doctrinarium doctrine",
+    "execute task work",
+    "treat registry existence as operational proof",
+    "claim final verdict or crown verdict"
+  ],
+  "accepted_inputs": [
+    "task_intake_packet",
+    "patch_metadata",
+    "receipt_paths",
+    "report_paths",
+    "census_refresh_request"
+  ],
+  "required_outputs": [
+    "registry_entry",
+    "population_census",
+    "receipt_index",
+    "lifecycle_state",
+    "staleness_warning"
+  ],
+  "required_receipts": [
+    "administratum_registry_receipt.json",
+    "population_census_refresh_receipt.json",
+    "receipt_chain_index_receipt.json"
+  ],
+  "rule_validators_required": [
+    "administratum_duty_contract_rule_validator.v0_1",
+    "administratum_forbidden_action_boundary_validator.v0_1"
+  ],
+  "action_validators_required": [
+    "administratum_profile_action_validator.v0_1",
+    "administratum_receipt_output_validator.v0_1"
+  ],
+  "trust_validators_required": [
+    "administratum_cross_organ_trust_validator.v0_1",
+    "throne_administratum_truth_confirmation_validator.v0_1"
+  ],
+  "handoff_in": [
+    "ASTRONOMICON",
+    "THRONE",
+    "MECHANICUS"
+  ],
+  "handoff_out": [
+    "STRATEGIUM",
+    "THRONE",
+    "SCHOLA_IMPERIALIS"
+  ],
+  "audited_by": [
+    "MECHANICUS",
+    "INQUISITION",
+    "THRONE"
+  ],
+  "throne_must_confirm": [
+    "registry refers to existing paths",
+    "staleness guard is active",
+    "census does not hide unknown owners/classes",
+    "receipt chain is reproducible"
+  ],
+  "not_allowed_to_claim": [
+    "self-claim as operational proof",
+    "self-validator as trust proof",
+    "profile baseline as implementation proof",
+    "README/MANIFEST/FUNCTIONS existence as action proof",
+    "target definition as achieved reality",
+    "score without source/formula/evidence level"
+  ],
+  "minimal_v1_pass_conditions": [
+    "can refresh census after land",
+    "can register patch/receipt/report path with hash evidence",
+    "can mark stale maps instead of presenting stale truth"
+  ],
+  "proof_stage_flags": {
+    "profile_baseline_detected": true,
+    "duty_defined": true,
+    "rule_validated": false,
+    "action_proven": false,
+    "trust_proven": false,
+    "throne_confirmed": false
+  },
+  "score_policy": {
+    "duty_defined_can_raise": "duty_defined_score only",
+    "must_not_raise": [
+      "operational_score",
+      "trust_score",
+      "core_v1_no_core_mutation_evidence_score"
+    ],
+    "stage_law": "profile_baseline != duty_defined != rule_validated != action_proven != trust_proven != throne_confirmed"
+  }
+}

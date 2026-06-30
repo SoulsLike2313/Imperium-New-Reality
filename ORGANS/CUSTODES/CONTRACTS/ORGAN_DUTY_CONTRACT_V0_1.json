@@ -1,0 +1,103 @@
+{
+  "contract_id": "custodes.organ_duty_contract.v0_1",
+  "contract_version": "0.1",
+  "status": "DUTY_DEFINED_ONLY",
+  "organ_id": "CUSTODES",
+  "organ_class": "GREAT_NINE",
+  "core_v1_mission": "Guard trust, permission, integrity, allowed authority, and cross-organ approval so no organ can crown itself truthful.",
+  "primary_duties": [
+    "verify trust chain across organs",
+    "check allowed authority and forbidden actions",
+    "confirm integrity receipts and permission boundaries",
+    "approve or deny elevated operations",
+    "record trust decisions as evidence, not prose"
+  ],
+  "forbidden_actions": [
+    "write doctrine law",
+    "execute implementation work",
+    "accept self-validator as trust proof",
+    "override Throne final verdict",
+    "hide trust uncertainty",
+    "claim final verdict or crown verdict"
+  ],
+  "accepted_inputs": [
+    "trust_request",
+    "organ_receipt",
+    "scope_contract",
+    "permission_request",
+    "integrity_evidence"
+  ],
+  "required_outputs": [
+    "trust_receipt",
+    "permission_decision",
+    "integrity_guard_result",
+    "authority_boundary_report",
+    "denial_reason"
+  ],
+  "required_receipts": [
+    "custodes_trust_receipt.json",
+    "permission_boundary_receipt.json",
+    "integrity_guard_receipt.json"
+  ],
+  "rule_validators_required": [
+    "custodes_duty_contract_rule_validator.v0_1",
+    "custodes_forbidden_action_boundary_validator.v0_1"
+  ],
+  "action_validators_required": [
+    "custodes_profile_action_validator.v0_1",
+    "custodes_receipt_output_validator.v0_1"
+  ],
+  "trust_validators_required": [
+    "custodes_cross_organ_trust_validator.v0_1",
+    "throne_custodes_truth_confirmation_validator.v0_1"
+  ],
+  "handoff_in": [
+    "INQUISITION",
+    "MECHANICUS",
+    "THRONE"
+  ],
+  "handoff_out": [
+    "THRONE",
+    "ADMINISTRATUM"
+  ],
+  "audited_by": [
+    "INQUISITION",
+    "THRONE"
+  ],
+  "throne_must_confirm": [
+    "trust came from cross-organ evidence",
+    "permission decision matches policy",
+    "self-claim was not accepted",
+    "integrity evidence is replayable"
+  ],
+  "not_allowed_to_claim": [
+    "self-claim as operational proof",
+    "self-validator as trust proof",
+    "profile baseline as implementation proof",
+    "README/MANIFEST/FUNCTIONS existence as action proof",
+    "target definition as achieved reality",
+    "score without source/formula/evidence level"
+  ],
+  "minimal_v1_pass_conditions": [
+    "can reject self-trust",
+    "can approve/deny operation with evidence",
+    "can produce trust receipt for organ action proof"
+  ],
+  "proof_stage_flags": {
+    "profile_baseline_detected": true,
+    "duty_defined": true,
+    "rule_validated": false,
+    "action_proven": false,
+    "trust_proven": false,
+    "throne_confirmed": false
+  },
+  "score_policy": {
+    "duty_defined_can_raise": "duty_defined_score only",
+    "must_not_raise": [
+      "operational_score",
+      "trust_score",
+      "core_v1_no_core_mutation_evidence_score"
+    ],
+    "stage_law": "profile_baseline != duty_defined != rule_validated != action_proven != trust_proven != throne_confirmed"
+  }
+}

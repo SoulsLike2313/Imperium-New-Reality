@@ -1,0 +1,105 @@
+{
+  "contract_id": "astronomicon.organ_duty_contract.v0_1",
+  "contract_version": "0.1",
+  "status": "DUTY_DEFINED_ONLY",
+  "organ_id": "ASTRONOMICON",
+  "organ_class": "GREAT_NINE",
+  "core_v1_mission": "Receive owner/user intent and convert it into an admissible Imperium task intake without executing, landing, or declaring final success.",
+  "primary_duties": [
+    "accept raw intent, prompt, or task request",
+    "classify intent into task type, risk, expected artifact class, and required organs",
+    "decide admission, rejection, or clarification/fix-return path",
+    "produce task-intake packet and pass criteria seed",
+    "preserve original owner intent without silently rewriting it"
+  ],
+  "forbidden_actions": [
+    "execute implementation work",
+    "mutate Reality outside registered WARP path",
+    "issue final Throne verdict",
+    "claim trust proof from self-profile evidence",
+    "land or push repository changes",
+    "claim final verdict or crown verdict"
+  ],
+  "accepted_inputs": [
+    "owner_intent",
+    "raw_prompt",
+    "external_audit_summary",
+    "task_pack_candidate",
+    "fix_request"
+  ],
+  "required_outputs": [
+    "task_intake_packet",
+    "admission_or_rejection_note",
+    "risk_classification",
+    "initial_pass_fail_criteria",
+    "handoff_to_administratum_or_strategium"
+  ],
+  "required_receipts": [
+    "astronomicon_intake_receipt.json",
+    "astronomicon_rejection_receipt.json",
+    "astronomicon_fix_return_receipt.json"
+  ],
+  "rule_validators_required": [
+    "astronomicon_duty_contract_rule_validator.v0_1",
+    "astronomicon_forbidden_action_boundary_validator.v0_1"
+  ],
+  "action_validators_required": [
+    "astronomicon_profile_action_validator.v0_1",
+    "astronomicon_receipt_output_validator.v0_1"
+  ],
+  "trust_validators_required": [
+    "astronomicon_cross_organ_trust_validator.v0_1",
+    "throne_astronomicon_truth_confirmation_validator.v0_1"
+  ],
+  "handoff_in": [
+    "OWNER",
+    "THRONE",
+    "EXTERNAL_AUDIT"
+  ],
+  "handoff_out": [
+    "ADMINISTRATUM",
+    "STRATEGIUM",
+    "INQUISITION"
+  ],
+  "audited_by": [
+    "INQUISITION",
+    "CUSTODES",
+    "THRONE"
+  ],
+  "throne_must_confirm": [
+    "intent preserved",
+    "admission decision has evidence",
+    "Astronomicon did not execute implementation",
+    "risk and pass criteria are explicit"
+  ],
+  "not_allowed_to_claim": [
+    "self-claim as operational proof",
+    "self-validator as trust proof",
+    "profile baseline as implementation proof",
+    "README/MANIFEST/FUNCTIONS existence as action proof",
+    "target definition as achieved reality",
+    "score without source/formula/evidence level"
+  ],
+  "minimal_v1_pass_conditions": [
+    "can create replayable intake packet from raw prompt",
+    "can reject unsafe or underspecified task with reason",
+    "can route admitted task to next organ with receipt"
+  ],
+  "proof_stage_flags": {
+    "profile_baseline_detected": true,
+    "duty_defined": true,
+    "rule_validated": false,
+    "action_proven": false,
+    "trust_proven": false,
+    "throne_confirmed": false
+  },
+  "score_policy": {
+    "duty_defined_can_raise": "duty_defined_score only",
+    "must_not_raise": [
+      "operational_score",
+      "trust_score",
+      "core_v1_no_core_mutation_evidence_score"
+    ],
+    "stage_law": "profile_baseline != duty_defined != rule_validated != action_proven != trust_proven != throne_confirmed"
+  }
+}

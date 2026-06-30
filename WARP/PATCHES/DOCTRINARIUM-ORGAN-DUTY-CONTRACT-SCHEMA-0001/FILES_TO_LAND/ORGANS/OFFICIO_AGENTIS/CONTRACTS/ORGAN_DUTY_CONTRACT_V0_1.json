@@ -1,0 +1,107 @@
+{
+  "contract_id": "officio_agentis.organ_duty_contract.v0_1",
+  "contract_version": "0.1",
+  "status": "DUTY_DEFINED_ONLY",
+  "organ_id": "OFFICIO_AGENTIS",
+  "organ_class": "GREAT_NINE",
+  "core_v1_mission": "Bridge Imperium plans to external human/LLM/servitor executors through strict work orders, context packs, authority envelopes, and stop conditions.",
+  "primary_duties": [
+    "create executor/servitor work order from approved plan",
+    "define allowed paths, forbidden actions, stop conditions, and expected outputs",
+    "package minimal context for external agent",
+    "collect external result without mutating core directly",
+    "separate executor output from Imperium truth until validation"
+  ],
+  "forbidden_actions": [
+    "let executor mutate Reality without contract",
+    "grant trust to executor output",
+    "skip Inquisition/Custodes review",
+    "silently broaden scope",
+    "treat external product as core mutation",
+    "claim final verdict or crown verdict"
+  ],
+  "accepted_inputs": [
+    "strategium_plan",
+    "mechanicus_validator_requirements",
+    "custodes_permission",
+    "owner_executor_preference",
+    "context_pack_request"
+  ],
+  "required_outputs": [
+    "servitor_work_order",
+    "executor_authority_envelope",
+    "context_pack",
+    "stop_condition_list",
+    "external_result_intake"
+  ],
+  "required_receipts": [
+    "officio_work_order_receipt.json",
+    "servitor_authority_receipt.json",
+    "external_result_intake_receipt.json"
+  ],
+  "rule_validators_required": [
+    "officio_agentis_duty_contract_rule_validator.v0_1",
+    "officio_agentis_forbidden_action_boundary_validator.v0_1"
+  ],
+  "action_validators_required": [
+    "officio_agentis_profile_action_validator.v0_1",
+    "officio_agentis_receipt_output_validator.v0_1"
+  ],
+  "trust_validators_required": [
+    "officio_agentis_cross_organ_trust_validator.v0_1",
+    "throne_officio_agentis_truth_confirmation_validator.v0_1"
+  ],
+  "handoff_in": [
+    "STRATEGIUM",
+    "MECHANICUS",
+    "CUSTODES",
+    "THRONE"
+  ],
+  "handoff_out": [
+    "EXTERNAL_EXECUTOR",
+    "INQUISITION",
+    "CUSTODES",
+    "THRONE"
+  ],
+  "audited_by": [
+    "INQUISITION",
+    "CUSTODES",
+    "THRONE"
+  ],
+  "throne_must_confirm": [
+    "executor scope is narrow",
+    "forbidden actions are explicit",
+    "external output is not treated as trusted until reviewed",
+    "stop conditions are present"
+  ],
+  "not_allowed_to_claim": [
+    "self-claim as operational proof",
+    "self-validator as trust proof",
+    "profile baseline as implementation proof",
+    "README/MANIFEST/FUNCTIONS existence as action proof",
+    "target definition as achieved reality",
+    "score without source/formula/evidence level"
+  ],
+  "minimal_v1_pass_conditions": [
+    "can write a safe work order for an external LLM/agent",
+    "can require copy-only or read-only modes",
+    "can route result back through validation chain"
+  ],
+  "proof_stage_flags": {
+    "profile_baseline_detected": true,
+    "duty_defined": true,
+    "rule_validated": false,
+    "action_proven": false,
+    "trust_proven": false,
+    "throne_confirmed": false
+  },
+  "score_policy": {
+    "duty_defined_can_raise": "duty_defined_score only",
+    "must_not_raise": [
+      "operational_score",
+      "trust_score",
+      "core_v1_no_core_mutation_evidence_score"
+    ],
+    "stage_law": "profile_baseline != duty_defined != rule_validated != action_proven != trust_proven != throne_confirmed"
+  }
+}

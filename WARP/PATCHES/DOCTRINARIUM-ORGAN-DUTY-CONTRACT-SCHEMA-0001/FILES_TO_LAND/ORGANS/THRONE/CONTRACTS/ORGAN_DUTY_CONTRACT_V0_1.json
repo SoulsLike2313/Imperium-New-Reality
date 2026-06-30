@@ -1,0 +1,106 @@
+{
+  "contract_id": "throne.organ_duty_contract.v0_1",
+  "contract_version": "0.1",
+  "status": "DUTY_DEFINED_ONLY",
+  "organ_id": "THRONE",
+  "organ_class": "CROWN_ORGAN",
+  "core_v1_mission": "Serve as crown meta-validator and final measurement authority that compares target v1 against current Reality without granting fake green or trusting self-claims.",
+  "primary_duties": [
+    "measure target-vs-reality gap",
+    "confirm organ truth stages",
+    "enforce score contracts and evidence levels",
+    "issue final crown verdict from cross-organ evidence",
+    "block no-core-mutation, trust, or operational claims without receipts"
+  ],
+  "forbidden_actions": [
+    "execute implementation work directly",
+    "accept hardcoded readiness as truth",
+    "count self-validator as trust proof",
+    "declare v1 without workflow and no-core-mutation proof",
+    "hide uncertainty in scores"
+  ],
+  "accepted_inputs": [
+    "organ_contracts",
+    "validator_receipts",
+    "target_gap_reports",
+    "external_audit_consolidation",
+    "no_core_mutation_evidence"
+  ],
+  "required_outputs": [
+    "crown_verdict",
+    "target_gap_report",
+    "organ_truth_stage_report",
+    "score_contract_report",
+    "next_attention_areas"
+  ],
+  "required_receipts": [
+    "throne_target_gap_receipt.json",
+    "throne_organ_truth_receipt.json",
+    "throne_score_contract_receipt.json"
+  ],
+  "rule_validators_required": [
+    "throne_duty_contract_rule_validator.v0_1",
+    "throne_forbidden_action_boundary_validator.v0_1"
+  ],
+  "action_validators_required": [
+    "throne_profile_action_validator.v0_1",
+    "throne_receipt_output_validator.v0_1"
+  ],
+  "trust_validators_required": [
+    "throne_cross_organ_trust_validator.v0_1",
+    "throne_throne_truth_confirmation_validator.v0_1"
+  ],
+  "handoff_in": [
+    "ALL_ORGANS",
+    "OWNER",
+    "EXTERNAL_AUDIT"
+  ],
+  "handoff_out": [
+    "OWNER",
+    "ADMINISTRATUM",
+    "SCHOLA_IMPERIALIS",
+    "WARP"
+  ],
+  "audited_by": [
+    "CUSTODES",
+    "INQUISITION",
+    "EXTERNAL_AUDIT",
+    "OWNER"
+  ],
+  "throne_must_confirm": [
+    "every score has source/formula/evidence level",
+    "organ self-claim is not proof",
+    "readiness is separated by stage",
+    "no-core-mutation proof exists before v1 claim"
+  ],
+  "not_allowed_to_claim": [
+    "self-claim as operational proof",
+    "self-validator as trust proof",
+    "profile baseline as implementation proof",
+    "README/MANIFEST/FUNCTIONS existence as action proof",
+    "target definition as achieved reality",
+    "score without source/formula/evidence level"
+  ],
+  "minimal_v1_pass_conditions": [
+    "can measure organ truth stages",
+    "can reject fake-green claims",
+    "can issue replayable crown verdict from receipts"
+  ],
+  "proof_stage_flags": {
+    "profile_baseline_detected": true,
+    "duty_defined": true,
+    "rule_validated": false,
+    "action_proven": false,
+    "trust_proven": false,
+    "throne_confirmed": false
+  },
+  "score_policy": {
+    "duty_defined_can_raise": "duty_defined_score only",
+    "must_not_raise": [
+      "operational_score",
+      "trust_score",
+      "core_v1_no_core_mutation_evidence_score"
+    ],
+    "stage_law": "profile_baseline != duty_defined != rule_validated != action_proven != trust_proven != throne_confirmed"
+  }
+}

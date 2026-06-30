@@ -1,0 +1,105 @@
+{
+  "contract_id": "mechanicus.organ_duty_contract.v0_1",
+  "contract_version": "0.1",
+  "status": "DUTY_DEFINED_ONLY",
+  "organ_id": "MECHANICUS",
+  "organ_class": "GREAT_NINE",
+  "core_v1_mission": "Provide script-first technical validation, validators, tools, reproducibility checks, and mechanical proof while staying inside declared paths and modes.",
+  "primary_duties": [
+    "create and run validators",
+    "maintain technical schemas and scripts",
+    "detect long paths, encoding problems, hash mismatches, and root clutter",
+    "provide read-only/external audit modes",
+    "produce mechanical receipts with exact evidence paths"
+  ],
+  "forbidden_actions": [
+    "decide owner intent",
+    "grant final trust alone",
+    "hide failed technical checks",
+    "mutate external audit scope without declaration",
+    "treat successful script execution as product quality proof",
+    "claim final verdict or crown verdict"
+  ],
+  "accepted_inputs": [
+    "validator_request",
+    "schema",
+    "patch_pack",
+    "technical_failure",
+    "reproducibility_request"
+  ],
+  "required_outputs": [
+    "validator_script",
+    "technical_receipt",
+    "hash_manifest",
+    "failure_report",
+    "reproduction_command"
+  ],
+  "required_receipts": [
+    "mechanicus_validator_receipt.json",
+    "technical_integrity_receipt.json",
+    "reproducibility_receipt.json"
+  ],
+  "rule_validators_required": [
+    "mechanicus_duty_contract_rule_validator.v0_1",
+    "mechanicus_forbidden_action_boundary_validator.v0_1"
+  ],
+  "action_validators_required": [
+    "mechanicus_profile_action_validator.v0_1",
+    "mechanicus_receipt_output_validator.v0_1"
+  ],
+  "trust_validators_required": [
+    "mechanicus_cross_organ_trust_validator.v0_1",
+    "throne_mechanicus_truth_confirmation_validator.v0_1"
+  ],
+  "handoff_in": [
+    "DOCTRINARIUM",
+    "ADMINISTRATUM",
+    "THRONE"
+  ],
+  "handoff_out": [
+    "INQUISITION",
+    "CUSTODES",
+    "THRONE"
+  ],
+  "audited_by": [
+    "INQUISITION",
+    "CUSTODES",
+    "THRONE"
+  ],
+  "throne_must_confirm": [
+    "validator has failure path",
+    "validator is not self-trust",
+    "outputs include evidence paths",
+    "technical proof is separated from user-value proof"
+  ],
+  "not_allowed_to_claim": [
+    "self-claim as operational proof",
+    "self-validator as trust proof",
+    "profile baseline as implementation proof",
+    "README/MANIFEST/FUNCTIONS existence as action proof",
+    "target definition as achieved reality",
+    "score without source/formula/evidence level"
+  ],
+  "minimal_v1_pass_conditions": [
+    "can run validators reproducibly",
+    "can prove hash/path/format integrity",
+    "can fail loudly instead of fake-green"
+  ],
+  "proof_stage_flags": {
+    "profile_baseline_detected": true,
+    "duty_defined": true,
+    "rule_validated": false,
+    "action_proven": false,
+    "trust_proven": false,
+    "throne_confirmed": false
+  },
+  "score_policy": {
+    "duty_defined_can_raise": "duty_defined_score only",
+    "must_not_raise": [
+      "operational_score",
+      "trust_score",
+      "core_v1_no_core_mutation_evidence_score"
+    ],
+    "stage_law": "profile_baseline != duty_defined != rule_validated != action_proven != trust_proven != throne_confirmed"
+  }
+}

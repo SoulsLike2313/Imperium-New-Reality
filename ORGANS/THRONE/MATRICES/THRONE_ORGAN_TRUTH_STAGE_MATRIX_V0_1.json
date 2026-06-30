@@ -1,0 +1,52 @@
+{
+  "matrix_id": "THRONE_ORGAN_TRUTH_STAGE_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "THRONE",
+  "status": "ACTIVE_MEASUREMENT_LAW",
+  "patch_id": "DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+  "stages": [
+    {
+      "stage": "profile_baseline",
+      "meaning": "Organ has passport/card/basic structure",
+      "counts_as_operational": false,
+      "counts_as_trust": false
+    },
+    {
+      "stage": "duty_defined",
+      "meaning": "Organ has machine-readable duties/boundaries/validator requirements",
+      "counts_as_operational": false,
+      "counts_as_trust": false
+    },
+    {
+      "stage": "rule_validated",
+      "meaning": "Organ rules and forbidden actions pass rule validators",
+      "counts_as_operational": false,
+      "counts_as_trust": false
+    },
+    {
+      "stage": "action_proven",
+      "meaning": "Organ performed profile action with receipt/replay evidence",
+      "counts_as_operational": true,
+      "counts_as_trust": false
+    },
+    {
+      "stage": "trust_proven",
+      "meaning": "Action proof is confirmed by Custodes/Inquisition/Throne chain",
+      "counts_as_operational": true,
+      "counts_as_trust": true
+    },
+    {
+      "stage": "throne_confirmed",
+      "meaning": "Throne confirms stage from cross-organ evidence and score contract",
+      "counts_as_operational": true,
+      "counts_as_trust": true
+    }
+  ],
+  "hard_rules": [
+    "README/MANIFEST/FUNCTIONS existence is not action proof",
+    "self-validator is not trust proof",
+    "target definition is not achieved reality",
+    "duty_defined may increase only duty_defined_score",
+    "operational/trust/no-core-mutation scores must not rise from this patch alone"
+  ]
+}

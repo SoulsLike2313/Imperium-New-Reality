@@ -1,0 +1,105 @@
+{
+  "contract_id": "inquisition.organ_duty_contract.v0_1",
+  "contract_version": "0.1",
+  "status": "DUTY_DEFINED_ONLY",
+  "organ_id": "INQUISITION",
+  "organ_class": "GREAT_NINE",
+  "core_v1_mission": "Find false claims, scope violations, dirty state, fake green, forbidden mutations, quarantine candidates, and negative evidence.",
+  "primary_duties": [
+    "challenge optimistic claims and scores",
+    "detect fake-green patterns and self-claim evidence",
+    "classify quarantine and negative examples",
+    "enforce scope boundaries for external agents",
+    "produce rejection/challenge receipts"
+  ],
+  "forbidden_actions": [
+    "silently delete evidence",
+    "grant final trust",
+    "replace Custodes permission chain",
+    "execute implementation work",
+    "convert suspicion into final fact without evidence",
+    "claim final verdict or crown verdict"
+  ],
+  "accepted_inputs": [
+    "validator_receipt",
+    "external_audit",
+    "scope_contract",
+    "suspicious_score",
+    "dirty_worktree_signal"
+  ],
+  "required_outputs": [
+    "inquisition_challenge",
+    "negative_evidence_record",
+    "quarantine_decision",
+    "scope_violation_report",
+    "fake_green_warning"
+  ],
+  "required_receipts": [
+    "inquisition_scope_receipt.json",
+    "fake_green_challenge_receipt.json",
+    "negative_evidence_receipt.json"
+  ],
+  "rule_validators_required": [
+    "inquisition_duty_contract_rule_validator.v0_1",
+    "inquisition_forbidden_action_boundary_validator.v0_1"
+  ],
+  "action_validators_required": [
+    "inquisition_profile_action_validator.v0_1",
+    "inquisition_receipt_output_validator.v0_1"
+  ],
+  "trust_validators_required": [
+    "inquisition_cross_organ_trust_validator.v0_1",
+    "throne_inquisition_truth_confirmation_validator.v0_1"
+  ],
+  "handoff_in": [
+    "THRONE",
+    "MECHANICUS",
+    "ASTRONOMICON",
+    "EXTERNAL_AUDIT"
+  ],
+  "handoff_out": [
+    "CUSTODES",
+    "THRONE",
+    "SUPPORT/QUARANTINE"
+  ],
+  "audited_by": [
+    "CUSTODES",
+    "THRONE"
+  ],
+  "throne_must_confirm": [
+    "challenge has exact evidence",
+    "quarantine is reversible or justified",
+    "scope violation is not guessed",
+    "fake-green block has hard gate"
+  ],
+  "not_allowed_to_claim": [
+    "self-claim as operational proof",
+    "self-validator as trust proof",
+    "profile baseline as implementation proof",
+    "README/MANIFEST/FUNCTIONS existence as action proof",
+    "target definition as achieved reality",
+    "score without source/formula/evidence level"
+  ],
+  "minimal_v1_pass_conditions": [
+    "can identify self-claim as non-proof",
+    "can block mutating external audit",
+    "can produce negative evidence without destroying data"
+  ],
+  "proof_stage_flags": {
+    "profile_baseline_detected": true,
+    "duty_defined": true,
+    "rule_validated": false,
+    "action_proven": false,
+    "trust_proven": false,
+    "throne_confirmed": false
+  },
+  "score_policy": {
+    "duty_defined_can_raise": "duty_defined_score only",
+    "must_not_raise": [
+      "operational_score",
+      "trust_score",
+      "core_v1_no_core_mutation_evidence_score"
+    ],
+    "stage_law": "profile_baseline != duty_defined != rule_validated != action_proven != trust_proven != throne_confirmed"
+  }
+}

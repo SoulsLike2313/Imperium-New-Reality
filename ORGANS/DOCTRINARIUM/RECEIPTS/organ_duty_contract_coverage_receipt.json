@@ -1,0 +1,94 @@
+{
+  "receipt_id": "receipt.doctrinarium.organ_duty_contract_coverage.v0_1",
+  "task_id": "DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+  "validator_id": "organ_duty_contract_coverage_validator.v0_1",
+  "verdict": "PASS_DUTY_CONTRACTS_DEFINED",
+  "generated_at_utc": "2026-06-30T15:19:09Z",
+  "repo_head": "947c63ae7ce07706c0668d7308e0f01c8514b9cf",
+  "organ_count": 10,
+  "pass_count": 10,
+  "duty_defined_score": 100.0,
+  "operational_score_delta_allowed": false,
+  "trust_score_delta_allowed": false,
+  "no_core_mutation_score_delta_allowed": false,
+  "stage_law": "profile_baseline != duty_defined != rule_validated != action_proven != trust_proven != throne_confirmed",
+  "contract_paths": [
+    "ORGANS/ASTRONOMICON/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+    "ORGANS/ADMINISTRATUM/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+    "ORGANS/DOCTRINARIUM/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+    "ORGANS/MECHANICUS/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+    "ORGANS/INQUISITION/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+    "ORGANS/CUSTODES/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+    "ORGANS/STRATEGIUM/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+    "ORGANS/SCHOLA_IMPERIALIS/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+    "ORGANS/OFFICIO_AGENTIS/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+    "ORGANS/THRONE/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json"
+  ],
+  "summary_json": "ORGANS/DOCTRINARIUM/REPORTS/ORGAN_DUTY_CONTRACT_SUMMARY_V0_1.json",
+  "summary_csv": "ORGANS/DOCTRINARIUM/REPORTS/ORGAN_DUTY_CONTRACT_SUMMARY_V0_1.csv",
+  "report": "ORGANS/DOCTRINARIUM/REPORTS/ORGAN_DUTY_CONTRACT_COVERAGE_REPORT_V0_1.md",
+  "checks": [
+    {
+      "name": "organ_duty_contract.schema.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/DOCTRINARIUM/SCHEMAS/organ_duty_contract.schema.json"
+      }
+    },
+    {
+      "name": "ORGAN_DUTY_CONTRACT_REQUIRED_FIELDS_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/DOCTRINARIUM/MATRICES/ORGAN_DUTY_CONTRACT_REQUIRED_FIELDS_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "THRONE_ORGAN_TRUTH_STAGE_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/MATRICES/THRONE_ORGAN_TRUTH_STAGE_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "all_organ_contracts_exist_and_parse",
+      "status": "PASS",
+      "details": {
+        "failed_organs": []
+      }
+    },
+    {
+      "name": "duty_defined_does_not_claim_action_or_trust",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "throne_truth_stage_matrix_has_fake_green_law",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "operational_score_not_raised_by_this_patch",
+      "status": "PASS",
+      "details": {
+        "allowed": false
+      }
+    },
+    {
+      "name": "trust_score_not_raised_by_this_patch",
+      "status": "PASS",
+      "details": {
+        "allowed": false
+      }
+    },
+    {
+      "name": "no_core_mutation_score_not_raised_by_this_patch",
+      "status": "PASS",
+      "details": {
+        "allowed": false
+      }
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "meaning": "All organs have machine-readable duty contracts if PASS. This is duty_defined only, not action_proven or trust_proven."
+}
