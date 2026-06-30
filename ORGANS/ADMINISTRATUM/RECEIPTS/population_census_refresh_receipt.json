@@ -1,0 +1,133 @@
+{
+  "receipt_id": "receipt.administratum.population_census_refresh.v0_2",
+  "task_id": "IMPERIUM-POPULATION-CENSUS-REFRESH-0001",
+  "validator_id": "imperium_population_census_refresh_validator.v0_2",
+  "verdict": "PASS_CENSUS_REFRESHED",
+  "generated_at_utc": "2026-06-30T09:34:46Z",
+  "repo_head": "6992f63d012969e3ac25fec8c58495511adabe80",
+  "population_total": 6101,
+  "tracked_file_count": 5994,
+  "working_tree_visible_file_count": 6101,
+  "coverage": {
+    "owner_coverage_score": 100.0,
+    "classification_coverage_score": 93.1,
+    "status_coverage_score": 100.0,
+    "unknown_owner_count": 0,
+    "unknown_class_count": 421,
+    "unknown_status_count": 0
+  },
+  "root_zone_summary": {
+    "ORGANS": 2948,
+    "REPORTS": 2062,
+    "SUPPORT": 532,
+    "WARP": 500,
+    "_HARNESS": 34,
+    "DOCTRINARIUM": 15,
+    "SCHEMAS": 6,
+    ".editorconfig": 1,
+    ".gitattributes": 1,
+    ".gitignore": 1,
+    "AGENTS.md": 1
+  },
+  "root_transport_hygiene_state": {
+    "root_apply_scripts": [],
+    "root_file_manifests": [],
+    "support_transport_index_exists": true,
+    "support_transport_apply_count": 17,
+    "support_transport_manifest_count": 17
+  },
+  "legacy_comparison": {
+    "legacy_census_exists": true,
+    "legacy_census_path": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_CENSUS_V0_1.json",
+    "legacy_population_total": 6001,
+    "population_delta_vs_legacy": 100,
+    "legacy_is_current": false,
+    "meaning": "Legacy WARP census is historical unless explicitly mirrored by a current Administratum refresh."
+  },
+  "outputs": {
+    "census": "ORGANS/ADMINISTRATUM/REGISTRY/IMPERIUM_POPULATION_CENSUS_CURRENT_V0_2.json",
+    "summary": "ORGANS/ADMINISTRATUM/REGISTRY/IMPERIUM_POPULATION_SUMMARY_CURRENT_V0_2.json",
+    "root_zones": "ORGANS/ADMINISTRATUM/REGISTRY/IMPERIUM_ROOT_ZONE_REGISTRY_V0_2.json",
+    "receipt": "ORGANS/ADMINISTRATUM/RECEIPTS/population_census_refresh_receipt.json",
+    "report": "ORGANS/ADMINISTRATUM/REPORTS/IMPERIUM_POPULATION_CENSUS_REFRESH_REPORT_V0_2.md"
+  },
+  "checks": [
+    {
+      "name": "git_ls_files_available",
+      "status": "PASS",
+      "details": {
+        "tracked_file_count": 5994
+      }
+    },
+    {
+      "name": "root_transport_clutter_absent",
+      "status": "PASS",
+      "details": {
+        "root_apply": [],
+        "root_manifests": []
+      }
+    },
+    {
+      "name": "support_transport_index_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/TRANSPORT/ROOT_TRANSPORT_INDEX_V0_1.json"
+      }
+    },
+    {
+      "name": "census_matrix_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ADMINISTRATUM/MATRICES/IMPERIUM_POPULATION_CENSUS_REFRESH_MATRIX_V0_2.json"
+      }
+    },
+    {
+      "name": "staleness_guard_matrix_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/MATRICES/CENSUS_STALENESS_GUARD_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "root_zones_registered",
+      "status": "PASS",
+      "details": {
+        "unknown_root_zones": []
+      }
+    },
+    {
+      "name": "canonical_census_built",
+      "status": "PASS",
+      "details": {
+        "population_total": 6101
+      }
+    },
+    {
+      "name": "coverage_measured",
+      "status": "PASS",
+      "details": {
+        "owner_coverage_score": 100.0,
+        "classification_coverage_score": 93.1,
+        "status_coverage_score": 100.0,
+        "unknown_owner_count": 0,
+        "unknown_class_count": 421,
+        "unknown_status_count": 0
+      }
+    },
+    {
+      "name": "legacy_comparison_built",
+      "status": "PASS",
+      "details": {
+        "legacy_census_exists": true,
+        "legacy_census_path": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_CENSUS_V0_1.json",
+        "legacy_population_total": 6001,
+        "population_delta_vs_legacy": 100,
+        "legacy_is_current": false,
+        "meaning": "Legacy WARP census is historical unless explicitly mirrored by a current Administratum refresh."
+      }
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "meaning": "Current census is now an Administratum registry artifact with staleness guard data."
+}

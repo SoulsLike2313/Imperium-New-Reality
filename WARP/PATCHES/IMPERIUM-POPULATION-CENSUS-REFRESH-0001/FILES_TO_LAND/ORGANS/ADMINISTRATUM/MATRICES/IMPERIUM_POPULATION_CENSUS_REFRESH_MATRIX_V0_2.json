@@ -1,0 +1,41 @@
+{
+  "matrix_id": "IMPERIUM_POPULATION_CENSUS_REFRESH_MATRIX_V0_2",
+  "version": "0.2",
+  "status": "ACTIVE_BASELINE",
+  "owner": "ADMINISTRATUM",
+  "patch_id": "IMPERIUM-POPULATION-CENSUS-REFRESH-0001",
+  "purpose": "Refresh Imperium population census after root transport relocation and make current census a first-class Administratum registry artifact.",
+  "canonical_current_outputs": {
+    "census": "ORGANS/ADMINISTRATUM/REGISTRY/IMPERIUM_POPULATION_CENSUS_CURRENT_V0_2.json",
+    "summary": "ORGANS/ADMINISTRATUM/REGISTRY/IMPERIUM_POPULATION_SUMMARY_CURRENT_V0_2.json",
+    "root_zones": "ORGANS/ADMINISTRATUM/REGISTRY/IMPERIUM_ROOT_ZONE_REGISTRY_V0_2.json",
+    "receipt": "ORGANS/ADMINISTRATUM/RECEIPTS/population_census_refresh_receipt.json",
+    "report": "ORGANS/ADMINISTRATUM/REPORTS/IMPERIUM_POPULATION_CENSUS_REFRESH_REPORT_V0_2.md"
+  },
+  "classification_policy": {
+    "root_zone": "first path segment",
+    "owner": "derived from ORGANS/<organ>, WARP/PATCHES/<patch>, SUPPORT, REPORTS, SCHEMAS, DOCTRINARIUM, _HARNESS, or ROOT",
+    "resident_class": "derived from path role: validator, receipt, report, schema, matrix, registry, patch pack, runner, test, transport, dashboard, tui, lesson, source, config, etc.",
+    "status": "REALITY, WARP, TRANSPORT, HARNESS, ROOT, SUPPORT, or UNKNOWN"
+  },
+  "staleness_guard": {
+    "current_census_must_include": [
+      "repo_head",
+      "tracked_file_count",
+      "population_total",
+      "generated_at_utc",
+      "root_zone_summary"
+    ],
+    "old_warp_census_is_legacy": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_CENSUS_V0_1.json",
+    "canonical_current_source": "ORGANS/ADMINISTRATUM/REGISTRY/IMPERIUM_POPULATION_CENSUS_CURRENT_V0_2.json"
+  },
+  "checks": [
+    "git_ls_files_available",
+    "root_transport_clutter_absent",
+    "support_transport_index_exists",
+    "root_zones_registered",
+    "canonical_census_written",
+    "receipt_written",
+    "staleness_guard_written"
+  ]
+}

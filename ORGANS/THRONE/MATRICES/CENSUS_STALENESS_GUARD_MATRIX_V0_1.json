@@ -1,0 +1,29 @@
+{
+  "matrix_id": "CENSUS_STALENESS_GUARD_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "ACTIVE_BASELINE",
+  "owner": "THRONE",
+  "patch_id": "IMPERIUM-POPULATION-CENSUS-REFRESH-0001",
+  "purpose": "Prevent old population census artifacts from being treated as current truth after significant Reality changes.",
+  "canonical_current_census": "ORGANS/ADMINISTRATUM/REGISTRY/IMPERIUM_POPULATION_CENSUS_CURRENT_V0_2.json",
+  "legacy_census": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_CENSUS_V0_1.json",
+  "current_census_requirements": [
+    "generated_at_utc",
+    "repo_head",
+    "tracked_file_count",
+    "population_total",
+    "root_zone_summary",
+    "root_transport_hygiene_state"
+  ],
+  "stale_if": [
+    "repo_head differs from current HEAD",
+    "tracked_file_count differs from git ls-files count",
+    "root_transport_hygiene_state is missing",
+    "generated_at_utc is older than latest hygiene/control patch"
+  ],
+  "policy": {
+    "target_gap_validators_should_prefer": "canonical_current_census",
+    "legacy_census_may_be_used_as": "historical comparison only",
+    "missing_current_census": "WARN_OR_BLOCK depending on validator mode"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Imperium Population Census Current v0.2",
+  "type": "object",
+  "required": [
+    "census_id",
+    "patch_id",
+    "generated_at_utc",
+    "repo_head",
+    "population_total",
+    "tracked_file_count",
+    "root_zone_summary",
+    "coverage",
+    "residents"
+  ],
+  "properties": {
+    "census_id": {
+      "type": "string"
+    },
+    "patch_id": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "repo_head": {
+      "type": "string"
+    },
+    "population_total": {
+      "type": "integer"
+    },
+    "tracked_file_count": {
+      "type": "integer"
+    },
+    "root_zone_summary": {
+      "type": "object"
+    },
+    "coverage": {
+      "type": "object"
+    },
+    "residents": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}
