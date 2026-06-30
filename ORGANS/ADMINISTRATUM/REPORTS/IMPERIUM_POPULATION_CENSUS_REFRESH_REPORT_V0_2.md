@@ -3,7 +3,7 @@
 task_id: `IMPERIUM-POPULATION-CENSUS-REFRESH-0001`  
 validator_id: `imperium_population_census_refresh_validator.v0_2`  
 verdict: `PASS_CENSUS_REFRESHED`  
-generated_at_utc: `2026-06-30T09:34:46Z`
+generated_at_utc: `2026-06-30T11:07:50Z`
 
 ## Meaning
 
@@ -15,25 +15,22 @@ Legacy WARP census artifacts remain historical unless explicitly refreshed.
 
 ## Summary
 
-- population_total: `6101`
-- tracked_file_count: `5994`
-- repo_head: `6992f63d012969e3ac25fec8c58495511adabe80`
+- population_total: `6064`
+- tracked_file_count: `5981`
+- repo_head: `b39787a500fed3d680b9630f3ad2c65625776008`
 - owner_coverage_score: `100.0`
-- classification_coverage_score: `93.1`
+- classification_coverage_score: `89.58`
 - status_coverage_score: `100.0`
 - unknown_owner_count: `0`
-- unknown_class_count: `421`
+- unknown_class_count: `632`
 - unknown_status_count: `0`
 
 ## Root zones
 
-- `ORGANS`: `2948`
-- `REPORTS`: `2062`
-- `SUPPORT`: `532`
-- `WARP`: `500`
+- `ORGANS`: `2889`
+- `SUPPORT`: `2591`
+- `WARP`: `546`
 - `_HARNESS`: `34`
-- `DOCTRINARIUM`: `15`
-- `SCHEMAS`: `6`
 - `.editorconfig`: `1`
 - `.gitattributes`: `1`
 - `.gitignore`: `1`
@@ -49,7 +46,7 @@ Legacy WARP census artifacts remain historical unless explicitly refreshed.
 
 - legacy_census_exists: `True`
 - legacy_population_total: `6001`
-- population_delta_vs_legacy: `100`
+- population_delta_vs_legacy: `63`
 
 ## Checks
 

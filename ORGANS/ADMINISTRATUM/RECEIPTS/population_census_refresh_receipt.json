@@ -3,27 +3,24 @@
   "task_id": "IMPERIUM-POPULATION-CENSUS-REFRESH-0001",
   "validator_id": "imperium_population_census_refresh_validator.v0_2",
   "verdict": "PASS_CENSUS_REFRESHED",
-  "generated_at_utc": "2026-06-30T09:34:46Z",
-  "repo_head": "6992f63d012969e3ac25fec8c58495511adabe80",
-  "population_total": 6101,
-  "tracked_file_count": 5994,
-  "working_tree_visible_file_count": 6101,
+  "generated_at_utc": "2026-06-30T11:07:50Z",
+  "repo_head": "b39787a500fed3d680b9630f3ad2c65625776008",
+  "population_total": 6064,
+  "tracked_file_count": 5981,
+  "working_tree_visible_file_count": 6064,
   "coverage": {
     "owner_coverage_score": 100.0,
-    "classification_coverage_score": 93.1,
+    "classification_coverage_score": 89.58,
     "status_coverage_score": 100.0,
     "unknown_owner_count": 0,
-    "unknown_class_count": 421,
+    "unknown_class_count": 632,
     "unknown_status_count": 0
   },
   "root_zone_summary": {
-    "ORGANS": 2948,
-    "REPORTS": 2062,
-    "SUPPORT": 532,
-    "WARP": 500,
+    "ORGANS": 2889,
+    "SUPPORT": 2591,
+    "WARP": 546,
     "_HARNESS": 34,
-    "DOCTRINARIUM": 15,
-    "SCHEMAS": 6,
     ".editorconfig": 1,
     ".gitattributes": 1,
     ".gitignore": 1,
@@ -40,7 +37,7 @@
     "legacy_census_exists": true,
     "legacy_census_path": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_CENSUS_V0_1.json",
     "legacy_population_total": 6001,
-    "population_delta_vs_legacy": 100,
+    "population_delta_vs_legacy": 63,
     "legacy_is_current": false,
     "meaning": "Legacy WARP census is historical unless explicitly mirrored by a current Administratum refresh."
   },
@@ -56,7 +53,7 @@
       "name": "git_ls_files_available",
       "status": "PASS",
       "details": {
-        "tracked_file_count": 5994
+        "tracked_file_count": 5981
       }
     },
     {
@@ -99,7 +96,7 @@
       "name": "canonical_census_built",
       "status": "PASS",
       "details": {
-        "population_total": 6101
+        "population_total": 6064
       }
     },
     {
@@ -107,10 +104,10 @@
       "status": "PASS",
       "details": {
         "owner_coverage_score": 100.0,
-        "classification_coverage_score": 93.1,
+        "classification_coverage_score": 89.58,
         "status_coverage_score": 100.0,
         "unknown_owner_count": 0,
-        "unknown_class_count": 421,
+        "unknown_class_count": 632,
         "unknown_status_count": 0
       }
     },
@@ -121,7 +118,7 @@
         "legacy_census_exists": true,
         "legacy_census_path": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_CENSUS_V0_1.json",
         "legacy_population_total": 6001,
-        "population_delta_vs_legacy": 100,
+        "population_delta_vs_legacy": 63,
         "legacy_is_current": false,
         "meaning": "Legacy WARP census is historical unless explicitly mirrored by a current Administratum refresh."
       }
