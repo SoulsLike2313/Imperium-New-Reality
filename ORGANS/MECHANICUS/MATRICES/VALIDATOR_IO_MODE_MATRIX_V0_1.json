@@ -1,0 +1,47 @@
+{
+  "matrix_id": "VALIDATOR_IO_MODE_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "ACTIVE_BASELINE",
+  "owner": "MECHANICUS",
+  "patch_id": "VALIDATOR-READONLY-EXTERNAL-AUDIT-MODE-0001",
+  "required_flags": [
+    "--dry-run",
+    "--read-only",
+    "--external-audit",
+    "--output-dir"
+  ],
+  "mode_rules": {
+    "normal": {
+      "canonical_write_allowed": true,
+      "external_output_allowed": false,
+      "requires_output_dir": false
+    },
+    "dry_run": {
+      "canonical_write_allowed": false,
+      "external_output_allowed": false,
+      "requires_output_dir": false
+    },
+    "read_only": {
+      "canonical_write_allowed": false,
+      "external_output_allowed": false,
+      "requires_output_dir": false
+    },
+    "external_audit": {
+      "canonical_write_allowed": false,
+      "external_output_allowed": true,
+      "requires_output_dir": true
+    }
+  },
+  "converted_validators": [
+    "ORGANS/THRONE/VALIDATORS/validate_throne_target_gap.py",
+    "ORGANS/THRONE/VALIDATORS/validate_external_audit_consolidation.py"
+  ],
+  "not_yet_converted_policy": "Existing validators not converted are findings for later patches; external auditors must run them only in copied repos.",
+  "proof_requirements": [
+    "source flags present",
+    "--help exposes flags",
+    "--read-only run does not change git status",
+    "--external-audit writes outside repo",
+    "canonical outputs are not rewritten in read-only/external mode"
+  ]
+}

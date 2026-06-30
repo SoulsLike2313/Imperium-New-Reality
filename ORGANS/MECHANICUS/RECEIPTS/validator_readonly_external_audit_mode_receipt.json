@@ -1,0 +1,100 @@
+{
+  "receipt_id": "receipt.mechanicus.validator_readonly_external_audit_mode.v0_1",
+  "task_id": "VALIDATOR-READONLY-EXTERNAL-AUDIT-MODE-0001",
+  "validator_id": "validator_readonly_external_audit_mode_validator.v0_1",
+  "verdict": "PASS_READONLY_MODE_BASELINE",
+  "generated_at_utc": "2026-06-30T09:15:32Z",
+  "target_validators": [
+    "ORGANS/THRONE/VALIDATORS/validate_throne_target_gap.py",
+    "ORGANS/THRONE/VALIDATORS/validate_external_audit_consolidation.py"
+  ],
+  "external_output_root": "E:\\IMPERIUM_EXTERNAL_AUDITS\\VALIDATOR-READONLY-EXTERNAL-AUDIT-MODE-0001",
+  "validator_results": {
+    "ORGANS/THRONE/VALIDATORS/validate_throne_target_gap.py": {
+      "path": "ORGANS/THRONE/VALIDATORS/validate_throne_target_gap.py",
+      "exists": true,
+      "flags_in_source": {
+        "--dry-run": true,
+        "--read-only": true,
+        "--external-audit": true,
+        "--output-dir": true
+      },
+      "help_ok": true,
+      "read_only_ok": true,
+      "status_unchanged": true,
+      "external_audit_ok": true,
+      "external_audit_status_unchanged": true,
+      "errors": []
+    },
+    "ORGANS/THRONE/VALIDATORS/validate_external_audit_consolidation.py": {
+      "path": "ORGANS/THRONE/VALIDATORS/validate_external_audit_consolidation.py",
+      "exists": true,
+      "flags_in_source": {
+        "--dry-run": true,
+        "--read-only": true,
+        "--external-audit": true,
+        "--output-dir": true
+      },
+      "help_ok": true,
+      "read_only_ok": true,
+      "status_unchanged": true,
+      "external_audit_ok": true,
+      "external_audit_status_unchanged": true,
+      "errors": []
+    }
+  },
+  "checks": [
+    {
+      "name": "spec_exists",
+      "status": "PASS",
+      "details": {
+        "path": "E:\\IMPERIUM_REALITY\\ORGANS\\MECHANICUS\\SPECS\\VALIDATOR_READONLY_EXTERNAL_AUDIT_MODE_SPEC_V0_2.md"
+      }
+    },
+    {
+      "name": "matrix_exists",
+      "status": "PASS",
+      "details": {
+        "path": "E:\\IMPERIUM_REALITY\\ORGANS\\MECHANICUS\\MATRICES\\VALIDATOR_IO_MODE_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "target_validators_exist",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "required_flags_present",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "help_exposes_required_flags",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "read_only_runs_pass",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "read_only_does_not_change_git_status",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "external_audit_writes_outside_repo",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "external_audit_does_not_change_git_status",
+      "status": "PASS",
+      "details": {}
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "meaning": "This proves the first high-risk Throne validators support read-only and external-audit modes. It does not prove all validators are converted."
+}
