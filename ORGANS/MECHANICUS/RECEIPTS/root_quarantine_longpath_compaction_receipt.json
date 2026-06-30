@@ -1,0 +1,92 @@
+{
+  "receipt_id": "receipt.mechanicus.root_quarantine_longpath_compaction.v0_1.fix_0001",
+  "task_id": "ROOT-QUARANTINE-LONGPATH-COMPACTION-0001",
+  "fix_id": "ROOT-QUARANTINE-LONGPATH-COMPACTION-0001-FIX-0001",
+  "validator_id": "root_quarantine_longpath_compactor.v0_2_universal_bundle",
+  "verdict": "PASS_LONGPATH_COMPACTED",
+  "generated_at_utc": "2026-06-30T10:37:21Z",
+  "repo_head": "c5b398d733abc7753203db05a00922eef7b905e5",
+  "max_rel_path": 180,
+  "max_full_path": 220,
+  "compacted_count": 126,
+  "total_bundle_entries": 126,
+  "long_paths_after": 0,
+  "root_state": {
+    "dirs": [
+      "_HARNESS",
+      "ORGANS",
+      "SUPPORT",
+      "WARP"
+    ],
+    "files": [
+      ".editorconfig",
+      ".gitattributes",
+      ".gitignore",
+      "AGENTS.md"
+    ]
+  },
+  "bundle_map": "SUPPORT/QUARANTINE/LONGPATH_BUNDLE_V0_1/LONGPATH_BUNDLE_MAP_V0_1.json",
+  "registry": "ORGANS/ADMINISTRATUM/REGISTRY/LONGPATH_QUARANTINE_COMPACTION_REGISTRY_V0_1.json",
+  "restore_script": "SUPPORT/QUARANTINE/LONGPATH_BUNDLE_V0_1/RESTORE_LONGPATH_BUNDLE_V0_1.ps1",
+  "report": "ORGANS/MECHANICUS/REPORTS/ROOT_QUARANTINE_LONGPATH_COMPACTION_REPORT_V0_1.md",
+  "checks": [
+    {
+      "name": "compacted_sha256_match",
+      "status": "PASS",
+      "details": {
+        "bad_count": 0
+      }
+    },
+    {
+      "name": "no_long_paths_after_compaction",
+      "status": "PASS",
+      "details": {
+        "long_count": 0,
+        "first": []
+      }
+    },
+    {
+      "name": "root_canon_still_clean",
+      "status": "PASS",
+      "details": {
+        "bad_dirs": [],
+        "bad_files": []
+      }
+    },
+    {
+      "name": "no_root_transport_regression",
+      "status": "PASS",
+      "details": {
+        "root_transport": []
+      }
+    },
+    {
+      "name": "universal_longpath_compaction_policy_active",
+      "status": "PASS",
+      "details": {
+        "excluded": [
+          ".git",
+          "SUPPORT/QUARANTINE/LONGPATH_BUNDLE_V0_1/FILES"
+        ]
+      }
+    },
+    {
+      "name": "bundle_map_written",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/QUARANTINE/LONGPATH_BUNDLE_V0_1/LONGPATH_BUNDLE_MAP_V0_1.json"
+      }
+    },
+    {
+      "name": "restore_script_written",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/QUARANTINE/LONGPATH_BUNDLE_V0_1/RESTORE_LONGPATH_BUNDLE_V0_1.ps1"
+      }
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "long_paths_after_preview": [],
+  "meaning": "All long visible paths are compacted into a short SHA256-addressed bundle. Original paths are recoverable from the bundle map."
+}
