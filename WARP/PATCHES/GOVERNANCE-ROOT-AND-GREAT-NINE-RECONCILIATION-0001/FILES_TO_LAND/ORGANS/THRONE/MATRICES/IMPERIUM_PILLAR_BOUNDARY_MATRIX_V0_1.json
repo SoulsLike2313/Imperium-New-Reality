@@ -1,0 +1,45 @@
+{
+  "matrix_id": "IMPERIUM_PILLAR_BOUNDARY_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "ACTIVE_BASELINE",
+  "owner": "THRONE",
+  "patch_id": "GOVERNANCE-ROOT-AND-GREAT-NINE-RECONCILIATION-0001",
+  "pillars": {
+    "REALITY_CORE": {
+      "canonical_home": "E:/IMPERIUM_REALITY",
+      "role": "What Imperium is: active core, organs, Throne, validators, matrices, self-knowledge, permanent core tools.",
+      "root_allowed": [
+        "ORGANS",
+        "SUPPORT",
+        "AGENTS.md",
+        "README.md",
+        ".gitignore",
+        ".gitattributes",
+        ".editorconfig"
+      ],
+      "write_policy": "Only through patch/land with validators and receipts."
+    },
+    "WARP": {
+      "canonical_home": "E:/IMPERIUM_WARP",
+      "role": "Where Imperium changes: task packs, patch packs, transient work, land/abort boundary.",
+      "repo_internal_status": "TRANSITIONAL_DEBT",
+      "future_patch": "WARP-EXTERNALIZATION-AND-PROVENANCE-MIGRATION-0001"
+    },
+    "HARNESS": {
+      "canonical_home": "E:/IMPERIUM_HARNESS",
+      "role": "Where Imperium proves, tests, stores evidence, hosts external tools, IDE foundation, benchmark memory.",
+      "repo_internal_status": "TRANSITIONAL_DEBT",
+      "future_patch": "HARNESS-EXTERNALIZATION-AND-EVIDENCE-CANON-0001"
+    },
+    "SUPPORT": {
+      "canonical_home": "E:/IMPERIUM_REALITY/SUPPORT",
+      "role": "Service zone: transport, quarantine, migration, compatibility support.",
+      "is_power_pillar": false
+    }
+  },
+  "llm_readability_goal": [
+    "An external LLM should understand where canon lives within 30 seconds.",
+    "An external LLM should know where not to write.",
+    "An external LLM should distinguish core, warp, harness, support, quarantine, and legacy imports."
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "matrix_id": "REALITY_ROOT_CANON_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "ACTIVE_ROOT_LAW",
+  "owner": "THRONE",
+  "patch_id": "GOVERNANCE-ROOT-AND-GREAT-NINE-RECONCILIATION-0001",
+  "axioms": [
+    "Repo root is not a file dump.",
+    "E:/IMPERIUM_REALITY root is the entrance map to Imperium Core Reality.",
+    "WARP and HARNESS are separate external pillars, not canonical folders inside Reality root.",
+    "Internal WARP and _HARNESS are transitional debt until dedicated externalization patches land.",
+    "No useful file is silently deleted; uncertain material goes to registered quarantine/import zones with SHA256 proof."
+  ],
+  "allowed_reality_root_entries": {
+    "directories": [
+      "ORGANS",
+      "SUPPORT"
+    ],
+    "files": [
+      "AGENTS.md",
+      "README.md",
+      ".gitignore",
+      ".gitattributes",
+      ".editorconfig"
+    ]
+  },
+  "transitional_debt_root_entries": {
+    "WARP": {
+      "status": "TRANSITIONAL_EXTERNALIZATION_DEBT",
+      "canonical_external_home": "E:/IMPERIUM_WARP",
+      "future_patch": "WARP-EXTERNALIZATION-AND-PROVENANCE-MIGRATION-0001",
+      "meaning": "Current in-repo WARP/PATCHES keeps provenance alive but is not final Reality v1 root form."
+    },
+    "_HARNESS": {
+      "status": "TRANSITIONAL_EXTERNALIZATION_DEBT",
+      "canonical_external_home": "E:/IMPERIUM_HARNESS",
+      "future_patch": "HARNESS-EXTERNALIZATION-AND-EVIDENCE-CANON-0001",
+      "meaning": "Harness is a separate pillar for evidence, tests, external tools, IDE future, and benchmark memory."
+    }
+  },
+  "root_drift_relocations": {
+    "DOCTRINARIUM": "ORGANS/DOCTRINARIUM/LEGACY_ROOT_IMPORT/DOCTRINARIUM",
+    "SCHEMAS/AUTHORED/T4": "ORGANS/DOCTRINARIUM/SCHEMAS/AUTHORED/T4",
+    "SCHEMAS/*": "ORGANS/DOCTRINARIUM/LEGACY_ROOT_IMPORT/SCHEMAS",
+    "REPORTS": "SUPPORT/QUARANTINE/ROOT_REPORTS_PENDING_HARNESS_INTAKE/REPORTS"
+  },
+  "forbidden_root_patterns": [
+    "APPLY_*.ps1",
+    "*_FILE_MANIFEST_SHA256.json",
+    "DOCTRINARIUM",
+    "SCHEMAS",
+    "REPORTS"
+  ],
+  "verdict_policy": {
+    "root_drift_removed_with_warp_harness_inside": "PASS_REALITY_ROOT_CANON_WITH_TRANSITIONAL_DEBT",
+    "root_drift_present": "FAIL_ROOT_CANON_DRIFT",
+    "transport_clutter_present": "FAIL_ROOT_TRANSPORT_REGRESSION"
+  }
+}

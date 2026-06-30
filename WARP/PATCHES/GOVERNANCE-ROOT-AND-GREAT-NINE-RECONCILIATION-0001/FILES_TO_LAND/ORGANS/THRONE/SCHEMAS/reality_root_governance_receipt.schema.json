@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Reality Root Governance Receipt v0.1",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "task_id",
+    "validator_id",
+    "verdict",
+    "generated_at_utc",
+    "root_state",
+    "relocations",
+    "checks",
+    "errors"
+  ],
+  "properties": {
+    "receipt_id": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "validator_id": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string"
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "root_state": {
+      "type": "object"
+    },
+    "relocations": {
+      "type": "array"
+    },
+    "checks": {
+      "type": "array"
+    },
+    "errors": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

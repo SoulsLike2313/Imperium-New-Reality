@@ -1,0 +1,86 @@
+{
+  "matrix_id": "GREAT_NINE_CANON_AND_ALIAS_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "ACTIVE_CANON",
+  "owner": "THRONE",
+  "patch_id": "GOVERNANCE-ROOT-AND-GREAT-NINE-RECONCILIATION-0001",
+  "crown_organ": {
+    "canonical_id": "THRONE",
+    "canonical_home": "ORGANS/THRONE",
+    "status": "CROWN_ORGAN_OUTSIDE_GREAT_NINE_COUNT"
+  },
+  "great_nine": [
+    {
+      "canonical_id": "ASTRONOMICON",
+      "canonical_home": "ORGANS/ASTRONOMICON",
+      "role": "entry/intake/admission/pass criteria"
+    },
+    {
+      "canonical_id": "ADMINISTRATUM",
+      "canonical_home": "ORGANS/ADMINISTRATUM",
+      "role": "registry/context/provenance/archive"
+    },
+    {
+      "canonical_id": "DOCTRINARIUM",
+      "canonical_home": "ORGANS/DOCTRINARIUM",
+      "role": "doctrine/schema/canon/law"
+    },
+    {
+      "canonical_id": "MECHANICUS",
+      "canonical_home": "ORGANS/MECHANICUS",
+      "role": "tools/validators/harness adapters/mechanical proof"
+    },
+    {
+      "canonical_id": "INQUISITION",
+      "canonical_home": "ORGANS/INQUISITION",
+      "role": "drift/fake-green/mutation/scope violation detection"
+    },
+    {
+      "canonical_id": "CUSTODES",
+      "canonical_home": "ORGANS/CUSTODES",
+      "role": "trust layer/organ validator audit"
+    },
+    {
+      "canonical_id": "STRATEGIUM",
+      "canonical_home": "ORGANS/STRATEGIUM",
+      "role": "priority/roadmap/next attention"
+    },
+    {
+      "canonical_id": "SCHOLA_IMPERIALIS",
+      "canonical_home": "ORGANS/SCHOLA_IMPERIALIS",
+      "role": "lessons/negative examples/training memory"
+    },
+    {
+      "canonical_id": "OFFICIO_AGENTIS",
+      "canonical_home": "ORGANS/OFFICIO_AGENTIS",
+      "role": "servitor/executor boundary/agent prompts/role authority"
+    }
+  ],
+  "aliases": {
+    "ASTRA": {
+      "canonical_id": "ASTRONOMICON",
+      "status": "INFORMAL_ALIAS_NOT_PATH"
+    },
+    "OFFICIO": {
+      "canonical_id": "OFFICIO_AGENTIS",
+      "status": "INFORMAL_ALIAS_NOT_PATH"
+    },
+    "SCHOLA": {
+      "canonical_id": "SCHOLA_IMPERIALIS",
+      "status": "INFORMAL_ALIAS_NOT_PATH"
+    },
+    "ARCHITECTUM": {
+      "canonical_id": null,
+      "status": "DEPRECATED_OR_UNRESOLVED_LEGACY_CONCEPT_NOT_GREAT_NINE"
+    },
+    "GOVERNANCE": {
+      "canonical_id": "THRONE",
+      "status": "CONCEPTUAL_AREA_NOT_ORGAN_PATH"
+    }
+  },
+  "path_law": [
+    "Only canonical_id may be used as ORGANS/<organ> path.",
+    "Aliases may appear in prose but must not create root directories or organ homes.",
+    "Great Nine does not count THRONE; THRONE is the crown organ that validates the Nine."
+  ]
+}
