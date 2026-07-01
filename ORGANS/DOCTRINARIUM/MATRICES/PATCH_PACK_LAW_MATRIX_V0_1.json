@@ -1,0 +1,35 @@
+{
+  "matrix_id": "PATCH_PACK_LAW_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "DOCTRINARIUM",
+  "status": "ACTIVE_PATCH_PACK_LAW",
+  "patch_id": "DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+  "definition": "Patch Pack is a manual WARP package created by Owner + Logos Prime for Reality repository changes.",
+  "required_sections_for_patch_pack": [
+    "patch_id",
+    "owner_organ_or_scope",
+    "patch_pack_doc",
+    "files_to_land_or_explicit_no_land",
+    "runner_or_explicit_no_runner",
+    "validator_or_validation_gap",
+    "expected_verdict_or_expected_output",
+    "manifest_hashes",
+    "receipt_path_or_expected_receipt",
+    "no_core_mutation_policy"
+  ],
+  "state_machine": [
+    "PATCH_PACK_DRAFT",
+    "PATCH_PACK_REGISTERED",
+    "PATCH_PREFLIGHTED",
+    "PATCH_RUN_BY_OWNER",
+    "PATCH_RECEIPT_RECORDED",
+    "PATCH_COMMITTED_BY_OWNER",
+    "PATCH_PUSHED_BY_OWNER"
+  ],
+  "hard_laws": [
+    "Patch Pack is not Task Pack",
+    "Patch Pack may be created without Servitor",
+    "Patch Pack runner must not silently git commit or push",
+    "Patch Pack receipt is evidence, not final trust by itself"
+  ]
+}

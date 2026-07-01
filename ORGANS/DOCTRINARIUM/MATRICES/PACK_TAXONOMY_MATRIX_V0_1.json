@@ -1,0 +1,167 @@
+{
+  "matrix_id": "PACK_TAXONOMY_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "DOCTRINARIUM",
+  "status": "ACTIVE_PACK_LAW",
+  "patch_id": "DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+  "core_formulae": {
+    "patch_pack_formula": "OWNER + LOGOS_PRIME = PATCH_PACK",
+    "task_pack_formula": "OWNER + LOGOS_PRIME + SERVITOR = TASK_PACK"
+  },
+  "meaning": "Separates manual Reality patching from Servitor work orders. Astronomicon 00_INTAKE outputs are Intake Drafts, not valid Task Packs.",
+  "entities": {
+    "INTAKE_DRAFT": {
+      "home": "WARP/TASKS/<TASK_ID>/00_INTAKE",
+      "created_by": [
+        "ASTRONOMICON"
+      ],
+      "purpose": "Capture Owner intent, classify task shape, detect missing context, block execution, draft route/focus.",
+      "servitor_dispatch_allowed": false,
+      "reality_mutation_allowed": false,
+      "may_be_promoted_to": [
+        "TASK_PACK_CANDIDATE",
+        "PATCH_PACK_PLAN"
+      ],
+      "must_not_claim": [
+        "VALID_TASK_PACK",
+        "PATCH_PACK",
+        "SERVITOR_DISPATCHED",
+        "REALITY_MUTATION",
+        "TASK_COMPLETED"
+      ]
+    },
+    "PATCH_PACK": {
+      "home": "WARP/PATCHES/<PATCH_ID>",
+      "created_by": [
+        "OWNER",
+        "LOGOS_PRIME"
+      ],
+      "purpose": "Manual controlled candidate for Reality repository change.",
+      "servitor_dispatch_allowed": false,
+      "reality_mutation_allowed": true,
+      "requires": [
+        "PATCH_PACK.md",
+        "runner_or_explicit_no_runner",
+        "FILES_TO_LAND_or_explicit_no_land",
+        "manifest",
+        "validator_or_explicit_validator_gap",
+        "expected_verdict"
+      ],
+      "must_not_claim": [
+        "SERVITOR_TASK_PACK",
+        "SERVITOR_OUTPUT_VALIDATED_WITHOUT_CHECKS"
+      ]
+    },
+    "TASK_PACK_CANDIDATE": {
+      "home": "WARP/TASKS/<TASK_ID>/01_TASK_PACK_CANDIDATE",
+      "created_by": [
+        "OWNER",
+        "LOGOS_PRIME",
+        "ASTRONOMICON",
+        "OFFICIO_AGENTIS"
+      ],
+      "purpose": "Draft Servitor work order candidate. Not dispatchable until validated.",
+      "servitor_dispatch_allowed": false,
+      "reality_mutation_allowed": false,
+      "requires": [
+        "authority_envelope",
+        "context_pack",
+        "output_contract",
+        "validation_plan",
+        "stop_conditions",
+        "forbidden_actions"
+      ],
+      "may_be_promoted_to": [
+        "VALID_TASK_PACK"
+      ],
+      "must_not_claim": [
+        "VALID_TASK_PACK",
+        "SERVITOR_DISPATCHED",
+        "REALITY_MUTATION"
+      ]
+    },
+    "VALID_TASK_PACK": {
+      "home": "WARP/TASKS/<TASK_ID>/02_TASK_PACK_VALIDATED",
+      "created_by": [
+        "OWNER",
+        "LOGOS_PRIME",
+        "OFFICIO_AGENTIS"
+      ],
+      "purpose": "Validated work order for Servitor/external LLM executor.",
+      "servitor_dispatch_allowed": true,
+      "reality_mutation_allowed": false,
+      "requires": [
+        "servitor_identity_or_class",
+        "authority_envelope",
+        "context_pack",
+        "allowed_read_scope",
+        "allowed_write_scope_or_none",
+        "output_contract",
+        "validation_plan",
+        "stop_conditions",
+        "custody_path"
+      ],
+      "must_not_claim": [
+        "PATCH_PACK",
+        "REALITY_MUTATION",
+        "TRUST_PROVEN",
+        "THRONE_VERDICT"
+      ]
+    },
+    "SERVITOR_OUTPUT": {
+      "home": "WARP/TASKS/<TASK_ID>/03_SERVITOR_OUTPUT",
+      "created_by": [
+        "SERVITOR"
+      ],
+      "purpose": "Untrusted external executor output. Must be validated/quarantined before use.",
+      "servitor_dispatch_allowed": false,
+      "reality_mutation_allowed": false,
+      "requires": [
+        "source_task_pack",
+        "raw_output",
+        "output_manifest",
+        "quarantine_state",
+        "validation_required"
+      ],
+      "may_be_promoted_to": [
+        "PATCH_PACK_CANDIDATE_BY_OWNER_LOGOS"
+      ],
+      "must_not_claim": [
+        "PATCH_PACK",
+        "REALITY_MUTATION",
+        "VALIDATED",
+        "TRUST_PROVEN"
+      ]
+    },
+    "PATCH_PACK_FROM_SERVITOR_OUTPUT": {
+      "home": "WARP/PATCHES/<PATCH_ID>",
+      "created_by": [
+        "OWNER",
+        "LOGOS_PRIME"
+      ],
+      "purpose": "Normal Patch Pack manually created from reviewed Servitor output.",
+      "servitor_dispatch_allowed": false,
+      "reality_mutation_allowed": true,
+      "requires": [
+        "source_servitor_output_reference",
+        "owner_logos_review",
+        "normal_patch_pack_requirements"
+      ],
+      "must_not_claim": [
+        "SERVITOR_OUTPUT_IS_REALITY"
+      ]
+    }
+  },
+  "hard_laws": [
+    "INTAKE_DRAFT is not VALID_TASK_PACK",
+    "TASK_PACK is for SERVITOR work only",
+    "VALID_TASK_PACK requires SERVITOR context and authority envelope",
+    "SERVITOR_OUTPUT is not PATCH_PACK",
+    "SERVITOR_OUTPUT cannot mutate Reality",
+    "Reality mutation path is PATCH_PACK under Owner + Logos Prime control",
+    "Patch Pack does not require Servitor",
+    "Task Pack cannot be dispatched without validation",
+    "00_INTAKE folder must not be counted as valid Task Pack",
+    "Receipt existence is not task completion proof"
+  ]
+}

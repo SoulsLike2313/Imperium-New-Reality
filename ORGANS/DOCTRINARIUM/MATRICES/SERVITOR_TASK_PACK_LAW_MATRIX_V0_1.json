@@ -1,0 +1,39 @@
+{
+  "matrix_id": "SERVITOR_TASK_PACK_LAW_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "DOCTRINARIUM",
+  "status": "ACTIVE_SERVITOR_TASK_LAW",
+  "patch_id": "DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+  "definition": "Task Pack is a validated Servitor work order. It constrains an external LLM/agent executor.",
+  "required_sections_for_valid_task_pack": [
+    "servitor_identity_or_class",
+    "owner_intent_reference",
+    "source_intake_reference",
+    "authority_envelope",
+    "context_pack_manifest",
+    "allowed_read_scope",
+    "allowed_write_scope",
+    "forbidden_actions",
+    "output_contract",
+    "stop_conditions",
+    "validation_plan",
+    "receipt_contract",
+    "quarantine_or_return_path"
+  ],
+  "state_machine": [
+    "INTAKE_DRAFT",
+    "TASK_PACK_CANDIDATE",
+    "VALID_TASK_PACK",
+    "DISPATCHED_TO_SERVITOR",
+    "SERVITOR_OUTPUT_RECEIVED",
+    "OUTPUT_VALIDATION_REQUIRED",
+    "OUTPUT_ACCEPTED_FOR_PATCH_PLANNING_OR_REJECTED"
+  ],
+  "forbidden_shortcuts": [
+    "INTAKE_DRAFT -> DISPATCHED_TO_SERVITOR",
+    "SERVITOR_OUTPUT -> REALITY_MUTATION",
+    "SERVITOR_OUTPUT -> PATCH_PACK without Owner + Logos Prime review",
+    "VALID_TASK_PACK -> THRONE_VERDICT",
+    "receipt_text -> task_completion without gate comparison"
+  ]
+}

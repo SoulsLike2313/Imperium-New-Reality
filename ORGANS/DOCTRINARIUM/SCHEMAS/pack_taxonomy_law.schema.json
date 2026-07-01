@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.doctrinarium.pack_taxonomy_law.schema.v0_1",
+  "title": "Imperium Pack Taxonomy Law V0.1",
+  "type": "object",
+  "required": [
+    "matrix_id",
+    "version",
+    "owner",
+    "status",
+    "patch_id",
+    "hard_laws"
+  ],
+  "properties": {
+    "matrix_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string",
+      "const": "DOCTRINARIUM"
+    },
+    "status": {
+      "type": "string"
+    },
+    "patch_id": {
+      "type": "string"
+    },
+    "hard_laws": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

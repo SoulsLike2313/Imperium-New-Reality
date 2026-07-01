@@ -1,0 +1,248 @@
+{
+  "receipt_id": "receipt.doctrinarium.pack_taxonomy_law.v0_1",
+  "task_id": "DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+  "validator_id": "doctrinarium_pack_taxonomy_law_validator.v0_1",
+  "verdict": "PASS_PACK_TAXONOMY_LAW_VALIDATED",
+  "generated_at_utc": "2026-07-01T18:41:20Z",
+  "repo_head": "83c0cc2ec90e4a1b3cc2d7d0c4065a7c6eeb9730",
+  "checks": [
+    {
+      "name": "PACK_TAXONOMY_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/DOCTRINARIUM/MATRICES/PACK_TAXONOMY_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "SERVITOR_TASK_PACK_LAW_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/DOCTRINARIUM/MATRICES/SERVITOR_TASK_PACK_LAW_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "PATCH_PACK_LAW_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/DOCTRINARIUM/MATRICES/PATCH_PACK_LAW_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "pack_taxonomy_law.schema.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/DOCTRINARIUM/SCHEMAS/pack_taxonomy_law.schema.json"
+      }
+    },
+    {
+      "name": "PACK_TAXONOMY_AND_SERVITOR_TASK_LAW_V0_1.md_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/DOCTRINARIUM/DOCTRINE/PACK_TAXONOMY_AND_SERVITOR_TASK_LAW_V0_1.md"
+      }
+    },
+    {
+      "name": "pack_taxonomy_matrix_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "servitor_task_pack_law_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "patch_pack_law_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "required_pack_hard_laws_present",
+      "status": "PASS",
+      "details": {
+        "missing_laws": []
+      }
+    },
+    {
+      "name": "owner_logos_servitor_formulae_present",
+      "status": "PASS",
+      "details": {
+        "formulae": {
+          "patch_pack_formula": "OWNER + LOGOS_PRIME = PATCH_PACK",
+          "task_pack_formula": "OWNER + LOGOS_PRIME + SERVITOR = TASK_PACK"
+        }
+      }
+    },
+    {
+      "name": "required_pack_entities_defined",
+      "status": "PASS",
+      "details": {
+        "missing_entities": []
+      }
+    },
+    {
+      "name": "intake_draft_cannot_be_task_pack_or_dispatch",
+      "status": "PASS",
+      "details": {
+        "home": "WARP/TASKS/<TASK_ID>/00_INTAKE",
+        "created_by": [
+          "ASTRONOMICON"
+        ],
+        "purpose": "Capture Owner intent, classify task shape, detect missing context, block execution, draft route/focus.",
+        "servitor_dispatch_allowed": false,
+        "reality_mutation_allowed": false,
+        "may_be_promoted_to": [
+          "TASK_PACK_CANDIDATE",
+          "PATCH_PACK_PLAN"
+        ],
+        "must_not_claim": [
+          "VALID_TASK_PACK",
+          "PATCH_PACK",
+          "SERVITOR_DISPATCHED",
+          "REALITY_MUTATION",
+          "TASK_COMPLETED"
+        ]
+      }
+    },
+    {
+      "name": "valid_task_pack_is_servitor_only_not_reality_mutation",
+      "status": "PASS",
+      "details": {
+        "home": "WARP/TASKS/<TASK_ID>/02_TASK_PACK_VALIDATED",
+        "created_by": [
+          "OWNER",
+          "LOGOS_PRIME",
+          "OFFICIO_AGENTIS"
+        ],
+        "purpose": "Validated work order for Servitor/external LLM executor.",
+        "servitor_dispatch_allowed": true,
+        "reality_mutation_allowed": false,
+        "requires": [
+          "servitor_identity_or_class",
+          "authority_envelope",
+          "context_pack",
+          "allowed_read_scope",
+          "allowed_write_scope_or_none",
+          "output_contract",
+          "validation_plan",
+          "stop_conditions",
+          "custody_path"
+        ],
+        "must_not_claim": [
+          "PATCH_PACK",
+          "REALITY_MUTATION",
+          "TRUST_PROVEN",
+          "THRONE_VERDICT"
+        ]
+      }
+    },
+    {
+      "name": "servitor_output_not_patch_pack_or_reality",
+      "status": "PASS",
+      "details": {
+        "home": "WARP/TASKS/<TASK_ID>/03_SERVITOR_OUTPUT",
+        "created_by": [
+          "SERVITOR"
+        ],
+        "purpose": "Untrusted external executor output. Must be validated/quarantined before use.",
+        "servitor_dispatch_allowed": false,
+        "reality_mutation_allowed": false,
+        "requires": [
+          "source_task_pack",
+          "raw_output",
+          "output_manifest",
+          "quarantine_state",
+          "validation_required"
+        ],
+        "may_be_promoted_to": [
+          "PATCH_PACK_CANDIDATE_BY_OWNER_LOGOS"
+        ],
+        "must_not_claim": [
+          "PATCH_PACK",
+          "REALITY_MUTATION",
+          "VALIDATED",
+          "TRUST_PROVEN"
+        ]
+      }
+    },
+    {
+      "name": "valid_task_pack_required_sections_present",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "patch_pack_required_sections_present",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "servitor_forbidden_shortcuts_present",
+      "status": "PASS",
+      "details": {
+        "forbidden_shortcuts": [
+          "INTAKE_DRAFT -> DISPATCHED_TO_SERVITOR",
+          "SERVITOR_OUTPUT -> REALITY_MUTATION",
+          "SERVITOR_OUTPUT -> PATCH_PACK without Owner + Logos Prime review",
+          "VALID_TASK_PACK -> THRONE_VERDICT",
+          "receipt_text -> task_completion without gate comparison"
+        ]
+      }
+    },
+    {
+      "name": "existing_00_intake_discovered_as_intake_drafts_only",
+      "status": "PASS",
+      "details": {
+        "intake_draft_count": 6,
+        "sample": [
+          "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE",
+          "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE",
+          "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE",
+          "WARP/TASKS/OWNERTEST-ASTRONOMICON-PATCH-0001/00_INTAKE",
+          "WARP/TASKS/OWNERTEST-GAME-BUILD-0001/00_INTAKE",
+          "WARP/TASKS/OWNERTEST-WITCHER3-60FPS-0001/00_INTAKE"
+        ]
+      }
+    },
+    {
+      "name": "existing_patch_packs_discovered_as_patch_packs",
+      "status": "PASS",
+      "details": {
+        "patch_pack_count": 25,
+        "sample": [
+          "WARP/PATCHES/THRONE-CROWN-ORGAN-FOUNDATION-0001",
+          "WARP/PATCHES/THRONE-KERNEL-ANATOMY-AND-CORE-V1-TARGET-0001",
+          "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+          "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STANDARD-0001",
+          "WARP/PATCHES/THRONE-TARGET-GAP-CORE-V1-SCORING-INTEGRATION-0001",
+          "WARP/PATCHES/THRONE-TARGET-GAP-CORE-V1-SCORING-INTEGRATION-0001-FIX-0001",
+          "WARP/PATCHES/THRONE-TARGET-GAP-CORE-V1-SCORING-INTEGRATION-0001-FIX-0002",
+          "WARP/PATCHES/THRONE-TARGET-GAP-ORGAN-IMPLEMENTATION-SPLIT-0001",
+          "WARP/PATCHES/THRONE-TARGET-GAP-VALIDATOR-0001",
+          "WARP/PATCHES/VALIDATOR-READONLY-EXTERNAL-AUDIT-MODE-0001"
+        ]
+      }
+    },
+    {
+      "name": "dry_run_receipts_block_execution",
+      "status": "PASS",
+      "details": {
+        "violations": []
+      }
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "summary": "ORGANS/DOCTRINARIUM/REPORTS/PACK_TAXONOMY_LAW_SUMMARY_V0_1.json",
+  "report": "ORGANS/DOCTRINARIUM/REPORTS/PACK_TAXONOMY_LAW_REPORT_V0_1.md",
+  "meaning": "Pack taxonomy laws are readable and enforce that Task Pack is Servitor-only while Patch Pack is Owner+Logos Prime Reality patch path."
+}
