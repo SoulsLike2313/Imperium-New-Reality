@@ -1,0 +1,39 @@
+{
+  "receipt_id": "receipt.support_launcher.patch_lifecycle_operator.v0_1",
+  "generated_at_utc": "2026-07-01T20:10:10Z",
+  "repo_head": "91b1cc7e",
+  "target_patch_id": "PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+  "all_mode": false,
+  "operator_state": "PASS_OPERATOR_LIFECYCLE_FOUNDATION",
+  "pre_work": {
+    "mechanicus_exit_code": 0,
+    "mechanicus_verdict": "PASS_TECHNICAL_PREFLIGHT",
+    "mechanicus_error_count": 0
+  },
+  "scope_gate": {
+    "inquisition_exit_code": 0,
+    "inquisition_verdict": "PASS_SCOPE_FAKE_GREEN_GATE",
+    "inquisition_error_count": 0
+  },
+  "post_work_smoke": {
+    "astronomicon_exit_code": 0,
+    "smoke_patch_count": 1,
+    "smoke_summary": "SUPPORT/LAUNCHER/REPORTS/PATCH_LIFECYCLE_OPERATOR_SMOKE_PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001.json"
+  },
+  "not_claimed": [
+    "patch execution",
+    "Custodes trust",
+    "Throne verdict",
+    "full red/blue proof"
+  ],
+  "stdout_tail": {
+    "mechanicus": "{\n  \"task_id\": \"PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001\",\n  \"validator_id\": \"mechanicus_patch_pack_technical_preflight.v0_1\",\n  \"verdict\": \"PASS_TECHNICAL_PREFLIGHT\",\n  \"target_patch_id\": \"PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001\",\n  \"patch_count\": 1,\n  \"pass_count\": 1,\n  \"error_count\": 0,\n  \"receipt\": \"ORGANS/MECHANICUS/RECEIPTS/patch_pack_technical_preflight_receipt.json\",\n  \"summary\": \"ORGANS/MECHANICUS/REPORTS/PATCH_PACK_TECHNICAL_PREFLIGHT_SUMMARY_V0_1.json\",\n  \"errors\": [],\n  \"warnings\": []\n}\n",
+    "inquisition": "{\n  \"task_id\": \"PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001\",\n  \"validator_id\": \"inquisition_patch_pack_scope_fake_green_gate.v0_1\",\n  \"verdict\": \"PASS_SCOPE_FAKE_GREEN_GATE\",\n  \"target_patch_id\": \"PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001\",\n  \"patch_count\": 1,\n  \"pass_count\": 1,\n  \"error_count\": 0,\n  \"receipt\": \"ORGANS/INQUISITION/RECEIPTS/patch_pack_scope_fake_green_receipt.json\",\n  \"summary\": \"ORGANS/INQUISITION/REPORTS/PATCH_PACK_SCOPE_FAKE_GREEN_SUMMARY_V0_1.json\",\n  \"errors\": [],\n  \"warnings\": []\n}\n",
+    "smoke": "{\n  \"summary_id\": \"astronomicon.patch_pack_smoke_validation_summary.v0_1\",\n  \"patch_id\": \"ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001\",\n  \"generated_at_utc\": \"2026-07-01T20:10:10Z\",\n  \"target_patch_id\": \"PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001\",\n  \"patch_count\": 1,\n  \"results\": [\n    {\n      \"artifact_id\": \"ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1\",\n      \"patch_id\": \"PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001\",\n      \"path\": \"WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001\",\n      \"is_patch_pack\": true,\n      \"smoke_verdict\": \"PARTIAL\",\n      \"evidence_level\": \"DECLARED_ONLY\",\n      \"declared_expected_verdicts\": [\n        \"PASS_PATCH_LIFECYCLE_LAUNCHER_COMMANDS_READY\"\n      ],\n      \"declared_expected_receipts\": [],\n      \"actual_receipts_found\": [],\n      \"matching_verdict_receipts\": [],\n      \"linked_intake_candidates\": [],\n      \"shape\": {\n        \"patch_pack_doc\": \"WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/PATCH_PACK.md\",\n        \"runner_count\": 1,\n        \"manifest_exists\": true,\n        \"files_to_land_exists\": true\n      },\n      \"warnings\": [],\n      \"errors\": [],\n      \"meaning\": \"Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict.\"\n    }\n  ],\n  \"meaning\": \"Astronomicon smoke-tested Patch Pack declarations against visible receipts without executing runners.\"\n}\n"
+  },
+  "stderr_tail": {
+    "mechanicus": "",
+    "inquisition": "",
+    "smoke": ""
+  }
+}

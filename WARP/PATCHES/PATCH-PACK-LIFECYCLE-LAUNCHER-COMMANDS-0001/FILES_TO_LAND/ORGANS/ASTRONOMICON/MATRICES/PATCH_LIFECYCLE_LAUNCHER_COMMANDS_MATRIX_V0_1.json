@@ -1,0 +1,36 @@
+{
+  "matrix_id": "PATCH_LIFECYCLE_LAUNCHER_COMMANDS_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "ASTRONOMICON",
+  "status": "ACTIVE_OPERATOR_COMMAND_LAW",
+  "patch_id": "PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+  "purpose": "Expose Patch Pack lifecycle validation as terminal launcher commands without adding patch execution.",
+  "commands": [
+    "patch preflight <PATCH_ID>",
+    "patch scope <PATCH_ID>",
+    "patch smoke <PATCH_ID>",
+    "patch smoke-all",
+    "patch smoke-summary",
+    "patch smoke-partial",
+    "patch smoke-closed",
+    "patch lifecycle <PATCH_ID>",
+    "patch lifecycle-all"
+  ],
+  "hard_laws": [
+    "launcher patch lifecycle commands must not execute patch runners",
+    "launcher patch lifecycle commands must not git commit or push",
+    "patch preflight uses Mechanicus",
+    "patch scope uses Inquisition",
+    "patch smoke uses Astronomicon",
+    "patch lifecycle combines foundation validators and writes operator receipt",
+    "operator lifecycle result is not Custodes trust",
+    "operator lifecycle result is not Throne verdict"
+  ],
+  "not_claimed": [
+    "patch run",
+    "Custodes trust",
+    "Throne crown verdict",
+    "full red/blue fake-green proof",
+    "Valid Servitor Task Pack implementation"
+  ]
+}

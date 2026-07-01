@@ -1,0 +1,33 @@
+{
+  "launcher_id": "IMPERIUM_TERMINAL_LAUNCHER_V0_2",
+  "patch_id": "PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+  "mode": "SCRIPT_FIRST_RETURNS_TERMINAL",
+  "inherits": "IMPERIUM_TERMINAL_LAUNCHER_V0_1",
+  "new_patch_lifecycle_commands": [
+    "patch preflight <PATCH_ID>",
+    "patch scope <PATCH_ID>",
+    "patch smoke <PATCH_ID>",
+    "patch smoke-all",
+    "patch smoke-summary",
+    "patch smoke-partial",
+    "patch smoke-closed",
+    "patch lifecycle <PATCH_ID>",
+    "patch lifecycle-all"
+  ],
+  "still_forbidden": [
+    "patch run",
+    "patch apply",
+    "git commit",
+    "git push",
+    "servitor dispatch",
+    "trust claim",
+    "Throne verdict claim"
+  ],
+  "operator_law": [
+    "preflight command calls Mechanicus technical preflight",
+    "scope command calls Inquisition scope/fake-green gate",
+    "smoke command calls Astronomicon declared-vs-receipt smoke",
+    "lifecycle command combines preflight/scope/smoke and writes launcher receipt",
+    "commands do not execute Patch Pack runners"
+  ]
+}

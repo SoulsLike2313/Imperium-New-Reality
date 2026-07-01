@@ -2,24 +2,24 @@
   "summary_id": "mechanicus.patch_pack_technical_preflight_summary.v0_1",
   "task_id": "PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
   "validator_id": "mechanicus_patch_pack_technical_preflight.v0_1",
-  "generated_at_utc": "2026-07-01T19:57:33Z",
-  "repo_head": "60efa2d4bb8756fa157917651eca2ba4d8bf55b3",
-  "target_patch_id": "PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+  "generated_at_utc": "2026-07-01T20:10:10Z",
+  "repo_head": "91b1cc7ec902eb7ae8b319d02d4a97742f026a36",
+  "target_patch_id": "PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
   "patch_count": 1,
   "pass_count": 1,
   "error_count": 0,
   "verdict": "PASS_TECHNICAL_PREFLIGHT",
   "results": [
     {
-      "patch_id": "PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
-      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "patch_id": "PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
       "verdict": "PASS_TECHNICAL_PREFLIGHT",
       "checks": [
         {
           "name": "patch_pack_doc_exists",
           "status": "PASS",
           "details": {
-            "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/PATCH_PACK.md"
+            "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/PATCH_PACK.md"
           },
           "severity": "error"
         },
@@ -28,7 +28,7 @@
           "status": "PASS",
           "details": {
             "runners": [
-              "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/RUN_PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION.ps1"
+              "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/RUN_PATCH_LIFECYCLE_LAUNCHER_COMMANDS.ps1"
             ]
           },
           "severity": "error"
@@ -37,7 +37,7 @@
           "name": "files_to_land_exists",
           "status": "PASS",
           "details": {
-            "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/FILES_TO_LAND"
+            "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/FILES_TO_LAND"
           },
           "severity": "error"
         },
@@ -45,7 +45,7 @@
           "name": "sha256_manifest_exists",
           "status": "PASS",
           "details": {
-            "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/PATCH_FILE_MANIFEST_SHA256.json"
+            "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/PATCH_FILE_MANIFEST_SHA256.json"
           },
           "severity": "error"
         },
@@ -88,7 +88,7 @@
           "name": "python_files_syntax_compile_without_pyc",
           "status": "PASS",
           "details": {
-            "checked": 3,
+            "checked": 2,
             "errors": []
           },
           "severity": "error"
