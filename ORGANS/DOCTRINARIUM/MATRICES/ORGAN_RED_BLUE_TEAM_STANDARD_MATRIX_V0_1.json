@@ -1,0 +1,25 @@
+{
+  "matrix_id": "ORGAN_RED_BLUE_TEAM_STANDARD_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "DOCTRINARIUM",
+  "status": "TARGET_DEFINED_NOT_IMPLEMENTED",
+  "patch_id": "THRONE-ORGAN-ASSEMBLY-STANDARD-0001",
+  "meaning": "Each organ must eventually own a red-team side and a blue-team side for its own responsibility zone.",
+  "red_team_definition": "Find how the organ can fail, lie, leak scope, inflate score, misroute work, confuse an LLM, or accept unsafe evidence.",
+  "blue_team_definition": "Defend the organ with hard gates, stop conditions, rollback, scope locks, receipts, negative tests, and recovery paths.",
+  "required_red_team_artifacts": [
+    "failure_mode_matrix",
+    "attack_scenarios",
+    "negative_fixtures",
+    "red_team_validator",
+    "red_team_receipt"
+  ],
+  "required_blue_team_artifacts": [
+    "guard_matrix",
+    "defense_scenarios",
+    "positive_and_recovery_fixtures",
+    "blue_team_validator",
+    "blue_team_receipt"
+  ],
+  "top_throne_red_blue_law": "Throne red/blue layer must attack fake green, score inflation, stale receipts, self-trust, no-core-mutation lies, and cross-organ proof gaps."
+}

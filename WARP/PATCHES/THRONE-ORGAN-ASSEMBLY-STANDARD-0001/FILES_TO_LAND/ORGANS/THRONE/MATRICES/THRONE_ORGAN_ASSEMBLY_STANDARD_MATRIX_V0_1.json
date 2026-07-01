@@ -1,0 +1,124 @@
+{
+  "matrix_id": "THRONE_ORGAN_ASSEMBLY_STANDARD_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "THRONE",
+  "status": "ASSEMBLY_TARGET_LAW_DEFINED",
+  "patch_id": "THRONE-ORGAN-ASSEMBLY-STANDARD-0001",
+  "organ_scope": [
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "DOCTRINARIUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "CUSTODES",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS",
+    "OFFICIO_AGENTIS",
+    "THRONE"
+  ],
+  "assembly_definition": "An organ is assembled only when TUI launcher presence, tools/docs/functions, personal validators, Custodes validators, Throne validators, and red/blue resilience are all evidenced and verified.",
+  "assembly_gates": {
+    "tui_launcher_presence": {
+      "group": "OWNER_VISIBILITY",
+      "meaning": "Organ has a terminal launcher presence that returns control to the shell after command execution.",
+      "required_evidence": [
+        "launcher_command_declared",
+        "status_view_declared",
+        "receipt_view_declared",
+        "validate_action_declared"
+      ]
+    },
+    "organ_tools_docs_functions": {
+      "group": "ORGAN_CAPABILITY",
+      "meaning": "Organ has concrete docs/functions/tools needed to perform its mission.",
+      "required_evidence": [
+        "FUNCTIONS.md_or_equivalent",
+        "tool_or_script_inventory",
+        "input_output_contract",
+        "workflow_documentation"
+      ]
+    },
+    "personal_flow_validators": {
+      "group": "PERSONAL_VALIDATION",
+      "meaning": "Validators that check work flowing through the organ.",
+      "required_evidence": [
+        "flow_validator_inventory",
+        "positive_fixture",
+        "negative_fixture",
+        "flow_receipt_schema"
+      ]
+    },
+    "personal_integrity_validators": {
+      "group": "PERSONAL_VALIDATION",
+      "meaning": "Validators that check whether the organ itself behaves honestly and within authority.",
+      "required_evidence": [
+        "integrity_validator_inventory",
+        "forbidden_action_test",
+        "self_claim_rejection_test",
+        "organ_health_receipt"
+      ]
+    },
+    "custodes_organ_validators": {
+      "group": "CUSTODES_TRUST",
+      "meaning": "Custodes validators attack the organ's work, authority, validator honesty, and trust chain.",
+      "required_evidence": [
+        "custodes_validator_for_organ",
+        "scope_authority_check",
+        "validator_honesty_check",
+        "trust_receipt"
+      ]
+    },
+    "throne_organ_validators": {
+      "group": "THRONE_CROWN",
+      "meaning": "Throne validators decide whether the organ's proof counts as Imperium reality.",
+      "required_evidence": [
+        "throne_validator_for_organ",
+        "score_contract_check",
+        "cross_organ_evidence_check",
+        "crown_stage_verdict"
+      ]
+    },
+    "red_team_layer": {
+      "group": "RESILIENCE",
+      "meaning": "Organ can attack its own failure modes, fake-green paths, scope leaks, and vulnerability patterns.",
+      "required_evidence": [
+        "red_team_scenario_inventory",
+        "failure_mode_matrix",
+        "attack_validator",
+        "negative_evidence_receipt"
+      ]
+    },
+    "blue_team_layer": {
+      "group": "RESILIENCE",
+      "meaning": "Organ can defend against its own red-team findings through hard gates, guardrails, and recovery paths.",
+      "required_evidence": [
+        "blue_team_guard_inventory",
+        "defense_validator",
+        "rollback_or_stop_condition",
+        "blue_team_receipt"
+      ]
+    }
+  },
+  "stage_law": "profile_baseline != duty_defined != assembly_target_defined != rule_validated != action_proven != trust_proven != throne_confirmed != organ_assembled",
+  "hard_rules": [
+    "assembly_target_defined is not organ_assembled",
+    "duty contract is not operational proof",
+    "TUI placeholder is not human visibility proof",
+    "personal validator pass is not Custodes trust",
+    "Custodes validator pass is not Throne crown confirmation",
+    "red-team inventory is not resilience proof until attack validators exist",
+    "blue-team inventory is not defense proof until defense validators pass",
+    "organ assembly score must not raise operational/trust/no-core-mutation scores without action receipts"
+  ],
+  "scores_defined": [
+    "organ_assembly_target_defined_score",
+    "organ_tui_presence_score",
+    "organ_tooling_score",
+    "organ_personal_validator_score",
+    "organ_custodes_validator_score",
+    "organ_throne_validator_score",
+    "organ_red_team_score",
+    "organ_blue_team_score",
+    "organ_assembled_score"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.organ_assembly_target.schema.v0_1",
+  "title": "Imperium Organ Assembly Target V0.1",
+  "type": "object",
+  "required": [
+    "assembly_target_id",
+    "version",
+    "status",
+    "organ_id",
+    "owner_intent_definition",
+    "assembly_gates",
+    "layer_groups",
+    "must_not_claim",
+    "score_policy",
+    "required_future_receipts",
+    "required_future_validators"
+  ],
+  "properties": {
+    "assembly_target_id": {
+      "type": "string",
+      "minLength": 5
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "const": "ASSEMBLY_TARGET_DEFINED_NOT_ASSEMBLED"
+    },
+    "organ_id": {
+      "type": "string",
+      "enum": [
+        "ASTRONOMICON",
+        "ADMINISTRATUM",
+        "DOCTRINARIUM",
+        "MECHANICUS",
+        "INQUISITION",
+        "CUSTODES",
+        "STRATEGIUM",
+        "SCHOLA_IMPERIALIS",
+        "OFFICIO_AGENTIS",
+        "THRONE"
+      ]
+    },
+    "owner_intent_definition": {
+      "type": "string",
+      "minLength": 20
+    },
+    "assembly_gates": {
+      "type": "object",
+      "required": [
+        "tui_launcher_presence",
+        "organ_tools_docs_functions",
+        "personal_flow_validators",
+        "personal_integrity_validators",
+        "custodes_organ_validators",
+        "throne_organ_validators",
+        "red_team_layer",
+        "blue_team_layer"
+      ]
+    },
+    "layer_groups": {
+      "type": "object"
+    },
+    "must_not_claim": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "string"
+      }
+    },
+    "score_policy": {
+      "type": "object"
+    },
+    "required_future_receipts": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_future_validators": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

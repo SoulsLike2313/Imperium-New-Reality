@@ -1,0 +1,241 @@
+{
+  "assembly_target_id": "custodes.organ_assembly_target.v0_1",
+  "version": "0.1",
+  "status": "ASSEMBLY_TARGET_DEFINED_NOT_ASSEMBLED",
+  "organ_id": "CUSTODES",
+  "owner_intent_definition": "Organ is assembled only when it has launcher visibility, capability tools, personal validators, Custodes validators, Throne validators, and red/blue resilience evidence.",
+  "assembly_gates": {
+    "tui_launcher_presence": {
+      "required": true,
+      "proof_state": "NOT_PROVEN",
+      "evidence_paths": [],
+      "required_evidence": [
+        "launcher_command_declared",
+        "status_view_declared",
+        "receipt_view_declared",
+        "validate_action_declared"
+      ]
+    },
+    "organ_tools_docs_functions": {
+      "required": true,
+      "proof_state": "NOT_PROVEN",
+      "evidence_paths": [],
+      "required_evidence": [
+        "FUNCTIONS.md_or_equivalent",
+        "tool_or_script_inventory",
+        "input_output_contract",
+        "workflow_documentation"
+      ]
+    },
+    "personal_flow_validators": {
+      "required": true,
+      "proof_state": "NOT_PROVEN",
+      "evidence_paths": [],
+      "required_evidence": [
+        "flow_validator_inventory",
+        "positive_fixture",
+        "negative_fixture",
+        "flow_receipt_schema"
+      ]
+    },
+    "personal_integrity_validators": {
+      "required": true,
+      "proof_state": "NOT_PROVEN",
+      "evidence_paths": [],
+      "required_evidence": [
+        "integrity_validator_inventory",
+        "forbidden_action_test",
+        "self_claim_rejection_test",
+        "organ_health_receipt"
+      ]
+    },
+    "custodes_organ_validators": {
+      "required": true,
+      "proof_state": "NOT_PROVEN",
+      "evidence_paths": [],
+      "required_evidence": [
+        "custodes_validator_for_organ",
+        "scope_authority_check",
+        "validator_honesty_check",
+        "trust_receipt"
+      ]
+    },
+    "throne_organ_validators": {
+      "required": true,
+      "proof_state": "NOT_PROVEN",
+      "evidence_paths": [],
+      "required_evidence": [
+        "throne_validator_for_organ",
+        "score_contract_check",
+        "cross_organ_evidence_check",
+        "crown_stage_verdict"
+      ]
+    },
+    "red_team_layer": {
+      "required": true,
+      "proof_state": "NOT_PROVEN",
+      "evidence_paths": [],
+      "required_evidence": [
+        "red_team_scenario_inventory",
+        "failure_mode_matrix",
+        "attack_validator",
+        "negative_evidence_receipt"
+      ]
+    },
+    "blue_team_layer": {
+      "required": true,
+      "proof_state": "NOT_PROVEN",
+      "evidence_paths": [],
+      "required_evidence": [
+        "blue_team_guard_inventory",
+        "defense_validator",
+        "rollback_or_stop_condition",
+        "blue_team_receipt"
+      ]
+    }
+  },
+  "layer_groups": {
+    "tui_launcher_presence": {
+      "group": "OWNER_VISIBILITY",
+      "meaning": "Organ has a terminal launcher presence that returns control to the shell after command execution.",
+      "required_evidence": [
+        "launcher_command_declared",
+        "status_view_declared",
+        "receipt_view_declared",
+        "validate_action_declared"
+      ]
+    },
+    "organ_tools_docs_functions": {
+      "group": "ORGAN_CAPABILITY",
+      "meaning": "Organ has concrete docs/functions/tools needed to perform its mission.",
+      "required_evidence": [
+        "FUNCTIONS.md_or_equivalent",
+        "tool_or_script_inventory",
+        "input_output_contract",
+        "workflow_documentation"
+      ]
+    },
+    "personal_flow_validators": {
+      "group": "PERSONAL_VALIDATION",
+      "meaning": "Validators that check work flowing through the organ.",
+      "required_evidence": [
+        "flow_validator_inventory",
+        "positive_fixture",
+        "negative_fixture",
+        "flow_receipt_schema"
+      ]
+    },
+    "personal_integrity_validators": {
+      "group": "PERSONAL_VALIDATION",
+      "meaning": "Validators that check whether the organ itself behaves honestly and within authority.",
+      "required_evidence": [
+        "integrity_validator_inventory",
+        "forbidden_action_test",
+        "self_claim_rejection_test",
+        "organ_health_receipt"
+      ]
+    },
+    "custodes_organ_validators": {
+      "group": "CUSTODES_TRUST",
+      "meaning": "Custodes validators attack the organ's work, authority, validator honesty, and trust chain.",
+      "required_evidence": [
+        "custodes_validator_for_organ",
+        "scope_authority_check",
+        "validator_honesty_check",
+        "trust_receipt"
+      ]
+    },
+    "throne_organ_validators": {
+      "group": "THRONE_CROWN",
+      "meaning": "Throne validators decide whether the organ's proof counts as Imperium reality.",
+      "required_evidence": [
+        "throne_validator_for_organ",
+        "score_contract_check",
+        "cross_organ_evidence_check",
+        "crown_stage_verdict"
+      ]
+    },
+    "red_team_layer": {
+      "group": "RESILIENCE",
+      "meaning": "Organ can attack its own failure modes, fake-green paths, scope leaks, and vulnerability patterns.",
+      "required_evidence": [
+        "red_team_scenario_inventory",
+        "failure_mode_matrix",
+        "attack_validator",
+        "negative_evidence_receipt"
+      ]
+    },
+    "blue_team_layer": {
+      "group": "RESILIENCE",
+      "meaning": "Organ can defend against its own red-team findings through hard gates, guardrails, and recovery paths.",
+      "required_evidence": [
+        "blue_team_guard_inventory",
+        "defense_validator",
+        "rollback_or_stop_condition",
+        "blue_team_receipt"
+      ]
+    }
+  },
+  "launcher_contract": {
+    "required": true,
+    "commands_expected": [
+      "imperium organ custodes status",
+      "imperium organ custodes functions",
+      "imperium organ custodes receipts",
+      "imperium organ custodes validate self",
+      "imperium organ custodes validate custodes",
+      "imperium organ custodes validate throne",
+      "imperium organ custodes red",
+      "imperium organ custodes blue"
+    ],
+    "terminal_return_required": true,
+    "ide_dependency_forbidden_for_v1": true
+  },
+  "must_not_claim": [
+    "organ_assembled",
+    "operational_proven",
+    "trust_proven",
+    "throne_confirmed",
+    "red_blue_resilient",
+    "no_core_mutation_proven"
+  ],
+  "score_policy": {
+    "target_definition_can_raise": [
+      "organ_assembly_target_defined_score"
+    ],
+    "must_not_raise": [
+      "operational_score",
+      "trust_score",
+      "core_v1_no_core_mutation_evidence_score",
+      "organ_assembled_score"
+    ],
+    "minimum_for_organ_assembled": {
+      "tui_launcher_presence": 100,
+      "organ_tools_docs_functions": 100,
+      "personal_flow_validators": 100,
+      "personal_integrity_validators": 100,
+      "custodes_organ_validators": 100,
+      "throne_organ_validators": 100,
+      "red_team_layer": 100,
+      "blue_team_layer": 100
+    }
+  },
+  "required_future_receipts": [
+    "custodes_tui_launcher_receipt.json",
+    "custodes_capability_tooling_receipt.json",
+    "custodes_personal_validation_receipt.json",
+    "custodes_custodes_assembly_audit_receipt.json",
+    "throne_custodes_assembly_verdict_receipt.json",
+    "custodes_red_blue_resilience_receipt.json"
+  ],
+  "required_future_validators": [
+    "validate_custodes_tui_launcher.py",
+    "validate_custodes_capability_tooling.py",
+    "validate_custodes_personal_flow.py",
+    "validate_custodes_personal_integrity.py",
+    "validate_custodes_custodes_assembly_audit.py",
+    "validate_throne_custodes_assembly_truth.py",
+    "validate_custodes_red_team.py",
+    "validate_custodes_blue_team.py"
+  ]
+}

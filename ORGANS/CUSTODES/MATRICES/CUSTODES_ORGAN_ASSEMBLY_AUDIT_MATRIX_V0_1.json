@@ -1,0 +1,23 @@
+{
+  "matrix_id": "CUSTODES_ORGAN_ASSEMBLY_AUDIT_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "CUSTODES",
+  "status": "TARGET_DEFINED_NOT_IMPLEMENTED",
+  "patch_id": "THRONE-ORGAN-ASSEMBLY-STANDARD-0001",
+  "meaning": "Custodes must attack and verify every organ after the organ's own validators pass.",
+  "required_custodes_checks_per_organ": [
+    "scope_authority_boundary_check",
+    "organ_validator_honesty_check",
+    "self_claim_rejection_check",
+    "receipt_chain_integrity_check",
+    "red_blue_layer_claim_check",
+    "permission_and_mutation_boundary_check"
+  ],
+  "must_not_accept": [
+    "self-validator as trust proof",
+    "prose-only claim",
+    "path existence as functionality",
+    "single-organ evidence as full trust",
+    "external executor output before Inquisition/Custodes review"
+  ]
+}
