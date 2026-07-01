@@ -6,7 +6,7 @@ validator_id: `throne_target_gap_validator.v0_5_organ_implementation_split`
 verdict: `PASS_MEASURED`  
 mode: `MEASURE_ONLY`  
 validation_model: `TARGET_V1_VS_CURRENT_REALITY_WITH_ORGAN_IMPLEMENTATION_SPLIT`  
-generated_at_utc: `2026-06-30T11:08:22Z`
+generated_at_utc: `2026-06-30T15:38:33Z`
 
 ## Global scores
 

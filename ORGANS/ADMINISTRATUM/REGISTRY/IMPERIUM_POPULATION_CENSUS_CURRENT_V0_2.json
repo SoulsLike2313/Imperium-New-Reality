@@ -2,15 +2,15 @@
   "census_id": "imperium.population_census.current.v0_2",
   "patch_id": "IMPERIUM-POPULATION-CENSUS-REFRESH-0001",
   "validator_id": "imperium_population_census_refresh_validator.v0_2",
-  "generated_at_utc": "2026-06-30T11:07:50Z",
-  "repo_head": "b39787a500fed3d680b9630f3ad2c65625776008",
-  "tracked_file_count": 5981,
-  "working_tree_visible_file_count": 6064,
-  "population_total": 6064,
+  "generated_at_utc": "2026-06-30T15:38:24Z",
+  "repo_head": "760d218725eb8565b65f1330a093c5ff0b3843c0",
+  "tracked_file_count": 6023,
+  "working_tree_visible_file_count": 6106,
+  "population_total": 6106,
   "root_zone_summary": {
-    "ORGANS": 2889,
+    "ORGANS": 2908,
     "SUPPORT": 2591,
-    "WARP": 546,
+    "WARP": 569,
     "_HARNESS": 34,
     ".editorconfig": 1,
     ".gitattributes": 1,
@@ -19,24 +19,25 @@
   },
   "owner_summary": {
     "SUPPORT/QUARANTINE": 2098,
-    "ASTRONOMICON": 834,
-    "ADMINISTRATUM": 790,
+    "ASTRONOMICON": 835,
+    "ADMINISTRATUM": 791,
     "SUPPORT/COMMON_IMPERIUM_SUPPORT": 445,
-    "MECHANICUS": 321,
+    "MECHANICUS": 322,
     "ORGANS/IMPERIAL_IDE": 271,
-    "INQUISITION": 226,
+    "INQUISITION": 227,
     "WARP_PATCH/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001": 165,
     "WARP_PATCH/GREAT-NINE-PROFILE-VALIDATORS-0001": 152,
-    "DOCTRINARIUM": 96,
-    "THRONE": 85,
-    "STRATEGIUM": 77,
+    "DOCTRINARIUM": 104,
+    "THRONE": 88,
+    "STRATEGIUM": 78,
     "ORGANS/_CORE_GOVERNANCE": 64,
-    "OFFICIO_AGENTIS": 51,
-    "SCHOLA_IMPERIALIS": 41,
+    "OFFICIO_AGENTIS": 52,
+    "SCHOLA_IMPERIALIS": 42,
     "SUPPORT/TRANSPORT": 39,
     "_HARNESS": 34,
     "WARP_PATCH/THRONE-CROWN-ORGAN-FOUNDATION-0001": 29,
-    "CUSTODES": 26,
+    "CUSTODES": 27,
+    "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001": 23,
     "WARP_PATCH/IMPERIUM-POPULATION-CENSUS-0001": 23,
     "WARP_PATCH/THRONE-KERNEL-ANATOMY-AND-CORE-V1-TARGET-0001": 21,
     "WARP_PATCH/GOVERNANCE-ROOT-AND-GREAT-NINE-RECONCILIATION-0001": 16,
@@ -62,41 +63,41 @@
     "SUPPORT/graph_snapshot.json": 1
   },
   "class_summary": {
-    "REPORT": 1791,
-    "RECEIPT": 919,
-    "JSON": 711,
-    "MARKDOWN": 703,
+    "REPORT": 1796,
+    "RECEIPT": 922,
+    "JSON": 731,
+    "MARKDOWN": 705,
     "OTHER": 632,
-    "MATRIX": 222,
+    "MATRIX": 226,
     "TOOL": 213,
-    "SCHEMA": 162,
+    "SCHEMA": 164,
     "PYTHON": 122,
-    "TEST": 85,
+    "TEST": 86,
     "REGISTRY": 74,
     "BLOCK": 70,
-    "VALIDATOR": 61,
-    "POWERSHELL": 43,
+    "VALIDATOR": 63,
+    "POWERSHELL": 44,
     "TUI": 40,
     "LESSON": 39,
     "DASHBOARD": 38,
     "EYES": 38,
     "NEGATIVE_LESSON": 37,
-    "TRANSPORT_FILE_MANIFEST": 22,
-    "PATCH_PACK": 20,
+    "TRANSPORT_FILE_MANIFEST": 23,
+    "PATCH_PACK": 21,
     "TRANSPORT_APPLY_SCRIPT": 17,
     "ROOT_CONFIG": 5
   },
   "status_summary": {
-    "REALITY": 2889,
+    "REALITY": 2908,
     "SUPPORT": 2552,
-    "WARP": 546,
+    "WARP": 569,
     "TRANSPORT": 39,
     "HARNESS": 34,
     "ROOT": 4
   },
   "coverage": {
     "owner_coverage_score": 100.0,
-    "classification_coverage_score": 89.58,
+    "classification_coverage_score": 89.65,
     "status_coverage_score": 100.0,
     "unknown_owner_count": 0,
     "unknown_class_count": 632,
@@ -113,7 +114,7 @@
     "legacy_census_exists": true,
     "legacy_census_path": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_CENSUS_V0_1.json",
     "legacy_population_total": 6001,
-    "population_delta_vs_legacy": 63,
+    "population_delta_vs_legacy": 105,
     "legacy_is_current": false,
     "meaning": "Legacy WARP census is historical unless explicitly mirrored by a current Administratum refresh."
   },
@@ -3669,6 +3670,16 @@
       "sha256": "ddea4e27bd33c10580ffe16394ba6b09ff28d763d5161cce290c49e2e68f45fd"
     },
     {
+      "resident_id": "resident.5e0bfb56db4870ea",
+      "path": "ORGANS/ADMINISTRATUM/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ADMINISTRATUM",
+      "resident_class": "JSON",
+      "status": "REALITY",
+      "bytes": 3393,
+      "sha256": "59ba6bd4584adc46b4ab13eec1130005a0a441a4609d78730261454d9c4b17e5"
+    },
+    {
       "resident_id": "resident.a062c3558730b0ba",
       "path": "ORGANS/ADMINISTRATUM/CONTRACTS/OWNER_AUDIT_CARD_CONTRACT_V0_1.md",
       "root_zone": "ORGANS",
@@ -5725,8 +5736,8 @@
       "owner": "ADMINISTRATUM",
       "resident_class": "RECEIPT",
       "status": "REALITY",
-      "bytes": 4311,
-      "sha256": "9aa24c6fbcb27d0b3b0fc129ff5a2d6c4a57628c3106e85d63c60ad369849472"
+      "bytes": 4246,
+      "sha256": "ad0e8f0518ac47a05cc70b4481b3167afa167e2cee6da7822914aaa4817b1559"
     },
     {
       "resident_id": "resident.85d378525e8379e5",
@@ -5745,8 +5756,8 @@
       "owner": "ADMINISTRATUM",
       "resident_class": "REGISTRY",
       "status": "REALITY",
-      "bytes": 2613219,
-      "sha256": "bc25714e5f72c11d1fbe48da13d34b8c219cd2808b22e9123484b65e18adf473"
+      "bytes": 2683238,
+      "sha256": "2bc80f7b2d0b452f3abb12ac22092d3ae12d2f26c5c7541d5045f4ba9246c0dd"
     },
     {
       "resident_id": "resident.11a49350db7f111a",
@@ -5755,8 +5766,8 @@
       "owner": "ADMINISTRATUM",
       "resident_class": "REGISTRY",
       "status": "REALITY",
-      "bytes": 3123,
-      "sha256": "076ab4f33c49b635134080e21cb6cdff119907a79c3b6dbb718ff8004de1ac61"
+      "bytes": 3145,
+      "sha256": "515839b8e43e876ab59223cd1902bb4a89114bf554082e74c10579b12be1ea0a"
     },
     {
       "resident_id": "resident.817b3d90969fe12b",
@@ -5765,8 +5776,8 @@
       "owner": "ADMINISTRATUM",
       "resident_class": "REGISTRY",
       "status": "REALITY",
-      "bytes": 1957,
-      "sha256": "2b9cbdaf8c4b323d4ada59d2fca025096a222d4885d2de14e7fd8def13af416f"
+      "bytes": 1480,
+      "sha256": "200b0e95be889387eed06f931612faa311c060f53cc80d3f5a15b20052b03adc"
     },
     {
       "resident_id": "resident.00fe174468801843",
@@ -5835,8 +5846,8 @@
       "owner": "ADMINISTRATUM",
       "resident_class": "REPORT",
       "status": "REALITY",
-      "bytes": 2096,
-      "sha256": "ed435e382b68283a13ea22bb1b4706d931d4cb2e21aa4453cdb3d6e6c56a3248"
+      "bytes": 2034,
+      "sha256": "69877fb477d838d241b8f2402e7acadc3a84c4e3d4e5f01f4c78743747a3534a"
     },
     {
       "resident_id": "resident.e42a4b656a000771",
@@ -8117,6 +8128,16 @@
       "status": "REALITY",
       "bytes": 513,
       "sha256": "7ba9866a8ff63afd4f2578df13b41b7b5035ba9f0553c35ae8fdda959d0d1be2"
+    },
+    {
+      "resident_id": "resident.510d35f3f7efba13",
+      "path": "ORGANS/ASTRONOMICON/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "JSON",
+      "status": "REALITY",
+      "bytes": 3505,
+      "sha256": "c9070880fb6d26838e6e65354c488bf9616b1f17b48e03e6968786022d2eee73"
     },
     {
       "resident_id": "resident.819a5b74cbc198f4",
@@ -16409,6 +16430,16 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "resident_id": "resident.42d00d6bebf80b86",
+      "path": "ORGANS/CUSTODES/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "CUSTODES",
+      "resident_class": "JSON",
+      "status": "REALITY",
+      "bytes": 3202,
+      "sha256": "09f14a1388c40196d5a122a4744e8ab48ebd6b14b8dc879f1f04275df532a76a"
+    },
+    {
       "resident_id": "resident.f38b2e9fea85f6e8",
       "path": "ORGANS/CUSTODES/DASHBOARDS/.gitkeep",
       "root_zone": "ORGANS",
@@ -16707,6 +16738,16 @@
       "status": "REALITY",
       "bytes": 513,
       "sha256": "dae6f5f59b8c32988415e0f806c97ca8ceb5ac52645bb6551a37623dffc55a16"
+    },
+    {
+      "resident_id": "resident.da8d5f8beb62eb3b",
+      "path": "ORGANS/DOCTRINARIUM/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "JSON",
+      "status": "REALITY",
+      "bytes": 3453,
+      "sha256": "78001fd8a410bd230393c57894fc07aeeb4c39f92e8a54ffc528d670704cc6de"
     },
     {
       "resident_id": "resident.6f463872f15be93d",
@@ -17289,6 +17330,16 @@
       "sha256": "469803e2e48a15ca30869cf0fc3db4491193a483a39010554c2ffea409d2c01d"
     },
     {
+      "resident_id": "resident.0d40ac552d1d92e1",
+      "path": "ORGANS/DOCTRINARIUM/MATRICES/ORGAN_DUTY_CONTRACT_REQUIRED_FIELDS_MATRIX_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "MATRIX",
+      "status": "REALITY",
+      "bytes": 1253,
+      "sha256": "696a386ce8476b9a1633d1f19058342f956c2f385b045ed6555f9ccf0bada56b"
+    },
+    {
       "resident_id": "resident.1e2f1585581943ff",
       "path": "ORGANS/DOCTRINARIUM/MATRICES/ORGAN_RESPONSIBILITY_MATRIX.json",
       "root_zone": "ORGANS",
@@ -17389,6 +17440,16 @@
       "sha256": "ed5d8e12e9b9367116752f4cdd25eac84678ba52397548cdcb79324256dad1c4"
     },
     {
+      "resident_id": "resident.86dab81ae8518cd2",
+      "path": "ORGANS/DOCTRINARIUM/RECEIPTS/organ_duty_contract_coverage_receipt.json",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "RECEIPT",
+      "status": "REALITY",
+      "bytes": 3387,
+      "sha256": "26a554d80426a005dbfb8f5b5cefa17a9357791e1fc86c74b0b4a50385a302a4"
+    },
+    {
       "resident_id": "resident.47f3b31fc9d669d6",
       "path": "ORGANS/DOCTRINARIUM/REPORTS/.gitkeep",
       "root_zone": "ORGANS",
@@ -17407,6 +17468,36 @@
       "status": "REALITY",
       "bytes": 1032,
       "sha256": "0466eee61b26f74fcf4835ec56e187b3dd28d0564b1dd481d716d77ca06fb4a6"
+    },
+    {
+      "resident_id": "resident.48a4a05bf20da34e",
+      "path": "ORGANS/DOCTRINARIUM/REPORTS/ORGAN_DUTY_CONTRACT_COVERAGE_REPORT_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 2072,
+      "sha256": "4998bd3cd355caf861eb0ebb1e49651e3ae6ea546526de26ed43a20fa9d7bd35"
+    },
+    {
+      "resident_id": "resident.9dc6f9f2e0187c31",
+      "path": "ORGANS/DOCTRINARIUM/REPORTS/ORGAN_DUTY_CONTRACT_SUMMARY_V0_1.csv",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 482,
+      "sha256": "a7e17e10824bba66988f91be9573d17abdd865fa0392ed97b74b630fa2891a57"
+    },
+    {
+      "resident_id": "resident.b98ef54f42cb67ea",
+      "path": "ORGANS/DOCTRINARIUM/REPORTS/ORGAN_DUTY_CONTRACT_SUMMARY_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 9753,
+      "sha256": "9c0c079251502121ba202bd1d081f49f438ff38bbacfc25842e459f937ea2057"
     },
     {
       "resident_id": "resident.1db896c030926db5",
@@ -17477,6 +17568,16 @@
       "status": "REALITY",
       "bytes": 2473,
       "sha256": "e8fbe696d66294d5875e7830ab47fe105dad2030fa8050ddf0d0811e128b6967"
+    },
+    {
+      "resident_id": "resident.a863e9fdb599b24e",
+      "path": "ORGANS/DOCTRINARIUM/SCHEMAS/organ_duty_contract.schema.json",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "SCHEMA",
+      "status": "REALITY",
+      "bytes": 3515,
+      "sha256": "522faaca71da5586114ba67b2e91a1087f69a1495177de56055e4fd40ca1cc7e"
     },
     {
       "resident_id": "resident.606a52095a96b003",
@@ -17617,6 +17718,16 @@
       "status": "REALITY",
       "bytes": 8769,
       "sha256": "d4afd8d096447cb1dab34f057ef608b75a6236d441c1c52cb98eaacb84372d21"
+    },
+    {
+      "resident_id": "resident.d443cca0e35a695a",
+      "path": "ORGANS/DOCTRINARIUM/VALIDATORS/validate_organ_duty_contract_coverage.py",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "VALIDATOR",
+      "status": "REALITY",
+      "bytes": 14719,
+      "sha256": "944797773e37a94bb7292cb371541707ed9a7f05e8850634b8d8b292baf366ff"
     },
     {
       "resident_id": "resident.c63ce131471b2398",
@@ -20439,6 +20550,16 @@
       "sha256": "58b7ce49563ae4b51903861c0da7ef87a3792cde885f36c9377fb297fcd51f8d"
     },
     {
+      "resident_id": "resident.35346555b1ebe00c",
+      "path": "ORGANS/INQUISITION/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "INQUISITION",
+      "resident_class": "JSON",
+      "status": "REALITY",
+      "bytes": 3331,
+      "sha256": "21ef1200e2cffb0ff779fbea90822f3bdabc937bae047346396b114b72e3ac86"
+    },
+    {
       "resident_id": "resident.0fc1bdfefbe1fd05",
       "path": "ORGANS/INQUISITION/CONTRACTS/review_reinforcement_proposals_contract_v0_1.md",
       "root_zone": "ORGANS",
@@ -22747,6 +22868,16 @@
       "status": "REALITY",
       "bytes": 2146,
       "sha256": "f75b70c125649ac8e4e6f5a7b0f49a49fe565e6a1ad5010d397db691e3beabf0"
+    },
+    {
+      "resident_id": "resident.787d2c913ea0e6a7",
+      "path": "ORGANS/MECHANICUS/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "MECHANICUS",
+      "resident_class": "JSON",
+      "status": "REALITY",
+      "bytes": 3338,
+      "sha256": "fa7497d8144ac3f231cc71906b1c860c7eccb3e367ea46c9319b39a1866a97b3"
     },
     {
       "resident_id": "resident.fa589958a708f54e",
@@ -25859,6 +25990,16 @@
       "sha256": "a4f968d2b3e7b2811313b1eb0252b495d2d5b1bfdb506038928af12527f7c39e"
     },
     {
+      "resident_id": "resident.d58a1646cd85cfca",
+      "path": "ORGANS/OFFICIO_AGENTIS/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "OFFICIO_AGENTIS",
+      "resident_class": "JSON",
+      "status": "REALITY",
+      "bytes": 3567,
+      "sha256": "a7619278e8b6ea8c2e3078cb48a2807dab33809a7a83f63ec745e884ad9db4d0"
+    },
+    {
       "resident_id": "resident.6ef801642df9b7fb",
       "path": "ORGANS/OFFICIO_AGENTIS/CONTRACTS/OWNER_FACING_RU_RESPONSE_CONTRACT.md",
       "root_zone": "ORGANS",
@@ -26369,6 +26510,16 @@
       "sha256": "461f4a943462d050b247b26ce1507839a078dfb6fba79046bb8b373294c69988"
     },
     {
+      "resident_id": "resident.c7cb1fc0d0467212",
+      "path": "ORGANS/SCHOLA_IMPERIALIS/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "SCHOLA_IMPERIALIS",
+      "resident_class": "JSON",
+      "status": "REALITY",
+      "bytes": 3396,
+      "sha256": "0d66597a434cc26cd64e74c791d5bd1b2636ec3a04819229e7223a52f5b22397"
+    },
+    {
       "resident_id": "resident.b77542814021e336",
       "path": "ORGANS/SCHOLA_IMPERIALIS/DASHBOARDS/.gitkeep",
       "root_zone": "ORGANS",
@@ -26777,6 +26928,16 @@
       "status": "REALITY",
       "bytes": 503,
       "sha256": "f5aba87f1bc12f8bb6733c1e30fb022e2fbea69726226b8d9043f731800116a9"
+    },
+    {
+      "resident_id": "resident.781438f4959b5f68",
+      "path": "ORGANS/STRATEGIUM/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "STRATEGIUM",
+      "resident_class": "JSON",
+      "status": "REALITY",
+      "bytes": 3232,
+      "sha256": "12f2a83e3909cc02a75dcd178c2b339c4e7d6aac60f37c93223bce2fa6293193"
     },
     {
       "resident_id": "resident.3fa547bd0760e6cf",
@@ -27509,6 +27670,16 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "resident_id": "resident.1bc021791c56f7e3",
+      "path": "ORGANS/THRONE/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "THRONE",
+      "resident_class": "JSON",
+      "status": "REALITY",
+      "bytes": 3279,
+      "sha256": "ef5d733d7b5d0de5925b9b9b4e8428fa0a4f7b694e698a46a11171a46698ce6f"
+    },
+    {
       "resident_id": "resident.c2226e67bd1d5060",
       "path": "ORGANS/THRONE/DASHBOARDS/.gitkeep",
       "root_zone": "ORGANS",
@@ -27749,6 +27920,16 @@
       "sha256": "5d1039a084ab1992caa1ef3a60d7fa7a3b9f4081c4fa81ae911ec72f47f0ed68"
     },
     {
+      "resident_id": "resident.e37aa7b785806262",
+      "path": "ORGANS/THRONE/MATRICES/THRONE_ORGAN_TRUTH_STAGE_MATRIX_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "THRONE",
+      "resident_class": "MATRIX",
+      "status": "REALITY",
+      "bytes": 1691,
+      "sha256": "5baa9ce352709518768f29aeb90e7188949b444c57fbd286166e2163d7610d92"
+    },
+    {
       "resident_id": "resident.2653354fff9cfdf1",
       "path": "ORGANS/THRONE/MATRICES/THRONE_REQUEST_PACKET_MATRIX_V0_1.json",
       "root_zone": "ORGANS",
@@ -27925,8 +28106,8 @@
       "owner": "THRONE",
       "resident_class": "RECEIPT",
       "status": "REALITY",
-      "bytes": 82800,
-      "sha256": "51f93f51f7cb9100fb2db075d71efe292921f5a511648db67284a2fe89ea74e7"
+      "bytes": 84389,
+      "sha256": "29b935096ef362a2b58b7ffd14151eb9ecc1da31265e7e8e5e965caf51c83fbe"
     },
     {
       "resident_id": "resident.b30ef993e03e5a2c",
@@ -28005,8 +28186,8 @@
       "owner": "THRONE",
       "resident_class": "REPORT",
       "status": "REALITY",
-      "bytes": 20049,
-      "sha256": "5826590abb20e04366b49c95ee5b55947f1a8f12fa3a3872ff31dc7e2d97ec5c"
+      "bytes": 20225,
+      "sha256": "13b128cefefdc26821265f0192ff15ea49af6139d18209d22e37f99588766945"
     },
     {
       "resident_id": "resident.80b40e725695b6f4",
@@ -28025,8 +28206,8 @@
       "owner": "THRONE",
       "resident_class": "REPORT",
       "status": "REALITY",
-      "bytes": 4692,
-      "sha256": "9caf78ab6b84ffc1679b879778de13cdb76f28898badd3dba076df623876799d"
+      "bytes": 4863,
+      "sha256": "352e8e5248e40c2fcc938a2ab5db2a286cd3c18859df4de4a6af9b7b10904abb"
     },
     {
       "resident_id": "resident.77bd8ad5a44f00d9",
@@ -28065,8 +28246,8 @@
       "owner": "THRONE",
       "resident_class": "REPORT",
       "status": "REALITY",
-      "bytes": 50850,
-      "sha256": "3b7dd24da7f5a0b7721af3d3a4759e2f974cfdfad1a19532e96837c955c1980c"
+      "bytes": 51968,
+      "sha256": "257bbd8bf0b4ea7bdc7d01db458d4f44f4be6dc838dc4640622c4c939077f3ba"
     },
     {
       "resident_id": "resident.1da963755b258dd7",
@@ -28095,8 +28276,8 @@
       "owner": "THRONE",
       "resident_class": "REPORT",
       "status": "REALITY",
-      "bytes": 4154,
-      "sha256": "52094af633522479a6e5f369f375cf25924883a2535646e475a96a89cdae1604"
+      "bytes": 4244,
+      "sha256": "263aabeb411587322c8f308f80d1586c616824de6930e9d156141e93d0df263c"
     },
     {
       "resident_id": "resident.d5fbe670ef900c6a",
@@ -28269,6 +28450,16 @@
       "sha256": "45ea3309ebb474e28c0b844897c9684e4ce3aea3cd20e95df367e330f88f2b3f"
     },
     {
+      "resident_id": "resident.54373d07e2251592",
+      "path": "ORGANS/THRONE/SELF_KNOWLEDGE/ORGAN_TRUTH_STAGE_NOTES_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "THRONE",
+      "resident_class": "MARKDOWN",
+      "status": "REALITY",
+      "bytes": 569,
+      "sha256": "9533a6c8a7ec1dc1adc57a42841ccc79e4f3799164a1b18c80f43bf3f42213c2"
+    },
+    {
       "resident_id": "resident.9250dad53cdabf54",
       "path": "ORGANS/THRONE/SELF_KNOWLEDGE/REALITY_BOUNDARY_AND_STORAGE_POLICY_V0_1.md",
       "root_zone": "ORGANS",
@@ -28345,8 +28536,8 @@
       "owner": "THRONE",
       "resident_class": "VALIDATOR",
       "status": "REALITY",
-      "bytes": 14846,
-      "sha256": "58b7d7cce4bcfdb68e3ae50d124361709eaca27b1df6ec69e236e6350c4764e0"
+      "bytes": 43329,
+      "sha256": "3aafbba9ff1554f8b4a02443e0988cd489084d099fbca5c9132b1c8f9aa7f255"
     },
     {
       "resident_id": "resident.8f69a548450755a1",
@@ -54957,6 +55148,236 @@
       "status": "SUPPORT",
       "bytes": 140882,
       "sha256": "51187b673e3888d9046d804fb89c52b5bfff91e099811487281bf77700410304"
+    },
+    {
+      "resident_id": "resident.5626f5821a41d041",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/ADMINISTRATUM/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 3393,
+      "sha256": "59ba6bd4584adc46b4ab13eec1130005a0a441a4609d78730261454d9c4b17e5"
+    },
+    {
+      "resident_id": "resident.c8783771b6348664",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 3505,
+      "sha256": "c9070880fb6d26838e6e65354c488bf9616b1f17b48e03e6968786022d2eee73"
+    },
+    {
+      "resident_id": "resident.b050cbfe9982ae50",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/CUSTODES/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 3202,
+      "sha256": "09f14a1388c40196d5a122a4744e8ab48ebd6b14b8dc879f1f04275df532a76a"
+    },
+    {
+      "resident_id": "resident.d2897fdce1e67fa9",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 3453,
+      "sha256": "78001fd8a410bd230393c57894fc07aeeb4c39f92e8a54ffc528d670704cc6de"
+    },
+    {
+      "resident_id": "resident.a3775f4144a3182a",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/MATRICES/ORGAN_DUTY_CONTRACT_REQUIRED_FIELDS_MATRIX_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "MATRIX",
+      "status": "WARP",
+      "bytes": 1253,
+      "sha256": "696a386ce8476b9a1633d1f19058342f956c2f385b045ed6555f9ccf0bada56b"
+    },
+    {
+      "resident_id": "resident.571fadb06a76f82d",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.efdf6d81f97f1038",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.c7d543fa86e9a281",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/SCHEMAS/organ_duty_contract.schema.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "SCHEMA",
+      "status": "WARP",
+      "bytes": 3515,
+      "sha256": "522faaca71da5586114ba67b2e91a1087f69a1495177de56055e4fd40ca1cc7e"
+    },
+    {
+      "resident_id": "resident.d3913e716b132286",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/VALIDATORS/validate_organ_duty_contract_coverage.py",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "VALIDATOR",
+      "status": "WARP",
+      "bytes": 14719,
+      "sha256": "944797773e37a94bb7292cb371541707ed9a7f05e8850634b8d8b292baf366ff"
+    },
+    {
+      "resident_id": "resident.befe59dd2998ba5b",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/INQUISITION/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 3331,
+      "sha256": "21ef1200e2cffb0ff779fbea90822f3bdabc937bae047346396b114b72e3ac86"
+    },
+    {
+      "resident_id": "resident.bb1f399cbb57e288",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/MECHANICUS/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 3338,
+      "sha256": "fa7497d8144ac3f231cc71906b1c860c7eccb3e367ea46c9319b39a1866a97b3"
+    },
+    {
+      "resident_id": "resident.e8006d3e7176939c",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/OFFICIO_AGENTIS/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 3567,
+      "sha256": "a7619278e8b6ea8c2e3078cb48a2807dab33809a7a83f63ec745e884ad9db4d0"
+    },
+    {
+      "resident_id": "resident.29b5568d606b0a11",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/SCHOLA_IMPERIALIS/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 3396,
+      "sha256": "0d66597a434cc26cd64e74c791d5bd1b2636ec3a04819229e7223a52f5b22397"
+    },
+    {
+      "resident_id": "resident.a720729be94e0a04",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/STRATEGIUM/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 3232,
+      "sha256": "12f2a83e3909cc02a75dcd178c2b339c4e7d6aac60f37c93223bce2fa6293193"
+    },
+    {
+      "resident_id": "resident.f9b6e4188578c872",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/THRONE/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 3279,
+      "sha256": "ef5d733d7b5d0de5925b9b9b4e8428fa0a4f7b694e698a46a11171a46698ce6f"
+    },
+    {
+      "resident_id": "resident.b9bb83ca2ea05b5e",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/THRONE/MATRICES/THRONE_ORGAN_TRUTH_STAGE_MATRIX_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "MATRIX",
+      "status": "WARP",
+      "bytes": 1691,
+      "sha256": "5baa9ce352709518768f29aeb90e7188949b444c57fbd286166e2163d7610d92"
+    },
+    {
+      "resident_id": "resident.af77857979411959",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/THRONE/SELF_KNOWLEDGE/ORGAN_TRUTH_STAGE_NOTES_V0_1.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "MARKDOWN",
+      "status": "WARP",
+      "bytes": 569,
+      "sha256": "9533a6c8a7ec1dc1adc57a42841ccc79e4f3799164a1b18c80f43bf3f42213c2"
+    },
+    {
+      "resident_id": "resident.1d26630830aa4f3b",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/PATCH_FILE_MANIFEST_SHA256.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "TRANSPORT_FILE_MANIFEST",
+      "status": "WARP",
+      "bytes": 5755,
+      "sha256": "be2c18f483e55b67a0b188c52469c5c456d12ddfcc8401a4fbd1d4d7f4701d93"
+    },
+    {
+      "resident_id": "resident.b1c3f1d8fae59f15",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/PATCH_PACK.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "PATCH_PACK",
+      "status": "WARP",
+      "bytes": 989,
+      "sha256": "31eb79dad93651fc028c6ddb9bcdc1be0e951ec2508e6a07a553348336fdc0ef"
+    },
+    {
+      "resident_id": "resident.7a9b6ba2003ad42c",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.703f17404e1b7f50",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.e23aca6ab4acaf40",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/RUN_ORGAN_DUTY_CONTRACT_VALIDATION.ps1",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "POWERSHELL",
+      "status": "WARP",
+      "bytes": 1084,
+      "sha256": "403cf59b306bc76e8aa5832a044d5f722841362d45c92e0e1acd55d6446433dd"
+    },
+    {
+      "resident_id": "resident.7fee28c44f3b3b93",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/TESTS/README.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "resident_class": "TEST",
+      "status": "WARP",
+      "bytes": 522,
+      "sha256": "8fa57efffcf48b1c0352f76b3bf3235b59d4ce1598dbfe85c1b70876360017f9"
     },
     {
       "resident_id": "resident.59ea6f2af76ef999",
