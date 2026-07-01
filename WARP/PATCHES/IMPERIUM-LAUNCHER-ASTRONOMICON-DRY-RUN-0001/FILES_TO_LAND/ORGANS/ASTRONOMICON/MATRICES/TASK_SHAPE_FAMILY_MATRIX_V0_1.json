@@ -1,0 +1,131 @@
+{
+  "matrix_id": "ASTRONOMICON_TASK_SHAPE_FAMILY_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "ASTRONOMICON",
+  "status": "ACTIVE_DRY_RUN_CLASSIFICATION_MATRIX",
+  "patch_id": "IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+  "meaning": "Rule-first task family detection for dry-run intake. Unknown tasks become research-required candidates; execution remains forbidden.",
+  "families": [
+    {
+      "task_family": "EXTERNAL_GAME_OPTIMIZATION",
+      "verbs": [
+        "optimize",
+        "оптимиз",
+        "fix",
+        "фикс",
+        "fps",
+        "фпс",
+        "кадр",
+        "performance",
+        "производител"
+      ],
+      "targets": [
+        "witcher",
+        "ведьмак",
+        "game",
+        "игр",
+        "fps",
+        "фпс"
+      ],
+      "default_admission": "NEEDS_BASELINE_AND_SAFE_CONTEXT",
+      "execution_allowed": false
+    },
+    {
+      "task_family": "SOFTWARE_PRODUCT_BUILD",
+      "verbs": [
+        "write",
+        "create",
+        "build",
+        "сделай",
+        "напиши",
+        "создай"
+      ],
+      "targets": [
+        "game",
+        "игр",
+        "app",
+        "приложен",
+        "site",
+        "сайт",
+        "program",
+        "программ"
+      ],
+      "default_admission": "NEEDS_PRODUCT_BRIEF",
+      "execution_allowed": false
+    },
+    {
+      "task_family": "IMPERIUM_PATCH_PACK",
+      "verbs": [
+        "patch",
+        "патч",
+        "validator",
+        "валидатор",
+        "орган",
+        "organ",
+        "трон",
+        "throne"
+      ],
+      "targets": [
+        "imperium",
+        "империум",
+        "repo",
+        "репо",
+        "warp",
+        "organ",
+        "орган"
+      ],
+      "default_admission": "ADMITTED_FOR_WARP_PLANNING_ONLY",
+      "execution_allowed": false
+    },
+    {
+      "task_family": "REPO_AUDIT",
+      "verbs": [
+        "audit",
+        "аудит",
+        "анализ",
+        "проверь",
+        "inspect"
+      ],
+      "targets": [
+        "repo",
+        "репо",
+        "repository",
+        "код",
+        "commit"
+      ],
+      "default_admission": "ADMITTED_FOR_READONLY_AUDIT_PLANNING",
+      "execution_allowed": false
+    },
+    {
+      "task_family": "MEDIA_PROMPT_BUILD",
+      "verbs": [
+        "prompt",
+        "промт",
+        "video",
+        "видео",
+        "image",
+        "картин",
+        "song",
+        "трек"
+      ],
+      "targets": [
+        "video",
+        "видео",
+        "image",
+        "картин",
+        "music",
+        "song",
+        "трек"
+      ],
+      "default_admission": "NEEDS_CREATIVE_BRIEF",
+      "execution_allowed": false
+    },
+    {
+      "task_family": "UNKNOWN_RESEARCH_REQUIRED",
+      "verbs": [],
+      "targets": [],
+      "default_admission": "NEEDS_TASK_SHAPE_RESEARCH",
+      "execution_allowed": false
+    }
+  ]
+}

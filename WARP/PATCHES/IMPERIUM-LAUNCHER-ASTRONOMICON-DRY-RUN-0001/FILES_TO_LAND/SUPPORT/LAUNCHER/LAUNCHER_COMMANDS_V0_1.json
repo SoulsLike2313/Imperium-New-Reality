@@ -1,0 +1,22 @@
+{
+  "launcher_id": "IMPERIUM_TERMINAL_LAUNCHER_V0_1",
+  "patch_id": "IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+  "mode": "SCRIPT_FIRST_RETURNS_TERMINAL",
+  "commands": [
+    "status",
+    "organs",
+    "organ <ORGAN> status",
+    "organ <ORGAN> assembly",
+    "organ <ORGAN> receipts",
+    "patch list",
+    "patch inspect <PATCH_ID>",
+    "intake dry-run <TEXT>"
+  ],
+  "forbidden_in_this_patch": [
+    "patch run",
+    "external mutation",
+    "web research execution",
+    "organ assembled claim",
+    "trust claim"
+  ]
+}

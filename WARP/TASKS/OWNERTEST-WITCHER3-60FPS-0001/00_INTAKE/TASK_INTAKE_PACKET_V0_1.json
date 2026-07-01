@@ -1,0 +1,48 @@
+{
+  "artifact_id": "TASK_INTAKE_PACKET_V0_1",
+  "task_id": "OWNERTEST-WITCHER3-60FPS-0001",
+  "title": "EXTERNAL_GAME_OPTIMIZATION: пишем 60 фпс фикс для ведьмака 3",
+  "owner_goal": "Create a safe measurable optimization task for stable performance without unsafe mutation.",
+  "raw_owner_text": "пишем 60 фпс фикс для ведьмака 3",
+  "task_family": "EXTERNAL_GAME_OPTIMIZATION",
+  "admission_state": "NEEDS_BASELINE_AND_SAFE_CONTEXT",
+  "execution_allowed": false,
+  "known_context": {
+    "raw_text_available": true,
+    "target_product": "The Witcher 3 Wild Hunt",
+    "target_fps": 60
+  },
+  "success_criteria": [
+    "success metric must be explicit",
+    "validation evidence required",
+    "no final claim without receipt"
+  ],
+  "hard_constraints": [
+    "file mutation outside this dry-run task folder",
+    "external execution",
+    "patch run",
+    "final verdict",
+    "trust claim"
+  ],
+  "missing_context": [
+    "current_state",
+    "allowed_scope",
+    "forbidden_scope",
+    "constraints",
+    "risks",
+    "baseline_or_existing_state",
+    "validation_method",
+    "rollback_or_stop_condition",
+    "hardware_profile",
+    "game_install_profile",
+    "game_version",
+    "graphics_settings_snapshot",
+    "mod_manifest",
+    "baseline_benchmark",
+    "benchmark_route",
+    "backup_and_rollback_plan",
+    "allowed_mutation_paths",
+    "quality_loss_policy"
+  ],
+  "next_required_action": "fill required context or run research intake; execution remains blocked"
+}

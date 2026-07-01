@@ -1,0 +1,27 @@
+{
+  "artifact_id": "ADMISSION_DECISION_V0_1",
+  "task_id": "SELFTEST-IMPERIUM-PATCH-0001",
+  "decision": "ADMITTED_FOR_WARP_PLANNING_ONLY",
+  "admitted_for_planning": true,
+  "admitted_for_execution": false,
+  "reason": "Dry-run intake never permits execution. Missing context must be filled and validated before mutation.",
+  "blocked_until": [
+    "success_criteria",
+    "current_state",
+    "allowed_scope",
+    "forbidden_scope",
+    "constraints",
+    "risks",
+    "baseline_or_existing_state",
+    "validation_method",
+    "rollback_or_stop_condition",
+    "patch_id",
+    "owner_organ",
+    "files_to_land",
+    "runner",
+    "expected_validator",
+    "expected_verdict",
+    "receipt_path",
+    "no_core_mutation_policy"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.astronomicon.task_intake_packet.schema.v0_1",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "task_id",
+    "title",
+    "owner_goal",
+    "task_family",
+    "admission_state",
+    "execution_allowed",
+    "success_criteria",
+    "hard_constraints",
+    "missing_context",
+    "next_required_action"
+  ],
+  "properties": {
+    "execution_allowed": {
+      "type": "boolean",
+      "const": false
+    }
+  }
+}

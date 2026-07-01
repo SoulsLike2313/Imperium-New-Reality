@@ -1,0 +1,230 @@
+{
+  "receipt_id": "receipt.astronomicon.launcher_dry_run_validator.v0_1",
+  "task_id": "IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+  "validator_id": "astronomicon_dry_run_and_launcher_validator.v0_1",
+  "verdict": "PASS_LAUNCHER_AND_ASTRONOMICON_DRY_RUN_READY",
+  "generated_at_utc": "2026-07-01T16:46:05Z",
+  "repo_head": "d648035322f7a8c5b08231848ec3ea349f4cd5f5",
+  "launcher_present": true,
+  "astronomicon_dry_run_present": true,
+  "execution_allowed_by_dry_run": false,
+  "sample_results": [
+    {
+      "task_id": "SELFTEST-WITCHER3-60FPS-0001",
+      "text": "пишем 60 фпс фикс для ведьмака 3",
+      "expected": "EXTERNAL_GAME_OPTIMIZATION",
+      "got": "EXTERNAL_GAME_OPTIMIZATION",
+      "execution_allowed": false,
+      "missing_count": 18,
+      "folder": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE"
+    },
+    {
+      "task_id": "SELFTEST-GAME-BUILD-0001",
+      "text": "напиши мне игру про космодесантников в стиле survivor-like",
+      "expected": "SOFTWARE_PRODUCT_BUILD",
+      "got": "SOFTWARE_PRODUCT_BUILD",
+      "execution_allowed": false,
+      "missing_count": 18,
+      "folder": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE"
+    },
+    {
+      "task_id": "SELFTEST-IMPERIUM-PATCH-0001",
+      "text": "сделай патч пак для поднятия Astronomicon в Империуме",
+      "expected": "IMPERIUM_PATCH_PACK",
+      "got": "IMPERIUM_PATCH_PACK",
+      "execution_allowed": false,
+      "missing_count": 17,
+      "folder": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE"
+    }
+  ],
+  "checks": [
+    {
+      "name": "imperium.ps1_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/LAUNCHER/imperium.ps1"
+      }
+    },
+    {
+      "name": "imperium_cli.py_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/LAUNCHER/imperium_cli.py"
+      }
+    },
+    {
+      "name": "LAUNCHER_COMMANDS_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/LAUNCHER/LAUNCHER_COMMANDS_V0_1.json"
+      }
+    },
+    {
+      "name": "astronomicon_intake_dry_run.py_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/TOOLS/astronomicon_intake_dry_run.py"
+      }
+    },
+    {
+      "name": "TASK_SHAPE_FAMILY_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/MATRICES/TASK_SHAPE_FAMILY_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "UNIVERSAL_TASK_INFORMATION_DEFICIT_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/MATRICES/UNIVERSAL_TASK_INFORMATION_DEFICIT_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "task_intake_packet.schema.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/SCHEMAS/task_intake_packet.schema.json"
+      }
+    },
+    {
+      "name": "focus_pack.schema.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/SCHEMAS/focus_pack.schema.json"
+      }
+    },
+    {
+      "name": "LAUNCHER_COMMANDS_V0_1.json_parses",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "TASK_SHAPE_FAMILY_MATRIX_V0_1.json_parses",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "UNIVERSAL_TASK_INFORMATION_DEFICIT_MATRIX_V0_1.json_parses",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "SELFTEST-WITCHER3-60FPS-0001_dry_run_executes",
+      "status": "PASS",
+      "details": {
+        "stdout": "{\n  \"task_id\": \"SELFTEST-WITCHER3-60FPS-0001\",\n  \"task_family\": \"EXTERNAL_GAME_OPTIMIZATION\",\n  \"confidence\": 0.92,\n  \"execution_allowed\": false,\n  \"task_folder\": \"ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE\",\n  \"receipt\": \"ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE/ASTRONOMICON_DRY_RUN_RECEIPT.json\",\n  \"missing_context\": [\n    \"current_state\",\n    \"allowed_scope\",\n    \"forbidden_scope\",\n    \"constraints\",\n    \"risks\",\n    \"baseline_or_existing_state\",\n    \"validation_method\",\n    \"rollback_or_stop_condition\",\n    \"hardware_profile\",\n    \"game_install_profile\",\n    \"game_version\",\n    \"graphics_settings_snapshot\",\n    \"mod_manifest\",\n    \"baseline_benchmark\",\n    \"benchmark_route\",\n    \"backup_and_rollback_plan\",\n    \"allowed_mutation_paths\",\n    \"quality_loss_policy\"\n  ]\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "SELFTEST-WITCHER3-60FPS-0001_required_artifacts_exist",
+      "status": "PASS",
+      "details": {
+        "folder": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE"
+      }
+    },
+    {
+      "name": "SELFTEST-WITCHER3-60FPS-0001_classification_EXTERNAL_GAME_OPTIMIZATION",
+      "status": "PASS",
+      "details": {
+        "got": "EXTERNAL_GAME_OPTIMIZATION"
+      }
+    },
+    {
+      "name": "SELFTEST-WITCHER3-60FPS-0001_execution_blocked",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "SELFTEST-WITCHER3-60FPS-0001_missing_context_detected",
+      "status": "PASS",
+      "details": {
+        "missing_count": 18
+      }
+    },
+    {
+      "name": "SELFTEST-GAME-BUILD-0001_dry_run_executes",
+      "status": "PASS",
+      "details": {
+        "stdout": "{\n  \"task_id\": \"SELFTEST-GAME-BUILD-0001\",\n  \"task_family\": \"SOFTWARE_PRODUCT_BUILD\",\n  \"confidence\": 0.9,\n  \"execution_allowed\": false,\n  \"task_folder\": \"ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE\",\n  \"receipt\": \"ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE/ASTRONOMICON_DRY_RUN_RECEIPT.json\",\n  \"missing_context\": [\n    \"success_criteria\",\n    \"current_state\",\n    \"allowed_scope\",\n    \"forbidden_scope\",\n    \"constraints\",\n    \"risks\",\n    \"baseline_or_existing_state\",\n    \"validation_method\",\n    \"rollback_or_stop_condition\",\n    \"product_brief\",\n    \"platform\",\n    \"engine_or_stack\",\n    \"feature_scope\",\n    \"references\",\n    \"asset_policy\",\n    \"build_run_command\",\n    \"definition_of_done\",\n    \"test_plan\"\n  ]\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "SELFTEST-GAME-BUILD-0001_required_artifacts_exist",
+      "status": "PASS",
+      "details": {
+        "folder": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE"
+      }
+    },
+    {
+      "name": "SELFTEST-GAME-BUILD-0001_classification_SOFTWARE_PRODUCT_BUILD",
+      "status": "PASS",
+      "details": {
+        "got": "SOFTWARE_PRODUCT_BUILD"
+      }
+    },
+    {
+      "name": "SELFTEST-GAME-BUILD-0001_execution_blocked",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "SELFTEST-GAME-BUILD-0001_missing_context_detected",
+      "status": "PASS",
+      "details": {
+        "missing_count": 18
+      }
+    },
+    {
+      "name": "SELFTEST-IMPERIUM-PATCH-0001_dry_run_executes",
+      "status": "PASS",
+      "details": {
+        "stdout": "{\n  \"task_id\": \"SELFTEST-IMPERIUM-PATCH-0001\",\n  \"task_family\": \"IMPERIUM_PATCH_PACK\",\n  \"confidence\": 0.9,\n  \"execution_allowed\": false,\n  \"task_folder\": \"ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE\",\n  \"receipt\": \"ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE/ASTRONOMICON_DRY_RUN_RECEIPT.json\",\n  \"missing_context\": [\n    \"success_criteria\",\n    \"current_state\",\n    \"allowed_scope\",\n    \"forbidden_scope\",\n    \"constraints\",\n    \"risks\",\n    \"baseline_or_existing_state\",\n    \"validation_method\",\n    \"rollback_or_stop_condition\",\n    \"patch_id\",\n    \"owner_organ\",\n    \"files_to_land\",\n    \"runner\",\n    \"expected_validator\",\n    \"expected_verdict\",\n    \"receipt_path\",\n    \"no_core_mutation_policy\"\n  ]\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "name": "SELFTEST-IMPERIUM-PATCH-0001_required_artifacts_exist",
+      "status": "PASS",
+      "details": {
+        "folder": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE"
+      }
+    },
+    {
+      "name": "SELFTEST-IMPERIUM-PATCH-0001_classification_IMPERIUM_PATCH_PACK",
+      "status": "PASS",
+      "details": {
+        "got": "IMPERIUM_PATCH_PACK"
+      }
+    },
+    {
+      "name": "SELFTEST-IMPERIUM-PATCH-0001_execution_blocked",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "SELFTEST-IMPERIUM-PATCH-0001_missing_context_detected",
+      "status": "PASS",
+      "details": {
+        "missing_count": 17
+      }
+    },
+    {
+      "name": "launcher_is_non_mutating_this_patch",
+      "status": "PASS",
+      "details": {
+        "patch_run": "not implemented"
+      }
+    },
+    {
+      "name": "astronomicon_dry_run_does_not_claim_trust_or_execution",
+      "status": "PASS",
+      "details": {}
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "meaning": "Launcher skeleton and Astronomicon dry-run intake are present. They register machine-readable tasks and block execution."
+}

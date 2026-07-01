@@ -1,0 +1,28 @@
+{
+  "artifact_id": "ADMISSION_DECISION_V0_1",
+  "task_id": "OWNERTEST-WITCHER3-60FPS-0001",
+  "decision": "NEEDS_BASELINE_AND_SAFE_CONTEXT",
+  "admitted_for_planning": true,
+  "admitted_for_execution": false,
+  "reason": "Dry-run intake never permits execution. Missing context must be filled and validated before mutation.",
+  "blocked_until": [
+    "current_state",
+    "allowed_scope",
+    "forbidden_scope",
+    "constraints",
+    "risks",
+    "baseline_or_existing_state",
+    "validation_method",
+    "rollback_or_stop_condition",
+    "hardware_profile",
+    "game_install_profile",
+    "game_version",
+    "graphics_settings_snapshot",
+    "mod_manifest",
+    "baseline_benchmark",
+    "benchmark_route",
+    "backup_and_rollback_plan",
+    "allowed_mutation_paths",
+    "quality_loss_policy"
+  ]
+}

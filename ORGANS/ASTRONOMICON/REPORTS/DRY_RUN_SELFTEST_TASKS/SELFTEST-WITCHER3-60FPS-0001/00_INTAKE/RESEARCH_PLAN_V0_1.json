@@ -1,0 +1,39 @@
+{
+  "artifact_id": "RESEARCH_PLAN_V0_1",
+  "task_id": "SELFTEST-WITCHER3-60FPS-0001",
+  "research_required": true,
+  "queries": [
+    "The Witcher 3 Wild Hunt graphics settings config file location",
+    "The Witcher 3 Wild Hunt safe performance optimization settings mods benchmark",
+    "The Witcher 3 Wild Hunt DX11 DX12 user settings performance impact",
+    "The Witcher 3 Wild Hunt modded install backup config files"
+  ],
+  "must_extract": [
+    "current_state",
+    "allowed_scope",
+    "forbidden_scope",
+    "constraints",
+    "risks",
+    "baseline_or_existing_state",
+    "validation_method",
+    "rollback_or_stop_condition",
+    "hardware_profile",
+    "game_install_profile",
+    "game_version",
+    "graphics_settings_snapshot",
+    "mod_manifest",
+    "baseline_benchmark",
+    "benchmark_route",
+    "backup_and_rollback_plan",
+    "allowed_mutation_paths",
+    "quality_loss_policy"
+  ],
+  "must_not_do": [
+    "execute web commands",
+    "download random binaries",
+    "mutate files",
+    "trust one source",
+    "claim success from research"
+  ],
+  "execution_allowed_after_research": false
+}

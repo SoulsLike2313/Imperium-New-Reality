@@ -1,0 +1,47 @@
+{
+  "artifact_id": "TASK_INTAKE_PACKET_V0_1",
+  "task_id": "SELFTEST-IMPERIUM-PATCH-0001",
+  "title": "IMPERIUM_PATCH_PACK: сделай патч пак для поднятия Astronomicon в Империуме",
+  "owner_goal": "Create an Imperium WARP patch planning task with validators, receipts, and no fake green.",
+  "raw_owner_text": "сделай патч пак для поднятия Astronomicon в Империуме",
+  "task_family": "IMPERIUM_PATCH_PACK",
+  "admission_state": "ADMITTED_FOR_WARP_PLANNING_ONLY",
+  "execution_allowed": false,
+  "known_context": {
+    "raw_text_available": true,
+    "target_system": "Imperium",
+    "patch_intent_detected": true
+  },
+  "success_criteria": [
+    "success metric must be explicit",
+    "validation evidence required",
+    "no final claim without receipt"
+  ],
+  "hard_constraints": [
+    "file mutation outside this dry-run task folder",
+    "external execution",
+    "patch run",
+    "final verdict",
+    "trust claim"
+  ],
+  "missing_context": [
+    "success_criteria",
+    "current_state",
+    "allowed_scope",
+    "forbidden_scope",
+    "constraints",
+    "risks",
+    "baseline_or_existing_state",
+    "validation_method",
+    "rollback_or_stop_condition",
+    "patch_id",
+    "owner_organ",
+    "files_to_land",
+    "runner",
+    "expected_validator",
+    "expected_verdict",
+    "receipt_path",
+    "no_core_mutation_policy"
+  ],
+  "next_required_action": "fill required context or run research intake; execution remains blocked"
+}

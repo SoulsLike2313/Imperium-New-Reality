@@ -1,0 +1,84 @@
+{
+  "matrix_id": "ASTRONOMICON_UNIVERSAL_TASK_INFORMATION_DEFICIT_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "ASTRONOMICON",
+  "status": "ACTIVE_DRY_RUN_INTAKE_LAW",
+  "patch_id": "IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+  "universal_required_fields": [
+    "target_object",
+    "owner_goal",
+    "success_criteria",
+    "current_state",
+    "allowed_scope",
+    "forbidden_scope",
+    "constraints",
+    "risks",
+    "baseline_or_existing_state",
+    "validation_method",
+    "rollback_or_stop_condition"
+  ],
+  "family_specific_requirements": {
+    "EXTERNAL_GAME_OPTIMIZATION": [
+      "hardware_profile",
+      "game_install_profile",
+      "game_version",
+      "graphics_settings_snapshot",
+      "mod_manifest",
+      "baseline_benchmark",
+      "benchmark_route",
+      "backup_and_rollback_plan",
+      "allowed_mutation_paths",
+      "quality_loss_policy"
+    ],
+    "SOFTWARE_PRODUCT_BUILD": [
+      "product_brief",
+      "platform",
+      "engine_or_stack",
+      "feature_scope",
+      "references",
+      "asset_policy",
+      "build_run_command",
+      "definition_of_done",
+      "test_plan"
+    ],
+    "IMPERIUM_PATCH_PACK": [
+      "patch_id",
+      "owner_organ",
+      "files_to_land",
+      "runner",
+      "expected_validator",
+      "expected_verdict",
+      "receipt_path",
+      "no_core_mutation_policy"
+    ],
+    "REPO_AUDIT": [
+      "repo_path_or_commit",
+      "audit_scope",
+      "readonly_mode",
+      "report_format",
+      "risk_categories",
+      "evidence_requirements"
+    ],
+    "MEDIA_PROMPT_BUILD": [
+      "medium",
+      "duration_or_size",
+      "style",
+      "references",
+      "constraints",
+      "output_format"
+    ],
+    "UNKNOWN_RESEARCH_REQUIRED": [
+      "task_shape_research_plan",
+      "owner_questions",
+      "source_requirements",
+      "safety_boundary"
+    ]
+  },
+  "hard_rules": [
+    "execution_allowed must be false in dry-run intake",
+    "missing required context must block execution",
+    "research can define task shape but cannot execute",
+    "LLM extraction is proposal, not truth",
+    "Owner intent must be preserved verbatim"
+  ]
+}

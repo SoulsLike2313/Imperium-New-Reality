@@ -2,15 +2,15 @@
   "census_id": "imperium.population_census.current.v0_2",
   "patch_id": "IMPERIUM-POPULATION-CENSUS-REFRESH-0001",
   "validator_id": "imperium_population_census_refresh_validator.v0_2",
-  "generated_at_utc": "2026-07-01T13:51:28Z",
-  "repo_head": "2d073dbf5d263f8e8138ffb98e1a37dd7ce9e2bb",
-  "tracked_file_count": 6067,
-  "working_tree_visible_file_count": 6150,
-  "population_total": 6150,
+  "generated_at_utc": "2026-07-01T15:29:33Z",
+  "repo_head": "d648035322f7a8c5b08231848ec3ea349f4cd5f5",
+  "tracked_file_count": 6087,
+  "working_tree_visible_file_count": 6170,
+  "population_total": 6170,
   "root_zone_summary": {
-    "ORGANS": 2928,
+    "ORGANS": 2936,
     "SUPPORT": 2591,
-    "WARP": 593,
+    "WARP": 605,
     "_HARNESS": 34,
     ".editorconfig": 1,
     ".gitattributes": 1,
@@ -28,7 +28,7 @@
     "WARP_PATCH/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001": 165,
     "WARP_PATCH/GREAT-NINE-PROFILE-VALIDATORS-0001": 152,
     "DOCTRINARIUM": 106,
-    "THRONE": 97,
+    "THRONE": 105,
     "STRATEGIUM": 79,
     "ORGANS/_CORE_GOVERNANCE": 64,
     "OFFICIO_AGENTIS": 53,
@@ -46,6 +46,7 @@
     "WARP_PATCH/EXTERNAL-AUDIT-CONTROL-AND-CONSOLIDATION-0001": 13,
     "WARP_PATCH/IMPERIUM-POPULATION-CENSUS-REFRESH-0001": 13,
     "WARP_PATCH/OWNER-DOCS-VALIDATION-WARP-0001": 12,
+    "WARP_PATCH/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001": 12,
     "WARP_PATCH/ROOT-QUARANTINE-LONGPATH-COMPACTION-0001": 11,
     "WARP_PATCH/ROOT-QUARANTINE-LONGPATH-COMPACTION-0001-FIX-0001": 11,
     "WARP_PATCH/GOVERNANCE-ROOT-AND-GREAT-NINE-RECONCILIATION-0001-FIX-0001": 10,
@@ -64,41 +65,41 @@
     "SUPPORT/graph_snapshot.json": 1
   },
   "class_summary": {
-    "REPORT": 1801,
-    "RECEIPT": 925,
+    "REPORT": 1806,
+    "RECEIPT": 930,
     "JSON": 751,
-    "MARKDOWN": 707,
+    "MARKDOWN": 709,
     "OTHER": 632,
-    "MATRIX": 232,
+    "MATRIX": 234,
     "TOOL": 213,
     "SCHEMA": 166,
     "PYTHON": 122,
-    "TEST": 87,
+    "TEST": 88,
     "REGISTRY": 74,
     "BLOCK": 70,
-    "VALIDATOR": 65,
-    "POWERSHELL": 45,
+    "VALIDATOR": 67,
+    "POWERSHELL": 46,
     "TUI": 40,
     "LESSON": 39,
     "DASHBOARD": 38,
     "EYES": 38,
     "NEGATIVE_LESSON": 37,
-    "TRANSPORT_FILE_MANIFEST": 24,
-    "PATCH_PACK": 22,
+    "TRANSPORT_FILE_MANIFEST": 25,
+    "PATCH_PACK": 23,
     "TRANSPORT_APPLY_SCRIPT": 17,
     "ROOT_CONFIG": 5
   },
   "status_summary": {
-    "REALITY": 2928,
+    "REALITY": 2936,
     "SUPPORT": 2552,
-    "WARP": 593,
+    "WARP": 605,
     "TRANSPORT": 39,
     "HARNESS": 34,
     "ROOT": 4
   },
   "coverage": {
     "owner_coverage_score": 100.0,
-    "classification_coverage_score": 89.72,
+    "classification_coverage_score": 89.76,
     "status_coverage_score": 100.0,
     "unknown_owner_count": 0,
     "unknown_class_count": 632,
@@ -115,7 +116,7 @@
     "legacy_census_exists": true,
     "legacy_census_path": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_CENSUS_V0_1.json",
     "legacy_population_total": 6001,
-    "population_delta_vs_legacy": 149,
+    "population_delta_vs_legacy": 169,
     "legacy_is_current": false,
     "meaning": "Legacy WARP census is historical unless explicitly mirrored by a current Administratum refresh."
   },
@@ -5748,7 +5749,7 @@
       "resident_class": "RECEIPT",
       "status": "REALITY",
       "bytes": 4248,
-      "sha256": "8e34eb0b3c9493bd1d68a105a0fe51bc5229c22519911c376387dd75784e5131"
+      "sha256": "a5cd7595d9b211a560c60dedd0b5a425d762f50df16439c6b6e30de2cb519bdc"
     },
     {
       "resident_id": "resident.85d378525e8379e5",
@@ -5767,8 +5768,8 @@
       "owner": "ADMINISTRATUM",
       "resident_class": "REGISTRY",
       "status": "REALITY",
-      "bytes": 2701300,
-      "sha256": "6f5a50520bf4ce892eac86bd2991e0015dd3951aa1bba4e998e96f1b9d9b99ea"
+      "bytes": 2719717,
+      "sha256": "f3dd9166b6763b48614aeec48011b0ced1fbebc2216cd7a4b5fbeba7dd9981dd"
     },
     {
       "resident_id": "resident.11a49350db7f111a",
@@ -5777,8 +5778,8 @@
       "owner": "ADMINISTRATUM",
       "resident_class": "REGISTRY",
       "status": "REALITY",
-      "bytes": 3152,
-      "sha256": "fe6e4bd56f7f7e09b151aaa0417322a12beab5f67c7ddc37e2b882a71c9afd01"
+      "bytes": 3142,
+      "sha256": "4a545ceda89251d28cf2b48d1eb088526f604397d27f6b2e6fbc50d23989f2ad"
     },
     {
       "resident_id": "resident.817b3d90969fe12b",
@@ -5788,7 +5789,7 @@
       "resident_class": "REGISTRY",
       "status": "REALITY",
       "bytes": 1480,
-      "sha256": "2b33671406e602cb6893428ba875229a0af682e1ec527389983fa7f6e5211a11"
+      "sha256": "3bb886da1c45ceb57d06945109302c7a259475aacca648f772e1b8c521addb72"
     },
     {
       "resident_id": "resident.00fe174468801843",
@@ -5858,7 +5859,7 @@
       "resident_class": "REPORT",
       "status": "REALITY",
       "bytes": 2035,
-      "sha256": "e823ddf5de0334b32748b7576f5839f0a24431c2f3f10741a2e8f4ad2c881eec"
+      "sha256": "6381ed2a13868b7e76e5e085322b522b733106d26bd4a69490298d5164fa493c"
     },
     {
       "resident_id": "resident.e42a4b656a000771",
@@ -28011,6 +28012,16 @@
       "sha256": "736324417efa583150f92bba6b4ad28b33049b3fcbd0857e4bb9fa87d0502ef9"
     },
     {
+      "resident_id": "resident.872ecc118a47dd1d",
+      "path": "ORGANS/THRONE/MATRICES/THRONE_ORGAN_ASSEMBLY_STAGE_SCORING_MATRIX_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "THRONE",
+      "resident_class": "MATRIX",
+      "status": "REALITY",
+      "bytes": 2713,
+      "sha256": "b4ba9235d5d08eebcf97e6163d2c68513678d7cb996002d742be0eb1433e1cd1"
+    },
+    {
       "resident_id": "resident.b19943184589c155",
       "path": "ORGANS/THRONE/MATRICES/THRONE_ORGAN_ASSEMBLY_STANDARD_MATRIX_V0_1.json",
       "root_zone": "ORGANS",
@@ -28211,6 +28222,16 @@
       "sha256": "f50ed20ca80505b620150f5ea4f5561415095a668d0fed914658941377617ee1"
     },
     {
+      "resident_id": "resident.3df4aeee6db3f331",
+      "path": "ORGANS/THRONE/RECEIPTS/organ_assembly_stage_scoring_receipt.json",
+      "root_zone": "ORGANS",
+      "owner": "THRONE",
+      "resident_class": "RECEIPT",
+      "status": "REALITY",
+      "bytes": 5365,
+      "sha256": "5732b8f61420489307e4b08de179556c176ea1e292ae3a183353a5dfa4607f41"
+    },
+    {
       "resident_id": "resident.52790fe7f4d88940",
       "path": "ORGANS/THRONE/RECEIPTS/organ_assembly_standard_receipt.json",
       "root_zone": "ORGANS",
@@ -28248,7 +28269,7 @@
       "resident_class": "RECEIPT",
       "status": "REALITY",
       "bytes": 84389,
-      "sha256": "4ed9b155a365df78f587ebdacd82feb3a16b71279b13cac3dfba4c96fff8f114"
+      "sha256": "839003100aa959b87bd426145057c2ab3b33f5ebfa33d92472860a77d1f43919"
     },
     {
       "resident_id": "resident.b30ef993e03e5a2c",
@@ -28311,6 +28332,36 @@
       "sha256": "0424725f9e79185828fbabc83561af750d344f259312e5097a460934e1fd0153"
     },
     {
+      "resident_id": "resident.96a1a3c48253fe3c",
+      "path": "ORGANS/THRONE/REPORTS/ORGAN_ASSEMBLY_STAGE_SCORING_REPORT_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "THRONE",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 3974,
+      "sha256": "27d729d6940d153697c82c0aedb7127961e2a626cd238eaf9c5979e5ee0e6955"
+    },
+    {
+      "resident_id": "resident.d86d263c6a59aae5",
+      "path": "ORGANS/THRONE/REPORTS/ORGAN_ASSEMBLY_STAGE_SCORING_SUMMARY_V0_1.csv",
+      "root_zone": "ORGANS",
+      "owner": "THRONE",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 978,
+      "sha256": "d8e26398f797eacaf59e9649ea658516f9e1afc2818b6ae465df90defafab337"
+    },
+    {
+      "resident_id": "resident.d7daee051c9165a4",
+      "path": "ORGANS/THRONE/REPORTS/ORGAN_ASSEMBLY_STAGE_SCORING_SUMMARY_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "THRONE",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 17790,
+      "sha256": "ad087d3e06d198d54c97c93b474aac62eec94c7ae171400405908ac0142a932c"
+    },
+    {
       "resident_id": "resident.77e8ea46b6c1dd30",
       "path": "ORGANS/THRONE/REPORTS/ORGAN_ASSEMBLY_STANDARD_REPORT_V0_1.md",
       "root_zone": "ORGANS",
@@ -28358,7 +28409,7 @@
       "resident_class": "REPORT",
       "status": "REALITY",
       "bytes": 20225,
-      "sha256": "ee0eda072322c7b23a75893f1fde101f50b0454013f4ff566fa6815142e7ec33"
+      "sha256": "e940d25a35c71c8095363dd03a2ffd288bc4a40ffa8e008843d71ff01f00630b"
     },
     {
       "resident_id": "resident.80b40e725695b6f4",
@@ -28378,7 +28429,7 @@
       "resident_class": "REPORT",
       "status": "REALITY",
       "bytes": 4863,
-      "sha256": "1d983aba50146ec4ce3386f61c3d75b1af5a0731934e32ce0cac823448845b29"
+      "sha256": "a260fa13de84c44b5acd261b0a9fd473fc9aeb157661c039be9b857a0617e5ae"
     },
     {
       "resident_id": "resident.77bd8ad5a44f00d9",
@@ -28418,7 +28469,7 @@
       "resident_class": "REPORT",
       "status": "REALITY",
       "bytes": 51968,
-      "sha256": "3c7f2d16dda699060c982a5d88440c056dc172cd34fdf0cec8b30127eb5519b2"
+      "sha256": "d446e29f5cc391792fbc5871afaf9a1e6f177462df0fa8e63aab9edefde36178"
     },
     {
       "resident_id": "resident.1da963755b258dd7",
@@ -28448,7 +28499,7 @@
       "resident_class": "REPORT",
       "status": "REALITY",
       "bytes": 4244,
-      "sha256": "4652ab53134c9d3e121bf7c5556cdd39be1d26c0a599e2d51fde00013f80a740"
+      "sha256": "7df32f7ed6f7cbc125b7633f861e24d9342f40b4d1180a85f1755b68eb7fb60e"
     },
     {
       "resident_id": "resident.d5fbe670ef900c6a",
@@ -28529,6 +28580,16 @@
       "status": "REALITY",
       "bytes": 329,
       "sha256": "79745aa756ab5faf4f25897b9ccad1ab3def9986bc5e77be14f1af17669b4e68"
+    },
+    {
+      "resident_id": "resident.a8cce20a16d7f7e1",
+      "path": "ORGANS/THRONE/SCHEMAS/throne_organ_assembly_stage_scoring_receipt.schema.json",
+      "root_zone": "ORGANS",
+      "owner": "THRONE",
+      "resident_class": "RECEIPT",
+      "status": "REALITY",
+      "bytes": 937,
+      "sha256": "611a75f5ca582f733cea24e8ffa1bc65c7497b6e91addfb752da7e82a3521f8c"
     },
     {
       "resident_id": "resident.1a7cac82aa9cdb2c",
@@ -28631,6 +28692,16 @@
       "sha256": "45ea3309ebb474e28c0b844897c9684e4ce3aea3cd20e95df367e330f88f2b3f"
     },
     {
+      "resident_id": "resident.cf3c59db766eaaed",
+      "path": "ORGANS/THRONE/SELF_KNOWLEDGE/ORGAN_ASSEMBLY_STAGE_SCORING_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "THRONE",
+      "resident_class": "MARKDOWN",
+      "status": "REALITY",
+      "bytes": 812,
+      "sha256": "40aeb5a6815642222d5438463052b3304a2fdce906266a3dc2ed60852850516a"
+    },
+    {
       "resident_id": "resident.f32efdca7029dccf",
       "path": "ORGANS/THRONE/SELF_KNOWLEDGE/ORGAN_ASSEMBLY_STANDARD_V0_1.md",
       "root_zone": "ORGANS",
@@ -28699,6 +28770,16 @@
       "status": "REALITY",
       "bytes": 8039,
       "sha256": "613394366633f9545218c419e09df40023abf7ff1747a672e4608dc6633842ad"
+    },
+    {
+      "resident_id": "resident.c669760ea65f2c98",
+      "path": "ORGANS/THRONE/VALIDATORS/validate_organ_assembly_stage_scoring.py",
+      "root_zone": "ORGANS",
+      "owner": "THRONE",
+      "resident_class": "VALIDATOR",
+      "status": "REALITY",
+      "bytes": 16671,
+      "sha256": "a08c8d26f6493025a3a4b03e64c170c90b1c3484904f4c548e59aec7a23a47d1"
     },
     {
       "resident_id": "resident.05d228b69776951d",
@@ -60539,6 +60620,126 @@
       "status": "WARP",
       "bytes": 275,
       "sha256": "d720f8fa1e0073801488a135a9364ff4504e9ac83a251db2a67aff5a2cefaa01"
+    },
+    {
+      "resident_id": "resident.082ee3c7fbfea49b",
+      "path": "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001/FILES_TO_LAND/ORGANS/THRONE/MATRICES/THRONE_ORGAN_ASSEMBLY_STAGE_SCORING_MATRIX_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+      "resident_class": "MATRIX",
+      "status": "WARP",
+      "bytes": 2713,
+      "sha256": "b4ba9235d5d08eebcf97e6163d2c68513678d7cb996002d742be0eb1433e1cd1"
+    },
+    {
+      "resident_id": "resident.3217425521ca0833",
+      "path": "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001/FILES_TO_LAND/ORGANS/THRONE/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.c7872915fe8fa597",
+      "path": "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001/FILES_TO_LAND/ORGANS/THRONE/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.42f08d8558bb153a",
+      "path": "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001/FILES_TO_LAND/ORGANS/THRONE/SCHEMAS/throne_organ_assembly_stage_scoring_receipt.schema.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 937,
+      "sha256": "611a75f5ca582f733cea24e8ffa1bc65c7497b6e91addfb752da7e82a3521f8c"
+    },
+    {
+      "resident_id": "resident.a6a34ee202673d61",
+      "path": "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001/FILES_TO_LAND/ORGANS/THRONE/SELF_KNOWLEDGE/ORGAN_ASSEMBLY_STAGE_SCORING_V0_1.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+      "resident_class": "MARKDOWN",
+      "status": "WARP",
+      "bytes": 812,
+      "sha256": "40aeb5a6815642222d5438463052b3304a2fdce906266a3dc2ed60852850516a"
+    },
+    {
+      "resident_id": "resident.b3872ca9e06c35a4",
+      "path": "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001/FILES_TO_LAND/ORGANS/THRONE/VALIDATORS/validate_organ_assembly_stage_scoring.py",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+      "resident_class": "VALIDATOR",
+      "status": "WARP",
+      "bytes": 16671,
+      "sha256": "a08c8d26f6493025a3a4b03e64c170c90b1c3484904f4c548e59aec7a23a47d1"
+    },
+    {
+      "resident_id": "resident.0f057020eff614f5",
+      "path": "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001/PATCH_FILE_MANIFEST_SHA256.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+      "resident_class": "TRANSPORT_FILE_MANIFEST",
+      "status": "WARP",
+      "bytes": 2909,
+      "sha256": "5b04a730017e39fde5bce0a2d7f4c8ae9d77c1045348fb189c63a843c40b4721"
+    },
+    {
+      "resident_id": "resident.145ab4134857a9bb",
+      "path": "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001/PATCH_PACK.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+      "resident_class": "PATCH_PACK",
+      "status": "WARP",
+      "bytes": 676,
+      "sha256": "debc442831477a6ae3b879b30785485160fe746e7926dde1648cc7752b4e0185"
+    },
+    {
+      "resident_id": "resident.2e19da35ea97a9e0",
+      "path": "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.c33a250952d2cc98",
+      "path": "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.108bcd0de267c51e",
+      "path": "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001/RUN_ORGAN_ASSEMBLY_STAGE_SCORING.ps1",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+      "resident_class": "POWERSHELL",
+      "status": "WARP",
+      "bytes": 1079,
+      "sha256": "2299f5a398381ca7566db19853b1af2e9b4732dbe45fcc08493167ab20d4954e"
+    },
+    {
+      "resident_id": "resident.f0285012eb0693ec",
+      "path": "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001/TESTS/README.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+      "resident_class": "TEST",
+      "status": "WARP",
+      "bytes": 322,
+      "sha256": "42fb2b6dbc02da589f8a238b761f5f170ddc089841517d6e02956df8183a46dc"
     },
     {
       "resident_id": "resident.c1041d6df323f6eb",
