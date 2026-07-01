@@ -1,0 +1,25 @@
+{
+  "matrix_id": "INQUISITION_PATCH_PACK_SCOPE_FAKE_GREEN_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "INQUISITION",
+  "status": "ACTIVE_FOUNDATION_SCOPE_GATE",
+  "patch_id": "PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+  "purpose": "Baseline scope and fake-green gate for Patch Packs.",
+  "hard_checks": [
+    "allowed_landing_roots",
+    "no_path_traversal",
+    "runner_no_git_or_remote_exec",
+    "no_trust_throne_assembly_claim",
+    "receipt_existence_not_work_done"
+  ],
+  "allowed_roots": [
+    "ORGANS/",
+    "SUPPORT/",
+    "WARP/"
+  ],
+  "limits": [
+    "not full red/blue",
+    "not Custodes trust",
+    "not Throne verdict"
+  ]
+}

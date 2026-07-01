@@ -1,0 +1,21 @@
+{
+  "matrix_id": "MECHANICUS_PATCH_PACK_TECHNICAL_PREFLIGHT_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "MECHANICUS",
+  "status": "ACTIVE_FOUNDATION_PREFLIGHT",
+  "patch_id": "PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+  "purpose": "Baseline pre-work technical validation for Patch Packs.",
+  "hard_checks": [
+    "shape",
+    "manifest_hashes",
+    "python_compile",
+    "no_pycache",
+    "no_long_paths",
+    "runner_no_git_or_remote_exec"
+  ],
+  "limits": [
+    "not trust",
+    "not Throne",
+    "not product quality"
+  ]
+}

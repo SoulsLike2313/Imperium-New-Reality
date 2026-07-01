@@ -1,0 +1,126 @@
+{
+  "summary_id": "mechanicus.patch_pack_technical_preflight_summary.v0_1",
+  "task_id": "PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+  "validator_id": "mechanicus_patch_pack_technical_preflight.v0_1",
+  "generated_at_utc": "2026-07-01T19:57:33Z",
+  "repo_head": "60efa2d4bb8756fa157917651eca2ba4d8bf55b3",
+  "target_patch_id": "PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+  "patch_count": 1,
+  "pass_count": 1,
+  "error_count": 0,
+  "verdict": "PASS_TECHNICAL_PREFLIGHT",
+  "results": [
+    {
+      "patch_id": "PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "verdict": "PASS_TECHNICAL_PREFLIGHT",
+      "checks": [
+        {
+          "name": "patch_pack_doc_exists",
+          "status": "PASS",
+          "details": {
+            "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/PATCH_PACK.md"
+          },
+          "severity": "error"
+        },
+        {
+          "name": "runner_exists",
+          "status": "PASS",
+          "details": {
+            "runners": [
+              "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/RUN_PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION.ps1"
+            ]
+          },
+          "severity": "error"
+        },
+        {
+          "name": "files_to_land_exists",
+          "status": "PASS",
+          "details": {
+            "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/FILES_TO_LAND"
+          },
+          "severity": "error"
+        },
+        {
+          "name": "sha256_manifest_exists",
+          "status": "PASS",
+          "details": {
+            "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/PATCH_FILE_MANIFEST_SHA256.json"
+          },
+          "severity": "error"
+        },
+        {
+          "name": "manifest_parses_as_list",
+          "status": "PASS",
+          "details": {
+            "error": null
+          },
+          "severity": "error"
+        },
+        {
+          "name": "manifest_paths_resolve",
+          "status": "PASS",
+          "details": {
+            "missing_count": 0,
+            "sample": []
+          },
+          "severity": "error"
+        },
+        {
+          "name": "manifest_hashes_match",
+          "status": "PASS",
+          "details": {
+            "mismatch_count": 0,
+            "sample": []
+          },
+          "severity": "error"
+        },
+        {
+          "name": "manifest_byte_counts_match",
+          "status": "PASS",
+          "details": {
+            "mismatch_count": 0,
+            "sample": []
+          },
+          "severity": "error"
+        },
+        {
+          "name": "python_files_syntax_compile_without_pyc",
+          "status": "PASS",
+          "details": {
+            "checked": 3,
+            "errors": []
+          },
+          "severity": "error"
+        },
+        {
+          "name": "no_pycache_or_pyc",
+          "status": "PASS",
+          "details": {
+            "matches": []
+          },
+          "severity": "error"
+        },
+        {
+          "name": "no_long_paths_inside_patch",
+          "status": "PASS",
+          "details": {
+            "count": 0,
+            "sample": []
+          },
+          "severity": "error"
+        },
+        {
+          "name": "runner_no_git_or_remote_exec",
+          "status": "PASS",
+          "details": {
+            "violations": []
+          },
+          "severity": "error"
+        }
+      ],
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

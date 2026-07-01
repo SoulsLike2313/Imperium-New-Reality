@@ -1,0 +1,127 @@
+{
+  "receipt_id": "receipt.astronomicon.patch_pack_lifecycle_validation_foundation.v0_1",
+  "task_id": "PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+  "validator_id": "astronomicon_patch_pack_lifecycle_validation_foundation.v0_1",
+  "verdict": "PASS_PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION_READY",
+  "generated_at_utc": "2026-07-01T19:57:34Z",
+  "repo_head": "60efa2d4bb8756fa157917651eca2ba4d8bf55b3",
+  "summary": "ORGANS/ASTRONOMICON/REPORTS/PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION_SUMMARY_V0_1.json",
+  "report": "ORGANS/ASTRONOMICON/REPORTS/PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION_REPORT_V0_1.md",
+  "checks": [
+    {
+      "name": "PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/MATRICES/PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION_V0_1.md_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/DOCTRINE/PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION_V0_1.md"
+      }
+    },
+    {
+      "name": "validate_patch_pack_technical_preflight.py_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/VALIDATORS/validate_patch_pack_technical_preflight.py"
+      }
+    },
+    {
+      "name": "validate_patch_pack_scope_fake_green.py_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/INQUISITION/VALIDATORS/validate_patch_pack_scope_fake_green.py"
+      }
+    },
+    {
+      "name": "astronomicon_patch_pack_smoke.py_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/TOOLS/astronomicon_patch_pack_smoke.py"
+      }
+    },
+    {
+      "name": "lifecycle_matrix_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "mechanicus_preflight_current_patch_runs",
+      "status": "PASS",
+      "details": {
+        "stderr": "",
+        "stdout_tail": "{\n  \"task_id\": \"PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001\",\n  \"validator_id\": \"mechanicus_patch_pack_technical_preflight.v0_1\",\n  \"verdict\": \"PASS_TECHNICAL_PREFLIGHT\",\n  \"target_patch_id\": \"PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001\",\n  \"patch_count\": 1,\n  \"pass_count\": 1,\n  \"error_count\": 0,\n  \"receipt\": \"ORGANS/MECHANICUS/RECEIPTS/patch_pack_technical_preflight_receipt.json\",\n  \"summary\": \"ORGANS/MECHANICUS/REPORTS/PATCH_PACK_TECHNICAL_PREFLIGHT_SUMMARY_V0_1.json\",\n  \"errors\": [],\n  \"warnings\": []\n}\n"
+      }
+    },
+    {
+      "name": "mechanicus_preflight_current_patch_passes",
+      "status": "PASS",
+      "details": {
+        "verdict": "PASS_TECHNICAL_PREFLIGHT"
+      }
+    },
+    {
+      "name": "inquisition_scope_gate_current_patch_runs",
+      "status": "PASS",
+      "details": {
+        "stderr": "",
+        "stdout_tail": "{\n  \"task_id\": \"PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001\",\n  \"validator_id\": \"inquisition_patch_pack_scope_fake_green_gate.v0_1\",\n  \"verdict\": \"PASS_SCOPE_FAKE_GREEN_GATE\",\n  \"target_patch_id\": \"PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001\",\n  \"patch_count\": 1,\n  \"pass_count\": 1,\n  \"error_count\": 0,\n  \"receipt\": \"ORGANS/INQUISITION/RECEIPTS/patch_pack_scope_fake_green_receipt.json\",\n  \"summary\": \"ORGANS/INQUISITION/REPORTS/PATCH_PACK_SCOPE_FAKE_GREEN_SUMMARY_V0_1.json\",\n  \"errors\": [],\n  \"warnings\": []\n}\n"
+      }
+    },
+    {
+      "name": "inquisition_scope_gate_current_patch_passes",
+      "status": "PASS",
+      "details": {
+        "verdict": "PASS_SCOPE_FAKE_GREEN_GATE"
+      }
+    },
+    {
+      "name": "astronomicon_post_work_smoke_runs",
+      "status": "PASS",
+      "details": {
+        "stderr": "",
+        "stdout_tail": "\": \"WARP/PATCHES/VALIDATOR-READONLY-EXTERNAL-AUDIT-MODE-0001\",\n      \"is_patch_pack\": true,\n      \"smoke_verdict\": \"PARTIAL\",\n      \"evidence_level\": \"DECLARED_ONLY\",\n      \"declared_expected_verdicts\": [\n        \"PASS_READONLY_MODE_BASELINE\"\n      ],\n      \"declared_expected_receipts\": [],\n      \"actual_receipts_found\": [],\n      \"matching_verdict_receipts\": [],\n      \"linked_intake_candidates\": [],\n      \"shape\": {\n        \"patch_pack_doc\": \"WARP/PATCHES/VALIDATOR-READONLY-EXTERNAL-AUDIT-MODE-0001/PATCH_PACK.md\",\n        \"runner_count\": 1,\n        \"manifest_exists\": false,\n        \"files_to_land_exists\": true\n      },\n      \"warnings\": [\n        \"missing PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap\"\n      ],\n      \"errors\": [],\n      \"meaning\": \"Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict.\"\n    }\n  ],\n  \"meaning\": \"Astronomicon smoke-tested Patch Pack declarations against visible receipts without executing runners.\"\n}\n"
+      }
+    },
+    {
+      "name": "astronomicon_post_work_smoke_scans_patch_packs",
+      "status": "PASS",
+      "details": {
+        "patch_count": 27
+      }
+    },
+    {
+      "name": "astronomicon_post_work_smoke_can_refuse_closure",
+      "status": "PASS",
+      "details": {
+        "non_closed_count": 21
+      }
+    },
+    {
+      "name": "before_work_validation_available",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "after_work_smoke_validation_available",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "does_not_claim_custodes_or_throne",
+      "status": "PASS",
+      "details": {
+        "custodes": "not claimed",
+        "throne": "not claimed"
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "meaning": "Patch Pack lifecycle now has baseline before-work validation and after-work smoke validation."
+}
