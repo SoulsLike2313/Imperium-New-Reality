@@ -1,0 +1,68 @@
+{
+  "summary_id": "astronomicon.organ_agent_advisory_summary.v0_1",
+  "patch_id": "ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+  "generated_at_utc": "2026-07-01T20:17:38Z",
+  "repo_head": "5435e895",
+  "target_organ": "INQUISITION",
+  "verdict": "PASS_ORGAN_AGENT_ADVISORY_GENERATED",
+  "score_model": {
+    "name": "future_step_success_score_v0_1",
+    "range": "0..100",
+    "weighted_terms": {
+      "evidence_strength": 0.18,
+      "validator_availability": 0.16,
+      "authority_clarity": 0.14,
+      "scope_clarity": 0.12,
+      "dependency_readiness": 0.12,
+      "reversibility": 0.1,
+      "risk_control": 0.1,
+      "operator_clarity": 0.08
+    },
+    "equation": "score = sum(weight_i * factor_i), where each factor_i is 0..100",
+    "attention_priority_score": "future_step_success_score * impact_score / 100"
+  },
+  "evidence_snapshot": {
+    "intent_intake": 100.0,
+    "pack_taxonomy_law": 100.0,
+    "patch_lifecycle_foundation": 100.0,
+    "patch_lifecycle_launcher": 100.0,
+    "mechanicus_preflight": 100.0,
+    "inquisition_scope_gate": 100.0,
+    "assembly_stage_scoring": 100.0
+  },
+  "advisory_count": 1,
+  "advisories": [
+    {
+      "organ_id": "INQUISITION",
+      "organ_domain": "scope, fake-green, mutation risk, negative evidence, red-team suspicion",
+      "attention_zone": "fake-green and scope suspicion",
+      "future_step_success_score": 96.8,
+      "impact_score": 86,
+      "attention_priority_score": 83.25,
+      "confidence": "HIGH",
+      "advisory_text": "INQUISITION: обратить внимание на зону «fake-green and scope suspicion». Расчётная успешность следующего шага 96.8/100, приоритет внимания 83.25/100.",
+      "why_this_zone": [
+        "scope gate exists",
+        "receipt != work done law exists"
+      ],
+      "factor_breakdown": {
+        "evidence_strength": 100.0,
+        "validator_availability": 100.0,
+        "authority_clarity": 100.0,
+        "scope_clarity": 90,
+        "dependency_readiness": 100.0,
+        "reversibility": 80,
+        "risk_control": 100.0,
+        "operator_clarity": 100.0
+      },
+      "language_mode": "ADVISORY_ZONE_ONLY_NO_DIRECT_ACTION",
+      "not_claimed": [
+        "execution",
+        "trust",
+        "Throne verdict",
+        "concrete action command"
+      ]
+    }
+  ],
+  "hard_law": "Organs recommend attention zones, not concrete actions."
+}

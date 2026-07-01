@@ -1,0 +1,25 @@
+{
+  "launcher_id": "IMPERIUM_TERMINAL_LAUNCHER_V0_3",
+  "patch_id": "ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+  "inherits": "IMPERIUM_TERMINAL_LAUNCHER_V0_2",
+  "mode": "SCRIPT_FIRST_RETURNS_TERMINAL",
+  "new_organ_agent_commands": [
+    "advise",
+    "advise organ <ORGAN>",
+    "organ <ORGAN> advise"
+  ],
+  "preserved_patch_lifecycle_commands": [
+    "patch preflight <PATCH_ID>",
+    "patch scope <PATCH_ID>",
+    "patch smoke <PATCH_ID>",
+    "patch lifecycle <PATCH_ID>",
+    "patch lifecycle-all"
+  ],
+  "forbidden": [
+    "patch run",
+    "patch apply",
+    "concrete organ action commands",
+    "trust claim",
+    "Throne verdict claim"
+  ]
+}

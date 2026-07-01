@@ -1,0 +1,211 @@
+{
+  "matrix_id": "ORGAN_AGENT_ADVISORY_SCORING_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "ASTRONOMICON",
+  "status": "ACTIVE_ADVISORY_FOUNDATION",
+  "patch_id": "ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+  "purpose": "Create a conversational organ-agent advisory layer with mathematical future-step success scoring and strict no-direct-action language.",
+  "success_score_formula": {
+    "name": "future_step_success_score_v0_1",
+    "range": "0..100",
+    "weighted_terms": {
+      "evidence_strength": 0.18,
+      "validator_availability": 0.16,
+      "authority_clarity": 0.14,
+      "scope_clarity": 0.12,
+      "dependency_readiness": 0.12,
+      "reversibility": 0.1,
+      "risk_control": 0.1,
+      "operator_clarity": 0.08
+    },
+    "equation": "score = sum(weight_i * factor_i), where each factor_i is 0..100",
+    "attention_priority_score": "future_step_success_score * impact_score / 100"
+  },
+  "language_law": [
+    "Organs may advise attention zones.",
+    "Organs may explain why a zone matters.",
+    "Organs may show evidence and gaps.",
+    "Organs may recommend observation focus.",
+    "Organs must not command concrete actions.",
+    "Organs must not claim trust, Throne verdict, or execution authority.",
+    "Each organ speaks only inside its profile domain."
+  ],
+  "forbidden_direct_action_terms": [
+    "run",
+    "execute",
+    "apply",
+    "commit",
+    "push",
+    "delete",
+    "remove",
+    "copy",
+    "mutate",
+    "запусти",
+    "выполни",
+    "примени",
+    "закоммить",
+    "запушь",
+    "удали",
+    "скопируй",
+    "измени"
+  ],
+  "organs": {
+    "ASTRONOMICON": {
+      "domain": "intent intake, task/patch shape, route proposal, closure comparison",
+      "allowed_attention_zones": [
+        "intent clarity",
+        "missing context",
+        "patch/task shape",
+        "declared-vs-actual closure",
+        "operator intake quality"
+      ],
+      "must_not_advise": [
+        "technical implementation details outside intake",
+        "final trust",
+        "direct mutation"
+      ]
+    },
+    "ADMINISTRATUM": {
+      "domain": "registry, census, receipt chain, indexes, context packs",
+      "allowed_attention_zones": [
+        "registry freshness",
+        "receipt chain completeness",
+        "census drift",
+        "context pack index",
+        "archive hygiene"
+      ],
+      "must_not_advise": [
+        "execution",
+        "trust verdict",
+        "scope prosecution"
+      ]
+    },
+    "DOCTRINARIUM": {
+      "domain": "law, doctrine, schemas, contracts, definitions",
+      "allowed_attention_zones": [
+        "law clarity",
+        "schema coverage",
+        "contract gaps",
+        "taxonomy drift",
+        "definition ambiguity"
+      ],
+      "must_not_advise": [
+        "direct execution",
+        "trust verdict",
+        "runtime patching"
+      ]
+    },
+    "MECHANICUS": {
+      "domain": "tools, validators, manifests, syntax, runners, technical preflight",
+      "allowed_attention_zones": [
+        "technical preflight",
+        "manifest/hash integrity",
+        "runner safety",
+        "syntax coverage",
+        "tool shape"
+      ],
+      "must_not_advise": [
+        "owner intent",
+        "final trust",
+        "Crown verdict"
+      ]
+    },
+    "INQUISITION": {
+      "domain": "scope, fake-green, mutation risk, negative evidence, red-team suspicion",
+      "allowed_attention_zones": [
+        "fake-green risk",
+        "scope expansion",
+        "forbidden claims",
+        "mutation hazard",
+        "negative evidence"
+      ],
+      "must_not_advise": [
+        "final trust",
+        "owner intent replacement",
+        "implementation design"
+      ]
+    },
+    "CUSTODES": {
+      "domain": "trust chain, authority, validator honesty, integrity, permission",
+      "allowed_attention_zones": [
+        "trust chain gap",
+        "authority envelope",
+        "validator honesty",
+        "permission boundary",
+        "integrity proof"
+      ],
+      "must_not_advise": [
+        "execution",
+        "patch coding",
+        "Crown verdict"
+      ]
+    },
+    "STRATEGIUM": {
+      "domain": "priority, sequence, risk/value ordering, backlog, routing",
+      "allowed_attention_zones": [
+        "next attention priority",
+        "dependency order",
+        "risk/value balance",
+        "backlog routing",
+        "sequence pressure"
+      ],
+      "must_not_advise": [
+        "technical implementation",
+        "trust claim",
+        "direct patch execution"
+      ]
+    },
+    "SCHOLA_IMPERIALIS": {
+      "domain": "lessons, training, memory, failure explanation, operator education",
+      "allowed_attention_zones": [
+        "lesson capture",
+        "failure memory",
+        "operator explanation",
+        "training gap",
+        "repeat mistake prevention"
+      ],
+      "must_not_advise": [
+        "law promotion",
+        "trust verdict",
+        "execution"
+      ]
+    },
+    "OFFICIO_AGENTIS": {
+      "domain": "servitor work order, execution envelope, stop conditions, handoff",
+      "allowed_attention_zones": [
+        "work order clarity",
+        "servitor authority envelope",
+        "stop conditions",
+        "handoff safety",
+        "allowed output format"
+      ],
+      "must_not_advise": [
+        "servitor dispatch without valid Task Pack",
+        "Reality mutation",
+        "Throne verdict"
+      ]
+    },
+    "THRONE": {
+      "domain": "crown scoring, hard gates, stage truth, no-fake-green, final confirmation lane",
+      "allowed_attention_zones": [
+        "stage scoring",
+        "Crown gate gap",
+        "no-core-mutation proof",
+        "cross-organ contradiction",
+        "final confirmation readiness"
+      ],
+      "must_not_advise": [
+        "premature PASS",
+        "self-trust",
+        "execution"
+      ]
+    }
+  },
+  "not_claimed": [
+    "LLM free conversation",
+    "Servitor dispatch",
+    "Custodes trust",
+    "Throne verdict",
+    "organ assembled"
+  ]
+}
