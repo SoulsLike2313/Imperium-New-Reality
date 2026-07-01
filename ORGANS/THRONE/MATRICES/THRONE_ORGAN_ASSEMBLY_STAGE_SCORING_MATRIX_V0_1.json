@@ -1,0 +1,49 @@
+{
+  "matrix_id": "THRONE_ORGAN_ASSEMBLY_STAGE_SCORING_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "THRONE",
+  "status": "ACTIVE_STAGE_SCORING_LAW",
+  "patch_id": "THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+  "stage_law": "profile_baseline != duty_defined != assembly_target_defined != rule_validated != action_proven != trust_proven != throne_confirmed != organ_assembled",
+  "purpose": "Score organ maturity by separate truth stages without inflating operational/trust readiness from duty or assembly target definitions.",
+  "stage_scores": {
+    "profile_baseline_score": {"weight": 10, "meaning": "Baseline/profile/passport evidence only."},
+    "duty_defined_score": {"weight": 15, "meaning": "Machine-readable duty contract exists and validates."},
+    "assembly_target_defined_score": {"weight": 15, "meaning": "Machine-readable assembly target exists and validates."},
+    "rule_validated_score": {"weight": 15, "meaning": "Rules and forbidden actions validated by rule validators."},
+    "action_proven_score": {"weight": 15, "meaning": "Organ performed profile action with receipt/replay evidence."},
+    "trust_proven_score": {"weight": 15, "meaning": "Custodes/Inquisition/Throne trust chain confirms action evidence."},
+    "throne_confirmed_score": {"weight": 10, "meaning": "Throne confirms truth stage from cross-organ evidence."},
+    "organ_assembled_score": {"weight": 5, "meaning": "All assembly gates proven and Crown-confirmed."}
+  },
+  "assembly_gate_scores": [
+    "tui_launcher_presence_score",
+    "organ_tools_docs_functions_score",
+    "personal_flow_validators_score",
+    "personal_integrity_validators_score",
+    "custodes_organ_validators_score",
+    "throne_organ_validators_score",
+    "red_team_layer_score",
+    "blue_team_layer_score"
+  ],
+  "hard_rules": [
+    "duty_defined_score must not raise operational_score",
+    "assembly_target_defined_score must not raise operational_score",
+    "assembly_target_defined_score must not raise trust_score",
+    "assembly_target_defined_score must not raise no_core_mutation_score",
+    "organ_assembled_score must remain 0 unless every assembly gate is PROVEN and Throne confirmed",
+    "red_team_layer_score and blue_team_layer_score must remain 0 while their gates are NOT_PROVEN",
+    "self-validator is not trust proof",
+    "path existence is not functionality proof",
+    "profile baseline is not implementation proof"
+  ],
+  "expected_current_interpretation_after_great_gate": {
+    "duty_defined_score": 100,
+    "assembly_target_defined_score": 100,
+    "rule_validated_score": 0,
+    "action_proven_score": 0,
+    "trust_proven_score": 0,
+    "throne_confirmed_score": 0,
+    "organ_assembled_score": 0
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.throne_organ_assembly_stage_scoring_receipt.schema.v0_1",
+  "title": "Throne Organ Assembly Stage Scoring Receipt V0.1",
+  "type": "object",
+  "required": [
+    "receipt_id",
+    "task_id",
+    "validator_id",
+    "verdict",
+    "generated_at_utc",
+    "repo_head",
+    "organ_count",
+    "pass_count",
+    "scores",
+    "stage_law",
+    "operational_score_delta_allowed",
+    "trust_score_delta_allowed",
+    "no_core_mutation_score_delta_allowed",
+    "organ_assembled_score_delta_allowed",
+    "checks",
+    "errors"
+  ],
+  "properties": {
+    "operational_score_delta_allowed": {"type": "boolean", "const": false},
+    "trust_score_delta_allowed": {"type": "boolean", "const": false},
+    "no_core_mutation_score_delta_allowed": {"type": "boolean", "const": false},
+    "organ_assembled_score_delta_allowed": {"type": "boolean", "const": false}
+  }
+}

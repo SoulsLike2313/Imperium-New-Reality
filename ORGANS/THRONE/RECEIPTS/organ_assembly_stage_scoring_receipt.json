@@ -1,0 +1,168 @@
+{
+  "receipt_id": "receipt.throne.organ_assembly_stage_scoring.v0_1",
+  "task_id": "THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+  "validator_id": "throne_organ_assembly_stage_scoring_validator.v0_1",
+  "verdict": "PASS_STAGE_SCORING_INTEGRATED",
+  "generated_at_utc": "2026-07-01T14:28:14Z",
+  "repo_head": "2d073dbf5d263f8e8138ffb98e1a37dd7ce9e2bb",
+  "organ_count": 10,
+  "pass_count": 10,
+  "scores": {
+    "profile_baseline_score": 100.0,
+    "duty_defined_score": 100.0,
+    "assembly_target_defined_score": 100.0,
+    "rule_validated_score": 0.0,
+    "action_proven_score": 0.0,
+    "trust_proven_score": 0.0,
+    "throne_confirmed_score": 0.0,
+    "organ_assembled_score": 0.0,
+    "tui_launcher_presence_score": 0.0,
+    "organ_tools_docs_functions_score": 0.0,
+    "personal_flow_validators_score": 0.0,
+    "personal_integrity_validators_score": 0.0,
+    "custodes_organ_validators_score": 0.0,
+    "throne_organ_validators_score": 0.0,
+    "red_team_layer_score": 0.0,
+    "blue_team_layer_score": 0.0,
+    "red_team_score": 0.0,
+    "blue_team_score": 0.0,
+    "organ_truth_maturity_score": 40.0
+  },
+  "stage_law": "profile_baseline != duty_defined != assembly_target_defined != rule_validated != action_proven != trust_proven != throne_confirmed != organ_assembled",
+  "operational_score_delta_allowed": false,
+  "trust_score_delta_allowed": false,
+  "no_core_mutation_score_delta_allowed": false,
+  "organ_assembled_score_delta_allowed": false,
+  "summary_json": "ORGANS/THRONE/REPORTS/ORGAN_ASSEMBLY_STAGE_SCORING_SUMMARY_V0_1.json",
+  "summary_csv": "ORGANS/THRONE/REPORTS/ORGAN_ASSEMBLY_STAGE_SCORING_SUMMARY_V0_1.csv",
+  "report": "ORGANS/THRONE/REPORTS/ORGAN_ASSEMBLY_STAGE_SCORING_REPORT_V0_1.md",
+  "checks": [
+    {
+      "name": "THRONE_ORGAN_ASSEMBLY_STAGE_SCORING_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/MATRICES/THRONE_ORGAN_ASSEMBLY_STAGE_SCORING_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "THRONE_ORGAN_ASSEMBLY_STANDARD_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/MATRICES/THRONE_ORGAN_ASSEMBLY_STANDARD_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "ORGAN_DUTY_CONTRACT_REQUIRED_FIELDS_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/DOCTRINARIUM/MATRICES/ORGAN_DUTY_CONTRACT_REQUIRED_FIELDS_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "throne_organ_assembly_stage_scoring_receipt.schema.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/SCHEMAS/throne_organ_assembly_stage_scoring_receipt.schema.json"
+      }
+    },
+    {
+      "name": "ORGAN_ASSEMBLY_STAGE_SCORING_V0_1.md_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/SELF_KNOWLEDGE/ORGAN_ASSEMBLY_STAGE_SCORING_V0_1.md"
+      }
+    },
+    {
+      "name": "THRONE_ORGAN_ASSEMBLY_STAGE_SCORING_MATRIX_V0_1.json_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "THRONE_ORGAN_ASSEMBLY_STANDARD_MATRIX_V0_1.json_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "ORGAN_DUTY_CONTRACT_REQUIRED_FIELDS_MATRIX_V0_1.json_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "throne_organ_assembly_stage_scoring_receipt.schema.json_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "stage_scoring_hard_rules_present",
+      "status": "PASS",
+      "details": {
+        "required_laws": [
+          "duty_defined_score must not raise operational_score",
+          "assembly_target_defined_score must not raise operational_score",
+          "organ_assembled_score must remain 0 unless every assembly gate is PROVEN and Throne confirmed",
+          "self-validator is not trust proof"
+        ]
+      }
+    },
+    {
+      "name": "all_organs_have_duty_and_assembly_stage_inputs",
+      "status": "PASS",
+      "details": {
+        "failed": []
+      }
+    },
+    {
+      "name": "no_organ_assembled_claim_from_target_definition",
+      "status": "PASS",
+      "details": {
+        "assembled_claims": []
+      }
+    },
+    {
+      "name": "red_blue_not_claimed_before_proof",
+      "status": "PASS",
+      "details": {
+        "red_blue_claims": []
+      }
+    },
+    {
+      "name": "operational_score_not_raised_by_this_patch",
+      "status": "PASS",
+      "details": {
+        "allowed": false
+      }
+    },
+    {
+      "name": "trust_score_not_raised_by_this_patch",
+      "status": "PASS",
+      "details": {
+        "allowed": false
+      }
+    },
+    {
+      "name": "no_core_mutation_score_not_raised_by_this_patch",
+      "status": "PASS",
+      "details": {
+        "allowed": false
+      }
+    },
+    {
+      "name": "organ_assembled_score_delta_not_allowed",
+      "status": "PASS",
+      "details": {
+        "allowed": false
+      }
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "meaning": "Target/duty definition can be high while assembly, action, trust, red team, and blue team remain unproven."
+}
