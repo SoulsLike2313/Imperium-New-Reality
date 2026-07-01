@@ -1,0 +1,136 @@
+{
+  "summary_id": "astronomicon.advisory_output_isolation_voice_validation_summary.v0_1",
+  "task_id": "ORGAN-AGENT-ADVISORY-OUTPUT-ISOLATION-AND-VOICE-ENRICHMENT-0001",
+  "validator_id": "organ_agent_advisory_output_isolation_voice_validator.v0_1",
+  "verdict": "PASS_ADVISORY_OUTPUT_ISOLATION_AND_VOICE_ENRICHED",
+  "generated_at_utc": "2026-07-01T20:32:36Z",
+  "repo_head": "ef85a546f015cf968e58d2a4a75ea1df0145eb70",
+  "global_advisory_count": 10,
+  "single_organ_test": "INQUISITION",
+  "checks": [
+    {
+      "name": "ORGAN_AGENT_ADVISORY_OUTPUT_ISOLATION_AND_VOICE_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/MATRICES/ORGAN_AGENT_ADVISORY_OUTPUT_ISOLATION_AND_VOICE_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "ORGAN_AGENT_ADVISORY_OUTPUT_ISOLATION_AND_VOICE_ENRICHMENT_V0_1.md_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/DOCTRINE/ORGAN_AGENT_ADVISORY_OUTPUT_ISOLATION_AND_VOICE_ENRICHMENT_V0_1.md"
+      }
+    },
+    {
+      "name": "organ_agent_advisory.py_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/TOOLS/organ_agent_advisory.py"
+      }
+    },
+    {
+      "name": "output_isolation_matrix_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "global_advisory_generation_runs",
+      "status": "PASS",
+      "details": {
+        "stderr": ""
+      }
+    },
+    {
+      "name": "global_summary_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "global_summary_has_all_10_organs",
+      "status": "PASS",
+      "details": {
+        "count": 10
+      }
+    },
+    {
+      "name": "single_organ_advisory_generation_runs",
+      "status": "PASS",
+      "details": {
+        "stderr": ""
+      }
+    },
+    {
+      "name": "single_organ_json_written",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS\\ASTRONOMICON\\REPORTS\\ORGAN_AGENT_ADVISORY_INQUISITION_V0_1.json"
+      }
+    },
+    {
+      "name": "single_organ_markdown_written",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS\\ASTRONOMICON\\REPORTS\\ORGAN_AGENT_ADVISORY_INQUISITION_V0_1.md"
+      }
+    },
+    {
+      "name": "single_organ_did_not_overwrite_global_summary",
+      "status": "PASS",
+      "details": {
+        "before": "02eff7ddd056b29170354c9f54de3fe531abae74cd16166319305dd6afa9370d",
+        "after": "02eff7ddd056b29170354c9f54de3fe531abae74cd16166319305dd6afa9370d"
+      }
+    },
+    {
+      "name": "single_organ_did_not_overwrite_global_report",
+      "status": "PASS",
+      "details": {
+        "before": "57de6025a33423af22ac861c614c6863d28bc53cce4445961eeab5a174c7af93",
+        "after": "57de6025a33423af22ac861c614c6863d28bc53cce4445961eeab5a174c7af93"
+      }
+    },
+    {
+      "name": "single_organ_json_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "single_organ_has_one_advisory",
+      "status": "PASS",
+      "details": {
+        "count": 1
+      }
+    },
+    {
+      "name": "voice_enrichment_fields_present",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "voice_has_no_direct_action_commands",
+      "status": "PASS",
+      "details": {
+        "violations": []
+      }
+    },
+    {
+      "name": "global_advisory_regenerated_after_test",
+      "status": "PASS",
+      "details": {
+        "stderr": ""
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "next_layer_recommendation": "After this bug fix, move to red+blue team tools and skills foundation."
+}

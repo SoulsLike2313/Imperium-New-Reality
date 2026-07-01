@@ -2,15 +2,15 @@
   "census_id": "imperium.population_census.current.v0_2",
   "patch_id": "IMPERIUM-POPULATION-CENSUS-REFRESH-0001",
   "validator_id": "imperium_population_census_refresh_validator.v0_2",
-  "generated_at_utc": "2026-07-01T15:29:33Z",
-  "repo_head": "d648035322f7a8c5b08231848ec3ea349f4cd5f5",
-  "tracked_file_count": 6087,
-  "working_tree_visible_file_count": 6170,
-  "population_total": 6170,
+  "generated_at_utc": "2026-07-01T20:20:01Z",
+  "repo_head": "ef85a546f015cf968e58d2a4a75ea1df0145eb70",
+  "tracked_file_count": 6326,
+  "working_tree_visible_file_count": 6409,
+  "population_total": 6409,
   "root_zone_summary": {
-    "ORGANS": 2936,
-    "SUPPORT": 2591,
-    "WARP": 605,
+    "ORGANS": 3030,
+    "SUPPORT": 2603,
+    "WARP": 738,
     "_HARNESS": 34,
     ".editorconfig": 1,
     ".gitattributes": 1,
@@ -19,21 +19,22 @@
   },
   "owner_summary": {
     "SUPPORT/QUARANTINE": 2098,
-    "ASTRONOMICON": 836,
+    "ASTRONOMICON": 911,
     "ADMINISTRATUM": 792,
     "SUPPORT/COMMON_IMPERIUM_SUPPORT": 445,
-    "MECHANICUS": 323,
+    "MECHANICUS": 328,
     "ORGANS/IMPERIAL_IDE": 271,
-    "INQUISITION": 228,
+    "INQUISITION": 233,
     "WARP_PATCH/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001": 165,
     "WARP_PATCH/GREAT-NINE-PROFILE-VALIDATORS-0001": 152,
-    "DOCTRINARIUM": 106,
+    "DOCTRINARIUM": 115,
     "THRONE": 105,
     "STRATEGIUM": 79,
     "ORGANS/_CORE_GOVERNANCE": 64,
     "OFFICIO_AGENTIS": 53,
     "SCHOLA_IMPERIALIS": 43,
     "SUPPORT/TRANSPORT": 39,
+    "WARP": 36,
     "_HARNESS": 34,
     "CUSTODES": 29,
     "WARP_PATCH/THRONE-CROWN-ORGAN-FOUNDATION-0001": 29,
@@ -41,10 +42,17 @@
     "WARP_PATCH/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001": 23,
     "WARP_PATCH/IMPERIUM-POPULATION-CENSUS-0001": 23,
     "WARP_PATCH/THRONE-KERNEL-ANATOMY-AND-CORE-V1-TARGET-0001": 21,
+    "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001": 20,
+    "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001": 19,
     "WARP_PATCH/GOVERNANCE-ROOT-AND-GREAT-NINE-RECONCILIATION-0001": 16,
+    "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001": 16,
+    "WARP_PATCH/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001": 15,
     "WARP_PATCH/ROOT-TRANSPORT-CLUTTER-RELOCATION-0001": 15,
+    "WARP_PATCH/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001": 14,
+    "WARP_PATCH/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001": 13,
     "WARP_PATCH/EXTERNAL-AUDIT-CONTROL-AND-CONSOLIDATION-0001": 13,
     "WARP_PATCH/IMPERIUM-POPULATION-CENSUS-REFRESH-0001": 13,
+    "SUPPORT/LAUNCHER": 12,
     "WARP_PATCH/OWNER-DOCS-VALIDATION-WARP-0001": 12,
     "WARP_PATCH/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001": 12,
     "WARP_PATCH/ROOT-QUARANTINE-LONGPATH-COMPACTION-0001": 11,
@@ -65,41 +73,41 @@
     "SUPPORT/graph_snapshot.json": 1
   },
   "class_summary": {
-    "REPORT": 1806,
-    "RECEIPT": 930,
-    "JSON": 751,
-    "MARKDOWN": 709,
+    "REPORT": 1881,
+    "RECEIPT": 964,
+    "JSON": 787,
+    "MARKDOWN": 721,
     "OTHER": 632,
-    "MATRIX": 234,
-    "TOOL": 213,
-    "SCHEMA": 166,
-    "PYTHON": 122,
-    "TEST": 88,
+    "MATRIX": 256,
+    "TOOL": 219,
+    "SCHEMA": 174,
+    "PYTHON": 126,
+    "TEST": 94,
+    "VALIDATOR": 83,
     "REGISTRY": 74,
     "BLOCK": 70,
-    "VALIDATOR": 67,
-    "POWERSHELL": 46,
+    "POWERSHELL": 54,
     "TUI": 40,
     "LESSON": 39,
     "DASHBOARD": 38,
     "EYES": 38,
     "NEGATIVE_LESSON": 37,
-    "TRANSPORT_FILE_MANIFEST": 25,
-    "PATCH_PACK": 23,
+    "TRANSPORT_FILE_MANIFEST": 31,
+    "PATCH_PACK": 29,
     "TRANSPORT_APPLY_SCRIPT": 17,
     "ROOT_CONFIG": 5
   },
   "status_summary": {
-    "REALITY": 2936,
-    "SUPPORT": 2552,
-    "WARP": 605,
+    "REALITY": 3030,
+    "SUPPORT": 2564,
+    "WARP": 738,
     "TRANSPORT": 39,
     "HARNESS": 34,
     "ROOT": 4
   },
   "coverage": {
     "owner_coverage_score": 100.0,
-    "classification_coverage_score": 89.76,
+    "classification_coverage_score": 90.14,
     "status_coverage_score": 100.0,
     "unknown_owner_count": 0,
     "unknown_class_count": 632,
@@ -116,7 +124,7 @@
     "legacy_census_exists": true,
     "legacy_census_path": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/OUTPUTS/IMPERIUM_POPULATION_CENSUS_V0_1.json",
     "legacy_population_total": 6001,
-    "population_delta_vs_legacy": 169,
+    "population_delta_vs_legacy": 408,
     "legacy_is_current": false,
     "meaning": "Legacy WARP census is historical unless explicitly mirrored by a current Administratum refresh."
   },
@@ -5749,7 +5757,7 @@
       "resident_class": "RECEIPT",
       "status": "REALITY",
       "bytes": 4248,
-      "sha256": "a5cd7595d9b211a560c60dedd0b5a425d762f50df16439c6b6e30de2cb519bdc"
+      "sha256": "023dde03f4e20eec8fc1c7ac72b0bf938cdffcc38dbbd2c01a367d385ad69da3"
     },
     {
       "resident_id": "resident.85d378525e8379e5",
@@ -5768,8 +5776,8 @@
       "owner": "ADMINISTRATUM",
       "resident_class": "REGISTRY",
       "status": "REALITY",
-      "bytes": 2719717,
-      "sha256": "f3dd9166b6763b48614aeec48011b0ced1fbebc2216cd7a4b5fbeba7dd9981dd"
+      "bytes": 2728533,
+      "sha256": "9ec42a048c681418b6ba1873b2382e772f79694b99a27ff3b5967df4d2c23a81"
     },
     {
       "resident_id": "resident.11a49350db7f111a",
@@ -5778,8 +5786,8 @@
       "owner": "ADMINISTRATUM",
       "resident_class": "REGISTRY",
       "status": "REALITY",
-      "bytes": 3142,
-      "sha256": "4a545ceda89251d28cf2b48d1eb088526f604397d27f6b2e6fbc50d23989f2ad"
+      "bytes": 3143,
+      "sha256": "bdb5a1827691a1518a0aa338324c171ef7dbed35767131f16c665df7c6587d8c"
     },
     {
       "resident_id": "resident.817b3d90969fe12b",
@@ -5789,7 +5797,7 @@
       "resident_class": "REGISTRY",
       "status": "REALITY",
       "bytes": 1480,
-      "sha256": "3bb886da1c45ceb57d06945109302c7a259475aacca648f772e1b8c521addb72"
+      "sha256": "0a3ba02a42dcf09b6103878d765825bccdd10cc392e85cbbb659d68311f6e2ee"
     },
     {
       "resident_id": "resident.00fe174468801843",
@@ -5859,7 +5867,7 @@
       "resident_class": "REPORT",
       "status": "REALITY",
       "bytes": 2035,
-      "sha256": "6381ed2a13868b7e76e5e085322b522b733106d26bd4a69490298d5164fa493c"
+      "sha256": "b23360b55215de6b502d6c5287661d78c820a84990a530b45ace07bca37d9e73"
     },
     {
       "resident_id": "resident.e42a4b656a000771",
@@ -8202,6 +8210,36 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "resident_id": "resident.610cd6f965f1e1d5",
+      "path": "ORGANS/ASTRONOMICON/DOCTRINE/ORGAN_AGENT_ADVISORY_SCORING_FOUNDATION_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "MARKDOWN",
+      "status": "REALITY",
+      "bytes": 1231,
+      "sha256": "0839b3d24b54ac0f18f2ca4cd1afcbee5de832234ac7585ef32b3aa05dd0beb5"
+    },
+    {
+      "resident_id": "resident.3d4a9d2058ef51b5",
+      "path": "ORGANS/ASTRONOMICON/DOCTRINE/PATCH_PACK_INTAKE_AND_VALIDATION_SMOKE_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "MARKDOWN",
+      "status": "REALITY",
+      "bytes": 1162,
+      "sha256": "86d38c772f8a945fecba6019d571d0aad396779c1c24bbe176187e3180243652"
+    },
+    {
+      "resident_id": "resident.f5c85062ba287be1",
+      "path": "ORGANS/ASTRONOMICON/DOCTRINE/PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "MARKDOWN",
+      "status": "REALITY",
+      "bytes": 621,
+      "sha256": "ab11c2acf37ce695bae8c0f10c967aed93e93b394fb26f68e6245e21fe5aaf49"
+    },
+    {
       "resident_id": "resident.f324278ae829dc45",
       "path": "ORGANS/ASTRONOMICON/EYES/.gitkeep",
       "root_zone": "ORGANS",
@@ -8250,6 +8288,16 @@
       "status": "REALITY",
       "bytes": 1218,
       "sha256": "b85ce7bbe821329c6c208ab55556679c119b966ec264135be558a09f62a93814"
+    },
+    {
+      "resident_id": "resident.06a602607322429c",
+      "path": "ORGANS/ASTRONOMICON/MATRICES/ASTRONOMICON_PATCH_PACK_SMOKE_VALIDATION_MATRIX_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "MATRIX",
+      "status": "REALITY",
+      "bytes": 2548,
+      "sha256": "b066db03b781a64dc0b0a7da97e50db3717ff0b9af2d9f01537df23789cab973"
     },
     {
       "resident_id": "resident.4e5938514240d1d6",
@@ -8302,6 +8350,16 @@
       "sha256": "9e278999a2f0fb420b254107fcd393622c4e85c8eca65d885168b729c83e2063"
     },
     {
+      "resident_id": "resident.0f544e37740bb96d",
+      "path": "ORGANS/ASTRONOMICON/MATRICES/ORGAN_AGENT_ADVISORY_SCORING_MATRIX_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "MATRIX",
+      "status": "REALITY",
+      "bytes": 5993,
+      "sha256": "4f55acdc42ad2e96f393f77718d5efe893fd296d8f614eb1a98254a1959c18fc"
+    },
+    {
       "resident_id": "resident.1ff0253bccf2b173",
       "path": "ORGANS/ASTRONOMICON/MATRICES/OWNER_QUESTION_MATRIX.json",
       "root_zone": "ORGANS",
@@ -8320,6 +8378,26 @@
       "status": "REALITY",
       "bytes": 1505,
       "sha256": "08d5bee7202647657893fdbf4de6f3a12b2c926607692c33bccc6217a9aa8c99"
+    },
+    {
+      "resident_id": "resident.0fd93ad54bf12739",
+      "path": "ORGANS/ASTRONOMICON/MATRICES/PATCH_LIFECYCLE_LAUNCHER_COMMANDS_MATRIX_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "MATRIX",
+      "status": "REALITY",
+      "bytes": 1254,
+      "sha256": "c53a77a23e162f8f1309bc5f76c8235bef8025077c22aa3057cd735c9bd6da15"
+    },
+    {
+      "resident_id": "resident.c423027ec28fbf5e",
+      "path": "ORGANS/ASTRONOMICON/MATRICES/PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION_MATRIX_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "MATRIX",
+      "status": "REALITY",
+      "bytes": 783,
+      "sha256": "9d3032f370b176dce7363e529668f8864ca9d4f421620f37603fcd9492411451"
     },
     {
       "resident_id": "resident.ffba8298a350f495",
@@ -8390,6 +8468,26 @@
       "status": "REALITY",
       "bytes": 1051,
       "sha256": "b72b7ef3c421352aaa1510b5880447c50b02cf23a1bc34b814a5eeb9a9b9609a"
+    },
+    {
+      "resident_id": "resident.bceccd670dfc71c9",
+      "path": "ORGANS/ASTRONOMICON/MATRICES/TASK_SHAPE_FAMILY_MATRIX_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "MATRIX",
+      "status": "REALITY",
+      "bytes": 2971,
+      "sha256": "20744f171fcf19e5f74a5e0b85b902183f9cb32a981407d30843385c64b374fc"
+    },
+    {
+      "resident_id": "resident.5715552cbdc5144c",
+      "path": "ORGANS/ASTRONOMICON/MATRICES/UNIVERSAL_TASK_INFORMATION_DEFICIT_MATRIX_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "MATRIX",
+      "status": "REALITY",
+      "bytes": 2119,
+      "sha256": "55298e2edfdf88b0880d524c8a1bf614df1e1ba6cb2511ab392e1710c447c41e"
     },
     {
       "resident_id": "resident.16fa04f468b77b28",
@@ -8482,6 +8580,16 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "resident_id": "resident.6f883ecf7916c128",
+      "path": "ORGANS/ASTRONOMICON/RECEIPTS/astronomicon_dry_run_validator_receipt.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "RECEIPT",
+      "status": "REALITY",
+      "bytes": 9674,
+      "sha256": "9cb1a5bdb40704f4df93a4b541b803218ecee3df27c13c6386250972fcaffdb2"
+    },
+    {
       "resident_id": "resident.d208f87c4f27d065",
       "path": "ORGANS/ASTRONOMICON/RECEIPTS/astronomicon_profile_receipt.json",
       "root_zone": "ORGANS",
@@ -8490,6 +8598,56 @@
       "status": "REALITY",
       "bytes": 3215,
       "sha256": "3a248d553d54de6db5dd64193c31ca413be7c0612db5002bed1d2609e0da5cce"
+    },
+    {
+      "resident_id": "resident.ccadbcee982d9b57",
+      "path": "ORGANS/ASTRONOMICON/RECEIPTS/organ_agent_advisory_scoring_receipt.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "RECEIPT",
+      "status": "REALITY",
+      "bytes": 619,
+      "sha256": "c43d18f6a2466e474bf3faeda9552bce0b63563de276035c9a8335059b3a6b7b"
+    },
+    {
+      "resident_id": "resident.6b20df8c4775deda",
+      "path": "ORGANS/ASTRONOMICON/RECEIPTS/organ_agent_advisory_scoring_validation_receipt.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "RECEIPT",
+      "status": "REALITY",
+      "bytes": 5493,
+      "sha256": "b60bb7edb15e095169b6249413d9f7cd4f4aa75290bdf22a2c82c680236b1ccd"
+    },
+    {
+      "resident_id": "resident.cb802055ca26d05e",
+      "path": "ORGANS/ASTRONOMICON/RECEIPTS/patch_lifecycle_launcher_commands_receipt.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "RECEIPT",
+      "status": "REALITY",
+      "bytes": 6588,
+      "sha256": "ef00f0b0e31609f60c9169dea363a3cc72283e35e3b510583cd3ac619b3d5aae"
+    },
+    {
+      "resident_id": "resident.1d376c0edfee4c96",
+      "path": "ORGANS/ASTRONOMICON/RECEIPTS/patch_pack_intake_validation_smoke_receipt.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "RECEIPT",
+      "status": "REALITY",
+      "bytes": 3715,
+      "sha256": "5ce699aa98948ee7642b9c07450f1e9a2f124fa81a7ea52555cefdb6adcf543e"
+    },
+    {
+      "resident_id": "resident.8734acb24236883d",
+      "path": "ORGANS/ASTRONOMICON/RECEIPTS/patch_pack_lifecycle_validation_foundation_receipt.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "RECEIPT",
+      "status": "REALITY",
+      "bytes": 5931,
+      "sha256": "e8f52d26f8d70526c94139e9ce4f7485b4ac4b9995a11687c08c698f03add13f"
     },
     {
       "resident_id": "resident.2c026421b8a98f0d",
@@ -8502,6 +8660,16 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "resident_id": "resident.67bbe56d3cc17e0b",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_DRY_RUN_VALIDATION_REPORT_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 2392,
+      "sha256": "98c4d7c027f221506ba25c8f25209f19567b8c2632068321a5905aee8a2a1582"
+    },
+    {
       "resident_id": "resident.e3462379d06ac380",
       "path": "ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_PROFILE_VALIDATION_REPORT_V0_1.md",
       "root_zone": "ORGANS",
@@ -8510,6 +8678,486 @@
       "status": "REALITY",
       "bytes": 1032,
       "sha256": "8749501dcbf80abb2bf2bd8e404e63974d1b15ab302f67e85a6fef58c9dce734"
+    },
+    {
+      "resident_id": "resident.648af6241b2b83c3",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE/ADMISSION_DECISION_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 764,
+      "sha256": "0f0fc1845672515dbbe6dac61cfbebde11867e206e296836f4a477b5158d4bd6"
+    },
+    {
+      "resident_id": "resident.a02ca6f48252557e",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE/ASTRONOMICON_DRY_RUN_RECEIPT.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "RECEIPT",
+      "status": "REALITY",
+      "bytes": 1897,
+      "sha256": "2d363f9ec0a57ffda0456f7d48c0b37c293ae63974c14423bf48dcef905ed831"
+    },
+    {
+      "resident_id": "resident.bda007cbb0184dbc",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE/ASTRONOMICON_TASK_INTAKE_REPORT.md",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 835,
+      "sha256": "0e65e0fd7bd93f2ab697025d5d187ee47c8f81b90ec8aa51c1ffbb6c7a6d92b2"
+    },
+    {
+      "resident_id": "resident.72a158d7c9587a54",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE/FOCUS_PACK_DRAFT_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1532,
+      "sha256": "f1f244bc7f8ef84bd0349e6772efd72dabe3732a58e793cbf080e70c34653c09"
+    },
+    {
+      "resident_id": "resident.e1d817b494cdefc5",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE/OWNER_INTENT_CAPTURE_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 964,
+      "sha256": "8844dd35d06c639dc8f16238490d67f087eafb2c60108648ae5276517878451a"
+    },
+    {
+      "resident_id": "resident.88ccf6dabf2eae79",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE/REQUIRED_CONTEXT_REQUEST_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 2585,
+      "sha256": "b9662dac3937e98218e3e61d95d42c5a68eac2d7363e12b9ffefddee082e0b92"
+    },
+    {
+      "resident_id": "resident.aef363dbdfdaaad1",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE/RESEARCH_PLAN_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 935,
+      "sha256": "9fe4ef0ea4be76e0fdcc1dfb76255ca0e68abce915ba0f6167dfc7505e776da0"
+    },
+    {
+      "resident_id": "resident.06dd37a7cecaeaf3",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE/ROUTE_PROPOSAL_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 872,
+      "sha256": "a41eacc0594e447f7468d816d0522b47b01dcd73182496f951b8709cf04620ff"
+    },
+    {
+      "resident_id": "resident.598d5b7f893b5638",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE/SAFETY_BOUNDARY_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 583,
+      "sha256": "01612ead4a89343aae4a3edcddec3de3c9eb565f926eebc1f9947ab254db1399"
+    },
+    {
+      "resident_id": "resident.eb0212a8496f495c",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE/TASK_CLASSIFICATION_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 372,
+      "sha256": "8b9a845eb54d554e5fd521f30db029b34f3c2db8b080eb67c61fa56a1fbde580"
+    },
+    {
+      "resident_id": "resident.4ad5232f78cf8fa1",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE/TASK_INFORMATION_DEFICIT_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1174,
+      "sha256": "d31dcc983040a9fcc8825d8c75c2742f71e4f7288867b51c5d2212e582a6fb92"
+    },
+    {
+      "resident_id": "resident.bc1563fa8e25dbd1",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-GAME-BUILD-0001/00_INTAKE/TASK_INTAKE_PACKET_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1555,
+      "sha256": "76eef5ab531a792c7afed7025c641f63fdac42d2f80f075404d7aecfa8214565"
+    },
+    {
+      "resident_id": "resident.7f9926a5cabc1e0d",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE/ADMISSION_DECISION_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 763,
+      "sha256": "eccaa67ff1b383806ce7c18840e6be1831f6cd8d64f8b29d58ee640763d2a577"
+    },
+    {
+      "resident_id": "resident.01f1731bf97c8f2c",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE/ASTRONOMICON_DRY_RUN_RECEIPT.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "RECEIPT",
+      "status": "REALITY",
+      "bytes": 1942,
+      "sha256": "167e0decd4be26824cf6d01ab770199babeb1683e258f994e96671a7fc327844"
+    },
+    {
+      "resident_id": "resident.a06719fd84ff0b68",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE/ASTRONOMICON_TASK_INTAKE_REPORT.md",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 813,
+      "sha256": "5c325fb8578098b27125e2c9f5ba7812b94c58f39944efd7021ebdc4c8ee3ff5"
+    },
+    {
+      "resident_id": "resident.cdc1687bbd2f2ff6",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE/FOCUS_PACK_DRAFT_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1524,
+      "sha256": "255b87456eb2ec5c0df2c19be417e443eb1ad6f460320da6c267b0291736a01d"
+    },
+    {
+      "resident_id": "resident.301bf5c9cfb034b4",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE/OWNER_INTENT_CAPTURE_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 964,
+      "sha256": "c471431e8412dca33b0119ba0c374c20d0410bb042501ccdd1d4d7ff60d13d4d"
+    },
+    {
+      "resident_id": "resident.79fcab13ff4d4c2a",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE/REQUIRED_CONTEXT_REQUEST_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 2475,
+      "sha256": "2f9beaa570a36886d16f6c301821febb75a7abb037252890154a1a1894b0d5d6"
+    },
+    {
+      "resident_id": "resident.0c5664027fcf4d55",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE/RESEARCH_PLAN_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 898,
+      "sha256": "dfafa0711cadaa20da76bdfad796fc8492a43ffd4a295215c411e093fe4b3cd6"
+    },
+    {
+      "resident_id": "resident.18eb04fbfc09867d",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE/ROUTE_PROPOSAL_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 872,
+      "sha256": "899a99f1ee3feb8f39cb5f9918509d6a1c571edc6a2b1888592be9f3e2056446"
+    },
+    {
+      "resident_id": "resident.0d858f6156c1cf39",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE/SAFETY_BOUNDARY_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 587,
+      "sha256": "eba6314151325d1989834212b3aed4ba9b6f1e9f221882db2c28a1c99d1b82bd"
+    },
+    {
+      "resident_id": "resident.775a898d1d51e52b",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE/TASK_CLASSIFICATION_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 373,
+      "sha256": "e847e2cb19500236b54ed6d3bdb9afaae08b05e0ca0751601744dc5fc24b6e85"
+    },
+    {
+      "resident_id": "resident.f6d91d7a305f6161",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE/TASK_INFORMATION_DEFICIT_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1174,
+      "sha256": "e7610f24e742178acc3015974093f55c6685abd1d5804b0e6e4f2840b3bb2813"
+    },
+    {
+      "resident_id": "resident.0c21735ef031dfa5",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-IMPERIUM-PATCH-0001/00_INTAKE/TASK_INTAKE_PACKET_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1552,
+      "sha256": "7918945d34901481ef944e1c67acf494bc0fadb116acd4dcf98f0a39ef39ac77"
+    },
+    {
+      "resident_id": "resident.b2609c8ea541ddab",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE/ADMISSION_DECISION_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 833,
+      "sha256": "8e249fca424bde75186e6643f69f4edf0b309fadf66a072ab6e9f05a46b480d6"
+    },
+    {
+      "resident_id": "resident.732a55f2918947da",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE/ASTRONOMICON_DRY_RUN_RECEIPT.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "RECEIPT",
+      "status": "REALITY",
+      "bytes": 1950,
+      "sha256": "e3018b7a4a03850b73e7396d7bb78cc893f7b997b06d5cb52dcd622a18ae2d8b"
+    },
+    {
+      "resident_id": "resident.56cdd4a4d3ce46cd",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE/ASTRONOMICON_TASK_INTAKE_REPORT.md",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 856,
+      "sha256": "ce3bedcdcb722b68baf5cda75e36cafdf7765fb7d7a373d2a3214fa4e15a1f38"
+    },
+    {
+      "resident_id": "resident.f713ebdf0d554c2e",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE/FOCUS_PACK_DRAFT_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1668,
+      "sha256": "8959895d6f1224cfb6cf859fd54bde838b1bd8e17ecb44781ea84e8260a8fa3b"
+    },
+    {
+      "resident_id": "resident.8eadf52689dd800a",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE/OWNER_INTENT_CAPTURE_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1006,
+      "sha256": "74c5b082a2c97c6d7e86b4fa4794365e3b81709c5302dbbe45e7a21aa5f88d76"
+    },
+    {
+      "resident_id": "resident.faa2fffa2fb52026",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE/REQUIRED_CONTEXT_REQUEST_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 2695,
+      "sha256": "acf7053f78bf97ebae94beb851d00f9d11a0576c1519dd8a523670c463574af5"
+    },
+    {
+      "resident_id": "resident.3e9f792951b5ac33",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE/RESEARCH_PLAN_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1154,
+      "sha256": "8d0db3254b78f4af824cf487ce165cfb0fef29c393d96815f33f9357615a77e9"
+    },
+    {
+      "resident_id": "resident.3c952e0b0ad60266",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE/ROUTE_PROPOSAL_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1059,
+      "sha256": "00ec3e8f3c022aff02b28b246f1f1e73c1e0eecdc7ab4bb9a909295b530c24fa"
+    },
+    {
+      "resident_id": "resident.28741c63c86902a0",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE/SAFETY_BOUNDARY_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 587,
+      "sha256": "b723de76ed7bd687ededafa4f0d9ffcfbb84d98945a847f07556769c0cba878f"
+    },
+    {
+      "resident_id": "resident.163a866e1da778ed",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE/TASK_CLASSIFICATION_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 381,
+      "sha256": "0d482516d7c6ee6864096f2036d5ace843d819288e0d266e0f29766f29bb249d"
+    },
+    {
+      "resident_id": "resident.0fda44b801111d1f",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE/TASK_INFORMATION_DEFICIT_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1324,
+      "sha256": "76826ff480b116a8fe095425cfb830653e37ee587f0de25b42ab8656fad09998"
+    },
+    {
+      "resident_id": "resident.e90808cd59d4560f",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/DRY_RUN_SELFTEST_TASKS/SELFTEST-WITCHER3-60FPS-0001/00_INTAKE/TASK_INTAKE_PACKET_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1576,
+      "sha256": "6388ab87e9cb213dd34fa9f4f2f185dbaef18e2f728b733bd3dcf1e57a5ab908"
+    },
+    {
+      "resident_id": "resident.467554f81673c067",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/OPERATOR_PATCH_SMOKE_PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1414,
+      "sha256": "aca4e5d1e632d25f07295c184d597c3505385f696ed106321c42a1989b5da771"
+    },
+    {
+      "resident_id": "resident.6f802adce3c8e79b",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/ORGAN_AGENT_ADVISORY_REPORT_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 3735,
+      "sha256": "306582c713087f7609270cc9c019521b69526b837d3cd056db9984617dd693de"
+    },
+    {
+      "resident_id": "resident.496d13a80c4cefd7",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/ORGAN_AGENT_ADVISORY_SCORING_VALIDATION_REPORT_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1458,
+      "sha256": "e98fa2468d22a054df599fb698c860e125adaf1e8d5e9bef4de7203ae319b97a"
+    },
+    {
+      "resident_id": "resident.8f9fb5f00064f443",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/ORGAN_AGENT_ADVISORY_SCORING_VALIDATION_SUMMARY_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 5392,
+      "sha256": "64093c31558f47686836e7cac16dd5c2b9806223a53befe683dafc27b6c0f5ef"
+    },
+    {
+      "resident_id": "resident.9e0617c1e7f13bd3",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/ORGAN_AGENT_ADVISORY_SUMMARY_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 2491,
+      "sha256": "1fa1bfa0ca35df9c90bff067711e2813272ea8c5ba30b30bbab422c2677c93d8"
+    },
+    {
+      "resident_id": "resident.8c662d13ef32a3cf",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/PATCH_LIFECYCLE_LAUNCHER_COMMANDS_REPORT_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1520,
+      "sha256": "76071a09bae870296f195375e48e694a7b20fbdcb8b5b85eebdaf32ce258d850"
+    },
+    {
+      "resident_id": "resident.de25789df8fc91d5",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/PATCH_LIFECYCLE_LAUNCHER_COMMANDS_SUMMARY_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 10174,
+      "sha256": "9ba43912b4b79833067c8423c91b7634ee1f9b125c575ee5281f6b36b767fa7e"
+    },
+    {
+      "resident_id": "resident.9f97a4c5d49b6020",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/PATCH_PACK_INTAKE_VALIDATION_SMOKE_REPORT_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 4278,
+      "sha256": "fc2bec13c263f533ba657483713aad9998328f87ae8250dcaa53fbd8bd21839a"
+    },
+    {
+      "resident_id": "resident.d741fba90af70041",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/PATCH_PACK_LIFECYCLE_SMOKE_ALL_SUMMARY_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 34062,
+      "sha256": "aebbbecd46dec30608c891f77f74b469319d9d77d14cc247a0990ba80b319420"
+    },
+    {
+      "resident_id": "resident.4b89eb3daf218051",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION_REPORT_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1076,
+      "sha256": "aa987b3630fbb07fe2a2d586405d5a648acaec3fe032b549cf05b0326b7a5c59"
+    },
+    {
+      "resident_id": "resident.e2ee723a357c94a6",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION_SUMMARY_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 6219,
+      "sha256": "f5672f49c5b5d2511bcf6e927bca73a07802d89a5f3827d28b1c615fb9f5075f"
+    },
+    {
+      "resident_id": "resident.97e37f7cd2b7b121",
+      "path": "ORGANS/ASTRONOMICON/REPORTS/PATCH_PACK_SMOKE_VALIDATION_SUMMARY_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 31688,
+      "sha256": "25b3ab768b12f583da43f7144885f754ba751a925d54e6ddd8c8172f4964b3dd"
     },
     {
       "resident_id": "resident.71b657cf872ab80a",
@@ -10132,6 +10780,16 @@
       "sha256": "6bfc9ff9b9ea6ec9d9d57d87e7256960f3b37e06b8ce5631a48aed735cf0a1d3"
     },
     {
+      "resident_id": "resident.a02f3c7f88d032ff",
+      "path": "ORGANS/ASTRONOMICON/SCHEMAS/focus_pack.schema.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "SCHEMA",
+      "status": "REALITY",
+      "bytes": 336,
+      "sha256": "1d49aa708e6231ce2489b16ff1ce14a97618ef4ccab4ffee0ce0b6abf13ea164"
+    },
+    {
       "resident_id": "resident.316f177880625794",
       "path": "ORGANS/ASTRONOMICON/SCHEMAS/organ_profile_card.schema.json",
       "root_zone": "ORGANS",
@@ -10140,6 +10798,26 @@
       "status": "REALITY",
       "bytes": 433,
       "sha256": "022226a4c12e05e3fd9cc97800395734b3539c583db365a8bd483bf412e90a1e"
+    },
+    {
+      "resident_id": "resident.a4ceb4d45ae8b84b",
+      "path": "ORGANS/ASTRONOMICON/SCHEMAS/patch_pack_smoke_result.schema.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "SCHEMA",
+      "status": "REALITY",
+      "bytes": 1013,
+      "sha256": "0f330c1226a6f83fad3c44327a198ee8796f41c9e06be6280d77348612c38074"
+    },
+    {
+      "resident_id": "resident.52a91b4e222b871b",
+      "path": "ORGANS/ASTRONOMICON/SCHEMAS/task_intake_packet.schema.json",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "SCHEMA",
+      "status": "REALITY",
+      "bytes": 502,
+      "sha256": "86676577868784da52a14554257d1d823724d01a1d52a9c74cdd8555bcad0bc4"
     },
     {
       "resident_id": "resident.da10dec4b54b7a4d",
@@ -16262,6 +16940,16 @@
       "sha256": "e69ae79f80a600f782f1cfa0633d75f66afbe2b64323981613bf9363890d25b8"
     },
     {
+      "resident_id": "resident.bee391d619d818de",
+      "path": "ORGANS/ASTRONOMICON/TOOLS/astronomicon_intake_dry_run.py",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "TOOL",
+      "status": "REALITY",
+      "bytes": 12345,
+      "sha256": "362c77e59f3b4a8cc4d3bdbc8817522aad2a295a4d1962390c8e667cc812ee86"
+    },
+    {
       "resident_id": "resident.4262f0d704206dba",
       "path": "ORGANS/ASTRONOMICON/TOOLS/astronomicon_owner_launcher_v0_1.py",
       "root_zone": "ORGANS",
@@ -16270,6 +16958,16 @@
       "status": "REALITY",
       "bytes": 4829,
       "sha256": "2d7b1766c39ba750600de5fa0d90b758f0084426a124bbfd75df9dc0f2ab3993"
+    },
+    {
+      "resident_id": "resident.245285f7cbc9539f",
+      "path": "ORGANS/ASTRONOMICON/TOOLS/astronomicon_patch_pack_smoke.py",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "TOOL",
+      "status": "REALITY",
+      "bytes": 10364,
+      "sha256": "dcc13350c3194eccf5a631ae131fc0f5f7c10cfa21418564185a4279ffad6f2c"
     },
     {
       "resident_id": "resident.d6ee640ab6028284",
@@ -16352,6 +17050,16 @@
       "sha256": "e1d8926b5417a0defed6f53e250d138475fe2f27d9013d622d72cc772f8c7917"
     },
     {
+      "resident_id": "resident.54b02e354b18a32c",
+      "path": "ORGANS/ASTRONOMICON/TOOLS/organ_agent_advisory.py",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "TOOL",
+      "status": "REALITY",
+      "bytes": 14898,
+      "sha256": "9aa88f61b3fe6ee8d29a2d1429227d9216c2304338ce381c9e12f652271ef993"
+    },
+    {
       "resident_id": "resident.a3cf55fcb7b28a96",
       "path": "ORGANS/ASTRONOMICON/TOOLS/run_astronomicon_bootstrap_preflight_fixtures_v0_1.py",
       "root_zone": "ORGANS",
@@ -16422,6 +17130,16 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "resident_id": "resident.def30803d08e732c",
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_astronomicon_dry_run_and_launcher.py",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "VALIDATOR",
+      "status": "REALITY",
+      "bytes": 7311,
+      "sha256": "cec3cebb4b95fcc5d40870e48bc71fee8eea25b322837d66766e7fccde6cf03d"
+    },
+    {
       "resident_id": "resident.58e9c552f6953462",
       "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_astronomicon_profile.py",
       "root_zone": "ORGANS",
@@ -16430,6 +17148,46 @@
       "status": "REALITY",
       "bytes": 8769,
       "sha256": "61f7da919eee3a53b31bc2a19ea6051a9fe8f14e705e4e523c63defec98990f6"
+    },
+    {
+      "resident_id": "resident.896f145ce91cb1f8",
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_organ_agent_advisory_scoring.py",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "VALIDATOR",
+      "status": "REALITY",
+      "bytes": 10603,
+      "sha256": "0eabddf221bdb3df0df067502292bd6f4b11cd601fb31e76f0db14001aa52d7e"
+    },
+    {
+      "resident_id": "resident.3adf96194d98512d",
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_patch_lifecycle_launcher_commands.py",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "VALIDATOR",
+      "status": "REALITY",
+      "bytes": 8651,
+      "sha256": "c901ba40433ffe5d8c02d91bece39815c170af8557eabfaa129c784f035483ff"
+    },
+    {
+      "resident_id": "resident.13360d5a249aed5c",
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_patch_pack_intake_validation_smoke.py",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "VALIDATOR",
+      "status": "REALITY",
+      "bytes": 8908,
+      "sha256": "686c360a671bf85e6e1e9841f497497ccaf3c93e735a26628dc70d39adce17bc"
+    },
+    {
+      "resident_id": "resident.c16bbfcab69f0a85",
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_patch_pack_lifecycle_validation_foundation.py",
+      "root_zone": "ORGANS",
+      "owner": "ASTRONOMICON",
+      "resident_class": "VALIDATOR",
+      "status": "REALITY",
+      "bytes": 7868,
+      "sha256": "96b28e596b2c407ba497fc7e146692249abbb551efb072779d5babc7d37c0e72"
     },
     {
       "resident_id": "resident.2ede0453d230b7e9",
@@ -16810,6 +17568,16 @@
       "status": "REALITY",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.7dadcc4ae4a92e4a",
+      "path": "ORGANS/DOCTRINARIUM/DOCTRINE/PACK_TAXONOMY_AND_SERVITOR_TASK_LAW_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "MARKDOWN",
+      "status": "REALITY",
+      "bytes": 1162,
+      "sha256": "4577b43948ca708d4aa21b6804f5e31ad454b31b1f1461e9acb7077b78a1785e"
     },
     {
       "resident_id": "resident.f53737924e504fa1",
@@ -17422,6 +18190,36 @@
       "sha256": "8b4cdbb732edbc9fc8326bed15aa4e3877ddecd48b97650ab60968cb62c70030"
     },
     {
+      "resident_id": "resident.392c8244fbf74f06",
+      "path": "ORGANS/DOCTRINARIUM/MATRICES/PACK_TAXONOMY_MATRIX_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "MATRIX",
+      "status": "REALITY",
+      "bytes": 5113,
+      "sha256": "cf96a79bf3d863be735e980016f4d3f2a258385f7f9ca3eccbddb00a5bb58a4e"
+    },
+    {
+      "resident_id": "resident.cf0a85b581ef939f",
+      "path": "ORGANS/DOCTRINARIUM/MATRICES/PATCH_PACK_LAW_MATRIX_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "MATRIX",
+      "status": "REALITY",
+      "bytes": 1133,
+      "sha256": "cd68924da427a1fb12304c39b7e60201f83f8098d4382e58e1c6f92a5cd02522"
+    },
+    {
+      "resident_id": "resident.5507dfc8082ca9fe",
+      "path": "ORGANS/DOCTRINARIUM/MATRICES/SERVITOR_TASK_PACK_LAW_MATRIX_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "MATRIX",
+      "status": "REALITY",
+      "bytes": 1269,
+      "sha256": "4bc6d65fa762f8be808370d8ec72cb907e525f09d1ef7cba6405d41f53b7b0df"
+    },
+    {
       "resident_id": "resident.489dec3055425b84",
       "path": "ORGANS/DOCTRINARIUM/NEGATIVE_LESSONS/.gitkeep",
       "root_zone": "ORGANS",
@@ -17512,6 +18310,16 @@
       "sha256": "26a554d80426a005dbfb8f5b5cefa17a9357791e1fc86c74b0b4a50385a302a4"
     },
     {
+      "resident_id": "resident.54c28cb462e270c6",
+      "path": "ORGANS/DOCTRINARIUM/RECEIPTS/pack_taxonomy_law_receipt.json",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "RECEIPT",
+      "status": "REALITY",
+      "bytes": 7944,
+      "sha256": "6133d472230f0e6793b6fc8e2c6c7b4d78dd936e993e0997a486f36f9360a35e"
+    },
+    {
       "resident_id": "resident.47f3b31fc9d669d6",
       "path": "ORGANS/DOCTRINARIUM/REPORTS/.gitkeep",
       "root_zone": "ORGANS",
@@ -17560,6 +18368,26 @@
       "status": "REALITY",
       "bytes": 9753,
       "sha256": "9c0c079251502121ba202bd1d081f49f438ff38bbacfc25842e459f937ea2057"
+    },
+    {
+      "resident_id": "resident.a626ea8c81ecf1e4",
+      "path": "ORGANS/DOCTRINARIUM/REPORTS/PACK_TAXONOMY_LAW_REPORT_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 1853,
+      "sha256": "929e863ca0890213f1d873c0626837d94a392483e17624b7cc217f557a144dfb"
+    },
+    {
+      "resident_id": "resident.6edec9cac832f04b",
+      "path": "ORGANS/DOCTRINARIUM/REPORTS/PACK_TAXONOMY_LAW_SUMMARY_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 770,
+      "sha256": "d5a79af7ae1630d2a8c4bdc9a559cb147ae9f4dcfddb2f6cd1efeff99c56aab6"
     },
     {
       "resident_id": "resident.1db896c030926db5",
@@ -17650,6 +18478,16 @@
       "status": "REALITY",
       "bytes": 433,
       "sha256": "022226a4c12e05e3fd9cc97800395734b3539c583db365a8bd483bf412e90a1e"
+    },
+    {
+      "resident_id": "resident.de2ba62e6a4766d0",
+      "path": "ORGANS/DOCTRINARIUM/SCHEMAS/pack_taxonomy_law.schema.json",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "SCHEMA",
+      "status": "REALITY",
+      "bytes": 693,
+      "sha256": "f8990cc70406408e280af97643acac7a06eceab810acaa1b6a8002eea150e512"
     },
     {
       "resident_id": "resident.37d2df01172c6925",
@@ -17790,6 +18628,16 @@
       "status": "REALITY",
       "bytes": 14719,
       "sha256": "944797773e37a94bb7292cb371541707ed9a7f05e8850634b8d8b292baf366ff"
+    },
+    {
+      "resident_id": "resident.4af5c4799d1d1673",
+      "path": "ORGANS/DOCTRINARIUM/VALIDATORS/validate_pack_taxonomy_law.py",
+      "root_zone": "ORGANS",
+      "owner": "DOCTRINARIUM",
+      "resident_class": "VALIDATOR",
+      "status": "REALITY",
+      "bytes": 10982,
+      "sha256": "c31df226622876c3ed941e40a2761ed08b3f9b688958dd99b9dea4fecfdf48af"
     },
     {
       "resident_id": "resident.c63ce131471b2398",
@@ -21042,6 +21890,16 @@
       "sha256": "aae81cd29b953d732b14985a2f9251787ad9aea55500f6c15e67b5a5baf48ac7"
     },
     {
+      "resident_id": "resident.e20a4fe86ee251ff",
+      "path": "ORGANS/INQUISITION/MATRICES/INQUISITION_PATCH_PACK_SCOPE_FAKE_GREEN_MATRIX_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "INQUISITION",
+      "resident_class": "MATRIX",
+      "status": "REALITY",
+      "bytes": 650,
+      "sha256": "26444a911d291cbcce9eb2b7f3c8902ae05fcf8c2a6e5fc2e2e50cdd56f4a159"
+    },
+    {
       "resident_id": "resident.6d68f35732b27cd8",
       "path": "ORGANS/INQUISITION/MATRICES/INQUISITION_PROFILE_MATRIX_V0_1.json",
       "root_zone": "ORGANS",
@@ -21302,6 +22160,16 @@
       "sha256": "5d135a08425476c846e85da081fffecbb05663764c772184bf59b17ddd07ba54"
     },
     {
+      "resident_id": "resident.ef12eebda951ae82",
+      "path": "ORGANS/INQUISITION/RECEIPTS/patch_pack_scope_fake_green_receipt.json",
+      "root_zone": "ORGANS",
+      "owner": "INQUISITION",
+      "resident_class": "RECEIPT",
+      "status": "REALITY",
+      "bytes": 709,
+      "sha256": "c957ba95e8713e3a38c7249de48afeb5efb06adff551a45728f9bcaac8e89e2d"
+    },
+    {
       "resident_id": "resident.24df1c7f0f2de3d5",
       "path": "ORGANS/INQUISITION/REPORTING/inquisition_evidence_migration_planner_v0_1.py",
       "root_zone": "ORGANS",
@@ -21470,6 +22338,26 @@
       "status": "REALITY",
       "bytes": 991,
       "sha256": "b75113e4b819d3245d792f6c3046091d5e2b1a658a85ab48a5510be65dd07164"
+    },
+    {
+      "resident_id": "resident.6070dae043bd6b1c",
+      "path": "ORGANS/INQUISITION/REPORTS/PATCH_PACK_SCOPE_FAKE_GREEN_REPORT_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "INQUISITION",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 175,
+      "sha256": "86e0d4a5b8296dd6244f2ba292339e9684753ac65a9aae7d867c1c6339d3ad9c"
+    },
+    {
+      "resident_id": "resident.1c71aea0e734ad8c",
+      "path": "ORGANS/INQUISITION/REPORTS/PATCH_PACK_SCOPE_FAKE_GREEN_SUMMARY_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "INQUISITION",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 2215,
+      "sha256": "9d9af4a0404f834ae66ea3c6ceacb8a17a8697adb426120e5fb12cca5c956915"
     },
     {
       "resident_id": "resident.2d8a2e44a6b8120f",
@@ -22762,6 +23650,16 @@
       "sha256": "fb8afdd512927934564cdaeef6f68efcece03ed28a5b4faa8b595e9e0b78fca1"
     },
     {
+      "resident_id": "resident.7be924dd0cfdc752",
+      "path": "ORGANS/INQUISITION/VALIDATORS/validate_patch_pack_scope_fake_green.py",
+      "root_zone": "ORGANS",
+      "owner": "INQUISITION",
+      "resident_class": "VALIDATOR",
+      "status": "REALITY",
+      "bytes": 6144,
+      "sha256": "98654d9a279e4ea1024e77ea65c12eb49aacdf9333cb0c680806da2cbd60d835"
+    },
+    {
       "resident_id": "resident.65d471b80d82e40e",
       "path": "ORGANS/INQUISITION/VISUAL_AUDIT/VISUAL_INQUISITION_CONTRACT_V0_1_RU.md",
       "root_zone": "ORGANS",
@@ -23392,6 +24290,16 @@
       "sha256": "58b755bc6182f82c06909d24ea42df4fe0eb71497c8124e7e775e4ccbd3f1354"
     },
     {
+      "resident_id": "resident.330dfe5307d6a2b1",
+      "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_PATCH_PACK_TECHNICAL_PREFLIGHT_MATRIX_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "MECHANICUS",
+      "resident_class": "MATRIX",
+      "status": "REALITY",
+      "bytes": 536,
+      "sha256": "243772d797c161f7e348e86e427782a8e7402ae3212ce8e8ea295d01f1853dcf"
+    },
+    {
       "resident_id": "resident.8354123ff755c642",
       "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_PROFILE_MATRIX_V0_1.json",
       "root_zone": "ORGANS",
@@ -23582,6 +24490,16 @@
       "sha256": "80a585cd929617fcba9126dcf5623c05fd6d9cf4379401b5b6c98eee04b6c74b"
     },
     {
+      "resident_id": "resident.8a3f79d7085cbf1d",
+      "path": "ORGANS/MECHANICUS/RECEIPTS/patch_pack_technical_preflight_receipt.json",
+      "root_zone": "ORGANS",
+      "owner": "MECHANICUS",
+      "resident_class": "RECEIPT",
+      "status": "REALITY",
+      "bytes": 710,
+      "sha256": "764291b71b52763be41a8e71ee1bcec1171639a8281c9267b827ac07cc3ca195"
+    },
+    {
       "resident_id": "resident.c77369c8844a8e3e",
       "path": "ORGANS/MECHANICUS/RECEIPTS/reality_root_governance_receipt.json",
       "root_zone": "ORGANS",
@@ -23670,6 +24588,26 @@
       "status": "REALITY",
       "bytes": 1022,
       "sha256": "6541d26794cc81f73e018d508fc187e524b2b29f5f029076206fd54977d516a4"
+    },
+    {
+      "resident_id": "resident.adf1cf4b2de5445d",
+      "path": "ORGANS/MECHANICUS/REPORTS/PATCH_PACK_TECHNICAL_PREFLIGHT_REPORT_V0_1.md",
+      "root_zone": "ORGANS",
+      "owner": "MECHANICUS",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 167,
+      "sha256": "c77b6d0e83b5fbe798dca384753c2daaf8c35f1a48ddb24df421501a01fc7e09"
+    },
+    {
+      "resident_id": "resident.335b727f5555fe41",
+      "path": "ORGANS/MECHANICUS/REPORTS/PATCH_PACK_TECHNICAL_PREFLIGHT_SUMMARY_V0_1.json",
+      "root_zone": "ORGANS",
+      "owner": "MECHANICUS",
+      "resident_class": "REPORT",
+      "status": "REALITY",
+      "bytes": 3618,
+      "sha256": "a963da96176f8b22061dae3ee25b63e8de2d8b0ac1c34485707ad2dcff2da745"
     },
     {
       "resident_id": "resident.e3a29fda209c70af",
@@ -25960,6 +26898,16 @@
       "status": "REALITY",
       "bytes": 8767,
       "sha256": "cfd29b18225a17efa4e4c0a60000acffed0eff407801f9069fa446b59ed8d4e2"
+    },
+    {
+      "resident_id": "resident.02588ca9ada6c09d",
+      "path": "ORGANS/MECHANICUS/VALIDATORS/validate_patch_pack_technical_preflight.py",
+      "root_zone": "ORGANS",
+      "owner": "MECHANICUS",
+      "resident_class": "VALIDATOR",
+      "status": "REALITY",
+      "bytes": 7581,
+      "sha256": "58b85fc12c8bcf6dce565f18890c9824a321b06d9b101b003e2234d651a0f209"
     },
     {
       "resident_id": "resident.ce036500e1cc827f",
@@ -33970,6 +34918,126 @@
       "status": "SUPPORT",
       "bytes": 320,
       "sha256": "212cb62262eef41471657508da9b253fc975b815f555759d5a849d249d1c58bd"
+    },
+    {
+      "resident_id": "resident.e36d5a3437cacf09",
+      "path": "SUPPORT/LAUNCHER/LAUNCHER_COMMANDS_V0_1.json",
+      "root_zone": "SUPPORT",
+      "owner": "SUPPORT/LAUNCHER",
+      "resident_class": "JSON",
+      "status": "SUPPORT",
+      "bytes": 529,
+      "sha256": "73f103fc11ddc169d3c046ca50b8c7b4807e9643ea460929ce4877d01aa0d9d3"
+    },
+    {
+      "resident_id": "resident.89c1a43e6901bcde",
+      "path": "SUPPORT/LAUNCHER/LAUNCHER_COMMANDS_V0_2.json",
+      "root_zone": "SUPPORT",
+      "owner": "SUPPORT/LAUNCHER",
+      "resident_class": "JSON",
+      "status": "SUPPORT",
+      "bytes": 1022,
+      "sha256": "197c670aaf6aa3ed73952b402ed006aec45b3673b53dfb83aebdc2be6795992f"
+    },
+    {
+      "resident_id": "resident.eaefd8d4afe2375a",
+      "path": "SUPPORT/LAUNCHER/LAUNCHER_COMMANDS_V0_3.json",
+      "root_zone": "SUPPORT",
+      "owner": "SUPPORT/LAUNCHER",
+      "resident_class": "JSON",
+      "status": "SUPPORT",
+      "bytes": 658,
+      "sha256": "d6723c2de46ff4d79eb4052c62f5e9582bfcccb1ad0a57cf1806f1514f1b25b1"
+    },
+    {
+      "resident_id": "resident.5332236f492b9ec6",
+      "path": "SUPPORT/LAUNCHER/README.md",
+      "root_zone": "SUPPORT",
+      "owner": "SUPPORT/LAUNCHER",
+      "resident_class": "MARKDOWN",
+      "status": "SUPPORT",
+      "bytes": 503,
+      "sha256": "15ef9ac7389d484fa1b3ff50f2ceab0bc83c008bb8ce5068a226f07b0e367df9"
+    },
+    {
+      "resident_id": "resident.10d5061fe6d41f55",
+      "path": "SUPPORT/LAUNCHER/README_PATCH_LIFECYCLE_COMMANDS_V0_1.md",
+      "root_zone": "SUPPORT",
+      "owner": "SUPPORT/LAUNCHER",
+      "resident_class": "MARKDOWN",
+      "status": "SUPPORT",
+      "bytes": 472,
+      "sha256": "c1343f8be1dba0010bf8b557571ef4591e88cf9ce4f850a610e852c4e4bd8da2"
+    },
+    {
+      "resident_id": "resident.7322cc26a094b770",
+      "path": "SUPPORT/LAUNCHER/RECEIPTS/.gitkeep",
+      "root_zone": "SUPPORT",
+      "owner": "SUPPORT/LAUNCHER",
+      "resident_class": "RECEIPT",
+      "status": "SUPPORT",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.329b52fcb981b777",
+      "path": "SUPPORT/LAUNCHER/RECEIPTS/PATCH_LIFECYCLE_OPERATOR_RECEIPT_PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001.json",
+      "root_zone": "SUPPORT",
+      "owner": "SUPPORT/LAUNCHER",
+      "resident_class": "RECEIPT",
+      "status": "SUPPORT",
+      "bytes": 3740,
+      "sha256": "fd0278c3aa526fa40bf8e36f5a0ced24b49a5d4e9aa56aec3b111e0e9378a137"
+    },
+    {
+      "resident_id": "resident.ebd448ecb471eac5",
+      "path": "SUPPORT/LAUNCHER/REPORTS/.gitkeep",
+      "root_zone": "SUPPORT",
+      "owner": "SUPPORT/LAUNCHER",
+      "resident_class": "REPORT",
+      "status": "SUPPORT",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.1569f0b7b651f070",
+      "path": "SUPPORT/LAUNCHER/REPORTS/PATCH_LIFECYCLE_OPERATOR_REPORT_PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001.md",
+      "root_zone": "SUPPORT",
+      "owner": "SUPPORT/LAUNCHER",
+      "resident_class": "REPORT",
+      "status": "SUPPORT",
+      "bytes": 637,
+      "sha256": "4642450210ccac0a5feb92224ca9f17345dcff97a81ed12dc4cd48044134bafd"
+    },
+    {
+      "resident_id": "resident.dc64ef1c5b5813f8",
+      "path": "SUPPORT/LAUNCHER/REPORTS/PATCH_LIFECYCLE_OPERATOR_SMOKE_PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001.json",
+      "root_zone": "SUPPORT",
+      "owner": "SUPPORT/LAUNCHER",
+      "resident_class": "REPORT",
+      "status": "SUPPORT",
+      "bytes": 1414,
+      "sha256": "498922988eb18a44a3a85bb33db046855a1f7ee94a5464efede297a97309e8cb"
+    },
+    {
+      "resident_id": "resident.79f78c32004c3ccc",
+      "path": "SUPPORT/LAUNCHER/imperium.ps1",
+      "root_zone": "SUPPORT",
+      "owner": "SUPPORT/LAUNCHER",
+      "resident_class": "POWERSHELL",
+      "status": "SUPPORT",
+      "bytes": 379,
+      "sha256": "1b86af8ceb8112d3093279ce22d6ecb06ade4e446b1c77b5518f9168830c254c"
+    },
+    {
+      "resident_id": "resident.61c00e9a5d98c14a",
+      "path": "SUPPORT/LAUNCHER/imperium_cli.py",
+      "root_zone": "SUPPORT",
+      "owner": "SUPPORT/LAUNCHER",
+      "resident_class": "PYTHON",
+      "status": "SUPPORT",
+      "bytes": 14785,
+      "sha256": "48d90f69d62ffd72a280b583e076afb7377b7554c4525ddd09d2a93e2687b36c"
     },
     {
       "resident_id": "resident.e58e81eb9e2927b8",
@@ -55432,6 +56500,136 @@
       "sha256": "51187b673e3888d9046d804fb89c52b5bfff91e099811487281bf77700410304"
     },
     {
+      "resident_id": "resident.5bcae097aebec0ba",
+      "path": "WARP/PATCHES/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/DOCTRINE/PATCH_PACK_INTAKE_AND_VALIDATION_SMOKE_V0_1.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+      "resident_class": "MARKDOWN",
+      "status": "WARP",
+      "bytes": 1162,
+      "sha256": "86d38c772f8a945fecba6019d571d0aad396779c1c24bbe176187e3180243652"
+    },
+    {
+      "resident_id": "resident.3411a51cf9177913",
+      "path": "WARP/PATCHES/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/MATRICES/ASTRONOMICON_PATCH_PACK_SMOKE_VALIDATION_MATRIX_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+      "resident_class": "MATRIX",
+      "status": "WARP",
+      "bytes": 2548,
+      "sha256": "b066db03b781a64dc0b0a7da97e50db3717ff0b9af2d9f01537df23789cab973"
+    },
+    {
+      "resident_id": "resident.394b5373b4157114",
+      "path": "WARP/PATCHES/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.bfaac2cb20fade4d",
+      "path": "WARP/PATCHES/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.ceb12616ca53c78d",
+      "path": "WARP/PATCHES/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/SCHEMAS/patch_pack_smoke_result.schema.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+      "resident_class": "SCHEMA",
+      "status": "WARP",
+      "bytes": 1013,
+      "sha256": "0f330c1226a6f83fad3c44327a198ee8796f41c9e06be6280d77348612c38074"
+    },
+    {
+      "resident_id": "resident.8e6bcb2e7b882f99",
+      "path": "WARP/PATCHES/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/TOOLS/astronomicon_patch_pack_smoke.py",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+      "resident_class": "TOOL",
+      "status": "WARP",
+      "bytes": 10364,
+      "sha256": "dcc13350c3194eccf5a631ae131fc0f5f7c10cfa21418564185a4279ffad6f2c"
+    },
+    {
+      "resident_id": "resident.45d3f078341d9e72",
+      "path": "WARP/PATCHES/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/VALIDATORS/validate_patch_pack_intake_validation_smoke.py",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+      "resident_class": "VALIDATOR",
+      "status": "WARP",
+      "bytes": 8908,
+      "sha256": "686c360a671bf85e6e1e9841f497497ccaf3c93e735a26628dc70d39adce17bc"
+    },
+    {
+      "resident_id": "resident.cc131dd7cb708247",
+      "path": "WARP/PATCHES/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001/PATCH_FILE_MANIFEST_SHA256.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+      "resident_class": "TRANSPORT_FILE_MANIFEST",
+      "status": "WARP",
+      "bytes": 3640,
+      "sha256": "7022a37d359c304badb3126236168df9fccb654730cb807f353bbe84db645b24"
+    },
+    {
+      "resident_id": "resident.0a3aa23091d9bbbb",
+      "path": "WARP/PATCHES/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001/PATCH_PACK.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+      "resident_class": "PATCH_PACK",
+      "status": "WARP",
+      "bytes": 680,
+      "sha256": "d8a2a98f4a841a4e2f790f741fb175918042234dfe308727f1004c8f78db007e"
+    },
+    {
+      "resident_id": "resident.1270280944d6bd80",
+      "path": "WARP/PATCHES/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.5fbbf6946da2f3ed",
+      "path": "WARP/PATCHES/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.de704f6da37e2f3e",
+      "path": "WARP/PATCHES/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001/RUN_PATCH_PACK_INTAKE_VALIDATION_SMOKE.ps1",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+      "resident_class": "POWERSHELL",
+      "status": "WARP",
+      "bytes": 1316,
+      "sha256": "c0cebd79714122f67337ec4f1e5c8a5540e38131f70a2e34e17c3c4f6a922688"
+    },
+    {
+      "resident_id": "resident.511976055c374360",
+      "path": "WARP/PATCHES/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001/TESTS/README.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+      "resident_class": "TEST",
+      "status": "WARP",
+      "bytes": 395,
+      "sha256": "3322001becd9784c0966ac7b6bab73217594fa24b9053d2a7082f94dfded28b1"
+    },
+    {
       "resident_id": "resident.5626f5821a41d041",
       "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/FILES_TO_LAND/ORGANS/ADMINISTRATUM/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
       "root_zone": "WARP",
@@ -55660,6 +56858,146 @@
       "status": "WARP",
       "bytes": 522,
       "sha256": "8fa57efffcf48b1c0352f76b3bf3235b59d4ce1598dbfe85c1b70876360017f9"
+    },
+    {
+      "resident_id": "resident.5e5d5803dfbbc45f",
+      "path": "WARP/PATCHES/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/DOCTRINE/PACK_TAXONOMY_AND_SERVITOR_TASK_LAW_V0_1.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+      "resident_class": "MARKDOWN",
+      "status": "WARP",
+      "bytes": 1162,
+      "sha256": "4577b43948ca708d4aa21b6804f5e31ad454b31b1f1461e9acb7077b78a1785e"
+    },
+    {
+      "resident_id": "resident.0399e67fb0c44c5e",
+      "path": "WARP/PATCHES/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/MATRICES/PACK_TAXONOMY_MATRIX_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+      "resident_class": "MATRIX",
+      "status": "WARP",
+      "bytes": 5113,
+      "sha256": "cf96a79bf3d863be735e980016f4d3f2a258385f7f9ca3eccbddb00a5bb58a4e"
+    },
+    {
+      "resident_id": "resident.c404e36e6e4cf552",
+      "path": "WARP/PATCHES/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/MATRICES/PATCH_PACK_LAW_MATRIX_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+      "resident_class": "MATRIX",
+      "status": "WARP",
+      "bytes": 1133,
+      "sha256": "cd68924da427a1fb12304c39b7e60201f83f8098d4382e58e1c6f92a5cd02522"
+    },
+    {
+      "resident_id": "resident.145d533d6004e998",
+      "path": "WARP/PATCHES/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/MATRICES/SERVITOR_TASK_PACK_LAW_MATRIX_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+      "resident_class": "MATRIX",
+      "status": "WARP",
+      "bytes": 1269,
+      "sha256": "4bc6d65fa762f8be808370d8ec72cb907e525f09d1ef7cba6405d41f53b7b0df"
+    },
+    {
+      "resident_id": "resident.aa95eda57924fb10",
+      "path": "WARP/PATCHES/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.c1f7e3f6c91e65cd",
+      "path": "WARP/PATCHES/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.96c4df62833c5704",
+      "path": "WARP/PATCHES/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/SCHEMAS/pack_taxonomy_law.schema.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+      "resident_class": "SCHEMA",
+      "status": "WARP",
+      "bytes": 693,
+      "sha256": "f8990cc70406408e280af97643acac7a06eceab810acaa1b6a8002eea150e512"
+    },
+    {
+      "resident_id": "resident.8bee85046ef7edc7",
+      "path": "WARP/PATCHES/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001/FILES_TO_LAND/ORGANS/DOCTRINARIUM/VALIDATORS/validate_pack_taxonomy_law.py",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+      "resident_class": "VALIDATOR",
+      "status": "WARP",
+      "bytes": 10982,
+      "sha256": "c31df226622876c3ed941e40a2761ed08b3f9b688958dd99b9dea4fecfdf48af"
+    },
+    {
+      "resident_id": "resident.2ccbc48a4d2722e2",
+      "path": "WARP/PATCHES/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001/PATCH_FILE_MANIFEST_SHA256.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+      "resident_class": "TRANSPORT_FILE_MANIFEST",
+      "status": "WARP",
+      "bytes": 3435,
+      "sha256": "f1090ad44fa2eb1ae071df85b9cfc88d8f52847e6c0389faec18f81a4faf688c"
+    },
+    {
+      "resident_id": "resident.5e8fd683bc0920a0",
+      "path": "WARP/PATCHES/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001/PATCH_PACK.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+      "resident_class": "PATCH_PACK",
+      "status": "WARP",
+      "bytes": 588,
+      "sha256": "01c4cfa45ab216c0789a11ae49d8bf93bb728f95f73919920eccd9f048beeaee"
+    },
+    {
+      "resident_id": "resident.da19f15bd1eeca0b",
+      "path": "WARP/PATCHES/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.ac68b6a69f599382",
+      "path": "WARP/PATCHES/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.c3c5a7da630c637d",
+      "path": "WARP/PATCHES/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001/RUN_PACK_TAXONOMY_LAW_VALIDATION.ps1",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+      "resident_class": "POWERSHELL",
+      "status": "WARP",
+      "bytes": 1062,
+      "sha256": "5263f473185a037044ae48837a922e4428c8cf4789c928da5c3f62a88806fcb1"
+    },
+    {
+      "resident_id": "resident.ff38f775292d82a7",
+      "path": "WARP/PATCHES/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001/TESTS/README.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+      "resident_class": "TEST",
+      "status": "WARP",
+      "bytes": 344,
+      "sha256": "fb7dd5e2ae2bd0a6cffc7bfd611fcad19fde27da6f0c7221e68967067b944d01"
     },
     {
       "resident_id": "resident.59ea6f2af76ef999",
@@ -59222,6 +60560,206 @@
       "sha256": "9c8a60142916d2be247546f0f3a6759999e0b201bb833c1aae4fdf7f37faa5ac"
     },
     {
+      "resident_id": "resident.d5f459ccd706b867",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/MATRICES/TASK_SHAPE_FAMILY_MATRIX_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "MATRIX",
+      "status": "WARP",
+      "bytes": 2971,
+      "sha256": "20744f171fcf19e5f74a5e0b85b902183f9cb32a981407d30843385c64b374fc"
+    },
+    {
+      "resident_id": "resident.4e37d55261d2a4ba",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/MATRICES/UNIVERSAL_TASK_INFORMATION_DEFICIT_MATRIX_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "MATRIX",
+      "status": "WARP",
+      "bytes": 2119,
+      "sha256": "55298e2edfdf88b0880d524c8a1bf614df1e1ba6cb2511ab392e1710c447c41e"
+    },
+    {
+      "resident_id": "resident.d6e86deef0faffbd",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.d2b7e28bf9940cfc",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.8f9f24524dc0cd3c",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/SCHEMAS/focus_pack.schema.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "SCHEMA",
+      "status": "WARP",
+      "bytes": 336,
+      "sha256": "1d49aa708e6231ce2489b16ff1ce14a97618ef4ccab4ffee0ce0b6abf13ea164"
+    },
+    {
+      "resident_id": "resident.8ba41a2aa93fc756",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/SCHEMAS/task_intake_packet.schema.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "SCHEMA",
+      "status": "WARP",
+      "bytes": 502,
+      "sha256": "86676577868784da52a14554257d1d823724d01a1d52a9c74cdd8555bcad0bc4"
+    },
+    {
+      "resident_id": "resident.0d4ab8ebdf6bfb8a",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/TOOLS/astronomicon_intake_dry_run.py",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "TOOL",
+      "status": "WARP",
+      "bytes": 12345,
+      "sha256": "362c77e59f3b4a8cc4d3bdbc8817522aad2a295a4d1962390c8e667cc812ee86"
+    },
+    {
+      "resident_id": "resident.65d0726ce94a085a",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/VALIDATORS/validate_astronomicon_dry_run_and_launcher.py",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "VALIDATOR",
+      "status": "WARP",
+      "bytes": 7311,
+      "sha256": "cec3cebb4b95fcc5d40870e48bc71fee8eea25b322837d66766e7fccde6cf03d"
+    },
+    {
+      "resident_id": "resident.b5aceeb97eaeedc3",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/FILES_TO_LAND/SUPPORT/LAUNCHER/LAUNCHER_COMMANDS_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 529,
+      "sha256": "73f103fc11ddc169d3c046ca50b8c7b4807e9643ea460929ce4877d01aa0d9d3"
+    },
+    {
+      "resident_id": "resident.787c3dfc04572f6b",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/FILES_TO_LAND/SUPPORT/LAUNCHER/README.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "MARKDOWN",
+      "status": "WARP",
+      "bytes": 503,
+      "sha256": "15ef9ac7389d484fa1b3ff50f2ceab0bc83c008bb8ce5068a226f07b0e367df9"
+    },
+    {
+      "resident_id": "resident.8b3e02e6424f418d",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/FILES_TO_LAND/SUPPORT/LAUNCHER/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.670b05de913bfde3",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/FILES_TO_LAND/SUPPORT/LAUNCHER/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.3291a6b6c1f5105a",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/FILES_TO_LAND/SUPPORT/LAUNCHER/imperium.ps1",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "POWERSHELL",
+      "status": "WARP",
+      "bytes": 379,
+      "sha256": "1b86af8ceb8112d3093279ce22d6ecb06ade4e446b1c77b5518f9168830c254c"
+    },
+    {
+      "resident_id": "resident.1e91cdb1ae05545d",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/FILES_TO_LAND/SUPPORT/LAUNCHER/imperium_cli.py",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "PYTHON",
+      "status": "WARP",
+      "bytes": 4814,
+      "sha256": "b934d4b0e996944fba4d2b360cd80a7600d684608652281794a8765ea8eba572"
+    },
+    {
+      "resident_id": "resident.5e733953ef5fe9b9",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/PATCH_FILE_MANIFEST_SHA256.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "TRANSPORT_FILE_MANIFEST",
+      "status": "WARP",
+      "bytes": 5337,
+      "sha256": "58932ddea4e89c48e82cc16a3e7a6af28f7bc598bf09b80fc23502fa7e3bab6c"
+    },
+    {
+      "resident_id": "resident.a1c99f800bb08e2d",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/PATCH_PACK.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "PATCH_PACK",
+      "status": "WARP",
+      "bytes": 931,
+      "sha256": "867209e973b4fb744fd6cea5cdefffae7ee8767f23c4460c011c1110b7eff324"
+    },
+    {
+      "resident_id": "resident.838d702b3a2a98f0",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.356d0cd04c40d55e",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.7516849d55b026a3",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/RUN_LAUNCHER_ASTRONOMICON_DRY_RUN_VALIDATION.ps1",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "POWERSHELL",
+      "status": "WARP",
+      "bytes": 1384,
+      "sha256": "8fa2f77bb7f8a76bf76ccac97f522c44b6b8dea177b2731c30dbf4f5e501dbdd"
+    },
+    {
+      "resident_id": "resident.1ff588ccb0915753",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/TESTS/README.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "resident_class": "TEST",
+      "status": "WARP",
+      "bytes": 516,
+      "sha256": "f09e24500c3096ed107db7c6fcb46bdcd57d0bff2aa3bfaf475da93621121b36"
+    },
+    {
       "resident_id": "resident.aaf8dde1bd69a5b3",
       "path": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001-FIX-0001/PATCH_PACK.md",
       "root_zone": "WARP",
@@ -59632,6 +61170,166 @@
       "sha256": "5091ffaa660ca36fdbf7eac5e085b14ec26342c4cd853f8c38385263653da563"
     },
     {
+      "resident_id": "resident.f631b9b939ce0e23",
+      "path": "WARP/PATCHES/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/DOCTRINE/ORGAN_AGENT_ADVISORY_SCORING_FOUNDATION_V0_1.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+      "resident_class": "MARKDOWN",
+      "status": "WARP",
+      "bytes": 1231,
+      "sha256": "0839b3d24b54ac0f18f2ca4cd1afcbee5de832234ac7585ef32b3aa05dd0beb5"
+    },
+    {
+      "resident_id": "resident.7bd672c7f3445979",
+      "path": "WARP/PATCHES/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/MATRICES/ORGAN_AGENT_ADVISORY_SCORING_MATRIX_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+      "resident_class": "MATRIX",
+      "status": "WARP",
+      "bytes": 5993,
+      "sha256": "4f55acdc42ad2e96f393f77718d5efe893fd296d8f614eb1a98254a1959c18fc"
+    },
+    {
+      "resident_id": "resident.4891c6a3446c3b0f",
+      "path": "WARP/PATCHES/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.db761b89567d8485",
+      "path": "WARP/PATCHES/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.258ca1484fc2cd02",
+      "path": "WARP/PATCHES/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/TOOLS/organ_agent_advisory.py",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+      "resident_class": "TOOL",
+      "status": "WARP",
+      "bytes": 14898,
+      "sha256": "9aa88f61b3fe6ee8d29a2d1429227d9216c2304338ce381c9e12f652271ef993"
+    },
+    {
+      "resident_id": "resident.4fa13569503110ea",
+      "path": "WARP/PATCHES/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/VALIDATORS/validate_organ_agent_advisory_scoring.py",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+      "resident_class": "VALIDATOR",
+      "status": "WARP",
+      "bytes": 10603,
+      "sha256": "0eabddf221bdb3df0df067502292bd6f4b11cd601fb31e76f0db14001aa52d7e"
+    },
+    {
+      "resident_id": "resident.7a1f8c31ecba56fb",
+      "path": "WARP/PATCHES/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001/FILES_TO_LAND/SUPPORT/LAUNCHER/LAUNCHER_COMMANDS_V0_3.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 658,
+      "sha256": "d6723c2de46ff4d79eb4052c62f5e9582bfcccb1ad0a57cf1806f1514f1b25b1"
+    },
+    {
+      "resident_id": "resident.2b65360b7a9fa097",
+      "path": "WARP/PATCHES/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001/FILES_TO_LAND/SUPPORT/LAUNCHER/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.1519290fa6b47177",
+      "path": "WARP/PATCHES/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001/FILES_TO_LAND/SUPPORT/LAUNCHER/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.a95819070fb7f087",
+      "path": "WARP/PATCHES/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001/FILES_TO_LAND/SUPPORT/LAUNCHER/imperium_cli.py",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+      "resident_class": "PYTHON",
+      "status": "WARP",
+      "bytes": 14785,
+      "sha256": "48d90f69d62ffd72a280b583e076afb7377b7554c4525ddd09d2a93e2687b36c"
+    },
+    {
+      "resident_id": "resident.0c30098898722e12",
+      "path": "WARP/PATCHES/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001/PATCH_FILE_MANIFEST_SHA256.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+      "resident_class": "TRANSPORT_FILE_MANIFEST",
+      "status": "WARP",
+      "bytes": 3453,
+      "sha256": "805f89bd9ffaf810a19c65800baf2b12202d55354016212c6eadc209397d2179"
+    },
+    {
+      "resident_id": "resident.de78fc66bde5b923",
+      "path": "WARP/PATCHES/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001/PATCH_PACK.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+      "resident_class": "PATCH_PACK",
+      "status": "WARP",
+      "bytes": 862,
+      "sha256": "7ae177e31de39cf4709b986aca1e2a8ee6589ea794282a16f95aa4ed903e8b31"
+    },
+    {
+      "resident_id": "resident.0788c75c2d672da8",
+      "path": "WARP/PATCHES/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.7d3424c851c02409",
+      "path": "WARP/PATCHES/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.0dae2b2184198e5b",
+      "path": "WARP/PATCHES/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001/RUN_ORGAN_AGENT_ADVISORY_SCORING.ps1",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+      "resident_class": "POWERSHELL",
+      "status": "WARP",
+      "bytes": 1367,
+      "sha256": "407388de19dc74393a93345588395803ead0b1b839499a56a27e008eb898e180"
+    },
+    {
+      "resident_id": "resident.31225970cbea9396",
+      "path": "WARP/PATCHES/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001/TESTS/README.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
+      "resident_class": "TEST",
+      "status": "WARP",
+      "bytes": 381,
+      "sha256": "fecb7586f9f4560f762afa0f62a703c6580785095c65b1b955126bdb7b4f27dd"
+    },
+    {
       "resident_id": "resident.85749a7b4b510284",
       "path": "WARP/PATCHES/OWNER-DOCS-VALIDATION-WARP-0001/PATCH_PACK.md",
       "root_zone": "WARP",
@@ -59750,6 +61448,346 @@
       "status": "WARP",
       "bytes": 11125,
       "sha256": "11fb60756aeed981dcdd6eafee2b117e6fdd443f5bb1b9cc8720de708d579fca"
+    },
+    {
+      "resident_id": "resident.aced8dc5c7216c61",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/MATRICES/PATCH_LIFECYCLE_LAUNCHER_COMMANDS_MATRIX_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+      "resident_class": "MATRIX",
+      "status": "WARP",
+      "bytes": 1254,
+      "sha256": "c53a77a23e162f8f1309bc5f76c8235bef8025077c22aa3057cd735c9bd6da15"
+    },
+    {
+      "resident_id": "resident.45df813bfcae1253",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.c222ca9449e8e986",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.45aa1641af0bb81b",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/VALIDATORS/validate_patch_lifecycle_launcher_commands.py",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+      "resident_class": "VALIDATOR",
+      "status": "WARP",
+      "bytes": 8651,
+      "sha256": "c901ba40433ffe5d8c02d91bece39815c170af8557eabfaa129c784f035483ff"
+    },
+    {
+      "resident_id": "resident.59035a1e9d3524d2",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/FILES_TO_LAND/SUPPORT/LAUNCHER/LAUNCHER_COMMANDS_V0_2.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 1022,
+      "sha256": "197c670aaf6aa3ed73952b402ed006aec45b3673b53dfb83aebdc2be6795992f"
+    },
+    {
+      "resident_id": "resident.f7f8bb03d7dce210",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/FILES_TO_LAND/SUPPORT/LAUNCHER/README_PATCH_LIFECYCLE_COMMANDS_V0_1.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+      "resident_class": "MARKDOWN",
+      "status": "WARP",
+      "bytes": 472,
+      "sha256": "c1343f8be1dba0010bf8b557571ef4591e88cf9ce4f850a610e852c4e4bd8da2"
+    },
+    {
+      "resident_id": "resident.6d756e44c0133787",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/FILES_TO_LAND/SUPPORT/LAUNCHER/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.7b3c974ad58793f0",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/FILES_TO_LAND/SUPPORT/LAUNCHER/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.eb46f34281612839",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/FILES_TO_LAND/SUPPORT/LAUNCHER/imperium_cli.py",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+      "resident_class": "PYTHON",
+      "status": "WARP",
+      "bytes": 15104,
+      "sha256": "93297348b4a6bbd4562f9a3a046849233dbb33a6199eefa5f562b1b42c2f7d9b"
+    },
+    {
+      "resident_id": "resident.657b89e3af17ad79",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/PATCH_FILE_MANIFEST_SHA256.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+      "resident_class": "TRANSPORT_FILE_MANIFEST",
+      "status": "WARP",
+      "bytes": 3186,
+      "sha256": "6b49c2a1b2c8bc30d887939c122fa6bd8e5b6dbf3d075549a295b4dfe8e3dfaf"
+    },
+    {
+      "resident_id": "resident.75a81a850f2642d8",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/PATCH_PACK.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+      "resident_class": "PATCH_PACK",
+      "status": "WARP",
+      "bytes": 614,
+      "sha256": "fee62deec829cc912820495ef5790722a33186ba3df991e4223003900ff8e9a0"
+    },
+    {
+      "resident_id": "resident.80412e5f9b7d0aa1",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.0ea841d1901016f5",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.db60fdc25b59cf62",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/RUN_PATCH_LIFECYCLE_LAUNCHER_COMMANDS.ps1",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+      "resident_class": "POWERSHELL",
+      "status": "WARP",
+      "bytes": 1185,
+      "sha256": "9cb8854b585d87252a5265ec9809faa1f1f8b6af7baca1799fc0d69b9fc0a7bc"
+    },
+    {
+      "resident_id": "resident.25494ba3468e0a54",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001/TESTS/README.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-LAUNCHER-COMMANDS-0001",
+      "resident_class": "TEST",
+      "status": "WARP",
+      "bytes": 282,
+      "sha256": "6a4d5ade33eb5f8e27d76dbd17292156d38f5c54f82f219ddc5c26e7bf6f2592"
+    },
+    {
+      "resident_id": "resident.a0fa9a8d38dd4095",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/DOCTRINE/PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION_V0_1.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "MARKDOWN",
+      "status": "WARP",
+      "bytes": 621,
+      "sha256": "ab11c2acf37ce695bae8c0f10c967aed93e93b394fb26f68e6245e21fe5aaf49"
+    },
+    {
+      "resident_id": "resident.63b674e409384fe3",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/MATRICES/PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION_MATRIX_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "MATRIX",
+      "status": "WARP",
+      "bytes": 783,
+      "sha256": "9d3032f370b176dce7363e529668f8864ca9d4f421620f37603fcd9492411451"
+    },
+    {
+      "resident_id": "resident.df55a1bfb26de3bb",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.4254e7390855cc07",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.741b17d7bd2883fc",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/FILES_TO_LAND/ORGANS/ASTRONOMICON/VALIDATORS/validate_patch_pack_lifecycle_validation_foundation.py",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "VALIDATOR",
+      "status": "WARP",
+      "bytes": 7868,
+      "sha256": "96b28e596b2c407ba497fc7e146692249abbb551efb072779d5babc7d37c0e72"
+    },
+    {
+      "resident_id": "resident.b60101460268aed6",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/FILES_TO_LAND/ORGANS/INQUISITION/MATRICES/INQUISITION_PATCH_PACK_SCOPE_FAKE_GREEN_MATRIX_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "MATRIX",
+      "status": "WARP",
+      "bytes": 650,
+      "sha256": "26444a911d291cbcce9eb2b7f3c8902ae05fcf8c2a6e5fc2e2e50cdd56f4a159"
+    },
+    {
+      "resident_id": "resident.81322a329a7eeac1",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/FILES_TO_LAND/ORGANS/INQUISITION/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.ee2311f97c37bb48",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/FILES_TO_LAND/ORGANS/INQUISITION/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.1e2d27b5667ce026",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/FILES_TO_LAND/ORGANS/INQUISITION/VALIDATORS/validate_patch_pack_scope_fake_green.py",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "VALIDATOR",
+      "status": "WARP",
+      "bytes": 6144,
+      "sha256": "98654d9a279e4ea1024e77ea65c12eb49aacdf9333cb0c680806da2cbd60d835"
+    },
+    {
+      "resident_id": "resident.8ac43635a8779739",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/FILES_TO_LAND/ORGANS/MECHANICUS/MATRICES/MECHANICUS_PATCH_PACK_TECHNICAL_PREFLIGHT_MATRIX_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "MATRIX",
+      "status": "WARP",
+      "bytes": 536,
+      "sha256": "243772d797c161f7e348e86e427782a8e7402ae3212ce8e8ea295d01f1853dcf"
+    },
+    {
+      "resident_id": "resident.66971719c180df81",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/FILES_TO_LAND/ORGANS/MECHANICUS/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.14b0fa47b8808417",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/FILES_TO_LAND/ORGANS/MECHANICUS/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.f0abb24d6bdc660d",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/FILES_TO_LAND/ORGANS/MECHANICUS/VALIDATORS/validate_patch_pack_technical_preflight.py",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "VALIDATOR",
+      "status": "WARP",
+      "bytes": 7581,
+      "sha256": "58b85fc12c8bcf6dce565f18890c9824a321b06d9b101b003e2234d651a0f209"
+    },
+    {
+      "resident_id": "resident.07e60cb31cde130f",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/PATCH_FILE_MANIFEST_SHA256.json",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "TRANSPORT_FILE_MANIFEST",
+      "status": "WARP",
+      "bytes": 4480,
+      "sha256": "0c4fd4049c843340e78562b8a0600de1f8a7f6c5d6361a0c98896f9934a4e324"
+    },
+    {
+      "resident_id": "resident.5aaed80ebded7f06",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/PATCH_PACK.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "PATCH_PACK",
+      "status": "WARP",
+      "bytes": 937,
+      "sha256": "986ee9b8288be00107e64aac8b6844d2ffa4137fdfaf68659ff7d97e8812bd2a"
+    },
+    {
+      "resident_id": "resident.3a29f419735b7e0e",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/RECEIPTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.12fab6af12360d9b",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/REPORTS/.gitkeep",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "resident_id": "resident.f6028749cd02e281",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/RUN_PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION.ps1",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "POWERSHELL",
+      "status": "WARP",
+      "bytes": 1433,
+      "sha256": "878a3ebefb65a6426b3a2b48c5bcea897a20fb92cc8cbfa5210261bdeeb80809"
+    },
+    {
+      "resident_id": "resident.b71de79401f192b4",
+      "path": "WARP/PATCHES/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001/TESTS/README.md",
+      "root_zone": "WARP",
+      "owner": "WARP_PATCH/PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001",
+      "resident_class": "TEST",
+      "status": "WARP",
+      "bytes": 388,
+      "sha256": "184cb97e5adfa5f9e414e7b6d57a48c9d2855008a9b4b66085f1878c6c10542f"
     },
     {
       "resident_id": "resident.0ccdcc86dabb70f3",
@@ -61480,6 +63518,366 @@
       "status": "WARP",
       "bytes": 84,
       "sha256": "0ca1a49466c96cc3cf744e69868052c090290dfb9db0fb8135fe487e61da829a"
+    },
+    {
+      "resident_id": "resident.eac0e7a084be83d7",
+      "path": "WARP/TASKS/OWNERTEST-ASTRONOMICON-PATCH-0001/00_INTAKE/ADMISSION_DECISION_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 768,
+      "sha256": "8f90ce1fa3e7272f4b09ff71cdf0702c0d714cff3a6b5606cd194679a8b5dc73"
+    },
+    {
+      "resident_id": "resident.045a504a156a6ac6",
+      "path": "WARP/TASKS/OWNERTEST-ASTRONOMICON-PATCH-0001/00_INTAKE/ASTRONOMICON_DRY_RUN_RECEIPT.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 1562,
+      "sha256": "f0d50d3743fc8e469afae68a418a07616304e3aa4755b45385276097b91ac034"
+    },
+    {
+      "resident_id": "resident.86bd030ad08db705",
+      "path": "WARP/TASKS/OWNERTEST-ASTRONOMICON-PATCH-0001/00_INTAKE/ASTRONOMICON_TASK_INTAKE_REPORT.md",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 818,
+      "sha256": "543384e8117038df9d9f4767eece1e8e1bf9c1f4845b8b4967c31891dbbe32e3"
+    },
+    {
+      "resident_id": "resident.6bd276b7833130be",
+      "path": "WARP/TASKS/OWNERTEST-ASTRONOMICON-PATCH-0001/00_INTAKE/FOCUS_PACK_DRAFT_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 1529,
+      "sha256": "d401f636b5a6b1f5f4cae3012b59926b8a04ae9cbc5b260a1e275a8eb1cb9760"
+    },
+    {
+      "resident_id": "resident.ab84832cb40b63d8",
+      "path": "WARP/TASKS/OWNERTEST-ASTRONOMICON-PATCH-0001/00_INTAKE/OWNER_INTENT_CAPTURE_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 969,
+      "sha256": "f72bfc371577c87f8e7aa211564173357ece0e1f4a075c98b81cce8732b43572"
+    },
+    {
+      "resident_id": "resident.88d275ba1b185615",
+      "path": "WARP/TASKS/OWNERTEST-ASTRONOMICON-PATCH-0001/00_INTAKE/REQUIRED_CONTEXT_REQUEST_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 2480,
+      "sha256": "9ba144d9179261a3da073bca019cc4332cf1e10f65f8ef0f9a4d4712e334e786"
+    },
+    {
+      "resident_id": "resident.2f5a8502e2e5a06d",
+      "path": "WARP/TASKS/OWNERTEST-ASTRONOMICON-PATCH-0001/00_INTAKE/RESEARCH_PLAN_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 903,
+      "sha256": "972301fa5f19fde102abd8d5e5f95598d40528d606359945bd67641e8259e228"
+    },
+    {
+      "resident_id": "resident.da60d6d235a72cfa",
+      "path": "WARP/TASKS/OWNERTEST-ASTRONOMICON-PATCH-0001/00_INTAKE/ROUTE_PROPOSAL_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 877,
+      "sha256": "1640005a19d8a58cb48b456dfe05066d635db730554f7ebe0ca4b989a99ff2b3"
+    },
+    {
+      "resident_id": "resident.4d13f0f48854e536",
+      "path": "WARP/TASKS/OWNERTEST-ASTRONOMICON-PATCH-0001/00_INTAKE/SAFETY_BOUNDARY_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 592,
+      "sha256": "4c7798f4e5d6e6554d3c2337fba8f7c4772f3fe4a2ba681d8452dc286940411e"
+    },
+    {
+      "resident_id": "resident.844873bbfafe0339",
+      "path": "WARP/TASKS/OWNERTEST-ASTRONOMICON-PATCH-0001/00_INTAKE/TASK_CLASSIFICATION_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 378,
+      "sha256": "055cc729b47355d034cab6791fb8f633c4bb49ead8f523a0067f1303ce672a86"
+    },
+    {
+      "resident_id": "resident.cfeb822345b955a0",
+      "path": "WARP/TASKS/OWNERTEST-ASTRONOMICON-PATCH-0001/00_INTAKE/TASK_INFORMATION_DEFICIT_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 1179,
+      "sha256": "48e104e35f1eb392d681c36974618858e8f9e30bdfaba593a71734b338d5a9ec"
+    },
+    {
+      "resident_id": "resident.498d0a4a39904154",
+      "path": "WARP/TASKS/OWNERTEST-ASTRONOMICON-PATCH-0001/00_INTAKE/TASK_INTAKE_PACKET_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 1557,
+      "sha256": "9840db46b0aa4a4ea0599c7c35d89ca801c588fb057d99680c8189b7b004cf72"
+    },
+    {
+      "resident_id": "resident.a875475049e12570",
+      "path": "WARP/TASKS/OWNERTEST-GAME-BUILD-0001/00_INTAKE/ADMISSION_DECISION_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 765,
+      "sha256": "9f5ac4f71ddf9d978c785ac14ad9f63aa4ed47febfb5732ceb0d970bca7b2473"
+    },
+    {
+      "resident_id": "resident.e194f088ad2c59dc",
+      "path": "WARP/TASKS/OWNERTEST-GAME-BUILD-0001/00_INTAKE/ASTRONOMICON_DRY_RUN_RECEIPT.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 1469,
+      "sha256": "c06ba938d9d6b5fd49cdc5fa17d4a4fe6a344994d1b853e8608633429da5c962"
+    },
+    {
+      "resident_id": "resident.ee0f13456a0f2b15",
+      "path": "WARP/TASKS/OWNERTEST-GAME-BUILD-0001/00_INTAKE/ASTRONOMICON_TASK_INTAKE_REPORT.md",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 836,
+      "sha256": "0f94beb59f7a23e426925519f4d94f8e256f490bf80f046344aea6c5d3e45858"
+    },
+    {
+      "resident_id": "resident.f186e6c1aaedb7ad",
+      "path": "WARP/TASKS/OWNERTEST-GAME-BUILD-0001/00_INTAKE/FOCUS_PACK_DRAFT_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 1533,
+      "sha256": "1dd2b049d896e94d3883fadec1107061a2b706598e2288eb1a337a7e7079143d"
+    },
+    {
+      "resident_id": "resident.e9ce04fb4321162a",
+      "path": "WARP/TASKS/OWNERTEST-GAME-BUILD-0001/00_INTAKE/OWNER_INTENT_CAPTURE_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 965,
+      "sha256": "16c93f948f35dd6a5619b11f243f63c23ed6a94a7a708ab6419f36297441f792"
+    },
+    {
+      "resident_id": "resident.976313cc82990374",
+      "path": "WARP/TASKS/OWNERTEST-GAME-BUILD-0001/00_INTAKE/REQUIRED_CONTEXT_REQUEST_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 2586,
+      "sha256": "517b7b296e04ca77f45227b65da0bc896501a291df569da99192c411cca4b1de"
+    },
+    {
+      "resident_id": "resident.9d9d4d3c865d44f6",
+      "path": "WARP/TASKS/OWNERTEST-GAME-BUILD-0001/00_INTAKE/RESEARCH_PLAN_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 936,
+      "sha256": "7114c3b7f75410055f22a462a79421edcfe978a99d47d04c9a66b7d207258037"
+    },
+    {
+      "resident_id": "resident.d6a955b51abfcb9b",
+      "path": "WARP/TASKS/OWNERTEST-GAME-BUILD-0001/00_INTAKE/ROUTE_PROPOSAL_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 873,
+      "sha256": "2852d4503565c424ec9b8cc5f2c99f65efefb41928c106bc03127359efc19f54"
+    },
+    {
+      "resident_id": "resident.64c4b771271b53f6",
+      "path": "WARP/TASKS/OWNERTEST-GAME-BUILD-0001/00_INTAKE/SAFETY_BOUNDARY_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 584,
+      "sha256": "412b15e4959c64435cb891bc50a75d369a7797fc74c15e0863d391cdeac04145"
+    },
+    {
+      "resident_id": "resident.138d1cae99b58102",
+      "path": "WARP/TASKS/OWNERTEST-GAME-BUILD-0001/00_INTAKE/TASK_CLASSIFICATION_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 373,
+      "sha256": "64433e737ac379bf41eeda3b573f227467bb2496f54937c781ed6994a759a059"
+    },
+    {
+      "resident_id": "resident.690e86999bd43298",
+      "path": "WARP/TASKS/OWNERTEST-GAME-BUILD-0001/00_INTAKE/TASK_INFORMATION_DEFICIT_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 1175,
+      "sha256": "7e8262e78bc0fb224ebf079a83ff0beee427eea0b8cd6a5264e1c7b2a01d6e45"
+    },
+    {
+      "resident_id": "resident.50a54caa466b1435",
+      "path": "WARP/TASKS/OWNERTEST-GAME-BUILD-0001/00_INTAKE/TASK_INTAKE_PACKET_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 1556,
+      "sha256": "9f770fe05805fbeb29f36e913e15dbed1e12e8dd65488fd31021eef57e832ea0"
+    },
+    {
+      "resident_id": "resident.c3e4932f4906d2f3",
+      "path": "WARP/TASKS/OWNERTEST-WITCHER3-60FPS-0001/00_INTAKE/ADMISSION_DECISION_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 834,
+      "sha256": "fc8f21cf4eb7b69d7cfb0e79a4ba5387e53185cd84d343c81b1aa445218ebccc"
+    },
+    {
+      "resident_id": "resident.c84e353825f5017b",
+      "path": "WARP/TASKS/OWNERTEST-WITCHER3-60FPS-0001/00_INTAKE/ASTRONOMICON_DRY_RUN_RECEIPT.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "RECEIPT",
+      "status": "WARP",
+      "bytes": 1522,
+      "sha256": "d5b8454716dcd2cd454adffc2b249b0e462541146ae9d78b5797c0d7ace861f4"
+    },
+    {
+      "resident_id": "resident.df3d903408a147c4",
+      "path": "WARP/TASKS/OWNERTEST-WITCHER3-60FPS-0001/00_INTAKE/ASTRONOMICON_TASK_INTAKE_REPORT.md",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "REPORT",
+      "status": "WARP",
+      "bytes": 857,
+      "sha256": "5afbc7c56c545b5f28a6c5a7a8156dc149f960d3a93b98a9f0458f99e0a0e0ec"
+    },
+    {
+      "resident_id": "resident.04d89c3cc0e8e96b",
+      "path": "WARP/TASKS/OWNERTEST-WITCHER3-60FPS-0001/00_INTAKE/FOCUS_PACK_DRAFT_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 1669,
+      "sha256": "d256c7b34708128a4701c386bfd9dea8ce9fdd8b3540c7d2ebe6c03b13c910df"
+    },
+    {
+      "resident_id": "resident.1b05cd235ea5d747",
+      "path": "WARP/TASKS/OWNERTEST-WITCHER3-60FPS-0001/00_INTAKE/OWNER_INTENT_CAPTURE_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 1007,
+      "sha256": "d374eeea4982f3def1f92243fe67f44886451130d47cf0b2e428d81900316795"
+    },
+    {
+      "resident_id": "resident.ff61000e64635ad4",
+      "path": "WARP/TASKS/OWNERTEST-WITCHER3-60FPS-0001/00_INTAKE/REQUIRED_CONTEXT_REQUEST_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 2696,
+      "sha256": "d2f54e795ba3da9d68a5126af1afe0991b24e7663782191a2d6800ed4fb80056"
+    },
+    {
+      "resident_id": "resident.63e267a75cb4ae49",
+      "path": "WARP/TASKS/OWNERTEST-WITCHER3-60FPS-0001/00_INTAKE/RESEARCH_PLAN_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 1155,
+      "sha256": "e1fe52aff0c68234592fdc51720e7f62e6f72151c889f430d2cb7c27869fb82c"
+    },
+    {
+      "resident_id": "resident.99f15a0ae1cf41a8",
+      "path": "WARP/TASKS/OWNERTEST-WITCHER3-60FPS-0001/00_INTAKE/ROUTE_PROPOSAL_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 1060,
+      "sha256": "95946c241e1b6a9e207a3afc017f1400ef71ea628b5ef64e65f11d5ba18c25cd"
+    },
+    {
+      "resident_id": "resident.12e0a1f8c50f462a",
+      "path": "WARP/TASKS/OWNERTEST-WITCHER3-60FPS-0001/00_INTAKE/SAFETY_BOUNDARY_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 588,
+      "sha256": "0f0c0abe3dc9dcefd634cca40a8ad1579e193dea5730ea3990ba89fadf7f8d87"
+    },
+    {
+      "resident_id": "resident.302e68c33dc1a460",
+      "path": "WARP/TASKS/OWNERTEST-WITCHER3-60FPS-0001/00_INTAKE/TASK_CLASSIFICATION_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 382,
+      "sha256": "cdcfac3987ec6d076707147fa944f95e1643945736140464fed5ed0b26297263"
+    },
+    {
+      "resident_id": "resident.82512c7de5401adc",
+      "path": "WARP/TASKS/OWNERTEST-WITCHER3-60FPS-0001/00_INTAKE/TASK_INFORMATION_DEFICIT_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 1325,
+      "sha256": "0912c2949581077765449a669313bc411a5be2807dcde5e6a11de602337671a5"
+    },
+    {
+      "resident_id": "resident.1941149fb2aec68a",
+      "path": "WARP/TASKS/OWNERTEST-WITCHER3-60FPS-0001/00_INTAKE/TASK_INTAKE_PACKET_V0_1.json",
+      "root_zone": "WARP",
+      "owner": "WARP",
+      "resident_class": "JSON",
+      "status": "WARP",
+      "bytes": 1577,
+      "sha256": "8680c40b4340adf29dab204b86ae4ef237e82eedab3aebed4c41a35f629d49b6"
     },
     {
       "resident_id": "resident.37f3cf6f12b328ed",

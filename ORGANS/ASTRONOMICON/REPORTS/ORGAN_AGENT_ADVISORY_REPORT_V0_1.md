@@ -1,37 +1,299 @@
 # ORGAN AGENT ADVISORY REPORT V0.1
 
-verdict: `PASS_ORGAN_AGENT_ADVISORY_GENERATED`  
-generated_at_utc: `2026-07-01T20:17:34Z`  
-repo_head: `5435e895`
+This is advisory-zone guidance only. It does not command concrete actions.
 
-## Meaning
+## ASTRONOMICON
 
-Organs speak as advisory agents. They point to attention zones using mathematical scoring.
+- attention_zone: `operator intake / closure guidance`
+- future_step_success_score: `98.5`
+- attention_priority_score: `90.62`
+- confidence: `HIGH`
 
-They do not command concrete actions, execute, claim trust, or claim Throne verdict.
+ASTRONOMICON: зона внимания «operator intake / closure guidance». Расчётная успешность будущего шага 98.5/100, приоритет внимания 90.62/100.
 
-## Ranked attention zones
+Visible: Видно профильную зону: operator intake / closure guidance; текущий расчёт основан на evidence snapshot и доступности валидаторов.
 
-- `ASTRONOMICON` — zone `operator intake / closure guidance`, success `98.5`, priority `90.62`, confidence `HIGH`
-- `MECHANICUS` — zone `technical preflight hardness`, success `99.0`, priority `87.12`, confidence `HIGH`
-- `INQUISITION` — zone `fake-green and scope suspicion`, success `96.8`, priority `83.25`, confidence `HIGH`
-- `THRONE` — zone `Crown confirmation gap`, success `80.6`, priority `75.76`, confidence `HIGH`
-- `DOCTRINARIUM` — zone `law/schema clarity`, success `93.7`, priority `73.09`, confidence `HIGH`
-- `ADMINISTRATUM` — zone `receipt and registry indexing`, success `83.7`, priority `61.94`, confidence `HIGH`
-- `OFFICIO_AGENTIS` — zone `servitor work-order boundary`, success `69.8`, priority `58.63`, confidence `MEDIUM`
-- `CUSTODES` — zone `trust-chain gap`, success `53.1`, priority `50.98`, confidence `MEDIUM`
-- `STRATEGIUM` — zone `priority/routing math`, success `60.0`, priority `49.2`, confidence `MEDIUM`
-- `SCHOLA_IMPERIALIS` — zone `lesson capture from validator failures`, success `51.7`, priority `35.16`, confidence `MEDIUM`
+Why it matters: Эта зона связана с доменом органа: intent intake, patch/task shape, closure comparison, operator guidance. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.
 
-## Advisory voice
+Raises probability:
+- reversibility: 85/100 поддерживает прогноз
+- evidence_strength: 100.0/100 поддерживает прогноз
+- validator_availability: 100.0/100 поддерживает прогноз
+- authority_clarity: 100.0/100 поддерживает прогноз
+- scope_clarity: 100.0/100 поддерживает прогноз
+- dependency_readiness: 100.0/100 поддерживает прогноз
+- risk_control: 100.0/100 поддерживает прогноз
+- operator_clarity: 100.0/100 поддерживает прогноз
 
-- ASTRONOMICON: обратить внимание на зону «operator intake / closure guidance». Расчётная успешность следующего шага 98.5/100, приоритет внимания 90.62/100.
-- MECHANICUS: обратить внимание на зону «technical preflight hardness». Расчётная успешность следующего шага 99.0/100, приоритет внимания 87.12/100.
-- INQUISITION: обратить внимание на зону «fake-green and scope suspicion». Расчётная успешность следующего шага 96.8/100, приоритет внимания 83.25/100.
-- THRONE: обратить внимание на зону «Crown confirmation gap». Расчётная успешность следующего шага 80.6/100, приоритет внимания 75.76/100.
-- DOCTRINARIUM: обратить внимание на зону «law/schema clarity». Расчётная успешность следующего шага 93.7/100, приоритет внимания 73.09/100.
-- ADMINISTRATUM: обратить внимание на зону «receipt and registry indexing». Расчётная успешность следующего шага 83.7/100, приоритет внимания 61.94/100.
-- OFFICIO_AGENTIS: обратить внимание на зону «servitor work-order boundary». Расчётная успешность следующего шага 69.8/100, приоритет внимания 58.63/100.
-- CUSTODES: обратить внимание на зону «trust-chain gap». Расчётная успешность следующего шага 53.1/100, приоритет внимания 50.98/100.
-- STRATEGIUM: обратить внимание на зону «priority/routing math». Расчётная успешность следующего шага 60.0/100, приоритет внимания 49.2/100.
-- SCHOLA_IMPERIALIS: обратить внимание на зону «lesson capture from validator failures». Расчётная успешность следующего шага 51.7/100, приоритет внимания 35.16/100.
+Reduces probability:
+- существенных слабых факторов в базовой формуле не найдено
+
+Not claimed:
+- execution
+- trust
+- Throne verdict
+- concrete action command
+
+## MECHANICUS
+
+- attention_zone: `technical preflight hardness`
+- future_step_success_score: `99.0`
+- attention_priority_score: `87.12`
+- confidence: `HIGH`
+
+MECHANICUS: зона внимания «technical preflight hardness». Расчётная успешность будущего шага 99.0/100, приоритет внимания 87.12/100.
+
+Visible: Видно профильную зону: technical preflight hardness; текущий расчёт основан на evidence snapshot и доступности валидаторов.
+
+Why it matters: Эта зона связана с доменом органа: tools, validators, manifests, syntax, runners, technical preflight. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.
+
+Raises probability:
+- reversibility: 90/100 поддерживает прогноз
+- evidence_strength: 100.0/100 поддерживает прогноз
+- validator_availability: 100.0/100 поддерживает прогноз
+- authority_clarity: 100.0/100 поддерживает прогноз
+- scope_clarity: 100.0/100 поддерживает прогноз
+- dependency_readiness: 100.0/100 поддерживает прогноз
+- risk_control: 100.0/100 поддерживает прогноз
+- operator_clarity: 100.0/100 поддерживает прогноз
+
+Reduces probability:
+- существенных слабых факторов в базовой формуле не найдено
+
+Not claimed:
+- execution
+- trust
+- Throne verdict
+- concrete action command
+
+## INQUISITION
+
+- attention_zone: `fake-green and scope suspicion`
+- future_step_success_score: `96.8`
+- attention_priority_score: `83.25`
+- confidence: `HIGH`
+
+INQUISITION: зона внимания «fake-green and scope suspicion». Расчётная успешность будущего шага 96.8/100, приоритет внимания 83.25/100.
+
+Visible: Видно профильную зону: fake-green and scope suspicion; текущий расчёт основан на evidence snapshot и доступности валидаторов.
+
+Why it matters: Эта зона связана с доменом органа: scope, fake-green, mutation risk, negative evidence, red-team suspicion. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.
+
+Raises probability:
+- reversibility: 80/100 поддерживает прогноз
+- scope_clarity: 90/100 поддерживает прогноз
+- evidence_strength: 100.0/100 поддерживает прогноз
+- validator_availability: 100.0/100 поддерживает прогноз
+- authority_clarity: 100.0/100 поддерживает прогноз
+- dependency_readiness: 100.0/100 поддерживает прогноз
+- risk_control: 100.0/100 поддерживает прогноз
+- operator_clarity: 100.0/100 поддерживает прогноз
+
+Reduces probability:
+- существенных слабых факторов в базовой формуле не найдено
+
+Not claimed:
+- execution
+- trust
+- Throne verdict
+- concrete action command
+
+## THRONE
+
+- attention_zone: `Crown confirmation gap`
+- future_step_success_score: `80.6`
+- attention_priority_score: `75.76`
+- confidence: `HIGH`
+
+THRONE: зона внимания «Crown confirmation gap». Расчётная успешность будущего шага 80.6/100, приоритет внимания 75.76/100.
+
+Visible: Видно профильную зону: Crown confirmation gap; текущий расчёт основан на evidence snapshot и доступности валидаторов.
+
+Why it matters: Эта зона связана с доменом органа: crown scoring, hard gates, stage truth, no-fake-green, final confirmation lane. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.
+
+Raises probability:
+- reversibility: 80/100 поддерживает прогноз
+- authority_clarity: 90/100 поддерживает прогноз
+- evidence_strength: 100.0/100 поддерживает прогноз
+- risk_control: 100.0/100 поддерживает прогноз
+- operator_clarity: 100.0/100 поддерживает прогноз
+
+Reduces probability:
+- dependency_readiness: 45/100 держит прогноз ниже
+
+Not claimed:
+- execution
+- trust
+- Throne verdict
+- concrete action command
+
+## DOCTRINARIUM
+
+- attention_zone: `law/schema clarity`
+- future_step_success_score: `93.7`
+- attention_priority_score: `73.09`
+- confidence: `HIGH`
+
+DOCTRINARIUM: зона внимания «law/schema clarity». Расчётная успешность будущего шага 93.7/100, приоритет внимания 73.09/100.
+
+Visible: Видно профильную зону: law/schema clarity; текущий расчёт основан на evidence snapshot и доступности валидаторов.
+
+Why it matters: Эта зона связана с доменом органа: law, doctrine, schemas, contracts, definitions. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.
+
+Raises probability:
+- scope_clarity: 80/100 поддерживает прогноз
+- reversibility: 88/100 поддерживает прогноз
+- authority_clarity: 95/100 поддерживает прогноз
+- evidence_strength: 100.0/100 поддерживает прогноз
+- validator_availability: 100.0/100 поддерживает прогноз
+- dependency_readiness: 100.0/100 поддерживает прогноз
+- risk_control: 100.0/100 поддерживает прогноз
+
+Reduces probability:
+- существенных слабых факторов в базовой формуле не найдено
+
+Not claimed:
+- execution
+- trust
+- Throne verdict
+- concrete action command
+
+## ADMINISTRATUM
+
+- attention_zone: `receipt and registry indexing`
+- future_step_success_score: `83.7`
+- attention_priority_score: `61.94`
+- confidence: `HIGH`
+
+ADMINISTRATUM: зона внимания «receipt and registry indexing». Расчётная успешность будущего шага 83.7/100, приоритет внимания 61.94/100.
+
+Visible: Видно профильную зону: receipt and registry indexing; текущий расчёт основан на evidence snapshot и доступности валидаторов.
+
+Why it matters: Эта зона связана с доменом органа: registry, census, receipt chain, indexes, context packs. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.
+
+Raises probability:
+- evidence_strength: 100.0/100 поддерживает прогноз
+- authority_clarity: 100.0/100 поддерживает прогноз
+- dependency_readiness: 100.0/100 поддерживает прогноз
+- operator_clarity: 100.0/100 поддерживает прогноз
+
+Reduces probability:
+- validator_availability: 55/100 держит прогноз ниже
+
+Not claimed:
+- execution
+- trust
+- Throne verdict
+- concrete action command
+
+## OFFICIO_AGENTIS
+
+- attention_zone: `servitor work-order boundary`
+- future_step_success_score: `69.8`
+- attention_priority_score: `58.63`
+- confidence: `MEDIUM`
+
+OFFICIO_AGENTIS: зона внимания «servitor work-order boundary». Расчётная успешность будущего шага 69.8/100, приоритет внимания 58.63/100.
+
+Visible: Видно профильную зону: servitor work-order boundary; текущий расчёт основан на evidence snapshot и доступности валидаторов.
+
+Why it matters: Эта зона связана с доменом органа: servitor work order, execution envelope, stop conditions, handoff. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.
+
+Raises probability:
+- evidence_strength: 100.0/100 поддерживает прогноз
+- authority_clarity: 100.0/100 поддерживает прогноз
+- operator_clarity: 100.0/100 поддерживает прогноз
+
+Reduces probability:
+- validator_availability: 20/100 держит прогноз ниже
+- dependency_readiness: 45/100 держит прогноз ниже
+
+Not claimed:
+- execution
+- trust
+- Throne verdict
+- concrete action command
+
+## CUSTODES
+
+- attention_zone: `trust-chain gap`
+- future_step_success_score: `53.1`
+- attention_priority_score: `50.98`
+- confidence: `MEDIUM`
+
+CUSTODES: зона внимания «trust-chain gap». Расчётная успешность будущего шага 53.1/100, приоритет внимания 50.98/100.
+
+Visible: Видно профильную зону: trust-chain gap; текущий расчёт основан на evidence snapshot и доступности валидаторов.
+
+Why it matters: Эта зона связана с доменом органа: trust chain, authority, validator honesty, integrity, permission. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.
+
+Raises probability:
+- authority_clarity: 100.0/100 поддерживает прогноз
+- risk_control: 100.0/100 поддерживает прогноз
+
+Reduces probability:
+- validator_availability: 10/100 держит прогноз ниже
+- evidence_strength: 15/100 держит прогноз ниже
+- dependency_readiness: 40/100 держит прогноз ниже
+
+Not claimed:
+- execution
+- trust
+- Throne verdict
+- concrete action command
+
+## STRATEGIUM
+
+- attention_zone: `priority/routing math`
+- future_step_success_score: `60.0`
+- attention_priority_score: `49.2`
+- confidence: `MEDIUM`
+
+STRATEGIUM: зона внимания «priority/routing math». Расчётная успешность будущего шага 60.0/100, приоритет внимания 49.2/100.
+
+Visible: Видно профильную зону: priority/routing math; текущий расчёт основан на evidence snapshot и доступности валидаторов.
+
+Why it matters: Эта зона связана с доменом органа: priority, sequence, risk/value ordering, backlog, routing. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.
+
+Raises probability:
+- reversibility: 80/100 поддерживает прогноз
+- authority_clarity: 100.0/100 поддерживает прогноз
+- operator_clarity: 100.0/100 поддерживает прогноз
+
+Reduces probability:
+- validator_availability: 10/100 держит прогноз ниже
+- evidence_strength: 35/100 держит прогноз ниже
+
+Not claimed:
+- execution
+- trust
+- Throne verdict
+- concrete action command
+
+## SCHOLA_IMPERIALIS
+
+- attention_zone: `lesson capture from validator failures`
+- future_step_success_score: `51.7`
+- attention_priority_score: `35.16`
+- confidence: `MEDIUM`
+
+SCHOLA_IMPERIALIS: зона внимания «lesson capture from validator failures». Расчётная успешность будущего шага 51.7/100, приоритет внимания 35.16/100.
+
+Visible: Видно профильную зону: lesson capture from validator failures; текущий расчёт основан на evidence snapshot и доступности валидаторов.
+
+Why it matters: Эта зона связана с доменом органа: lessons, training, memory, failure explanation, operator education. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.
+
+Raises probability:
+- operator_clarity: 80/100 поддерживает прогноз
+- reversibility: 85/100 поддерживает прогноз
+
+Reduces probability:
+- validator_availability: 10/100 держит прогноз ниже
+- evidence_strength: 25/100 держит прогноз ниже
+
+Not claimed:
+- execution
+- trust
+- Throne verdict
+- concrete action command
+

@@ -1,37 +1,105 @@
 {
   "summary_id": "astronomicon.organ_agent_advisory_summary.v0_1",
-  "patch_id": "ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001",
-  "generated_at_utc": "2026-07-01T20:17:38Z",
-  "repo_head": "5435e895",
-  "target_organ": "INQUISITION",
+  "patch_id": "ORGAN-AGENT-ADVISORY-OUTPUT-ISOLATION-AND-VOICE-ENRICHMENT-0001",
+  "generated_at_utc": "2026-07-01T20:32:51Z",
+  "repo_head": "ef85a546",
+  "target_organ": null,
   "verdict": "PASS_ORGAN_AGENT_ADVISORY_GENERATED",
-  "score_model": {
-    "name": "future_step_success_score_v0_1",
-    "range": "0..100",
-    "weighted_terms": {
-      "evidence_strength": 0.18,
-      "validator_availability": 0.16,
-      "authority_clarity": 0.14,
-      "scope_clarity": 0.12,
-      "dependency_readiness": 0.12,
-      "reversibility": 0.1,
-      "risk_control": 0.1,
-      "operator_clarity": 0.08
-    },
-    "equation": "score = sum(weight_i * factor_i), where each factor_i is 0..100",
-    "attention_priority_score": "future_step_success_score * impact_score / 100"
-  },
-  "evidence_snapshot": {
-    "intent_intake": 100.0,
-    "pack_taxonomy_law": 100.0,
-    "patch_lifecycle_foundation": 100.0,
-    "patch_lifecycle_launcher": 100.0,
-    "mechanicus_preflight": 100.0,
-    "inquisition_scope_gate": 100.0,
-    "assembly_stage_scoring": 100.0
-  },
-  "advisory_count": 1,
+  "advisory_count": 10,
   "advisories": [
+    {
+      "organ_id": "ASTRONOMICON",
+      "organ_domain": "intent intake, patch/task shape, closure comparison, operator guidance",
+      "attention_zone": "operator intake / closure guidance",
+      "future_step_success_score": 98.5,
+      "impact_score": 92,
+      "attention_priority_score": 90.62,
+      "confidence": "HIGH",
+      "advisory_text": "ASTRONOMICON: зона внимания «operator intake / closure guidance». Расчётная успешность будущего шага 98.5/100, приоритет внимания 90.62/100.",
+      "what_is_visible": "Видно профильную зону: operator intake / closure guidance; текущий расчёт основан на evidence snapshot и доступности валидаторов.",
+      "why_this_zone_matters": "Эта зона связана с доменом органа: intent intake, patch/task shape, closure comparison, operator guidance. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.",
+      "what_raises_success_probability": [
+        "reversibility: 85/100 поддерживает прогноз",
+        "evidence_strength: 100.0/100 поддерживает прогноз",
+        "validator_availability: 100.0/100 поддерживает прогноз",
+        "authority_clarity: 100.0/100 поддерживает прогноз",
+        "scope_clarity: 100.0/100 поддерживает прогноз",
+        "dependency_readiness: 100.0/100 поддерживает прогноз",
+        "risk_control: 100.0/100 поддерживает прогноз",
+        "operator_clarity: 100.0/100 поддерживает прогноз"
+      ],
+      "what_reduces_success_probability": [
+        "существенных слабых факторов в базовой формуле не найдено"
+      ],
+      "evidence_considered": [
+        "intent intake exists",
+        "patch lifecycle commands exist",
+        "smoke closure exists"
+      ],
+      "factor_breakdown": {
+        "evidence_strength": 100.0,
+        "validator_availability": 100.0,
+        "authority_clarity": 100.0,
+        "scope_clarity": 100.0,
+        "dependency_readiness": 100.0,
+        "reversibility": 85,
+        "risk_control": 100.0,
+        "operator_clarity": 100.0
+      },
+      "language_mode": "ADVISORY_ZONE_ONLY_NO_DIRECT_ACTION",
+      "not_claimed": [
+        "execution",
+        "trust",
+        "Throne verdict",
+        "concrete action command"
+      ]
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "organ_domain": "tools, validators, manifests, syntax, runners, technical preflight",
+      "attention_zone": "technical preflight hardness",
+      "future_step_success_score": 99.0,
+      "impact_score": 88,
+      "attention_priority_score": 87.12,
+      "confidence": "HIGH",
+      "advisory_text": "MECHANICUS: зона внимания «technical preflight hardness». Расчётная успешность будущего шага 99.0/100, приоритет внимания 87.12/100.",
+      "what_is_visible": "Видно профильную зону: technical preflight hardness; текущий расчёт основан на evidence snapshot и доступности валидаторов.",
+      "why_this_zone_matters": "Эта зона связана с доменом органа: tools, validators, manifests, syntax, runners, technical preflight. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.",
+      "what_raises_success_probability": [
+        "reversibility: 90/100 поддерживает прогноз",
+        "evidence_strength: 100.0/100 поддерживает прогноз",
+        "validator_availability: 100.0/100 поддерживает прогноз",
+        "authority_clarity: 100.0/100 поддерживает прогноз",
+        "scope_clarity: 100.0/100 поддерживает прогноз",
+        "dependency_readiness: 100.0/100 поддерживает прогноз",
+        "risk_control: 100.0/100 поддерживает прогноз",
+        "operator_clarity: 100.0/100 поддерживает прогноз"
+      ],
+      "what_reduces_success_probability": [
+        "существенных слабых факторов в базовой формуле не найдено"
+      ],
+      "evidence_considered": [
+        "manifest and runner preflight exists",
+        "syntax check avoids pyc self-contamination"
+      ],
+      "factor_breakdown": {
+        "evidence_strength": 100.0,
+        "validator_availability": 100.0,
+        "authority_clarity": 100.0,
+        "scope_clarity": 100.0,
+        "dependency_readiness": 100.0,
+        "reversibility": 90,
+        "risk_control": 100.0,
+        "operator_clarity": 100.0
+      },
+      "language_mode": "ADVISORY_ZONE_ONLY_NO_DIRECT_ACTION",
+      "not_claimed": [
+        "execution",
+        "trust",
+        "Throne verdict",
+        "concrete action command"
+      ]
+    },
     {
       "organ_id": "INQUISITION",
       "organ_domain": "scope, fake-green, mutation risk, negative evidence, red-team suspicion",
@@ -40,10 +108,25 @@
       "impact_score": 86,
       "attention_priority_score": 83.25,
       "confidence": "HIGH",
-      "advisory_text": "INQUISITION: обратить внимание на зону «fake-green and scope suspicion». Расчётная успешность следующего шага 96.8/100, приоритет внимания 83.25/100.",
-      "why_this_zone": [
+      "advisory_text": "INQUISITION: зона внимания «fake-green and scope suspicion». Расчётная успешность будущего шага 96.8/100, приоритет внимания 83.25/100.",
+      "what_is_visible": "Видно профильную зону: fake-green and scope suspicion; текущий расчёт основан на evidence snapshot и доступности валидаторов.",
+      "why_this_zone_matters": "Эта зона связана с доменом органа: scope, fake-green, mutation risk, negative evidence, red-team suspicion. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.",
+      "what_raises_success_probability": [
+        "reversibility: 80/100 поддерживает прогноз",
+        "scope_clarity: 90/100 поддерживает прогноз",
+        "evidence_strength: 100.0/100 поддерживает прогноз",
+        "validator_availability: 100.0/100 поддерживает прогноз",
+        "authority_clarity: 100.0/100 поддерживает прогноз",
+        "dependency_readiness: 100.0/100 поддерживает прогноз",
+        "risk_control: 100.0/100 поддерживает прогноз",
+        "operator_clarity: 100.0/100 поддерживает прогноз"
+      ],
+      "what_reduces_success_probability": [
+        "существенных слабых факторов в базовой формуле не найдено"
+      ],
+      "evidence_considered": [
         "scope gate exists",
-        "receipt != work done law exists"
+        "receipt does not equal work law exists"
       ],
       "factor_breakdown": {
         "evidence_strength": 100.0,
@@ -54,6 +137,302 @@
         "reversibility": 80,
         "risk_control": 100.0,
         "operator_clarity": 100.0
+      },
+      "language_mode": "ADVISORY_ZONE_ONLY_NO_DIRECT_ACTION",
+      "not_claimed": [
+        "execution",
+        "trust",
+        "Throne verdict",
+        "concrete action command"
+      ]
+    },
+    {
+      "organ_id": "THRONE",
+      "organ_domain": "crown scoring, hard gates, stage truth, no-fake-green, final confirmation lane",
+      "attention_zone": "Crown confirmation gap",
+      "future_step_success_score": 80.6,
+      "impact_score": 94,
+      "attention_priority_score": 75.76,
+      "confidence": "HIGH",
+      "advisory_text": "THRONE: зона внимания «Crown confirmation gap». Расчётная успешность будущего шага 80.6/100, приоритет внимания 75.76/100.",
+      "what_is_visible": "Видно профильную зону: Crown confirmation gap; текущий расчёт основан на evidence snapshot и доступности валидаторов.",
+      "why_this_zone_matters": "Эта зона связана с доменом органа: crown scoring, hard gates, stage truth, no-fake-green, final confirmation lane. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.",
+      "what_raises_success_probability": [
+        "reversibility: 80/100 поддерживает прогноз",
+        "authority_clarity: 90/100 поддерживает прогноз",
+        "evidence_strength: 100.0/100 поддерживает прогноз",
+        "risk_control: 100.0/100 поддерживает прогноз",
+        "operator_clarity: 100.0/100 поддерживает прогноз"
+      ],
+      "what_reduces_success_probability": [
+        "dependency_readiness: 45/100 держит прогноз ниже"
+      ],
+      "evidence_considered": [
+        "stage scoring exists",
+        "foundation validators do not claim Throne"
+      ],
+      "factor_breakdown": {
+        "evidence_strength": 100.0,
+        "validator_availability": 60,
+        "authority_clarity": 90,
+        "scope_clarity": 75,
+        "dependency_readiness": 45,
+        "reversibility": 80,
+        "risk_control": 100.0,
+        "operator_clarity": 100.0
+      },
+      "language_mode": "ADVISORY_ZONE_ONLY_NO_DIRECT_ACTION",
+      "not_claimed": [
+        "execution",
+        "trust",
+        "Throne verdict",
+        "concrete action command"
+      ]
+    },
+    {
+      "organ_id": "DOCTRINARIUM",
+      "organ_domain": "law, doctrine, schemas, contracts, definitions",
+      "attention_zone": "law/schema clarity",
+      "future_step_success_score": 93.7,
+      "impact_score": 78,
+      "attention_priority_score": 73.09,
+      "confidence": "HIGH",
+      "advisory_text": "DOCTRINARIUM: зона внимания «law/schema clarity». Расчётная успешность будущего шага 93.7/100, приоритет внимания 73.09/100.",
+      "what_is_visible": "Видно профильную зону: law/schema clarity; текущий расчёт основан на evidence snapshot и доступности валидаторов.",
+      "why_this_zone_matters": "Эта зона связана с доменом органа: law, doctrine, schemas, contracts, definitions. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.",
+      "what_raises_success_probability": [
+        "scope_clarity: 80/100 поддерживает прогноз",
+        "reversibility: 88/100 поддерживает прогноз",
+        "authority_clarity: 95/100 поддерживает прогноз",
+        "evidence_strength: 100.0/100 поддерживает прогноз",
+        "validator_availability: 100.0/100 поддерживает прогноз",
+        "dependency_readiness: 100.0/100 поддерживает прогноз",
+        "risk_control: 100.0/100 поддерживает прогноз"
+      ],
+      "what_reduces_success_probability": [
+        "существенных слабых факторов в базовой формуле не найдено"
+      ],
+      "evidence_considered": [
+        "pack taxonomy law exists",
+        "organ duty contracts exist"
+      ],
+      "factor_breakdown": {
+        "evidence_strength": 100.0,
+        "validator_availability": 100.0,
+        "authority_clarity": 95,
+        "scope_clarity": 80,
+        "dependency_readiness": 100.0,
+        "reversibility": 88,
+        "risk_control": 100.0,
+        "operator_clarity": 75
+      },
+      "language_mode": "ADVISORY_ZONE_ONLY_NO_DIRECT_ACTION",
+      "not_claimed": [
+        "execution",
+        "trust",
+        "Throne verdict",
+        "concrete action command"
+      ]
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "organ_domain": "registry, census, receipt chain, indexes, context packs",
+      "attention_zone": "receipt and registry indexing",
+      "future_step_success_score": 83.7,
+      "impact_score": 74,
+      "attention_priority_score": 61.94,
+      "confidence": "HIGH",
+      "advisory_text": "ADMINISTRATUM: зона внимания «receipt and registry indexing». Расчётная успешность будущего шага 83.7/100, приоритет внимания 61.94/100.",
+      "what_is_visible": "Видно профильную зону: receipt and registry indexing; текущий расчёт основан на evidence snapshot и доступности валидаторов.",
+      "why_this_zone_matters": "Эта зона связана с доменом органа: registry, census, receipt chain, indexes, context packs. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.",
+      "what_raises_success_probability": [
+        "evidence_strength: 100.0/100 поддерживает прогноз",
+        "authority_clarity: 100.0/100 поддерживает прогноз",
+        "dependency_readiness: 100.0/100 поддерживает прогноз",
+        "operator_clarity: 100.0/100 поддерживает прогноз"
+      ],
+      "what_reduces_success_probability": [
+        "validator_availability: 55/100 держит прогноз ниже"
+      ],
+      "evidence_considered": [
+        "census refresh exists",
+        "receipt chain grows after lifecycle work"
+      ],
+      "factor_breakdown": {
+        "evidence_strength": 100.0,
+        "validator_availability": 55,
+        "authority_clarity": 100.0,
+        "scope_clarity": 70,
+        "dependency_readiness": 100.0,
+        "reversibility": 75,
+        "risk_control": 70,
+        "operator_clarity": 100.0
+      },
+      "language_mode": "ADVISORY_ZONE_ONLY_NO_DIRECT_ACTION",
+      "not_claimed": [
+        "execution",
+        "trust",
+        "Throne verdict",
+        "concrete action command"
+      ]
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "organ_domain": "servitor work order, execution envelope, stop conditions, handoff",
+      "attention_zone": "servitor work-order boundary",
+      "future_step_success_score": 69.8,
+      "impact_score": 84,
+      "attention_priority_score": 58.63,
+      "confidence": "MEDIUM",
+      "advisory_text": "OFFICIO_AGENTIS: зона внимания «servitor work-order boundary». Расчётная успешность будущего шага 69.8/100, приоритет внимания 58.63/100.",
+      "what_is_visible": "Видно профильную зону: servitor work-order boundary; текущий расчёт основан на evidence snapshot и доступности валидаторов.",
+      "why_this_zone_matters": "Эта зона связана с доменом органа: servitor work order, execution envelope, stop conditions, handoff. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.",
+      "what_raises_success_probability": [
+        "evidence_strength: 100.0/100 поддерживает прогноз",
+        "authority_clarity: 100.0/100 поддерживает прогноз",
+        "operator_clarity: 100.0/100 поддерживает прогноз"
+      ],
+      "what_reduces_success_probability": [
+        "validator_availability: 20/100 держит прогноз ниже",
+        "dependency_readiness: 45/100 держит прогноз ниже"
+      ],
+      "evidence_considered": [
+        "Task Pack law exists",
+        "dispatch remains forbidden"
+      ],
+      "factor_breakdown": {
+        "evidence_strength": 100.0,
+        "validator_availability": 20,
+        "authority_clarity": 100.0,
+        "scope_clarity": 60,
+        "dependency_readiness": 45,
+        "reversibility": 70,
+        "risk_control": 70,
+        "operator_clarity": 100.0
+      },
+      "language_mode": "ADVISORY_ZONE_ONLY_NO_DIRECT_ACTION",
+      "not_claimed": [
+        "execution",
+        "trust",
+        "Throne verdict",
+        "concrete action command"
+      ]
+    },
+    {
+      "organ_id": "CUSTODES",
+      "organ_domain": "trust chain, authority, validator honesty, integrity, permission",
+      "attention_zone": "trust-chain gap",
+      "future_step_success_score": 53.1,
+      "impact_score": 96,
+      "attention_priority_score": 50.98,
+      "confidence": "MEDIUM",
+      "advisory_text": "CUSTODES: зона внимания «trust-chain gap». Расчётная успешность будущего шага 53.1/100, приоритет внимания 50.98/100.",
+      "what_is_visible": "Видно профильную зону: trust-chain gap; текущий расчёт основан на evidence snapshot и доступности валидаторов.",
+      "why_this_zone_matters": "Эта зона связана с доменом органа: trust chain, authority, validator honesty, integrity, permission. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.",
+      "what_raises_success_probability": [
+        "authority_clarity: 100.0/100 поддерживает прогноз",
+        "risk_control: 100.0/100 поддерживает прогноз"
+      ],
+      "what_reduces_success_probability": [
+        "validator_availability: 10/100 держит прогноз ниже",
+        "evidence_strength: 15/100 держит прогноз ниже",
+        "dependency_readiness: 40/100 держит прогноз ниже"
+      ],
+      "evidence_considered": [
+        "trust is not claimed",
+        "validator honesty still needs a dedicated layer"
+      ],
+      "factor_breakdown": {
+        "evidence_strength": 15,
+        "validator_availability": 10,
+        "authority_clarity": 100.0,
+        "scope_clarity": 65,
+        "dependency_readiness": 40,
+        "reversibility": 70,
+        "risk_control": 100.0,
+        "operator_clarity": 65
+      },
+      "language_mode": "ADVISORY_ZONE_ONLY_NO_DIRECT_ACTION",
+      "not_claimed": [
+        "execution",
+        "trust",
+        "Throne verdict",
+        "concrete action command"
+      ]
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "organ_domain": "priority, sequence, risk/value ordering, backlog, routing",
+      "attention_zone": "priority/routing math",
+      "future_step_success_score": 60.0,
+      "impact_score": 82,
+      "attention_priority_score": 49.2,
+      "confidence": "MEDIUM",
+      "advisory_text": "STRATEGIUM: зона внимания «priority/routing math». Расчётная успешность будущего шага 60.0/100, приоритет внимания 49.2/100.",
+      "what_is_visible": "Видно профильную зону: priority/routing math; текущий расчёт основан на evidence snapshot и доступности валидаторов.",
+      "why_this_zone_matters": "Эта зона связана с доменом органа: priority, sequence, risk/value ordering, backlog, routing. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.",
+      "what_raises_success_probability": [
+        "reversibility: 80/100 поддерживает прогноз",
+        "authority_clarity: 100.0/100 поддерживает прогноз",
+        "operator_clarity: 100.0/100 поддерживает прогноз"
+      ],
+      "what_reduces_success_probability": [
+        "validator_availability: 10/100 держит прогноз ниже",
+        "evidence_strength: 35/100 держит прогноз ниже"
+      ],
+      "evidence_considered": [
+        "next attention ranking now has score factors"
+      ],
+      "factor_breakdown": {
+        "evidence_strength": 35,
+        "validator_availability": 10,
+        "authority_clarity": 100.0,
+        "scope_clarity": 65,
+        "dependency_readiness": 65,
+        "reversibility": 80,
+        "risk_control": 65,
+        "operator_clarity": 100.0
+      },
+      "language_mode": "ADVISORY_ZONE_ONLY_NO_DIRECT_ACTION",
+      "not_claimed": [
+        "execution",
+        "trust",
+        "Throne verdict",
+        "concrete action command"
+      ]
+    },
+    {
+      "organ_id": "SCHOLA_IMPERIALIS",
+      "organ_domain": "lessons, training, memory, failure explanation, operator education",
+      "attention_zone": "lesson capture from validator failures",
+      "future_step_success_score": 51.7,
+      "impact_score": 68,
+      "attention_priority_score": 35.16,
+      "confidence": "MEDIUM",
+      "advisory_text": "SCHOLA_IMPERIALIS: зона внимания «lesson capture from validator failures». Расчётная успешность будущего шага 51.7/100, приоритет внимания 35.16/100.",
+      "what_is_visible": "Видно профильную зону: lesson capture from validator failures; текущий расчёт основан на evidence snapshot и доступности валидаторов.",
+      "why_this_zone_matters": "Эта зона связана с доменом органа: lessons, training, memory, failure explanation, operator education. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.",
+      "what_raises_success_probability": [
+        "operator_clarity: 80/100 поддерживает прогноз",
+        "reversibility: 85/100 поддерживает прогноз"
+      ],
+      "what_reduces_success_probability": [
+        "validator_availability: 10/100 держит прогноз ниже",
+        "evidence_strength: 25/100 держит прогноз ниже"
+      ],
+      "evidence_considered": [
+        "self-contamination lesson exists",
+        "operator pager confusion lesson exists"
+      ],
+      "factor_breakdown": {
+        "evidence_strength": 25,
+        "validator_availability": 10,
+        "authority_clarity": 70,
+        "scope_clarity": 60,
+        "dependency_readiness": 60,
+        "reversibility": 85,
+        "risk_control": 65,
+        "operator_clarity": 80
       },
       "language_mode": "ADVISORY_ZONE_ONLY_NO_DIRECT_ACTION",
       "not_claimed": [

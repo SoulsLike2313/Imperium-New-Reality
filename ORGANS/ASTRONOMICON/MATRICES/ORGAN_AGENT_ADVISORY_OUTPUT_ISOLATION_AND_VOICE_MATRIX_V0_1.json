@@ -1,0 +1,201 @@
+{
+  "matrix_id": "ORGAN_AGENT_ADVISORY_OUTPUT_ISOLATION_AND_VOICE_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "ASTRONOMICON",
+  "status": "ACTIVE_ADVISORY_OUTPUT_LAW",
+  "patch_id": "ORGAN-AGENT-ADVISORY-OUTPUT-ISOLATION-AND-VOICE-ENRICHMENT-0001",
+  "purpose": "Prevent per-organ advisory calls from overwriting global advisory outputs and enrich organ-agent voice.",
+  "global_outputs": [
+    "ORGANS/ASTRONOMICON/REPORTS/ORGAN_AGENT_ADVISORY_SUMMARY_V0_1.json",
+    "ORGANS/ASTRONOMICON/REPORTS/ORGAN_AGENT_ADVISORY_REPORT_V0_1.md",
+    "ORGANS/ASTRONOMICON/RECEIPTS/organ_agent_advisory_scoring_receipt.json"
+  ],
+  "per_organ_output_pattern": [
+    "ORGANS/ASTRONOMICON/REPORTS/ORGAN_AGENT_ADVISORY_<ORGAN>_V0_1.json",
+    "ORGANS/ASTRONOMICON/REPORTS/ORGAN_AGENT_ADVISORY_<ORGAN>_V0_1.md"
+  ],
+  "voice_enrichment_required_fields": [
+    "what_is_visible",
+    "why_this_zone_matters",
+    "what_raises_success_probability",
+    "what_reduces_success_probability",
+    "evidence_considered",
+    "not_claimed"
+  ],
+  "hard_laws": [
+    "single-organ advisory must not overwrite global advisory summary",
+    "global advisory must include all 10 organs",
+    "per-organ advisory must write isolated per-organ outputs",
+    "advisory language may recommend attention zones but not concrete actions",
+    "advisory voice must explain score factors",
+    "advisory voice must state what is not claimed"
+  ],
+  "forbidden_direct_action_terms": [
+    "run",
+    "execute",
+    "apply",
+    "commit",
+    "push",
+    "delete",
+    "remove",
+    "copy",
+    "mutate",
+    "запусти",
+    "выполни",
+    "примени",
+    "закоммить",
+    "запушь",
+    "удали",
+    "скопируй",
+    "измени"
+  ],
+  "organs": {
+    "ASTRONOMICON": {
+      "domain": "intent intake, patch/task shape, closure comparison, operator guidance",
+      "allowed_attention_zones": [
+        "operator intake",
+        "closure comparison",
+        "missing context",
+        "patch lifecycle"
+      ],
+      "must_not_advise": [
+        "technical implementation outside intake",
+        "final trust",
+        "direct mutation"
+      ]
+    },
+    "ADMINISTRATUM": {
+      "domain": "registry, census, receipt chain, indexes, context packs",
+      "allowed_attention_zones": [
+        "registry freshness",
+        "receipt chain",
+        "census drift",
+        "context pack index"
+      ],
+      "must_not_advise": [
+        "execution",
+        "trust verdict",
+        "scope prosecution"
+      ]
+    },
+    "DOCTRINARIUM": {
+      "domain": "law, doctrine, schemas, contracts, definitions",
+      "allowed_attention_zones": [
+        "law clarity",
+        "schema coverage",
+        "contract gaps",
+        "taxonomy drift"
+      ],
+      "must_not_advise": [
+        "direct execution",
+        "trust verdict",
+        "runtime patching"
+      ]
+    },
+    "MECHANICUS": {
+      "domain": "tools, validators, manifests, syntax, runners, technical preflight",
+      "allowed_attention_zones": [
+        "technical preflight",
+        "manifest integrity",
+        "runner safety",
+        "syntax coverage"
+      ],
+      "must_not_advise": [
+        "owner intent",
+        "final trust",
+        "Crown verdict"
+      ]
+    },
+    "INQUISITION": {
+      "domain": "scope, fake-green, mutation risk, negative evidence, red-team suspicion",
+      "allowed_attention_zones": [
+        "fake-green risk",
+        "scope expansion",
+        "forbidden claims",
+        "mutation hazard"
+      ],
+      "must_not_advise": [
+        "final trust",
+        "owner intent replacement",
+        "implementation design"
+      ]
+    },
+    "CUSTODES": {
+      "domain": "trust chain, authority, validator honesty, integrity, permission",
+      "allowed_attention_zones": [
+        "trust chain gap",
+        "authority envelope",
+        "validator honesty",
+        "permission boundary"
+      ],
+      "must_not_advise": [
+        "execution",
+        "patch coding",
+        "Crown verdict"
+      ]
+    },
+    "STRATEGIUM": {
+      "domain": "priority, sequence, risk/value ordering, backlog, routing",
+      "allowed_attention_zones": [
+        "next attention priority",
+        "dependency order",
+        "risk/value balance",
+        "backlog routing"
+      ],
+      "must_not_advise": [
+        "technical implementation",
+        "trust claim",
+        "direct patch execution"
+      ]
+    },
+    "SCHOLA_IMPERIALIS": {
+      "domain": "lessons, training, memory, failure explanation, operator education",
+      "allowed_attention_zones": [
+        "lesson capture",
+        "failure memory",
+        "operator explanation",
+        "training gap"
+      ],
+      "must_not_advise": [
+        "law promotion",
+        "trust verdict",
+        "execution"
+      ]
+    },
+    "OFFICIO_AGENTIS": {
+      "domain": "servitor work order, execution envelope, stop conditions, handoff",
+      "allowed_attention_zones": [
+        "work order clarity",
+        "servitor authority envelope",
+        "stop conditions",
+        "handoff safety"
+      ],
+      "must_not_advise": [
+        "servitor dispatch without valid Task Pack",
+        "Reality mutation",
+        "Throne verdict"
+      ]
+    },
+    "THRONE": {
+      "domain": "crown scoring, hard gates, stage truth, no-fake-green, final confirmation lane",
+      "allowed_attention_zones": [
+        "stage scoring",
+        "Crown gate gap",
+        "no-core-mutation proof",
+        "cross-organ contradiction"
+      ],
+      "must_not_advise": [
+        "premature PASS",
+        "self-trust",
+        "execution"
+      ]
+    }
+  },
+  "not_claimed": [
+    "LLM free chat",
+    "execution",
+    "trust",
+    "Throne verdict",
+    "organ assembled"
+  ]
+}
