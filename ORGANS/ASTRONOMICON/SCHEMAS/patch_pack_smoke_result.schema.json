@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium.astronomicon.patch_pack_smoke_result.schema.v0_1",
+  "title": "Astronomicon Patch Pack Smoke Result V0.1",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "patch_id",
+    "path",
+    "is_patch_pack",
+    "smoke_verdict",
+    "declared_expected_verdicts",
+    "declared_expected_receipts",
+    "actual_receipts_found",
+    "evidence_level",
+    "errors"
+  ],
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "patch_id": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "is_patch_pack": {
+      "type": "boolean"
+    },
+    "smoke_verdict": {
+      "type": "string"
+    },
+    "declared_expected_verdicts": {
+      "type": "array"
+    },
+    "declared_expected_receipts": {
+      "type": "array"
+    },
+    "actual_receipts_found": {
+      "type": "array"
+    },
+    "evidence_level": {
+      "type": "string"
+    },
+    "errors": {
+      "type": "array"
+    }
+  }
+}

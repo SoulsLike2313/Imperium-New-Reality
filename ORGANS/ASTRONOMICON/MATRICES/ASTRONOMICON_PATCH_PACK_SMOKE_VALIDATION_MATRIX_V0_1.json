@@ -1,0 +1,61 @@
+{
+  "matrix_id": "ASTRONOMICON_PATCH_PACK_SMOKE_VALIDATION_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "ASTRONOMICON",
+  "status": "ACTIVE_SMOKE_LAW",
+  "patch_id": "ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+  "purpose": "Teach Astronomicon to inspect Patch Packs and compare declared expected outputs against actual receipts without executing anything.",
+  "pack_law_dependencies": [
+    "ORGANS/DOCTRINARIUM/MATRICES/PACK_TAXONOMY_MATRIX_V0_1.json",
+    "ORGANS/DOCTRINARIUM/MATRICES/PATCH_PACK_LAW_MATRIX_V0_1.json"
+  ],
+  "allowed_actions": [
+    "read_patch_pack",
+    "read_patch_manifest",
+    "read_declared_expected_verdict",
+    "read_declared_receipts",
+    "read_actual_receipts",
+    "compare_declared_to_actual",
+    "write_smoke_report",
+    "write_smoke_receipt"
+  ],
+  "forbidden_actions": [
+    "execute_patch_runner",
+    "copy_FILES_TO_LAND",
+    "git_commit",
+    "git_push",
+    "claim_trust",
+    "claim_throne_verdict",
+    "count_receipt_existence_as_completion"
+  ],
+  "verdicts": {
+    "CLOSED_BY_DECLARED_GOALS": "Declared expected verdict/receipts are present and actual receipts support the declared goal at smoke level.",
+    "PARTIAL": "Some expected outputs exist but the declared goal is not fully supported.",
+    "FAILED": "Expected outputs contradict or fail the declared goal.",
+    "UNPROVEN_RECEIPT_ONLY": "Receipts exist, but they do not prove stated pass goals or expected verdicts.",
+    "INSUFFICIENT_DECLARATION": "Patch Pack lacks enough declared goals/expected receipts/verdict to judge closure.",
+    "NOT_A_PATCH_PACK": "Folder does not satisfy basic Patch Pack shape."
+  },
+  "hard_laws": [
+    "receipt existence is not task completion proof",
+    "Patch Pack smoke validation must not execute runner",
+    "Patch Pack smoke validation is not Custodes trust",
+    "Patch Pack smoke validation is not Throne verdict",
+    "Patch Pack smoke validation can only compare declaration against evidence",
+    "SERVITOR Task Pack law must not be confused with Patch Pack law",
+    "Intake Draft can inform expectations but cannot become Valid Task Pack here"
+  ],
+  "minimum_patch_pack_shape": [
+    "PATCH_PACK.md or PATCH_PACK_MANIFEST_V0_1.json",
+    "runner ps1 or explicit no-runner declaration",
+    "PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap",
+    "FILES_TO_LAND directory or explicit no-land declaration"
+  ],
+  "evidence_levels": [
+    "DECLARED_ONLY",
+    "RECEIPT_EXISTS",
+    "RECEIPT_VERDICT_MATCHES",
+    "REPORT_SUPPORTS",
+    "CROSS_ORGAN_VALIDATED"
+  ]
+}

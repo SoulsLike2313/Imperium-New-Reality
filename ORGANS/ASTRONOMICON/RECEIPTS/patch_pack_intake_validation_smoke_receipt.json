@@ -1,0 +1,134 @@
+{
+  "receipt_id": "receipt.astronomicon.patch_pack_intake_validation_smoke.v0_1",
+  "task_id": "ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+  "validator_id": "astronomicon_patch_pack_intake_validation_smoke_validator.v0_1",
+  "verdict": "PASS_PATCH_PACK_INTAKE_VALIDATION_SMOKE_READY",
+  "generated_at_utc": "2026-07-01T19:33:37Z",
+  "repo_head": "7349a5641b274fbf96a5bd42a3f9af1f37a13984",
+  "patch_count": 26,
+  "smoke_summary": "ORGANS/ASTRONOMICON/REPORTS/PATCH_PACK_SMOKE_VALIDATION_SUMMARY_V0_1.json",
+  "checks": [
+    {
+      "name": "ASTRONOMICON_PATCH_PACK_SMOKE_VALIDATION_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/MATRICES/ASTRONOMICON_PATCH_PACK_SMOKE_VALIDATION_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "patch_pack_smoke_result.schema.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/SCHEMAS/patch_pack_smoke_result.schema.json"
+      }
+    },
+    {
+      "name": "PATCH_PACK_INTAKE_AND_VALIDATION_SMOKE_V0_1.md_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/DOCTRINE/PATCH_PACK_INTAKE_AND_VALIDATION_SMOKE_V0_1.md"
+      }
+    },
+    {
+      "name": "astronomicon_patch_pack_smoke.py_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/TOOLS/astronomicon_patch_pack_smoke.py"
+      }
+    },
+    {
+      "name": "PACK_TAXONOMY_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/DOCTRINARIUM/MATRICES/PACK_TAXONOMY_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "PATCH_PACK_LAW_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/DOCTRINARIUM/MATRICES/PATCH_PACK_LAW_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "ASTRONOMICON_PATCH_PACK_SMOKE_VALIDATION_MATRIX_V0_1.json_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "patch_pack_smoke_result.schema.json_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "PACK_TAXONOMY_MATRIX_V0_1.json_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "PATCH_PACK_LAW_MATRIX_V0_1.json_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "smoke_hard_laws_present",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "astronomicon_patch_pack_smoke_tool_runs",
+      "status": "PASS",
+      "details": {
+        "stderr": ""
+      }
+    },
+    {
+      "name": "smoke_summary_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "current_patch_packs_smoke_scanned",
+      "status": "PASS",
+      "details": {
+        "patch_count": 26
+      }
+    },
+    {
+      "name": "linked_intakes_remain_intake_draft_only",
+      "status": "PASS",
+      "details": {
+        "violations": []
+      }
+    },
+    {
+      "name": "smoke_validation_did_not_execute_patch_runners",
+      "status": "PASS",
+      "details": {
+        "executed": false
+      }
+    },
+    {
+      "name": "smoke_can_refuse_goal_closure",
+      "status": "PASS",
+      "details": {
+        "non_closed_count": 20
+      }
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "meaning": "Astronomicon can smoke-compare Patch Pack declarations against visible receipts without execution. This is not trust or Throne verdict."
+}

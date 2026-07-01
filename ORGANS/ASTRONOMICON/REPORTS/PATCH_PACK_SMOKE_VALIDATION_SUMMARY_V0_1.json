@@ -1,0 +1,782 @@
+{
+  "summary_id": "astronomicon.patch_pack_smoke_validation_summary.v0_1",
+  "patch_id": "ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+  "generated_at_utc": "2026-07-01T19:33:37Z",
+  "target_patch_id": null,
+  "patch_count": 26,
+  "results": [
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+      "path": "WARP/PATCHES/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS_PATCH_PACK_INTAKE_VALIDATION_SMOKE_READY"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": true,
+        "files_to_land_exists": true
+      },
+      "warnings": [],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "path": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS_DUTY_CONTRACTS_DEFINED"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/DOCTRINARIUM-ORGAN-DUTY-CONTRACT-SCHEMA-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": true,
+        "files_to_land_exists": true
+      },
+      "warnings": [],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+      "path": "WARP/PATCHES/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS_PACK_TAXONOMY_LAW_VALIDATED"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/DOCTRINARIUM-PACK-TAXONOMY-AND-SERVITOR-TASK-LAW-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": true,
+        "files_to_land_exists": true
+      },
+      "warnings": [],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "EXTERNAL-AUDIT-CONTROL-AND-CONSOLIDATION-0001",
+      "path": "WARP/PATCHES/EXTERNAL-AUDIT-CONTROL-AND-CONSOLIDATION-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "CLOSED_BY_DECLARED_GOALS",
+      "evidence_level": "RECEIPT_VERDICT_MATCHES",
+      "declared_expected_verdicts": [
+        "PASS_CONSOLIDATED"
+      ],
+      "declared_expected_receipts": [
+        "ORGANS/THRONE/RECEIPTS/external_audit_consolidation_receipt.json"
+      ],
+      "actual_receipts_found": [
+        {
+          "path": "ORGANS/THRONE/RECEIPTS/external_audit_consolidation_receipt.json",
+          "verdict": "PASS_CONSOLIDATED",
+          "task_id": "EXTERNAL-AUDIT-CONTROL-AND-CONSOLIDATION-0001",
+          "validator_id": "external_audit_control_and_consolidation_validator.v0_1",
+          "parse_error": null
+        }
+      ],
+      "matching_verdict_receipts": [
+        {
+          "path": "ORGANS/THRONE/RECEIPTS/external_audit_consolidation_receipt.json",
+          "verdict": "PASS_CONSOLIDATED",
+          "task_id": "EXTERNAL-AUDIT-CONTROL-AND-CONSOLIDATION-0001",
+          "validator_id": "external_audit_control_and_consolidation_validator.v0_1",
+          "parse_error": null
+        }
+      ],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/EXTERNAL-AUDIT-CONTROL-AND-CONSOLIDATION-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": false,
+        "files_to_land_exists": true
+      },
+      "warnings": [
+        "missing PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap"
+      ],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "GOVERNANCE-ROOT-AND-GREAT-NINE-RECONCILIATION-0001",
+      "path": "WARP/PATCHES/GOVERNANCE-ROOT-AND-GREAT-NINE-RECONCILIATION-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS_REALITY_ROOT_CANON_WITH_TRANSITIONAL_DEBT"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/GOVERNANCE-ROOT-AND-GREAT-NINE-RECONCILIATION-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": true,
+        "files_to_land_exists": true
+      },
+      "warnings": [],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "GOVERNANCE-ROOT-AND-GREAT-NINE-RECONCILIATION-0001-FIX-0001",
+      "path": "WARP/PATCHES/GOVERNANCE-ROOT-AND-GREAT-NINE-RECONCILIATION-0001-FIX-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS",
+        "PASS_REALITY_ROOT_CANON_WITH_TRANSITIONAL_DEBT"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/GOVERNANCE-ROOT-AND-GREAT-NINE-RECONCILIATION-0001-FIX-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": true,
+        "files_to_land_exists": true
+      },
+      "warnings": [],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "GREAT-NINE-PROFILE-VALIDATORS-0001",
+      "path": "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS_GREAT_NINE_PROFILE_BASELINE",
+        "PASS_PROFILE_BASELINE"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": false,
+        "files_to_land_exists": true
+      },
+      "warnings": [
+        "missing PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap"
+      ],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001",
+      "path": "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "FAIL_PROFILE_BASELINE",
+        "PASS_GREAT_NINE_PROFILE_BASELINE",
+        "PASS_PROFILE_BASELINE"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/GREAT-NINE-PROFILE-VALIDATORS-0001-FIX-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": false,
+        "files_to_land_exists": true
+      },
+      "warnings": [
+        "missing PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap"
+      ],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "path": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS_LAUNCHER_AND_ASTRONOMICON_DRY_RUN_READY"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/IMPERIUM-LAUNCHER-ASTRONOMICON-DRY-RUN-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": true,
+        "files_to_land_exists": true
+      },
+      "warnings": [],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "IMPERIUM-POPULATION-CENSUS-0001",
+      "path": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "FAIL",
+        "PASS"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": false,
+        "files_to_land_exists": false
+      },
+      "warnings": [
+        "missing PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap",
+        "missing FILES_TO_LAND or explicit no-land declaration"
+      ],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "IMPERIUM-POPULATION-CENSUS-0001-FIX-0001",
+      "path": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001-FIX-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-0001-FIX-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": false,
+        "files_to_land_exists": false
+      },
+      "warnings": [
+        "missing PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap",
+        "missing FILES_TO_LAND or explicit no-land declaration"
+      ],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "IMPERIUM-POPULATION-CENSUS-REFRESH-0001",
+      "path": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-REFRESH-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "CLOSED_BY_DECLARED_GOALS",
+      "evidence_level": "RECEIPT_VERDICT_MATCHES",
+      "declared_expected_verdicts": [
+        "PASS_CENSUS_REFRESHED"
+      ],
+      "declared_expected_receipts": [
+        "ORGANS/ADMINISTRATUM/RECEIPTS/population_census_refresh_receipt.json"
+      ],
+      "actual_receipts_found": [
+        {
+          "path": "ORGANS/ADMINISTRATUM/RECEIPTS/population_census_refresh_receipt.json",
+          "verdict": "PASS_CENSUS_REFRESHED",
+          "task_id": "IMPERIUM-POPULATION-CENSUS-REFRESH-0001",
+          "validator_id": "imperium_population_census_refresh_validator.v0_2",
+          "parse_error": null
+        }
+      ],
+      "matching_verdict_receipts": [
+        {
+          "path": "ORGANS/ADMINISTRATUM/RECEIPTS/population_census_refresh_receipt.json",
+          "verdict": "PASS_CENSUS_REFRESHED",
+          "task_id": "IMPERIUM-POPULATION-CENSUS-REFRESH-0001",
+          "validator_id": "imperium_population_census_refresh_validator.v0_2",
+          "parse_error": null
+        }
+      ],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-REFRESH-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": true,
+        "files_to_land_exists": true
+      },
+      "warnings": [],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "OWNER-DOCS-VALIDATION-WARP-0001",
+      "path": "WARP/PATCHES/OWNER-DOCS-VALIDATION-WARP-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "CLOSED_BY_DECLARED_GOALS",
+      "evidence_level": "RECEIPT_VERDICT_MATCHES",
+      "declared_expected_verdicts": [
+        "PASS"
+      ],
+      "declared_expected_receipts": [
+        "WARP/PATCHES/OWNER-DOCS-VALIDATION-WARP-0001/RECEIPTS/owner_docs_validation_receipt.json"
+      ],
+      "actual_receipts_found": [
+        {
+          "path": "WARP/PATCHES/OWNER-DOCS-VALIDATION-WARP-0001/RECEIPTS/owner_docs_validation_receipt.json",
+          "verdict": "PASS",
+          "task_id": "OWNER-DOCS-VALIDATION-WARP-0001",
+          "validator_id": null,
+          "parse_error": null
+        }
+      ],
+      "matching_verdict_receipts": [
+        {
+          "path": "WARP/PATCHES/OWNER-DOCS-VALIDATION-WARP-0001/RECEIPTS/owner_docs_validation_receipt.json",
+          "verdict": "PASS",
+          "task_id": "OWNER-DOCS-VALIDATION-WARP-0001",
+          "validator_id": null,
+          "parse_error": null
+        }
+      ],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/OWNER-DOCS-VALIDATION-WARP-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": false,
+        "files_to_land_exists": false
+      },
+      "warnings": [
+        "missing PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap",
+        "missing FILES_TO_LAND or explicit no-land declaration"
+      ],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "ROOT-QUARANTINE-LONGPATH-COMPACTION-0001",
+      "path": "WARP/PATCHES/ROOT-QUARANTINE-LONGPATH-COMPACTION-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS_LONGPATH_COMPACTED"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/ROOT-QUARANTINE-LONGPATH-COMPACTION-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": true,
+        "files_to_land_exists": true
+      },
+      "warnings": [],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "ROOT-QUARANTINE-LONGPATH-COMPACTION-0001-FIX-0001",
+      "path": "WARP/PATCHES/ROOT-QUARANTINE-LONGPATH-COMPACTION-0001-FIX-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS_LONGPATH_COMPACTED"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/ROOT-QUARANTINE-LONGPATH-COMPACTION-0001-FIX-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": true,
+        "files_to_land_exists": true
+      },
+      "warnings": [],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "ROOT-TRANSPORT-CLUTTER-RELOCATION-0001",
+      "path": "WARP/PATCHES/ROOT-TRANSPORT-CLUTTER-RELOCATION-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS_ROOT_TRANSPORT_HYGIENE"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/ROOT-TRANSPORT-CLUTTER-RELOCATION-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": false,
+        "files_to_land_exists": true
+      },
+      "warnings": [
+        "missing PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap"
+      ],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "THRONE-CROWN-ORGAN-FOUNDATION-0001",
+      "path": "WARP/PATCHES/THRONE-CROWN-ORGAN-FOUNDATION-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "CLOSED_BY_DECLARED_GOALS",
+      "evidence_level": "RECEIPT_VERDICT_MATCHES",
+      "declared_expected_verdicts": [
+        "PASS"
+      ],
+      "declared_expected_receipts": [
+        "ORGANS/THRONE/RECEIPTS/throne_self_form_receipt.json"
+      ],
+      "actual_receipts_found": [
+        {
+          "path": "ORGANS/THRONE/RECEIPTS/throne_self_form_receipt.json",
+          "verdict": "PASS",
+          "task_id": "THRONE-CROWN-ORGAN-FOUNDATION-0001",
+          "validator_id": "throne_self_form_validator.v0_1",
+          "parse_error": null
+        }
+      ],
+      "matching_verdict_receipts": [
+        {
+          "path": "ORGANS/THRONE/RECEIPTS/throne_self_form_receipt.json",
+          "verdict": "PASS",
+          "task_id": "THRONE-CROWN-ORGAN-FOUNDATION-0001",
+          "validator_id": "throne_self_form_validator.v0_1",
+          "parse_error": null
+        }
+      ],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/THRONE-CROWN-ORGAN-FOUNDATION-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": false,
+        "files_to_land_exists": true
+      },
+      "warnings": [
+        "missing PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap"
+      ],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "THRONE-KERNEL-ANATOMY-AND-CORE-V1-TARGET-0001",
+      "path": "WARP/PATCHES/THRONE-KERNEL-ANATOMY-AND-CORE-V1-TARGET-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS_TARGET_DEFINED"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/THRONE-KERNEL-ANATOMY-AND-CORE-V1-TARGET-0001/PATCH_PACK.md",
+        "runner_count": 2,
+        "manifest_exists": false,
+        "files_to_land_exists": true
+      },
+      "warnings": [
+        "missing PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap"
+      ],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+      "path": "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS_STAGE_SCORING_INTEGRATED"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": true,
+        "files_to_land_exists": true
+      },
+      "warnings": [],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "THRONE-ORGAN-ASSEMBLY-STANDARD-0001",
+      "path": "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STANDARD-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS_ORGAN_ASSEMBLY_STANDARD_DEFINED"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STANDARD-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": true,
+        "files_to_land_exists": true
+      },
+      "warnings": [],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "THRONE-TARGET-GAP-CORE-V1-SCORING-INTEGRATION-0001",
+      "path": "WARP/PATCHES/THRONE-TARGET-GAP-CORE-V1-SCORING-INTEGRATION-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "CLOSED_BY_DECLARED_GOALS",
+      "evidence_level": "RECEIPT_VERDICT_MATCHES",
+      "declared_expected_verdicts": [
+        "PASS_MEASURED"
+      ],
+      "declared_expected_receipts": [
+        "ORGANS/THRONE/RECEIPTS/throne_target_gap_receipt.json"
+      ],
+      "actual_receipts_found": [
+        {
+          "path": "ORGANS/THRONE/RECEIPTS/throne_target_gap_receipt.json",
+          "verdict": "PASS_MEASURED",
+          "task_id": "THRONE-TARGET-GAP-VALIDATOR-0001",
+          "validator_id": "throne_target_gap_validator.v0_5_organ_implementation_split",
+          "parse_error": null
+        }
+      ],
+      "matching_verdict_receipts": [
+        {
+          "path": "ORGANS/THRONE/RECEIPTS/throne_target_gap_receipt.json",
+          "verdict": "PASS_MEASURED",
+          "task_id": "THRONE-TARGET-GAP-VALIDATOR-0001",
+          "validator_id": "throne_target_gap_validator.v0_5_organ_implementation_split",
+          "parse_error": null
+        }
+      ],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/THRONE-TARGET-GAP-CORE-V1-SCORING-INTEGRATION-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": false,
+        "files_to_land_exists": true
+      },
+      "warnings": [
+        "missing PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap"
+      ],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "THRONE-TARGET-GAP-CORE-V1-SCORING-INTEGRATION-0001-FIX-0001",
+      "path": "WARP/PATCHES/THRONE-TARGET-GAP-CORE-V1-SCORING-INTEGRATION-0001-FIX-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS_MEASURED"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/THRONE-TARGET-GAP-CORE-V1-SCORING-INTEGRATION-0001-FIX-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": false,
+        "files_to_land_exists": true
+      },
+      "warnings": [
+        "missing PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap"
+      ],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "THRONE-TARGET-GAP-CORE-V1-SCORING-INTEGRATION-0001-FIX-0002",
+      "path": "WARP/PATCHES/THRONE-TARGET-GAP-CORE-V1-SCORING-INTEGRATION-0001-FIX-0002",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS_MEASURED"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/THRONE-TARGET-GAP-CORE-V1-SCORING-INTEGRATION-0001-FIX-0002/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": false,
+        "files_to_land_exists": true
+      },
+      "warnings": [
+        "missing PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap"
+      ],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "THRONE-TARGET-GAP-ORGAN-IMPLEMENTATION-SPLIT-0001",
+      "path": "WARP/PATCHES/THRONE-TARGET-GAP-ORGAN-IMPLEMENTATION-SPLIT-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS_MEASURED"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/THRONE-TARGET-GAP-ORGAN-IMPLEMENTATION-SPLIT-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": false,
+        "files_to_land_exists": true
+      },
+      "warnings": [
+        "missing PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap"
+      ],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "THRONE-TARGET-GAP-VALIDATOR-0001",
+      "path": "WARP/PATCHES/THRONE-TARGET-GAP-VALIDATOR-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "CLOSED_BY_DECLARED_GOALS",
+      "evidence_level": "RECEIPT_VERDICT_MATCHES",
+      "declared_expected_verdicts": [
+        "FAIL_FALSE_CLAIM",
+        "FAIL_UNMEASURABLE",
+        "PASS_MEASURED"
+      ],
+      "declared_expected_receipts": [
+        "ORGANS/THRONE/RECEIPTS/throne_target_gap_receipt.json"
+      ],
+      "actual_receipts_found": [
+        {
+          "path": "ORGANS/THRONE/RECEIPTS/throne_target_gap_receipt.json",
+          "verdict": "PASS_MEASURED",
+          "task_id": "THRONE-TARGET-GAP-VALIDATOR-0001",
+          "validator_id": "throne_target_gap_validator.v0_5_organ_implementation_split",
+          "parse_error": null
+        }
+      ],
+      "matching_verdict_receipts": [
+        {
+          "path": "ORGANS/THRONE/RECEIPTS/throne_target_gap_receipt.json",
+          "verdict": "PASS_MEASURED",
+          "task_id": "THRONE-TARGET-GAP-VALIDATOR-0001",
+          "validator_id": "throne_target_gap_validator.v0_5_organ_implementation_split",
+          "parse_error": null
+        }
+      ],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/THRONE-TARGET-GAP-VALIDATOR-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": false,
+        "files_to_land_exists": true
+      },
+      "warnings": [
+        "missing PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap"
+      ],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    },
+    {
+      "artifact_id": "ASTRONOMICON_PATCH_PACK_SMOKE_RESULT_V0_1",
+      "patch_id": "VALIDATOR-READONLY-EXTERNAL-AUDIT-MODE-0001",
+      "path": "WARP/PATCHES/VALIDATOR-READONLY-EXTERNAL-AUDIT-MODE-0001",
+      "is_patch_pack": true,
+      "smoke_verdict": "PARTIAL",
+      "evidence_level": "DECLARED_ONLY",
+      "declared_expected_verdicts": [
+        "PASS_READONLY_MODE_BASELINE"
+      ],
+      "declared_expected_receipts": [],
+      "actual_receipts_found": [],
+      "matching_verdict_receipts": [],
+      "linked_intake_candidates": [],
+      "shape": {
+        "patch_pack_doc": "WARP/PATCHES/VALIDATOR-READONLY-EXTERNAL-AUDIT-MODE-0001/PATCH_PACK.md",
+        "runner_count": 1,
+        "manifest_exists": false,
+        "files_to_land_exists": true
+      },
+      "warnings": [
+        "missing PATCH_FILE_MANIFEST_SHA256.json or explicit manifest gap"
+      ],
+      "errors": [],
+      "meaning": "Smoke comparison only. This is not trust, not Inquisition anti-fake-green, and not Throne verdict."
+    }
+  ],
+  "meaning": "Astronomicon smoke-tested Patch Pack declarations against visible receipts without executing runners."
+}
