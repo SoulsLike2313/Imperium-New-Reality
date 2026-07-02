@@ -1,0 +1,197 @@
+{
+  "summary_id": "astronomicon.red_blue_team_launcher_scan_commands_summary.v0_1",
+  "task_id": "RED-BLUE-TEAM-LAUNCHER-SCAN-COMMANDS-0001",
+  "validator_id": "red_blue_team_launcher_scan_commands_validator.v0_1",
+  "verdict": "PASS_RED_BLUE_TEAM_LAUNCHER_SCAN_COMMANDS_READY",
+  "generated_at_utc": "2026-07-02T10:38:49Z",
+  "repo_head": "893347e8a578b861f59b978c60d55e6ab2319716",
+  "command_results": {
+    "redblue_scan": {
+      "exit_code": 0,
+      "stdout_tail": "roof=0.0 zone=red_blue_defined_not_proven\n  ADMINISTRATUM: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n- DOCTRINARIUM: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  DOCTRINARIUM: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n- MECHANICUS: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  MECHANICUS: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n- INQUISITION: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  INQUISITION: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n- CUSTODES: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  CUSTODES: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n- STRATEGIUM: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  STRATEGIUM: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n- SCHOLA_IMPERIALIS: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  SCHOLA_IMPERIALIS: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n- OFFICIO_AGENTIS: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  OFFICIO_AGENTIS: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n- THRONE: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  THRONE: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n\nnot claimed: red/blue proof, Custodes trust, Throne verdict, organ assembled\n",
+      "stderr_tail": ""
+    },
+    "redblue_scan_organ_inquisition": {
+      "exit_code": 0,
+      "stdout_tail": "RED/BLUE SCAN: INQUISITION\nverdict: PASS_RED_BLUE_SKILLS_DEFINED_NOT_PROVEN\norgan_count: 1\nred_team_defined_score: 100.0\nblue_team_defined_score: 100.0\nred_team_proven_score: 0.0\nblue_team_proven_score: 0.0\n\n- INQUISITION: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  INQUISITION: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n\nnot claimed: red/blue proof, Custodes trust, Throne verdict, organ assembled\n",
+      "stderr_tail": ""
+    },
+    "redblue_summary": {
+      "exit_code": 0,
+      "stdout_tail": "RED/BLUE SUMMARY\nverdict: PASS_RED_BLUE_SKILLS_DEFINED_NOT_PROVEN\norgan_count: 1\nred_team_defined_score: 100.0\nblue_team_defined_score: 100.0\nred_team_proven_score: 0.0\nblue_team_proven_score: 0.0\n\n- INQUISITION: red_blue_defined_not_proven proof=0.0\n",
+      "stderr_tail": ""
+    },
+    "organ_inquisition_redblue": {
+      "exit_code": 0,
+      "stdout_tail": "ORGAN INQUISITION\npath: E:\\IMPERIUM_REALITY\\ORGANS\\INQUISITION\nRED/BLUE SCAN: INQUISITION\nverdict: PASS_RED_BLUE_SKILLS_DEFINED_NOT_PROVEN\norgan_count: 1\nred_team_defined_score: 100.0\nblue_team_defined_score: 100.0\nred_team_proven_score: 0.0\nblue_team_proven_score: 0.0\n\n- INQUISITION: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  INQUISITION: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n\nnot claimed: red/blue proof, Custodes trust, Throne verdict, organ assembled\n",
+      "stderr_tail": ""
+    }
+  },
+  "checks": [
+    {
+      "name": "imperium_cli.py_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/LAUNCHER/imperium_cli.py"
+      }
+    },
+    {
+      "name": "LAUNCHER_COMMANDS_V0_4.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/LAUNCHER/LAUNCHER_COMMANDS_V0_4.json"
+      }
+    },
+    {
+      "name": "RED_BLUE_TEAM_LAUNCHER_SCAN_COMMANDS_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/MATRICES/RED_BLUE_TEAM_LAUNCHER_SCAN_COMMANDS_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "red_blue_team_skills_scan.py_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/INQUISITION/TOOLS/red_blue_team_skills_scan.py"
+      }
+    },
+    {
+      "name": "launcher_v0_4_commands_parse",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "redblue_launcher_commands_declared",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "redblue_launcher_matrix_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "launcher_redblue_scan_runs",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "roof=0.0 zone=red_blue_defined_not_proven\n  ADMINISTRATUM: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n- DOCTRINARIUM: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  DOCTRINARIUM: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n- MECHANICUS: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  MECHANICUS: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n- INQUISITION: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  INQUISITION: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n- CUSTODES: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  CUSTODES: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n- STRATEGIUM: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  STRATEGIUM: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n- SCHOLA_IMPERIALIS: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  SCHOLA_IMPERIALIS: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n- OFFICIO_AGENTIS: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  OFFICIO_AGENTIS: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n- THRONE: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  THRONE: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n\nnot claimed: red/blue proof, Custodes trust, Throne verdict, organ assembled\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "launcher_redblue_scan_organ_inquisition_runs",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "RED/BLUE SCAN: INQUISITION\nverdict: PASS_RED_BLUE_SKILLS_DEFINED_NOT_PROVEN\norgan_count: 1\nred_team_defined_score: 100.0\nblue_team_defined_score: 100.0\nred_team_proven_score: 0.0\nblue_team_proven_score: 0.0\n\n- INQUISITION: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  INQUISITION: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n\nnot claimed: red/blue proof, Custodes trust, Throne verdict, organ assembled\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "launcher_redblue_summary_runs",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "RED/BLUE SUMMARY\nverdict: PASS_RED_BLUE_SKILLS_DEFINED_NOT_PROVEN\norgan_count: 1\nred_team_defined_score: 100.0\nblue_team_defined_score: 100.0\nred_team_proven_score: 0.0\nblue_team_proven_score: 0.0\n\n- INQUISITION: red_blue_defined_not_proven proof=0.0\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "launcher_organ_inquisition_redblue_runs",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "ORGAN INQUISITION\npath: E:\\IMPERIUM_REALITY\\ORGANS\\INQUISITION\nRED/BLUE SCAN: INQUISITION\nverdict: PASS_RED_BLUE_SKILLS_DEFINED_NOT_PROVEN\norgan_count: 1\nred_team_defined_score: 100.0\nblue_team_defined_score: 100.0\nred_team_proven_score: 0.0\nblue_team_proven_score: 0.0\n\n- INQUISITION: red_defined=100.0 blue_defined=100.0 proof=0.0 zone=red_blue_defined_not_proven\n  INQUISITION: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof.\n\nnot claimed: red/blue proof, Custodes trust, Throne verdict, organ assembled\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "launcher_redblue_prove_forbidden",
+      "status": "PASS",
+      "details": {
+        "exit_code": 2,
+        "stdout_tail": "",
+        "stderr_tail": "Forbidden in launcher v0.4: Red/Blue proof/action is not implemented.\n"
+      }
+    },
+    {
+      "name": "launcher_redblue_attack_forbidden",
+      "status": "PASS",
+      "details": {
+        "exit_code": 2,
+        "stdout_tail": "",
+        "stderr_tail": "Forbidden in launcher v0.4: Red/Blue proof/action is not implemented.\n"
+      }
+    },
+    {
+      "name": "launcher_redblue_defend_forbidden",
+      "status": "PASS",
+      "details": {
+        "exit_code": 2,
+        "stdout_tail": "",
+        "stderr_tail": "Forbidden in launcher v0.4: Red/Blue proof/action is not implemented.\n"
+      }
+    },
+    {
+      "name": "redblue_scan_summary_still_defined_not_proven",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "summary": {
+          "summary_id": "inquisition.red_blue_team_skills_scan_summary.v0_1",
+          "patch_id": "RED-BLUE-TEAM-TOOLS-AND-SKILLS-FOUNDATION-0001",
+          "generated_at_utc": "2026-07-02T10:38:48Z",
+          "repo_head": "893347e8",
+          "target_organ": "INQUISITION",
+          "verdict": "PASS_RED_BLUE_SKILLS_DEFINED_NOT_PROVEN",
+          "organ_count": 1,
+          "red_team_defined_score": 100.0,
+          "blue_team_defined_score": 100.0,
+          "red_team_proven_score": 0.0,
+          "blue_team_proven_score": 0.0,
+          "results": [
+            {
+              "organ_id": "INQUISITION",
+              "red_defined_score": 100.0,
+              "blue_defined_score": 100.0,
+              "red_proven_score": 0.0,
+              "blue_proven_score": 0.0,
+              "red_blue_definition_score": 100.0,
+              "red_blue_proof_score": 0.0,
+              "risk_score": 0.0,
+              "errors": [],
+              "attention_zone": "red_blue_defined_not_proven",
+              "advisory_text": "INQUISITION: Red/Blue skills are defined but not proven. Future layer should focus on validator honesty and action proof."
+            }
+          ],
+          "errors": [],
+          "warnings": [],
+          "not_claimed": [
+            "red_team_proven",
+            "blue_team_proven",
+            "Custodes trust",
+            "Throne verdict",
+            "organ assembled"
+          ]
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "not_claimed": [
+    "red_team_proven",
+    "blue_team_proven",
+    "Custodes trust",
+    "Throne verdict",
+    "organ assembled"
+  ]
+}

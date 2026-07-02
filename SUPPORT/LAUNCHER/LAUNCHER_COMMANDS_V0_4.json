@@ -1,0 +1,30 @@
+{
+  "launcher_id": "IMPERIUM_TERMINAL_LAUNCHER_V0_4",
+  "patch_id": "RED-BLUE-TEAM-LAUNCHER-SCAN-COMMANDS-0001",
+  "inherits": "IMPERIUM_TERMINAL_LAUNCHER_V0_3",
+  "mode": "SCRIPT_FIRST_RETURNS_TERMINAL",
+  "new_red_blue_commands": [
+    "redblue scan",
+    "redblue scan organ <ORGAN>",
+    "redblue summary",
+    "organ <ORGAN> redblue"
+  ],
+  "preserved_commands": [
+    "advise",
+    "advise organ <ORGAN>",
+    "organ <ORGAN> advise",
+    "patch preflight <PATCH_ID>",
+    "patch scope <PATCH_ID>",
+    "patch smoke <PATCH_ID>",
+    "patch lifecycle <PATCH_ID>"
+  ],
+  "forbidden": [
+    "redblue prove",
+    "redblue attack",
+    "redblue defend",
+    "Custodes trust claim",
+    "Throne verdict claim",
+    "organ assembled claim"
+  ],
+  "meaning": "Expose Red/Blue defined-not-proven scans to the operator launcher without claiming proof."
+}

@@ -1,0 +1,36 @@
+{
+  "matrix_id": "RED_BLUE_TEAM_LAUNCHER_SCAN_COMMANDS_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "ASTRONOMICON",
+  "status": "ACTIVE_OPERATOR_COMMAND_LAW",
+  "patch_id": "RED-BLUE-TEAM-LAUNCHER-SCAN-COMMANDS-0001",
+  "purpose": "Expose Red/Blue team scan outputs through terminal launcher commands.",
+  "commands": [
+    "redblue scan",
+    "redblue scan organ <ORGAN>",
+    "redblue summary",
+    "organ <ORGAN> redblue"
+  ],
+  "hard_laws": [
+    "redblue scan command must use Inquisition scan tool",
+    "redblue scan organ command must use isolated organ scan",
+    "organ <ORGAN> redblue must route to isolated organ scan",
+    "redblue commands must not claim proof",
+    "redblue commands must not claim Custodes trust",
+    "redblue commands must not claim Throne verdict",
+    "redblue commands must not mutate organ contracts"
+  ],
+  "expected_scores_after_foundation": {
+    "red_team_defined_score": 100.0,
+    "blue_team_defined_score": 100.0,
+    "red_team_proven_score": 0.0,
+    "blue_team_proven_score": 0.0
+  },
+  "not_claimed": [
+    "red_team_proven",
+    "blue_team_proven",
+    "Custodes trust",
+    "Throne verdict",
+    "organ assembled"
+  ]
+}
