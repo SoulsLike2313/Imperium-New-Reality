@@ -1,0 +1,169 @@
+{
+  "matrix_id": "ORGAN_RED_BLUE_TEAM_SKILLS_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "DOCTRINARIUM",
+  "status": "DEFINED_NOT_PROVEN",
+  "patch_id": "RED-BLUE-TEAM-TOOLS-AND-SKILLS-FOUNDATION-0001",
+  "purpose": "Define per-organ Red Team and Blue Team skill slots without claiming operational proof.",
+  "red_team_definition": "Red Team skills search for organ-specific failure modes, exploit paths, fake-green, scope drift, trust gaps, ambiguity, and bypass risk.",
+  "blue_team_definition": "Blue Team skills defend organ-specific duties through guards, preflights, boundary checks, validation discipline, and repair suggestions.",
+  "global_law": [
+    "Every organ must have red_skills and blue_skills.",
+    "Red/Blue defined is not Red/Blue proven.",
+    "Organ Red/Blue may recommend attention zones, not concrete actions.",
+    "Custodes later verifies validator honesty and trust chain.",
+    "Throne later verifies Crown-level red+blue adequacy.",
+    "No organ may claim assembled from Red/Blue definition alone."
+  ],
+  "required_per_organ_fields": [
+    "organ_id",
+    "profile_scope",
+    "red_team",
+    "blue_team",
+    "red_skills",
+    "blue_skills",
+    "allowed_outputs",
+    "forbidden_claims",
+    "proof_state",
+    "required_future_validators"
+  ],
+  "organs": {
+    "ASTRONOMICON": {
+      "red_skills": [
+        "intent_ambiguity_probe",
+        "missing_context_attack",
+        "closure_claim_attack"
+      ],
+      "blue_skills": [
+        "intent_preservation",
+        "context_deficit_guard",
+        "declared_vs_actual_closure_guard"
+      ],
+      "profile_scope": "intent intake, task/patch shape, route and closure comparison"
+    },
+    "ADMINISTRATUM": {
+      "red_skills": [
+        "registry_drift_probe",
+        "receipt_chain_gap_probe",
+        "index_staleness_probe"
+      ],
+      "blue_skills": [
+        "registry_reconciliation",
+        "receipt_chain_indexing",
+        "census_freshness_guard"
+      ],
+      "profile_scope": "registry, census, receipt index, context pack chain"
+    },
+    "DOCTRINARIUM": {
+      "red_skills": [
+        "law_ambiguity_probe",
+        "schema_gap_probe",
+        "taxonomy_collision_probe"
+      ],
+      "blue_skills": [
+        "schema_contract_guard",
+        "definition_consistency_guard",
+        "law_scope_guard"
+      ],
+      "profile_scope": "law, doctrine, schemas, contracts, definitions"
+    },
+    "MECHANICUS": {
+      "red_skills": [
+        "runner_danger_probe",
+        "manifest_mismatch_probe",
+        "syntax_self_contamination_probe"
+      ],
+      "blue_skills": [
+        "technical_preflight",
+        "manifest_hash_guard",
+        "syntax_compile_without_pyc_guard"
+      ],
+      "profile_scope": "tools, validators, manifests, runners, technical preflight"
+    },
+    "INQUISITION": {
+      "red_skills": [
+        "fake_green_attack",
+        "scope_expansion_attack",
+        "forbidden_claim_attack"
+      ],
+      "blue_skills": [
+        "scope_gate",
+        "negative_evidence_record",
+        "fake_green_pattern_guard"
+      ],
+      "profile_scope": "scope, fake-green, mutation risk, negative evidence"
+    },
+    "CUSTODES": {
+      "red_skills": [
+        "validator_honesty_attack",
+        "authority_chain_attack",
+        "permission_boundary_attack"
+      ],
+      "blue_skills": [
+        "trust_chain_guard",
+        "authority_envelope_guard",
+        "validator_integrity_guard"
+      ],
+      "profile_scope": "trust, authority, validator honesty, integrity, permission"
+    },
+    "STRATEGIUM": {
+      "red_skills": [
+        "priority_inversion_probe",
+        "dependency_order_attack",
+        "risk_value_confusion_probe"
+      ],
+      "blue_skills": [
+        "priority_scoring_guard",
+        "dependency_sequence_guard",
+        "risk_value_balance_guard"
+      ],
+      "profile_scope": "priority, sequence, risk/value ordering, backlog, routing"
+    },
+    "SCHOLA_IMPERIALIS": {
+      "red_skills": [
+        "forgotten_failure_probe",
+        "lesson_drift_probe",
+        "operator_confusion_probe"
+      ],
+      "blue_skills": [
+        "lesson_capture_guard",
+        "failure_memory_guard",
+        "operator_explanation_guard"
+      ],
+      "profile_scope": "lessons, training, memory, failure explanation"
+    },
+    "OFFICIO_AGENTIS": {
+      "red_skills": [
+        "servitor_authority_escape_probe",
+        "stop_condition_bypass_probe",
+        "output_contract_attack"
+      ],
+      "blue_skills": [
+        "work_order_boundary_guard",
+        "stop_condition_guard",
+        "output_contract_guard"
+      ],
+      "profile_scope": "servitor work order, execution envelope, stop conditions, handoff"
+    },
+    "THRONE": {
+      "red_skills": [
+        "crown_bypass_attack",
+        "stage_inflation_attack",
+        "no_core_mutation_false_claim_attack"
+      ],
+      "blue_skills": [
+        "crown_gate_guard",
+        "stage_truth_guard",
+        "no_core_mutation_guard"
+      ],
+      "profile_scope": "crown scoring, hard gates, stage truth, final confirmation"
+    }
+  },
+  "not_claimed": [
+    "red_team_proven",
+    "blue_team_proven",
+    "Custodes trust",
+    "Throne verdict",
+    "organ assembled"
+  ]
+}

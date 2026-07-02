@@ -1,0 +1,51 @@
+{
+  "contract_id": "ORGAN_RED_BLUE_SKILLS_V0_1",
+  "patch_id": "RED-BLUE-TEAM-TOOLS-AND-SKILLS-FOUNDATION-0001",
+  "organ_id": "THRONE",
+  "profile_scope": "crown scoring, hard gates, stage truth, final confirmation",
+  "proof_state": "DEFINED_NOT_PROVEN",
+  "red_team": {
+    "mission": "Search for organ-specific weaknesses, bypasses, fake-green paths, ambiguity, and negative evidence.",
+    "skills": [
+      "crown_bypass_attack",
+      "stage_inflation_attack",
+      "no_core_mutation_false_claim_attack"
+    ],
+    "allowed_outputs": [
+      "risk_finding",
+      "negative_evidence",
+      "attention_zone",
+      "validator_gap",
+      "future_test_suggestion"
+    ]
+  },
+  "blue_team": {
+    "mission": "Harden organ-specific duties with guards, evidence requirements, validation discipline, and repair attention zones.",
+    "skills": [
+      "crown_gate_guard",
+      "stage_truth_guard",
+      "no_core_mutation_guard"
+    ],
+    "allowed_outputs": [
+      "guard_recommendation",
+      "hardening_attention_zone",
+      "evidence_requirement",
+      "boundary_clarification",
+      "future_validator_need"
+    ]
+  },
+  "forbidden_claims": [
+    "RED_TEAM_PROVEN",
+    "BLUE_TEAM_PROVEN",
+    "CUSTODES_TRUST",
+    "THRONE_VERDICT",
+    "ORGAN_ASSEMBLED",
+    "EXECUTION_ALLOWED"
+  ],
+  "required_future_validators": [
+    "validate_throne_red_team_action.py",
+    "validate_throne_blue_team_action.py",
+    "custodes_attack_throne_red_blue_honesty.py",
+    "throne_confirm_throne_red_blue_gate.py"
+  ]
+}

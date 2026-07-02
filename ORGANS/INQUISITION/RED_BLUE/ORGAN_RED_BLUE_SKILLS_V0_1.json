@@ -1,0 +1,51 @@
+{
+  "contract_id": "ORGAN_RED_BLUE_SKILLS_V0_1",
+  "patch_id": "RED-BLUE-TEAM-TOOLS-AND-SKILLS-FOUNDATION-0001",
+  "organ_id": "INQUISITION",
+  "profile_scope": "scope, fake-green, mutation risk, negative evidence",
+  "proof_state": "DEFINED_NOT_PROVEN",
+  "red_team": {
+    "mission": "Search for organ-specific weaknesses, bypasses, fake-green paths, ambiguity, and negative evidence.",
+    "skills": [
+      "fake_green_attack",
+      "scope_expansion_attack",
+      "forbidden_claim_attack"
+    ],
+    "allowed_outputs": [
+      "risk_finding",
+      "negative_evidence",
+      "attention_zone",
+      "validator_gap",
+      "future_test_suggestion"
+    ]
+  },
+  "blue_team": {
+    "mission": "Harden organ-specific duties with guards, evidence requirements, validation discipline, and repair attention zones.",
+    "skills": [
+      "scope_gate",
+      "negative_evidence_record",
+      "fake_green_pattern_guard"
+    ],
+    "allowed_outputs": [
+      "guard_recommendation",
+      "hardening_attention_zone",
+      "evidence_requirement",
+      "boundary_clarification",
+      "future_validator_need"
+    ]
+  },
+  "forbidden_claims": [
+    "RED_TEAM_PROVEN",
+    "BLUE_TEAM_PROVEN",
+    "CUSTODES_TRUST",
+    "THRONE_VERDICT",
+    "ORGAN_ASSEMBLED",
+    "EXECUTION_ALLOWED"
+  ],
+  "required_future_validators": [
+    "validate_inquisition_red_team_action.py",
+    "validate_inquisition_blue_team_action.py",
+    "custodes_attack_inquisition_red_blue_honesty.py",
+    "throne_confirm_inquisition_red_blue_gate.py"
+  ]
+}
