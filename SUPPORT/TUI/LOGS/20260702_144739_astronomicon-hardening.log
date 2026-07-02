@@ -1,0 +1,186 @@
+============================================================
+IMPERIUM TUI / АКВАРИУМ РАБОТЫ
+============================================================
+generated_at_utc: 2026-07-02T11:47:39Z
+repo: E:\IMPERIUM_REALITY
+action_id: astronomicon-hardening
+label: Астрономикон: локальное Red/Blue ужесточение
+mutates_repo: True
+============================================================
+
+АКВАРИУМ ВЫЗОВА
+Действие: Астрономикон: локальное Red/Blue ужесточение
+Описание: Запускает локальный hardening-readout Astronomicon Red/Blue. Показывает red/blue local scores.
+Команда:
+  python ORGANS/ASTRONOMICON/TOOLS/astronomicon_red_blue_hardening.py --repo-root .
+
+----- terminal output begin -----
+{
+  "summary_id": "astronomicon.red_blue_hardening_summary.v0_1",
+  "task_id": "ASTRONOMICON-RED-BLUE-HARDENING-AND-SCAN-ISOLATION-0001",
+  "validator_id": "astronomicon_red_blue_hardening_tool.v0_1",
+  "verdict": "PASS_ASTRONOMICON_RED_BLUE_LOCAL_HARDENED_NOT_CUSTODES",
+  "generated_at_utc": "2026-07-02T11:47:39Z",
+  "repo_head": "20efa57c",
+  "target_organ": "ASTRONOMICON",
+  "red_case_count": 6,
+  "blue_guard_count": 6,
+  "red_local_hardening_score": 100.0,
+  "blue_local_hardening_score": 100.0,
+  "red_team_proven_score": 0.0,
+  "blue_team_proven_score": 0.0,
+  "custodes_validation_score": 0.0,
+  "throne_confirmation_score": 0.0,
+  "red_results": [
+    {
+      "id": "RED_ASTRONOMICON_INTENT_AMBIGUITY_001",
+      "skill": "intent_ambiguity_probe",
+      "status": "PASS",
+      "required_evidence": [
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_intake_dry_run.py"
+      ],
+      "missing_evidence": [],
+      "attention_zone": "intent clarity",
+      "meaning": "local Astronomicon Red/Blue hardening evidence exists"
+    },
+    {
+      "id": "RED_ASTRONOMICON_MISSING_CONTEXT_001",
+      "skill": "missing_context_attack",
+      "status": "PASS",
+      "required_evidence": [
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_intake_dry_run.py"
+      ],
+      "missing_evidence": [],
+      "attention_zone": "missing context",
+      "meaning": "local Astronomicon Red/Blue hardening evidence exists"
+    },
+    {
+      "id": "RED_ASTRONOMICON_FALSE_CLOSURE_001",
+      "skill": "false_closure_claim_attack",
+      "status": "PASS",
+      "required_evidence": [
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_patch_pack_smoke.py"
+      ],
+      "missing_evidence": [],
+      "attention_zone": "declared vs actual closure",
+      "meaning": "local Astronomicon Red/Blue hardening evidence exists"
+    },
+    {
+      "id": "RED_ASTRONOMICON_RECEIPT_ONLY_COMPLETION_001",
+      "skill": "receipt_only_completion_attack",
+      "status": "PASS",
+      "required_evidence": [
+        "ORGANS/DOCTRINARIUM/RECEIPTS/pack_taxonomy_law_receipt.json",
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_patch_pack_smoke.py"
+      ],
+      "missing_evidence": [],
+      "attention_zone": "receipt is not work",
+      "meaning": "local Astronomicon Red/Blue hardening evidence exists"
+    },
+    {
+      "id": "RED_ASTRONOMICON_ADVISORY_ACTION_LEAK_001",
+      "skill": "advisory_direct_action_leak_attack",
+      "status": "PASS",
+      "required_evidence": [
+        "ORGANS/ASTRONOMICON/VALIDATORS/validate_advisory_output_isolation_voice.py"
+      ],
+      "missing_evidence": [],
+      "attention_zone": "advisory language boundary",
+      "meaning": "local Astronomicon Red/Blue hardening evidence exists"
+    },
+    {
+      "id": "RED_ASTRONOMICON_SINGLE_OUTPUT_OVERWRITE_001",
+      "skill": "single_organ_output_overwrite_attack",
+      "status": "PASS",
+      "required_evidence": [
+        "ORGANS/ASTRONOMICON/RECEIPTS/organ_agent_advisory_output_isolation_voice_receipt.json"
+      ],
+      "missing_evidence": [],
+      "attention_zone": "output isolation",
+      "meaning": "local Astronomicon Red/Blue hardening evidence exists"
+    }
+  ],
+  "blue_results": [
+    {
+      "id": "BLUE_ASTRONOMICON_INTENT_PRESERVATION_001",
+      "skill": "intent_preservation_guard",
+      "status": "PASS",
+      "required_evidence": [
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_intake_dry_run.py"
+      ],
+      "missing_evidence": [],
+      "attention_zone": "intake keeps task text and route visible",
+      "meaning": "local Astronomicon Red/Blue hardening evidence exists"
+    },
+    {
+      "id": "BLUE_ASTRONOMICON_CONTEXT_DEFICIT_001",
+      "skill": "context_deficit_guard",
+      "status": "PASS",
+      "required_evidence": [
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_intake_dry_run.py"
+      ],
+      "missing_evidence": [],
+      "attention_zone": "context gaps are expressed as deficits, not guessed truth",
+      "meaning": "local Astronomicon Red/Blue hardening evidence exists"
+    },
+    {
+      "id": "BLUE_ASTRONOMICON_DECLARED_ACTUAL_001",
+      "skill": "declared_vs_actual_closure_guard",
+      "status": "PASS",
+      "required_evidence": [
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_patch_pack_smoke.py"
+      ],
+      "missing_evidence": [],
+      "attention_zone": "Patch Pack closure compares declared expectations to visible receipts",
+      "meaning": "local Astronomicon Red/Blue hardening evidence exists"
+    },
+    {
+      "id": "BLUE_ASTRONOMICON_ADVISORY_NO_ACTION_001",
+      "skill": "advisory_no_direct_action_guard",
+      "status": "PASS",
+      "required_evidence": [
+        "ORGANS/ASTRONOMICON/VALIDATORS/validate_organ_agent_advisory_scoring.py"
+      ],
+      "missing_evidence": [],
+      "attention_zone": "organ advisory must not contain direct action commands",
+      "meaning": "local Astronomicon Red/Blue hardening evidence exists"
+    },
+    {
+      "id": "BLUE_ASTRONOMICON_OUTPUT_ISOLATION_001",
+      "skill": "global_summary_isolation_guard",
+      "status": "PASS",
+      "required_evidence": [
+        "ORGANS/ASTRONOMICON/VALIDATORS/validate_advisory_output_isolation_voice.py"
+      ],
+      "missing_evidence": [],
+      "attention_zone": "single-organ advisory must not overwrite global advisory",
+      "meaning": "local Astronomicon Red/Blue hardening evidence exists"
+    },
+    {
+      "id": "BLUE_ASTRONOMICON_OPERATOR_NOT_CLAIMED_001",
+      "skill": "operator_not_claimed_guard",
+      "status": "PASS",
+      "required_evidence": [
+        "ORGANS/ASTRONOMICON/RECEIPTS/red_blue_team_launcher_scan_commands_receipt.json"
+      ],
+      "missing_evidence": [],
+      "attention_zone": "operator surfaces not-claimed boundaries",
+      "meaning": "local Astronomicon Red/Blue hardening evidence exists"
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "not_claimed": [
+    "Custodes trust",
+    "Throne verdict",
+    "organ assembled",
+    "red_team_proven",
+    "blue_team_proven"
+  ]
+}
+----- terminal output end -----
+exit_code: 0
+
+============================================================
+ACTION EXIT CODE: 0
+============================================================

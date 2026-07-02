@@ -1,0 +1,164 @@
+[14:58:41] ============================================================
+[14:58:41] IMPERIUM WINDOWED TUI / АКВАРИУМ ОКНА
+[14:58:41] ============================================================
+[14:58:41] repo: E:\IMPERIUM_REALITY
+[14:58:41] action_id: throne-crown-order
+[14:58:41] label: Трон: Crown order по Астрономикону
+[14:58:41] description: Запускает строгие gates Трона с anti-self-deception: Crown order != Throne self-validation.
+[14:58:41] mutates_repo: True
+[14:58:41] underlying command:
+[14:58:41] python SUPPORT/TUI/imperium_tui.py --repo-root <repo> --action throne-crown-order
+[14:58:41] ============================================================
+[14:58:41] ----- terminal output begin -----
+[14:58:42] ============================================================
+[14:58:42] IMPERIUM TUI / АКВАРИУМ РАБОТЫ
+[14:58:42] ============================================================
+[14:58:42] generated_at_utc: 2026-07-02T11:58:42Z
+[14:58:42] repo: E:\IMPERIUM_REALITY
+[14:58:42] action_id: throne-crown-order
+[14:58:42] label: Трон: Crown order по Астрономикону
+[14:58:42] mutates_repo: True
+[14:58:42] ============================================================
+[14:58:42] 
+[14:58:42] АКВАРИУМ ВЫЗОВА
+[14:58:42] Действие: Трон: Crown order по Астрономикону
+[14:58:42] Описание: Запускает строгие gates Трона с anti-self-deception: Crown order != Throne self-validation.
+[14:58:42] Команда:
+[14:58:42]   python ORGANS/THRONE/TOOLS/throne_astronomicon_strict_gate.py --repo-root .
+[14:58:42] 
+[14:58:42] ----- terminal output begin -----
+[14:58:42] {
+[14:58:42]   "summary_id": "throne.astronomicon_strict_gates_summary.v0_2_anti_self_deception",
+[14:58:42]   "task_id": "THRONE-ASTRONOMICON-STRICT-GATES-ANTI-SELF-DECEPTION-FIX-0001",
+[14:58:42]   "validator_id": "throne_astronomicon_strict_gate.v0_2_anti_self_deception",
+[14:58:42]   "verdict": "PASS_THRONE_ASTRONOMICON_CROWN_ORDER_WITH_SELF_DECEPTION_GUARD",
+[14:58:42]   "generated_at_utc": "2026-07-02T11:58:42Z",
+[14:58:42]   "repo_head": "20efa57c",
+[14:58:42]   "target_organ": "ASTRONOMICON",
+[14:58:42]   "crown_order_truth_state": "CROWN_ORDER_ISSUED_NOT_THRONE_SELF_PROVEN",
+[14:58:42]   "gate_count": 10,
+[14:58:42]   "gate_pass_count": 10,
+[14:58:42]   "astronomicon_crown_order_score": 100.0,
+[14:58:42]   "astronomicon_crown_gate_score": 100.0,
+[14:58:42]   "astronomicon_red_team_crown_score": 100.0,
+[14:58:42]   "astronomicon_blue_team_crown_score": 100.0,
+[14:58:42]   "astronomicon_throne_confirmed_score": 100.0,
+[14:58:42]   "throne_self_validation_score": 0.0,
+[14:58:42]   "external_witness_for_throne_score": 0.0,
+[14:58:42]   "astronomicon_assembled_score": 0.0,
+[14:58:42]   "custodes_validation_score": 100.0,
+[14:58:42]   "custodes_indictment_count": 0,
+[14:58:42]   "gates": [
+[14:58:42]     {
+[14:58:42]       "gate_id": "ASTRONOMICON_IDENTITY_EXACT",
+[14:58:42]       "status": "PASS",
+[14:58:42]       "score": 100.0,
+[14:58:42]       "evidence": "ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json",
+[14:58:42]       "details": {
+[14:58:42]         "target_organ": "ASTRONOMICON"
+[14:58:42]       }
+[14:58:42]     },
+[14:58:42]     {
+[14:58:42]       "gate_id": "CAPABILITY_EVIDENCE_EXACT",
+[14:58:42]       "status": "PASS",
+[14:58:42]       "score": 100.0,
+[14:58:42]       "evidence": "ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json",
+[14:58:42]       "details": {}
+[14:58:42]     },
+[14:58:42]     {
+[14:58:42]       "gate_id": "VALIDATORS_WORK_UNDER_CUSTODES",
+[14:58:42]       "status": "PASS",
+[14:58:42]       "score": 100.0,
+[14:58:42]       "evidence": "ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json",
+[14:58:42]       "details": {
+[14:58:42]         "validator_count": 7
+[14:58:42]       }
+[14:58:42]     },
+[14:58:42]     {
+[14:58:42]       "gate_id": "NO_CUSTODES_INDICTMENTS",
+[14:58:42]       "status": "PASS",
+[14:58:42]       "score": 100.0,
+[14:58:42]       "evidence": "ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json",
+[14:58:42]       "details": {
+[14:58:42]         "indictments": []
+[14:58:42]       }
+[14:58:42]     },
+[14:58:42]     {
+[14:58:42]       "gate_id": "CUSTODES_VALIDATION_EXACT",
+[14:58:42]       "status": "PASS",
+[14:58:42]       "score": 100.0,
+[14:58:42]       "evidence": "ORGANS/CUSTODES/RECEIPTS/custodes_astronomicon_validation_receipt.json",
+[14:58:42]       "details": {
+[14:58:42]         "audit_verdict": "PASS_CUSTODES_ASTRONOMICON_PROSECUTOR_VALIDATION",
+[14:58:42]         "receipt_verdict": "PASS_CUSTODES_ASTRONOMICON_VALIDATION_READY"
+[14:58:42]       }
+[14:58:42]     },
+[14:58:42]     {
+[14:58:42]       "gate_id": "BOUNDARY_HONESTY_EXACT",
+[14:58:42]       "status": "PASS",
+[14:58:42]       "score": 100.0,
+[14:58:42]       "evidence": "ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json",
+[14:58:42]       "details": {}
+[14:58:42]     },
+[14:58:42]     {
+[14:58:42]       "gate_id": "EVIDENCE_CHAIN_EXACT",
+[14:58:42]       "status": "PASS",
+[14:58:42]       "score": 100.0,
+[14:58:42]       "evidence": "ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json",
+[14:58:42]       "details": {}
+[14:58:42]     },
+[14:58:42]     {
+[14:58:42]       "gate_id": "RED_BLUE_LOCAL_HARDENING_EXACT",
+[14:58:42]       "status": "PASS",
+[14:58:42]       "score": 100.0,
+[14:58:42]       "evidence": "ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_RED_BLUE_HARDENING_SCAN_ISOLATION_SUMMARY_V0_1.json",
+[14:58:42]       "details": {
+[14:58:42]         "red": 100.0,
+[14:58:42]         "blue": 100.0
+[14:58:42]       }
+[14:58:42]     },
+[14:58:42]     {
+[14:58:42]       "gate_id": "PRIOR_THRONE_WAS_NOT_EXTERNAL_PROOF",
+[14:58:42]       "status": "PASS",
+[14:58:42]       "score": 100.0,
+[14:58:42]       "evidence": "ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_RED_BLUE_HARDENING_SCAN_ISOLATION_SUMMARY_V0_1.json",
+[14:58:42]       "details": {
+[14:58:42]         "rb_throne_confirmation_score": 0.0,
+[14:58:42]         "custodes_throne_confirmation_score": 0.0
+[14:58:42]       }
+[14:58:42]     },
+[14:58:42]     {
+[14:58:42]       "gate_id": "RED_BLUE_CONTRACT_DEFINED_NOT_PROVEN",
+[14:58:42]       "status": "PASS",
+[14:58:42]       "score": 100.0,
+[14:58:42]       "evidence": "ORGANS/ASTRONOMICON/RED_BLUE/ORGAN_RED_BLUE_SKILLS_V0_1.json",
+[14:58:42]       "details": {
+[14:58:42]         "proof_state": "DEFINED_NOT_PROVEN"
+[14:58:42]       }
+[14:58:42]     }
+[14:58:42]   ],
+[14:58:42]   "errors": [],
+[14:58:42]   "warnings": [],
+[14:58:42]   "not_claimed": [
+[14:58:42]     "Throne self-validation",
+[14:58:42]     "global organ assembled",
+[14:58:42]     "Core v1 ready",
+[14:58:42]     "Great Nine complete",
+[14:58:42]     "visual work resumed",
+[14:58:42]     "organ assembled"
+[14:58:42]   ]
+[14:58:42] }
+[14:58:42] ----- terminal output end -----
+[14:58:42] exit_code: 0
+[14:58:42] 
+[14:58:42] ============================================================
+[14:58:42] ACTION EXIT CODE: 0
+[14:58:42] ============================================================
+[14:58:42] 
+[14:58:42] Лог аквариума: SUPPORT\TUI\LOGS\20260702_145842_throne-crown-order.log
+[14:58:42] AQUARIUM_LOG: SUPPORT\TUI\LOGS\20260702_145842_throne-crown-order.log
+[14:58:42] Receipt TUI: SUPPORT\TUI\RECEIPTS\20260702_145842_throne-crown-order_receipt.json
+[14:58:42] TUI_RECEIPT: SUPPORT\TUI\RECEIPTS\20260702_145842_throne-crown-order_receipt.json
+[14:58:42] ----- terminal output end -----
+[14:58:42] exit_code: 0
+

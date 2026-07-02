@@ -1,0 +1,36 @@
+{
+  "matrix_id": "IMPERIUM_TUI_WINDOWED_AQUARIUM_LAUNCHER_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "ASTRONOMICON + SUPPORT/TUI",
+  "status": "ACTIVE_WINDOWED_OPERATOR_LAUNCHER",
+  "patch_id": "IMPERIUM-TUI-WINDOWED-AQUARIUM-LAUNCHER-0001",
+  "purpose": "Add a terminal-launched windowed operator launcher with separate aquarium log pane and Copy/Clear buttons.",
+  "launcher_entry": "SUPPORT/TUI/imperium_tui_window.ps1",
+  "self_test": "pwsh SUPPORT/TUI/imperium_tui_window.ps1 -SelfTest",
+  "ui_requirements": [
+    "left function list in Russian",
+    "selected function details in Russian",
+    "separate visible aquarium log pane",
+    "Run button",
+    "Copy log button",
+    "Clear log button",
+    "Open logs folder button",
+    "every action streams visible output into the log pane",
+    "every action still writes SUPPORT/TUI logs/receipts through underlying console TUI"
+  ],
+  "hard_laws": [
+    "No hidden action.",
+    "No silent execution.",
+    "No git commit or git push action.",
+    "Windowed launcher is an operator shell, not IDE visual abstraction.",
+    "Aquarium log must be copyable and clearable."
+  ],
+  "not_claimed": [
+    "full IDE visual abstraction",
+    "graph/AAA visual layer resumed",
+    "background agent execution",
+    "Git land automation",
+    "Great Nine assembled",
+    "Core v1 ready"
+  ]
+}

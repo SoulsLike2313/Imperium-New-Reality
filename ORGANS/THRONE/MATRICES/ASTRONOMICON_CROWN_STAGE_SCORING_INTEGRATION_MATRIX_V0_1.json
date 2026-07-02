@@ -1,0 +1,43 @@
+{
+  "matrix_id": "ASTRONOMICON_CROWN_STAGE_SCORING_INTEGRATION_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "THRONE",
+  "status": "CROWN_AWARE_STAGE_OVERLAY_DEFINED",
+  "patch_id": "ASTRONOMICON-CROWN-STAGE-SCORING-INTEGRATION-0001",
+  "purpose": "Integrate the local Astronomicon Crown order into a global 10-organ crown-aware stage scoring overlay without claiming assembled state.",
+  "target_organ": "ASTRONOMICON",
+  "organ_count": 10,
+  "per_organ_weight": 10.0,
+  "required_inputs": {
+    "canonical_stage_summary": "ORGANS/THRONE/REPORTS/ORGAN_ASSEMBLY_STAGE_SCORING_SUMMARY_V0_1.json",
+    "astronomicon_red_blue_hardening": "ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_RED_BLUE_HARDENING_SCAN_ISOLATION_SUMMARY_V0_1.json",
+    "custodes_audit": "ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json",
+    "throne_crown": "ORGANS/THRONE/REPORTS/THRONE_ASTRONOMICON_STRICT_GATES_SUMMARY_V0_1.json",
+    "tui_console_receipt": "ORGANS/ASTRONOMICON/RECEIPTS/imperium_tui_astronomicon_console_receipt.json",
+    "windowed_tui_receipt": "ORGANS/ASTRONOMICON/RECEIPTS/imperium_tui_windowed_aquarium_launcher_receipt.json"
+  },
+  "integration_law": [
+    "One Crown-confirmed organ contributes 10/100 to organ-wide Red/Blue/Custodes/Throne stage signals.",
+    "Crown-aware overlay is global scoring evidence, but it does not overwrite assembled state.",
+    "Astronomicon assembled score remains 0.",
+    "Throne self-validation remains 0.",
+    "Canonical v0.1 stage summary may remain unchanged; this overlay is explicit and separately named.",
+    "Launcher/TUI presence can count as 10/100 only for the organ with validated windowed aquarium TUI."
+  ],
+  "score_rules": {
+    "red_team_score": "10 if Astronomicon red local hardening is 100 and Crown order is 100, else 0",
+    "blue_team_score": "10 if Astronomicon blue local hardening is 100 and Crown order is 100, else 0",
+    "custodes_organ_validators_score": "10 if Custodes Astronomicon validation is 100 with no indictments, else 0",
+    "throne_organ_validators_score": "10 if Astronomicon Crown order is 100 and Throne self-validation is 0, else 0",
+    "tui_launcher_presence_score": "10 if Astronomicon TUI console and windowed aquarium receipts PASS, else 0",
+    "organ_assembled_score": "always 0 in this patch"
+  },
+  "not_claimed": [
+    "Great Nine assembled",
+    "Core v1 ready",
+    "Astronomicon assembled",
+    "Throne self-validation",
+    "visual/AAA work resumed",
+    "all organs integrated"
+  ]
+}

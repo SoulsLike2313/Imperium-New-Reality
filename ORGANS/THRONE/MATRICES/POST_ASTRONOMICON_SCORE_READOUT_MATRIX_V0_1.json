@@ -1,0 +1,56 @@
+{
+  "matrix_id": "POST_ASTRONOMICON_SCORE_READOUT_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "THRONE",
+  "status": "SCORE_READOUT_AFTER_ASTRONOMICON_CHAIN",
+  "patch_id": "POST-ASTRONOMICON-SCORE-READOUT-0001",
+  "purpose": "Refresh and read current system scores after Astronomicon local Red/Blue, Custodes prosecutor validation, and Throne Crown order with anti-self-deception guard.",
+  "refresh_commands_expected": [
+    "pwsh WARP/PATCHES/IMPERIUM-POPULATION-CENSUS-REFRESH-0001/RUN_IMPERIUM_POPULATION_CENSUS_REFRESH.ps1",
+    "pwsh WARP/PATCHES/THRONE-TARGET-GAP-ORGAN-IMPLEMENTATION-SPLIT-0001/RUN_THRONE_TARGET_GAP_ORGAN_IMPLEMENTATION_SPLIT.ps1",
+    "pwsh WARP/PATCHES/THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001/RUN_ORGAN_ASSEMBLY_STAGE_SCORING.ps1"
+  ],
+  "baseline": {
+    "baseline_id": "PRE_ASTRONOMICON_CUSTODES_THRONE_CYCLE_BASELINE_FROM_OWNER_LOGS",
+    "meaning": "Last known measured scores before Astronomicon local hardening + Custodes prosecutor validation + Throne anti-self-deception Crown order were fully added.",
+    "population_total": 6409,
+    "tracked_file_count": 6326,
+    "core_readiness_score": 53.2,
+    "throne_readiness_score": 97.0,
+    "great_nine_readiness_score": 55.22,
+    "lowest_organ_readiness_score": 47.75,
+    "great_nine_profile_baseline_score": 100.0,
+    "great_nine_structural_score": 100.0,
+    "great_nine_operational_score": 32.67,
+    "great_nine_trust_score": 15.56,
+    "organ_truth_maturity_score": 40.0,
+    "red_team_score": 0.0,
+    "blue_team_score": 0.0,
+    "organ_assembled_score": 0.0,
+    "note": "These are comparison anchors only, not authoritative current state."
+  },
+  "required_current_inputs": {
+    "population_summary": "ORGANS/ADMINISTRATUM/REGISTRY/IMPERIUM_POPULATION_SUMMARY_CURRENT_V0_2.json",
+    "population_receipt": "ORGANS/ADMINISTRATUM/RECEIPTS/population_census_refresh_receipt.json",
+    "throne_gap_receipt": "ORGANS/THRONE/RECEIPTS/throne_target_gap_receipt.json",
+    "stage_scoring_summary": "ORGANS/THRONE/REPORTS/ORGAN_ASSEMBLY_STAGE_SCORING_SUMMARY_V0_1.json",
+    "stage_scoring_receipt": "ORGANS/THRONE/RECEIPTS/organ_assembly_stage_scoring_receipt.json",
+    "astronomicon_hardening": "ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_RED_BLUE_HARDENING_SCAN_ISOLATION_SUMMARY_V0_1.json",
+    "custodes_audit": "ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json",
+    "throne_crown": "ORGANS/THRONE/REPORTS/THRONE_ASTRONOMICON_STRICT_GATES_SUMMARY_V0_1.json"
+  },
+  "readout_law": [
+    "Report current scores and deltas, do not invent integration.",
+    "Local Astronomicon Crown order is not the same as global Great Nine assembled.",
+    "If global stage scoring does not consume Astronomicon Crown order yet, report that honestly.",
+    "Throne self-validation must remain zero.",
+    "Astronomicon assembled score must remain zero until the whole organ assembly gate set proves it."
+  ],
+  "not_claimed": [
+    "Great Nine assembled",
+    "Core v1 ready",
+    "visual work resumed",
+    "Throne self-validation",
+    "all organs validated by Custodes/Throne"
+  ]
+}

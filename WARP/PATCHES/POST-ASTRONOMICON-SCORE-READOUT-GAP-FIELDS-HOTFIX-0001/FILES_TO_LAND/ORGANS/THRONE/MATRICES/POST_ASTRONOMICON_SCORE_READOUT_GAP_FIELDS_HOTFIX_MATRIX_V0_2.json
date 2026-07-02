@@ -1,0 +1,73 @@
+{
+  "matrix_id": "POST_ASTRONOMICON_SCORE_READOUT_GAP_FIELDS_HOTFIX_MATRIX_V0_2",
+  "version": "0.2",
+  "owner": "THRONE",
+  "status": "SCORE_READOUT_FIELD_EXTRACTION_HARDENED",
+  "patch_id": "POST-ASTRONOMICON-SCORE-READOUT-GAP-FIELDS-HOTFIX-0001",
+  "purpose": "Fix post-Astronomicon score readout so current gap/readiness fields cannot silently become None while refresh output contains values.",
+  "baseline": {
+    "baseline_id": "PRE_ASTRONOMICON_CUSTODES_THRONE_CYCLE_BASELINE_FROM_OWNER_LOGS",
+    "population_total": 6409,
+    "tracked_file_count": 6326,
+    "core_readiness_score": 53.2,
+    "throne_readiness_score": 97.0,
+    "great_nine_readiness_score": 55.22,
+    "lowest_organ_readiness_score": 47.75,
+    "great_nine_profile_baseline_score": 100.0,
+    "great_nine_structural_score": 100.0,
+    "great_nine_operational_score": 32.67,
+    "great_nine_trust_score": 15.56,
+    "organ_truth_maturity_score": 40.0,
+    "red_team_score": 0.0,
+    "blue_team_score": 0.0,
+    "organ_assembled_score": 0.0,
+    "note": "Comparison anchors only; current truth must come from refreshed receipts/reports."
+  },
+  "required_current_inputs": {
+    "population_summary": "ORGANS/ADMINISTRATUM/REGISTRY/IMPERIUM_POPULATION_SUMMARY_CURRENT_V0_2.json",
+    "population_receipt": "ORGANS/ADMINISTRATUM/RECEIPTS/population_census_refresh_receipt.json",
+    "throne_gap_receipt": "ORGANS/THRONE/RECEIPTS/throne_target_gap_receipt.json",
+    "stage_scoring_summary": "ORGANS/THRONE/REPORTS/ORGAN_ASSEMBLY_STAGE_SCORING_SUMMARY_V0_1.json",
+    "stage_scoring_receipt": "ORGANS/THRONE/RECEIPTS/organ_assembly_stage_scoring_receipt.json",
+    "astronomicon_hardening": "ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_RED_BLUE_HARDENING_SCAN_ISOLATION_SUMMARY_V0_1.json",
+    "custodes_audit": "ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json",
+    "throne_crown": "ORGANS/THRONE/REPORTS/THRONE_ASTRONOMICON_STRICT_GATES_SUMMARY_V0_1.json"
+  },
+  "required_non_null_current_scores": [
+    "population_total",
+    "tracked_file_count",
+    "core_readiness_score",
+    "throne_readiness_score",
+    "great_nine_readiness_score",
+    "lowest_organ_readiness_score",
+    "great_nine_operational_score",
+    "great_nine_trust_score",
+    "profile_baseline_score",
+    "duty_defined_score",
+    "assembly_target_defined_score",
+    "red_team_score",
+    "blue_team_score",
+    "organ_truth_maturity_score",
+    "organ_assembled_score",
+    "astronomicon_red_local_hardening_score",
+    "astronomicon_blue_local_hardening_score",
+    "custodes_astronomicon_validation_score",
+    "astronomicon_crown_order_score",
+    "throne_self_validation_score",
+    "astronomicon_assembled_score"
+  ],
+  "readout_law": [
+    "PASS is forbidden if core/great-nine current fields are None.",
+    "Use recursive field extraction when receipts wrap metrics in nested payloads.",
+    "Report local Astronomicon chain separately from global stage integration.",
+    "Do not claim global stage integration unless red/blue global stage scores move above zero.",
+    "Do not claim Throne self-validation."
+  ],
+  "not_claimed": [
+    "Great Nine assembled",
+    "Core v1 ready",
+    "visual work resumed",
+    "Throne self-validation",
+    "local Crown order integrated into global stage scoring"
+  ]
+}

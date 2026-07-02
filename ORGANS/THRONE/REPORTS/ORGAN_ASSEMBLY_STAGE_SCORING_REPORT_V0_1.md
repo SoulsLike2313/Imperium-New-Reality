@@ -3,8 +3,8 @@
 task_id: `THRONE-ORGAN-ASSEMBLY-STAGE-SCORING-INTEGRATION-0001`  
 validator_id: `throne_organ_assembly_stage_scoring_validator.v0_1`  
 verdict: `PASS_STAGE_SCORING_INTEGRATED`  
-generated_at_utc: `2026-07-01T20:21:00Z`  
-repo_head: `ef85a546f015cf968e58d2a4a75ea1df0145eb70`
+generated_at_utc: `2026-07-02T12:06:34Z`  
+repo_head: `20efa57ccd52c2c968c395f15e4bad73afe3de31`
 
 ## Meaning
 

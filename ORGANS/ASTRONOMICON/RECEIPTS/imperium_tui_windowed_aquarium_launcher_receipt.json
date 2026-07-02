@@ -1,0 +1,110 @@
+{
+  "receipt_id": "receipt.astronomicon.imperium_tui_windowed_aquarium_launcher.v0_1_selftest_json_hotfix",
+  "task_id": "IMPERIUM-TUI-WINDOWED-AQUARIUM-SELFTEST-JSON-HOTFIX-0001",
+  "validator_id": "imperium_tui_windowed_aquarium_selftest_json_hotfix.v0_1",
+  "verdict": "PASS_IMPERIUM_TUI_WINDOWED_AQUARIUM_LAUNCHER_READY",
+  "generated_at_utc": "2026-07-02T11:58:22Z",
+  "summary": "ORGANS/ASTRONOMICON/REPORTS/IMPERIUM_TUI_WINDOWED_AQUARIUM_LAUNCHER_SUMMARY_V0_1.json",
+  "report": "ORGANS/ASTRONOMICON/REPORTS/IMPERIUM_TUI_WINDOWED_AQUARIUM_LAUNCHER_REPORT_V0_1.md",
+  "checks": [
+    {
+      "name": "imperium_tui_window.ps1_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/TUI/imperium_tui_window.ps1"
+      }
+    },
+    {
+      "name": "IMPERIUM_TUI_ACTIONS_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/TUI/IMPERIUM_TUI_ACTIONS_V0_1.json"
+      }
+    },
+    {
+      "name": "IMPERIUM_TUI_WINDOWED_AQUARIUM_LAUNCHER_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/MATRICES/IMPERIUM_TUI_WINDOWED_AQUARIUM_LAUNCHER_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "README_IMPERIUM_TUI_WINDOWED_AQUARIUM_V0_1.md_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/TUI/README_IMPERIUM_TUI_WINDOWED_AQUARIUM_V0_1.md"
+      }
+    },
+    {
+      "name": "windowed_aquarium_matrix_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "actions_manifest_available",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "count": 9
+      }
+    },
+    {
+      "name": "windowed_launcher_has_required_ui_markers",
+      "status": "PASS",
+      "details": {
+        "missing": [],
+        "marker_checks": {
+          "windows_forms": true,
+          "rich_text_log_pane": true,
+          "function_list": true,
+          "copy_button": true,
+          "clear_button": true,
+          "open_logs_button": true,
+          "run_button": true,
+          "log_function": true,
+          "action_invoker": true,
+          "selftest_parameter": true,
+          "selftest_branch": true
+        }
+      }
+    },
+    {
+      "name": "windowed_launcher_does_not_execute_git",
+      "status": "PASS",
+      "details": {
+        "dangerous": []
+      }
+    },
+    {
+      "name": "windowed_launcher_selftest_passes",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "selftest_verdict": "PASS_IMPERIUM_TUI_WINDOWED_AQUARIUM_SELFTEST",
+        "stdout_tail": "IMPERIUM SHELL: pwsh 7.6.2 OK\n{\n  \"errors\": [],\n  \"verdict\": \"PASS_IMPERIUM_TUI_WINDOWED_AQUARIUM_SELFTEST\",\n  \"warnings\": [],\n  \"validator_id\": \"imperium_tui_windowed_aquarium_selftest.v0_1\",\n  \"action_count\": 9,\n  \"task_id\": \"IMPERIUM-TUI-WINDOWED-AQUARIUM-LAUNCHER-0001\"\n}\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "selftest_reports_action_count_or_manifest_confirms",
+      "status": "PASS",
+      "details": {
+        "selftest_action_count": 9,
+        "manifest_action_count": 9,
+        "parsed_selftest": {
+          "errors": [],
+          "verdict": "PASS_IMPERIUM_TUI_WINDOWED_AQUARIUM_SELFTEST",
+          "warnings": [],
+          "validator_id": "imperium_tui_windowed_aquarium_selftest.v0_1",
+          "action_count": 9,
+          "task_id": "IMPERIUM-TUI-WINDOWED-AQUARIUM-LAUNCHER-0001"
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "meaning": "Windowed TUI selftest JSON hotfix: parse JSON even when PowerShell profile writes preamble."
+}

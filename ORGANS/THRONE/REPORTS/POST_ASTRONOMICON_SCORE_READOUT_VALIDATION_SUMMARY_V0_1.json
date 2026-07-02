@@ -1,0 +1,106 @@
+{
+  "summary_id": "throne.post_astronomicon_score_readout_validation_summary.v0_2_gap_fields_hotfix",
+  "task_id": "POST-ASTRONOMICON-SCORE-READOUT-GAP-FIELDS-HOTFIX-0001",
+  "validator_id": "post_astronomicon_score_readout_gap_fields_hotfix_validator.v0_1",
+  "verdict": "PASS_POST_ASTRONOMICON_SCORE_READOUT_READY",
+  "generated_at_utc": "2026-07-02T12:15:33Z",
+  "repo_head": "20efa57ccd52c2c968c395f15e4bad73afe3de31",
+  "checks": [
+    {
+      "name": "post_astronomicon_score_readout.py_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/TOOLS/post_astronomicon_score_readout.py"
+      }
+    },
+    {
+      "name": "POST_ASTRONOMICON_SCORE_READOUT_GAP_FIELDS_HOTFIX_MATRIX_V0_2.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/MATRICES/POST_ASTRONOMICON_SCORE_READOUT_GAP_FIELDS_HOTFIX_MATRIX_V0_2.json"
+      }
+    },
+    {
+      "name": "score_readout_hotfix_matrix_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "score_readout_tool_runs",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": ": 100.0,\n    \"classification_coverage_score\": 90.61,\n    \"status_coverage_score\": 100.0,\n    \"core_readiness_score\": 53.2,\n    \"throne_readiness_score\": 97.0,\n    \"great_nine_readiness_score\": 55.22,\n    \"lowest_organ_readiness_score\": 47.75,\n    \"great_nine_profile_baseline_score\": 100.0,\n    \"great_nine_structural_score\": 100.0,\n    \"great_nine_operational_score\": 32.67,\n    \"great_nine_trust_score\": 15.56,\n    \"profile_baseline_score\": 100.0,\n    \"duty_defined_score\": 100.0,\n    \"assembly_target_defined_score\": 100.0,\n    \"red_team_score\": 0.0,\n    \"blue_team_score\": 0.0,\n    \"organ_truth_maturity_score\": 40.0,\n    \"organ_assembled_score\": 0.0,\n    \"astronomicon_red_local_hardening_score\": 100.0,\n    \"astronomicon_blue_local_hardening_score\": 100.0,\n    \"custodes_astronomicon_validation_score\": 100.0,\n    \"custodes_astronomicon_indictment_count\": 0,\n    \"astronomicon_crown_order_score\": 100.0,\n    \"astronomicon_crown_gate_score\": 100.0,\n    \"astronomicon_throne_confirmed_score\": 100.0,\n    \"throne_self_validation_score\": 0.0,\n    \"external_witness_for_throne_score\": 0.0,\n    \"astronomicon_assembled_score\": 0.0\n  },\n  \"deltas_vs_baseline\": {\n    \"population_total\": 323.0,\n    \"tracked_file_count\": 255.0,\n    \"core_readiness_score\": 0.0,\n    \"throne_readiness_score\": 0.0,\n    \"great_nine_readiness_score\": 0.0,\n    \"lowest_organ_readiness_score\": 0.0,\n    \"great_nine_profile_baseline_score\": 0.0,\n    \"great_nine_structural_score\": 0.0,\n    \"great_nine_operational_score\": 0.0,\n    \"great_nine_trust_score\": 0.0,\n    \"red_team_score\": 0.0,\n    \"blue_team_score\": 0.0,\n    \"organ_truth_maturity_score\": 0.0,\n    \"organ_assembled_score\": 0.0\n  },\n  \"missing_required_current_scores\": [],\n  \"summary\": \"ORGANS/THRONE/REPORTS/POST_ASTRONOMICON_SCORE_READOUT_SUMMARY_V0_1.json\",\n  \"report\": \"ORGANS/THRONE/REPORTS/POST_ASTRONOMICON_SCORE_READOUT_REPORT_V0_1.md\",\n  \"receipt\": \"ORGANS/THRONE/RECEIPTS/post_astronomicon_score_readout_receipt.json\",\n  \"errors\": [],\n  \"warnings\": []\n}\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "score_readout_summary_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "global_gap_scores_are_non_null",
+      "status": "PASS",
+      "details": {
+        "missing": [],
+        "values": {
+          "core_readiness_score": 53.2,
+          "throne_readiness_score": 97.0,
+          "great_nine_readiness_score": 55.22,
+          "lowest_organ_readiness_score": 47.75,
+          "great_nine_operational_score": 32.67,
+          "great_nine_trust_score": 15.56
+        }
+      }
+    },
+    {
+      "name": "readout_reports_no_missing_required_scores",
+      "status": "PASS",
+      "details": {
+        "missing_required_current_scores": []
+      }
+    },
+    {
+      "name": "astronomicon_chain_is_clean",
+      "status": "PASS",
+      "details": {
+        "astronomicon_chain_ok": true
+      }
+    },
+    {
+      "name": "throne_self_validation_stays_zero",
+      "status": "PASS",
+      "details": {
+        "score": 0.0
+      }
+    },
+    {
+      "name": "astronomicon_assembled_stays_zero",
+      "status": "PASS",
+      "details": {
+        "score": 0.0
+      }
+    },
+    {
+      "name": "stage_integration_truth_reported",
+      "status": "PASS",
+      "details": {
+        "stage_integrates_local_crown": false,
+        "integration_note": "Global stage scorer still does not consume the local Astronomicon Crown order; next required work is explicit stage-score integration."
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "readout_summary": "ORGANS/THRONE/REPORTS/POST_ASTRONOMICON_SCORE_READOUT_SUMMARY_V0_1.json",
+  "not_claimed": [
+    "Great Nine assembled",
+    "Core v1 ready",
+    "visual work resumed"
+  ]
+}
