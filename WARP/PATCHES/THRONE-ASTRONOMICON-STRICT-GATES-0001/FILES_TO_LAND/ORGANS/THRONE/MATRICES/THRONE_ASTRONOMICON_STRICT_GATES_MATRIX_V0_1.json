@@ -1,0 +1,63 @@
+{
+  "matrix_id": "THRONE_ASTRONOMICON_STRICT_GATES_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "THRONE",
+  "status": "CROWN_STRICT_GATE_DEFINED",
+  "patch_id": "THRONE-ASTRONOMICON-STRICT-GATES-0001",
+  "target_organ": "ASTRONOMICON",
+  "purpose": "Apply severe impartial Crown gates to Astronomicon after local Red/Blue hardening and Custodes prosecutor validation.",
+  "crown_law": [
+    "Throne is not conversational advice.",
+    "Throne is not Custodes prosecution.",
+    "Throne adjudicates whether proven evidence is enough to raise organ-stage scores.",
+    "No score is raised from declarations alone.",
+    "Any missing evidence or forbidden claim blocks Crown PASS.",
+    "Throne never grants organ assembled unless all assembly gates are proven."
+  ],
+  "required_inputs": {
+    "astronomicon_red_blue_hardening": "ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_RED_BLUE_HARDENING_SCAN_ISOLATION_SUMMARY_V0_1.json",
+    "custodes_prosecutor_audit": "ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json",
+    "custodes_validation_receipt": "ORGANS/CUSTODES/RECEIPTS/custodes_astronomicon_validation_receipt.json",
+    "organ_red_blue_contract": "ORGANS/ASTRONOMICON/RED_BLUE/ORGAN_RED_BLUE_SKILLS_V0_1.json",
+    "advisory_voice_summary": "ORGANS/ASTRONOMICON/REPORTS/ORGAN_AGENT_ADVISORY_SUMMARY_V0_1.json",
+    "patch_lifecycle_foundation": "ORGANS/ASTRONOMICON/RECEIPTS/patch_pack_lifecycle_validation_foundation_receipt.json",
+    "patch_lifecycle_launcher": "ORGANS/ASTRONOMICON/RECEIPTS/patch_lifecycle_launcher_commands_receipt.json"
+  },
+  "gate_thresholds": {
+    "red_local_hardening_score_min": 100.0,
+    "blue_local_hardening_score_min": 100.0,
+    "custodes_validation_score_min": 100.0,
+    "custodes_indictment_count_max": 0,
+    "validator_working_score_min": 100.0,
+    "identity_score_min": 100.0,
+    "capability_evidence_score_min": 100.0,
+    "boundary_honesty_score_min": 100.0,
+    "evidence_chain_score_min": 100.0,
+    "throne_confirmation_score_prior_must_be": 0.0
+  },
+  "score_outputs": {
+    "astronomicon_crown_gate_score": "mean of strict gates; fails to zero if any hard gate fails",
+    "astronomicon_red_team_crown_score": "may become 100 only if local red score 100 and Custodes score 100",
+    "astronomicon_blue_team_crown_score": "may become 100 only if local blue score 100 and Custodes score 100",
+    "astronomicon_throne_confirmed_score": "may become 100 only if all strict gates PASS",
+    "astronomicon_assembled_score": "must remain 0 in this patch"
+  },
+  "hard_forbidden": [
+    "organ assembled",
+    "global Great Nine assembled",
+    "Core v1 ready",
+    "Throne has validated itself",
+    "visual layer resumed"
+  ],
+  "not_claimed": [
+    "global organ assembled",
+    "Core v1 ready",
+    "Great Nine complete",
+    "visual work resumed",
+    "Throne self-validation"
+  ],
+  "next_after_pass": [
+    "POST-ASTRONOMICON-SCORE-READOUT-0001",
+    "THRONE-GREAT-NINE-STAGE-SCORE-REFRESH-0001"
+  ]
+}

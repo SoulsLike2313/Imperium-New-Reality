@@ -1,0 +1,103 @@
+{
+  "receipt_id": "receipt.throne.astronomicon_strict_gates_validation.v0_1",
+  "task_id": "THRONE-ASTRONOMICON-STRICT-GATES-0001",
+  "validator_id": "throne_astronomicon_strict_gates_validator.v0_1",
+  "verdict": "PASS_THRONE_ASTRONOMICON_STRICT_GATES_READY",
+  "generated_at_utc": "2026-07-02T11:22:41Z",
+  "summary": "ORGANS/THRONE/REPORTS/THRONE_ASTRONOMICON_STRICT_GATES_VALIDATION_SUMMARY_V0_1.json",
+  "report": "ORGANS/THRONE/REPORTS/THRONE_ASTRONOMICON_STRICT_GATES_VALIDATION_REPORT_V0_1.md",
+  "checks": [
+    {
+      "name": "throne_astronomicon_strict_gate.py_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/TOOLS/throne_astronomicon_strict_gate.py"
+      }
+    },
+    {
+      "name": "THRONE_ASTRONOMICON_STRICT_GATES_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/MATRICES/THRONE_ASTRONOMICON_STRICT_GATES_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "strict_gate_matrix_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "matrix_has_hard_forbidden_claims",
+      "status": "PASS",
+      "details": {
+        "hard_forbidden": [
+          "organ assembled",
+          "global Great Nine assembled",
+          "Core v1 ready",
+          "Throne has validated itself",
+          "visual layer resumed"
+        ]
+      }
+    },
+    {
+      "name": "throne_strict_gate_tool_runs",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stderr_tail": "",
+        "stdout_tail": "00.0\n      }\n    },\n    {\n      \"gate_id\": \"RED_BLUE_LOCAL_HARDENING_EXACT\",\n      \"status\": \"PASS\",\n      \"score\": 100.0,\n      \"evidence\": \"ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_RED_BLUE_HARDENING_SCAN_ISOLATION_SUMMARY_V0_1.json\",\n      \"details\": {\n        \"red_local_hardening_score\": 100.0,\n        \"blue_local_hardening_score\": 100.0\n      }\n    },\n    {\n      \"gate_id\": \"PRIOR_THRONE_SCORE_ZERO\",\n      \"status\": \"PASS\",\n      \"score\": 100.0,\n      \"evidence\": \"ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_RED_BLUE_HARDENING_SCAN_ISOLATION_SUMMARY_V0_1.json\",\n      \"details\": {\n        \"rb_throne_confirmation_score\": 0.0,\n        \"custodes_throne_confirmation_score\": 0.0\n      }\n    },\n    {\n      \"gate_id\": \"RED_BLUE_CONTRACT_DEFINED_NOT_PROVEN\",\n      \"status\": \"PASS\",\n      \"score\": 100.0,\n      \"evidence\": \"ORGANS/ASTRONOMICON/RED_BLUE/ORGAN_RED_BLUE_SKILLS_V0_1.json\",\n      \"details\": {\n        \"organ_id\": \"ASTRONOMICON\",\n        \"proof_state\": \"DEFINED_NOT_PROVEN\"\n      }\n    }\n  ],\n  \"errors\": [],\n  \"warnings\": [],\n  \"not_claimed\": [\n    \"global organ assembled\",\n    \"Core v1 ready\",\n    \"Great Nine complete\",\n    \"visual work resumed\",\n    \"Throne self-validation\"\n  ]\n}\n"
+      }
+    },
+    {
+      "name": "throne_strict_gate_summary_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "throne_strict_gate_verdict_pass",
+      "status": "PASS",
+      "details": {
+        "verdict": "PASS_THRONE_ASTRONOMICON_STRICT_GATES_CONFIRMED"
+      }
+    },
+    {
+      "name": "all_crown_gates_pass",
+      "status": "PASS",
+      "details": {
+        "gate_count": 10,
+        "failed": []
+      }
+    },
+    {
+      "name": "astronomicon_crown_scores_are_strict",
+      "status": "PASS",
+      "details": {
+        "crown": 100.0,
+        "red": 100.0,
+        "blue": 100.0,
+        "confirmed": 100.0
+      }
+    },
+    {
+      "name": "astronomicon_assembled_score_remains_zero",
+      "status": "PASS",
+      "details": {
+        "assembled": 0.0
+      }
+    },
+    {
+      "name": "custodes_score_was_required_100",
+      "status": "PASS",
+      "details": {
+        "custodes": 100.0
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "meaning": "Throne strict Crown gates validated Astronomicon after Custodes prosecution."
+}

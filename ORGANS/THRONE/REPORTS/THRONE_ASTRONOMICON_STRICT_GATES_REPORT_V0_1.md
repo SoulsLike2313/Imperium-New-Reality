@@ -1,0 +1,38 @@
+# THRONE ASTRONOMICON STRICT GATES REPORT V0.2 — ANTI SELF-DECEPTION
+
+verdict: `PASS_THRONE_ASTRONOMICON_CROWN_ORDER_WITH_SELF_DECEPTION_GUARD`  
+crown_order_truth_state: `CROWN_ORDER_ISSUED_NOT_THRONE_SELF_PROVEN`  
+astronomicon_crown_order_score: `100.0`  
+throne_self_validation_score: `0.0`  
+external_witness_for_throne_score: `0.0`  
+astronomicon_assembled_score: `0.0`
+
+## Meaning
+
+Throne issued a local Crown order over Astronomicon evidence. This is not proof that Throne validated itself.
+
+## Gates
+
+- `PASS` — `ASTRONOMICON_IDENTITY_EXACT` — score `100.0` — evidence `ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json`
+- `PASS` — `CAPABILITY_EVIDENCE_EXACT` — score `100.0` — evidence `ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json`
+- `PASS` — `VALIDATORS_WORK_UNDER_CUSTODES` — score `100.0` — evidence `ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json`
+- `PASS` — `NO_CUSTODES_INDICTMENTS` — score `100.0` — evidence `ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json`
+- `PASS` — `CUSTODES_VALIDATION_EXACT` — score `100.0` — evidence `ORGANS/CUSTODES/RECEIPTS/custodes_astronomicon_validation_receipt.json`
+- `PASS` — `BOUNDARY_HONESTY_EXACT` — score `100.0` — evidence `ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json`
+- `PASS` — `EVIDENCE_CHAIN_EXACT` — score `100.0` — evidence `ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json`
+- `PASS` — `RED_BLUE_LOCAL_HARDENING_EXACT` — score `100.0` — evidence `ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_RED_BLUE_HARDENING_SCAN_ISOLATION_SUMMARY_V0_1.json`
+- `PASS` — `PRIOR_THRONE_WAS_NOT_EXTERNAL_PROOF` — score `100.0` — evidence `ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_RED_BLUE_HARDENING_SCAN_ISOLATION_SUMMARY_V0_1.json`
+- `PASS` — `RED_BLUE_CONTRACT_DEFINED_NOT_PROVEN` — score `100.0` — evidence `ORGANS/ASTRONOMICON/RED_BLUE/ORGAN_RED_BLUE_SKILLS_V0_1.json`
+
+## Errors
+
+- none
+
+## Not claimed
+
+- Throne self-validation
+- global organ assembled
+- Core v1 ready
+- Great Nine complete
+- visual work resumed
+- organ assembled

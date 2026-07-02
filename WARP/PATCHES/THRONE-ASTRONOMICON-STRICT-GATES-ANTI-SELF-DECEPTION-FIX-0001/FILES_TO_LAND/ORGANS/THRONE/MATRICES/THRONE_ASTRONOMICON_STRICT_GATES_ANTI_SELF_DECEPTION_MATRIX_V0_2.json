@@ -1,0 +1,57 @@
+{
+  "matrix_id": "THRONE_ASTRONOMICON_STRICT_GATES_ANTI_SELF_DECEPTION_MATRIX_V0_2",
+  "version": "0.2",
+  "owner": "THRONE",
+  "status": "CROWN_ORDER_WITH_SELF_DECEPTION_GUARD",
+  "patch_id": "THRONE-ASTRONOMICON-STRICT-GATES-ANTI-SELF-DECEPTION-FIX-0001",
+  "target_organ": "ASTRONOMICON",
+  "purpose": "Prevent Throne from treating its own validator as proof of Throne truth while preserving strict Crown gate order over Astronomicon evidence.",
+  "crown_witness_law": [
+    "Throne may issue a Crown order based on external evidence and Custodes prosecution.",
+    "Throne may not claim that its own validator proves Throne itself.",
+    "Crown order score and Throne self-validation score are different fields.",
+    "Self-validation score must remain zero until a separate Throne anti-self-deception / external witness layer exists.",
+    "Astronomicon may receive a local Crown order, but organ assembled remains zero."
+  ],
+  "required_inputs": {
+    "astronomicon_red_blue_hardening": "ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_RED_BLUE_HARDENING_SCAN_ISOLATION_SUMMARY_V0_1.json",
+    "custodes_prosecutor_audit": "ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json",
+    "custodes_validation_receipt": "ORGANS/CUSTODES/RECEIPTS/custodes_astronomicon_validation_receipt.json",
+    "organ_red_blue_contract": "ORGANS/ASTRONOMICON/RED_BLUE/ORGAN_RED_BLUE_SKILLS_V0_1.json"
+  },
+  "gate_thresholds": {
+    "red_local_hardening_score_min": 100.0,
+    "blue_local_hardening_score_min": 100.0,
+    "custodes_validation_score_min": 100.0,
+    "custodes_indictment_count_max": 0,
+    "validator_working_score_min": 100.0,
+    "identity_score_min": 100.0,
+    "capability_evidence_score_min": 100.0,
+    "boundary_honesty_score_min": 100.0,
+    "evidence_chain_score_min": 100.0,
+    "prior_throne_confirmation_must_be_zero_or_existing_self_issued": true
+  },
+  "output_law": {
+    "astronomicon_crown_order_score": "May become 100 when all Crown gates pass.",
+    "astronomicon_throne_confirmed_score": "Deprecated ambiguous field; retained as local order compatibility only.",
+    "throne_self_validation_score": "Must be 0 in this patch.",
+    "crown_order_truth_state": "CROWN_ORDER_ISSUED_NOT_THRONE_SELF_PROVEN",
+    "astronomicon_assembled_score": "Must remain 0."
+  },
+  "hard_forbidden": [
+    "Throne self-validation",
+    "Throne validated itself",
+    "global organ assembled",
+    "Core v1 ready",
+    "Great Nine complete",
+    "visual work resumed"
+  ],
+  "not_claimed": [
+    "Throne self-validation",
+    "global organ assembled",
+    "Core v1 ready",
+    "Great Nine complete",
+    "visual work resumed",
+    "organ assembled"
+  ]
+}
