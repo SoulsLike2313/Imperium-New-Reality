@@ -1,0 +1,121 @@
+{
+  "receipt_id": "receipt.astronomicon.imperium_app_tauri_runtime_window_fps_proof.v0_1",
+  "task_id": "IMPERIUM-APP-TAURI-RUNTIME-WINDOW-FPS-PROOF-0001",
+  "validator_id": "imperium_app_tauri_runtime_window_fps_proof_validator.v0_1",
+  "verdict": "PASS_IMPERIUM_APP_TAURI_RUNTIME_WINDOW_FPS_PROOF_READY",
+  "generated_at_utc": "2026-07-02T14:50:50Z",
+  "summary": "ORGANS/ASTRONOMICON/REPORTS/IMPERIUM_APP_TAURI_RUNTIME_WINDOW_FPS_PROOF_SUMMARY_V0_1.json",
+  "report": "ORGANS/ASTRONOMICON/REPORTS/IMPERIUM_APP_TAURI_RUNTIME_WINDOW_FPS_PROOF_REPORT_V0_1.md",
+  "checks": [
+    {
+      "name": "runtime_fps_matrix_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "tauri_install_build_compile_proof_is_pass",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "verdict": "PASS_IMPERIUM_APP_TAURI_PROOF_RUN_READY"
+      }
+    },
+    {
+      "name": "runtime_required_files_exist",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "frontend_runtime_fps_markers_present",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "rust_runtime_fps_command_markers_present",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "tauri_dev_window_created_runtime_fps_receipt",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "npm",
+          "run",
+          "tauri:dev"
+        ],
+        "actual_command": [
+          "cmd.exe",
+          "/d",
+          "/s",
+          "/c",
+          "npm run tauri:dev"
+        ],
+        "cwd": "SUPPORT/APP_TAURI",
+        "exit_code": 1,
+        "started_at_utc": "2026-07-02T14:49:05Z",
+        "finished_at_utc": "2026-07-02T14:50:50Z",
+        "stdout_log": "SUPPORT\\APP_TAURI\\logs\\runtime_window_fps_proof_tauri_dev_stdout.log",
+        "stderr_log": "SUPPORT\\APP_TAURI\\logs\\runtime_window_fps_proof_tauri_dev_stderr.log",
+        "stdout_tail": "\n> imperium-app-tauri@0.1.0 tauri:dev\n> tauri dev\n\n\n> imperium-app-tauri@0.1.0 dev\n> vite --host 127.0.0.1 --port 1420\n\n\n  VITE v5.4.21  ready in 402 ms\n\n  ➜  Local:   http://127.0.0.1:1420/\n",
+        "stderr_tail": "                     \n\u001b[1m\u001b[92m   Compiling\u001b[0m embed-resource v3.0.9\n\u001b[1m\u001b[96m    Building\u001b[0m [====================>    ] 313/363: muda, s…\n                                                            \n\u001b[1m\u001b[92m   Compiling\u001b[0m chrono v0.4.45\n\u001b[1m\u001b[96m    Building\u001b[0m [====================>    ] 314/363: muda, s…\n\u001b[1m\u001b[96m    Building\u001b[0m [====================>    ] 315/363: muda, s…\n\u001b[1m\u001b[96m    Building\u001b[0m [====================>    ] 316/363: muda, s…\n\u001b[1m\u001b[96m    Building\u001b[0m [====================>    ] 317/363: muda, s…\n\u001b[1m\u001b[96m    Building\u001b[0m [====================>    ] 318/363: muda, s…\n                                                            \n\u001b[1m\u001b[92m   Compiling\u001b[0m tauri-winres v0.3.6\n\u001b[1m\u001b[96m    Building\u001b[0m [====================>    ] 319/363: muda, s…\n\u001b[1m\u001b[96m    Building\u001b[0m [=====================>   ] 320/363: muda, s…\n\u001b[1m\u001b[96m    Building\u001b[0m [=====================>   ] 321/363: muda, s…\n\u001b[1m\u001b[96m    Building\u001b[0m [=====================>   ] 322/363: muda, s…\n\u001b[1m\u001b[96m    Building\u001b[0m [=====================>   ] 323/363: muda, s…\n\u001b[1m\u001b[96m    Building\u001b[0m [=====================>   ] 324/363: muda, s…\n\u001b[1m\u001b[96m    Building\u001b[0m [=====================>   ] 325/363: muda, u…\n\u001b[1m\u001b[96m    Building\u001b[0m [=====================>   ] 326/363: muda, u…\n\u001b[1m\u001b[96m    Building\u001b[0m [=====================>   ] 327/363: muda, u…\n                                                            \n\u001b[1m\u001b[92m   Compiling\u001b[0m tauri-utils v2.9.3\n\u001b[1m\u001b[96m    Building\u001b[0m [=====================>   ] 327/363: muda, t…\n\u001b[1m\u001b[96m    Building\u001b[0m [=====================>   ] 328/363: muda, t…\n\u001b[1m\u001b[96m    Building\u001b[0m [=====================>   ] 329/363: muda, t…\n                                                            \n\u001b[1m\u001b[92m   Compiling\u001b[0m cookie v0.18.1\n\u001b[1m\u001b[96m    Building\u001b[0m [=====================>   ] 329/363: muda, t…\n\u001b[1m\u001b[96m    Building\u001b[0m [=====================>   ] 330/363: muda, t…\n\u001b[1m\u001b[96m    Building\u001b[0m [=====================>   ] 331/363: muda, t…\n\u001b[1m\u001b[96m    Building\u001b[0m [=====================>   ] 332/363: muda, t…\n\u001b[1m\u001b[96m    Building\u001b[0m [=====================>   ] 333/363: muda, t…\n\u001b[1m\u001b[96m    Building\u001b[0m [======================>  ] 334/363: muda, t…\n\u001b[1m\u001b[96m    Building\u001b[0m [======================>  ] 335/363: muda, t…\n\u001b[1m\u001b[96m    Building\u001b[0m [======================>  ] 336/363: muda, t…\n\u001b[1m\u001b[96m    Building\u001b[0m [======================>  ] 337/363: muda, t…\n\u001b[1m\u001b[96m    Building\u001b[0m [======================>  ] 338/363: muda, t…\n\u001b[1m\u001b[96m    Building\u001b[0m [======================>  ] 339/363: tauri-u…\n\u001b[1m\u001b[96m    Building\u001b[0m [======================>  ] 340/363: tauri-u…\n\u001b[1m\u001b[96m    Building\u001b[0m [======================>  ] 341/363: tauri-u…\n                                                            \n\u001b[1m\u001b[92m   Compiling\u001b[0m tauri-build v2.6.3\n\u001b[1m\u001b[92m   Compiling\u001b[0m tauri-plugin v2.6.3\n\u001b[1m\u001b[92m   Compiling\u001b[0m tauri-codegen v2.6.3\n\u001b[1m\u001b[96m    Building\u001b[0m [======================>  ] 341/363: tauri-u…\n\u001b[1m\u001b[96m    Building\u001b[0m [======================>  ] 342/363: tauri-u…\n\u001b[1m\u001b[96m    Building\u001b[0m [======================>  ] 343/363: tauri-u…\n\u001b[1m\u001b[96m    Building\u001b[0m [======================>  ] 344/363: tauri-u…\n\u001b[1m\u001b[96m    Building\u001b[0m [======================>  ] 345/363: tauri-u…\n                                                            \n\u001b[1m\u001b[92m   Compiling\u001b[0m tauri v2.11.5\n\u001b[1m\u001b[92m   Compiling\u001b[0m tauri-plugin-opener v2.5.4\n\u001b[1m\u001b[92m   Compiling\u001b[0m tauri-macros v2.6.3\n\u001b[1m\u001b[92m   Compiling\u001b[0m imperium_app_tauri v0.1.0 (E:\\IMPERIUM_REALITY\\SUPPORT\\APP_TAURI\\src-tauri)\n\u001b[1m\u001b[96m    Building\u001b[0m [======================>  ] 346/363: tauri-p…\n\u001b[1m\u001b[96m    Building\u001b[0m [======================>  ] 347/363: windows…\n\u001b[1m\u001b[96m    Building\u001b[0m [======================>  ] 348/363: windows…\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 349/363: windows…\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 350/363: windows…\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 351/363: tauri-p…\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 352/363: windows…\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 353/363: windows \n                                                            \n\u001b[1m\u001b[92m   Compiling\u001b[0m tao v0.35.3\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 353/363: webview…\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 354/363: webview…\n                                                            \n\u001b[1m\u001b[92m   Compiling\u001b[0m webview2-com v0.38.2\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 354/363: webview…\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 355/363: webview…\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 356/363: webview…\n                                                            \n\u001b[1m\u001b[92m   Compiling\u001b[0m tauri-runtime v2.11.3\n\u001b[1m\u001b[92m   Compiling\u001b[0m wry v0.55.1\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 356/363: wry, we…\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 357/363: wry, we…\n                                                            \n\u001b[1m\u001b[92m   Compiling\u001b[0m tauri-runtime-wry v2.11.4\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 357/363: wry, we…\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 358/363: wry, ta…\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 359/363: tauri-r…\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 359/363: tauri, …\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 360/363: tauri   \n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 360/363: tauri, …\n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 361/363: tauri   \n\u001b[1m\u001b[96m    Building\u001b[0m [=======================> ] 362/363: imperiu…\n                                                            \n\u001b[1m\u001b[92m    Finished\u001b[0m \u001b]8;;https://doc.rust-lang.org/cargo/reference/profiles.html#default-profiles\u001b\\`dev` profile [unoptimized + debuginfo]\u001b]8;;\u001b\\ target(s) in 1m 34s\n\u001b[1m\u001b[92m     Running\u001b[0m `target\\debug\\imperium_app_tauri.exe`\n"
+      }
+    },
+    {
+      "name": "runtime_fps_lock_receipt_is_pass",
+      "status": "PASS",
+      "details": {
+        "receipt": "SUPPORT/APP_TAURI/receipts/20260702_145049_runtime_fps_proof_receipt.json",
+        "error": null,
+        "receipt_data": {
+          "average_fps_pass_threshold": 59.5,
+          "errors": [],
+          "fps_lock_proven": true,
+          "generated_at_utc": "2026-07-02T14:50:49.386525600+00:00",
+          "max_slow_frame_ratio": 0.05,
+          "payload": {
+            "app_marker": "IMPERIUM_TAURI_SHELL",
+            "average_fps": 60.00067182521536,
+            "generated_at_client_iso": "2026-07-02T14:50:49.382Z",
+            "max_frame_ms": 16.800000000000182,
+            "min_fps": 59.52380952380888,
+            "proof_id": "RUNTIME_FPS_PROOF",
+            "reduce_motion_mode": false,
+            "sample_count": 180,
+            "slow_frame_count": 0,
+            "slow_frame_ms": 24,
+            "slow_frame_ratio": 0,
+            "target_fps": 60,
+            "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+            "warmup_frames": 30
+          },
+          "proof_id": "RUNTIME_FPS_PROOF",
+          "receipt_id": "receipt.tauri.runtime_fps_proof.20260702_145049",
+          "target_fps": 60.0,
+          "verdict": "PASS_TAURI_RUNTIME_WINDOW_FPS_LOCK_PROVEN",
+          "warnings": []
+        }
+      }
+    },
+    {
+      "name": "runtime_fps_metrics_meet_strict_gate",
+      "status": "PASS",
+      "details": {
+        "average_fps": 60.00067182521536,
+        "sample_count": 180,
+        "slow_frame_ratio": 0
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "meaning": "Tauri runtime proof: tauri:dev window opened long enough for WebView requestAnimationFrame FPS lock receipt."
+}

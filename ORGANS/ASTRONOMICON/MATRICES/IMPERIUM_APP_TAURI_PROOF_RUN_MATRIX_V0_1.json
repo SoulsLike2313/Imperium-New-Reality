@@ -1,0 +1,39 @@
+{
+  "matrix_id": "IMPERIUM_APP_TAURI_PROOF_RUN_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "IMPERIUM-APP-TAURI-PROOF-RUN-0001",
+  "owner": "ASTRONOMICON + SUPPORT/APP_TAURI",
+  "status": "TAURI_PROOF_RUN_VALIDATION_DEFINED",
+  "purpose": "Prove the Tauri shell can install dependencies, pass static contracts, build frontend, and compile/check Rust bridge.",
+  "required_files": [
+    "SUPPORT/APP_TAURI/.gitignore",
+    "SUPPORT/APP_TAURI/vite.config.js",
+    "SUPPORT/APP_TAURI/package.json",
+    "SUPPORT/APP_TAURI/src/main.js",
+    "SUPPORT/APP_TAURI/src/styles.css",
+    "SUPPORT/APP_TAURI/src-tauri/Cargo.toml",
+    "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+    "SUPPORT/APP_TAURI/src-tauri/tauri.conf.json",
+    "SUPPORT/APP_TAURI/tests/fps_contract_check.mjs",
+    "SUPPORT/APP_TAURI/tests/action_parity_check.mjs"
+  ],
+  "proof_commands": [
+    "node --version",
+    "npm --version",
+    "cargo --version",
+    "rustc --version",
+    "npm install",
+    "npm run check:fps",
+    "npm run check:parity",
+    "npm run build",
+    "cargo check --manifest-path SUPPORT/APP_TAURI/src-tauri/Cargo.toml"
+  ],
+  "not_claimed": [
+    "Tauri dev window opened",
+    "runtime FPS measured in WebView",
+    "packaged exe built",
+    "auto-updater active",
+    "Eyes embedded",
+    "AAA final polish"
+  ]
+}

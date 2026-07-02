@@ -1,0 +1,33 @@
+{
+  "app_id": "IMPERIUM_APP_TAURI_SHELL_V0_1",
+  "version": "0.1",
+  "patch_id": "IMPERIUM-APP-TAURI-SHELL-FOUNDATION-0001",
+  "status": "TAURI_MIGRATION_FOUNDATION",
+  "owner": "SUPPORT/APP_TAURI + ASTRONOMICON",
+  "purpose": "Create a Tauri v2 shell next to the existing WinForms app. First proof: scaffold, contracts, bridge commands, 60fps watchdog, Eyes/Seed contracts.",
+  "entrypoints": {
+    "tauri_dev": "cd SUPPORT/APP_TAURI && npm install && npm run tauri:dev",
+    "tauri_build": "cd SUPPORT/APP_TAURI && npm install && npm run tauri:build",
+    "fallback_winforms": "pwsh SUPPORT/APP/imperium_launcher.ps1"
+  },
+  "hard_requirements": [
+    "WinForms remains fallback",
+    "visible aquarium for every action",
+    "60 FPS watchdog/gate",
+    "no app git land",
+    "Eyes v0.5.3.1 contract only in this patch",
+    "Seed Core contract only in this patch"
+  ],
+  "not_claimed": [
+    "Tauri dependencies installed",
+    "Tauri app built on Owner machine",
+    "packaged exe installer",
+    "auto-updater active",
+    "Eyes fully embedded",
+    "canvas screenshot sweep implemented",
+    "AAA final visual polish",
+    "Seed Core implementation",
+    "Great Nine assembled",
+    "Core v1 ready"
+  ]
+}

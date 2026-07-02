@@ -1,0 +1,570 @@
+{
+  "summary_id": "astronomicon.imperium_app_tauri_proof_run_summary.v0_1",
+  "task_id": "IMPERIUM-APP-TAURI-PROOF-RUN-0001",
+  "validator_id": "imperium_app_tauri_proof_run_validator.v0_2_windows_cmd_aware",
+  "verdict": "PASS_IMPERIUM_APP_TAURI_PROOF_RUN_READY",
+  "generated_at_utc": "2026-07-02T14:40:42Z",
+  "repo_head": "170a2f9a8d1bf03eb79cac62efac719b8eca42a5",
+  "checks": [
+    {
+      "name": "proof_run_matrix_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "foundation_receipt_is_pass",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "verdict": "PASS_IMPERIUM_APP_TAURI_SHELL_FOUNDATION_READY"
+      }
+    },
+    {
+      "name": "required_tauri_proof_files_exist",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "env_node_exists",
+      "status": "PASS",
+      "details": {
+        "command": "node",
+        "shutil_which": "C:\\Program Files\\nodejs\\node.EXE",
+        "platform": "Windows-10-10.0.19045-SP0",
+        "is_windows": true,
+        "where_exit_code": 0,
+        "where_stdout": "C:\\Program Files\\nodejs\\node.exe",
+        "where_stderr": "",
+        "exists": true
+      }
+    },
+    {
+      "name": "env_npm_exists",
+      "status": "PASS",
+      "details": {
+        "command": "npm",
+        "shutil_which": "C:\\Program Files\\nodejs\\npm.CMD",
+        "platform": "Windows-10-10.0.19045-SP0",
+        "is_windows": true,
+        "where_exit_code": 0,
+        "where_stdout": "C:\\Program Files\\nodejs\\npm\nC:\\Program Files\\nodejs\\npm.cmd",
+        "where_stderr": "",
+        "exists": true
+      }
+    },
+    {
+      "name": "env_cargo_exists",
+      "status": "PASS",
+      "details": {
+        "command": "cargo",
+        "shutil_which": "C:\\Users\\PC\\.cargo\\bin\\cargo.EXE",
+        "platform": "Windows-10-10.0.19045-SP0",
+        "is_windows": true,
+        "where_exit_code": 0,
+        "where_stdout": "C:\\Users\\PC\\.cargo\\bin\\cargo.exe",
+        "where_stderr": "",
+        "exists": true
+      }
+    },
+    {
+      "name": "env_rustc_exists",
+      "status": "PASS",
+      "details": {
+        "command": "rustc",
+        "shutil_which": "C:\\Users\\PC\\.cargo\\bin\\rustc.EXE",
+        "platform": "Windows-10-10.0.19045-SP0",
+        "is_windows": true,
+        "where_exit_code": 0,
+        "where_stdout": "C:\\Users\\PC\\.cargo\\bin\\rustc.exe",
+        "where_stderr": "",
+        "exists": true
+      }
+    },
+    {
+      "name": "vite_and_tauri_dev_ports_match_1420",
+      "status": "PASS",
+      "details": {
+        "tauri_json_error": null
+      }
+    },
+    {
+      "name": "tauri_generated_artifacts_ignored",
+      "status": "PASS",
+      "details": {
+        "gitignore": "SUPPORT/APP_TAURI/.gitignore"
+      }
+    },
+    {
+      "name": "command_node_version_passes",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "node",
+          "--version"
+        ],
+        "actual_command": [
+          "node",
+          "--version"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "started_at_utc": "2026-07-02T14:40:17Z",
+        "finished_at_utc": "2026-07-02T14:40:17Z",
+        "stdout_tail": "v24.15.0\n",
+        "stderr_tail": "",
+        "ok": true,
+        "shell_note": null
+      }
+    },
+    {
+      "name": "command_npm_version_passes",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "npm",
+          "--version"
+        ],
+        "actual_command": [
+          "cmd.exe",
+          "/d",
+          "/s",
+          "/c",
+          "npm --version"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "started_at_utc": "2026-07-02T14:40:17Z",
+        "finished_at_utc": "2026-07-02T14:40:18Z",
+        "stdout_tail": "11.12.1\n",
+        "stderr_tail": "",
+        "ok": true,
+        "shell_note": "windows_cmd_wrapper"
+      }
+    },
+    {
+      "name": "command_cargo_version_passes",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "cargo",
+          "--version"
+        ],
+        "actual_command": [
+          "cargo",
+          "--version"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "started_at_utc": "2026-07-02T14:40:18Z",
+        "finished_at_utc": "2026-07-02T14:40:18Z",
+        "stdout_tail": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)\n",
+        "stderr_tail": "",
+        "ok": true,
+        "shell_note": null
+      }
+    },
+    {
+      "name": "command_rustc_version_passes",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "rustc",
+          "--version"
+        ],
+        "actual_command": [
+          "rustc",
+          "--version"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "started_at_utc": "2026-07-02T14:40:18Z",
+        "finished_at_utc": "2026-07-02T14:40:18Z",
+        "stdout_tail": "rustc 1.95.0 (59807616e 2026-04-14)\n",
+        "stderr_tail": "",
+        "ok": true,
+        "shell_note": null
+      }
+    },
+    {
+      "name": "npm_install_passes",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "npm",
+          "install"
+        ],
+        "actual_command": [
+          "cmd.exe",
+          "/d",
+          "/s",
+          "/c",
+          "npm install"
+        ],
+        "cwd": "SUPPORT\\APP_TAURI",
+        "exit_code": 0,
+        "started_at_utc": "2026-07-02T14:40:18Z",
+        "finished_at_utc": "2026-07-02T14:40:21Z",
+        "stdout_tail": "\nup to date, audited 16 packages in 2s\n\n5 packages are looking for funding\n  run `npm fund` for details\n\n2 vulnerabilities (1 moderate, 1 high)\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n\nRun `npm audit` for details.\n",
+        "stderr_tail": "",
+        "ok": true,
+        "shell_note": "windows_cmd_wrapper"
+      }
+    },
+    {
+      "name": "npm_check_fps_passes",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "npm",
+          "run",
+          "check:fps"
+        ],
+        "actual_command": [
+          "cmd.exe",
+          "/d",
+          "/s",
+          "/c",
+          "npm run check:fps"
+        ],
+        "cwd": "SUPPORT\\APP_TAURI",
+        "exit_code": 0,
+        "started_at_utc": "2026-07-02T14:40:21Z",
+        "finished_at_utc": "2026-07-02T14:40:21Z",
+        "stdout_tail": "\n> imperium-app-tauri@0.1.0 check:fps\n> node ./tests/fps_contract_check.mjs\n\n{\n  \"verdict\": \"PASS_FPS_CONTRACT\",\n  \"target_fps\": 60,\n  \"frame_budget_ms\": 16.67\n}\n",
+        "stderr_tail": "",
+        "ok": true,
+        "shell_note": "windows_cmd_wrapper"
+      }
+    },
+    {
+      "name": "npm_check_parity_passes",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "npm",
+          "run",
+          "check:parity"
+        ],
+        "actual_command": [
+          "cmd.exe",
+          "/d",
+          "/s",
+          "/c",
+          "npm run check:parity"
+        ],
+        "cwd": "SUPPORT\\APP_TAURI",
+        "exit_code": 0,
+        "started_at_utc": "2026-07-02T14:40:21Z",
+        "finished_at_utc": "2026-07-02T14:40:22Z",
+        "stdout_tail": "\n> imperium-app-tauri@0.1.0 check:parity\n> node ./tests/action_parity_check.mjs\n\n{\n  \"verdict\": \"PASS_ACTION_PARITY_CONTRACT\",\n  \"action_count\": 9\n}\n",
+        "stderr_tail": "",
+        "ok": true,
+        "shell_note": "windows_cmd_wrapper"
+      }
+    },
+    {
+      "name": "npm_frontend_build_passes",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "npm",
+          "run",
+          "build"
+        ],
+        "actual_command": [
+          "cmd.exe",
+          "/d",
+          "/s",
+          "/c",
+          "npm run build"
+        ],
+        "cwd": "SUPPORT\\APP_TAURI",
+        "exit_code": 0,
+        "started_at_utc": "2026-07-02T14:40:22Z",
+        "finished_at_utc": "2026-07-02T14:40:23Z",
+        "stdout_tail": "\n> imperium-app-tauri@0.1.0 build\n> vite build\n\nvite v5.4.21 building for production...\ntransforming...\n✓ 5 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                0.32 kB │ gzip: 0.26 kB\ndist/assets/index-Bo3U6osq.js  7.82 kB │ gzip: 3.26 kB\n✓ built in 153ms\n",
+        "stderr_tail": "",
+        "ok": true,
+        "shell_note": "windows_cmd_wrapper"
+      }
+    },
+    {
+      "name": "cargo_check_tauri_bridge_passes",
+      "status": "PASS",
+      "details": {
+        "command": [
+          "cargo",
+          "check",
+          "--manifest-path",
+          "SUPPORT/APP_TAURI/src-tauri/Cargo.toml"
+        ],
+        "actual_command": [
+          "cargo",
+          "check",
+          "--manifest-path",
+          "SUPPORT/APP_TAURI/src-tauri/Cargo.toml"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "started_at_utc": "2026-07-02T14:40:23Z",
+        "finished_at_utc": "2026-07-02T14:40:42Z",
+        "stdout_tail": "",
+        "stderr_tail": "    Checking webview2-com-sys v0.38.2\n    Checking tao v0.35.3\n   Compiling imperium_app_tauri v0.1.0 (E:\\IMPERIUM_REALITY\\SUPPORT\\APP_TAURI\\src-tauri)\n    Checking webview2-com v0.38.2\n    Checking tauri-runtime v2.11.3\n    Checking wry v0.55.1\n    Checking tauri-runtime-wry v2.11.4\n    Checking tauri v2.11.5\n    Checking tauri-plugin-opener v2.5.4\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 19.25s\n",
+        "ok": true,
+        "shell_note": null
+      }
+    },
+    {
+      "name": "generated_dirs_can_exist_but_are_ignored",
+      "status": "PASS",
+      "details": {
+        "node_modules_exists": true,
+        "target_exists": true
+      }
+    }
+  ],
+  "command_results": [
+    {
+      "command": [
+        "node",
+        "--version"
+      ],
+      "actual_command": [
+        "node",
+        "--version"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "started_at_utc": "2026-07-02T14:40:17Z",
+      "finished_at_utc": "2026-07-02T14:40:17Z",
+      "stdout_tail": "v24.15.0\n",
+      "stderr_tail": "",
+      "ok": true,
+      "shell_note": null
+    },
+    {
+      "command": [
+        "npm",
+        "--version"
+      ],
+      "actual_command": [
+        "cmd.exe",
+        "/d",
+        "/s",
+        "/c",
+        "npm --version"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "started_at_utc": "2026-07-02T14:40:17Z",
+      "finished_at_utc": "2026-07-02T14:40:18Z",
+      "stdout_tail": "11.12.1\n",
+      "stderr_tail": "",
+      "ok": true,
+      "shell_note": "windows_cmd_wrapper"
+    },
+    {
+      "command": [
+        "cargo",
+        "--version"
+      ],
+      "actual_command": [
+        "cargo",
+        "--version"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "started_at_utc": "2026-07-02T14:40:18Z",
+      "finished_at_utc": "2026-07-02T14:40:18Z",
+      "stdout_tail": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)\n",
+      "stderr_tail": "",
+      "ok": true,
+      "shell_note": null
+    },
+    {
+      "command": [
+        "rustc",
+        "--version"
+      ],
+      "actual_command": [
+        "rustc",
+        "--version"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "started_at_utc": "2026-07-02T14:40:18Z",
+      "finished_at_utc": "2026-07-02T14:40:18Z",
+      "stdout_tail": "rustc 1.95.0 (59807616e 2026-04-14)\n",
+      "stderr_tail": "",
+      "ok": true,
+      "shell_note": null
+    },
+    {
+      "command": [
+        "npm",
+        "install"
+      ],
+      "actual_command": [
+        "cmd.exe",
+        "/d",
+        "/s",
+        "/c",
+        "npm install"
+      ],
+      "cwd": "SUPPORT\\APP_TAURI",
+      "exit_code": 0,
+      "started_at_utc": "2026-07-02T14:40:18Z",
+      "finished_at_utc": "2026-07-02T14:40:21Z",
+      "stdout_tail": "\nup to date, audited 16 packages in 2s\n\n5 packages are looking for funding\n  run `npm fund` for details\n\n2 vulnerabilities (1 moderate, 1 high)\n\nTo address all issues (including breaking changes), run:\n  npm audit fix --force\n\nRun `npm audit` for details.\n",
+      "stderr_tail": "",
+      "ok": true,
+      "shell_note": "windows_cmd_wrapper"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "check:fps"
+      ],
+      "actual_command": [
+        "cmd.exe",
+        "/d",
+        "/s",
+        "/c",
+        "npm run check:fps"
+      ],
+      "cwd": "SUPPORT\\APP_TAURI",
+      "exit_code": 0,
+      "started_at_utc": "2026-07-02T14:40:21Z",
+      "finished_at_utc": "2026-07-02T14:40:21Z",
+      "stdout_tail": "\n> imperium-app-tauri@0.1.0 check:fps\n> node ./tests/fps_contract_check.mjs\n\n{\n  \"verdict\": \"PASS_FPS_CONTRACT\",\n  \"target_fps\": 60,\n  \"frame_budget_ms\": 16.67\n}\n",
+      "stderr_tail": "",
+      "ok": true,
+      "shell_note": "windows_cmd_wrapper"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "check:parity"
+      ],
+      "actual_command": [
+        "cmd.exe",
+        "/d",
+        "/s",
+        "/c",
+        "npm run check:parity"
+      ],
+      "cwd": "SUPPORT\\APP_TAURI",
+      "exit_code": 0,
+      "started_at_utc": "2026-07-02T14:40:21Z",
+      "finished_at_utc": "2026-07-02T14:40:22Z",
+      "stdout_tail": "\n> imperium-app-tauri@0.1.0 check:parity\n> node ./tests/action_parity_check.mjs\n\n{\n  \"verdict\": \"PASS_ACTION_PARITY_CONTRACT\",\n  \"action_count\": 9\n}\n",
+      "stderr_tail": "",
+      "ok": true,
+      "shell_note": "windows_cmd_wrapper"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "actual_command": [
+        "cmd.exe",
+        "/d",
+        "/s",
+        "/c",
+        "npm run build"
+      ],
+      "cwd": "SUPPORT\\APP_TAURI",
+      "exit_code": 0,
+      "started_at_utc": "2026-07-02T14:40:22Z",
+      "finished_at_utc": "2026-07-02T14:40:23Z",
+      "stdout_tail": "\n> imperium-app-tauri@0.1.0 build\n> vite build\n\nvite v5.4.21 building for production...\ntransforming...\n✓ 5 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                0.32 kB │ gzip: 0.26 kB\ndist/assets/index-Bo3U6osq.js  7.82 kB │ gzip: 3.26 kB\n✓ built in 153ms\n",
+      "stderr_tail": "",
+      "ok": true,
+      "shell_note": "windows_cmd_wrapper"
+    },
+    {
+      "command": [
+        "cargo",
+        "check",
+        "--manifest-path",
+        "SUPPORT/APP_TAURI/src-tauri/Cargo.toml"
+      ],
+      "actual_command": [
+        "cargo",
+        "check",
+        "--manifest-path",
+        "SUPPORT/APP_TAURI/src-tauri/Cargo.toml"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "started_at_utc": "2026-07-02T14:40:23Z",
+      "finished_at_utc": "2026-07-02T14:40:42Z",
+      "stdout_tail": "",
+      "stderr_tail": "    Checking webview2-com-sys v0.38.2\n    Checking tao v0.35.3\n   Compiling imperium_app_tauri v0.1.0 (E:\\IMPERIUM_REALITY\\SUPPORT\\APP_TAURI\\src-tauri)\n    Checking webview2-com v0.38.2\n    Checking tauri-runtime v2.11.3\n    Checking wry v0.55.1\n    Checking tauri-runtime-wry v2.11.4\n    Checking tauri v2.11.5\n    Checking tauri-plugin-opener v2.5.4\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 19.25s\n",
+      "ok": true,
+      "shell_note": null
+    }
+  ],
+  "environment": {
+    "node": {
+      "command": "node",
+      "shutil_which": "C:\\Program Files\\nodejs\\node.EXE",
+      "platform": "Windows-10-10.0.19045-SP0",
+      "is_windows": true,
+      "where_exit_code": 0,
+      "where_stdout": "C:\\Program Files\\nodejs\\node.exe",
+      "where_stderr": "",
+      "exists": true
+    },
+    "npm": {
+      "command": "npm",
+      "shutil_which": "C:\\Program Files\\nodejs\\npm.CMD",
+      "platform": "Windows-10-10.0.19045-SP0",
+      "is_windows": true,
+      "where_exit_code": 0,
+      "where_stdout": "C:\\Program Files\\nodejs\\npm\nC:\\Program Files\\nodejs\\npm.cmd",
+      "where_stderr": "",
+      "exists": true
+    },
+    "cargo": {
+      "command": "cargo",
+      "shutil_which": "C:\\Users\\PC\\.cargo\\bin\\cargo.EXE",
+      "platform": "Windows-10-10.0.19045-SP0",
+      "is_windows": true,
+      "where_exit_code": 0,
+      "where_stdout": "C:\\Users\\PC\\.cargo\\bin\\cargo.exe",
+      "where_stderr": "",
+      "exists": true
+    },
+    "rustc": {
+      "command": "rustc",
+      "shutil_which": "C:\\Users\\PC\\.cargo\\bin\\rustc.EXE",
+      "platform": "Windows-10-10.0.19045-SP0",
+      "is_windows": true,
+      "where_exit_code": 0,
+      "where_stdout": "C:\\Users\\PC\\.cargo\\bin\\rustc.exe",
+      "where_stderr": "",
+      "exists": true
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "proof_level": "INSTALL_BUILD_AND_COMPILE_CHECK",
+  "next_stage": "IMPERIUM-APP-TAURI-RUNTIME-WINDOW-FPS-PROOF-0001",
+  "not_claimed": [
+    "Tauri dev window opened",
+    "runtime FPS measured in WebView",
+    "packaged exe built",
+    "auto-updater active",
+    "Eyes embedded",
+    "AAA final polish"
+  ]
+}

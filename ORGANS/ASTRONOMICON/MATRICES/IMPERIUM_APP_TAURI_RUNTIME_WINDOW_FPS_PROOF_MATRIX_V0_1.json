@@ -1,0 +1,34 @@
+{
+  "matrix_id": "IMPERIUM_APP_TAURI_RUNTIME_WINDOW_FPS_PROOF_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "IMPERIUM-APP-TAURI-RUNTIME-WINDOW-FPS-PROOF-0001",
+  "owner": "ASTRONOMICON + SUPPORT/APP_TAURI",
+  "status": "RUNTIME_WINDOW_FPS_PROOF_DEFINED",
+  "required_files": [
+    "SUPPORT/APP_TAURI/src/main.js",
+    "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+    "SUPPORT/APP_TAURI/contracts/IMPERIUM_TAURI_RUNTIME_WINDOW_FPS_PROOF_CONTRACT_V0_1.json",
+    "ORGANS/ASTRONOMICON/VALIDATORS/validate_imperium_app_tauri_runtime_window_fps_proof.py"
+  ],
+  "required_frontend_markers": [
+    "recordRuntimeFpsProof",
+    "record_runtime_fps_proof",
+    "runtimeFpsProofSent",
+    "frameDeltas",
+    "FPS_LOCK_TARGET",
+    "RUNTIME_FPS_PROOF"
+  ],
+  "required_rust_markers": [
+    "record_runtime_fps_proof",
+    "PASS_TAURI_RUNTIME_WINDOW_FPS_LOCK_PROVEN",
+    "FAIL_TAURI_RUNTIME_WINDOW_FPS_LOCK",
+    "runtime_fps_proof_receipt"
+  ],
+  "runtime_command": "cmd.exe /d /s /c npm run tauri:dev",
+  "not_claimed": [
+    "packaged exe built",
+    "auto-updater active",
+    "Eyes embedded",
+    "AAA final polish complete"
+  ]
+}

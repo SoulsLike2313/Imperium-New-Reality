@@ -1,0 +1,133 @@
+{
+  "summary_id": "astronomicon.imperium_launcher_app_platform_summary.v0_1",
+  "task_id": "IMPERIUM-LAUNCHER-APP-PLATFORM-0001",
+  "validator_id": "imperium_launcher_app_platform_validator.v0_1",
+  "verdict": "PASS_IMPERIUM_LAUNCHER_APP_PLATFORM_READY",
+  "generated_at_utc": "2026-07-02T12:30:43Z",
+  "repo_head": "170a2f9a8d1bf03eb79cac62efac719b8eca42a5",
+  "action_count": 9,
+  "checks": [
+    {
+      "name": "imperium_launcher.ps1_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP/imperium_launcher.ps1"
+      }
+    },
+    {
+      "name": "imperium_launcher_app.ps1_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP/imperium_launcher_app.ps1"
+      }
+    },
+    {
+      "name": "LAUNCH_IMPERIUM_APP.cmd_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP/LAUNCH_IMPERIUM_APP.cmd"
+      }
+    },
+    {
+      "name": "IMPERIUM_LAUNCHER_APP_MANIFEST_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP/IMPERIUM_LAUNCHER_APP_MANIFEST_V0_1.json"
+      }
+    },
+    {
+      "name": "IMPERIUM_APP_THEME_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP/IMPERIUM_APP_THEME_V0_1.json"
+      }
+    },
+    {
+      "name": "IMPERIUM_LAUNCHER_APP_PLATFORM_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/MATRICES/IMPERIUM_LAUNCHER_APP_PLATFORM_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "README_IMPERIUM_LAUNCHER_APP_V0_1.md_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP/README_IMPERIUM_LAUNCHER_APP_V0_1.md"
+      }
+    },
+    {
+      "name": "app_manifest_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "app_theme_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "app_matrix_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "app_has_required_ui_markers",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "app_does_not_execute_or_offer_git_land",
+      "status": "PASS",
+      "details": {
+        "dangerous": []
+      }
+    },
+    {
+      "name": "app_selftest_passes",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "selftest_verdict": "PASS_IMPERIUM_LAUNCHER_APP_PLATFORM_SELFTEST",
+        "stdout_tail": "IMPERIUM SHELL: pwsh 7.6.2 OK\nIMPERIUM SHELL: pwsh 7.6.2 OK\n{\n  \"action_count\": 9,\n  \"app_id\": \"IMPERIUM_LAUNCHER_APP_PLATFORM_V0_1\",\n  \"errors\": [],\n  \"validator_id\": \"imperium_launcher_app_platform_selftest.v0_1\",\n  \"warnings\": [],\n  \"task_id\": \"IMPERIUM-LAUNCHER-APP-PLATFORM-0001\",\n  \"verdict\": \"PASS_IMPERIUM_LAUNCHER_APP_PLATFORM_SELFTEST\",\n  \"theme_id\": \"IMPERIUM_APP_THEME_V0_1\"\n}\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "app_selftest_reports_actions",
+      "status": "PASS",
+      "details": {
+        "action_count": 9
+      }
+    },
+    {
+      "name": "theme_has_imperium_color_tokens",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "run_command": "pwsh SUPPORT/APP/imperium_launcher.ps1",
+  "selftest_command": "pwsh SUPPORT/APP/imperium_launcher.ps1 -SelfTest",
+  "not_claimed": [
+    "packaged exe installer",
+    "full IDE visual abstraction",
+    "graph/AAA visual layer resumed",
+    "background agent execution",
+    "Git land automation",
+    "Great Nine assembled",
+    "Core v1 ready",
+    "Throne self-validation"
+  ]
+}

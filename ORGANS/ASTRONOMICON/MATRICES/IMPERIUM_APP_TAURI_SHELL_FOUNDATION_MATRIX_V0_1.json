@@ -1,0 +1,53 @@
+{
+  "matrix_id": "IMPERIUM_APP_TAURI_SHELL_FOUNDATION_MATRIX_V0_1",
+  "patch_id": "IMPERIUM-APP-TAURI-SHELL-FOUNDATION-0001",
+  "required_files": [
+    "SUPPORT/APP_TAURI/package.json",
+    "SUPPORT/APP_TAURI/index.html",
+    "SUPPORT/APP_TAURI/src/main.js",
+    "SUPPORT/APP_TAURI/src/styles.css",
+    "SUPPORT/APP_TAURI/src-tauri/Cargo.toml",
+    "SUPPORT/APP_TAURI/src-tauri/tauri.conf.json",
+    "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+    "SUPPORT/APP_TAURI/contracts/IMPERIUM_TAURI_60FPS_PERFORMANCE_GATE_V0_1.json",
+    "SUPPORT/APP_TAURI/contracts/IMPERIUM_EYES_ROOM_CONTRACT_V0_1.json",
+    "SUPPORT/APP_TAURI/contracts/IMPERIUM_SEED_CORE_CONTRACT_DRAFT_V0_1.json"
+  ],
+  "required_frontend_markers": [
+    "IMPERIUM_TAURI_SHELL",
+    "FPS_LOCK_TARGET",
+    "requestAnimationFrame",
+    "PerformanceObserver",
+    "reduceMotionMode",
+    "ORGAN_HUB",
+    "EYES_ROOM",
+    "PACK_FORGE",
+    "SEED_CORE",
+    "CROWN_AWARE_OVERLAY",
+    "AQUARIUM_STREAM",
+    "runImperiumAction",
+    "refreshImperiumState",
+    "createPackRequest",
+    "openEyesRoom"
+  ],
+  "required_rust_commands": [
+    "read_imperium_state",
+    "run_imperium_action",
+    "create_pack_request",
+    "read_eyes_contract",
+    "read_seed_core_contract",
+    "app_selftest"
+  ],
+  "not_claimed": [
+    "Tauri dependencies installed",
+    "Tauri app built on Owner machine",
+    "packaged exe installer",
+    "auto-updater active",
+    "Eyes fully embedded",
+    "canvas screenshot sweep implemented",
+    "AAA final visual polish",
+    "Seed Core implementation",
+    "Great Nine assembled",
+    "Core v1 ready"
+  ]
+}

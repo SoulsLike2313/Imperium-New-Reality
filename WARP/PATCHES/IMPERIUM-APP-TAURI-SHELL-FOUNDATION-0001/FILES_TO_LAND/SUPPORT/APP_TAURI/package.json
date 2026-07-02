@@ -1,0 +1,22 @@
+{
+  "name": "imperium-app-tauri",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 1420",
+    "build": "vite build",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "check:fps": "node ./tests/fps_contract_check.mjs",
+    "check:parity": "node ./tests/action_parity_check.mjs"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.0.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0",
+    "vite": "^5.0.0",
+    "typescript": "^5.0.0"
+  }
+}

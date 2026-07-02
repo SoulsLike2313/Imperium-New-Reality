@@ -1,0 +1,38 @@
+{
+  "summary_id": "astronomicon.imperium_app_tauri_proof_run_npm_cmd_hotfix_summary.v0_1",
+  "task_id": "IMPERIUM-APP-TAURI-PROOF-RUN-NPM-CMD-HOTFIX-0001",
+  "validator_id": "imperium_app_tauri_proof_run_npm_cmd_hotfix_validator.v0_1",
+  "verdict": "FAIL_IMPERIUM_APP_TAURI_PROOF_RUN_NPM_CMD_HOTFIX",
+  "generated_at_utc": "2026-07-02T14:21:58Z",
+  "checks": [
+    {
+      "name": "proof_validator_is_windows_npm_cmd_aware",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_imperium_app_tauri_proof_run.py"
+      }
+    },
+    {
+      "name": "proof_run_passes_with_windows_npm_cmd_execution",
+      "status": "FAIL",
+      "details": {
+        "exit_code": 1,
+        "stdout_tail": "{\n  \"task_id\": \"IMPERIUM-APP-TAURI-PROOF-RUN-0001\",\n  \"validator_id\": \"imperium_app_tauri_proof_run_validator.v0_2_windows_cmd_aware\",\n  \"verdict\": \"FAIL_IMPERIUM_APP_TAURI_PROOF_RUN\",\n  \"proof_level\": \"BLOCKED\",\n  \"receipt\": \"ORGANS/ASTRONOMICON/RECEIPTS/imperium_app_tauri_proof_run_receipt.json\",\n  \"summary\": \"ORGANS/ASTRONOMICON/REPORTS/IMPERIUM_APP_TAURI_PROOF_RUN_SUMMARY_V0_1.json\",\n  \"report\": \"ORGANS/ASTRONOMICON/REPORTS/IMPERIUM_APP_TAURI_PROOF_RUN_REPORT_V0_1.md\",\n  \"errors\": [\n    \"cargo check Tauri bridge failed\"\n  ],\n  \"warnings\": []\n}\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "proof_receipt_is_pass_after_hotfix",
+      "status": "FAIL",
+      "details": {
+        "error": null,
+        "verdict": "FAIL_IMPERIUM_APP_TAURI_PROOF_RUN"
+      }
+    }
+  ],
+  "errors": [
+    "proof run still does not pass with Windows npm/cmd execution"
+  ],
+  "warnings": [],
+  "meaning": "Hotfixes Tauri proof-run validator to execute npm through cmd.exe on Windows."
+}

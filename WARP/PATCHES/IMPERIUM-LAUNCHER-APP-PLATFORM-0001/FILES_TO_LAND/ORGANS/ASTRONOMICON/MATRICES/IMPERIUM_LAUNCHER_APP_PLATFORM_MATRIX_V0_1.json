@@ -1,0 +1,47 @@
+{
+  "matrix_id": "IMPERIUM_LAUNCHER_APP_PLATFORM_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "IMPERIUM-LAUNCHER-APP-PLATFORM-0001",
+  "owner": "ASTRONOMICON + SUPPORT/APP",
+  "status": "APP_PLATFORM_VALIDATION_DEFINED",
+  "purpose": "Validate first Imperium Launcher application platform.",
+  "required_files": [
+    "SUPPORT/APP/imperium_launcher.ps1",
+    "SUPPORT/APP/imperium_launcher_app.ps1",
+    "SUPPORT/APP/LAUNCH_IMPERIUM_APP.cmd",
+    "SUPPORT/APP/IMPERIUM_LAUNCHER_APP_MANIFEST_V0_1.json",
+    "SUPPORT/APP/IMPERIUM_APP_THEME_V0_1.json",
+    "SUPPORT/APP/README_IMPERIUM_LAUNCHER_APP_V0_1.md"
+  ],
+  "required_ui_markers": [
+    "System.Windows.Forms",
+    "TabControl",
+    "RichTextBox",
+    "ListView",
+    "Запустить функцию",
+    "Копировать лог",
+    "Очистить лог",
+    "Открыть логи",
+    "Астрономикон",
+    "Кустодес",
+    "Трон",
+    "CROWN_AWARE_OVERLAY"
+  ],
+  "required_selftest_verdict": "PASS_IMPERIUM_LAUNCHER_APP_PLATFORM_SELFTEST",
+  "forbidden": [
+    "git commit",
+    "git push",
+    "hidden execution",
+    "silent action"
+  ],
+  "not_claimed": [
+    "packaged exe installer",
+    "full IDE visual abstraction",
+    "graph/AAA visual layer resumed",
+    "background agent execution",
+    "Git land automation",
+    "Great Nine assembled",
+    "Core v1 ready",
+    "Throne self-validation"
+  ]
+}

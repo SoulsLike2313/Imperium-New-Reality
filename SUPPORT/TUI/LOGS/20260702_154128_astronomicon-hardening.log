@@ -1,9 +1,26 @@
+============================================================
+IMPERIUM TUI / АКВАРИУМ РАБОТЫ
+============================================================
+generated_at_utc: 2026-07-02T12:41:28Z
+repo: E:\IMPERIUM_REALITY
+action_id: astronomicon-hardening
+label: Астрономикон: локальное Red/Blue ужесточение
+mutates_repo: True
+============================================================
+
+АКВАРИУМ ВЫЗОВА
+Действие: Астрономикон: локальное Red/Blue ужесточение
+Описание: Запускает локальный hardening-readout Astronomicon Red/Blue. Показывает red/blue local scores.
+Команда:
+  python ORGANS/ASTRONOMICON/TOOLS/astronomicon_red_blue_hardening.py --repo-root .
+
+----- terminal output begin -----
 {
   "summary_id": "astronomicon.red_blue_hardening_summary.v0_1",
   "task_id": "ASTRONOMICON-RED-BLUE-HARDENING-AND-SCAN-ISOLATION-0001",
   "validator_id": "astronomicon_red_blue_hardening_tool.v0_1",
   "verdict": "PASS_ASTRONOMICON_RED_BLUE_LOCAL_HARDENED_NOT_CUSTODES",
-  "generated_at_utc": "2026-07-02T14:55:15Z",
+  "generated_at_utc": "2026-07-02T12:41:28Z",
   "repo_head": "170a2f9a",
   "target_organ": "ASTRONOMICON",
   "red_case_count": 6,
@@ -161,3 +178,9 @@
     "blue_team_proven"
   ]
 }
+----- terminal output end -----
+exit_code: 0
+
+============================================================
+ACTION EXIT CODE: 0
+============================================================

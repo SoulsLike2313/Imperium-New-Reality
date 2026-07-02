@@ -1,0 +1,26 @@
+{
+  "contract_id": "IMPERIUM_TAURI_RUNTIME_WINDOW_FPS_PROOF_CONTRACT_V0_1",
+  "version": "0.1",
+  "patch_id": "IMPERIUM-APP-TAURI-RUNTIME-WINDOW-FPS-PROOF-0001",
+  "purpose": "Open the Tauri application window through tauri:dev, record WebView runtime FPS from requestAnimationFrame, and produce an app receipt.",
+  "target": {
+    "target_fps": 60,
+    "average_fps_pass_threshold": 59.5,
+    "minimum_sample_count": 180,
+    "warmup_frames": 30,
+    "slow_frame_ms": 24.0,
+    "max_slow_frame_ratio": 0.05
+  },
+  "law": [
+    "60 FPS is a measured local runtime property, not a visual claim.",
+    "Runtime FPS proof must be written by the opened Tauri WebView through the Rust bridge.",
+    "If FPS proof fails, the app must not claim AAA readiness.",
+    "Visual effects must degrade before aquarium/action visibility is degraded."
+  ],
+  "not_claimed": [
+    "packaged exe built",
+    "auto-updater active",
+    "Eyes embedded",
+    "AAA final polish complete"
+  ]
+}

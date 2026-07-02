@@ -1,0 +1,100 @@
+{
+  "receipt_id": "receipt.astronomicon.imperium_app_tauri_shell_foundation.v0_1",
+  "task_id": "IMPERIUM-APP-TAURI-SHELL-FOUNDATION-0001",
+  "validator_id": "imperium_app_tauri_shell_foundation_validator.v0_1",
+  "verdict": "PASS_IMPERIUM_APP_TAURI_SHELL_FOUNDATION_READY",
+  "generated_at_utc": "2026-07-02T13:57:50Z",
+  "summary": "ORGANS/ASTRONOMICON/REPORTS/IMPERIUM_APP_TAURI_SHELL_FOUNDATION_SUMMARY_V0_1.json",
+  "report": "ORGANS/ASTRONOMICON/REPORTS/IMPERIUM_APP_TAURI_SHELL_FOUNDATION_REPORT_V0_1.md",
+  "checks": [
+    {
+      "name": "tauri_foundation_matrix_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "required_tauri_files_exist",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "tauri_json_files_parse",
+      "status": "PASS",
+      "details": {
+        "bad_json": []
+      }
+    },
+    {
+      "name": "frontend_has_required_markers",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "rust_bridge_has_required_commands",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "tauri_shell_has_no_git_land",
+      "status": "PASS",
+      "details": {
+        "hits": []
+      }
+    },
+    {
+      "name": "fps_gate_60_declared_and_frontend_watchdog_exists",
+      "status": "PASS",
+      "details": {
+        "target_fps": 60
+      }
+    },
+    {
+      "name": "eyes_room_contract_declared",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "seed_core_contract_declared",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "local_tauri_build_environment_detected_optional",
+      "status": "PASS",
+      "details": {
+        "node": {
+          "exists": true,
+          "path": "C:\\Program Files\\nodejs\\node.EXE",
+          "exit_code": 0,
+          "version": "v24.15.0"
+        },
+        "npm": {
+          "exists": true,
+          "error": "[WinError 2] Не удается найти указанный файл"
+        },
+        "cargo": {
+          "exists": true,
+          "path": "C:\\Users\\PC\\.cargo\\bin\\cargo.EXE",
+          "exit_code": 0,
+          "version": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)"
+        },
+        "rustc": {
+          "exists": true,
+          "path": "C:\\Users\\PC\\.cargo\\bin\\rustc.EXE",
+          "exit_code": 0,
+          "version": "rustc 1.95.0 (59807616e 2026-04-14)"
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": []
+}

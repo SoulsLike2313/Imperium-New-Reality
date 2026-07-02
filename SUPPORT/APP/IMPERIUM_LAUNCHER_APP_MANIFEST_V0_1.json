@@ -1,0 +1,47 @@
+{
+  "app_id": "IMPERIUM_LAUNCHER_APP_PLATFORM_V0_1",
+  "version": "0.1",
+  "patch_id": "IMPERIUM-LAUNCHER-APP-PLATFORM-0001",
+  "language": "ru",
+  "owner": "SUPPORT/APP + ASTRONOMICON",
+  "status": "APP_PLATFORM_CANDIDATE",
+  "purpose": "Move the Imperium launcher from a terminal menu/window helper into its own application platform with Imperium identity, aquarium logs, and organ-aware status.",
+  "entrypoints": {
+    "app": "SUPPORT/APP/imperium_launcher.ps1",
+    "direct_app": "SUPPORT/APP/imperium_launcher_app.ps1",
+    "double_click_cmd": "SUPPORT/APP/LAUNCH_IMPERIUM_APP.cmd",
+    "self_test": "pwsh SUPPORT/APP/imperium_launcher.ps1 -SelfTest"
+  },
+  "depends_on": [
+    "SUPPORT/TUI/imperium_tui.py",
+    "SUPPORT/TUI/IMPERIUM_TUI_ACTIONS_V0_1.json",
+    "ORGANS/THRONE/REPORTS/POST_ASTRONOMICON_SCORE_READOUT_SUMMARY_V0_1.json",
+    "ORGANS/THRONE/REPORTS/THRONE_ASTRONOMICON_STRICT_GATES_SUMMARY_V0_1.json",
+    "ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json"
+  ],
+  "app_law": [
+    "The app is a visible operator shell, not a hidden executor.",
+    "Every callable function streams output to a visible aquarium pane.",
+    "Every function writes or preserves logs/receipts via the underlying TUI layer.",
+    "The app may read status and run validated TUI actions.",
+    "The app must not perform git commit or git push.",
+    "The app must not claim Great Nine assembled, Core v1 ready, or Throne self-validation."
+  ],
+  "first_scope": [
+    "Astronomicon",
+    "Custodes validation over Astronomicon",
+    "Throne Crown order over Astronomicon",
+    "Crown-aware score overlay",
+    "TUI action surface"
+  ],
+  "not_claimed": [
+    "packaged exe installer",
+    "full IDE visual abstraction",
+    "graph/AAA visual layer resumed",
+    "background agent execution",
+    "Git land automation",
+    "Great Nine assembled",
+    "Core v1 ready",
+    "Throne self-validation"
+  ]
+}

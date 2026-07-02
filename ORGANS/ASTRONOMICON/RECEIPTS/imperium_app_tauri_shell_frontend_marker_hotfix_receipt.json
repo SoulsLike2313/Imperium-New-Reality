@@ -1,0 +1,40 @@
+{
+  "receipt_id": "receipt.astronomicon.imperium_app_tauri_shell_frontend_marker_hotfix.v0_1",
+  "task_id": "IMPERIUM-APP-TAURI-SHELL-FRONTEND-MARKER-HOTFIX-0001",
+  "validator_id": "imperium_app_tauri_shell_frontend_marker_hotfix_validator.v0_1",
+  "verdict": "FAIL_IMPERIUM_APP_TAURI_SHELL_FRONTEND_MARKER_HOTFIX",
+  "generated_at_utc": "2026-07-02T13:52:39Z",
+  "summary": "ORGANS/ASTRONOMICON/REPORTS/IMPERIUM_APP_TAURI_SHELL_FRONTEND_MARKER_HOTFIX_SUMMARY_V0_1.json",
+  "report": "ORGANS/ASTRONOMICON/REPORTS/IMPERIUM_APP_TAURI_SHELL_FRONTEND_MARKER_HOTFIX_REPORT_V0_1.md",
+  "checks": [
+    {
+      "name": "main_js_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP_TAURI/src/main.js"
+      }
+    },
+    {
+      "name": "frontend_shell_marker_present_in_main_js",
+      "status": "FAIL",
+      "details": {
+        "marker": "IMPERIUM_TAURI_SHELL",
+        "path": "SUPPORT/APP_TAURI/src/main.js"
+      }
+    },
+    {
+      "name": "foundation_validator_passes_after_marker_hotfix",
+      "status": "FAIL",
+      "details": {
+        "exit_code": 1,
+        "stdout_tail": "{\n  \"task_id\": \"IMPERIUM-APP-TAURI-SHELL-FOUNDATION-0001\",\n  \"validator_id\": \"imperium_app_tauri_shell_foundation_validator.v0_1\",\n  \"verdict\": \"FAIL_IMPERIUM_APP_TAURI_SHELL_FOUNDATION\",\n  \"environment_ready_for_tauri_build\": true,\n  \"receipt\": \"ORGANS/ASTRONOMICON/RECEIPTS/imperium_app_tauri_shell_foundation_receipt.json\",\n  \"summary\": \"ORGANS/ASTRONOMICON/REPORTS/IMPERIUM_APP_TAURI_SHELL_FOUNDATION_SUMMARY_V0_1.json\",\n  \"report\": \"ORGANS/ASTRONOMICON/REPORTS/IMPERIUM_APP_TAURI_SHELL_FOUNDATION_REPORT_V0_1.md\",\n  \"errors\": [\n    \"frontend missing markers\"\n  ],\n  \"warnings\": []\n}\n",
+        "stderr_tail": ""
+      }
+    }
+  ],
+  "errors": [
+    "frontend shell marker still missing from main.js",
+    "foundation validator still does not pass after marker hotfix"
+  ],
+  "warnings": []
+}
