@@ -3,8 +3,8 @@
 task_id: `ORGAN-AGENT-ADVISORY-SCORING-FOUNDATION-0001`  
 validator_id: `organ_agent_advisory_scoring_validator.v0_1`  
 verdict: `PASS_ORGAN_AGENT_ADVISORY_SCORING_READY`  
-generated_at_utc: `2026-07-01T20:17:20Z`  
-repo_head: `5435e8953f6cc9a0efd50110bcfc08949bfba780`
+generated_at_utc: `2026-07-02T11:14:33Z`  
+repo_head: `663c402afe07620745df8ad55953c27c6031de0b`
 
 ## Meaning
 

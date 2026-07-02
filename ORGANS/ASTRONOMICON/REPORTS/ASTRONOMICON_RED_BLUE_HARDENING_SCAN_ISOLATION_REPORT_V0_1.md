@@ -3,8 +3,8 @@
 task_id: `ASTRONOMICON-RED-BLUE-HARDENING-AND-SCAN-ISOLATION-0001`  
 validator_id: `astronomicon_red_blue_hardening_scan_isolation_validator.v0_1`  
 verdict: `PASS_ASTRONOMICON_RED_BLUE_HARDENED_AND_SCAN_ISOLATED`  
-generated_at_utc: `2026-07-02T10:51:07Z`  
-repo_head: `589cfb80c608587a460479af7173d944fdf22229`
+generated_at_utc: `2026-07-02T11:14:36Z`  
+repo_head: `663c402afe07620745df8ad55953c27c6031de0b`
 
 ## Meaning
 

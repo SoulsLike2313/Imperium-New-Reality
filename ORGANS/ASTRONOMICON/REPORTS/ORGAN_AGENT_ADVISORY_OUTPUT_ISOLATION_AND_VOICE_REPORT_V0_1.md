@@ -3,8 +3,8 @@
 task_id: `ORGAN-AGENT-ADVISORY-OUTPUT-ISOLATION-AND-VOICE-ENRICHMENT-0001`  
 validator_id: `organ_agent_advisory_output_isolation_voice_validator.v0_1`  
 verdict: `PASS_ADVISORY_OUTPUT_ISOLATION_AND_VOICE_ENRICHED`  
-generated_at_utc: `2026-07-01T20:32:36Z`  
-repo_head: `ef85a546f015cf968e58d2a4a75ea1df0145eb70`
+generated_at_utc: `2026-07-02T11:14:34Z`  
+repo_head: `663c402afe07620745df8ad55953c27c6031de0b`
 
 ## Meaning
 

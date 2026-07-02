@@ -1,0 +1,121 @@
+{
+  "matrix_id": "CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "CUSTODES",
+  "status": "ACTIVE_PROSECUTOR_AUDIT",
+  "patch_id": "CUSTODES-ASTRONOMICON-VALIDATION-0001",
+  "target_organ": "ASTRONOMICON",
+  "purpose": "Custodes proves Astronomicon is not lying about identity, capabilities, validators, evidence and authority boundaries.",
+  "prosecutor_law": [
+    "assume audited organ may be lying until evidence passes",
+    "prove identity",
+    "prove claimed files and tools exist",
+    "execute declared active validators",
+    "treat failed validators as indictments",
+    "do not grant Throne verdict"
+  ],
+  "score_formula": {
+    "identity_score": 0.15,
+    "capability_evidence_score": 0.2,
+    "validator_working_score": 0.25,
+    "boundary_honesty_score": 0.2,
+    "red_blue_truth_score": 0.1,
+    "evidence_chain_score": 0.1
+  },
+  "pass_thresholds": {
+    "custodes_validation_score_min": 85.0,
+    "identity_score_min": 80.0,
+    "capability_evidence_score_min": 80.0,
+    "validator_working_score_min": 80.0,
+    "boundary_honesty_score_min": 80.0
+  },
+  "required_identity_files": [
+    "ORGANS/ASTRONOMICON/CONTRACTS/ORGAN_DUTY_CONTRACT_V0_1.json",
+    "ORGANS/ASTRONOMICON/ASSEMBLY/ORGAN_ASSEMBLY_TARGET_V0_1.json",
+    "ORGANS/ASTRONOMICON/RED_BLUE/ORGAN_RED_BLUE_SKILLS_V0_1.json"
+  ],
+  "required_capability_files": [
+    "ORGANS/ASTRONOMICON/TOOLS/astronomicon_intake_dry_run.py",
+    "ORGANS/ASTRONOMICON/TOOLS/astronomicon_patch_pack_smoke.py",
+    "ORGANS/ASTRONOMICON/TOOLS/organ_agent_advisory.py",
+    "ORGANS/ASTRONOMICON/TOOLS/astronomicon_red_blue_hardening.py",
+    "ORGANS/ASTRONOMICON/VALIDATORS/validate_organ_agent_advisory_scoring.py",
+    "ORGANS/ASTRONOMICON/VALIDATORS/validate_advisory_output_isolation_voice.py",
+    "ORGANS/ASTRONOMICON/VALIDATORS/validate_astronomicon_red_blue_hardening_scan_isolation.py",
+    "ORGANS/ASTRONOMICON/RECEIPTS/patch_pack_lifecycle_validation_foundation_receipt.json",
+    "ORGANS/ASTRONOMICON/RECEIPTS/red_blue_team_launcher_scan_commands_receipt.json",
+    "ORGANS/ASTRONOMICON/RECEIPTS/astronomicon_red_blue_hardening_scan_isolation_receipt.json"
+  ],
+  "declared_active_validators": [
+    {
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_organ_agent_advisory_scoring.py",
+      "args": [
+        "--repo-root",
+        "{repo}",
+        "--apply"
+      ]
+    },
+    {
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_advisory_output_isolation_voice.py",
+      "args": [
+        "--repo-root",
+        "{repo}",
+        "--apply"
+      ]
+    },
+    {
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_red_blue_team_launcher_scan_commands.py",
+      "args": [
+        "--repo-root",
+        "{repo}",
+        "--apply"
+      ]
+    },
+    {
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_astronomicon_red_blue_hardening_scan_isolation.py",
+      "args": [
+        "--repo-root",
+        "{repo}",
+        "--apply"
+      ]
+    }
+  ],
+  "conditional_validators_if_present": [
+    {
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_patch_lifecycle_launcher_commands.py",
+      "args": [
+        "--repo-root",
+        "{repo}",
+        "--apply"
+      ]
+    },
+    {
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_patch_pack_lifecycle_validation_foundation.py",
+      "args": [
+        "--repo-root",
+        "{repo}",
+        "--patch-id",
+        "PATCH-PACK-LIFECYCLE-VALIDATION-FOUNDATION-0001"
+      ]
+    },
+    {
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_patch_pack_intake_validation_smoke.py",
+      "args": [
+        "--repo-root",
+        "{repo}"
+      ]
+    }
+  ],
+  "boundary_claims_forbidden_as_assertions": [
+    "CUSTODES_TRUST_GRANTED",
+    "THRONE_CONFIRMED",
+    "ORGAN_ASSEMBLED",
+    "RED_BLUE_PROVEN",
+    "EXECUTION_ALLOWED"
+  ],
+  "not_claimed": [
+    "Throne verdict",
+    "organ assembled",
+    "global Custodes trust for all organs"
+  ]
+}

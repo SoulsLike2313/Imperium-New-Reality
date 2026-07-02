@@ -3,8 +3,8 @@
 task_id: `RED-BLUE-TEAM-LAUNCHER-SCAN-COMMANDS-0001`  
 validator_id: `red_blue_team_launcher_scan_commands_validator.v0_1`  
 verdict: `PASS_RED_BLUE_TEAM_LAUNCHER_SCAN_COMMANDS_READY`  
-generated_at_utc: `2026-07-02T10:38:49Z`  
-repo_head: `893347e8a578b861f59b978c60d55e6ab2319716`
+generated_at_utc: `2026-07-02T11:14:35Z`  
+repo_head: `663c402afe07620745df8ad55953c27c6031de0b`
 
 ## Commands
 

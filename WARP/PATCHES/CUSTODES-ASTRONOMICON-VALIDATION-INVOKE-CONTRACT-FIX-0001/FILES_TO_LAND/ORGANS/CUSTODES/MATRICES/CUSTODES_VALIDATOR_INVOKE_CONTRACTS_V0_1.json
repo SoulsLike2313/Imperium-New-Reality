@@ -1,0 +1,135 @@
+{
+  "matrix_id": "CUSTODES_VALIDATOR_INVOKE_CONTRACTS_V0_1",
+  "version": "0.1",
+  "owner": "CUSTODES",
+  "status": "ACTIVE_PROSECUTOR_INVOKE_CONTRACTS",
+  "patch_id": "CUSTODES-ASTRONOMICON-VALIDATION-INVOKE-CONTRACT-FIX-0001",
+  "purpose": "Custodes must prosecute validator honesty using explicit/adaptive invocation contracts, not a single brittle command shape.",
+  "target_organ": "ASTRONOMICON",
+  "default_attempts": [
+    [
+      "--repo-root",
+      "{repo}",
+      "--apply"
+    ],
+    [
+      "--repo-root",
+      "{repo}"
+    ],
+    []
+  ],
+  "validator_contracts": [
+    {
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_organ_agent_advisory_scoring.py",
+      "attempts": [
+        [
+          "--repo-root",
+          "{repo}",
+          "--apply"
+        ],
+        [
+          "--repo-root",
+          "{repo}"
+        ]
+      ]
+    },
+    {
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_advisory_output_isolation_voice.py",
+      "attempts": [
+        [
+          "--repo-root",
+          "{repo}",
+          "--apply"
+        ],
+        [
+          "--repo-root",
+          "{repo}"
+        ]
+      ]
+    },
+    {
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_red_blue_team_launcher_scan_commands.py",
+      "attempts": [
+        [
+          "--repo-root",
+          "{repo}",
+          "--apply"
+        ],
+        [
+          "--repo-root",
+          "{repo}"
+        ]
+      ]
+    },
+    {
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_astronomicon_red_blue_hardening_scan_isolation.py",
+      "attempts": [
+        [
+          "--repo-root",
+          "{repo}",
+          "--apply"
+        ],
+        [
+          "--repo-root",
+          "{repo}"
+        ]
+      ]
+    },
+    {
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_patch_lifecycle_launcher_commands.py",
+      "attempts": [
+        [
+          "--repo-root",
+          "{repo}",
+          "--apply"
+        ],
+        [
+          "--repo-root",
+          "{repo}"
+        ]
+      ]
+    },
+    {
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_patch_pack_lifecycle_validation_foundation.py",
+      "attempts": [
+        [
+          "--repo-root",
+          "{repo}",
+          "--apply"
+        ],
+        [
+          "--repo-root",
+          "{repo}"
+        ],
+        []
+      ],
+      "reason": "This validator previously failed with exit_code 2 under Custodes; prosecutor must distinguish broken validator from wrong invocation contract."
+    },
+    {
+      "path": "ORGANS/ASTRONOMICON/VALIDATORS/validate_patch_pack_intake_validation_smoke.py",
+      "attempts": [
+        [
+          "--repo-root",
+          "{repo}",
+          "--apply"
+        ],
+        [
+          "--repo-root",
+          "{repo}"
+        ],
+        []
+      ]
+    }
+  ],
+  "hard_laws": [
+    "exit_code 2 on first attempt is not enough to indict the organ; Custodes must try declared invocation contracts",
+    "a validator is indicted only if all compatible invocation attempts fail or return non-PASS",
+    "Custodes must preserve stderr/stdout tails for prosecution evidence",
+    "Custodes validation is still not Throne verdict"
+  ],
+  "not_claimed": [
+    "Throne verdict",
+    "organ assembled",
+    "validator infallibility"
+  ]
+}

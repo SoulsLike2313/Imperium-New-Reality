@@ -1,0 +1,60 @@
+{
+  "summary_id": "astronomicon.organ_agent_single_advisory.v0_1",
+  "patch_id": "ORGAN-AGENT-ADVISORY-OUTPUT-ISOLATION-AND-VOICE-ENRICHMENT-0001",
+  "generated_at_utc": "2026-07-02T11:14:33Z",
+  "repo_head": "663c402a",
+  "target_organ": "ASTRONOMICON",
+  "verdict": "PASS_SINGLE_ORGAN_ADVISORY_GENERATED",
+  "advisory_count": 1,
+  "advisories": [
+    {
+      "organ_id": "ASTRONOMICON",
+      "organ_domain": "intent intake, patch/task shape, closure comparison, operator guidance",
+      "attention_zone": "operator intake / closure guidance",
+      "future_step_success_score": 98.5,
+      "impact_score": 92,
+      "attention_priority_score": 90.62,
+      "confidence": "HIGH",
+      "advisory_text": "ASTRONOMICON: зона внимания «operator intake / closure guidance». Расчётная успешность будущего шага 98.5/100, приоритет внимания 90.62/100.",
+      "what_is_visible": "Видно профильную зону: operator intake / closure guidance; текущий расчёт основан на evidence snapshot и доступности валидаторов.",
+      "why_this_zone_matters": "Эта зона связана с доменом органа: intent intake, patch/task shape, closure comparison, operator guidance. Усиление зоны повышает вероятность безопасного следующего шага без заявления trust.",
+      "what_raises_success_probability": [
+        "reversibility: 85/100 поддерживает прогноз",
+        "evidence_strength: 100.0/100 поддерживает прогноз",
+        "validator_availability: 100.0/100 поддерживает прогноз",
+        "authority_clarity: 100.0/100 поддерживает прогноз",
+        "scope_clarity: 100.0/100 поддерживает прогноз",
+        "dependency_readiness: 100.0/100 поддерживает прогноз",
+        "risk_control: 100.0/100 поддерживает прогноз",
+        "operator_clarity: 100.0/100 поддерживает прогноз"
+      ],
+      "what_reduces_success_probability": [
+        "существенных слабых факторов в базовой формуле не найдено"
+      ],
+      "evidence_considered": [
+        "intent intake exists",
+        "patch lifecycle commands exist",
+        "smoke closure exists"
+      ],
+      "factor_breakdown": {
+        "evidence_strength": 100.0,
+        "validator_availability": 100.0,
+        "authority_clarity": 100.0,
+        "scope_clarity": 100.0,
+        "dependency_readiness": 100.0,
+        "reversibility": 85,
+        "risk_control": 100.0,
+        "operator_clarity": 100.0
+      },
+      "language_mode": "ADVISORY_ZONE_ONLY_NO_DIRECT_ACTION",
+      "not_claimed": [
+        "execution",
+        "trust",
+        "Throne verdict",
+        "concrete action command"
+      ]
+    }
+  ],
+  "global_summary_touched": false,
+  "hard_law": "Single-organ advisory writes isolated per-organ outputs and does not overwrite global summary."
+}

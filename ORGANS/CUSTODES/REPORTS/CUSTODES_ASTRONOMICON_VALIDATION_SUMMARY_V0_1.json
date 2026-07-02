@@ -1,0 +1,91 @@
+{
+  "summary_id": "custodes.astronomicon_validation_summary.v0_2",
+  "task_id": "CUSTODES-ASTRONOMICON-VALIDATION-INVOKE-CONTRACT-FIX-0001",
+  "validator_id": "custodes_astronomicon_validation_invoke_contract_fix_validator.v0_1",
+  "verdict": "PASS_CUSTODES_ASTRONOMICON_VALIDATION_READY",
+  "generated_at_utc": "2026-07-02T11:14:42Z",
+  "repo_head": "663c402afe07620745df8ad55953c27c6031de0b",
+  "custodes_validation_score": 100.0,
+  "checks": [
+    {
+      "name": "custodes_audit_astronomicon.py_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/CUSTODES/TOOLS/custodes_audit_astronomicon.py"
+      }
+    },
+    {
+      "name": "CUSTODES_VALIDATOR_INVOKE_CONTRACTS_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/CUSTODES/MATRICES/CUSTODES_VALIDATOR_INVOKE_CONTRACTS_V0_1.json"
+      }
+    },
+    {
+      "name": "invoke_contract_matrix_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "invoke_contracts_include_lifecycle_foundation_validator",
+      "status": "PASS",
+      "details": {
+        "contract_count": 7
+      }
+    },
+    {
+      "name": "custodes_audit_tool_runs",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stderr_tail": "",
+        "stdout_tail": "y\\\": \\\"ORGANS/ASTRONOMICON/REPORTS/PATCH_PACK_LIFECYCLE_SMOKE_ALL_SUMMARY_V0_1.json\\\"\\n  },\\n  \\\"receipt\\\": \\\"ORGANS/ASTRONOMICON/RECEIPTS/patch_pack_lifecycle_validation_foundation_receipt.json\\\",\\n  \\\"summary\\\": \\\"ORGANS/ASTRONOMICON/REPORTS/PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION_SUMMARY_V0_1.json\\\",\\n  \\\"report\\\": \\\"ORGANS/ASTRONOMICON/REPORTS/PATCH_PACK_LIFECYCLE_VALIDATION_FOUNDATION_REPORT_V0_1.md\\\",\\n  \\\"errors\\\": [],\\n  \\\"warnings\\\": []\\n}\\n\",\n          \"stderr_tail\": \"\"\n        }\n      ]\n    },\n    {\n      \"path\": \"ORGANS/ASTRONOMICON/VALIDATORS/validate_patch_pack_intake_validation_smoke.py\",\n      \"status\": \"PASS\",\n      \"verdict\": \"PASS_PATCH_PACK_INTAKE_VALIDATION_SMOKE_READY\",\n      \"exit_code\": 0,\n      \"winning_attempt\": [\n        \"--repo-root\",\n        \"E:\\\\IMPERIUM_REALITY\",\n        \"--apply\"\n      ],\n      \"attempts\": [\n        {\n          \"args\": [\n            \"--repo-root\",\n            \"E:\\\\IMPERIUM_REALITY\",\n            \"--apply\"\n          ],\n          \"exit_code\": 0,\n          \"verdict\": \"PASS_PATCH_PACK_INTAKE_VALIDATION_SMOKE_READY\",\n          \"stdout_tail\": \"{\\n  \\\"task_id\\\": \\\"ASTRONOMICON-PATCH-PACK-INTAKE-AND-VALIDATION-SMOKE-0001\\\",\\n  \\\"validator_id\\\": \\\"astronomicon_patch_pack_intake_validation_smoke_validator.v0_1\\\",\\n  \\\"verdict\\\": \\\"PASS_PATCH_PACK_INTAKE_VALIDATION_SMOKE_READY\\\",\\n  \\\"patch_count\\\": 35,\\n  \\\"smoke_summary\\\": \\\"ORGANS/ASTRONOMICON/REPORTS/PATCH_PACK_SMOKE_VALIDATION_SUMMARY_V0_1.json\\\",\\n  \\\"receipt\\\": \\\"ORGANS/ASTRONOMICON/RECEIPTS/patch_pack_intake_validation_smoke_receipt.json\\\",\\n  \\\"report\\\": \\\"ORGANS/ASTRONOMICON/REPORTS/PATCH_PACK_INTAKE_VALIDATION_SMOKE_REPORT_V0_1.md\\\",\\n  \\\"errors\\\": [],\\n  \\\"warnings\\\": [],\\n  \\\"verdict_counts\\\": {\\n    \\\"PARTIAL\\\": 22,\\n    \\\"CLOSED_BY_DECLARED_GOALS\\\": 12,\\n    \\\"FAILED\\\": 1\\n  }\\n}\\n\",\n          \"stderr_tail\": \"\"\n        }\n      ]\n    }\n  ],\n  \"indictments\": [],\n  \"errors\": [],\n  \"warnings\": [],\n  \"not_claimed\": [\n    \"Throne verdict\",\n    \"organ assembled\"\n  ]\n}\n"
+      }
+    },
+    {
+      "name": "custodes_audit_summary_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "custodes_audit_verdict_pass",
+      "status": "PASS",
+      "details": {
+        "verdict": "PASS_CUSTODES_ASTRONOMICON_PROSECUTOR_VALIDATION"
+      }
+    },
+    {
+      "name": "all_astronomicon_validators_pass_under_custodes",
+      "status": "PASS",
+      "details": {
+        "failed": [],
+        "validator_count": 7
+      }
+    },
+    {
+      "name": "custodes_indictments_absent",
+      "status": "PASS",
+      "details": {
+        "indictments": []
+      }
+    },
+    {
+      "name": "throne_confirmation_score_remains_zero",
+      "status": "PASS",
+      "details": {
+        "score": 0.0
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "audit_summary": "ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json",
+  "not_claimed": [
+    "Throne verdict",
+    "organ assembled"
+  ]
+}
