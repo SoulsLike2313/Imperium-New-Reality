@@ -1,0 +1,112 @@
+{
+  "case_set_id": "ASTRONOMICON_RED_BLUE_HARDENING_CASES_V0_1",
+  "patch_id": "ASTRONOMICON-RED-BLUE-HARDENING-AND-SCAN-ISOLATION-0001",
+  "target_organ": "ASTRONOMICON",
+  "red_cases": [
+    {
+      "case_id": "RED_ASTRONOMICON_INTENT_AMBIGUITY_001",
+      "skill": "intent_ambiguity_probe",
+      "attack_zone": "operator intent may be underspecified",
+      "expected_detector_evidence": [
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_intake_dry_run.py"
+      ],
+      "expected_attention_zone": "intent clarity"
+    },
+    {
+      "case_id": "RED_ASTRONOMICON_MISSING_CONTEXT_001",
+      "skill": "missing_context_attack",
+      "attack_zone": "task has missing inputs or ambiguous source context",
+      "expected_detector_evidence": [
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_intake_dry_run.py"
+      ],
+      "expected_attention_zone": "missing context"
+    },
+    {
+      "case_id": "RED_ASTRONOMICON_FALSE_CLOSURE_001",
+      "skill": "false_closure_claim_attack",
+      "attack_zone": "declared expected verdict may be treated as actual closure",
+      "expected_detector_evidence": [
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_patch_pack_smoke.py"
+      ],
+      "expected_attention_zone": "declared vs actual closure"
+    },
+    {
+      "case_id": "RED_ASTRONOMICON_RECEIPT_ONLY_COMPLETION_001",
+      "skill": "receipt_only_completion_attack",
+      "attack_zone": "receipt existence may be confused with work done",
+      "expected_detector_evidence": [
+        "ORGANS/DOCTRINARIUM/RECEIPTS/pack_taxonomy_law_receipt.json",
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_patch_pack_smoke.py"
+      ],
+      "expected_attention_zone": "receipt is not work"
+    },
+    {
+      "case_id": "RED_ASTRONOMICON_ADVISORY_ACTION_LEAK_001",
+      "skill": "advisory_direct_action_leak_attack",
+      "attack_zone": "organ-agent voice may command concrete action",
+      "expected_detector_evidence": [
+        "ORGANS/ASTRONOMICON/VALIDATORS/validate_advisory_output_isolation_voice.py"
+      ],
+      "expected_attention_zone": "advisory language boundary"
+    },
+    {
+      "case_id": "RED_ASTRONOMICON_SINGLE_OUTPUT_OVERWRITE_001",
+      "skill": "single_organ_output_overwrite_attack",
+      "attack_zone": "single-organ output may overwrite global summary",
+      "expected_detector_evidence": [
+        "ORGANS/ASTRONOMICON/RECEIPTS/organ_agent_advisory_output_isolation_voice_receipt.json"
+      ],
+      "expected_attention_zone": "output isolation"
+    }
+  ],
+  "blue_guards": [
+    {
+      "guard_id": "BLUE_ASTRONOMICON_INTENT_PRESERVATION_001",
+      "skill": "intent_preservation_guard",
+      "defense_zone": "intake keeps task text and route visible",
+      "expected_guard_evidence": [
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_intake_dry_run.py"
+      ]
+    },
+    {
+      "guard_id": "BLUE_ASTRONOMICON_CONTEXT_DEFICIT_001",
+      "skill": "context_deficit_guard",
+      "defense_zone": "context gaps are expressed as deficits, not guessed truth",
+      "expected_guard_evidence": [
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_intake_dry_run.py"
+      ]
+    },
+    {
+      "guard_id": "BLUE_ASTRONOMICON_DECLARED_ACTUAL_001",
+      "skill": "declared_vs_actual_closure_guard",
+      "defense_zone": "Patch Pack closure compares declared expectations to visible receipts",
+      "expected_guard_evidence": [
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_patch_pack_smoke.py"
+      ]
+    },
+    {
+      "guard_id": "BLUE_ASTRONOMICON_ADVISORY_NO_ACTION_001",
+      "skill": "advisory_no_direct_action_guard",
+      "defense_zone": "organ advisory must not contain direct action commands",
+      "expected_guard_evidence": [
+        "ORGANS/ASTRONOMICON/VALIDATORS/validate_organ_agent_advisory_scoring.py"
+      ]
+    },
+    {
+      "guard_id": "BLUE_ASTRONOMICON_OUTPUT_ISOLATION_001",
+      "skill": "global_summary_isolation_guard",
+      "defense_zone": "single-organ advisory must not overwrite global advisory",
+      "expected_guard_evidence": [
+        "ORGANS/ASTRONOMICON/VALIDATORS/validate_advisory_output_isolation_voice.py"
+      ]
+    },
+    {
+      "guard_id": "BLUE_ASTRONOMICON_OPERATOR_NOT_CLAIMED_001",
+      "skill": "operator_not_claimed_guard",
+      "defense_zone": "operator surfaces not-claimed boundaries",
+      "expected_guard_evidence": [
+        "ORGANS/ASTRONOMICON/RECEIPTS/red_blue_team_launcher_scan_commands_receipt.json"
+      ]
+    }
+  ]
+}

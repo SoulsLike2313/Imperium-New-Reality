@@ -1,0 +1,58 @@
+{
+  "matrix_id": "ASTRONOMICON_RED_BLUE_HARDENING_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "ASTRONOMICON",
+  "status": "LOCAL_HARDENING_NOT_CUSTODES_NOT_THRONE",
+  "patch_id": "ASTRONOMICON-RED-BLUE-HARDENING-AND-SCAN-ISOLATION-0001",
+  "purpose": "Harden Astronomicon Red/Blue lanes and fix Red/Blue scan output isolation before Custodes audit.",
+  "target_organ": "ASTRONOMICON",
+  "local_red_team_cases": [
+    "intent_ambiguity_probe",
+    "missing_context_attack",
+    "false_closure_claim_attack",
+    "receipt_only_completion_attack",
+    "advisory_direct_action_leak_attack",
+    "single_organ_output_overwrite_attack"
+  ],
+  "local_blue_team_guards": [
+    "intent_preservation_guard",
+    "context_deficit_guard",
+    "declared_vs_actual_closure_guard",
+    "advisory_no_direct_action_guard",
+    "global_summary_isolation_guard",
+    "operator_not_claimed_guard"
+  ],
+  "score_law": {
+    "red_local_hardening_score": "percent of red cases with expected detector evidence",
+    "blue_local_hardening_score": "percent of blue guards with expected guard evidence",
+    "red_team_proven_score": "must remain 0 until Custodes/Throne proof",
+    "blue_team_proven_score": "must remain 0 until Custodes/Throne proof",
+    "custodes_validation_score": "must remain 0 in this patch",
+    "throne_confirmation_score": "must remain 0 in this patch"
+  },
+  "pass_thresholds": {
+    "red_local_hardening_score_min": 80.0,
+    "blue_local_hardening_score_min": 80.0,
+    "required_red_case_count_min": 6,
+    "required_blue_guard_count_min": 6
+  },
+  "hard_laws": [
+    "single-organ redblue scan must not overwrite global scan summary",
+    "Astronomicon local Red/Blue hardening is not Custodes trust",
+    "Astronomicon local Red/Blue hardening is not Throne verdict",
+    "local red/blue cases may recommend attention zones but not execute",
+    "red_team_proven_score and blue_team_proven_score remain 0 in this patch"
+  ],
+  "next_gate": [
+    "CUSTODES-ASTRONOMICON-VALIDATION-0001",
+    "THRONE-ASTRONOMICON-STRICT-GATES-0001",
+    "POST-ASTRONOMICON-SCORE-READOUT-0001"
+  ],
+  "not_claimed": [
+    "Custodes trust",
+    "Throne verdict",
+    "organ assembled",
+    "red_team_proven",
+    "blue_team_proven"
+  ]
+}

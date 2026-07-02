@@ -1,0 +1,133 @@
+{
+  "receipt_id": "receipt.astronomicon.red_blue_hardening_scan_isolation.v0_1",
+  "task_id": "ASTRONOMICON-RED-BLUE-HARDENING-AND-SCAN-ISOLATION-0001",
+  "validator_id": "astronomicon_red_blue_hardening_scan_isolation_validator.v0_1",
+  "verdict": "PASS_ASTRONOMICON_RED_BLUE_HARDENED_AND_SCAN_ISOLATED",
+  "generated_at_utc": "2026-07-02T10:51:07Z",
+  "summary": "ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_RED_BLUE_HARDENING_SCAN_ISOLATION_SUMMARY_V0_1.json",
+  "report": "ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_RED_BLUE_HARDENING_SCAN_ISOLATION_REPORT_V0_1.md",
+  "checks": [
+    {
+      "name": "red_blue_team_skills_scan.py_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/INQUISITION/TOOLS/red_blue_team_skills_scan.py"
+      }
+    },
+    {
+      "name": "astronomicon_red_blue_hardening.py_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/TOOLS/astronomicon_red_blue_hardening.py"
+      }
+    },
+    {
+      "name": "ASTRONOMICON_RED_BLUE_HARDENING_MATRIX_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/RED_BLUE/ASTRONOMICON_RED_BLUE_HARDENING_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "ASTRONOMICON_RED_BLUE_HARDENING_CASES_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/ASTRONOMICON/RED_BLUE/ASTRONOMICON_RED_BLUE_HARDENING_CASES_V0_1.json"
+      }
+    },
+    {
+      "name": "astronomicon_red_blue_matrix_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "astronomicon_red_blue_cases_parse",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "global_redblue_scan_runs",
+      "status": "PASS",
+      "details": {
+        "stderr": ""
+      }
+    },
+    {
+      "name": "global_redblue_summary_has_10_organs",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "organ_count": 10
+      }
+    },
+    {
+      "name": "single_organ_redblue_scan_runs",
+      "status": "PASS",
+      "details": {
+        "stderr": ""
+      }
+    },
+    {
+      "name": "single_organ_scan_does_not_overwrite_global_summary",
+      "status": "PASS",
+      "details": {
+        "before": "fb8c6ca9d33f69de7a3f1b255903a7998fb9400e58b3b48e2cdf5a2c58c2f8c6",
+        "after": "fb8c6ca9d33f69de7a3f1b255903a7998fb9400e58b3b48e2cdf5a2c58c2f8c6"
+      }
+    },
+    {
+      "name": "single_organ_scan_writes_isolated_astronomicon_summary",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "organ_count": 1
+      }
+    },
+    {
+      "name": "astronomicon_red_blue_hardening_tool_runs",
+      "status": "PASS",
+      "details": {
+        "stderr": ""
+      }
+    },
+    {
+      "name": "astronomicon_red_blue_hardening_summary_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "astronomicon_red_blue_local_scores_pass_threshold",
+      "status": "PASS",
+      "details": {
+        "red": 100.0,
+        "blue": 100.0
+      }
+    },
+    {
+      "name": "proof_scores_remain_zero",
+      "status": "PASS",
+      "details": {
+        "red_team_proven_score": 0.0,
+        "blue_team_proven_score": 0.0,
+        "custodes_validation_score": 0.0,
+        "throne_confirmation_score": 0.0
+      }
+    },
+    {
+      "name": "global_redblue_scan_restored_after_test",
+      "status": "PASS",
+      "details": {
+        "stderr": ""
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "meaning": "Astronomicon local Red/Blue hardened and Red/Blue scan isolation fixed. Custodes/Throne remain next."
+}
