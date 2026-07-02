@@ -1,0 +1,109 @@
+{
+  "receipt_id": "receipt.astronomicon.imperium_tui_console.v0_1_hotfix",
+  "task_id": "IMPERIUM-TUI-AQUARIUM-VALIDATOR-HOTFIX-0001",
+  "validator_id": "imperium_tui_aquarium_validator_hotfix.v0_1",
+  "verdict": "PASS_IMPERIUM_TUI_ASTRONOMICON_CONSOLE_READY",
+  "generated_at_utc": "2026-07-02T11:44:09Z",
+  "summary": "ORGANS/ASTRONOMICON/REPORTS/IMPERIUM_TUI_ASTRONOMICON_CONSOLE_SUMMARY_V0_1.json",
+  "report": "ORGANS/ASTRONOMICON/REPORTS/IMPERIUM_TUI_ASTRONOMICON_CONSOLE_REPORT_V0_1.md",
+  "checks": [
+    {
+      "name": "imperium_tui.py_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/TUI/imperium_tui.py"
+      }
+    },
+    {
+      "name": "imperium_tui.ps1_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/TUI/imperium_tui.ps1"
+      }
+    },
+    {
+      "name": "IMPERIUM_TUI_ACTIONS_V0_1.json_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/TUI/IMPERIUM_TUI_ACTIONS_V0_1.json"
+      }
+    },
+    {
+      "name": "README_IMPERIUM_TUI_ASTRONOMICON_V0_1.md_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/TUI/README_IMPERIUM_TUI_ASTRONOMICON_V0_1.md"
+      }
+    },
+    {
+      "name": "tui_actions_manifest_parses",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "tui_has_minimum_russian_actions",
+      "status": "PASS",
+      "details": {
+        "count": 9
+      }
+    },
+    {
+      "name": "all_actions_have_russian_labels_and_descriptions",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "all_actions_require_aquarium_logs",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "tui_does_not_implement_git_commit_push",
+      "status": "PASS",
+      "details": {
+        "hits": []
+      }
+    },
+    {
+      "name": "tui_has_ascii_aquarium_marker",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "tui_list_actions_runs",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "status\t������ ��������� � ������� �����\tmutates=False\nastronomicon-advice\t������������: ����������� �����\tmutates=True\nastronomicon-redblue\t������������: Red/Blue ������\tmutates=True\nastronomicon-hardening\t������������: ��������� Red/Blue �����������\tmutates=True\ncustodes-audit\t��������: ������������ �������� �������������\tmutates=True\nthrone-crown-order\t����: Crown order �� �������������\tmutates=True\nthrone-readout\t����: ��������� ��������� Crown-��������\tmutates=False\ncustodes-readout\t��������: ��������� ��������� ������������ docket\tmutates=False\nscore-refresh-guidance\t���������: ��� �������� ����� ����� �����\tmutates=False\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "tui_status_action_runs_and_logs",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "IMPERIUM_REALITY\naction_id: status\nlabel: ������ ��������� � ������� �����\nmutates_repo: False\n============================================================\n\n������ ��������� / ��������\n\n### Git\nHEAD: 19f92ea9\nbranch: master\nstatus: ?? ORGANS/ASTRONOMICON/RECEIPTS/imperium_tui_astronomicon_console_receipt.json\n?? ORGANS/ASTRONOMICON/REPORTS/IMPERIUM_TUI_ASTRONOMICON_CONSOLE_REPORT_V0_1.md\n?? ORGANS/ASTRONOMICON/REPORTS/IMPERIUM_TUI_ASTRONOMICON_CONSOLE_SUMMARY_V0_1.json\n?? ORGANS/ASTRONOMICON/VALIDATORS/validate_imperium_tui_astronomicon_console.py\n?? SUPPORT/TUI/\n?? WARP/PATCHES/IMPERIUM-TUI-AQUARIUM-VALIDATOR-HOTFIX-0001/\n?? WARP/PATCHES/IMPERIUM-TUI-ASTRONOMICON-CUSTODES-THRONE-CONSOLE-0001/\n\n### Astronomicon / Custodes / Throne\nCustodes verdict: PASS_CUSTODES_ASTRONOMICON_PROSECUTOR_VALIDATION\nCustodes score: 100.0\nCustodes indictments: 0\nAstronomicon red local: 100.0\nAstronomicon blue local: 100.0\nThrone verdict: PASS_THRONE_ASTRONOMICON_CROWN_ORDER_WITH_SELF_DECEPTION_GUARD\nCrown truth state: CROWN_ORDER_ISSUED_NOT_THRONE_SELF_PROVEN\nAstronomicon crown order: 100.0\nThrone self-validation: 0.0\nExternal witness for Throne: 0.0\nAstronomicon assembled: 0.0\n\n### Great Nine stage scores\nprofile_baseline_score: 100.0\nduty_defined_score: 100.0\nassembly_target_defined_score: 100.0\nred_team_score: 0.0\nblue_team_score: 0.0\norgan_truth_maturity_score: 40.0\norgan_assembled_score: 0.0\n\n============================================================\nACTION EXIT CODE: 0\n============================================================\n\n��� ���������: SUPPORT\\TUI\\LOGS\\20260702_144409_status.log\nAQUARIUM_LOG: SUPPORT\\TUI\\LOGS\\20260702_144409_status.log\nReceipt TUI: SUPPORT\\TUI\\RECEIPTS\\20260702_144409_status_receipt.json\nTUI_RECEIPT: SUPPORT\\TUI\\RECEIPTS\\20260702_144409_status_receipt.json\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "tui_throne_readout_runs",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "=ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json\n- PASS | VALIDATORS_WORK_UNDER_CUSTODES | score=100.0 | evidence=ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json\n- PASS | NO_CUSTODES_INDICTMENTS | score=100.0 | evidence=ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json\n- PASS | CUSTODES_VALIDATION_EXACT | score=100.0 | evidence=ORGANS/CUSTODES/RECEIPTS/custodes_astronomicon_validation_receipt.json\n- PASS | BOUNDARY_HONESTY_EXACT | score=100.0 | evidence=ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json\n- PASS | EVIDENCE_CHAIN_EXACT | score=100.0 | evidence=ORGANS/CUSTODES/REPORTS/CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY_V0_1.json\n- PASS | RED_BLUE_LOCAL_HARDENING_EXACT | score=100.0 | evidence=ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_RED_BLUE_HARDENING_SCAN_ISOLATION_SUMMARY_V0_1.json\n- PASS | PRIOR_THRONE_WAS_NOT_EXTERNAL_PROOF | score=100.0 | evidence=ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_RED_BLUE_HARDENING_SCAN_ISOLATION_SUMMARY_V0_1.json\n- PASS | RED_BLUE_CONTRACT_DEFINED_NOT_PROVEN | score=100.0 | evidence=ORGANS/ASTRONOMICON/RED_BLUE/ORGAN_RED_BLUE_SKILLS_V0_1.json\n\nNot claimed:\n- Throne self-validation\n- global organ assembled\n- Core v1 ready\n- Great Nine complete\n- visual work resumed\n- organ assembled\n\n============================================================\nACTION EXIT CODE: 0\n============================================================\n\n��� ���������: SUPPORT\\TUI\\LOGS\\20260702_144409_throne-readout.log\nAQUARIUM_LOG: SUPPORT\\TUI\\LOGS\\20260702_144409_throne-readout.log\nReceipt TUI: SUPPORT\\TUI\\RECEIPTS\\20260702_144409_throne-readout_receipt.json\nTUI_RECEIPT: SUPPORT\\TUI\\RECEIPTS\\20260702_144409_throne-readout_receipt.json\n",
+        "stderr_tail": ""
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "meaning": "TUI validator hotfix: structural forbidden-git check and explicit AQUARIUM_LOG marker."
+}

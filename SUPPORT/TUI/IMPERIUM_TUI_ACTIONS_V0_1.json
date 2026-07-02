@@ -1,0 +1,144 @@
+{
+  "tui_id": "IMPERIUM_TUI_ASTRONOMICON_CUSTODES_THRONE_CONSOLE_V0_1",
+  "version": "0.1",
+  "patch_id": "IMPERIUM-TUI-ASTRONOMICON-CUSTODES-THRONE-CONSOLE-0001",
+  "language": "ru",
+  "mode": "TERMINAL_TUI_WITH_AQUARIUM_LOGS",
+  "purpose": "Russian operator TUI for Astronomicon work and Custodes/Throne validation state.",
+  "aquarium_law": [
+    "Every callable action must print a visible terminal log.",
+    "Every external command must stream stdout/stderr to the TUI.",
+    "Every action must write an action transcript under SUPPORT/TUI/LOGS.",
+    "No action may silently mutate without visible output.",
+    "No action may run git commit, git push, or hidden land."
+  ],
+  "scope": [
+    "Astronomicon",
+    "Custodes validation over Astronomicon",
+    "Throne Crown order over Astronomicon",
+    "status/readout only for current broader Imperium scores"
+  ],
+  "actions": [
+    {
+      "id": "status",
+      "ru_label": "Статус Империума и рабочей ветки",
+      "ru_description": "Показывает HEAD, git status, ключевые последние verdicts и состояние Astronomicon/Custodes/Throne.",
+      "kind": "internal_readout",
+      "aquarium_log_required": true,
+      "mutates_repo": false
+    },
+    {
+      "id": "astronomicon-advice",
+      "ru_label": "Астрономикон: органальный совет",
+      "ru_description": "Показывает scored advisory по Astronomicon: зона внимания, score, evidence, not-claimed.",
+      "kind": "external_command",
+      "command": [
+        "pwsh",
+        "SUPPORT/LAUNCHER/imperium.ps1",
+        "advise",
+        "organ",
+        "ASTRONOMICON"
+      ],
+      "aquarium_log_required": true,
+      "mutates_repo": true
+    },
+    {
+      "id": "astronomicon-redblue",
+      "ru_label": "Астрономикон: Red/Blue статус",
+      "ru_description": "Показывает Red/Blue skill lanes и proof gap для Astronomicon.",
+      "kind": "external_command",
+      "command": [
+        "pwsh",
+        "SUPPORT/LAUNCHER/imperium.ps1",
+        "redblue",
+        "scan",
+        "organ",
+        "ASTRONOMICON"
+      ],
+      "aquarium_log_required": true,
+      "mutates_repo": true
+    },
+    {
+      "id": "astronomicon-hardening",
+      "ru_label": "Астрономикон: локальное Red/Blue ужесточение",
+      "ru_description": "Запускает локальный hardening-readout Astronomicon Red/Blue. Показывает red/blue local scores.",
+      "kind": "external_command",
+      "command": [
+        "python",
+        "ORGANS/ASTRONOMICON/TOOLS/astronomicon_red_blue_hardening.py",
+        "--repo-root",
+        "."
+      ],
+      "aquarium_log_required": true,
+      "mutates_repo": true
+    },
+    {
+      "id": "custodes-audit",
+      "ru_label": "Кустодес: прокурорская проверка Астрономикона",
+      "ru_description": "Запускает Custodes audit: identity, evidence, validators, boundary honesty, indictments.",
+      "kind": "external_command",
+      "command": [
+        "python",
+        "ORGANS/CUSTODES/TOOLS/custodes_audit_astronomicon.py",
+        "--repo-root",
+        "."
+      ],
+      "aquarium_log_required": true,
+      "mutates_repo": true
+    },
+    {
+      "id": "throne-crown-order",
+      "ru_label": "Трон: Crown order по Астрономикону",
+      "ru_description": "Запускает строгие gates Трона с anti-self-deception: Crown order != Throne self-validation.",
+      "kind": "external_command",
+      "command": [
+        "python",
+        "ORGANS/THRONE/TOOLS/throne_astronomicon_strict_gate.py",
+        "--repo-root",
+        "."
+      ],
+      "aquarium_log_required": true,
+      "mutates_repo": true
+    },
+    {
+      "id": "throne-readout",
+      "ru_label": "Трон: прочитать последний Crown-приговор",
+      "ru_description": "Читает последний THRONE_ASTRONOMICON_STRICT_GATES_SUMMARY и показывает ключевые поля.",
+      "kind": "internal_readout",
+      "aquarium_log_required": true,
+      "mutates_repo": false
+    },
+    {
+      "id": "custodes-readout",
+      "ru_label": "Кустодес: прочитать последний прокурорский docket",
+      "ru_description": "Читает CUSTODES_ASTRONOMICON_PROSECUTOR_AUDIT_SUMMARY и показывает scores, validators, indictments.",
+      "kind": "internal_readout",
+      "aquarium_log_required": true,
+      "mutates_repo": false
+    },
+    {
+      "id": "score-refresh-guidance",
+      "ru_label": "Подсказка: как обновить цифры после цикла",
+      "ru_description": "Показывает команды census/gap/stage refresh. Не запускает их автоматически.",
+      "kind": "internal_readout",
+      "aquarium_log_required": true,
+      "mutates_repo": false
+    }
+  ],
+  "forbidden": [
+    "git commit",
+    "git push",
+    "hidden mutation",
+    "silent action",
+    "claim global organ assembled",
+    "claim Core v1 ready",
+    "claim Throne self-validation"
+  ],
+  "not_claimed": [
+    "full IDE visual abstraction",
+    "visual/AAA layer resumed",
+    "Great Nine assembled",
+    "Core v1 ready",
+    "Throne self-validation"
+  ]
+}
