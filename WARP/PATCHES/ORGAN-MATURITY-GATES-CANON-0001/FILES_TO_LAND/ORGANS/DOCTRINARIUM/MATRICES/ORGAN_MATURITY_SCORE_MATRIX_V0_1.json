@@ -1,0 +1,107 @@
+{
+  "matrix_id": "ORGAN_MATURITY_SCORE_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "DOCTRINARIUM",
+  "purpose": "Advisory scoring matrix for the universal six gate organ maturity model.",
+  "score_scale": {
+    "0": "absent",
+    "1": "drafted",
+    "2": "evidence_bound",
+    "3": "operational",
+    "4": "externally_checked",
+    "5": "locally_crown_confirmed"
+  },
+  "gates": [
+    {
+      "gate_id": "G1_IDENTITY_AND_JURISDICTION",
+      "gate_number": 1,
+      "title": "Identity & Jurisdiction",
+      "max_score": 5,
+      "minimum_evidence_for_score": {
+        "1": "Gate has a draft document or declared field.",
+        "2": "Gate has evidence paths mapped to claims.",
+        "3": "Gate evidence includes working action, validator or receipt where applicable.",
+        "4": "Gate is checked by an external organ or cross-organ validator.",
+        "5": "Gate has local crown confirmation and explicit anti-global-readiness boundary."
+      },
+      "risk_if_overstated": "anonymous folder, role confusion, authority creep"
+    },
+    {
+      "gate_id": "G2_CONTRACT_AND_EVIDENCE",
+      "gate_number": 2,
+      "title": "Contract & Evidence",
+      "max_score": 5,
+      "minimum_evidence_for_score": {
+        "1": "Gate has a draft document or declared field.",
+        "2": "Gate has evidence paths mapped to claims.",
+        "3": "Gate evidence includes working action, validator or receipt where applicable.",
+        "4": "Gate is checked by an external organ or cross-organ validator.",
+        "5": "Gate has local crown confirmation and explicit anti-global-readiness boundary."
+      },
+      "risk_if_overstated": "claims without proof, fake readiness, unverifiable promises"
+    },
+    {
+      "gate_id": "G3_OPERATIONAL_SURFACE",
+      "gate_number": 3,
+      "title": "Operational Surface",
+      "max_score": 5,
+      "minimum_evidence_for_score": {
+        "1": "Gate has a draft document or declared field.",
+        "2": "Gate has evidence paths mapped to claims.",
+        "3": "Gate evidence includes working action, validator or receipt where applicable.",
+        "4": "Gate is checked by an external organ or cross-organ validator.",
+        "5": "Gate has local crown confirmation and explicit anti-global-readiness boundary."
+      },
+      "risk_if_overstated": "unusable organ, invisible work, untraceable actions"
+    },
+    {
+      "gate_id": "G4_ADVISORY_AND_HARDENING",
+      "gate_number": 4,
+      "title": "Advisory & Hardening",
+      "max_score": 5,
+      "minimum_evidence_for_score": {
+        "1": "Gate has a draft document or declared field.",
+        "2": "Gate has evidence paths mapped to claims.",
+        "3": "Gate evidence includes working action, validator or receipt where applicable.",
+        "4": "Gate is checked by an external organ or cross-organ validator.",
+        "5": "Gate has local crown confirmation and explicit anti-global-readiness boundary."
+      },
+      "risk_if_overstated": "fragile organ, hidden risks, recommendations without math"
+    },
+    {
+      "gate_id": "G5_EXTERNAL_TRUST",
+      "gate_number": 5,
+      "title": "External Trust",
+      "max_score": 5,
+      "minimum_evidence_for_score": {
+        "1": "Gate has a draft document or declared field.",
+        "2": "Gate has evidence paths mapped to claims.",
+        "3": "Gate evidence includes working action, validator or receipt where applicable.",
+        "4": "Gate is checked by an external organ or cross-organ validator.",
+        "5": "Gate has local crown confirmation and explicit anti-global-readiness boundary."
+      },
+      "risk_if_overstated": "self-trust, stolen crown, local success sold as global readiness"
+    },
+    {
+      "gate_id": "G6_INTEGRATION_AND_MATURITY_LOOP",
+      "gate_number": 6,
+      "title": "Integration & Maturity Loop",
+      "max_score": 5,
+      "minimum_evidence_for_score": {
+        "1": "Gate has a draft document or declared field.",
+        "2": "Gate has evidence paths mapped to claims.",
+        "3": "Gate evidence includes working action, validator or receipt where applicable.",
+        "4": "Gate is checked by an external organ or cross-organ validator.",
+        "5": "Gate has local crown confirmation and explicit anti-global-readiness boundary."
+      },
+      "risk_if_overstated": "isolated victory, stale organ, score drift, global readiness pollution"
+    }
+  ],
+  "anti_fake_green_rules": [
+    "No score increment without evidence path.",
+    "No local score may mutate global assembled/core readiness directly.",
+    "Self-validator PASS can raise hygiene, not external trust.",
+    "Warnings must affect risk debt unless explicitly waived by Owner.",
+    "Game XP must be downstream of receipts, never upstream of truth."
+  ]
+}

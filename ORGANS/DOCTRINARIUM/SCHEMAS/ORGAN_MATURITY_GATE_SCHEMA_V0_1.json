@@ -1,0 +1,146 @@
+{
+  "schema_id": "ORGAN_MATURITY_GATE_SCHEMA_V0_1",
+  "version": "0.1",
+  "applies_to": "ALL_ORGANS",
+  "canonical_gate_count": 6,
+  "score_scale": {
+    "0": "absent",
+    "1": "drafted",
+    "2": "evidence_bound",
+    "3": "operational",
+    "4": "externally_checked",
+    "5": "locally_crown_confirmed"
+  },
+  "required_gates": [
+    {
+      "gate_id": "G1_IDENTITY_AND_JURISDICTION",
+      "gate_number": 1,
+      "title": "Identity & Jurisdiction",
+      "purpose": "The organ knows who it is, what it governs, and where it has no authority.",
+      "required_evidence_classes": [
+        "organ_id",
+        "profile_or_passport",
+        "purpose",
+        "jurisdiction",
+        "non_jurisdiction",
+        "owner_or_supervising_contour",
+        "relation_to_great_nine_or_supporting_organs"
+      ],
+      "primary_risk_if_missing": "anonymous folder, role confusion, authority creep"
+    },
+    {
+      "gate_id": "G2_CONTRACT_AND_EVIDENCE",
+      "gate_number": 2,
+      "title": "Contract & Evidence",
+      "purpose": "The organ binds duties and claims to evidence paths.",
+      "required_evidence_classes": [
+        "duty_contract",
+        "capability_claims",
+        "not_claimed_boundaries",
+        "forbidden_claims",
+        "external_dependency_claims",
+        "evidence_map",
+        "file_ownership_or_anatomy"
+      ],
+      "primary_risk_if_missing": "claims without proof, fake readiness, unverifiable promises"
+    },
+    {
+      "gate_id": "G3_OPERATIONAL_SURFACE",
+      "gate_number": 3,
+      "title": "Operational Surface",
+      "purpose": "The organ exposes safe usable functions with visible execution.",
+      "required_evidence_classes": [
+        "cli_tui_app_or_api_actions",
+        "safe_invocation_commands",
+        "aquarium_logging",
+        "receipts",
+        "reports",
+        "self_validators",
+        "no_hidden_destructive_execution"
+      ],
+      "primary_risk_if_missing": "unusable organ, invisible work, untraceable actions"
+    },
+    {
+      "gate_id": "G4_ADVISORY_AND_HARDENING",
+      "gate_number": 4,
+      "title": "Advisory & Hardening",
+      "purpose": "The organ can recommend, score and harden without becoming sovereign.",
+      "required_evidence_classes": [
+        "advisory_scoring",
+        "risk_scoring",
+        "red_team_layer",
+        "blue_team_layer",
+        "hardening_synthesis",
+        "warnings_and_known_limits",
+        "no_command_authority_without_owner_or_workflow_gate"
+      ],
+      "primary_risk_if_missing": "fragile organ, hidden risks, recommendations without math"
+    },
+    {
+      "gate_id": "G5_EXTERNAL_TRUST",
+      "gate_number": 5,
+      "title": "External Trust",
+      "purpose": "The organ is prosecuted and crown-gated by external layers.",
+      "required_evidence_classes": [
+        "custodes_prosecution_matrix",
+        "custodes_validator_pass",
+        "indictment_handling",
+        "throne_crown_gate_matrix",
+        "throne_validator_pass",
+        "anti_self_validation_proof",
+        "local_crown_not_global_assembled"
+      ],
+      "primary_risk_if_missing": "self-trust, stolen crown, local success sold as global readiness"
+    },
+    {
+      "gate_id": "G6_INTEGRATION_AND_MATURITY_LOOP",
+      "gate_number": 6,
+      "title": "Integration & Maturity Loop",
+      "purpose": "The organ integrates into Imperium and remains upgradeable without false completion.",
+      "required_evidence_classes": [
+        "stage_score_integration",
+        "app_or_operator_integration",
+        "event_ledger_compatibility",
+        "maturity_loop",
+        "regression_checks",
+        "future_gate_path",
+        "global_core_readiness_requires_separate_law"
+      ],
+      "primary_risk_if_missing": "isolated victory, stale organ, score drift, global readiness pollution"
+    }
+  ],
+  "claim_rules": {
+    "claims_must_map_to_evidence": true,
+    "scores_must_map_to_evidence": true,
+    "self_validators_do_not_grant_external_trust": true,
+    "local_crown_does_not_grant_global_core_readiness": true,
+    "game_layer_cannot_claim_truth": true
+  },
+  "recommended_entity_shape": {
+    "organ_id": "string",
+    "gate_scores": {
+      "G1_IDENTITY_AND_JURISDICTION": "0..5",
+      "G2_CONTRACT_AND_EVIDENCE": "0..5",
+      "G3_OPERATIONAL_SURFACE": "0..5",
+      "G4_ADVISORY_AND_HARDENING": "0..5",
+      "G5_EXTERNAL_TRUST": "0..5",
+      "G6_INTEGRATION_AND_MATURITY_LOOP": "0..5"
+    },
+    "evidence_map": {
+      "<gate_id>": [
+        {
+          "evidence_type": "receipt|report|validator|matrix|schema|document|runtime_proof|test_output|owner_waiver",
+          "path": "string",
+          "status": "draft|pass|fail|waived|missing"
+        }
+      ]
+    },
+    "not_claimed": [
+      "string"
+    ],
+    "forbidden_claims": [
+      "string"
+    ],
+    "last_validated_at_utc": "datetime"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "receipt_id": "receipt.throne.organ_maturity_crown_gate_matrix.v0_1",
+  "task_id": "ORGAN-MATURITY-GATES-CANON-0001",
+  "validator_id": "throne_organ_maturity_crown_gate_matrix_validator.v0_1",
+  "verdict": "PASS_THRONE_ORGAN_MATURITY_CROWN_GATE_MATRIX_READY",
+  "generated_at_utc": "2026-07-03T23:34:34Z",
+  "checks": [
+    {
+      "name": "throne_crown_gate_matrix_exists_and_parses",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/MATRICES/ORGAN_MATURITY_CROWN_GATE_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "throne_matrix_covers_exact_six_gates",
+      "status": "PASS",
+      "details": {
+        "expected": [
+          "G1_IDENTITY_AND_JURISDICTION",
+          "G2_CONTRACT_AND_EVIDENCE",
+          "G3_OPERATIONAL_SURFACE",
+          "G4_ADVISORY_AND_HARDENING",
+          "G5_EXTERNAL_TRUST",
+          "G6_INTEGRATION_AND_MATURITY_LOOP"
+        ],
+        "actual": [
+          "G1_IDENTITY_AND_JURISDICTION",
+          "G2_CONTRACT_AND_EVIDENCE",
+          "G3_OPERATIONAL_SURFACE",
+          "G4_ADVISORY_AND_HARDENING",
+          "G5_EXTERNAL_TRUST",
+          "G6_INTEGRATION_AND_MATURITY_LOOP"
+        ]
+      }
+    },
+    {
+      "name": "throne_crown_laws_prevent_local_to_global_pollution",
+      "status": "PASS",
+      "details": {
+        "crown_laws": [
+          "Local organ maturity is not Core v1 readiness.",
+          "Local crown confirmation is not Great Nine assembled.",
+          "Custodes prosecution must be external to the organ.",
+          "Throne crown gate must not be represented as Throne self-validation.",
+          "Scores are overlays unless a separate global law permits mutation.",
+          "Game projection is display, not truth authority."
+        ]
+      }
+    },
+    {
+      "name": "throne_matrix_declares_forbidden_global_mutations",
+      "status": "PASS",
+      "details": {
+        "expected": [
+          "core_v1_ready",
+          "great_nine_assembled",
+          "throne_complete",
+          "global_organ_assembled",
+          "visual_work_unfrozen",
+          "game_projection_truth_source"
+        ],
+        "actual": [
+          "core_v1_ready",
+          "great_nine_assembled",
+          "throne_complete",
+          "global_organ_assembled",
+          "visual_work_unfrozen",
+          "game_projection_truth_source"
+        ]
+      }
+    },
+    {
+      "name": "throne_matrix_allows_local_outputs_without_global_claims",
+      "status": "PASS",
+      "details": {
+        "allowed": [
+          "organ_maturity_gate_score",
+          "organ_local_crown_confirmed",
+          "organ_evidence_bound_claim",
+          "organ_app_visible",
+          "organ_event_ledger_candidate"
+        ]
+      }
+    },
+    {
+      "name": "doctrinarium_law_contains_core_v1_boundary",
+      "status": "PASS",
+      "details": {
+        "law_path": "ORGANS/DOCTRINARIUM/LAWS/ORGAN_MATURITY_GATES_CANON_V0_1.md"
+      }
+    },
+    {
+      "name": "throne_matrix_aligned_with_doctrinarium_schema",
+      "status": "PASS",
+      "details": {
+        "schema_error": null,
+        "schema_ids": [
+          "G1_IDENTITY_AND_JURISDICTION",
+          "G2_CONTRACT_AND_EVIDENCE",
+          "G3_OPERATIONAL_SURFACE",
+          "G4_ADVISORY_AND_HARDENING",
+          "G5_EXTERNAL_TRUST",
+          "G6_INTEGRATION_AND_MATURITY_LOOP"
+        ],
+        "matrix_ids": [
+          "G1_IDENTITY_AND_JURISDICTION",
+          "G2_CONTRACT_AND_EVIDENCE",
+          "G3_OPERATIONAL_SURFACE",
+          "G4_ADVISORY_AND_HARDENING",
+          "G5_EXTERNAL_TRUST",
+          "G6_INTEGRATION_AND_MATURITY_LOOP"
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "matrix": "ORGANS/THRONE/MATRICES/ORGAN_MATURITY_CROWN_GATE_MATRIX_V0_1.json",
+  "law": "ORGANS/DOCTRINARIUM/LAWS/ORGAN_MATURITY_GATES_CANON_V0_1.md",
+  "schema": "ORGANS/DOCTRINARIUM/SCHEMAS/ORGAN_MATURITY_GATE_SCHEMA_V0_1.json"
+}

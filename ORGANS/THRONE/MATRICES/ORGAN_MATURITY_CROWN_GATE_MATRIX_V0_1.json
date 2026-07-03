@@ -1,0 +1,62 @@
+{
+  "matrix_id": "ORGAN_MATURITY_CROWN_GATE_MATRIX_V0_1",
+  "version": "0.1",
+  "owner": "THRONE",
+  "purpose": "Crown gate rules for preventing local organ maturity from polluting global Imperium truth.",
+  "required_gate_count": 6,
+  "crown_laws": [
+    "Local organ maturity is not Core v1 readiness.",
+    "Local crown confirmation is not Great Nine assembled.",
+    "Custodes prosecution must be external to the organ.",
+    "Throne crown gate must not be represented as Throne self-validation.",
+    "Scores are overlays unless a separate global law permits mutation.",
+    "Game projection is display, not truth authority."
+  ],
+  "gate_requirements": [
+    {
+      "gate_id": "G1_IDENTITY_AND_JURISDICTION",
+      "crown_question": "Does identity/jurisdiction prevent authority theft?",
+      "must_block_if_false": true
+    },
+    {
+      "gate_id": "G2_CONTRACT_AND_EVIDENCE",
+      "crown_question": "Are claims evidence-bound and forbidden claims explicit?",
+      "must_block_if_false": true
+    },
+    {
+      "gate_id": "G3_OPERATIONAL_SURFACE",
+      "crown_question": "Are actions visible and bounded?",
+      "must_block_if_false": true
+    },
+    {
+      "gate_id": "G4_ADVISORY_AND_HARDENING",
+      "crown_question": "Does advice remain advisory and risk-aware?",
+      "must_block_if_false": true
+    },
+    {
+      "gate_id": "G5_EXTERNAL_TRUST",
+      "crown_question": "Is trust external and anti-self-validating?",
+      "must_block_if_false": true
+    },
+    {
+      "gate_id": "G6_INTEGRATION_AND_MATURITY_LOOP",
+      "crown_question": "Does integration avoid global readiness pollution?",
+      "must_block_if_false": true
+    }
+  ],
+  "forbidden_global_mutations": [
+    "core_v1_ready",
+    "great_nine_assembled",
+    "throne_complete",
+    "global_organ_assembled",
+    "visual_work_unfrozen",
+    "game_projection_truth_source"
+  ],
+  "local_crown_allowed_outputs": [
+    "organ_maturity_gate_score",
+    "organ_local_crown_confirmed",
+    "organ_evidence_bound_claim",
+    "organ_app_visible",
+    "organ_event_ledger_candidate"
+  ]
+}

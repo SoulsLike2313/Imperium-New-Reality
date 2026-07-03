@@ -1,0 +1,130 @@
+{
+  "receipt_id": "receipt.custodes.organ_maturity_prosecutor_matrix.v0_1",
+  "task_id": "ORGAN-MATURITY-GATES-CANON-0001",
+  "validator_id": "custodes_organ_maturity_prosecutor_matrix_validator.v0_1",
+  "verdict": "PASS_CUSTODES_ORGAN_MATURITY_PROSECUTOR_MATRIX_READY",
+  "generated_at_utc": "2026-07-03T23:34:34Z",
+  "checks": [
+    {
+      "name": "custodes_prosecutor_matrix_exists_and_parses",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/CUSTODES/MATRICES/ORGAN_MATURITY_PROSECUTOR_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "custodes_matrix_covers_exact_six_gates",
+      "status": "PASS",
+      "details": {
+        "expected": [
+          "G1_IDENTITY_AND_JURISDICTION",
+          "G2_CONTRACT_AND_EVIDENCE",
+          "G3_OPERATIONAL_SURFACE",
+          "G4_ADVISORY_AND_HARDENING",
+          "G5_EXTERNAL_TRUST",
+          "G6_INTEGRATION_AND_MATURITY_LOOP"
+        ],
+        "actual": [
+          "G1_IDENTITY_AND_JURISDICTION",
+          "G2_CONTRACT_AND_EVIDENCE",
+          "G3_OPERATIONAL_SURFACE",
+          "G4_ADVISORY_AND_HARDENING",
+          "G5_EXTERNAL_TRUST",
+          "G6_INTEGRATION_AND_MATURITY_LOOP"
+        ]
+      }
+    },
+    {
+      "name": "each_gate_has_prosecutor_questions_and_blocking_findings",
+      "status": "PASS",
+      "details": {
+        "gates": [
+          {
+            "gate_id": "G1_IDENTITY_AND_JURISDICTION",
+            "questions": 3,
+            "blocking_findings": 3,
+            "ok": true
+          },
+          {
+            "gate_id": "G2_CONTRACT_AND_EVIDENCE",
+            "questions": 3,
+            "blocking_findings": 3,
+            "ok": true
+          },
+          {
+            "gate_id": "G3_OPERATIONAL_SURFACE",
+            "questions": 3,
+            "blocking_findings": 3,
+            "ok": true
+          },
+          {
+            "gate_id": "G4_ADVISORY_AND_HARDENING",
+            "questions": 3,
+            "blocking_findings": 3,
+            "ok": true
+          },
+          {
+            "gate_id": "G5_EXTERNAL_TRUST",
+            "questions": 3,
+            "blocking_findings": 3,
+            "ok": true
+          },
+          {
+            "gate_id": "G6_INTEGRATION_AND_MATURITY_LOOP",
+            "questions": 3,
+            "blocking_findings": 3,
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "custodes_posture_is_prosecutor_not_helper",
+      "status": "PASS",
+      "details": {
+        "prosecutor_posture": "accuse_until_evidence_answers"
+      }
+    },
+    {
+      "name": "custodes_pass_requires_no_self_trust",
+      "status": "PASS",
+      "details": {
+        "custodes_pass_requires": [
+          "all six gate ids present",
+          "each gate has prosecutor questions",
+          "each gate has blocking findings",
+          "canon law and schema parse",
+          "no self-trust clause"
+        ]
+      }
+    },
+    {
+      "name": "custodes_matrix_aligned_with_doctrinarium_schema",
+      "status": "PASS",
+      "details": {
+        "schema_error": null,
+        "schema_ids": [
+          "G1_IDENTITY_AND_JURISDICTION",
+          "G2_CONTRACT_AND_EVIDENCE",
+          "G3_OPERATIONAL_SURFACE",
+          "G4_ADVISORY_AND_HARDENING",
+          "G5_EXTERNAL_TRUST",
+          "G6_INTEGRATION_AND_MATURITY_LOOP"
+        ],
+        "matrix_ids": [
+          "G1_IDENTITY_AND_JURISDICTION",
+          "G2_CONTRACT_AND_EVIDENCE",
+          "G3_OPERATIONAL_SURFACE",
+          "G4_ADVISORY_AND_HARDENING",
+          "G5_EXTERNAL_TRUST",
+          "G6_INTEGRATION_AND_MATURITY_LOOP"
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "matrix": "ORGANS/CUSTODES/MATRICES/ORGAN_MATURITY_PROSECUTOR_MATRIX_V0_1.json",
+  "schema": "ORGANS/DOCTRINARIUM/SCHEMAS/ORGAN_MATURITY_GATE_SCHEMA_V0_1.json"
+}
