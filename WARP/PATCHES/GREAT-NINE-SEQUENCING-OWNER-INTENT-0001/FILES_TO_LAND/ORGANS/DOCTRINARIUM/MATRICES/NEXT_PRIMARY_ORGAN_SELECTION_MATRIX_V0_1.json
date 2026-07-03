@@ -1,0 +1,149 @@
+{
+  "decision_id": "NEXT_PRIMARY_ORGAN_SELECTION_AFTER_ASTRONOMICON_CANON_V0_1",
+  "version": "0.1",
+  "patch_id": "GREAT-NINE-SEQUENCING-OWNER-INTENT-0001",
+  "context": {
+    "astronomicon_status": "reference_implementation_for_organ_maturity",
+    "six_gate_canon_status": "landed_and_validated",
+    "tauri_runtime_status": "runtime_window_fps_proof_passed",
+    "owner_intent": "Administratum must be last among Great Nine."
+  },
+  "weights": {
+    "core_v1_unlock_value": 25,
+    "dependency_provider_value": 20,
+    "evidence_validator_leverage": 20,
+    "implementation_tractability": 15,
+    "risk_reduction_value": 10,
+    "app_runtime_integration_value": 5,
+    "external_market_value": 5
+  },
+  "owner_constraints": [
+    {
+      "constraint_id": "ADMINISTRATUM_LAST_IN_GREAT_NINE",
+      "effect": "Administratum excluded from next primary organ selection even if raw score is high."
+    },
+    {
+      "constraint_id": "THRONE_IS_SPECIAL_CROWN_ORGAN",
+      "effect": "Throne may receive crown infrastructure but is not scored as the next ordinary Great Nine organ."
+    }
+  ],
+  "candidates": [
+    {
+      "organ_id": "MECHANICUS",
+      "raw_scores_0_to_10": {
+        "core_v1_unlock_value": 10,
+        "dependency_provider_value": 10,
+        "evidence_validator_leverage": 9,
+        "implementation_tractability": 8,
+        "risk_reduction_value": 8,
+        "app_runtime_integration_value": 7,
+        "external_market_value": 8
+      },
+      "weighted_score_0_to_100": 90.5,
+      "sequence_status": "ELIGIBLE",
+      "reasoning": "Mechanicus unlocks environment, build, dependencies, runtime, tool discipline, app proof and execution reliability. It strengthens every later organ and directly advances Core v1."
+    },
+    {
+      "organ_id": "DOCTRINARIUM",
+      "raw_scores_0_to_10": {
+        "core_v1_unlock_value": 8,
+        "dependency_provider_value": 9,
+        "evidence_validator_leverage": 9,
+        "implementation_tractability": 9,
+        "risk_reduction_value": 7,
+        "app_runtime_integration_value": 6,
+        "external_market_value": 6
+      },
+      "weighted_score_0_to_100": 82.5,
+      "sequence_status": "ELIGIBLE",
+      "reasoning": "Doctrinarium is highly valuable for laws, schemas, teaching, operator school and common language, but it already received the six-gate canon and does not unlock runtime execution as strongly as Mechanicus."
+    },
+    {
+      "organ_id": "INQUISITION",
+      "raw_scores_0_to_10": {
+        "core_v1_unlock_value": 8,
+        "dependency_provider_value": 8,
+        "evidence_validator_leverage": 9,
+        "implementation_tractability": 7,
+        "risk_reduction_value": 10,
+        "app_runtime_integration_value": 5,
+        "external_market_value": 7
+      },
+      "weighted_score_0_to_100": 80.5,
+      "sequence_status": "ELIGIBLE",
+      "reasoning": "Inquisition is critical for fake-green, scope creep and risk suppression, but its maximum value increases after Mechanicus makes execution/build/tool reality more measurable."
+    },
+    {
+      "organ_id": "CUSTODES",
+      "raw_scores_0_to_10": {
+        "core_v1_unlock_value": 7,
+        "dependency_provider_value": 8,
+        "evidence_validator_leverage": 10,
+        "implementation_tractability": 6,
+        "risk_reduction_value": 10,
+        "app_runtime_integration_value": 5,
+        "external_market_value": 6
+      },
+      "weighted_score_0_to_100": 78.0,
+      "sequence_status": "ELIGIBLE",
+      "reasoning": "Custodes is essential external prosecution, but it already received universal prosecutor matrices; full expansion is valuable after more organs have surfaces to prosecute."
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "raw_scores_0_to_10": {
+        "core_v1_unlock_value": 7,
+        "dependency_provider_value": 7,
+        "evidence_validator_leverage": 7,
+        "implementation_tractability": 8,
+        "risk_reduction_value": 6,
+        "app_runtime_integration_value": 6,
+        "external_market_value": 7
+      },
+      "weighted_score_0_to_100": 70.0,
+      "sequence_status": "ELIGIBLE",
+      "reasoning": "Strategium is useful for prioritization and external market planning, but depends on evidence/control surfaces from stronger technical organs."
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "raw_scores_0_to_10": {
+        "core_v1_unlock_value": 9,
+        "dependency_provider_value": 10,
+        "evidence_validator_leverage": 9,
+        "implementation_tractability": 6,
+        "risk_reduction_value": 8,
+        "app_runtime_integration_value": 7,
+        "external_market_value": 7
+      },
+      "weighted_score_0_to_100": 84.5,
+      "sequence_status": "DEFERRED_TO_LAST_GREAT_NINE",
+      "reasoning": "Raw value is high, but Owner intent says Administratum must be last because it should register living reports from already-formed organs rather than inventing a registry over incomplete bodies."
+    },
+    {
+      "organ_id": "THRONE",
+      "raw_scores_0_to_10": {
+        "core_v1_unlock_value": 10,
+        "dependency_provider_value": 10,
+        "evidence_validator_leverage": 10,
+        "implementation_tractability": 5,
+        "risk_reduction_value": 10,
+        "app_runtime_integration_value": 6,
+        "external_market_value": 6
+      },
+      "weighted_score_0_to_100": 88.5,
+      "sequence_status": "SPECIAL_CROWN_ORGAN",
+      "reasoning": "Throne is a Crown organ and must receive laws/gates early, but full Throne foundation is not the same as selecting a next ordinary Great Nine organ. Throne work can proceed as crown-gate infrastructure in parallel."
+    }
+  ],
+  "recommended_next_primary_organ": "MECHANICUS",
+  "recommended_next_primary_organ_score": 90.5,
+  "secondary_support_organ": "DOCTRINARIUM",
+  "recommended_next_patch_family": "MECHANICUS-GATE-1-2-FOUNDATION",
+  "decision": "MECHANICUS should be the next primary organ formation target. DOCTRINARIUM remains the law/schema/school support organ. ADMINISTRATUM is deferred to the last Great Nine consolidation stage.",
+  "not_claimed": [
+    "Mechanicus is assembled",
+    "Doctrinarium is assembled",
+    "Administratum is assembled",
+    "Great Nine is assembled",
+    "Core v1 is ready"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema_id": "NEXT_ORGAN_SELECTION_SCHEMA_V0_1",
+  "version": "0.1",
+  "purpose": "Schema for selecting the next primary organ formation target by weighted mathematical value.",
+  "weight_sum_required": 100,
+  "criteria": {
+    "core_v1_unlock_value": "core_v1_unlock_value",
+    "dependency_provider_value": "dependency_provider_value",
+    "evidence_validator_leverage": "evidence_validator_leverage",
+    "implementation_tractability": "implementation_tractability",
+    "risk_reduction_value": "risk_reduction_value",
+    "app_runtime_integration_value": "app_runtime_integration_value",
+    "external_market_value": "external_market_value"
+  },
+  "candidate_shape": {
+    "organ_id": "string",
+    "raw_scores_0_to_10": "object",
+    "weighted_score_0_to_100": "number",
+    "sequence_status": "ELIGIBLE|DEFERRED|REFERENCE_ONLY|SPECIAL_CROWN_ORGAN",
+    "reasoning": "string"
+  }
+}

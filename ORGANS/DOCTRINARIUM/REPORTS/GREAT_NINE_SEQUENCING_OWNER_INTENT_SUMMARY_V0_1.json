@@ -1,0 +1,151 @@
+{
+  "summary_id": "doctrinarium.great_nine_sequencing_owner_intent_summary.v0_1",
+  "task_id": "GREAT-NINE-SEQUENCING-OWNER-INTENT-0001",
+  "validator_id": "doctrinarium_great_nine_sequencing_owner_intent_validator.v0_1",
+  "verdict": "PASS_GREAT_NINE_SEQUENCING_OWNER_INTENT_READY",
+  "generated_at_utc": "2026-07-03T23:44:09Z",
+  "checks": [
+    {
+      "name": "owner_intent_administratum_last_file_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/_CORE_GOVERNANCE/OWNER_DECISIONS/OWNER_INTENT_ADMINISTRATUM_LAST_IN_GREAT_NINE_V0_1.md",
+        "bytes": 2005
+      }
+    },
+    {
+      "name": "owner_intent_contains_last_sequence_and_boundary_law",
+      "status": "PASS",
+      "details": {
+        "missing_phrases": []
+      }
+    },
+    {
+      "name": "next_organ_selection_schema_exists_and_parses",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/DOCTRINARIUM/SCHEMAS/NEXT_ORGAN_SELECTION_SCHEMA_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "next_organ_selection_matrix_exists_and_parses",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/DOCTRINARIUM/MATRICES/NEXT_PRIMARY_ORGAN_SELECTION_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "selection_weights_sum_to_100",
+      "status": "PASS",
+      "details": {
+        "weight_sum": 100,
+        "weights": {
+          "core_v1_unlock_value": 25,
+          "dependency_provider_value": 20,
+          "evidence_validator_leverage": 20,
+          "implementation_tractability": 15,
+          "risk_reduction_value": 10,
+          "app_runtime_integration_value": 5,
+          "external_market_value": 5
+        }
+      }
+    },
+    {
+      "name": "selection_matrix_contains_required_candidate_organs",
+      "status": "PASS",
+      "details": {
+        "missing": [],
+        "actual": [
+          "MECHANICUS",
+          "DOCTRINARIUM",
+          "INQUISITION",
+          "CUSTODES",
+          "STRATEGIUM",
+          "ADMINISTRATUM",
+          "THRONE"
+        ]
+      }
+    },
+    {
+      "name": "administratum_is_deferred_to_last_great_nine",
+      "status": "PASS",
+      "details": {
+        "sequence_status": "DEFERRED_TO_LAST_GREAT_NINE",
+        "reasoning": "Raw value is high, but Owner intent says Administratum must be last because it should register living reports from already-formed organs rather than inventing a registry over incomplete bodies."
+      }
+    },
+    {
+      "name": "throne_is_marked_special_crown_organ_not_ordinary_next",
+      "status": "PASS",
+      "details": {
+        "sequence_status": "SPECIAL_CROWN_ORGAN"
+      }
+    },
+    {
+      "name": "recommended_next_primary_organ_is_mechanicus",
+      "status": "PASS",
+      "details": {
+        "recommended": "MECHANICUS"
+      }
+    },
+    {
+      "name": "mechanicus_has_highest_eligible_weighted_score",
+      "status": "PASS",
+      "details": {
+        "top_eligible": "MECHANICUS",
+        "eligible_scores": [
+          {
+            "organ_id": "MECHANICUS",
+            "score": 90.5
+          },
+          {
+            "organ_id": "DOCTRINARIUM",
+            "score": 82.5
+          },
+          {
+            "organ_id": "INQUISITION",
+            "score": 80.5
+          },
+          {
+            "organ_id": "CUSTODES",
+            "score": 78.0
+          },
+          {
+            "organ_id": "STRATEGIUM",
+            "score": 70.0
+          }
+        ]
+      }
+    },
+    {
+      "name": "selection_matrix_contains_owner_constraints",
+      "status": "PASS",
+      "details": {
+        "owner_constraints": [
+          {
+            "constraint_id": "ADMINISTRATUM_LAST_IN_GREAT_NINE",
+            "effect": "Administratum excluded from next primary organ selection even if raw score is high."
+          },
+          {
+            "constraint_id": "THRONE_IS_SPECIAL_CROWN_ORGAN",
+            "effect": "Throne may receive crown infrastructure but is not scored as the next ordinary Great Nine organ."
+          }
+        ]
+      }
+    },
+    {
+      "name": "readout_exists_and_states_mechanicus_recommendation",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/DOCTRINARIUM/REPORTS/NEXT_ORGAN_SELECTION_READOUT_V0_1.md",
+        "bytes": 2103
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "recommended_next_primary_organ": "MECHANICUS",
+  "owner_intent": "Administratum deferred to last Great Nine consolidation."
+}
