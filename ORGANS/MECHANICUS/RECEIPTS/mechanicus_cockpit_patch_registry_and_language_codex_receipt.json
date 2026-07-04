@@ -1,0 +1,129 @@
+{
+  "receipt_id": "receipt.mechanicus.cockpit_patch_registry_and_language_codex.v0_1",
+  "task_id": "MECHANICUS-COCKPIT-PATCH-REGISTRY-AND-LANGUAGE-CODEX-0001",
+  "validator_id": "mechanicus_cockpit_patch_registry_and_language_codex_validator.v0_1",
+  "verdict": "PASS_MECHANICUS_COCKPIT_PATCH_REGISTRY_AND_LANGUAGE_CODEX_READY",
+  "generated_at_utc": "2026-07-03T23:57:05Z",
+  "checks": [
+    {
+      "name": "tauri_rust_main_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+        "bytes": 11248
+      }
+    },
+    {
+      "name": "tauri_rust_contains_patch_registry_commands",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "tauri_rust_contains_basic_cockpit_safety_gates",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "tauri_frontend_main_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP_TAURI/src/main.js",
+        "bytes": 7771
+      }
+    },
+    {
+      "name": "tauri_frontend_contains_working_cockpit_markers",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "tauri_frontend_style_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP_TAURI/src/styles.css",
+        "bytes": 2491
+      }
+    },
+    {
+      "name": "mechanicus_language_codex_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/CODEX/MECHANICUS_LANGUAGE_POWER_CODEX_V0_1.md"
+      }
+    },
+    {
+      "name": "mechanicus_language_schema_exists_and_parses",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/SCHEMAS/MECHANICUS_LANGUAGE_POWER_SCHEMA_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "mechanicus_language_matrix_exists_and_parses",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_LANGUAGE_POWER_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "language_matrix_contains_required_language_powers",
+      "status": "PASS",
+      "details": {
+        "missing": [],
+        "actual": [
+          "Python",
+          "Rust",
+          "Go",
+          "C++",
+          "TypeScript",
+          "PowerShell"
+        ]
+      }
+    },
+    {
+      "name": "each_language_has_proof_commands",
+      "status": "PASS",
+      "details": {
+        "languages": [
+          {
+            "language": "Python",
+            "proof_commands": 2
+          },
+          {
+            "language": "Rust",
+            "proof_commands": 3
+          },
+          {
+            "language": "Go",
+            "proof_commands": 3
+          },
+          {
+            "language": "C++",
+            "proof_commands": 3
+          },
+          {
+            "language": "TypeScript",
+            "proof_commands": 3
+          },
+          {
+            "language": "PowerShell",
+            "proof_commands": 1
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "codex": "ORGANS/MECHANICUS/CODEX/MECHANICUS_LANGUAGE_POWER_CODEX_V0_1.md",
+  "schema": "ORGANS/MECHANICUS/SCHEMAS/MECHANICUS_LANGUAGE_POWER_SCHEMA_V0_1.json",
+  "matrix": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_LANGUAGE_POWER_MATRIX_V0_1.json",
+  "tauri_main_rs": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+  "tauri_main_js": "SUPPORT/APP_TAURI/src/main.js"
+}

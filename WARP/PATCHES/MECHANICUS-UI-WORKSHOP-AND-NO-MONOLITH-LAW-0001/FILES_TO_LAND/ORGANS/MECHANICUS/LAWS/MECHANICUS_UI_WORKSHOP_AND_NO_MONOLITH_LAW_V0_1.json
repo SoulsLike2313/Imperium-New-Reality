@@ -1,0 +1,93 @@
+{
+  "law_id": "MECHANICUS_UI_WORKSHOP_AND_NO_MONOLITH_LAW_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-UI-WORKSHOP-AND-NO-MONOLITH-LAW-0001",
+  "status": "CANON_LAW_WITH_TRANSITIONAL_DEBT",
+  "owner_intent": [
+    "All UI rules, UI tools, UI fidelity gates and implementation language recommendations belong under Mechanicus.",
+    "Monoliths are forbidden as a normal development form, including backend monoliths.",
+    "Fast result is not the priority; working, maintainable, provable result is the priority."
+  ],
+  "mechanicus_ownership": {
+    "owns": [
+      "UI workshop laws",
+      "UI design tokens and component architecture rules",
+      "visual/reference fidelity tools",
+      "monolith debt scanning tools",
+      "language power recommendations",
+      "toolchain proof",
+      "build/runtime proof",
+      "performance/FPS proof"
+    ],
+    "does_not_own": [
+      "Owner final visual acceptance",
+      "Throne crown/global readiness decision",
+      "Custodes prosecution verdict"
+    ]
+  },
+  "monolith_law": [
+    "A monolith is forbidden unless explicitly registered as transitional debt.",
+    "A patch may not increase monolith debt unless its declared purpose is de-monolithization support or short-lived migration scaffolding.",
+    "UI must be split into tokens, layout, components, rooms, services/bridges, telemetry and assets.",
+    "Backend must be split by responsibility: commands, filesystem/repo discovery, receipts, validators, process execution, security policy.",
+    "Validators must not encourage monoliths by only checking markers in giant files.",
+    "No file may become a dumping ground because it is currently convenient."
+  ],
+  "ui_target_architecture": {
+    "recommended_tree": [
+      "SUPPORT/APP_TAURI/src/app/main.js",
+      "SUPPORT/APP_TAURI/src/app/state.js",
+      "SUPPORT/APP_TAURI/src/app/render.js",
+      "SUPPORT/APP_TAURI/src/rooms/organHub.js",
+      "SUPPORT/APP_TAURI/src/rooms/patchForge.js",
+      "SUPPORT/APP_TAURI/src/rooms/mechanicus.js",
+      "SUPPORT/APP_TAURI/src/components/commandRail.js",
+      "SUPPORT/APP_TAURI/src/components/aquarium.js",
+      "SUPPORT/APP_TAURI/src/components/heartbeat.js",
+      "SUPPORT/APP_TAURI/src/components/operationalLaw.js",
+      "SUPPORT/APP_TAURI/src/styles/tokens.css",
+      "SUPPORT/APP_TAURI/src/styles/layout.css",
+      "SUPPORT/APP_TAURI/src/styles/components.css",
+      "SUPPORT/APP_TAURI/src/styles/rooms.css",
+      "SUPPORT/APP_TAURI/src/styles/ornaments.css",
+      "SUPPORT/APP_TAURI/src/styles/telemetry.css",
+      "SUPPORT/APP_TAURI/src/assets/ornaments/*.svg"
+    ],
+    "reference_candidate_rules": [
+      "Do not use a full screenshot bitmap as proof of a live UI.",
+      "Reference overlay modes are allowed only as visual aid and must be labelled NON_CANON_REFERENCE_AID.",
+      "Live DOM must visibly carry the target form in normal mode.",
+      "Invisible hit zones over a bitmap are forbidden as fidelity proof."
+    ]
+  },
+  "thresholds": {
+    "soft": {
+      "js_file_lines": 260,
+      "css_file_lines": 520,
+      "rust_file_lines": 360,
+      "function_lines": 80,
+      "render_function_lines": 60,
+      "css_selector_count": 180
+    },
+    "blocking_for_new_work": {
+      "js_file_lines": 420,
+      "css_file_lines": 900,
+      "rust_file_lines": 520,
+      "function_lines": 120,
+      "render_function_lines": 90,
+      "css_selector_count": 260
+    }
+  },
+  "current_debt_policy": [
+    "Existing APP_TAURI main.js/styles.css/main.rs are known transitional debt.",
+    "This patch records the law and the scanner; it does not fail the current repository for pre-existing monoliths.",
+    "Future UI work must either reduce monolith debt or be explicitly registered as temporary debt with Owner-visible rationale."
+  ],
+  "anti_fake_green": [
+    "Build proof is not architecture proof.",
+    "A pretty screenshot is not maintainability proof.",
+    "Reference image overlay is not live UI proof.",
+    "Marker presence is not component architecture proof.",
+    "Line count alone is not truth, but a giant multi-responsibility file is a prosecution signal."
+  ]
+}

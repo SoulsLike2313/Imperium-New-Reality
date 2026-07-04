@@ -1,0 +1,223 @@
+{
+  "matrix_id": "MECHANICUS_LANGUAGE_POWER_MATRIX_V0_1",
+  "version": "0.1",
+  "purpose": "Mechanicus language recommendation and toolchain proof matrix.",
+  "languages": [
+    {
+      "language": "Python",
+      "primary_role": "glue, orchestration, scripts, receipts, reports, quick validators",
+      "use_when": [
+        "fast automation",
+        "file scans",
+        "JSON receipts",
+        "artifact generation",
+        "LLM-friendly patch tooling"
+      ],
+      "avoid_when": [
+        "hard real-time",
+        "deep native optimization",
+        "single binary distribution without packaging",
+        "strict memory safety boundary"
+      ],
+      "toolchain_evidence": [
+        "python_version",
+        "pip_version_optional",
+        "venv_policy_optional"
+      ],
+      "proof_commands": [
+        "python --version",
+        "python -m py_compile <validator>.py"
+      ],
+      "python_binding_strategy": [
+        "native",
+        "subprocess to compiled tools",
+        "JSON stdin/stdout bridge"
+      ],
+      "risk": [
+        "dependency drift",
+        "slow hot paths",
+        "runtime-only errors"
+      ]
+    },
+    {
+      "language": "Rust",
+      "primary_role": "strict validators, safety gates, binary tools, Tauri bridge, deterministic compiled checks",
+      "use_when": [
+        "validator must be hard to fake",
+        "tool should compile",
+        "memory safety matters",
+        "Tauri backend"
+      ],
+      "avoid_when": [
+        "one-off tiny glue",
+        "team lacks time for compile/debug loop"
+      ],
+      "toolchain_evidence": [
+        "rustc_version",
+        "cargo_version",
+        "cargo_check_pass"
+      ],
+      "proof_commands": [
+        "rustc --version",
+        "cargo --version",
+        "cargo check --manifest-path <Cargo.toml>"
+      ],
+      "python_binding_strategy": [
+        "subprocess compiled binary",
+        "JSON file exchange",
+        "pyo3 later if justified"
+      ],
+      "risk": [
+        "compile time",
+        "borrow checker learning cost",
+        "crate supply-chain"
+      ]
+    },
+    {
+      "language": "Go",
+      "primary_role": "simple fast CLI, small services, portable workers",
+      "use_when": [
+        "single static-ish tool desired",
+        "concurrency simple",
+        "CLI should be easy to distribute"
+      ],
+      "avoid_when": [
+        "complex app UI",
+        "native graphics hot path",
+        "existing Rust bridge is better"
+      ],
+      "toolchain_evidence": [
+        "go_version",
+        "go_test_or_go_build_pass"
+      ],
+      "proof_commands": [
+        "go version",
+        "go test ./...",
+        "go build ./..."
+      ],
+      "python_binding_strategy": [
+        "subprocess Go binary",
+        "JSON stdin/stdout",
+        "HTTP local service if long-running"
+      ],
+      "risk": [
+        "module drift",
+        "less strict type modeling than Rust for safety gates"
+      ]
+    },
+    {
+      "language": "C++",
+      "primary_role": "deep optimization, native engine modules, performance-critical kernels",
+      "use_when": [
+        "profiling proves Python/Rust/Go insufficient",
+        "native library boundary required",
+        "graphics/audio/compute hot path"
+      ],
+      "avoid_when": [
+        "ordinary validators",
+        "ordinary scripts",
+        "unprofiled optimization desire"
+      ],
+      "toolchain_evidence": [
+        "compiler_version",
+        "cmake_or_build_system_pass",
+        "minimal_binary_runs"
+      ],
+      "proof_commands": [
+        "cl /? OR g++ --version",
+        "cmake --version",
+        "cmake --build <build_dir>"
+      ],
+      "python_binding_strategy": [
+        "subprocess binary",
+        "ctypes/cffi only when stable ABI exists",
+        "pybind11 later if justified"
+      ],
+      "risk": [
+        "memory safety",
+        "toolchain complexity",
+        "platform-specific builds"
+      ]
+    },
+    {
+      "language": "TypeScript",
+      "primary_role": "Tauri/frontend cockpit, web UI, visual operator surfaces",
+      "use_when": [
+        "interactive UI",
+        "stateful cockpit",
+        "webview integration",
+        "frontend build"
+      ],
+      "avoid_when": [
+        "trusted backend validator",
+        "heavy local filesystem mutation without Rust bridge"
+      ],
+      "toolchain_evidence": [
+        "node_version",
+        "npm_version",
+        "npm_build_pass"
+      ],
+      "proof_commands": [
+        "node --version",
+        "npm --version",
+        "npm run build"
+      ],
+      "python_binding_strategy": [
+        "Python produces JSON consumed by frontend",
+        "Tauri/Rust bridge mediates filesystem"
+      ],
+      "risk": [
+        "frontend build drift",
+        "package dependency churn",
+        "WebView runtime differences"
+      ]
+    },
+    {
+      "language": "PowerShell",
+      "primary_role": "Windows operator scripts, patch runners, environment commands",
+      "use_when": [
+        "Windows host control",
+        "WARP runner",
+        "shell integration",
+        "operator copy-paste commands"
+      ],
+      "avoid_when": [
+        "cross-platform binary",
+        "large validators",
+        "complex parsing when Python/Rust is clearer"
+      ],
+      "toolchain_evidence": [
+        "pwsh_version",
+        "execution_policy_visibility"
+      ],
+      "proof_commands": [
+        "pwsh --version"
+      ],
+      "python_binding_strategy": [
+        "Python invokes pwsh for host-specific shell operations",
+        "receipts capture stdout/stderr"
+      ],
+      "risk": [
+        "Windows path pitfalls",
+        "quoting issues",
+        "destructive command risk"
+      ]
+    }
+  ],
+  "selection_rules": [
+    "Start with Python for glue and evidence assembly unless task shape demands compiled guarantees.",
+    "Prefer Rust for strict validators, safety gates and Tauri backend commands when compile proof is available.",
+    "Prefer Go for simple external CLI tools when distribution and speed matter more than deep safety modeling.",
+    "Use C++ only after profiling or a native boundary requirement exists.",
+    "Use TypeScript for cockpit/app UI only behind Rust filesystem/process boundaries.",
+    "Use PowerShell for Windows operator runners, not as a general-purpose truth engine."
+  ],
+  "not_claimed": [
+    "all toolchains are installed",
+    "all language proofs pass",
+    "C++ optimization is needed now",
+    "Go is integrated now",
+    "Rust replaces Python orchestration",
+    "Python alone is enough for Core v1"
+  ]
+}

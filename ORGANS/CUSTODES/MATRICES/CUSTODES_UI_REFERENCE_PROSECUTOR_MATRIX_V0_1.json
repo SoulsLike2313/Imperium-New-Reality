@@ -1,0 +1,20 @@
+{
+  "matrix_id": "CUSTODES_UI_REFERENCE_PROSECUTOR_MATRIX_V0_1",
+  "posture": "prosecutor_not_helper",
+  "questions": [
+    "Did the agent claim target/reference completion from build proof alone?",
+    "Did the UI keep duplicate metadata that the Owner marked as noise?",
+    "Did the patch preserve runtime actions and truth boundary?",
+    "Does screenshot evidence exist for visual comparison?",
+    "Is Owner acceptance explicit, or is the agent self-certifying?",
+    "Are external outsource outputs isolated from canon until WARP review?"
+  ],
+  "blocking_findings": [
+    "self_certified_reference_form",
+    "build_proof_treated_as_visual_proof",
+    "owner_marked_noise_not_addressed",
+    "no_screenshot_evidence",
+    "external_candidate_landed_without_warp",
+    "truth_boundary_removed"
+  ]
+}

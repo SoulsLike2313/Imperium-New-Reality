@@ -1,0 +1,20 @@
+{
+  "matrix_id": "CUSTODES_NO_MONOLITH_PROSECUTOR_MATRIX_V0_1",
+  "version": "0.1",
+  "posture": "prosecutor_not_helper",
+  "questions": [
+    "Did the patch add or enlarge a monolith?",
+    "Did a validator pass a giant file only because markers were present?",
+    "Did the patch use a reference bitmap or invisible hit zones as fake UI proof?",
+    "Did backend code collect unrelated responsibilities in one file?",
+    "Was monolith debt registered as transitional and Owner-visible?",
+    "Did the patch reduce, preserve or increase monolith debt?"
+  ],
+  "blocking_findings": [
+    "unregistered_monolith_growth",
+    "bitmap_reference_fidelity_fake_green",
+    "marker_validator_over_monolith",
+    "backend_multi_domain_monolith",
+    "owner_unaware_monolith_debt"
+  ]
+}

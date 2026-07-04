@@ -1,0 +1,68 @@
+{
+  "receipt_id": "receipt.mechanicus.imperium_app_ui_right_rail_command_deck_v3_fix.v0_1",
+  "task_id": "IMPERIUM-APP-UI-RIGHT-RAIL-COMMAND-DECK-V3-FIX-0001",
+  "validator_id": "mechanicus_imperium_app_ui_right_rail_command_deck_v3_fix_validator.v0_1",
+  "verdict": "PASS_IMPERIUM_APP_UI_RIGHT_RAIL_COMMAND_DECK_V3_FIX_READY",
+  "generated_at_utc": "2026-07-04T02:34:11Z",
+  "checks": [
+    {
+      "name": "styles_css_exists_before_size_fix",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP_TAURI/src/styles.css",
+        "bytes": 21998
+      }
+    },
+    {
+      "name": "styles_css_size_threshold_met_after_substantive_extension",
+      "status": "PASS",
+      "details": {
+        "before_bytes": 21994,
+        "after_bytes": 25761,
+        "extension_present": true,
+        "threshold_22000_met": true,
+        "threshold_22500_met": true
+      }
+    },
+    {
+      "name": "substantive_ornament_extension_present",
+      "status": "PASS",
+      "details": {
+        "before_bytes": 21994,
+        "after_bytes": 25761,
+        "extension_present": true,
+        "threshold_22000_met": true,
+        "threshold_22500_met": true
+      }
+    },
+    {
+      "name": "previous_command_deck_v3_validator_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/VALIDATORS/validate_imperium_app_ui_right_rail_command_deck_v3.py"
+      }
+    },
+    {
+      "name": "previous_command_deck_v3_validator_passes_after_size_fix",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "{\n  \"task_id\": \"IMPERIUM-APP-UI-RIGHT-RAIL-COMMAND-DECK-V3-0001\",\n  \"validator_id\": \"mechanicus_imperium_app_ui_right_rail_command_deck_v3_validator.v0_1\",\n  \"verdict\": \"PASS_IMPERIUM_APP_UI_RIGHT_RAIL_COMMAND_DECK_V3_READY\",\n  \"receipt\": \"ORGANS/MECHANICUS/RECEIPTS/imperium_app_ui_right_rail_command_deck_v3_receipt.json\",\n  \"summary\": \"ORGANS/MECHANICUS/REPORTS/IMPERIUM_APP_UI_RIGHT_RAIL_COMMAND_DECK_V3_SUMMARY_V0_1.json\",\n  \"errors\": [],\n  \"warnings\": []\n}\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "previous_command_deck_v3_receipt_is_pass_after_fix",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "verdict": "PASS_IMPERIUM_APP_UI_RIGHT_RAIL_COMMAND_DECK_V3_READY"
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "styles": "SUPPORT/APP_TAURI/src/styles.css",
+  "previous_validator": "ORGANS/MECHANICUS/VALIDATORS/validate_imperium_app_ui_right_rail_command_deck_v3.py",
+  "previous_receipt": "ORGANS/MECHANICUS/RECEIPTS/imperium_app_ui_right_rail_command_deck_v3_receipt.json"
+}

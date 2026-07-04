@@ -1,0 +1,31 @@
+/* IMPERIUM_TAURI_COCKPIT_PATCH_REGISTRY_STYLE */
+:root {
+  font-family: Inter, Segoe UI, system-ui, sans-serif;
+  color: #f1e8ff;
+  background: #070712;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: radial-gradient(circle at top left, #27114a, #070712 44%), #070712; }
+.shell { padding: 22px; max-width: 1380px; margin: 0 auto; }
+.card { border: 1px solid rgba(190, 142, 255, .28); background: linear-gradient(145deg, rgba(22, 18, 42, .96), rgba(7, 7, 18, .96)); border-radius: 18px; box-shadow: 0 0 28px rgba(118, 57, 255, .20); }
+.hero { display: flex; align-items: stretch; justify-content: space-between; padding: 22px; margin-bottom: 18px; gap: 18px; }
+.eyebrow { color: #9cecff; letter-spacing: .22em; font-size: 12px; text-transform: uppercase; }
+h1 { margin: 6px 0 4px; font-size: 34px; }
+h2 { margin: 0 0 6px; font-size: 20px; }
+p { margin: 0; }
+.muted { color: #b7a8d8; font-size: 13px; margin-bottom: 14px; }
+.statusBox { min-width: 320px; padding: 14px; border-radius: 14px; background: rgba(0, 0, 0, .24); color: #b9fffb; font-family: Consolas, monospace; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.panel { padding: 18px; overflow: hidden; }
+.row, .buttonRow { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 10px 0; }
+select { width: 100%; padding: 10px 12px; border-radius: 10px; background: #120e24; color: #fff; border: 1px solid rgba(185, 255, 251, .25); }
+button { padding: 10px 14px; border-radius: 10px; border: 1px solid rgba(185, 255, 251, .30); background: linear-gradient(180deg, #2d1d60, #161229); color: #fff; cursor: pointer; }
+button:hover { filter: brightness(1.18); box-shadow: 0 0 18px rgba(156, 236, 255, .18); }
+button:disabled { opacity: .5; cursor: wait; }
+button.danger { border-color: rgba(255, 111, 188, .45); background: linear-gradient(180deg, #5b1749, #211022); }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid rgba(255,255,255,.09); vertical-align: top; }
+th { color: #9cecff; font-weight: 700; }
+td { color: #e7def8; }
+#aquarium { height: 210px; overflow: auto; background: #02030a; border: 1px solid rgba(156,236,255,.22); border-radius: 12px; padding: 12px; color: #8fffe4; font-family: Consolas, monospace; white-space: pre-wrap; }
+@media (max-width: 980px) { .grid, .hero { grid-template-columns: 1fr; display: block; } .statusBox { margin-top: 14px; min-width: 0; } }

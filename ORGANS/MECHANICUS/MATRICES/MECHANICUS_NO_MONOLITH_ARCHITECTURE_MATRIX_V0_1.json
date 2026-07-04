@@ -1,0 +1,65 @@
+{
+  "matrix_id": "MECHANICUS_NO_MONOLITH_ARCHITECTURE_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-UI-WORKSHOP-AND-NO-MONOLITH-LAW-0001",
+  "score_total": 100,
+  "dimensions": [
+    {
+      "id": "responsibility_split",
+      "weight": 20,
+      "pass_condition": "files/modules have one clear responsibility"
+    },
+    {
+      "id": "file_size_control",
+      "weight": 15,
+      "pass_condition": "new or modified files stay under soft thresholds unless waiver exists"
+    },
+    {
+      "id": "render_separation",
+      "weight": 15,
+      "pass_condition": "rendering, state, commands and data definitions are separated"
+    },
+    {
+      "id": "style_layering",
+      "weight": 15,
+      "pass_condition": "tokens/layout/components/rooms/ornaments/telemetry are separated"
+    },
+    {
+      "id": "backend_command_seams",
+      "weight": 10,
+      "pass_condition": "Rust/backend commands are separated from filesystem, receipts and process policy"
+    },
+    {
+      "id": "toolchain_proof",
+      "weight": 10,
+      "pass_condition": "language/toolchain proof exists for languages used"
+    },
+    {
+      "id": "reference_fidelity_truth",
+      "weight": 10,
+      "pass_condition": "reference aids are not counted as live UI proof"
+    },
+    {
+      "id": "owner_review_boundary",
+      "weight": 5,
+      "pass_condition": "Owner acceptance remains separate from automated pass"
+    }
+  ],
+  "blocking_findings": [
+    "new_js_file_over_420_lines_without_waiver",
+    "new_css_file_over_900_lines_without_waiver",
+    "new_rust_file_over_520_lines_without_waiver",
+    "render_function_over_90_lines_without_split",
+    "bitmap_reference_mode_claimed_as_live_ui",
+    "single_file_contains_state_render_commands_data_and_events",
+    "validator_only_checks_markers_in_monolith",
+    "backend_command_file_contains_unrelated_policy_domains",
+    "backend_multi_domain_monolith"
+  ],
+  "recommended_verdicts": [
+    "PASS_ARCHITECTURE_OK",
+    "PASS_WITH_TRANSITIONAL_MONOLITH_DEBT",
+    "BLOCK_MONOLITH_DEBT_INCREASE",
+    "BLOCK_FAKE_REFERENCE_FIDELITY"
+  ]
+}

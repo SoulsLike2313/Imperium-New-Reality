@@ -1,0 +1,73 @@
+{
+  "receipt_id": "receipt.mechanicus.imperium_app_ui_right_rail_command_deck_v3.v0_1",
+  "task_id": "IMPERIUM-APP-UI-RIGHT-RAIL-COMMAND-DECK-V3-0001",
+  "validator_id": "mechanicus_imperium_app_ui_right_rail_command_deck_v3_validator.v0_1",
+  "verdict": "PASS_IMPERIUM_APP_UI_RIGHT_RAIL_COMMAND_DECK_V3_READY",
+  "generated_at_utc": "2026-07-04T02:34:11Z",
+  "checks": [
+    {
+      "name": "main_js_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP_TAURI/src/main.js",
+        "bytes": 23017
+      }
+    },
+    {
+      "name": "main_js_contains_right_rail_and_preserves_ux_actions",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "styles_css_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP_TAURI/src/styles.css",
+        "bytes": 26920
+      }
+    },
+    {
+      "name": "styles_css_contains_right_rail_command_deck_v3_markers",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "styles_css_is_substantive_v3_skin",
+      "status": "PASS",
+      "details": {
+        "bytes": 25761
+      }
+    },
+    {
+      "name": "css_preserves_viewport_fit_with_internal_zones",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "right_rail_command_deck_contract_exists_and_preserves_not_claimed",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP_TAURI/contracts/IMPERIUM_APP_UI_RIGHT_RAIL_COMMAND_DECK_V3_CONTRACT_V0_1.json",
+        "error": null,
+        "contract_id": "IMPERIUM_APP_UI_RIGHT_RAIL_COMMAND_DECK_V3_CONTRACT_V0_1",
+        "not_claimed": [
+          "final target UI reached",
+          "final AAA visual pass",
+          "game projection runtime",
+          "full backend Patch Forge security complete",
+          "Core v1 ready",
+          "Great Nine assembled"
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "main_js": "SUPPORT/APP_TAURI/src/main.js",
+  "styles": "SUPPORT/APP_TAURI/src/styles.css",
+  "contract": "SUPPORT/APP_TAURI/contracts/IMPERIUM_APP_UI_RIGHT_RAIL_COMMAND_DECK_V3_CONTRACT_V0_1.json"
+}

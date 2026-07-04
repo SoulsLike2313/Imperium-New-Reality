@@ -1,0 +1,80 @@
+{
+  "summary_id": "mechanicus.ui_workshop_and_no_monolith_law_summary.v0_1",
+  "task_id": "MECHANICUS-UI-WORKSHOP-AND-NO-MONOLITH-LAW-0001",
+  "validator_id": "mechanicus_ui_workshop_and_no_monolith_law_validator.v0_1",
+  "verdict": "PASS_MECHANICUS_UI_WORKSHOP_AND_NO_MONOLITH_LAW_READY",
+  "generated_at_utc": "2026-07-04T15:21:11Z",
+  "checks": [
+    {
+      "name": "mechanicus_ui_workshop_and_no_monolith_law_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/LAWS/MECHANICUS_UI_WORKSHOP_AND_NO_MONOLITH_LAW_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "no_monolith_architecture_matrix_exists_and_weights_100",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_NO_MONOLITH_ARCHITECTURE_MATRIX_V0_1.json",
+        "error": null,
+        "weights_sum": 100
+      }
+    },
+    {
+      "name": "ui_workshop_pipeline_matrix_exists_and_declares_required_stages",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_UI_WORKSHOP_TARGET_PIPELINE_MATRIX_V0_1.json",
+        "error": null,
+        "missing_stages": []
+      }
+    },
+    {
+      "name": "custodes_no_monolith_prosecutor_matrix_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/CUSTODES/MATRICES/CUSTODES_NO_MONOLITH_PROSECUTOR_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "throne_no_monolith_crown_gate_matrix_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/MATRICES/THRONE_NO_MONOLITH_CROWN_GATE_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "mechanicus_ui_monolith_surface_scanner_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/measure_ui_monolith_surface.py"
+      }
+    },
+    {
+      "name": "monolith_surface_scanner_runs_and_writes_transitional_debt_report",
+      "status": "PASS",
+      "details": {
+        "scan_report": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_UI_MONOLITH_SURFACE_SCAN_V0_1.json",
+        "monolith_debt_count": 2,
+        "reference_bitmap_risk_count": 0
+      }
+    },
+    {
+      "name": "codex_outsource_code_review_report_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/REPORTS/CODEX_UI_OUTSOURCE_CODE_REVIEW_V0_1.md"
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Current APP_TAURI surface has monolith debt; this patch records it as transitional debt and does not fail legacy files."
+  ],
+  "scan_report": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_UI_MONOLITH_SURFACE_SCAN_V0_1.json",
+  "meaning": "Places UI rules/tools under Mechanicus and establishes no-monolith law with transitional debt reporting."
+}

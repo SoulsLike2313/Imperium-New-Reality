@@ -1,0 +1,331 @@
+/* IMPERIUM_APP_PLATFORM / APP_COCKPIT_MERGED_INTO_PLATFORM */
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #f6ecff;
+  background: #05020b;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 960px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(126, 48, 255, 0.34), transparent 36rem),
+    radial-gradient(circle at bottom right, rgba(255, 43, 173, 0.12), transparent 34rem),
+    linear-gradient(135deg, #0d0619 0%, #090414 42%, #030108 100%);
+}
+
+button,
+select {
+  font: inherit;
+}
+
+button {
+  border: 1px solid rgba(174, 126, 255, 0.55);
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(103, 67, 190, 0.72), rgba(45, 22, 83, 0.86));
+  color: #fff;
+  padding: 0.7rem 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(111, 68, 255, 0.16);
+}
+
+button:hover {
+  border-color: rgba(129, 248, 255, 0.8);
+  box-shadow: 0 0 24px rgba(129, 248, 255, 0.18);
+}
+
+button.danger-soft {
+  border-color: rgba(255, 76, 177, 0.75);
+  background: linear-gradient(180deg, rgba(128, 33, 100, 0.78), rgba(54, 12, 45, 0.88));
+}
+
+select {
+  min-width: 320px;
+  max-width: 100%;
+  border: 1px solid rgba(174, 126, 255, 0.48);
+  border-radius: 12px;
+  background: rgba(8, 6, 24, 0.94);
+  color: #fff;
+  padding: 0.75rem 0.9rem;
+}
+
+code {
+  color: #8df9ff;
+  white-space: nowrap;
+}
+
+.app-shell {
+  width: min(1420px, calc(100vw - 48px));
+  margin: 0 auto;
+  padding: 28px 0 36px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border: 1px solid rgba(174, 126, 255, 0.38);
+  border-radius: 24px;
+  padding: 24px 28px;
+  background: rgba(10, 7, 30, 0.78);
+  box-shadow: 0 0 60px rgba(80, 47, 180, 0.22);
+}
+
+.hero h1,
+.room-panel h2,
+.aquarium h2 {
+  margin: 0;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+}
+
+.hero p {
+  margin: 0.65rem 0 0;
+  color: #e5d8ff;
+}
+
+.eyebrow {
+  margin: 0 0 0.55rem;
+  color: #8df9ff;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.hud {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 310px;
+  border-radius: 18px;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.32);
+  color: #bffcff;
+  font-family: "Cascadia Mono", "Consolas", monospace;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.room-nav {
+  position: sticky;
+  top: 18px;
+  align-self: start;
+  display: grid;
+  gap: 10px;
+  border: 1px solid rgba(174, 126, 255, 0.25);
+  border-radius: 22px;
+  padding: 14px;
+  background: rgba(8, 6, 24, 0.72);
+}
+
+.room-button {
+  display: grid;
+  gap: 0.3rem;
+  text-align: left;
+  border-radius: 14px;
+  padding: 0.9rem;
+}
+
+.room-button small {
+  color: #9fd6ff;
+  font-size: 0.63rem;
+  opacity: 0.86;
+}
+
+.room-button.active {
+  border-color: rgba(141, 249, 255, 0.86);
+  background: linear-gradient(180deg, rgba(39, 91, 137, 0.72), rgba(50, 20, 104, 0.9));
+}
+
+.room-stack {
+  display: grid;
+  gap: 18px;
+}
+
+.room-panel,
+.aquarium {
+  border: 1px solid rgba(174, 126, 255, 0.28);
+  border-radius: 22px;
+  padding: 20px;
+  background: rgba(9, 7, 28, 0.78);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.025);
+}
+
+.panel-title-row,
+.aquarium-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.level-card {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 190px;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(108, 46, 190, 0.22);
+  border: 1px solid rgba(174, 126, 255, 0.28);
+  color: #f7e9ff;
+}
+
+.muted {
+  color: #c9bbe6;
+}
+
+.organ-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.organ-card {
+  border: 1px solid rgba(174, 126, 255, 0.22);
+  border-radius: 18px;
+  padding: 16px;
+  background: linear-gradient(180deg, rgba(38, 20, 68, 0.78), rgba(8, 6, 24, 0.82));
+}
+
+.organ-card h3 {
+  margin: 0.4rem 0;
+}
+
+.organ-id {
+  color: #8df9ff;
+  font-family: "Cascadia Mono", "Consolas", monospace;
+  font-size: 0.72rem;
+}
+
+.organ-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.8rem;
+}
+
+.organ-meta span,
+.status-strip span {
+  border: 1px solid rgba(141, 249, 255, 0.22);
+  border-radius: 999px;
+  padding: 0.3rem 0.55rem;
+  color: #dcefff;
+  background: rgba(44, 85, 128, 0.16);
+  font-size: 0.78rem;
+}
+
+.control-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0;
+  align-items: center;
+}
+
+.control-row.small {
+  margin: 0;
+}
+
+.status-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.table-wrap {
+  overflow: auto;
+  max-height: 620px;
+  border: 1px solid rgba(174, 126, 255, 0.18);
+  border-radius: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+
+th,
+td {
+  border-bottom: 1px solid rgba(174, 126, 255, 0.14);
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: rgba(16, 10, 38, 0.98);
+  color: #8df9ff;
+}
+
+.law-box {
+  display: grid;
+  gap: 0.3rem;
+  border: 1px solid rgba(141, 249, 255, 0.24);
+  border-radius: 16px;
+  padding: 14px;
+  background: rgba(11, 39, 54, 0.28);
+  margin: 10px 0 14px;
+}
+
+.aquarium pre {
+  min-height: 160px;
+  max-height: 280px;
+  overflow: auto;
+  margin: 14px 0 0;
+  padding: 14px;
+  border-radius: 16px;
+  background: #020107;
+  color: #bffcff;
+  border: 1px solid rgba(141, 249, 255, 0.18);
+  font-family: "Cascadia Mono", "Consolas", monospace;
+  font-size: 0.82rem;
+  white-space: pre-wrap;
+}
+
+.placeholder-sigil {
+  display: grid;
+  place-items: center;
+  margin-top: 18px;
+  height: 160px;
+  border-radius: 18px;
+  border: 1px dashed rgba(174, 126, 255, 0.28);
+  color: rgba(141, 249, 255, 0.65);
+  font-size: 4rem;
+}
+
+@media (max-width: 1080px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .room-nav {
+    position: static;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

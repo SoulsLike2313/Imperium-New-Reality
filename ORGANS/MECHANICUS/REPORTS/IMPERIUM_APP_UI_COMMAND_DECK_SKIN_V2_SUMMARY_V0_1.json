@@ -1,0 +1,76 @@
+{
+  "summary_id": "mechanicus.imperium_app_ui_command_deck_skin_v2_summary.v0_1",
+  "task_id": "IMPERIUM-APP-UI-COMMAND-DECK-SKIN-V2-0001",
+  "validator_id": "mechanicus_imperium_app_ui_command_deck_skin_v2_validator.v0_1",
+  "verdict": "PASS_IMPERIUM_APP_UI_COMMAND_DECK_SKIN_V2_READY",
+  "generated_at_utc": "2026-07-04T01:58:10Z",
+  "checks": [
+    {
+      "name": "main_js_exists_and_preserves_operational_rooms",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP_TAURI/src/main.js",
+        "bytes": 21025
+      }
+    },
+    {
+      "name": "main_js_keeps_rooms_and_ux_actions",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "styles_css_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP_TAURI/src/styles.css",
+        "bytes": 19136
+      }
+    },
+    {
+      "name": "styles_css_contains_command_deck_skin_v2_markers",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "styles_css_is_substantive_target_skin",
+      "status": "PASS",
+      "details": {
+        "bytes": 19132
+      }
+    },
+    {
+      "name": "css_preserves_viewport_fit_cabin_layout",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "css_adds_motion_with_reduced_motion_guard",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "command_deck_skin_contract_exists_and_preserves_not_claimed",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP_TAURI/contracts/IMPERIUM_APP_UI_COMMAND_DECK_SKIN_V2_CONTRACT_V0_1.json",
+        "error": null,
+        "contract_id": "IMPERIUM_APP_UI_COMMAND_DECK_SKIN_V2_CONTRACT_V0_1",
+        "not_claimed": [
+          "final AAA UI",
+          "final target concept reached",
+          "game projection runtime",
+          "full Patch Forge backend complete",
+          "Core v1 ready",
+          "Great Nine assembled"
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "meaning": "Applies a stronger command-deck skin over the working cabin layout while preserving UX actions and truth boundaries."
+}

@@ -1,0 +1,34 @@
+{
+  "schema_id": "MECHANICUS_LANGUAGE_POWER_SCHEMA_V0_1",
+  "version": "0.1",
+  "purpose": "Describe language powers, recommendation criteria, proof commands and Python binding/orchestration strategy.",
+  "language_shape": {
+    "language": "string",
+    "primary_role": "string",
+    "use_when": [
+      "string"
+    ],
+    "avoid_when": [
+      "string"
+    ],
+    "toolchain_evidence": [
+      "string"
+    ],
+    "proof_commands": [
+      "string"
+    ],
+    "python_binding_strategy": [
+      "string"
+    ],
+    "risk": [
+      "string"
+    ]
+  },
+  "rules": {
+    "no_language_available_without_toolchain_proof": true,
+    "python_may_orchestrate_but_not_replace_compilation_proof": true,
+    "cpp_requires_profiling_or_native_boundary_reason": true,
+    "rust_preferred_for_strict_validators_when_available": true,
+    "go_preferred_for_simple_fast_distributable_cli_when_available": true
+  }
+}

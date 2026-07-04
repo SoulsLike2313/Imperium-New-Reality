@@ -1,0 +1,91 @@
+{
+  "summary_id": "mechanicus.imperium_app_ui_cabin_frame_ux_proof_summary.v0_1",
+  "task_id": "IMPERIUM-APP-UI-CABIN-FRAME-UX-PROOF-0001",
+  "validator_id": "mechanicus_imperium_app_ui_cabin_frame_ux_proof_validator.v0_1",
+  "verdict": "PASS_IMPERIUM_APP_UI_CABIN_FRAME_UX_PROOF_READY",
+  "generated_at_utc": "2026-07-04T01:49:10Z",
+  "checks": [
+    {
+      "name": "main_js_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP_TAURI/src/main.js",
+        "bytes": 21025
+      }
+    },
+    {
+      "name": "main_js_contains_cabin_frame_and_ux_proof_actions",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "main_js_preserves_required_rooms",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "styles_css_exists",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP_TAURI/src/styles.css",
+        "bytes": 16376
+      }
+    },
+    {
+      "name": "styles_css_contains_cabin_fit_no_page_clip_markers",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "css_reduces_page_level_clipping_with_internal_scroll_zones",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "hud_layout_prevents_overflow_and_line_collision",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "cabin_frame_contract_exists_and_parses",
+      "status": "PASS",
+      "details": {
+        "path": "SUPPORT/APP_TAURI/contracts/IMPERIUM_APP_UI_CABIN_FRAME_UX_PROOF_CONTRACT_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "contract_addresses_owner_marked_ui_failures",
+      "status": "PASS",
+      "details": {
+        "owner_complaints_addressed": [
+          "protruding zones",
+          "cropped/broken view",
+          "too little animation",
+          "not enough control-cabin feeling",
+          "target gothic/metallic/cyber/trash-polka identity still weak"
+        ]
+      }
+    },
+    {
+      "name": "contract_declares_ux_proof_not_execution_proof",
+      "status": "PASS",
+      "details": {
+        "truth_law": [
+          "UI renders truth; receipts prove truth.",
+          "UX action proof is not execution proof.",
+          "Patch run button may request a backend run, but cannot claim a successful patch without receipt."
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "meaning": "Fixes the marked UI issues by introducing a viewport-fit cabin frame, internal scroll zones, better HUD/card fit and UX proof markers."
+}

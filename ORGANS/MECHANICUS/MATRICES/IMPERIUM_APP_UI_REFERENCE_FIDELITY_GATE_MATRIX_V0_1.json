@@ -1,0 +1,105 @@
+{
+  "matrix_id": "IMPERIUM_APP_UI_REFERENCE_FIDELITY_GATE_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "IMPERIUM-APP-UI-REFERENCE-TARGET-CONTRACT-AND-FIDELITY-GATE-0001",
+  "scoring": {
+    "max_score": 100,
+    "owner_acceptance_required_for_final": true,
+    "thresholds": {
+      "PASS_BUILD_ONLY": "build/runtime checks pass but reference score is unknown or below 60",
+      "PASS_UX_FUNCTIONAL": "UX actions and layout work, score >= 60, but visual target not accepted",
+      "PASS_REFERENCE_CANDIDATE": "score >= 80 with screenshot evidence and no critical blockers; Owner still must review",
+      "OWNER_ACCEPTED_REFERENCE_FORM": "Owner explicitly accepts reference form in current conversation or OWNER_UI_ACCEPTANCE file"
+    }
+  },
+  "dimensions": [
+    {
+      "id": "layout_hierarchy",
+      "weight": 15,
+      "requires": [
+        "top header",
+        "left nav",
+        "central deck",
+        "right rail",
+        "bottom aquarium"
+      ]
+    },
+    {
+      "id": "readability",
+      "weight": 15,
+      "requires": [
+        "font scale improved",
+        "operator text readable",
+        "log readable"
+      ]
+    },
+    {
+      "id": "deduplication",
+      "weight": 15,
+      "requires": [
+        "room ids reduced",
+        "telemetry not triplicated",
+        "active room not repeated unnecessarily"
+      ]
+    },
+    {
+      "id": "operational_law_anchor",
+      "weight": 10,
+      "requires": [
+        "UI renders truth",
+        "Receipts prove truth",
+        "UX proof is not execution proof"
+      ]
+    },
+    {
+      "id": "heartbeat_telemetry",
+      "weight": 10,
+      "requires": [
+        "FPS heartbeat/cardiogram or equivalent telemetry line"
+      ]
+    },
+    {
+      "id": "gothic_metal_material",
+      "weight": 15,
+      "requires": [
+        "metal panels",
+        "gothic ornament",
+        "brass/gold trim",
+        "depth"
+      ]
+    },
+    {
+      "id": "trash_polka_restraint",
+      "weight": 5,
+      "requires": [
+        "red accent exists",
+        "red does not dominate operator data"
+      ]
+    },
+    {
+      "id": "ux_action_proof",
+      "weight": 10,
+      "requires": [
+        "Aquarium UX markers",
+        "buttons remain present"
+      ]
+    },
+    {
+      "id": "truth_boundary",
+      "weight": 5,
+      "requires": [
+        "no fake execution claim",
+        "external candidates not canonical"
+      ]
+    }
+  ],
+  "critical_blockers": [
+    "main app cannot build",
+    "main app cannot open",
+    "buttons removed without replacement",
+    "truth boundary missing",
+    "external candidate marked canonical without WARP",
+    "final UI claimed without Owner acceptance",
+    "reference target claimed from build/FPS alone"
+  ]
+}

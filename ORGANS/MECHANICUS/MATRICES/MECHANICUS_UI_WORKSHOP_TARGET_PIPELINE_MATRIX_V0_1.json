@@ -1,0 +1,42 @@
+{
+  "matrix_id": "MECHANICUS_UI_WORKSHOP_TARGET_PIPELINE_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-UI-WORKSHOP-AND-NO-MONOLITH-LAW-0001",
+  "pipeline": [
+    {
+      "stage": "target_contract",
+      "purpose": "Owner reference target and no-fake-visual-green laws are fixed before implementation."
+    },
+    {
+      "stage": "design_tokens",
+      "purpose": "Colors, font scale, spacing, radii, glows, metal trim and red accent intensity are centralized."
+    },
+    {
+      "stage": "component_inventory",
+      "purpose": "Nav, Header, HUD, Command Rail, Operational Law, Organ Card, Aquarium, Buttons are separate components."
+    },
+    {
+      "stage": "ornament_assets",
+      "purpose": "Lightweight SVG ornaments/frames/medallions are created as reusable assets; no giant screenshot chassis."
+    },
+    {
+      "stage": "reference_fidelity_review",
+      "purpose": "Screenshot evidence, layout metrics, deduplication, readability and Owner review are collected."
+    },
+    {
+      "stage": "live_runtime_proof",
+      "purpose": "npm build, cargo check, Tauri dev and FPS proof are lower gates after live UI implementation."
+    },
+    {
+      "stage": "owner_acceptance",
+      "purpose": "Only Owner can close visual target as accepted."
+    }
+  ],
+  "tools_to_build_next": [
+    "mechanicus_ui_surface_scanner",
+    "ui_component_inventory_reporter",
+    "reference_screenshot_evidence_collector",
+    "css_token_coverage_checker",
+    "live_ui_no_bitmap_chassis_checker"
+  ]
+}

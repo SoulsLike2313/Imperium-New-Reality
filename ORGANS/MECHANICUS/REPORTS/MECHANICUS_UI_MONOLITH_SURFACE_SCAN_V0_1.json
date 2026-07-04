@@ -1,0 +1,555 @@
+{
+  "tool_id": "mechanicus_ui_monolith_surface_scanner.v0_1",
+  "repo_root": "E:\\IMPERIUM_REALITY",
+  "target_count": 3,
+  "scanned_count": 3,
+  "missing": [],
+  "files": [
+    {
+      "path": "SUPPORT/APP_TAURI/src/main.js",
+      "extension": ".js",
+      "bytes": 23017,
+      "line_count": 496,
+      "soft_threshold": 260,
+      "blocking_new_threshold": 420,
+      "soft_exceeded": true,
+      "blocking_new_exceeded": true,
+      "function_lengths": [
+        {
+          "name": "nowStamp",
+          "start_line": 65,
+          "end_line": 67,
+          "lines": 3
+        },
+        {
+          "name": "activeRoomLabel",
+          "start_line": 69,
+          "end_line": 71,
+          "lines": 3
+        },
+        {
+          "name": "markUx",
+          "start_line": 73,
+          "end_line": 76,
+          "lines": 4
+        },
+        {
+          "name": "logAquarium",
+          "start_line": 78,
+          "end_line": 82,
+          "lines": 5
+        },
+        {
+          "name": "callAnyCommand",
+          "start_line": 84,
+          "end_line": 97,
+          "lines": 14
+        },
+        {
+          "name": "normalizePatches",
+          "start_line": 99,
+          "end_line": 114,
+          "lines": 16
+        },
+        {
+          "name": "refreshPatchPacks",
+          "start_line": 116,
+          "end_line": 129,
+          "lines": 14
+        },
+        {
+          "name": "registerPatchPack",
+          "start_line": 131,
+          "end_line": 142,
+          "lines": 12
+        },
+        {
+          "name": "runRegisteredPatchPack",
+          "start_line": 144,
+          "end_line": 158,
+          "lines": 15
+        },
+        {
+          "name": "loadLanguagePowers",
+          "start_line": 160,
+          "end_line": 173,
+          "lines": 14
+        },
+        {
+          "name": "saveAquariumLog",
+          "start_line": 175,
+          "end_line": 189,
+          "lines": 15
+        },
+        {
+          "name": "openLogs",
+          "start_line": 191,
+          "end_line": 195,
+          "lines": 5
+        },
+        {
+          "name": "renderRoomNav",
+          "start_line": 197,
+          "end_line": 207,
+          "lines": 11
+        },
+        {
+          "name": "renderStatusTiles",
+          "start_line": 209,
+          "end_line": 216,
+          "lines": 8
+        },
+        {
+          "name": "renderOrganHub",
+          "start_line": 218,
+          "end_line": 246,
+          "lines": 29
+        },
+        {
+          "name": "renderPatchForge",
+          "start_line": 248,
+          "end_line": 277,
+          "lines": 30
+        },
+        {
+          "name": "renderMechanicus",
+          "start_line": 279,
+          "end_line": 296,
+          "lines": 18
+        },
+        {
+          "name": "renderPlaceholderRoom",
+          "start_line": 298,
+          "end_line": 305,
+          "lines": 8
+        },
+        {
+          "name": "renderActiveRoom",
+          "start_line": 307,
+          "end_line": 316,
+          "lines": 10
+        },
+        {
+          "name": "renderCommandRail",
+          "start_line": 318,
+          "end_line": 350,
+          "lines": 33
+        },
+        {
+          "name": "renderAquarium",
+          "start_line": 352,
+          "end_line": 365,
+          "lines": 14
+        },
+        {
+          "name": "render",
+          "start_line": 367,
+          "end_line": 428,
+          "lines": 62
+        },
+        {
+          "name": "recordRuntimeFpsProof",
+          "start_line": 430,
+          "end_line": 440,
+          "lines": 11
+        },
+        {
+          "name": "startFpsWatchdog",
+          "start_line": 442,
+          "end_line": 484,
+          "lines": 43
+        }
+      ],
+      "css_selector_blocks": null,
+      "reference_bitmap_mode_detected": false,
+      "invisible_hit_zone_mode_detected": false,
+      "max_function_lines": 62
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/src/styles.css",
+      "extension": ".css",
+      "bytes": 26920,
+      "line_count": 1155,
+      "soft_threshold": 520,
+      "blocking_new_threshold": 900,
+      "soft_exceeded": true,
+      "blocking_new_exceeded": true,
+      "function_lengths": [],
+      "css_selector_blocks": 144,
+      "reference_bitmap_mode_detected": false,
+      "invisible_hit_zone_mode_detected": false,
+      "max_function_lines": 0
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+      "extension": ".rs",
+      "bytes": 11248,
+      "line_count": 285,
+      "soft_threshold": 360,
+      "blocking_new_threshold": 520,
+      "soft_exceeded": false,
+      "blocking_new_exceeded": false,
+      "function_lengths": [],
+      "css_selector_blocks": null,
+      "reference_bitmap_mode_detected": false,
+      "invisible_hit_zone_mode_detected": false,
+      "max_function_lines": 0
+    }
+  ],
+  "monolith_debt": [
+    {
+      "path": "SUPPORT/APP_TAURI/src/main.js",
+      "extension": ".js",
+      "bytes": 23017,
+      "line_count": 496,
+      "soft_threshold": 260,
+      "blocking_new_threshold": 420,
+      "soft_exceeded": true,
+      "blocking_new_exceeded": true,
+      "function_lengths": [
+        {
+          "name": "nowStamp",
+          "start_line": 65,
+          "end_line": 67,
+          "lines": 3
+        },
+        {
+          "name": "activeRoomLabel",
+          "start_line": 69,
+          "end_line": 71,
+          "lines": 3
+        },
+        {
+          "name": "markUx",
+          "start_line": 73,
+          "end_line": 76,
+          "lines": 4
+        },
+        {
+          "name": "logAquarium",
+          "start_line": 78,
+          "end_line": 82,
+          "lines": 5
+        },
+        {
+          "name": "callAnyCommand",
+          "start_line": 84,
+          "end_line": 97,
+          "lines": 14
+        },
+        {
+          "name": "normalizePatches",
+          "start_line": 99,
+          "end_line": 114,
+          "lines": 16
+        },
+        {
+          "name": "refreshPatchPacks",
+          "start_line": 116,
+          "end_line": 129,
+          "lines": 14
+        },
+        {
+          "name": "registerPatchPack",
+          "start_line": 131,
+          "end_line": 142,
+          "lines": 12
+        },
+        {
+          "name": "runRegisteredPatchPack",
+          "start_line": 144,
+          "end_line": 158,
+          "lines": 15
+        },
+        {
+          "name": "loadLanguagePowers",
+          "start_line": 160,
+          "end_line": 173,
+          "lines": 14
+        },
+        {
+          "name": "saveAquariumLog",
+          "start_line": 175,
+          "end_line": 189,
+          "lines": 15
+        },
+        {
+          "name": "openLogs",
+          "start_line": 191,
+          "end_line": 195,
+          "lines": 5
+        },
+        {
+          "name": "renderRoomNav",
+          "start_line": 197,
+          "end_line": 207,
+          "lines": 11
+        },
+        {
+          "name": "renderStatusTiles",
+          "start_line": 209,
+          "end_line": 216,
+          "lines": 8
+        },
+        {
+          "name": "renderOrganHub",
+          "start_line": 218,
+          "end_line": 246,
+          "lines": 29
+        },
+        {
+          "name": "renderPatchForge",
+          "start_line": 248,
+          "end_line": 277,
+          "lines": 30
+        },
+        {
+          "name": "renderMechanicus",
+          "start_line": 279,
+          "end_line": 296,
+          "lines": 18
+        },
+        {
+          "name": "renderPlaceholderRoom",
+          "start_line": 298,
+          "end_line": 305,
+          "lines": 8
+        },
+        {
+          "name": "renderActiveRoom",
+          "start_line": 307,
+          "end_line": 316,
+          "lines": 10
+        },
+        {
+          "name": "renderCommandRail",
+          "start_line": 318,
+          "end_line": 350,
+          "lines": 33
+        },
+        {
+          "name": "renderAquarium",
+          "start_line": 352,
+          "end_line": 365,
+          "lines": 14
+        },
+        {
+          "name": "render",
+          "start_line": 367,
+          "end_line": 428,
+          "lines": 62
+        },
+        {
+          "name": "recordRuntimeFpsProof",
+          "start_line": 430,
+          "end_line": 440,
+          "lines": 11
+        },
+        {
+          "name": "startFpsWatchdog",
+          "start_line": 442,
+          "end_line": 484,
+          "lines": 43
+        }
+      ],
+      "css_selector_blocks": null,
+      "reference_bitmap_mode_detected": false,
+      "invisible_hit_zone_mode_detected": false,
+      "max_function_lines": 62
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/src/styles.css",
+      "extension": ".css",
+      "bytes": 26920,
+      "line_count": 1155,
+      "soft_threshold": 520,
+      "blocking_new_threshold": 900,
+      "soft_exceeded": true,
+      "blocking_new_exceeded": true,
+      "function_lengths": [],
+      "css_selector_blocks": 144,
+      "reference_bitmap_mode_detected": false,
+      "invisible_hit_zone_mode_detected": false,
+      "max_function_lines": 0
+    }
+  ],
+  "blocking_new_debt": [
+    {
+      "path": "SUPPORT/APP_TAURI/src/main.js",
+      "extension": ".js",
+      "bytes": 23017,
+      "line_count": 496,
+      "soft_threshold": 260,
+      "blocking_new_threshold": 420,
+      "soft_exceeded": true,
+      "blocking_new_exceeded": true,
+      "function_lengths": [
+        {
+          "name": "nowStamp",
+          "start_line": 65,
+          "end_line": 67,
+          "lines": 3
+        },
+        {
+          "name": "activeRoomLabel",
+          "start_line": 69,
+          "end_line": 71,
+          "lines": 3
+        },
+        {
+          "name": "markUx",
+          "start_line": 73,
+          "end_line": 76,
+          "lines": 4
+        },
+        {
+          "name": "logAquarium",
+          "start_line": 78,
+          "end_line": 82,
+          "lines": 5
+        },
+        {
+          "name": "callAnyCommand",
+          "start_line": 84,
+          "end_line": 97,
+          "lines": 14
+        },
+        {
+          "name": "normalizePatches",
+          "start_line": 99,
+          "end_line": 114,
+          "lines": 16
+        },
+        {
+          "name": "refreshPatchPacks",
+          "start_line": 116,
+          "end_line": 129,
+          "lines": 14
+        },
+        {
+          "name": "registerPatchPack",
+          "start_line": 131,
+          "end_line": 142,
+          "lines": 12
+        },
+        {
+          "name": "runRegisteredPatchPack",
+          "start_line": 144,
+          "end_line": 158,
+          "lines": 15
+        },
+        {
+          "name": "loadLanguagePowers",
+          "start_line": 160,
+          "end_line": 173,
+          "lines": 14
+        },
+        {
+          "name": "saveAquariumLog",
+          "start_line": 175,
+          "end_line": 189,
+          "lines": 15
+        },
+        {
+          "name": "openLogs",
+          "start_line": 191,
+          "end_line": 195,
+          "lines": 5
+        },
+        {
+          "name": "renderRoomNav",
+          "start_line": 197,
+          "end_line": 207,
+          "lines": 11
+        },
+        {
+          "name": "renderStatusTiles",
+          "start_line": 209,
+          "end_line": 216,
+          "lines": 8
+        },
+        {
+          "name": "renderOrganHub",
+          "start_line": 218,
+          "end_line": 246,
+          "lines": 29
+        },
+        {
+          "name": "renderPatchForge",
+          "start_line": 248,
+          "end_line": 277,
+          "lines": 30
+        },
+        {
+          "name": "renderMechanicus",
+          "start_line": 279,
+          "end_line": 296,
+          "lines": 18
+        },
+        {
+          "name": "renderPlaceholderRoom",
+          "start_line": 298,
+          "end_line": 305,
+          "lines": 8
+        },
+        {
+          "name": "renderActiveRoom",
+          "start_line": 307,
+          "end_line": 316,
+          "lines": 10
+        },
+        {
+          "name": "renderCommandRail",
+          "start_line": 318,
+          "end_line": 350,
+          "lines": 33
+        },
+        {
+          "name": "renderAquarium",
+          "start_line": 352,
+          "end_line": 365,
+          "lines": 14
+        },
+        {
+          "name": "render",
+          "start_line": 367,
+          "end_line": 428,
+          "lines": 62
+        },
+        {
+          "name": "recordRuntimeFpsProof",
+          "start_line": 430,
+          "end_line": 440,
+          "lines": 11
+        },
+        {
+          "name": "startFpsWatchdog",
+          "start_line": 442,
+          "end_line": 484,
+          "lines": 43
+        }
+      ],
+      "css_selector_blocks": null,
+      "reference_bitmap_mode_detected": false,
+      "invisible_hit_zone_mode_detected": false,
+      "max_function_lines": 62
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/src/styles.css",
+      "extension": ".css",
+      "bytes": 26920,
+      "line_count": 1155,
+      "soft_threshold": 520,
+      "blocking_new_threshold": 900,
+      "soft_exceeded": true,
+      "blocking_new_exceeded": true,
+      "function_lengths": [],
+      "css_selector_blocks": 144,
+      "reference_bitmap_mode_detected": false,
+      "invisible_hit_zone_mode_detected": false,
+      "max_function_lines": 0
+    }
+  ],
+  "reference_bitmap_risks": [],
+  "meaning": "Scanner reports monolith risk and reference-bitmap risk. It does not fail legacy debt by itself."
+}
