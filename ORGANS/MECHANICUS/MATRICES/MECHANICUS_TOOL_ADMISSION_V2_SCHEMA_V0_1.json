@@ -1,0 +1,79 @@
+{
+  "schema_id": "MECHANICUS_TOOL_ADMISSION_V2_SCHEMA_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-TOOL-ADMISSION-V2-0001",
+  "record_type": "mechanicus.tool_admission_v2_record",
+  "required_fields": [
+    "tool_id",
+    "source_admission_state",
+    "tool_class",
+    "kind",
+    "owner_scope",
+    "path_or_command",
+    "purpose",
+    "provenance",
+    "language_lane",
+    "risk_class",
+    "execution_mode",
+    "allowed_actions",
+    "forbidden_actions",
+    "input_contract_status",
+    "output_contract_status",
+    "receipt_contract_status",
+    "validator_coverage",
+    "custodes_audit_status",
+    "throne_relevance",
+    "v2_admission_status",
+    "promotion_blockers"
+  ],
+  "admission_status_values": [
+    "DISCOVERED",
+    "CANDIDATE_REQUIRES_REVIEW",
+    "ADMITTED_READ_ONLY",
+    "ADMITTED_DRY_RUN",
+    "ADMITTED_HOST_BOUND_CAPABILITY",
+    "REJECTED_REWORK_REQUIRED",
+    "QUARANTINED",
+    "DEPRECATED",
+    "OWNER_WAIVED_TEMPORARY_USE",
+    "ADMITTED_OWNER_APPROVED_EXECUTION"
+  ],
+  "execution_mode_values": [
+    "LOCAL_READ_ONLY_BY_CONTRACT",
+    "DRY_RUN_ALLOWLISTED",
+    "HOST_BOUND_PROBE_ONLY",
+    "PATCH_RUNNER_NOT_PROMOTED",
+    "EXECUTION_BLOCKED",
+    "OWNER_APPROVED_REAL_EXECUTION_NOT_GRANTED"
+  ],
+  "risk_class_values": [
+    "LOW_READ_ONLY",
+    "LOW_DRY_RUN",
+    "HOST_BOUND_CAPABILITY",
+    "PATCH_RUNNER_SCOPE",
+    "MEDIUM_REVIEW_REQUIRED",
+    "HIGH_MUTATION_RISK",
+    "QUARANTINE_OR_REWORK"
+  ],
+  "contract_status_values": [
+    "DECLARED",
+    "IMPLIED_BY_TOOL_CLASS",
+    "SOURCE_REPORT_BOUND",
+    "MISSING",
+    "NOT_APPLICABLE"
+  ],
+  "required_report_fields": [
+    "task_id",
+    "validator_id",
+    "verdict",
+    "source_inventory_path",
+    "source_tool_count",
+    "admission_counts_by_v2_status",
+    "execution_mode_counts",
+    "risk_class_counts",
+    "real_execution_enabled_count",
+    "admission_records",
+    "errors",
+    "warnings"
+  ]
+}

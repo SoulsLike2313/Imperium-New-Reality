@@ -1,0 +1,22 @@
+{
+  "matrix_id": "CUSTODES_MECHANICUS_TOOL_ADMISSION_V2_PROSECUTOR_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-TOOL-ADMISSION-V2-0001",
+  "prosecutor_questions": [
+    "Does Mechanicus distinguish inventory from admission?",
+    "Does Mechanicus prevent dry-run admission from being claimed as real execution authority?",
+    "Does Mechanicus expose host-bound claims instead of treating them as universal proof?",
+    "Does every admitted record preserve promotion blockers and evidence scope?",
+    "Does the report show real_execution_enabled_count == 0 for V2 foundation?",
+    "Does the future local model membrane remain deferred and non-authoritative?"
+  ],
+  "blocking_findings": [
+    "tool_inventory_claimed_as_trust",
+    "dry_run_claimed_as_real_execution",
+    "host_bound_claimed_as_universal",
+    "missing_promotion_blockers",
+    "local_model_membrane_used_as_validator",
+    "admitted_owner_approved_execution_in_v2_foundation"
+  ],
+  "expected_v2_posture": "PASS_IF_MECHANICUS_REPORTS_ADMISSION_WITH_NO_REAL_EXECUTION_AUTHORITY"
+}

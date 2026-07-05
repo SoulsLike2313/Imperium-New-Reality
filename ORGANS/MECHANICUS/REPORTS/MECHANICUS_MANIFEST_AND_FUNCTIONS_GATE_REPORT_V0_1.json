@@ -1,0 +1,248 @@
+{
+  "task_id": "MECHANICUS-MANIFEST-AND-FUNCTIONS-GATE-0001",
+  "validator_id": "mechanicus_manifest_and_functions_gate_validator.v0_1",
+  "verdict": "PASS_MECHANICUS_MANIFEST_AND_FUNCTIONS_GATE_READY",
+  "generated_at_utc": "2026-07-05T22:45:53Z",
+  "manifest_path": "ORGANS/MECHANICUS/MANIFEST.json",
+  "functions_md_path": "ORGANS/MECHANICUS/FUNCTIONS.md",
+  "function_registry_path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_FUNCTION_REGISTRY_V0_1.json",
+  "gate_matrix_path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_MANIFEST_AND_FUNCTIONS_GATE_MATRIX_V0_1.json",
+  "organ_assembly_claim": false,
+  "six_gate_closure_claim": false,
+  "identity_gate_status": "PASS_BASELINE",
+  "functions_gate_status": "PASS_BASELINE",
+  "six_gate_progress": [
+    {
+      "gate_id": "G1_IDENTITY_MANIFEST",
+      "current_state_after_this_patch": "PASS_BASELINE",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G2_FUNCTIONS_REGISTRY",
+      "current_state_after_this_patch": "PASS_BASELINE",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G3_CAPABILITY_EVIDENCE",
+      "current_state_after_this_patch": "PARTIAL_MEASURED",
+      "closure_claim": "NOT_FULLY_CLOSED"
+    },
+    {
+      "gate_id": "G4_PERSONAL_VALIDATORS",
+      "current_state_after_this_patch": "PARTIAL_FOUNDATION",
+      "closure_claim": "NOT_FULLY_CLOSED"
+    },
+    {
+      "gate_id": "G5_CURRENT_TRUTH_RECEIPTS",
+      "current_state_after_this_patch": "PARTIAL_MEASURED",
+      "closure_claim": "NOT_FULLY_CLOSED"
+    },
+    {
+      "gate_id": "G6_RESIDENCY_TRUST",
+      "current_state_after_this_patch": "NOT_PROVEN",
+      "closure_claim": "NOT_FULLY_CLOSED"
+    }
+  ],
+  "function_status_counts": {
+    "MEASURED_PRESENT": 5,
+    "PROVEN_BASELINE": 2,
+    "PARTIAL_MEASURED": 1,
+    "FUTURE_DEFERRED": 2,
+    "FORBIDDEN": 1
+  },
+  "function_count": 11,
+  "local_model_membrane_status": "DEFERRED_AFTER_CORE_V1",
+  "next_gate_work": [
+    "MECHANICUS-PERSONAL-VALIDATORS-GATE-0001",
+    "MECHANICUS-EVIDENCE-COVERAGE-GATE-0001",
+    "MECHANICUS-RESIDENCY-CLEANUP-GATE-0001",
+    "CUSTODES-MECHANICUS-PROSECUTOR-GATE-0001",
+    "THRONE-MECHANICUS-SIX-GATE-CROWN-VERDICT-0001"
+  ],
+  "checks": [
+    {
+      "name": "exists::ORGANS/MECHANICUS/MANIFEST.json",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MANIFEST.json"
+      }
+    },
+    {
+      "name": "exists::ORGANS/MECHANICUS/FUNCTIONS.md",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/FUNCTIONS.md"
+      }
+    },
+    {
+      "name": "exists::ORGANS/MECHANICUS/MATRICES/MECHANICUS_FUNCTION_REGISTRY_V0_1.json",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_FUNCTION_REGISTRY_V0_1.json"
+      }
+    },
+    {
+      "name": "exists::ORGANS/MECHANICUS/MATRICES/MECHANICUS_MANIFEST_AND_FUNCTIONS_GATE_MATRIX_V0_1.json",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_MANIFEST_AND_FUNCTIONS_GATE_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "json_parse::MANIFEST",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "json_parse::FUNCTION_REGISTRY",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "json_parse::GATE_MATRIX",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "manifest_has_required_fields",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "manifest_organ_id_mechanicus",
+      "status": "PASS",
+      "details": {
+        "organ_id": "MECHANICUS"
+      }
+    },
+    {
+      "name": "manifest_no_full_implementation_claim",
+      "status": "PASS",
+      "details": {
+        "value": false
+      }
+    },
+    {
+      "name": "manifest_no_organ_assembly_claim",
+      "status": "PASS",
+      "details": {
+        "value": false
+      }
+    },
+    {
+      "name": "manifest_no_six_gate_closure_claim",
+      "status": "PASS",
+      "details": {
+        "value": false
+      }
+    },
+    {
+      "name": "manifest_has_exactly_six_gates",
+      "status": "PASS",
+      "details": {
+        "count": 6
+      }
+    },
+    {
+      "name": "local_model_membrane_deferred",
+      "status": "PASS",
+      "details": {
+        "status": "DEFERRED_AFTER_CORE_V1"
+      }
+    },
+    {
+      "name": "evidence_exists::ORGANS/MECHANICUS/REPORTS/MECHANICUS_ORGAN_READINESS_ROLLUP_V0_1.json",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_ORGAN_READINESS_ROLLUP_V0_1.json"
+      }
+    },
+    {
+      "name": "evidence_exists::ORGANS/MECHANICUS/REPORTS/MECHANICUS_TOOL_ADMISSION_V2_REPORT_V0_1.json",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TOOL_ADMISSION_V2_REPORT_V0_1.json"
+      }
+    },
+    {
+      "name": "evidence_exists::ORGANS/MECHANICUS/REPORTS/MECHANICUS_TOOL_INVENTORY_V0_1.json",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TOOL_INVENTORY_V0_1.json"
+      }
+    },
+    {
+      "name": "evidence_exists::ORGANS/MECHANICUS/REGISTRY/command_policy.json",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/REGISTRY/command_policy.json"
+      }
+    },
+    {
+      "name": "functions_md_has_required_markers",
+      "status": "PASS",
+      "details": {
+        "MECHANICUS_ASSEMBLED": true,
+        "SIX_GATES_100_PERCENT_CLOSED": true,
+        "DEFERRED_AFTER_CORE_V1": true,
+        "registry_path": true
+      }
+    },
+    {
+      "name": "function_registry_has_functions",
+      "status": "PASS",
+      "details": {
+        "count": 11
+      }
+    },
+    {
+      "name": "function_records_have_required_fields",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "function_evidence_paths_exist",
+      "status": "PASS",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "name": "function_registry_has_proven_baseline",
+      "status": "PASS",
+      "details": {
+        "count": 2
+      }
+    },
+    {
+      "name": "function_registry_has_future_deferred",
+      "status": "PASS",
+      "details": {
+        "count": 2
+      }
+    },
+    {
+      "name": "function_registry_has_forbidden",
+      "status": "PASS",
+      "details": {
+        "count": 1
+      }
+    },
+    {
+      "name": "manifest_status_has_no_forbidden_closure_claim",
+      "status": "PASS",
+      "details": {
+        "forbidden": []
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "This patch closes identity/functions baseline only; it does not assemble Mechanicus.",
+    "Personal validators, evidence coverage, residency/trust, Custodes and Throne gates remain future work."
+  ]
+}

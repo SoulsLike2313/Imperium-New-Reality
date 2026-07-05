@@ -1,0 +1,49 @@
+{
+  "matrix_id": "MECHANICUS_TOOL_ADMISSION_V2_RISK_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-TOOL-ADMISSION-V2-0001",
+  "risk_rules": [
+    {
+      "rule_id": "external_host_toolchain",
+      "if": "tool_class == external_tool",
+      "risk_class": "HOST_BOUND_CAPABILITY",
+      "execution_mode": "HOST_BOUND_PROBE_ONLY"
+    },
+    {
+      "rule_id": "allowlisted_dry_run",
+      "if": "tool_id in command_policy.allowlisted_tool_ids_for_dry_run",
+      "risk_class": "LOW_DRY_RUN",
+      "execution_mode": "DRY_RUN_ALLOWLISTED"
+    },
+    {
+      "rule_id": "internal_validator_scanner",
+      "if": "kind/path suggest validator/scanner/report generator",
+      "risk_class": "LOW_READ_ONLY",
+      "execution_mode": "LOCAL_READ_ONLY_BY_CONTRACT"
+    },
+    {
+      "rule_id": "warp_runner",
+      "if": "path is RUN_*.ps1 or kind is runner",
+      "risk_class": "PATCH_RUNNER_SCOPE",
+      "execution_mode": "PATCH_RUNNER_NOT_PROMOTED"
+    },
+    {
+      "rule_id": "source_rejected",
+      "if": "source admission state is REJECTED_REWORK_REQUIRED",
+      "risk_class": "QUARANTINE_OR_REWORK",
+      "execution_mode": "EXECUTION_BLOCKED"
+    },
+    {
+      "rule_id": "missing_identity_or_purpose",
+      "if": "required source identity fields are missing",
+      "risk_class": "QUARANTINE_OR_REWORK",
+      "execution_mode": "EXECUTION_BLOCKED"
+    }
+  ],
+  "blocking_rules": [
+    "ADMITTED_OWNER_APPROVED_EXECUTION count must be 0 in this patch",
+    "command_policy.arbitrary_shell_execution_allowed must be false",
+    "each V2 record must expose promotion blockers instead of hiding them",
+    "candidate/rejected/quarantined tools cannot be counted as executable tools"
+  ]
+}

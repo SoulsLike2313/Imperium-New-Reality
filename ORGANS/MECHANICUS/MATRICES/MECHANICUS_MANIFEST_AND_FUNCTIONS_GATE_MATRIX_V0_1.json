@@ -1,0 +1,57 @@
+{
+  "matrix_id": "MECHANICUS_MANIFEST_AND_FUNCTIONS_GATE_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-MANIFEST-AND-FUNCTIONS-GATE-0001",
+  "organ_id": "MECHANICUS",
+  "gate_scope": "Identity and Functions baseline gate for six-gate Mechanicus closure path.",
+  "required_files": [
+    "ORGANS/MECHANICUS/MANIFEST.json",
+    "ORGANS/MECHANICUS/FUNCTIONS.md",
+    "ORGANS/MECHANICUS/MATRICES/MECHANICUS_FUNCTION_REGISTRY_V0_1.json",
+    "ORGANS/MECHANICUS/MATRICES/MECHANICUS_MANIFEST_AND_FUNCTIONS_GATE_MATRIX_V0_1.json"
+  ],
+  "required_manifest_fields": [
+    "manifest_id",
+    "version",
+    "organ_id",
+    "status",
+    "full_implementation_claim",
+    "organ_assembly_claim",
+    "six_gate_closure_claim",
+    "six_gates",
+    "required_current_evidence",
+    "local_model_membrane"
+  ],
+  "required_function_fields": [
+    "function_id",
+    "title",
+    "status",
+    "profile_zone",
+    "evidence_paths",
+    "forbidden_overclaim"
+  ],
+  "allowed_function_statuses": [
+    "PROVEN_BASELINE",
+    "MEASURED_PRESENT",
+    "PARTIAL_MEASURED",
+    "FUTURE_DEFERRED",
+    "FORBIDDEN"
+  ],
+  "blocking_rules": [
+    "manifest.organ_id must be MECHANICUS",
+    "manifest.full_implementation_claim must be false",
+    "manifest.organ_assembly_claim must be false",
+    "manifest.six_gate_closure_claim must be false",
+    "manifest must contain exactly six gates",
+    "function registry must contain at least one PROVEN_BASELINE function and at least one FUTURE_DEFERRED function",
+    "PROVEN_BASELINE and MEASURED_PRESENT function evidence paths must exist unless explicitly listed optional",
+    "FORBIDDEN functions must have no evidence paths and must include forbidden_overclaim",
+    "local_model_membrane.status must be DEFERRED_AFTER_CORE_V1",
+    "no report may claim MECHANICUS_ASSEMBLED or SIX_GATES_100_PERCENT_CLOSED"
+  ],
+  "pass_verdict": "PASS_MECHANICUS_MANIFEST_AND_FUNCTIONS_GATE_READY",
+  "not_allowed_verdicts": [
+    "PASS_MECHANICUS_ASSEMBLED",
+    "PASS_SIX_GATES_100_PERCENT_CLOSED"
+  ]
+}

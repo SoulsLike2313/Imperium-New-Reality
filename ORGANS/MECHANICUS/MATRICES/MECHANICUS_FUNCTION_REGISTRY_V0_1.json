@@ -1,0 +1,139 @@
+{
+  "registry_id": "MECHANICUS_FUNCTION_REGISTRY_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-MANIFEST-AND-FUNCTIONS-GATE-0001",
+  "organ_id": "MECHANICUS",
+  "status_values": [
+    "PROVEN_BASELINE",
+    "MEASURED_PRESENT",
+    "PARTIAL_MEASURED",
+    "FUTURE_DEFERRED",
+    "FORBIDDEN"
+  ],
+  "forbidden_claims": [
+    "MECHANICUS_ASSEMBLED",
+    "SIX_GATES_100_PERCENT_CLOSED",
+    "REAL_EXECUTION_GATE_READY",
+    "LOCAL_MODEL_MEMBRANE_AVAILABLE_NOW",
+    "TOOL_INVENTORY_EQUALS_TOOL_TRUST",
+    "HOST_BOUND_PROOF_IS_PORTABLE_PROOF"
+  ],
+  "functions": [
+    {
+      "function_id": "language_surface_census",
+      "title": "Language surface and lane census",
+      "status": "MEASURED_PRESENT",
+      "profile_zone": "languages/toolchains",
+      "evidence_paths": [
+        "ORGANS/MECHANICUS/REPORTS/MECHANICUS_LANGUAGE_SURFACE_CENSUS_V0_1.json",
+        "ORGANS/MECHANICUS/REPORTS/MECHANICUS_LANGUAGE_VALIDATION_BASELINE_V0_1.json"
+      ],
+      "forbidden_overclaim": "does not prove full code cleanliness"
+    },
+    {
+      "function_id": "strict_build_lane_foundation",
+      "title": "Strict build lane foundation",
+      "status": "MEASURED_PRESENT",
+      "profile_zone": "build proof",
+      "evidence_paths": [
+        "ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_REPORT_V0_1.json",
+        "ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_FOUNDATION_SUMMARY_V0_1.json"
+      ],
+      "forbidden_overclaim": "does not prove lint/type/test/security cleanliness"
+    },
+    {
+      "function_id": "json_evidence_strict_lane",
+      "title": "JSON evidence strict lane",
+      "status": "MEASURED_PRESENT",
+      "profile_zone": "evidence parsing",
+      "evidence_paths": [
+        "ORGANS/MECHANICUS/REPORTS/MECHANICUS_JSON_EVIDENCE_STRICT_LANE_REPORT_V0_1.json"
+      ],
+      "optional_evidence_paths": [
+        "ORGANS/MECHANICUS/REPORTS/MECHANICUS_JSON_EVIDENCE_STRICT_LANE_SUMMARY_V0_1.json"
+      ],
+      "forbidden_overclaim": "does not prove every evidence file is semantically current"
+    },
+    {
+      "function_id": "tool_inventory",
+      "title": "Tool inventory / arsenal census",
+      "status": "MEASURED_PRESENT",
+      "profile_zone": "tools",
+      "evidence_paths": [
+        "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TOOL_INVENTORY_V0_1.json"
+      ],
+      "forbidden_overclaim": "inventory is not trust"
+    },
+    {
+      "function_id": "tool_admission_v2",
+      "title": "Script-first Tool Admission V2",
+      "status": "PROVEN_BASELINE",
+      "profile_zone": "tools/admission",
+      "evidence_paths": [
+        "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TOOL_ADMISSION_V2_REPORT_V0_1.json",
+        "ORGANS/MECHANICUS/RECEIPTS/mechanicus_tool_admission_v2_receipt.json"
+      ],
+      "forbidden_overclaim": "does not grant real execution authority"
+    },
+    {
+      "function_id": "organ_readiness_rollup",
+      "title": "Organ readiness rollup",
+      "status": "PROVEN_BASELINE",
+      "profile_zone": "self-measurement",
+      "evidence_paths": [
+        "ORGANS/MECHANICUS/REPORTS/MECHANICUS_ORGAN_READINESS_ROLLUP_V0_1.json",
+        "ORGANS/MECHANICUS/RECEIPTS/mechanicus_organ_readiness_rollup_receipt.json"
+      ],
+      "forbidden_overclaim": "readiness rollup reports not assembled"
+    },
+    {
+      "function_id": "command_policy_boundary",
+      "title": "Command policy / arbitrary shell boundary",
+      "status": "MEASURED_PRESENT",
+      "profile_zone": "execution safety",
+      "evidence_paths": [
+        "ORGANS/MECHANICUS/REGISTRY/command_policy.json"
+      ],
+      "forbidden_overclaim": "policy is not safe real execution gateway"
+    },
+    {
+      "function_id": "ui_no_monolith_workshop",
+      "title": "UI workshop / no-monolith visibility",
+      "status": "PARTIAL_MEASURED",
+      "profile_zone": "UI code structure",
+      "evidence_paths": [
+        "ORGANS/MECHANICUS/REPORTS/MECHANICUS_UI_WORKSHOP_AND_NO_MONOLITH_LAW_REPORT_V0_1.md"
+      ],
+      "optional_evidence_paths": [
+        "ORGANS/MECHANICUS/REPORTS/MECHANICUS_UI_WORKSHOP_AND_NO_MONOLITH_LAW_SUMMARY_V0_1.json"
+      ],
+      "forbidden_overclaim": "does not mean visual/AAA layer is ready"
+    },
+    {
+      "function_id": "safe_real_execution_gateway",
+      "title": "Safe real execution gateway",
+      "status": "FUTURE_DEFERRED",
+      "profile_zone": "execution safety",
+      "evidence_paths": [],
+      "deferred_until": "Tool admission, preflight, sandbox contract, Owner approval and receipts exist",
+      "forbidden_overclaim": "not available now"
+    },
+    {
+      "function_id": "local_model_membrane",
+      "title": "Local model membrane / light intent cortex",
+      "status": "FUTURE_DEFERRED",
+      "profile_zone": "intent translation",
+      "evidence_paths": [],
+      "deferred_until": "after Core v1; not expected in near-term patches",
+      "forbidden_overclaim": "not a Core v1 dependency and not an authority"
+    },
+    {
+      "function_id": "organ_assembled_claim",
+      "title": "Mechanicus fully assembled organ claim",
+      "status": "FORBIDDEN",
+      "profile_zone": "claim discipline",
+      "evidence_paths": [],
+      "forbidden_overclaim": "must remain forbidden until all six gates pass Custodes and Throne checks"
+    }
+  ]
+}
