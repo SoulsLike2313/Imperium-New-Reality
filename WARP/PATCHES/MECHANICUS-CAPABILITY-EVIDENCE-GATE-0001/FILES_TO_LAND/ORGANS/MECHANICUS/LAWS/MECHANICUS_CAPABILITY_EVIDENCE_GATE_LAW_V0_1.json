@@ -1,0 +1,37 @@
+{
+  "law_id": "MECHANICUS_CAPABILITY_EVIDENCE_GATE_LAW_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-CAPABILITY-EVIDENCE-GATE-0001",
+  "organ_id": "MECHANICUS",
+  "gate_id": "G3_CAPABILITY_EVIDENCE",
+  "purpose": "Bind every declared Mechanicus function to explicit evidence or to an explicit deferred/forbidden status without claiming full organ closure.",
+  "script_first": true,
+  "rules": [
+    "Every non-future/non-forbidden function in MECHANICUS_FUNCTION_REGISTRY_V0_1 must have at least one evidence path.",
+    "Every required evidence path must exist inside the current repository root.",
+    "JSON evidence paths must parse as JSON.",
+    "PROVEN_BASELINE functions must include receipt or validator-backed evidence, not only prose.",
+    "MEASURED_PRESENT and PARTIAL_MEASURED functions may pass baseline with existing evidence but must not claim full semantic closure.",
+    "FUTURE_DEFERRED functions must remain deferred and must not be counted as missing evidence.",
+    "FORBIDDEN functions must remain forbidden and must not be counted as capability proof.",
+    "The gate may set G3 to PASS_BASELINE but must not claim MECHANICUS_ASSEMBLED or SIX_GATES_100_PERCENT_CLOSED.",
+    "Local model membrane remains DEFERRED_AFTER_CORE_V1 and is not evidence authority."
+  ],
+  "forbidden_claims": [
+    "MECHANICUS_ASSEMBLED",
+    "SIX_GATES_100_PERCENT_CLOSED",
+    "ALL_FUNCTIONS_PROVEN_FULLY",
+    "FUTURE_DEFERRED_FUNCTIONS_AVAILABLE_NOW",
+    "LOCAL_MODEL_MEMBRANE_AVAILABLE_NOW",
+    "CAPABILITY_EVIDENCE_EQUALS_CUSTODES_TRUST"
+  ],
+  "pass_meaning": "Declared current Mechanicus functions have explicit evidence bindings or explicit deferred/forbidden status; G3 reaches baseline readiness only.",
+  "pass_does_not_mean": [
+    "Mechanicus is assembled",
+    "Personal validators gate is closed",
+    "Current truth/receipts gate is closed",
+    "Residency/trust gate is closed",
+    "Custodes prosecutor has accepted the organ",
+    "Throne has crowned Mechanicus"
+  ]
+}

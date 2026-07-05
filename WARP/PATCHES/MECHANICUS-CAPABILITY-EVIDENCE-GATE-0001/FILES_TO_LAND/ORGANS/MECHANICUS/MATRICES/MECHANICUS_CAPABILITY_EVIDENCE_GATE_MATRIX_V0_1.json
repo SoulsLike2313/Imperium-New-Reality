@@ -1,0 +1,72 @@
+{
+  "matrix_id": "MECHANICUS_CAPABILITY_EVIDENCE_GATE_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-CAPABILITY-EVIDENCE-GATE-0001",
+  "organ_id": "MECHANICUS",
+  "gate_id": "G3_CAPABILITY_EVIDENCE",
+  "source_registry": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_FUNCTION_REGISTRY_V0_1.json",
+  "coverage_rules": {
+    "PROVEN_BASELINE": {
+      "required_evidence_paths_min": 1,
+      "must_have_receipt_or_validator_evidence": true,
+      "closure_claim_allowed": "BASELINE_ONLY"
+    },
+    "MEASURED_PRESENT": {
+      "required_evidence_paths_min": 1,
+      "must_have_receipt_or_validator_evidence": false,
+      "closure_claim_allowed": "MEASURED_BASELINE_ONLY"
+    },
+    "PARTIAL_MEASURED": {
+      "required_evidence_paths_min": 1,
+      "must_have_receipt_or_validator_evidence": false,
+      "closure_claim_allowed": "PARTIAL_ONLY"
+    },
+    "FUTURE_DEFERRED": {
+      "required_evidence_paths_min": 0,
+      "must_have_deferred_until": true,
+      "closure_claim_allowed": "NO_CURRENT_CAPABILITY_CLAIM"
+    },
+    "FORBIDDEN": {
+      "required_evidence_paths_min": 0,
+      "closure_claim_allowed": "FORBIDDEN_CLAIM_ONLY"
+    }
+  },
+  "report_outputs": {
+    "receipt": "ORGANS/MECHANICUS/RECEIPTS/mechanicus_capability_evidence_gate_receipt.json",
+    "summary": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_CAPABILITY_EVIDENCE_GATE_SUMMARY_V0_1.json",
+    "report_json": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_CAPABILITY_EVIDENCE_GATE_REPORT_V0_1.json",
+    "report_md": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_CAPABILITY_EVIDENCE_GATE_REPORT_V0_1.md"
+  },
+  "six_gate_progress_after_pass": [
+    {
+      "gate_id": "G1_IDENTITY_MANIFEST",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G2_FUNCTIONS_REGISTRY",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G3_CAPABILITY_EVIDENCE",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G4_PERSONAL_VALIDATORS",
+      "state": "PARTIAL_FOUNDATION",
+      "closure_claim": "NOT_FULLY_CLOSED"
+    },
+    {
+      "gate_id": "G5_CURRENT_TRUTH_RECEIPTS",
+      "state": "PARTIAL_MEASURED",
+      "closure_claim": "NOT_FULLY_CLOSED"
+    },
+    {
+      "gate_id": "G6_RESIDENCY_TRUST",
+      "state": "NOT_PROVEN",
+      "closure_claim": "NOT_FULLY_CLOSED"
+    }
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "task_id": "MECHANICUS-CAPABILITY-EVIDENCE-GATE-0001",
+  "validator_id": "mechanicus_capability_evidence_gate_validator.v0_1",
+  "verdict": "PASS_MECHANICUS_CAPABILITY_EVIDENCE_GATE_READY",
+  "generated_at_utc": "2026-07-05T23:11:28Z",
+  "gate_id": "G3_CAPABILITY_EVIDENCE",
+  "capability_evidence_gate_status": "PASS_BASELINE",
+  "function_count": 11,
+  "current_function_count": 8,
+  "evidence_bound_current_function_count": 8,
+  "future_deferred_count": 2,
+  "forbidden_count": 1,
+  "missing_required_evidence_count": 0,
+  "json_parse_failure_count": 0,
+  "status_counts": {
+    "MEASURED_PRESENT": 5,
+    "PROVEN_BASELINE": 2,
+    "PARTIAL_MEASURED": 1,
+    "FUTURE_DEFERRED": 2,
+    "FORBIDDEN": 1
+  },
+  "evidence_type_counts": {
+    "report": 10,
+    "validator_or_validation": 1,
+    "receipt": 2,
+    "registry": 1
+  },
+  "coverage_records": [
+    {
+      "function_id": "language_surface_census",
+      "title": "Language surface and lane census",
+      "status": "MEASURED_PRESENT",
+      "profile_zone": "languages/toolchains",
+      "coverage_status": "EVIDENCE_BOUND_BASELINE",
+      "required_evidence_count": 2,
+      "required_evidence_present_count": 2,
+      "optional_evidence_count": 0,
+      "optional_evidence_present_count": 0,
+      "evidence_types": {
+        "report": 1,
+        "validator_or_validation": 1
+      },
+      "missing_required_evidence": [],
+      "forbidden_overclaim": "does not prove full code cleanliness",
+      "deferred_until": null
+    },
+    {
+      "function_id": "strict_build_lane_foundation",
+      "title": "Strict build lane foundation",
+      "status": "MEASURED_PRESENT",
+      "profile_zone": "build proof",
+      "coverage_status": "EVIDENCE_BOUND_BASELINE",
+      "required_evidence_count": 2,
+      "required_evidence_present_count": 2,
+      "optional_evidence_count": 0,
+      "optional_evidence_present_count": 0,
+      "evidence_types": {
+        "report": 2
+      },
+      "missing_required_evidence": [],
+      "forbidden_overclaim": "does not prove lint/type/test/security cleanliness",
+      "deferred_until": null
+    },
+    {
+      "function_id": "json_evidence_strict_lane",
+      "title": "JSON evidence strict lane",
+      "status": "MEASURED_PRESENT",
+      "profile_zone": "evidence parsing",
+      "coverage_status": "EVIDENCE_BOUND_BASELINE",
+      "required_evidence_count": 1,
+      "required_evidence_present_count": 1,
+      "optional_evidence_count": 1,
+      "optional_evidence_present_count": 1,
+      "evidence_types": {
+        "report": 2
+      },
+      "missing_required_evidence": [],
+      "forbidden_overclaim": "does not prove every evidence file is semantically current",
+      "deferred_until": null
+    },
+    {
+      "function_id": "tool_inventory",
+      "title": "Tool inventory / arsenal census",
+      "status": "MEASURED_PRESENT",
+      "profile_zone": "tools",
+      "coverage_status": "EVIDENCE_BOUND_BASELINE",
+      "required_evidence_count": 1,
+      "required_evidence_present_count": 1,
+      "optional_evidence_count": 0,
+      "optional_evidence_present_count": 0,
+      "evidence_types": {
+        "report": 1
+      },
+      "missing_required_evidence": [],
+      "forbidden_overclaim": "inventory is not trust",
+      "deferred_until": null
+    },
+    {
+      "function_id": "tool_admission_v2",
+      "title": "Script-first Tool Admission V2",
+      "status": "PROVEN_BASELINE",
+      "profile_zone": "tools/admission",
+      "coverage_status": "EVIDENCE_BOUND_BASELINE",
+      "required_evidence_count": 2,
+      "required_evidence_present_count": 2,
+      "optional_evidence_count": 0,
+      "optional_evidence_present_count": 0,
+      "evidence_types": {
+        "report": 1,
+        "receipt": 1
+      },
+      "missing_required_evidence": [],
+      "forbidden_overclaim": "does not grant real execution authority",
+      "deferred_until": null
+    },
+    {
+      "function_id": "organ_readiness_rollup",
+      "title": "Organ readiness rollup",
+      "status": "PROVEN_BASELINE",
+      "profile_zone": "self-measurement",
+      "coverage_status": "EVIDENCE_BOUND_BASELINE",
+      "required_evidence_count": 2,
+      "required_evidence_present_count": 2,
+      "optional_evidence_count": 0,
+      "optional_evidence_present_count": 0,
+      "evidence_types": {
+        "report": 1,
+        "receipt": 1
+      },
+      "missing_required_evidence": [],
+      "forbidden_overclaim": "readiness rollup reports not assembled",
+      "deferred_until": null
+    },
+    {
+      "function_id": "command_policy_boundary",
+      "title": "Command policy / arbitrary shell boundary",
+      "status": "MEASURED_PRESENT",
+      "profile_zone": "execution safety",
+      "coverage_status": "EVIDENCE_BOUND_BASELINE",
+      "required_evidence_count": 1,
+      "required_evidence_present_count": 1,
+      "optional_evidence_count": 0,
+      "optional_evidence_present_count": 0,
+      "evidence_types": {
+        "registry": 1
+      },
+      "missing_required_evidence": [],
+      "forbidden_overclaim": "policy is not safe real execution gateway",
+      "deferred_until": null
+    },
+    {
+      "function_id": "ui_no_monolith_workshop",
+      "title": "UI workshop / no-monolith visibility",
+      "status": "PARTIAL_MEASURED",
+      "profile_zone": "UI code structure",
+      "coverage_status": "EVIDENCE_BOUND_BASELINE",
+      "required_evidence_count": 1,
+      "required_evidence_present_count": 1,
+      "optional_evidence_count": 1,
+      "optional_evidence_present_count": 1,
+      "evidence_types": {
+        "report": 2
+      },
+      "missing_required_evidence": [],
+      "forbidden_overclaim": "does not mean visual/AAA layer is ready",
+      "deferred_until": null
+    },
+    {
+      "function_id": "safe_real_execution_gateway",
+      "title": "Safe real execution gateway",
+      "status": "FUTURE_DEFERRED",
+      "profile_zone": "execution safety",
+      "coverage_status": "DEFERRED_NOT_CURRENT_CAPABILITY",
+      "required_evidence_count": 0,
+      "required_evidence_present_count": 0,
+      "optional_evidence_count": 0,
+      "optional_evidence_present_count": 0,
+      "evidence_types": {},
+      "missing_required_evidence": [],
+      "forbidden_overclaim": "not available now",
+      "deferred_until": "Tool admission, preflight, sandbox contract, Owner approval and receipts exist"
+    },
+    {
+      "function_id": "local_model_membrane",
+      "title": "Local model membrane / light intent cortex",
+      "status": "FUTURE_DEFERRED",
+      "profile_zone": "intent translation",
+      "coverage_status": "DEFERRED_NOT_CURRENT_CAPABILITY",
+      "required_evidence_count": 0,
+      "required_evidence_present_count": 0,
+      "optional_evidence_count": 0,
+      "optional_evidence_present_count": 0,
+      "evidence_types": {},
+      "missing_required_evidence": [],
+      "forbidden_overclaim": "not a Core v1 dependency and not an authority",
+      "deferred_until": "after Core v1; not expected in near-term patches"
+    },
+    {
+      "function_id": "organ_assembled_claim",
+      "title": "Mechanicus fully assembled organ claim",
+      "status": "FORBIDDEN",
+      "profile_zone": "claim discipline",
+      "coverage_status": "FORBIDDEN_CLAIM_ONLY",
+      "required_evidence_count": 0,
+      "required_evidence_present_count": 0,
+      "optional_evidence_count": 0,
+      "optional_evidence_present_count": 0,
+      "evidence_types": {},
+      "missing_required_evidence": [],
+      "forbidden_overclaim": "must remain forbidden until all six gates pass Custodes and Throne checks",
+      "deferred_until": null
+    }
+  ],
+  "missing_required_evidence": [],
+  "json_parse_failures": [],
+  "proven_without_receipt_or_validator": [],
+  "local_model_membrane_status": "DEFERRED_AFTER_CORE_V1",
+  "organ_assembly_claim": false,
+  "six_gate_closure_claim": false,
+  "six_gate_progress": [
+    {
+      "gate_id": "G1_IDENTITY_MANIFEST",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G2_FUNCTIONS_REGISTRY",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G3_CAPABILITY_EVIDENCE",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G4_PERSONAL_VALIDATORS",
+      "state": "PARTIAL_FOUNDATION",
+      "closure_claim": "NOT_FULLY_CLOSED"
+    },
+    {
+      "gate_id": "G5_CURRENT_TRUTH_RECEIPTS",
+      "state": "PARTIAL_MEASURED",
+      "closure_claim": "NOT_FULLY_CLOSED"
+    },
+    {
+      "gate_id": "G6_RESIDENCY_TRUST",
+      "state": "NOT_PROVEN",
+      "closure_claim": "NOT_FULLY_CLOSED"
+    }
+  ],
+  "deferred_capabilities": [
+    {
+      "function_id": "safe_real_execution_gateway",
+      "title": "Safe real execution gateway",
+      "status": "FUTURE_DEFERRED",
+      "profile_zone": "execution safety",
+      "coverage_status": "DEFERRED_NOT_CURRENT_CAPABILITY",
+      "required_evidence_count": 0,
+      "required_evidence_present_count": 0,
+      "optional_evidence_count": 0,
+      "optional_evidence_present_count": 0,
+      "evidence_types": {},
+      "missing_required_evidence": [],
+      "forbidden_overclaim": "not available now",
+      "deferred_until": "Tool admission, preflight, sandbox contract, Owner approval and receipts exist"
+    },
+    {
+      "function_id": "local_model_membrane",
+      "title": "Local model membrane / light intent cortex",
+      "status": "FUTURE_DEFERRED",
+      "profile_zone": "intent translation",
+      "coverage_status": "DEFERRED_NOT_CURRENT_CAPABILITY",
+      "required_evidence_count": 0,
+      "required_evidence_present_count": 0,
+      "optional_evidence_count": 0,
+      "optional_evidence_present_count": 0,
+      "evidence_types": {},
+      "missing_required_evidence": [],
+      "forbidden_overclaim": "not a Core v1 dependency and not an authority",
+      "deferred_until": "after Core v1; not expected in near-term patches"
+    }
+  ],
+  "forbidden_capabilities": [
+    {
+      "function_id": "organ_assembled_claim",
+      "title": "Mechanicus fully assembled organ claim",
+      "status": "FORBIDDEN",
+      "profile_zone": "claim discipline",
+      "coverage_status": "FORBIDDEN_CLAIM_ONLY",
+      "required_evidence_count": 0,
+      "required_evidence_present_count": 0,
+      "optional_evidence_count": 0,
+      "optional_evidence_present_count": 0,
+      "evidence_types": {},
+      "missing_required_evidence": [],
+      "forbidden_overclaim": "must remain forbidden until all six gates pass Custodes and Throne checks",
+      "deferred_until": null
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "This patch closes Capability Evidence baseline only; it does not assemble Mechanicus.",
+    "Personal validators, current truth/receipts, residency/trust, Custodes and Throne gates remain future work.",
+    "FUTURE_DEFERRED and FORBIDDEN functions are intentionally excluded from current capability evidence closure."
+  ]
+}
