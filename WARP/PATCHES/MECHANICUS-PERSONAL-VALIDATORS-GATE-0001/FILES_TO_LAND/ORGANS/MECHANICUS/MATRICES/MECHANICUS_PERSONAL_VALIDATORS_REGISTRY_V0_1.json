@@ -1,0 +1,98 @@
+{
+  "registry_id": "MECHANICUS_PERSONAL_VALIDATORS_REGISTRY_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-PERSONAL-VALIDATORS-GATE-0001",
+  "organ_id": "MECHANICUS",
+  "gate_id": "G4_PERSONAL_VALIDATORS",
+  "baseline_required_validator_count": 7,
+  "validator_status_values": [
+    "REQUIRED_BASELINE",
+    "SUPPORTING_PRESENT",
+    "FUTURE_CUSTODES_AUDIT_REQUIRED"
+  ],
+  "validators": [
+    {
+      "validator_id": "mechanicus_organ_readiness_rollup_validator.v0_1",
+      "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_organ_readiness_rollup.py",
+      "status": "REQUIRED_BASELINE",
+      "protects": [
+        "self_readiness",
+        "no_assembly_overclaim",
+        "six_gate_visibility"
+      ],
+      "expected_verdict_prefix": "PASS_MECHANICUS_ORGAN_READINESS_ROLLUP"
+    },
+    {
+      "validator_id": "mechanicus_manifest_and_functions_gate_validator.v0_1",
+      "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_manifest_and_functions_gate.py",
+      "status": "REQUIRED_BASELINE",
+      "protects": [
+        "G1_IDENTITY_MANIFEST",
+        "G2_FUNCTIONS_REGISTRY",
+        "function_status_discipline"
+      ],
+      "expected_verdict_prefix": "PASS_MECHANICUS_MANIFEST_AND_FUNCTIONS_GATE"
+    },
+    {
+      "validator_id": "mechanicus_capability_evidence_gate_validator.v0_1",
+      "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_capability_evidence_gate.py",
+      "status": "REQUIRED_BASELINE",
+      "protects": [
+        "G3_CAPABILITY_EVIDENCE",
+        "evidence_binding",
+        "future_forbidden_exclusion"
+      ],
+      "expected_verdict_prefix": "PASS_MECHANICUS_CAPABILITY_EVIDENCE_GATE"
+    },
+    {
+      "validator_id": "mechanicus_tool_admission_v2_validator.v0_1",
+      "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_tool_admission_v2.py",
+      "status": "REQUIRED_BASELINE",
+      "protects": [
+        "tool_admission",
+        "real_execution_block",
+        "inventory_not_trust"
+      ],
+      "expected_verdict_prefix": "PASS_MECHANICUS_TOOL_ADMISSION_V2"
+    },
+    {
+      "validator_id": "mechanicus_json_evidence_strict_lane_validator.v0_1",
+      "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_json_evidence_strict_lane.py",
+      "status": "REQUIRED_BASELINE",
+      "protects": [
+        "json_evidence_parse_lane",
+        "canonical_evidence_debt_visibility"
+      ],
+      "expected_verdict_prefix": "PASS_MECHANICUS_JSON_EVIDENCE_STRICT_LANE"
+    },
+    {
+      "validator_id": "mechanicus_strict_build_lane_foundation_validator.v0_1",
+      "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_strict_build_lane_foundation.py",
+      "status": "REQUIRED_BASELINE",
+      "protects": [
+        "strict_build_lane_foundation",
+        "host_bound_build_proof_visibility"
+      ],
+      "expected_verdict_prefix": "PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION"
+    },
+    {
+      "validator_id": "mechanicus_personal_validators_gate_validator.v0_1",
+      "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_personal_validators_gate.py",
+      "status": "REQUIRED_BASELINE",
+      "protects": [
+        "G4_PERSONAL_VALIDATORS",
+        "validator_presence",
+        "validator_syntax",
+        "claim_discipline"
+      ],
+      "expected_verdict_prefix": "PASS_MECHANICUS_PERSONAL_VALIDATORS_GATE"
+    }
+  ],
+  "future_external_audits_required": [
+    "CUSTODES-MECHANICUS-PROSECUTOR-GATE-0001",
+    "THRONE-MECHANICUS-SIX-GATE-CROWN-VERDICT-0001"
+  ],
+  "local_model_membrane_status": "DEFERRED_AFTER_CORE_V1",
+  "organ_assembly_claim": false,
+  "six_gate_closure_claim": false
+}

@@ -1,0 +1,34 @@
+{
+  "law_id": "MECHANICUS_PERSONAL_VALIDATORS_GATE_LAW_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-PERSONAL-VALIDATORS-GATE-0001",
+  "organ_id": "MECHANICUS",
+  "gate_id": "G4_PERSONAL_VALIDATORS",
+  "purpose": "Prove that Mechanicus has its own script-first validator coverage for identity, functions, capability evidence, tool admission, build/evidence lanes and claim discipline without claiming full organ assembly.",
+  "script_first": true,
+  "rules": [
+    "Personal validators must exist as files under ORGANS/MECHANICUS/VALIDATORS and must be script-first Python validators.",
+    "Required personal validators must have no control characters and must compile with Python py_compile.",
+    "The personal validator registry must map each validator to the Mechanicus gate/function it protects.",
+    "At least one validator must protect claim discipline and must forbid MECHANICUS_ASSEMBLED or SIX_GATES_100_PERCENT_CLOSED claims before external gates close.",
+    "This gate may set G4 to PASS_BASELINE only; it must not claim Custodes or Throne acceptance.",
+    "Local model membrane remains DEFERRED_AFTER_CORE_V1 and cannot be a validator."
+  ],
+  "forbidden_claims": [
+    "MECHANICUS_ASSEMBLED",
+    "SIX_GATES_100_PERCENT_CLOSED",
+    "ALL_VALIDATORS_CUSTODES_AUDITED",
+    "THRONE_CROWNED_MECHANICUS",
+    "LOCAL_MODEL_IS_VALIDATOR",
+    "PERSONAL_VALIDATORS_EQUAL_FULL_TRUST"
+  ],
+  "pass_meaning": "Mechanicus has baseline personal validator coverage and its required validators are present, syntax-valid and bound to gates/functions.",
+  "pass_does_not_mean": [
+    "Mechanicus is assembled",
+    "Custodes has prosecuted all validators",
+    "Throne has crowned Mechanicus",
+    "Current truth/receipts gate is closed",
+    "Residency/trust gate is closed",
+    "Local model membrane exists or can validate anything"
+  ]
+}

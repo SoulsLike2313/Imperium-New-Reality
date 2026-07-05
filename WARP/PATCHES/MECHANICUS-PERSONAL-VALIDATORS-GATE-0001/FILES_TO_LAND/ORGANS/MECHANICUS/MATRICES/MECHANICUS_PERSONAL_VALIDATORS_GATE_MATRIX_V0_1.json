@@ -1,0 +1,55 @@
+{
+  "matrix_id": "MECHANICUS_PERSONAL_VALIDATORS_GATE_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-PERSONAL-VALIDATORS-GATE-0001",
+  "organ_id": "MECHANICUS",
+  "gate_id": "G4_PERSONAL_VALIDATORS",
+  "source_registry": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_PERSONAL_VALIDATORS_REGISTRY_V0_1.json",
+  "baseline_rules": {
+    "required_validator_presence": true,
+    "required_validator_no_control_chars": true,
+    "required_validator_python_compile": true,
+    "required_validator_protects_claim_discipline": true,
+    "external_audit_required_for_full_trust": true,
+    "organ_assembly_claim_allowed": false,
+    "six_gate_closure_claim_allowed": false
+  },
+  "report_outputs": {
+    "receipt": "ORGANS/MECHANICUS/RECEIPTS/mechanicus_personal_validators_gate_receipt.json",
+    "summary": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_PERSONAL_VALIDATORS_GATE_SUMMARY_V0_1.json",
+    "report_json": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_PERSONAL_VALIDATORS_GATE_REPORT_V0_1.json",
+    "report_md": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_PERSONAL_VALIDATORS_GATE_REPORT_V0_1.md"
+  },
+  "six_gate_progress_after_pass": [
+    {
+      "gate_id": "G1_IDENTITY_MANIFEST",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G2_FUNCTIONS_REGISTRY",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G3_CAPABILITY_EVIDENCE",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G4_PERSONAL_VALIDATORS",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G5_CURRENT_TRUTH_RECEIPTS",
+      "state": "PARTIAL_MEASURED",
+      "closure_claim": "NOT_FULLY_CLOSED"
+    },
+    {
+      "gate_id": "G6_RESIDENCY_TRUST",
+      "state": "NOT_PROVEN",
+      "closure_claim": "NOT_FULLY_CLOSED"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "task_id": "MECHANICUS-PERSONAL-VALIDATORS-GATE-0001",
+  "validator_id": "mechanicus_personal_validators_gate_validator.v0_1",
+  "verdict": "PASS_MECHANICUS_PERSONAL_VALIDATORS_GATE_READY",
+  "generated_at_utc": "2026-07-05T23:17:07Z",
+  "gate_id": "G4_PERSONAL_VALIDATORS",
+  "personal_validators_gate_status": "PASS_BASELINE",
+  "required_validator_count": 7,
+  "present_required_validator_count": 7,
+  "compiled_required_validator_count": 7,
+  "no_control_char_required_validator_count": 7,
+  "missing_required_validator_count": 0,
+  "compile_failure_count": 0,
+  "control_char_failure_count": 0,
+  "claim_discipline_protected": true,
+  "validator_records": [
+    {
+      "validator_id": "mechanicus_organ_readiness_rollup_validator.v0_1",
+      "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_organ_readiness_rollup.py",
+      "status": "REQUIRED_BASELINE",
+      "protects": [
+        "self_readiness",
+        "no_assembly_overclaim",
+        "six_gate_visibility"
+      ],
+      "exists": true,
+      "no_control_chars": true,
+      "python_compile": true,
+      "compile_error": null,
+      "control_char_hits": []
+    },
+    {
+      "validator_id": "mechanicus_manifest_and_functions_gate_validator.v0_1",
+      "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_manifest_and_functions_gate.py",
+      "status": "REQUIRED_BASELINE",
+      "protects": [
+        "G1_IDENTITY_MANIFEST",
+        "G2_FUNCTIONS_REGISTRY",
+        "function_status_discipline"
+      ],
+      "exists": true,
+      "no_control_chars": true,
+      "python_compile": true,
+      "compile_error": null,
+      "control_char_hits": []
+    },
+    {
+      "validator_id": "mechanicus_capability_evidence_gate_validator.v0_1",
+      "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_capability_evidence_gate.py",
+      "status": "REQUIRED_BASELINE",
+      "protects": [
+        "G3_CAPABILITY_EVIDENCE",
+        "evidence_binding",
+        "future_forbidden_exclusion"
+      ],
+      "exists": true,
+      "no_control_chars": true,
+      "python_compile": true,
+      "compile_error": null,
+      "control_char_hits": []
+    },
+    {
+      "validator_id": "mechanicus_tool_admission_v2_validator.v0_1",
+      "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_tool_admission_v2.py",
+      "status": "REQUIRED_BASELINE",
+      "protects": [
+        "tool_admission",
+        "real_execution_block",
+        "inventory_not_trust"
+      ],
+      "exists": true,
+      "no_control_chars": true,
+      "python_compile": true,
+      "compile_error": null,
+      "control_char_hits": []
+    },
+    {
+      "validator_id": "mechanicus_json_evidence_strict_lane_validator.v0_1",
+      "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_json_evidence_strict_lane.py",
+      "status": "REQUIRED_BASELINE",
+      "protects": [
+        "json_evidence_parse_lane",
+        "canonical_evidence_debt_visibility"
+      ],
+      "exists": true,
+      "no_control_chars": true,
+      "python_compile": true,
+      "compile_error": null,
+      "control_char_hits": []
+    },
+    {
+      "validator_id": "mechanicus_strict_build_lane_foundation_validator.v0_1",
+      "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_strict_build_lane_foundation.py",
+      "status": "REQUIRED_BASELINE",
+      "protects": [
+        "strict_build_lane_foundation",
+        "host_bound_build_proof_visibility"
+      ],
+      "exists": true,
+      "no_control_chars": true,
+      "python_compile": true,
+      "compile_error": null,
+      "control_char_hits": []
+    },
+    {
+      "validator_id": "mechanicus_personal_validators_gate_validator.v0_1",
+      "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_personal_validators_gate.py",
+      "status": "REQUIRED_BASELINE",
+      "protects": [
+        "G4_PERSONAL_VALIDATORS",
+        "validator_presence",
+        "validator_syntax",
+        "claim_discipline"
+      ],
+      "exists": true,
+      "no_control_chars": true,
+      "python_compile": true,
+      "compile_error": null,
+      "control_char_hits": []
+    }
+  ],
+  "six_gate_progress": [
+    {
+      "gate_id": "G1_IDENTITY_MANIFEST",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G2_FUNCTIONS_REGISTRY",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G3_CAPABILITY_EVIDENCE",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G4_PERSONAL_VALIDATORS",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G5_CURRENT_TRUTH_RECEIPTS",
+      "state": "PARTIAL_MEASURED",
+      "closure_claim": "NOT_FULLY_CLOSED"
+    },
+    {
+      "gate_id": "G6_RESIDENCY_TRUST",
+      "state": "NOT_PROVEN",
+      "closure_claim": "NOT_FULLY_CLOSED"
+    }
+  ],
+  "local_model_membrane_status": "DEFERRED_AFTER_CORE_V1",
+  "organ_assembly_claim": false,
+  "six_gate_closure_claim": false,
+  "future_external_audits_required": [
+    "CUSTODES-MECHANICUS-PROSECUTOR-GATE-0001",
+    "THRONE-MECHANICUS-SIX-GATE-CROWN-VERDICT-0001"
+  ],
+  "errors": [],
+  "warnings": [
+    "This patch closes Personal Validators baseline only; it does not assemble Mechanicus.",
+    "Current truth/receipts, residency/trust, Custodes and Throne gates remain future work.",
+    "Personal validators are baseline self-checks and still require future Custodes prosecution."
+  ]
+}
