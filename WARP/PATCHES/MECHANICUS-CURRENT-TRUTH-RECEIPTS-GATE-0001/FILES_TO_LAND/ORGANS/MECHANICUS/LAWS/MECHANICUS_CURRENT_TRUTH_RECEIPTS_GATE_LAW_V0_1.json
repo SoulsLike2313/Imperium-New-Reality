@@ -1,0 +1,36 @@
+{
+  "law_id": "MECHANICUS_CURRENT_TRUTH_RECEIPTS_GATE_LAW_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-CURRENT-TRUTH-RECEIPTS-GATE-0001",
+  "organ_id": "MECHANICUS",
+  "gate_id": "G5_CURRENT_TRUTH_RECEIPTS",
+  "purpose": "Make Mechanicus current truth and receipt state machine-readable, bounded and auditable without claiming full organ assembly.",
+  "script_first": true,
+  "rules": [
+    "Current truth must be declared in a machine-readable index, not reconstructed from chat memory.",
+    "Every current gate state used for Mechanicus readiness must point to a generated report and receipt when the gate has a patch-level receipt.",
+    "Generated current-truth reports must parse as JSON and must be paired with a human-readable MD report.",
+    "Historical, superseded or negative-example artifacts may remain in the repo but must not be promoted to current truth unless explicitly listed in the current truth index.",
+    "G5 may set current truth / receipts to PASS_BASELINE only; it may not set G6 residency/trust, Custodes prosecution or Throne crown status to PASS.",
+    "Local model membrane remains DEFERRED_AFTER_CORE_V1 and cannot be a source of current truth."
+  ],
+  "forbidden_claims": [
+    "MECHANICUS_ASSEMBLED",
+    "SIX_GATES_100_PERCENT_CLOSED",
+    "ALL_HISTORY_IS_CURRENT_TRUTH",
+    "HISTORICAL_PASS_IS_CURRENT_WITHOUT_INDEX",
+    "CURRENT_TRUTH_WITHOUT_RECEIPT",
+    "LOCAL_MODEL_MEMBRANE_IS_CURRENT_TRUTH_SOURCE",
+    "CUSTODES_AUDIT_DONE",
+    "THRONE_CROWN_DONE"
+  ],
+  "pass_meaning": "Mechanicus has a baseline current-truth/receipt index for its self-closure gates and all indexed current truth evidence exists, parses and avoids overclaim.",
+  "pass_does_not_mean": [
+    "Mechanicus is assembled",
+    "Residency/trust gate is closed",
+    "Custodes has prosecuted Mechanicus",
+    "Throne has crowned Mechanicus",
+    "All old reports are superseded or cleaned",
+    "Local model membrane exists"
+  ]
+}

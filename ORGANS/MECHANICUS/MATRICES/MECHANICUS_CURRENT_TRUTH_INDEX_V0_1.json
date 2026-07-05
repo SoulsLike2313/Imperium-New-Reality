@@ -1,0 +1,91 @@
+{
+  "index_id": "MECHANICUS_CURRENT_TRUTH_INDEX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-CURRENT-TRUTH-RECEIPTS-GATE-0001",
+  "organ_id": "MECHANICUS",
+  "gate_id": "G5_CURRENT_TRUTH_RECEIPTS",
+  "index_scope": "Mechanicus current truth for six-gate baseline closure sequence only",
+  "current_truth_selection_rule": "Only artifacts listed here are promoted as current truth for this gate; older reports may be evidence or history but are not current gate state unless indexed.",
+  "current_gate_truth": [
+    {
+      "gate_id": "G1_IDENTITY_MANIFEST",
+      "state": "PASS_BASELINE",
+      "source_patch_id": "MECHANICUS-MANIFEST-AND-FUNCTIONS-GATE-0001",
+      "summary_path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_MANIFEST_AND_FUNCTIONS_GATE_SUMMARY_V0_1.json",
+      "report_path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_MANIFEST_AND_FUNCTIONS_GATE_REPORT_V0_1.json",
+      "receipt_path": "ORGANS/MECHANICUS/RECEIPTS/mechanicus_manifest_and_functions_gate_receipt.json",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G2_FUNCTIONS_REGISTRY",
+      "state": "PASS_BASELINE",
+      "source_patch_id": "MECHANICUS-MANIFEST-AND-FUNCTIONS-GATE-0001",
+      "summary_path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_MANIFEST_AND_FUNCTIONS_GATE_SUMMARY_V0_1.json",
+      "report_path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_MANIFEST_AND_FUNCTIONS_GATE_REPORT_V0_1.json",
+      "receipt_path": "ORGANS/MECHANICUS/RECEIPTS/mechanicus_manifest_and_functions_gate_receipt.json",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G3_CAPABILITY_EVIDENCE",
+      "state": "PASS_BASELINE",
+      "source_patch_id": "MECHANICUS-CAPABILITY-EVIDENCE-GATE-0001",
+      "summary_path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_CAPABILITY_EVIDENCE_GATE_SUMMARY_V0_1.json",
+      "report_path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_CAPABILITY_EVIDENCE_GATE_REPORT_V0_1.json",
+      "receipt_path": "ORGANS/MECHANICUS/RECEIPTS/mechanicus_capability_evidence_gate_receipt.json",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G4_PERSONAL_VALIDATORS",
+      "state": "PASS_BASELINE",
+      "source_patch_id": "MECHANICUS-PERSONAL-VALIDATORS-GATE-0001",
+      "summary_path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_PERSONAL_VALIDATORS_GATE_SUMMARY_V0_1.json",
+      "report_path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_PERSONAL_VALIDATORS_GATE_REPORT_V0_1.json",
+      "receipt_path": "ORGANS/MECHANICUS/RECEIPTS/mechanicus_personal_validators_gate_receipt.json",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G5_CURRENT_TRUTH_RECEIPTS",
+      "state": "PASS_BASELINE",
+      "source_patch_id": "MECHANICUS-CURRENT-TRUTH-RECEIPTS-GATE-0001",
+      "summary_path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_CURRENT_TRUTH_RECEIPTS_GATE_SUMMARY_V0_1.json",
+      "report_path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_CURRENT_TRUTH_RECEIPTS_GATE_REPORT_V0_1.json",
+      "receipt_path": "ORGANS/MECHANICUS/RECEIPTS/mechanicus_current_truth_receipts_gate_receipt.json",
+      "closure_claim": "BASELINE_ONLY_NOT_FULL_ORGAN_CLOSURE"
+    },
+    {
+      "gate_id": "G6_RESIDENCY_TRUST",
+      "state": "NOT_PROVEN",
+      "source_patch_id": null,
+      "summary_path": null,
+      "report_path": null,
+      "receipt_path": null,
+      "closure_claim": "NOT_FULLY_CLOSED"
+    }
+  ],
+  "current_supporting_truth": [
+    {
+      "truth_id": "organ_readiness_rollup",
+      "state": "MEASURED_NOT_ASSEMBLED",
+      "report_path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_ORGAN_READINESS_ROLLUP_V0_1.json",
+      "summary_path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_ORGAN_READINESS_ROLLUP_SUMMARY_V0_1.json",
+      "receipt_path": "ORGANS/MECHANICUS/RECEIPTS/mechanicus_organ_readiness_rollup_receipt.json"
+    },
+    {
+      "truth_id": "tool_admission_v2",
+      "state": "PASS_MEASURED_REAL_EXECUTION_DISABLED",
+      "report_path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TOOL_ADMISSION_V2_REPORT_V0_1.json",
+      "summary_path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TOOL_ADMISSION_V2_SUMMARY_V0_1.json",
+      "receipt_path": "ORGANS/MECHANICUS/RECEIPTS/mechanicus_tool_admission_v2_receipt.json"
+    }
+  ],
+  "non_current_classes": [
+    "legacy_history",
+    "negative_examples",
+    "quarantine_residents",
+    "superseded_reports",
+    "future_deferred_capabilities"
+  ],
+  "local_model_membrane_status": "DEFERRED_AFTER_CORE_V1",
+  "organ_assembly_claim": false,
+  "six_gate_closure_claim": false
+}
