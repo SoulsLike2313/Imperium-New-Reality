@@ -1,0 +1,135 @@
+{
+  "tool_id": "mechanicus_strict_build_lane_foundation_runner.v0_1",
+  "generated_at_utc": "2026-07-05T18:43:51Z",
+  "repo_root": "E:\\IMPERIUM_REALITY",
+  "targets": [
+    {
+      "target_id": "python_compile_current_non_patch",
+      "lane": "python_compile",
+      "detected": true,
+      "files_checked": 396,
+      "ok": true,
+      "errors": [],
+      "not_claimed": [
+        "ruff",
+        "mypy",
+        "pytest",
+        "import runtime"
+      ]
+    },
+    {
+      "target_id": "powershell_host_probe",
+      "lane": "powershell_host_probe",
+      "detected": true,
+      "ok": true,
+      "toolchain": {
+        "pwsh": "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\pwsh.EXE"
+      },
+      "command_result": {
+        "started_at_utc": "2026-07-05T18:43:48Z",
+        "finished_at_utc": "2026-07-05T18:43:49Z",
+        "cmd": [
+          "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\pwsh.EXE",
+          "-NoLogo",
+          "-NoProfile",
+          "-Command",
+          "$PSVersionTable.PSVersion.ToString()"
+        ],
+        "cwd": "E:\\IMPERIUM_REALITY",
+        "exit_code": 0,
+        "ok": true,
+        "stdout_tail": "7.6.2\n",
+        "stderr_tail": ""
+      },
+      "errors": [],
+      "not_claimed": [
+        "PSScriptAnalyzer",
+        "all runners valid"
+      ]
+    },
+    {
+      "target_id": "support_app_tauri_npm_build",
+      "lane": "tauri_frontend_npm_build",
+      "detected": true,
+      "ok": true,
+      "toolchain": {
+        "npm": "C:\\Program Files\\nodejs\\npm.CMD",
+        "node": "C:\\Program Files\\nodejs\\node.EXE"
+      },
+      "dependency_state": "node_modules_present",
+      "command_result": {
+        "started_at_utc": "2026-07-05T18:43:49Z",
+        "finished_at_utc": "2026-07-05T18:43:50Z",
+        "cmd": [
+          "cmd.exe",
+          "/d",
+          "/s",
+          "/c",
+          "npm run build"
+        ],
+        "cwd": "E:\\IMPERIUM_REALITY\\SUPPORT\\APP_TAURI",
+        "exit_code": 0,
+        "ok": true,
+        "stdout_tail": "\n> imperium-app-tauri@0.1.0 build\n> vite build\n\n\u001b[36mvite v5.4.21 \u001b[32mbuilding for production...\u001b[36m\u001b[39m\ntransforming...\n\u001b[32m✓\u001b[39m 6 modules transformed.\nrendering chunks...\ncomputing gzip size...\n\u001b[2mdist/\u001b[22m\u001b[32mindex.html                 \u001b[39m\u001b[1m\u001b[2m 0.40 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m │ gzip: 0.30 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[35massets/index-BaHd6r1U.css  \u001b[39m\u001b[1m\u001b[2m19.97 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m │ gzip: 5.10 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[36massets/index-D3aptHkS.js   \u001b[39m\u001b[1m\u001b[2m17.34 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m │ gzip: 6.55 kB\u001b[22m\n\u001b[32m✓ built in 175ms\u001b[39m\n",
+        "stderr_tail": ""
+      },
+      "errors": [],
+      "not_claimed": [
+        "npm test",
+        "npm audit",
+        "eslint",
+        "runtime proof"
+      ]
+    },
+    {
+      "target_id": "support_app_tauri_cargo_check",
+      "lane": "tauri_rust_cargo_check",
+      "detected": true,
+      "ok": true,
+      "toolchain": {
+        "cargo": "C:\\Users\\PC\\.cargo\\bin\\cargo.EXE",
+        "rustc": "C:\\Users\\PC\\.cargo\\bin\\rustc.EXE"
+      },
+      "manifest": "SUPPORT/APP_TAURI/src-tauri/Cargo.toml",
+      "command_result": {
+        "started_at_utc": "2026-07-05T18:43:50Z",
+        "finished_at_utc": "2026-07-05T18:43:51Z",
+        "cmd": [
+          "C:\\Users\\PC\\.cargo\\bin\\cargo.EXE",
+          "check",
+          "--manifest-path",
+          "E:\\IMPERIUM_REALITY\\SUPPORT\\APP_TAURI\\src-tauri\\Cargo.toml"
+        ],
+        "cwd": "E:\\IMPERIUM_REALITY",
+        "exit_code": 0,
+        "ok": true,
+        "stdout_tail": "",
+        "stderr_tail": "    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.60s\n"
+      },
+      "errors": [],
+      "not_claimed": [
+        "cargo fmt",
+        "cargo clippy",
+        "cargo test",
+        "runtime proof"
+      ]
+    }
+  ],
+  "target_count": 4,
+  "blocking_failure_count": 0,
+  "foundation_debt_count": 0,
+  "blocking_failures": [],
+  "foundation_debt": [],
+  "verdict": "PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION",
+  "not_claimed": [
+    "tests passed",
+    "linters passed",
+    "security audit clean",
+    "runtime FPS proof",
+    "UI reference fidelity"
+  ],
+  "warnings": [
+    "Strict build lane foundation does not install dependencies.",
+    "Build proof is separate from code cleanliness and runtime proof."
+  ]
+}

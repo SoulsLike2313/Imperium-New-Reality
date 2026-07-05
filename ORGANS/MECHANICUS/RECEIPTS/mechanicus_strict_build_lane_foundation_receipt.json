@@ -1,0 +1,211 @@
+{
+  "receipt_id": "receipt.mechanicus.strict_build_lane_foundation.v0_2",
+  "task_id": "MECHANICUS-STRICT-BUILD-LANE-FOUNDATION-0001",
+  "validator_id": "mechanicus_strict_build_lane_foundation_validator.v0_2_report_primary_false_negative_guard",
+  "verdict": "PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION_READY",
+  "generated_at_utc": "2026-07-05T18:43:51Z",
+  "checks": [
+    {
+      "name": "strict_build_lane_runner_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/run_mechanicus_strict_build_lane.py"
+      }
+    },
+    {
+      "name": "task_tool_planner_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/plan_mechanicus_task_tool_composition.py"
+      }
+    },
+    {
+      "name": "strict_build_report_passes_with_zero_blocking_failures",
+      "status": "PASS",
+      "details": {
+        "runner_exit_code": 1,
+        "load_error": null,
+        "verdict": "PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION",
+        "blocking_failure_count": 0,
+        "stdout_tail": "",
+        "stderr_tail": "Traceback (most recent call last):\n  File \"E:\\IMPERIUM_REALITY\\ORGANS\\MECHANICUS\\TOOLS\\run_mechanicus_strict_build_lane.py\", line 63, in <module>\n    if __name__=='__main__': raise SystemExit(main())\n                                              ^^^^^^\n  File \"E:\\IMPERIUM_REALITY\\ORGANS\\MECHANICUS\\TOOLS\\run_mechanicus_strict_build_lane.py\", line 62, in main\n    wr(repo/args.out,rep); print(json.dumps(rep,ensure_ascii=False,indent=2,default=str)); return 0 if not fails else 1\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\encodings\\cp1251.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode character '\\u2713' in position 2311: character maps to <undefined>\n"
+      }
+    },
+    {
+      "name": "all_detected_build_targets_ok",
+      "status": "PASS",
+      "details": {
+        "targets": [
+          {
+            "target_id": "python_compile_current_non_patch",
+            "lane": "python_compile",
+            "detected": true,
+            "ok": true,
+            "dependency_state": null,
+            "errors": []
+          },
+          {
+            "target_id": "powershell_host_probe",
+            "lane": "powershell_host_probe",
+            "detected": true,
+            "ok": true,
+            "dependency_state": null,
+            "errors": []
+          },
+          {
+            "target_id": "support_app_tauri_npm_build",
+            "lane": "tauri_frontend_npm_build",
+            "detected": true,
+            "ok": true,
+            "dependency_state": "node_modules_present",
+            "errors": []
+          },
+          {
+            "target_id": "support_app_tauri_cargo_check",
+            "lane": "tauri_rust_cargo_check",
+            "detected": true,
+            "ok": true,
+            "dependency_state": null,
+            "errors": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "all_detected_build_targets_have_receipts",
+      "status": "PASS",
+      "details": {
+        "receipt_presence": {
+          "python_compile_current_non_patch": true,
+          "powershell_host_probe": true,
+          "support_app_tauri_npm_build": true,
+          "support_app_tauri_cargo_check": true
+        }
+      }
+    },
+    {
+      "name": "no_dependency_installation_attempted",
+      "status": "PASS",
+      "details": {}
+    },
+    {
+      "name": "python_compile_current_non_patch_passes",
+      "status": "PASS",
+      "details": {
+        "target": {
+          "target_id": "python_compile_current_non_patch",
+          "lane": "python_compile",
+          "detected": true,
+          "files_checked": 396,
+          "ok": true,
+          "errors": [],
+          "not_claimed": [
+            "ruff",
+            "mypy",
+            "pytest",
+            "import runtime"
+          ]
+        }
+      }
+    },
+    {
+      "name": "powershell_host_probe_passes",
+      "status": "PASS",
+      "details": {
+        "target": {
+          "target_id": "powershell_host_probe",
+          "lane": "powershell_host_probe",
+          "detected": true,
+          "ok": true,
+          "toolchain": {
+            "pwsh": "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\pwsh.EXE"
+          },
+          "command_result": {
+            "started_at_utc": "2026-07-05T18:43:48Z",
+            "finished_at_utc": "2026-07-05T18:43:49Z",
+            "cmd": [
+              "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\pwsh.EXE",
+              "-NoLogo",
+              "-NoProfile",
+              "-Command",
+              "$PSVersionTable.PSVersion.ToString()"
+            ],
+            "cwd": "E:\\IMPERIUM_REALITY",
+            "exit_code": 0,
+            "ok": true,
+            "stdout_tail": "7.6.2\n",
+            "stderr_tail": ""
+          },
+          "errors": [],
+          "not_claimed": [
+            "PSScriptAnalyzer",
+            "all runners valid"
+          ]
+        }
+      }
+    },
+    {
+      "name": "support_app_tauri_npm_build_detected_and_passes",
+      "status": "PASS",
+      "details": {
+        "target_summary": {
+          "target_id": "support_app_tauri_npm_build",
+          "lane": "tauri_frontend_npm_build",
+          "detected": true,
+          "ok": true,
+          "dependency_state": "node_modules_present",
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "support_app_tauri_cargo_check_detected_and_passes",
+      "status": "PASS",
+      "details": {
+        "target_summary": {
+          "target_id": "support_app_tauri_cargo_check",
+          "lane": "tauri_rust_cargo_check",
+          "detected": true,
+          "ok": true,
+          "dependency_state": null,
+          "errors": []
+        }
+      }
+    },
+    {
+      "name": "planner_runs_with_strict_build_report_awareness",
+      "status": "PASS",
+      "details": {
+        "run": {
+          "exit_code": 0,
+          "stdout_tail": " \"lane_id\": \"json_evidence\",\n          \"state\": \"LANE_READY_BASELINE\"\n        }\n      ],\n      \"dimensions\": {\n        \"requirement_fit\": 96,\n        \"availability_and_admission\": 100,\n        \"cleanliness_validation_coverage\": 92,\n        \"reliability_and_receipts\": 91,\n        \"cost_and_runtime_weight\": 82,\n        \"maintainability_no_monolith\": 82,\n        \"strict_build_bonus\": 12\n      },\n      \"required_validators\": [\n        \"pwsh version\",\n        \"runner receipt\",\n        \"no direct master mutation\"\n      ],\n      \"typical_tools\": [\n        \"pwsh\",\n        \"WARP runner\",\n        \"git\"\n      ]\n    },\n    {\n      \"demand_id\": \"visual_ui_polish\",\n      \"score_0_to_100\": 90.25,\n      \"verdict\": \"RECOMMENDED_PRIMARY_STACK\",\n      \"preferred_lanes\": [\n        \"css_ui\",\n        \"node_frontend\",\n        \"json_evidence\"\n      ],\n      \"lane_states\": [\n        {\n          \"lane_id\": \"css_ui\",\n          \"state\": \"LANE_READY_BASELINE\"\n        },\n        {\n          \"lane_id\": \"node_frontend\",\n          \"state\": \"LANE_READY_BASELINE\"\n        },\n        {\n          \"lane_id\": \"json_evidence\",\n          \"state\": \"LANE_READY_BASELINE\"\n        }\n      ],\n      \"dimensions\": {\n        \"requirement_fit\": 96,\n        \"availability_and_admission\": 100,\n        \"cleanliness_validation_coverage\": 92,\n        \"reliability_and_receipts\": 91,\n        \"cost_and_runtime_weight\": 60,\n        \"maintainability_no_monolith\": 82,\n        \"strict_build_bonus\": 12\n      },\n      \"required_validators\": [\n        \"CSS structural scan\",\n        \"FPS proof\",\n        \"reference fidelity report\",\n        \"no CSS monolith\"\n      ],\n      \"typical_tools\": [\n        \"CSS lane\",\n        \"Tauri app\",\n        \"FPS watchdog\"\n      ]\n    },\n    {\n      \"demand_id\": \"tauri_app_or_cockpit\",\n      \"score_0_to_100\": 89.55,\n      \"verdict\": \"RECOMMENDED_PRIMARY_STACK\",\n      \"preferred_lanes\": [\n        \"node_frontend\",\n        \"css_ui\",\n        \"rust\",\n        \"json_evidence\"\n      ],\n      \"lane_states\": [\n        {\n          \"lane_id\": \"node_frontend\",\n          \"state\": \"LANE_READY_BASELINE\"\n        },\n        {\n          \"lane_id\": \"css_ui\",\n          \"state\": \"LANE_READY_BASELINE\"\n        },\n        {\n          \"lane_id\": \"rust\",\n          \"state\": \"LANE_READY_BASELINE\"\n        },\n        {\n          \"lane_id\": \"json_evidence\",\n          \"state\": \"LANE_READY_BASELINE\"\n        }\n      ],\n      \"dimensions\": {\n        \"requirement_fit\": 82,\n        \"availability_and_admission\": 100,\n        \"cleanliness_validation_coverage\": 100,\n        \"reliability_and_receipts\": 99,\n        \"cost_and_runtime_weight\": 60,\n        \"maintainability_no_monolith\": 82,\n        \"strict_build_bonus\": 12\n      },\n      \"required_validators\": [\n        \"npm build\",\n        \"cargo check\",\n        \"runtime FPS proof\",\n        \"UX proof receipt\"\n      ],\n      \"typical_tools\": [\n        \"node\",\n        \"npm\",\n        \"rustc\",\n        \"cargo\",\n        \"Tauri app shell\"\n      ]\n    },\n    {\n      \"demand_id\": \"python_validator_or_scanner\",\n      \"score_0_to_100\": 85.45,\n      \"verdict\": \"RECOMMENDED_PRIMARY_STACK\",\n      \"preferred_lanes\": [\n        \"python\",\n        \"json_evidence\",\n        \"markdown_docs\"\n      ],\n      \"lane_states\": [\n        {\n          \"lane_id\": \"python\",\n          \"state\": \"LANE_READY_BASELINE\"\n        },\n        {\n          \"lane_id\": \"json_evidence\",\n          \"state\": \"LANE_READY_BASELINE\"\n        },\n        {\n          \"lane_id\": \"markdown_docs\",\n          \"state\": \"LANE_READY_BASELINE\"\n        }\n      ],\n      \"dimensions\": {\n        \"requirement_fit\": 68,\n        \"availability_and_admission\": 100,\n        \"cleanliness_validation_coverage\": 92,\n        \"reliability_and_receipts\": 91,\n        \"cost_and_runtime_weight\": 82,\n        \"maintainability_no_monolith\": 82,\n        \"strict_build_bonus\": 12\n      },\n      \"required_validators\": [\n        \"python py_compile\",\n        \"json parse\",\n        \"receipt shape\"\n      ],\n      \"typical_tools\": [\n        \"python\",\n        \"Mechanicus inventory scanner\",\n        \"language validation dispatch\"\n      ]\n    },\n    {\n      \"demand_id\": \"game_engine_or_procedural_world\",\n      \"score_0_to_100\": 48.75,\n      \"verdict\": \"NOT_RECOMMENDED_OR_CAPABILITY_MISSING\",\n      \"preferred_lanes\": [\n        \"node_frontend\",\n        \"rust\",\n        \"css_ui\",\n        \"go_future\",\n        \"cpp_future\"\n      ],\n      \"lane_states\": [\n        {\n          \"lane_id\": \"node_frontend\",\n          \"state\": \"LANE_READY_BASELINE\"\n        },\n        {\n          \"lane_id\": \"rust\",\n          \"state\": \"LANE_READY_BASELINE\"\n        },\n        {\n          \"lane_id\": \"css_ui\",\n          \"state\": \"LANE_READY_BASELINE\"\n        },\n        {\n          \"lane_id\": \"go_future\",\n          \"state\": \"LANE_FUTURE_CAPABILITY\"\n        },\n        {\n          \"lane_id\": \"cpp_future\",\n          \"state\": \"LANE_FUTURE_CAPABILITY\"\n        }\n      ],\n      \"dimensions\": {\n        \"requirement_fit\": 68,\n        \"availability_and_admission\": 20,\n        \"cleanliness_validation_coverage\": 48,\n        \"reliability_and_receipts\": 51,\n        \"cost_and_runtime_weight\": 40,\n        \"maintainability_no_monolith\": 65,\n        \"strict_build_bonus\": 4\n      },\n      \"required_validators\": [\n        \"engine capability proof\",\n        \"runtime performance proof\",\n        \"asset pipeline proof\"\n      ],\n      \"typical_tools\": [\n        \"game engine candidate\",\n        \"runtime profiler\",\n        \"asset pipeline\"\n      ]\n    }\n  ],\n  \"recommended_tool_stack\": {\n    \"demand_id\": \"warp_runner_or_windows_operator\",\n    \"score_0_to_100\": 92.45,\n    \"verdict\": \"RECOMMENDED_PRIMARY_STACK\",\n    \"preferred_lanes\": [\n      \"powershell\",\n      \"python\",\n      \"json_evidence\"\n    ],\n    \"lane_states\": [\n      {\n        \"lane_id\": \"powershell\",\n        \"state\": \"LANE_READY_BASELINE\"\n      },\n      {\n        \"lane_id\": \"python\",\n        \"state\": \"LANE_READY_BASELINE\"\n      },\n      {\n        \"lane_id\": \"json_evidence\",\n        \"state\": \"LANE_READY_BASELINE\"\n      }\n    ],\n    \"dimensions\": {\n      \"requirement_fit\": 96,\n      \"availability_and_admission\": 100,\n      \"cleanliness_validation_coverage\": 92,\n      \"reliability_and_receipts\": 91,\n      \"cost_and_runtime_weight\": 82,\n      \"maintainability_no_monolith\": 82,\n      \"strict_build_bonus\": 12\n    },\n    \"required_validators\": [\n      \"pwsh version\",\n      \"runner receipt\",\n      \"no direct master mutation\"\n    ],\n    \"typical_tools\": [\n      \"pwsh\",\n      \"WARP runner\",\n      \"git\"\n    ]\n  },\n  \"recommended_language_lanes\": [\n    \"powershell\",\n    \"python\",\n    \"json_evidence\"\n  ],\n  \"required_validators\": [\n    \"pwsh version\",\n    \"runner receipt\",\n    \"no direct master mutation\",\n    \"CSS structural scan\",\n    \"FPS proof\",\n    \"reference fidelity report\",\n    \"no CSS monolith\",\n    \"npm build\",\n    \"cargo check\",\n    \"runtime FPS proof\",\n    \"UX proof receipt\"\n  ],\n  \"missing_capabilities\": [\n    {\n      \"capability_id\": \"GAME_ENGINE_CAPABILITY_NOT_INVENTORIED\",\n      \"severity\": \"OWNER_VISIBLE_GAP\",\n      \"meaning\": \"Game/procedural engine requested or implied, but no admitted engine is inventoried.\"\n    },\n    {\n      \"capability_id\": \"UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI\",\n      \"severity\": \"CONDITIONAL_GAP\",\n      \"meaning\": \"UI/reference work needs dedicated fidelity proof; CSS alone cannot prove target UI.\"\n    }\n  ],\n  \"owner_visible_blockers\": [\n    {\n      \"capability_id\": \"GAME_ENGINE_CAPABILITY_NOT_INVENTORIED\",\n      \"severity\": \"OWNER_VISIBLE_GAP\",\n      \"meaning\": \"Game/procedural engine requested or implied, but no admitted engine is inventoried.\"\n    }\n  ],\n  \"verdict\": \"PLAN_READY_WITH_CAPABILITY_GAPS\",\n  \"not_claimed\": [\n    \"task executed\",\n    \"runtime proof\",\n    \"dependencies installed\",\n    \"100% clean\",\n    \"strict build pass unless strict build receipt exists\"\n  ],\n  \"warnings\": [\n    \"Tool composition plan is advisory and does not execute the task.\",\n    \"Strict build lane affects reliability score only when receipt exists.\"\n  ]\n}\n",
+          "stderr_tail": ""
+        },
+        "load_error": null,
+        "strict_build_report": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_REPORT_V0_1.json"
+      }
+    },
+    {
+      "name": "planner_no_longer_reports_strict_build_lane_required_gap_after_pass",
+      "status": "PASS",
+      "details": {
+        "missing_capabilities": [
+          "GAME_ENGINE_CAPABILITY_NOT_INVENTORIED",
+          "UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI"
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Runner process exit code 1 disagreed with PASS report; false-negative guard used report truth.",
+    "Strict build lane foundation does not install dependencies.",
+    "Build proof is separate from code cleanliness and runtime proof.",
+    "Planner recommended demand after build lane: warp_runner_or_windows_operator score=92.45 verdict=RECOMMENDED_PRIMARY_STACK",
+    "Remaining planner gap: GAME_ENGINE_CAPABILITY_NOT_INVENTORIED => OWNER_VISIBLE_GAP",
+    "Remaining planner gap: UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI => CONDITIONAL_GAP"
+  ],
+  "build_report": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_REPORT_V0_1.json",
+  "plan": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TASK_TOOL_COMPOSITION_PLAN_V0_1.json",
+  "runner_exit_code": 1
+}

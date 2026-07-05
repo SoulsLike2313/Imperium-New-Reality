@@ -1,0 +1,45 @@
+{
+  "matrix_id": "MECHANICUS_STRICT_BUILD_LANE_FOUNDATION_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-STRICT-BUILD-LANE-FOUNDATION-0001",
+  "score_total": 100,
+  "dimensions": [
+    {
+      "id": "build_target_discovery",
+      "weight": 15
+    },
+    {
+      "id": "toolchain_presence",
+      "weight": 15
+    },
+    {
+      "id": "command_execution_receipts",
+      "weight": 30
+    },
+    {
+      "id": "known_build_targets_pass",
+      "weight": 20
+    },
+    {
+      "id": "capability_debt_visible",
+      "weight": 10
+    },
+    {
+      "id": "no_dependency_mutation",
+      "weight": 10
+    }
+  ],
+  "blocking_findings": [
+    "BUILD_COMMAND_FAILED",
+    "BUILD_TARGET_WITHOUT_RESULT",
+    "BUILD_PROOF_CLAIM_WITHOUT_RECEIPT",
+    "DEPENDENCY_INSTALLATION_ATTEMPTED",
+    "TOOLCHAIN_MISSING_FOR_REQUIRED_TARGET"
+  ],
+  "not_claimed": [
+    "strict lint",
+    "strict test",
+    "dependency security",
+    "runtime proof"
+  ]
+}

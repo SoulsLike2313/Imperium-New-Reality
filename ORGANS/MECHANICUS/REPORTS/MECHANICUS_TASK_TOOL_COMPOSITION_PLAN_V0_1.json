@@ -1,18 +1,23 @@
 {
-  "tool_id": "mechanicus_task_tool_composition_planner.v0_3_hard_safe",
-  "generated_at_utc": "2026-07-05T14:50:41Z",
+  "tool_id": "mechanicus_task_tool_composition_planner.v0_4_strict_build_lane_aware",
+  "generated_at_utc": "2026-07-05T18:43:51Z",
   "repo_root": "E:\\IMPERIUM_REALITY",
   "task_source": "inline_task_text",
   "task_text_preview": "Register a Patch Pack for Tauri UI cockpit polish with CSS ornament animation, runtime FPS proof, JSON receipts, PowerShell WARP runner, and possible future game engine projection.",
+  "strict_build_report": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_REPORT_V0_1.json",
   "task_demand_classification": [
     {
       "demand_id": "warp_runner_or_windows_operator",
-      "score": 76,
-      "matched_keywords": [
+      "keywords": [
+        "pwsh",
         "powershell",
         "runner",
+        "run_",
         "warp",
-        "patch pack"
+        "patch pack",
+        "task pack",
+        "таск пак",
+        "патч пак"
       ],
       "preferred_lanes": [
         "powershell",
@@ -28,16 +33,32 @@
         "pwsh",
         "WARP runner",
         "git"
+      ],
+      "score": 76,
+      "matched_keywords": [
+        "powershell",
+        "runner",
+        "warp",
+        "patch pack"
       ]
     },
     {
       "demand_id": "visual_ui_polish",
-      "score": 76,
-      "matched_keywords": [
+      "keywords": [
         "css",
+        "style",
         "animation",
         "ornament",
-        "fps"
+        "gothic",
+        "metal",
+        "fps",
+        "visual",
+        "reference",
+        "готика",
+        "орнамент",
+        "анимация",
+        "визуал",
+        "реф"
       ],
       "preferred_lanes": [
         "css_ui",
@@ -54,15 +75,28 @@
         "CSS lane",
         "Tauri app",
         "FPS watchdog"
+      ],
+      "score": 76,
+      "matched_keywords": [
+        "css",
+        "animation",
+        "ornament",
+        "fps"
       ]
     },
     {
       "demand_id": "tauri_app_or_cockpit",
-      "score": 62,
-      "matched_keywords": [
+      "keywords": [
         "tauri",
         "cockpit",
-        "ui"
+        "app",
+        "webview",
+        "frontend",
+        "ui",
+        "ux",
+        "приложение",
+        "кокпит",
+        "интерфейс"
       ],
       "preferred_lanes": [
         "node_frontend",
@@ -82,14 +116,30 @@
         "rustc",
         "cargo",
         "Tauri app shell"
+      ],
+      "score": 62,
+      "matched_keywords": [
+        "tauri",
+        "cockpit",
+        "ui"
       ]
     },
     {
       "demand_id": "python_validator_or_scanner",
-      "score": 48,
-      "matched_keywords": [
+      "keywords": [
+        "validator",
+        "scan",
+        "scanner",
+        "census",
         "receipt",
-        "json"
+        "report",
+        "json",
+        "matrix",
+        "валидатор",
+        "скан",
+        "отчет",
+        "отчёт",
+        "матриц"
       ],
       "preferred_lanes": [
         "python",
@@ -105,14 +155,25 @@
         "python",
         "Mechanicus inventory scanner",
         "language validation dispatch"
+      ],
+      "score": 48,
+      "matched_keywords": [
+        "receipt",
+        "json"
       ]
     },
     {
       "demand_id": "game_engine_or_procedural_world",
-      "score": 48,
-      "matched_keywords": [
+      "keywords": [
         "game",
-        "engine"
+        "engine",
+        "godot",
+        "bevy",
+        "unity",
+        "unreal",
+        "игра",
+        "движок",
+        "процедур"
       ],
       "preferred_lanes": [
         "node_frontend",
@@ -130,14 +191,19 @@
         "game engine candidate",
         "runtime profiler",
         "asset pipeline"
+      ],
+      "score": 48,
+      "matched_keywords": [
+        "game",
+        "engine"
       ]
     }
   ],
   "candidate_combinations_with_scores": [
     {
       "demand_id": "warp_runner_or_windows_operator",
-      "score_0_to_100": 72.35,
-      "verdict": "ACCEPTABLE_WITH_DEBT",
+      "score_0_to_100": 92.45,
+      "verdict": "RECOMMENDED_PRIMARY_STACK",
       "preferred_lanes": [
         "powershell",
         "python",
@@ -154,16 +220,17 @@
         },
         {
           "lane_id": "json_evidence",
-          "state": "LANE_MEASURED_WITH_DEBT"
+          "state": "LANE_READY_BASELINE"
         }
       ],
       "dimensions": {
         "requirement_fit": 96,
-        "availability_and_admission": 56,
-        "cleanliness_validation_coverage": 58,
-        "reliability_and_receipts": 61,
+        "availability_and_admission": 100,
+        "cleanliness_validation_coverage": 92,
+        "reliability_and_receipts": 91,
         "cost_and_runtime_weight": 82,
-        "maintainability_no_monolith": 82
+        "maintainability_no_monolith": 82,
+        "strict_build_bonus": 12
       },
       "required_validators": [
         "pwsh version",
@@ -177,9 +244,53 @@
       ]
     },
     {
+      "demand_id": "visual_ui_polish",
+      "score_0_to_100": 90.25,
+      "verdict": "RECOMMENDED_PRIMARY_STACK",
+      "preferred_lanes": [
+        "css_ui",
+        "node_frontend",
+        "json_evidence"
+      ],
+      "lane_states": [
+        {
+          "lane_id": "css_ui",
+          "state": "LANE_READY_BASELINE"
+        },
+        {
+          "lane_id": "node_frontend",
+          "state": "LANE_READY_BASELINE"
+        },
+        {
+          "lane_id": "json_evidence",
+          "state": "LANE_READY_BASELINE"
+        }
+      ],
+      "dimensions": {
+        "requirement_fit": 96,
+        "availability_and_admission": 100,
+        "cleanliness_validation_coverage": 92,
+        "reliability_and_receipts": 91,
+        "cost_and_runtime_weight": 60,
+        "maintainability_no_monolith": 82,
+        "strict_build_bonus": 12
+      },
+      "required_validators": [
+        "CSS structural scan",
+        "FPS proof",
+        "reference fidelity report",
+        "no CSS monolith"
+      ],
+      "typical_tools": [
+        "CSS lane",
+        "Tauri app",
+        "FPS watchdog"
+      ]
+    },
+    {
       "demand_id": "tauri_app_or_cockpit",
-      "score_0_to_100": 71.65,
-      "verdict": "ACCEPTABLE_WITH_DEBT",
+      "score_0_to_100": 89.55,
+      "verdict": "RECOMMENDED_PRIMARY_STACK",
       "preferred_lanes": [
         "node_frontend",
         "css_ui",
@@ -201,16 +312,17 @@
         },
         {
           "lane_id": "json_evidence",
-          "state": "LANE_MEASURED_WITH_DEBT"
+          "state": "LANE_READY_BASELINE"
         }
       ],
       "dimensions": {
         "requirement_fit": 82,
-        "availability_and_admission": 65,
-        "cleanliness_validation_coverage": 68,
-        "reliability_and_receipts": 69,
+        "availability_and_admission": 100,
+        "cleanliness_validation_coverage": 100,
+        "reliability_and_receipts": 99,
         "cost_and_runtime_weight": 60,
-        "maintainability_no_monolith": 82
+        "maintainability_no_monolith": 82,
+        "strict_build_bonus": 12
       },
       "required_validators": [
         "npm build",
@@ -227,52 +339,9 @@
       ]
     },
     {
-      "demand_id": "visual_ui_polish",
-      "score_0_to_100": 70.15,
-      "verdict": "ACCEPTABLE_WITH_DEBT",
-      "preferred_lanes": [
-        "css_ui",
-        "node_frontend",
-        "json_evidence"
-      ],
-      "lane_states": [
-        {
-          "lane_id": "css_ui",
-          "state": "LANE_READY_BASELINE"
-        },
-        {
-          "lane_id": "node_frontend",
-          "state": "LANE_READY_BASELINE"
-        },
-        {
-          "lane_id": "json_evidence",
-          "state": "LANE_MEASURED_WITH_DEBT"
-        }
-      ],
-      "dimensions": {
-        "requirement_fit": 96,
-        "availability_and_admission": 56,
-        "cleanliness_validation_coverage": 58,
-        "reliability_and_receipts": 61,
-        "cost_and_runtime_weight": 60,
-        "maintainability_no_monolith": 82
-      },
-      "required_validators": [
-        "CSS structural scan",
-        "FPS proof",
-        "reference fidelity report",
-        "no CSS monolith"
-      ],
-      "typical_tools": [
-        "CSS lane",
-        "Tauri app",
-        "FPS watchdog"
-      ]
-    },
-    {
       "demand_id": "python_validator_or_scanner",
-      "score_0_to_100": 65.35,
-      "verdict": "POSSIBLE_REWORK_REQUIRED",
+      "score_0_to_100": 85.45,
+      "verdict": "RECOMMENDED_PRIMARY_STACK",
       "preferred_lanes": [
         "python",
         "json_evidence",
@@ -285,7 +354,7 @@
         },
         {
           "lane_id": "json_evidence",
-          "state": "LANE_MEASURED_WITH_DEBT"
+          "state": "LANE_READY_BASELINE"
         },
         {
           "lane_id": "markdown_docs",
@@ -294,11 +363,12 @@
       ],
       "dimensions": {
         "requirement_fit": 68,
-        "availability_and_admission": 56,
-        "cleanliness_validation_coverage": 58,
-        "reliability_and_receipts": 61,
+        "availability_and_admission": 100,
+        "cleanliness_validation_coverage": 92,
+        "reliability_and_receipts": 91,
         "cost_and_runtime_weight": 82,
-        "maintainability_no_monolith": 82
+        "maintainability_no_monolith": 82,
+        "strict_build_bonus": 12
       },
       "required_validators": [
         "python py_compile",
@@ -313,7 +383,7 @@
     },
     {
       "demand_id": "game_engine_or_procedural_world",
-      "score_0_to_100": 47.35,
+      "score_0_to_100": 48.75,
       "verdict": "NOT_RECOMMENDED_OR_CAPABILITY_MISSING",
       "preferred_lanes": [
         "node_frontend",
@@ -347,10 +417,11 @@
       "dimensions": {
         "requirement_fit": 68,
         "availability_and_admission": 20,
-        "cleanliness_validation_coverage": 44,
-        "reliability_and_receipts": 47,
+        "cleanliness_validation_coverage": 48,
+        "reliability_and_receipts": 51,
         "cost_and_runtime_weight": 40,
-        "maintainability_no_monolith": 65
+        "maintainability_no_monolith": 65,
+        "strict_build_bonus": 4
       },
       "required_validators": [
         "engine capability proof",
@@ -366,8 +437,8 @@
   ],
   "recommended_tool_stack": {
     "demand_id": "warp_runner_or_windows_operator",
-    "score_0_to_100": 72.35,
-    "verdict": "ACCEPTABLE_WITH_DEBT",
+    "score_0_to_100": 92.45,
+    "verdict": "RECOMMENDED_PRIMARY_STACK",
     "preferred_lanes": [
       "powershell",
       "python",
@@ -384,16 +455,17 @@
       },
       {
         "lane_id": "json_evidence",
-        "state": "LANE_MEASURED_WITH_DEBT"
+        "state": "LANE_READY_BASELINE"
       }
     ],
     "dimensions": {
       "requirement_fit": 96,
-      "availability_and_admission": 56,
-      "cleanliness_validation_coverage": 58,
-      "reliability_and_receipts": 61,
+      "availability_and_admission": 100,
+      "cleanliness_validation_coverage": 92,
+      "reliability_and_receipts": 91,
       "cost_and_runtime_weight": 82,
-      "maintainability_no_monolith": 82
+      "maintainability_no_monolith": 82,
+      "strict_build_bonus": 12
     },
     "required_validators": [
       "pwsh version",
@@ -415,25 +487,20 @@
     "pwsh version",
     "runner receipt",
     "no direct master mutation",
-    "npm build",
-    "cargo check",
-    "runtime FPS proof",
-    "UX proof receipt",
     "CSS structural scan",
     "FPS proof",
     "reference fidelity report",
-    "no CSS monolith"
+    "no CSS monolith",
+    "npm build",
+    "cargo check",
+    "runtime FPS proof",
+    "UX proof receipt"
   ],
   "missing_capabilities": [
     {
       "capability_id": "GAME_ENGINE_CAPABILITY_NOT_INVENTORIED",
       "severity": "OWNER_VISIBLE_GAP",
       "meaning": "Game/procedural engine requested or implied, but no admitted engine is inventoried."
-    },
-    {
-      "capability_id": "STRICT_BUILD_LANE_REQUIRED",
-      "severity": "NEXT_VALIDATOR_REQUIRED",
-      "meaning": "Task asks for strict/build/runtime confidence; a separate strict lane must run."
     },
     {
       "capability_id": "UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI",
@@ -454,11 +521,10 @@
     "runtime proof",
     "dependencies installed",
     "100% clean",
-    "strict build pass"
+    "strict build pass unless strict build receipt exists"
   ],
   "warnings": [
     "Tool composition plan is advisory and does not execute the task.",
-    "Missing capabilities must remain visible until resolved or Owner-waived.",
-    "Strict build/runtime validators remain separate lanes."
+    "Strict build lane affects reliability score only when receipt exists."
   ]
 }

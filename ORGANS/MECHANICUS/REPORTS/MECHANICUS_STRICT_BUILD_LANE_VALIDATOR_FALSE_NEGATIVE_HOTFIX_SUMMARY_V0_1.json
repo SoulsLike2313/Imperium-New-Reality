@@ -1,0 +1,66 @@
+{
+  "summary_id": "mechanicus.strict_build_lane_validator_false_negative_hotfix_summary.v0_1",
+  "task_id": "MECHANICUS-STRICT-BUILD-LANE-VALIDATOR-FALSE-NEGATIVE-HOTFIX-0001",
+  "validator_id": "mechanicus_strict_build_lane_validator_false_negative_hotfix_validator.v0_1",
+  "verdict": "PASS_MECHANICUS_STRICT_BUILD_LANE_VALIDATOR_FALSE_NEGATIVE_HOTFIX_READY",
+  "generated_at_utc": "2026-07-05T18:43:51Z",
+  "checks": [
+    {
+      "name": "strict_build_foundation_validator_v0_2_installed",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_strict_build_lane_foundation.py"
+      }
+    },
+    {
+      "name": "base_strict_build_foundation_validator_passes_after_hotfix",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "{\n  \"task_id\": \"MECHANICUS-STRICT-BUILD-LANE-FOUNDATION-0001\",\n  \"validator_id\": \"mechanicus_strict_build_lane_foundation_validator.v0_2_report_primary_false_negative_guard\",\n  \"verdict\": \"PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION_READY\",\n  \"receipt\": \"ORGANS/MECHANICUS/RECEIPTS/mechanicus_strict_build_lane_foundation_receipt.json\",\n  \"summary\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_FOUNDATION_SUMMARY_V0_1.json\",\n  \"build_report\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_REPORT_V0_1.json\",\n  \"plan\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_TASK_TOOL_COMPOSITION_PLAN_V0_1.json\",\n  \"errors\": [],\n  \"warnings\": [\n    \"Runner process exit code 1 disagreed with PASS report; false-negative guard used report truth.\",\n    \"Strict build lane foundation does not install dependencies.\",\n    \"Build proof is separate from code cleanliness and runtime proof.\",\n    \"Planner recommended demand after build lane: warp_runner_or_windows_operator score=92.45 verdict=RECOMMENDED_PRIMARY_STACK\",\n    \"Remaining planner gap: GAME_ENGINE_CAPABILITY_NOT_INVENTORIED => OWNER_VISIBLE_GAP\",\n    \"Remaining planner gap: UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI => CONDITIONAL_GAP\"\n  ]\n}\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "base_strict_build_receipt_is_pass_after_hotfix",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "verdict": "PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION_READY"
+      }
+    },
+    {
+      "name": "build_report_passes_with_zero_blocking_failures",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "verdict": "PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION",
+        "blocking_failure_count": 0
+      }
+    },
+    {
+      "name": "planner_strict_build_gap_removed_after_hotfix",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "missing_capabilities": [
+          "GAME_ENGINE_CAPABILITY_NOT_INVENTORIED",
+          "UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI"
+        ],
+        "verdict": "PLAN_READY_WITH_CAPABILITY_GAPS"
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Runner process exit code 1 disagreed with PASS report; false-negative guard used report truth.",
+    "Strict build lane foundation does not install dependencies.",
+    "Build proof is separate from code cleanliness and runtime proof.",
+    "Planner recommended demand after build lane: warp_runner_or_windows_operator score=92.45 verdict=RECOMMENDED_PRIMARY_STACK",
+    "Remaining planner gap: GAME_ENGINE_CAPABILITY_NOT_INVENTORIED => OWNER_VISIBLE_GAP",
+    "Remaining planner gap: UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI => CONDITIONAL_GAP"
+  ],
+  "base_receipt": "ORGANS/MECHANICUS/RECEIPTS/mechanicus_strict_build_lane_foundation_receipt.json",
+  "build_report": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_REPORT_V0_1.json",
+  "plan": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TASK_TOOL_COMPOSITION_PLAN_V0_1.json"
+}

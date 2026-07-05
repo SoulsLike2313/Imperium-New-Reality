@@ -1,0 +1,19 @@
+{
+  "matrix_id": "CUSTODES_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION_PROSECUTOR_MATRIX_V0_1",
+  "version": "0.1",
+  "posture": "prosecutor_not_helper",
+  "questions": [
+    "Did Mechanicus actually run build/check commands for discovered targets?",
+    "Did Mechanicus pretend toolchain presence equals build pass?",
+    "Did Mechanicus install or mutate dependencies without Owner command?",
+    "Did Mechanicus hide command stdout/stderr?",
+    "Did Mechanicus claim runtime proof from build proof?"
+  ],
+  "blocking_findings": [
+    "toolchain_presence_claimed_as_build_pass",
+    "dependency_install_without_owner",
+    "stdout_stderr_missing",
+    "runtime_claim_from_build",
+    "failed_build_hidden"
+  ]
+}

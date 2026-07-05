@@ -1,0 +1,17 @@
+{
+  "matrix_id": "THRONE_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION_CROWN_GATE_MATRIX_V0_1",
+  "version": "0.1",
+  "crown_laws": [
+    "A build lane pass may raise Mechanicus readiness but cannot prove global core readiness.",
+    "A local build pass cannot become universal host readiness.",
+    "Build proof cannot overwrite runtime/FPS/UI/reference proof.",
+    "No dependency mutation is allowed in foundation build lane."
+  ],
+  "forbidden_global_mutations": [
+    "claim runtime proof from build pass",
+    "claim all hosts ready from local host",
+    "hide failed build target",
+    "install dependencies silently",
+    "promote build pass to semantic truth"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "law_id": "MECHANICUS_STRICT_BUILD_LANE_FOUNDATION_LAW_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-STRICT-BUILD-LANE-FOUNDATION-0001",
+  "owner_intent": [
+    "Mechanicus must separate build proof from source cleanliness, UI proof and runtime truth.",
+    "No task may claim build readiness without a build lane receipt.",
+    "Strict build lane must detect build targets and run only known safe build/check commands.",
+    "Build lane foundation must not install dependencies, mutate package versions or repair source automatically."
+  ],
+  "core_laws": [
+    "Build proof is not code cleanliness.",
+    "Code cleanliness is not runtime proof.",
+    "Runtime proof is not semantic truth.",
+    "Detected build target must have an explicit command result or explicit debt reason.",
+    "npm build requires node/npm and existing dependencies.",
+    "cargo check requires rustc/cargo and a Cargo manifest.",
+    "No dependency installation without Owner command."
+  ],
+  "build_lanes": [
+    "python_compile",
+    "powershell_host_probe",
+    "tauri_frontend_npm_build",
+    "tauri_rust_cargo_check"
+  ],
+  "not_claimed": [
+    "tests passed",
+    "linters passed",
+    "type checking passed",
+    "security audit clean",
+    "runtime FPS proof",
+    "UI reference fidelity",
+    "semantic correctness",
+    "dependency installation"
+  ]
+}
