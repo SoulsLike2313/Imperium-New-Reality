@@ -1,0 +1,50 @@
+{
+  "matrix_id": "CUSTODES_MECHANICUS_PROSECUTOR_GATE_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "CUSTODES-MECHANICUS-PROSECUTOR-GATE-0001",
+  "organ_id": "CUSTODES",
+  "target_organ_id": "MECHANICUS",
+  "required_sources": [
+    "ORGANS/MECHANICUS/MANIFEST.json",
+    "ORGANS/MECHANICUS/MATRICES/MECHANICUS_CURRENT_TRUTH_INDEX_V0_1.json",
+    "ORGANS/MECHANICUS/MATRICES/MECHANICUS_PERSONAL_VALIDATORS_REGISTRY_V0_1.json",
+    "ORGANS/MECHANICUS/REPORTS/MECHANICUS_RESIDENCY_TRUST_GATE_REPORT_V0_1.json",
+    "ORGANS/MECHANICUS/REPORTS/MECHANICUS_RESIDENCY_TRUST_GATE_SUMMARY_V0_1.json",
+    "ORGANS/MECHANICUS/RECEIPTS/mechanicus_residency_trust_gate_receipt.json",
+    "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TOOL_ADMISSION_V2_SUMMARY_V0_1.json"
+  ],
+  "required_gate_states": {
+    "G1_IDENTITY_MANIFEST": "PASS_BASELINE",
+    "G2_FUNCTIONS_REGISTRY": "PASS_BASELINE",
+    "G3_CAPABILITY_EVIDENCE": "PASS_BASELINE",
+    "G4_PERSONAL_VALIDATORS": "PASS_BASELINE",
+    "G5_CURRENT_TRUTH_RECEIPTS": "PASS_BASELINE",
+    "G6_RESIDENCY_TRUST": "PASS_BASELINE"
+  },
+  "required_checks": [
+    "all_required_sources_exist",
+    "all_required_json_parse",
+    "six_gates_pass_baseline",
+    "six_gate_baseline_closure_true",
+    "organ_assembly_claim_false",
+    "throne_crown_claim_false",
+    "local_model_membrane_deferred",
+    "real_execution_enabled_zero",
+    "personal_validators_present_and_compile",
+    "non_current_classes_declared",
+    "control_chars_absent_from_required_sources"
+  ],
+  "report_outputs": {
+    "receipt": "ORGANS/CUSTODES/RECEIPTS/custodes_mechanicus_prosecutor_gate_receipt.json",
+    "summary": "ORGANS/CUSTODES/REPORTS/CUSTODES_MECHANICUS_PROSECUTOR_GATE_SUMMARY_V0_1.json",
+    "report_json": "ORGANS/CUSTODES/REPORTS/CUSTODES_MECHANICUS_PROSECUTOR_GATE_REPORT_V0_1.json",
+    "report_md": "ORGANS/CUSTODES/REPORTS/CUSTODES_MECHANICUS_PROSECUTOR_GATE_REPORT_V0_1.md"
+  },
+  "state_after_pass": {
+    "custodes_prosecution_status": "PASS_BASELINE_PROSECUTION",
+    "mechanicus_six_gate_baseline_status": "PASS_BASELINE",
+    "organ_assembly_claim": false,
+    "throne_crown_claim": false,
+    "next_gate": "THRONE-MECHANICUS-SIX-GATE-CROWN-VERDICT-0001"
+  }
+}

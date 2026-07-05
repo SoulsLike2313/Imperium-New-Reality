@@ -1,0 +1,33 @@
+{
+  "law_id": "CUSTODES_MECHANICUS_PROSECUTOR_GATE_LAW_V0_1",
+  "version": "0.1",
+  "patch_id": "CUSTODES-MECHANICUS-PROSECUTOR-GATE-0001",
+  "organ_id": "CUSTODES",
+  "target_organ_id": "MECHANICUS",
+  "purpose": "Prosecute Mechanicus six-gate baseline closure by checking identity, functions, capability evidence, personal validators, current truth/receipts, residency/trust, and forbidden overclaims.",
+  "script_first": true,
+  "rules": [
+    "Custodes must validate Mechanicus claims against machine-readable reports, receipts and indices, not narrative alone.",
+    "Custodes may accept six-gate baseline prosecution only if all six gates are PASS_BASELINE and supported by reports/receipts.",
+    "Custodes must reject any Mechanicus claim of full assembly, Throne crown, real execution safety, local model readiness or universal reproducibility.",
+    "Custodes must verify current truth is indexed and non-current residents are classified.",
+    "Custodes prosecution does not replace Throne crown verdict and must not claim final organ assembly."
+  ],
+  "forbidden_claims": [
+    "MECHANICUS_ASSEMBLED",
+    "THRONE_CROWN_DONE",
+    "LOCAL_MODEL_MEMBRANE_READY",
+    "REAL_EXECUTION_GATEWAY_READY",
+    "UNIVERSAL_REPRODUCIBILITY_PROVEN",
+    "CUSTODES_ACCEPTED_UNCHECKED_NARRATIVE"
+  ],
+  "pass_meaning": "Custodes baseline prosecution accepts that Mechanicus six gates are baseline-closed and evidence-bound without granting Throne crown or full organ assembly.",
+  "pass_does_not_mean": [
+    "Mechanicus is crowned by Throne",
+    "Mechanicus is fully assembled",
+    "Real execution gateway is ready",
+    "Local model membrane is ready",
+    "All technical debt is removed",
+    "Future Task/Patch preflight gate exists"
+  ]
+}
