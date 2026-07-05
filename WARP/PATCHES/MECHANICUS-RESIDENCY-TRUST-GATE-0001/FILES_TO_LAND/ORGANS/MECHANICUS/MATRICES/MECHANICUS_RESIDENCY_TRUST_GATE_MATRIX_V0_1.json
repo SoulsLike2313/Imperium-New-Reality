@@ -1,0 +1,58 @@
+{
+  "matrix_id": "MECHANICUS_RESIDENCY_TRUST_GATE_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-RESIDENCY-TRUST-GATE-0001",
+  "organ_id": "MECHANICUS",
+  "gate_id": "G6_RESIDENCY_TRUST",
+  "source_registry": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_RESIDENCY_TRUST_REGISTRY_V0_1.json",
+  "source_current_truth_index": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_CURRENT_TRUTH_INDEX_V0_1.json",
+  "baseline_rules": {
+    "previous_five_gates_pass_baseline": true,
+    "resident_classes_declared": true,
+    "negative_quarantine_legacy_not_current": true,
+    "g6_sets_pass_baseline": true,
+    "six_gate_baseline_closure_allowed": true,
+    "organ_assembly_claim_allowed": false,
+    "custodes_prosecution_claim_allowed": false,
+    "throne_crown_claim_allowed": false,
+    "local_model_membrane_current_dependency_allowed": false
+  },
+  "report_outputs": {
+    "receipt": "ORGANS/MECHANICUS/RECEIPTS/mechanicus_residency_trust_gate_receipt.json",
+    "summary": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_RESIDENCY_TRUST_GATE_SUMMARY_V0_1.json",
+    "report_json": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_RESIDENCY_TRUST_GATE_REPORT_V0_1.json",
+    "report_md": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_RESIDENCY_TRUST_GATE_REPORT_V0_1.md"
+  },
+  "six_gate_progress_after_pass": [
+    {
+      "gate_id": "G1_IDENTITY_MANIFEST",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_CLOSED_NOT_CUSTODES_OR_THRONE_CROWNED"
+    },
+    {
+      "gate_id": "G2_FUNCTIONS_REGISTRY",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_CLOSED_NOT_CUSTODES_OR_THRONE_CROWNED"
+    },
+    {
+      "gate_id": "G3_CAPABILITY_EVIDENCE",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_CLOSED_NOT_CUSTODES_OR_THRONE_CROWNED"
+    },
+    {
+      "gate_id": "G4_PERSONAL_VALIDATORS",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_CLOSED_NOT_CUSTODES_OR_THRONE_CROWNED"
+    },
+    {
+      "gate_id": "G5_CURRENT_TRUTH_RECEIPTS",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_CLOSED_NOT_CUSTODES_OR_THRONE_CROWNED"
+    },
+    {
+      "gate_id": "G6_RESIDENCY_TRUST",
+      "state": "PASS_BASELINE",
+      "closure_claim": "BASELINE_CLOSED_NOT_CUSTODES_OR_THRONE_CROWNED"
+    }
+  ]
+}

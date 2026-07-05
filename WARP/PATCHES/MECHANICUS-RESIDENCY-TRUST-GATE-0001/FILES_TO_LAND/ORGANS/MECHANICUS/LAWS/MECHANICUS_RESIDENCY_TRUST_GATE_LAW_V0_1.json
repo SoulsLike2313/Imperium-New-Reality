@@ -1,0 +1,35 @@
+{
+  "law_id": "MECHANICUS_RESIDENCY_TRUST_GATE_LAW_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-RESIDENCY-TRUST-GATE-0001",
+  "organ_id": "MECHANICUS",
+  "gate_id": "G6_RESIDENCY_TRUST",
+  "purpose": "Close Mechanicus six-gate baseline by classifying organ residents and trust boundaries without claiming Custodes prosecution, Throne crown, or full organ assembly.",
+  "script_first": true,
+  "rules": [
+    "All Mechanicus resident classes that can confuse current truth must be explicitly classified.",
+    "Negative examples, quarantine residents, legacy history, superseded reports and future-deferred capabilities may remain in the organ only as non-current residents.",
+    "Current truth must remain controlled by MECHANICUS_CURRENT_TRUTH_INDEX_V0_1, not by file presence alone.",
+    "G6 may set six-gate baseline closure, but must not claim Custodes prosecution, Throne crown verdict, local model membrane readiness, real execution safety, or final organ assembly.",
+    "Every G6 artifact and required validator/tool must be free of control characters and parse/compile where applicable."
+  ],
+  "forbidden_claims": [
+    "MECHANICUS_ASSEMBLED",
+    "CUSTODES_AUDIT_DONE",
+    "THRONE_CROWN_DONE",
+    "LOCAL_MODEL_MEMBRANE_READY",
+    "REAL_EXECUTION_GATEWAY_READY",
+    "ALL_RESIDENTS_ARE_CURRENT_TRUTH",
+    "NEGATIVE_EXAMPLES_ARE_CURRENT_TRUTH",
+    "QUARANTINE_IS_TRUSTED"
+  ],
+  "pass_meaning": "Mechanicus has all six maturity gates closed at baseline level, including resident/trust classification and current-truth boundaries.",
+  "pass_does_not_mean": [
+    "Mechanicus is fully assembled",
+    "Custodes has prosecuted Mechanicus",
+    "Throne has crowned Mechanicus",
+    "Residency is perfect or debt-free",
+    "Local model membrane exists",
+    "Real execution gateway is safe or admitted"
+  ]
+}

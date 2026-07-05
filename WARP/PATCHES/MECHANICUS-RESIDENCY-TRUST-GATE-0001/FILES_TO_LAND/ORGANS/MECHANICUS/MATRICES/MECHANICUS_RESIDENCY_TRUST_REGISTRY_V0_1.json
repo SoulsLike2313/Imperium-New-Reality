@@ -1,0 +1,79 @@
+{
+  "registry_id": "MECHANICUS_RESIDENCY_TRUST_REGISTRY_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-RESIDENCY-TRUST-GATE-0001",
+  "organ_id": "MECHANICUS",
+  "gate_id": "G6_RESIDENCY_TRUST",
+  "resident_classification_policy": "File presence is not current truth. Resident classes below define how Mechanicus keeps debt/history without letting it become active capability.",
+  "resident_classes": [
+    {
+      "class_id": "current_truth_residents",
+      "current_truth_allowed": true,
+      "description": "Files explicitly listed in current truth index or generated current gate reports/receipts."
+    },
+    {
+      "class_id": "legacy_history",
+      "current_truth_allowed": false,
+      "description": "Historical artifacts retained for traceability, not current gate state."
+    },
+    {
+      "class_id": "negative_examples",
+      "current_truth_allowed": false,
+      "description": "Known bad or rejected patterns retained as lessons, not active capability."
+    },
+    {
+      "class_id": "quarantine_residents",
+      "current_truth_allowed": false,
+      "description": "Quarantined or deliberately dirty fixtures/debt; must not be promoted by file presence."
+    },
+    {
+      "class_id": "superseded_reports",
+      "current_truth_allowed": false,
+      "description": "Older reports are not current unless indexed."
+    },
+    {
+      "class_id": "future_deferred_capabilities",
+      "current_truth_allowed": false,
+      "description": "Local model membrane, real execution gateway, game/procedural engine inventory and other deferred capabilities."
+    }
+  ],
+  "classification_patterns": {
+    "negative_examples": [
+      "NEGATIVE",
+      "NEGATIVE_LESSONS",
+      "bad",
+      "rejected"
+    ],
+    "quarantine_residents": [
+      "QUARANTINE",
+      "quarantine"
+    ],
+    "legacy_history": [
+      "FIXTURES",
+      "LESSONS",
+      "HISTORY",
+      "ARCHIVE"
+    ],
+    "future_deferred_capabilities": [
+      "FUTURE_DEFERRED",
+      "LOCAL_MODEL_MEMBRANE",
+      "REAL_EXECUTION_GATEWAY",
+      "GAME_ENGINE"
+    ]
+  },
+  "required_previous_gate_states": {
+    "G1_IDENTITY_MANIFEST": "PASS_BASELINE",
+    "G2_FUNCTIONS_REGISTRY": "PASS_BASELINE",
+    "G3_CAPABILITY_EVIDENCE": "PASS_BASELINE",
+    "G4_PERSONAL_VALIDATORS": "PASS_BASELINE",
+    "G5_CURRENT_TRUTH_RECEIPTS": "PASS_BASELINE"
+  },
+  "state_after_pass": {
+    "G6_RESIDENCY_TRUST": "PASS_BASELINE",
+    "six_gate_baseline_closure_claim": true,
+    "organ_assembly_claim": false,
+    "custodes_prosecution_claim": false,
+    "throne_crown_claim": false
+  },
+  "local_model_membrane_status": "DEFERRED_AFTER_CORE_V1"
+}
