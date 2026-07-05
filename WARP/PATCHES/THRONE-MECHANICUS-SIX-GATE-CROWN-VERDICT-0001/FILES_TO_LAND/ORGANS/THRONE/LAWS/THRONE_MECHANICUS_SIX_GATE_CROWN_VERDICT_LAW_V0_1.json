@@ -1,0 +1,30 @@
+{
+  "law_id": "THRONE_MECHANICUS_SIX_GATE_CROWN_VERDICT_LAW_V0_1",
+  "version": "0.1",
+  "patch_id": "THRONE-MECHANICUS-SIX-GATE-CROWN-VERDICT-0001",
+  "authority": "THRONE",
+  "target_organ_id": "MECHANICUS",
+  "purpose": "Allow Throne to crown Mechanicus six-gate baseline only after Custodes prosecution passes and no overclaim remains.",
+  "required_preconditions": [
+    "Mechanicus current truth index exists and shows six PASS_BASELINE gates.",
+    "Custodes Mechanicus prosecutor summary/report/receipt exist and pass.",
+    "real_execution_enabled_count is zero.",
+    "local_model_membrane_status is DEFERRED_AFTER_CORE_V1.",
+    "Core v1 completion is not claimed."
+  ],
+  "allowed_claims_after_pass": [
+    "MECHANICUS_SIX_GATE_BASELINE_THRONE_CROWNED",
+    "MECHANICUS_ASSEMBLED_BASELINE_FOR_CORE_V1_FOUNDATION"
+  ],
+  "forbidden_claims_after_pass": [
+    "CORE_V1_COMPLETE",
+    "REAL_EXECUTION_GATEWAY_READY",
+    "LOCAL_MODEL_MEMBRANE_READY",
+    "UNIVERSAL_REPRODUCIBLE_BUILD_PROOF",
+    "CUSTODES_OR_THRONE_FOR_OTHER_ORGANS_COMPLETE"
+  ],
+  "local_model_membrane": {
+    "status": "DEFERRED_AFTER_CORE_V1",
+    "may_not_validate_or_execute": true
+  }
+}

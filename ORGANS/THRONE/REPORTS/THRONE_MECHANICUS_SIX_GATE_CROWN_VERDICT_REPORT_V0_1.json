@@ -1,0 +1,162 @@
+{
+  "task_id": "THRONE-MECHANICUS-SIX-GATE-CROWN-VERDICT-0001",
+  "validator_id": "throne_mechanicus_six_gate_crown_verdict_validator.v0_1",
+  "verdict": "PASS_THRONE_MECHANICUS_SIX_GATE_CROWN_VERDICT_READY",
+  "generated_at_utc": "2026-07-05T23:42:05Z",
+  "target_organ_id": "MECHANICUS",
+  "throne_crown_status": "PASS_BASELINE_CROWN_VERDICT",
+  "mechanicus_assembly_status": "ASSEMBLED_BASELINE_THRONE_CROWNED_NOT_CORE_V1_COMPLETE",
+  "mechanicus_six_gate_baseline_status": "PASS_BASELINE",
+  "pass_baseline_gate_count": 6,
+  "custodes_prosecution_status": "PASS_BASELINE_PROSECUTION",
+  "real_execution_enabled_count": 0,
+  "local_model_membrane_status": "DEFERRED_AFTER_CORE_V1",
+  "core_v1_complete_claim": false,
+  "real_execution_gateway_ready": false,
+  "local_model_membrane_ready": false,
+  "throne_crown_claim": true,
+  "mechanicus_baseline_assembly_claim": true,
+  "current_truth_index_version": "0.4",
+  "manifest_version": "0.8",
+  "gate_states": {
+    "G1_IDENTITY_MANIFEST": "PASS_BASELINE",
+    "G2_FUNCTIONS_REGISTRY": "PASS_BASELINE",
+    "G3_CAPABILITY_EVIDENCE": "PASS_BASELINE",
+    "G4_PERSONAL_VALIDATORS": "PASS_BASELINE",
+    "G5_CURRENT_TRUTH_RECEIPTS": "PASS_BASELINE",
+    "G6_RESIDENCY_TRUST": "PASS_BASELINE"
+  },
+  "throne_findings": [
+    {
+      "finding_id": "THRONE_SEES_SIX_BASELINE_GATES",
+      "status": "PASS",
+      "details": {
+        "G1_IDENTITY_MANIFEST": "PASS_BASELINE",
+        "G2_FUNCTIONS_REGISTRY": "PASS_BASELINE",
+        "G3_CAPABILITY_EVIDENCE": "PASS_BASELINE",
+        "G4_PERSONAL_VALIDATORS": "PASS_BASELINE",
+        "G5_CURRENT_TRUTH_RECEIPTS": "PASS_BASELINE",
+        "G6_RESIDENCY_TRUST": "PASS_BASELINE"
+      }
+    },
+    {
+      "finding_id": "THRONE_SEES_CUSTODES_PROSECUTION",
+      "status": "PASS",
+      "details": {
+        "custodes_prosecution_status": "PASS_BASELINE_PROSECUTION"
+      }
+    },
+    {
+      "finding_id": "THRONE_SEES_REAL_EXECUTION_DISABLED",
+      "status": "PASS",
+      "details": {
+        "real_execution_enabled_count": 0
+      }
+    },
+    {
+      "finding_id": "THRONE_SEES_LOCAL_MODEL_DEFERRED",
+      "status": "PASS",
+      "details": {
+        "local_model_membrane_status": "DEFERRED_AFTER_CORE_V1"
+      }
+    },
+    {
+      "finding_id": "THRONE_REJECTS_CORE_V1_OVERCLAIM",
+      "status": "PASS",
+      "details": {
+        "core_v1_complete_claim": false
+      }
+    },
+    {
+      "finding_id": "THRONE_ACCEPTS_MECHANICUS_BASELINE_ASSEMBLY_ONLY",
+      "status": "PASS",
+      "details": {
+        "mechanicus_assembly_status": "ASSEMBLED_BASELINE_THRONE_CROWNED_NOT_CORE_V1_COMPLETE"
+      }
+    }
+  ],
+  "custodes_prosecutor_findings": [
+    {
+      "finding_id": "MECH_IDENTITY_AND_FUNCTIONS_BOUND",
+      "status": "PASS"
+    },
+    {
+      "finding_id": "MECH_CAPABILITIES_EVIDENCE_BOUND",
+      "status": "PASS"
+    },
+    {
+      "finding_id": "MECH_PERSONAL_VALIDATORS_BASELINE_PRESENT",
+      "status": "PASS"
+    },
+    {
+      "finding_id": "MECH_CURRENT_TRUTH_INDEX_PRESENT",
+      "status": "PASS"
+    },
+    {
+      "finding_id": "MECH_RESIDENCY_NON_CURRENT_CLASSES_BOUNDED",
+      "status": "PASS"
+    },
+    {
+      "finding_id": "MECH_NO_REAL_EXECUTION_ENABLED",
+      "status": "PASS"
+    },
+    {
+      "finding_id": "MECH_NO_THRONE_OR_ASSEMBLY_OVERCLAIM",
+      "status": "PASS"
+    }
+  ],
+  "resident_classes": {
+    "resident_file_count": 575,
+    "negative_examples": [
+      "ORGANS/MECHANICUS/NEGATIVE_LESSONS/.gitkeep",
+      "ORGANS/MECHANICUS/RECEIPTS/mechanicus_strict_build_lane_validator_false_negative_hotfix_receipt.json",
+      "ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_VALIDATOR_FALSE_NEGATIVE_HOTFIX_REPORT_V0_1.md",
+      "ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_VALIDATOR_FALSE_NEGATIVE_HOTFIX_SUMMARY_V0_1.json",
+      "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_strict_build_lane_validator_false_negative_hotfix.py",
+      "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/negative_fixtures_report.md",
+      "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1/negative_fixtures_report.md"
+    ],
+    "quarantine_residents": [
+      "ORGANS/MECHANICUS/RECEIPTS/root_quarantine_longpath_compaction_receipt.json",
+      "ORGANS/MECHANICUS/REPORTS/ROOT_QUARANTINE_LONGPATH_COMPACTION_REPORT_V0_1.md",
+      "ORGANS/MECHANICUS/VALIDATORS/validate_root_quarantine_longpath_compaction.py"
+    ],
+    "legacy_history": [
+      "ORGANS/MECHANICUS/LESSONS/.gitkeep",
+      "ORGANS/MECHANICUS/NEGATIVE_LESSONS/.gitkeep",
+      "ORGANS/MECHANICUS/FIXTURES/EXTERNAL_FINALIZATION_SEMANTICS_V0_1/01_self_head_paradox_present.json",
+      "ORGANS/MECHANICUS/FIXTURES/EXTERNAL_FINALIZATION_SEMANTICS_V0_1/02_guessed_self_hash_used_as_final_head.json",
+      "ORGANS/MECHANICUS/FIXTURES/EXTERNAL_FINALIZATION_SEMANTICS_V0_1/03_external_finalization_receipt_valid.json",
+      "ORGANS/MECHANICUS/FIXTURES/EXTERNAL_FINALIZATION_SEMANTICS_V0_1/04_missing_external_delivery_head.json",
+      "ORGANS/MECHANICUS/FIXTURES/EXTERNAL_FINALIZATION_SEMANTICS_V0_1/05_cap_closed_without_closure_evidence.json",
+      "ORGANS/MECHANICUS/FIXTURES/EXTERNAL_FINALIZATION_SEMANTICS_V0_1/06_replay_state_none_but_replay_exists.json",
+      "ORGANS/MECHANICUS/FIXTURES/EXTERNAL_FINALIZATION_SEMANTICS_V0_1/07_replay_claim_current_target_mismatch.json",
+      "ORGANS/MECHANICUS/FIXTURES/EXTERNAL_FINALIZATION_SEMANTICS_V0_1/08_stale_replay_only_precise_state.json",
+      "ORGANS/MECHANICUS/FIXTURES/EXTERNAL_FINALIZATION_SEMANTICS_V0_1/09_clean_pass_with_contradictory_semantics.json",
+      "ORGANS/MECHANICUS/FIXTURES/EXTERNAL_FINALIZATION_SEMANTICS_V0_1/10_valid_pass_with_warnings_external_pending.json",
+      "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MATRIX-SPINE-RECEIPT-HEAD-CONSISTENCY-AND-INDEPENDENT-REPLAY-GATE-VM3-V0_1/negative_fixtures_report.md",
+      "ORGANS/MECHANICUS/REPORTS/TASK-NEWGEN-MECHANICUS-MATRIX-SPINE-STATUS-NORMALIZATION-AND-RUNTIME-CORRIDOR-PROOF-VM3-V0_1/negative_fixtures_report.md"
+    ],
+    "future_deferred_capabilities": []
+  },
+  "non_current_classes": [
+    "legacy_history",
+    "negative_examples",
+    "quarantine_residents",
+    "superseded_reports",
+    "future_deferred_capabilities"
+  ],
+  "next_gate_count": 0,
+  "post_crown_deferred_work": [
+    "MECHANICUS-DEPENDENCY-INVENTORY-0001",
+    "MECHANICUS-CODE-CLEANLINESS-LANES-0001",
+    "MECHANICUS-SAFE-EXECUTION-GATEWAY-0001",
+    "LOCAL-MODEL-MEMBRANE-AFTER-CORE-V1"
+  ],
+  "errors": [],
+  "warnings": [
+    "Throne crowns Mechanicus baseline assembly only; this is not Core v1 completion.",
+    "Real execution gateway, dependency/code-cleanliness expansion and local model membrane remain future/deferred work.",
+    "This crown verdict applies to Mechanicus only, not to all Great Nine organs."
+  ]
+}
