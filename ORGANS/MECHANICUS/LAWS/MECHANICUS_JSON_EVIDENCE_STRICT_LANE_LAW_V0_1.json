@@ -1,0 +1,30 @@
+{
+  "law_id": "MECHANICUS_JSON_EVIDENCE_STRICT_LANE_LAW_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-JSON-EVIDENCE-STRICT-LANE-0001",
+  "owner_intent": [
+    "JSON/JSONL evidence is the blood ledger of Imperium receipts, matrices, reports and gates.",
+    "Mechanicus must separate canonical JSON evidence from negative fixtures, quarantine records and patch payload candidates.",
+    "Malformed fixtures and quarantine debt must remain visible; only canonical parse debt blocks readiness."
+  ],
+  "core_laws": [
+    "Canonical evidence JSON must parse cleanly.",
+    "JSONL must contain exactly one JSON value per non-empty line.",
+    "Expected negative fixtures must be classified, not fixed.",
+    "Quarantine evidence debt must be reported, not silently counted as current source failure.",
+    "Strict JSON lane pass is not schema correctness, semantic correctness, or full evidence truth."
+  ],
+  "classes": {
+    "canonical_evidence": "current non-patch JSON/JSONL outside fixtures and quarantine",
+    "expected_negative_fixture": "malformed/invalid JSON fixtures used for validator tests",
+    "quarantine_evidence_debt": "historic/pending/quarantined records that are not current canonical evidence",
+    "patch_payload_candidate": "WARP patch files not yet landed as canonical evidence"
+  },
+  "not_claimed": [
+    "JSON schema correctness",
+    "semantic evidence truth",
+    "quarantine resolved",
+    "fixtures valid JSON",
+    "automatic repair"
+  ]
+}

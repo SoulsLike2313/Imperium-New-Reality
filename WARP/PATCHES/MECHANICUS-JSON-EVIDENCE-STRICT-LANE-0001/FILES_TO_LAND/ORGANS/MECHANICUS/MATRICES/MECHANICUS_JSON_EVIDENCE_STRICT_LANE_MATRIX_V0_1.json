@@ -1,0 +1,48 @@
+{
+  "matrix_id": "MECHANICUS_JSON_EVIDENCE_STRICT_LANE_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-JSON-EVIDENCE-STRICT-LANE-0001",
+  "score_total": 100,
+  "dimensions": [
+    {
+      "id": "canonical_json_parse_clean",
+      "weight": 35
+    },
+    {
+      "id": "jsonl_one_value_per_line",
+      "weight": 20
+    },
+    {
+      "id": "negative_fixtures_classified",
+      "weight": 15
+    },
+    {
+      "id": "quarantine_debt_visible",
+      "weight": 10
+    },
+    {
+      "id": "patch_payload_not_counted_as_canonical",
+      "weight": 10
+    },
+    {
+      "id": "no_auto_repair_without_owner",
+      "weight": 10
+    }
+  ],
+  "pass_condition": "canonical_parse_debt_count == 0",
+  "allowed_nonblocking_findings": [
+    "EXPECTED_NEGATIVE_FIXTURE",
+    "QUARANTINE_EVIDENCE_DEBT"
+  ],
+  "blocking_findings": [
+    "CANONICAL_EVIDENCE_PARSE_DEBT",
+    "PARSE_ERROR_HIDDEN",
+    "AUTO_REPAIR_WITHOUT_OWNER"
+  ],
+  "not_claimed": [
+    "schema validation",
+    "semantic validation",
+    "quarantine repair",
+    "receipt honesty"
+  ]
+}

@@ -3,8 +3,7 @@
   "repo_root": "E:\\IMPERIUM_REALITY",
   "lane_count": 10,
   "state_counts": {
-    "LANE_READY_BASELINE": 7,
-    "LANE_MEASURED_WITH_DEBT": 1,
+    "LANE_READY_BASELINE": 8,
     "LANE_FUTURE_CAPABILITY": 2
   },
   "lanes": [
@@ -63,15 +62,10 @@
           {
             "language": "Python",
             "lane_id": "python",
-            "files_checked": 385,
+            "files_checked": 393,
             "ok": true,
             "baseline_type": "py_compile_current_non_patch_python",
-            "errors": [],
-            "not_claimed": [
-              "ruff clean",
-              "mypy clean",
-              "pytest clean"
-            ]
+            "errors": []
           }
         ]
       },
@@ -147,12 +141,7 @@
             "ok": true,
             "baseline_type": "powershell_surface_and_toolchain_detection_no_parser_yet",
             "toolchain_ok": true,
-            "errors": [],
-            "not_claimed": [
-              "PowerShell parser clean",
-              "PSScriptAnalyzer clean",
-              "runner contract proof"
-            ]
+            "errors": []
           }
         ]
       },
@@ -231,17 +220,7 @@
             "ok": true,
             "baseline_type": "rust_surface_and_toolchain_detection_no_cargo_check",
             "toolchain_ok": true,
-            "cargo_manifests_detected": [
-              "ORGANS/IMPERIAL_IDE/COCKPIT/shell-rs/Cargo.toml",
-              "SUPPORT/APP_TAURI/src-tauri/Cargo.toml"
-            ],
-            "errors": [],
-            "not_claimed": [
-              "cargo check",
-              "cargo fmt",
-              "cargo clippy",
-              "cargo test"
-            ]
+            "errors": []
           }
         ]
       },
@@ -325,20 +304,7 @@
             "ok": true,
             "baseline_type": "node_frontend_surface_and_toolchain_detection_no_npm_build",
             "toolchain_ok": true,
-            "package_json_detected": [
-              "ORGANS/IMPERIAL_IDE/WEB_SANCTUM/package.json",
-              "ORGANS/IMPERIAL_IDE/COCKPIT/app-ts/package.json",
-              "SUPPORT/APP_TAURI/package.json",
-              "SUPPORT/QUARANTINE/ROOT_REPORTS_PENDING_HARNESS_INTAKE/REPORTS/TASK-20260520-SANCTUM-BRAIN-HARDENING-VISUAL-POLISH-PC-V0_2/package.json",
-              "SUPPORT/QUARANTINE/ROOT_REPORTS_PENDING_HARNESS_INTAKE/REPORTS/TASK-20260520-SANCTUM-PLAYWRIGHT-TRUTH-BRAIN-STRIKE-PC-V0_1/package.json"
-            ],
-            "errors": [],
-            "not_claimed": [
-              "npm build",
-              "eslint clean",
-              "tsc clean",
-              "npm audit clean"
-            ]
+            "errors": []
           }
         ]
       },
@@ -401,13 +367,7 @@
             "files_checked": 5,
             "ok": true,
             "baseline_type": "css_structural_brace_balance_current_non_patch",
-            "errors": [],
-            "not_claimed": [
-              "stylelint clean",
-              "token coverage",
-              "reference fidelity",
-              "no CSS monolith"
-            ]
+            "errors": []
           }
         ]
       },
@@ -429,7 +389,7 @@
         "JSONL"
       ],
       "purpose": "receipts, matrices, contracts, manifests, reports",
-      "state": "LANE_MEASURED_WITH_DEBT",
+      "state": "LANE_READY_BASELINE",
       "surface": {
         "raw": {
           "files": 3574,
@@ -476,29 +436,26 @@
       },
       "baseline_validation": {
         "baseline_present": true,
-        "ok": false,
+        "ok": true,
         "checks": [
           {
             "language": "JSON/JSONL",
             "lane_id": "json_evidence",
-            "files_checked": 3302,
-            "ok": false,
-            "baseline_type": "parse_all_current_non_patch_json",
-            "errors": [
-              {
-                "path": "ORGANS/ADMINISTRATUM/BUNDLE_GATE/FIXTURES/v0_2_malformed_required_json/CLAIM_LEDGER.json",
-                "error": "Expecting property name enclosed in double quotes: line 2 column 1 (char 2)"
-              },
-              {
-                "path": "SUPPORT/COMMON_IMPERIUM_SUPPORT/ROOT_IMPORTED_COMMON_SUPPORT/MATRIX_SPINE/FIXTURES/invalid_malformed_json_matrix.json",
-                "error": "Expecting property name enclosed in double quotes: line 5 column 1 (char 111)"
-              },
-              {
-                "path": "SUPPORT/QUARANTINE/ROOT_REPORTS_PENDING_HARNESS_INTAKE/REPORTS/TASK-20260521-NEWGEN-ASTRONOMICON-TASK-FORMATION-PC-V0_1/STEP_PROOF_RECORDS.jsonl",
-                "error": "Extra data: line 1 column 741 (char 740)"
-              }
-            ],
-            "debt_kind": "governance_evidence_parse_debt"
+            "files_checked": 3642,
+            "ok": true,
+            "baseline_type": "json_evidence_strict_lane_canonical_parse_with_classified_debt",
+            "errors": [],
+            "strict_lane_report": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_JSON_EVIDENCE_STRICT_LANE_REPORT_V0_1.json",
+            "classified_nonblocking_debt": {
+              "expected_negative_fixture_count": 2,
+              "quarantine_parse_debt_count": 1,
+              "patch_candidate_parse_error_count": 0
+            },
+            "not_claimed": [
+              "schema correctness",
+              "semantic evidence truth",
+              "receipt honesty"
+            ]
           }
         ]
       },
@@ -565,14 +522,10 @@
           {
             "language": "Markdown",
             "lane_id": "markdown_docs",
-            "files_checked": 1375,
+            "files_checked": 1381,
             "ok": true,
             "baseline_type": "non_empty_markdown_current_non_patch",
-            "errors": [],
-            "not_claimed": [
-              "markdownlint clean",
-              "link integrity"
-            ]
+            "errors": []
           }
         ]
       },

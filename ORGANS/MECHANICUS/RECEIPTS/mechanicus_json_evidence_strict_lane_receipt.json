@@ -1,0 +1,157 @@
+{
+  "receipt_id": "receipt.mechanicus.json_evidence_strict_lane.v0_1",
+  "task_id": "MECHANICUS-JSON-EVIDENCE-STRICT-LANE-0001",
+  "validator_id": "mechanicus_json_evidence_strict_lane_validator.v0_1",
+  "verdict": "PASS_MECHANICUS_JSON_EVIDENCE_STRICT_LANE_READY",
+  "generated_at_utc": "2026-07-05T15:05:16Z",
+  "checks": [
+    {
+      "name": "json_evidence_law_exists_and_declares_boundaries",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/LAWS/MECHANICUS_JSON_EVIDENCE_STRICT_LANE_LAW_V0_1.json"
+      }
+    },
+    {
+      "name": "json_evidence_matrix_exists_and_declares_boundaries",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_JSON_EVIDENCE_STRICT_LANE_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "custodes_json_evidence_matrix_exists_and_declares_boundaries",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/CUSTODES/MATRICES/CUSTODES_MECHANICUS_JSON_EVIDENCE_STRICT_LANE_PROSECUTOR_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "throne_json_evidence_matrix_exists_and_declares_boundaries",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/MATRICES/THRONE_MECHANICUS_JSON_EVIDENCE_STRICT_LANE_CROWN_GATE_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "json_evidence_strict_scanner_installed",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/scan_mechanicus_json_evidence_strict_lane.py"
+      }
+    },
+    {
+      "name": "language_dispatch_is_json_strict_lane_aware",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/run_language_validation_dispatch.py"
+      }
+    },
+    {
+      "name": "json_strict_scanner_runs_and_writes_report",
+      "status": "PASS",
+      "details": {
+        "run": {
+          "exit_code": 0,
+          "stdout_tail": "{\n  \"tool_id\": \"mechanicus_json_evidence_strict_lane_scanner.v0_1\",\n  \"generated_at_utc\": \"2026-07-05T15:04:41Z\",\n  \"repo_root\": \"E:\\\\IMPERIUM_REALITY\",\n  \"files_checked\": 3641,\n  \"parse_error_count\": 3,\n  \"counts_by_class\": {\n    \"CANONICAL_EVIDENCE\": 2172,\n    \"EXPECTED_NEGATIVE_FIXTURE\": 79,\n    \"QUARANTINE_EVIDENCE_DEBT\": 1077,\n    \"PATCH_PAYLOAD_CANDIDATE\": 313\n  },\n  \"counts_by_error_class\": {\n    \"EXPECTED_NEGATIVE_FIXTURE\": 2,\n    \"QUARANTINE_EVIDENCE_DEBT\": 1\n  },\n  \"canonical_parse_debt_count\": 0,\n  \"expected_negative_fixture_count\": 2,\n  \"quarantine_parse_debt_count\": 1,\n  \"patch_candidate_parse_error_count\": 0,\n  \"canonical_parse_debt\": [],\n  \"expected_negative_fixtures\": [\n    {\n      \"path\": \"ORGANS/ADMINISTRATUM/BUNDLE_GATE/FIXTURES/v0_2_malformed_required_json/CLAIM_LEDGER.json\",\n      \"evidence_class\": \"EXPECTED_NEGATIVE_FIXTURE\",\n      \"parser_mode\": \"json_parse\",\n      \"error\": \"Expecting property name enclosed in double quotes: line 2 column 1 (char 2)\"\n    },\n    {\n      \"path\": \"SUPPORT/COMMON_IMPERIUM_SUPPORT/ROOT_IMPORTED_COMMON_SUPPORT/MATRIX_SPINE/FIXTURES/invalid_malformed_json_matrix.json\",\n      \"evidence_class\": \"EXPECTED_NEGATIVE_FIXTURE\",\n      \"parser_mode\": \"json_parse\",\n      \"error\": \"Expecting property name enclosed in double quotes: line 5 column 1 (char 111)\"\n    }\n  ],\n  \"quarantine_parse_debt\": [\n    {\n      \"path\": \"SUPPORT/QUARANTINE/ROOT_REPORTS_PENDING_HARNESS_INTAKE/REPORTS/TASK-20260521-NEWGEN-ASTRONOMICON-TASK-FORMATION-PC-V0_1/STEP_PROOF_RECORDS.jsonl\",\n      \"evidence_class\": \"QUARANTINE_EVIDENCE_DEBT\",\n      \"parser_mode\": \"jsonl_one_json_value_per_nonempty_line\",\n      \"error\": \"Extra data: line 1 column 741 (char 740)\"\n    }\n  ],\n  \"patch_candidate_parse_errors\": [],\n  \"json_evidence_lane_state\": \"LANE_READY_BASELINE\",\n  \"verdict\": \"PASS_JSON_EVIDENCE_CANONICAL_STRICT_CLEAN_WITH_CLASSIFIED_DEBT\",\n  \"not_claimed\": [\n    \"schema correctness\",\n    \"semantic evidence truth\",\n    \"quarantine repaired\",\n    \"fixtures valid\",\n    \"receipt honesty\"\n  ],\n  \"warnings\": [\n    \"Expected negative fixtures are classified and do not block canonical JSON readiness.\",\n    \"Quarantine parse debt remains visible and is not erased.\",\n    \"This is parse strictness only, not schema or semantic validation.\"\n  ]\n}\n",
+          "stderr_tail": ""
+        },
+        "load_error": null,
+        "verdict": "PASS_JSON_EVIDENCE_CANONICAL_STRICT_CLEAN_WITH_CLASSIFIED_DEBT"
+      }
+    },
+    {
+      "name": "canonical_json_parse_debt_is_zero",
+      "status": "PASS",
+      "details": {
+        "canonical_parse_debt_count": 0,
+        "canonical_parse_debt": []
+      }
+    },
+    {
+      "name": "noncanonical_parse_errors_are_classified_visible",
+      "status": "PASS",
+      "details": {
+        "parse_error_count": 3,
+        "expected_negative_fixture_count": 2,
+        "quarantine_parse_debt_count": 1
+      }
+    },
+    {
+      "name": "language_dispatch_runs_after_json_strict_lane",
+      "status": "PASS",
+      "details": {
+        "run": {
+          "exit_code": 0,
+          "stdout_tail": "{\n  \"tool_id\": \"mechanicus_language_validator_dispatch_baseline.v0_4_json_strict_lane_aware\",\n  \"repo_root\": \"E:\\\\IMPERIUM_REALITY\",\n  \"mode\": \"LANE_EXPANDED_BASELINE_WITH_JSON_STRICT_CLASSIFICATION\",\n  \"checks\": [\n    {\n      \"language\": \"JSON/JSONL\",\n      \"lane_id\": \"json_evidence\",\n      \"files_checked\": 3642,\n      \"ok\": true,\n      \"baseline_type\": \"json_evidence_strict_lane_canonical_parse_with_classified_debt\",\n      \"errors\": [],\n      \"strict_lane_report\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_JSON_EVIDENCE_STRICT_LANE_REPORT_V0_1.json\",\n      \"classified_nonblocking_debt\": {\n        \"expected_negative_fixture_count\": 2,\n        \"quarantine_parse_debt_count\": 1,\n        \"patch_candidate_parse_error_count\": 0\n      },\n      \"not_claimed\": [\n        \"schema correctness\",\n        \"semantic evidence truth\",\n        \"receipt honesty\"\n      ]\n    },\n    {\n      \"language\": \"TOML\",\n      \"lane_id\": \"toml_config\",\n      \"files_checked\": 2,\n      \"ok\": true,\n      \"baseline_type\": \"parse_all_current_toml\",\n      \"errors\": []\n    },\n    {\n      \"language\": \"Python\",\n      \"lane_id\": \"python\",\n      \"files_checked\": 393,\n      \"ok\": true,\n      \"baseline_type\": \"py_compile_current_non_patch_python\",\n      \"errors\": []\n    },\n    {\n      \"language\": \"Markdown\",\n      \"lane_id\": \"markdown_docs\",\n      \"files_checked\": 1381,\n      \"ok\": true,\n      \"baseline_type\": \"non_empty_markdown_current_non_patch\",\n      \"errors\": []\n    },\n    {\n      \"language\": \"PowerShell\",\n      \"lane_id\": \"powershell\",\n      \"files_checked\": 51,\n      \"ok\": true,\n      \"baseline_type\": \"powershell_surface_and_toolchain_detection_no_parser_yet\",\n      \"toolchain_ok\": true,\n      \"errors\": []\n    },\n    {\n      \"language\": \"Rust\",\n      \"lane_id\": \"rust\",\n      \"files_checked\": 5,\n      \"ok\": true,\n      \"baseline_type\": \"rust_surface_and_toolchain_detection_no_cargo_check\",\n      \"toolchain_ok\": true,\n      \"errors\": []\n    },\n    {\n      \"language\": \"JavaScript/TypeScript\",\n      \"lane_id\": \"node_frontend\",\n      \"files_checked\": 22,\n      \"ok\": true,\n      \"baseline_type\": \"node_frontend_surface_and_toolchain_detection_no_npm_build\",\n      \"toolchain_ok\": true,\n      \"errors\": []\n    },\n    {\n      \"language\": \"CSS\",\n      \"lane_id\": \"css_ui\",\n      \"files_checked\": 5,\n      \"ok\": true,\n      \"baseline_type\": \"css_structural_brace_balance_current_non_patch\",\n      \"errors\": []\n    }\n  ],\n  \"all_baseline_checks_clean\": true,\n  \"validation_debt\": [],\n  \"verdict\": \"PASS_BASELINE_CLEAN_FOR_IMPLEMENTED_LANE_CHECKS\",\n  \"not_claimed\": [\n    \"100% code cleanliness\",\n    \"all strict build lanes passed\",\n    \"JSON semantic truth\"\n  ],\n  \"warnings\": [\n    \"JSON evidence uses strict classification: canonical parse debt blocks; fixtures/quarantine remain visible but nonblocking for canonical readiness.\"\n  ]\n}\n",
+          "stderr_tail": ""
+        },
+        "load_error": null
+      }
+    },
+    {
+      "name": "dispatch_json_evidence_lane_is_ok_after_classification",
+      "status": "PASS",
+      "details": {
+        "json_checks": [
+          {
+            "language": "JSON/JSONL",
+            "lane_id": "json_evidence",
+            "files_checked": 3642,
+            "ok": true,
+            "baseline_type": "json_evidence_strict_lane_canonical_parse_with_classified_debt",
+            "errors": [],
+            "strict_lane_report": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_JSON_EVIDENCE_STRICT_LANE_REPORT_V0_1.json",
+            "classified_nonblocking_debt": {
+              "expected_negative_fixture_count": 2,
+              "quarantine_parse_debt_count": 1,
+              "patch_candidate_parse_error_count": 0
+            },
+            "not_claimed": [
+              "schema correctness",
+              "semantic evidence truth",
+              "receipt honesty"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "strict_language_lane_readout_tool_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/generate_strict_language_lane_readout.py"
+      }
+    },
+    {
+      "name": "strict_language_lane_readout_runs_after_json_strict_lane",
+      "status": "PASS",
+      "details": {
+        "run": {
+          "exit_code": 0,
+          "stdout_tail": "st_not_claim\": [\n        \"machine proof without JSON receipt\"\n      ]\n    },\n    {\n      \"lane_id\": \"toml_config\",\n      \"language_names\": [\n        \"TOML\"\n      ],\n      \"purpose\": \"Cargo and project configuration\",\n      \"state\": \"LANE_READY_BASELINE\",\n      \"surface\": {\n        \"raw\": {\n          \"files\": 3,\n          \"total_lines\": 47,\n          \"code_lines\": 39,\n          \"languages\": [\n            \"TOML\"\n          ]\n        },\n        \"source_runtime\": {\n          \"files\": 2,\n          \"total_lines\": 32,\n          \"code_lines\": 26,\n          \"languages\": [\n            \"TOML\"\n          ]\n        },\n        \"governance_evidence\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        }\n      },\n      \"toolchain\": {\n        \"required_probe_names\": [\n          \"python_version\"\n        ],\n        \"all_observed_ok\": true,\n        \"observed\": [\n          {\n            \"name\": \"python_version\",\n            \"ok\": true,\n            \"exit_code\": 0,\n            \"which\": \"C:\\\\Users\\\\PC\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe\",\n            \"stderr\": \"\"\n          }\n        ]\n      },\n      \"baseline_validation\": {\n        \"baseline_present\": true,\n        \"ok\": true,\n        \"checks\": [\n          {\n            \"language\": \"TOML\",\n            \"lane_id\": \"toml_config\",\n            \"files_checked\": 2,\n            \"ok\": true,\n            \"baseline_type\": \"parse_all_current_toml\",\n            \"errors\": []\n          }\n        ]\n      },\n      \"strict_layers_future\": [\n        \"cargo_manifest_semantics\",\n        \"dependency_policy\"\n      ],\n      \"must_not_claim\": [\n        \"Rust readiness from TOML parse\"\n      ]\n    },\n    {\n      \"lane_id\": \"go_future\",\n      \"language_names\": [\n        \"Go\"\n      ],\n      \"purpose\": \"future portable CLI workers and fast simple tools\",\n      \"state\": \"LANE_FUTURE_CAPABILITY\",\n      \"surface\": {\n        \"raw\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        },\n        \"source_runtime\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        },\n        \"governance_evidence\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        }\n      },\n      \"toolchain\": {\n        \"required_probe_names\": [\n          \"go_version\"\n        ],\n        \"all_observed_ok\": false,\n        \"observed\": [\n          {\n            \"name\": \"go_version\",\n            \"ok\": false,\n            \"exit_code\": null,\n            \"which\": null,\n            \"stderr\": \"executable not found in PATH\"\n          }\n        ]\n      },\n      \"baseline_validation\": {\n        \"baseline_present\": false,\n        \"ok\": false,\n        \"checks\": []\n      },\n      \"strict_layers_future\": [\n        \"go_fmt\",\n        \"go_vet\",\n        \"go_test\",\n        \"go_build\"\n      ],\n      \"must_not_claim\": [\n        \"available while go toolchain missing\"\n      ]\n    },\n    {\n      \"lane_id\": \"cpp_future\",\n      \"language_names\": [\n        \"C++\",\n        \"C\",\n        \"C/C++ Header\"\n      ],\n      \"purpose\": \"future deep optimization after profiling proves need\",\n      \"state\": \"LANE_FUTURE_CAPABILITY\",\n      \"surface\": {\n        \"raw\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        },\n        \"source_runtime\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        },\n        \"governance_evidence\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        }\n      },\n      \"toolchain\": {\n        \"required_probe_names\": [\n          \"cmake_version\"\n        ],\n        \"all_observed_ok\": false,\n        \"observed\": [\n          {\n            \"name\": \"cmake_version\",\n            \"ok\": false,\n            \"exit_code\": null,\n            \"which\": null,\n            \"stderr\": \"executable not found in PATH\"\n          }\n        ]\n      },\n      \"baseline_validation\": {\n        \"baseline_present\": false,\n        \"ok\": false,\n        \"checks\": []\n      },\n      \"strict_layers_future\": [\n        \"cmake_build\",\n        \"clang_format\",\n        \"clang_tidy\",\n        \"tests\"\n      ],\n      \"must_not_claim\": [\n        \"needed before profiling\"\n      ]\n    }\n  ],\n  \"verdict\": \"PASS_STRICT_LANGUAGE_LANES_MEASURED_WITH_DEBT\",\n  \"not_claimed\": [\n    \"100% clean\",\n    \"strict lanes complete\",\n    \"all toolchains available\",\n    \"all linter/type/security layers complete\",\n    \"cargo check pass\",\n    \"npm build pass\"\n  ],\n  \"warnings\": [\n    \"This is a lane foundation/readout, not strict cleanliness.\",\n    \"LANE_READY_BASELINE means only implemented baseline checks passed.\",\n    \"LANE_MEASURED_WITH_DEBT shows a real debt lane.\",\n    \"LANE_FOUNDATION_ONLY means no baseline check exists for that lane yet.\",\n    \"LANE_TOOLCHAIN_MISSING is capability debt.\"\n  ]\n}\n",
+          "stderr_tail": ""
+        },
+        "load_error": null
+      }
+    },
+    {
+      "name": "json_evidence_lane_state_is_ready_baseline",
+      "status": "PASS",
+      "details": {
+        "json_state": "LANE_READY_BASELINE"
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Expected negative fixtures classified: 2",
+    "Quarantine parse debt visible: 1",
+    "Expected negative fixtures are classified and do not block canonical JSON readiness.",
+    "Quarantine parse debt remains visible and is not erased.",
+    "This is parse strictness only, not schema or semantic validation."
+  ],
+  "strict_report": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_JSON_EVIDENCE_STRICT_LANE_REPORT_V0_1.json",
+  "dispatch_report": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_LANGUAGE_VALIDATION_BASELINE_V0_1.json",
+  "lane_readout": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_LANGUAGE_LANE_READOUT_V0_1.json"
+}
