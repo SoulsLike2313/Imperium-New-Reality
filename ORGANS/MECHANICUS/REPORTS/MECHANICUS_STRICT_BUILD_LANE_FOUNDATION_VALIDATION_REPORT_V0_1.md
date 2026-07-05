@@ -3,7 +3,7 @@
 task_id: `MECHANICUS-STRICT-BUILD-LANE-FOUNDATION-0001`  
 validator_id: `mechanicus_strict_build_lane_foundation_validator.v0_2_report_primary_false_negative_guard`  
 verdict: `PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION_READY`  
-generated_at_utc: `2026-07-05T18:43:51Z`
+generated_at_utc: `2026-07-05T20:45:56Z`
 
 ## Fix
 
@@ -40,9 +40,9 @@ No dependency installation is attempted.
 
 ## Warnings
 
-- Runner process exit code 1 disagreed with PASS report; false-negative guard used report truth.
 - Strict build lane foundation does not install dependencies.
 - Build proof is separate from code cleanliness and runtime proof.
+- Local host pass is not universal host readiness.
 - Planner recommended demand after build lane: warp_runner_or_windows_operator score=92.45 verdict=RECOMMENDED_PRIMARY_STACK
 - Remaining planner gap: GAME_ENGINE_CAPABILITY_NOT_INVENTORIED => OWNER_VISIBLE_GAP
 - Remaining planner gap: UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI => CONDITIONAL_GAP

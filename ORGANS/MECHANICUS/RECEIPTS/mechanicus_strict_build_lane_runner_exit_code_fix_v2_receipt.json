@@ -1,0 +1,115 @@
+{
+  "receipt_id": "receipt.mechanicus.strict_build_lane_runner_exit_code_fix_v2.v0_1",
+  "task_id": "MECHANICUS-STRICT-BUILD-LANE-RUNNER-EXIT-CODE-FIX-0002",
+  "validator_id": "mechanicus_strict_build_lane_runner_exit_code_fix_validator.v0_2_full_replacement",
+  "verdict": "PASS_MECHANICUS_STRICT_BUILD_LANE_RUNNER_EXIT_CODE_FIX_V2_READY",
+  "generated_at_utc": "2026-07-05T20:45:56Z",
+  "checks": [
+    {
+      "name": "runner_v0_2_full_replacement_installed_with_legacy_marker",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/run_mechanicus_strict_build_lane.py"
+      }
+    },
+    {
+      "name": "runner_exit_code_zero_when_report_passes",
+      "status": "PASS",
+      "details": {
+        "runner_exit_code": 0,
+        "report_verdict": "PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION",
+        "blocking_failure_count": 0,
+        "stdout_tail": "{\n  \"tool_id\": \"mechanicus_strict_build_lane_foundation_runner.v0_2_exit_code_consistent\",\n  \"verdict\": \"PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION\",\n  \"target_count\": 4,\n  \"blocking_failure_count\": 0,\n  \"foundation_debt_count\": 0,\n  \"expected_exit_code\": 0,\n  \"targets\": [\n    {\n      \"target_id\": \"python_compile_current_non_patch\",\n      \"lane\": \"python_compile\",\n      \"detected\": true,\n      \"ok\": true,\n      \"dependency_state\": null\n    },\n    {\n      \"target_id\": \"powershell_host_probe\",\n      \"lane\": \"powershell_host_probe\",\n      \"detected\": true,\n      \"ok\": true,\n      \"dependency_state\": null\n    },\n    {\n      \"target_id\": \"support_app_tauri_npm_build\",\n      \"lane\": \"tauri_frontend_npm_build\",\n      \"detected\": true,\n      \"ok\": true,\n      \"dependency_state\": \"node_modules_present\"\n    },\n    {\n      \"target_id\": \"support_app_tauri_cargo_check\",\n      \"lane\": \"tauri_rust_cargo_check\",\n      \"detected\": true,\n      \"ok\": true,\n      \"dependency_state\": null\n    }\n  ],\n  \"report\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_REPORT_V0_1.json\"\n}\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "all_detected_build_targets_still_pass",
+      "status": "PASS",
+      "details": {
+        "targets": [
+          {
+            "target_id": "python_compile_current_non_patch",
+            "lane": "python_compile",
+            "detected": true,
+            "ok": true,
+            "dependency_state": null
+          },
+          {
+            "target_id": "powershell_host_probe",
+            "lane": "powershell_host_probe",
+            "detected": true,
+            "ok": true,
+            "dependency_state": null
+          },
+          {
+            "target_id": "support_app_tauri_npm_build",
+            "lane": "tauri_frontend_npm_build",
+            "detected": true,
+            "ok": true,
+            "dependency_state": "node_modules_present"
+          },
+          {
+            "target_id": "support_app_tauri_cargo_check",
+            "lane": "tauri_rust_cargo_check",
+            "detected": true,
+            "ok": true,
+            "dependency_state": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "base_strict_build_validator_passes_after_runner_exit_fix",
+      "status": "PASS",
+      "details": {
+        "base_exit_code": 0,
+        "receipt_error": null,
+        "base_verdict": "PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION_READY",
+        "base_runner_exit_code": 0,
+        "stdout_tail": "{\n  \"task_id\": \"MECHANICUS-STRICT-BUILD-LANE-FOUNDATION-0001\",\n  \"validator_id\": \"mechanicus_strict_build_lane_foundation_validator.v0_2_report_primary_false_negative_guard\",\n  \"verdict\": \"PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION_READY\",\n  \"receipt\": \"ORGANS/MECHANICUS/RECEIPTS/mechanicus_strict_build_lane_foundation_receipt.json\",\n  \"summary\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_FOUNDATION_SUMMARY_V0_1.json\",\n  \"build_report\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_REPORT_V0_1.json\",\n  \"plan\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_TASK_TOOL_COMPOSITION_PLAN_V0_1.json\",\n  \"errors\": [],\n  \"warnings\": [\n    \"Strict build lane foundation does not install dependencies.\",\n    \"Build proof is separate from code cleanliness and runtime proof.\",\n    \"Local host pass is not universal host readiness.\",\n    \"Planner recommended demand after build lane: warp_runner_or_windows_operator score=92.45 verdict=RECOMMENDED_PRIMARY_STACK\",\n    \"Remaining planner gap: GAME_ENGINE_CAPABILITY_NOT_INVENTORIED => OWNER_VISIBLE_GAP\",\n    \"Remaining planner gap: UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI => CONDITIONAL_GAP\"\n  ]\n}\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "false_negative_warning_removed",
+      "status": "PASS",
+      "details": {
+        "base_warnings": [
+          "Strict build lane foundation does not install dependencies.",
+          "Build proof is separate from code cleanliness and runtime proof.",
+          "Local host pass is not universal host readiness.",
+          "Planner recommended demand after build lane: warp_runner_or_windows_operator score=92.45 verdict=RECOMMENDED_PRIMARY_STACK",
+          "Remaining planner gap: GAME_ENGINE_CAPABILITY_NOT_INVENTORIED => OWNER_VISIBLE_GAP",
+          "Remaining planner gap: UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI => CONDITIONAL_GAP"
+        ]
+      }
+    },
+    {
+      "name": "planner_still_has_no_strict_build_required_gap",
+      "status": "PASS",
+      "details": {
+        "missing_capabilities": [
+          "GAME_ENGINE_CAPABILITY_NOT_INVENTORIED",
+          "UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI"
+        ],
+        "plan_error": null
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Strict build lane foundation does not install dependencies.",
+    "Build proof is separate from code cleanliness and runtime proof.",
+    "Local host pass is not universal host readiness.",
+    "Planner recommended demand after build lane: warp_runner_or_windows_operator score=92.45 verdict=RECOMMENDED_PRIMARY_STACK",
+    "Remaining planner gap: GAME_ENGINE_CAPABILITY_NOT_INVENTORIED => OWNER_VISIBLE_GAP",
+    "Remaining planner gap: UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI => CONDITIONAL_GAP",
+    "Planner recommended demand after runner fix v2: warp_runner_or_windows_operator score=92.45 verdict=RECOMMENDED_PRIMARY_STACK",
+    "Remaining planner gap: GAME_ENGINE_CAPABILITY_NOT_INVENTORIED => OWNER_VISIBLE_GAP",
+    "Remaining planner gap: UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI => CONDITIONAL_GAP"
+  ],
+  "build_report": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_REPORT_V0_1.json",
+  "base_receipt": "ORGANS/MECHANICUS/RECEIPTS/mechanicus_strict_build_lane_foundation_receipt.json",
+  "plan": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TASK_TOOL_COMPOSITION_PLAN_V0_1.json"
+}

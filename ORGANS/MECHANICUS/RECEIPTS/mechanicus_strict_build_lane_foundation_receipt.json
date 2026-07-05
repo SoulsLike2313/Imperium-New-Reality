@@ -3,7 +3,7 @@
   "task_id": "MECHANICUS-STRICT-BUILD-LANE-FOUNDATION-0001",
   "validator_id": "mechanicus_strict_build_lane_foundation_validator.v0_2_report_primary_false_negative_guard",
   "verdict": "PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION_READY",
-  "generated_at_utc": "2026-07-05T18:43:51Z",
+  "generated_at_utc": "2026-07-05T20:45:56Z",
   "checks": [
     {
       "name": "strict_build_lane_runner_exists",
@@ -23,12 +23,12 @@
       "name": "strict_build_report_passes_with_zero_blocking_failures",
       "status": "PASS",
       "details": {
-        "runner_exit_code": 1,
+        "runner_exit_code": 0,
         "load_error": null,
         "verdict": "PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION",
         "blocking_failure_count": 0,
-        "stdout_tail": "",
-        "stderr_tail": "Traceback (most recent call last):\n  File \"E:\\IMPERIUM_REALITY\\ORGANS\\MECHANICUS\\TOOLS\\run_mechanicus_strict_build_lane.py\", line 63, in <module>\n    if __name__=='__main__': raise SystemExit(main())\n                                              ^^^^^^\n  File \"E:\\IMPERIUM_REALITY\\ORGANS\\MECHANICUS\\TOOLS\\run_mechanicus_strict_build_lane.py\", line 62, in main\n    wr(repo/args.out,rep); print(json.dumps(rep,ensure_ascii=False,indent=2,default=str)); return 0 if not fails else 1\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\encodings\\cp1251.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode character '\\u2713' in position 2311: character maps to <undefined>\n"
+        "stdout_tail": "{\n  \"tool_id\": \"mechanicus_strict_build_lane_foundation_runner.v0_2_exit_code_consistent\",\n  \"verdict\": \"PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION\",\n  \"target_count\": 4,\n  \"blocking_failure_count\": 0,\n  \"foundation_debt_count\": 0,\n  \"expected_exit_code\": 0,\n  \"targets\": [\n    {\n      \"target_id\": \"python_compile_current_non_patch\",\n      \"lane\": \"python_compile\",\n      \"detected\": true,\n      \"ok\": true,\n      \"dependency_state\": null\n    },\n    {\n      \"target_id\": \"powershell_host_probe\",\n      \"lane\": \"powershell_host_probe\",\n      \"detected\": true,\n      \"ok\": true,\n      \"dependency_state\": null\n    },\n    {\n      \"target_id\": \"support_app_tauri_npm_build\",\n      \"lane\": \"tauri_frontend_npm_build\",\n      \"detected\": true,\n      \"ok\": true,\n      \"dependency_state\": \"node_modules_present\"\n    },\n    {\n      \"target_id\": \"support_app_tauri_cargo_check\",\n      \"lane\": \"tauri_rust_cargo_check\",\n      \"detected\": true,\n      \"ok\": true,\n      \"dependency_state\": null\n    }\n  ],\n  \"report\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_REPORT_V0_1.json\"\n}\n",
+        "stderr_tail": ""
       }
     },
     {
@@ -96,7 +96,7 @@
           "target_id": "python_compile_current_non_patch",
           "lane": "python_compile",
           "detected": true,
-          "files_checked": 396,
+          "files_checked": 399,
           "ok": true,
           "errors": [],
           "not_claimed": [
@@ -121,8 +121,8 @@
             "pwsh": "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\pwsh.EXE"
           },
           "command_result": {
-            "started_at_utc": "2026-07-05T18:43:48Z",
-            "finished_at_utc": "2026-07-05T18:43:49Z",
+            "started_at_utc": "2026-07-05T20:45:54Z",
+            "finished_at_utc": "2026-07-05T20:45:54Z",
             "cmd": [
               "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\pwsh.EXE",
               "-NoLogo",
@@ -198,14 +198,14 @@
   ],
   "errors": [],
   "warnings": [
-    "Runner process exit code 1 disagreed with PASS report; false-negative guard used report truth.",
     "Strict build lane foundation does not install dependencies.",
     "Build proof is separate from code cleanliness and runtime proof.",
+    "Local host pass is not universal host readiness.",
     "Planner recommended demand after build lane: warp_runner_or_windows_operator score=92.45 verdict=RECOMMENDED_PRIMARY_STACK",
     "Remaining planner gap: GAME_ENGINE_CAPABILITY_NOT_INVENTORIED => OWNER_VISIBLE_GAP",
     "Remaining planner gap: UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI => CONDITIONAL_GAP"
   ],
   "build_report": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_REPORT_V0_1.json",
   "plan": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TASK_TOOL_COMPOSITION_PLAN_V0_1.json",
-  "runner_exit_code": 1
+  "runner_exit_code": 0
 }

@@ -1,0 +1,61 @@
+{
+  "receipt_id": "receipt.mechanicus.strict_build_lane_runner_exit_code_fix.v0_1",
+  "task_id": "MECHANICUS-STRICT-BUILD-LANE-RUNNER-EXIT-CODE-FIX-0001",
+  "validator_id": "mechanicus_strict_build_lane_runner_exit_code_fix_validator.v0_1",
+  "verdict": "FAIL_MECHANICUS_STRICT_BUILD_LANE_RUNNER_EXIT_CODE_FIX",
+  "generated_at_utc": "2026-07-05T20:31:21Z",
+  "checks": [
+    {
+      "name": "runner_exit_code_patcher_installed",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/patch_mechanicus_strict_build_lane_runner_exit_code.py"
+      }
+    },
+    {
+      "name": "runner_exit_code_patch_applies_cleanly",
+      "status": "FAIL",
+      "details": {
+        "run": {
+          "exit_code": 1,
+          "stdout_tail": "{\n  \"tool_id\": \"mechanicus_strict_build_lane_runner_exit_code_patcher.v0_1\",\n  \"generated_at_utc\": \"2026-07-05T20:31:21Z\",\n  \"verdict\": \"FAIL_MECHANICUS_STRICT_BUILD_LANE_RUNNER_EXIT_CODE_PATCH\",\n  \"runner\": \"ORGANS/MECHANICUS/TOOLS/run_mechanicus_strict_build_lane.py\",\n  \"changed\": false,\n  \"replacements\": [\n    \"tool_id_v0_2_with_legacy_marker\"\n  ],\n  \"errors\": [\n    \"could not insert configure_stdout\",\n    \"runner return contract pattern not found\",\n    \"runner missing required markers after patch: mechanicus_strict_build_lane_foundation_runner.v0_2_exit_code_consistent, LEGACY_VALIDATOR_MARKER, configure_stdout(), ensure_ascii=True, report.get(\\\"verdict\\\") == \\\"PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION\\\"\"\n  ],\n  \"warnings\": [\n    \"full report print pattern not found; stdout may already be patched or has different shape\"\n  ]\n}\n",
+          "stderr_tail": ""
+        },
+        "patch_report": {
+          "tool_id": "mechanicus_strict_build_lane_runner_exit_code_patcher.v0_1",
+          "generated_at_utc": "2026-07-05T20:31:21Z",
+          "verdict": "FAIL_MECHANICUS_STRICT_BUILD_LANE_RUNNER_EXIT_CODE_PATCH",
+          "runner": "ORGANS/MECHANICUS/TOOLS/run_mechanicus_strict_build_lane.py",
+          "changed": false,
+          "replacements": [
+            "tool_id_v0_2_with_legacy_marker"
+          ],
+          "errors": [
+            "could not insert configure_stdout",
+            "runner return contract pattern not found",
+            "runner missing required markers after patch: mechanicus_strict_build_lane_foundation_runner.v0_2_exit_code_consistent, LEGACY_VALIDATOR_MARKER, configure_stdout(), ensure_ascii=True, report.get(\"verdict\") == \"PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION\""
+          ],
+          "warnings": [
+            "full report print pattern not found; stdout may already be patched or has different shape"
+          ]
+        },
+        "load_error": null
+      }
+    },
+    {
+      "name": "runner_contains_v0_2_exit_code_and_legacy_validator_markers",
+      "status": "FAIL",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/run_mechanicus_strict_build_lane.py"
+      }
+    }
+  ],
+  "errors": [
+    "runner exit-code patch did not apply cleanly",
+    "runner markers incomplete after patch"
+  ],
+  "warnings": [],
+  "build_report": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_BUILD_LANE_REPORT_V0_1.json",
+  "base_receipt": "ORGANS/MECHANICUS/RECEIPTS/mechanicus_strict_build_lane_foundation_receipt.json",
+  "plan": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TASK_TOOL_COMPOSITION_PLAN_V0_1.json"
+}

@@ -1,13 +1,14 @@
 {
-  "tool_id": "mechanicus_strict_build_lane_foundation_runner.v0_1",
-  "generated_at_utc": "2026-07-05T18:43:51Z",
+  "tool_id": "mechanicus_strict_build_lane_foundation_runner.v0_2_exit_code_consistent",
+  "legacy_validator_marker": "mechanicus_strict_build_lane_foundation_runner.v0_1",
+  "generated_at_utc": "2026-07-05T20:45:56Z",
   "repo_root": "E:\\IMPERIUM_REALITY",
   "targets": [
     {
       "target_id": "python_compile_current_non_patch",
       "lane": "python_compile",
       "detected": true,
-      "files_checked": 396,
+      "files_checked": 399,
       "ok": true,
       "errors": [],
       "not_claimed": [
@@ -26,8 +27,8 @@
         "pwsh": "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\pwsh.EXE"
       },
       "command_result": {
-        "started_at_utc": "2026-07-05T18:43:48Z",
-        "finished_at_utc": "2026-07-05T18:43:49Z",
+        "started_at_utc": "2026-07-05T20:45:54Z",
+        "finished_at_utc": "2026-07-05T20:45:54Z",
         "cmd": [
           "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\pwsh.EXE",
           "-NoLogo",
@@ -58,8 +59,8 @@
       },
       "dependency_state": "node_modules_present",
       "command_result": {
-        "started_at_utc": "2026-07-05T18:43:49Z",
-        "finished_at_utc": "2026-07-05T18:43:50Z",
+        "started_at_utc": "2026-07-05T20:45:54Z",
+        "finished_at_utc": "2026-07-05T20:45:56Z",
         "cmd": [
           "cmd.exe",
           "/d",
@@ -70,7 +71,7 @@
         "cwd": "E:\\IMPERIUM_REALITY\\SUPPORT\\APP_TAURI",
         "exit_code": 0,
         "ok": true,
-        "stdout_tail": "\n> imperium-app-tauri@0.1.0 build\n> vite build\n\n\u001b[36mvite v5.4.21 \u001b[32mbuilding for production...\u001b[36m\u001b[39m\ntransforming...\n\u001b[32m✓\u001b[39m 6 modules transformed.\nrendering chunks...\ncomputing gzip size...\n\u001b[2mdist/\u001b[22m\u001b[32mindex.html                 \u001b[39m\u001b[1m\u001b[2m 0.40 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m │ gzip: 0.30 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[35massets/index-BaHd6r1U.css  \u001b[39m\u001b[1m\u001b[2m19.97 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m │ gzip: 5.10 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[36massets/index-D3aptHkS.js   \u001b[39m\u001b[1m\u001b[2m17.34 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m │ gzip: 6.55 kB\u001b[22m\n\u001b[32m✓ built in 175ms\u001b[39m\n",
+        "stdout_tail": "\n> imperium-app-tauri@0.1.0 build\n> vite build\n\n\u001b[36mvite v5.4.21 \u001b[32mbuilding for production...\u001b[36m\u001b[39m\ntransforming...\n\u001b[32m✓\u001b[39m 6 modules transformed.\nrendering chunks...\ncomputing gzip size...\n\u001b[2mdist/\u001b[22m\u001b[32mindex.html                 \u001b[39m\u001b[1m\u001b[2m 0.40 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m │ gzip: 0.30 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[35massets/index-BaHd6r1U.css  \u001b[39m\u001b[1m\u001b[2m19.97 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m │ gzip: 5.10 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[36massets/index-D3aptHkS.js   \u001b[39m\u001b[1m\u001b[2m17.34 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m │ gzip: 6.55 kB\u001b[22m\n\u001b[32m✓ built in 178ms\u001b[39m\n",
         "stderr_tail": ""
       },
       "errors": [],
@@ -78,6 +79,7 @@
         "npm test",
         "npm audit",
         "eslint",
+        "tsc unless part of build",
         "runtime proof"
       ]
     },
@@ -92,8 +94,8 @@
       },
       "manifest": "SUPPORT/APP_TAURI/src-tauri/Cargo.toml",
       "command_result": {
-        "started_at_utc": "2026-07-05T18:43:50Z",
-        "finished_at_utc": "2026-07-05T18:43:51Z",
+        "started_at_utc": "2026-07-05T20:45:56Z",
+        "finished_at_utc": "2026-07-05T20:45:56Z",
         "cmd": [
           "C:\\Users\\PC\\.cargo\\bin\\cargo.EXE",
           "check",
@@ -121,15 +123,22 @@
   "blocking_failures": [],
   "foundation_debt": [],
   "verdict": "PASS_MECHANICUS_STRICT_BUILD_LANE_FOUNDATION",
+  "exit_code_contract": {
+    "rule": "process exit code must be 0 when verdict is PASS and blocking_failure_count is 0, else 1",
+    "expected_exit_code": 0
+  },
   "not_claimed": [
     "tests passed",
     "linters passed",
+    "type checking passed unless part of build",
     "security audit clean",
     "runtime FPS proof",
-    "UI reference fidelity"
+    "UI reference fidelity",
+    "semantic correctness"
   ],
   "warnings": [
     "Strict build lane foundation does not install dependencies.",
-    "Build proof is separate from code cleanliness and runtime proof."
+    "Build proof is separate from code cleanliness and runtime proof.",
+    "Local host pass is not universal host readiness."
   ]
 }
