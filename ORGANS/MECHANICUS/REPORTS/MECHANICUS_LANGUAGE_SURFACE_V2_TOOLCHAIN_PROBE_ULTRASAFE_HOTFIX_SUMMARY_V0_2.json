@@ -1,0 +1,64 @@
+{
+  "summary_id": "mechanicus.language_surface_v2_toolchain_probe_ultrasafe_hotfix_summary.v0_2",
+  "task_id": "MECHANICUS-LANGUAGE-SURFACE-V2-TOOLCHAIN-PROBE-ULTRASAFE-HOTFIX-0002",
+  "validator_id": "mechanicus_language_surface_v2_toolchain_probe_ultrasafe_hotfix_validator.v0_2",
+  "verdict": "PASS_MECHANICUS_LANGUAGE_SURFACE_V2_TOOLCHAIN_PROBE_ULTRASAFE_HOTFIX_READY",
+  "generated_at_utc": "2026-07-04T19:00:49Z",
+  "checks": [
+    {
+      "name": "ultrasafe_toolchain_probe_installed",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/prove_toolchains.py"
+      }
+    },
+    {
+      "name": "ultrasafe_probe_runs_and_writes_report",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "stc 1.95.0 (59807616e 2026-04-14)\\n\",\n      \"stderr\": \"\",\n      \"mode\": \"version_probe_only\",\n      \"cmd\": [\n        \"C:\\\\Users\\\\PC\\\\.cargo\\\\bin\\\\rustc.EXE\",\n        \"--version\"\n      ]\n    },\n    {\n      \"name\": \"cargo_version\",\n      \"executable\": \"cargo\",\n      \"args\": [\n        \"--version\"\n      ],\n      \"importance\": \"capability_optional\",\n      \"which\": \"C:\\\\Users\\\\PC\\\\.cargo\\\\bin\\\\cargo.EXE\",\n      \"ok\": true,\n      \"exit_code\": 0,\n      \"stdout\": \"cargo 1.95.0 (f2d3ce0bd 2026-03-21)\\n\",\n      \"stderr\": \"\",\n      \"mode\": \"version_probe_only\",\n      \"cmd\": [\n        \"C:\\\\Users\\\\PC\\\\.cargo\\\\bin\\\\cargo.EXE\",\n        \"--version\"\n      ]\n    },\n    {\n      \"name\": \"go_version\",\n      \"executable\": \"go\",\n      \"args\": [\n        \"version\"\n      ],\n      \"importance\": \"capability_optional\",\n      \"which\": null,\n      \"ok\": false,\n      \"exit_code\": null,\n      \"stdout\": \"\",\n      \"stderr\": \"executable not found in PATH\",\n      \"mode\": \"version_probe_only\",\n      \"missing_executable\": true\n    },\n    {\n      \"name\": \"cmake_version\",\n      \"executable\": \"cmake\",\n      \"args\": [\n        \"--version\"\n      ],\n      \"importance\": \"capability_optional\",\n      \"which\": null,\n      \"ok\": false,\n      \"exit_code\": null,\n      \"stdout\": \"\",\n      \"stderr\": \"executable not found in PATH\",\n      \"mode\": \"version_probe_only\",\n      \"missing_executable\": true\n    }\n  ],\n  \"build_targets_detected_but_not_run\": [\n    {\n      \"name\": \"app_tauri_npm_build_target_detected\",\n      \"path\": \"SUPPORT/APP_TAURI/package.json\",\n      \"status\": \"DETECTED_NOT_RUN_BY_ULTRASAFE_PROBE\"\n    },\n    {\n      \"name\": \"app_tauri_cargo_manifest_detected\",\n      \"path\": \"SUPPORT/APP_TAURI/src-tauri/Cargo.toml\",\n      \"status\": \"DETECTED_NOT_RUN_BY_ULTRASAFE_PROBE\"\n    }\n  ],\n  \"observed_required_ok\": true,\n  \"observed_required_failed\": [],\n  \"optional_available\": [\n    \"node_version\",\n    \"npm_version\",\n    \"rustc_version\",\n    \"cargo_version\"\n  ],\n  \"optional_missing_or_failed\": [\n    \"go_version\",\n    \"cmake_version\"\n  ],\n  \"verdict\": \"PASS_TOOLCHAIN_CAPABILITY_BASELINE_RECORDED_WITH_DEBT\",\n  \"not_claimed\": [\n    \"100% code cleanliness\",\n    \"all toolchains available\",\n    \"build/runtime proof\",\n    \"dependency security clean\",\n    \"universal machine readiness\",\n    \"npm audit fixed\"\n  ],\n  \"warnings\": [\n    \"This probe is intentionally nonblocking and records debt.\",\n    \"Build commands are detected but not executed here.\",\n    \"Tool missing/failure is capability debt, not hidden pass.\"\n  ]\n}\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "ultrasafe_probe_report_has_debt_boundary",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "verdict": "PASS_TOOLCHAIN_CAPABILITY_BASELINE_RECORDED_WITH_DEBT"
+      }
+    },
+    {
+      "name": "previous_language_surface_v2_validator_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_language_surface_v2_toolchain_validator_dispatch.py"
+      }
+    },
+    {
+      "name": "previous_language_surface_v2_validator_passes_after_ultrasafe_hotfix",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "{\n  \"task_id\": \"MECHANICUS-LANGUAGE-SURFACE-V2-TOOLCHAIN-VALIDATOR-DISPATCH-0001\",\n  \"validator_id\": \"mechanicus_language_surface_v2_toolchain_validator_dispatch_validator.v0_1\",\n  \"verdict\": \"PASS_MECHANICUS_LANGUAGE_SURFACE_V2_TOOLCHAIN_VALIDATOR_DISPATCH_READY\",\n  \"receipt\": \"ORGANS/MECHANICUS/RECEIPTS/mechanicus_language_surface_v2_toolchain_validator_dispatch_receipt.json\",\n  \"summary\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_LANGUAGE_SURFACE_V2_TOOLCHAIN_VALIDATOR_DISPATCH_SUMMARY_V0_1.json\",\n  \"surface_report\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_LANGUAGE_SURFACE_V2_REPORT_V0_1.json\",\n  \"toolchain_report\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_TOOLCHAIN_PROOF_REPORT_V0_1.json\",\n  \"dispatch_report\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_LANGUAGE_VALIDATION_BASELINE_V0_1.json\",\n  \"errors\": [],\n  \"warnings\": [\n    \"Optional toolchains/builds missing or failed; recorded as debt, not 100% clean failure.\",\n    \"Validation baseline contains debt; expected for first baseline.\"\n  ]\n}\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "previous_language_surface_v2_receipt_is_pass_after_ultrasafe_hotfix",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "verdict": "PASS_MECHANICUS_LANGUAGE_SURFACE_V2_TOOLCHAIN_VALIDATOR_DISPATCH_READY"
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Optional toolchains missing or failed and are recorded as capability debt.",
+    "Build targets were detected but not run by ultrasafe probe; strict build lanes remain separate.",
+    "Optional toolchains/builds missing or failed; recorded as debt, not 100% clean failure.",
+    "Validation baseline contains debt; expected for first baseline."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "receipt_id": "receipt.mechanicus.language_surface_v2_toolchain_probe_nonblocking_hotfix.v0_1",
+  "task_id": "MECHANICUS-LANGUAGE-SURFACE-V2-TOOLCHAIN-PROBE-NONBLOCKING-HOTFIX-0001",
+  "validator_id": "mechanicus_language_surface_v2_toolchain_probe_nonblocking_hotfix_validator.v0_1",
+  "verdict": "FAIL_MECHANICUS_LANGUAGE_SURFACE_V2_TOOLCHAIN_PROBE_NONBLOCKING_HOTFIX",
+  "generated_at_utc": "2026-07-04T18:48:36Z",
+  "checks": [
+    {
+      "name": "nonblocking_toolchain_probe_installed",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/prove_toolchains.py"
+      }
+    },
+    {
+      "name": "nonblocking_toolchain_probe_runs_and_returns_zero",
+      "status": "FAIL",
+      "details": {
+        "exit_code": 1,
+        "stdout_tail": "",
+        "stderr_tail": "Traceback (most recent call last):\n  File \"E:\\IMPERIUM_REALITY\\ORGANS\\MECHANICUS\\TOOLS\\prove_toolchains.py\", line 129, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"E:\\IMPERIUM_REALITY\\ORGANS\\MECHANICUS\\TOOLS\\prove_toolchains.py\", line 123, in main\n    print(json.dumps(report, ensure_ascii=False, indent=2))\n  File \"C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\encodings\\cp1251.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode character '\\u2713' in position 2889: character maps to <undefined>\n"
+      }
+    },
+    {
+      "name": "previous_language_surface_v2_validator_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_language_surface_v2_toolchain_validator_dispatch.py"
+      }
+    },
+    {
+      "name": "previous_language_surface_v2_receipt_is_pass_after_hotfix",
+      "status": "FAIL",
+      "details": {
+        "error": null,
+        "verdict": "FAIL_MECHANICUS_LANGUAGE_SURFACE_V2_TOOLCHAIN_VALIDATOR_DISPATCH"
+      }
+    }
+  ],
+  "errors": [
+    "nonblocking toolchain probe did not run/write report"
+  ],
+  "warnings": [],
+  "probe": "ORGANS/MECHANICUS/TOOLS/prove_toolchains.py",
+  "toolchain_report": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TOOLCHAIN_PROOF_REPORT_V0_1.json",
+  "previous_validator": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_language_surface_v2_toolchain_validator_dispatch.py",
+  "previous_receipt": "ORGANS/MECHANICUS/RECEIPTS/mechanicus_language_surface_v2_toolchain_validator_dispatch_receipt.json"
+}

@@ -1,0 +1,147 @@
+{
+  "matrix_id": "MECHANICUS_LANGUAGE_ROLE_TAXONOMY_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-PRIMARY-ORGAN-PASSPORT-AND-LANGUAGE-CENSUS-0001",
+  "languages": [
+    {
+      "language": "Python",
+      "role": "orchestration, scanners, receipts, JSON reports, flexible validators",
+      "participates_in": [
+        "WARP validation",
+        "census tools",
+        "reports",
+        "governance automation"
+      ],
+      "validator_lane": [
+        "python --version",
+        "python -m py_compile",
+        "compileall",
+        "ruff/flake8 if available",
+        "mypy if typed",
+        "pytest if tests exist"
+      ]
+    },
+    {
+      "language": "PowerShell",
+      "role": "Windows operator runners and WARP execution scripts",
+      "participates_in": [
+        "patch runners",
+        "host workflow",
+        "Windows command sequencing"
+      ],
+      "validator_lane": [
+        "pwsh --version",
+        "PowerShell parser check",
+        "PSScriptAnalyzer if available"
+      ]
+    },
+    {
+      "language": "Rust",
+      "role": "strict compiled validators, Tauri backend, safety-critical gates",
+      "participates_in": [
+        "Tauri commands",
+        "compiled proof",
+        "strict parsing",
+        "security boundaries"
+      ],
+      "validator_lane": [
+        "rustc --version",
+        "cargo check",
+        "cargo fmt --check",
+        "cargo clippy if available",
+        "cargo test if tests exist"
+      ]
+    },
+    {
+      "language": "TypeScript/JavaScript",
+      "role": "operator UI, Tauri webview rooms, frontend state/render components",
+      "participates_in": [
+        "App cockpit",
+        "UI rooms",
+        "telemetry display",
+        "operator actions"
+      ],
+      "validator_lane": [
+        "node --version",
+        "npm --version",
+        "npm run build",
+        "eslint if configured",
+        "tsc if TypeScript configured"
+      ]
+    },
+    {
+      "language": "CSS",
+      "role": "visual system, design tokens, layout, components, ornament, animation",
+      "participates_in": [
+        "UI skin",
+        "layout",
+        "readability",
+        "reference fidelity"
+      ],
+      "validator_lane": [
+        "stylelint if available",
+        "token coverage checker",
+        "no-monolith CSS scanner",
+        "screenshot evidence"
+      ]
+    },
+    {
+      "language": "JSON",
+      "role": "contracts, receipts, matrices, registries, manifests",
+      "participates_in": [
+        "evidence",
+        "configuration",
+        "governance"
+      ],
+      "validator_lane": [
+        "JSON parse",
+        "schema shape checks",
+        "required key checks"
+      ]
+    },
+    {
+      "language": "Markdown",
+      "role": "human-facing doctrine, reports, patch packs, readmes",
+      "participates_in": [
+        "operator understanding",
+        "Owner review",
+        "documentation"
+      ],
+      "validator_lane": [
+        "presence",
+        "required section checks",
+        "link/path checks if available"
+      ]
+    },
+    {
+      "language": "Go",
+      "role": "portable CLI workers and simple fast tools",
+      "participates_in": [
+        "future external utilities",
+        "fast command tools"
+      ],
+      "validator_lane": [
+        "go version",
+        "go fmt",
+        "go vet",
+        "go test",
+        "go build"
+      ]
+    },
+    {
+      "language": "C++",
+      "role": "deep optimization only after profiling proves need",
+      "participates_in": [
+        "future hot paths",
+        "native integration"
+      ],
+      "validator_lane": [
+        "compiler version",
+        "cmake build",
+        "clang-format if available",
+        "clang-tidy if available",
+        "tests"
+      ]
+    }
+  ]
+}

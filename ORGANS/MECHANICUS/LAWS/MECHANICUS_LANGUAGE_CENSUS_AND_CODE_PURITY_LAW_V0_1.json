@@ -1,0 +1,39 @@
+{
+  "law_id": "MECHANICUS_LANGUAGE_CENSUS_AND_CODE_PURITY_LAW_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-PRIMARY-ORGAN-PASSPORT-AND-LANGUAGE-CENSUS-0001",
+  "owner_intent": [
+    "Mechanicus must analyze the whole codebase and say exactly how many lines each language has.",
+    "Mechanicus must explain what each language participates in.",
+    "Mechanicus must be equipped with powerful language validators.",
+    "Code cleanliness target is 100%."
+  ],
+  "laws": [
+    "Every language used by the repo must be counted.",
+    "Every counted language must have a role description.",
+    "Every language role must be tied to task zones.",
+    "Language validators must be explicit, not implied.",
+    "Missing validator toolchains are not pass; they are uncovered validation debt.",
+    "100% cleanliness is a target state requiring layered proof, not a claim from one linter.",
+    "Legacy dirt is baseline debt; future patches must not hide or worsen it."
+  ],
+  "cleanliness_100_definition": [
+    "syntax/build pass",
+    "formatter pass or formatter policy declared",
+    "lint/static analysis pass or tool unavailable debt declared",
+    "type check pass when applicable",
+    "tests pass when applicable",
+    "dependency/security audit pass or risk registered",
+    "no-monolith gate pass",
+    "dead/unused code scan pass where supported",
+    "language role documented",
+    "receipts generated"
+  ],
+  "anti_fake_green": [
+    "No single validator may claim 100% cleanliness alone.",
+    "A build pass does not prove clean code.",
+    "A formatter pass does not prove architecture.",
+    "A language count does not prove quality.",
+    "Tool unavailable must be reported as debt, not ignored."
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "summary_id": "mechanicus.task_tool_composition_planner_ultrasafe_hotfix_v2_summary.v0_1",
+  "task_id": "MECHANICUS-TASK-TOOL-COMPOSITION-PLANNER-ULTRASAFE-HOTFIX-0002",
+  "validator_id": "mechanicus_task_tool_composition_planner_ultrasafe_hotfix_validator.v0_2",
+  "verdict": "PASS_MECHANICUS_TASK_TOOL_COMPOSITION_PLANNER_ULTRASAFE_HOTFIX_V2_READY",
+  "generated_at_utc": "2026-07-05T14:50:41Z",
+  "checks": [
+    {
+      "name": "hard_safe_planner_v0_3_installed",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/plan_mechanicus_task_tool_composition.py"
+      }
+    },
+    {
+      "name": "base_planner_validator_v0_2_installed",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/VALIDATORS/validate_mechanicus_task_tool_composition_planner.py"
+      }
+    },
+    {
+      "name": "base_planner_validator_passes_after_v2_hotfix",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "{\n  \"task_id\": \"MECHANICUS-TASK-TOOL-COMPOSITION-PLANNER-0001\",\n  \"validator_id\": \"mechanicus_task_tool_composition_planner_validator.v0_2_hard_safe\",\n  \"verdict\": \"PASS_MECHANICUS_TASK_TOOL_COMPOSITION_PLANNER_READY\",\n  \"receipt\": \"ORGANS/MECHANICUS/RECEIPTS/mechanicus_task_tool_composition_planner_receipt.json\",\n  \"summary\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_TASK_TOOL_COMPOSITION_PLANNER_SUMMARY_V0_1.json\",\n  \"plan\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_TASK_TOOL_COMPOSITION_PLAN_V0_1.json\",\n  \"errors\": [],\n  \"warnings\": [\n    \"Planner gap: GAME_ENGINE_CAPABILITY_NOT_INVENTORIED => OWNER_VISIBLE_GAP\",\n    \"Planner gap: STRICT_BUILD_LANE_REQUIRED => NEXT_VALIDATOR_REQUIRED\",\n    \"Planner gap: UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI => CONDITIONAL_GAP\",\n    \"Recommended demand: warp_runner_or_windows_operator score=72.35 verdict=ACCEPTABLE_WITH_DEBT\"\n  ]\n}\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "base_planner_receipt_is_pass_after_v2_hotfix",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "verdict": "PASS_MECHANICUS_TASK_TOOL_COMPOSITION_PLANNER_READY"
+      }
+    },
+    {
+      "name": "plan_is_real_composition_plan_not_exception_debt",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "verdict": "PLAN_READY_WITH_CAPABILITY_GAPS",
+        "classification_count": 5,
+        "combination_count": 5
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Planner gap: GAME_ENGINE_CAPABILITY_NOT_INVENTORIED => OWNER_VISIBLE_GAP",
+    "Planner gap: STRICT_BUILD_LANE_REQUIRED => NEXT_VALIDATOR_REQUIRED",
+    "Planner gap: UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI => CONDITIONAL_GAP",
+    "Recommended demand: warp_runner_or_windows_operator score=72.35 verdict=ACCEPTABLE_WITH_DEBT"
+  ],
+  "plan": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TASK_TOOL_COMPOSITION_PLAN_V0_1.json",
+  "meaning": "Installs hard-safe planner v0.3 and base validator v0.2 so the planner produces a real composition plan instead of exception debt."
+}

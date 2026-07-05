@@ -1,0 +1,41 @@
+{
+  "law_id": "MECHANICUS_TASK_TOOL_COMPOSITION_PLANNER_LAW_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-TASK-TOOL-COMPOSITION-PLANNER-0001",
+  "owner_intent": [
+    "When a Patch Pack or Task Pack is registered, Mechanicus must inspect the task demand and propose the required languages, tools, validators and missing capabilities.",
+    "Mechanicus must mathematically evaluate tool combinations for cheaper, cleaner and more reliable execution.",
+    "Mechanicus must understand the heart-of-machine layer: tools, languages, libraries, engines, validators and runtime hosts required for blood to flow through Imperium.",
+    "Mechanicus recommendation is advisory until Owner/Throne policy makes a lane blocking.",
+    "Mechanicus must report unknown or missing capabilities instead of pretending the system can do the task.",
+    "Mechanicus should prefer existing admitted tools over creating new tools, unless gaps make a new tool necessary."
+  ],
+  "core_laws": [
+    "A task is not registered as machine-ready until Mechanicus can name the required tool stack or declare missing capability.",
+    "Tool choice must be scored, not guessed.",
+    "Cheapest is not best if cleanliness or reliability collapses.",
+    "Cleanest is not best if no toolchain exists.",
+    "Reliable is not best if it creates monolith or blocks Owner workflow.",
+    "Unknown demand must become an Owner-visible capability gap.",
+    "Tool composition plans do not execute the task.",
+    "Tool composition plans do not install packages.",
+    "Tool composition plans do not claim runtime proof."
+  ],
+  "planner_outputs_required": [
+    "task_demand_classification",
+    "recommended_tool_stack",
+    "recommended_language_lanes",
+    "required_validators",
+    "candidate_combinations_with_scores",
+    "missing_capabilities",
+    "owner_visible_blockers",
+    "not_claimed"
+  ],
+  "not_claimed": [
+    "automatic task execution",
+    "automatic dependency installation",
+    "runtime correctness",
+    "100% clean code",
+    "all possible tools known"
+  ]
+}

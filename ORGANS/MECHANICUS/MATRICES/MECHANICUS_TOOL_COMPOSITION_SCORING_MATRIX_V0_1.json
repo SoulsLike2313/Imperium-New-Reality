@@ -1,0 +1,69 @@
+{
+  "matrix_id": "MECHANICUS_TOOL_COMPOSITION_SCORING_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-TASK-TOOL-COMPOSITION-PLANNER-0001",
+  "score_total": 100,
+  "dimensions": [
+    {
+      "id": "requirement_fit",
+      "weight": 25,
+      "meaning": "how directly the stack matches task demand"
+    },
+    {
+      "id": "availability_and_admission",
+      "weight": 20,
+      "meaning": "existing admitted tools and available toolchains"
+    },
+    {
+      "id": "cleanliness_validation_coverage",
+      "weight": 20,
+      "meaning": "how much validation coverage already exists"
+    },
+    {
+      "id": "reliability_and_receipts",
+      "weight": 15,
+      "meaning": "evidence, receipts, repeatability, failure visibility"
+    },
+    {
+      "id": "cost_and_runtime_weight",
+      "weight": 10,
+      "meaning": "local cost, build cost, operator friction"
+    },
+    {
+      "id": "maintainability_no_monolith",
+      "weight": 10,
+      "meaning": "keeps language lanes and tools modular"
+    }
+  ],
+  "verdict_bands": [
+    {
+      "min": 85,
+      "verdict": "RECOMMENDED_PRIMARY_STACK"
+    },
+    {
+      "min": 70,
+      "verdict": "ACCEPTABLE_WITH_DEBT"
+    },
+    {
+      "min": 50,
+      "verdict": "POSSIBLE_REWORK_REQUIRED"
+    },
+    {
+      "min": 0,
+      "verdict": "NOT_RECOMMENDED_OR_CAPABILITY_MISSING"
+    }
+  ],
+  "missing_capability_rules": [
+    "If selected lane needs Go and go_version is missing, report GO_TOOLCHAIN_MISSING.",
+    "If selected lane needs C++/CMake and cmake_version is missing, report CPP_CMAKE_TOOLCHAIN_MISSING.",
+    "If task asks for game engine and no engine record exists, report GAME_ENGINE_CAPABILITY_NOT_INVENTORIED.",
+    "If task asks for strict build and build lane was not run, report STRICT_BUILD_LANE_REQUIRED.",
+    "If task asks for UI reference fidelity and no reference proof exists, report UI_REFERENCE_FIDELITY_TOOLING_REQUIRED."
+  ],
+  "not_claimed": [
+    "planner result is execution",
+    "planner result is final architecture",
+    "planner result is 100% clean",
+    "planner result installs missing tools"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "summary_id": "mechanicus.strict_language_lane_foundation_summary.v0_1",
+  "task_id": "MECHANICUS-STRICT-LANGUAGE-LANE-FOUNDATION-0001",
+  "validator_id": "mechanicus_strict_language_lane_foundation_validator.v0_1",
+  "verdict": "PASS_MECHANICUS_STRICT_LANGUAGE_LANE_FOUNDATION_READY",
+  "generated_at_utc": "2026-07-04T19:29:58Z",
+  "checks": [
+    {
+      "name": "strict_language_lane_registry_exists_and_covers_required_lanes",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_STRICT_LANGUAGE_LANE_REGISTRY_V0_1.json",
+        "error": null,
+        "missing_lanes": []
+      }
+    },
+    {
+      "name": "strict_language_lane_foundation_matrix_exists_and_weights_100",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_STRICT_LANGUAGE_LANE_FOUNDATION_MATRIX_V0_1.json",
+        "error": null,
+        "weight_sum": 100
+      }
+    },
+    {
+      "name": "custodes_strict_language_lane_matrix_exists_and_blocks_fake_lane_readiness",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/CUSTODES/MATRICES/CUSTODES_STRICT_LANGUAGE_LANE_PROSECUTOR_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "throne_strict_language_lane_matrix_exists_and_blocks_fake_lane_readiness",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/MATRICES/THRONE_STRICT_LANGUAGE_LANE_CROWN_GATE_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "strict_language_lane_readout_tool_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/generate_strict_language_lane_readout.py"
+      }
+    },
+    {
+      "name": "surface_v2_report_available",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_LANGUAGE_SURFACE_V2_REPORT_V0_1.json"
+      }
+    },
+    {
+      "name": "toolchain_report_available",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TOOLCHAIN_PROOF_REPORT_V0_1.json"
+      }
+    },
+    {
+      "name": "dispatch_report_available",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_LANGUAGE_VALIDATION_BASELINE_V0_1.json"
+      }
+    },
+    {
+      "name": "strict_language_lane_readout_tool_runs_and_writes_report",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "    \"surface\": {\n        \"raw\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        },\n        \"source_runtime\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        },\n        \"governance_evidence\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        }\n      },\n      \"toolchain\": {\n        \"required_probe_names\": [\n          \"go_version\"\n        ],\n        \"all_observed_ok\": false,\n        \"observed\": [\n          {\n            \"name\": \"go_version\",\n            \"ok\": false,\n            \"exit_code\": null,\n            \"which\": null,\n            \"stderr\": \"executable not found in PATH\"\n          }\n        ]\n      },\n      \"baseline_validation\": {\n        \"baseline_present\": false,\n        \"ok\": false,\n        \"checks\": []\n      },\n      \"strict_layers_future\": [\n        \"go_fmt\",\n        \"go_vet\",\n        \"go_test\",\n        \"go_build\"\n      ],\n      \"must_not_claim\": [\n        \"available while go toolchain missing\"\n      ]\n    },\n    {\n      \"lane_id\": \"cpp_future\",\n      \"language_names\": [\n        \"C++\",\n        \"C\",\n        \"C/C++ Header\"\n      ],\n      \"purpose\": \"future deep optimization after profiling proves need\",\n      \"state\": \"LANE_FUTURE_CAPABILITY\",\n      \"surface\": {\n        \"raw\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        },\n        \"source_runtime\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        },\n        \"governance_evidence\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        }\n      },\n      \"toolchain\": {\n        \"required_probe_names\": [\n          \"cmake_version\"\n        ],\n        \"all_observed_ok\": false,\n        \"observed\": [\n          {\n            \"name\": \"cmake_version\",\n            \"ok\": false,\n            \"exit_code\": null,\n            \"which\": null,\n            \"stderr\": \"executable not found in PATH\"\n          }\n        ]\n      },\n      \"baseline_validation\": {\n        \"baseline_present\": false,\n        \"ok\": false,\n        \"checks\": []\n      },\n      \"strict_layers_future\": [\n        \"cmake_build\",\n        \"clang_format\",\n        \"clang_tidy\",\n        \"tests\"\n      ],\n      \"must_not_claim\": [\n        \"needed before profiling\"\n      ]\n    }\n  ],\n  \"verdict\": \"PASS_STRICT_LANGUAGE_LANES_MEASURED_WITH_DEBT\",\n  \"not_claimed\": [\n    \"100% clean\",\n    \"strict lanes complete\",\n    \"all toolchains available\",\n    \"all linter/type/security layers complete\"\n  ],\n  \"warnings\": [\n    \"This is a lane foundation/readout, not strict cleanliness.\",\n    \"LANE_READY_BASELINE means only implemented baseline checks passed.\",\n    \"LANE_FOUNDATION_ONLY needs strict validators before it can block or certify.\",\n    \"LANE_TOOLCHAIN_MISSING is capability debt.\"\n  ]\n}\n",
+        "stderr_tail": "",
+        "path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_LANGUAGE_LANE_READOUT_V0_1.json"
+      }
+    },
+    {
+      "name": "strict_language_lane_readout_covers_lanes_and_does_not_claim_100_clean",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "lane_count": 10,
+        "state_counts": {
+          "LANE_READY_BASELINE": 3,
+          "LANE_FOUNDATION_ONLY": 4,
+          "LANE_MEASURED_WITH_DEBT": 1,
+          "LANE_FUTURE_CAPABILITY": 2
+        },
+        "verdict": "PASS_STRICT_LANGUAGE_LANES_MEASURED_WITH_DEBT"
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Strict language lanes contain measured debt/foundation-only lanes; expected at this stage.",
+    "Lane debt: json_evidence => LANE_MEASURED_WITH_DEBT"
+  ],
+  "lane_readout": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_LANGUAGE_LANE_READOUT_V0_1.json",
+  "state_counts": {
+    "LANE_READY_BASELINE": 3,
+    "LANE_FOUNDATION_ONLY": 4,
+    "LANE_MEASURED_WITH_DEBT": 1,
+    "LANE_FUTURE_CAPABILITY": 2
+  },
+  "meaning": "Establishes strict per-language lanes and readout. This is lane foundation, not full code cleanliness."
+}

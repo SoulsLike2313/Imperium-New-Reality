@@ -1,0 +1,86 @@
+{
+  "law_id": "MECHANICUS_TOOL_ACCUMULATION_AND_ADMISSION_LAW_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-TOOL-ACCUMULATION-AND-ADMISSION-GATE-0001",
+  "owner_intent": [
+    "Mechanicus must accumulate tools, not pretend to be the author of every tool.",
+    "External tools include installed languages, compilers, runtimes, libraries, engines, package managers, linters, formatters and build systems.",
+    "Internal tools include validators, scanners, runners, UI tools, helper scripts and task-specific tools created during Imperium work by Logos/Codex/Grok/other executors.",
+    "Internal tools created during a task must pass Mechanicus admission before becoming accepted Imperium tools.",
+    "Mechanicus may reject a tool because of dirty code, missing receipt, missing purpose, missing owner, missing lane, monolith risk, unsafe mutation or failed validation.",
+    "If a task-created internal tool is rejected, the executor should not silently stop the whole task. The executor must fix the tool inside the same task loop until admission passes or an Owner-visible blocker is declared."
+  ],
+  "core_laws": [
+    "A tool is not trusted because it exists.",
+    "A tool is not trusted because Codex, Grok, Claude, ChatGPT or any Servitor produced it.",
+    "A tool becomes usable only after it has identity, purpose, provenance, lane binding, validation result and receipt.",
+    "External tools are proven by local capability evidence and version discovery.",
+    "Internal tools are proven by source validation, behavior validation and evidence receipts.",
+    "Rejected tools are not deleted by default; they are quarantined as rework/debt evidence.",
+    "Mechanicus can reject tools; Custodes can prosecute tool truth; Throne can block global adoption.",
+    "Tool admission is separate from task success. A task may continue through rework, but the failed tool cannot be promoted.",
+    "No dirty helper may become hidden infrastructure."
+  ],
+  "tool_classes": {
+    "external_tool": [
+      "language runtime",
+      "compiler",
+      "package manager",
+      "library",
+      "framework",
+      "game engine",
+      "linter",
+      "formatter",
+      "security scanner",
+      "build system",
+      "runtime host"
+    ],
+    "internal_tool": [
+      "validator",
+      "scanner",
+      "runner",
+      "adapter",
+      "bridge",
+      "UI helper",
+      "report generator",
+      "task-specific temporary tool",
+      "promotion candidate tool"
+    ]
+  },
+  "admission_states": [
+    "DISCOVERED",
+    "CANDIDATE",
+    "VALIDATING",
+    "ADMITTED_BASELINE",
+    "ADMITTED_STRICT",
+    "REJECTED_REWORK_REQUIRED",
+    "QUARANTINED",
+    "OWNER_WAIVED_TEMPORARY_USE",
+    "DEPRECATED"
+  ],
+  "executor_loop_law": {
+    "rejection_effect": "REWORK_REQUIRED_WITHIN_TASK",
+    "allowed_next_actions": [
+      "fix tool code",
+      "add missing receipt",
+      "split monolith",
+      "bind tool to language lane",
+      "declare tool as temporary and non-promoted",
+      "ask Owner for waiver only when task cannot proceed"
+    ],
+    "forbidden_next_actions": [
+      "silently continue using rejected tool as accepted",
+      "delete evidence of rejection",
+      "claim task success from unadmitted tool",
+      "promote dirty tool to shared infrastructure"
+    ]
+  },
+  "not_claimed": [
+    "all tools already inventoried perfectly",
+    "all external libraries known",
+    "all internal tools admitted",
+    "100% code cleanliness",
+    "automatic package installation",
+    "automatic dependency mutation"
+  ]
+}

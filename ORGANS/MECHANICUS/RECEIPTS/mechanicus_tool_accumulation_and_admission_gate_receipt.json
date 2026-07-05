@@ -1,0 +1,106 @@
+{
+  "receipt_id": "receipt.mechanicus.tool_accumulation_and_admission_gate.v0_1",
+  "task_id": "MECHANICUS-TOOL-ACCUMULATION-AND-ADMISSION-GATE-0001",
+  "validator_id": "mechanicus_tool_accumulation_and_admission_gate_validator.v0_1",
+  "verdict": "PASS_MECHANICUS_TOOL_ACCUMULATION_AND_ADMISSION_GATE_READY",
+  "generated_at_utc": "2026-07-04T19:55:27Z",
+  "checks": [
+    {
+      "name": "tool_accumulation_law_exists_and_declares_required_boundaries",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/LAWS/MECHANICUS_TOOL_ACCUMULATION_AND_ADMISSION_LAW_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "tool_registry_schema_exists_and_declares_required_boundaries",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_TOOL_REGISTRY_SCHEMA_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "tool_admission_gate_matrix_exists_and_declares_required_boundaries",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_TOOL_ADMISSION_GATE_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "custodes_tool_admission_matrix_exists_and_declares_required_boundaries",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/CUSTODES/MATRICES/CUSTODES_MECHANICUS_TOOL_ADMISSION_PROSECUTOR_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "throne_tool_admission_matrix_exists_and_declares_required_boundaries",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/MATRICES/THRONE_MECHANICUS_TOOL_ADMISSION_CROWN_GATE_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "tool_admission_gate_weights_sum_to_100",
+      "status": "PASS",
+      "details": {
+        "weight_sum": 100,
+        "error": null
+      }
+    },
+    {
+      "name": "tool_inventory_scanner_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/scan_mechanicus_tool_inventory.py"
+      }
+    },
+    {
+      "name": "tool_inventory_scanner_runs_and_writes_report",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "\n      \"kind\": \"app_runtime_component\",\n      \"path_or_command\": \"WARP/PATCHES/IMPERIUM-APP-TAURI-SHELL-FOUNDATION-0001/FILES_TO_LAND/SUPPORT/APP_TAURI/logs/.gitkeep\",\n      \"provenance\": \"repository_canonical\",\n      \"owner_scope\": \"imperium_repository\",\n      \"language_lane\": \"unknown\",\n      \"purpose\": \"support Tauri application runtime/operator surface\",\n      \"admission_state\": \"REJECTED_REWORK_REQUIRED\",\n      \"validation_evidence\": {\n        \"file_exists\": true,\n        \"size_bytes\": 0,\n        \"baseline_state\": \"inventory_only_not_strict_validation\"\n      },\n      \"risks\": [\n        \"missing_language_lane\",\n        \"empty_file\"\n      ],\n      \"last_seen_utc\": \"2026-07-04T19:55:24Z\"\n    },\n    {\n      \"tool_id\": \"internal::WARP/PATCHES/IMPERIUM-APP-TAURI-SHELL-FOUNDATION-0001/FILES_TO_LAND/SUPPORT/APP_TAURI/receipts/.gitkeep\",\n      \"tool_class\": \"internal_tool\",\n      \"name\": \".gitkeep\",\n      \"kind\": \"app_runtime_component\",\n      \"path_or_command\": \"WARP/PATCHES/IMPERIUM-APP-TAURI-SHELL-FOUNDATION-0001/FILES_TO_LAND/SUPPORT/APP_TAURI/receipts/.gitkeep\",\n      \"provenance\": \"repository_canonical\",\n      \"owner_scope\": \"imperium_repository\",\n      \"language_lane\": \"unknown\",\n      \"purpose\": \"support Tauri application runtime/operator surface\",\n      \"admission_state\": \"REJECTED_REWORK_REQUIRED\",\n      \"validation_evidence\": {\n        \"file_exists\": true,\n        \"size_bytes\": 0,\n        \"baseline_state\": \"inventory_only_not_strict_validation\"\n      },\n      \"risks\": [\n        \"missing_language_lane\",\n        \"empty_file\"\n      ],\n      \"last_seen_utc\": \"2026-07-04T19:55:24Z\"\n    },\n    {\n      \"tool_id\": \"internal::WARP/PATCHES/MECHANICUS-COCKPIT-PATCH-REGISTRY-AND-LANGUAGE-CODEX-0001/FILES_TO_LAND/SUPPORT/APP_TAURI/logs/.gitkeep\",\n      \"tool_class\": \"internal_tool\",\n      \"name\": \".gitkeep\",\n      \"kind\": \"app_runtime_component\",\n      \"path_or_command\": \"WARP/PATCHES/MECHANICUS-COCKPIT-PATCH-REGISTRY-AND-LANGUAGE-CODEX-0001/FILES_TO_LAND/SUPPORT/APP_TAURI/logs/.gitkeep\",\n      \"provenance\": \"repository_canonical\",\n      \"owner_scope\": \"imperium_repository\",\n      \"language_lane\": \"unknown\",\n      \"purpose\": \"support Tauri application runtime/operator surface\",\n      \"admission_state\": \"REJECTED_REWORK_REQUIRED\",\n      \"validation_evidence\": {\n        \"file_exists\": true,\n        \"size_bytes\": 0,\n        \"baseline_state\": \"inventory_only_not_strict_validation\"\n      },\n      \"risks\": [\n        \"missing_language_lane\",\n        \"empty_file\"\n      ],\n      \"last_seen_utc\": \"2026-07-04T19:55:24Z\"\n    },\n    {\n      \"tool_id\": \"internal::WARP/PATCHES/MECHANICUS-COCKPIT-PATCH-REGISTRY-AND-LANGUAGE-CODEX-0001/FILES_TO_LAND/SUPPORT/APP_TAURI/receipts/.gitkeep\",\n      \"tool_class\": \"internal_tool\",\n      \"name\": \".gitkeep\",\n      \"kind\": \"app_runtime_component\",\n      \"path_or_command\": \"WARP/PATCHES/MECHANICUS-COCKPIT-PATCH-REGISTRY-AND-LANGUAGE-CODEX-0001/FILES_TO_LAND/SUPPORT/APP_TAURI/receipts/.gitkeep\",\n      \"provenance\": \"repository_canonical\",\n      \"owner_scope\": \"imperium_repository\",\n      \"language_lane\": \"unknown\",\n      \"purpose\": \"support Tauri application runtime/operator surface\",\n      \"admission_state\": \"REJECTED_REWORK_REQUIRED\",\n      \"validation_evidence\": {\n        \"file_exists\": true,\n        \"size_bytes\": 0,\n        \"baseline_state\": \"inventory_only_not_strict_validation\"\n      },\n      \"risks\": [\n        \"missing_language_lane\",\n        \"empty_file\"\n      ],\n      \"last_seen_utc\": \"2026-07-04T19:55:24Z\"\n    }\n  ],\n  \"candidate_tools\": [],\n  \"verdict\": \"PASS_TOOL_INVENTORY_RECORDED_WITH_CANDIDATES_AND_DEBT\",\n  \"not_claimed\": [\n    \"all internal tools strictly clean\",\n    \"all external libraries discovered\",\n    \"all tools admitted strict\",\n    \"automatic installation or mutation\"\n  ],\n  \"warnings\": [\n    \"Inventory is admission baseline, not strict tool validation.\",\n    \"Patch payload tools are candidates until landed and validated.\",\n    \"External tool availability is local host truth only.\"\n  ]\n}\n",
+        "stderr_tail": "",
+        "out_exists": true
+      }
+    },
+    {
+      "name": "tool_inventory_contains_external_and_internal_tools",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "counts_by_class": {
+          "external_tool": 9,
+          "internal_tool": 553
+        }
+      }
+    },
+    {
+      "name": "tool_inventory_declares_admission_states",
+      "status": "PASS",
+      "details": {
+        "counts_by_state": {
+          "ADMITTED_BASELINE": 486,
+          "REJECTED_REWORK_REQUIRED": 76
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Tools requiring rework visible: 76",
+    "Inventory is admission baseline, not strict tool validation.",
+    "Patch payload tools are candidates until landed and validated.",
+    "External tool availability is local host truth only."
+  ],
+  "law": "ORGANS/MECHANICUS/LAWS/MECHANICUS_TOOL_ACCUMULATION_AND_ADMISSION_LAW_V0_1.json",
+  "schema": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_TOOL_REGISTRY_SCHEMA_V0_1.json",
+  "admission_matrix": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_TOOL_ADMISSION_GATE_MATRIX_V0_1.json",
+  "tool_inventory": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TOOL_INVENTORY_V0_1.json"
+}

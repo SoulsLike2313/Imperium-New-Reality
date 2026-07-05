@@ -1,0 +1,220 @@
+{
+  "taxonomy_id": "MECHANICUS_TASK_CAPABILITY_DEMAND_TAXONOMY_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-TASK-TOOL-COMPOSITION-PLANNER-0001",
+  "demand_classes": [
+    {
+      "demand_id": "python_validator_or_scanner",
+      "keywords": [
+        "validator",
+        "scan",
+        "scanner",
+        "census",
+        "receipt",
+        "report",
+        "json",
+        "matrix",
+        "валидатор",
+        "скан",
+        "отчет",
+        "отчёт"
+      ],
+      "preferred_lanes": [
+        "python",
+        "json_evidence",
+        "markdown_docs"
+      ],
+      "required_validators": [
+        "python py_compile",
+        "json parse",
+        "receipt shape"
+      ],
+      "typical_tools": [
+        "python",
+        "Mechanicus inventory scanner",
+        "language validation dispatch"
+      ]
+    },
+    {
+      "demand_id": "warp_runner_or_windows_operator",
+      "keywords": [
+        "pwsh",
+        "powershell",
+        "runner",
+        "run_",
+        "warp",
+        "patch pack",
+        "таск пак",
+        "патч пак"
+      ],
+      "preferred_lanes": [
+        "powershell",
+        "python",
+        "json_evidence"
+      ],
+      "required_validators": [
+        "pwsh version",
+        "runner receipt",
+        "no direct master mutation"
+      ],
+      "typical_tools": [
+        "pwsh",
+        "WARP runner",
+        "git"
+      ]
+    },
+    {
+      "demand_id": "tauri_app_or_cockpit",
+      "keywords": [
+        "tauri",
+        "cockpit",
+        "app",
+        "webview",
+        "frontend",
+        "ui",
+        "ux",
+        "приложение",
+        "кокпит",
+        "интерфейс"
+      ],
+      "preferred_lanes": [
+        "node_frontend",
+        "css_ui",
+        "rust",
+        "json_evidence"
+      ],
+      "required_validators": [
+        "npm build",
+        "cargo check",
+        "runtime FPS proof",
+        "UX proof receipt"
+      ],
+      "typical_tools": [
+        "node",
+        "npm",
+        "rustc",
+        "cargo",
+        "Tauri app shell"
+      ]
+    },
+    {
+      "demand_id": "rust_backend_or_compiled_gate",
+      "keywords": [
+        "rust",
+        "cargo",
+        "compiled",
+        "tauri backend",
+        "strict gate",
+        "безопасность",
+        "строгий"
+      ],
+      "preferred_lanes": [
+        "rust",
+        "json_evidence"
+      ],
+      "required_validators": [
+        "cargo check",
+        "cargo fmt",
+        "cargo clippy future"
+      ],
+      "typical_tools": [
+        "rustc",
+        "cargo"
+      ]
+    },
+    {
+      "demand_id": "visual_ui_polish",
+      "keywords": [
+        "css",
+        "style",
+        "animation",
+        "ornament",
+        "gothic",
+        "metal",
+        "fps",
+        "visual",
+        "reference",
+        "готика",
+        "орнамент",
+        "анимация"
+      ],
+      "preferred_lanes": [
+        "css_ui",
+        "node_frontend",
+        "json_evidence"
+      ],
+      "required_validators": [
+        "CSS structural scan",
+        "FPS proof",
+        "reference fidelity report",
+        "no CSS monolith"
+      ],
+      "typical_tools": [
+        "CSS lane",
+        "Tauri app",
+        "FPS watchdog"
+      ]
+    },
+    {
+      "demand_id": "game_engine_or_procedural_world",
+      "keywords": [
+        "game",
+        "engine",
+        "godot",
+        "bevy",
+        "unity",
+        "unreal",
+        "игра",
+        "движок",
+        "процедур"
+      ],
+      "preferred_lanes": [
+        "node_frontend",
+        "rust",
+        "css_ui",
+        "go_future",
+        "cpp_future"
+      ],
+      "required_validators": [
+        "engine capability proof",
+        "runtime performance proof",
+        "asset pipeline proof"
+      ],
+      "typical_tools": [
+        "game engine candidate",
+        "runtime profiler",
+        "asset pipeline"
+      ]
+    },
+    {
+      "demand_id": "external_repo_product_work",
+      "keywords": [
+        "external repo",
+        "внешний репозиторий",
+        "продукт",
+        "рынок",
+        "script",
+        "скрипт",
+        "repo analysis"
+      ],
+      "preferred_lanes": [
+        "python",
+        "powershell",
+        "json_evidence",
+        "markdown_docs"
+      ],
+      "required_validators": [
+        "repo scan",
+        "language lane selection",
+        "task-specific tool admission"
+      ],
+      "typical_tools": [
+        "python",
+        "git",
+        "pwsh",
+        "Mechanicus tool inventory"
+      ]
+    }
+  ],
+  "unknown_demand_rule": "If no demand class scores above threshold, Mechanicus must declare unknown capability demand and request Owner clarification or research."
+}

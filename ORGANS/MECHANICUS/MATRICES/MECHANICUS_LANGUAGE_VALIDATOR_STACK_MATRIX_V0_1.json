@@ -1,0 +1,54 @@
+{
+  "matrix_id": "MECHANICUS_LANGUAGE_VALIDATOR_STACK_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-PRIMARY-ORGAN-PASSPORT-AND-LANGUAGE-CENSUS-0001",
+  "validator_layers": [
+    {
+      "layer": "discovery",
+      "meaning": "language files exist and are counted"
+    },
+    {
+      "layer": "toolchain",
+      "meaning": "language executable/build tool is locally available"
+    },
+    {
+      "layer": "syntax",
+      "meaning": "files parse or compile"
+    },
+    {
+      "layer": "format",
+      "meaning": "canonical formatting is present or formatter debt recorded"
+    },
+    {
+      "layer": "lint",
+      "meaning": "static analyzer/linter pass or tool debt recorded"
+    },
+    {
+      "layer": "build",
+      "meaning": "build/check command passes where applicable"
+    },
+    {
+      "layer": "test",
+      "meaning": "tests pass where available"
+    },
+    {
+      "layer": "security",
+      "meaning": "dependency/security scan where applicable"
+    },
+    {
+      "layer": "architecture",
+      "meaning": "no-monolith and responsibility split checks"
+    },
+    {
+      "layer": "receipt",
+      "meaning": "machine-readable evidence written"
+    }
+  ],
+  "minimum_next_tools": [
+    "toolchain availability scanner",
+    "per-language validator dispatcher",
+    "formatter/linter presence detector",
+    "dependency audit detector",
+    "architecture delta gate"
+  ]
+}

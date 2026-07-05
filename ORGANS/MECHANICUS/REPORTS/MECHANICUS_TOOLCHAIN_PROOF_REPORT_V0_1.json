@@ -1,0 +1,202 @@
+{
+  "tool_id": "mechanicus_toolchain_probe.v0_3_ultrasafe_nonblocking",
+  "generated_at_utc": "2026-07-04T19:00:40Z",
+  "repo_root": "E:\\IMPERIUM_REALITY",
+  "mode": "ULTRASAFE_NONBLOCKING_LOCAL_TOOLCHAIN_CAPABILITY_PROBE",
+  "results": [
+    {
+      "name": "python_version",
+      "executable": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "args": [
+        "--version"
+      ],
+      "importance": "host_required_observed",
+      "which": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "ok": true,
+      "exit_code": 0,
+      "stdout": "Python 3.12.10\n",
+      "stderr": "",
+      "mode": "version_probe_only",
+      "cmd": [
+        "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "--version"
+      ]
+    },
+    {
+      "name": "pwsh_version",
+      "executable": "pwsh",
+      "args": [
+        "--version"
+      ],
+      "importance": "host_required_observed",
+      "which": "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\pwsh.EXE",
+      "ok": true,
+      "exit_code": 0,
+      "stdout": "PowerShell 7.6.2\n",
+      "stderr": "",
+      "mode": "version_probe_only",
+      "cmd": [
+        "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\pwsh.EXE",
+        "--version"
+      ]
+    },
+    {
+      "name": "git_version",
+      "executable": "git",
+      "args": [
+        "--version"
+      ],
+      "importance": "host_required_observed",
+      "which": "C:\\Program Files\\Git\\cmd\\git.EXE",
+      "ok": true,
+      "exit_code": 0,
+      "stdout": "git version 2.54.0.windows.1\n",
+      "stderr": "",
+      "mode": "version_probe_only",
+      "cmd": [
+        "C:\\Program Files\\Git\\cmd\\git.EXE",
+        "--version"
+      ]
+    },
+    {
+      "name": "node_version",
+      "executable": "node",
+      "args": [
+        "--version"
+      ],
+      "importance": "capability_optional",
+      "which": "C:\\Program Files\\nodejs\\node.EXE",
+      "ok": true,
+      "exit_code": 0,
+      "stdout": "v24.15.0\n",
+      "stderr": "",
+      "mode": "version_probe_only",
+      "cmd": [
+        "C:\\Program Files\\nodejs\\node.EXE",
+        "--version"
+      ]
+    },
+    {
+      "name": "npm_version",
+      "executable": "cmd.exe/npm",
+      "importance": "capability_optional",
+      "which": "C:\\Windows\\system32\\cmd.exe",
+      "ok": true,
+      "exit_code": 0,
+      "stdout": "11.12.1\n",
+      "stderr": "",
+      "mode": "version_probe_only",
+      "cmd": [
+        "cmd.exe",
+        "/d",
+        "/s",
+        "/c",
+        "npm --version"
+      ]
+    },
+    {
+      "name": "rustc_version",
+      "executable": "rustc",
+      "args": [
+        "--version"
+      ],
+      "importance": "capability_optional",
+      "which": "C:\\Users\\PC\\.cargo\\bin\\rustc.EXE",
+      "ok": true,
+      "exit_code": 0,
+      "stdout": "rustc 1.95.0 (59807616e 2026-04-14)\n",
+      "stderr": "",
+      "mode": "version_probe_only",
+      "cmd": [
+        "C:\\Users\\PC\\.cargo\\bin\\rustc.EXE",
+        "--version"
+      ]
+    },
+    {
+      "name": "cargo_version",
+      "executable": "cargo",
+      "args": [
+        "--version"
+      ],
+      "importance": "capability_optional",
+      "which": "C:\\Users\\PC\\.cargo\\bin\\cargo.EXE",
+      "ok": true,
+      "exit_code": 0,
+      "stdout": "cargo 1.95.0 (f2d3ce0bd 2026-03-21)\n",
+      "stderr": "",
+      "mode": "version_probe_only",
+      "cmd": [
+        "C:\\Users\\PC\\.cargo\\bin\\cargo.EXE",
+        "--version"
+      ]
+    },
+    {
+      "name": "go_version",
+      "executable": "go",
+      "args": [
+        "version"
+      ],
+      "importance": "capability_optional",
+      "which": null,
+      "ok": false,
+      "exit_code": null,
+      "stdout": "",
+      "stderr": "executable not found in PATH",
+      "mode": "version_probe_only",
+      "missing_executable": true
+    },
+    {
+      "name": "cmake_version",
+      "executable": "cmake",
+      "args": [
+        "--version"
+      ],
+      "importance": "capability_optional",
+      "which": null,
+      "ok": false,
+      "exit_code": null,
+      "stdout": "",
+      "stderr": "executable not found in PATH",
+      "mode": "version_probe_only",
+      "missing_executable": true
+    }
+  ],
+  "build_targets_detected_but_not_run": [
+    {
+      "name": "app_tauri_npm_build_target_detected",
+      "path": "SUPPORT/APP_TAURI/package.json",
+      "status": "DETECTED_NOT_RUN_BY_ULTRASAFE_PROBE"
+    },
+    {
+      "name": "app_tauri_cargo_manifest_detected",
+      "path": "SUPPORT/APP_TAURI/src-tauri/Cargo.toml",
+      "status": "DETECTED_NOT_RUN_BY_ULTRASAFE_PROBE"
+    }
+  ],
+  "observed_required_ok": true,
+  "observed_required_failed": [],
+  "optional_available": [
+    "node_version",
+    "npm_version",
+    "rustc_version",
+    "cargo_version"
+  ],
+  "optional_missing_or_failed": [
+    "go_version",
+    "cmake_version"
+  ],
+  "verdict": "PASS_TOOLCHAIN_CAPABILITY_BASELINE_RECORDED_WITH_DEBT",
+  "not_claimed": [
+    "100% code cleanliness",
+    "all toolchains available",
+    "build/runtime proof",
+    "dependency security clean",
+    "universal machine readiness",
+    "npm audit fixed"
+  ],
+  "warnings": [
+    "This probe is intentionally nonblocking and records debt.",
+    "Build commands are detected but not executed here.",
+    "Tool missing/failure is capability debt, not hidden pass."
+  ]
+}

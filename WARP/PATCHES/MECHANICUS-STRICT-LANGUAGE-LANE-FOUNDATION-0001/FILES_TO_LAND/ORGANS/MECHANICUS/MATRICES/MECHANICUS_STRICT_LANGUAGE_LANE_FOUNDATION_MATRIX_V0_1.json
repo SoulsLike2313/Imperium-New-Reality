@@ -1,0 +1,58 @@
+{
+  "matrix_id": "MECHANICUS_STRICT_LANGUAGE_LANE_FOUNDATION_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-STRICT-LANGUAGE-LANE-FOUNDATION-0001",
+  "score_total": 100,
+  "dimensions": [
+    {
+      "id": "lane_registry_exists",
+      "weight": 15,
+      "pass": "core lanes are listed with purpose/toolchain/baseline/strict future layers"
+    },
+    {
+      "id": "source_evidence_split_available",
+      "weight": 15,
+      "pass": "language surface v2 report splits source_runtime and governance_evidence"
+    },
+    {
+      "id": "toolchain_report_available",
+      "weight": 15,
+      "pass": "toolchain proof report exists and records missing tools as debt"
+    },
+    {
+      "id": "baseline_dispatch_available",
+      "weight": 15,
+      "pass": "baseline language validation report exists and does not claim 100 clean"
+    },
+    {
+      "id": "lane_readout_generated",
+      "weight": 20,
+      "pass": "Mechanicus writes per-lane status/readout"
+    },
+    {
+      "id": "no_common_bucket_law",
+      "weight": 10,
+      "pass": "matrix forbids validating all languages as one bucket"
+    },
+    {
+      "id": "custodes_throne_lane_boundaries",
+      "weight": 10,
+      "pass": "Custodes and Throne matrices prevent fake lane readiness"
+    }
+  ],
+  "blocking_findings": [
+    "single_common_language_bucket",
+    "missing_lane_registry",
+    "toolchain_debt_hidden",
+    "baseline_claimed_as_100_clean",
+    "source_evidence_not_split",
+    "ui_css_json_markdown_validated_as_executable_code",
+    "go_or_cpp_claimed_available_while_toolchain_missing"
+  ],
+  "allowed_verdicts": [
+    "PASS_STRICT_LANGUAGE_LANE_FOUNDATION_READY",
+    "PASS_LANES_MEASURED_WITH_DEBT",
+    "BLOCK_FAKE_LANGUAGE_CLEANLINESS",
+    "BLOCK_COMMON_BUCKET_VALIDATION"
+  ]
+}

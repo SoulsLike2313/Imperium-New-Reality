@@ -1,0 +1,789 @@
+{
+  "tool_id": "mechanicus_strict_language_lane_readout.v0_2_lane_expanded",
+  "repo_root": "E:\\IMPERIUM_REALITY",
+  "lane_count": 10,
+  "state_counts": {
+    "LANE_READY_BASELINE": 7,
+    "LANE_MEASURED_WITH_DEBT": 1,
+    "LANE_FUTURE_CAPABILITY": 2
+  },
+  "lanes": [
+    {
+      "lane_id": "python",
+      "language_names": [
+        "Python"
+      ],
+      "purpose": "orchestration, scanners, validators, receipts, reports",
+      "state": "LANE_READY_BASELINE",
+      "surface": {
+        "raw": {
+          "files": 499,
+          "total_lines": 127849,
+          "code_lines": 109117,
+          "languages": [
+            "Python"
+          ]
+        },
+        "source_runtime": {
+          "files": 375,
+          "total_lines": 97406,
+          "code_lines": 83584,
+          "languages": [
+            "Python"
+          ]
+        },
+        "governance_evidence": {
+          "files": 7,
+          "total_lines": 4598,
+          "code_lines": 4013,
+          "languages": [
+            "Python"
+          ]
+        }
+      },
+      "toolchain": {
+        "required_probe_names": [
+          "python_version"
+        ],
+        "all_observed_ok": true,
+        "observed": [
+          {
+            "name": "python_version",
+            "ok": true,
+            "exit_code": 0,
+            "which": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+            "stderr": ""
+          }
+        ]
+      },
+      "baseline_validation": {
+        "baseline_present": true,
+        "ok": true,
+        "checks": [
+          {
+            "language": "Python",
+            "lane_id": "python",
+            "files_checked": 385,
+            "ok": true,
+            "baseline_type": "py_compile_current_non_patch_python",
+            "errors": [],
+            "not_claimed": [
+              "ruff clean",
+              "mypy clean",
+              "pytest clean"
+            ]
+          }
+        ]
+      },
+      "strict_layers_future": [
+        "compileall",
+        "ruff_or_flake8",
+        "mypy_if_typed",
+        "pytest_if_tests_exist",
+        "dependency_review"
+      ],
+      "must_not_claim": [
+        "typed correctness without mypy/pyright",
+        "lint clean without linter",
+        "test clean without tests"
+      ]
+    },
+    {
+      "lane_id": "powershell",
+      "language_names": [
+        "PowerShell"
+      ],
+      "purpose": "Windows WARP runners and operator workflows",
+      "state": "LANE_READY_BASELINE",
+      "surface": {
+        "raw": {
+          "files": 133,
+          "total_lines": 7744,
+          "code_lines": 6373,
+          "languages": [
+            "PowerShell"
+          ]
+        },
+        "source_runtime": {
+          "files": 49,
+          "total_lines": 2783,
+          "code_lines": 2370,
+          "languages": [
+            "PowerShell"
+          ]
+        },
+        "governance_evidence": {
+          "files": 2,
+          "total_lines": 1218,
+          "code_lines": 1060,
+          "languages": [
+            "PowerShell"
+          ]
+        }
+      },
+      "toolchain": {
+        "required_probe_names": [
+          "pwsh_version"
+        ],
+        "all_observed_ok": true,
+        "observed": [
+          {
+            "name": "pwsh_version",
+            "ok": true,
+            "exit_code": 0,
+            "which": "C:\\Program Files\\WindowsApps\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\pwsh.EXE",
+            "stderr": ""
+          }
+        ]
+      },
+      "baseline_validation": {
+        "baseline_present": true,
+        "ok": true,
+        "checks": [
+          {
+            "language": "PowerShell",
+            "lane_id": "powershell",
+            "files_checked": 51,
+            "ok": true,
+            "baseline_type": "powershell_surface_and_toolchain_detection_no_parser_yet",
+            "toolchain_ok": true,
+            "errors": [],
+            "not_claimed": [
+              "PowerShell parser clean",
+              "PSScriptAnalyzer clean",
+              "runner contract proof"
+            ]
+          }
+        ]
+      },
+      "strict_layers_future": [
+        "PSScriptAnalyzer",
+        "runner_contract_check",
+        "no_direct_master_mutation_check"
+      ],
+      "must_not_claim": [
+        "cross-platform core logic",
+        "large app logic cleanliness"
+      ]
+    },
+    {
+      "lane_id": "rust",
+      "language_names": [
+        "Rust"
+      ],
+      "purpose": "Tauri backend, strict compiled validators, safety gates",
+      "state": "LANE_READY_BASELINE",
+      "surface": {
+        "raw": {
+          "files": 10,
+          "total_lines": 1365,
+          "code_lines": 1250,
+          "languages": [
+            "Rust"
+          ]
+        },
+        "source_runtime": {
+          "files": 5,
+          "total_lines": 306,
+          "code_lines": 281,
+          "languages": [
+            "Rust"
+          ]
+        },
+        "governance_evidence": {
+          "files": 0,
+          "total_lines": 0,
+          "code_lines": 0,
+          "languages": []
+        }
+      },
+      "toolchain": {
+        "required_probe_names": [
+          "rustc_version",
+          "cargo_version"
+        ],
+        "all_observed_ok": true,
+        "observed": [
+          {
+            "name": "rustc_version",
+            "ok": true,
+            "exit_code": 0,
+            "which": "C:\\Users\\PC\\.cargo\\bin\\rustc.EXE",
+            "stderr": ""
+          },
+          {
+            "name": "cargo_version",
+            "ok": true,
+            "exit_code": 0,
+            "which": "C:\\Users\\PC\\.cargo\\bin\\cargo.EXE",
+            "stderr": ""
+          }
+        ]
+      },
+      "baseline_validation": {
+        "baseline_present": true,
+        "ok": true,
+        "checks": [
+          {
+            "language": "Rust",
+            "lane_id": "rust",
+            "files_checked": 5,
+            "ok": true,
+            "baseline_type": "rust_surface_and_toolchain_detection_no_cargo_check",
+            "toolchain_ok": true,
+            "cargo_manifests_detected": [
+              "ORGANS/IMPERIAL_IDE/COCKPIT/shell-rs/Cargo.toml",
+              "SUPPORT/APP_TAURI/src-tauri/Cargo.toml"
+            ],
+            "errors": [],
+            "not_claimed": [
+              "cargo check",
+              "cargo fmt",
+              "cargo clippy",
+              "cargo test"
+            ]
+          }
+        ]
+      },
+      "strict_layers_future": [
+        "cargo_check",
+        "cargo_fmt_check",
+        "cargo_clippy",
+        "cargo_test"
+      ],
+      "must_not_claim": [
+        "cargo clean without cargo_check/fmt/clippy"
+      ]
+    },
+    {
+      "lane_id": "node_frontend",
+      "language_names": [
+        "JavaScript",
+        "TypeScript"
+      ],
+      "purpose": "Tauri webview app, operator rooms, frontend state/render components",
+      "state": "LANE_READY_BASELINE",
+      "surface": {
+        "raw": {
+          "files": 33,
+          "total_lines": 6590,
+          "code_lines": 6008,
+          "languages": [
+            "JavaScript",
+            "TypeScript"
+          ]
+        },
+        "source_runtime": {
+          "files": 16,
+          "total_lines": 2228,
+          "code_lines": 2039,
+          "languages": [
+            "JavaScript",
+            "TypeScript"
+          ]
+        },
+        "governance_evidence": {
+          "files": 6,
+          "total_lines": 1776,
+          "code_lines": 1593,
+          "languages": [
+            "JavaScript"
+          ]
+        }
+      },
+      "toolchain": {
+        "required_probe_names": [
+          "node_version",
+          "npm_version"
+        ],
+        "all_observed_ok": true,
+        "observed": [
+          {
+            "name": "node_version",
+            "ok": true,
+            "exit_code": 0,
+            "which": "C:\\Program Files\\nodejs\\node.EXE",
+            "stderr": ""
+          },
+          {
+            "name": "npm_version",
+            "ok": true,
+            "exit_code": 0,
+            "which": "C:\\Windows\\system32\\cmd.exe",
+            "stderr": ""
+          }
+        ]
+      },
+      "baseline_validation": {
+        "baseline_present": true,
+        "ok": true,
+        "checks": [
+          {
+            "language": "JavaScript/TypeScript",
+            "lane_id": "node_frontend",
+            "files_checked": 22,
+            "ok": true,
+            "baseline_type": "node_frontend_surface_and_toolchain_detection_no_npm_build",
+            "toolchain_ok": true,
+            "package_json_detected": [
+              "ORGANS/IMPERIAL_IDE/WEB_SANCTUM/package.json",
+              "ORGANS/IMPERIAL_IDE/COCKPIT/app-ts/package.json",
+              "SUPPORT/APP_TAURI/package.json",
+              "SUPPORT/QUARANTINE/ROOT_REPORTS_PENDING_HARNESS_INTAKE/REPORTS/TASK-20260520-SANCTUM-BRAIN-HARDENING-VISUAL-POLISH-PC-V0_2/package.json",
+              "SUPPORT/QUARANTINE/ROOT_REPORTS_PENDING_HARNESS_INTAKE/REPORTS/TASK-20260520-SANCTUM-PLAYWRIGHT-TRUTH-BRAIN-STRIKE-PC-V0_1/package.json"
+            ],
+            "errors": [],
+            "not_claimed": [
+              "npm build",
+              "eslint clean",
+              "tsc clean",
+              "npm audit clean"
+            ]
+          }
+        ]
+      },
+      "strict_layers_future": [
+        "npm_build",
+        "eslint_if_configured",
+        "tsc_if_typescript",
+        "npm_audit_report_only"
+      ],
+      "must_not_claim": [
+        "backend truth",
+        "execution proof from UI markers"
+      ]
+    },
+    {
+      "lane_id": "css_ui",
+      "language_names": [
+        "CSS"
+      ],
+      "purpose": "visual system, design tokens, layout, components, ornaments, telemetry",
+      "state": "LANE_READY_BASELINE",
+      "surface": {
+        "raw": {
+          "files": 13,
+          "total_lines": 5911,
+          "code_lines": 5168,
+          "languages": [
+            "CSS"
+          ]
+        },
+        "source_runtime": {
+          "files": 4,
+          "total_lines": 1385,
+          "code_lines": 1204,
+          "languages": [
+            "CSS"
+          ]
+        },
+        "governance_evidence": {
+          "files": 1,
+          "total_lines": 488,
+          "code_lines": 420,
+          "languages": [
+            "CSS"
+          ]
+        }
+      },
+      "toolchain": {
+        "required_probe_names": [],
+        "all_observed_ok": true,
+        "observed": []
+      },
+      "baseline_validation": {
+        "baseline_present": true,
+        "ok": true,
+        "checks": [
+          {
+            "language": "CSS",
+            "lane_id": "css_ui",
+            "files_checked": 5,
+            "ok": true,
+            "baseline_type": "css_structural_brace_balance_current_non_patch",
+            "errors": [],
+            "not_claimed": [
+              "stylelint clean",
+              "token coverage",
+              "reference fidelity",
+              "no CSS monolith"
+            ]
+          }
+        ]
+      },
+      "strict_layers_future": [
+        "stylelint_if_configured",
+        "token_coverage",
+        "no_monolith_css",
+        "reference_fidelity_evidence"
+      ],
+      "must_not_claim": [
+        "live UI fidelity from bitmap overlay",
+        "functional proof from style"
+      ]
+    },
+    {
+      "lane_id": "json_evidence",
+      "language_names": [
+        "JSON",
+        "JSONL"
+      ],
+      "purpose": "receipts, matrices, contracts, manifests, reports",
+      "state": "LANE_MEASURED_WITH_DEBT",
+      "surface": {
+        "raw": {
+          "files": 3574,
+          "total_lines": 585223,
+          "code_lines": 585188,
+          "languages": [
+            "JSON",
+            "JSONL"
+          ]
+        },
+        "source_runtime": {
+          "files": 338,
+          "total_lines": 91751,
+          "code_lines": 91740,
+          "languages": [
+            "JSON",
+            "JSONL"
+          ]
+        },
+        "governance_evidence": {
+          "files": 1886,
+          "total_lines": 229005,
+          "code_lines": 228989,
+          "languages": [
+            "JSON",
+            "JSONL"
+          ]
+        }
+      },
+      "toolchain": {
+        "required_probe_names": [
+          "python_version"
+        ],
+        "all_observed_ok": true,
+        "observed": [
+          {
+            "name": "python_version",
+            "ok": true,
+            "exit_code": 0,
+            "which": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+            "stderr": ""
+          }
+        ]
+      },
+      "baseline_validation": {
+        "baseline_present": true,
+        "ok": false,
+        "checks": [
+          {
+            "language": "JSON/JSONL",
+            "lane_id": "json_evidence",
+            "files_checked": 3302,
+            "ok": false,
+            "baseline_type": "parse_all_current_non_patch_json",
+            "errors": [
+              {
+                "path": "ORGANS/ADMINISTRATUM/BUNDLE_GATE/FIXTURES/v0_2_malformed_required_json/CLAIM_LEDGER.json",
+                "error": "Expecting property name enclosed in double quotes: line 2 column 1 (char 2)"
+              },
+              {
+                "path": "SUPPORT/COMMON_IMPERIUM_SUPPORT/ROOT_IMPORTED_COMMON_SUPPORT/MATRIX_SPINE/FIXTURES/invalid_malformed_json_matrix.json",
+                "error": "Expecting property name enclosed in double quotes: line 5 column 1 (char 111)"
+              },
+              {
+                "path": "SUPPORT/QUARANTINE/ROOT_REPORTS_PENDING_HARNESS_INTAKE/REPORTS/TASK-20260521-NEWGEN-ASTRONOMICON-TASK-FORMATION-PC-V0_1/STEP_PROOF_RECORDS.jsonl",
+                "error": "Extra data: line 1 column 741 (char 740)"
+              }
+            ],
+            "debt_kind": "governance_evidence_parse_debt"
+          }
+        ]
+      },
+      "strict_layers_future": [
+        "schema_per_family",
+        "receipt_shape",
+        "matrix_weight_sum",
+        "contract_required_keys"
+      ],
+      "must_not_claim": [
+        "source code cleanliness from JSON parse"
+      ]
+    },
+    {
+      "lane_id": "markdown_docs",
+      "language_names": [
+        "Markdown"
+      ],
+      "purpose": "patch packs, reports, doctrine, readmes",
+      "state": "LANE_READY_BASELINE",
+      "surface": {
+        "raw": {
+          "files": 1584,
+          "total_lines": 67200,
+          "code_lines": 50989,
+          "languages": [
+            "Markdown"
+          ]
+        },
+        "source_runtime": {
+          "files": 0,
+          "total_lines": 0,
+          "code_lines": 0,
+          "languages": []
+        },
+        "governance_evidence": {
+          "files": 660,
+          "total_lines": 25129,
+          "code_lines": 19776,
+          "languages": [
+            "Markdown"
+          ]
+        }
+      },
+      "toolchain": {
+        "required_probe_names": [
+          "python_version"
+        ],
+        "all_observed_ok": true,
+        "observed": [
+          {
+            "name": "python_version",
+            "ok": true,
+            "exit_code": 0,
+            "which": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+            "stderr": ""
+          }
+        ]
+      },
+      "baseline_validation": {
+        "baseline_present": true,
+        "ok": true,
+        "checks": [
+          {
+            "language": "Markdown",
+            "lane_id": "markdown_docs",
+            "files_checked": 1375,
+            "ok": true,
+            "baseline_type": "non_empty_markdown_current_non_patch",
+            "errors": [],
+            "not_claimed": [
+              "markdownlint clean",
+              "link integrity"
+            ]
+          }
+        ]
+      },
+      "strict_layers_future": [
+        "required_sections",
+        "link_path_check",
+        "markdownlint_if_available"
+      ],
+      "must_not_claim": [
+        "machine proof without JSON receipt"
+      ]
+    },
+    {
+      "lane_id": "toml_config",
+      "language_names": [
+        "TOML"
+      ],
+      "purpose": "Cargo and project configuration",
+      "state": "LANE_READY_BASELINE",
+      "surface": {
+        "raw": {
+          "files": 3,
+          "total_lines": 47,
+          "code_lines": 39,
+          "languages": [
+            "TOML"
+          ]
+        },
+        "source_runtime": {
+          "files": 2,
+          "total_lines": 32,
+          "code_lines": 26,
+          "languages": [
+            "TOML"
+          ]
+        },
+        "governance_evidence": {
+          "files": 0,
+          "total_lines": 0,
+          "code_lines": 0,
+          "languages": []
+        }
+      },
+      "toolchain": {
+        "required_probe_names": [
+          "python_version"
+        ],
+        "all_observed_ok": true,
+        "observed": [
+          {
+            "name": "python_version",
+            "ok": true,
+            "exit_code": 0,
+            "which": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+            "stderr": ""
+          }
+        ]
+      },
+      "baseline_validation": {
+        "baseline_present": true,
+        "ok": true,
+        "checks": [
+          {
+            "language": "TOML",
+            "lane_id": "toml_config",
+            "files_checked": 2,
+            "ok": true,
+            "baseline_type": "parse_all_current_toml",
+            "errors": []
+          }
+        ]
+      },
+      "strict_layers_future": [
+        "cargo_manifest_semantics",
+        "dependency_policy"
+      ],
+      "must_not_claim": [
+        "Rust readiness from TOML parse"
+      ]
+    },
+    {
+      "lane_id": "go_future",
+      "language_names": [
+        "Go"
+      ],
+      "purpose": "future portable CLI workers and fast simple tools",
+      "state": "LANE_FUTURE_CAPABILITY",
+      "surface": {
+        "raw": {
+          "files": 0,
+          "total_lines": 0,
+          "code_lines": 0,
+          "languages": []
+        },
+        "source_runtime": {
+          "files": 0,
+          "total_lines": 0,
+          "code_lines": 0,
+          "languages": []
+        },
+        "governance_evidence": {
+          "files": 0,
+          "total_lines": 0,
+          "code_lines": 0,
+          "languages": []
+        }
+      },
+      "toolchain": {
+        "required_probe_names": [
+          "go_version"
+        ],
+        "all_observed_ok": false,
+        "observed": [
+          {
+            "name": "go_version",
+            "ok": false,
+            "exit_code": null,
+            "which": null,
+            "stderr": "executable not found in PATH"
+          }
+        ]
+      },
+      "baseline_validation": {
+        "baseline_present": false,
+        "ok": false,
+        "checks": []
+      },
+      "strict_layers_future": [
+        "go_fmt",
+        "go_vet",
+        "go_test",
+        "go_build"
+      ],
+      "must_not_claim": [
+        "available while go toolchain missing"
+      ]
+    },
+    {
+      "lane_id": "cpp_future",
+      "language_names": [
+        "C++",
+        "C",
+        "C/C++ Header"
+      ],
+      "purpose": "future deep optimization after profiling proves need",
+      "state": "LANE_FUTURE_CAPABILITY",
+      "surface": {
+        "raw": {
+          "files": 0,
+          "total_lines": 0,
+          "code_lines": 0,
+          "languages": []
+        },
+        "source_runtime": {
+          "files": 0,
+          "total_lines": 0,
+          "code_lines": 0,
+          "languages": []
+        },
+        "governance_evidence": {
+          "files": 0,
+          "total_lines": 0,
+          "code_lines": 0,
+          "languages": []
+        }
+      },
+      "toolchain": {
+        "required_probe_names": [
+          "cmake_version"
+        ],
+        "all_observed_ok": false,
+        "observed": [
+          {
+            "name": "cmake_version",
+            "ok": false,
+            "exit_code": null,
+            "which": null,
+            "stderr": "executable not found in PATH"
+          }
+        ]
+      },
+      "baseline_validation": {
+        "baseline_present": false,
+        "ok": false,
+        "checks": []
+      },
+      "strict_layers_future": [
+        "cmake_build",
+        "clang_format",
+        "clang_tidy",
+        "tests"
+      ],
+      "must_not_claim": [
+        "needed before profiling"
+      ]
+    }
+  ],
+  "verdict": "PASS_STRICT_LANGUAGE_LANES_MEASURED_WITH_DEBT",
+  "not_claimed": [
+    "100% clean",
+    "strict lanes complete",
+    "all toolchains available",
+    "all linter/type/security layers complete",
+    "cargo check pass",
+    "npm build pass"
+  ],
+  "warnings": [
+    "This is a lane foundation/readout, not strict cleanliness.",
+    "LANE_READY_BASELINE means only implemented baseline checks passed.",
+    "LANE_MEASURED_WITH_DEBT shows a real debt lane.",
+    "LANE_FOUNDATION_ONLY means no baseline check exists for that lane yet.",
+    "LANE_TOOLCHAIN_MISSING is capability debt."
+  ]
+}

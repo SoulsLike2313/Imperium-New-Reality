@@ -1,0 +1,73 @@
+{
+  "receipt_id": "receipt.mechanicus.task_tool_composition_planner.v0_2",
+  "task_id": "MECHANICUS-TASK-TOOL-COMPOSITION-PLANNER-0001",
+  "validator_id": "mechanicus_task_tool_composition_planner_validator.v0_2_hard_safe",
+  "verdict": "PASS_MECHANICUS_TASK_TOOL_COMPOSITION_PLANNER_READY",
+  "generated_at_utc": "2026-07-05T14:50:41Z",
+  "checks": [
+    {
+      "name": "planner_law_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/LAWS/MECHANICUS_TASK_TOOL_COMPOSITION_PLANNER_LAW_V0_1.json"
+      }
+    },
+    {
+      "name": "taxonomy_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_TASK_CAPABILITY_DEMAND_TAXONOMY_V0_1.json"
+      }
+    },
+    {
+      "name": "scoring_matrix_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_TOOL_COMPOSITION_SCORING_MATRIX_V0_1.json"
+      }
+    },
+    {
+      "name": "hard_safe_planner_installed",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/plan_mechanicus_task_tool_composition.py"
+      }
+    },
+    {
+      "name": "planner_runs_and_writes_plan",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "on\",\n        \"json_evidence\",\n        \"markdown_docs\"\n      ],\n      \"lane_states\": [\n        {\n          \"lane_id\": \"python\",\n          \"state\": \"LANE_READY_BASELINE\"\n        },\n        {\n          \"lane_id\": \"json_evidence\",\n          \"state\": \"LANE_MEASURED_WITH_DEBT\"\n        },\n        {\n          \"lane_id\": \"markdown_docs\",\n          \"state\": \"LANE_READY_BASELINE\"\n        }\n      ],\n      \"dimensions\": {\n        \"requirement_fit\": 68,\n        \"availability_and_admission\": 56,\n        \"cleanliness_validation_coverage\": 58,\n        \"reliability_and_receipts\": 61,\n        \"cost_and_runtime_weight\": 82,\n        \"maintainability_no_monolith\": 82\n      },\n      \"required_validators\": [\n        \"python py_compile\",\n        \"json parse\",\n        \"receipt shape\"\n      ],\n      \"typical_tools\": [\n        \"python\",\n        \"Mechanicus inventory scanner\",\n        \"language validation dispatch\"\n      ]\n    },\n    {\n      \"demand_id\": \"game_engine_or_procedural_world\",\n      \"score_0_to_100\": 47.35,\n      \"verdict\": \"NOT_RECOMMENDED_OR_CAPABILITY_MISSING\",\n      \"preferred_lanes\": [\n        \"node_frontend\",\n        \"rust\",\n        \"css_ui\",\n        \"go_future\",\n        \"cpp_future\"\n      ],\n      \"lane_states\": [\n        {\n          \"lane_id\": \"node_frontend\",\n          \"state\": \"LANE_READY_BASELINE\"\n        },\n        {\n          \"lane_id\": \"rust\",\n          \"state\": \"LANE_READY_BASELINE\"\n        },\n        {\n          \"lane_id\": \"css_ui\",\n          \"state\": \"LANE_READY_BASELINE\"\n        },\n        {\n          \"lane_id\": \"go_future\",\n          \"state\": \"LANE_FUTURE_CAPABILITY\"\n        },\n        {\n          \"lane_id\": \"cpp_future\",\n          \"state\": \"LANE_FUTURE_CAPABILITY\"\n        }\n      ],\n      \"dimensions\": {\n        \"requirement_fit\": 68,\n        \"availability_and_admission\": 20,\n        \"cleanliness_validation_coverage\": 44,\n        \"reliability_and_receipts\": 47,\n        \"cost_and_runtime_weight\": 40,\n        \"maintainability_no_monolith\": 65\n      },\n      \"required_validators\": [\n        \"engine capability proof\",\n        \"runtime performance proof\",\n        \"asset pipeline proof\"\n      ],\n      \"typical_tools\": [\n        \"game engine candidate\",\n        \"runtime profiler\",\n        \"asset pipeline\"\n      ]\n    }\n  ],\n  \"recommended_tool_stack\": {\n    \"demand_id\": \"warp_runner_or_windows_operator\",\n    \"score_0_to_100\": 72.35,\n    \"verdict\": \"ACCEPTABLE_WITH_DEBT\",\n    \"preferred_lanes\": [\n      \"powershell\",\n      \"python\",\n      \"json_evidence\"\n    ],\n    \"lane_states\": [\n      {\n        \"lane_id\": \"powershell\",\n        \"state\": \"LANE_READY_BASELINE\"\n      },\n      {\n        \"lane_id\": \"python\",\n        \"state\": \"LANE_READY_BASELINE\"\n      },\n      {\n        \"lane_id\": \"json_evidence\",\n        \"state\": \"LANE_MEASURED_WITH_DEBT\"\n      }\n    ],\n    \"dimensions\": {\n      \"requirement_fit\": 96,\n      \"availability_and_admission\": 56,\n      \"cleanliness_validation_coverage\": 58,\n      \"reliability_and_receipts\": 61,\n      \"cost_and_runtime_weight\": 82,\n      \"maintainability_no_monolith\": 82\n    },\n    \"required_validators\": [\n      \"pwsh version\",\n      \"runner receipt\",\n      \"no direct master mutation\"\n    ],\n    \"typical_tools\": [\n      \"pwsh\",\n      \"WARP runner\",\n      \"git\"\n    ]\n  },\n  \"recommended_language_lanes\": [\n    \"powershell\",\n    \"python\",\n    \"json_evidence\"\n  ],\n  \"required_validators\": [\n    \"pwsh version\",\n    \"runner receipt\",\n    \"no direct master mutation\",\n    \"npm build\",\n    \"cargo check\",\n    \"runtime FPS proof\",\n    \"UX proof receipt\",\n    \"CSS structural scan\",\n    \"FPS proof\",\n    \"reference fidelity report\",\n    \"no CSS monolith\"\n  ],\n  \"missing_capabilities\": [\n    {\n      \"capability_id\": \"GAME_ENGINE_CAPABILITY_NOT_INVENTORIED\",\n      \"severity\": \"OWNER_VISIBLE_GAP\",\n      \"meaning\": \"Game/procedural engine requested or implied, but no admitted engine is inventoried.\"\n    },\n    {\n      \"capability_id\": \"STRICT_BUILD_LANE_REQUIRED\",\n      \"severity\": \"NEXT_VALIDATOR_REQUIRED\",\n      \"meaning\": \"Task asks for strict/build/runtime confidence; a separate strict lane must run.\"\n    },\n    {\n      \"capability_id\": \"UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI\",\n      \"severity\": \"CONDITIONAL_GAP\",\n      \"meaning\": \"UI/reference work needs dedicated fidelity proof; CSS alone cannot prove target UI.\"\n    }\n  ],\n  \"owner_visible_blockers\": [\n    {\n      \"capability_id\": \"GAME_ENGINE_CAPABILITY_NOT_INVENTORIED\",\n      \"severity\": \"OWNER_VISIBLE_GAP\",\n      \"meaning\": \"Game/procedural engine requested or implied, but no admitted engine is inventoried.\"\n    }\n  ],\n  \"verdict\": \"PLAN_READY_WITH_CAPABILITY_GAPS\",\n  \"not_claimed\": [\n    \"task executed\",\n    \"runtime proof\",\n    \"dependencies installed\",\n    \"100% clean\",\n    \"strict build pass\"\n  ],\n  \"warnings\": [\n    \"Tool composition plan is advisory and does not execute the task.\",\n    \"Missing capabilities must remain visible until resolved or Owner-waived.\",\n    \"Strict build/runtime validators remain separate lanes.\"\n  ]\n}\n",
+        "stderr_tail": "",
+        "out_exists": true
+      }
+    },
+    {
+      "name": "plan_contains_classification_scores_recommendation_gaps_and_no_execution_claim",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "verdict": "PLAN_READY_WITH_CAPABILITY_GAPS",
+        "classification_count": 5,
+        "combination_count": 5,
+        "missing_count": 3
+      }
+    },
+    {
+      "name": "planner_did_not_fall_back_to_exception_debt_plan",
+      "status": "PASS",
+      "details": {
+        "verdict": "PLAN_READY_WITH_CAPABILITY_GAPS"
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Planner gap: GAME_ENGINE_CAPABILITY_NOT_INVENTORIED => OWNER_VISIBLE_GAP",
+    "Planner gap: STRICT_BUILD_LANE_REQUIRED => NEXT_VALIDATOR_REQUIRED",
+    "Planner gap: UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI => CONDITIONAL_GAP",
+    "Recommended demand: warp_runner_or_windows_operator score=72.35 verdict=ACCEPTABLE_WITH_DEBT"
+  ],
+  "plan": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_TASK_TOOL_COMPOSITION_PLAN_V0_1.json"
+}

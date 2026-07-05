@@ -1,0 +1,307 @@
+{
+  "registry_id": "MECHANICUS_STRICT_LANGUAGE_LANE_REGISTRY_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-STRICT-LANGUAGE-LANE-FOUNDATION-0001",
+  "status": "FOUNDATION_REGISTRY_NOT_FULL_CLEANLINESS",
+  "core_law": [
+    "Languages must not be validated in one common bucket.",
+    "Each language has its own lane, toolchain proof, validation layers, debt and receipts.",
+    "A language lane may be available, measured, partial, blocked or future; these are different states.",
+    "A missing toolchain is capability debt, not a fake pass.",
+    "A baseline lane pass is not 100% code cleanliness."
+  ],
+  "lane_states": [
+    "LANE_READY_BASELINE",
+    "LANE_MEASURED_WITH_DEBT",
+    "LANE_FOUNDATION_ONLY",
+    "LANE_TOOLCHAIN_MISSING",
+    "LANE_NOT_PRESENT",
+    "LANE_FUTURE_CAPABILITY"
+  ],
+  "lanes": [
+    {
+      "lane_id": "python",
+      "language_names": [
+        "Python"
+      ],
+      "owner": "MECHANICUS",
+      "purpose": "orchestration, scanners, validators, receipts, reports",
+      "toolchain_required": [
+        "python"
+      ],
+      "baseline_layers": [
+        "version",
+        "py_compile"
+      ],
+      "strict_layers_future": [
+        "compileall",
+        "ruff_or_flake8",
+        "mypy_if_typed",
+        "pytest_if_tests_exist",
+        "dependency_review"
+      ],
+      "source_role_expectation": [
+        "validator",
+        "tool",
+        "governance automation"
+      ],
+      "must_not_claim": [
+        "typed correctness without mypy/pyright",
+        "lint clean without linter",
+        "test clean without tests"
+      ]
+    },
+    {
+      "lane_id": "powershell",
+      "language_names": [
+        "PowerShell"
+      ],
+      "owner": "MECHANICUS",
+      "purpose": "Windows WARP runners and operator workflows",
+      "toolchain_required": [
+        "pwsh"
+      ],
+      "baseline_layers": [
+        "version",
+        "parser"
+      ],
+      "strict_layers_future": [
+        "PSScriptAnalyzer",
+        "runner_contract_check",
+        "no_direct_master_mutation_check"
+      ],
+      "source_role_expectation": [
+        "warp_runner",
+        "host workflow"
+      ],
+      "must_not_claim": [
+        "cross-platform core logic",
+        "large app logic cleanliness"
+      ]
+    },
+    {
+      "lane_id": "rust",
+      "language_names": [
+        "Rust"
+      ],
+      "owner": "MECHANICUS",
+      "purpose": "Tauri backend, strict compiled validators, safety gates",
+      "toolchain_required": [
+        "rustc",
+        "cargo"
+      ],
+      "baseline_layers": [
+        "version"
+      ],
+      "strict_layers_future": [
+        "cargo_check",
+        "cargo_fmt_check",
+        "cargo_clippy",
+        "cargo_test"
+      ],
+      "source_role_expectation": [
+        "tauri_backend",
+        "compiled proof"
+      ],
+      "must_not_claim": [
+        "cargo clean without cargo_check/fmt/clippy"
+      ]
+    },
+    {
+      "lane_id": "node_frontend",
+      "language_names": [
+        "JavaScript",
+        "TypeScript"
+      ],
+      "owner": "MECHANICUS",
+      "purpose": "Tauri webview app, operator rooms, frontend state/render components",
+      "toolchain_required": [
+        "node",
+        "npm"
+      ],
+      "baseline_layers": [
+        "version"
+      ],
+      "strict_layers_future": [
+        "npm_build",
+        "eslint_if_configured",
+        "tsc_if_typescript",
+        "npm_audit_report_only"
+      ],
+      "source_role_expectation": [
+        "tauri_frontend",
+        "operator surface"
+      ],
+      "must_not_claim": [
+        "backend truth",
+        "execution proof from UI markers"
+      ]
+    },
+    {
+      "lane_id": "css_ui",
+      "language_names": [
+        "CSS"
+      ],
+      "owner": "MECHANICUS",
+      "purpose": "visual system, design tokens, layout, components, ornaments, telemetry",
+      "toolchain_required": [
+        "npm_optional"
+      ],
+      "baseline_layers": [
+        "surface_scan"
+      ],
+      "strict_layers_future": [
+        "stylelint_if_configured",
+        "token_coverage",
+        "no_monolith_css",
+        "reference_fidelity_evidence"
+      ],
+      "source_role_expectation": [
+        "ui style system"
+      ],
+      "must_not_claim": [
+        "live UI fidelity from bitmap overlay",
+        "functional proof from style"
+      ]
+    },
+    {
+      "lane_id": "json_evidence",
+      "language_names": [
+        "JSON",
+        "JSONL"
+      ],
+      "owner": "MECHANICUS",
+      "purpose": "receipts, matrices, contracts, manifests, reports",
+      "toolchain_required": [
+        "python_json_parser"
+      ],
+      "baseline_layers": [
+        "parse_all_json"
+      ],
+      "strict_layers_future": [
+        "schema_per_family",
+        "receipt_shape",
+        "matrix_weight_sum",
+        "contract_required_keys"
+      ],
+      "source_role_expectation": [
+        "governance_evidence"
+      ],
+      "must_not_claim": [
+        "source code cleanliness from JSON parse"
+      ]
+    },
+    {
+      "lane_id": "markdown_docs",
+      "language_names": [
+        "Markdown"
+      ],
+      "owner": "MECHANICUS",
+      "purpose": "patch packs, reports, doctrine, readmes",
+      "toolchain_required": [
+        "python"
+      ],
+      "baseline_layers": [
+        "non_empty_markdown"
+      ],
+      "strict_layers_future": [
+        "required_sections",
+        "link_path_check",
+        "markdownlint_if_available"
+      ],
+      "source_role_expectation": [
+        "documentation",
+        "human report"
+      ],
+      "must_not_claim": [
+        "machine proof without JSON receipt"
+      ]
+    },
+    {
+      "lane_id": "toml_config",
+      "language_names": [
+        "TOML"
+      ],
+      "owner": "MECHANICUS",
+      "purpose": "Cargo and project configuration",
+      "toolchain_required": [
+        "python_tomllib"
+      ],
+      "baseline_layers": [
+        "parse_all_toml"
+      ],
+      "strict_layers_future": [
+        "cargo_manifest_semantics",
+        "dependency_policy"
+      ],
+      "source_role_expectation": [
+        "configuration"
+      ],
+      "must_not_claim": [
+        "Rust readiness from TOML parse"
+      ]
+    },
+    {
+      "lane_id": "go_future",
+      "language_names": [
+        "Go"
+      ],
+      "owner": "MECHANICUS",
+      "purpose": "future portable CLI workers and fast simple tools",
+      "toolchain_required": [
+        "go"
+      ],
+      "baseline_layers": [
+        "version_if_present"
+      ],
+      "strict_layers_future": [
+        "go_fmt",
+        "go_vet",
+        "go_test",
+        "go_build"
+      ],
+      "source_role_expectation": [
+        "future cli workers"
+      ],
+      "must_not_claim": [
+        "available while go toolchain missing"
+      ]
+    },
+    {
+      "lane_id": "cpp_future",
+      "language_names": [
+        "C++",
+        "C",
+        "C/C++ Header"
+      ],
+      "owner": "MECHANICUS",
+      "purpose": "future deep optimization after profiling proves need",
+      "toolchain_required": [
+        "cmake_or_compiler"
+      ],
+      "baseline_layers": [
+        "compiler_detection"
+      ],
+      "strict_layers_future": [
+        "cmake_build",
+        "clang_format",
+        "clang_tidy",
+        "tests"
+      ],
+      "source_role_expectation": [
+        "future hot path"
+      ],
+      "must_not_claim": [
+        "needed before profiling"
+      ]
+    }
+  ],
+  "not_claimed": [
+    "strict lanes complete",
+    "100% clean",
+    "all toolchains available",
+    "all linters configured",
+    "all tests present",
+    "Core v1 ready"
+  ]
+}

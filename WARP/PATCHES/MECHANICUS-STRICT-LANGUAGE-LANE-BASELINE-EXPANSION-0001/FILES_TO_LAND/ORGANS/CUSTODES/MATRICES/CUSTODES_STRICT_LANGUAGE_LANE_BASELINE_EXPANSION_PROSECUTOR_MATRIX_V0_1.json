@@ -1,0 +1,19 @@
+{
+  "matrix_id": "CUSTODES_STRICT_LANGUAGE_LANE_BASELINE_EXPANSION_PROSECUTOR_MATRIX_V0_1",
+  "version": "0.1",
+  "posture": "prosecutor_not_helper",
+  "questions": [
+    "Did Mechanicus create a lane-specific baseline for each active lane?",
+    "Did Mechanicus exclude patch-pack payload from source-runtime validator decisions?",
+    "Did Mechanicus claim strict build success without running strict build lanes?",
+    "Did Mechanicus keep JSON evidence debt separate from runtime-code debt?",
+    "Did Mechanicus expose exact validation debt instead of hiding it?"
+  ],
+  "blocking_findings": [
+    "foundation_lane_left_without_reason",
+    "strict_build_claimed_from_baseline",
+    "patch_payload_validated_as_current_source_runtime",
+    "json_evidence_debt_hidden",
+    "lane_specific_debt_missing"
+  ]
+}

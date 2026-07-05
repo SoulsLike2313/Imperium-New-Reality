@@ -1,0 +1,119 @@
+{
+  "matrix_id": "MECHANICUS_TOOLCHAIN_PROOF_AND_LANGUAGE_VALIDATOR_DISPATCH_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-LANGUAGE-SURFACE-V2-TOOLCHAIN-VALIDATOR-DISPATCH-0001",
+  "target": "LANGUAGE_VALIDATION_BASELINE_NOT_100_CLEAN_CLAIM",
+  "languages": [
+    {
+      "language": "Python",
+      "baseline_validators": [
+        "version",
+        "py_compile"
+      ],
+      "deep_validators": [
+        "ruff/flake8",
+        "mypy",
+        "pytest"
+      ]
+    },
+    {
+      "language": "PowerShell",
+      "baseline_validators": [
+        "version",
+        "parser"
+      ],
+      "deep_validators": [
+        "PSScriptAnalyzer"
+      ]
+    },
+    {
+      "language": "Rust",
+      "baseline_validators": [
+        "rustc",
+        "cargo check if manifest exists"
+      ],
+      "deep_validators": [
+        "fmt",
+        "clippy",
+        "test"
+      ]
+    },
+    {
+      "language": "JavaScript/TypeScript",
+      "baseline_validators": [
+        "node",
+        "npm",
+        "npm build if package exists"
+      ],
+      "deep_validators": [
+        "eslint",
+        "tsc",
+        "npm audit report-only"
+      ]
+    },
+    {
+      "language": "JSON",
+      "baseline_validators": [
+        "parse all json/jsonl"
+      ],
+      "deep_validators": [
+        "schema checks"
+      ]
+    },
+    {
+      "language": "TOML",
+      "baseline_validators": [
+        "parse all toml"
+      ],
+      "deep_validators": []
+    },
+    {
+      "language": "CSS",
+      "baseline_validators": [
+        "surface scan"
+      ],
+      "deep_validators": [
+        "stylelint",
+        "token coverage"
+      ]
+    },
+    {
+      "language": "Markdown",
+      "baseline_validators": [
+        "empty/required section scan"
+      ],
+      "deep_validators": [
+        "markdownlint"
+      ]
+    },
+    {
+      "language": "Go",
+      "baseline_validators": [
+        "go version if present"
+      ],
+      "deep_validators": [
+        "fmt",
+        "vet",
+        "test",
+        "build"
+      ]
+    },
+    {
+      "language": "C++",
+      "baseline_validators": [
+        "compiler detection"
+      ],
+      "deep_validators": [
+        "cmake",
+        "clang-tidy"
+      ]
+    }
+  ],
+  "verdict_laws": [
+    "PASS_BASELINE_MEASURED_WITH_VALIDATION_DEBT is honest for current transitional state.",
+    "PASS_100_CLEAN is forbidden until all required cleanliness dimensions pass.",
+    "Tool unavailable is validation debt, not a pass.",
+    "A build pass does not prove code purity.",
+    "npm audit fix --force is forbidden unless Owner explicitly requests mutation."
+  ]
+}

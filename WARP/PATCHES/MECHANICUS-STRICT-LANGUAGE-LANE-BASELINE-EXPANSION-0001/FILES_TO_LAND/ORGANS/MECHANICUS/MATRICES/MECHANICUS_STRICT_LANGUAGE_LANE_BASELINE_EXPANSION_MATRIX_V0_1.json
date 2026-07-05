@@ -1,0 +1,33 @@
+{
+  "matrix_id": "MECHANICUS_STRICT_LANGUAGE_LANE_BASELINE_EXPANSION_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-STRICT-LANGUAGE-LANE-BASELINE-EXPANSION-0001",
+  "purpose": "Expand baseline dispatch so foundation-only lanes receive lane-specific baseline evidence instead of staying in a common bucket.",
+  "core_laws": [
+    "Baseline expansion is not strict cleanliness.",
+    "Every active lane should receive a lane-specific check object, even if strict validators are future debt.",
+    "Patch-pack payload and generated/build outputs must not dominate source-runtime validation.",
+    "Toolchain availability may make a lane measurable, but does not prove build/runtime correctness.",
+    "JSON evidence parse debt is real evidence debt, not runtime-code debt."
+  ],
+  "expanded_lanes": [
+    "PowerShell",
+    "Rust",
+    "JavaScript",
+    "TypeScript",
+    "CSS",
+    "JSON/JSONL",
+    "Markdown",
+    "TOML",
+    "Python"
+  ],
+  "not_claimed": [
+    "cargo check pass",
+    "npm build pass",
+    "eslint clean",
+    "stylelint clean",
+    "mypy clean",
+    "PSScriptAnalyzer clean",
+    "100% code cleanliness"
+  ]
+}

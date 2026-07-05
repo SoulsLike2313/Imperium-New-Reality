@@ -1,0 +1,61 @@
+{
+  "matrix_id": "MECHANICUS_CODE_PURITY_GATE_MATRIX_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-PRIMARY-ORGAN-PASSPORT-AND-LANGUAGE-CENSUS-0001",
+  "target": "100_PERCENT_CODE_CLEANLINESS",
+  "score_total": 100,
+  "dimensions": [
+    {
+      "id": "syntax_and_parse",
+      "weight": 10
+    },
+    {
+      "id": "build_or_compile",
+      "weight": 15
+    },
+    {
+      "id": "formatting",
+      "weight": 10
+    },
+    {
+      "id": "lint_static_analysis",
+      "weight": 15
+    },
+    {
+      "id": "type_or_contract_check",
+      "weight": 10
+    },
+    {
+      "id": "tests",
+      "weight": 10
+    },
+    {
+      "id": "dependency_security",
+      "weight": 10
+    },
+    {
+      "id": "no_monolith_architecture",
+      "weight": 10
+    },
+    {
+      "id": "dead_unused_code",
+      "weight": 5
+    },
+    {
+      "id": "receipts_and_reports",
+      "weight": 5
+    }
+  ],
+  "verdicts": [
+    "PASS_100_CLEAN",
+    "PASS_BASELINE_MEASURED_WITH_DEBT",
+    "BLOCK_NEW_DIRT",
+    "BLOCK_UNVALIDATED_LANGUAGE",
+    "BLOCK_MONOLITH_DEBT_INCREASE"
+  ],
+  "laws": [
+    "100% cleanliness requires all dimensions satisfied or explicitly waived by Owner with visible debt.",
+    "Current repo may have baseline debt; this is measured, not hidden.",
+    "Future patches should trend toward 100, not away from it."
+  ]
+}

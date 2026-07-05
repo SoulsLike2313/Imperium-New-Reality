@@ -1,0 +1,24 @@
+{
+  "matrix_id": "CUSTODES_MECHANICUS_TOOL_ADMISSION_PROSECUTOR_MATRIX_V0_1",
+  "version": "0.1",
+  "posture": "prosecutor_not_helper",
+  "questions": [
+    "Did Mechanicus distinguish external tools from internal tools?",
+    "Did Mechanicus accept a tool merely because it exists?",
+    "Did Mechanicus accept a tool merely because Codex/Grok produced it?",
+    "Did Mechanicus record provenance, lane and purpose?",
+    "Did Mechanicus reject dirty internal tools instead of hiding debt?",
+    "Did the executor continue with rework instead of promoting the rejected tool?",
+    "Did any tool perform unsafe mutation without Owner command?"
+  ],
+  "blocking_findings": [
+    "tool_existence_treated_as_trust",
+    "servitor_generated_tool_auto_accepted",
+    "tool_provenance_missing",
+    "tool_lane_missing",
+    "dirty_tool_promoted",
+    "rejected_tool_used_as_accepted",
+    "unsafe_mutation_without_owner",
+    "rejection_evidence_deleted"
+  ]
+}

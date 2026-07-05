@@ -1,0 +1,409 @@
+{
+  "summary_id": "mechanicus.primary_organ_passport_and_language_census_summary.v0_1",
+  "task_id": "MECHANICUS-PRIMARY-ORGAN-PASSPORT-AND-LANGUAGE-CENSUS-0001",
+  "validator_id": "mechanicus_primary_organ_passport_and_language_census_validator.v0_1",
+  "verdict": "PASS_MECHANICUS_PRIMARY_ORGAN_PASSPORT_AND_LANGUAGE_CENSUS_READY",
+  "generated_at_utc": "2026-07-04T17:15:03Z",
+  "checks": [
+    {
+      "name": "mechanicus_readme_exists_and_declares_machine_reality",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/README.md"
+      }
+    },
+    {
+      "name": "mechanicus_passport_exists_and_declares_scope",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/PASSPORT/MECHANICUS_ORGAN_PASSPORT_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "machine_reality_law_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/LAWS/MECHANICUS_MACHINE_REALITY_LAW_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "language_census_and_code_purity_law_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/LAWS/MECHANICUS_LANGUAGE_CENSUS_AND_CODE_PURITY_LAW_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "language_role_taxonomy_matrix_exists_and_covers_core_languages",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_LANGUAGE_ROLE_TAXONOMY_MATRIX_V0_1.json",
+        "error": null,
+        "missing": []
+      }
+    },
+    {
+      "name": "code_purity_gate_matrix_exists_and_weights_100",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_CODE_PURITY_GATE_MATRIX_V0_1.json",
+        "error": null,
+        "weight_sum": 100
+      }
+    },
+    {
+      "name": "language_validator_stack_matrix_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_LANGUAGE_VALIDATOR_STACK_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "custodes_mechanicus_language_census_prosecutor_matrix_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/CUSTODES/MATRICES/CUSTODES_MECHANICUS_LANGUAGE_CENSUS_PROSECUTOR_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "throne_mechanicus_machine_reality_crown_gate_matrix_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/MATRICES/THRONE_MECHANICUS_MACHINE_REALITY_CROWN_GATE_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "language_surface_census_tool_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/measure_language_surface.py"
+      }
+    },
+    {
+      "name": "language_surface_census_tool_runs_and_writes_report",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_LANGUAGE_SURFACE_CENSUS_V0_1.json",
+        "language_count": 16,
+        "total_counted_lines": 804736
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "census_report": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_LANGUAGE_SURFACE_CENSUS_V0_1.json",
+  "top_languages": [
+    {
+      "language": "JSON",
+      "files": 3498,
+      "total_lines": 574090,
+      "code_lines": 574057,
+      "roles": {
+        "general": {
+          "files": 1596,
+          "total_lines": 349916
+        },
+        "law": {
+          "files": 7,
+          "total_lines": 357
+        },
+        "matrix": {
+          "files": 240,
+          "total_lines": 15428
+        },
+        "passport": {
+          "files": 10,
+          "total_lines": 448
+        },
+        "receipt": {
+          "files": 96,
+          "total_lines": 30254
+        },
+        "report": {
+          "files": 1517,
+          "total_lines": 171787
+        },
+        "tauri_app": {
+          "files": 22,
+          "total_lines": 5585
+        },
+        "tool": {
+          "files": 10,
+          "total_lines": 315
+        }
+      }
+    },
+    {
+      "language": "Python",
+      "files": 485,
+      "total_lines": 126636,
+      "code_lines": 108023,
+      "roles": {
+        "general": {
+          "files": 158,
+          "total_lines": 37915
+        },
+        "report": {
+          "files": 7,
+          "total_lines": 4598
+        },
+        "test": {
+          "files": 19,
+          "total_lines": 3614
+        },
+        "tool": {
+          "files": 142,
+          "total_lines": 42311
+        },
+        "validator": {
+          "files": 175,
+          "total_lines": 45176
+        }
+      }
+    },
+    {
+      "language": "Markdown",
+      "files": 1575,
+      "total_lines": 66945,
+      "code_lines": 50806,
+      "roles": {
+        "general": {
+          "files": 856,
+          "total_lines": 39762
+        },
+        "law": {
+          "files": 28,
+          "total_lines": 1902
+        },
+        "matrix": {
+          "files": 54,
+          "total_lines": 2503
+        },
+        "passport": {
+          "files": 8,
+          "total_lines": 488
+        },
+        "receipt": {
+          "files": 1,
+          "total_lines": 19
+        },
+        "report": {
+          "files": 544,
+          "total_lines": 21068
+        },
+        "tauri_app": {
+          "files": 2,
+          "total_lines": 27
+        },
+        "test": {
+          "files": 73,
+          "total_lines": 713
+        },
+        "tool": {
+          "files": 8,
+          "total_lines": 400
+        },
+        "validator": {
+          "files": 1,
+          "total_lines": 63
+        }
+      }
+    },
+    {
+      "language": "Text",
+      "files": 232,
+      "total_lines": 8949,
+      "code_lines": 8861,
+      "roles": {
+        "general": {
+          "files": 69,
+          "total_lines": 660
+        },
+        "report": {
+          "files": 161,
+          "total_lines": 8280
+        },
+        "tool": {
+          "files": 2,
+          "total_lines": 9
+        }
+      }
+    },
+    {
+      "language": "PowerShell",
+      "files": 130,
+      "total_lines": 7682,
+      "code_lines": 6321,
+      "roles": {
+        "general": {
+          "files": 44,
+          "total_lines": 3877
+        },
+        "report": {
+          "files": 2,
+          "total_lines": 1218
+        },
+        "tool": {
+          "files": 5,
+          "total_lines": 780
+        },
+        "validator": {
+          "files": 5,
+          "total_lines": 50
+        },
+        "warp_runner": {
+          "files": 74,
+          "total_lines": 1757
+        }
+      }
+    },
+    {
+      "language": "JavaScript",
+      "files": 23,
+      "total_lines": 6092,
+      "code_lines": 5561,
+      "roles": {
+        "general": {
+          "files": 4,
+          "total_lines": 1728
+        },
+        "report": {
+          "files": 6,
+          "total_lines": 1776
+        },
+        "tauri_app": {
+          "files": 11,
+          "total_lines": 2586
+        },
+        "tauri_frontend": {
+          "files": 8,
+          "total_lines": 2569
+        },
+        "test": {
+          "files": 4,
+          "total_lines": 4
+        }
+      }
+    },
+    {
+      "language": "CSS",
+      "files": 13,
+      "total_lines": 5911,
+      "code_lines": 5168,
+      "roles": {
+        "general": {
+          "files": 4,
+          "total_lines": 1385
+        },
+        "report": {
+          "files": 1,
+          "total_lines": 488
+        },
+        "tauri_app": {
+          "files": 8,
+          "total_lines": 4038
+        },
+        "tauri_frontend": {
+          "files": 8,
+          "total_lines": 4038
+        }
+      }
+    },
+    {
+      "language": "SVG",
+      "files": 10,
+      "total_lines": 4276,
+      "code_lines": 4196,
+      "roles": {
+        "report": {
+          "files": 10,
+          "total_lines": 4276
+        }
+      }
+    },
+    {
+      "language": "Rust",
+      "files": 10,
+      "total_lines": 1365,
+      "code_lines": 1250,
+      "roles": {
+        "general": {
+          "files": 3,
+          "total_lines": 20
+        },
+        "tauri_app": {
+          "files": 7,
+          "total_lines": 1345
+        },
+        "tauri_backend": {
+          "files": 5,
+          "total_lines": 1343
+        }
+      }
+    },
+    {
+      "language": "YAML",
+      "files": 3,
+      "total_lines": 1299,
+      "code_lines": 1026,
+      "roles": {
+        "general": {
+          "files": 3,
+          "total_lines": 1299
+        }
+      }
+    },
+    {
+      "language": "TypeScript",
+      "files": 10,
+      "total_lines": 498,
+      "code_lines": 447,
+      "roles": {
+        "general": {
+          "files": 8,
+          "total_lines": 360
+        },
+        "test": {
+          "files": 2,
+          "total_lines": 138
+        }
+      }
+    },
+    {
+      "language": "HTML",
+      "files": 12,
+      "total_lines": 481,
+      "code_lines": 449,
+      "roles": {
+        "general": {
+          "files": 3,
+          "total_lines": 275
+        },
+        "report": {
+          "files": 8,
+          "total_lines": 205
+        },
+        "tauri_app": {
+          "files": 1,
+          "total_lines": 1
+        }
+      }
+    }
+  ],
+  "meaning": "Establishes Mechanicus as primary machine reality organ and measures the repository language surface.",
+  "receipt_id": "receipt.mechanicus.primary_organ_passport_and_language_census.v0_1",
+  "readme": "ORGANS/MECHANICUS/README.md",
+  "passport": "ORGANS/MECHANICUS/PASSPORT/MECHANICUS_ORGAN_PASSPORT_V0_1.json",
+  "machine_law": "ORGANS/MECHANICUS/LAWS/MECHANICUS_MACHINE_REALITY_LAW_V0_1.json",
+  "language_law": "ORGANS/MECHANICUS/LAWS/MECHANICUS_LANGUAGE_CENSUS_AND_CODE_PURITY_LAW_V0_1.json",
+  "role_matrix": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_LANGUAGE_ROLE_TAXONOMY_MATRIX_V0_1.json",
+  "purity_matrix": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_CODE_PURITY_GATE_MATRIX_V0_1.json",
+  "validator_stack": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_LANGUAGE_VALIDATOR_STACK_MATRIX_V0_1.json",
+  "census_tool": "ORGANS/MECHANICUS/TOOLS/measure_language_surface.py"
+}

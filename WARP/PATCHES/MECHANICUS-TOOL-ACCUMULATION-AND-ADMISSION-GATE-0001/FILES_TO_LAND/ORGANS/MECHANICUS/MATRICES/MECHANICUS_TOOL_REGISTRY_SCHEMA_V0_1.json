@@ -1,0 +1,63 @@
+{
+  "schema_id": "MECHANICUS_TOOL_REGISTRY_SCHEMA_V0_1",
+  "version": "0.1",
+  "patch_id": "MECHANICUS-TOOL-ACCUMULATION-AND-ADMISSION-GATE-0001",
+  "required_tool_record_fields": [
+    "tool_id",
+    "tool_class",
+    "name",
+    "kind",
+    "path_or_command",
+    "provenance",
+    "owner_scope",
+    "language_lane",
+    "purpose",
+    "admission_state",
+    "validation_evidence",
+    "risks",
+    "last_seen_utc"
+  ],
+  "tool_class_values": [
+    "external_tool",
+    "internal_tool"
+  ],
+  "provenance_values": [
+    "installed_on_host",
+    "repository_canonical",
+    "warp_patch_candidate",
+    "codex_generated",
+    "grok_generated",
+    "chatgpt_generated",
+    "owner_supplied",
+    "external_outsource",
+    "unknown"
+  ],
+  "minimum_admission_evidence": {
+    "external_tool": [
+      "version_or_presence_probe",
+      "local_toolchain_report_entry",
+      "capability_or_debt_state"
+    ],
+    "internal_tool": [
+      "file_exists",
+      "purpose_declared",
+      "language_lane_bound",
+      "baseline_language_validation",
+      "no_forbidden_monolith_role",
+      "receipt_or_candidate_report"
+    ]
+  },
+  "dirty_rejection_reasons": [
+    "syntax_error",
+    "parse_error",
+    "missing_purpose",
+    "missing_provenance",
+    "missing_language_lane",
+    "monolith_mixed_responsibilities",
+    "unsafe_mutation_without_owner",
+    "no_receipt",
+    "failed_baseline_validation",
+    "fake_success_claim",
+    "generated_artifact_pollution"
+  ]
+}

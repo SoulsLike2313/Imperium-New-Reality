@@ -1,0 +1,110 @@
+{
+  "receipt_id": "receipt.mechanicus.strict_language_lane_baseline_expansion.v0_1",
+  "task_id": "MECHANICUS-STRICT-LANGUAGE-LANE-BASELINE-EXPANSION-0001",
+  "validator_id": "mechanicus_strict_language_lane_baseline_expansion_validator.v0_1",
+  "verdict": "PASS_MECHANICUS_STRICT_LANGUAGE_LANE_BASELINE_EXPANSION_READY",
+  "generated_at_utc": "2026-07-04T19:44:46Z",
+  "checks": [
+    {
+      "name": "baseline_expansion_matrix_exists_and_declares_boundaries",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_STRICT_LANGUAGE_LANE_BASELINE_EXPANSION_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "custodes_baseline_expansion_matrix_exists_and_declares_boundaries",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/CUSTODES/MATRICES/CUSTODES_STRICT_LANGUAGE_LANE_BASELINE_EXPANSION_PROSECUTOR_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "throne_baseline_expansion_matrix_exists_and_declares_boundaries",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/MATRICES/THRONE_STRICT_LANGUAGE_LANE_BASELINE_EXPANSION_CROWN_GATE_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "lane_expanded_dispatch_tool_installed",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/run_language_validation_dispatch.py"
+      }
+    },
+    {
+      "name": "lane_expanded_readout_tool_installed",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/generate_strict_language_lane_readout.py"
+      }
+    },
+    {
+      "name": "lane_expanded_dispatch_runs_and_writes_report",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": " \"SUPPORT/COMMON_IMPERIUM_SUPPORT/ROOT_IMPORTED_COMMON_SUPPORT/MATRIX_SPINE/FIXTURES/invalid_malformed_json_matrix.json\",\n          \"error\": \"Expecting property name enclosed in double quotes: line 5 column 1 (char 111)\"\n        },\n        {\n          \"path\": \"SUPPORT/QUARANTINE/ROOT_REPORTS_PENDING_HARNESS_INTAKE/REPORTS/TASK-20260521-NEWGEN-ASTRONOMICON-TASK-FORMATION-PC-V0_1/STEP_PROOF_RECORDS.jsonl\",\n          \"error\": \"Extra data: line 1 column 741 (char 740)\"\n        }\n      ],\n      \"debt_kind\": \"governance_evidence_parse_debt\"\n    },\n    {\n      \"language\": \"TOML\",\n      \"lane_id\": \"toml_config\",\n      \"files_checked\": 2,\n      \"ok\": true,\n      \"baseline_type\": \"parse_all_current_toml\",\n      \"errors\": []\n    },\n    {\n      \"language\": \"Python\",\n      \"lane_id\": \"python\",\n      \"files_checked\": 385,\n      \"ok\": true,\n      \"baseline_type\": \"py_compile_current_non_patch_python\",\n      \"errors\": [],\n      \"not_claimed\": [\n        \"ruff clean\",\n        \"mypy clean\",\n        \"pytest clean\"\n      ]\n    },\n    {\n      \"language\": \"Markdown\",\n      \"lane_id\": \"markdown_docs\",\n      \"files_checked\": 1375,\n      \"ok\": true,\n      \"baseline_type\": \"non_empty_markdown_current_non_patch\",\n      \"errors\": [],\n      \"not_claimed\": [\n        \"markdownlint clean\",\n        \"link integrity\"\n      ]\n    },\n    {\n      \"language\": \"PowerShell\",\n      \"lane_id\": \"powershell\",\n      \"files_checked\": 51,\n      \"ok\": true,\n      \"baseline_type\": \"powershell_surface_and_toolchain_detection_no_parser_yet\",\n      \"toolchain_ok\": true,\n      \"errors\": [],\n      \"not_claimed\": [\n        \"PowerShell parser clean\",\n        \"PSScriptAnalyzer clean\",\n        \"runner contract proof\"\n      ]\n    },\n    {\n      \"language\": \"Rust\",\n      \"lane_id\": \"rust\",\n      \"files_checked\": 5,\n      \"ok\": true,\n      \"baseline_type\": \"rust_surface_and_toolchain_detection_no_cargo_check\",\n      \"toolchain_ok\": true,\n      \"cargo_manifests_detected\": [\n        \"ORGANS/IMPERIAL_IDE/COCKPIT/shell-rs/Cargo.toml\",\n        \"SUPPORT/APP_TAURI/src-tauri/Cargo.toml\"\n      ],\n      \"errors\": [],\n      \"not_claimed\": [\n        \"cargo check\",\n        \"cargo fmt\",\n        \"cargo clippy\",\n        \"cargo test\"\n      ]\n    },\n    {\n      \"language\": \"JavaScript/TypeScript\",\n      \"lane_id\": \"node_frontend\",\n      \"files_checked\": 22,\n      \"ok\": true,\n      \"baseline_type\": \"node_frontend_surface_and_toolchain_detection_no_npm_build\",\n      \"toolchain_ok\": true,\n      \"package_json_detected\": [\n        \"ORGANS/IMPERIAL_IDE/WEB_SANCTUM/package.json\",\n        \"ORGANS/IMPERIAL_IDE/COCKPIT/app-ts/package.json\",\n        \"SUPPORT/APP_TAURI/package.json\",\n        \"SUPPORT/QUARANTINE/ROOT_REPORTS_PENDING_HARNESS_INTAKE/REPORTS/TASK-20260520-SANCTUM-BRAIN-HARDENING-VISUAL-POLISH-PC-V0_2/package.json\",\n        \"SUPPORT/QUARANTINE/ROOT_REPORTS_PENDING_HARNESS_INTAKE/REPORTS/TASK-20260520-SANCTUM-PLAYWRIGHT-TRUTH-BRAIN-STRIKE-PC-V0_1/package.json\"\n      ],\n      \"errors\": [],\n      \"not_claimed\": [\n        \"npm build\",\n        \"eslint clean\",\n        \"tsc clean\",\n        \"npm audit clean\"\n      ]\n    },\n    {\n      \"language\": \"CSS\",\n      \"lane_id\": \"css_ui\",\n      \"files_checked\": 5,\n      \"ok\": true,\n      \"baseline_type\": \"css_structural_brace_balance_current_non_patch\",\n      \"errors\": [],\n      \"not_claimed\": [\n        \"stylelint clean\",\n        \"token coverage\",\n        \"reference fidelity\",\n        \"no CSS monolith\"\n      ]\n    }\n  ],\n  \"all_baseline_checks_clean\": false,\n  \"validation_debt\": [\n    {\n      \"language\": \"JSON/JSONL\",\n      \"lane_id\": \"json_evidence\",\n      \"files_checked\": 3302,\n      \"baseline_type\": \"parse_all_current_non_patch_json\",\n      \"error_count_visible\": 3,\n      \"errors\": [\n        {\n          \"path\": \"ORGANS/ADMINISTRATUM/BUNDLE_GATE/FIXTURES/v0_2_malformed_required_json/CLAIM_LEDGER.json\",\n          \"error\": \"Expecting property name enclosed in double quotes: line 2 column 1 (char 2)\"\n        },\n        {\n          \"path\": \"SUPPORT/COMMON_IMPERIUM_SUPPORT/ROOT_IMPORTED_COMMON_SUPPORT/MATRIX_SPINE/FIXTURES/invalid_malformed_json_matrix.json\",\n          \"error\": \"Expecting property name enclosed in double quotes: line 5 column 1 (char 111)\"\n        },\n        {\n          \"path\": \"SUPPORT/QUARANTINE/ROOT_REPORTS_PENDING_HARNESS_INTAKE/REPORTS/TASK-20260521-NEWGEN-ASTRONOMICON-TASK-FORMATION-PC-V0_1/STEP_PROOF_RECORDS.jsonl\",\n          \"error\": \"Extra data: line 1 column 741 (char 740)\"\n        }\n      ]\n    }\n  ],\n  \"verdict\": \"PASS_BASELINE_MEASURED_WITH_VALIDATION_DEBT\",\n  \"not_claimed\": [\n    \"100% code cleanliness\",\n    \"all linters present\",\n    \"all type checkers present\",\n    \"all strict build lanes passed\",\n    \"dependency security clean\",\n    \"architecture clean\"\n  ],\n  \"warnings\": [\n    \"This baseline intentionally does not claim 100% clean.\",\n    \"Strict build/lint/type/security layers remain future work.\",\n    \"Patch-pack payload is excluded from current-source baseline checks.\",\n    \"Build proof is not code purity proof.\"\n  ]\n}\n",
+        "stderr_tail": "",
+        "out_exists": true
+      }
+    },
+    {
+      "name": "dispatch_report_covers_active_lanes_and_does_not_claim_100_clean",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "lane_ids": [
+          "css_ui",
+          "json_evidence",
+          "markdown_docs",
+          "node_frontend",
+          "powershell",
+          "python",
+          "rust",
+          "toml_config"
+        ],
+        "missing": [],
+        "verdict": "PASS_BASELINE_MEASURED_WITH_VALIDATION_DEBT"
+      }
+    },
+    {
+      "name": "lane_expanded_readout_runs_and_writes_report",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "st_not_claim\": [\n        \"machine proof without JSON receipt\"\n      ]\n    },\n    {\n      \"lane_id\": \"toml_config\",\n      \"language_names\": [\n        \"TOML\"\n      ],\n      \"purpose\": \"Cargo and project configuration\",\n      \"state\": \"LANE_READY_BASELINE\",\n      \"surface\": {\n        \"raw\": {\n          \"files\": 3,\n          \"total_lines\": 47,\n          \"code_lines\": 39,\n          \"languages\": [\n            \"TOML\"\n          ]\n        },\n        \"source_runtime\": {\n          \"files\": 2,\n          \"total_lines\": 32,\n          \"code_lines\": 26,\n          \"languages\": [\n            \"TOML\"\n          ]\n        },\n        \"governance_evidence\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        }\n      },\n      \"toolchain\": {\n        \"required_probe_names\": [\n          \"python_version\"\n        ],\n        \"all_observed_ok\": true,\n        \"observed\": [\n          {\n            \"name\": \"python_version\",\n            \"ok\": true,\n            \"exit_code\": 0,\n            \"which\": \"C:\\\\Users\\\\PC\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python312\\\\python.exe\",\n            \"stderr\": \"\"\n          }\n        ]\n      },\n      \"baseline_validation\": {\n        \"baseline_present\": true,\n        \"ok\": true,\n        \"checks\": [\n          {\n            \"language\": \"TOML\",\n            \"lane_id\": \"toml_config\",\n            \"files_checked\": 2,\n            \"ok\": true,\n            \"baseline_type\": \"parse_all_current_toml\",\n            \"errors\": []\n          }\n        ]\n      },\n      \"strict_layers_future\": [\n        \"cargo_manifest_semantics\",\n        \"dependency_policy\"\n      ],\n      \"must_not_claim\": [\n        \"Rust readiness from TOML parse\"\n      ]\n    },\n    {\n      \"lane_id\": \"go_future\",\n      \"language_names\": [\n        \"Go\"\n      ],\n      \"purpose\": \"future portable CLI workers and fast simple tools\",\n      \"state\": \"LANE_FUTURE_CAPABILITY\",\n      \"surface\": {\n        \"raw\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        },\n        \"source_runtime\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        },\n        \"governance_evidence\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        }\n      },\n      \"toolchain\": {\n        \"required_probe_names\": [\n          \"go_version\"\n        ],\n        \"all_observed_ok\": false,\n        \"observed\": [\n          {\n            \"name\": \"go_version\",\n            \"ok\": false,\n            \"exit_code\": null,\n            \"which\": null,\n            \"stderr\": \"executable not found in PATH\"\n          }\n        ]\n      },\n      \"baseline_validation\": {\n        \"baseline_present\": false,\n        \"ok\": false,\n        \"checks\": []\n      },\n      \"strict_layers_future\": [\n        \"go_fmt\",\n        \"go_vet\",\n        \"go_test\",\n        \"go_build\"\n      ],\n      \"must_not_claim\": [\n        \"available while go toolchain missing\"\n      ]\n    },\n    {\n      \"lane_id\": \"cpp_future\",\n      \"language_names\": [\n        \"C++\",\n        \"C\",\n        \"C/C++ Header\"\n      ],\n      \"purpose\": \"future deep optimization after profiling proves need\",\n      \"state\": \"LANE_FUTURE_CAPABILITY\",\n      \"surface\": {\n        \"raw\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        },\n        \"source_runtime\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        },\n        \"governance_evidence\": {\n          \"files\": 0,\n          \"total_lines\": 0,\n          \"code_lines\": 0,\n          \"languages\": []\n        }\n      },\n      \"toolchain\": {\n        \"required_probe_names\": [\n          \"cmake_version\"\n        ],\n        \"all_observed_ok\": false,\n        \"observed\": [\n          {\n            \"name\": \"cmake_version\",\n            \"ok\": false,\n            \"exit_code\": null,\n            \"which\": null,\n            \"stderr\": \"executable not found in PATH\"\n          }\n        ]\n      },\n      \"baseline_validation\": {\n        \"baseline_present\": false,\n        \"ok\": false,\n        \"checks\": []\n      },\n      \"strict_layers_future\": [\n        \"cmake_build\",\n        \"clang_format\",\n        \"clang_tidy\",\n        \"tests\"\n      ],\n      \"must_not_claim\": [\n        \"needed before profiling\"\n      ]\n    }\n  ],\n  \"verdict\": \"PASS_STRICT_LANGUAGE_LANES_MEASURED_WITH_DEBT\",\n  \"not_claimed\": [\n    \"100% clean\",\n    \"strict lanes complete\",\n    \"all toolchains available\",\n    \"all linter/type/security layers complete\",\n    \"cargo check pass\",\n    \"npm build pass\"\n  ],\n  \"warnings\": [\n    \"This is a lane foundation/readout, not strict cleanliness.\",\n    \"LANE_READY_BASELINE means only implemented baseline checks passed.\",\n    \"LANE_MEASURED_WITH_DEBT shows a real debt lane.\",\n    \"LANE_FOUNDATION_ONLY means no baseline check exists for that lane yet.\",\n    \"LANE_TOOLCHAIN_MISSING is capability debt.\"\n  ]\n}\n",
+        "stderr_tail": "",
+        "out_exists": true
+      }
+    },
+    {
+      "name": "active_lanes_no_longer_foundation_only_and_no_100_clean_claim",
+      "status": "PASS",
+      "details": {
+        "error": null,
+        "foundation_only_active_lanes": [],
+        "state_counts": {
+          "LANE_READY_BASELINE": 7,
+          "LANE_MEASURED_WITH_DEBT": 1,
+          "LANE_FUTURE_CAPABILITY": 2
+        },
+        "verdict": "PASS_STRICT_LANGUAGE_LANES_MEASURED_WITH_DEBT"
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Expanded baseline contains validation debt; expected until strict lane validators are implemented.",
+    "Validation debt: json_evidence / JSON/JSONL visible_errors=3",
+    "Lane state: json_evidence => LANE_MEASURED_WITH_DEBT",
+    "Lane state: go_future => LANE_FUTURE_CAPABILITY",
+    "Lane state: cpp_future => LANE_FUTURE_CAPABILITY"
+  ],
+  "dispatch_report": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_LANGUAGE_VALIDATION_BASELINE_V0_1.json",
+  "lane_readout": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_STRICT_LANGUAGE_LANE_READOUT_V0_1.json"
+}
