@@ -1,0 +1,20 @@
+{
+  "matrix_id": "THRONE_MECHANICUS_READINESS_ROLLUP_CROWN_GATE_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "CROWN_GATE_TARGET_DECLARED_NOT_CLOSED",
+  "owner": "THRONE",
+  "purpose": "Define how Throne should treat Mechanicus readiness rollup before Crown closure.",
+  "crown_rules": [
+    "A readiness rollup may improve visibility but does not assemble the organ.",
+    "Mechanicus remains NOT_ASSEMBLED until launcher, personal validators, Custodes validators, Throne validators, red layer and blue layer have current proof.",
+    "Core v1 must not depend on local model membrane; script-first evidence remains primary.",
+    "Throne may use this rollup as input to gap maps, not as a Crown verdict."
+  ],
+  "blocking_overclaims": [
+    "MECHANICUS_ASSEMBLED",
+    "CORE_V1_READY",
+    "THRONE_CONFIRMED",
+    "CUSTODES_TRUST_PROVEN",
+    "LOCAL_MODEL_REQUIRED_FOR_CORE_V1"
+  ]
+}

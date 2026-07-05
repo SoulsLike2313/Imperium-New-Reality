@@ -1,0 +1,54 @@
+{
+  "law_id": "MECHANICUS_ORGAN_READINESS_ROLLUP_LAW_V0_1",
+  "version": "0.1",
+  "status": "ACTIVE_ROLLUP_LAW",
+  "owner": "MECHANICUS",
+  "purpose": "Create a current truth rollup for Mechanicus organ readiness without claiming assembly closure.",
+  "core_doctrine": [
+    "Readiness rollup is a measured truth index, not an organ closure receipt.",
+    "Mechanicus must distinguish proven baseline functions, partial evidence, future capabilities, blockers and forbidden claims.",
+    "Mechanicus must not claim organ_assembled, operational_proven, trust_proven, throne_confirmed, red_blue_resilient or no_core_mutation_proven until assembly gates have evidence.",
+    "Build proof is not code purity proof; tool inventory is not tool admission; planner recommendation is not execution authority.",
+    "The future local model membrane is DEFERRED_FUTURE_CAPABILITY and must not be treated as a Core v1 dependency or near-term patch blocker."
+  ],
+  "required_rollup_sections": [
+    "repo_context",
+    "organ_identity",
+    "proven_baseline_capabilities",
+    "partial_or_host_bound_capabilities",
+    "assembly_gate_map",
+    "forbidden_claims",
+    "current_blockers",
+    "next_patch_queue",
+    "deferred_future_capabilities",
+    "local_model_membrane_hook",
+    "no_fake_green_guard"
+  ],
+  "local_model_membrane_policy": {
+    "status": "DEFERRED_AFTER_CORE_V1",
+    "not_a_dependency_for": [
+      "MECHANICUS-ORGAN-READINESS-ROLLUP-0001",
+      "Core v1 script-first foundation",
+      "validator execution",
+      "receipt generation"
+    ],
+    "allowed_future_role": [
+      "translate Owner intent into machine-readable intent envelopes",
+      "explain capability/risk/cost based on code-generated reports",
+      "route tasks to local scripts, CLI Codex, Grok, chat agent or Owner review"
+    ],
+    "forbidden_future_role": [
+      "setting PASS verdicts",
+      "bypassing WARP",
+      "running arbitrary shell",
+      "landing patches",
+      "overriding Owner authority",
+      "claiming evidence not produced by scripts/validators"
+    ]
+  },
+  "verdict_policy": {
+    "expected_patch_verdict": "PASS_ROLLUP_CREATED_MECHANICUS_NOT_ASSEMBLED",
+    "must_remain_not_assembled_until": "all assembly gates have current proof and Custodes/Throne validators pass",
+    "overclaim_is_blocking_failure": true
+  }
+}

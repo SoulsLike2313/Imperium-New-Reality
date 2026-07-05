@@ -1,0 +1,491 @@
+{
+  "rollup_id": "mechanicus.organ_readiness_rollup.v0_1",
+  "task_id": "MECHANICUS-ORGAN-READINESS-ROLLUP-0001",
+  "tool_id": "mechanicus_organ_readiness_rollup_builder.v0_1",
+  "generated_at_utc": "2026-07-05T22:11:45Z",
+  "status": "MEASURED_NOT_ASSEMBLED",
+  "verdict": "PASS_ROLLUP_CREATED_MECHANICUS_NOT_ASSEMBLED",
+  "repo_context": {
+    "repo_root": "E:\\IMPERIUM_REALITY",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python_version": "3.12.10",
+    "script_first": true,
+    "llm_required_for_this_patch": false
+  },
+  "organ_identity": {
+    "organ_id": "MECHANICUS",
+    "passport_path": "ORGANS/MECHANICUS/PASSPORT/MECHANICUS_ORGAN_PASSPORT_V0_1.json",
+    "passport_load_error": null,
+    "status_from_passport": "PRIMARY_ORGAN_FORMING",
+    "identity_is": [
+      "organ of machine reality",
+      "toolchain proof authority",
+      "language power registry owner",
+      "build/runtime proof owner",
+      "architecture/no-monolith enforcement owner",
+      "UI workshop tool owner",
+      "polymorphic form enablement owner"
+    ],
+    "identity_is_not": [
+      "Owner visual acceptance",
+      "Custodes prosecutor",
+      "Throne Crown/global readiness",
+      "Administratum final registrar",
+      "free-form code generator",
+      "fake-green issuer"
+    ],
+    "core_laws_from_passport": [
+      "Build proof is not code purity proof.",
+      "Line count is not truth, but language census is required evidence.",
+      "A language is available only after toolchain proof.",
+      "A validator is trusted only after it proves what it checked.",
+      "Code cleanliness target is 100%; legacy debt must be measured, not hidden.",
+      "Form may change; function must not be lost."
+    ]
+  },
+  "source_files": {
+    "assembly_target": {
+      "path": "ORGANS/MECHANICUS/ASSEMBLY/ORGAN_ASSEMBLY_TARGET_V0_1.json",
+      "load_error": null
+    },
+    "passport": {
+      "path": "ORGANS/MECHANICUS/PASSPORT/MECHANICUS_ORGAN_PASSPORT_V0_1.json",
+      "load_error": null
+    },
+    "functions": {
+      "path": "ORGANS/MECHANICUS/FUNCTIONS.md",
+      "exists": true
+    },
+    "manifest": {
+      "path": "ORGANS/MECHANICUS/MANIFEST.json",
+      "exists": true
+    },
+    "rollup_law": {
+      "path": "ORGANS/MECHANICUS/LAWS/MECHANICUS_ORGAN_READINESS_ROLLUP_LAW_V0_1.json",
+      "load_error": null
+    },
+    "rollup_matrix": {
+      "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_ORGAN_READINESS_ROLLUP_MATRIX_V0_1.json",
+      "load_error": null
+    }
+  },
+  "source_counts": {
+    "mechanicus_tools_py": 24,
+    "mechanicus_validators_py": 35,
+    "mechanicus_laws_json": 8,
+    "mechanicus_matrices_json": 33,
+    "mechanicus_receipts_json": 34,
+    "mechanicus_reports_files": 168
+  },
+  "proven_baseline_capabilities": [
+    {
+      "capability_id": "language_census_and_language_power_registry",
+      "state": "PROVEN_BASELINE_OR_PRESENT_CANDIDATE",
+      "present_evidence": [
+        "ORGANS/MECHANICUS/LAWS/MECHANICUS_LANGUAGE_CENSUS_AND_CODE_PURITY_LAW_V0_1.json",
+        "ORGANS/MECHANICUS/MATRICES/MECHANICUS_LANGUAGE_POWER_MATRIX_V0_1.json",
+        "ORGANS/MECHANICUS/MATRICES/MECHANICUS_LANGUAGE_SURFACE_V2_CLASSIFICATION_MATRIX_V0_1.json",
+        "ORGANS/MECHANICUS/RECEIPTS/mechanicus_primary_organ_passport_and_language_census_receipt.json"
+      ],
+      "missing_evidence": [],
+      "evidence_ratio": 1.0,
+      "meaning": "Mechanicus can measure language surface and classify language roles.",
+      "claim_boundary": "language census is evidence, not full code purity"
+    },
+    {
+      "capability_id": "strict_language_lane_baseline",
+      "state": "PROVEN_BASELINE_OR_PRESENT_CANDIDATE",
+      "present_evidence": [
+        "ORGANS/MECHANICUS/MATRICES/MECHANICUS_STRICT_LANGUAGE_LANE_REGISTRY_V0_1.json",
+        "ORGANS/MECHANICUS/MATRICES/MECHANICUS_STRICT_LANGUAGE_LANE_BASELINE_EXPANSION_MATRIX_V0_1.json",
+        "ORGANS/MECHANICUS/RECEIPTS/mechanicus_strict_language_lane_baseline_expansion_receipt.json"
+      ],
+      "missing_evidence": [],
+      "evidence_ratio": 1.0,
+      "meaning": "Mechanicus has baseline strict lanes for primary repo languages/formats.",
+      "claim_boundary": "baseline lanes do not mean every language is lint/type/test clean"
+    },
+    {
+      "capability_id": "json_evidence_strict_lane",
+      "state": "PROVEN_BASELINE_OR_PRESENT_CANDIDATE",
+      "present_evidence": [
+        "ORGANS/MECHANICUS/LAWS/MECHANICUS_JSON_EVIDENCE_STRICT_LANE_LAW_V0_1.json",
+        "ORGANS/MECHANICUS/MATRICES/MECHANICUS_JSON_EVIDENCE_STRICT_LANE_MATRIX_V0_1.json",
+        "ORGANS/MECHANICUS/RECEIPTS/mechanicus_json_evidence_strict_lane_receipt.json"
+      ],
+      "missing_evidence": [],
+      "evidence_ratio": 1.0,
+      "meaning": "Mechanicus can parse and classify JSON/JSONL evidence debt.",
+      "claim_boundary": "canonical parse cleanliness is not semantic correctness of every claim"
+    },
+    {
+      "capability_id": "strict_build_lane_foundation",
+      "state": "PROVEN_BASELINE_OR_PRESENT_CANDIDATE",
+      "present_evidence": [
+        "ORGANS/MECHANICUS/LAWS/MECHANICUS_STRICT_BUILD_LANE_FOUNDATION_LAW_V0_1.json",
+        "ORGANS/MECHANICUS/MATRICES/MECHANICUS_STRICT_BUILD_LANE_FOUNDATION_MATRIX_V0_1.json",
+        "ORGANS/MECHANICUS/RECEIPTS/mechanicus_strict_build_lane_foundation_receipt.json",
+        "ORGANS/MECHANICUS/RECEIPTS/mechanicus_strict_build_lane_runner_exit_code_fix_v2_receipt.json"
+      ],
+      "missing_evidence": [],
+      "evidence_ratio": 1.0,
+      "meaning": "Mechanicus can run a foundation build lane across Python, PowerShell, Node frontend and Rust/Tauri checks on a prepared host.",
+      "claim_boundary": "build proof is host/profile-bound unless clean bootstrap proof exists"
+    },
+    {
+      "capability_id": "tool_accumulation_and_admission_baseline",
+      "state": "PROVEN_BASELINE_OR_PRESENT_CANDIDATE",
+      "present_evidence": [
+        "ORGANS/MECHANICUS/LAWS/MECHANICUS_TOOL_ACCUMULATION_AND_ADMISSION_LAW_V0_1.json",
+        "ORGANS/MECHANICUS/MATRICES/MECHANICUS_TOOL_ADMISSION_GATE_MATRIX_V0_1.json",
+        "ORGANS/MECHANICUS/TOOLS/scan_mechanicus_tool_inventory.py",
+        "ORGANS/MECHANICUS/RECEIPTS/mechanicus_tool_accumulation_and_admission_gate_receipt.json"
+      ],
+      "missing_evidence": [],
+      "evidence_ratio": 1.0,
+      "meaning": "Mechanicus can inventory tools/candidates and declare admission/rework categories.",
+      "claim_boundary": "tool inventory is not full tool admission v2"
+    },
+    {
+      "capability_id": "task_tool_composition_planner",
+      "state": "PROVEN_BASELINE_OR_PRESENT_CANDIDATE",
+      "present_evidence": [
+        "ORGANS/MECHANICUS/LAWS/MECHANICUS_TASK_TOOL_COMPOSITION_PLANNER_LAW_V0_1.json",
+        "ORGANS/MECHANICUS/MATRICES/MECHANICUS_TOOL_COMPOSITION_SCORING_MATRIX_V0_1.json",
+        "ORGANS/MECHANICUS/RECEIPTS/mechanicus_task_tool_composition_planner_receipt.json",
+        "ORGANS/MECHANICUS/RECEIPTS/mechanicus_task_tool_composition_planner_ultrasafe_hotfix_v2_receipt.json"
+      ],
+      "missing_evidence": [],
+      "evidence_ratio": 1.0,
+      "meaning": "Mechanicus can propose tool stacks, demand classes and gaps for tasks.",
+      "claim_boundary": "planner recommendation is advisory/scored, not execution authority"
+    },
+    {
+      "capability_id": "ui_workshop_no_monolith_baseline",
+      "state": "PROVEN_BASELINE_OR_PRESENT_CANDIDATE",
+      "present_evidence": [
+        "ORGANS/MECHANICUS/LAWS/MECHANICUS_UI_WORKSHOP_AND_NO_MONOLITH_LAW_V0_1.json",
+        "ORGANS/MECHANICUS/MATRICES/MECHANICUS_NO_MONOLITH_ARCHITECTURE_MATRIX_V0_1.json",
+        "ORGANS/MECHANICUS/RECEIPTS/mechanicus_ui_workshop_and_no_monolith_law_receipt.json"
+      ],
+      "missing_evidence": [],
+      "evidence_ratio": 1.0,
+      "meaning": "Mechanicus can declare UI workshop rules and detect monolith risk zones.",
+      "claim_boundary": "UI workshop law is not AAA visual acceptance or reference fidelity proof"
+    },
+    {
+      "capability_id": "patch_pack_technical_preflight",
+      "state": "PROVEN_BASELINE_OR_PRESENT_CANDIDATE",
+      "present_evidence": [
+        "ORGANS/MECHANICUS/MATRICES/MECHANICUS_PATCH_PACK_TECHNICAL_PREFLIGHT_MATRIX_V0_1.json",
+        "ORGANS/MECHANICUS/RECEIPTS/patch_pack_technical_preflight_receipt.json"
+      ],
+      "missing_evidence": [],
+      "evidence_ratio": 1.0,
+      "meaning": "Mechanicus can participate in patch pack technical preflight and file-to-land discipline.",
+      "claim_boundary": "preflight support is not final land authority"
+    },
+    {
+      "capability_id": "ide_warp_metaos_bridges_candidate",
+      "state": "PROVEN_BASELINE_OR_PRESENT_CANDIDATE",
+      "present_evidence": [
+        "ORGANS/MECHANICUS/IDE_BRIDGE/mechanicus_ide_bridge.py",
+        "ORGANS/MECHANICUS/IDE_BRIDGE/warp_bridge_adapter.py",
+        "ORGANS/MECHANICUS/IDE_BRIDGE/metaos_bridge_adapter.py",
+        "ORGANS/MECHANICUS/IDE_BRIDGE/workbench_bridge_adapter.py"
+      ],
+      "missing_evidence": [],
+      "evidence_ratio": 1.0,
+      "meaning": "Mechanicus has bridge adapters toward IDE, WARP and MetaOS surfaces.",
+      "claim_boundary": "bridge files are candidate infrastructure, not full operating system control"
+    },
+    {
+      "capability_id": "evidence_vault_candidate",
+      "state": "PROVEN_BASELINE_OR_PRESENT_CANDIDATE",
+      "present_evidence": [
+        "ORGANS/MECHANICUS/EVIDENCE_VAULT/evidence_vault_packager_v0_1.py",
+        "ORGANS/MECHANICUS/EVIDENCE_VAULT/evidence_vault_sealer_v0_1.py",
+        "ORGANS/MECHANICUS/EVIDENCE_VAULT/evidence_vault_batch_pack_executor_v0_1.py"
+      ],
+      "missing_evidence": [],
+      "evidence_ratio": 1.0,
+      "meaning": "Mechanicus has evidence vault packager/sealer/batch executor candidates.",
+      "claim_boundary": "evidence vault candidate is not full Administratum supersession ledger"
+    }
+  ],
+  "partial_or_candidate_capabilities": [],
+  "assembly_gate_map": [
+    {
+      "gate_id": "tui_launcher_presence",
+      "required": true,
+      "official_assembly_proof_state": "NOT_PROVEN",
+      "rollup_measured_state": "OFFICIAL_NOT_PROVEN",
+      "evidence_paths_declared": [],
+      "present_declared_evidence": [],
+      "required_evidence": [
+        "launcher_command_declared",
+        "status_view_declared",
+        "receipt_view_declared",
+        "validate_action_declared"
+      ],
+      "nearby_non_closing_evidence": {},
+      "may_raise_assembled_claim": false
+    },
+    {
+      "gate_id": "organ_tools_docs_functions",
+      "required": true,
+      "official_assembly_proof_state": "NOT_PROVEN",
+      "rollup_measured_state": "OFFICIAL_NOT_PROVEN",
+      "evidence_paths_declared": [],
+      "present_declared_evidence": [],
+      "required_evidence": [
+        "FUNCTIONS.md_or_equivalent",
+        "tool_or_script_inventory",
+        "input_output_contract",
+        "workflow_documentation"
+      ],
+      "nearby_non_closing_evidence": {
+        "functions_md_exists": true,
+        "tool_files": 24,
+        "validator_files": 35,
+        "law_files": 8,
+        "matrix_files": 33
+      },
+      "may_raise_assembled_claim": false
+    },
+    {
+      "gate_id": "personal_flow_validators",
+      "required": true,
+      "official_assembly_proof_state": "NOT_PROVEN",
+      "rollup_measured_state": "OFFICIAL_NOT_PROVEN",
+      "evidence_paths_declared": [],
+      "present_declared_evidence": [],
+      "required_evidence": [
+        "flow_validator_inventory",
+        "positive_fixture",
+        "negative_fixture",
+        "flow_receipt_schema"
+      ],
+      "nearby_non_closing_evidence": {},
+      "may_raise_assembled_claim": false
+    },
+    {
+      "gate_id": "personal_integrity_validators",
+      "required": true,
+      "official_assembly_proof_state": "NOT_PROVEN",
+      "rollup_measured_state": "OFFICIAL_NOT_PROVEN",
+      "evidence_paths_declared": [],
+      "present_declared_evidence": [],
+      "required_evidence": [
+        "integrity_validator_inventory",
+        "forbidden_action_test",
+        "self_claim_rejection_test",
+        "organ_health_receipt"
+      ],
+      "nearby_non_closing_evidence": {},
+      "may_raise_assembled_claim": false
+    },
+    {
+      "gate_id": "custodes_organ_validators",
+      "required": true,
+      "official_assembly_proof_state": "NOT_PROVEN",
+      "rollup_measured_state": "OFFICIAL_NOT_PROVEN",
+      "evidence_paths_declared": [],
+      "present_declared_evidence": [],
+      "required_evidence": [
+        "custodes_validator_for_organ",
+        "scope_authority_check",
+        "validator_honesty_check",
+        "trust_receipt"
+      ],
+      "nearby_non_closing_evidence": {},
+      "may_raise_assembled_claim": false
+    },
+    {
+      "gate_id": "throne_organ_validators",
+      "required": true,
+      "official_assembly_proof_state": "NOT_PROVEN",
+      "rollup_measured_state": "OFFICIAL_NOT_PROVEN",
+      "evidence_paths_declared": [],
+      "present_declared_evidence": [],
+      "required_evidence": [
+        "throne_validator_for_organ",
+        "score_contract_check",
+        "cross_organ_evidence_check",
+        "crown_stage_verdict"
+      ],
+      "nearby_non_closing_evidence": {},
+      "may_raise_assembled_claim": false
+    },
+    {
+      "gate_id": "red_team_layer",
+      "required": true,
+      "official_assembly_proof_state": "NOT_PROVEN",
+      "rollup_measured_state": "OFFICIAL_NOT_PROVEN",
+      "evidence_paths_declared": [],
+      "present_declared_evidence": [],
+      "required_evidence": [
+        "red_team_scenario_inventory",
+        "failure_mode_matrix",
+        "attack_validator",
+        "negative_evidence_receipt"
+      ],
+      "nearby_non_closing_evidence": {},
+      "may_raise_assembled_claim": false
+    },
+    {
+      "gate_id": "blue_team_layer",
+      "required": true,
+      "official_assembly_proof_state": "NOT_PROVEN",
+      "rollup_measured_state": "OFFICIAL_NOT_PROVEN",
+      "evidence_paths_declared": [],
+      "present_declared_evidence": [],
+      "required_evidence": [
+        "blue_team_guard_inventory",
+        "defense_validator",
+        "rollback_or_stop_condition",
+        "blue_team_receipt"
+      ],
+      "nearby_non_closing_evidence": {},
+      "may_raise_assembled_claim": false
+    }
+  ],
+  "organ_assembled_claim_allowed": false,
+  "mechanicus_assembled": false,
+  "forbidden_claims": [
+    "organ_assembled",
+    "operational_proven",
+    "trust_proven",
+    "throne_confirmed",
+    "red_blue_resilient",
+    "no_core_mutation_proven"
+  ],
+  "current_blockers": [
+    {
+      "blocker_id": "assembly_gate_unproven::tui_launcher_presence",
+      "severity": "BLOCKS_ORGAN_ASSEMBLED_CLAIM"
+    },
+    {
+      "blocker_id": "assembly_gate_unproven::organ_tools_docs_functions",
+      "severity": "BLOCKS_ORGAN_ASSEMBLED_CLAIM"
+    },
+    {
+      "blocker_id": "assembly_gate_unproven::personal_flow_validators",
+      "severity": "BLOCKS_ORGAN_ASSEMBLED_CLAIM"
+    },
+    {
+      "blocker_id": "assembly_gate_unproven::personal_integrity_validators",
+      "severity": "BLOCKS_ORGAN_ASSEMBLED_CLAIM"
+    },
+    {
+      "blocker_id": "assembly_gate_unproven::custodes_organ_validators",
+      "severity": "BLOCKS_ORGAN_ASSEMBLED_CLAIM"
+    },
+    {
+      "blocker_id": "assembly_gate_unproven::throne_organ_validators",
+      "severity": "BLOCKS_ORGAN_ASSEMBLED_CLAIM"
+    },
+    {
+      "blocker_id": "assembly_gate_unproven::red_team_layer",
+      "severity": "BLOCKS_ORGAN_ASSEMBLED_CLAIM"
+    },
+    {
+      "blocker_id": "assembly_gate_unproven::blue_team_layer",
+      "severity": "BLOCKS_ORGAN_ASSEMBLED_CLAIM"
+    },
+    {
+      "blocker_id": "tool_admission_v2_not_done",
+      "severity": "BLOCKS_FULL_TOOL_TRUST"
+    },
+    {
+      "blocker_id": "dependency_inventory_not_done",
+      "severity": "BLOCKS_REPRODUCIBILITY_TRUTH"
+    },
+    {
+      "blocker_id": "code_cleanliness_lanes_not_done",
+      "severity": "BLOCKS_100_PERCENT_CODE_CLEANLINESS_CLAIM"
+    },
+    {
+      "blocker_id": "custodes_mechanicus_audit_not_done",
+      "severity": "BLOCKS_TRUST_PROVEN_CLAIM"
+    },
+    {
+      "blocker_id": "throne_mechanicus_crown_verdict_not_done",
+      "severity": "BLOCKS_CROWN_CONFIRMED_CLAIM"
+    }
+  ],
+  "next_patch_queue": [
+    {
+      "patch_id": "MECHANICUS-TOOL-ADMISSION-V2-0001",
+      "priority": 10,
+      "reason": "inventory must become admitted/risk-scored/passported tool reality"
+    },
+    {
+      "patch_id": "MECHANICUS-DEPENDENCY-INVENTORY-0001",
+      "priority": 20,
+      "reason": "Mechanicus must know libraries, CLIs, modules and host dependencies"
+    },
+    {
+      "patch_id": "MECHANICUS-CODE-CLEANLINESS-LANES-0001",
+      "priority": 30,
+      "reason": "build proof must be separated from lint/type/test/security proof"
+    },
+    {
+      "patch_id": "MECHANICUS-TUI-LAUNCHER-0001",
+      "priority": 40,
+      "reason": "organ needs terminal-first launcher presence"
+    },
+    {
+      "patch_id": "MECHANICUS-PERSONAL-VALIDATORS-0001",
+      "priority": 50,
+      "reason": "organ needs self flow/integrity validators"
+    },
+    {
+      "patch_id": "CUSTODES-MECHANICUS-AUDIT-0001",
+      "priority": 60,
+      "reason": "Custodes must prosecute Mechanicus claims and validator honesty"
+    },
+    {
+      "patch_id": "THRONE-MECHANICUS-CROWN-VERDICT-0001",
+      "priority": 70,
+      "reason": "Throne must crown or block Mechanicus assembly from current evidence"
+    }
+  ],
+  "deferred_future_capabilities": [
+    {
+      "capability_id": "local_model_membrane",
+      "status": "DEFERRED_AFTER_CORE_V1",
+      "meaning": "small local model may later translate Owner intent and explain routing/cost, but is not required for this patch or Core v1 validators"
+    },
+    {
+      "capability_id": "safe_real_execution_gateway",
+      "status": "FUTURE_AFTER_ADMISSION_AND_SANDBOX",
+      "meaning": "real execution can exist only after tool admission v2, sandbox profile and receipts"
+    },
+    {
+      "capability_id": "game_or_procedural_engine_inventory",
+      "status": "FUTURE_GAP",
+      "meaning": "game/procedural runtime capability must be inventoried before visual/simulation claims"
+    },
+    {
+      "capability_id": "ui_reference_fidelity_gate",
+      "status": "FUTURE_CONDITIONAL_GAP",
+      "meaning": "visual work requires reference fidelity, screenshot/runtime/performance proof"
+    }
+  ],
+  "local_model_membrane_hook": {
+    "status": "DEFERRED_AFTER_CORE_V1",
+    "near_term_dependency": false,
+    "core_v1_dependency": false,
+    "purpose_later": "Translate Owner intent into IntentEnvelope and explain capability/risk/cost using script-generated reports.",
+    "authority_later": "No PASS, no land, no arbitrary shell, no WARP bypass, no Owner override.",
+    "machine_interface_candidate": "IntentEnvelope.json after Mechanicus/Strategium/Throne readiness gates exist"
+  },
+  "no_fake_green_guard": {
+    "build_proof_is_not_code_purity": true,
+    "tool_inventory_is_not_tool_admission_v2": true,
+    "planner_is_not_execution_authority": true,
+    "rollup_is_not_crown_verdict": true,
+    "local_model_is_not_inner_authority": true
+  }
+}

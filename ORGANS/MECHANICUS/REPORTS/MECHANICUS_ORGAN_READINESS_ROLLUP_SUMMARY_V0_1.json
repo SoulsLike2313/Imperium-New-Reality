@@ -1,0 +1,133 @@
+{
+  "summary_id": "mechanicus.organ_readiness_rollup_summary.v0_1",
+  "task_id": "MECHANICUS-ORGAN-READINESS-ROLLUP-0001",
+  "validator_id": "mechanicus_organ_readiness_rollup_validator.v0_1",
+  "verdict": "PASS_MECHANICUS_ORGAN_READINESS_ROLLUP_READY",
+  "generated_at_utc": "2026-07-05T22:11:45Z",
+  "checks": [
+    {
+      "name": "rollup_law_exists_and_declares_required_boundaries",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/LAWS/MECHANICUS_ORGAN_READINESS_ROLLUP_LAW_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "rollup_matrix_exists_and_declares_required_boundaries",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/MATRICES/MECHANICUS_ORGAN_READINESS_ROLLUP_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "custodes_prosecutor_matrix_exists_and_declares_required_boundaries",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/CUSTODES/MATRICES/CUSTODES_MECHANICUS_READINESS_ROLLUP_PROSECUTOR_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "throne_crown_gate_matrix_exists_and_declares_required_boundaries",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/THRONE/MATRICES/THRONE_MECHANICUS_READINESS_ROLLUP_CROWN_GATE_MATRIX_V0_1.json",
+        "error": null
+      }
+    },
+    {
+      "name": "rollup_builder_exists",
+      "status": "PASS",
+      "details": {
+        "path": "ORGANS/MECHANICUS/TOOLS/build_mechanicus_organ_readiness_rollup.py"
+      }
+    },
+    {
+      "name": "rollup_builder_runs_and_writes_outputs",
+      "status": "PASS",
+      "details": {
+        "exit_code": 0,
+        "stdout_tail": "{\n  \"task_id\": \"MECHANICUS-ORGAN-READINESS-ROLLUP-0001\",\n  \"tool_id\": \"mechanicus_organ_readiness_rollup_builder.v0_1\",\n  \"verdict\": \"PASS_ROLLUP_CREATED_MECHANICUS_NOT_ASSEMBLED\",\n  \"rollup_json\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_ORGAN_READINESS_ROLLUP_V0_1.json\",\n  \"rollup_md\": \"ORGANS/MECHANICUS/REPORTS/MECHANICUS_ORGAN_READINESS_ROLLUP_V0_1.md\",\n  \"mechanicus_assembled\": false,\n  \"local_model_membrane\": \"DEFERRED_AFTER_CORE_V1\"\n}\n",
+        "stderr_tail": "",
+        "rollup_json_exists": true,
+        "rollup_md_exists": true
+      }
+    },
+    {
+      "name": "rollup_json_parse",
+      "status": "PASS",
+      "details": {
+        "error": null
+      }
+    },
+    {
+      "name": "rollup_contains_required_sections",
+      "status": "PASS",
+      "details": {
+        "missing_sections": []
+      }
+    },
+    {
+      "name": "rollup_verdict_is_not_assembled",
+      "status": "PASS",
+      "details": {
+        "verdict": "PASS_ROLLUP_CREATED_MECHANICUS_NOT_ASSEMBLED",
+        "status": "MEASURED_NOT_ASSEMBLED"
+      }
+    },
+    {
+      "name": "rollup_blocks_mechanicus_assembled_claim",
+      "status": "PASS",
+      "details": {
+        "mechanicus_assembled": false,
+        "organ_assembled_claim_allowed": false
+      }
+    },
+    {
+      "name": "assembly_gate_map_present_and_non_closing",
+      "status": "PASS",
+      "details": {
+        "gate_count": 8
+      }
+    },
+    {
+      "name": "baseline_capabilities_visible",
+      "status": "PASS",
+      "details": {
+        "count": 10
+      }
+    },
+    {
+      "name": "no_fake_green_guard_complete",
+      "status": "PASS",
+      "details": {
+        "build_proof_is_not_code_purity": true,
+        "tool_inventory_is_not_tool_admission_v2": true,
+        "planner_is_not_execution_authority": true,
+        "rollup_is_not_crown_verdict": true,
+        "local_model_is_not_inner_authority": true
+      }
+    },
+    {
+      "name": "local_model_membrane_marked_deferred_not_dependency",
+      "status": "PASS",
+      "details": {
+        "status": "DEFERRED_AFTER_CORE_V1",
+        "near_term_dependency": false,
+        "core_v1_dependency": false,
+        "purpose_later": "Translate Owner intent into IntentEnvelope and explain capability/risk/cost using script-generated reports.",
+        "authority_later": "No PASS, no land, no arbitrary shell, no WARP bypass, no Owner override.",
+        "machine_interface_candidate": "IntentEnvelope.json after Mechanicus/Strategium/Throne readiness gates exist"
+      }
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Mechanicus assembly blockers visible: 13"
+  ],
+  "rollup_json": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_ORGAN_READINESS_ROLLUP_V0_1.json",
+  "rollup_md": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_ORGAN_READINESS_ROLLUP_V0_1.md",
+  "meaning": "Mechanicus now has a script-generated readiness rollup. This is visibility, not organ assembly closure."
+}

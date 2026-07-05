@@ -1,0 +1,80 @@
+{
+  "matrix_id": "MECHANICUS_ORGAN_READINESS_ROLLUP_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "ACTIVE_ROLLUP_SCORING_MATRIX",
+  "purpose": "Score whether a Mechanicus readiness rollup is honest, complete enough, and non-overclaiming.",
+  "dimensions": [
+    {
+      "id": "identity_and_boundary",
+      "weight": 10,
+      "requires": [
+        "passport_read",
+        "is_not_boundaries_preserved",
+        "forbidden_claims_listed"
+      ]
+    },
+    {
+      "id": "capability_inventory",
+      "weight": 20,
+      "requires": [
+        "baseline_functions_counted",
+        "tools_validators_laws_matrices_receipts_counted",
+        "host_bound_vs_proven_split"
+      ]
+    },
+    {
+      "id": "assembly_gate_mapping",
+      "weight": 20,
+      "requires": [
+        "assembly_target_read",
+        "all_gates_mapped",
+        "unproven_gates_remain_unproven"
+      ]
+    },
+    {
+      "id": "evidence_and_receipts",
+      "weight": 15,
+      "requires": [
+        "evidence_paths_recorded",
+        "runtime_outputs_written",
+        "receipt_written"
+      ]
+    },
+    {
+      "id": "no_fake_green_guard",
+      "weight": 20,
+      "requires": [
+        "not_assembled_verdict",
+        "no_core_v1_claim",
+        "build_not_purity_boundary",
+        "inventory_not_admission_boundary"
+      ]
+    },
+    {
+      "id": "future_queue",
+      "weight": 10,
+      "requires": [
+        "next_patch_queue_declared",
+        "deferred_capabilities_declared"
+      ]
+    },
+    {
+      "id": "local_model_membrane_deferral",
+      "weight": 5,
+      "requires": [
+        "local_model_marked_deferred",
+        "no_llm_dependency_for_current_patch",
+        "script_first_asserted"
+      ]
+    }
+  ],
+  "minimum_pass_score": 85,
+  "blocking_failures": [
+    "rollup_claims_mechanicus_assembled",
+    "rollup_claims_core_v1_complete",
+    "local_model_marked_required_for_current_patch",
+    "missing_assembly_gate_map",
+    "missing_forbidden_claims",
+    "missing_runtime_receipt"
+  ]
+}

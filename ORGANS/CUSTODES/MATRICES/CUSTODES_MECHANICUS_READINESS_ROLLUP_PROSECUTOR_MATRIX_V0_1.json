@@ -1,0 +1,35 @@
+{
+  "matrix_id": "CUSTODES_MECHANICUS_READINESS_ROLLUP_PROSECUTOR_MATRIX_V0_1",
+  "version": "0.1",
+  "status": "PROSECUTOR_TARGET_DECLARED_NOT_FULL_AUDIT",
+  "owner": "CUSTODES",
+  "purpose": "Define how Custodes should later prosecute Mechanicus readiness rollup honesty.",
+  "attacks": [
+    {
+      "id": "overclaim_attack",
+      "question": "Does Mechanicus claim assembled/trusted/crowned without gate evidence?",
+      "blocking_if": "yes"
+    },
+    {
+      "id": "validator_truth_attack",
+      "question": "Does the validator prove what it says it checks?",
+      "blocking_if": "no"
+    },
+    {
+      "id": "evidence_fabrication_attack",
+      "question": "Can every PASS/READY statement be traced to files or generated reports?",
+      "blocking_if": "no"
+    },
+    {
+      "id": "host_bound_attack",
+      "question": "Does Mechanicus confuse Owner-host proof with portable proof?",
+      "blocking_if": "yes"
+    },
+    {
+      "id": "llm_magic_attack",
+      "question": "Does the rollup rely on local/cloud LLM as inner authority?",
+      "blocking_if": "yes"
+    }
+  ],
+  "current_scope": "This patch only declares the prosecutor target. It does not claim Custodes audit closure."
+}
