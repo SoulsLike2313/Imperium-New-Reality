@@ -1,0 +1,93 @@
+{
+  "task_id": "IMPERIUM-CORE-SELF-ANALYSIS-0001",
+  "validator_id": "validate_imperium_core_self_analysis.v0_1",
+  "verdict": "PASS_IMPERIUM_CORE_SELF_ANALYSIS_VALIDATION_READY",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "name": "exists::ORGANS/ASTRONOMICON/TOOLS/build_astronomicon_patch_pack_inventory.py",
+      "status": "PASS"
+    },
+    {
+      "name": "no_control_chars::ORGANS/ASTRONOMICON/TOOLS/build_astronomicon_patch_pack_inventory.py",
+      "status": "PASS",
+      "details": {
+        "hits": []
+      }
+    },
+    {
+      "name": "py_compile::ORGANS/ASTRONOMICON/TOOLS/build_astronomicon_patch_pack_inventory.py",
+      "status": "PASS"
+    },
+    {
+      "name": "exists::ORGANS/MECHANICUS/TOOLS/build_mechanicus_code_topology.py",
+      "status": "PASS"
+    },
+    {
+      "name": "no_control_chars::ORGANS/MECHANICUS/TOOLS/build_mechanicus_code_topology.py",
+      "status": "PASS",
+      "details": {
+        "hits": []
+      }
+    },
+    {
+      "name": "py_compile::ORGANS/MECHANICUS/TOOLS/build_mechanicus_code_topology.py",
+      "status": "PASS"
+    },
+    {
+      "name": "exists::SUPPORT/APP_TAURI/tools/imperium_core_self_analyze.py",
+      "status": "PASS"
+    },
+    {
+      "name": "no_control_chars::SUPPORT/APP_TAURI/tools/imperium_core_self_analyze.py",
+      "status": "PASS",
+      "details": {
+        "hits": []
+      }
+    },
+    {
+      "name": "py_compile::SUPPORT/APP_TAURI/tools/imperium_core_self_analyze.py",
+      "status": "PASS"
+    },
+    {
+      "name": "exists::SUPPORT/APP_TAURI/contracts/IMPERIUM_CORE_SELF_ANALYSIS_CONTRACT_V0_1.json",
+      "status": "PASS"
+    },
+    {
+      "name": "no_control_chars::SUPPORT/APP_TAURI/contracts/IMPERIUM_CORE_SELF_ANALYSIS_CONTRACT_V0_1.json",
+      "status": "PASS",
+      "details": {
+        "hits": []
+      }
+    },
+    {
+      "name": "json_parse::SUPPORT/APP_TAURI/contracts/IMPERIUM_CORE_SELF_ANALYSIS_CONTRACT_V0_1.json",
+      "status": "PASS"
+    },
+    {
+      "name": "self_analyze_runs",
+      "status": "PASS",
+      "details": {
+        "ok": true,
+        "exit_code": 0,
+        "stdout_tail": [
+          "VERDICT: PASS_IMPERIUM_CORE_SELF_ANALYSIS_READY",
+          "ASTRA: packs=102 standard=84 candidate=3 legacy=14 dirty=1",
+          "MECH: files=86 lines=13683 monoliths=3 blockers=1 nodes=8",
+          "SUMMARY: SUPPORT/APP_TAURI/receipts/imperium_core_self_analysis_summary.json",
+          "RECEIPT: SUPPORT/APP_TAURI/receipts/imperium_core_self_analysis_receipt.json",
+          "WARNINGS: ASTRA: dirty nested WARP payload packs visible: 1 | ASTRA: legacy/incomplete packs visible: 14 | MECH: monolith risk files visible: 3"
+        ],
+        "stderr_tail": []
+      }
+    },
+    {
+      "name": "summary_verdict",
+      "status": "PASS",
+      "details": {
+        "verdict": "PASS_IMPERIUM_CORE_SELF_ANALYSIS_READY"
+      }
+    }
+  ]
+}

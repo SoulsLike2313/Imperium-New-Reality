@@ -1,0 +1,442 @@
+{
+  "task_id": "MECHANICUS-CODE-TOPOLOGY-V0-1",
+  "validator_id": "mechanicus_code_topology.v0_1",
+  "verdict": "PASS_MECHANICUS_CODE_TOPOLOGY_READY",
+  "generated_at_utc": "2026-07-06T02:09:47Z",
+  "scope": "SUPPORT/APP_TAURI",
+  "file_count": 86,
+  "total_lines": 13683,
+  "language_counts": {
+    "JSON": {
+      "files": 64,
+      "lines": 8690
+    },
+    "HTML": {
+      "files": 1,
+      "lines": 1
+    },
+    "Markdown": {
+      "files": 3,
+      "lines": 43
+    },
+    "JavaScript": {
+      "files": 2,
+      "lines": 795
+    },
+    "CSS": {
+      "files": 1,
+      "lines": 1913
+    },
+    "Rust": {
+      "files": 2,
+      "lines": 729
+    },
+    "TOML": {
+      "files": 1,
+      "lines": 15
+    },
+    "Python": {
+      "files": 10,
+      "lines": 1483
+    },
+    "PowerShell": {
+      "files": 2,
+      "lines": 14
+    }
+  },
+  "zone_counts": {
+    "APP_CONTRACTS": {
+      "files": 16,
+      "lines": 465
+    },
+    "APP_OTHER": {
+      "files": 10,
+      "lines": 1728
+    },
+    "APP_EVIDENCE_RECEIPTS": {
+      "files": 37,
+      "lines": 1456
+    },
+    "APP_FRONTEND_MONOLITH_CANDIDATE": {
+      "files": 1,
+      "lines": 780
+    },
+    "APP_STYLE_SURFACE_MONOLITH_CANDIDATE": {
+      "files": 1,
+      "lines": 1913
+    },
+    "APP_FRONTEND_SOURCE": {
+      "files": 8,
+      "lines": 5116
+    },
+    "TAURI_RUST_COMMAND_BRIDGE": {
+      "files": 1,
+      "lines": 728
+    },
+    "APP_TESTS_VALIDATORS": {
+      "files": 7,
+      "lines": 1001
+    },
+    "APP_TERMINAL_TOOLS": {
+      "files": 5,
+      "lines": 496
+    }
+  },
+  "top_files_by_lines": [
+    {
+      "path": "SUPPORT/APP_TAURI/src-tauri/gen/schemas/desktop-schema.json",
+      "scope_path": "src-tauri/gen/schemas/desktop-schema.json",
+      "ext": ".json",
+      "language": "JSON",
+      "lines": 2525,
+      "zone": "APP_FRONTEND_SOURCE",
+      "monolith_risk": "OK",
+      "metrics": {}
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/src-tauri/gen/schemas/windows-schema.json",
+      "scope_path": "src-tauri/gen/schemas/windows-schema.json",
+      "ext": ".json",
+      "language": "JSON",
+      "lines": 2525,
+      "zone": "APP_FRONTEND_SOURCE",
+      "monolith_risk": "OK",
+      "metrics": {}
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/src/styles.css",
+      "scope_path": "src/styles.css",
+      "ext": ".css",
+      "language": "CSS",
+      "lines": 1913,
+      "zone": "APP_STYLE_SURFACE_MONOLITH_CANDIDATE",
+      "monolith_risk": "BLOCKING_MONOLITH",
+      "metrics": {
+        "selector_block_count": 283,
+        "media_query_count": 8,
+        "root_token_count": 26
+      }
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/package-lock.json",
+      "scope_path": "package-lock.json",
+      "ext": ".json",
+      "language": "JSON",
+      "lines": 1287,
+      "zone": "APP_OTHER",
+      "monolith_risk": "OK",
+      "metrics": {}
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/src/main.js",
+      "scope_path": "src/main.js",
+      "ext": ".js",
+      "language": "JavaScript",
+      "lines": 780,
+      "zone": "APP_FRONTEND_MONOLITH_CANDIDATE",
+      "monolith_risk": "MONOLITH_RISK",
+      "metrics": {
+        "function_like_count": 74,
+        "event_listener_count": 14,
+        "invoke_count": 2,
+        "query_selector_count": 16
+      }
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+      "scope_path": "src-tauri/src/main.rs",
+      "ext": ".rs",
+      "language": "Rust",
+      "lines": 728,
+      "zone": "TAURI_RUST_COMMAND_BRIDGE",
+      "monolith_risk": "MONOLITH_RISK",
+      "metrics": {
+        "tauri_command_count": 9,
+        "function_count": 37
+      }
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/state/patch_pack_registry.json",
+      "scope_path": "state/patch_pack_registry.json",
+      "ext": ".json",
+      "language": "JSON",
+      "lines": 322,
+      "zone": "APP_OTHER",
+      "monolith_risk": "OK",
+      "metrics": {}
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/tools/register_patch_with_organs_cli.py",
+      "scope_path": "tools/register_patch_with_organs_cli.py",
+      "ext": ".py",
+      "language": "Python",
+      "lines": 275,
+      "zone": "APP_TERMINAL_TOOLS",
+      "monolith_risk": "OK",
+      "metrics": {}
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/receipts/astronomicon_mechanicus_registration_proof_receipt.json",
+      "scope_path": "receipts/astronomicon_mechanicus_registration_proof_receipt.json",
+      "ext": ".json",
+      "language": "JSON",
+      "lines": 231,
+      "zone": "APP_EVIDENCE_RECEIPTS",
+      "monolith_risk": "OK",
+      "metrics": {}
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/tests/validate_astronomicon_mechanicus_registration.py",
+      "scope_path": "tests/validate_astronomicon_mechanicus_registration.py",
+      "ext": ".py",
+      "language": "Python",
+      "lines": 222,
+      "zone": "APP_TESTS_VALIDATORS",
+      "monolith_risk": "OK",
+      "metrics": {}
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/receipts/two_phase_organ_registration_receipt.json",
+      "scope_path": "receipts/two_phase_organ_registration_receipt.json",
+      "ext": ".json",
+      "language": "JSON",
+      "lines": 186,
+      "zone": "APP_EVIDENCE_RECEIPTS",
+      "monolith_risk": "OK",
+      "metrics": {}
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/tools/imperium_core_self_analyze.py",
+      "scope_path": "tools/imperium_core_self_analyze.py",
+      "ext": ".py",
+      "language": "Python",
+      "lines": 169,
+      "zone": "APP_TERMINAL_TOOLS",
+      "monolith_risk": "OK",
+      "metrics": {}
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/tests/validate_two_phase_organ_registration.py",
+      "scope_path": "tests/validate_two_phase_organ_registration.py",
+      "ext": ".py",
+      "language": "Python",
+      "lines": 159,
+      "zone": "APP_TESTS_VALIDATORS",
+      "monolith_risk": "OK",
+      "metrics": {}
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/tests/validate_astronomicon_terminal_first_workflow.py",
+      "scope_path": "tests/validate_astronomicon_terminal_first_workflow.py",
+      "ext": ".py",
+      "language": "Python",
+      "lines": 143,
+      "zone": "APP_TESTS_VALIDATORS",
+      "monolith_risk": "OK",
+      "metrics": {}
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/tests/validate_daily_use_ui_refit_polished.py",
+      "scope_path": "tests/validate_daily_use_ui_refit_polished.py",
+      "ext": ".py",
+      "language": "Python",
+      "lines": 140,
+      "zone": "APP_TESTS_VALIDATORS",
+      "monolith_risk": "OK",
+      "metrics": {}
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/tests/validate_astronomicon_mechanicus_registration_picker_fix.py",
+      "scope_path": "tests/validate_astronomicon_mechanicus_registration_picker_fix.py",
+      "ext": ".py",
+      "language": "Python",
+      "lines": 136,
+      "zone": "APP_TESTS_VALIDATORS",
+      "monolith_risk": "OK",
+      "metrics": {}
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/tests/validate_imperium_core_self_analysis.py",
+      "scope_path": "tests/validate_imperium_core_self_analysis.py",
+      "ext": ".py",
+      "language": "Python",
+      "lines": 123,
+      "zone": "APP_TESTS_VALIDATORS",
+      "monolith_risk": "OK",
+      "metrics": {}
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/receipts/astronomicon_mechanicus_registration_picker_fix_receipt.json",
+      "scope_path": "receipts/astronomicon_mechanicus_registration_picker_fix_receipt.json",
+      "ext": ".json",
+      "language": "JSON",
+      "lines": 112,
+      "zone": "APP_EVIDENCE_RECEIPTS",
+      "monolith_risk": "OK",
+      "metrics": {}
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/receipts/terminal_organ_registration_imperium_app_daily_use_ui_refit_candidate_0001_report.json",
+      "scope_path": "receipts/terminal_organ_registration_imperium_app_daily_use_ui_refit_candidate_0001_report.json",
+      "ext": ".json",
+      "language": "JSON",
+      "lines": 86,
+      "zone": "APP_EVIDENCE_RECEIPTS",
+      "monolith_risk": "OK",
+      "metrics": {}
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/receipts/terminal_organ_registration_imperium_app_core_versioning_foundation_0001_report.json",
+      "scope_path": "receipts/terminal_organ_registration_imperium_app_core_versioning_foundation_0001_report.json",
+      "ext": ".json",
+      "language": "JSON",
+      "lines": 84,
+      "zone": "APP_EVIDENCE_RECEIPTS",
+      "monolith_risk": "OK",
+      "metrics": {}
+    }
+  ],
+  "monolith_risk_count": 3,
+  "blocking_monolith_count": 1,
+  "monolith_records": [
+    {
+      "path": "SUPPORT/APP_TAURI/src/styles.css",
+      "scope_path": "src/styles.css",
+      "ext": ".css",
+      "language": "CSS",
+      "lines": 1913,
+      "zone": "APP_STYLE_SURFACE_MONOLITH_CANDIDATE",
+      "monolith_risk": "BLOCKING_MONOLITH",
+      "metrics": {
+        "selector_block_count": 283,
+        "media_query_count": 8,
+        "root_token_count": 26
+      }
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/src/main.js",
+      "scope_path": "src/main.js",
+      "ext": ".js",
+      "language": "JavaScript",
+      "lines": 780,
+      "zone": "APP_FRONTEND_MONOLITH_CANDIDATE",
+      "monolith_risk": "MONOLITH_RISK",
+      "metrics": {
+        "function_like_count": 74,
+        "event_listener_count": 14,
+        "invoke_count": 2,
+        "query_selector_count": 16
+      }
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+      "scope_path": "src-tauri/src/main.rs",
+      "ext": ".rs",
+      "language": "Rust",
+      "lines": 728,
+      "zone": "TAURI_RUST_COMMAND_BRIDGE",
+      "monolith_risk": "MONOLITH_RISK",
+      "metrics": {
+        "tauri_command_count": 9,
+        "function_count": 37
+      }
+    }
+  ],
+  "node_boundary_map": [
+    {
+      "node_id": "core_shell_header",
+      "owner_file_hint": "SUPPORT/APP_TAURI/src/main.js",
+      "responsibility": "product name, version strip, top truth markers",
+      "split_recommendation": "extract shell-header module"
+    },
+    {
+      "node_id": "left_room_nav",
+      "owner_file_hint": "SUPPORT/APP_TAURI/src/main.js",
+      "responsibility": "room navigation state",
+      "split_recommendation": "extract room-nav module"
+    },
+    {
+      "node_id": "astronomicon_registration",
+      "owner_file_hint": "SUPPORT/APP_TAURI/src/main.js",
+      "responsibility": "registration UI state, candidate/polished gates",
+      "split_recommendation": "extract astronomicon-room module"
+    },
+    {
+      "node_id": "mechanicus_digest",
+      "owner_file_hint": "SUPPORT/APP_TAURI/src/main.js",
+      "responsibility": "technical summary cards, language/validator/debt readout",
+      "split_recommendation": "extract mechanicus-digest module"
+    },
+    {
+      "node_id": "proof_digest",
+      "owner_file_hint": "SUPPORT/APP_TAURI/src/main.js",
+      "responsibility": "short proof log and receipt links",
+      "split_recommendation": "extract proof-digest module"
+    },
+    {
+      "node_id": "right_command_rail",
+      "owner_file_hint": "SUPPORT/APP_TAURI/src/main.js",
+      "responsibility": "active room, patch state, truth boundary, version/update hints",
+      "split_recommendation": "extract command-rail module"
+    },
+    {
+      "node_id": "style_tokens",
+      "owner_file_hint": "SUPPORT/APP_TAURI/src/styles.css",
+      "responsibility": "premium gothic/trash-polka tokens, density, surfaces",
+      "split_recommendation": "split tokens/layout/components css files"
+    },
+    {
+      "node_id": "tauri_commands",
+      "owner_file_hint": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+      "responsibility": "backend bridge commands and receipts",
+      "split_recommendation": "split command modules when Rust grows"
+    }
+  ],
+  "package_json": {
+    "exists": true,
+    "name": "imperium-core",
+    "version": "0.1.0-alpha.0",
+    "dependency_count": 1,
+    "dev_dependency_count": 3,
+    "script_names": [
+      "build",
+      "check:fps",
+      "check:parity",
+      "dev",
+      "tauri:build",
+      "tauri:dev"
+    ],
+    "dependencies": [
+      "@tauri-apps/api"
+    ],
+    "dev_dependencies": [
+      "@tauri-apps/cli",
+      "typescript",
+      "vite"
+    ]
+  },
+  "cargo_toml": {
+    "exists": true,
+    "name": "imperium_app_tauri",
+    "version": "0.1.0",
+    "dependency_count": 5,
+    "dependencies": [
+      "chrono",
+      "serde",
+      "serde_json",
+      "tauri",
+      "tauri-plugin-opener"
+    ]
+  },
+  "refactor_priority": [
+    "split SUPPORT/APP_TAURI/src/main.js into shell/nav/astronomicon/mechanicus/proof modules",
+    "split SUPPORT/APP_TAURI/src/styles.css into tokens/layout/components/rooms/proof css",
+    "keep app registration/launch buttons present but terminal remains preferred until UI matures",
+    "build a one-screen proof digest before adding Eyes/Canvas runtime"
+  ],
+  "errors": [],
+  "warnings": [
+    "monolith risk files visible: 3",
+    "blocking monolith files visible: 1"
+  ]
+}

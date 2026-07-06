@@ -1,0 +1,17 @@
+{
+  "matrix_id": "ASTRONOMICON_PATCH_PACK_INVENTORY_MATRIX_V0_1",
+  "task_id": "IMPERIUM-CORE-SELF-ANALYSIS-0001",
+  "checks": [
+    "WARP/PATCHES exists",
+    "patch packs classified",
+    "candidate packs separated from execution packs",
+    "legacy/incomplete packs visible",
+    "dirty nested WARP payloads visible",
+    "long path blockers visible"
+  ],
+  "forbidden_claims": [
+    "all packs are clean",
+    "legacy packs are execution-ready",
+    "candidate packs may run without polished re-registration"
+  ]
+}

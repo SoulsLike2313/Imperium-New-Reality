@@ -1,0 +1,30 @@
+{
+  "contract_id": "IMPERIUM_CORE_SELF_ANALYSIS_CONTRACT_V0_1",
+  "task_id": "IMPERIUM-CORE-SELF-ANALYSIS-0001",
+  "product_name": "Imperium Core",
+  "mode": "terminal_first_two_organ_self_analysis",
+  "organs": ["ASTRONOMICON", "MECHANICUS"],
+  "claims": {
+    "core_v1_complete": false,
+    "real_execution_gateway_ready": false,
+    "ui_refactor_complete": false,
+    "app_self_analysis_baseline": true
+  },
+  "astronomicon_responsibilities": [
+    "scan WARP/PATCHES",
+    "classify standard patch packs, candidate packs, legacy/incomplete packs, nested WARP dirt and long-path blockers",
+    "write compact summary and full report"
+  ],
+  "mechanicus_responsibilities": [
+    "scan SUPPORT/APP_TAURI code topology",
+    "count files, lines, languages and zones",
+    "identify monolith risks and technical split boundaries",
+    "write compact summary and full report"
+  ],
+  "terminal_output_policy": {
+    "compact_by_default": true,
+    "full_truth_in_receipts": true,
+    "no_full_json_dump_by_default": true
+  },
+  "next_recommended_patch": "IMPERIUM-CORE-APP-MONOLITH-SPLIT-PLAN-0001"
+}

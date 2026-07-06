@@ -1,0 +1,95 @@
+{
+  "task_id": "IMPERIUM-CORE-SELF-ANALYSIS-0001",
+  "validator_id": "imperium_core_self_analysis.v0_1",
+  "verdict": "PASS_IMPERIUM_CORE_SELF_ANALYSIS_READY",
+  "generated_at_utc": "2026-07-06T02:09:47Z",
+  "core_name": "Imperium Core",
+  "mode": "terminal_first_two_organ_self_analysis",
+  "astronomicon": {
+    "pack_count": 102,
+    "standard_pack_count": 84,
+    "candidate_pack_count": 3,
+    "legacy_or_incomplete_count": 14,
+    "dirty_nested_warp_count": 1,
+    "long_path_blocker_count": 0,
+    "summary_path": "ORGANS/ASTRONOMICON/REPORTS/ASTRONOMICON_PATCH_PACK_INVENTORY_SUMMARY_V0_1.json"
+  },
+  "mechanicus": {
+    "scope": "SUPPORT/APP_TAURI",
+    "file_count": 86,
+    "total_lines": 13683,
+    "monolith_risk_count": 3,
+    "blocking_monolith_count": 1,
+    "node_boundary_count": 8,
+    "top_monoliths": [
+      {
+        "path": "SUPPORT/APP_TAURI/src/styles.css",
+        "lines": 1913,
+        "risk": "BLOCKING_MONOLITH",
+        "zone": "APP_STYLE_SURFACE_MONOLITH_CANDIDATE"
+      },
+      {
+        "path": "SUPPORT/APP_TAURI/src/main.js",
+        "lines": 780,
+        "risk": "MONOLITH_RISK",
+        "zone": "APP_FRONTEND_MONOLITH_CANDIDATE"
+      },
+      {
+        "path": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+        "lines": 728,
+        "risk": "MONOLITH_RISK",
+        "zone": "TAURI_RUST_COMMAND_BRIDGE"
+      }
+    ],
+    "summary_path": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_CODE_TOPOLOGY_SUMMARY_V0_1.json"
+  },
+  "next_recommended_patch": "IMPERIUM-CORE-APP-MONOLITH-SPLIT-PLAN-0001",
+  "no_llm_dependency": true,
+  "real_execution_gateway_claim": false,
+  "core_v1_claim": false,
+  "errors": [],
+  "warnings": [
+    "ASTRA: dirty nested WARP payload packs visible: 1",
+    "ASTRA: legacy/incomplete packs visible: 14",
+    "MECH: monolith risk files visible: 3",
+    "MECH: blocking monolith files visible: 1"
+  ],
+  "astronomicon_run": {
+    "ok": true,
+    "exit_code": 0,
+    "cmd": [
+      "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "E:\\IMPERIUM_REALITY\\ORGANS\\ASTRONOMICON\\TOOLS\\build_astronomicon_patch_pack_inventory.py",
+      "--repo-root",
+      "E:\\IMPERIUM_REALITY",
+      "--compact"
+    ],
+    "stdout_tail": [
+      "ASTRONOMICON: packs=102 standard=84 candidate=3 legacy=14 dirty=1 long=0",
+      "ASTRA_WARN: dirty nested WARP payload packs visible: 1 | legacy/incomplete packs visible: 14"
+    ],
+    "stderr_tail": [],
+    "error": null
+  },
+  "mechanicus_run": {
+    "ok": true,
+    "exit_code": 0,
+    "cmd": [
+      "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "E:\\IMPERIUM_REALITY\\ORGANS\\MECHANICUS\\TOOLS\\build_mechanicus_code_topology.py",
+      "--repo-root",
+      "E:\\IMPERIUM_REALITY",
+      "--scope",
+      "SUPPORT/APP_TAURI",
+      "--compact"
+    ],
+    "stdout_tail": [
+      "MECHANICUS: files=86 lines=13683 langs=CSS,HTML,JSON,JavaScript,Markdown,PowerShell,Python,Rust,TOML",
+      "MECH_MONOLITH: risks=3 blockers=1 nodes=8",
+      "MECH_WARN: monolith risk files visible: 3 | blocking monolith files visible: 1"
+    ],
+    "stderr_tail": [],
+    "error": null
+  },
+  "summary": "SUPPORT/APP_TAURI/receipts/imperium_core_self_analysis_summary.json"
+}

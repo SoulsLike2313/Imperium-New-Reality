@@ -1,0 +1,121 @@
+{
+  "task_id": "MECHANICUS-CODE-TOPOLOGY-V0-1",
+  "verdict": "PASS_MECHANICUS_CODE_TOPOLOGY_READY",
+  "generated_at_utc": "2026-07-06T02:09:47Z",
+  "scope": "SUPPORT/APP_TAURI",
+  "file_count": 86,
+  "total_lines": 13683,
+  "language_counts": {
+    "JSON": {
+      "files": 64,
+      "lines": 8690
+    },
+    "HTML": {
+      "files": 1,
+      "lines": 1
+    },
+    "Markdown": {
+      "files": 3,
+      "lines": 43
+    },
+    "JavaScript": {
+      "files": 2,
+      "lines": 795
+    },
+    "CSS": {
+      "files": 1,
+      "lines": 1913
+    },
+    "Rust": {
+      "files": 2,
+      "lines": 729
+    },
+    "TOML": {
+      "files": 1,
+      "lines": 15
+    },
+    "Python": {
+      "files": 10,
+      "lines": 1483
+    },
+    "PowerShell": {
+      "files": 2,
+      "lines": 14
+    }
+  },
+  "zone_counts": {
+    "APP_CONTRACTS": {
+      "files": 16,
+      "lines": 465
+    },
+    "APP_OTHER": {
+      "files": 10,
+      "lines": 1728
+    },
+    "APP_EVIDENCE_RECEIPTS": {
+      "files": 37,
+      "lines": 1456
+    },
+    "APP_FRONTEND_MONOLITH_CANDIDATE": {
+      "files": 1,
+      "lines": 780
+    },
+    "APP_STYLE_SURFACE_MONOLITH_CANDIDATE": {
+      "files": 1,
+      "lines": 1913
+    },
+    "APP_FRONTEND_SOURCE": {
+      "files": 8,
+      "lines": 5116
+    },
+    "TAURI_RUST_COMMAND_BRIDGE": {
+      "files": 1,
+      "lines": 728
+    },
+    "APP_TESTS_VALIDATORS": {
+      "files": 7,
+      "lines": 1001
+    },
+    "APP_TERMINAL_TOOLS": {
+      "files": 5,
+      "lines": 496
+    }
+  },
+  "monolith_risk_count": 3,
+  "blocking_monolith_count": 1,
+  "refactor_priority": [
+    "split SUPPORT/APP_TAURI/src/main.js into shell/nav/astronomicon/mechanicus/proof modules",
+    "split SUPPORT/APP_TAURI/src/styles.css into tokens/layout/components/rooms/proof css",
+    "keep app registration/launch buttons present but terminal remains preferred until UI matures",
+    "build a one-screen proof digest before adding Eyes/Canvas runtime"
+  ],
+  "errors": [],
+  "warnings": [
+    "monolith risk files visible: 3",
+    "blocking monolith files visible: 1"
+  ],
+  "top_monoliths": [
+    {
+      "path": "SUPPORT/APP_TAURI/src/styles.css",
+      "lines": 1913,
+      "risk": "BLOCKING_MONOLITH",
+      "zone": "APP_STYLE_SURFACE_MONOLITH_CANDIDATE"
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/src/main.js",
+      "lines": 780,
+      "risk": "MONOLITH_RISK",
+      "zone": "APP_FRONTEND_MONOLITH_CANDIDATE"
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+      "lines": 728,
+      "risk": "MONOLITH_RISK",
+      "zone": "TAURI_RUST_COMMAND_BRIDGE"
+    }
+  ],
+  "node_boundary_count": 8,
+  "report_json": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_CODE_TOPOLOGY_REPORT_V0_1.json",
+  "report_md": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_CODE_TOPOLOGY_REPORT_V0_1.md",
+  "summary": "ORGANS/MECHANICUS/REPORTS/MECHANICUS_CODE_TOPOLOGY_SUMMARY_V0_1.json"
+}
