@@ -1,0 +1,18 @@
+{
+  "matrix_id": "astronomicon.mechanicus.app_registration_matrix.v0_1",
+  "task_id": "IMPERIUM-APP-ASTRONOMICON-MECHANICUS-REGISTRATION-0001",
+  "checks": [
+    "patch_id_safe",
+    "patch_dir_exists",
+    "patch_pack_md_exists",
+    "files_to_land_exists",
+    "runner_exists",
+    "mechanicus_summary_available"
+  ],
+  "organ_sequence": [
+    "ASTRONOMICON_REGISTER",
+    "MECHANICUS_MACHINE_SUMMARY",
+    "OWNER_REVIEW"
+  ],
+  "no_execution": true
+}

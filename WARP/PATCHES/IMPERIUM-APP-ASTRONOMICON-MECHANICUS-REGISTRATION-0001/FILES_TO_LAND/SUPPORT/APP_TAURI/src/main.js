@@ -20,13 +20,10 @@ const APP_COCKPIT_MERGED_INTO_PLATFORM = "APP_COCKPIT_MERGED_INTO_PLATFORM";
 const NO_FAKE_EXECUTION_CLAIMED_MARKER = "No fake execution claimed";
 const FPS_LOCK_TARGET = 60;
 const RUNTIME_FPS_PROOF = "RUNTIME_FPS_PROOF";
-const ASTRONOMICON_PATCH_PICKER_DARK_LIST_V0_1 = "ASTRONOMICON_PATCH_PICKER_DARK_LIST_V0_1";
-const APP_REGISTRATION_PATCH_ID = "IMPERIUM-APP-ASTRONOMICON-MECHANICUS-REGISTRATION-0001";
 
 let activeRoom = "organ-hub";
 let patchPacks = [];
 let selectedPatchId = "";
-let patchSearch = "";
 let registeredPatchId = "";
 let registeredPatchStatus = "none";
 let organSummary = null;
@@ -123,7 +120,6 @@ function normalizePatches(result) {
       status: item.status || item.state || "DISCOVERED",
       runner: item.runner || item.runner_path || item.run_script || item.has_runner ? "RUNNER" : "",
       path: item.path || item.patch_path || "",
-      modified_unix: Number(item.modified_unix || item.modified || 0),
     };
   }).filter((x) => x.patch_id && x.patch_id !== "UNKNOWN_PATCH");
 }
@@ -133,8 +129,7 @@ async function refreshPatchPacks() {
   const response = await callAnyCommand(["discover_patch_packs", "list_patch_packs", "get_patch_packs", "refresh_patch_registry", "list_warp_patch_packs"]);
   if (response.ok) {
     patchPacks = normalizePatches(response.result);
-    const preferred = patchPacks.find((p) => p.patch_id === APP_REGISTRATION_PATCH_ID) || patchPacks[0];
-    selectedPatchId = selectedPatchId && patchPacks.some((p) => p.patch_id === selectedPatchId) ? selectedPatchId : (preferred?.patch_id || "");
+    selectedPatchId = selectedPatchId || patchPacks[0]?.patch_id || "";
     logAquarium("PATCH", `Patch packs visible: ${patchPacks.length}`);
   } else if (patchPacks.length === 0) {
     patchPacks = [{ patch_id: "PATCH_REGISTRY_BACKEND_PENDING", status: "LOCAL_PLACEHOLDER", runner: "—" }];
@@ -155,39 +150,6 @@ function summarizeArray(items, limit = 6) {
   const head = items.slice(0, limit).map((item) => typeof item === "string" ? item : (item.toolchain || item.zone || item.name || JSON.stringify(item).slice(0, 60)));
   const rest = items.length > limit ? ` +${items.length - limit}` : "";
   return `${head.join(", ")}${rest}`;
-}
-
-
-function escapeHtml(value) {
-  return String(value ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#39;");
-}
-
-function sortedPatchPacks() {
-  return [...patchPacks].sort((a, b) => {
-    if (a.patch_id === APP_REGISTRATION_PATCH_ID) return -1;
-    if (b.patch_id === APP_REGISTRATION_PATCH_ID) return 1;
-    return Number(b.modified_unix || 0) - Number(a.modified_unix || 0) || String(a.patch_id).localeCompare(String(b.patch_id));
-  });
-}
-
-function visiblePatchPacks(limit = 14) {
-  const query = patchSearch.trim().toUpperCase();
-  const items = sortedPatchPacks().filter((p) => !query || p.patch_id.toUpperCase().includes(query));
-  return items.slice(0, limit);
-}
-
-function patchPickLabel(p) {
-  const flags = [];
-  if (p.patch_id === APP_REGISTRATION_PATCH_ID) flags.push("current proof");
-  if (p.registered) flags.push("registered");
-  if (p.has_runner || p.runner) flags.push("runner");
-  if (p.modified_unix) flags.push("recent");
-  return flags.join(" · ") || (p.status || "discovered");
 }
 
 async function registerPatchPack() {
@@ -350,36 +312,18 @@ function renderAstronomicon() {
   const languages = mech?.languages || [];
   const missing = mech?.missing_capabilities || [];
   const validators = mech?.required_validators || [];
-  const visiblePatches = visiblePatchPacks();
-  const selectedPatch = patchPacks.find((p) => p.patch_id === selectedPatchId);
-  return `<section class="room-panel astronomicon-intake-panel" data-marker="ASTRONOMICON_ROOM" data-picker-marker="${ASTRONOMICON_PATCH_PICKER_DARK_LIST_V0_1}">
+  return `<section class="room-panel astronomicon-intake-panel" data-marker="ASTRONOMICON_ROOM">
     <p class="eyebrow">ASTRONOMICON / PATCH PACK INTAKE</p>
     <h2>Astronomicon Registration</h2>
     <p class="muted">Astronomicon registers patch intent and shape. Mechanicus answers with machine stack, language, monolith, visual and dependency verdict. No execution here.</p>
-    <div class="patch-picker-box">
-      <div class="patch-picker-head">
-        <input id="patch-search" value="${escapeHtml(patchSearch)}" placeholder="Поиск pack id: app, eyes, mechanicus, throne..." aria-label="Patch pack search" />
-        <button id="refresh-patches">Refresh</button>
-        <button id="register-patch">Register via Astronomicon → Mechanicus</button>
-      </div>
-      <div class="patch-selected-card">
-        <span class="eyebrow">SELECTED PATCH PACK</span>
-        <b>${escapeHtml(selectedPatchId || "none")}</b>
-        <small>${escapeHtml(selectedPatch ? patchPickLabel(selectedPatch) : "not in current visible registry")}</small>
-      </div>
-      <div class="patch-list" role="listbox" aria-label="Patch pack list">
-        ${(visiblePatches.length ? visiblePatches : [{ patch_id: "NO_PATCHES_MATCH_FILTER", status: "EMPTY" }]).map((p) => `
-          <button class="patch-pick ${selectedPatchId === p.patch_id ? "selected" : ""}" data-patch-id="${escapeHtml(p.patch_id)}" type="button">
-            <span>${escapeHtml(p.patch_id)}</span>
-            <small>${escapeHtml(patchPickLabel(p))}</small>
-          </button>
+    <div class="control-row">
+      <select id="patch-select" aria-label="Patch pack selection">
+        ${(patchPacks.length ? patchPacks : [{ patch_id: "NO_PATCHES_LOADED", status: "EMPTY", runner: "" }]).map((p) => `
+          <option value="${p.patch_id}" ${selectedPatchId === p.patch_id ? "selected" : ""}>${p.patch_id}</option>
         `).join("")}
-      </div>
-      <div class="trial-task-box compact-trial">
-        <p class="eyebrow">NEXT HARD TRIAL CANDIDATE — not a WARP pack yet</p>
-        <h3>${trialMission.task_id}</h3>
-        <p>${trialMission.goal}</p>
-      </div>
+      </select>
+      <button id="refresh-patches">Refresh</button>
+      <button id="register-patch">Register via Astronomicon → Mechanicus</button>
     </div>
     <div class="status-strip">
       <span>Selected: <b>${selectedPatchId || "none"}</b></span>
@@ -404,6 +348,12 @@ function renderAstronomicon() {
       <div class="mini-panel"><b>Monolith risk</b><span>${mech?.monolith_risk || "not checked"}</span></div>
       <div class="mini-panel"><b>Visual stack</b><span>${mech?.visual_stack?.required ? summarizeArray(mech.visual_stack.stack, 5) : "not required"}</span></div>
       <div class="mini-panel wide"><b>Missing / Debt</b><span>${summarizeArray(missing, 8)}</span></div>
+    </div>
+    <div class="trial-task-box">
+      <p class="eyebrow">NEXT HARD TRIAL</p>
+      <h3>${trialMission.task_id}</h3>
+      <p>${trialMission.goal}</p>
+      <small>Expected stack: ${trialMission.expected_stack.join(" · ")}</small>
     </div>
   </section>`;
 }
@@ -538,17 +488,9 @@ function render() {
     });
   });
 
-  document.querySelector("#patch-search")?.addEventListener("input", (event) => {
-    patchSearch = event.target.value;
-    markUx("filter_patch_list");
-    render();
-  });
-  document.querySelectorAll("[data-patch-id]").forEach((button) => {
-    button.addEventListener("click", () => {
-      selectedPatchId = button.getAttribute("data-patch-id") || "";
-      markUx("select_patch_from_dark_list");
-      render();
-    });
+  document.querySelector("#patch-select")?.addEventListener("change", (event) => {
+    selectedPatchId = event.target.value;
+    markUx("select_patch");
   });
   document.querySelector("#refresh-patches")?.addEventListener("click", refreshPatchPacks);
   document.querySelector("#register-patch")?.addEventListener("click", registerPatchPack);

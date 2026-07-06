@@ -1,0 +1,20 @@
+{
+  "matrix_id": "mechanicus.app_patch_pack_analysis_matrix.v0_1",
+  "task_id": "IMPERIUM-APP-ASTRONOMICON-MECHANICUS-REGISTRATION-0001",
+  "outputs": [
+    "task_class",
+    "languages",
+    "toolchains",
+    "validators",
+    "monolith_risk",
+    "visual_stack",
+    "dependency_impact",
+    "missing_capabilities"
+  ],
+  "monolith_policy": {
+    "main_js_warning_threshold_lines": 420,
+    "styles_css_warning_threshold_lines": 950,
+    "patch_touching_main_js_or_styles_css": "HIGH_REQUIRES_MODULE_DECOMPOSITION"
+  },
+  "visual_policy": "UI/Eyes/Canvas tasks require visual stack + FPS + screenshot/reference fidelity proof; no AAA claim from style alone."
+}

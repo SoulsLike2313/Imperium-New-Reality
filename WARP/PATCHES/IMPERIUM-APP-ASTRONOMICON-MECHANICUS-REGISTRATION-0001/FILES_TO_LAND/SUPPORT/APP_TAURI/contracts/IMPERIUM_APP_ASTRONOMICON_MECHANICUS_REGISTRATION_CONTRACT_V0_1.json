@@ -1,0 +1,18 @@
+{
+  "contract_id": "imperium.app.astronomicon_mechanicus_registration.v0_1",
+  "task_id": "IMPERIUM-APP-ASTRONOMICON-MECHANICUS-REGISTRATION-0001",
+  "purpose": "Patch Pack registration belongs to Astronomicon; Mechanicus supplies machine verdict and stack summary before execution.",
+  "terminal_output_policy": "compact_by_default_full_json_to_report_files",
+  "execution_policy": "registration_and_summary_only_no_real_execution",
+  "required_app_commands": [
+    "list_patch_packs",
+    "register_patch_pack_with_organs",
+    "analyze_patch_pack_organ_summary"
+  ],
+  "ui_rooms": [
+    "astronomicon",
+    "mechanicus",
+    "patch-forge"
+  ],
+  "future_trial_task": "IMPERIUM-APP-EYES-CANVAS-DAILY-OPERATIONS-0001"
+}

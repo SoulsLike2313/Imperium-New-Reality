@@ -81,15 +81,6 @@ fn patch_dir(repo: &Path, patch_id: &str) -> PathBuf {
     repo.join("WARP").join("PATCHES").join(patch_id)
 }
 
-fn path_modified_unix(path: &Path) -> u64 {
-    fs::metadata(path)
-        .and_then(|m| m.modified())
-        .ok()
-        .and_then(|t| t.duration_since(UNIX_EPOCH).ok())
-        .map(|d| d.as_secs())
-        .unwrap_or(0)
-}
-
 fn find_runner(dir: &Path) -> Option<PathBuf> {
     let mut runners: Vec<PathBuf> = Vec::new();
     if let Ok(read) = fs::read_dir(dir) {
@@ -118,7 +109,6 @@ fn patch_pack_summary(repo: &Path, patch_id: &str, registered: bool) -> Value {
         "has_runner": runner.is_some(),
         "runner": runner.as_ref().map(|p| p.to_string_lossy().to_string()),
         "has_patch_pack_md": patch_pack.is_file(),
-        "modified_unix": path_modified_unix(&dir),
         "registered": registered,
         "status": if registered { "REGISTERED" } else { "DISCOVERED" }
     })
@@ -141,11 +131,8 @@ fn list_patch_packs() -> Result<Value, String> {
                 }
             }
         }
-        ids.sort_by(|a, b| {
-            let ma = path_modified_unix(&patch_dir(&repo, a));
-            let mb = path_modified_unix(&patch_dir(&repo, b));
-            mb.cmp(&ma).then_with(|| a.cmp(b))
-        });
+        ids.sort();
+        ids.reverse();
         for id in ids {
             let registered = regs.iter().any(|x| x == &id);
             packs.push(patch_pack_summary(&repo, &id, registered));
