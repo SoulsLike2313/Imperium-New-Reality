@@ -1880,34 +1880,3 @@ button {
   .compact-mechanicus-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .compact-mechanicus-grid .mini-panel.wide { grid-column: span 2; }
 }
-
-
-/* IMPERIUM_CORE_VERSIONING_V0_1 */
-.core-version-strip {
-  margin-top: 8px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  max-width: 920px;
-}
-.core-version-strip span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border: 1px solid rgba(101, 243, 255, .22);
-  border-radius: 999px;
-  background: rgba(0, 0, 0, .28);
-  padding: 4px 8px;
-  color: var(--muted);
-  font-size: .68rem;
-}
-.core-version-strip b { color: var(--cyan); text-transform: uppercase; letter-spacing: .12em; font-size: .58rem; }
-.core-version-strip em { color: var(--ink); font-style: normal; font-weight: 800; }
-.core-version-strip .version-status { border-color: rgba(215,178,103,.35); color: var(--gold); font-weight: 900; letter-spacing: .08em; }
-.core-version-strip .version-status.hot { border-color: rgba(185,14,32,.65); color: #ff5060; box-shadow: 0 0 18px rgba(185,14,32,.20); }
-.update-button { min-height: 26px; padding: .24rem .64rem; border-radius: 999px; font-size: .68rem; text-transform: uppercase; letter-spacing: .12em; }
-.update-button:disabled { opacity: .48; cursor: default; }
-.update-button.lit { border-color: #ff5060; color: #fff4f5; background: linear-gradient(180deg, rgba(185,14,32,.50), rgba(28,3,8,.92)); box-shadow: 0 0 18px rgba(185,14,32,.28); }
-.hero .hud { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-@media (max-width: 1280px) { .hero .hud { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

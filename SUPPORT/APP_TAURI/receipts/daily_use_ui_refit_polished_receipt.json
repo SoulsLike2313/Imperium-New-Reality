@@ -1,0 +1,71 @@
+{
+  "task_id": "IMPERIUM-APP-DAILY-USE-UI-REFIT-POLISHED-0001",
+  "validator_id": "imperium_app_daily_use_ui_refit_polished_validator.v0_1",
+  "generated_at_unix": 1783301622,
+  "verdict": "PASS_IMPERIUM_APP_DAILY_USE_UI_REFIT_POLISHED_READY",
+  "daily_ui_refit_status": "PASS_DAILY_COCKPIT_BASELINE",
+  "compact_proof_digest": "PASS",
+  "patch_forge_removed_from_daily_nav": true,
+  "astronomicon_owns_registration_and_launch": true,
+  "node_boundary_map_ready": true,
+  "proof_log_last_lines": 14,
+  "npm_build": {
+    "ok": true,
+    "exit_code": 0,
+    "missing_tool": false,
+    "stdout_tail": "> imperium-app-tauri@0.1.0 build\n> vite build\n\n\u001b[36mvite v5.4.21 \u001b[32mbuilding for production...\u001b[36m\u001b[39m\ntransforming...\n\u001b[32mвњ“\u001b[39m 6 modules transformed.\nrendering chunks...\ncomputing gzip size...\n\u001b[2mdist/\u001b[22m\u001b[32mindex.html                 \u001b[39m\u001b[1m\u001b[2m 0.40 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m в”‚ gzip: 0.30 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[35massets/index-BablQf-x.css  \u001b[39m\u001b[1m\u001b[2m29.55 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m в”‚ gzip: 6.96 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[36massets/index-BFAQul1w.js   \u001b[39m\u001b[1m\u001b[2m26.91 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m в”‚ gzip: 9.98 kB\u001b[22m\n\u001b[32mвњ“ built in 188ms\u001b[39m",
+    "stderr_tail": "",
+    "error": ""
+  },
+  "cargo_check": {
+    "ok": true,
+    "exit_code": 0,
+    "missing_tool": false,
+    "stdout_tail": "",
+    "stderr_tail": "    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.58s",
+    "error": ""
+  },
+  "checks": [
+    {
+      "name": "exists::SUPPORT/APP_TAURI/src/main.js",
+      "ok": true
+    },
+    {
+      "name": "exists::SUPPORT/APP_TAURI/src/styles.css",
+      "ok": true
+    },
+    {
+      "name": "exists::SUPPORT/APP_TAURI/contracts/IMPERIUM_APP_DAILY_USE_UI_REFIT_POLISHED_CONTRACT_V0_1.json",
+      "ok": true
+    },
+    {
+      "name": "marker::IMPERIUM_APP_DAILY_USE_UI_REFIT_POLISHED_V0_1",
+      "ok": true
+    },
+    {
+      "name": "marker::COMPACT_PROOF_DIGEST_V0_1",
+      "ok": true
+    },
+    {
+      "name": "marker::MECHANICUS_NODE_BOUNDARY_MAP_V0_1",
+      "ok": true
+    },
+    {
+      "name": "marker::daily-use-proof-stack",
+      "ok": true
+    },
+    {
+      "name": "marker::daily-proof-ledger",
+      "ok": true
+    },
+    {
+      "name": "marker::aquariumLines.slice(-14)",
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "Polished UI refit proves daily cockpit baseline only; Eyes/Canvas is still a future pack.",
+    "Launch gate remains Astronomicon-owned and Owner-reviewed."
+  ]
+}

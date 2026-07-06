@@ -3,9 +3,6 @@ import "./styles.css";
 
 const IMPERIUM_TAURI_SHELL = "IMPERIUM_TAURI_SHELL";
 const IMPERIUM_APP_PLATFORM = "IMPERIUM_APP_PLATFORM";
-const IMPERIUM_CORE_PRODUCT_NAME = "Imperium Core";
-const IMPERIUM_CORE_VERSIONING = "IMPERIUM_CORE_VERSIONING_V0_1";
-const IMPERIUM_CORE_UPDATE_FLOW = "IMPERIUM_CORE_UPDATE_FLOW_TERMINAL_STAGED_V0_1";
 const IMPERIUM_APP_UI_TARGET_FORM = "IMPERIUM_APP_UI_TARGET_FORM";
 const IMPERIUM_APP_UI_CABIN_FRAME = "IMPERIUM_APP_UI_CABIN_FRAME";
 const IMPERIUM_APP_UI_RIGHT_RAIL_COMMAND_DECK_V3 = "IMPERIUM_APP_UI_RIGHT_RAIL_COMMAND_DECK_V3";
@@ -45,7 +42,6 @@ let frameDeltas = [];
 let lastFrame = 0;
 let uxActionCount = 0;
 let fpsDisplay = "60.0";
-let imperiumCoreVersion = { current_version: "0.1.0-alpha.0", available_version: "0.1.0-alpha.0", update_available: false, update_status: "CURRENT" };
 
 const roomList = [
   { id: "organ-hub", label: "Organ Hub", marker: ORGAN_HUB_ROOM, icon: "✦", purpose: "organs" },
@@ -115,42 +111,6 @@ async function callAnyCommand(names, payload = {}) {
   }
   logAquarium("WARN", `Backend command unavailable: ${names.join(", ")} :: ${String(lastError || "")}`);
   return { ok: false, error: String(lastError || "command not available") };
-}
-
-
-async function refreshImperiumCoreVersion() {
-  const response = await callAnyCommand(["get_imperium_core_version_state"]);
-  if (response.ok) {
-    imperiumCoreVersion = response.result || imperiumCoreVersion;
-    if (imperiumCoreVersion.update_available) {
-      logAquarium("UPDATE", `Imperium Core update available: ${imperiumCoreVersion.current_version} → ${imperiumCoreVersion.available_version}`);
-    }
-  }
-  render();
-}
-
-async function initializeImperiumCoreUpdate() {
-  markUx("imperium_core_update_initialize");
-  const requestedVersion = imperiumCoreVersion?.available_version || "";
-  const response = await callAnyCommand(["initialize_imperium_core_update"], { requestedVersion, requested_version: requestedVersion });
-  if (response.ok) {
-    logAquarium("UPDATE", `Imperium Core update initialized: ${response.result?.verdict || "PASS"}`);
-  } else {
-    logAquarium("BLOCKED", `Imperium Core update init failed: ${response.error}`);
-  }
-  await refreshImperiumCoreVersion();
-}
-
-function renderCoreVersionStrip() {
-  const current = imperiumCoreVersion?.current_version || "unknown";
-  const available = imperiumCoreVersion?.available_version || current;
-  const status = imperiumCoreVersion?.update_available ? "UPDATE_AVAILABLE" : "CURRENT";
-  return `<div class="core-version-strip" data-marker="${IMPERIUM_CORE_VERSIONING}">
-    <span><b>Current version</b><em>${escapeHtml(current)}</em></span>
-    <span><b>Available</b><em>${escapeHtml(available)}</em></span>
-    <span class="version-status ${imperiumCoreVersion?.update_available ? "hot" : "ok"}">${status}</span>
-    <button id="imperium-core-update" class="update-button ${imperiumCoreVersion?.update_available ? "lit" : ""}" ${imperiumCoreVersion?.update_available ? "" : "disabled"}>Update</button>
-  </div>`;
 }
 
 function normalizePatches(result) {
@@ -474,8 +434,6 @@ function renderNodeBoundaryMap(mech) {
 }
 
 function renderAstronomicon() {
-  // Registration and launch buttons intentionally remain in-app, but daily workflow uses terminal until UI form is mature.
-
   const astro = organSummary?.astronomicon;
   const mech = organSummary?.mechanicus;
   const languages = mech?.languages || [];
@@ -642,17 +600,15 @@ function render() {
       <header class="hero">
         <div class="imperial-crest" aria-hidden="true">♛</div>
         <div class="hero-copy">
-          <p class="eyebrow">IMPERIUM CORE</p>
-          <h1>Imperium Core</h1>
-          <p>Versioned daily cockpit. Terminal patches stage new versions; the app renders current truth and update readiness.</p>
-          ${renderCoreVersionStrip()}
+          <p class="eyebrow">IMPERIUM TAURI SHELL</p>
+          <h1>Imperium App Platform</h1>
+          <p>Organ rooms, Astronomicon registration, Mechanicus proof digest, Aquarium and future Eyes canvas in one daily cockpit.</p>
         </div>
         <div class="hud">
           <span><i>◎</i><b>FPS</b><em id="fps-readout">${fpsDisplay}</em><small>/ target ${FPS_LOCK_TARGET}</small></span>
           <span><i>▣</i><b>Repo</b><em>E:\\IMPERIUM_REALITY</em></span>
           <span><i>✥</i><b>Marker</b><em>${IMPERIUM_TAURI_SHELL}</em></span>
           <span><i>✦</i><b>Deck</b><em>${COMMAND_DECK_V3}</em></span>
-          <span><i>⬡</i><b>Core</b><em>${imperiumCoreVersion?.current_version || "unknown"}</em><small>${imperiumCoreVersion?.update_available ? "update ready" : "current"}</small></span>
         </div>
       </header>
       <div class="cabin-layout">
@@ -707,7 +663,6 @@ function render() {
   });
   document.querySelector("#save-aquarium")?.addEventListener("click", saveAquariumLog);
   document.querySelector("#open-logs")?.addEventListener("click", openLogs);
-  document.querySelector("#imperium-core-update")?.addEventListener("click", initializeImperiumCoreUpdate);
 }
 
 async function recordRuntimeFpsProof(payload) {
@@ -767,7 +722,7 @@ function startFpsWatchdog() {
 }
 
 aquariumLines = [
-  `[${nowStamp()}][AUTH] Imperium Core command deck awakened`,
+  `[${nowStamp()}][AUTH] Imperium command deck v3 awakened`,
   `[${nowStamp()}][STYLE] ${IMPERIUM_APP_UI_RIGHT_RAIL_COMMAND_DECK_V3}: right rail / gothic metal / cyber proof lines`,
   `[${nowStamp()}][LAW] UI renders truth; core receipts prove truth`,
   `[${nowStamp()}][LAW] ${NO_FAKE_EXECUTION_CLAIMED_MARKER}`,
@@ -776,5 +731,4 @@ aquariumLines = [
 
 render();
 startFpsWatchdog();
-refreshImperiumCoreVersion();
 refreshPatchPacks();
