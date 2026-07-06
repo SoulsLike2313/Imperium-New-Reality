@@ -1,0 +1,18 @@
+{
+  "contract_id": "IMPERIUM_APP_ASTRONOMICON_TERMINAL_FIRST_WORKFLOW_CONTRACT_V0_1",
+  "task_id": "IMPERIUM-APP-ASTRONOMICON-TERMINAL-FIRST-WORKFLOW-0001",
+  "laws": [
+    "Patch Forge is deprecated from daily UI navigation.",
+    "Registration and launch gates are owned by Astronomicon.",
+    "Terminal organ registration must work without Tauri UI.",
+    "Candidate packs are analysis-only and cannot be launched.",
+    "Polished packs must be generated from organ summary and re-registered before launch.",
+    "Runner output must be compact; full proof is written to receipt/report files."
+  ],
+  "ui_target": {
+    "remove_patch_forge_nav": true,
+    "compact_panels": true,
+    "fit_1080p_screen_intent": true
+  },
+  "terminal_tool": "SUPPORT/APP_TAURI/tools/register_patch_with_organs_cli.py"
+}

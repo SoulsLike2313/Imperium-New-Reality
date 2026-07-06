@@ -172,6 +172,150 @@
       "registered_at_unix": 1783298784,
       "source": "TAURI_ASTRONOMICON_ROOM",
       "status": "REGISTERED_BY_ASTRONOMICON_WITH_MECHANICUS_SUMMARY"
+    },
+    {
+      "organ_summary": {
+        "astronomicon": {
+          "checks": {
+            "files_to_land_exists": true,
+            "land_file_count": 1,
+            "manifest_exists": true,
+            "patch_dir_exists": true,
+            "patch_id_safe": true,
+            "patch_pack_md_exists": true,
+            "runner_exists": true
+          },
+          "meaning": "Astronomicon registers patch intent and shape, then asks Mechanicus for machine verdict.",
+          "organ_id": "ASTRONOMICON",
+          "verdict": "REGISTERABLE_PATCH_PACK"
+        },
+        "generated_at_unix": 1783300009,
+        "mechanicus": {
+          "current_truth_index_seen": true,
+          "dependency_impact": {
+            "cascade_rule": "A node change does not imply global rewrite; it identifies dependent nodes that must be revalidated.",
+            "zones": [
+              {
+                "impact": "patch form and runner lifecycle",
+                "touched": false,
+                "zone": "WARP/PATCHES"
+              },
+              {
+                "impact": "frontend room/state/event surface; split into nodes when growth continues",
+                "line_count_now": 690,
+                "touched": false,
+                "zone": "SUPPORT/APP_TAURI/src/main.js"
+              },
+              {
+                "impact": "visual skin/token surface; split into style modules when growth continues",
+                "line_count_now": 1420,
+                "touched": false,
+                "zone": "SUPPORT/APP_TAURI/src/styles.css"
+              },
+              {
+                "impact": "backend command bridge; any change requires cargo check",
+                "touched": false,
+                "zone": "SUPPORT/APP_TAURI/src-tauri/src/main.rs"
+              },
+              {
+                "impact": "machine truth and toolchain verdicts",
+                "touched": false,
+                "zone": "ORGANS/MECHANICUS"
+              },
+              {
+                "impact": "intake and registration truth",
+                "touched": true,
+                "zone": "ORGANS/ASTRONOMICON"
+              }
+            ]
+          },
+          "languages": [
+            "JSON"
+          ],
+          "meaning": "Mechanicus recommends stack and validators; it does not execute or crown the patch.",
+          "missing_capabilities": [
+            "UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI"
+          ],
+          "monolith_risk": "HIGH_REQUIRES_MODULE_DECOMPOSITION",
+          "organ_id": "MECHANICUS",
+          "real_execution": "BLOCKED_BY_POLICY",
+          "required_validators": [
+            "patch_pack_shape_smoke",
+            "no_control_chars",
+            "json_parse",
+            "ui_reference_fidelity_or_screenshot_proof",
+            "runtime_fps_proof"
+          ],
+          "task_class": "UI_PRODUCT_SURFACE_OR_VISUAL_RUNTIME",
+          "tool_admission": {
+            "blocked_or_rejected_count": 74,
+            "candidate_requires_review_count": 144,
+            "errors_count": 0,
+            "generated_at_utc": "2026-07-05T22:27:08Z",
+            "local_model_membrane_status": "DEFERRED_AFTER_CORE_V1",
+            "real_execution_enabled_count": 0,
+            "safe_real_execution_gateway_status": "FUTURE_PATCH_REQUIRED",
+            "source_tool_count": 562,
+            "task_id": "MECHANICUS-TOOL-ADMISSION-V2-0001",
+            "v2_admitted_dry_run_count": 0,
+            "v2_admitted_read_only_count": 337,
+            "v2_host_bound_count": 7,
+            "validator_id": "mechanicus_tool_admission_v2_validator.v0_1",
+            "verdict": "PASS_MECHANICUS_TOOL_ADMISSION_V2_READY",
+            "warnings_count": 2
+          },
+          "toolchains": [
+            {
+              "mode": "evidence/contract/matrix",
+              "proof": "json parse + schema/semantic validator",
+              "toolchain": "JSON"
+            }
+          ],
+          "verdict": "MECHANICUS_ACCEPTS_WITH_VISIBLE_DEBT",
+          "visual_stack": {
+            "eyes_canvas_candidate": false,
+            "law": "visual output is product surface, not proof; proof stays in receipts/reports",
+            "required": true,
+            "stack": [
+              "Tauri WebView",
+              "JavaScript/TypeScript components",
+              "CSS tokens/modules",
+              "Rust command bridge",
+              "FPS receipt",
+              "screenshot/reference fidelity proof"
+            ]
+          }
+        },
+        "next_complex_trial_task": {
+          "expected_languages": [
+            "JavaScript/TypeScript",
+            "CSS",
+            "Rust/Tauri",
+            "JSON",
+            "Python",
+            "PowerShell",
+            "Markdown"
+          ],
+          "expected_mechanicus_pressure": [
+            "visual_stack_planning",
+            "monolith_control",
+            "node_boundary_map",
+            "dependency_impact",
+            "fps_and_fidelity_proof"
+          ],
+          "goal": "Integrate an Eyes/Canvas room into daily app operation so the Owner can watch a new path point appear in real time.",
+          "task_class": "UI_PRODUCT_SURFACE_OR_VISUAL_RUNTIME",
+          "task_id": "IMPERIUM-APP-EYES-CANVAS-DAILY-OPERATIONS-0001"
+        },
+        "patch_id": "IMPERIUM-APP-DAILY-USE-UI-REFIT-CANDIDATE-0001",
+        "registered": true,
+        "repo_root": "E:\\IMPERIUM_REALITY",
+        "summary_id": "imperium.app.astronomicon_mechanicus.patch_registration_summary.v0_1"
+      },
+      "patch_id": "IMPERIUM-APP-DAILY-USE-UI-REFIT-CANDIDATE-0001",
+      "registered_at_unix": 1783300009,
+      "source": "TAURI_ASTRONOMICON_ROOM",
+      "status": "REGISTERED_BY_ASTRONOMICON_WITH_MECHANICUS_SUMMARY"
     }
   ],
   "registry_id": "imperium.tauri.patch_pack_registry.v0_1"

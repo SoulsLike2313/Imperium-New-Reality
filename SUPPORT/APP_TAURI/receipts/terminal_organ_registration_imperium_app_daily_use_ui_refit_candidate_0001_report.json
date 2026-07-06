@@ -1,0 +1,86 @@
+{
+  "task_id": "IMPERIUM-APP-ASTRONOMICON-TERMINAL-FIRST-WORKFLOW-0001",
+  "patch_id": "IMPERIUM-APP-DAILY-USE-UI-REFIT-CANDIDATE-0001",
+  "generated_at_unix": 1783300843,
+  "repo_root": "E:\\IMPERIUM_REALITY",
+  "verdict": "PASS_TERMINAL_ORGAN_REGISTRATION_ANALYSIS_READY",
+  "astronomicon": {
+    "verdict": "REGISTERABLE_CANDIDATE_PACK",
+    "phase": "CANDIDATE_INTAKE_PACK",
+    "shape": {
+      "patch_dir": true,
+      "patch_pack_md": true,
+      "files_to_land": true,
+      "runner": true,
+      "manifest": true,
+      "land_file_count": 1,
+      "dirty_control_char_files": []
+    }
+  },
+  "mechanicus": {
+    "verdict": "MECHANICUS_ANALYZES_CANDIDATE_REQUIRES_POLISHED_PACK",
+    "task_class": "UI_PRODUCT_SURFACE_OR_VISUAL_RUNTIME",
+    "languages": [
+      "CSS",
+      "JSON",
+      "JavaScript",
+      "Markdown",
+      "PowerShell",
+      "Python",
+      "Rust",
+      "TypeScript"
+    ],
+    "required_validators": [
+      "patch_pack_shape_smoke",
+      "no_control_chars",
+      "json_parse",
+      "python_py_compile",
+      "pwsh_runner_exit_code",
+      "npm_run_build",
+      "cargo_check",
+      "ui_reference_fidelity_or_screenshot_proof",
+      "runtime_fps_proof"
+    ],
+    "monolith_risk": "HIGH_REQUIRES_MODULE_DECOMPOSITION",
+    "visual_stack_required": true,
+    "missing_capabilities": [
+      "UI_REFERENCE_FIDELITY_TOOLING_REQUIRED_IF_TARGET_UI",
+      "APP_TAURI_MONOLITH_DECOMPOSITION_REQUIRED"
+    ],
+    "dependency_impact": {
+      "nodes": [
+        {
+          "node": "SUPPORT/APP_TAURI/src/main.js",
+          "touched": false,
+          "line_count_now": 682
+        },
+        {
+          "node": "SUPPORT/APP_TAURI/src/styles.css",
+          "touched": false,
+          "line_count_now": 1628
+        },
+        {
+          "node": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+          "touched": false
+        },
+        {
+          "node": "WARP/PATCHES",
+          "touched": false
+        }
+      ],
+      "cascade_rule": "Only dependent nodes need revalidation; no global rewrite without dependency evidence."
+    },
+    "real_execution": "BLOCKED_FOR_CANDIDATE"
+  },
+  "workflow": {
+    "phase": "CANDIDATE_INTAKE_PACK",
+    "candidate_registration": true,
+    "polished_pack_required": true,
+    "launch_allowed": false,
+    "launch_gate": "ASTRONOMICON_ONLY"
+  },
+  "errors": [],
+  "warnings": [
+    "Terminal proof only; UI renders a digest but receipts/reports prove truth."
+  ]
+}
