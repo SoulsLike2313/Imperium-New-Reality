@@ -1,0 +1,23 @@
+{
+  "contract_id": "imperium.app.two_phase_organ_registration.v0_1",
+  "task_id": "IMPERIUM-APP-DAILY-USE-REGISTRATION-WORKFLOW-0001",
+  "law": "Candidate packs are for organ analysis only. Polished execution packs are created from the organ summary and must be re-registered before launch.",
+  "phases": [
+    {
+      "phase": "CANDIDATE_INTAKE_PACK",
+      "run_allowed": false,
+      "purpose": "Astronomicon + Mechanicus analysis"
+    },
+    {
+      "phase": "POLISHED_EXECUTION_PACK",
+      "run_allowed": "Owner review required",
+      "purpose": "execution-ready WARP pack"
+    }
+  ],
+  "app_requirements": [
+    "show workflow phase",
+    "show launch gate state",
+    "show compact Mechanicus proof digest",
+    "do not claim execution from UI rendering"
+  ]
+}

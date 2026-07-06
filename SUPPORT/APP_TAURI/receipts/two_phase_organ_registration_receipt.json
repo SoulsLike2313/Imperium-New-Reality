@@ -1,0 +1,186 @@
+{
+  "task_id": "IMPERIUM-APP-DAILY-USE-REGISTRATION-WORKFLOW-0001",
+  "validator_id": "imperium_app_two_phase_organ_registration.validator.v0_1",
+  "verdict": "PASS_IMPERIUM_APP_DAILY_USE_REGISTRATION_WORKFLOW_READY",
+  "generated_at_utc": "2026-07-06T01:06:20Z",
+  "candidate_patch_id": "IMPERIUM-APP-DAILY-USE-UI-REFIT-CANDIDATE-0001",
+  "two_phase_workflow_status": "PASS_BASELINE",
+  "candidate_pack_created": true,
+  "candidate_run_allowed": false,
+  "polished_pack_required": true,
+  "app_summary_mode": "COMPACT_ORGAN_PROOF_DIGEST",
+  "npm_build": {
+    "cmd": [
+      "C:\\Program Files\\nodejs\\npm.cmd",
+      "run",
+      "build"
+    ],
+    "ok": true,
+    "exit_code": 0,
+    "stdout_tail": "\n> imperium-app-tauri@0.1.0 build\n> vite build\n\n\u001b[36mvite v5.4.21 \u001b[32mbuilding for production...\u001b[36m\u001b[39m\ntransforming...\n\u001b[32mвњ“\u001b[39m 6 modules transformed.\nrendering chunks...\ncomputing gzip size...\n\u001b[2mdist/\u001b[22m\u001b[32mindex.html                 \u001b[39m\u001b[1m\u001b[2m 0.40 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m в”‚ gzip: 0.30 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[35massets/index-CohvxSai.css  \u001b[39m\u001b[1m\u001b[2m23.97 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m в”‚ gzip: 5.94 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[36massets/index-BoVnZrBz.js   \u001b[39m\u001b[1m\u001b[2m25.34 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m в”‚ gzip: 9.42 kB\u001b[22m\n\u001b[32mвњ“ built in 189ms\u001b[39m\n",
+    "stderr_tail": ""
+  },
+  "cargo_check": {
+    "cmd": [
+      "C:\\Users\\PC\\.cargo\\bin\\cargo.exe",
+      "check",
+      "--manifest-path",
+      "E:\\IMPERIUM_REALITY\\SUPPORT\\APP_TAURI\\src-tauri\\Cargo.toml"
+    ],
+    "ok": true,
+    "exit_code": 0,
+    "stdout_tail": "",
+    "stderr_tail": "    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.60s\n"
+  },
+  "receipt": "SUPPORT/APP_TAURI/receipts/two_phase_organ_registration_receipt.json",
+  "summary": "SUPPORT/APP_TAURI/receipts/two_phase_organ_registration_summary.json",
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "name": "exists::SUPPORT/APP_TAURI/src/main.js",
+      "status": "PASS"
+    },
+    {
+      "name": "no_control_chars::SUPPORT/APP_TAURI/src/main.js",
+      "status": "PASS",
+      "hits": []
+    },
+    {
+      "name": "exists::SUPPORT/APP_TAURI/src/styles.css",
+      "status": "PASS"
+    },
+    {
+      "name": "no_control_chars::SUPPORT/APP_TAURI/src/styles.css",
+      "status": "PASS",
+      "hits": []
+    },
+    {
+      "name": "exists::SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+      "status": "PASS"
+    },
+    {
+      "name": "no_control_chars::SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+      "status": "PASS",
+      "hits": []
+    },
+    {
+      "name": "exists::SUPPORT/APP_TAURI/contracts/IMPERIUM_APP_TWO_PHASE_ORGAN_REGISTRATION_CONTRACT_V0_1.json",
+      "status": "PASS"
+    },
+    {
+      "name": "no_control_chars::SUPPORT/APP_TAURI/contracts/IMPERIUM_APP_TWO_PHASE_ORGAN_REGISTRATION_CONTRACT_V0_1.json",
+      "status": "PASS",
+      "hits": []
+    },
+    {
+      "name": "exists::ORGANS/ASTRONOMICON/TASK_CANDIDATES/IMPERIUM-APP-DAILY-USE-UI-REFIT-CANDIDATE-0001.json",
+      "status": "PASS"
+    },
+    {
+      "name": "no_control_chars::ORGANS/ASTRONOMICON/TASK_CANDIDATES/IMPERIUM-APP-DAILY-USE-UI-REFIT-CANDIDATE-0001.json",
+      "status": "PASS",
+      "hits": []
+    },
+    {
+      "name": "exists::WARP/PATCHES/IMPERIUM-APP-DAILY-USE-UI-REFIT-CANDIDATE-0001/INTENT.json",
+      "status": "PASS"
+    },
+    {
+      "name": "no_control_chars::WARP/PATCHES/IMPERIUM-APP-DAILY-USE-UI-REFIT-CANDIDATE-0001/INTENT.json",
+      "status": "PASS",
+      "hits": []
+    },
+    {
+      "name": "exists::WARP/PATCHES/IMPERIUM-APP-DAILY-USE-UI-REFIT-CANDIDATE-0001/PATCH_PACK.md",
+      "status": "PASS"
+    },
+    {
+      "name": "no_control_chars::WARP/PATCHES/IMPERIUM-APP-DAILY-USE-UI-REFIT-CANDIDATE-0001/PATCH_PACK.md",
+      "status": "PASS",
+      "hits": []
+    },
+    {
+      "name": "two_phase_marker_js",
+      "status": "PASS"
+    },
+    {
+      "name": "two_phase_marker_css",
+      "status": "PASS"
+    },
+    {
+      "name": "candidate_priority",
+      "status": "PASS"
+    },
+    {
+      "name": "candidate_preferred_on_refresh",
+      "status": "PASS"
+    },
+    {
+      "name": "normalize_phase_fields",
+      "status": "PASS"
+    },
+    {
+      "name": "candidate_phase_backend",
+      "status": "PASS"
+    },
+    {
+      "name": "candidate_run_block",
+      "status": "PASS"
+    },
+    {
+      "name": "astronomicon_candidate_verdict",
+      "status": "PASS"
+    },
+    {
+      "name": "mechanicus_candidate_verdict",
+      "status": "PASS"
+    },
+    {
+      "name": "node_check_main_js",
+      "status": "PASS",
+      "details": {
+        "cmd": [
+          "C:\\Program Files\\nodejs\\node.exe",
+          "--check",
+          "E:\\IMPERIUM_REALITY\\SUPPORT\\APP_TAURI\\src\\main.js"
+        ],
+        "ok": true,
+        "exit_code": 0,
+        "stdout_tail": "",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "npm_run_build",
+      "status": "PASS",
+      "details": {
+        "cmd": [
+          "C:\\Program Files\\nodejs\\npm.cmd",
+          "run",
+          "build"
+        ],
+        "ok": true,
+        "exit_code": 0,
+        "stdout_tail": "\n> imperium-app-tauri@0.1.0 build\n> vite build\n\n\u001b[36mvite v5.4.21 \u001b[32mbuilding for production...\u001b[36m\u001b[39m\ntransforming...\n\u001b[32mвњ“\u001b[39m 6 modules transformed.\nrendering chunks...\ncomputing gzip size...\n\u001b[2mdist/\u001b[22m\u001b[32mindex.html                 \u001b[39m\u001b[1m\u001b[2m 0.40 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m в”‚ gzip: 0.30 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[35massets/index-CohvxSai.css  \u001b[39m\u001b[1m\u001b[2m23.97 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m в”‚ gzip: 5.94 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[36massets/index-BoVnZrBz.js   \u001b[39m\u001b[1m\u001b[2m25.34 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m в”‚ gzip: 9.42 kB\u001b[22m\n\u001b[32mвњ“ built in 189ms\u001b[39m\n",
+        "stderr_tail": ""
+      }
+    },
+    {
+      "name": "cargo_check_tauri",
+      "status": "PASS",
+      "details": {
+        "cmd": [
+          "C:\\Users\\PC\\.cargo\\bin\\cargo.exe",
+          "check",
+          "--manifest-path",
+          "E:\\IMPERIUM_REALITY\\SUPPORT\\APP_TAURI\\src-tauri\\Cargo.toml"
+        ],
+        "ok": true,
+        "exit_code": 0,
+        "stdout_tail": "",
+        "stderr_tail": "    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.60s\n"
+      }
+    }
+  ]
+}
