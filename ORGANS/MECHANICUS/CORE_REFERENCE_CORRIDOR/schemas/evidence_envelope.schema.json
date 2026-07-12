@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://core-reference-corridor/evidence-envelope/v0_1",
+  "type": "object",
+  "required": [
+    "schema_version", "evidence_id", "task_id", "warp_id", "event_id", "base_head",
+    "result_head_or_tree_hash", "branch", "timestamp_utc", "host_fingerprint", "toolchain",
+    "exact_argv", "executable_path", "executable_sha256", "cwd", "environment_profile",
+    "input_hashes", "output_hashes", "stdout_hash", "stderr_hash", "exit_code", "timeout",
+    "pre_git_state", "post_git_state", "filesystem_diff", "validator_ids", "acceptance_results",
+    "organ_verdict_refs", "owner_decision_ref", "parent_evidence_ids", "verdict"
+  ],
+  "properties": {
+    "base_head": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "exact_argv": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "verdict": {"enum": ["PASS_PROVEN", "PASS_WITH_DEBT", "BLOCK", "NOT_PROVEN"]}
+  },
+  "additionalProperties": true
+}

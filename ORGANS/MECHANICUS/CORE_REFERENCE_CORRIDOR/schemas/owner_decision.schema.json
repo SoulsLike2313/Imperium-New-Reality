@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://core-reference-corridor/owner-decision/v0_1",
+  "type": "object",
+  "required": ["decision_id", "task_id", "decision_type", "actor", "basis", "timestamp_utc"],
+  "properties": {
+    "actor": {"const": "OWNER"},
+    "decision_type": {
+      "enum": [
+        "APPROVE_LAUNCH", "STOP", "CONTINUE_CHECKPOINT", "ACCEPT_RISK", "ACCEPT_RESULT",
+        "REJECT_RESULT", "REQUEST_REWORK", "AUTHORIZE_LAND_PLAN", "FORBID_LAND", "DESTROY_WARP"
+      ]
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,236 @@
+{
+  "schema_version": "imperium.core_reference_corridor.validation_matrix.v0_1",
+  "task_id": "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+  "base_head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+  "generated_at_utc": "2026-07-12T21:30:05.238975Z",
+  "checks": {
+    "pytest_execution": {
+      "argv": [
+        "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "pytest",
+        "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tests",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\BACKEND_TEST_RESULTS.xml"
+      ],
+      "started_at_utc": "2026-07-12T21:29:43.856390Z",
+      "ended_at_utc": "2026-07-12T21:30:00.501614Z",
+      "exit_code": 0,
+      "timeout": 240,
+      "stdout_sha256": "e80d59aab07b703cb2b6ea521e17dca73ce267bfe2cae2280bc6e50b93689982",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": ".................................                                        [100%]\n- generated xml file: E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\BACKEND_TEST_RESULTS.xml -\n33 passed in 15.96s\n",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    },
+    "backend_tests": {
+      "path": "BACKEND_TEST_RESULTS.xml",
+      "sha256": "0e84eba6d3233961f4cea15cf4163f9de71da19819f4e633756c753977671e36",
+      "tests": 33,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "verdict": "PASS"
+    },
+    "negative_scenarios": {
+      "count": 20,
+      "verdict": "PASS"
+    },
+    "vite_build": {
+      "argv": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "build"
+      ],
+      "started_at_utc": "2026-07-12T21:30:00.522602Z",
+      "ended_at_utc": "2026-07-12T21:30:01.685195Z",
+      "exit_code": 0,
+      "timeout": 180,
+      "stdout_sha256": "d8cd84e53f6910932ef88a1730f539bb7c323593ea34e3dc5e328b6079df90a0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "\n> imperium-core@0.1.0-alpha.0 build\n> vite build\n\nvite v5.4.21 building for production...\ntransforming...\n\u2713 9 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                  0.42 kB \u2502 gzip: 0.32 kB\ndist/assets/index-DSt5HEk6.css   7.58 kB \u2502 gzip: 2.27 kB\ndist/assets/index-CWiOwFJK.js   10.25 kB \u2502 gzip: 3.39 kB\n\u2713 built in 169ms\n",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    },
+    "ui_backend_parity": {
+      "argv": [
+        "C:\\Program Files\\nodejs\\node.exe",
+        "tests/action_parity_check.mjs"
+      ],
+      "started_at_utc": "2026-07-12T21:30:01.685195Z",
+      "ended_at_utc": "2026-07-12T21:30:02.452286Z",
+      "exit_code": 0,
+      "timeout": 180,
+      "stdout_sha256": "6ce67ab67760740dc1ed51a5ff2f86911b4b0deee386b68bd0d7485d119bc3c4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "{\n  \"verdict\": \"PASS_CORRIDOR_UI_BACKEND_SEMANTIC_PARITY\",\n  \"contract_id\": \"IMPERIUM_CORE_REFERENCE_CORRIDOR_THIN_IDE_V0_1\",\n  \"panel_count\": 11,\n  \"card_count\": 22,\n  \"action_count\": 15,\n  \"bridge_commands\": [\n    \"corridor_ui_action\",\n    \"corridor_ui_snapshot\"\n  ]\n}\n",
+      "stderr_tail": "",
+      "verdict": "PASS",
+      "parsed": {
+        "verdict": "PASS_CORRIDOR_UI_BACKEND_SEMANTIC_PARITY",
+        "contract_id": "IMPERIUM_CORE_REFERENCE_CORRIDOR_THIN_IDE_V0_1",
+        "panel_count": 11,
+        "card_count": 22,
+        "action_count": 15,
+        "bridge_commands": [
+          "corridor_ui_action",
+          "corridor_ui_snapshot"
+        ]
+      }
+    },
+    "cargo_check": {
+      "argv": [
+        "cargo",
+        "check",
+        "--manifest-path",
+        "src-tauri/Cargo.toml"
+      ],
+      "started_at_utc": "2026-07-12T21:30:02.452286Z",
+      "ended_at_utc": "2026-07-12T21:30:03.139875Z",
+      "exit_code": 0,
+      "timeout": 180,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "73596b79c23573c30ea3176cec2df235cf5a72cea804331b01f4aa027afa4a13",
+      "stdout_tail": "",
+      "stderr_tail": "    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.61s\n",
+      "verdict": "PASS"
+    },
+    "cargo_bridge_tests": {
+      "argv": [
+        "cargo",
+        "test",
+        "--manifest-path",
+        "src-tauri/Cargo.toml",
+        "corridor::bridge::tests"
+      ],
+      "started_at_utc": "2026-07-12T21:30:03.139875Z",
+      "ended_at_utc": "2026-07-12T21:30:03.788739Z",
+      "exit_code": 0,
+      "timeout": 180,
+      "stdout_sha256": "6c864ddb8fbe1bb9806dd4f1e5be8b4aea81923dc2b3b758cd933630565cf4d1",
+      "stderr_sha256": "ad82c4aa29e20d75dd641fec2f3daf3f2e3399f4e7c2130fd0f3b8d0fd872307",
+      "stdout_tail": "\nrunning 3 tests\ntest corridor::bridge::tests::action_id_rejects_shell_syntax ... ok\ntest corridor::bridge::tests::action_payload_stays_in_one_argv_slot ... ok\ntest corridor::bridge::tests::snapshot_argv_is_fixed ... ok\n\ntest result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n",
+      "stderr_tail": "    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.56s\n     Running unittests src\\main.rs (src-tauri\\target\\debug\\deps\\imperium_app_tauri-94088cb5aaca9dcc.exe)\n",
+      "verdict": "PASS"
+    },
+    "direct_runner_unreachable": {
+      "forbidden_matches": [],
+      "commands": [
+        "corridor_ui_snapshot",
+        "corridor_ui_action",
+        "list_patch_packs",
+        "register_patch_pack",
+        "analyze_patch_pack_organ_summary",
+        "register_patch_pack_with_organs",
+        "get_mechanicus_language_codex",
+        "record_runtime_fps_proof",
+        "get_imperium_core_version_state",
+        "initialize_imperium_core_update"
+      ],
+      "corridor_commands": [
+        "corridor_ui_action",
+        "corridor_ui_snapshot"
+      ],
+      "legacy_commands_retained_read_only_by_scope": [
+        "analyze_patch_pack_organ_summary",
+        "get_imperium_core_version_state",
+        "get_mechanicus_language_codex",
+        "initialize_imperium_core_update",
+        "list_patch_packs",
+        "record_runtime_fps_proof",
+        "register_patch_pack",
+        "register_patch_pack_with_organs"
+      ],
+      "verdict": "PASS"
+    },
+    "git_diff_check": {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "started_at_utc": "2026-07-12T21:30:03.788739Z",
+      "ended_at_utc": "2026-07-12T21:30:03.862149Z",
+      "exit_code": 0,
+      "timeout": 180,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    },
+    "taskpack_digest_check": {
+      "argv": [
+        "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "ORGANS/ASTRONOMICON/TOOLS/servitor_intake.py",
+        "check",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\ASTRONOMICON\\TASK_INBOX\\REGISTERED\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\EXTRACTED",
+        "--servitor",
+        "CODEX",
+        "--reality-root",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001"
+      ],
+      "started_at_utc": "2026-07-12T21:30:03.862149Z",
+      "ended_at_utc": "2026-07-12T21:30:03.952547Z",
+      "exit_code": 0,
+      "timeout": 180,
+      "stdout_sha256": "c054f35a6aa0f5ffa5c7ce56482b7de7735d093ecfc898e12c1a108c8704241c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "============================================================\n  SERVITOR WORK-PERMIT CHECK\n  servitor : CODEX\n  pack     : E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\ASTRONOMICON\\TASK_INBOX\\REGISTERED\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\EXTRACTED\n  task_id  : IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\n  digest   : sha256:0e5e9f5cbd00cf8966330593df399f0f0a47c242ff7d3708c5721479f2ee5e94\n============================================================\n------------------------------------------------------------\n  VERDICT : WORK_PERMITTED\n  -> \u0421\u0435\u0440\u0432\u0438\u0442\u043e\u0440 CODEX \u0432\u043f\u0440\u0430\u0432\u0435 \u0440\u0430\u0431\u043e\u0442\u0430\u0442\u044c \u043f\u043e task_id=IMPERIUM-CORE-REFERENCE-CORRIDOR-0001.\n",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    },
+    "json_parse": {
+      "checked": 52,
+      "failures": [],
+      "verdict": "PASS"
+    },
+    "no_monolith": {
+      "checked": 37,
+      "files_over_500": [],
+      "verdict": "PASS"
+    },
+    "required_outputs": {
+      "required_count": 23,
+      "missing": [],
+      "self_reference_pending": [
+        "VALIDATION_MATRIX.json",
+        "HASH_MANIFEST.json",
+        "VALIDATION_RECEIPT.json",
+        "OWNER_REVIEW_READY_RECEIPT.json"
+      ],
+      "verdict": "PASS"
+    },
+    "reality_unchanged": {
+      "before": {
+        "head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+        "origin_master": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+        "porcelain": [],
+        "verdict": "PASS"
+      },
+      "after": {
+        "head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+        "origin_master": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+        "porcelain": [],
+        "verdict": "PASS"
+      },
+      "verdict": "PASS"
+    }
+  },
+  "failed_checks": [],
+  "current_receipts": {
+    "validation": "VALIDATION_RETRY_03_RECEIPT.json",
+    "negative_proof": "NEGATIVE_PROOF_RECEIPT_ATTEMPT_03.json",
+    "ui_backend_parity": "UI_BACKEND_PARITY_RECEIPT_ATTEMPT_03.json"
+  },
+  "self_reference_exclusions": [
+    "VALIDATION_MATRIX.json",
+    "HASH_MANIFEST.json",
+    "VALIDATION_RECEIPT.json",
+    "OWNER_REVIEW_READY_RECEIPT.json"
+  ],
+  "verdict": "PASS_PROVEN"
+}

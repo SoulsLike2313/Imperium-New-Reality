@@ -1,0 +1,13 @@
+{
+  "schema_version": "imperium.mechanicus.tool_card.v0_1",
+  "tool_id": "CORE_VALIDATION_SUITE",
+  "status": "TASK_LOCAL_ACTIVE",
+  "task_id": "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+  "purpose": "Validate the current WARP implementation, map the 20 adversarial scenarios and write validation/UI receipts.",
+  "interface": "python -m ORGANS.MECHANICUS.CORE_REFERENCE_CORRIDOR.validation_runner --write",
+  "risk_class": "MUTATING_WARP_SCOPED",
+  "actual_effect_class": "MUTATING",
+  "allowed_write_root": "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+  "forbidden": ["Reality writes", "destructive tests outside disposable fixtures", "Git ref updates", "commit", "push"],
+  "receipt": "VALIDATION_RECEIPT evidence envelope from typed executor"
+}

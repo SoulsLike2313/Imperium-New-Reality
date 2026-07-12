@@ -1,0 +1,174 @@
+{
+  "acceptance_tests": [
+    "exact_happy_path",
+    "stale_base_head",
+    "dirty_master_fixture",
+    "unauthorized_write_path",
+    "malicious_powershell_runner",
+    "command_not_in_registry",
+    "timeout",
+    "process_crash",
+    "failed_validation",
+    "modified_finalized_evidence",
+    "nested_path",
+    "windows_long_path_boundary",
+    "broken_ui_backend_parity",
+    "warp_reject_discard",
+    "warp_destroy",
+    "disposable_rollback",
+    "deterministic_replay_clone",
+    "direct_execution_outside_executor",
+    "missing_organ_participation",
+    "throne_pass_without_proof"
+  ],
+  "allowed_read_roots": [
+    "E:\\IMPERIUM_REALITY",
+    "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001"
+  ],
+  "allowed_write_roots": [
+    "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\ASTRONOMICON\\TASK_INBOX\\REGISTERED\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+    "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\ASTRONOMICON\\ADMISSIONS",
+    "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\CORE_REFERENCE_CORRIDOR",
+    "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+    "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\SUPPORT\\APP_TAURI"
+  ],
+  "base_head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+  "branch": "servitor/imperium-core-reference-corridor-0001",
+  "caps": [
+    "CAP_CONSTITUTION_GREAT_NINE_SUPERSESSION_PENDING",
+    "CAP_NO_MASTER_LAND",
+    "CAP_SCAFFOLD_EXTENSIONS_NOT_OPERATIONALLY_PROVEN"
+  ],
+  "confidence_components": {
+    "components": {
+      "authority_and_scope": {
+        "evidence": "digest-bound taskpack + exact Owner prompt hash",
+        "score": 0.95
+      },
+      "base_truth": {
+        "evidence": "exact HEAD/clean/master-origin/pwsh drift guard",
+        "score": 1.0
+      },
+      "component_reuse_map": {
+        "evidence": "targeted reconciliation across Mechanicus, WARP and APP_TAURI",
+        "score": 0.9
+      },
+      "land_authority": {
+        "evidence": "Owner land decision intentionally pending",
+        "score": 0.5
+      },
+      "negative_testability": {
+        "evidence": "20 disposable scenarios specified",
+        "score": 0.95
+      }
+    },
+    "overall": 0.86,
+    "threshold": 0.8,
+    "truth_boundary": "Confidence permits bounded WARP work; it is not result acceptance.",
+    "verdict": "CONFIDENCE_SUFFICIENT_FOR_WARP"
+  },
+  "created_at_utc": "2026-07-12T20:56:58.820481Z",
+  "created_by": "CODEX_SERVITOR_PRIME",
+  "current_state": "OWNER_ACCEPT_OR_REJECT",
+  "organ_depth_plan": {
+    "ADMINISTRATUM": "MINIMAL_LEDGER_ADAPTER",
+    "ASTRONOMICON": "STANDARD",
+    "CUSTODES": "DEEP",
+    "DOCTRINARIUM": "STANDARD",
+    "INQUISITION": "DEEP",
+    "MECHANICUS": "DEEP",
+    "OFFICIO_AGENTIS": "STANDARD",
+    "SCHOLA_IMPERIALIS": "STANDARD",
+    "STRATEGIUM": "STANDARD",
+    "THRONE": "CROWN_REVIEW"
+  },
+  "owner_decisions": [
+    {
+      "actor": "OWNER",
+      "basis": "Owner supplied the named task specification and explicitly requested execution.",
+      "decision": "APPROVE_LAUNCH",
+      "decision_id": "OWNER-LAUNCH-IMPERIUM-CORE-REFERENCE-0001",
+      "gate_evidence": {
+        "allowed": true,
+        "decision_action": "APPROVE_LAUNCH",
+        "decision_ref": "OWNER-LAUNCH-IMPERIUM-CORE-REFERENCE-0001",
+        "gate_action": "LAUNCH",
+        "reason": "EXPLICIT_OWNER_DECISION",
+        "schema_version": "imperium.owner_gate_receipt.v1",
+        "task_id": "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "timestamp_utc": "2026-07-12T20:58:12.035573Z",
+        "verdict": "ALLOW",
+        "warp_id": null
+      },
+      "recorded_at_utc": "2026-07-12T20:58:12Z"
+    }
+  ],
+  "owner_intent": {
+    "authority_mode": "OWNER_EQUIVALENT_INSTRUCTION",
+    "payload_digest": "0e5e9f5cbd00cf8966330593df399f0f0a47c242ff7d3708c5721479f2ee5e94",
+    "source_filename": "IMPERIUM_CORE_REFERENCE_CORRIDOR_0001_SERVITOR_PROMPT.md",
+    "source_sha256": "3fa7249d956c8a79c04a8b5f323ec82bec8de1ebabf7aa3cace18d96e7ef6fd8",
+    "summary": "Build one safe, evidence-bound Owner-to-WARP reference corridor without landing master."
+  },
+  "schema_version": "imperium.core_reference_corridor.task_state.v0_1",
+  "scope": {
+    "forbidden": [
+      "master mutation",
+      "master land",
+      "legacy RUN_*.ps1",
+      "legacy deletion"
+    ],
+    "implementation": [
+      "Mechanicus Safe Execution Spine",
+      "APP_TAURI Thin IDE",
+      "task/evidence package"
+    ]
+  },
+  "selected_strategy": {
+    "isolated": [
+      "copytree WARP",
+      "legacy registries",
+      "hardcoded UI actions",
+      "direct RUN_*.ps1 runner"
+    ],
+    "reasons": [
+      "Existing repository has Python validation/tooling lanes and a current Tauri product shell.",
+      "Stdlib-only backend keeps the first corridor replayable without new dependencies.",
+      "One task-local registry and typed executor remove UI/CLI authority duplication."
+    ],
+    "rejected_alternatives": [
+      {
+        "reason": "out of scope and violates bounded-corridor law",
+        "strategy": "new universal framework"
+      },
+      {
+        "reason": "duplicates existing product surface",
+        "strategy": "new parallel IDE"
+      },
+      {
+        "reason": "cannot prove exact HEAD or Git lifecycle",
+        "strategy": "reuse copytree WARP"
+      }
+    ],
+    "reused": [
+      "git worktree",
+      "Astronomicon digest intake",
+      "Tauri/Vite shell",
+      "Great Nine active matrix"
+    ],
+    "selected": true,
+    "strategy_id": "MODULAR_PYTHON_SPINE_WITH_THIN_TAURI_ADAPTER"
+  },
+  "state_version": 14,
+  "task_id": "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+  "task_type": "SERVITOR_TASK_PACK",
+  "updated_at_utc": "2026-07-12T21:19:42Z",
+  "warp": {
+    "base_head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+    "git_metadata": true,
+    "mode": "EXTERNAL_GIT_WORKTREE_FROM_EXACT_AUDIT_HEAD",
+    "path": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+    "state": "ACTIVE",
+    "warp_id": "WARP-CORE-REFERENCE-0001"
+  }
+}

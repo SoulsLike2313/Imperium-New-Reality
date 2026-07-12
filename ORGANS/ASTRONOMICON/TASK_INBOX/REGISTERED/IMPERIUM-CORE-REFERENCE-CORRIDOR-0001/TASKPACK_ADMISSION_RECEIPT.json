@@ -1,0 +1,29 @@
+{
+  "schema_version": "imperium.reference_corridor_taskpack_admission.v0_1",
+  "task_id": "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+  "authority_mode": "OWNER_EQUIVALENT_INSTRUCTION_FORMALIZED_IN_WARP",
+  "stage2_shape": {
+    "verdict": "PASS_REQUIRED_FILES_PRESENT",
+    "required_files": [
+      "MANIFEST.json",
+      "TASK_SPEC.md",
+      "ACCEPTANCE_GATES.md",
+      "OUTPUT_REQUIREMENTS.md",
+      "TASK_ROUTE_MANIFEST_TEMPLATE.json",
+      "TASK_START_ACK_TEMPLATE.json",
+      "README.md"
+    ]
+  },
+  "servitor_intake": {
+    "verdict": "ADMIT",
+    "servitor": "CODEX",
+    "payload_digest": "sha256:0e5e9f5cbd00cf8966330593df399f0f0a47c242ff7d3708c5721479f2ee5e94",
+    "token_path": "ORGANS/ASTRONOMICON/ADMISSIONS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001__CODEX.admission.json",
+    "checked_at_utc": "2026-07-12T20:35:39Z"
+  },
+  "verdict": "ADMITTED_DIGEST_BOUND_IN_WARP",
+  "limitations": [
+    "The main-root current_expected_task remains the unrelated H-TUI task and was not mutated.",
+    "Owner result acceptance and land approval remain pending."
+  ]
+}

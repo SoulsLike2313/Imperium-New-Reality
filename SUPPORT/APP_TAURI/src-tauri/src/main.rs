@@ -1,6 +1,8 @@
 // IMPERIUM_TAURI_COCKPIT_PATCH_REGISTRY_COMMANDS
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
+mod corridor;
+
 use serde_json::{json, Value};
 use std::fs;
 use std::path::{Path, PathBuf};
@@ -106,34 +108,32 @@ fn path_modified_unix(path: &Path) -> u64 {
         .unwrap_or(0)
 }
 
-fn find_runner(dir: &Path) -> Option<PathBuf> {
-    let mut runners: Vec<PathBuf> = Vec::new();
+fn legacy_runner_present(dir: &Path) -> bool {
     if let Ok(read) = fs::read_dir(dir) {
         for entry in read.flatten() {
             let path = entry.path();
             if path.is_file() {
                 if let Some(name) = path.file_name().and_then(|s| s.to_str()) {
                     if name.starts_with("RUN_") && name.ends_with(".ps1") {
-                        runners.push(path);
+                        return true;
                     }
                 }
             }
         }
     }
-    runners.sort();
-    runners.into_iter().next()
+    false
 }
 
 fn patch_pack_summary(repo: &Path, patch_id: &str, registered: bool) -> Value {
     let dir = patch_dir(repo, patch_id);
-    let runner = find_runner(&dir);
+    let runner_present = legacy_runner_present(&dir);
     let patch_pack = dir.join("PATCH_PACK.md");
     let workflow_phase = infer_pack_phase(patch_id, &dir);
     json!({
         "patch_id": patch_id,
         "path": dir.to_string_lossy(),
-        "has_runner": runner.is_some(),
-        "runner": runner.as_ref().map(|p| p.to_string_lossy().to_string()),
+        "has_runner": runner_present,
+        "runner_execution": "DISABLED_IN_TAURI",
         "has_patch_pack_md": patch_pack.is_file(),
         "modified_unix": path_modified_unix(&dir),
         "workflow_phase": workflow_phase,
@@ -302,7 +302,7 @@ fn register_patch_pack(patch_id: String) -> Result<Value, String> {
     let repo = repo_root()?;
     let dir = patch_dir(&repo, &patch_id);
     if !dir.is_dir() { return Err(format!("patch dir not found: {}", dir.to_string_lossy())); }
-    if find_runner(&dir).is_none() { return Err("patch runner RUN_*.ps1 not found".to_string()); }
+    if !legacy_runner_present(&dir) { return Err("legacy patch runner marker not found".to_string()); }
 
     let mut registry = read_registry(&repo);
     let already = registered_ids(&registry).iter().any(|id| id == &patch_id);
@@ -325,69 +325,6 @@ fn register_patch_pack(patch_id: String) -> Result<Value, String> {
         "patch_id": patch_id,
         "already_registered": already,
         "registry_path": registry_path(&repo).to_string_lossy()
-    }))
-}
-
-#[tauri::command]
-fn run_registered_patch_pack(patch_id: String) -> Result<Value, String> {
-    if !safe_patch_id(&patch_id) { return Err("unsafe patch_id".to_string()); }
-    let repo = repo_root()?;
-    let registry = read_registry(&repo);
-    let is_registered = registered_ids(&registry).iter().any(|id| id == &patch_id);
-    if !is_registered { return Err("patch pack is not registered; register it first".to_string()); }
-    let dir = patch_dir(&repo, &patch_id);
-    let workflow_phase = infer_pack_phase(&patch_id, &dir);
-    if is_candidate_phase(workflow_phase) {
-        return Err("candidate intake pack is analysis-only; create and register a polished execution pack before run".to_string());
-    }
-    let runner = find_runner(&dir).ok_or_else(|| "patch runner RUN_*.ps1 not found".to_string())?;
-    let runner_text = fs::read_to_string(&runner).unwrap_or_default().to_lowercase();
-    let blocked = ["git push", "git commit", "format-volume", "remove-item -recurse -force c:", "remove-item -recurse -force e:"];
-    for pattern in blocked {
-        if runner_text.contains(pattern) {
-            return Err(format!("runner blocked by cockpit safety pattern: {}", pattern));
-        }
-    }
-
-    let output = Command::new("pwsh")
-        .arg(&runner)
-        .current_dir(&repo)
-        .output()
-        .map_err(|e| format!("failed to run pwsh: {}", e))?;
-
-    let ts = now_unix();
-    let app_dir = repo.join("SUPPORT").join("APP_TAURI");
-    let logs_dir = app_dir.join("logs");
-    let receipts_dir = app_dir.join("receipts");
-    fs::create_dir_all(&logs_dir).map_err(|e| e.to_string())?;
-    fs::create_dir_all(&receipts_dir).map_err(|e| e.to_string())?;
-
-    let stdout = String::from_utf8_lossy(&output.stdout).to_string();
-    let stderr = String::from_utf8_lossy(&output.stderr).to_string();
-    let exit_code = output.status.code().unwrap_or(-1);
-    let log_path = logs_dir.join(format!("{}_{}_patch_run.log", ts, patch_id));
-    fs::write(&log_path, format!("# STDOUT\n{}\n\n# STDERR\n{}\n", stdout, stderr)).map_err(|e| e.to_string())?;
-
-    let verdict = if output.status.success() { "PASS_PATCH_PACK_RUN_FROM_COCKPIT" } else { "FAIL_PATCH_PACK_RUN_FROM_COCKPIT" };
-    let receipt = json!({
-        "receipt_id": "receipt.support_app_tauri.patch_pack_run.v0_1",
-        "patch_id": patch_id,
-        "runner": runner.to_string_lossy(),
-        "verdict": verdict,
-        "exit_code": exit_code,
-        "log": log_path.to_string_lossy(),
-        "generated_at_unix": ts,
-        "stdout_tail": stdout.chars().rev().take(4000).collect::<String>().chars().rev().collect::<String>(),
-        "stderr_tail": stderr.chars().rev().take(2000).collect::<String>().chars().rev().collect::<String>()
-    });
-    let receipt_path = receipts_dir.join(format!("{}_{}_patch_run_receipt.json", ts, patch_id));
-    fs::write(&receipt_path, serde_json::to_string_pretty(&receipt).map_err(|e| e.to_string())? + "\n").map_err(|e| e.to_string())?;
-    Ok(json!({
-        "verdict": verdict,
-        "patch_id": patch_id,
-        "exit_code": exit_code,
-        "receipt": receipt_path.to_string_lossy(),
-        "log": log_path.to_string_lossy()
     }))
 }
 
@@ -486,7 +423,7 @@ fn analyze_patch_pack_core(repo: &Path, patch_id: &str, register: bool) -> Resul
     let patch_pack_md = dir.join("PATCH_PACK.md");
     let files_to_land = dir.join("FILES_TO_LAND");
     let manifest = dir.join("PATCH_FILE_MANIFEST_SHA256.json");
-    let runner = find_runner(&dir);
+    let runner_present = legacy_runner_present(&dir);
     let _pack_files = collect_files_limited(&dir, 900);
     let land_files = if files_to_land.is_dir() { collect_files_limited(&files_to_land, 900) } else { Vec::new() };
     let rels: Vec<String> = land_files.iter().map(|p| rel_path(&files_to_land, p)).collect();
@@ -581,7 +518,7 @@ fn analyze_patch_pack_core(repo: &Path, patch_id: &str, register: bool) -> Resul
     let tool_admission_summary = read_json_file(&repo.join("ORGANS/MECHANICUS/REPORTS/MECHANICUS_TOOL_ADMISSION_V2_SUMMARY_V0_1.json"));
     let current_truth_index = read_json_file(&repo.join("ORGANS/MECHANICUS/MATRICES/MECHANICUS_CURRENT_TRUTH_INDEX_V0_1.json"));
 
-    let astronomicon_verdict = if patch_pack_md.is_file() && files_to_land.is_dir() && runner.is_some() {
+    let astronomicon_verdict = if patch_pack_md.is_file() && files_to_land.is_dir() && runner_present {
         if is_candidate_phase(workflow_phase) { "REGISTERABLE_CANDIDATE_PACK" } else { "REGISTERABLE_PATCH_PACK" }
     } else {
         "BLOCKED_DIRTY_OR_INCOMPLETE_PACK"
@@ -596,7 +533,8 @@ fn analyze_patch_pack_core(repo: &Path, patch_id: &str, register: bool) -> Resul
             "patch_pack_md_exists": patch_pack_md.is_file(),
             "files_to_land_exists": files_to_land.is_dir(),
             "manifest_exists": manifest.is_file(),
-            "runner_exists": runner.is_some(),
+            "runner_exists": runner_present,
+            "runner_execution": "DISABLED_IN_TAURI",
             "land_file_count": land_files.len()
         },
         "meaning": "Astronomicon registers patch intent and shape, then asks Mechanicus for machine verdict."
@@ -713,9 +651,10 @@ fn record_runtime_fps_proof(payload: Value) -> Result<Value, String> {
 fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
+            corridor::bridge::corridor_ui_snapshot,
+            corridor::bridge::corridor_ui_action,
             list_patch_packs,
             register_patch_pack,
-            run_registered_patch_pack,
             analyze_patch_pack_organ_summary,
             register_patch_pack_with_organs,
             get_mechanicus_language_codex,

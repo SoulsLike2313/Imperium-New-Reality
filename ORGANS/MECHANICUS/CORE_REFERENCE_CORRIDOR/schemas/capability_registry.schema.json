@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://core-reference-corridor/capability-registry/v0_1",
+  "type": "object",
+  "required": ["schema_version", "registry_id", "task_id", "default_policy", "capabilities", "ui_actions", "registry_digest"],
+  "properties": {
+    "default_policy": {"const": "DENY"},
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "capability_id", "type", "adapter_id", "executable_path", "executable_sha256",
+          "version", "admission_state", "declared_effect", "actual_effect_class",
+          "allowed_operations", "allowed_read_roots", "allowed_write_roots", "timeout_seconds",
+          "environment_profile", "cost_model", "trust_level", "last_validation", "quarantine_reason"
+        ],
+        "properties": {
+          "admission_state": {"enum": ["CANDIDATE", "VALIDATING", "ACTIVE", "QUARANTINED", "DISABLED"]},
+          "timeout_seconds": {"type": "number", "exclusiveMinimum": 0, "maximum": 300}
+        },
+        "additionalProperties": true
+      }
+    },
+    "ui_actions": {"type": "array"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,576 @@
+{
+  "schema_version": "imperium.core_reference_corridor.organ_ledger.v0_1",
+  "task_id": "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+  "operational_canon_source": "ORGANS/THRONE/MATRICES/GREAT_NINE_CANON_AND_ALIAS_MATRIX_V0_1.json",
+  "great_nine": [
+    "ASTRONOMICON",
+    "ADMINISTRATUM",
+    "DOCTRINARIUM",
+    "MECHANICUS",
+    "INQUISITION",
+    "CUSTODES",
+    "STRATEGIUM",
+    "SCHOLA_IMPERIALIS",
+    "OFFICIO_AGENTIS"
+  ],
+  "crown_organ": "THRONE",
+  "constitution_conflict": "CAP_CONSTITUTION_GREAT_NINE_SUPERSESSION_PENDING",
+  "records": [
+    {
+      "organ_id": "ASTRONOMICON",
+      "phase": "PREFLIGHT",
+      "assigned_depth": "STANDARD",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "taskpack_digest_admitted",
+        "task_route_resolved"
+      ],
+      "verdict": "PASS_WITH_DEBT",
+      "confidence": 0.75,
+      "evidence_refs": [
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/TASKPACK_ADMISSION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/RECONCILIATION_PLAN.md",
+        "ORGANS/THRONE/MATRICES/GREAT_NINE_CANON_AND_ALIAS_MATRIX_V0_1.json"
+      ],
+      "warnings": [],
+      "not_proven": [
+        "POSTCHECK_PENDING"
+      ],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T20:57:02.258755Z"
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "phase": "PREFLIGHT",
+      "assigned_depth": "MINIMAL_LEDGER_ADAPTER",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "task_state_addressable",
+        "evidence_index_addressable"
+      ],
+      "verdict": "PASS_WITH_DEBT",
+      "confidence": 0.75,
+      "evidence_refs": [
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/TASKPACK_ADMISSION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/RECONCILIATION_PLAN.md",
+        "ORGANS/THRONE/MATRICES/GREAT_NINE_CANON_AND_ALIAS_MATRIX_V0_1.json"
+      ],
+      "warnings": [],
+      "not_proven": [
+        "POSTCHECK_PENDING"
+      ],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T20:57:02.258755Z"
+    },
+    {
+      "organ_id": "DOCTRINARIUM",
+      "phase": "PREFLIGHT",
+      "assigned_depth": "STANDARD",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "forbidden_claims_carried",
+        "canon_conflict_disclosed"
+      ],
+      "verdict": "PASS_WITH_DEBT",
+      "confidence": 0.75,
+      "evidence_refs": [
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/TASKPACK_ADMISSION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/RECONCILIATION_PLAN.md",
+        "ORGANS/THRONE/MATRICES/GREAT_NINE_CANON_AND_ALIAS_MATRIX_V0_1.json"
+      ],
+      "warnings": [],
+      "not_proven": [
+        "POSTCHECK_PENDING"
+      ],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T20:57:02.258755Z"
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "phase": "PREFLIGHT",
+      "assigned_depth": "DEEP",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "single_registry_valid",
+        "typed_executor_validated"
+      ],
+      "verdict": "PASS_WITH_DEBT",
+      "confidence": 0.75,
+      "evidence_refs": [
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/TASKPACK_ADMISSION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/RECONCILIATION_PLAN.md",
+        "ORGANS/THRONE/MATRICES/GREAT_NINE_CANON_AND_ALIAS_MATRIX_V0_1.json"
+      ],
+      "warnings": [],
+      "not_proven": [
+        "POSTCHECK_PENDING"
+      ],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T20:57:02.258755Z"
+    },
+    {
+      "organ_id": "INQUISITION",
+      "phase": "PREFLIGHT",
+      "assigned_depth": "DEEP",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "negative_matrix_localized",
+        "master_unchanged"
+      ],
+      "verdict": "PASS_WITH_DEBT",
+      "confidence": 0.75,
+      "evidence_refs": [
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/TASKPACK_ADMISSION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/RECONCILIATION_PLAN.md",
+        "ORGANS/THRONE/MATRICES/GREAT_NINE_CANON_AND_ALIAS_MATRIX_V0_1.json"
+      ],
+      "warnings": [],
+      "not_proven": [
+        "POSTCHECK_PENDING"
+      ],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T20:57:02.258755Z"
+    },
+    {
+      "organ_id": "CUSTODES",
+      "phase": "PREFLIGHT",
+      "assigned_depth": "DEEP",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "great_nine_complete",
+        "ledger_rows_schema_complete"
+      ],
+      "verdict": "PASS_WITH_DEBT",
+      "confidence": 0.75,
+      "evidence_refs": [
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/TASKPACK_ADMISSION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/RECONCILIATION_PLAN.md",
+        "ORGANS/THRONE/MATRICES/GREAT_NINE_CANON_AND_ALIAS_MATRIX_V0_1.json"
+      ],
+      "warnings": [],
+      "not_proven": [
+        "POSTCHECK_PENDING"
+      ],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T20:57:02.258755Z"
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "phase": "PREFLIGHT",
+      "assigned_depth": "STANDARD",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "strategy_selected",
+        "cost_time_pause_contract_present"
+      ],
+      "verdict": "PASS_WITH_DEBT",
+      "confidence": 0.75,
+      "evidence_refs": [
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/TASKPACK_ADMISSION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/RECONCILIATION_PLAN.md",
+        "ORGANS/THRONE/MATRICES/GREAT_NINE_CANON_AND_ALIAS_MATRIX_V0_1.json"
+      ],
+      "warnings": [],
+      "not_proven": [
+        "POSTCHECK_PENDING"
+      ],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T20:57:02.258755Z"
+    },
+    {
+      "organ_id": "SCHOLA_IMPERIALIS",
+      "phase": "PREFLIGHT",
+      "assigned_depth": "STANDARD",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "known_gaps_captured",
+        "learning_proposals_owner_gated"
+      ],
+      "verdict": "PASS_WITH_DEBT",
+      "confidence": 0.75,
+      "evidence_refs": [
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/TASKPACK_ADMISSION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/RECONCILIATION_PLAN.md",
+        "ORGANS/THRONE/MATRICES/GREAT_NINE_CANON_AND_ALIAS_MATRIX_V0_1.json"
+      ],
+      "warnings": [],
+      "not_proven": [
+        "POSTCHECK_PENDING"
+      ],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T20:57:02.258755Z"
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "phase": "PREFLIGHT",
+      "assigned_depth": "STANDARD",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "owner_language_ru",
+        "final_response_contract_loaded"
+      ],
+      "verdict": "PASS_WITH_DEBT",
+      "confidence": 0.75,
+      "evidence_refs": [
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/TASKPACK_ADMISSION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/RECONCILIATION_PLAN.md",
+        "ORGANS/THRONE/MATRICES/GREAT_NINE_CANON_AND_ALIAS_MATRIX_V0_1.json"
+      ],
+      "warnings": [],
+      "not_proven": [
+        "POSTCHECK_PENDING"
+      ],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T20:57:02.258755Z"
+    },
+    {
+      "organ_id": "THRONE",
+      "phase": "PREFLIGHT",
+      "assigned_depth": "CROWN_REVIEW",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "great_nine_evidence_referenced",
+        "owner_sovereignty_preserved",
+        "land_not_executed"
+      ],
+      "verdict": "PASS_WITH_DEBT",
+      "confidence": 0.75,
+      "evidence_refs": [
+        "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/TASKPACK_ADMISSION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/RECONCILIATION_PLAN.md",
+        "ORGANS/THRONE/MATRICES/GREAT_NINE_CANON_AND_ALIAS_MATRIX_V0_1.json"
+      ],
+      "warnings": [],
+      "not_proven": [
+        "POSTCHECK_PENDING"
+      ],
+      "boundary_statement": "Analyzes evidence and risk; cannot accept the result or authorize land for the Owner.",
+      "timestamp_utc": "2026-07-12T20:57:02.258755Z",
+      "risk_statement": {
+        "evidence": [
+          "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/TASKPACK_ADMISSION_RECEIPT.json",
+          "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/RECONCILIATION_PLAN.md",
+          "ORGANS/THRONE/MATRICES/GREAT_NINE_CANON_AND_ALIAS_MATRIX_V0_1.json"
+        ],
+        "causal_chain": [
+          "Constitution names an older organ set",
+          "runtime follows later explicit Owner canon",
+          "land without supersession would preserve authority ambiguity"
+        ],
+        "affected_scope": [
+          "governance",
+          "organ routing",
+          "future land"
+        ],
+        "probability": "HIGH_UNTIL_SUPERSESSION",
+        "severity": "HIGH",
+        "expected_consequences": "Conflicting organ routes and false claims of conflict-free canon."
+      }
+    },
+    {
+      "organ_id": "ASTRONOMICON",
+      "phase": "POSTCHECK",
+      "assigned_depth": "STANDARD",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "taskpack_digest_admitted",
+        "task_route_resolved"
+      ],
+      "verdict": "PASS_PROVEN",
+      "confidence": 1.0,
+      "evidence_refs": [
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/NEGATIVE_PROOF_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/SAFE_EXECUTION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/UI_BACKEND_PARITY_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/VALIDATION_RETRY_03_RECEIPT.json"
+      ],
+      "warnings": [],
+      "not_proven": [],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T21:30:23.072780Z"
+    },
+    {
+      "organ_id": "ADMINISTRATUM",
+      "phase": "POSTCHECK",
+      "assigned_depth": "MINIMAL_LEDGER_ADAPTER",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "task_state_addressable",
+        "evidence_index_addressable"
+      ],
+      "verdict": "PASS_PROVEN",
+      "confidence": 1.0,
+      "evidence_refs": [
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/NEGATIVE_PROOF_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/SAFE_EXECUTION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/UI_BACKEND_PARITY_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/VALIDATION_RETRY_03_RECEIPT.json"
+      ],
+      "warnings": [],
+      "not_proven": [],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T21:30:23.073780Z"
+    },
+    {
+      "organ_id": "DOCTRINARIUM",
+      "phase": "POSTCHECK",
+      "assigned_depth": "STANDARD",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "forbidden_claims_carried",
+        "canon_conflict_disclosed"
+      ],
+      "verdict": "PASS_PROVEN",
+      "confidence": 1.0,
+      "evidence_refs": [
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/NEGATIVE_PROOF_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/SAFE_EXECUTION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/UI_BACKEND_PARITY_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/VALIDATION_RETRY_03_RECEIPT.json"
+      ],
+      "warnings": [],
+      "not_proven": [],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T21:30:23.073780Z"
+    },
+    {
+      "organ_id": "MECHANICUS",
+      "phase": "POSTCHECK",
+      "assigned_depth": "DEEP",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "single_registry_valid",
+        "typed_executor_validated"
+      ],
+      "verdict": "PASS_PROVEN",
+      "confidence": 1.0,
+      "evidence_refs": [
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/NEGATIVE_PROOF_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/SAFE_EXECUTION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/UI_BACKEND_PARITY_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/VALIDATION_RETRY_03_RECEIPT.json"
+      ],
+      "warnings": [],
+      "not_proven": [],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T21:30:23.073780Z"
+    },
+    {
+      "organ_id": "INQUISITION",
+      "phase": "POSTCHECK",
+      "assigned_depth": "DEEP",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "negative_matrix_localized",
+        "master_unchanged"
+      ],
+      "verdict": "PASS_PROVEN",
+      "confidence": 1.0,
+      "evidence_refs": [
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/NEGATIVE_PROOF_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/SAFE_EXECUTION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/UI_BACKEND_PARITY_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/VALIDATION_RETRY_03_RECEIPT.json"
+      ],
+      "warnings": [],
+      "not_proven": [],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T21:30:23.073780Z"
+    },
+    {
+      "organ_id": "CUSTODES",
+      "phase": "POSTCHECK",
+      "assigned_depth": "DEEP",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "great_nine_complete",
+        "ledger_rows_schema_complete"
+      ],
+      "verdict": "PASS_PROVEN",
+      "confidence": 1.0,
+      "evidence_refs": [
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/NEGATIVE_PROOF_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/SAFE_EXECUTION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/UI_BACKEND_PARITY_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/VALIDATION_RETRY_03_RECEIPT.json"
+      ],
+      "warnings": [],
+      "not_proven": [],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T21:30:23.073780Z"
+    },
+    {
+      "organ_id": "STRATEGIUM",
+      "phase": "POSTCHECK",
+      "assigned_depth": "STANDARD",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "strategy_selected",
+        "cost_time_pause_contract_present"
+      ],
+      "verdict": "PASS_PROVEN",
+      "confidence": 1.0,
+      "evidence_refs": [
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/NEGATIVE_PROOF_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/SAFE_EXECUTION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/UI_BACKEND_PARITY_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/VALIDATION_RETRY_03_RECEIPT.json"
+      ],
+      "warnings": [],
+      "not_proven": [],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T21:30:23.073780Z"
+    },
+    {
+      "organ_id": "SCHOLA_IMPERIALIS",
+      "phase": "POSTCHECK",
+      "assigned_depth": "STANDARD",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "known_gaps_captured",
+        "learning_proposals_owner_gated"
+      ],
+      "verdict": "PASS_PROVEN",
+      "confidence": 1.0,
+      "evidence_refs": [
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/NEGATIVE_PROOF_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/SAFE_EXECUTION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/UI_BACKEND_PARITY_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/VALIDATION_RETRY_03_RECEIPT.json"
+      ],
+      "warnings": [],
+      "not_proven": [],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T21:30:23.073780Z"
+    },
+    {
+      "organ_id": "OFFICIO_AGENTIS",
+      "phase": "POSTCHECK",
+      "assigned_depth": "STANDARD",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "owner_language_ru",
+        "final_response_contract_loaded"
+      ],
+      "verdict": "PASS_PROVEN",
+      "confidence": 1.0,
+      "evidence_refs": [
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/NEGATIVE_PROOF_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/SAFE_EXECUTION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/UI_BACKEND_PARITY_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/VALIDATION_RETRY_03_RECEIPT.json"
+      ],
+      "warnings": [],
+      "not_proven": [],
+      "boundary_statement": "Deterministic contract checks only; no simulated cognition or autonomous authority.",
+      "timestamp_utc": "2026-07-12T21:30:23.073780Z"
+    },
+    {
+      "organ_id": "THRONE",
+      "phase": "POSTCHECK",
+      "assigned_depth": "CROWN_REVIEW",
+      "input_refs": [
+        "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "281c3a7c8463de7fb64473929fe0ed975f99f595"
+      ],
+      "checks_executed": [
+        "great_nine_evidence_referenced",
+        "owner_sovereignty_preserved",
+        "land_not_executed"
+      ],
+      "verdict": "PASS_PROVEN",
+      "confidence": 1.0,
+      "evidence_refs": [
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/NEGATIVE_PROOF_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/SAFE_EXECUTION_RECEIPT.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/UI_BACKEND_PARITY_RECEIPT_ATTEMPT_03.json",
+        "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/VALIDATION_RETRY_03_RECEIPT.json"
+      ],
+      "warnings": [],
+      "not_proven": [],
+      "boundary_statement": "Analyzes evidence and risk; cannot accept the result or authorize land for the Owner.",
+      "timestamp_utc": "2026-07-12T21:30:23.073780Z",
+      "risk_statement": {
+        "evidence": [
+          "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/NEGATIVE_PROOF_RECEIPT_ATTEMPT_03.json",
+          "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/SAFE_EXECUTION_RECEIPT.json",
+          "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/UI_BACKEND_PARITY_RECEIPT_ATTEMPT_03.json",
+          "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/VALIDATION_RETRY_03_RECEIPT.json"
+        ],
+        "causal_chain": [
+          "Constitution names an older organ set",
+          "runtime follows later explicit Owner canon",
+          "land without supersession would preserve authority ambiguity"
+        ],
+        "affected_scope": [
+          "governance",
+          "organ routing",
+          "future land"
+        ],
+        "probability": "HIGH_UNTIL_SUPERSESSION",
+        "severity": "HIGH",
+        "expected_consequences": "Conflicting organ routes and false claims of conflict-free canon."
+      }
+    }
+  ],
+  "overall_verdict": "PASS_WITH_DEBT",
+  "validation_errors": [],
+  "updated_at_utc": "2026-07-12T21:30:23.073780Z"
+}

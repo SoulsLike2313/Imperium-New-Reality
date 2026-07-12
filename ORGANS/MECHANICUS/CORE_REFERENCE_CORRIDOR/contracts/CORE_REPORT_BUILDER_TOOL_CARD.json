@@ -1,0 +1,13 @@
+{
+  "schema_version": "imperium.mechanicus.tool_card.v0_1",
+  "tool_id": "CORE_REPORT_BUILDER",
+  "status": "TASK_LOCAL_ACTIVE",
+  "task_id": "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+  "purpose": "Build deterministic GitHub-safe report projections and control receipts inside the admitted WARP report root.",
+  "interface": "python -m ORGANS.MECHANICUS.CORE_REFERENCE_CORRIDOR.report_builder --write",
+  "risk_class": "MUTATING_WARP_SCOPED",
+  "actual_effect_class": "MUTATING",
+  "allowed_write_root": "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+  "forbidden": ["Reality writes", "Git ref updates", "commit", "push", "land"],
+  "receipt": "REPORT_BUILD_RECEIPT evidence envelope from typed executor"
+}

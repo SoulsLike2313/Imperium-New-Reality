@@ -1,0 +1,6 @@
+{
+  "schema_version": "imperium.core_reference_corridor.error_event.v0_1",
+  "event_type": "CORRIDOR_ERROR",
+  "required_fields": ["error_code", "message", "task_id", "event_id", "timestamp_utc", "localized", "evidence_refs"],
+  "rule": "Unknown errors and unknown side effects are BLOCK, never implicit success."
+}

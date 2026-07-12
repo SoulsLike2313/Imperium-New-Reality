@@ -1,0 +1,314 @@
+{
+  "schema_version": "imperium.core_reference_corridor.capability_registry.v0_1",
+  "registry_id": "IMPERIUM_CORE_REFERENCE_CORRIDOR_0001_CAPABILITIES",
+  "authority": "TASK_LOCAL_CANONICAL_SINGLE_SOURCE",
+  "task_id": "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+  "base_head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+  "host_scope": "Windows-AMD64",
+  "default_policy": "DENY",
+  "legacy_sources": [
+    {
+      "path": "ORGANS/MECHANICUS/REGISTRY/tool_registry.json",
+      "status": "LEGACY_READ_ONLY"
+    },
+    {
+      "path": "ORGANS/MECHANICUS/REGISTRY/capability_registry.json",
+      "status": "LEGACY_READ_ONLY"
+    },
+    {
+      "path": "ORGANS/MECHANICUS/TOOL_REGISTRY/tool_registry.json",
+      "status": "LEGACY_READ_ONLY"
+    },
+    {
+      "path": "SUPPORT/APP_TAURI/state/patch_pack_registry.json",
+      "status": "DEPRECATED_UNSAFE"
+    }
+  ],
+  "capabilities": [
+    {
+      "capability_id": "CORE_DIAGNOSTIC",
+      "type": "PYTHON_MODULE",
+      "adapter_id": "FIXED_ARGV_PYTHON_MODULE_V0_1",
+      "adapter_path": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\CORE_REFERENCE_CORRIDOR\\diagnostic_tool.py",
+      "adapter_sha256": "88088eeb72b33fe941fe57005a5c2835cc87a157ba5365f0a9fda6f03cacfeb9",
+      "executable_path": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "executable_sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a",
+      "version": "3.12.10",
+      "admission_state": "ACTIVE",
+      "declared_effect": "READ_ONLY",
+      "actual_effect_class": "READ_ONLY",
+      "allowed_operations": [
+        "diagnose"
+      ],
+      "allowed_read_roots": [
+        "E:\\IMPERIUM_REALITY",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001"
+      ],
+      "allowed_write_roots": [],
+      "timeout_seconds": 10,
+      "environment_profile": "CORE_MINIMAL_HOST_V0_1",
+      "cost_model": {
+        "unit": "local_process",
+        "estimated_units": 1,
+        "external_cost": 0
+      },
+      "trust_level": "TASK_LOCAL_HOST_BOUND",
+      "last_validation": {
+        "evidence_id": "SAFE_EXECUTION_RECEIPT",
+        "verdict": "PASS_PROVEN",
+        "timestamp_utc": "2026-07-12T20:58:38.228272Z"
+      },
+      "quarantine_reason": "",
+      "fixed_argv": [
+        "-m",
+        "ORGANS.MECHANICUS.CORE_REFERENCE_CORRIDOR.diagnostic_tool",
+        "--json"
+      ],
+      "parameter_schema": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    {
+      "capability_id": "CORE_REPORT_BUILDER",
+      "type": "PYTHON_MODULE",
+      "adapter_id": "FIXED_ARGV_PYTHON_MODULE_V0_1",
+      "adapter_path": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\CORE_REFERENCE_CORRIDOR\\report_builder.py",
+      "adapter_sha256": "6b1841f51a0562a5fa687a7fe8f1582484d9bb75e1374cefb426c86a19ab22ec",
+      "executable_path": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "executable_sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a",
+      "version": "3.12.10",
+      "admission_state": "ACTIVE",
+      "declared_effect": "MUTATING",
+      "actual_effect_class": "MUTATING",
+      "allowed_operations": [
+        "run"
+      ],
+      "allowed_read_roots": [
+        "E:\\IMPERIUM_REALITY",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001"
+      ],
+      "allowed_write_roots": [
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001"
+      ],
+      "timeout_seconds": 60,
+      "environment_profile": "CORE_MINIMAL_HOST_V0_1",
+      "cost_model": {
+        "unit": "local_process",
+        "estimated_units": 1,
+        "external_cost": 0
+      },
+      "trust_level": "TASK_LOCAL_HOST_BOUND",
+      "last_validation": {
+        "evidence_id": "REPORT_BUILD_FINAL_RECEIPT",
+        "verdict": "PASS_PROVEN",
+        "timestamp_utc": "2026-07-12T21:31:43.424695Z"
+      },
+      "quarantine_reason": "",
+      "fixed_argv": [
+        "-m",
+        "ORGANS.MECHANICUS.CORE_REFERENCE_CORRIDOR.report_builder",
+        "--write"
+      ],
+      "parameter_schema": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    },
+    {
+      "capability_id": "CORE_VALIDATION_SUITE",
+      "type": "PYTHON_MODULE",
+      "adapter_id": "FIXED_ARGV_PYTHON_MODULE_V0_1",
+      "adapter_path": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\CORE_REFERENCE_CORRIDOR\\validation_runner.py",
+      "adapter_sha256": "a587454054384c1f44e003a1963b3fb8b94e0231d60231fa3653b1061287c985",
+      "executable_path": "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "executable_sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a",
+      "version": "3.12.10",
+      "admission_state": "ACTIVE",
+      "declared_effect": "MUTATING",
+      "actual_effect_class": "MUTATING",
+      "allowed_operations": [
+        "run"
+      ],
+      "allowed_read_roots": [
+        "E:\\IMPERIUM_REALITY",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001"
+      ],
+      "allowed_write_roots": [
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\SUPPORT\\APP_TAURI\\dist",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\SUPPORT\\APP_TAURI\\src-tauri\\target"
+      ],
+      "timeout_seconds": 300,
+      "environment_profile": "CORE_MINIMAL_HOST_V0_1",
+      "cost_model": {
+        "unit": "local_process",
+        "estimated_units": 1,
+        "external_cost": 0
+      },
+      "trust_level": "TASK_LOCAL_HOST_BOUND",
+      "last_validation": {
+        "evidence_id": "VALIDATION_RETRY_03_RECEIPT",
+        "verdict": "PASS_PROVEN",
+        "timestamp_utc": "2026-07-12T21:30:17.099220Z"
+      },
+      "quarantine_reason": "",
+      "fixed_argv": [
+        "-m",
+        "ORGANS.MECHANICUS.CORE_REFERENCE_CORRIDOR.validation_runner",
+        "--write"
+      ],
+      "parameter_schema": {
+        "type": "object",
+        "additionalProperties": false
+      }
+    }
+  ],
+  "ui_actions": [
+    {
+      "action_id": "refresh_state",
+      "label": "Refresh",
+      "panel_id": "task_state",
+      "effect": "READ_ONLY"
+    },
+    {
+      "action_id": "create_test_task",
+      "label": "Create Test Task",
+      "panel_id": "new_task",
+      "effect": "CONTROL_STATE"
+    },
+    {
+      "action_id": "approve_launch",
+      "label": "Approve Launch",
+      "panel_id": "owner_decisions",
+      "effect": "OWNER_DECISION"
+    },
+    {
+      "action_id": "stop_task",
+      "label": "Stop",
+      "panel_id": "owner_decisions",
+      "effect": "OWNER_DECISION"
+    },
+    {
+      "action_id": "continue_checkpoint",
+      "label": "Continue Checkpoint",
+      "panel_id": "owner_decisions",
+      "effect": "OWNER_DECISION"
+    },
+    {
+      "action_id": "accept_risk",
+      "label": "Accept Risk",
+      "panel_id": "owner_decisions",
+      "effect": "OWNER_DECISION"
+    },
+    {
+      "action_id": "create_exact_head_warp",
+      "label": "Create WARP",
+      "panel_id": "warp",
+      "effect": "MANAGED_WARP_MUTATION"
+    },
+    {
+      "action_id": "run_core_diagnostic",
+      "label": "Run Diagnostic",
+      "panel_id": "execution_trace",
+      "effect": "READ_ONLY",
+      "capability_id": "CORE_DIAGNOSTIC"
+    },
+    {
+      "action_id": "accept_result",
+      "label": "Accept Result",
+      "panel_id": "owner_decisions",
+      "effect": "OWNER_DECISION"
+    },
+    {
+      "action_id": "reject_result",
+      "label": "Reject Result",
+      "panel_id": "owner_decisions",
+      "effect": "OWNER_DECISION"
+    },
+    {
+      "action_id": "request_rework",
+      "label": "Request Rework",
+      "panel_id": "owner_decisions",
+      "effect": "OWNER_DECISION"
+    },
+    {
+      "action_id": "prepare_land_plan",
+      "label": "Prepare Land Plan",
+      "panel_id": "diff",
+      "effect": "OWNER_DECISION"
+    },
+    {
+      "action_id": "forbid_land",
+      "label": "Forbid Land",
+      "panel_id": "owner_decisions",
+      "effect": "OWNER_DECISION"
+    },
+    {
+      "action_id": "discard_warp",
+      "label": "Discard WARP",
+      "panel_id": "warp",
+      "effect": "MANAGED_WARP_MUTATION"
+    },
+    {
+      "action_id": "destroy_warp",
+      "label": "Destroy WARP",
+      "panel_id": "warp",
+      "effect": "MANAGED_WARP_DESTRUCTIVE"
+    }
+  ],
+  "extension_points": [
+    {
+      "extension_id": "API_ADAPTERS",
+      "status": "SCAFFOLD_ONLY",
+      "proof": "NOT_OPERATIONALLY_PROVEN"
+    },
+    {
+      "extension_id": "MCP_REGISTRY_CONFIGURATION",
+      "status": "SCAFFOLD_ONLY",
+      "proof": "NOT_OPERATIONALLY_PROVEN"
+    },
+    {
+      "extension_id": "SKILLS_REGISTRY_EDITOR",
+      "status": "SCAFFOLD_ONLY",
+      "proof": "NOT_OPERATIONALLY_PROVEN"
+    },
+    {
+      "extension_id": "EXTERNAL_LLM_ADAPTERS",
+      "status": "SCAFFOLD_ONLY",
+      "proof": "NOT_OPERATIONALLY_PROVEN"
+    },
+    {
+      "extension_id": "QUIET_INTERNAL_ANALYSIS",
+      "status": "SCAFFOLD_ONLY",
+      "proof": "NOT_OPERATIONALLY_PROVEN"
+    },
+    {
+      "extension_id": "COST_TIME_ESTIMATOR",
+      "status": "SCAFFOLD_ONLY",
+      "proof": "NOT_OPERATIONALLY_PROVEN"
+    },
+    {
+      "extension_id": "LIVE_CAUSAL_GRAPH",
+      "status": "SCAFFOLD_ONLY",
+      "proof": "NOT_OPERATIONALLY_PROVEN"
+    },
+    {
+      "extension_id": "DAILY_AND_THREE_DAY_REPORTS",
+      "status": "SCAFFOLD_ONLY",
+      "proof": "NOT_OPERATIONALLY_PROVEN"
+    },
+    {
+      "extension_id": "LEARNED_RULE_PROPOSALS",
+      "status": "SCAFFOLD_ONLY",
+      "proof": "NOT_OPERATIONALLY_PROVEN"
+    },
+    {
+      "extension_id": "FUTURE_CODING_ABSTRACTION_LAYER",
+      "status": "SCAFFOLD_ONLY",
+      "proof": "NOT_OPERATIONALLY_PROVEN"
+    }
+  ],
+  "report_root": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+  "registry_digest": "sha256:43757cce62aa5fce0b1d5a53008d6d279cad0c5a268daf377db34976f2fcc59e"
+}

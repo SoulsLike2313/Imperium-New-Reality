@@ -1,0 +1,46 @@
+{
+  "schema_version": "imperium.core_reference_corridor.task_manifest.v0_1",
+  "task_id": "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+  "authority_mode": "OWNER_EQUIVALENT_INSTRUCTION",
+  "source_prompt_sha256": "3fa7249d956c8a79c04a8b5f323ec82bec8de1ebabf7aa3cace18d96e7ef6fd8",
+  "base_head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+  "branch": "servitor/imperium-core-reference-corridor-0001",
+  "worktree": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+  "taskpack": "ORGANS/ASTRONOMICON/TASK_INBOX/REGISTERED/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+  "scope": {
+    "forbidden": [
+      "master mutation",
+      "master land",
+      "legacy RUN_*.ps1",
+      "legacy deletion"
+    ],
+    "implementation": [
+      "Mechanicus Safe Execution Spine",
+      "APP_TAURI Thin IDE",
+      "task/evidence package"
+    ]
+  },
+  "acceptance_tests": [
+    "exact_happy_path",
+    "stale_base_head",
+    "dirty_master_fixture",
+    "unauthorized_write_path",
+    "malicious_powershell_runner",
+    "command_not_in_registry",
+    "timeout",
+    "process_crash",
+    "failed_validation",
+    "modified_finalized_evidence",
+    "nested_path",
+    "windows_long_path_boundary",
+    "broken_ui_backend_parity",
+    "warp_reject_discard",
+    "warp_destroy",
+    "disposable_rollback",
+    "deterministic_replay_clone",
+    "direct_execution_outside_executor",
+    "missing_organ_participation",
+    "throne_pass_without_proof"
+  ],
+  "owner_land_approved": false
+}

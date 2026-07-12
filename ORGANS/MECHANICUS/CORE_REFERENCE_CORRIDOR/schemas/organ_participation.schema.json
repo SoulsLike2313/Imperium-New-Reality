@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "imperium://core-reference-corridor/organ-participation/v0_1",
+  "type": "object",
+  "required": ["organ_id", "phase", "assigned_depth", "input_refs", "checks_executed", "verdict", "confidence", "evidence_refs", "warnings", "not_proven", "boundary_statement", "timestamp_utc"],
+  "properties": {
+    "phase": {"enum": ["PREFLIGHT", "POSTCHECK"]},
+    "verdict": {"enum": ["PASS_PROVEN", "PASS_WITH_DEBT", "BLOCK", "NOT_PROVEN", "NOT_APPLICABLE_PROVEN"]},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+  },
+  "additionalProperties": true
+}
