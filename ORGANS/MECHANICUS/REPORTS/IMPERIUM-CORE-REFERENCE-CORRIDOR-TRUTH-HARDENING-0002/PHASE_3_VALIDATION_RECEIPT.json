@@ -1,0 +1,314 @@
+{
+  "schema_version": "imperium.core_reference_corridor.phase3_validation.v1",
+  "task_id": "IMPERIUM_CORE_TRUTH_HARDENING_0002",
+  "generated_at_utc": "2026-07-13T17:10:40.035075Z",
+  "phase": "PHASE_3_LEGACY_TAURI_MUTATION_SURFACE_CLOSURE",
+  "phase_verdict": "LEGACY_MUTATION_SURFACE_CLOSED",
+  "campaign_verdict": "TRUTH_HARDENING_PARTIAL_NOT_READY",
+  "phase_4_started": false,
+  "inventory_path": "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/TAURI_COMMAND_INVENTORY.json",
+  "inventory_sha256": "110b6af3c473824ecf42071f375d9746c17999b79cf04e75c9c68c30fe3974d1",
+  "inventory_receipt_hash": "c998a34581c8ee05eb50df9fb236cc2b7e7862703ce6812b68ca704d15c55ded",
+  "validation_source_hashes": {
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tauri_surface_validation.py": "e096663e69522d5555872b0dda44378bc74df1aee158f373362cc94f89b6a3c9",
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tauri_surface_inventory.py": "dda4d2c4053f0c8c21f502e7ea10e32de84313a5322f9205d201127706cebfaa",
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tests/test_tauri_surface.py": "8c6203d004b3f425eabf84872b9af99cffabef27ca9db485a84a090a3a8bbac2",
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/surface_tests.rs": "295fa3d6e4b908fb8cf8eadf4c7af424d6a1033ca38062ba47957eaf47e820ce",
+    "SUPPORT/APP_TAURI/tests/tauri_surface_check.mjs": "e546a686480e5d05c4048698dc8b0d409afd25c8df7fe1f3845bebd97334c084",
+    "SUPPORT/APP_TAURI/tests/action_parity_check.mjs": "ba847b150f5507d1c9342f89b0084caef2342a1f056f2aca54384b297e6abdc1",
+    "SUPPORT/APP_TAURI/tests/fps_contract_check.mjs": "7d074e5bbd0655f4abf4e9863d6235cdf886921e7ccd68199f84e67df8f061cb",
+    "SUPPORT/APP_TAURI/package.json": "b3ca1e57b6078a43f46f54ff1f05410f8dd9f57e56524f725e7154f92c9c7f35"
+  },
+  "commands": {
+    "targeted_python": {
+      "argv": [
+        "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "pytest",
+        "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tests/test_tauri_surface.py",
+        "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tests/test_executor.py::test_unknown_and_malicious_runner_are_default_denied_without_execution",
+        "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tests/test_executor.py::test_mutation_from_reality_is_blocked_before_process_start",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002\\PHASE_3_TEST_RESULTS.xml"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+      "started_at_utc": "2026-07-13T17:09:32.933817Z",
+      "ended_at_utc": "2026-07-13T17:09:38.491067Z",
+      "timeout_seconds": 240,
+      "exit_code": 0,
+      "stdout_sha256": "0809d446506e8e92c866bc7ef5f013920042ad8e65bb257abd40981fb849ff95",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "..........                                                               [100%]\n- generated xml file: E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002\\PHASE_3_TEST_RESULTS.xml -\n10 passed in 4.58s\n",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    },
+    "targeted_rust": {
+      "argv": [
+        "C:\\Users\\PC\\.cargo\\bin\\cargo.exe",
+        "test",
+        "--manifest-path",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\SUPPORT\\APP_TAURI\\src-tauri\\Cargo.toml",
+        "corridor::"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+      "started_at_utc": "2026-07-13T17:09:38.491067Z",
+      "ended_at_utc": "2026-07-13T17:09:39.157213Z",
+      "timeout_seconds": 360,
+      "exit_code": 0,
+      "stdout_sha256": "665fc7217555ed32ac8e96bb0be00a34a6220f71084ce2230a59dea870b57a22",
+      "stderr_sha256": "f94a44d6a845ced1aab7961ab2b97249f0ab175c2bfb4b96cc71ced4043ededd",
+      "stdout_tail": "\nrunning 6 tests\ntest corridor::bridge::tests::action_id_rejects_shell_syntax ... ok\ntest corridor::bridge::tests::action_payload_stays_in_one_argv_slot ... ok\ntest corridor::bridge::tests::read_only_diagnostic_uses_the_fixed_corridor_action_route ... ok\ntest corridor::bridge::tests::snapshot_argv_is_fixed ... ok\ntest corridor::surface_tests::thin_ide_invoke_surface_is_corridor_only ... ok\ntest corridor::surface_tests::legacy_mutating_commands_have_no_tauri_wrapper_or_handler_entry ... ok\n\ntest result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n",
+      "stderr_tail": "^^^^^^^^^^^^^^\n\nwarning: function `default_current_version` is never used\n   --> src\\main.rs:154:4\n    |\n154 | fn default_current_version() -> Value {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `default_available_version` is never used\n   --> src\\main.rs:165:4\n    |\n165 | fn default_available_version() -> Value {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `simple_version_key` is never used\n   --> src\\main.rs:175:4\n    |\n175 | fn simple_version_key(v: &str) -> Vec<u64> {\n    |    ^^^^^^^^^^^^^^^^^^\n\nwarning: function `version_gt` is never used\n   --> src\\main.rs:182:4\n    |\n182 | fn version_gt(a: &str, b: &str) -> bool {\n    |    ^^^^^^^^^^\n\nwarning: function `get_imperium_core_version_state` is never used\n   --> src\\main.rs:191:4\n    |\n191 | fn get_imperium_core_version_state() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `initialize_imperium_core_update` is never used\n   --> src\\main.rs:223:4\n    |\n223 | fn initialize_imperium_core_update(requested_version: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `list_patch_packs` is never used\n   --> src\\main.rs:263:4\n    |\n263 | fn list_patch_packs() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^\n\nwarning: function `register_patch_pack` is never used\n   --> src\\main.rs:296:4\n    |\n296 | fn register_patch_pack(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^\n\nwarning: function `get_mechanicus_language_codex` is never used\n   --> src\\main.rs:327:4\n    |\n327 | fn get_mechanicus_language_codex() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `read_json_file` is never used\n   --> src\\main.rs:335:4\n    |\n335 | fn read_json_file(path: &Path) -> Option<Value> {\n    |    ^^^^^^^^^^^^^^\n\nwarning: function `rel_path` is never used\n   --> src\\main.rs:340:4\n    |\n340 | fn rel_path(base: &Path, path: &Path) -> String {\n    |    ^^^^^^^^\n\nwarning: function `collect_files_limited` is never used\n   --> src\\main.rs:347:4\n    |\n347 | fn collect_files_limited(root: &Path, limit: usize) -> Vec<PathBuf> {\n    |    ^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `language_for_path` is never used\n   --> src\\main.rs:372:4\n    |\n372 | fn language_for_path(path: &Path) -> &'static str {\n    |    ^^^^^^^^^^^^^^^^^\n\nwarning: function `push_unique` is never used\n   --> src\\main.rs:388:4\n    |\n388 | fn push_unique(list: &mut Vec<String>, value: &str) {\n    |    ^^^^^^^^^^^\n\nwarning: function `file_line_count` is never used\n   --> src\\main.rs:394:4\n    |\n394 | fn file_line_count(path: &Path) -> usize {\n    |    ^^^^^^^^^^^^^^^\n\nwarning: function `infer_task_class` is never used\n   --> src\\main.rs:398:4\n    |\n398 | fn infer_task_class(patch_id: &str, rels: &[String]) -> String {\n    |    ^^^^^^^^^^^^^^^^\n\nwarning: function `analyze_patch_pack_core` is never used\n   --> src\\main.rs:413:4\n    |\n413 | fn analyze_patch_pack_core(repo: &Path, patch_id: &str, register: bool) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `analyze_patch_pack_organ_summary` is never used\n   --> src\\main.rs:584:4\n    |\n584 | fn analyze_patch_pack_organ_summary(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `register_patch_pack_with_organs` is never used\n   --> src\\main.rs:589:4\n    |\n589 | fn register_patch_pack_with_organs(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `record_runtime_fps_proof` is never used\n   --> src\\main.rs:617:4\n    |\n617 | fn record_runtime_fps_proof(payload: Value) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: `imperium_app_tauri` (bin \"imperium_app_tauri\" test) generated 35 warnings\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.58s\n     Running unittests src\\main.rs (SUPPORT\\APP_TAURI\\src-tauri\\target\\debug\\deps\\imperium_app_tauri-94088cb5aaca9dcc.exe)\n",
+      "verdict": "PASS"
+    },
+    "targeted_node_surface": {
+      "argv": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "check:tauri-surface"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\SUPPORT\\APP_TAURI",
+      "started_at_utc": "2026-07-13T17:09:39.158211Z",
+      "ended_at_utc": "2026-07-13T17:09:39.776772Z",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout_sha256": "7be9ee2189219778c3bc19356e1cf526419008fc1f12b3dfcab3a9d01eb766ea",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "\n> imperium-core@0.1.0-alpha.0 check:tauri-surface\n> node ./tests/tauri_surface_check.mjs\n\n{\n  \"verdict\": \"PASS_TAURI_LEGACY_MUTATION_SURFACE_CHECK\",\n  \"handler_commands\": [\n    \"corridor_ui_snapshot\",\n    \"corridor_ui_action\"\n  ],\n  \"frontend_commands\": [\n    \"corridor_ui_snapshot\",\n    \"corridor_ui_action\"\n  ],\n  \"required_legacy_blocked\": 4\n}\n",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    },
+    "npm_build": {
+      "argv": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\SUPPORT\\APP_TAURI",
+      "started_at_utc": "2026-07-13T17:09:39.776772Z",
+      "ended_at_utc": "2026-07-13T17:09:40.921835Z",
+      "timeout_seconds": 240,
+      "exit_code": 0,
+      "stdout_sha256": "291207b97e26d756bbbc8e874b96c2ebe6ad00f80f7d04a8827df80b11d541fc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "\n> imperium-core@0.1.0-alpha.0 build\n> vite build\n\n\u001b[36mvite v5.4.21 \u001b[32mbuilding for production...\u001b[36m\u001b[39m\ntransforming...\n\u001b[32m\u2713\u001b[39m 9 modules transformed.\nrendering chunks...\ncomputing gzip size...\n\u001b[2mdist/\u001b[22m\u001b[32mindex.html                 \u001b[39m\u001b[1m\u001b[2m 0.42 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m \u2502 gzip: 0.32 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[35massets/index-DSt5HEk6.css  \u001b[39m\u001b[1m\u001b[2m 7.58 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m \u2502 gzip: 2.27 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[36massets/index-CWiOwFJK.js   \u001b[39m\u001b[1m\u001b[2m10.25 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m \u2502 gzip: 3.39 kB\u001b[22m\n\u001b[32m\u2713 built in 171ms\u001b[39m\n",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    },
+    "cargo_check": {
+      "argv": [
+        "C:\\Users\\PC\\.cargo\\bin\\cargo.exe",
+        "check",
+        "--manifest-path",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\SUPPORT\\APP_TAURI\\src-tauri\\Cargo.toml"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+      "started_at_utc": "2026-07-13T17:09:40.921835Z",
+      "ended_at_utc": "2026-07-13T17:09:41.591325Z",
+      "timeout_seconds": 360,
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "32200f288eed609afdcb51e858b37466bf43702160e4cabb663b8ff2fe0c3c00",
+      "stdout_tail": "",
+      "stderr_tail": "n `app_receipts_dir` is never used\n   --> src\\main.rs:150:4\n    |\n150 | fn app_receipts_dir(repo: &Path) -> PathBuf {\n    |    ^^^^^^^^^^^^^^^^\n\nwarning: function `default_current_version` is never used\n   --> src\\main.rs:154:4\n    |\n154 | fn default_current_version() -> Value {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `default_available_version` is never used\n   --> src\\main.rs:165:4\n    |\n165 | fn default_available_version() -> Value {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `simple_version_key` is never used\n   --> src\\main.rs:175:4\n    |\n175 | fn simple_version_key(v: &str) -> Vec<u64> {\n    |    ^^^^^^^^^^^^^^^^^^\n\nwarning: function `version_gt` is never used\n   --> src\\main.rs:182:4\n    |\n182 | fn version_gt(a: &str, b: &str) -> bool {\n    |    ^^^^^^^^^^\n\nwarning: function `get_imperium_core_version_state` is never used\n   --> src\\main.rs:191:4\n    |\n191 | fn get_imperium_core_version_state() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `initialize_imperium_core_update` is never used\n   --> src\\main.rs:223:4\n    |\n223 | fn initialize_imperium_core_update(requested_version: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `list_patch_packs` is never used\n   --> src\\main.rs:263:4\n    |\n263 | fn list_patch_packs() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^\n\nwarning: function `register_patch_pack` is never used\n   --> src\\main.rs:296:4\n    |\n296 | fn register_patch_pack(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^\n\nwarning: function `get_mechanicus_language_codex` is never used\n   --> src\\main.rs:327:4\n    |\n327 | fn get_mechanicus_language_codex() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `read_json_file` is never used\n   --> src\\main.rs:335:4\n    |\n335 | fn read_json_file(path: &Path) -> Option<Value> {\n    |    ^^^^^^^^^^^^^^\n\nwarning: function `rel_path` is never used\n   --> src\\main.rs:340:4\n    |\n340 | fn rel_path(base: &Path, path: &Path) -> String {\n    |    ^^^^^^^^\n\nwarning: function `collect_files_limited` is never used\n   --> src\\main.rs:347:4\n    |\n347 | fn collect_files_limited(root: &Path, limit: usize) -> Vec<PathBuf> {\n    |    ^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `language_for_path` is never used\n   --> src\\main.rs:372:4\n    |\n372 | fn language_for_path(path: &Path) -> &'static str {\n    |    ^^^^^^^^^^^^^^^^^\n\nwarning: function `push_unique` is never used\n   --> src\\main.rs:388:4\n    |\n388 | fn push_unique(list: &mut Vec<String>, value: &str) {\n    |    ^^^^^^^^^^^\n\nwarning: function `file_line_count` is never used\n   --> src\\main.rs:394:4\n    |\n394 | fn file_line_count(path: &Path) -> usize {\n    |    ^^^^^^^^^^^^^^^\n\nwarning: function `infer_task_class` is never used\n   --> src\\main.rs:398:4\n    |\n398 | fn infer_task_class(patch_id: &str, rels: &[String]) -> String {\n    |    ^^^^^^^^^^^^^^^^\n\nwarning: function `analyze_patch_pack_core` is never used\n   --> src\\main.rs:413:4\n    |\n413 | fn analyze_patch_pack_core(repo: &Path, patch_id: &str, register: bool) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `analyze_patch_pack_organ_summary` is never used\n   --> src\\main.rs:584:4\n    |\n584 | fn analyze_patch_pack_organ_summary(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `register_patch_pack_with_organs` is never used\n   --> src\\main.rs:589:4\n    |\n589 | fn register_patch_pack_with_organs(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `record_runtime_fps_proof` is never used\n   --> src\\main.rs:617:4\n    |\n617 | fn record_runtime_fps_proof(payload: Value) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: `imperium_app_tauri` (bin \"imperium_app_tauri\") generated 35 warnings\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.60s\n",
+      "verdict": "PASS"
+    },
+    "full_python_regression": {
+      "argv": [
+        "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "pytest",
+        "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tests",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002\\PHASE_3_REGRESSION_RESULTS.xml"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+      "started_at_utc": "2026-07-13T17:09:41.591325Z",
+      "ended_at_utc": "2026-07-13T17:10:34.146651Z",
+      "timeout_seconds": 360,
+      "exit_code": 0,
+      "stdout_sha256": "28afc9becc287bf2daac47aae31c86dad0dc5cf7719ddb69ee6fbb6b85b90f5d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "...................................................................      [100%]\n- generated xml file: E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002\\PHASE_3_REGRESSION_RESULTS.xml -\n67 passed in 51.81s\n",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    },
+    "full_rust_regression": {
+      "argv": [
+        "C:\\Users\\PC\\.cargo\\bin\\cargo.exe",
+        "test",
+        "--manifest-path",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\SUPPORT\\APP_TAURI\\src-tauri\\Cargo.toml"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+      "started_at_utc": "2026-07-13T17:10:34.146651Z",
+      "ended_at_utc": "2026-07-13T17:10:34.816935Z",
+      "timeout_seconds": 600,
+      "exit_code": 0,
+      "stdout_sha256": "665fc7217555ed32ac8e96bb0be00a34a6220f71084ce2230a59dea870b57a22",
+      "stderr_sha256": "af2e0ba5278c07c7b2906557e5a6f9fb2f2d6bd13b16249b6370612ebacde957",
+      "stdout_tail": "\nrunning 6 tests\ntest corridor::bridge::tests::action_id_rejects_shell_syntax ... ok\ntest corridor::bridge::tests::action_payload_stays_in_one_argv_slot ... ok\ntest corridor::bridge::tests::read_only_diagnostic_uses_the_fixed_corridor_action_route ... ok\ntest corridor::bridge::tests::snapshot_argv_is_fixed ... ok\ntest corridor::surface_tests::thin_ide_invoke_surface_is_corridor_only ... ok\ntest corridor::surface_tests::legacy_mutating_commands_have_no_tauri_wrapper_or_handler_entry ... ok\n\ntest result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n",
+      "stderr_tail": "^^^^^^^^^^^^^^\n\nwarning: function `default_current_version` is never used\n   --> src\\main.rs:154:4\n    |\n154 | fn default_current_version() -> Value {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `default_available_version` is never used\n   --> src\\main.rs:165:4\n    |\n165 | fn default_available_version() -> Value {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `simple_version_key` is never used\n   --> src\\main.rs:175:4\n    |\n175 | fn simple_version_key(v: &str) -> Vec<u64> {\n    |    ^^^^^^^^^^^^^^^^^^\n\nwarning: function `version_gt` is never used\n   --> src\\main.rs:182:4\n    |\n182 | fn version_gt(a: &str, b: &str) -> bool {\n    |    ^^^^^^^^^^\n\nwarning: function `get_imperium_core_version_state` is never used\n   --> src\\main.rs:191:4\n    |\n191 | fn get_imperium_core_version_state() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `initialize_imperium_core_update` is never used\n   --> src\\main.rs:223:4\n    |\n223 | fn initialize_imperium_core_update(requested_version: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `list_patch_packs` is never used\n   --> src\\main.rs:263:4\n    |\n263 | fn list_patch_packs() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^\n\nwarning: function `register_patch_pack` is never used\n   --> src\\main.rs:296:4\n    |\n296 | fn register_patch_pack(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^\n\nwarning: function `get_mechanicus_language_codex` is never used\n   --> src\\main.rs:327:4\n    |\n327 | fn get_mechanicus_language_codex() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `read_json_file` is never used\n   --> src\\main.rs:335:4\n    |\n335 | fn read_json_file(path: &Path) -> Option<Value> {\n    |    ^^^^^^^^^^^^^^\n\nwarning: function `rel_path` is never used\n   --> src\\main.rs:340:4\n    |\n340 | fn rel_path(base: &Path, path: &Path) -> String {\n    |    ^^^^^^^^\n\nwarning: function `collect_files_limited` is never used\n   --> src\\main.rs:347:4\n    |\n347 | fn collect_files_limited(root: &Path, limit: usize) -> Vec<PathBuf> {\n    |    ^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `language_for_path` is never used\n   --> src\\main.rs:372:4\n    |\n372 | fn language_for_path(path: &Path) -> &'static str {\n    |    ^^^^^^^^^^^^^^^^^\n\nwarning: function `push_unique` is never used\n   --> src\\main.rs:388:4\n    |\n388 | fn push_unique(list: &mut Vec<String>, value: &str) {\n    |    ^^^^^^^^^^^\n\nwarning: function `file_line_count` is never used\n   --> src\\main.rs:394:4\n    |\n394 | fn file_line_count(path: &Path) -> usize {\n    |    ^^^^^^^^^^^^^^^\n\nwarning: function `infer_task_class` is never used\n   --> src\\main.rs:398:4\n    |\n398 | fn infer_task_class(patch_id: &str, rels: &[String]) -> String {\n    |    ^^^^^^^^^^^^^^^^\n\nwarning: function `analyze_patch_pack_core` is never used\n   --> src\\main.rs:413:4\n    |\n413 | fn analyze_patch_pack_core(repo: &Path, patch_id: &str, register: bool) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `analyze_patch_pack_organ_summary` is never used\n   --> src\\main.rs:584:4\n    |\n584 | fn analyze_patch_pack_organ_summary(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `register_patch_pack_with_organs` is never used\n   --> src\\main.rs:589:4\n    |\n589 | fn register_patch_pack_with_organs(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `record_runtime_fps_proof` is never used\n   --> src\\main.rs:617:4\n    |\n617 | fn record_runtime_fps_proof(payload: Value) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: `imperium_app_tauri` (bin \"imperium_app_tauri\" test) generated 35 warnings\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.59s\n     Running unittests src\\main.rs (SUPPORT\\APP_TAURI\\src-tauri\\target\\debug\\deps\\imperium_app_tauri-94088cb5aaca9dcc.exe)\n",
+      "verdict": "PASS"
+    },
+    "node_parity_regression": {
+      "argv": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "check:parity"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\SUPPORT\\APP_TAURI",
+      "started_at_utc": "2026-07-13T17:10:34.816935Z",
+      "ended_at_utc": "2026-07-13T17:10:36.041590Z",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout_sha256": "160bc68d802b3b889d829b51a1d75816c91af45030b12dcefe6c4de59ebc3062",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "\n> imperium-core@0.1.0-alpha.0 check:parity\n> node ./tests/action_parity_check.mjs\n\n{\n  \"verdict\": \"PASS_CORRIDOR_UI_BACKEND_SEMANTIC_PARITY\",\n  \"contract_id\": \"IMPERIUM_CORE_REFERENCE_CORRIDOR_THIN_IDE_V0_1\",\n  \"panel_count\": 11,\n  \"card_count\": 22,\n  \"action_count\": 15,\n  \"bridge_commands\": [\n    \"corridor_ui_action\",\n    \"corridor_ui_snapshot\"\n  ]\n}\n",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    },
+    "legacy_fps_route_regression": {
+      "argv": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "check:fps"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\SUPPORT\\APP_TAURI",
+      "started_at_utc": "2026-07-13T17:10:36.041590Z",
+      "ended_at_utc": "2026-07-13T17:10:36.598433Z",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout_sha256": "07929900865340c6804fa873a0c9b31297113748c1c95c223bdc7764a3984be7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "\n> imperium-core@0.1.0-alpha.0 check:fps\n> node ./tests/fps_contract_check.mjs\n\n{\n  \"verdict\": \"PASS_LEGACY_FPS_MUTATION_ROUTE_FAIL_CLOSED\",\n  \"command\": \"record_runtime_fps_proof\",\n  \"performance_claim\": \"NOT_CLAIMED_BY_THIN_IDE\"\n}\n",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    },
+    "read_only_diagnostic": {
+      "argv": [
+        "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "ORGANS.MECHANICUS.CORE_REFERENCE_CORRIDOR.diagnostic_tool",
+        "--json"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+      "started_at_utc": "2026-07-13T17:10:36.598433Z",
+      "ended_at_utc": "2026-07-13T17:10:39.704793Z",
+      "timeout_seconds": 120,
+      "exit_code": 0,
+      "stdout_sha256": "9936dde9d59e8c56e017e3d84456d29e26acf96fd32c1451ee434d859bd749ad",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "{\"canon\": {\"constitution_conflict\": \"CAP_CONSTITUTION_GREAT_NINE_SUPERSESSION_PENDING\", \"missing_organ_paths\": [], \"organ_count\": 9, \"organ_ids\": [\"ASTRONOMICON\", \"ADMINISTRATUM\", \"DOCTRINARIUM\", \"MECHANICUS\", \"INQUISITION\", \"CUSTODES\", \"STRATEGIUM\", \"SCHOLA_IMPERIALIS\", \"OFFICIO_AGENTIS\"], \"source\": \"ORGANS/THRONE/MATRICES/GREAT_NINE_CANON_AND_ALIAS_MATRIX_V0_1.json\", \"source_status\": \"ACTIVE_CANON\", \"throne\": {\"canonical_home\": \"ORGANS/THRONE\", \"canonical_id\": \"THRONE\", \"status\": \"CROWN_ORGAN_OUTSIDE_GREAT_NINE_COUNT\"}}, \"git\": {\"origin_master\": \"281c3a7c8463de7fb64473929fe0ed975f99f595\", \"reality_branch\": \"master\", \"reality_dirty\": false, \"reality_head\": \"281c3a7c8463de7fb64473929fe0ed975f99f595\", \"reality_matches_origin_master\": true, \"reality_root\": \"E:\\\\IMPERIUM_REALITY\", \"reality_status\": [], \"worktree_branch\": \"servitor/imperium-core-reference-corridor-0001\", \"worktree_dirty\": true, \"worktree_head\": \"fb7a1d83690c238d0b276618114e9050735f8ea9\", \"worktree_root\": \"E:\\\\IMPERIUM_WARPS\\\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\", \"worktree_status\": [\"M ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/KNOWN_GAPS.md\", \" M SUPPORT/APP_TAURI/package.json\", \" M SUPPORT/APP_TAURI/src-tauri/src/corridor/bridge.rs\", \" M SUPPORT/APP_TAURI/src-tauri/src/corridor/mod.rs\", \" M SUPPORT/APP_TAURI/src-tauri/src/main.rs\", \" M SUPPORT/APP_TAURI/tests/action_parity_check.mjs\", \" M SUPPORT/APP_TAURI/tests/fps_contract_check.mjs\", \"?? ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tauri_surface_inventory.py\", \"?? ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tauri_surface_validation.py\", \"?? ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tests/test_tauri_surface.py\", \"?? ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/PHASE_3_REGRESSION_RESULTS.xml\", \"?? ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/PHASE_3_TEST_RESULTS.xml\", \"?? ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/PHASE_3_VALIDATION_RECEIPT.json\", \"?? ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/TAURI_COMMAND_INVENTORY.json\", \"?? ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/TAURI_SURFACE_AUDIT.md\", \"?? SUPPORT/APP_TAURI/src-tauri/src/corridor/surface_tests.rs\", \"?? SUPPORT/APP_TAURI/tests/tauri_surface_check.mjs\"]}, \"powershell\": {\"exact_required_version\": \"7.6.2\", \"exact_version_match\": true, \"executable\": \"C:\\\\Program Files\\\\WindowsApps\\\\Microsoft.PowerShell_7.6.2.0_x64__8wekyb3d8bbwe\\\\pwsh.exe\", \"version\": \"7.6.2\"}, \"resolution\": {\"branch\": \"servitor/imperium-core-reference-corridor-0001\", \"git_common_dir\": \"E:\\\\IMPERIUM_REALITY\\\\.git\", \"head\": \"fb7a1d83690c238d0b276618114e9050735f8ea9\", \"reality_root\": \"E:\\\\IMPERIUM_REALITY\", \"resolution_method\": \"git_rev_parse_worktree_and_common_dir\", \"worktree_root\": \"E:\\\\IMPERIUM_WARPS\\\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\"}, \"schema_version\": \"imperium.core_reference_corridor.diagnostic.v0_1\", \"truth_boundary\": \"Diagnostic proves current host/repository facts only; it does not prove complete Core v1.\", \"verdict\": \"PASS_PROVEN\"}\n",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    },
+    "git_diff_check": {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+      "started_at_utc": "2026-07-13T17:10:39.704793Z",
+      "ended_at_utc": "2026-07-13T17:10:39.788821Z",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    }
+  },
+  "command_checks": {
+    "targeted_python": true,
+    "targeted_rust": true,
+    "targeted_node_surface": true,
+    "npm_build": true,
+    "cargo_check": true,
+    "full_python_regression": true,
+    "full_rust_regression": true,
+    "node_parity_regression": true,
+    "legacy_fps_route_regression": true,
+    "read_only_diagnostic": true,
+    "git_diff_check": true
+  },
+  "junit": {
+    "targeted": {
+      "path": "PHASE_3_TEST_RESULTS.xml",
+      "sha256": "17393f43ce616e6a2b818eb6010a64f54185675eb0f3c40207944c18232fad34",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "verdict": "PASS"
+    },
+    "regression": {
+      "path": "PHASE_3_REGRESSION_RESULTS.xml",
+      "sha256": "83e9e0c8b209d4ba4cd0d30f9f0231c97426af35b04eb681d92bdcd303d36752",
+      "tests": 67,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "verdict": "PASS"
+    }
+  },
+  "diagnostic_verdict": "PASS_PROVEN",
+  "reality_before": {
+    "root": "E:\\IMPERIUM_REALITY",
+    "head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+    "origin_master": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+    "branch": "master",
+    "status_porcelain": []
+  },
+  "reality_after": {
+    "root": "E:\\IMPERIUM_REALITY",
+    "head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+    "origin_master": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+    "branch": "master",
+    "status_porcelain": []
+  },
+  "checks": {
+    "inventory_closed": true,
+    "unknown_effects_absent": true,
+    "every_mutation_capability_registry_routed": true,
+    "every_mutation_typed_executor_routed": true,
+    "every_mutation_owner_gated": true,
+    "legacy_mutations_unreachable": true,
+    "all_required_commands_passed": true,
+    "targeted_tests_passed": true,
+    "full_regression_passed": true,
+    "read_only_diagnostic_passed": true,
+    "reality_unchanged_and_clean": true
+  },
+  "regression_repairs": [
+    {
+      "id": "STALE_LEGACY_FPS_UI_CONTRACT",
+      "initial_command": "npm run check:fps",
+      "initial_exit_code": 1,
+      "initial_missing_markers": [
+        "FPS_LOCK_TARGET",
+        "requestAnimationFrame",
+        "PerformanceObserver",
+        "fpsSamples",
+        "reduceMotionMode"
+      ],
+      "origin_commit": "a6a840aeba4ad8f8e55df6efe02c020a8b3245eb",
+      "repair": "Migrate the stale regression to assert that record_runtime_fps_proof is absent from the real Rust handler and frontend API.",
+      "performance_claim": "NOT_CLAIMED_BY_THIN_IDE",
+      "visual_source_changes": []
+    }
+  ],
+  "known_gaps": [
+    "Rust-to-Python bridge hardening and Phase 4 are not started.",
+    "The overall campaign remains partial until all later checkpoints pass."
+  ],
+  "receipt_hash": "7adb1dda4b8c061525588c19b70fe5af4fea80629b352fb6cf39f5c86ee34c35"
+}

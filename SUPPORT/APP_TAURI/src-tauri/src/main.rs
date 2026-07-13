@@ -188,7 +188,6 @@ fn version_gt(a: &str, b: &str) -> bool {
     ak > bk
 }
 
-#[tauri::command]
 fn get_imperium_core_version_state() -> Result<Value, String> {
     let repo = repo_root()?;
     let state_dir = app_state_dir(&repo);
@@ -221,7 +220,6 @@ fn get_imperium_core_version_state() -> Result<Value, String> {
     }))
 }
 
-#[tauri::command]
 fn initialize_imperium_core_update(requested_version: String) -> Result<Value, String> {
     let repo = repo_root()?;
     let version_state = get_imperium_core_version_state()?;
@@ -262,7 +260,6 @@ fn initialize_imperium_core_update(requested_version: String) -> Result<Value, S
     }))
 }
 
-#[tauri::command]
 fn list_patch_packs() -> Result<Value, String> {
     let repo = repo_root()?;
     let registry = read_registry(&repo);
@@ -296,7 +293,6 @@ fn list_patch_packs() -> Result<Value, String> {
     }))
 }
 
-#[tauri::command]
 fn register_patch_pack(patch_id: String) -> Result<Value, String> {
     if !safe_patch_id(&patch_id) { return Err("unsafe patch_id".to_string()); }
     let repo = repo_root()?;
@@ -328,7 +324,6 @@ fn register_patch_pack(patch_id: String) -> Result<Value, String> {
     }))
 }
 
-#[tauri::command]
 fn get_mechanicus_language_codex() -> Result<Value, String> {
     let repo = repo_root()?;
     let path = repo.join("ORGANS").join("MECHANICUS").join("MATRICES").join("MECHANICUS_LANGUAGE_POWER_MATRIX_V0_1.json");
@@ -586,13 +581,11 @@ fn analyze_patch_pack_core(repo: &Path, patch_id: &str, register: bool) -> Resul
     Ok(summary)
 }
 
-#[tauri::command]
 fn analyze_patch_pack_organ_summary(patch_id: String) -> Result<Value, String> {
     let repo = repo_root()?;
     analyze_patch_pack_core(&repo, &patch_id, false)
 }
 
-#[tauri::command]
 fn register_patch_pack_with_organs(patch_id: String) -> Result<Value, String> {
     let repo = repo_root()?;
     let summary = analyze_patch_pack_core(&repo, &patch_id, true)?;
@@ -621,7 +614,6 @@ fn register_patch_pack_with_organs(patch_id: String) -> Result<Value, String> {
     }))
 }
 
-#[tauri::command]
 fn record_runtime_fps_proof(payload: Value) -> Result<Value, String> {
     let repo = repo_root()?;
     let ts = now_unix();
@@ -652,15 +644,7 @@ fn main() {
     tauri::Builder::default()
         .invoke_handler(tauri::generate_handler![
             corridor::bridge::corridor_ui_snapshot,
-            corridor::bridge::corridor_ui_action,
-            list_patch_packs,
-            register_patch_pack,
-            analyze_patch_pack_organ_summary,
-            register_patch_pack_with_organs,
-            get_mechanicus_language_codex,
-            record_runtime_fps_proof,
-            get_imperium_core_version_state,
-            initialize_imperium_core_update
+            corridor::bridge::corridor_ui_action
         ])
         .run(tauri::generate_context!())
         .expect("error while running Imperium Core");

@@ -1,0 +1,175 @@
+{
+  "schema_version": "imperium.core_reference_corridor.tauri_command_inventory.v1",
+  "task_id": "IMPERIUM_CORE_TRUTH_HARDENING_0002",
+  "generated_at_utc": "2026-07-13T17:09:32.692108Z",
+  "inventory_method": "PARSE_REAL_RUST_INVOKE_HANDLER_NOT_FRONTEND_DECLARATIONS",
+  "generator": {
+    "path": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\CORE_REFERENCE_CORRIDOR\\tauri_surface_inventory.py",
+    "sha256": "dda4d2c4053f0c8c21f502e7ea10e32de84313a5322f9205d201127706cebfaa"
+  },
+  "rust_invoke_source": {
+    "path": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+    "sha256": "e92dc5a98c6e7ac4011168ae1d60a0b5226c168df1a8844ab6856034a80286e9"
+  },
+  "registered_tauri_commands": [
+    "corridor_ui_snapshot",
+    "corridor_ui_action"
+  ],
+  "rust_handler_entries": [
+    "corridor::bridge::corridor_ui_snapshot",
+    "corridor::bridge::corridor_ui_action"
+  ],
+  "effect_classification": {
+    "corridor_ui_snapshot": "READ_ONLY",
+    "corridor_ui_action": "MUTATING"
+  },
+  "commands": [
+    {
+      "command": "corridor_ui_snapshot",
+      "rust_handler_entry": "corridor::bridge::corridor_ui_snapshot",
+      "effect": "READ_ONLY",
+      "corridor_reachable": true,
+      "canonical_capability_registry_routed": false,
+      "typed_executor_routed": false,
+      "owner_gate_required": false,
+      "legacy_command": false,
+      "definition_path": "SUPPORT/APP_TAURI/src-tauri/src/corridor/bridge.rs",
+      "direct_invocation": "ADMITTED_BY_RUST_INVOKE_HANDLER"
+    },
+    {
+      "command": "corridor_ui_action",
+      "rust_handler_entry": "corridor::bridge::corridor_ui_action",
+      "effect": "MUTATING",
+      "corridor_reachable": true,
+      "canonical_capability_registry_routed": true,
+      "typed_executor_routed": true,
+      "owner_gate_required": true,
+      "legacy_command": false,
+      "definition_path": "SUPPORT/APP_TAURI/src-tauri/src/corridor/bridge.rs",
+      "direct_invocation": "ADMITTED_BY_RUST_INVOKE_HANDLER"
+    }
+  ],
+  "legacy_command_probes": [
+    {
+      "command": "get_imperium_core_version_state",
+      "effect": "MUTATING",
+      "required_attention": false,
+      "rust_command_attribute_present": false,
+      "registered_in_invoke_handler": false,
+      "corridor_reachable": false,
+      "definition_path": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+      "direct_invocation_result": "BLOCK_COMMAND_NOT_REGISTERED"
+    },
+    {
+      "command": "initialize_imperium_core_update",
+      "effect": "MUTATING",
+      "required_attention": true,
+      "rust_command_attribute_present": false,
+      "registered_in_invoke_handler": false,
+      "corridor_reachable": false,
+      "definition_path": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+      "direct_invocation_result": "BLOCK_COMMAND_NOT_REGISTERED"
+    },
+    {
+      "command": "list_patch_packs",
+      "effect": "READ_ONLY",
+      "required_attention": false,
+      "rust_command_attribute_present": false,
+      "registered_in_invoke_handler": false,
+      "corridor_reachable": false,
+      "definition_path": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+      "direct_invocation_result": "BLOCK_COMMAND_NOT_REGISTERED"
+    },
+    {
+      "command": "register_patch_pack",
+      "effect": "MUTATING",
+      "required_attention": true,
+      "rust_command_attribute_present": false,
+      "registered_in_invoke_handler": false,
+      "corridor_reachable": false,
+      "definition_path": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+      "direct_invocation_result": "BLOCK_COMMAND_NOT_REGISTERED"
+    },
+    {
+      "command": "get_mechanicus_language_codex",
+      "effect": "READ_ONLY",
+      "required_attention": false,
+      "rust_command_attribute_present": false,
+      "registered_in_invoke_handler": false,
+      "corridor_reachable": false,
+      "definition_path": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+      "direct_invocation_result": "BLOCK_COMMAND_NOT_REGISTERED"
+    },
+    {
+      "command": "analyze_patch_pack_organ_summary",
+      "effect": "READ_ONLY",
+      "required_attention": false,
+      "rust_command_attribute_present": false,
+      "registered_in_invoke_handler": false,
+      "corridor_reachable": false,
+      "definition_path": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+      "direct_invocation_result": "BLOCK_COMMAND_NOT_REGISTERED"
+    },
+    {
+      "command": "register_patch_pack_with_organs",
+      "effect": "MUTATING",
+      "required_attention": true,
+      "rust_command_attribute_present": false,
+      "registered_in_invoke_handler": false,
+      "corridor_reachable": false,
+      "definition_path": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+      "direct_invocation_result": "BLOCK_COMMAND_NOT_REGISTERED"
+    },
+    {
+      "command": "record_runtime_fps_proof",
+      "effect": "MUTATING",
+      "required_attention": true,
+      "rust_command_attribute_present": false,
+      "registered_in_invoke_handler": false,
+      "corridor_reachable": false,
+      "definition_path": "SUPPORT/APP_TAURI/src-tauri/src/main.rs",
+      "direct_invocation_result": "BLOCK_COMMAND_NOT_REGISTERED"
+    }
+  ],
+  "required_legacy_commands": [
+    "register_patch_pack",
+    "register_patch_pack_with_organs",
+    "record_runtime_fps_proof",
+    "initialize_imperium_core_update"
+  ],
+  "frontend_declared_commands": [
+    "corridor_ui_snapshot",
+    "corridor_ui_action"
+  ],
+  "route_evidence": {
+    "fixed_corridor_cli_route": true,
+    "canonical_registry_lookup": true,
+    "typed_executor_dispatch": true,
+    "owner_gate_dispatch": true,
+    "registry_default_deny": true
+  },
+  "source_hashes": {
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/bridge.rs": "15b15d0ae02b9acf9f7714d1baddf27f7364a2ec36957117e3f5dc409c1a6923",
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/mod.rs": "b1c0c2d7329aab45608fa93e665486a9c1fcbbe34044ce6333478b3e10279180",
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/surface_tests.rs": "295fa3d6e4b908fb8cf8eadf4c7af424d6a1033ca38062ba47957eaf47e820ce",
+    "SUPPORT/APP_TAURI/src-tauri/src/main.rs": "e92dc5a98c6e7ac4011168ae1d60a0b5226c168df1a8844ab6856034a80286e9"
+  },
+  "checks": {
+    "unknown_effects_absent": true,
+    "mutating_commands_capability_registry_routed": true,
+    "mutating_commands_typed_executor_routed": true,
+    "mutating_commands_owner_gated": true,
+    "legacy_mutating_commands_unreachable": true,
+    "frontend_unknown_commands_absent": true
+  },
+  "unknown_commands": [],
+  "unregistered_mutating_commands": [],
+  "unrouted_mutating_commands": [],
+  "ungated_mutating_commands": [],
+  "reachable_legacy_mutations": [],
+  "frontend_unknown_commands": [],
+  "surface_verdict": "LEGACY_MUTATION_SURFACE_CLOSED",
+  "campaign_verdict": "TRUTH_HARDENING_PARTIAL_NOT_READY",
+  "phase_4_started": false,
+  "receipt_hash": "c998a34581c8ee05eb50df9fb236cc2b7e7862703ce6812b68ca704d15c55ded"
+}

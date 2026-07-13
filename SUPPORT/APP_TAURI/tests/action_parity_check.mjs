@@ -167,10 +167,16 @@ const handlerCommands = handlerBlock
   .split(",")
   .map((entry) => entry.trim().split("::").at(-1))
   .filter(Boolean);
-const corridorHandlerCommands = handlerCommands.filter((name) => name.startsWith("corridor_ui_"));
-sameMembers(frontendCommands, corridorHandlerCommands, "frontend/Rust corridor command surface");
-invariant(!handlerCommands.includes("run_registered_patch_pack"), "direct legacy runner remains in the Tauri invoke surface");
-invariant(!/fn\s+run_registered_patch_pack\s*\(/.test(rustSource), "direct legacy runner implementation remains compiled");
+sameMembers(frontendCommands, handlerCommands, "frontend/complete Rust invoke surface");
+for (const command of [
+  "register_patch_pack",
+  "register_patch_pack_with_organs",
+  "record_runtime_fps_proof",
+  "initialize_imperium_core_update",
+  "run_registered_patch_pack",
+]) {
+  invariant(!handlerCommands.includes(command), `legacy command ${command} remains in the Tauri invoke surface`);
+}
 
 console.log(JSON.stringify({
   verdict: "PASS_CORRIDOR_UI_BACKEND_SEMANTIC_PARITY",

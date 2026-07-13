@@ -293,4 +293,12 @@ mod tests {
         assert!(action_args("diagnostic && whoami", "{}").is_err());
         assert!(action_args("", "{}").is_err());
     }
+
+    #[test]
+    fn read_only_diagnostic_uses_the_fixed_corridor_action_route() {
+        let args = action_args("run_core_diagnostic", "{}").expect("diagnostic route");
+        assert_eq!(args[2], "ui-action");
+        assert_eq!(args[4], "run_core_diagnostic");
+        assert_eq!(args[6], "{}");
+    }
 }
