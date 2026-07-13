@@ -1,200 +1,212 @@
+use super::bridge_receipt::write_bridge_receipt;
+use super::process_boundary::{
+    admit_interpreter, execute_python, minimal_environment, InterpreterAdmission,
+    MinimalEnvironment, ReceiptBinding,
+};
+use serde::de::DeserializeOwned;
+use serde::Deserialize;
 use serde_json::Value;
-use std::ffi::OsStr;
-use std::io::{self, Read};
+use std::collections::BTreeSet;
+use std::ffi::OsString;
+use std::fs::File;
+use std::io::Read;
 use std::path::{Path, PathBuf};
-use std::process::{Command, ExitStatus, Stdio};
-use std::thread;
-use std::time::{Duration, Instant};
+use std::time::Duration;
 
 const CORRIDOR_MODULE: &str = "ORGANS.MECHANICUS.CORE_REFERENCE_CORRIDOR.cli";
-const ROOT_TIMEOUT: Duration = Duration::from_secs(5);
+const CAPABILITY_REGISTRY_RELATIVE: &str =
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/CAPABILITY_REGISTRY.json";
+const TASK_STATE_RELATIVE: &str =
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/TASK_STATE.json";
+const RECEIPT_RELATIVE: &str = "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/PHASE_4_BRIDGE_RECEIPTS";
+const EXPECTED_TASK_ID: &str = "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001";
+const EXPECTED_WARP_ID: &str = "WARP-CORE-REFERENCE-0001";
+const EXPECTED_BASE_HEAD: &str = "281c3a7c8463de7fb64473929fe0ed975f99f595";
 const SNAPSHOT_TIMEOUT: Duration = Duration::from_secs(15);
 const ACTION_TIMEOUT: Duration = Duration::from_secs(120);
-const MAX_OUTPUT_BYTES: usize = 8 * 1024 * 1024;
 const MAX_PAYLOAD_BYTES: usize = 128 * 1024;
+const MAX_CONFIG_BYTES: u64 = 2 * 1024 * 1024;
 
-#[derive(Clone, Copy)]
-enum FixedProgram {
-    Git,
-    Python,
+#[derive(Deserialize)]
+struct CapabilityRegistry {
+    schema_version: String,
+    task_id: String,
+    base_head: String,
+    default_policy: String,
+    capabilities: Vec<CapabilityRecord>,
 }
 
-impl FixedProgram {
-    fn executable(self) -> &'static str {
-        match self {
-            Self::Git => "git",
-            Self::Python => "python",
+#[derive(Deserialize)]
+struct CapabilityRecord {
+    capability_id: String,
+    #[serde(rename = "type")]
+    capability_type: String,
+    adapter_id: String,
+    actual_effect_class: String,
+    executable_path: String,
+    executable_sha256: String,
+    allowed_read_roots: Vec<String>,
+}
+
+#[derive(Deserialize)]
+struct TaskState {
+    schema_version: String,
+    task_id: String,
+    base_head: String,
+    branch: String,
+    warp: WarpState,
+}
+
+#[derive(Deserialize)]
+struct WarpState {
+    warp_id: String,
+    base_head: String,
+    path: String,
+    state: String,
+}
+
+pub(crate) struct BridgeContext {
+    pub repo: PathBuf,
+    pub admission: InterpreterAdmission,
+    pub binding: ReceiptBinding,
+    pub receipt_dir: PathBuf,
+}
+
+fn read_json_bounded<T: DeserializeOwned>(path: &Path) -> Result<T, String> {
+    let metadata = path
+        .metadata()
+        .map_err(|error| format!("BRIDGE_CONFIG_METADATA_FAILED: {error}"))?;
+    if !metadata.is_file() || metadata.len() == 0 || metadata.len() > MAX_CONFIG_BYTES {
+        return Err("BRIDGE_CONFIG_SIZE_OR_TYPE_REJECTED".to_string());
+    }
+    let mut file =
+        File::open(path).map_err(|error| format!("BRIDGE_CONFIG_OPEN_FAILED: {error}"))?;
+    let mut bytes = Vec::with_capacity(metadata.len() as usize);
+    file.read_to_end(&mut bytes)
+        .map_err(|error| format!("BRIDGE_CONFIG_READ_FAILED: {error}"))?;
+    serde_json::from_slice(&bytes).map_err(|error| format!("BRIDGE_CONFIG_PARSE_FAILED: {error}"))
+}
+
+fn has_corridor_contract(candidate: &Path) -> bool {
+    candidate.join(".git").exists()
+        && candidate
+            .join("ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR")
+            .is_dir()
+        && candidate.join(CAPABILITY_REGISTRY_RELATIVE).is_file()
+        && candidate.join(TASK_STATE_RELATIVE).is_file()
+}
+
+pub(crate) fn resolve_repo_root() -> Result<PathBuf, String> {
+    let manifest = Path::new(env!("CARGO_MANIFEST_DIR"))
+        .canonicalize()
+        .map_err(|error| format!("BRIDGE_MANIFEST_ROOT_UNAVAILABLE: {error}"))?;
+    for candidate in manifest.ancestors() {
+        if has_corridor_contract(candidate) {
+            return candidate
+                .canonicalize()
+                .map_err(|error| format!("BRIDGE_REPOSITORY_CANONICALIZE_FAILED: {error}"));
         }
     }
+    Err("BRIDGE_COMPILE_TIME_REPOSITORY_NOT_ADMITTED".to_string())
 }
 
-struct CapturedStream {
-    bytes: Vec<u8>,
-    truncated: bool,
-}
-
-struct FixedOutput {
-    status: ExitStatus,
-    stdout: String,
-    stderr: String,
-}
-
-fn read_stream_bounded<R: Read>(mut stream: R) -> io::Result<CapturedStream> {
-    let mut bytes = Vec::new();
-    let mut truncated = false;
-    let mut buffer = [0_u8; 8192];
-    loop {
-        let count = stream.read(&mut buffer)?;
-        if count == 0 {
-            break;
-        }
-        let remaining = MAX_OUTPUT_BYTES.saturating_sub(bytes.len());
-        let retained = remaining.min(count);
-        bytes.extend_from_slice(&buffer[..retained]);
-        truncated |= retained < count;
+pub(crate) fn load_bridge_context(repo: &Path) -> Result<BridgeContext, String> {
+    let repo = repo
+        .canonicalize()
+        .map_err(|error| format!("BRIDGE_REPOSITORY_UNAVAILABLE: {error}"))?;
+    if !has_corridor_contract(&repo) {
+        return Err("BRIDGE_REPOSITORY_CONTRACT_MISSING".to_string());
     }
-    Ok(CapturedStream { bytes, truncated })
-}
-
-fn join_capture(
-    handle: thread::JoinHandle<io::Result<CapturedStream>>,
-    name: &str,
-) -> Result<CapturedStream, String> {
-    handle
-        .join()
-        .map_err(|_| format!("{name} capture thread panicked"))?
-        .map_err(|error| format!("failed to read {name}: {error}"))
-}
-
-fn run_fixed<I, S>(
-    program: FixedProgram,
-    args: I,
-    cwd: &Path,
-    timeout: Duration,
-) -> Result<FixedOutput, String>
-where
-    I: IntoIterator<Item = S>,
-    S: AsRef<OsStr>,
-{
-    let mut command = Command::new(program.executable());
-    command
-        .args(args)
-        .current_dir(cwd)
-        .stdin(Stdio::null())
-        .stdout(Stdio::piped())
-        .stderr(Stdio::piped());
-    if matches!(program, FixedProgram::Python) {
-        command
-            .env("PYTHONDONTWRITEBYTECODE", "1")
-            .env("PYTHONNOUSERSITE", "1");
+    let registry: CapabilityRegistry = read_json_bounded(&repo.join(CAPABILITY_REGISTRY_RELATIVE))?;
+    if registry.schema_version != "imperium.core_reference_corridor.capability_registry.v0_1"
+        || registry.default_policy != "DENY"
+        || registry.task_id != EXPECTED_TASK_ID
+        || registry.base_head != EXPECTED_BASE_HEAD
+    {
+        return Err("BRIDGE_CAPABILITY_REGISTRY_BINDING_REJECTED".to_string());
     }
 
-    let mut child = command.spawn().map_err(|error| {
-        format!(
-            "failed to start fixed {} command: {error}",
-            program.executable()
-        )
-    })?;
-    let stdout = child
-        .stdout
-        .take()
-        .ok_or_else(|| "stdout pipe missing".to_string())?;
-    let stderr = child
-        .stderr
-        .take()
-        .ok_or_else(|| "stderr pipe missing".to_string())?;
-    let stdout_reader = thread::spawn(move || read_stream_bounded(stdout));
-    let stderr_reader = thread::spawn(move || read_stream_bounded(stderr));
-
-    let deadline = Instant::now() + timeout;
-    let status = loop {
-        if let Some(status) = child
-            .try_wait()
-            .map_err(|error| format!("failed to poll fixed command: {error}"))?
-        {
-            break status;
-        }
-        if Instant::now() >= deadline {
-            let _ = child.kill();
-            let _ = child.wait();
-            let _ = join_capture(stdout_reader, "stdout");
-            let _ = join_capture(stderr_reader, "stderr");
-            return Err(format!(
-                "fixed {} command exceeded {} seconds",
-                program.executable(),
-                timeout.as_secs()
-            ));
-        }
-        thread::sleep(Duration::from_millis(20));
-    };
-
-    let stdout = join_capture(stdout_reader, "stdout")?;
-    let stderr = join_capture(stderr_reader, "stderr")?;
-    if stdout.truncated || stderr.truncated {
-        return Err(format!(
-            "fixed {} command exceeded the {} byte output limit",
-            program.executable(),
-            MAX_OUTPUT_BYTES
-        ));
+    let python_capabilities: Vec<&CapabilityRecord> = registry
+        .capabilities
+        .iter()
+        .filter(|record| record.capability_type == "PYTHON_MODULE")
+        .collect();
+    if python_capabilities.is_empty() {
+        return Err("BRIDGE_PYTHON_ADMISSION_MISSING".to_string());
     }
+    let identities: BTreeSet<(&str, &str)> = python_capabilities
+        .iter()
+        .map(|record| {
+            (
+                record.executable_path.as_str(),
+                record.executable_sha256.as_str(),
+            )
+        })
+        .collect();
+    if identities.len() != 1 {
+        return Err("BRIDGE_PYTHON_ADMISSION_AMBIGUOUS".to_string());
+    }
+    let diagnostic_matches: Vec<&CapabilityRecord> = python_capabilities
+        .iter()
+        .copied()
+        .filter(|record| record.capability_id == "CORE_DIAGNOSTIC")
+        .collect();
+    if diagnostic_matches.len() != 1 {
+        return Err("BRIDGE_DIAGNOSTIC_ADMISSION_AMBIGUOUS".to_string());
+    }
+    let diagnostic = diagnostic_matches[0];
+    if diagnostic.adapter_id != "FIXED_ARGV_PYTHON_MODULE_V0_1"
+        || diagnostic.actual_effect_class != "READ_ONLY"
+    {
+        return Err("BRIDGE_DIAGNOSTIC_ADAPTER_REJECTED".to_string());
+    }
+    let mut repo_read_admitted = false;
+    for allowed in &diagnostic.allowed_read_roots {
+        let allowed = Path::new(allowed)
+            .canonicalize()
+            .map_err(|error| format!("BRIDGE_ALLOWED_READ_ROOT_UNKNOWN: {error}"))?;
+        repo_read_admitted |= allowed == repo;
+    }
+    if !repo_read_admitted {
+        return Err("BRIDGE_REPOSITORY_READ_SCOPE_REJECTED".to_string());
+    }
+    let admission = admit_interpreter(
+        Path::new(&diagnostic.executable_path),
+        &diagnostic.executable_sha256,
+    )?;
 
-    Ok(FixedOutput {
-        status,
-        stdout: String::from_utf8(stdout.bytes)
-            .map_err(|_| "fixed command stdout was not UTF-8".to_string())?,
-        stderr: String::from_utf8(stderr.bytes)
-            .map_err(|_| "fixed command stderr was not UTF-8".to_string())?,
+    let state: TaskState = read_json_bounded(&repo.join(TASK_STATE_RELATIVE))?;
+    if state.schema_version != "imperium.core_reference_corridor.task_state.v0_1"
+        || state.task_id != registry.task_id
+        || state.task_id != EXPECTED_TASK_ID
+        || state.base_head != registry.base_head
+        || state.base_head != EXPECTED_BASE_HEAD
+        || state.branch != "servitor/imperium-core-reference-corridor-0001"
+        || state.warp.warp_id != EXPECTED_WARP_ID
+        || state.warp.base_head != EXPECTED_BASE_HEAD
+        || state.warp.state != "ACTIVE"
+    {
+        return Err("BRIDGE_TASK_WARP_BASE_BINDING_REJECTED".to_string());
+    }
+    let warp_path = Path::new(&state.warp.path)
+        .canonicalize()
+        .map_err(|error| format!("BRIDGE_WARP_PATH_UNKNOWN: {error}"))?;
+    if warp_path != repo {
+        return Err("BRIDGE_WARP_PATH_MISMATCH".to_string());
+    }
+    Ok(BridgeContext {
+        repo: repo.clone(),
+        admission,
+        binding: ReceiptBinding {
+            task_id: state.task_id,
+            warp_id: state.warp.warp_id,
+            base_head: state.base_head,
+        },
+        receipt_dir: repo.join(RECEIPT_RELATIVE),
     })
 }
 
-fn git_root_from(candidate: &Path) -> Result<PathBuf, String> {
-    let output = run_fixed(
-        FixedProgram::Git,
-        ["rev-parse", "--show-toplevel"],
-        candidate,
-        ROOT_TIMEOUT,
-    )?;
-    if !output.status.success() {
-        return Err(format!(
-            "git root resolution failed: {}",
-            output.stderr.trim()
-        ));
-    }
-    let root = PathBuf::from(output.stdout.trim());
-    if !root.is_dir() {
-        return Err("git returned a non-directory repository root".to_string());
-    }
-    if !root
-        .join("ORGANS")
-        .join("MECHANICUS")
-        .join("CORE_REFERENCE_CORRIDOR")
-        .is_dir()
-    {
-        return Err("git root does not contain the corridor backend package".to_string());
-    }
-    Ok(root)
-}
-
-fn resolve_repo_root() -> Result<PathBuf, String> {
-    let mut candidates = vec![PathBuf::from(env!("CARGO_MANIFEST_DIR"))];
-    if let Ok(cwd) = std::env::current_dir() {
-        candidates.push(cwd);
-    }
-
-    let mut errors = Vec::new();
-    for candidate in candidates {
-        match git_root_from(&candidate) {
-            Ok(root) => return Ok(root),
-            Err(error) => errors.push(error),
-        }
-    }
-    Err(format!(
-        "corridor repository root is unavailable through git: {}",
-        errors.join(" | ")
-    ))
-}
-
-fn snapshot_args() -> Vec<String> {
+pub(crate) fn snapshot_args() -> Vec<String> {
     vec![
         "-m".to_string(),
         CORRIDOR_MODULE.to_string(),
@@ -210,14 +222,13 @@ fn valid_action_id(action_id: &str) -> bool {
             .all(|byte| byte.is_ascii_alphanumeric() || matches!(byte, b'_' | b'-' | b'.' | b':'))
 }
 
-fn action_args(action_id: &str, payload_json: &str) -> Result<Vec<String>, String> {
+pub(crate) fn action_args(action_id: &str, payload_json: &str) -> Result<Vec<String>, String> {
     if !valid_action_id(action_id) {
-        return Err("corridor action id contains unsupported characters".to_string());
+        return Err("BRIDGE_ACTION_ID_REJECTED".to_string());
     }
     if payload_json.len() > MAX_PAYLOAD_BYTES {
         return Err(format!(
-            "corridor action payload exceeds {} bytes",
-            MAX_PAYLOAD_BYTES
+            "BRIDGE_ACTION_PAYLOAD_EXCEEDS_{MAX_PAYLOAD_BYTES}_BYTES"
         ));
     }
     Ok(vec![
@@ -231,74 +242,96 @@ fn action_args(action_id: &str, payload_json: &str) -> Result<Vec<String>, Strin
     ])
 }
 
-fn run_corridor_cli(repo: &Path, args: Vec<String>, timeout: Duration) -> Result<Value, String> {
-    let output = run_fixed(FixedProgram::Python, args, repo, timeout)?;
-    if !output.status.success() {
-        let detail = output.stderr.trim();
-        return Err(if detail.is_empty() {
-            format!("corridor CLI exited with {}", output.status)
-        } else {
-            format!("corridor CLI exited with {}: {detail}", output.status)
-        });
+fn host_environment() -> MinimalEnvironment {
+    std::env::vars_os().collect()
+}
+
+fn output_block_verdict(output: &super::process_boundary::ProcessOutput) -> &'static str {
+    if !output.termination.tree_terminated {
+        "BLOCK_PROCESS_TREE_TERMINATION_UNPROVEN"
+    } else if output.timed_out {
+        "BLOCK_TIMEOUT"
+    } else if output.stdout_truncated || output.stderr_truncated {
+        "BLOCK_OUTPUT_LIMIT"
+    } else if !output.stdout_utf8 || !output.stderr_utf8 {
+        "BLOCK_OUTPUT_NOT_UTF8"
+    } else {
+        "BLOCK_PROCESS_EXIT"
     }
-    serde_json::from_str(output.stdout.trim())
-        .map_err(|error| format!("corridor CLI returned invalid JSON: {error}"))
+}
+
+fn run_corridor_cli(
+    repo: &Path,
+    args: Vec<String>,
+    timeout: Duration,
+    operation: &str,
+) -> Result<Value, String> {
+    let context = load_bridge_context(repo)?;
+    let environment = minimal_environment(&host_environment(), &context.repo)?;
+    let os_args: Vec<OsString> = args.iter().map(OsString::from).collect();
+    let output = execute_python(
+        &context.admission,
+        &os_args,
+        &context.repo,
+        &context.repo,
+        &environment,
+        timeout,
+    )?;
+    let parsed: Result<Value, String> = if output.success {
+        serde_json::from_str::<Value>(output.stdout.trim())
+            .map_err(|error| format!("BRIDGE_INVALID_JSON: {error}"))
+    } else {
+        Err("BRIDGE_PROCESS_OUTPUT_BLOCKED".to_string())
+    };
+    let verdict = if !output.success {
+        output_block_verdict(&output)
+    } else if parsed.is_err() {
+        "BLOCK_INVALID_JSON"
+    } else {
+        "PASS_PROVEN"
+    };
+    let receipt = write_bridge_receipt(
+        &context.receipt_dir,
+        &context.binding,
+        operation,
+        &context.admission,
+        &os_args,
+        &context.repo,
+        &environment,
+        timeout,
+        &output,
+        verdict,
+    )?;
+    if !output.success {
+        let detail = output.stderr.trim();
+        return Err(format!(
+            "{verdict}: exit={:?}; stderr={detail}; receipt={}",
+            output.exit_code,
+            receipt.display()
+        ));
+    }
+    parsed.map_err(|error| format!("{error}; receipt={}", receipt.display()))
 }
 
 #[tauri::command]
 pub fn corridor_ui_snapshot() -> Result<Value, String> {
     let repo = resolve_repo_root()?;
-    run_corridor_cli(&repo, snapshot_args(), SNAPSHOT_TIMEOUT)
+    run_corridor_cli(&repo, snapshot_args(), SNAPSHOT_TIMEOUT, "ui-snapshot")
 }
 
 #[tauri::command]
 pub fn corridor_ui_action(action_id: String, payload: Value) -> Result<Value, String> {
     if !payload.is_object() {
-        return Err("corridor action payload must be a JSON object".to_string());
+        return Err("BRIDGE_ACTION_PAYLOAD_NOT_OBJECT".to_string());
     }
     let payload_json = serde_json::to_string(&payload)
-        .map_err(|error| format!("failed to encode corridor action payload: {error}"))?;
+        .map_err(|error| format!("BRIDGE_ACTION_PAYLOAD_ENCODE_FAILED: {error}"))?;
     let repo = resolve_repo_root()?;
+    let operation = format!("ui-action:{action_id}");
     run_corridor_cli(
         &repo,
         action_args(&action_id, &payload_json)?,
         ACTION_TIMEOUT,
+        &operation,
     )
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn snapshot_argv_is_fixed() {
-        assert_eq!(
-            snapshot_args(),
-            ["-m", CORRIDOR_MODULE, "ui-snapshot"].map(str::to_string)
-        );
-    }
-
-    #[test]
-    fn action_payload_stays_in_one_argv_slot() {
-        let payload = r#"{"message":"one; two && three"}"#;
-        let args = action_args("diagnostic.run", payload).expect("valid action args");
-        assert_eq!(args.len(), 7);
-        assert_eq!(args[2], "ui-action");
-        assert_eq!(args[4], "diagnostic.run");
-        assert_eq!(args[6], payload);
-    }
-
-    #[test]
-    fn action_id_rejects_shell_syntax() {
-        assert!(action_args("diagnostic && whoami", "{}").is_err());
-        assert!(action_args("", "{}").is_err());
-    }
-
-    #[test]
-    fn read_only_diagnostic_uses_the_fixed_corridor_action_route() {
-        let args = action_args("run_core_diagnostic", "{}").expect("diagnostic route");
-        assert_eq!(args[2], "ui-action");
-        assert_eq!(args[4], "run_core_diagnostic");
-        assert_eq!(args[6], "{}");
-    }
 }

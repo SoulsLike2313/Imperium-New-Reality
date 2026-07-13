@@ -1,0 +1,245 @@
+{
+  "schema_version": "imperium.core_reference_corridor.phase4_checkpoint.v1",
+  "task_id": "IMPERIUM_CORE_TRUTH_HARDENING_0002",
+  "generated_at_utc": "2026-07-13T17:58:03.577483Z",
+  "phase": "PHASE_4_RUST_TO_PYTHON_BRIDGE_HARDENING",
+  "phase_verdict": "RUST_PYTHON_BRIDGE_HARDENING_PASS",
+  "campaign_verdict": "TRUTH_HARDENING_PARTIAL_NOT_READY",
+  "phase_5_started": false,
+  "bridge_binding": {
+    "task_id": "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+    "warp_id": "WARP-CORE-REFERENCE-0001",
+    "base_head": "281c3a7c8463de7fb64473929fe0ed975f99f595"
+  },
+  "process_tree_termination_proven": true,
+  "required_tests": {
+    "phase4_01_admitted_absolute_python_works": {
+      "verdict": "PASS"
+    },
+    "phase4_02_bare_python_is_rejected": {
+      "verdict": "PASS"
+    },
+    "phase4_03_path_hijack_is_rejected": {
+      "verdict": "PASS"
+    },
+    "phase4_04_executable_hash_mismatch_is_rejected": {
+      "verdict": "PASS"
+    },
+    "phase4_05_cwd_escape_is_rejected_before_spawn": {
+      "verdict": "PASS"
+    },
+    "phase4_06_shell_metacharacters_remain_inert_argv": {
+      "verdict": "PASS"
+    },
+    "phase4_07_secret_like_environment_variables_are_excluded": {
+      "verdict": "PASS"
+    },
+    "phase4_08_stdout_and_stderr_are_captured_separately": {
+      "verdict": "PASS"
+    },
+    "phase4_09_timeout_kills_parent_child_and_grandchild": {
+      "verdict": "PASS"
+    },
+    "phase4_10_bridge_receipt_has_task_warp_and_base_bindings": {
+      "verdict": "PASS"
+    }
+  },
+  "commands": {
+    "targeted_rust": {
+      "argv": [
+        "C:\\Users\\PC\\.cargo\\bin\\cargo.exe",
+        "test",
+        "--manifest-path",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\SUPPORT\\APP_TAURI\\src-tauri\\Cargo.toml",
+        "corridor::bridge_tests",
+        "--",
+        "--test-threads=1"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+      "started_at_utc": "2026-07-13T17:56:58.379791Z",
+      "ended_at_utc": "2026-07-13T17:57:03.613535Z",
+      "timeout_seconds": 600,
+      "exit_code": 0,
+      "stdout_sha256": "d79211a7dc30c522e3db14457f21cbd22cacfa7e85c573fde258a082af89a08f",
+      "stderr_sha256": "724c2fab9531cb5c98356d01c79ee424439c85a50f9ee208ed460884b082dc73",
+      "stdout_tail": "\nrunning 15 tests\ntest corridor::bridge_tests::action_id_rejects_shell_syntax ... ok\ntest corridor::bridge_tests::action_payload_stays_in_one_argv_slot ... ok\ntest corridor::bridge_tests::admitted_interpreter_hash_matches_current_file ... ok\ntest corridor::bridge_tests::phase4_01_admitted_absolute_python_works ... ok\ntest corridor::bridge_tests::phase4_02_bare_python_is_rejected ... ok\ntest corridor::bridge_tests::phase4_03_path_hijack_is_rejected ... ok\ntest corridor::bridge_tests::phase4_04_executable_hash_mismatch_is_rejected ... ok\ntest corridor::bridge_tests::phase4_05_cwd_escape_is_rejected_before_spawn ... ok\ntest corridor::bridge_tests::phase4_06_shell_metacharacters_remain_inert_argv ... ok\ntest corridor::bridge_tests::phase4_07_secret_like_environment_variables_are_excluded ... ok\ntest corridor::bridge_tests::phase4_08_stdout_and_stderr_are_captured_separately ... ok\ntest corridor::bridge_tests::phase4_09_timeout_kills_parent_child_and_grandchild ... ok\ntest corridor::bridge_tests::phase4_10_bridge_receipt_has_task_warp_and_base_bindings ... ok\ntest corridor::bridge_tests::read_only_diagnostic_uses_the_fixed_corridor_action_route ... ok\ntest corridor::bridge_tests::snapshot_argv_is_fixed ... ok\n\ntest result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 2 filtered out; finished in 4.58s\n\n",
+      "stderr_tail": "_id(patch_id: &str) -> bool {\n   |    ^^^^^^^^^^^^^\n\nwarning: function `registry_path` is never used\n  --> src\\main.rs:50:4\n   |\n50 | fn registry_path(repo: &Path) -> PathBuf {\n   |    ^^^^^^^^^^^^^\n\nwarning: function `read_registry` is never used\n  --> src\\main.rs:54:4\n   |\n54 | fn read_registry(repo: &Path) -> Value {\n   |    ^^^^^^^^^^^^^\n\nwarning: function `write_registry` is never used\n  --> src\\main.rs:69:4\n   |\n69 | fn write_registry(repo: &Path, registry: &Value) -> Result<(), String> {\n   |    ^^^^^^^^^^^^^^\n\nwarning: function `registered_ids` is never used\n  --> src\\main.rs:76:4\n   |\n76 | fn registered_ids(registry: &Value) -> Vec<String> {\n   |    ^^^^^^^^^^^^^^\n\nwarning: function `patch_dir` is never used\n  --> src\\main.rs:83:4\n   |\n83 | fn patch_dir(repo: &Path, patch_id: &str) -> PathBuf {\n   |    ^^^^^^^^^\n\nwarning: function `infer_pack_phase` is never used\n  --> src\\main.rs:87:4\n   |\n87 | fn infer_pack_phase(patch_id: &str, dir: &Path) -> &'static str {\n   |    ^^^^^^^^^^^^^^^^\n\nwarning: function `is_candidate_phase` is never used\n  --> src\\main.rs:98:4\n   |\n98 | fn is_candidate_phase(phase: &str) -> bool {\n   |    ^^^^^^^^^^^^^^^^^^\n\nwarning: function `path_modified_unix` is never used\n   --> src\\main.rs:102:4\n    |\n102 | fn path_modified_unix(path: &Path) -> u64 {\n    |    ^^^^^^^^^^^^^^^^^^\n\nwarning: function `legacy_runner_present` is never used\n   --> src\\main.rs:111:4\n    |\n111 | fn legacy_runner_present(dir: &Path) -> bool {\n    |    ^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `patch_pack_summary` is never used\n   --> src\\main.rs:127:4\n    |\n127 | fn patch_pack_summary(repo: &Path, patch_id: &str, registered: bool) -> Value {\n    |    ^^^^^^^^^^^^^^^^^^\n\nwarning: function `app_state_dir` is never used\n   --> src\\main.rs:146:4\n    |\n146 | fn app_state_dir(repo: &Path) -> PathBuf {\n    |    ^^^^^^^^^^^^^\n\nwarning: function `app_receipts_dir` is never used\n   --> src\\main.rs:150:4\n    |\n150 | fn app_receipts_dir(repo: &Path) -> PathBuf {\n    |    ^^^^^^^^^^^^^^^^\n\nwarning: function `default_current_version` is never used\n   --> src\\main.rs:154:4\n    |\n154 | fn default_current_version() -> Value {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `default_available_version` is never used\n   --> src\\main.rs:165:4\n    |\n165 | fn default_available_version() -> Value {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `simple_version_key` is never used\n   --> src\\main.rs:175:4\n    |\n175 | fn simple_version_key(v: &str) -> Vec<u64> {\n    |    ^^^^^^^^^^^^^^^^^^\n\nwarning: function `version_gt` is never used\n   --> src\\main.rs:182:4\n    |\n182 | fn version_gt(a: &str, b: &str) -> bool {\n    |    ^^^^^^^^^^\n\nwarning: function `get_imperium_core_version_state` is never used\n   --> src\\main.rs:191:4\n    |\n191 | fn get_imperium_core_version_state() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `initialize_imperium_core_update` is never used\n   --> src\\main.rs:223:4\n    |\n223 | fn initialize_imperium_core_update(requested_version: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `list_patch_packs` is never used\n   --> src\\main.rs:263:4\n    |\n263 | fn list_patch_packs() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^\n\nwarning: function `register_patch_pack` is never used\n   --> src\\main.rs:296:4\n    |\n296 | fn register_patch_pack(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^\n\nwarning: function `get_mechanicus_language_codex` is never used\n   --> src\\main.rs:327:4\n    |\n327 | fn get_mechanicus_language_codex() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `read_json_file` is never used\n   --> src\\main.rs:335:4\n    |\n335 | fn read_json_file(path: &Path) -> Option<Value> {\n    |    ^^^^^^^^^^^^^^\n\nwarning: function `rel_path` is never used\n   --> src\\main.rs:340:4\n    |\n340 | fn rel_path(base: &Path, path: &Path) -> String {\n    |    ^^^^^^^^\n\nwarning: function `collect_files_limited` is never used\n   --> src\\main.rs:347:4\n    |\n347 | fn collect_files_limited(root: &Path, limit: usize) -> Vec<PathBuf> {\n    |    ^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `language_for_path` is never used\n   --> src\\main.rs:372:4\n    |\n372 | fn language_for_path(path: &Path) -> &'static str {\n    |    ^^^^^^^^^^^^^^^^^\n\nwarning: function `push_unique` is never used\n   --> src\\main.rs:388:4\n    |\n388 | fn push_unique(list: &mut Vec<String>, value: &str) {\n    |    ^^^^^^^^^^^\n\nwarning: function `file_line_count` is never used\n   --> src\\main.rs:394:4\n    |\n394 | fn file_line_count(path: &Path) -> usize {\n    |    ^^^^^^^^^^^^^^^\n\nwarning: function `infer_task_class` is never used\n   --> src\\main.rs:398:4\n    |\n398 | fn infer_task_class(patch_id: &str, rels: &[String]) -> String {\n    |    ^^^^^^^^^^^^^^^^\n\nwarning: function `analyze_patch_pack_core` is never used\n   --> src\\main.rs:413:4\n    |\n413 | fn analyze_patch_pack_core(repo: &Path, patch_id: &str, register: bool) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `analyze_patch_pack_organ_summary` is never used\n   --> src\\main.rs:584:4\n    |\n584 | fn analyze_patch_pack_organ_summary(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `register_patch_pack_with_organs` is never used\n   --> src\\main.rs:589:4\n    |\n589 | fn register_patch_pack_with_organs(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `record_runtime_fps_proof` is never used\n   --> src\\main.rs:617:4\n    |\n617 | fn record_runtime_fps_proof(payload: Value) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: `imperium_app_tauri` (bin \"imperium_app_tauri\" test) generated 35 warnings\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.58s\n     Running unittests src\\main.rs (SUPPORT\\APP_TAURI\\src-tauri\\target\\debug\\deps\\imperium_app_tauri-1483922781530727.exe)\n",
+      "verdict": "PASS"
+    },
+    "full_rust_tests": {
+      "argv": [
+        "C:\\Users\\PC\\.cargo\\bin\\cargo.exe",
+        "test",
+        "--manifest-path",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\SUPPORT\\APP_TAURI\\src-tauri\\Cargo.toml"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+      "started_at_utc": "2026-07-13T17:57:03.613535Z",
+      "ended_at_utc": "2026-07-13T17:57:08.362952Z",
+      "timeout_seconds": 600,
+      "exit_code": 0,
+      "stdout_sha256": "81f92aaff017438ccdbb2840b77dc48a9d4e2e7798fbf695d03da5246168fd99",
+      "stderr_sha256": "724c2fab9531cb5c98356d01c79ee424439c85a50f9ee208ed460884b082dc73",
+      "stdout_tail": "\nrunning 17 tests\ntest corridor::bridge_tests::action_id_rejects_shell_syntax ... ok\ntest corridor::bridge_tests::action_payload_stays_in_one_argv_slot ... ok\ntest corridor::bridge_tests::phase4_02_bare_python_is_rejected ... ok\ntest corridor::bridge_tests::read_only_diagnostic_uses_the_fixed_corridor_action_route ... ok\ntest corridor::bridge_tests::snapshot_argv_is_fixed ... ok\ntest corridor::surface_tests::thin_ide_invoke_surface_is_corridor_only ... ok\ntest corridor::surface_tests::legacy_mutating_commands_have_no_tauri_wrapper_or_handler_entry ... ok\ntest corridor::bridge_tests::phase4_03_path_hijack_is_rejected ... ok\ntest corridor::bridge_tests::phase4_04_executable_hash_mismatch_is_rejected ... ok\ntest corridor::bridge_tests::admitted_interpreter_hash_matches_current_file ... ok\ntest corridor::bridge_tests::phase4_05_cwd_escape_is_rejected_before_spawn ... ok\ntest corridor::bridge_tests::phase4_01_admitted_absolute_python_works ... ok\ntest corridor::bridge_tests::phase4_08_stdout_and_stderr_are_captured_separately ... ok\ntest corridor::bridge_tests::phase4_06_shell_metacharacters_remain_inert_argv ... ok\ntest corridor::bridge_tests::phase4_10_bridge_receipt_has_task_warp_and_base_bindings ... ok\ntest corridor::bridge_tests::phase4_07_secret_like_environment_variables_are_excluded ... ok\ntest corridor::bridge_tests::phase4_09_timeout_kills_parent_child_and_grandchild ... ok\n\ntest result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.08s\n\n",
+      "stderr_tail": "_id(patch_id: &str) -> bool {\n   |    ^^^^^^^^^^^^^\n\nwarning: function `registry_path` is never used\n  --> src\\main.rs:50:4\n   |\n50 | fn registry_path(repo: &Path) -> PathBuf {\n   |    ^^^^^^^^^^^^^\n\nwarning: function `read_registry` is never used\n  --> src\\main.rs:54:4\n   |\n54 | fn read_registry(repo: &Path) -> Value {\n   |    ^^^^^^^^^^^^^\n\nwarning: function `write_registry` is never used\n  --> src\\main.rs:69:4\n   |\n69 | fn write_registry(repo: &Path, registry: &Value) -> Result<(), String> {\n   |    ^^^^^^^^^^^^^^\n\nwarning: function `registered_ids` is never used\n  --> src\\main.rs:76:4\n   |\n76 | fn registered_ids(registry: &Value) -> Vec<String> {\n   |    ^^^^^^^^^^^^^^\n\nwarning: function `patch_dir` is never used\n  --> src\\main.rs:83:4\n   |\n83 | fn patch_dir(repo: &Path, patch_id: &str) -> PathBuf {\n   |    ^^^^^^^^^\n\nwarning: function `infer_pack_phase` is never used\n  --> src\\main.rs:87:4\n   |\n87 | fn infer_pack_phase(patch_id: &str, dir: &Path) -> &'static str {\n   |    ^^^^^^^^^^^^^^^^\n\nwarning: function `is_candidate_phase` is never used\n  --> src\\main.rs:98:4\n   |\n98 | fn is_candidate_phase(phase: &str) -> bool {\n   |    ^^^^^^^^^^^^^^^^^^\n\nwarning: function `path_modified_unix` is never used\n   --> src\\main.rs:102:4\n    |\n102 | fn path_modified_unix(path: &Path) -> u64 {\n    |    ^^^^^^^^^^^^^^^^^^\n\nwarning: function `legacy_runner_present` is never used\n   --> src\\main.rs:111:4\n    |\n111 | fn legacy_runner_present(dir: &Path) -> bool {\n    |    ^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `patch_pack_summary` is never used\n   --> src\\main.rs:127:4\n    |\n127 | fn patch_pack_summary(repo: &Path, patch_id: &str, registered: bool) -> Value {\n    |    ^^^^^^^^^^^^^^^^^^\n\nwarning: function `app_state_dir` is never used\n   --> src\\main.rs:146:4\n    |\n146 | fn app_state_dir(repo: &Path) -> PathBuf {\n    |    ^^^^^^^^^^^^^\n\nwarning: function `app_receipts_dir` is never used\n   --> src\\main.rs:150:4\n    |\n150 | fn app_receipts_dir(repo: &Path) -> PathBuf {\n    |    ^^^^^^^^^^^^^^^^\n\nwarning: function `default_current_version` is never used\n   --> src\\main.rs:154:4\n    |\n154 | fn default_current_version() -> Value {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `default_available_version` is never used\n   --> src\\main.rs:165:4\n    |\n165 | fn default_available_version() -> Value {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `simple_version_key` is never used\n   --> src\\main.rs:175:4\n    |\n175 | fn simple_version_key(v: &str) -> Vec<u64> {\n    |    ^^^^^^^^^^^^^^^^^^\n\nwarning: function `version_gt` is never used\n   --> src\\main.rs:182:4\n    |\n182 | fn version_gt(a: &str, b: &str) -> bool {\n    |    ^^^^^^^^^^\n\nwarning: function `get_imperium_core_version_state` is never used\n   --> src\\main.rs:191:4\n    |\n191 | fn get_imperium_core_version_state() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `initialize_imperium_core_update` is never used\n   --> src\\main.rs:223:4\n    |\n223 | fn initialize_imperium_core_update(requested_version: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `list_patch_packs` is never used\n   --> src\\main.rs:263:4\n    |\n263 | fn list_patch_packs() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^\n\nwarning: function `register_patch_pack` is never used\n   --> src\\main.rs:296:4\n    |\n296 | fn register_patch_pack(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^\n\nwarning: function `get_mechanicus_language_codex` is never used\n   --> src\\main.rs:327:4\n    |\n327 | fn get_mechanicus_language_codex() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `read_json_file` is never used\n   --> src\\main.rs:335:4\n    |\n335 | fn read_json_file(path: &Path) -> Option<Value> {\n    |    ^^^^^^^^^^^^^^\n\nwarning: function `rel_path` is never used\n   --> src\\main.rs:340:4\n    |\n340 | fn rel_path(base: &Path, path: &Path) -> String {\n    |    ^^^^^^^^\n\nwarning: function `collect_files_limited` is never used\n   --> src\\main.rs:347:4\n    |\n347 | fn collect_files_limited(root: &Path, limit: usize) -> Vec<PathBuf> {\n    |    ^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `language_for_path` is never used\n   --> src\\main.rs:372:4\n    |\n372 | fn language_for_path(path: &Path) -> &'static str {\n    |    ^^^^^^^^^^^^^^^^^\n\nwarning: function `push_unique` is never used\n   --> src\\main.rs:388:4\n    |\n388 | fn push_unique(list: &mut Vec<String>, value: &str) {\n    |    ^^^^^^^^^^^\n\nwarning: function `file_line_count` is never used\n   --> src\\main.rs:394:4\n    |\n394 | fn file_line_count(path: &Path) -> usize {\n    |    ^^^^^^^^^^^^^^^\n\nwarning: function `infer_task_class` is never used\n   --> src\\main.rs:398:4\n    |\n398 | fn infer_task_class(patch_id: &str, rels: &[String]) -> String {\n    |    ^^^^^^^^^^^^^^^^\n\nwarning: function `analyze_patch_pack_core` is never used\n   --> src\\main.rs:413:4\n    |\n413 | fn analyze_patch_pack_core(repo: &Path, patch_id: &str, register: bool) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `analyze_patch_pack_organ_summary` is never used\n   --> src\\main.rs:584:4\n    |\n584 | fn analyze_patch_pack_organ_summary(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `register_patch_pack_with_organs` is never used\n   --> src\\main.rs:589:4\n    |\n589 | fn register_patch_pack_with_organs(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `record_runtime_fps_proof` is never used\n   --> src\\main.rs:617:4\n    |\n617 | fn record_runtime_fps_proof(payload: Value) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: `imperium_app_tauri` (bin \"imperium_app_tauri\" test) generated 35 warnings\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.58s\n     Running unittests src\\main.rs (SUPPORT\\APP_TAURI\\src-tauri\\target\\debug\\deps\\imperium_app_tauri-1483922781530727.exe)\n",
+      "verdict": "PASS"
+    },
+    "cargo_check": {
+      "argv": [
+        "C:\\Users\\PC\\.cargo\\bin\\cargo.exe",
+        "check",
+        "--manifest-path",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\SUPPORT\\APP_TAURI\\src-tauri\\Cargo.toml"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+      "started_at_utc": "2026-07-13T17:57:08.362952Z",
+      "ended_at_utc": "2026-07-13T17:57:09.036673Z",
+      "timeout_seconds": 600,
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "32200f288eed609afdcb51e858b37466bf43702160e4cabb663b8ff2fe0c3c00",
+      "stdout_tail": "",
+      "stderr_tail": "hBuf, String> {\n   |    ^^^^^^^^^\n\nwarning: function `safe_patch_id` is never used\n  --> src\\main.rs:41:4\n   |\n41 | fn safe_patch_id(patch_id: &str) -> bool {\n   |    ^^^^^^^^^^^^^\n\nwarning: function `registry_path` is never used\n  --> src\\main.rs:50:4\n   |\n50 | fn registry_path(repo: &Path) -> PathBuf {\n   |    ^^^^^^^^^^^^^\n\nwarning: function `read_registry` is never used\n  --> src\\main.rs:54:4\n   |\n54 | fn read_registry(repo: &Path) -> Value {\n   |    ^^^^^^^^^^^^^\n\nwarning: function `write_registry` is never used\n  --> src\\main.rs:69:4\n   |\n69 | fn write_registry(repo: &Path, registry: &Value) -> Result<(), String> {\n   |    ^^^^^^^^^^^^^^\n\nwarning: function `registered_ids` is never used\n  --> src\\main.rs:76:4\n   |\n76 | fn registered_ids(registry: &Value) -> Vec<String> {\n   |    ^^^^^^^^^^^^^^\n\nwarning: function `patch_dir` is never used\n  --> src\\main.rs:83:4\n   |\n83 | fn patch_dir(repo: &Path, patch_id: &str) -> PathBuf {\n   |    ^^^^^^^^^\n\nwarning: function `infer_pack_phase` is never used\n  --> src\\main.rs:87:4\n   |\n87 | fn infer_pack_phase(patch_id: &str, dir: &Path) -> &'static str {\n   |    ^^^^^^^^^^^^^^^^\n\nwarning: function `is_candidate_phase` is never used\n  --> src\\main.rs:98:4\n   |\n98 | fn is_candidate_phase(phase: &str) -> bool {\n   |    ^^^^^^^^^^^^^^^^^^\n\nwarning: function `path_modified_unix` is never used\n   --> src\\main.rs:102:4\n    |\n102 | fn path_modified_unix(path: &Path) -> u64 {\n    |    ^^^^^^^^^^^^^^^^^^\n\nwarning: function `legacy_runner_present` is never used\n   --> src\\main.rs:111:4\n    |\n111 | fn legacy_runner_present(dir: &Path) -> bool {\n    |    ^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `patch_pack_summary` is never used\n   --> src\\main.rs:127:4\n    |\n127 | fn patch_pack_summary(repo: &Path, patch_id: &str, registered: bool) -> Value {\n    |    ^^^^^^^^^^^^^^^^^^\n\nwarning: function `app_state_dir` is never used\n   --> src\\main.rs:146:4\n    |\n146 | fn app_state_dir(repo: &Path) -> PathBuf {\n    |    ^^^^^^^^^^^^^\n\nwarning: function `app_receipts_dir` is never used\n   --> src\\main.rs:150:4\n    |\n150 | fn app_receipts_dir(repo: &Path) -> PathBuf {\n    |    ^^^^^^^^^^^^^^^^\n\nwarning: function `default_current_version` is never used\n   --> src\\main.rs:154:4\n    |\n154 | fn default_current_version() -> Value {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `default_available_version` is never used\n   --> src\\main.rs:165:4\n    |\n165 | fn default_available_version() -> Value {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `simple_version_key` is never used\n   --> src\\main.rs:175:4\n    |\n175 | fn simple_version_key(v: &str) -> Vec<u64> {\n    |    ^^^^^^^^^^^^^^^^^^\n\nwarning: function `version_gt` is never used\n   --> src\\main.rs:182:4\n    |\n182 | fn version_gt(a: &str, b: &str) -> bool {\n    |    ^^^^^^^^^^\n\nwarning: function `get_imperium_core_version_state` is never used\n   --> src\\main.rs:191:4\n    |\n191 | fn get_imperium_core_version_state() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `initialize_imperium_core_update` is never used\n   --> src\\main.rs:223:4\n    |\n223 | fn initialize_imperium_core_update(requested_version: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `list_patch_packs` is never used\n   --> src\\main.rs:263:4\n    |\n263 | fn list_patch_packs() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^\n\nwarning: function `register_patch_pack` is never used\n   --> src\\main.rs:296:4\n    |\n296 | fn register_patch_pack(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^\n\nwarning: function `get_mechanicus_language_codex` is never used\n   --> src\\main.rs:327:4\n    |\n327 | fn get_mechanicus_language_codex() -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `read_json_file` is never used\n   --> src\\main.rs:335:4\n    |\n335 | fn read_json_file(path: &Path) -> Option<Value> {\n    |    ^^^^^^^^^^^^^^\n\nwarning: function `rel_path` is never used\n   --> src\\main.rs:340:4\n    |\n340 | fn rel_path(base: &Path, path: &Path) -> String {\n    |    ^^^^^^^^\n\nwarning: function `collect_files_limited` is never used\n   --> src\\main.rs:347:4\n    |\n347 | fn collect_files_limited(root: &Path, limit: usize) -> Vec<PathBuf> {\n    |    ^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `language_for_path` is never used\n   --> src\\main.rs:372:4\n    |\n372 | fn language_for_path(path: &Path) -> &'static str {\n    |    ^^^^^^^^^^^^^^^^^\n\nwarning: function `push_unique` is never used\n   --> src\\main.rs:388:4\n    |\n388 | fn push_unique(list: &mut Vec<String>, value: &str) {\n    |    ^^^^^^^^^^^\n\nwarning: function `file_line_count` is never used\n   --> src\\main.rs:394:4\n    |\n394 | fn file_line_count(path: &Path) -> usize {\n    |    ^^^^^^^^^^^^^^^\n\nwarning: function `infer_task_class` is never used\n   --> src\\main.rs:398:4\n    |\n398 | fn infer_task_class(patch_id: &str, rels: &[String]) -> String {\n    |    ^^^^^^^^^^^^^^^^\n\nwarning: function `analyze_patch_pack_core` is never used\n   --> src\\main.rs:413:4\n    |\n413 | fn analyze_patch_pack_core(repo: &Path, patch_id: &str, register: bool) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `analyze_patch_pack_organ_summary` is never used\n   --> src\\main.rs:584:4\n    |\n584 | fn analyze_patch_pack_organ_summary(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `register_patch_pack_with_organs` is never used\n   --> src\\main.rs:589:4\n    |\n589 | fn register_patch_pack_with_organs(patch_id: String) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: function `record_runtime_fps_proof` is never used\n   --> src\\main.rs:617:4\n    |\n617 | fn record_runtime_fps_proof(payload: Value) -> Result<Value, String> {\n    |    ^^^^^^^^^^^^^^^^^^^^^^^^\n\nwarning: `imperium_app_tauri` (bin \"imperium_app_tauri\") generated 35 warnings\n    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.60s\n",
+      "verdict": "PASS"
+    },
+    "npm_build": {
+      "argv": [
+        "C:\\Program Files\\nodejs\\npm.cmd",
+        "run",
+        "build"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\SUPPORT\\APP_TAURI",
+      "started_at_utc": "2026-07-13T17:57:09.036673Z",
+      "ended_at_utc": "2026-07-13T17:57:10.180476Z",
+      "timeout_seconds": 300,
+      "exit_code": 0,
+      "stdout_sha256": "fea4bac928c4bc6d737ef38ca9518f6e9cdbe539d9960e0a43ea141bad3b55a4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "\n> imperium-core@0.1.0-alpha.0 build\n> vite build\n\n\u001b[36mvite v5.4.21 \u001b[32mbuilding for production...\u001b[36m\u001b[39m\ntransforming...\n\u001b[32m\u2713\u001b[39m 9 modules transformed.\nrendering chunks...\ncomputing gzip size...\n\u001b[2mdist/\u001b[22m\u001b[32mindex.html                 \u001b[39m\u001b[1m\u001b[2m 0.42 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m \u2502 gzip: 0.32 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[35massets/index-DSt5HEk6.css  \u001b[39m\u001b[1m\u001b[2m 7.58 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m \u2502 gzip: 2.27 kB\u001b[22m\n\u001b[2mdist/\u001b[22m\u001b[36massets/index-CWiOwFJK.js   \u001b[39m\u001b[1m\u001b[2m10.25 kB\u001b[22m\u001b[1m\u001b[22m\u001b[2m \u2502 gzip: 3.39 kB\u001b[22m\n\u001b[32m\u2713 built in 169ms\u001b[39m\n",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    },
+    "full_python_regression": {
+      "argv": [
+        "C:\\Users\\PC\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "pytest",
+        "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tests",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml",
+        "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002\\PHASE_4_REGRESSION_RESULTS.xml"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+      "started_at_utc": "2026-07-13T17:57:10.180476Z",
+      "ended_at_utc": "2026-07-13T17:58:03.161850Z",
+      "timeout_seconds": 600,
+      "exit_code": 0,
+      "stdout_sha256": "373605f8ec233e43062573a050394fb9ea7b0dcad188849d894f939b3570b793",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "...................................................................      [100%]\n- generated xml file: E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002\\PHASE_4_REGRESSION_RESULTS.xml -\n67 passed in 52.03s\n",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    },
+    "git_diff_check": {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+      "started_at_utc": "2026-07-13T17:58:03.161850Z",
+      "ended_at_utc": "2026-07-13T17:58:03.236259Z",
+      "timeout_seconds": 60,
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_tail": "",
+      "stderr_tail": "",
+      "verdict": "PASS"
+    }
+  },
+  "command_checks": {
+    "targeted_rust": true,
+    "full_rust_tests": true,
+    "cargo_check": true,
+    "npm_build": true,
+    "full_python_regression": true,
+    "git_diff_check": true
+  },
+  "python_regression": {
+    "path": "PHASE_4_REGRESSION_RESULTS.xml",
+    "sha256": "78713aa68a75aa1326a668fc825d9729f51e33ebd49ca0bc5ffe36a0a23a0622",
+    "tests": 67,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "verdict": "PASS"
+  },
+  "source_hashes": {
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/bridge.rs": "adf6d504e030e42508eae86f0bc56ebc070477e8819f09d6a3e499d7e644eeed",
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/bridge_receipt.rs": "f2d3e9f52808ee0a780467f38df9e54399203932889b27c7ad3a6882c8159d65",
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/bridge_tests.rs": "be36defe009dfb01121386290fb33fdd9c2cb09944ef3ed1ceef959332850275",
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/mod.rs": "0f990e669404c0857d0441f3733eb658e68446987108b403c27c0d447fc9dbf9",
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/process_boundary.rs": "2d47ba68fc2127ad937991a095e95c9d1d7b8d9557cd9ac8f9f736df7af1e474",
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/surface_tests.rs": "295fa3d6e4b908fb8cf8eadf4c7af424d6a1033ca38062ba47957eaf47e820ce",
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/windows_job.rs": "760f48ac1c79d60595cb6cde6e0a72084e356dca74a13eb8917903d30d849f3d",
+    "SUPPORT/APP_TAURI/src-tauri/Cargo.toml": "ee3e2f0d007ee2373c97407b0a43d637d03f016251dff4119c5ffa69ee0f9228",
+    "SUPPORT/APP_TAURI/src-tauri/Cargo.lock": "b1cc9379f2b9db43e6c5843ae1626fef8476314e03b11a6c1b5e8fd7690c945f",
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/phase4_bridge_validation.py": "96abac70df326867bd2a0111c189b51aad7b791ee63852c294e3375c070e39a5",
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/CAPABILITY_REGISTRY.json": "b75a76163c766c746dd998e90d7c68adc31549925d8e907216df6b8f232b3fcc"
+  },
+  "reality_before": {
+    "root": "E:\\IMPERIUM_REALITY",
+    "head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+    "origin_master": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+    "branch": "master",
+    "status_porcelain": []
+  },
+  "reality_after": {
+    "root": "E:\\IMPERIUM_REALITY",
+    "head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+    "origin_master": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+    "branch": "master",
+    "status_porcelain": []
+  },
+  "changed_paths": [
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/KNOWN_GAPS.md",
+    "SUPPORT/APP_TAURI/src-tauri/Cargo.lock",
+    "SUPPORT/APP_TAURI/src-tauri/Cargo.toml",
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/bridge.rs",
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/mod.rs",
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/phase4_bridge_validation.py",
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/PHASE_4_CHECKPOINT.json",
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/PHASE_4_CHECKPOINT.md",
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/PHASE_4_REGRESSION_RESULTS.xml",
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/bridge_receipt.rs",
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/bridge_tests.rs",
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/process_boundary.rs",
+    "SUPPORT/APP_TAURI/src-tauri/src/corridor/windows_job.rs"
+  ],
+  "checks": {
+    "no_bare_python_command": true,
+    "registry_admits_one_absolute_hashed_python": true,
+    "sha256_checked_at_admission_and_before_spawn": true,
+    "exact_argv_without_shell": true,
+    "cwd_is_exact_canonical_root": true,
+    "environment_is_cleared_and_path_not_admitted": true,
+    "timeout_is_bounded": true,
+    "windows_job_kills_full_tree": true,
+    "receipt_binds_task_warp_base": true,
+    "required_test_sources_present": true,
+    "production_modules_within_500_lines": true,
+    "all_required_targeted_tests_passed": true,
+    "all_validation_commands_passed": true,
+    "full_python_regression_passed": true,
+    "process_tree_termination_proven": true,
+    "reality_unchanged_and_clean": true,
+    "no_ui_source_changes": true
+  },
+  "blockers": [],
+  "ui_changes": [],
+  "land_performed": false,
+  "receipt_hash": "9807c57fb38ad0226ae1565f3f7b8ba854fa970c39bd8ac7393dcdacd89e7e3f"
+}
