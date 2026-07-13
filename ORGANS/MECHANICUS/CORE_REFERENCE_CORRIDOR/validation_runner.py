@@ -18,33 +18,10 @@ from typing import Any
 
 from .evidence import EvidenceFinalizedError, EvidenceStore
 from .executor import git_state
+from .negative_proof_runner import run_negative_suite
 from .registry import atomic_write_json, sha256_file
 from .root_resolver import resolve_repository_context
-from .service import BASE_HEAD, REPORT_RELATIVE, TASKPACK_RELATIVE, TASK_ID
-
-
-SCENARIOS = [
-    ("exact_happy_path", "PASS_PROVEN", ["test_exact_read_only_happy_path", "test_exact_head_worktree_lifecycle_land_plan_and_safe_destroy"]),
-    ("stale_base_head", "BLOCK_LOCALIZED_PROVEN", ["test_stale_base_blocks_without_changing_state", "test_create_blocks_dirty_or_stale_source_and_register_existing_verifies_detached"]),
-    ("dirty_master", "BLOCK_LOCALIZED_PROVEN", ["test_create_blocks_dirty_or_stale_source_and_register_existing_verifies_detached"]),
-    ("unauthorized_write_path", "BLOCK_LOCALIZED_PROVEN", ["test_unauthorized_write_is_observed_and_blocked"]),
-    ("malicious_powershell_runner", "BLOCK_BEFORE_EXECUTION_PROVEN", ["test_unknown_and_malicious_runner_are_default_denied_without_execution"]),
-    ("command_not_in_capability_registry", "BLOCK_BEFORE_EXECUTION_PROVEN", ["test_unknown_and_malicious_runner_are_default_denied_without_execution"]),
-    ("timeout", "BLOCK_PROCESS_TREE_TERMINATED_PROVEN", ["test_timeout_kills_process_tree_and_crash_is_blocked"]),
-    ("process_crash", "BLOCK_NONZERO_EXIT_PROVEN", ["test_timeout_kills_process_tree_and_crash_is_blocked"]),
-    ("failed_validation", "FAILED_CONTAINED_PROVEN", ["test_failed_validation_is_contained_and_source_stays_unchanged"]),
-    ("modified_finalized_evidence", "TAMPER_BLOCK_PROVEN", ["test_finalized_payload_tampering_is_detected"]),
-    ("nested_path", "PASS_GIT_DERIVED_ROOT_PROVEN", ["test_resolves_linked_worktree_and_reality_from_nested_cwd"]),
-    ("windows_long_path_boundary", "BLOCK_LOCALIZED_FILENAME_TOO_LONG", ["test_windows_long_path_boundary_is_localized_without_root_guessing"]),
-    ("broken_ui_backend_action_parity", "PARITY_BREAK_BLOCK_PROVEN", ["test_exact_ui_contract_and_broken_parity_are_distinguished"]),
-    ("warp_reject_discard", "LIFECYCLE_PROVEN", ["test_exact_head_worktree_lifecycle_land_plan_and_safe_destroy"]),
-    ("warp_destroy", "DESTROY_MANAGED_FIXTURE_PROVEN", ["test_exact_head_worktree_lifecycle_land_plan_and_safe_destroy"]),
-    ("rollback_disposable_git", "ATOMIC_LAND_ROLLBACK_PROVEN", ["test_atomic_land_and_rollback_proof_is_disposable_and_restores_ref"]),
-    ("deterministic_replay_clean_clone", "DETERMINISTIC_OUTPUT_PROVEN", ["test_deterministic_replay_from_two_clean_clones"]),
-    ("direct_execution_outside_safe_executor", "BLOCK_BEFORE_PROCESS_PROVEN", ["test_mutation_from_reality_is_blocked_before_process_start"]),
-    ("missing_organ_participation", "LEDGER_BLOCK_PROVEN", ["test_complete_participation_passes_and_missing_organ_or_throne_proof_blocks"]),
-    ("throne_pass_without_referenced_proof", "THRONE_BLOCK_PROVEN", ["test_throne_pass_without_proof_is_blocked_and_budget_overrun_pauses", "test_complete_participation_passes_and_missing_organ_or_throne_proof_blocks"]),
-]
+from .service import BASE_HEAD, REPORT_RELATIVE, TASKPACK_RELATIVE, TASK_ID, WARP_ID
 
 
 def _utc_now() -> str:
@@ -100,34 +77,6 @@ def _junit(report: Path) -> tuple[dict[str, Any], set[str]]:
         },
         names,
     )
-
-
-def _negative_receipt(report: Path, junit: dict[str, Any], names: set[str], reality_before: dict[str, Any], reality_after: dict[str, Any]) -> dict[str, Any]:
-    rows = []
-    for scenario_id, expected, tests in SCENARIOS:
-        missing = [name for name in tests if name not in names]
-        actual = expected if not missing and junit["verdict"] == "PASS" else "NOT_PROVEN"
-        rows.append(
-            {
-                "scenario_id": scenario_id,
-                "expected_verdict": expected,
-                "actual_verdict": actual,
-                "supporting_tests": tests,
-                "missing_tests": missing,
-                "reality_unchanged": reality_before == reality_after,
-                "receipt_path": f"{REPORT_RELATIVE.as_posix()}/BACKEND_TEST_RESULTS.xml#" + ",".join(tests),
-            }
-        )
-    return {
-        "schema_version": "imperium.core_reference_corridor.negative_proof.v0_1",
-        "task_id": TASK_ID,
-        "generated_at_utc": _utc_now(),
-        "scenario_count": len(rows),
-        "junit": junit,
-        "scenarios": rows,
-        "failure_localization_rule": "FAILURE MUST BE LOCALIZED. NO UNKNOWN GREEN.",
-        "verdict": "PASS_PROVEN" if len(rows) == 20 and all(row["actual_verdict"] != "NOT_PROVEN" and row["reality_unchanged"] for row in rows) else "BLOCK",
-    }
 
 
 def _source_security(worktree: Path) -> dict[str, Any]:
@@ -279,7 +228,7 @@ def validate_and_write() -> dict[str, Any]:
         worktree,
         240,
     )
-    junit, test_names = _junit(report)
+    junit, _test_names = _junit(report)
     app = worktree / "SUPPORT/APP_TAURI"
     npm = shutil.which("npm.cmd") or shutil.which("npm") or "npm.cmd"
     node = shutil.which("node.exe") or shutil.which("node") or "node.exe"
@@ -294,7 +243,14 @@ def validate_and_write() -> dict[str, Any]:
     )
     post_git = {"reality": git_state(reality), "worktree": git_state(worktree)}
     reality_after = _live_git(reality)
-    negative = _negative_receipt(report, junit, test_names, reality_before, reality_after)
+    negative = run_negative_suite(
+        report=report,
+        worktree=worktree,
+        reality=reality,
+        task_id=TASK_ID,
+        warp_id=WARP_ID,
+        base_head=BASE_HEAD,
+    )
     try:
         parity_result = json.loads(node_parity["stdout_tail"])
     except json.JSONDecodeError:
@@ -311,7 +267,7 @@ def validate_and_write() -> dict[str, Any]:
     checks = {
         "pytest_execution": pytest_result,
         "backend_tests": junit,
-        "negative_scenarios": {"count": negative["scenario_count"], "verdict": "PASS" if negative["verdict"] == "PASS_PROVEN" else "BLOCK"},
+        "negative_scenarios": {"count": negative["scenario_count"], "verdict": "PASS" if negative["phase_acceptance"] == "NEGATIVE_PROOF_HARDENING_PASS" else "BLOCK"},
         "vite_build": node_build,
         "ui_backend_parity": {**node_parity, "parsed": parity_result},
         "cargo_check": cargo_check,
@@ -351,7 +307,7 @@ def validate_and_write() -> dict[str, Any]:
             context=context,
             pre_git=pre_git,
             post_git=post_git,
-            acceptance=[{"check": "20_scenarios", "verdict": "PASS" if negative["verdict"] == "PASS_PROVEN" else "BLOCK"}],
+            acceptance=[{"check": "20_scenarios", "verdict": "PASS" if negative["phase_acceptance"] == "NEGATIVE_PROOF_HARDENING_PASS" else "BLOCK"}],
             parent_evidence_id=validation_evidence_id,
         ),
     )

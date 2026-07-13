@@ -1,0 +1,26 @@
+{
+  "schema_version": "imperium.core_reference_corridor.negative_mutation_receipt.v1",
+  "mutation_id": "broken_organ_verdict_calculation",
+  "red": {
+    "scenario_receipt": "RED_SCENARIO_RECEIPT.json",
+    "scenario_sha256": "c9a79f48a956c74ba3dcdaba34561f6ea70b2ae28d3b4893117e4164dda4e31b",
+    "validation_receipt": "RED_RECEIPT.json",
+    "validation_sha256": "727d17e9e222038ba327ac71393b43f248d97565924ee6048ee0eeb7ff8ff362",
+    "actual_verdict": "PASS_PROVEN",
+    "suite_verdict": "BLOCK",
+    "exit_code": 2
+  },
+  "green_after_restore": {
+    "scenario_receipt": "GREEN_SCENARIO_RECEIPT.json",
+    "scenario_sha256": "c141e44789dc590d17c5c7209edf95eb4545bb2818ba3a339b9dc4b46f8f38b1",
+    "validation_receipt": "GREEN_RECEIPT.json",
+    "validation_sha256": "9e62c9e12fbbc4c8a33cf27819e55cada1914cdc0d2f6a1e6b50672810b20914",
+    "actual_verdict": "BLOCK_MISSING_ORGAN_PROVEN",
+    "suite_verdict": "PASS",
+    "exit_code": 0
+  },
+  "red_detected": true,
+  "green_restored": true,
+  "verdict": "RED_DETECTED_GREEN_RESTORED",
+  "receipt_hash": "b8255c9f182ac7895981e7993bf61b3920e127c0346c084921833f64052a13ce"
+}

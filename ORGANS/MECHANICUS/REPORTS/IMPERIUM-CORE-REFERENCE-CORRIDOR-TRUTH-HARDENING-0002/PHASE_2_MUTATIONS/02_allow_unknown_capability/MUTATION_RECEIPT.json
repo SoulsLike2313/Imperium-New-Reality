@@ -1,0 +1,26 @@
+{
+  "schema_version": "imperium.core_reference_corridor.negative_mutation_receipt.v1",
+  "mutation_id": "allow_unknown_capability",
+  "red": {
+    "scenario_receipt": "RED_SCENARIO_RECEIPT.json",
+    "scenario_sha256": "00c2d1f20abe8e6410300e2f33bf2c51b796a196fdf8ff9475fc3d8541a5a009",
+    "validation_receipt": "RED_RECEIPT.json",
+    "validation_sha256": "ac8d3ec38130f6938f9ebde9595f85d6bd0385f33aaef6f68a22c6f097ac7e82",
+    "actual_verdict": "BLOCK_UNKNOWN_CAPABILITY_EXECUTED",
+    "suite_verdict": "BLOCK",
+    "exit_code": 2
+  },
+  "green_after_restore": {
+    "scenario_receipt": "GREEN_SCENARIO_RECEIPT.json",
+    "scenario_sha256": "e86c5e2a57cd9d0431992e167c1ab785884548f606d93a1a5adf9356ebec5b67",
+    "validation_receipt": "GREEN_RECEIPT.json",
+    "validation_sha256": "f572e1b40af5cd1c93efb1481b8981fefa3befd94e792e30fad01db0cf465f10",
+    "actual_verdict": "BLOCK_UNREGISTERED_CAPABILITY_PROVEN",
+    "suite_verdict": "PASS",
+    "exit_code": 0
+  },
+  "red_detected": true,
+  "green_restored": true,
+  "verdict": "RED_DETECTED_GREEN_RESTORED",
+  "receipt_hash": "74507d1376503c278d9d18b213b84d9128c50b6eddaa91734c188cdbfc3ae4ea"
+}

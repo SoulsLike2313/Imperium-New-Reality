@@ -1,0 +1,108 @@
+{
+  "schema_version": "imperium.core_reference_corridor.negative_scenario_expectations.v1",
+  "catalog_id": "IMPERIUM_CORE_TRUTH_HARDENING_0002_PHASE_2_EXPECTATIONS",
+  "authority": "TASKPACK_EXPECTED_OUTCOMES_ONLY",
+  "actual_verdict_source": "FORBIDDEN",
+  "scenarios": [
+    {
+      "order": 1,
+      "scenario_id": "unauthorized_reality_write",
+      "expected_verdict": "BLOCK_REALITY_WRITE_PROVEN"
+    },
+    {
+      "order": 2,
+      "scenario_id": "write_outside_allowed_warp_scope",
+      "expected_verdict": "BLOCK_WARP_SCOPE_PROVEN"
+    },
+    {
+      "order": 3,
+      "scenario_id": "unregistered_capability",
+      "expected_verdict": "BLOCK_UNREGISTERED_CAPABILITY_PROVEN"
+    },
+    {
+      "order": 4,
+      "scenario_id": "executable_hash_mismatch",
+      "expected_verdict": "BLOCK_EXECUTABLE_HASH_MISMATCH_PROVEN"
+    },
+    {
+      "order": 5,
+      "scenario_id": "timeout",
+      "expected_verdict": "BLOCK_TIMEOUT_PROVEN"
+    },
+    {
+      "order": 6,
+      "scenario_id": "parent_child_grandchild_termination",
+      "expected_verdict": "BLOCK_PROCESS_TREE_TERMINATED_PROVEN"
+    },
+    {
+      "order": 7,
+      "scenario_id": "stale_base_head",
+      "expected_verdict": "BLOCK_STALE_BASE_HEAD_PROVEN"
+    },
+    {
+      "order": 8,
+      "scenario_id": "dirty_reality",
+      "expected_verdict": "BLOCK_DIRTY_REALITY_PROVEN"
+    },
+    {
+      "order": 9,
+      "scenario_id": "failed_validator",
+      "expected_verdict": "BLOCK_FAILED_VALIDATOR_PROVEN"
+    },
+    {
+      "order": 10,
+      "scenario_id": "evidence_tampering",
+      "expected_verdict": "BLOCK_EVIDENCE_TAMPERING_PROVEN"
+    },
+    {
+      "order": 11,
+      "scenario_id": "wrong_task_id",
+      "expected_verdict": "BLOCK_WRONG_TASK_ID_PROVEN"
+    },
+    {
+      "order": 12,
+      "scenario_id": "wrong_warp_id",
+      "expected_verdict": "BLOCK_WRONG_WARP_ID_PROVEN"
+    },
+    {
+      "order": 13,
+      "scenario_id": "wrong_base_head",
+      "expected_verdict": "BLOCK_WRONG_BASE_HEAD_PROVEN"
+    },
+    {
+      "order": 14,
+      "scenario_id": "missing_organ",
+      "expected_verdict": "BLOCK_MISSING_ORGAN_PROVEN"
+    },
+    {
+      "order": 15,
+      "scenario_id": "throne_overclaim",
+      "expected_verdict": "BLOCK_THRONE_OVERCLAIM_PROVEN"
+    },
+    {
+      "order": 16,
+      "scenario_id": "direct_legacy_command_attempt",
+      "expected_verdict": "BLOCK_LEGACY_COMMAND_PROVEN"
+    },
+    {
+      "order": 17,
+      "scenario_id": "direct_tauri_bypass_attempt",
+      "expected_verdict": "BLOCK_TAURI_BYPASS_PROVEN"
+    },
+    {
+      "order": 18,
+      "scenario_id": "parity_mismatch",
+      "expected_verdict": "BLOCK_PARITY_MISMATCH_PROVEN"
+    },
+    {
+      "order": 19,
+      "scenario_id": "warp_reject_discard_destroy",
+      "expected_verdict": "WARP_LIFECYCLE_CONTAINED_PROVEN"
+    },
+    {
+      "order": 20,
+      "scenario_id": "restart_and_state_recovery",
+      "expected_verdict": "RESTART_STATE_RECOVERY_PROVEN"
+    }
+  ]
+}

@@ -288,8 +288,9 @@ def test_phase1_14_unadmitted_validator_adapter_is_blocked(tmp_path: Path) -> No
     check_id = CHECKS["MECHANICUS"][0]
     path = _evidence(tmp_path, "MECHANICUS", {check_id: Verdict.PASS_PROVEN.value}, name="rogue-validator")
     claim = _claim(path, "MECHANICUS", check_id)
-    rogue = tmp_path / "rogue_validator.py"
-    rogue.write_bytes(VALIDATOR.read_bytes())
+    # Keep this fixture inside the admitted validator root so the assertion
+    # exercises adapter admission, not the earlier path-scope guard.
+    rogue = VALIDATOR.with_name("organ_verdict.py")
     claim["validator_execution"]["validator_adapter_path"] = str(rogue)
     claim["validator_execution"]["validator_adapter_sha256"] = sha256_file(rogue)
     claim["validator_execution"]["exact_argv"][1] = str(rogue)
