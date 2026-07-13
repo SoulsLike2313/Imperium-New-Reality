@@ -1,0 +1,54 @@
+{
+  "added_files": [
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/real_diff.py",
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/phase5_real_diff_validation.py",
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tests/test_real_diff.py"
+  ],
+  "expected_branch": "servitor/imperium-core-reference-corridor-0001",
+  "expected_reality_head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+  "expected_warp_head": "f686b90ea0d2e1af06e2243dd543324f5be6c9e3",
+  "forbidden": [
+    "commit",
+    "push",
+    "merge",
+    "land",
+    "Reality mutation",
+    "Phase 6"
+  ],
+  "kind": "PATCH_PACK",
+  "patch_id": "IMPERIUM_CORE_REAL_DIFF_0001",
+  "payload_files": [
+    {
+      "path": "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/phase5_real_diff_validation.py",
+      "sha256": "7b3687883f5350382d10d0e81076726cd9e21e4874724da228408cbc4d82ed59"
+    },
+    {
+      "path": "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/real_diff.py",
+      "sha256": "b49e6b6f73a77f9d83353a789816ee088c923c76137633f6ba3c341bcddba6a8"
+    },
+    {
+      "path": "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tests/test_real_diff.py",
+      "sha256": "b375cfd508390fa4dcd8908687d20fc28b7e716ee1402f03bed9accf3bcb0568"
+    },
+    {
+      "path": "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/ui_snapshot.py",
+      "sha256": "d35bca2b26d6ad0b32a7529af2dbf67b7ba420cdc1c51ba1ee8db3a0b872da31"
+    },
+    {
+      "path": "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/KNOWN_GAPS.md",
+      "sha256": "77d90fef4920ff533f89fa8e7ff1247f2e35145781cde38d5a0e82d2a794338e"
+    }
+  ],
+  "preimages": [
+    {
+      "path": "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/ui_snapshot.py",
+      "sha256": "b27ed5f10dfc3b4e31a825b281fec33d614aaca3ae3e3a1348bf2cb0ff3deb21"
+    },
+    {
+      "path": "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/KNOWN_GAPS.md",
+      "sha256": "207853b9c97d33fe4d9324ca5e74a323e28c05518c305fccb5cb732d4788cfec"
+    }
+  ],
+  "pwsh": "7.6.2",
+  "scope": "Phase 5 only: measured base-to-result Git diff and Thin IDE Diff panel truth."
+}
