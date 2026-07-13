@@ -1,0 +1,68 @@
+{
+  "schema_version": "imperium.core_reference_corridor.phase_receipt.v1",
+  "task_id": "IMPERIUM_CORE_TRUTH_HARDENING_0002",
+  "phase": 1,
+  "blocker": "B01",
+  "PHASE_VERDICT": "ORGAN_TRUTH_HARDENING_PASS",
+  "TESTS": {
+    "targeted": {"tests": 16, "failures": 0, "errors": 0, "skipped": 0},
+    "regression": {"tests": 48, "failures": 0, "errors": 0, "skipped": 0},
+    "schema_json_parse": "PASS",
+    "max_new_production_file_lines": 450
+  },
+  "NEGATIVE_TESTS": [
+    "non-empty reference without validator execution returns NOT_PROVEN",
+    "missing evidence reference returns NOT_PROVEN",
+    "modified evidence returns BLOCK",
+    "validator non-zero exit returns BLOCK",
+    "absent required check returns NOT_PROVEN",
+    "scaffold evidence cannot return PASS_PROVEN",
+    "debt prevents confidence 1.0",
+    "Throne cannot pass a critical organ BLOCK",
+    "wrong task_id returns BLOCK",
+    "wrong warp_id returns BLOCK",
+    "wrong base_head returns BLOCK",
+    "declared PASS cannot override failed observation",
+    "contradictory evidence returns BLOCK",
+    "unadmitted validator adapter returns BLOCK",
+    "NOT_APPLICABLE_PROVEN without applicability proof is rejected"
+  ],
+  "EVIDENCE": [
+    {
+      "path": "PHASE_1_TEST_RESULTS.xml",
+      "sha256": "9c2b9a8c8edd709882c5b2ad8c2a7d9b60c8dd7e46fb1b154e5c971fe785821e"
+    },
+    {
+      "path": "PHASE_1_REGRESSION_RESULTS.xml",
+      "sha256": "02bba39b59b3cbd74fb4d4e2dedcb9efe2a04ea66355d17ebd0a9332c9307b68"
+    },
+    {
+      "path": "ORGAN_VALIDATION_INDEX.json",
+      "status": "MACHINE_INDEX_PRESENT"
+    }
+  ],
+  "FILES_CHANGED": [
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/organ_verdict.py",
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/organ_evidence_validator.py",
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/organ_ledger.py",
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/schemas/organ_participation.schema.json",
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tests/test_organ_verdict.py",
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tests/test_organ_ledger.py",
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/HARDENING_DRIFT_GUARD.json",
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/HARDENING_DRIFT_GUARD.md",
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/ORGAN_VALIDATION_INDEX.json",
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/ORGAN_VALIDATION_INDEX.md",
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/ORGAN_VERDICT_TRUTH.json",
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/ORGAN_VERDICT_TRUTH.md",
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/PHASE_1_TEST_RESULTS.xml",
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/PHASE_1_REGRESSION_RESULTS.xml",
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/KNOWN_GAPS.md"
+  ],
+  "KNOWN_GAPS": [
+    "Historical finalized corridor receipts remain historical and are not upgraded by Phase 1.",
+    "Actual organ operational claims remain NOT_PROVEN until organ-specific current evidence is supplied.",
+    "Negative scenario hardening is Phase 2 and has not started.",
+    "Final claim reconciliation and independent disk audit remain Phase 7 work."
+  ],
+  "final_corridor_verdict": "TRUTH_HARDENING_PARTIAL_NOT_READY"
+}

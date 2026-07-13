@@ -1,0 +1,81 @@
+{
+  "schema_version": "imperium.core_reference_corridor.organ_validation_index.v1",
+  "task_id": "IMPERIUM_CORE_TRUTH_HARDENING_0002",
+  "corridor_task_id": "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001",
+  "warp_id": "WARP-CORE-REFERENCE-0001",
+  "base_head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+  "starting_warp_head": "a6a840aeba4ad8f8e55df6efe02c020a8b3245eb",
+  "phase": 1,
+  "phase_verdict": "ORGAN_TRUTH_HARDENING_PASS",
+  "validator": {
+    "validator_id": "organ_evidence_validator_v1",
+    "validator_version": "1.0.0",
+    "validator_adapter_path": "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/organ_evidence_validator.py",
+    "validator_adapter_sha256": "1ae13cbc3f82651cf00cba469715fd2a3fde923a29e7ecac6fe90b63ac435d64",
+    "validator_executable_path": "C:/Users/PC/AppData/Local/Programs/Python/Python312/python.exe",
+    "validator_sha256": "4d6f5f81a4bca11191c4c7c6b43632694d0a4ce74e068619d8fdc161d469859a",
+    "execution_mode": "SEPARATE_PROCESS_PER_REQUIRED_CHECK",
+    "write_authority": false
+  },
+  "canonical_verdicts": [
+    "PASS_PROVEN",
+    "PASS_WITH_DEBT",
+    "BLOCK",
+    "NOT_PROVEN",
+    "NOT_APPLICABLE_PROVEN"
+  ],
+  "required_checks": {
+    "ASTRONOMICON": ["taskpack_digest_admitted", "task_route_resolved"],
+    "ADMINISTRATUM": ["task_state_addressable", "evidence_index_addressable"],
+    "DOCTRINARIUM": ["forbidden_claims_carried", "canon_conflict_disclosed"],
+    "MECHANICUS": ["single_registry_valid", "typed_executor_validated"],
+    "INQUISITION": ["negative_matrix_localized", "master_unchanged"],
+    "CUSTODES": ["great_nine_complete", "ledger_rows_schema_complete"],
+    "STRATEGIUM": ["strategy_selected", "cost_time_pause_contract_present"],
+    "SCHOLA_IMPERIALIS": ["known_gaps_captured", "learning_proposals_owner_gated"],
+    "OFFICIO_AGENTIS": ["owner_language_ru", "final_response_contract_loaded"],
+    "THRONE": ["great_nine_evidence_referenced", "owner_sovereignty_preserved", "land_not_executed"]
+  },
+  "acceptance_tests": [
+    "test_phase1_01_reference_without_validator_is_not_proven",
+    "test_phase1_02_missing_evidence_reference_is_not_proven",
+    "test_phase1_03_modified_evidence_is_blocked",
+    "test_phase1_04_validator_nonzero_is_blocked_with_process_metadata",
+    "test_phase1_05_required_check_absent_is_not_proven_with_zero_exit",
+    "test_phase1_06_scaffold_evidence_cannot_be_pass_proven",
+    "test_phase1_07_accepted_debt_lowers_confidence_below_one",
+    "test_phase1_08_throne_cannot_pass_over_critical_organ_block",
+    "test_phase1_09_wrong_task_or_warp_binding_is_blocked",
+    "test_phase1_10_wrong_base_head_binding_is_blocked",
+    "test_phase1_11_declared_pass_cannot_override_failed_observation",
+    "test_phase1_12_contradictory_evidence_blocks",
+    "test_phase1_13_throne_cannot_pass_over_critical_not_proven",
+    "test_phase1_14_unadmitted_validator_adapter_is_blocked",
+    "test_complete_participation_is_structural_but_unvalidated_refs_are_not_proven",
+    "test_organ_specific_validator_runs_produce_schema_valid_records"
+  ],
+  "test_receipts": [
+    {
+      "path": "PHASE_1_TEST_RESULTS.xml",
+      "sha256": "9c2b9a8c8edd709882c5b2ad8c2a7d9b60c8dd7e46fb1b154e5c971fe785821e",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "path": "PHASE_1_REGRESSION_RESULTS.xml",
+      "sha256": "02bba39b59b3cbd74fb4d4e2dedcb9efe2a04ea66355d17ebd0a9332c9307b68",
+      "tests": 48,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "claim_boundary": {
+    "mechanism_proven": true,
+    "all_actual_organs_operationally_revalidated": false,
+    "historical_ledger_promoted": false,
+    "final_corridor_ready_claimed": false
+  }
+}

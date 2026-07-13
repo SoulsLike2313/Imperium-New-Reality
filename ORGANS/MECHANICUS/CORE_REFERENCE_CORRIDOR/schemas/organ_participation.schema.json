@@ -1,12 +1,71 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "imperium://core-reference-corridor/organ-participation/v0_1",
+  "$id": "imperium://core-reference-corridor/organ-participation/v0_2",
   "type": "object",
-  "required": ["organ_id", "phase", "assigned_depth", "input_refs", "checks_executed", "verdict", "confidence", "evidence_refs", "warnings", "not_proven", "boundary_statement", "timestamp_utc"],
+  "required": [
+    "organ_id", "phase", "assigned_depth", "input_refs", "required_checks", "checks_executed",
+    "validator_id", "validator_version", "validator_executable_path", "validator_sha256",
+    "exact_argv", "started_at_utc", "finished_at_utc", "exit_code", "validator_runs",
+    "measured_checks", "failed_checks",
+    "verdict", "confidence", "confidence_basis", "check_results", "proven", "evidence_refs",
+    "declared_evidence_refs", "warnings", "not_proven", "accepted_debt", "blocking_evidence",
+    "boundary_statement", "timestamp_utc"
+  ],
   "properties": {
     "phase": {"enum": ["PREFLIGHT", "POSTCHECK"]},
     "verdict": {"enum": ["PASS_PROVEN", "PASS_WITH_DEBT", "BLOCK", "NOT_PROVEN", "NOT_APPLICABLE_PROVEN"]},
-    "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "confidence_basis": {
+      "type": "object",
+      "required": [
+        "required_checks_total", "required_checks_passed", "evidence_integrity",
+        "reproducibility", "unknowns", "scope_coverage", "accepted_debt_count",
+        "blocking_check_count"
+      ]
+    },
+    "required_checks": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+    "checks_executed": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "validator_id": {"type": ["string", "null"]},
+    "validator_version": {"type": ["string", "null"]},
+    "validator_executable_path": {"type": ["string", "null"]},
+    "validator_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "exact_argv": {"type": "array", "items": {"type": "string"}},
+    "started_at_utc": {"type": ["string", "null"]},
+    "finished_at_utc": {"type": ["string", "null"]},
+    "exit_code": {"type": ["integer", "null"]},
+    "validator_runs": {"type": "array", "items": {"type": "object"}},
+    "measured_checks": {"type": "array", "items": {"type": "object"}},
+    "failed_checks": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "check_results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["check_id", "critical", "verdict", "reasons"],
+        "properties": {
+          "check_id": {"type": "string"},
+          "critical": {"type": "boolean"},
+          "verdict": {"enum": ["PASS_PROVEN", "BLOCK", "NOT_PROVEN"]},
+          "reasons": {"type": "array", "items": {"type": "string"}},
+          "evidence_ref": {"type": "string"},
+          "evidence_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "validator_execution": {
+            "type": "object",
+            "required": [
+              "validator_id", "validator_version", "validator_adapter_path",
+              "validator_adapter_sha256", "validator_executable_path", "validator_sha256",
+              "exact_argv", "started_at_utc", "finished_at_utc", "exit_code", "result"
+            ]
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "proven": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "declared_evidence_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "not_proven": {"type": "array"},
+    "accepted_debt": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "blocking_evidence": {"type": "array"}
   },
   "additionalProperties": true
 }
