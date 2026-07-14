@@ -1,0 +1,33 @@
+{
+  "patch_id": "IMPERIUM_PHASE7_CLAIM_RECONCILIATION_0001",
+  "class": "PATCH_PACK",
+  "title": "Phase 7 claim reconciliation and independent disk audit",
+  "expected_warp_head": "dc3079e4ac9e299761317d6bc078ce1ac3f18c8d",
+  "expected_reality_head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+  "expected_branch": "servitor/imperium-core-reference-corridor-0001",
+  "phase": 7,
+  "purpose": [
+    "Downgrade historical organ PASS rows to current NOT_PROVEN in the Thin IDE",
+    "Create a current claim authority without rewriting historical receipts",
+    "Reconcile Phase 1–6 claims and known debts",
+    "Add an independent disk auditor with mutation self-tests",
+    "Produce a final PASS_WITH_DEBT or fail closed"
+  ],
+  "final_allowed_verdicts": [
+    "REFERENCE_CORRIDOR_PASS_PROVEN",
+    "REFERENCE_CORRIDOR_PASS_WITH_DEBT",
+    "REFERENCE_CORRIDOR_NOT_READY",
+    "REFERENCE_CORRIDOR_BLOCKED"
+  ],
+  "expected_current_verdict": "REFERENCE_CORRIDOR_PASS_WITH_DEBT",
+  "forbidden": [
+    "master mutation",
+    "Reality mutation",
+    "land",
+    "merge",
+    "push",
+    "historical receipt rewrite",
+    "promotion of historical organ rows",
+    "Core v1 completion claim"
+  ]
+}
