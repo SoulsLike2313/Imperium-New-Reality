@@ -1,0 +1,59 @@
+{
+  "schema_version": "imperium.patch_pack.v1",
+  "patch_id": "IMPERIUM_CORE_LIVE_UI_CORRIDOR_0001_FIX_0002",
+  "purpose": "Phase 6 live UI proof through the unchanged canonical corridor_ui_action route.",
+  "expected_warp_head": "8f34f78f6dc36b82989ac51e2e2baedba26872de",
+  "expected_branch": "servitor/imperium-core-reference-corridor-0001",
+  "expected_reality_head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+  "preimages": [
+    {
+      "path": "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/service.py",
+      "sha256": "1044f69883a65357e00a267e783e23cb801a4bf60bde4f1f6dcb2f45c8652bee"
+    },
+    {
+      "path": "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/ui_snapshot.py",
+      "sha256": "d35bca2b26d6ad0b32a7529af2dbf67b7ba420cdc1c51ba1ee8db3a0b872da31"
+    }
+  ],
+  "payload_files": [
+    {
+      "path": "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/service.py",
+      "sha256": "bb721c860b7e9b23d2736c8365207cd7f867f2a794104decb46410094f38e780",
+      "size": 23922
+    },
+    {
+      "path": "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/live_ui_evidence.py",
+      "sha256": "69ca38800ec76d4b43515c8eb5c87366ba5f1c0f090f09527875eaa9dc46cba2",
+      "size": 6177
+    },
+    {
+      "path": "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/ui_snapshot.py",
+      "sha256": "262e41324074c8cc6e5f5d5b4a464c97dececfa3b9a9035917a1e21341c71be4",
+      "size": 15341
+    },
+    {
+      "path": "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/phase6_live_ui_validation.py",
+      "sha256": "6f10a4b06721252368e3036a03e98b54fe72959ae4b52f17445936ed7635f44b",
+      "size": 11795
+    },
+    {
+      "path": "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tests/test_live_ui_evidence.py",
+      "sha256": "2b2b8e6fd3e411d56d94bc8f0ce8aed7c3b3969bbb9650a32484f1aed935b804",
+      "size": 5091
+    }
+  ],
+  "added_files": [
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/live_ui_evidence.py",
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/phase6_live_ui_validation.py",
+    "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/tests/test_live_ui_evidence.py"
+  ],
+  "forbidden": [
+    "new Tauri command",
+    "direct witness writer",
+    "master mutation",
+    "land",
+    "commit",
+    "push"
+  ],
+  "expected_verdict": "LIVE_UI_CORRIDOR_PROVEN"
+}

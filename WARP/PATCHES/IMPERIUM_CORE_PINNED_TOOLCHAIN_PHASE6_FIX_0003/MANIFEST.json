@@ -1,0 +1,17 @@
+{
+  "patch_id": "IMPERIUM_CORE_PINNED_TOOLCHAIN_PHASE6_FIX_0003",
+  "task": "Close the PATH-free Rust-to-Python dependency gap and resume Phase 6",
+  "expected_warp_head": "8f34f78f6dc36b82989ac51e2e2baedba26872de",
+  "expected_reality_head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+  "requires_existing_phase6_state": "IMPERIUM_CORE_LIVE_UI_CORRIDOR_0001_FIX_0002",
+  "changes": [
+    "Admit absolute hashed CORE_GIT and CORE_PWSH system tools",
+    "Pass only pinned tool identities through the PATH-free bridge environment",
+    "Require Python repository/diff/diagnostic paths to verify tool hashes before each spawn",
+    "Preserve Phase 3 canonical mutation routing",
+    "Strengthen Phase 6 proof with live Git and pwsh identity evidence"
+  ],
+  "forbidden": ["master mutation", "PATH restoration", "land", "new Tauri command"],
+  "expected_verdict_before_owner_action": "LIVE_UI_BASELINE_CAPTURED_WAITING_FOR_OWNER_ACTION",
+  "expected_final_verdict": "LIVE_UI_CORRIDOR_PROVEN"
+}

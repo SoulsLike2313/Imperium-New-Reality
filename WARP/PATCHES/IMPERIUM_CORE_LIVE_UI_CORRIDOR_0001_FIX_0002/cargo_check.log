@@ -1,0 +1,214 @@
+warning: function `now_unix` is never used
+  --> src\main.rs:13:4
+   |
+13 | fn now_unix() -> u64 {
+   |    ^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: function `repo_root` is never used
+  --> src\main.rs:20:4
+   |
+20 | fn repo_root() -> Result<PathBuf, String> {
+   |    ^^^^^^^^^
+
+warning: function `safe_patch_id` is never used
+  --> src\main.rs:41:4
+   |
+41 | fn safe_patch_id(patch_id: &str) -> bool {
+   |    ^^^^^^^^^^^^^
+
+warning: function `registry_path` is never used
+  --> src\main.rs:50:4
+   |
+50 | fn registry_path(repo: &Path) -> PathBuf {
+   |    ^^^^^^^^^^^^^
+
+warning: function `read_registry` is never used
+  --> src\main.rs:54:4
+   |
+54 | fn read_registry(repo: &Path) -> Value {
+   |    ^^^^^^^^^^^^^
+
+warning: function `write_registry` is never used
+  --> src\main.rs:69:4
+   |
+69 | fn write_registry(repo: &Path, registry: &Value) -> Result<(), String> {
+   |    ^^^^^^^^^^^^^^
+
+warning: function `registered_ids` is never used
+  --> src\main.rs:76:4
+   |
+76 | fn registered_ids(registry: &Value) -> Vec<String> {
+   |    ^^^^^^^^^^^^^^
+
+warning: function `patch_dir` is never used
+  --> src\main.rs:83:4
+   |
+83 | fn patch_dir(repo: &Path, patch_id: &str) -> PathBuf {
+   |    ^^^^^^^^^
+
+warning: function `infer_pack_phase` is never used
+  --> src\main.rs:87:4
+   |
+87 | fn infer_pack_phase(patch_id: &str, dir: &Path) -> &'static str {
+   |    ^^^^^^^^^^^^^^^^
+
+warning: function `is_candidate_phase` is never used
+  --> src\main.rs:98:4
+   |
+98 | fn is_candidate_phase(phase: &str) -> bool {
+   |    ^^^^^^^^^^^^^^^^^^
+
+warning: function `path_modified_unix` is never used
+   --> src\main.rs:102:4
+    |
+102 | fn path_modified_unix(path: &Path) -> u64 {
+    |    ^^^^^^^^^^^^^^^^^^
+
+warning: function `legacy_runner_present` is never used
+   --> src\main.rs:111:4
+    |
+111 | fn legacy_runner_present(dir: &Path) -> bool {
+    |    ^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `patch_pack_summary` is never used
+   --> src\main.rs:127:4
+    |
+127 | fn patch_pack_summary(repo: &Path, patch_id: &str, registered: bool) -> Value {
+    |    ^^^^^^^^^^^^^^^^^^
+
+warning: function `app_state_dir` is never used
+   --> src\main.rs:146:4
+    |
+146 | fn app_state_dir(repo: &Path) -> PathBuf {
+    |    ^^^^^^^^^^^^^
+
+warning: function `app_receipts_dir` is never used
+   --> src\main.rs:150:4
+    |
+150 | fn app_receipts_dir(repo: &Path) -> PathBuf {
+    |    ^^^^^^^^^^^^^^^^
+
+warning: function `default_current_version` is never used
+   --> src\main.rs:154:4
+    |
+154 | fn default_current_version() -> Value {
+    |    ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `default_available_version` is never used
+   --> src\main.rs:165:4
+    |
+165 | fn default_available_version() -> Value {
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `simple_version_key` is never used
+   --> src\main.rs:175:4
+    |
+175 | fn simple_version_key(v: &str) -> Vec<u64> {
+    |    ^^^^^^^^^^^^^^^^^^
+
+warning: function `version_gt` is never used
+   --> src\main.rs:182:4
+    |
+182 | fn version_gt(a: &str, b: &str) -> bool {
+    |    ^^^^^^^^^^
+
+warning: function `get_imperium_core_version_state` is never used
+   --> src\main.rs:191:4
+    |
+191 | fn get_imperium_core_version_state() -> Result<Value, String> {
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `initialize_imperium_core_update` is never used
+   --> src\main.rs:223:4
+    |
+223 | fn initialize_imperium_core_update(requested_version: String) -> Result<Value, String> {
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `list_patch_packs` is never used
+   --> src\main.rs:263:4
+    |
+263 | fn list_patch_packs() -> Result<Value, String> {
+    |    ^^^^^^^^^^^^^^^^
+
+warning: function `register_patch_pack` is never used
+   --> src\main.rs:296:4
+    |
+296 | fn register_patch_pack(patch_id: String) -> Result<Value, String> {
+    |    ^^^^^^^^^^^^^^^^^^^
+
+warning: function `get_mechanicus_language_codex` is never used
+   --> src\main.rs:327:4
+    |
+327 | fn get_mechanicus_language_codex() -> Result<Value, String> {
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `read_json_file` is never used
+   --> src\main.rs:335:4
+    |
+335 | fn read_json_file(path: &Path) -> Option<Value> {
+    |    ^^^^^^^^^^^^^^
+
+warning: function `rel_path` is never used
+   --> src\main.rs:340:4
+    |
+340 | fn rel_path(base: &Path, path: &Path) -> String {
+    |    ^^^^^^^^
+
+warning: function `collect_files_limited` is never used
+   --> src\main.rs:347:4
+    |
+347 | fn collect_files_limited(root: &Path, limit: usize) -> Vec<PathBuf> {
+    |    ^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `language_for_path` is never used
+   --> src\main.rs:372:4
+    |
+372 | fn language_for_path(path: &Path) -> &'static str {
+    |    ^^^^^^^^^^^^^^^^^
+
+warning: function `push_unique` is never used
+   --> src\main.rs:388:4
+    |
+388 | fn push_unique(list: &mut Vec<String>, value: &str) {
+    |    ^^^^^^^^^^^
+
+warning: function `file_line_count` is never used
+   --> src\main.rs:394:4
+    |
+394 | fn file_line_count(path: &Path) -> usize {
+    |    ^^^^^^^^^^^^^^^
+
+warning: function `infer_task_class` is never used
+   --> src\main.rs:398:4
+    |
+398 | fn infer_task_class(patch_id: &str, rels: &[String]) -> String {
+    |    ^^^^^^^^^^^^^^^^
+
+warning: function `analyze_patch_pack_core` is never used
+   --> src\main.rs:413:4
+    |
+413 | fn analyze_patch_pack_core(repo: &Path, patch_id: &str, register: bool) -> Result<Value, String> {
+    |    ^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `analyze_patch_pack_organ_summary` is never used
+   --> src\main.rs:584:4
+    |
+584 | fn analyze_patch_pack_organ_summary(patch_id: String) -> Result<Value, String> {
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `register_patch_pack_with_organs` is never used
+   --> src\main.rs:589:4
+    |
+589 | fn register_patch_pack_with_organs(patch_id: String) -> Result<Value, String> {
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: function `record_runtime_fps_proof` is never used
+   --> src\main.rs:617:4
+    |
+617 | fn record_runtime_fps_proof(payload: Value) -> Result<Value, String> {
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `imperium_app_tauri` (bin "imperium_app_tauri") generated 35 warnings
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 8.76s

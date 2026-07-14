@@ -1,0 +1,17 @@
+{
+  "patch_id": "IMPERIUM_PHASE6_TOOL_PATH_IDENTITY_FIX_0004",
+  "title": "Phase 6 executable path identity normalization",
+  "class": "PATCH_PACK",
+  "expected_warp_head": "8f34f78f6dc36b82989ac51e2e2baedba26872de",
+  "expected_reality_head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+  "purpose": "Normalize Windows extended-length executable paths in the Phase 6 verifier without weakening SHA-256 or PATH-resolution checks.",
+  "forbidden": [
+    "new diagnostic execution",
+    "master mutation",
+    "land",
+    "push",
+    "registry mutation",
+    "PATH re-enablement",
+    "hash-check removal"
+  ]
+}

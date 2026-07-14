@@ -1,0 +1,23 @@
+{
+  "patch_id": "IMPERIUM_CAPABILITY_IDENTITY_RECONCILIATION_0001",
+  "title": "Capability identity reconciliation for Phase 6",
+  "class": "PATCH_PACK",
+  "expected_warp_head": "8f34f78f6dc36b82989ac51e2e2baedba26872de",
+  "expected_reality_head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+  "scope": [
+    "Reconcile exactly two stale adapter identities in the canonical capability registry",
+    "Recompute and validate the canonical registry digest",
+    "Prove ui-action refresh_state loads through the pinned toolchain with PATH empty"
+  ],
+  "allowed_mutations": [
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/CAPABILITY_REGISTRY.json",
+    "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002/CAPABILITY_IDENTITY_RECONCILIATION_RECEIPT.json"
+  ],
+  "forbidden": [
+    "master mutation",
+    "land",
+    "push",
+    "code changes",
+    "blind hash refresh"
+  ]
+}
