@@ -1,0 +1,28 @@
+{
+  "patch_id": "IMPERIUM_PHASE6_REGISTRY_RUNTIME_TRANSITION_PROOF_0006",
+  "class": "PATCH_PACK",
+  "title": "Phase 6 exact registry runtime transition proof",
+  "expected_warp_head": "5da51c51199f759d4dbe04d15249f137f56dc27c",
+  "expected_reality_head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+  "purpose": "Finalize the already executed second live diagnostic without changing the implementation HEAD. Permit exactly one tracked runtime mutation: CORE_DIAGNOSTIC.last_validation plus the canonical registry digest.",
+  "observed_transition": {
+    "tracked_file": "ORGANS/MECHANICUS/REPORTS/IMPERIUM-CORE-REFERENCE-CORRIDOR-0001/CAPABILITY_REGISTRY.json",
+    "historical_live_count": 1,
+    "current_live_count": 2,
+    "allowed_semantic_fields": [
+      "capabilities[CORE_DIAGNOSTIC].last_validation.evidence_id",
+      "capabilities[CORE_DIAGNOSTIC].last_validation.timestamp_utc",
+      "registry_digest"
+    ]
+  },
+  "forbidden": [
+    "new Run Diagnostic click",
+    "implementation code mutation",
+    "baseline rebinding",
+    "historical evidence deletion",
+    "master mutation",
+    "land",
+    "push",
+    "general dirty-worktree bypass"
+  ]
+}
