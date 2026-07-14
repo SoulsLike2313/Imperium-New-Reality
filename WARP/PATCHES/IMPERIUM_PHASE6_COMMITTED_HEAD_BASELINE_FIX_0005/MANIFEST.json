@@ -1,0 +1,22 @@
+{
+  "patch_id": "IMPERIUM_PHASE6_COMMITTED_HEAD_BASELINE_FIX_0005",
+  "class": "PATCH_PACK",
+  "expected_warp_head": "8c3a3630478c53e19fead8e18ec165adc5062cbe",
+  "expected_reality_head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+  "expected_validator_sha256": "8ec4a28d0d8af15589753243b573020cfe7db84b2924d8fd8dee247759cc978d",
+  "purpose": "Allow a second Phase 6 proof attempt on a clean committed implementation HEAD while preserving the first pre-commit attempt as historical evidence.",
+  "truth_rules": [
+    "Do not rewrite or pretend the first baseline was bound to the later commit.",
+    "A new baseline must be captured only after this code is committed.",
+    "The new baseline may include historical live evidence IDs.",
+    "The implementation tracked worktree must be clean at baseline.",
+    "Verify still requires exact HEAD equality from baseline through Owner action."
+  ],
+  "forbidden": [
+    "master mutation",
+    "land",
+    "push",
+    "deleting historical live evidence",
+    "manual editing of evidence hashes"
+  ]
+}

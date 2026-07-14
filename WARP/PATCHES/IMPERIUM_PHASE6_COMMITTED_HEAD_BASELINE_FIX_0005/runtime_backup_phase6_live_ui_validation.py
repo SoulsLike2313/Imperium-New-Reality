@@ -20,6 +20,7 @@ from .tauri_surface_inventory import build_inventory
 from .ui_snapshot import build_ui_snapshot
 
 EXPECTED_BASE = "281c3a7c8463de7fb64473929fe0ed975f99f595"
+EXPECTED_IMPLEMENTATION_HEAD = "8f34f78f6dc36b82989ac51e2e2baedba26872de"
 TASK_ID = "IMPERIUM-CORE-REFERENCE-CORRIDOR-0001"
 WARP_ID = "WARP-CORE-REFERENCE-0001"
 
@@ -113,18 +114,18 @@ def _snapshot_field(snapshot: Mapping[str, Any], panel_id: str, card_id: str, la
 
 def capture_baseline(repo: Path, reality: Path, report: Path, output: Path) -> dict[str, Any]:
     live_index = load_live_index(report)
+    if live_index.get("entries"):
+        raise RuntimeError("Phase 6 first proof requires an empty live UI evidence stream")
     service_source = (repo / "ORGANS/MECHANICUS/CORE_REFERENCE_CORRIDOR/service.py").read_text(encoding="utf-8")
     if "return self.execute_demo()" not in service_source:
         raise RuntimeError("canonical typed-executor route token was removed")
     inventory = build_inventory(repo)
     if inventory.get("surface_verdict") != "LEGACY_MUTATION_SURFACE_CLOSED":
         raise RuntimeError("Phase 3 mutation surface is not closed")
-    tracked_status = _git(repo, "status", "--porcelain=v1", "--untracked-files=no").splitlines()
     baseline = {
-        "schema_version": "imperium.phase6_live_ui_baseline.v3",
+        "schema_version": "imperium.phase6_live_ui_baseline.v2",
         "captured_at_utc": _utc_now(),
         "implementation_head": _git(repo, "rev-parse", "HEAD"),
-        "implementation_tracked_status": tracked_status,
         "branch": _git(repo, "rev-parse", "--abbrev-ref", "HEAD"),
         "reality_head": _git(reality, "rev-parse", "HEAD"),
         "reality_status": _git(reality, "status", "--porcelain=v1").splitlines(),
@@ -133,8 +134,8 @@ def capture_baseline(repo: Path, reality: Path, report: Path, output: Path) -> d
         "live_evidence_ids": sorted(live_index.get("entries", {})),
         "phase3_surface_verdict": inventory.get("surface_verdict"),
     }
-    if tracked_status:
-        raise RuntimeError("implementation tracked worktree is dirty at baseline")
+    if baseline["implementation_head"] != EXPECTED_IMPLEMENTATION_HEAD:
+        raise RuntimeError("unexpected implementation HEAD")
     if baseline["reality_head"] != EXPECTED_BASE or baseline["reality_status"]:
         raise RuntimeError("Reality is not at the clean authoritative base")
     _atomic_json(output, baseline)
