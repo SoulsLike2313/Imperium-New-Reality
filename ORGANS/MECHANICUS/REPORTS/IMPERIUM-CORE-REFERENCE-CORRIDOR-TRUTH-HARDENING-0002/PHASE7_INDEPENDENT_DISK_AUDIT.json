@@ -1,0 +1,109 @@
+{
+  "capability_registry": {
+    "capabilities": [
+      {
+        "adapter_match": true,
+        "admission_state": "ACTIVE",
+        "capability_id": "CORE_DIAGNOSTIC",
+        "executable_match": true
+      },
+      {
+        "adapter_match": true,
+        "admission_state": "ACTIVE",
+        "capability_id": "CORE_REPORT_BUILDER",
+        "executable_match": true
+      },
+      {
+        "adapter_match": true,
+        "admission_state": "ACTIVE",
+        "capability_id": "CORE_VALIDATION_SUITE",
+        "executable_match": true
+      },
+      {
+        "adapter_match": true,
+        "admission_state": "ACTIVE",
+        "capability_id": "CORE_GIT",
+        "executable_match": true
+      },
+      {
+        "adapter_match": true,
+        "admission_state": "ACTIVE",
+        "capability_id": "CORE_PWSH",
+        "executable_match": true
+      }
+    ],
+    "digest": "sha256:b749da10a14df3131bdfd80ce7752d7c9e7f8754a585f5df57a35c2b7bdacd31",
+    "path": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\CAPABILITY_REGISTRY.json",
+    "sha256": "44c48750cd911bdd5401da2edacd9e2ad3ea113f40d56b83245c085038ab5640"
+  },
+  "claim_status_path": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\CURRENT_CLAIM_STATUS.json",
+  "claim_status_sha256": "07ef34d3f17e2cc6d63e61281b1737f88168fc224d3b5dd9315ccfb03882a094",
+  "errors": [],
+  "generated_at_utc": "2026-07-14T15:43:44.060825Z",
+  "implementation_head": "64d988f1dd63f68a9a0b45520c7ac7d621b4eabf",
+  "land_authorized": false,
+  "mode": "final",
+  "mutation_tests": {
+    "count": 5,
+    "detected": [
+      "organ_promotion",
+      "debt_removal",
+      "core_v1_overclaim",
+      "supersession_removal",
+      "registry_digest_tamper"
+    ],
+    "verdict": "MUTATIONS_DETECTED"
+  },
+  "phase_receipts": [
+    {
+      "exists": true,
+      "observed_verdict": "ORGAN_TRUTH_HARDENING_PASS",
+      "path": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002\\ORGAN_VERDICT_TRUTH.json",
+      "sha256": "653e068abe25c77953c880d9f7c01ece7dc831fa9a66409ec3cc060acc747b89",
+      "verdict": "PASS_PROVEN"
+    },
+    {
+      "exists": true,
+      "observed_verdict": "NEGATIVE_PROOF_HARDENING_PASS",
+      "path": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002\\NEGATIVE_PROOF_TRUTH.json",
+      "sha256": "f91a513511561c8a94730d6c37a1cba1918045b1f4c9482e3bd8f2210457a671",
+      "verdict": "PASS_PROVEN"
+    },
+    {
+      "exists": true,
+      "observed_verdict": "LEGACY_MUTATION_SURFACE_CLOSED",
+      "path": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002\\PHASE_3_VALIDATION_RECEIPT.json",
+      "sha256": "9ae6a0f72908cc9554e031174b1a0fa5fefb431343ec995665d5d578b88af478",
+      "verdict": "PASS_PROVEN"
+    },
+    {
+      "exists": true,
+      "observed_verdict": "RUST_PYTHON_BRIDGE_HARDENING_PASS",
+      "path": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002\\PHASE_4_CHECKPOINT.json",
+      "sha256": "4696543ddbe47079b21871bbdbb43fa142c0b824be78656d38a50b4ce3d05ed9",
+      "verdict": "PASS_PROVEN"
+    },
+    {
+      "exists": true,
+      "observed_verdict": "REAL_DIFF_REVIEW_PROVEN",
+      "path": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002\\REAL_DIFF_RECEIPT.json",
+      "sha256": "246974ba053446874e5001531286f2a75d2c87dd8eb7acdea2629afd7e7fcab0",
+      "verdict": "PASS_PROVEN"
+    },
+    {
+      "exists": true,
+      "observed_verdict": "LIVE_UI_CORRIDOR_PROVEN",
+      "path": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-TRUTH-HARDENING-0002\\LIVE_UI_ACTION_RECEIPT.json",
+      "sha256": "2c84f9a2c7d1a32ba18c7dcd6fcd3353e8b9c582ce3d145b32b0c3474b9f7e92",
+      "verdict": "PASS_PROVEN"
+    }
+  ],
+  "reality_head": "281c3a7c8463de7fb64473929fe0ed975f99f595",
+  "reality_status": [],
+  "reality_unchanged": true,
+  "schema_version": "imperium.phase7.independent_disk_audit.v1",
+  "tracked_status": [],
+  "ui_contract_errors": [],
+  "ui_organ_panel_status": "NOT_PROVEN",
+  "verdict": "REFERENCE_CORRIDOR_PASS_WITH_DEBT"
+}

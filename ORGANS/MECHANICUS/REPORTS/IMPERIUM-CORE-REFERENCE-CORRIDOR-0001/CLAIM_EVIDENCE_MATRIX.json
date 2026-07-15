@@ -1,0 +1,126 @@
+{
+  "blockers": [],
+  "campaign_verdict": "REFERENCE_CORRIDOR_PASS_WITH_DEBT",
+  "claims": [
+    {
+      "claim_id": "PHASE_1",
+      "classification": "PASS_PROVEN",
+      "measured_truth": "ORGAN_TRUTH_HARDENING_PASS from ORGAN_VERDICT_TRUTH.json; sha256=653e068abe25c77953c880d9f7c01ece7dc831fa9a66409ec3cc060acc747b89"
+    },
+    {
+      "claim_id": "PHASE_2",
+      "classification": "PASS_PROVEN",
+      "measured_truth": "NEGATIVE_PROOF_HARDENING_PASS from NEGATIVE_PROOF_TRUTH.json; sha256=f91a513511561c8a94730d6c37a1cba1918045b1f4c9482e3bd8f2210457a671"
+    },
+    {
+      "claim_id": "PHASE_3",
+      "classification": "PASS_PROVEN",
+      "measured_truth": "LEGACY_MUTATION_SURFACE_CLOSED from PHASE_3_VALIDATION_RECEIPT.json; sha256=9ae6a0f72908cc9554e031174b1a0fa5fefb431343ec995665d5d578b88af478"
+    },
+    {
+      "claim_id": "PHASE_4",
+      "classification": "PASS_PROVEN",
+      "measured_truth": "RUST_PYTHON_BRIDGE_HARDENING_PASS from PHASE_4_CHECKPOINT.json; sha256=4696543ddbe47079b21871bbdbb43fa142c0b824be78656d38a50b4ce3d05ed9"
+    },
+    {
+      "claim_id": "PHASE_5",
+      "classification": "PASS_PROVEN",
+      "measured_truth": "REAL_DIFF_REVIEW_PROVEN from REAL_DIFF_RECEIPT.json; sha256=246974ba053446874e5001531286f2a75d2c87dd8eb7acdea2629afd7e7fcab0"
+    },
+    {
+      "claim_id": "PHASE_6",
+      "classification": "PASS_PROVEN",
+      "measured_truth": "LIVE_UI_CORRIDOR_PROVEN from LIVE_UI_ACTION_RECEIPT.json; sha256=2c84f9a2c7d1a32ba18c7dcd6fcd3353e8b9c582ce3d145b32b0c3474b9f7e92"
+    },
+    {
+      "claim_id": "GREAT_NINE_AND_THRONE_OPERATIONAL",
+      "classification": "NOT_PROVEN",
+      "measured_truth": "Historical ledger rows exist, but current organ-specific operational evidence was not supplied."
+    },
+    {
+      "claim_id": "LIVE_UI_NONBLOCKING",
+      "classification": "PASS_WITH_DEBT",
+      "measured_truth": "Execution and evidence are proven; synchronous UI responsiveness is deferred accepted debt."
+    },
+    {
+      "claim_id": "CORE_V1_COMPLETE",
+      "classification": "NOT_CLAIMED",
+      "measured_truth": "Phase 7 covers only the Reference Corridor campaign."
+    },
+    {
+      "claim_id": "LAND_AUTHORIZED",
+      "classification": "NOT_PROVEN",
+      "measured_truth": "Owner land decision has not been recorded."
+    }
+  ],
+  "debts": [
+    {
+      "blocking_scope": "LAND_ONLY",
+      "debt_id": "CAP_CONSTITUTION_GREAT_NINE_SUPERSESSION_PENDING",
+      "severity": "HIGH_FOR_LAND"
+    },
+    {
+      "blocking_scope": "ORGAN_OPERATIONAL_CLAIMS",
+      "debt_id": "ACTUAL_ORGANS_NOT_CURRENTLY_REVALIDATED",
+      "severity": "HIGH_FOR_ORGAN_MATURITY_CLAIMS"
+    },
+    {
+      "blocking_scope": "NON_BLOCKING_FOR_PHASE7",
+      "debt_id": "LIVE_UI_NONBLOCKING_ACTION_DEFERRED",
+      "severity": "UX_DEBT"
+    },
+    {
+      "blocking_scope": "NON_BLOCKING",
+      "debt_id": "LEGACY_PRIVATE_RUST_SOURCE_DEBT",
+      "severity": "LOW"
+    },
+    {
+      "blocking_scope": "PARTIAL_RESTORE",
+      "debt_id": "PARTIAL_CHECKPOINT_RESTORE_NOT_IMPLEMENTED",
+      "severity": "MEDIUM"
+    },
+    {
+      "blocking_scope": "EXTENSION_CLAIMS",
+      "debt_id": "SCAFFOLD_EXTENSIONS_NOT_OPERATIONAL",
+      "severity": "EXPECTED_SCOPE_BOUNDARY"
+    },
+    {
+      "blocking_scope": "FULL_ADMINISTRATUM_CLAIMS",
+      "debt_id": "ADMINISTRATUM_MINIMAL_LEDGER_ADAPTER",
+      "severity": "EXPECTED_SCOPE_BOUNDARY"
+    },
+    {
+      "blocking_scope": "LAND",
+      "debt_id": "OWNER_ACCEPTANCE_AND_LAND_PENDING",
+      "severity": "OWNER_GATE"
+    },
+    {
+      "blocking_scope": "CORE_V1_COMPLETENESS_CLAIMS",
+      "debt_id": "REFERENCE_CORRIDOR_SCOPE_ONLY",
+      "severity": "CLAIM_BOUNDARY"
+    }
+  ],
+  "generated_at_utc": "2026-07-14T15:43:41.780910Z",
+  "implementation_head": "64d988f1dd63f68a9a0b45520c7ac7d621b4eabf",
+  "schema_version": "imperium.phase7.claim_evidence_matrix.v1",
+  "superseded_claims": [
+    {
+      "claim": "REFERENCE_CORRIDOR_READY_FOR_OWNER_REVIEW",
+      "classification": "HISTORICAL_SUPERSEDED",
+      "path": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\OWNER_RESULT.md",
+      "reason": "Predates truth-hardening Phases 1–7."
+    },
+    {
+      "claim": "OWNER_REVIEW_READY",
+      "classification": "HISTORICAL_SUPERSEDED",
+      "path": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\OWNER_REVIEW_READY_RECEIPT.json",
+      "reason": "Preserved as history; not current Phase 7 authority."
+    },
+    {
+      "claim": "HISTORICAL_POSTCHECK_PASS_PROVEN",
+      "classification": "HISTORICAL_NOT_PROMOTED",
+      "path": "E:\\IMPERIUM_WARPS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGANS\\MECHANICUS\\REPORTS\\IMPERIUM-CORE-REFERENCE-CORRIDOR-0001\\ORGAN_PARTICIPATION_LEDGER.json",
+      "reason": "Current organ-specific operational evidence is absent."
+    }
+  ]
+}
